@@ -5,8 +5,7 @@
 pub enum Error {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>There was a conflict processing the request. Try your request again.</p>
     ConflictException(crate::error::ConflictException),
@@ -19,8 +18,7 @@ pub enum Error {
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>License Manager cannot allocate a license to a resource because of its state. </p>
-    /// <p>For example, you cannot allocate a license to an instance in the process of shutting
-    /// down.</p>
+    /// <p>For example, you cannot allocate a license to an instance in the process of shutting down.</p>
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
     /// <p>You do not have enough licenses available to support a new resource launch.</p>
     LicenseUsageException(crate::error::LicenseUsageException),

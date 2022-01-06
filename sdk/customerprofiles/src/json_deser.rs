@@ -1006,6 +1006,11 @@ pub fn deser_operation_crate_operation_get_integration(
                             .transpose()?,
                         );
                     }
+                    "ObjectTypeNames" => {
+                        builder = builder.set_object_type_names(
+                            crate::json_deser::deser_map_com_amazonaws_customerprofiles_object_type_names(tokens)?
+                        );
+                    }
                     "Tags" => {
                         builder = builder.set_tags(
                             crate::json_deser::deser_map_com_amazonaws_customerprofiles_tag_map(
@@ -1805,6 +1810,11 @@ pub fn deser_operation_crate_operation_put_integration(
                             .transpose()?,
                         );
                     }
+                    "ObjectTypeNames" => {
+                        builder = builder.set_object_type_names(
+                            crate::json_deser::deser_map_com_amazonaws_customerprofiles_object_type_names(tokens)?
+                        );
+                    }
                     "Tags" => {
                         builder = builder.set_tags(
                             crate::json_deser::deser_map_com_amazonaws_customerprofiles_tag_map(
@@ -2580,6 +2590,52 @@ where
                 }
             }
             Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_map_com_amazonaws_customerprofiles_object_type_names<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            let mut map = std::collections::HashMap::new();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        let key = key.to_unescaped().map(|u| u.into_owned())?;
+                        let value = aws_smithy_json::deserialize::token::expect_string_or_null(
+                            tokens.next(),
+                        )?
+                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                        .transpose()?;
+                        if let Some(value) = value {
+                            map.insert(key, value);
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(map))
         }
         _ => Err(aws_smithy_json::deserialize::Error::custom(
             "expected start object or null",
@@ -3473,6 +3529,11 @@ where
                             "Tags" => {
                                 builder = builder.set_tags(
                                     crate::json_deser::deser_map_com_amazonaws_customerprofiles_tag_map(tokens)?
+                                );
+                            }
+                            "ObjectTypeNames" => {
+                                builder = builder.set_object_type_names(
+                                    crate::json_deser::deser_map_com_amazonaws_customerprofiles_object_type_names(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -198,8 +198,7 @@ impl ListTagsForResourceOutput {
 pub struct ListProjectsOutput {
     /// <p>An object containing the list of projects.</p>
     pub projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
-    /// <p>The token used to retrieve the next set of results - will be effectively empty if there
-    /// are no further results.</p>
+    /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -207,8 +206,7 @@ impl ListProjectsOutput {
     pub fn projects(&self) -> std::option::Option<&[crate::model::ProjectSummary]> {
         self.projects.as_deref()
     }
-    /// <p>The token used to retrieve the next set of results - will be effectively empty if there
-    /// are no further results.</p>
+    /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -236,9 +234,9 @@ pub mod list_projects_output {
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
         /// <p>An object containing the list of projects.</p>
-        pub fn projects(mut self, input: impl Into<crate::model::ProjectSummary>) -> Self {
+        pub fn projects(mut self, input: crate::model::ProjectSummary) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }
@@ -250,14 +248,12 @@ pub mod list_projects_output {
             self.projects = input;
             self
         }
-        /// <p>The token used to retrieve the next set of results - will be effectively empty if there
-        /// are no further results.</p>
+        /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to retrieve the next set of results - will be effectively empty if there
-        /// are no further results.</p>
+        /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -284,8 +280,7 @@ impl ListProjectsOutput {
 pub struct ListPlacementsOutput {
     /// <p>An object listing the requested placements.</p>
     pub placements: std::option::Option<std::vec::Vec<crate::model::PlacementSummary>>,
-    /// <p>The token used to retrieve the next set of results - will be effectively empty if there
-    /// are no further results.</p>
+    /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlacementsOutput {
@@ -293,8 +288,7 @@ impl ListPlacementsOutput {
     pub fn placements(&self) -> std::option::Option<&[crate::model::PlacementSummary]> {
         self.placements.as_deref()
     }
-    /// <p>The token used to retrieve the next set of results - will be effectively empty if there
-    /// are no further results.</p>
+    /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -322,9 +316,9 @@ pub mod list_placements_output {
         /// To override the contents of this collection use [`set_placements`](Self::set_placements).
         ///
         /// <p>An object listing the requested placements.</p>
-        pub fn placements(mut self, input: impl Into<crate::model::PlacementSummary>) -> Self {
+        pub fn placements(mut self, input: crate::model::PlacementSummary) -> Self {
             let mut v = self.placements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.placements = Some(v);
             self
         }
@@ -336,14 +330,12 @@ pub mod list_placements_output {
             self.placements = input;
             self
         }
-        /// <p>The token used to retrieve the next set of results - will be effectively empty if there
-        /// are no further results.</p>
+        /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to retrieve the next set of results - will be effectively empty if there
-        /// are no further results.</p>
+        /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

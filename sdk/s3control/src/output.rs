@@ -261,13 +261,11 @@ impl PutPublicAccessBlockOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMultiRegionAccessPointPolicyOutput {
-    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
-    /// asynchronous requests.</p>
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
     pub request_token_arn: std::option::Option<std::string::String>,
 }
 impl PutMultiRegionAccessPointPolicyOutput {
-    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
-    /// asynchronous requests.</p>
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
     pub fn request_token_arn(&self) -> std::option::Option<&str> {
         self.request_token_arn.as_deref()
     }
@@ -288,14 +286,12 @@ pub mod put_multi_region_access_point_policy_output {
         pub(crate) request_token_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
-        /// asynchronous requests.</p>
+        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
         pub fn request_token_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_token_arn = Some(input.into());
             self
         }
-        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
-        /// asynchronous requests.</p>
+        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
         pub fn set_request_token_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -533,18 +529,14 @@ impl PutAccessPointConfigurationForObjectLambdaOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStorageLensConfigurationsOutput {
-    /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results,
-    /// you can pass this value into a subsequent request to retrieve the next page of
-    /// results.</p>
+    /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of S3 Storage Lens configurations.</p>
     pub storage_lens_configuration_list:
         std::option::Option<std::vec::Vec<crate::model::ListStorageLensConfigurationEntry>>,
 }
 impl ListStorageLensConfigurationsOutput {
-    /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results,
-    /// you can pass this value into a subsequent request to retrieve the next page of
-    /// results.</p>
+    /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -577,16 +569,12 @@ pub mod list_storage_lens_configurations_output {
             std::option::Option<std::vec::Vec<crate::model::ListStorageLensConfigurationEntry>>,
     }
     impl Builder {
-        /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results,
-        /// you can pass this value into a subsequent request to retrieve the next page of
-        /// results.</p>
+        /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results,
-        /// you can pass this value into a subsequent request to retrieve the next page of
-        /// results.</p>
+        /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -598,10 +586,10 @@ pub mod list_storage_lens_configurations_output {
         /// <p>A list of S3 Storage Lens configurations.</p>
         pub fn storage_lens_configuration_list(
             mut self,
-            input: impl Into<crate::model::ListStorageLensConfigurationEntry>,
+            input: crate::model::ListStorageLensConfigurationEntry,
         ) -> Self {
             let mut v = self.storage_lens_configuration_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_lens_configuration_list = Some(v);
             self
         }
@@ -637,11 +625,7 @@ impl ListStorageLensConfigurationsOutput {
 pub struct ListRegionalBucketsOutput {
     /// <p></p>
     pub regional_bucket_list: std::option::Option<std::vec::Vec<crate::model::RegionalBucket>>,
-    /// <p>
-    /// <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means
-    /// there are more buckets that can be listed. The next list requests to Amazon S3
-    /// can be continued with this <code>NextToken</code>.
-    /// <code>NextToken</code> is obfuscated and is not a real key.</p>
+    /// <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means there are more buckets that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated and is not a real key.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRegionalBucketsOutput {
@@ -649,11 +633,7 @@ impl ListRegionalBucketsOutput {
     pub fn regional_bucket_list(&self) -> std::option::Option<&[crate::model::RegionalBucket]> {
         self.regional_bucket_list.as_deref()
     }
-    /// <p>
-    /// <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means
-    /// there are more buckets that can be listed. The next list requests to Amazon S3
-    /// can be continued with this <code>NextToken</code>.
-    /// <code>NextToken</code> is obfuscated and is not a real key.</p>
+    /// <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means there are more buckets that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated and is not a real key.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -682,12 +662,9 @@ pub mod list_regional_buckets_output {
         /// To override the contents of this collection use [`set_regional_bucket_list`](Self::set_regional_bucket_list).
         ///
         /// <p></p>
-        pub fn regional_bucket_list(
-            mut self,
-            input: impl Into<crate::model::RegionalBucket>,
-        ) -> Self {
+        pub fn regional_bucket_list(mut self, input: crate::model::RegionalBucket) -> Self {
             let mut v = self.regional_bucket_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regional_bucket_list = Some(v);
             self
         }
@@ -699,20 +676,12 @@ pub mod list_regional_buckets_output {
             self.regional_bucket_list = input;
             self
         }
-        /// <p>
-        /// <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means
-        /// there are more buckets that can be listed. The next list requests to Amazon S3
-        /// can be continued with this <code>NextToken</code>.
-        /// <code>NextToken</code> is obfuscated and is not a real key.</p>
+        /// <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means there are more buckets that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated and is not a real key.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means
-        /// there are more buckets that can be listed. The next list requests to Amazon S3
-        /// can be continued with this <code>NextToken</code>.
-        /// <code>NextToken</code> is obfuscated and is not a real key.</p>
+        /// <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means there are more buckets that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated and is not a real key.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -740,9 +709,7 @@ pub struct ListMultiRegionAccessPointsOutput {
     /// <p>The list of Multi-Region Access Points associated with the user.</p>
     pub access_points:
         std::option::Option<std::vec::Vec<crate::model::MultiRegionAccessPointReport>>,
-    /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this
-    /// action, this field contains a continuation token. You can use this token tin subsequent
-    /// calls to this action to retrieve additional Multi-Region Access Points.</p>
+    /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMultiRegionAccessPointsOutput {
@@ -752,9 +719,7 @@ impl ListMultiRegionAccessPointsOutput {
     ) -> std::option::Option<&[crate::model::MultiRegionAccessPointReport]> {
         self.access_points.as_deref()
     }
-    /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this
-    /// action, this field contains a continuation token. You can use this token tin subsequent
-    /// calls to this action to retrieve additional Multi-Region Access Points.</p>
+    /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -783,12 +748,9 @@ pub mod list_multi_region_access_points_output {
         /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
         ///
         /// <p>The list of Multi-Region Access Points associated with the user.</p>
-        pub fn access_points(
-            mut self,
-            input: impl Into<crate::model::MultiRegionAccessPointReport>,
-        ) -> Self {
+        pub fn access_points(mut self, input: crate::model::MultiRegionAccessPointReport) -> Self {
             let mut v = self.access_points.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_points = Some(v);
             self
         }
@@ -800,16 +762,12 @@ pub mod list_multi_region_access_points_output {
             self.access_points = input;
             self
         }
-        /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this
-        /// action, this field contains a continuation token. You can use this token tin subsequent
-        /// calls to this action to retrieve additional Multi-Region Access Points.</p>
+        /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this
-        /// action, this field contains a continuation token. You can use this token tin subsequent
-        /// calls to this action to retrieve additional Multi-Region Access Points.</p>
+        /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -834,15 +792,13 @@ impl ListMultiRegionAccessPointsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
-    /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve
-    /// the next page of results.</p>
+    /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
     pub jobs: std::option::Option<std::vec::Vec<crate::model::JobListDescriptor>>,
 }
 impl ListJobsOutput {
-    /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve
-    /// the next page of results.</p>
+    /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -869,14 +825,12 @@ pub mod list_jobs_output {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::JobListDescriptor>>,
     }
     impl Builder {
-        /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve
-        /// the next page of results.</p>
+        /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve
-        /// the next page of results.</p>
+        /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -886,9 +840,9 @@ pub mod list_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::JobListDescriptor>) -> Self {
+        pub fn jobs(mut self, input: crate::model::JobListDescriptor) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -923,9 +877,7 @@ pub struct ListAccessPointsForObjectLambdaOutput {
     /// <p>Returns list of Object Lambda Access Points.</p>
     pub object_lambda_access_point_list:
         std::option::Option<std::vec::Vec<crate::model::ObjectLambdaAccessPoint>>,
-    /// <p>If the list has more access points than can be returned in one call to this
-    /// API, this field contains a continuation token that you can provide in subsequent calls to
-    /// this API to retrieve additional access points.</p>
+    /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccessPointsForObjectLambdaOutput {
@@ -935,9 +887,7 @@ impl ListAccessPointsForObjectLambdaOutput {
     ) -> std::option::Option<&[crate::model::ObjectLambdaAccessPoint]> {
         self.object_lambda_access_point_list.as_deref()
     }
-    /// <p>If the list has more access points than can be returned in one call to this
-    /// API, this field contains a continuation token that you can provide in subsequent calls to
-    /// this API to retrieve additional access points.</p>
+    /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -971,10 +921,10 @@ pub mod list_access_points_for_object_lambda_output {
         /// <p>Returns list of Object Lambda Access Points.</p>
         pub fn object_lambda_access_point_list(
             mut self,
-            input: impl Into<crate::model::ObjectLambdaAccessPoint>,
+            input: crate::model::ObjectLambdaAccessPoint,
         ) -> Self {
             let mut v = self.object_lambda_access_point_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.object_lambda_access_point_list = Some(v);
             self
         }
@@ -986,16 +936,12 @@ pub mod list_access_points_for_object_lambda_output {
             self.object_lambda_access_point_list = input;
             self
         }
-        /// <p>If the list has more access points than can be returned in one call to this
-        /// API, this field contains a continuation token that you can provide in subsequent calls to
-        /// this API to retrieve additional access points.</p>
+        /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the list has more access points than can be returned in one call to this
-        /// API, this field contains a continuation token that you can provide in subsequent calls to
-        /// this API to retrieve additional access points.</p>
+        /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1020,23 +966,17 @@ impl ListAccessPointsForObjectLambdaOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPointsOutput {
-    /// <p>Contains identification and configuration information for one or more access points
-    /// associated with the specified bucket.</p>
+    /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
     pub access_point_list: std::option::Option<std::vec::Vec<crate::model::AccessPoint>>,
-    /// <p>If the specified bucket has more access points than can be returned in one call to this
-    /// API, this field contains a continuation token that you can provide in subsequent calls to
-    /// this API to retrieve additional access points.</p>
+    /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccessPointsOutput {
-    /// <p>Contains identification and configuration information for one or more access points
-    /// associated with the specified bucket.</p>
+    /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
     pub fn access_point_list(&self) -> std::option::Option<&[crate::model::AccessPoint]> {
         self.access_point_list.as_deref()
     }
-    /// <p>If the specified bucket has more access points than can be returned in one call to this
-    /// API, this field contains a continuation token that you can provide in subsequent calls to
-    /// this API to retrieve additional access points.</p>
+    /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1063,16 +1003,14 @@ pub mod list_access_points_output {
         ///
         /// To override the contents of this collection use [`set_access_point_list`](Self::set_access_point_list).
         ///
-        /// <p>Contains identification and configuration information for one or more access points
-        /// associated with the specified bucket.</p>
-        pub fn access_point_list(mut self, input: impl Into<crate::model::AccessPoint>) -> Self {
+        /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
+        pub fn access_point_list(mut self, input: crate::model::AccessPoint) -> Self {
             let mut v = self.access_point_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_point_list = Some(v);
             self
         }
-        /// <p>Contains identification and configuration information for one or more access points
-        /// associated with the specified bucket.</p>
+        /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
         pub fn set_access_point_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccessPoint>>,
@@ -1080,16 +1018,12 @@ pub mod list_access_points_output {
             self.access_point_list = input;
             self
         }
-        /// <p>If the specified bucket has more access points than can be returned in one call to this
-        /// API, this field contains a continuation token that you can provide in subsequent calls to
-        /// this API to retrieve additional access points.</p>
+        /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the specified bucket has more access points than can be returned in one call to this
-        /// API, this field contains a continuation token that you can provide in subsequent calls to
-        /// this API to retrieve additional access points.</p>
+        /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1144,9 +1078,9 @@ pub mod get_storage_lens_configuration_tagging_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of S3 Storage Lens configuration requested.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::StorageLensTag>) -> Self {
+        pub fn tags(mut self, input: crate::model::StorageLensTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1308,17 +1242,11 @@ impl GetPublicAccessBlockOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMultiRegionAccessPointPolicyStatusOutput {
-    /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the
-    /// <i>Amazon S3 User Guide</i>.
-    /// </p>
+    /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
     pub established: std::option::Option<crate::model::PolicyStatus>,
 }
 impl GetMultiRegionAccessPointPolicyStatusOutput {
-    /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the
-    /// <i>Amazon S3 User Guide</i>.
-    /// </p>
+    /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
     pub fn established(&self) -> std::option::Option<&crate::model::PolicyStatus> {
         self.established.as_ref()
     }
@@ -1339,18 +1267,12 @@ pub mod get_multi_region_access_point_policy_status_output {
         pub(crate) established: std::option::Option<crate::model::PolicyStatus>,
     }
     impl Builder {
-        /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the
-        /// <i>Amazon S3 User Guide</i>.
-        /// </p>
+        /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
         pub fn established(mut self, input: crate::model::PolicyStatus) -> Self {
             self.established = Some(input);
             self
         }
-        /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the
-        /// <i>Amazon S3 User Guide</i>.
-        /// </p>
+        /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
         pub fn set_established(
             mut self,
             input: std::option::Option<crate::model::PolicyStatus>,
@@ -1523,9 +1445,9 @@ pub mod get_job_tagging_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The set of tags associated with the S3 Batch Operations job.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1584,9 +1506,9 @@ pub mod get_bucket_tagging_output {
         /// To override the contents of this collection use [`set_tag_set`](Self::set_tag_set).
         ///
         /// <p>The tags set of the Outposts bucket.</p>
-        pub fn tag_set(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
+        pub fn tag_set(mut self, input: crate::model::S3Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_set = Some(v);
             self
         }
@@ -1701,9 +1623,9 @@ pub mod get_bucket_lifecycle_configuration_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::LifecycleRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::LifecycleRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1830,17 +1752,11 @@ impl GetBucketOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyStatusForObjectLambdaOutput {
-    /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the
-    /// <i>Amazon S3 User Guide</i>.
-    /// </p>
+    /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
     pub policy_status: std::option::Option<crate::model::PolicyStatus>,
 }
 impl GetAccessPointPolicyStatusForObjectLambdaOutput {
-    /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the
-    /// <i>Amazon S3 User Guide</i>.
-    /// </p>
+    /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
     pub fn policy_status(&self) -> std::option::Option<&crate::model::PolicyStatus> {
         self.policy_status.as_ref()
     }
@@ -1861,18 +1777,12 @@ pub mod get_access_point_policy_status_for_object_lambda_output {
         pub(crate) policy_status: std::option::Option<crate::model::PolicyStatus>,
     }
     impl Builder {
-        /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the
-        /// <i>Amazon S3 User Guide</i>.
-        /// </p>
+        /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
         pub fn policy_status(mut self, input: crate::model::PolicyStatus) -> Self {
             self.policy_status = Some(input);
             self
         }
-        /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the
-        /// <i>Amazon S3 User Guide</i>.
-        /// </p>
+        /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
         pub fn set_policy_status(
             mut self,
             input: std::option::Option<crate::model::PolicyStatus>,
@@ -2235,22 +2145,14 @@ pub struct GetAccessPointOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the bucket associated with the specified access point.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Indicates whether this access point allows access from the public internet. If
-    /// <code>VpcConfiguration</code> is specified for this access point, then
-    /// <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from
-    /// the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and
-    /// the access point allows access from the public internet, subject to the access point and bucket access
-    /// policies.</p>
+    /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
     /// <p>This will always be true for an Amazon S3 on Outposts access point</p>
     pub network_origin: std::option::Option<crate::model::NetworkOrigin>,
-    /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p>
-    /// <note>
+    /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
-    /// You can enable the configuration options in any combination. For more information about
-    /// when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This is not supported for Amazon S3 on Outposts.</p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
@@ -2273,26 +2175,18 @@ impl GetAccessPointOutput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>Indicates whether this access point allows access from the public internet. If
-    /// <code>VpcConfiguration</code> is specified for this access point, then
-    /// <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from
-    /// the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and
-    /// the access point allows access from the public internet, subject to the access point and bucket access
-    /// policies.</p>
+    /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
     /// <p>This will always be true for an Amazon S3 on Outposts access point</p>
     pub fn network_origin(&self) -> std::option::Option<&crate::model::NetworkOrigin> {
         self.network_origin.as_ref()
     }
-    /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p>
-    /// <note>
+    /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
     pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
-    /// You can enable the configuration options in any combination. For more information about
-    /// when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This is not supported for Amazon S3 on Outposts.</p>
     pub fn public_access_block_configuration(
         &self,
@@ -2377,23 +2271,13 @@ pub mod get_access_point_output {
             self.bucket = input;
             self
         }
-        /// <p>Indicates whether this access point allows access from the public internet. If
-        /// <code>VpcConfiguration</code> is specified for this access point, then
-        /// <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from
-        /// the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and
-        /// the access point allows access from the public internet, subject to the access point and bucket access
-        /// policies.</p>
+        /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
         /// <p>This will always be true for an Amazon S3 on Outposts access point</p>
         pub fn network_origin(mut self, input: crate::model::NetworkOrigin) -> Self {
             self.network_origin = Some(input);
             self
         }
-        /// <p>Indicates whether this access point allows access from the public internet. If
-        /// <code>VpcConfiguration</code> is specified for this access point, then
-        /// <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from
-        /// the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and
-        /// the access point allows access from the public internet, subject to the access point and bucket access
-        /// policies.</p>
+        /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
         /// <p>This will always be true for an Amazon S3 on Outposts access point</p>
         pub fn set_network_origin(
             mut self,
@@ -2402,16 +2286,14 @@ pub mod get_access_point_output {
             self.network_origin = input;
             self
         }
-        /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p>
-        /// <note>
+        /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
         /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
         /// </note>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
             self.vpc_configuration = Some(input);
             self
         }
-        /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p>
-        /// <note>
+        /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
         /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
         /// </note>
         pub fn set_vpc_configuration(
@@ -2421,9 +2303,7 @@ pub mod get_access_point_output {
             self.vpc_configuration = input;
             self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
-        /// You can enable the configuration options in any combination. For more information about
-        /// when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>This is not supported for Amazon S3 on Outposts.</p>
         pub fn public_access_block_configuration(
             mut self,
@@ -2432,9 +2312,7 @@ pub mod get_access_point_output {
             self.public_access_block_configuration = Some(input);
             self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
-        /// You can enable the configuration options in any combination. For more information about
-        /// when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>This is not supported for Amazon S3 on Outposts.</p>
         pub fn set_public_access_block_configuration(
             mut self,
@@ -2731,13 +2609,11 @@ impl DeletePublicAccessBlockOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMultiRegionAccessPointOutput {
-    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
-    /// asynchronous requests.</p>
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
     pub request_token_arn: std::option::Option<std::string::String>,
 }
 impl DeleteMultiRegionAccessPointOutput {
-    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
-    /// asynchronous requests.</p>
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
     pub fn request_token_arn(&self) -> std::option::Option<&str> {
         self.request_token_arn.as_deref()
     }
@@ -2758,14 +2634,12 @@ pub mod delete_multi_region_access_point_output {
         pub(crate) request_token_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
-        /// asynchronous requests.</p>
+        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
         pub fn request_token_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_token_arn = Some(input.into());
             self
         }
-        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
-        /// asynchronous requests.</p>
+        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
         pub fn set_request_token_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3063,13 +2937,11 @@ impl DeleteAccessPointOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMultiRegionAccessPointOutput {
-    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
-    /// asynchronous requests.</p>
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
     pub request_token_arn: std::option::Option<std::string::String>,
 }
 impl CreateMultiRegionAccessPointOutput {
-    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
-    /// asynchronous requests.</p>
+    /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
     pub fn request_token_arn(&self) -> std::option::Option<&str> {
         self.request_token_arn.as_deref()
     }
@@ -3090,14 +2962,12 @@ pub mod create_multi_region_access_point_output {
         pub(crate) request_token_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
-        /// asynchronous requests.</p>
+        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
         pub fn request_token_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_token_arn = Some(input.into());
             self
         }
-        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of
-        /// asynchronous requests.</p>
+        /// <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
         pub fn set_request_token_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3124,13 +2994,11 @@ impl CreateMultiRegionAccessPointOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobOutput {
-    /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a
-    /// successful <code>Create Job</code> request.</p>
+    /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a successful <code>Create Job</code> request.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CreateJobOutput {
-    /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a
-    /// successful <code>Create Job</code> request.</p>
+    /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a successful <code>Create Job</code> request.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -3151,14 +3019,12 @@ pub mod create_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a
-        /// successful <code>Create Job</code> request.</p>
+        /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a successful <code>Create Job</code> request.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a
-        /// successful <code>Create Job</code> request.</p>
+        /// <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a successful <code>Create Job</code> request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3186,7 +3052,17 @@ pub struct CreateBucketOutput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub bucket_arn: std::option::Option<std::string::String>,
 }
 impl CreateBucketOutput {
@@ -3196,7 +3072,17 @@ impl CreateBucketOutput {
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
     pub fn bucket_arn(&self) -> std::option::Option<&str> {
         self.bucket_arn.as_deref()
     }
@@ -3231,14 +3117,34 @@ pub mod create_bucket_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /bucket/
+        /// <my-bucket-name></my-bucket-name>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_arn = input;
             self
@@ -3326,8 +3232,7 @@ impl CreateAccessPointForObjectLambdaOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPointOutput {
-    /// <p>The ARN of the access point.</p>
-    /// <note>
+    /// <p>The ARN of the access point.</p> <note>
     /// <p>This is only supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub access_point_arn: std::option::Option<std::string::String>,
@@ -3335,8 +3240,7 @@ pub struct CreateAccessPointOutput {
     pub alias: std::option::Option<std::string::String>,
 }
 impl CreateAccessPointOutput {
-    /// <p>The ARN of the access point.</p>
-    /// <note>
+    /// <p>The ARN of the access point.</p> <note>
     /// <p>This is only supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn access_point_arn(&self) -> std::option::Option<&str> {
@@ -3365,16 +3269,14 @@ pub mod create_access_point_output {
         pub(crate) alias: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the access point.</p>
-        /// <note>
+        /// <p>The ARN of the access point.</p> <note>
         /// <p>This is only supported by Amazon S3 on Outposts.</p>
         /// </note>
         pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_point_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the access point.</p>
-        /// <note>
+        /// <p>The ARN of the access point.</p> <note>
         /// <p>This is only supported by Amazon S3 on Outposts.</p>
         /// </note>
         pub fn set_access_point_arn(

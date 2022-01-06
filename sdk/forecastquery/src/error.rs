@@ -20,8 +20,7 @@ pub enum QueryForecastErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>We can't find that resource. Check the information that you've provided and try
-    /// again.</p>
+    /// <p>We can't find that resource. Check the information that you've provided and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -68,8 +67,6 @@ impl QueryForecastError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -136,8 +133,7 @@ impl std::error::Error for QueryForecastError {
     }
 }
 
-/// <p>We can't find that resource. Check the information that you've provided and try
-/// again.</p>
+/// <p>We can't find that resource. Check the information that you've provided and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {

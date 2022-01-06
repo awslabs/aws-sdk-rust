@@ -14,38 +14,22 @@ pub struct GetClipError {
 pub enum GetClipErrorKind {
     /// <p>Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call later. For information about limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
-    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be
-    /// used.</p>
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The codec private data in at least one of the tracks of the video stream is not valid
-    /// for this operation.</p>
+    /// <p>The codec private data in at least one of the tracks of the video stream is not valid for this operation.</p>
     InvalidCodecPrivateDataException(crate::error::InvalidCodecPrivateDataException),
-    /// <p>One or more frames in the requested clip could not be parsed based on the specified
-    /// codec.</p>
+    /// <p>One or more frames in the requested clip could not be parsed based on the specified codec.</p>
     InvalidMediaFrameException(crate::error::InvalidMediaFrameException),
     /// <p>No codec private data was found in at least one of tracks of the video stream.</p>
     MissingCodecPrivateDataException(crate::error::MissingCodecPrivateDataException),
-    /// <p>A streaming session was requested for a stream that does not retain data (that is, has
-    /// a <code>DataRetentionInHours</code> of 0). </p>
+    /// <p>A streaming session was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0). </p>
     NoDataRetentionException(crate::error::NoDataRetentionException),
-    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given
-    /// stream, or the token has expired.</p>
+    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>
-    /// <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream
-    /// that you specified.</p>
-    /// <p>
-    /// <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw
-    /// this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the
-    /// requested time range, or if a session with a <code>PlaybackMode</code> of
-    /// <code>LIVE</code> is requested for a stream that has no fragments within the last 30
-    /// seconds.</p>
+    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could
-    /// not be determined from the codec IDs of the tracks in the first fragment for a playback
-    /// session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally,
-    /// the codec ID for track 2 should be <code>A_AAC</code>.</p>
+    /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -96,8 +80,6 @@ impl GetClipError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -199,35 +181,20 @@ pub struct GetDASHStreamingSessionURLError {
 pub enum GetDASHStreamingSessionURLErrorKind {
     /// <p>Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call later. For information about limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
-    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be
-    /// used.</p>
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The codec private data in at least one of the tracks of the video stream is not valid
-    /// for this operation.</p>
+    /// <p>The codec private data in at least one of the tracks of the video stream is not valid for this operation.</p>
     InvalidCodecPrivateDataException(crate::error::InvalidCodecPrivateDataException),
     /// <p>No codec private data was found in at least one of tracks of the video stream.</p>
     MissingCodecPrivateDataException(crate::error::MissingCodecPrivateDataException),
-    /// <p>A streaming session was requested for a stream that does not retain data (that is, has
-    /// a <code>DataRetentionInHours</code> of 0). </p>
+    /// <p>A streaming session was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0). </p>
     NoDataRetentionException(crate::error::NoDataRetentionException),
-    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given
-    /// stream, or the token has expired.</p>
+    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>
-    /// <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream
-    /// that you specified.</p>
-    /// <p>
-    /// <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw
-    /// this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the
-    /// requested time range, or if a session with a <code>PlaybackMode</code> of
-    /// <code>LIVE</code> is requested for a stream that has no fragments within the last 30
-    /// seconds.</p>
+    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could
-    /// not be determined from the codec IDs of the tracks in the first fragment for a playback
-    /// session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally,
-    /// the codec ID for track 2 should be <code>A_AAC</code>.</p>
+    /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -285,8 +252,6 @@ impl GetDASHStreamingSessionURLError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -403,35 +368,20 @@ pub struct GetHLSStreamingSessionURLError {
 pub enum GetHLSStreamingSessionURLErrorKind {
     /// <p>Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call later. For information about limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
-    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be
-    /// used.</p>
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The codec private data in at least one of the tracks of the video stream is not valid
-    /// for this operation.</p>
+    /// <p>The codec private data in at least one of the tracks of the video stream is not valid for this operation.</p>
     InvalidCodecPrivateDataException(crate::error::InvalidCodecPrivateDataException),
     /// <p>No codec private data was found in at least one of tracks of the video stream.</p>
     MissingCodecPrivateDataException(crate::error::MissingCodecPrivateDataException),
-    /// <p>A streaming session was requested for a stream that does not retain data (that is, has
-    /// a <code>DataRetentionInHours</code> of 0). </p>
+    /// <p>A streaming session was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0). </p>
     NoDataRetentionException(crate::error::NoDataRetentionException),
-    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given
-    /// stream, or the token has expired.</p>
+    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>
-    /// <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream
-    /// that you specified.</p>
-    /// <p>
-    /// <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw
-    /// this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the
-    /// requested time range, or if a session with a <code>PlaybackMode</code> of
-    /// <code>LIVE</code> is requested for a stream that has no fragments within the last 30
-    /// seconds.</p>
+    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could
-    /// not be determined from the codec IDs of the tracks in the first fragment for a playback
-    /// session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally,
-    /// the codec ID for track 2 should be <code>A_AAC</code>.</p>
+    /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
     UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -489,8 +439,6 @@ impl GetHLSStreamingSessionURLError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -607,22 +555,12 @@ pub struct GetMediaForFragmentListError {
 pub enum GetMediaForFragmentListErrorKind {
     /// <p>Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call later. For information about limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
-    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be
-    /// used.</p>
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given
-    /// stream, or the token has expired.</p>
+    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>
-    /// <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream
-    /// that you specified.</p>
-    /// <p>
-    /// <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw
-    /// this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the
-    /// requested time range, or if a session with a <code>PlaybackMode</code> of
-    /// <code>LIVE</code> is requested for a stream that has no fragments within the last 30
-    /// seconds.</p>
+    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -668,8 +606,6 @@ impl GetMediaForFragmentListError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -746,22 +682,12 @@ pub struct ListFragmentsError {
 pub enum ListFragmentsErrorKind {
     /// <p>Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call later. For information about limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
-    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be
-    /// used.</p>
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given
-    /// stream, or the token has expired.</p>
+    /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>
-    /// <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream
-    /// that you specified.</p>
-    /// <p>
-    /// <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw
-    /// this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the
-    /// requested time range, or if a session with a <code>PlaybackMode</code> of
-    /// <code>LIVE</code> is requested for a stream that has no fragments within the last 30
-    /// seconds.</p>
+    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -807,8 +733,6 @@ impl ListFragmentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -870,16 +794,8 @@ impl std::error::Error for ListFragmentsError {
     }
 }
 
-/// <p>
-/// <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream
-/// that you specified.</p>
-/// <p>
-/// <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw
-/// this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or
-/// <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the
-/// requested time range, or if a session with a <code>PlaybackMode</code> of
-/// <code>LIVE</code> is requested for a stream that has no fragments within the last 30
-/// seconds.</p>
+/// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+/// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -943,8 +859,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Status Code: 403, The caller is not authorized to perform an operation on the given
-/// stream, or the token has expired.</p>
+/// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotAuthorizedException {
@@ -1008,8 +923,7 @@ impl NotAuthorizedException {
     }
 }
 
-/// <p>A specified parameter exceeds its restrictions, is not supported, or can't be
-/// used.</p>
+/// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArgumentException {
@@ -1137,10 +1051,7 @@ impl ClientLimitExceededException {
     }
 }
 
-/// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could
-/// not be determined from the codec IDs of the tracks in the first fragment for a playback
-/// session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally,
-/// the codec ID for track 2 should be <code>A_AAC</code>.</p>
+/// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedStreamMediaTypeException {
@@ -1204,8 +1115,7 @@ impl UnsupportedStreamMediaTypeException {
     }
 }
 
-/// <p>A streaming session was requested for a stream that does not retain data (that is, has
-/// a <code>DataRetentionInHours</code> of 0). </p>
+/// <p>A streaming session was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoDataRetentionException {
@@ -1333,8 +1243,7 @@ impl MissingCodecPrivateDataException {
     }
 }
 
-/// <p>The codec private data in at least one of the tracks of the video stream is not valid
-/// for this operation.</p>
+/// <p>The codec private data in at least one of the tracks of the video stream is not valid for this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCodecPrivateDataException {
@@ -1398,8 +1307,7 @@ impl InvalidCodecPrivateDataException {
     }
 }
 
-/// <p>One or more frames in the requested clip could not be parsed based on the specified
-/// codec.</p>
+/// <p>One or more frames in the requested clip could not be parsed based on the specified codec.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMediaFrameException {

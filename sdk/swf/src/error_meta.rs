@@ -3,16 +3,9 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The <code>StartWorkflowExecution</code> API action was called without the required
-    /// parameters set.</p>
-    /// <p>Some workflow execution parameters, such as the decision <code>taskList</code>, must be
-    /// set to start the execution. However, these parameters might have been set as defaults when the
-    /// workflow type was registered. In this case, you can omit these parameters from the
-    /// <code>StartWorkflowExecution</code> call and Amazon SWF uses the values defined in the workflow
-    /// type.</p>
-    /// <note>
-    /// <p>If these parameters aren't set and no default parameters were defined in the workflow
-    /// type, this error is displayed.</p>
+    /// <p>The <code>StartWorkflowExecution</code> API action was called without the required parameters set.</p>
+    /// <p>Some workflow execution parameters, such as the decision <code>taskList</code>, must be set to start the execution. However, these parameters might have been set as defaults when the workflow type was registered. In this case, you can omit these parameters from the <code>StartWorkflowExecution</code> call and Amazon SWF uses the values defined in the workflow type.</p> <note>
+    /// <p>If these parameters aren't set and no default parameters were defined in the workflow type, this error is displayed.</p>
     /// </note>
     DefaultUndefinedFault(crate::error::DefaultUndefinedFault),
     /// <p>Returned if the domain already exists. You may get this fault if you are registering a domain that is either already registered or deprecated, or if you undeprecate a domain that is currently registered.</p>
@@ -31,8 +24,7 @@ pub enum Error {
     TypeDeprecatedFault(crate::error::TypeDeprecatedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// <p>Returned by <a>StartWorkflowExecution</a> when an open execution with the same workflowId is already running in
-    /// the specified domain.</p>
+    /// <p>Returned by <code>StartWorkflowExecution</code> when an open execution with the same workflowId is already running in the specified domain.</p>
     WorkflowExecutionAlreadyStartedFault(crate::error::WorkflowExecutionAlreadyStartedFault),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

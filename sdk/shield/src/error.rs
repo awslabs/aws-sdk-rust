@@ -24,8 +24,7 @@ pub enum AssociateDRTLogBucketErrorKind {
     LimitsExceededException(crate::error::LimitsExceededException),
     /// <p>The ARN of the role that you specifed does not exist.</p>
     NoAssociatedRoleException(crate::error::NoAssociatedRoleException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -79,8 +78,6 @@ impl AssociateDRTLogBucketError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -197,8 +194,7 @@ pub enum AssociateDRTRoleErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -248,8 +244,6 @@ impl AssociateDRTRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -348,8 +342,7 @@ pub enum AssociateHealthCheckErrorKind {
     InvalidResourceException(crate::error::InvalidResourceException),
     /// <p>Exception that indicates that the operation would exceed a limit.</p>
     LimitsExceededException(crate::error::LimitsExceededException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -399,8 +392,6 @@ impl AssociateHealthCheckError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -497,8 +488,7 @@ pub enum AssociateProactiveEngagementDetailsErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -560,8 +550,6 @@ impl AssociateProactiveEngagementDetailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -666,8 +654,7 @@ pub enum CreateProtectionErrorKind {
     InvalidResourceException(crate::error::InvalidResourceException),
     /// <p>Exception that indicates that the operation would exceed a limit.</p>
     LimitsExceededException(crate::error::LimitsExceededException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties. </p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -721,8 +708,6 @@ impl CreateProtectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -835,8 +820,7 @@ pub enum CreateProtectionGroupErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Exception that indicates that the operation would exceed a limit.</p>
     LimitsExceededException(crate::error::LimitsExceededException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties. </p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -888,8 +872,6 @@ impl CreateProtectionGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1026,8 +1008,6 @@ impl CreateSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1088,8 +1068,7 @@ pub struct DeleteProtectionError {
 pub enum DeleteProtectionErrorKind {
     /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1136,8 +1115,6 @@ impl DeleteProtectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1206,8 +1183,7 @@ pub struct DeleteProtectionGroupError {
 pub enum DeleteProtectionGroupErrorKind {
     /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1254,8 +1230,6 @@ impl DeleteProtectionGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1371,8 +1345,6 @@ impl DeleteSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1485,8 +1457,6 @@ impl DescribeAttackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1588,8 +1558,6 @@ impl DescribeAttackStatisticsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1686,8 +1654,6 @@ impl DescribeDRTAccessError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1799,8 +1765,6 @@ impl DescribeEmergencyContactSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1912,8 +1876,6 @@ impl DescribeProtectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2026,8 +1988,6 @@ impl DescribeProtectionGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2132,8 +2092,6 @@ impl DescribeSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2198,8 +2156,7 @@ pub enum DisableApplicationLayerAutomaticResponseErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2261,8 +2218,6 @@ impl DisableApplicationLayerAutomaticResponseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2363,8 +2318,7 @@ pub enum DisableProactiveEngagementErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2413,8 +2367,6 @@ impl DisableProactiveEngagementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2505,8 +2457,7 @@ pub enum DisassociateDRTLogBucketErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The ARN of the role that you specifed does not exist.</p>
     NoAssociatedRoleException(crate::error::NoAssociatedRoleException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2558,8 +2509,6 @@ impl DisassociateDRTLogBucketError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2656,8 +2605,7 @@ pub enum DisassociateDRTRoleErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2705,8 +2653,6 @@ impl DisassociateDRTRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2787,8 +2733,7 @@ pub enum DisassociateHealthCheckErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Exception that indicates that the resource is invalid. You might not have access to the resource, or the resource might not exist.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2837,8 +2782,6 @@ impl DisassociateHealthCheckError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2929,8 +2872,7 @@ pub enum EnableApplicationLayerAutomaticResponseErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Exception that indicates that the operation would exceed a limit.</p>
     LimitsExceededException(crate::error::LimitsExceededException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2995,8 +2937,6 @@ impl EnableApplicationLayerAutomaticResponseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3107,8 +3047,7 @@ pub enum EnableProactiveEngagementErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3157,8 +3096,6 @@ impl EnableProactiveEngagementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3284,8 +3221,6 @@ impl GetSubscriptionStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3385,8 +3320,6 @@ impl ListAttacksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3499,8 +3432,6 @@ impl ListProtectionGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3616,8 +3547,6 @@ impl ListProtectionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3742,8 +3671,6 @@ impl ListResourcesInProtectionGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3863,8 +3790,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3983,8 +3908,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4108,8 +4031,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4190,8 +4111,7 @@ pub enum UpdateApplicationLayerAutomaticResponseErrorKind {
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4253,8 +4173,6 @@ impl UpdateApplicationLayerAutomaticResponseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4353,8 +4271,7 @@ pub enum UpdateEmergencyContactSettingsErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4413,8 +4330,6 @@ impl UpdateEmergencyContactSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4499,8 +4414,7 @@ pub enum UpdateProtectionGroupErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4548,8 +4462,6 @@ impl UpdateProtectionGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4630,8 +4542,7 @@ pub enum UpdateSubscriptionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>You are trying to update a subscription that has not yet completed the 1-year commitment. You can change the <code>AutoRenew</code> parameter during the last 30 days of your subscription. This exception indicates that you are attempting to change <code>AutoRenew</code> prior to that period.</p>
     LockedSubscriptionException(crate::error::LockedSubscriptionException),
-    /// <p>Exception that indicates that the resource state has been modified by another
-    /// client. Retrieve the resource and then retry your request.</p>
+    /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
     /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4680,8 +4591,6 @@ impl UpdateSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4839,8 +4748,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Exception that indicates that the resource state has been modified by another
-/// client. Retrieve the resource and then retry your request.</p>
+/// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptimisticLockException {
@@ -5054,9 +4962,9 @@ pub mod invalid_parameter_exception {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>Fields that caused the exception.</p>
-        pub fn fields(mut self, input: impl Into<crate::model::ValidationExceptionField>) -> Self {
+        pub fn fields(mut self, input: crate::model::ValidationExceptionField) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields = Some(v);
             self
         }

@@ -18,8 +18,7 @@ pub enum AssociateMemberErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -70,8 +69,6 @@ impl AssociateMemberError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -148,8 +145,7 @@ pub enum BatchGetAccountStatusErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -201,8 +197,6 @@ impl BatchGetAccountStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -291,8 +285,7 @@ pub enum BatchGetFreeTrialInfoErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -343,8 +336,6 @@ impl BatchGetFreeTrialInfoError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -427,8 +418,7 @@ pub enum CancelFindingsReportErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -480,8 +470,6 @@ impl CancelFindingsReportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -570,13 +558,11 @@ pub enum CreateFilterErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>The request has failed due to an internal failure of the Amazon Inspector service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of
-    /// the relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -629,8 +615,6 @@ impl CreateFilterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -717,8 +701,7 @@ pub enum CreateFindingsReportErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -770,8 +753,6 @@ impl CreateFindingsReportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -862,8 +843,7 @@ pub enum DeleteFilterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -915,8 +895,6 @@ impl DeleteFilterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -996,8 +974,7 @@ pub enum DescribeOrganizationConfigurationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1059,8 +1036,6 @@ impl DescribeOrganizationConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1147,8 +1122,7 @@ pub enum DisableErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1198,8 +1172,6 @@ impl DisableError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1277,8 +1249,7 @@ pub enum DisableDelegatedAdminAccountErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1333,8 +1304,6 @@ impl DisableDelegatedAdminAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1433,8 +1402,7 @@ pub enum DisassociateMemberErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1485,8 +1453,6 @@ impl DisassociateMemberError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1569,8 +1535,7 @@ pub enum EnableErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1620,8 +1585,6 @@ impl EnableError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1699,8 +1662,7 @@ pub enum EnableDelegatedAdminAccountErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1755,8 +1717,6 @@ impl EnableDelegatedAdminAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1855,8 +1815,7 @@ pub enum GetDelegatedAdminAccountErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1908,8 +1867,6 @@ impl GetDelegatedAdminAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2000,8 +1957,7 @@ pub enum GetFindingsReportStatusErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2053,8 +2009,6 @@ impl GetFindingsReportStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2145,8 +2099,7 @@ pub enum GetMemberErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2198,8 +2151,6 @@ impl GetMemberError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2273,8 +2224,7 @@ pub enum ListAccountPermissionsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2325,8 +2275,6 @@ impl ListAccountPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2405,8 +2353,7 @@ pub enum ListCoverageErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2456,8 +2403,6 @@ impl ListCoverageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2522,8 +2467,7 @@ pub enum ListCoverageStatisticsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2573,8 +2517,6 @@ impl ListCoverageStatisticsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2647,8 +2589,7 @@ pub enum ListDelegatedAdminAccountsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2699,8 +2640,6 @@ impl ListDelegatedAdminAccountsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2781,8 +2720,7 @@ pub enum ListFiltersErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2833,8 +2771,6 @@ impl ListFiltersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2901,8 +2837,7 @@ pub enum ListFindingAggregationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2952,8 +2887,6 @@ impl ListFindingAggregationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3024,8 +2957,7 @@ pub enum ListFindingsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3075,8 +3007,6 @@ impl ListFindingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3143,8 +3073,7 @@ pub enum ListMembersErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3195,8 +3124,6 @@ impl ListMembersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3265,8 +3192,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3317,8 +3243,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3399,8 +3323,7 @@ pub enum ListUsageTotalsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3451,8 +3374,6 @@ impl ListUsageTotalsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3529,8 +3450,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3582,8 +3502,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3660,8 +3578,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3712,8 +3629,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3790,8 +3705,7 @@ pub enum UpdateFilterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3843,8 +3757,6 @@ impl UpdateFilterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3924,8 +3836,7 @@ pub enum UpdateOrganizationConfigurationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3983,8 +3894,6 @@ impl UpdateOrganizationConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4048,8 +3957,7 @@ impl std::error::Error for UpdateOrganizationConfigurationError {
     }
 }
 
-/// <p>The request has failed validation due to missing required fields or having invalid
-/// inputs.</p>
+/// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -4135,9 +4043,9 @@ pub mod validation_exception {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>The fields that failed validation.</p>
-        pub fn fields(mut self, input: impl Into<crate::model::ValidationExceptionField>) -> Self {
+        pub fn fields(mut self, input: crate::model::ValidationExceptionField) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields = Some(v);
             self
         }
@@ -4618,8 +4526,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You have exceeded your service quota. To perform the requested action, remove some of
-/// the relevant resources, or use Service Quotas to request a service quota increase.</p>
+/// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

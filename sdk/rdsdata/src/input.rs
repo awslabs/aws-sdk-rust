@@ -71,40 +71,25 @@ pub mod batch_execute_statement_input {
         /// To override the contents of this collection use [`set_parameter_sets`](Self::set_parameter_sets).
         ///
         /// <p>The parameter set for the batch operation.</p>
-        /// <p>The SQL statement is executed as many times as the number of parameter sets provided.
-        /// To execute a SQL statement with no parameters, use one of the following options:</p>
+        /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specify one or more empty parameter sets.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+        /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+        /// </ul> <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
-        pub fn parameter_sets(
-            mut self,
-            input: impl Into<std::vec::Vec<crate::model::SqlParameter>>,
-        ) -> Self {
+        pub fn parameter_sets(mut self, input: std::vec::Vec<crate::model::SqlParameter>) -> Self {
             let mut v = self.parameter_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_sets = Some(v);
             self
         }
         /// <p>The parameter set for the batch operation.</p>
-        /// <p>The SQL statement is executed as many times as the number of parameter sets provided.
-        /// To execute a SQL statement with no parameters, use one of the following options:</p>
+        /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specify one or more empty parameter sets.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+        /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+        /// </ul> <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
         pub fn set_parameter_sets(
@@ -114,20 +99,14 @@ pub mod batch_execute_statement_input {
             self.parameter_sets = input;
             self
         }
-        /// <p>The identifier of a transaction that was started by using the
-        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-        /// transaction that you want to include the SQL statement in.</p>
-        /// <p>If the SQL statement is not part of a transaction, don't set this
-        /// parameter.</p>
+        /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
+        /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
         pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.transaction_id = Some(input.into());
             self
         }
-        /// <p>The identifier of a transaction that was started by using the
-        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-        /// transaction that you want to include the SQL statement in.</p>
-        /// <p>If the SQL statement is not part of a transaction, don't set this
-        /// parameter.</p>
+        /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
+        /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -157,7 +136,7 @@ pub mod batch_execute_statement_input {
 #[doc(hidden)]
 pub type BatchExecuteStatementInputOperationOutputAlias = crate::operation::BatchExecuteStatement;
 #[doc(hidden)]
-pub type BatchExecuteStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchExecuteStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`BatchExecuteStatement`](crate::operation::BatchExecuteStatement)>
     #[allow(clippy::let_and_return)]
@@ -168,7 +147,7 @@ impl BatchExecuteStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchExecuteStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -250,7 +229,7 @@ impl BatchExecuteStatementInput {
             "BatchExecuteStatement",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -344,7 +323,7 @@ pub mod begin_transaction_input {
 #[doc(hidden)]
 pub type BeginTransactionInputOperationOutputAlias = crate::operation::BeginTransaction;
 #[doc(hidden)]
-pub type BeginTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BeginTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BeginTransactionInput {
     /// Consumes the builder and constructs an Operation<[`BeginTransaction`](crate::operation::BeginTransaction)>
     #[allow(clippy::let_and_return)]
@@ -355,7 +334,7 @@ impl BeginTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BeginTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -435,7 +414,7 @@ impl BeginTransactionInput {
             "BeginTransaction",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -520,7 +499,7 @@ pub mod commit_transaction_input {
 #[doc(hidden)]
 pub type CommitTransactionInputOperationOutputAlias = crate::operation::CommitTransaction;
 #[doc(hidden)]
-pub type CommitTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CommitTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CommitTransactionInput {
     /// Consumes the builder and constructs an Operation<[`CommitTransaction`](crate::operation::CommitTransaction)>
     #[allow(clippy::let_and_return)]
@@ -531,7 +510,7 @@ impl CommitTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CommitTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -611,7 +590,7 @@ impl CommitTransactionInput {
             "CommitTransaction",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -674,17 +653,13 @@ pub mod execute_sql_input {
             self
         }
         /// <p>One or more SQL statements to run on the DB cluster.</p>
-        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
-        /// statement is permitted, including data definition, data manipulation, and commit
-        /// statements. </p>
+        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
         pub fn sql_statements(mut self, input: impl Into<std::string::String>) -> Self {
             self.sql_statements = Some(input.into());
             self
         }
         /// <p>One or more SQL statements to run on the DB cluster.</p>
-        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
-        /// statement is permitted, including data definition, data manipulation, and commit
-        /// statements. </p>
+        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
         pub fn set_sql_statements(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -732,7 +707,7 @@ pub mod execute_sql_input {
 #[doc(hidden)]
 pub type ExecuteSqlInputOperationOutputAlias = crate::operation::ExecuteSql;
 #[doc(hidden)]
-pub type ExecuteSqlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExecuteSqlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteSqlInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteSql`](crate::operation::ExecuteSql)>
     #[allow(clippy::let_and_return)]
@@ -743,7 +718,7 @@ impl ExecuteSqlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteSql,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -822,7 +797,7 @@ impl ExecuteSqlInput {
             "ExecuteSql",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -903,16 +878,14 @@ pub mod execute_statement_input {
             self.database = input;
             self
         }
-        /// <p>The name of the database schema.</p>
-        /// <note>
+        /// <p>The name of the database schema.</p> <note>
         /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
         /// </note>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema = Some(input.into());
             self
         }
-        /// <p>The name of the database schema.</p>
-        /// <note>
+        /// <p>The name of the database schema.</p> <note>
         /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
         /// </note>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -923,18 +896,16 @@ pub mod execute_statement_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>The parameters for the SQL statement.</p>
-        /// <note>
+        /// <p>The parameters for the SQL statement.</p> <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
-        pub fn parameters(mut self, input: impl Into<crate::model::SqlParameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::SqlParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
-        /// <p>The parameters for the SQL statement.</p>
-        /// <note>
+        /// <p>The parameters for the SQL statement.</p> <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
         pub fn set_parameters(
@@ -944,17 +915,13 @@ pub mod execute_statement_input {
             self.parameters = input;
             self
         }
-        /// <p>The identifier of a transaction that was started by using the
-        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-        /// transaction that you want to include the SQL statement in.</p>
+        /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
         /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
         pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.transaction_id = Some(input.into());
             self
         }
-        /// <p>The identifier of a transaction that was started by using the
-        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-        /// transaction that you want to include the SQL statement in.</p>
+        /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
         /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
         pub fn set_transaction_id(
             mut self,
@@ -973,25 +940,15 @@ pub mod execute_statement_input {
             self.include_result_metadata = input;
             self
         }
-        /// <p>A value that indicates whether to continue running the statement after
-        /// the call times out. By default, the statement stops running when the call
-        /// times out.</p>
-        /// <important>
-        /// <p>For DDL statements, we recommend continuing to run the statement after
-        /// the call times out. When a DDL statement terminates before it is finished
-        /// running, it can result in errors and possibly corrupted data structures.</p>
+        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+        /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
         /// </important>
         pub fn continue_after_timeout(mut self, input: bool) -> Self {
             self.continue_after_timeout = Some(input);
             self
         }
-        /// <p>A value that indicates whether to continue running the statement after
-        /// the call times out. By default, the statement stops running when the call
-        /// times out.</p>
-        /// <important>
-        /// <p>For DDL statements, we recommend continuing to run the statement after
-        /// the call times out. When a DDL statement terminates before it is finished
-        /// running, it can result in errors and possibly corrupted data structures.</p>
+        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+        /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
         /// </important>
         pub fn set_continue_after_timeout(mut self, input: std::option::Option<bool>) -> Self {
             self.continue_after_timeout = input;
@@ -1035,7 +992,7 @@ pub mod execute_statement_input {
 #[doc(hidden)]
 pub type ExecuteStatementInputOperationOutputAlias = crate::operation::ExecuteStatement;
 #[doc(hidden)]
-pub type ExecuteStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExecuteStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteStatementInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteStatement`](crate::operation::ExecuteStatement)>
     #[allow(clippy::let_and_return)]
@@ -1046,7 +1003,7 @@ impl ExecuteStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1126,7 +1083,7 @@ impl ExecuteStatementInput {
             "ExecuteStatement",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1211,7 +1168,7 @@ pub mod rollback_transaction_input {
 #[doc(hidden)]
 pub type RollbackTransactionInputOperationOutputAlias = crate::operation::RollbackTransaction;
 #[doc(hidden)]
-pub type RollbackTransactionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RollbackTransactionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RollbackTransactionInput {
     /// Consumes the builder and constructs an Operation<[`RollbackTransaction`](crate::operation::RollbackTransaction)>
     #[allow(clippy::let_and_return)]
@@ -1222,7 +1179,7 @@ impl RollbackTransactionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RollbackTransaction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1302,7 +1259,7 @@ impl RollbackTransactionInput {
             "RollbackTransaction",
             "rdsdata",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1325,8 +1282,7 @@ impl RollbackTransactionInput {
     }
 }
 
-/// <p>The request parameters represent the input of a request to perform a rollback of a
-/// transaction.</p>
+/// <p>The request parameters represent the input of a request to perform a rollback of a transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackTransactionInput {
@@ -1361,8 +1317,7 @@ impl std::fmt::Debug for RollbackTransactionInput {
     }
 }
 
-/// <p>The request parameters represent the input of a request to run a SQL statement against
-/// a database.</p>
+/// <p>The request parameters represent the input of a request to run a SQL statement against a database.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteStatementInput {
@@ -1374,30 +1329,21 @@ pub struct ExecuteStatementInput {
     pub sql: std::option::Option<std::string::String>,
     /// <p>The name of the database.</p>
     pub database: std::option::Option<std::string::String>,
-    /// <p>The name of the database schema.</p>
-    /// <note>
+    /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub schema: std::option::Option<std::string::String>,
-    /// <p>The parameters for the SQL statement.</p>
-    /// <note>
+    /// <p>The parameters for the SQL statement.</p> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
-    /// <p>The identifier of a transaction that was started by using the
-    /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-    /// transaction that you want to include the SQL statement in.</p>
+    /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to include metadata in the results.</p>
     pub include_result_metadata: bool,
-    /// <p>A value that indicates whether to continue running the statement after
-    /// the call times out. By default, the statement stops running when the call
-    /// times out.</p>
-    /// <important>
-    /// <p>For DDL statements, we recommend continuing to run the statement after
-    /// the call times out. When a DDL statement terminates before it is finished
-    /// running, it can result in errors and possibly corrupted data structures.</p>
+    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+    /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </important>
     pub continue_after_timeout: bool,
     /// <p>Options that control how the result set is returned.</p>
@@ -1420,23 +1366,19 @@ impl ExecuteStatementInput {
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
-    /// <p>The name of the database schema.</p>
-    /// <note>
+    /// <p>The name of the database schema.</p> <note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
     }
-    /// <p>The parameters for the SQL statement.</p>
-    /// <note>
+    /// <p>The parameters for the SQL statement.</p> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::SqlParameter]> {
         self.parameters.as_deref()
     }
-    /// <p>The identifier of a transaction that was started by using the
-    /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-    /// transaction that you want to include the SQL statement in.</p>
+    /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
@@ -1445,13 +1387,8 @@ impl ExecuteStatementInput {
     pub fn include_result_metadata(&self) -> bool {
         self.include_result_metadata
     }
-    /// <p>A value that indicates whether to continue running the statement after
-    /// the call times out. By default, the statement stops running when the call
-    /// times out.</p>
-    /// <important>
-    /// <p>For DDL statements, we recommend continuing to run the statement after
-    /// the call times out. When a DDL statement terminates before it is finished
-    /// running, it can result in errors and possibly corrupted data structures.</p>
+    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+    /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </important>
     pub fn continue_after_timeout(&self) -> bool {
         self.continue_after_timeout
@@ -1478,8 +1415,7 @@ impl std::fmt::Debug for ExecuteStatementInput {
     }
 }
 
-/// <p>The request parameters represent the input of a request to run one or more SQL
-/// statements.</p>
+/// <p>The request parameters represent the input of a request to run one or more SQL statements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteSqlInput {
@@ -1488,9 +1424,7 @@ pub struct ExecuteSqlInput {
     /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
     pub aws_secret_store_arn: std::option::Option<std::string::String>,
     /// <p>One or more SQL statements to run on the DB cluster.</p>
-    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
-    /// statement is permitted, including data definition, data manipulation, and commit
-    /// statements. </p>
+    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     pub sql_statements: std::option::Option<std::string::String>,
     /// <p>The name of the database.</p>
     pub database: std::option::Option<std::string::String>,
@@ -1507,9 +1441,7 @@ impl ExecuteSqlInput {
         self.aws_secret_store_arn.as_deref()
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
-    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
-    /// statement is permitted, including data definition, data manipulation, and commit
-    /// statements. </p>
+    /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
     pub fn sql_statements(&self) -> std::option::Option<&str> {
         self.sql_statements.as_deref()
     }
@@ -1572,8 +1504,7 @@ impl std::fmt::Debug for CommitTransactionInput {
     }
 }
 
-/// <p>The request parameters represent the input of a request to start a SQL
-/// transaction.</p>
+/// <p>The request parameters represent the input of a request to start a SQL transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BeginTransactionInput {
@@ -1615,8 +1546,7 @@ impl std::fmt::Debug for BeginTransactionInput {
     }
 }
 
-/// <p>The request parameters represent the input of a SQL statement over an array of
-/// data.</p>
+/// <p>The request parameters represent the input of a SQL statement over an array of data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchExecuteStatementInput {
@@ -1631,26 +1561,17 @@ pub struct BatchExecuteStatementInput {
     /// <p>The name of the database schema.</p>
     pub schema: std::option::Option<std::string::String>,
     /// <p>The parameter set for the batch operation.</p>
-    /// <p>The SQL statement is executed as many times as the number of parameter sets provided.
-    /// To execute a SQL statement with no parameters, use one of the following options:</p>
+    /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify one or more empty parameter sets.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+    /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+    /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub parameter_sets:
         std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::SqlParameter>>>,
-    /// <p>The identifier of a transaction that was started by using the
-    /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-    /// transaction that you want to include the SQL statement in.</p>
-    /// <p>If the SQL statement is not part of a transaction, don't set this
-    /// parameter.</p>
+    /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
+    /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl BatchExecuteStatementInput {
@@ -1675,17 +1596,11 @@ impl BatchExecuteStatementInput {
         self.schema.as_deref()
     }
     /// <p>The parameter set for the batch operation.</p>
-    /// <p>The SQL statement is executed as many times as the number of parameter sets provided.
-    /// To execute a SQL statement with no parameters, use one of the following options:</p>
+    /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify one or more empty parameter sets.</p>
-    /// </li>
-    /// <li>
-    /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+    /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+    /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub fn parameter_sets(
@@ -1693,11 +1608,8 @@ impl BatchExecuteStatementInput {
     ) -> std::option::Option<&[std::vec::Vec<crate::model::SqlParameter>]> {
         self.parameter_sets.as_deref()
     }
-    /// <p>The identifier of a transaction that was started by using the
-    /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-    /// transaction that you want to include the SQL statement in.</p>
-    /// <p>If the SQL statement is not part of a transaction, don't set this
-    /// parameter.</p>
+    /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
+    /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
     }

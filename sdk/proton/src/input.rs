@@ -34,7 +34,8 @@ pub mod accept_environment_account_connection_input {
 pub type AcceptEnvironmentAccountConnectionInputOperationOutputAlias =
     crate::operation::AcceptEnvironmentAccountConnection;
 #[doc(hidden)]
-pub type AcceptEnvironmentAccountConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptEnvironmentAccountConnectionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptEnvironmentAccountConnectionInput {
     /// Consumes the builder and constructs an Operation<[`AcceptEnvironmentAccountConnection`](crate::operation::AcceptEnvironmentAccountConnection)>
     #[allow(clippy::let_and_return)]
@@ -45,7 +46,7 @@ impl AcceptEnvironmentAccountConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptEnvironmentAccountConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -131,7 +132,7 @@ impl AcceptEnvironmentAccountConnectionInput {
             "AcceptEnvironmentAccountConnection",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -193,7 +194,7 @@ pub mod cancel_environment_deployment_input {
 pub type CancelEnvironmentDeploymentInputOperationOutputAlias =
     crate::operation::CancelEnvironmentDeployment;
 #[doc(hidden)]
-pub type CancelEnvironmentDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelEnvironmentDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelEnvironmentDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CancelEnvironmentDeployment`](crate::operation::CancelEnvironmentDeployment)>
     #[allow(clippy::let_and_return)]
@@ -204,7 +205,7 @@ impl CancelEnvironmentDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelEnvironmentDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -290,7 +291,7 @@ impl CancelEnvironmentDeploymentInput {
             "CancelEnvironmentDeployment",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -364,7 +365,8 @@ pub mod cancel_service_instance_deployment_input {
 pub type CancelServiceInstanceDeploymentInputOperationOutputAlias =
     crate::operation::CancelServiceInstanceDeployment;
 #[doc(hidden)]
-pub type CancelServiceInstanceDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelServiceInstanceDeploymentInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CancelServiceInstanceDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CancelServiceInstanceDeployment`](crate::operation::CancelServiceInstanceDeployment)>
     #[allow(clippy::let_and_return)]
@@ -375,7 +377,7 @@ impl CancelServiceInstanceDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelServiceInstanceDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -461,7 +463,7 @@ impl CancelServiceInstanceDeploymentInput {
             "CancelServiceInstanceDeployment",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -520,7 +522,8 @@ pub mod cancel_service_pipeline_deployment_input {
 pub type CancelServicePipelineDeploymentInputOperationOutputAlias =
     crate::operation::CancelServicePipelineDeployment;
 #[doc(hidden)]
-pub type CancelServicePipelineDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelServicePipelineDeploymentInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CancelServicePipelineDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CancelServicePipelineDeployment`](crate::operation::CancelServicePipelineDeployment)>
     #[allow(clippy::let_and_return)]
@@ -531,7 +534,7 @@ impl CancelServicePipelineDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelServicePipelineDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -617,7 +620,7 @@ impl CancelServicePipelineDeploymentInput {
             "CancelServicePipelineDeployment",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -718,30 +721,22 @@ pub mod create_environment_input {
             self.description = input;
             self
         }
-        /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator
-        /// Guide</i>.</p>
+        /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.spec = Some(input.into());
             self
         }
-        /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator
-        /// Guide</i>.</p>
+        /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.spec = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must
-        /// include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the
-        /// <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
         pub fn proton_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.proton_service_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must
-        /// include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the
-        /// <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
         pub fn set_proton_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -749,10 +744,7 @@ pub mod create_environment_input {
             self.proton_service_role_arn = input;
             self
         }
-        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
-        /// environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and
-        /// value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator
-        /// guide</i>.</p>
+        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
         pub fn environment_account_connection_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -760,10 +752,7 @@ pub mod create_environment_input {
             self.environment_account_connection_id = Some(input.into());
             self
         }
-        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
-        /// environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and
-        /// value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator
-        /// guide</i>.</p>
+        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
         pub fn set_environment_account_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -776,9 +765,9 @@ pub mod create_environment_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for your environment. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -790,13 +779,8 @@ pub mod create_environment_input {
             self.tags = input;
             self
         }
-        /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the
-        /// <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn provisioning_repository(
             mut self,
@@ -805,13 +789,8 @@ pub mod create_environment_input {
             self.provisioning_repository = Some(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the
-        /// <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_provisioning_repository(
             mut self,
@@ -845,7 +824,7 @@ pub mod create_environment_input {
 #[doc(hidden)]
 pub type CreateEnvironmentInputOperationOutputAlias = crate::operation::CreateEnvironment;
 #[doc(hidden)]
-pub type CreateEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateEnvironment`](crate::operation::CreateEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -856,7 +835,7 @@ impl CreateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -941,7 +920,7 @@ impl CreateEnvironmentInput {
             "CreateEnvironment",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -977,28 +956,22 @@ pub mod create_environment_account_connection_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the
-        /// first request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the
-        /// first request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in
-        /// this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision
-        /// environment infrastructure resources in the associated environment account.</p>
+        /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
         pub fn management_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.management_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in
-        /// this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision
-        /// environment infrastructure resources in the associated environment account.</p>
+        /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
         pub fn set_management_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1006,14 +979,12 @@ pub mod create_environment_account_connection_input {
             self.management_account_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision
-        /// infrastructure resources in the associated environment account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision
-        /// infrastructure resources in the associated environment account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1035,16 +1006,14 @@ pub mod create_environment_account_connection_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator
-        /// Guide</i>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator
-        /// Guide</i>.</p>
+        /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1073,7 +1042,8 @@ pub mod create_environment_account_connection_input {
 pub type CreateEnvironmentAccountConnectionInputOperationOutputAlias =
     crate::operation::CreateEnvironmentAccountConnection;
 #[doc(hidden)]
-pub type CreateEnvironmentAccountConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEnvironmentAccountConnectionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEnvironmentAccountConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateEnvironmentAccountConnection`](crate::operation::CreateEnvironmentAccountConnection)>
     #[allow(clippy::let_and_return)]
@@ -1084,7 +1054,7 @@ impl CreateEnvironmentAccountConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEnvironmentAccountConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1173,7 +1143,7 @@ impl CreateEnvironmentAccountConnectionInput {
             "CreateEnvironmentAccountConnection",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1271,9 +1241,9 @@ pub mod create_environment_template_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for your environment template. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1307,7 +1277,7 @@ pub mod create_environment_template_input {
 pub type CreateEnvironmentTemplateInputOperationOutputAlias =
     crate::operation::CreateEnvironmentTemplate;
 #[doc(hidden)]
-pub type CreateEnvironmentTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEnvironmentTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEnvironmentTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateEnvironmentTemplate`](crate::operation::CreateEnvironmentTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1318,7 +1288,7 @@ impl CreateEnvironmentTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEnvironmentTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1405,7 +1375,7 @@ impl CreateEnvironmentTemplateInput {
             "CreateEnvironmentTemplate",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1442,14 +1412,12 @@ pub mod create_environment_template_version_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the
-        /// first request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the
-        /// first request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1478,15 +1446,13 @@ pub mod create_environment_template_version_input {
             self
         }
         /// <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>
-        /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To create a new major and minor version of the environment template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.major_version = Some(input.into());
             self
         }
         /// <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>
-        /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To create a new major and minor version of the environment template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1512,9 +1478,9 @@ pub mod create_environment_template_version_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for a new version of an environment template.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1548,7 +1514,8 @@ pub mod create_environment_template_version_input {
 pub type CreateEnvironmentTemplateVersionInputOperationOutputAlias =
     crate::operation::CreateEnvironmentTemplateVersion;
 #[doc(hidden)]
-pub type CreateEnvironmentTemplateVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEnvironmentTemplateVersionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEnvironmentTemplateVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateEnvironmentTemplateVersion`](crate::operation::CreateEnvironmentTemplateVersion)>
     #[allow(clippy::let_and_return)]
@@ -1559,7 +1526,7 @@ impl CreateEnvironmentTemplateVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEnvironmentTemplateVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1648,7 +1615,7 @@ impl CreateEnvironmentTemplateVersionInput {
             "CreateEnvironmentTemplateVersion",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1751,7 +1718,7 @@ pub mod create_repository_input {
 #[doc(hidden)]
 pub type CreateRepositoryInputOperationOutputAlias = crate::operation::CreateRepository;
 #[doc(hidden)]
-pub type CreateRepositoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRepositoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`CreateRepository`](crate::operation::CreateRepository)>
     #[allow(clippy::let_and_return)]
@@ -1762,7 +1729,7 @@ impl CreateRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRepository,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1847,7 +1814,7 @@ impl CreateRepositoryInput {
             "CreateRepository",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1947,36 +1914,22 @@ pub mod create_service_input {
             self.template_minor_version = input;
             self
         }
-        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
-        /// include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
-        /// <i>Proton User Guide</i>.</p>
+        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.spec = Some(input.into());
             self
         }
-        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
-        /// include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
-        /// <i>Proton User Guide</i>.</p>
+        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.spec = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-        /// with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
-        /// template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn repository_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_connection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-        /// with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
-        /// template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn set_repository_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1984,14 +1937,12 @@ pub mod create_service_input {
             self.repository_connection_arn = input;
             self
         }
-        /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
-        /// a service pipeline.</p>
+        /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn repository_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_id = Some(input.into());
             self
         }
-        /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
-        /// a service pipeline.</p>
+        /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn set_repository_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1999,14 +1950,12 @@ pub mod create_service_input {
             self.repository_id = input;
             self
         }
-        /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if
-        /// your service template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.branch_name = Some(input.into());
             self
         }
-        /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if
-        /// your service template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.branch_name = input;
             self
@@ -2016,9 +1965,9 @@ pub mod create_service_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for your service. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2055,7 +2004,7 @@ pub mod create_service_input {
 #[doc(hidden)]
 pub type CreateServiceInputOperationOutputAlias = crate::operation::CreateService;
 #[doc(hidden)]
-pub type CreateServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateServiceInput {
     /// Consumes the builder and constructs an Operation<[`CreateService`](crate::operation::CreateService)>
     #[allow(clippy::let_and_return)]
@@ -2066,7 +2015,7 @@ impl CreateServiceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateService,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2150,7 +2099,7 @@ impl CreateServiceInput {
             "CreateService",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2230,18 +2179,12 @@ pub mod create_service_template_input {
             self.encryption_key = input;
             self
         }
-        /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline
-        /// <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more
-        /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the
-        /// <i>Proton Administrator Guide</i>.</p>
+        /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn pipeline_provisioning(mut self, input: crate::model::Provisioning) -> Self {
             self.pipeline_provisioning = Some(input);
             self
         }
-        /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline
-        /// <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more
-        /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the
-        /// <i>Proton Administrator Guide</i>.</p>
+        /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn set_pipeline_provisioning(
             mut self,
             input: std::option::Option<crate::model::Provisioning>,
@@ -2254,9 +2197,9 @@ pub mod create_service_template_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for your service template. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2289,7 +2232,7 @@ pub mod create_service_template_input {
 #[doc(hidden)]
 pub type CreateServiceTemplateInputOperationOutputAlias = crate::operation::CreateServiceTemplate;
 #[doc(hidden)]
-pub type CreateServiceTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateServiceTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateServiceTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateServiceTemplate`](crate::operation::CreateServiceTemplate)>
     #[allow(clippy::let_and_return)]
@@ -2300,7 +2243,7 @@ impl CreateServiceTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateServiceTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2387,7 +2330,7 @@ impl CreateServiceTemplateInput {
             "CreateServiceTemplate",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2426,14 +2369,12 @@ pub mod create_service_template_version_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first
-        /// request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first
-        /// request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2462,15 +2403,13 @@ pub mod create_service_template_version_input {
             self
         }
         /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-        /// <p>To create a new major and minor version of the service template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.major_version = Some(input.into());
             self
         }
         /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-        /// <p>To create a new major and minor version of the service template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2498,10 +2437,10 @@ pub mod create_service_template_version_input {
         /// <p>An array of compatible environment template objects for the new version of a service template.</p>
         pub fn compatible_environment_templates(
             mut self,
-            input: impl Into<crate::model::CompatibleEnvironmentTemplateInput>,
+            input: crate::model::CompatibleEnvironmentTemplateInput,
         ) -> Self {
             let mut v = self.compatible_environment_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_environment_templates = Some(v);
             self
         }
@@ -2520,9 +2459,9 @@ pub mod create_service_template_version_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for a new version of a service template.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2557,7 +2496,8 @@ pub mod create_service_template_version_input {
 pub type CreateServiceTemplateVersionInputOperationOutputAlias =
     crate::operation::CreateServiceTemplateVersion;
 #[doc(hidden)]
-pub type CreateServiceTemplateVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateServiceTemplateVersionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateServiceTemplateVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateServiceTemplateVersion`](crate::operation::CreateServiceTemplateVersion)>
     #[allow(clippy::let_and_return)]
@@ -2568,7 +2508,7 @@ impl CreateServiceTemplateVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateServiceTemplateVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2657,7 +2597,7 @@ impl CreateServiceTemplateVersionInput {
             "CreateServiceTemplateVersion",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2756,14 +2696,12 @@ pub mod create_template_sync_config_input {
             self.branch = input;
             self
         }
-        /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this
-        /// repository directory.</p>
+        /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.subdirectory = Some(input.into());
             self
         }
-        /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this
-        /// repository directory.</p>
+        /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subdirectory = input;
             self
@@ -2790,7 +2728,7 @@ pub mod create_template_sync_config_input {
 pub type CreateTemplateSyncConfigInputOperationOutputAlias =
     crate::operation::CreateTemplateSyncConfig;
 #[doc(hidden)]
-pub type CreateTemplateSyncConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTemplateSyncConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTemplateSyncConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateTemplateSyncConfig`](crate::operation::CreateTemplateSyncConfig)>
     #[allow(clippy::let_and_return)]
@@ -2801,7 +2739,7 @@ impl CreateTemplateSyncConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTemplateSyncConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2888,7 +2826,7 @@ impl CreateTemplateSyncConfigInput {
             "CreateTemplateSyncConfig",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2944,7 +2882,7 @@ pub mod delete_environment_input {
 #[doc(hidden)]
 pub type DeleteEnvironmentInputOperationOutputAlias = crate::operation::DeleteEnvironment;
 #[doc(hidden)]
-pub type DeleteEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEnvironment`](crate::operation::DeleteEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -2955,7 +2893,7 @@ impl DeleteEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3040,7 +2978,7 @@ impl DeleteEnvironmentInput {
             "DeleteEnvironment",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3097,7 +3035,8 @@ pub mod delete_environment_account_connection_input {
 pub type DeleteEnvironmentAccountConnectionInputOperationOutputAlias =
     crate::operation::DeleteEnvironmentAccountConnection;
 #[doc(hidden)]
-pub type DeleteEnvironmentAccountConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEnvironmentAccountConnectionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEnvironmentAccountConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEnvironmentAccountConnection`](crate::operation::DeleteEnvironmentAccountConnection)>
     #[allow(clippy::let_and_return)]
@@ -3108,7 +3047,7 @@ impl DeleteEnvironmentAccountConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEnvironmentAccountConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3194,7 +3133,7 @@ impl DeleteEnvironmentAccountConnectionInput {
             "DeleteEnvironmentAccountConnection",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3251,7 +3190,7 @@ pub mod delete_environment_template_input {
 pub type DeleteEnvironmentTemplateInputOperationOutputAlias =
     crate::operation::DeleteEnvironmentTemplate;
 #[doc(hidden)]
-pub type DeleteEnvironmentTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEnvironmentTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEnvironmentTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEnvironmentTemplate`](crate::operation::DeleteEnvironmentTemplate)>
     #[allow(clippy::let_and_return)]
@@ -3262,7 +3201,7 @@ impl DeleteEnvironmentTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEnvironmentTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3349,7 +3288,7 @@ impl DeleteEnvironmentTemplateInput {
             "DeleteEnvironmentTemplate",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3441,7 +3380,8 @@ pub mod delete_environment_template_version_input {
 pub type DeleteEnvironmentTemplateVersionInputOperationOutputAlias =
     crate::operation::DeleteEnvironmentTemplateVersion;
 #[doc(hidden)]
-pub type DeleteEnvironmentTemplateVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEnvironmentTemplateVersionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEnvironmentTemplateVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEnvironmentTemplateVersion`](crate::operation::DeleteEnvironmentTemplateVersion)>
     #[allow(clippy::let_and_return)]
@@ -3452,7 +3392,7 @@ impl DeleteEnvironmentTemplateVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEnvironmentTemplateVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3538,7 +3478,7 @@ impl DeleteEnvironmentTemplateVersionInput {
             "DeleteEnvironmentTemplateVersion",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3611,7 +3551,7 @@ pub mod delete_repository_input {
 #[doc(hidden)]
 pub type DeleteRepositoryInputOperationOutputAlias = crate::operation::DeleteRepository;
 #[doc(hidden)]
-pub type DeleteRepositoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRepositoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRepository`](crate::operation::DeleteRepository)>
     #[allow(clippy::let_and_return)]
@@ -3622,7 +3562,7 @@ impl DeleteRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRepository,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3707,7 +3647,7 @@ impl DeleteRepositoryInput {
             "DeleteRepository",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3763,7 +3703,7 @@ pub mod delete_service_input {
 #[doc(hidden)]
 pub type DeleteServiceInputOperationOutputAlias = crate::operation::DeleteService;
 #[doc(hidden)]
-pub type DeleteServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServiceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteService`](crate::operation::DeleteService)>
     #[allow(clippy::let_and_return)]
@@ -3774,7 +3714,7 @@ impl DeleteServiceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteService,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3858,7 +3798,7 @@ impl DeleteServiceInput {
             "DeleteService",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3914,7 +3854,7 @@ pub mod delete_service_template_input {
 #[doc(hidden)]
 pub type DeleteServiceTemplateInputOperationOutputAlias = crate::operation::DeleteServiceTemplate;
 #[doc(hidden)]
-pub type DeleteServiceTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteServiceTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServiceTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServiceTemplate`](crate::operation::DeleteServiceTemplate)>
     #[allow(clippy::let_and_return)]
@@ -3925,7 +3865,7 @@ impl DeleteServiceTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteServiceTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4012,7 +3952,7 @@ impl DeleteServiceTemplateInput {
             "DeleteServiceTemplate",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4104,7 +4044,8 @@ pub mod delete_service_template_version_input {
 pub type DeleteServiceTemplateVersionInputOperationOutputAlias =
     crate::operation::DeleteServiceTemplateVersion;
 #[doc(hidden)]
-pub type DeleteServiceTemplateVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteServiceTemplateVersionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServiceTemplateVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServiceTemplateVersion`](crate::operation::DeleteServiceTemplateVersion)>
     #[allow(clippy::let_and_return)]
@@ -4115,7 +4056,7 @@ impl DeleteServiceTemplateVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteServiceTemplateVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4201,7 +4142,7 @@ impl DeleteServiceTemplateVersionInput {
             "DeleteServiceTemplateVersion",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4278,7 +4219,7 @@ pub mod delete_template_sync_config_input {
 pub type DeleteTemplateSyncConfigInputOperationOutputAlias =
     crate::operation::DeleteTemplateSyncConfig;
 #[doc(hidden)]
-pub type DeleteTemplateSyncConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTemplateSyncConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTemplateSyncConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTemplateSyncConfig`](crate::operation::DeleteTemplateSyncConfig)>
     #[allow(clippy::let_and_return)]
@@ -4289,7 +4230,7 @@ impl DeleteTemplateSyncConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTemplateSyncConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4376,7 +4317,7 @@ impl DeleteTemplateSyncConfigInput {
             "DeleteTemplateSyncConfig",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4420,7 +4361,7 @@ pub mod get_account_settings_input {
 #[doc(hidden)]
 pub type GetAccountSettingsInputOperationOutputAlias = crate::operation::GetAccountSettings;
 #[doc(hidden)]
-pub type GetAccountSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAccountSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccountSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetAccountSettings`](crate::operation::GetAccountSettings)>
     #[allow(clippy::let_and_return)]
@@ -4431,7 +4372,7 @@ impl GetAccountSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccountSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4516,7 +4457,7 @@ impl GetAccountSettingsInput {
             "GetAccountSettings",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4564,7 +4505,7 @@ pub mod get_environment_input {
 #[doc(hidden)]
 pub type GetEnvironmentInputOperationOutputAlias = crate::operation::GetEnvironment;
 #[doc(hidden)]
-pub type GetEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`GetEnvironment`](crate::operation::GetEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -4575,7 +4516,7 @@ impl GetEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4660,7 +4601,7 @@ impl GetEnvironmentInput {
             "GetEnvironment",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4717,7 +4658,8 @@ pub mod get_environment_account_connection_input {
 pub type GetEnvironmentAccountConnectionInputOperationOutputAlias =
     crate::operation::GetEnvironmentAccountConnection;
 #[doc(hidden)]
-pub type GetEnvironmentAccountConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEnvironmentAccountConnectionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetEnvironmentAccountConnectionInput {
     /// Consumes the builder and constructs an Operation<[`GetEnvironmentAccountConnection`](crate::operation::GetEnvironmentAccountConnection)>
     #[allow(clippy::let_and_return)]
@@ -4728,7 +4670,7 @@ impl GetEnvironmentAccountConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEnvironmentAccountConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4814,7 +4756,7 @@ impl GetEnvironmentAccountConnectionInput {
             "GetEnvironmentAccountConnection",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4870,7 +4812,7 @@ pub mod get_environment_template_input {
 #[doc(hidden)]
 pub type GetEnvironmentTemplateInputOperationOutputAlias = crate::operation::GetEnvironmentTemplate;
 #[doc(hidden)]
-pub type GetEnvironmentTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEnvironmentTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEnvironmentTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetEnvironmentTemplate`](crate::operation::GetEnvironmentTemplate)>
     #[allow(clippy::let_and_return)]
@@ -4881,7 +4823,7 @@ impl GetEnvironmentTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEnvironmentTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4968,7 +4910,7 @@ impl GetEnvironmentTemplateInput {
             "GetEnvironmentTemplate",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5060,7 +5002,8 @@ pub mod get_environment_template_version_input {
 pub type GetEnvironmentTemplateVersionInputOperationOutputAlias =
     crate::operation::GetEnvironmentTemplateVersion;
 #[doc(hidden)]
-pub type GetEnvironmentTemplateVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEnvironmentTemplateVersionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetEnvironmentTemplateVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetEnvironmentTemplateVersion`](crate::operation::GetEnvironmentTemplateVersion)>
     #[allow(clippy::let_and_return)]
@@ -5071,7 +5014,7 @@ impl GetEnvironmentTemplateVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEnvironmentTemplateVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5157,7 +5100,7 @@ impl GetEnvironmentTemplateVersionInput {
             "GetEnvironmentTemplateVersion",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5230,7 +5173,7 @@ pub mod get_repository_input {
 #[doc(hidden)]
 pub type GetRepositoryInputOperationOutputAlias = crate::operation::GetRepository;
 #[doc(hidden)]
-pub type GetRepositoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRepositoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRepositoryInput {
     /// Consumes the builder and constructs an Operation<[`GetRepository`](crate::operation::GetRepository)>
     #[allow(clippy::let_and_return)]
@@ -5241,7 +5184,7 @@ impl GetRepositoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRepository,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5325,7 +5268,7 @@ impl GetRepositoryInput {
             "GetRepository",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5426,7 +5369,7 @@ pub mod get_repository_sync_status_input {
 pub type GetRepositorySyncStatusInputOperationOutputAlias =
     crate::operation::GetRepositorySyncStatus;
 #[doc(hidden)]
-pub type GetRepositorySyncStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRepositorySyncStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRepositorySyncStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetRepositorySyncStatus`](crate::operation::GetRepositorySyncStatus)>
     #[allow(clippy::let_and_return)]
@@ -5437,7 +5380,7 @@ impl GetRepositorySyncStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRepositorySyncStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5524,7 +5467,7 @@ impl GetRepositorySyncStatusInput {
             "GetRepositorySyncStatus",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5580,7 +5523,7 @@ pub mod get_service_input {
 #[doc(hidden)]
 pub type GetServiceInputOperationOutputAlias = crate::operation::GetService;
 #[doc(hidden)]
-pub type GetServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceInput {
     /// Consumes the builder and constructs an Operation<[`GetService`](crate::operation::GetService)>
     #[allow(clippy::let_and_return)]
@@ -5591,7 +5534,7 @@ impl GetServiceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetService,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5675,7 +5618,7 @@ impl GetServiceInput {
             "GetService",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5745,7 +5688,7 @@ pub mod get_service_instance_input {
 #[doc(hidden)]
 pub type GetServiceInstanceInputOperationOutputAlias = crate::operation::GetServiceInstance;
 #[doc(hidden)]
-pub type GetServiceInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServiceInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceInstanceInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceInstance`](crate::operation::GetServiceInstance)>
     #[allow(clippy::let_and_return)]
@@ -5756,7 +5699,7 @@ impl GetServiceInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5841,7 +5784,7 @@ impl GetServiceInstanceInput {
             "GetServiceInstance",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5897,7 +5840,7 @@ pub mod get_service_template_input {
 #[doc(hidden)]
 pub type GetServiceTemplateInputOperationOutputAlias = crate::operation::GetServiceTemplate;
 #[doc(hidden)]
-pub type GetServiceTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServiceTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceTemplate`](crate::operation::GetServiceTemplate)>
     #[allow(clippy::let_and_return)]
@@ -5908,7 +5851,7 @@ impl GetServiceTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5993,7 +5936,7 @@ impl GetServiceTemplateInput {
             "GetServiceTemplate",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6085,7 +6028,7 @@ pub mod get_service_template_version_input {
 pub type GetServiceTemplateVersionInputOperationOutputAlias =
     crate::operation::GetServiceTemplateVersion;
 #[doc(hidden)]
-pub type GetServiceTemplateVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServiceTemplateVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceTemplateVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceTemplateVersion`](crate::operation::GetServiceTemplateVersion)>
     #[allow(clippy::let_and_return)]
@@ -6096,7 +6039,7 @@ impl GetServiceTemplateVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceTemplateVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6183,7 +6126,7 @@ impl GetServiceTemplateVersionInput {
             "GetServiceTemplateVersion",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6259,7 +6202,7 @@ pub mod get_template_sync_config_input {
 #[doc(hidden)]
 pub type GetTemplateSyncConfigInputOperationOutputAlias = crate::operation::GetTemplateSyncConfig;
 #[doc(hidden)]
-pub type GetTemplateSyncConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTemplateSyncConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTemplateSyncConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetTemplateSyncConfig`](crate::operation::GetTemplateSyncConfig)>
     #[allow(clippy::let_and_return)]
@@ -6270,7 +6213,7 @@ impl GetTemplateSyncConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTemplateSyncConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6357,7 +6300,7 @@ impl GetTemplateSyncConfigInput {
             "GetTemplateSyncConfig",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6448,7 +6391,7 @@ pub mod get_template_sync_status_input {
 #[doc(hidden)]
 pub type GetTemplateSyncStatusInputOperationOutputAlias = crate::operation::GetTemplateSyncStatus;
 #[doc(hidden)]
-pub type GetTemplateSyncStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTemplateSyncStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTemplateSyncStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetTemplateSyncStatus`](crate::operation::GetTemplateSyncStatus)>
     #[allow(clippy::let_and_return)]
@@ -6459,7 +6402,7 @@ impl GetTemplateSyncStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTemplateSyncStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6546,7 +6489,7 @@ impl GetTemplateSyncStatusInput {
             "GetTemplateSyncStatus",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6620,12 +6563,9 @@ pub mod list_environment_account_connections_input {
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
         /// <p>The status details for each listed environment account connection.</p>
-        pub fn statuses(
-            mut self,
-            input: impl Into<crate::model::EnvironmentAccountConnectionStatus>,
-        ) -> Self {
+        pub fn statuses(mut self, input: crate::model::EnvironmentAccountConnectionStatus) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }
@@ -6639,14 +6579,12 @@ pub mod list_environment_account_connections_input {
             self.statuses = input;
             self
         }
-        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of
-        /// environment account connections that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of
-        /// environment account connections that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6682,7 +6620,8 @@ pub mod list_environment_account_connections_input {
 pub type ListEnvironmentAccountConnectionsInputOperationOutputAlias =
     crate::operation::ListEnvironmentAccountConnections;
 #[doc(hidden)]
-pub type ListEnvironmentAccountConnectionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEnvironmentAccountConnectionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListEnvironmentAccountConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironmentAccountConnections`](crate::operation::ListEnvironmentAccountConnections)>
     #[allow(clippy::let_and_return)]
@@ -6693,7 +6632,7 @@ impl ListEnvironmentAccountConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEnvironmentAccountConnections,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6779,7 +6718,7 @@ impl ListEnvironmentAccountConnectionsInput {
             "ListEnvironmentAccountConnections",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6825,14 +6764,12 @@ pub mod list_environment_outputs_input {
             self.environment_name = input;
             self
         }
-        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs
-        /// that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs
-        /// that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6854,7 +6791,7 @@ pub mod list_environment_outputs_input {
 #[doc(hidden)]
 pub type ListEnvironmentOutputsInputOperationOutputAlias = crate::operation::ListEnvironmentOutputs;
 #[doc(hidden)]
-pub type ListEnvironmentOutputsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEnvironmentOutputsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEnvironmentOutputsInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironmentOutputs`](crate::operation::ListEnvironmentOutputs)>
     #[allow(clippy::let_and_return)]
@@ -6865,7 +6802,7 @@ impl ListEnvironmentOutputsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEnvironmentOutputs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6952,7 +6889,7 @@ impl ListEnvironmentOutputsInput {
             "ListEnvironmentOutputs",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6998,14 +6935,12 @@ pub mod list_environment_provisioned_resources_input {
             self.environment_name = input;
             self
         }
-        /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the
-        /// list of environment provisioned resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the
-        /// list of environment provisioned resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7029,7 +6964,7 @@ pub type ListEnvironmentProvisionedResourcesInputOperationOutputAlias =
     crate::operation::ListEnvironmentProvisionedResources;
 #[doc(hidden)]
 pub type ListEnvironmentProvisionedResourcesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListEnvironmentProvisionedResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironmentProvisionedResources`](crate::operation::ListEnvironmentProvisionedResources)>
     #[allow(clippy::let_and_return)]
@@ -7040,7 +6975,7 @@ impl ListEnvironmentProvisionedResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEnvironmentProvisionedResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7126,7 +7061,7 @@ impl ListEnvironmentProvisionedResourcesInput {
             "ListEnvironmentProvisionedResources",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7161,14 +7096,12 @@ pub mod list_environments_input {
             std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateFilter>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7190,10 +7123,10 @@ pub mod list_environments_input {
         /// <p>An array of the versions of the environment template.</p>
         pub fn environment_templates(
             mut self,
-            input: impl Into<crate::model::EnvironmentTemplateFilter>,
+            input: crate::model::EnvironmentTemplateFilter,
         ) -> Self {
             let mut v = self.environment_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environment_templates = Some(v);
             self
         }
@@ -7223,7 +7156,7 @@ pub mod list_environments_input {
 #[doc(hidden)]
 pub type ListEnvironmentsInputOperationOutputAlias = crate::operation::ListEnvironments;
 #[doc(hidden)]
-pub type ListEnvironmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEnvironmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironments`](crate::operation::ListEnvironments)>
     #[allow(clippy::let_and_return)]
@@ -7234,7 +7167,7 @@ impl ListEnvironmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEnvironments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7319,7 +7252,7 @@ impl ListEnvironmentsInput {
             "ListEnvironments",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7352,14 +7285,12 @@ pub mod list_environment_templates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
-        /// templates that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
-        /// templates that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7392,7 +7323,7 @@ pub mod list_environment_templates_input {
 pub type ListEnvironmentTemplatesInputOperationOutputAlias =
     crate::operation::ListEnvironmentTemplates;
 #[doc(hidden)]
-pub type ListEnvironmentTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEnvironmentTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEnvironmentTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironmentTemplates`](crate::operation::ListEnvironmentTemplates)>
     #[allow(clippy::let_and_return)]
@@ -7403,7 +7334,7 @@ impl ListEnvironmentTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEnvironmentTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7490,7 +7421,7 @@ impl ListEnvironmentTemplatesInput {
             "ListEnvironmentTemplates",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7525,14 +7456,12 @@ pub mod list_environment_template_versions_input {
         pub(crate) major_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-        /// the list of major or minor versions that was previously requested.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-        /// the list of major or minor versions that was previously requested.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7561,15 +7490,13 @@ pub mod list_environment_template_versions_input {
             self
         }
         /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
-        /// <p>To view a list of major versions of an environment template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.major_version = Some(input.into());
             self
         }
         /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
-        /// <p>To view a list of major versions of an environment template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7597,7 +7524,8 @@ pub mod list_environment_template_versions_input {
 pub type ListEnvironmentTemplateVersionsInputOperationOutputAlias =
     crate::operation::ListEnvironmentTemplateVersions;
 #[doc(hidden)]
-pub type ListEnvironmentTemplateVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEnvironmentTemplateVersionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListEnvironmentTemplateVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironmentTemplateVersions`](crate::operation::ListEnvironmentTemplateVersions)>
     #[allow(clippy::let_and_return)]
@@ -7608,7 +7536,7 @@ impl ListEnvironmentTemplateVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEnvironmentTemplateVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7694,7 +7622,7 @@ impl ListEnvironmentTemplateVersionsInput {
             "ListEnvironmentTemplateVersions",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7727,14 +7655,12 @@ pub mod list_repositories_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7766,7 +7692,7 @@ pub mod list_repositories_input {
 #[doc(hidden)]
 pub type ListRepositoriesInputOperationOutputAlias = crate::operation::ListRepositories;
 #[doc(hidden)]
-pub type ListRepositoriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRepositoriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRepositoriesInput {
     /// Consumes the builder and constructs an Operation<[`ListRepositories`](crate::operation::ListRepositories)>
     #[allow(clippy::let_and_return)]
@@ -7777,7 +7703,7 @@ impl ListRepositoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRepositories,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7862,7 +7788,7 @@ impl ListRepositoriesInput {
             "ListRepositories",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7933,14 +7859,12 @@ pub mod list_repository_sync_definitions_input {
             self.sync_type = input;
             self
         }
-        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of
-        /// repository sync definitions previously requested.</p>
+        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of
-        /// repository sync definitions previously requested.</p>
+        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7965,7 +7889,8 @@ pub mod list_repository_sync_definitions_input {
 pub type ListRepositorySyncDefinitionsInputOperationOutputAlias =
     crate::operation::ListRepositorySyncDefinitions;
 #[doc(hidden)]
-pub type ListRepositorySyncDefinitionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRepositorySyncDefinitionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListRepositorySyncDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListRepositorySyncDefinitions`](crate::operation::ListRepositorySyncDefinitions)>
     #[allow(clippy::let_and_return)]
@@ -7976,7 +7901,7 @@ impl ListRepositorySyncDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRepositorySyncDefinitions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8062,7 +7987,7 @@ impl ListRepositorySyncDefinitionsInput {
             "ListRepositorySyncDefinitions",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8148,7 +8073,7 @@ pub mod list_service_instance_outputs_input {
 pub type ListServiceInstanceOutputsInputOperationOutputAlias =
     crate::operation::ListServiceInstanceOutputs;
 #[doc(hidden)]
-pub type ListServiceInstanceOutputsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServiceInstanceOutputsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceInstanceOutputsInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceInstanceOutputs`](crate::operation::ListServiceInstanceOutputs)>
     #[allow(clippy::let_and_return)]
@@ -8159,7 +8084,7 @@ impl ListServiceInstanceOutputsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServiceInstanceOutputs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8245,7 +8170,7 @@ impl ListServiceInstanceOutputsInput {
             "ListServiceInstanceOutputs",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8302,14 +8227,12 @@ pub mod list_service_instance_provisioned_resources_input {
             self.service_instance_name = input;
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-        /// resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-        /// resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8334,7 +8257,7 @@ pub type ListServiceInstanceProvisionedResourcesInputOperationOutputAlias =
     crate::operation::ListServiceInstanceProvisionedResources;
 #[doc(hidden)]
 pub type ListServiceInstanceProvisionedResourcesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceInstanceProvisionedResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceInstanceProvisionedResources`](crate::operation::ListServiceInstanceProvisionedResources)>
     #[allow(clippy::let_and_return)]
@@ -8345,7 +8268,7 @@ impl ListServiceInstanceProvisionedResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServiceInstanceProvisionedResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8431,7 +8354,7 @@ impl ListServiceInstanceProvisionedResourcesInput {
             "ListServiceInstanceProvisionedResources",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8475,14 +8398,12 @@ pub mod list_service_instances_input {
             self.service_name = input;
             self
         }
-        /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
-        /// previously requested.</p>
+        /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
-        /// previously requested.</p>
+        /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8515,7 +8436,7 @@ pub mod list_service_instances_input {
 #[doc(hidden)]
 pub type ListServiceInstancesInputOperationOutputAlias = crate::operation::ListServiceInstances;
 #[doc(hidden)]
-pub type ListServiceInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServiceInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceInstances`](crate::operation::ListServiceInstances)>
     #[allow(clippy::let_and_return)]
@@ -8526,7 +8447,7 @@ impl ListServiceInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServiceInstances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8613,7 +8534,7 @@ impl ListServiceInstancesInput {
             "ListServiceInstances",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8684,7 +8605,7 @@ pub mod list_service_pipeline_outputs_input {
 pub type ListServicePipelineOutputsInputOperationOutputAlias =
     crate::operation::ListServicePipelineOutputs;
 #[doc(hidden)]
-pub type ListServicePipelineOutputsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServicePipelineOutputsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServicePipelineOutputsInput {
     /// Consumes the builder and constructs an Operation<[`ListServicePipelineOutputs`](crate::operation::ListServicePipelineOutputs)>
     #[allow(clippy::let_and_return)]
@@ -8695,7 +8616,7 @@ impl ListServicePipelineOutputsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServicePipelineOutputs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8781,7 +8702,7 @@ impl ListServicePipelineOutputsInput {
             "ListServicePipelineOutputs",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8824,14 +8745,12 @@ pub mod list_service_pipeline_provisioned_resources_input {
             self.service_name = input;
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-        /// resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-        /// resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8855,7 +8774,7 @@ pub type ListServicePipelineProvisionedResourcesInputOperationOutputAlias =
     crate::operation::ListServicePipelineProvisionedResources;
 #[doc(hidden)]
 pub type ListServicePipelineProvisionedResourcesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListServicePipelineProvisionedResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListServicePipelineProvisionedResources`](crate::operation::ListServicePipelineProvisionedResources)>
     #[allow(clippy::let_and_return)]
@@ -8866,7 +8785,7 @@ impl ListServicePipelineProvisionedResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServicePipelineProvisionedResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8952,7 +8871,7 @@ impl ListServicePipelineProvisionedResourcesInput {
             "ListServicePipelineProvisionedResources",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8985,14 +8904,12 @@ pub mod list_services_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9024,7 +8941,7 @@ pub mod list_services_input {
 #[doc(hidden)]
 pub type ListServicesInputOperationOutputAlias = crate::operation::ListServices;
 #[doc(hidden)]
-pub type ListServicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServicesInput {
     /// Consumes the builder and constructs an Operation<[`ListServices`](crate::operation::ListServices)>
     #[allow(clippy::let_and_return)]
@@ -9035,7 +8952,7 @@ impl ListServicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9119,7 +9036,7 @@ impl ListServicesInput {
             "ListServices",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9152,14 +9069,12 @@ pub mod list_service_templates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
-        /// previously requested.</p>
+        /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
-        /// previously requested.</p>
+        /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9191,7 +9106,7 @@ pub mod list_service_templates_input {
 #[doc(hidden)]
 pub type ListServiceTemplatesInputOperationOutputAlias = crate::operation::ListServiceTemplates;
 #[doc(hidden)]
-pub type ListServiceTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServiceTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceTemplates`](crate::operation::ListServiceTemplates)>
     #[allow(clippy::let_and_return)]
@@ -9202,7 +9117,7 @@ impl ListServiceTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServiceTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9289,7 +9204,7 @@ impl ListServiceTemplatesInput {
             "ListServiceTemplates",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9324,14 +9239,12 @@ pub mod list_service_template_versions_input {
         pub(crate) major_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-        /// list of major or minor versions that was previously requested.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-        /// list of major or minor versions that was previously requested.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9360,15 +9273,13 @@ pub mod list_service_template_versions_input {
             self
         }
         /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
-        /// <p>To view a list of major versions of a service template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.major_version = Some(input.into());
             self
         }
         /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
-        /// <p>To view a list of major versions of a service template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9396,7 +9307,7 @@ pub mod list_service_template_versions_input {
 pub type ListServiceTemplateVersionsInputOperationOutputAlias =
     crate::operation::ListServiceTemplateVersions;
 #[doc(hidden)]
-pub type ListServiceTemplateVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServiceTemplateVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServiceTemplateVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListServiceTemplateVersions`](crate::operation::ListServiceTemplateVersions)>
     #[allow(clippy::let_and_return)]
@@ -9407,7 +9318,7 @@ impl ListServiceTemplateVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServiceTemplateVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9493,7 +9404,7 @@ impl ListServiceTemplateVersionsInput {
             "ListServiceTemplateVersions",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9537,14 +9448,12 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9577,7 +9486,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -9588,7 +9497,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9675,7 +9584,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9739,9 +9648,9 @@ pub mod notify_resource_deployment_status_change_input {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -9801,7 +9710,7 @@ pub type NotifyResourceDeploymentStatusChangeInputOperationOutputAlias =
     crate::operation::NotifyResourceDeploymentStatusChange;
 #[doc(hidden)]
 pub type NotifyResourceDeploymentStatusChangeInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyResourceDeploymentStatusChangeInput {
     /// Consumes the builder and constructs an Operation<[`NotifyResourceDeploymentStatusChange`](crate::operation::NotifyResourceDeploymentStatusChange)>
     #[allow(clippy::let_and_return)]
@@ -9812,7 +9721,7 @@ impl NotifyResourceDeploymentStatusChangeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::NotifyResourceDeploymentStatusChange,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9898,7 +9807,7 @@ impl NotifyResourceDeploymentStatusChangeInput {
             "NotifyResourceDeploymentStatusChange",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9955,7 +9864,8 @@ pub mod reject_environment_account_connection_input {
 pub type RejectEnvironmentAccountConnectionInputOperationOutputAlias =
     crate::operation::RejectEnvironmentAccountConnection;
 #[doc(hidden)]
-pub type RejectEnvironmentAccountConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RejectEnvironmentAccountConnectionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RejectEnvironmentAccountConnectionInput {
     /// Consumes the builder and constructs an Operation<[`RejectEnvironmentAccountConnection`](crate::operation::RejectEnvironmentAccountConnection)>
     #[allow(clippy::let_and_return)]
@@ -9966,7 +9876,7 @@ impl RejectEnvironmentAccountConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectEnvironmentAccountConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10052,7 +9962,7 @@ impl RejectEnvironmentAccountConnectionInput {
             "RejectEnvironmentAccountConnection",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10100,9 +10010,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of resource tags to apply to a resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10131,7 +10041,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -10142,7 +10052,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10226,7 +10136,7 @@ impl TagResourceInput {
             "TagResource",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10305,7 +10215,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -10316,7 +10226,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10400,7 +10310,7 @@ impl UntagResourceInput {
             "UntagResource",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10434,23 +10344,15 @@ pub mod update_account_settings_input {
             std::option::Option<crate::model::RepositoryBranchInput>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn pipeline_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_service_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_pipeline_service_role_arn(
             mut self,
@@ -10459,12 +10361,8 @@ pub mod update_account_settings_input {
             self.pipeline_service_role_arn = input;
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn pipeline_provisioning_repository(
             mut self,
@@ -10473,12 +10371,8 @@ pub mod update_account_settings_input {
             self.pipeline_provisioning_repository = Some(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_pipeline_provisioning_repository(
             mut self,
@@ -10504,7 +10398,7 @@ pub mod update_account_settings_input {
 #[doc(hidden)]
 pub type UpdateAccountSettingsInputOperationOutputAlias = crate::operation::UpdateAccountSettings;
 #[doc(hidden)]
-pub type UpdateAccountSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAccountSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAccountSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAccountSettings`](crate::operation::UpdateAccountSettings)>
     #[allow(clippy::let_and_return)]
@@ -10515,7 +10409,7 @@ impl UpdateAccountSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAccountSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10602,7 +10496,7 @@ impl UpdateAccountSettingsInput {
             "UpdateAccountSettings",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10714,37 +10608,25 @@ pub mod update_environment_input {
         }
         /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version
-        /// in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn deployment_type(mut self, input: crate::model::DeploymentUpdateType) -> Self {
@@ -10753,37 +10635,25 @@ pub mod update_environment_input {
         }
         /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version
-        /// in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn set_deployment_type(
@@ -10794,8 +10664,7 @@ pub mod update_environment_input {
             self
         }
         /// <p>The ID of the environment account connection.</p>
-        /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment
-        /// account connection was created in and is associated with the current environment.</p>
+        /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
         pub fn environment_account_connection_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -10804,8 +10673,7 @@ pub mod update_environment_input {
             self
         }
         /// <p>The ID of the environment account connection.</p>
-        /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment
-        /// account connection was created in and is associated with the current environment.</p>
+        /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
         pub fn set_environment_account_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10813,12 +10681,8 @@ pub mod update_environment_input {
             self.environment_account_connection_id = input;
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn provisioning_repository(
             mut self,
@@ -10827,12 +10691,8 @@ pub mod update_environment_input {
             self.provisioning_repository = Some(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_provisioning_repository(
             mut self,
@@ -10865,7 +10725,7 @@ pub mod update_environment_input {
 #[doc(hidden)]
 pub type UpdateEnvironmentInputOperationOutputAlias = crate::operation::UpdateEnvironment;
 #[doc(hidden)]
-pub type UpdateEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnvironment`](crate::operation::UpdateEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -10876,7 +10736,7 @@ impl UpdateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10961,7 +10821,7 @@ impl UpdateEnvironmentInput {
             "UpdateEnvironment",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11032,7 +10892,8 @@ pub mod update_environment_account_connection_input {
 pub type UpdateEnvironmentAccountConnectionInputOperationOutputAlias =
     crate::operation::UpdateEnvironmentAccountConnection;
 #[doc(hidden)]
-pub type UpdateEnvironmentAccountConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEnvironmentAccountConnectionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEnvironmentAccountConnectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnvironmentAccountConnection`](crate::operation::UpdateEnvironmentAccountConnection)>
     #[allow(clippy::let_and_return)]
@@ -11043,7 +10904,7 @@ impl UpdateEnvironmentAccountConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEnvironmentAccountConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11129,7 +10990,7 @@ impl UpdateEnvironmentAccountConnectionInput {
             "UpdateEnvironmentAccountConnection",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11212,7 +11073,7 @@ pub mod update_environment_template_input {
 pub type UpdateEnvironmentTemplateInputOperationOutputAlias =
     crate::operation::UpdateEnvironmentTemplate;
 #[doc(hidden)]
-pub type UpdateEnvironmentTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEnvironmentTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEnvironmentTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnvironmentTemplate`](crate::operation::UpdateEnvironmentTemplate)>
     #[allow(clippy::let_and_return)]
@@ -11223,7 +11084,7 @@ impl UpdateEnvironmentTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEnvironmentTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11310,7 +11171,7 @@ impl UpdateEnvironmentTemplateInput {
             "UpdateEnvironmentTemplate",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11429,7 +11290,8 @@ pub mod update_environment_template_version_input {
 pub type UpdateEnvironmentTemplateVersionInputOperationOutputAlias =
     crate::operation::UpdateEnvironmentTemplateVersion;
 #[doc(hidden)]
-pub type UpdateEnvironmentTemplateVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEnvironmentTemplateVersionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEnvironmentTemplateVersionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEnvironmentTemplateVersion`](crate::operation::UpdateEnvironmentTemplateVersion)>
     #[allow(clippy::let_and_return)]
@@ -11440,7 +11302,7 @@ impl UpdateEnvironmentTemplateVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEnvironmentTemplateVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11526,7 +11388,7 @@ impl UpdateEnvironmentTemplateVersionInput {
             "UpdateEnvironmentTemplateVersion",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11580,18 +11442,12 @@ pub mod update_service_input {
             self.description = input;
             self
         }
-        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list.
-        /// <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
-        /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-        /// the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.spec = Some(input.into());
             self
         }
-        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list.
-        /// <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
-        /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-        /// the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.spec = input;
             self
@@ -11614,7 +11470,7 @@ pub mod update_service_input {
 #[doc(hidden)]
 pub type UpdateServiceInputOperationOutputAlias = crate::operation::UpdateService;
 #[doc(hidden)]
-pub type UpdateServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServiceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateService`](crate::operation::UpdateService)>
     #[allow(clippy::let_and_return)]
@@ -11625,7 +11481,7 @@ impl UpdateServiceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateService,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11709,7 +11565,7 @@ impl UpdateServiceInput {
             "UpdateService",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11767,40 +11623,27 @@ pub mod update_service_instance_input {
             self
         }
         /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the
-        /// mode.</p>
+        /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major
-        /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn deployment_type(mut self, input: crate::model::DeploymentUpdateType) -> Self {
@@ -11808,40 +11651,27 @@ pub mod update_service_instance_input {
             self
         }
         /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the
-        /// mode.</p>
+        /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major
-        /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn set_deployment_type(
@@ -11908,7 +11738,7 @@ pub mod update_service_instance_input {
 #[doc(hidden)]
 pub type UpdateServiceInstanceInputOperationOutputAlias = crate::operation::UpdateServiceInstance;
 #[doc(hidden)]
-pub type UpdateServiceInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateServiceInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServiceInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServiceInstance`](crate::operation::UpdateServiceInstance)>
     #[allow(clippy::let_and_return)]
@@ -11919,7 +11749,7 @@ impl UpdateServiceInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateServiceInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12006,7 +11836,7 @@ impl UpdateServiceInstanceInput {
             "UpdateServiceInstance",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12063,40 +11893,27 @@ pub mod update_service_pipeline_input {
             self
         }
         /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the
-        /// mode.</p>
+        /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major
-        /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn deployment_type(mut self, input: crate::model::DeploymentUpdateType) -> Self {
@@ -12104,40 +11921,27 @@ pub mod update_service_pipeline_input {
             self
         }
         /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the
-        /// mode.</p>
+        /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major
-        /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn set_deployment_type(
@@ -12193,7 +11997,7 @@ pub mod update_service_pipeline_input {
 #[doc(hidden)]
 pub type UpdateServicePipelineInputOperationOutputAlias = crate::operation::UpdateServicePipeline;
 #[doc(hidden)]
-pub type UpdateServicePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateServicePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServicePipelineInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServicePipeline`](crate::operation::UpdateServicePipeline)>
     #[allow(clippy::let_and_return)]
@@ -12204,7 +12008,7 @@ impl UpdateServicePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateServicePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12291,7 +12095,7 @@ impl UpdateServicePipelineInput {
             "UpdateServicePipeline",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12373,7 +12177,7 @@ pub mod update_service_template_input {
 #[doc(hidden)]
 pub type UpdateServiceTemplateInputOperationOutputAlias = crate::operation::UpdateServiceTemplate;
 #[doc(hidden)]
-pub type UpdateServiceTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateServiceTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServiceTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServiceTemplate`](crate::operation::UpdateServiceTemplate)>
     #[allow(clippy::let_and_return)]
@@ -12384,7 +12188,7 @@ impl UpdateServiceTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateServiceTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12471,7 +12275,7 @@ impl UpdateServiceTemplateInput {
             "UpdateServiceTemplate",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12578,10 +12382,10 @@ pub mod update_service_template_version_input {
         /// <p>An array of compatible environment names for a service template major or minor version to update.</p>
         pub fn compatible_environment_templates(
             mut self,
-            input: impl Into<crate::model::CompatibleEnvironmentTemplateInput>,
+            input: crate::model::CompatibleEnvironmentTemplateInput,
         ) -> Self {
             let mut v = self.compatible_environment_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_environment_templates = Some(v);
             self
         }
@@ -12617,7 +12421,8 @@ pub mod update_service_template_version_input {
 pub type UpdateServiceTemplateVersionInputOperationOutputAlias =
     crate::operation::UpdateServiceTemplateVersion;
 #[doc(hidden)]
-pub type UpdateServiceTemplateVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateServiceTemplateVersionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServiceTemplateVersionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServiceTemplateVersion`](crate::operation::UpdateServiceTemplateVersion)>
     #[allow(clippy::let_and_return)]
@@ -12628,7 +12433,7 @@ impl UpdateServiceTemplateVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateServiceTemplateVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12714,7 +12519,7 @@ impl UpdateServiceTemplateVersionInput {
             "UpdateServiceTemplateVersion",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12845,7 +12650,7 @@ pub mod update_template_sync_config_input {
 pub type UpdateTemplateSyncConfigInputOperationOutputAlias =
     crate::operation::UpdateTemplateSyncConfig;
 #[doc(hidden)]
-pub type UpdateTemplateSyncConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTemplateSyncConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTemplateSyncConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTemplateSyncConfig`](crate::operation::UpdateTemplateSyncConfig)>
     #[allow(clippy::let_and_return)]
@@ -12856,7 +12661,7 @@ impl UpdateTemplateSyncConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTemplateSyncConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12943,7 +12748,7 @@ impl UpdateTemplateSyncConfigInput {
             "UpdateTemplateSyncConfig",
             "proton",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12980,8 +12785,7 @@ pub struct CreateTemplateSyncConfigInput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch of the registered repository for your template.</p>
     pub branch: std::option::Option<std::string::String>,
-    /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this
-    /// repository directory.</p>
+    /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
     pub subdirectory: std::option::Option<std::string::String>,
 }
 impl CreateTemplateSyncConfigInput {
@@ -13005,8 +12809,7 @@ impl CreateTemplateSyncConfigInput {
     pub fn branch(&self) -> std::option::Option<&str> {
         self.branch.as_deref()
     }
-    /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this
-    /// repository directory.</p>
+    /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
     pub fn subdirectory(&self) -> std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
@@ -13140,21 +12943,18 @@ impl std::fmt::Debug for GetTemplateSyncConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceTemplateVersionsInput {
-    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-    /// list of major or minor versions that was previously requested.</p>
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of major or minor versions of a service template to list.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the service template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
-    /// <p>To view a list of major versions of a service template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
     pub major_version: std::option::Option<std::string::String>,
 }
 impl ListServiceTemplateVersionsInput {
-    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-    /// list of major or minor versions that was previously requested.</p>
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13167,8 +12967,7 @@ impl ListServiceTemplateVersionsInput {
         self.template_name.as_deref()
     }
     /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
-    /// <p>To view a list of major versions of a service template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
     }
@@ -13188,16 +12987,14 @@ impl std::fmt::Debug for ListServiceTemplateVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceTemplateVersionInput {
-    /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first
-    /// request created.</p>
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the service template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>A description of the new version of a service template.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-    /// <p>To create a new major and minor version of the service template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
     pub major_version: std::option::Option<std::string::String>,
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
     pub source: std::option::Option<crate::model::TemplateVersionSourceInput>,
@@ -13208,8 +13005,7 @@ pub struct CreateServiceTemplateVersionInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateServiceTemplateVersionInput {
-    /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first
-    /// request created.</p>
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -13222,8 +13018,7 @@ impl CreateServiceTemplateVersionInput {
         self.description.as_deref()
     }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-    /// <p>To create a new major and minor version of the service template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
     }
@@ -13395,15 +13190,13 @@ impl std::fmt::Debug for GetServiceTemplateVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceTemplatesInput {
-    /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
-    /// previously requested.</p>
+    /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of service templates to list.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListServiceTemplatesInput {
-    /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
-    /// previously requested.</p>
+    /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13433,10 +13226,7 @@ pub struct CreateServiceTemplateInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>A customer provided encryption key that's used to encrypt data.</p>
     pub encryption_key: std::option::Option<std::string::String>,
-    /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline
-    /// <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more
-    /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the
-    /// <i>Proton Administrator Guide</i>.</p>
+    /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
     pub pipeline_provisioning: std::option::Option<crate::model::Provisioning>,
     /// <p>Create tags for your service template. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13458,10 +13248,7 @@ impl CreateServiceTemplateInput {
     pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
-    /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline
-    /// <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more
-    /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the
-    /// <i>Proton Administrator Guide</i>.</p>
+    /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
     pub fn pipeline_provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
         self.pipeline_provisioning.as_ref()
     }
@@ -13564,15 +13351,13 @@ impl std::fmt::Debug for GetServiceTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesInput {
-    /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of services to list.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListServicesInput {
-    /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13604,22 +13389,13 @@ pub struct CreateServiceInput {
     pub template_major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of the service template that was used to create the service.</p>
     pub template_minor_version: std::option::Option<std::string::String>,
-    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
-    /// include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see
-    /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton
-    /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
-    /// <i>Proton User Guide</i>.</p>
+    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
     pub spec: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton
-    /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-    /// with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
-    /// template <i>doesn't</i> include a service pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub repository_connection_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
-    /// a service pipeline.</p>
+    /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub repository_id: std::option::Option<std::string::String>,
-    /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if
-    /// your service template <i>doesn't</i> include a service pipeline.</p>
+    /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub branch_name: std::option::Option<std::string::String>,
     /// <p>Create tags for your service. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13645,28 +13421,19 @@ impl CreateServiceInput {
     pub fn template_minor_version(&self) -> std::option::Option<&str> {
         self.template_minor_version.as_deref()
     }
-    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
-    /// include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see
-    /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton
-    /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
-    /// <i>Proton User Guide</i>.</p>
+    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
     pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton
-    /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-    /// with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
-    /// template <i>doesn't</i> include a service pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn repository_connection_arn(&self) -> std::option::Option<&str> {
         self.repository_connection_arn.as_deref()
     }
-    /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
-    /// a service pipeline.</p>
+    /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn repository_id(&self) -> std::option::Option<&str> {
         self.repository_id.as_deref()
     }
-    /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if
-    /// your service template <i>doesn't</i> include a service pipeline.</p>
+    /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
@@ -13721,10 +13488,7 @@ pub struct UpdateServiceInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The edited service description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list.
-    /// <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
-    /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-    /// the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
     pub spec: std::option::Option<std::string::String>,
 }
 impl UpdateServiceInput {
@@ -13736,10 +13500,7 @@ impl UpdateServiceInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list.
-    /// <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
-    /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-    /// the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
     pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
@@ -13784,40 +13545,27 @@ pub struct UpdateServicePipelineInput {
     /// <p>The spec for the service pipeline to update.</p>
     pub spec: std::option::Option<std::string::String>,
     /// <p>The deployment type.</p>
-    /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the
-    /// mode.</p>
+    /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major
-    /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
     pub deployment_type: std::option::Option<crate::model::DeploymentUpdateType>,
@@ -13836,40 +13584,27 @@ impl UpdateServicePipelineInput {
         self.spec.as_deref()
     }
     /// <p>The deployment type.</p>
-    /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the
-    /// mode.</p>
+    /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major
-    /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentUpdateType> {
@@ -13902,8 +13637,7 @@ impl std::fmt::Debug for UpdateServicePipelineInput {
 pub struct ListServicePipelineProvisionedResourcesInput {
     /// <p>The service name.</p>
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-    /// resources that was previously requested.</p>
+    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicePipelineProvisionedResourcesInput {
@@ -13911,8 +13645,7 @@ impl ListServicePipelineProvisionedResourcesInput {
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-    /// resources that was previously requested.</p>
+    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13960,8 +13693,7 @@ impl std::fmt::Debug for ListServicePipelineOutputsInput {
 pub struct ListServiceInstancesInput {
     /// <p>The name of the service that the service instance belongs to.</p>
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
-    /// previously requested.</p>
+    /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of service instances to list.</p>
     pub max_results: std::option::Option<i32>,
@@ -13971,8 +13703,7 @@ impl ListServiceInstancesInput {
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
-    /// previously requested.</p>
+    /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14000,40 +13731,27 @@ pub struct UpdateServiceInstanceInput {
     /// <p>The name of the service that the service instance belongs to.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The deployment type.</p>
-    /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the
-    /// mode.</p>
+    /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major
-    /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
     pub deployment_type: std::option::Option<crate::model::DeploymentUpdateType>,
@@ -14054,40 +13772,27 @@ impl UpdateServiceInstanceInput {
         self.service_name.as_deref()
     }
     /// <p>The deployment type.</p>
-    /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the
-    /// mode.</p>
+    /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major
-    /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentUpdateType> {
@@ -14155,8 +13860,7 @@ pub struct ListServiceInstanceProvisionedResourcesInput {
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The service instance name.</p>
     pub service_instance_name: std::option::Option<std::string::String>,
-    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-    /// resources that was previously requested.</p>
+    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServiceInstanceProvisionedResourcesInput {
@@ -14168,8 +13872,7 @@ impl ListServiceInstanceProvisionedResourcesInput {
     pub fn service_instance_name(&self) -> std::option::Option<&str> {
         self.service_instance_name.as_deref()
     }
-    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-    /// resources that was previously requested.</p>
+    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14223,15 +13926,13 @@ impl std::fmt::Debug for ListServiceInstanceOutputsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesInput {
-    /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of repositories to list.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListRepositoriesInput {
-    /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14351,21 +14052,18 @@ impl std::fmt::Debug for GetRepositoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentTemplateVersionsInput {
-    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-    /// the list of major or minor versions that was previously requested.</p>
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of major or minor versions of an environment template to list.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the environment template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
-    /// <p>To view a list of major versions of an environment template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
     pub major_version: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentTemplateVersionsInput {
-    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-    /// the list of major or minor versions that was previously requested.</p>
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14378,8 +14076,7 @@ impl ListEnvironmentTemplateVersionsInput {
         self.template_name.as_deref()
     }
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
-    /// <p>To view a list of major versions of an environment template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
     }
@@ -14399,16 +14096,14 @@ impl std::fmt::Debug for ListEnvironmentTemplateVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentTemplateVersionInput {
-    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the
-    /// first request created.</p>
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the environment template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>A description of the new version of an environment template.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>
-    /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To create a new major and minor version of the environment template, <i>exclude</i> <code>major Version</code>.</p>
     pub major_version: std::option::Option<std::string::String>,
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
     pub source: std::option::Option<crate::model::TemplateVersionSourceInput>,
@@ -14416,8 +14111,7 @@ pub struct CreateEnvironmentTemplateVersionInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEnvironmentTemplateVersionInput {
-    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the
-    /// first request created.</p>
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -14430,8 +14124,7 @@ impl CreateEnvironmentTemplateVersionInput {
         self.description.as_deref()
     }
     /// <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>
-    /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To create a new major and minor version of the environment template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
     }
@@ -14580,15 +14273,13 @@ impl std::fmt::Debug for GetEnvironmentTemplateVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentTemplatesInput {
-    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
-    /// templates that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environment templates to list.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListEnvironmentTemplatesInput {
-    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
-    /// templates that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14743,8 +14434,7 @@ impl std::fmt::Debug for GetEnvironmentTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsInput {
-    /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environments to list.</p>
     pub max_results: std::option::Option<i32>,
@@ -14753,8 +14443,7 @@ pub struct ListEnvironmentsInput {
         std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateFilter>>,
 }
 impl ListEnvironmentsInput {
-    /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14793,28 +14482,16 @@ pub struct CreateEnvironmentInput {
     pub template_minor_version: std::option::Option<std::string::String>,
     /// <p>A description of the environment that's being created and deployed.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see
-    /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator
-    /// Guide</i>.</p>
+    /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
     pub spec: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must
-    /// include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the
-    /// <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
     pub proton_service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
-    /// environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and
-    /// value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator
-    /// guide</i>.</p>
+    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
     pub environment_account_connection_id: std::option::Option<std::string::String>,
     /// <p>Create tags for your environment. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the
-    /// <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
 }
@@ -14839,22 +14516,15 @@ impl CreateEnvironmentInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see
-    /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator
-    /// Guide</i>.</p>
+    /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
     pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must
-    /// include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the
-    /// <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
     pub fn proton_service_role_arn(&self) -> std::option::Option<&str> {
         self.proton_service_role_arn.as_deref()
     }
-    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
-    /// environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and
-    /// value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator
-    /// guide</i>.</p>
+    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
     pub fn environment_account_connection_id(&self) -> std::option::Option<&str> {
         self.environment_account_connection_id.as_deref()
     }
@@ -14862,13 +14532,8 @@ impl CreateEnvironmentInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the
-    /// <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub fn provisioning_repository(
         &self,
@@ -14935,50 +14600,33 @@ pub struct UpdateEnvironmentInput {
     pub proton_service_role_arn: std::option::Option<std::string::String>,
     /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version
-    /// in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
     pub deployment_type: std::option::Option<crate::model::DeploymentUpdateType>,
     /// <p>The ID of the environment account connection.</p>
-    /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment
-    /// account connection was created in and is associated with the current environment.</p>
+    /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
     pub environment_account_connection_id: std::option::Option<std::string::String>,
-    /// <p>The repository that you provide with pull request provisioning.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
 }
@@ -15009,54 +14657,37 @@ impl UpdateEnvironmentInput {
     }
     /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version
-    /// in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentUpdateType> {
         self.deployment_type.as_ref()
     }
     /// <p>The ID of the environment account connection.</p>
-    /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment
-    /// account connection was created in and is associated with the current environment.</p>
+    /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
     pub fn environment_account_connection_id(&self) -> std::option::Option<&str> {
         self.environment_account_connection_id.as_deref()
     }
-    /// <p>The repository that you provide with pull request provisioning.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub fn provisioning_repository(
         &self,
@@ -15110,8 +14741,7 @@ impl std::fmt::Debug for GetEnvironmentInput {
 pub struct ListEnvironmentProvisionedResourcesInput {
     /// <p>The environment name.</p>
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the
-    /// list of environment provisioned resources that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentProvisionedResourcesInput {
@@ -15119,8 +14749,7 @@ impl ListEnvironmentProvisionedResourcesInput {
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the
-    /// list of environment provisioned resources that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15140,8 +14769,7 @@ impl std::fmt::Debug for ListEnvironmentProvisionedResourcesInput {
 pub struct ListEnvironmentOutputsInput {
     /// <p>The environment name.</p>
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs
-    /// that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentOutputsInput {
@@ -15149,8 +14777,7 @@ impl ListEnvironmentOutputsInput {
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs
-    /// that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15218,8 +14845,7 @@ pub struct ListEnvironmentAccountConnectionsInput {
     /// <p>The status details for each listed environment account connection.</p>
     pub statuses:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentAccountConnectionStatus>>,
-    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of
-    /// environment account connections that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environment account connections to list.</p>
     pub max_results: std::option::Option<i32>,
@@ -15241,8 +14867,7 @@ impl ListEnvironmentAccountConnectionsInput {
     ) -> std::option::Option<&[crate::model::EnvironmentAccountConnectionStatus]> {
         self.statuses.as_deref()
     }
-    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of
-    /// environment account connections that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15267,36 +14892,27 @@ impl std::fmt::Debug for ListEnvironmentAccountConnectionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentAccountConnectionInput {
-    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the
-    /// first request created.</p>
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in
-    /// this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision
-    /// environment infrastructure resources in the associated environment account.</p>
+    /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
     pub management_account_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision
-    /// infrastructure resources in the associated environment account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Proton environment that's created in the associated management account.</p>
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator
-    /// Guide</i>.</p>
+    /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEnvironmentAccountConnectionInput {
-    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the
-    /// first request created.</p>
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in
-    /// this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision
-    /// environment infrastructure resources in the associated environment account.</p>
+    /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
     pub fn management_account_id(&self) -> std::option::Option<&str> {
         self.management_account_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision
-    /// infrastructure resources in the associated environment account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -15304,8 +14920,7 @@ impl CreateEnvironmentAccountConnectionInput {
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator
-    /// Guide</i>.</p>
+    /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -15396,40 +15011,24 @@ impl std::fmt::Debug for GetEnvironmentAccountConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountSettingsInput {
-    /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub pipeline_service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The repository that you provide with pull request provisioning.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub pipeline_provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
 }
 impl UpdateAccountSettingsInput {
-    /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub fn pipeline_service_role_arn(&self) -> std::option::Option<&str> {
         self.pipeline_service_role_arn.as_deref()
     }
-    /// <p>The repository that you provide with pull request provisioning.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub fn pipeline_provisioning_repository(
         &self,
@@ -15571,8 +15170,7 @@ impl std::fmt::Debug for NotifyResourceDeploymentStatusChangeInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for the listed tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of tags to list.</p>
     pub max_results: std::option::Option<i32>,
@@ -15582,8 +15180,7 @@ impl ListTagsForResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15612,8 +15209,7 @@ pub struct ListRepositorySyncDefinitionsInput {
     pub repository_provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
     pub sync_type: std::option::Option<crate::model::SyncType>,
-    /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of
-    /// repository sync definitions previously requested.</p>
+    /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositorySyncDefinitionsInput {
@@ -15629,8 +15225,7 @@ impl ListRepositorySyncDefinitionsInput {
     pub fn sync_type(&self) -> std::option::Option<&crate::model::SyncType> {
         self.sync_type.as_ref()
     }
-    /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of
-    /// repository sync definitions previously requested.</p>
+    /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

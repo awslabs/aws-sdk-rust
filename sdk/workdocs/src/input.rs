@@ -63,7 +63,7 @@ pub mod abort_document_version_upload_input {
 pub type AbortDocumentVersionUploadInputOperationOutputAlias =
     crate::operation::AbortDocumentVersionUpload;
 #[doc(hidden)]
-pub type AbortDocumentVersionUploadInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AbortDocumentVersionUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AbortDocumentVersionUploadInput {
     /// Consumes the builder and constructs an Operation<[`AbortDocumentVersionUpload`](crate::operation::AbortDocumentVersionUpload)>
     #[allow(clippy::let_and_return)]
@@ -74,7 +74,7 @@ impl AbortDocumentVersionUploadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AbortDocumentVersionUpload,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -208,7 +208,7 @@ impl AbortDocumentVersionUploadInput {
             "AbortDocumentVersionUpload",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -273,7 +273,7 @@ pub mod activate_user_input {
 #[doc(hidden)]
 pub type ActivateUserInputOperationOutputAlias = crate::operation::ActivateUser;
 #[doc(hidden)]
-pub type ActivateUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ActivateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ActivateUserInput {
     /// Consumes the builder and constructs an Operation<[`ActivateUser`](crate::operation::ActivateUser)>
     #[allow(clippy::let_and_return)]
@@ -284,7 +284,7 @@ impl ActivateUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ActivateUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -402,7 +402,7 @@ impl ActivateUserInput {
             "ActivateUser",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -457,9 +457,9 @@ pub mod add_resource_permissions_input {
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
         /// <p>The users, groups, or organization being granted permission.</p>
-        pub fn principals(mut self, input: impl Into<crate::model::SharePrincipal>) -> Self {
+        pub fn principals(mut self, input: crate::model::SharePrincipal) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principals = Some(v);
             self
         }
@@ -503,7 +503,7 @@ pub mod add_resource_permissions_input {
 #[doc(hidden)]
 pub type AddResourcePermissionsInputOperationOutputAlias = crate::operation::AddResourcePermissions;
 #[doc(hidden)]
-pub type AddResourcePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddResourcePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddResourcePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`AddResourcePermissions`](crate::operation::AddResourcePermissions)>
     #[allow(clippy::let_and_return)]
@@ -514,7 +514,7 @@ impl AddResourcePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddResourcePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -640,7 +640,7 @@ impl AddResourcePermissionsInput {
             "AddResourcePermissions",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -742,16 +742,12 @@ pub mod create_comment_input {
             self.text = input;
             self
         }
-        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-        /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-        /// the comment is visible to document owners, co-owners, and contributors.</p>
+        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
         pub fn visibility(mut self, input: crate::model::CommentVisibilityType) -> Self {
             self.visibility = Some(input);
             self
         }
-        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-        /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-        /// the comment is visible to document owners, co-owners, and contributors.</p>
+        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
         pub fn set_visibility(
             mut self,
             input: std::option::Option<crate::model::CommentVisibilityType>,
@@ -759,14 +755,12 @@ pub mod create_comment_input {
             self.visibility = input;
             self
         }
-        /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
-        /// the comment is created.</p>
+        /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
         pub fn notify_collaborators(mut self, input: bool) -> Self {
             self.notify_collaborators = Some(input);
             self
         }
-        /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
-        /// the comment is created.</p>
+        /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
         pub fn set_notify_collaborators(mut self, input: std::option::Option<bool>) -> Self {
             self.notify_collaborators = input;
             self
@@ -794,7 +788,7 @@ pub mod create_comment_input {
 #[doc(hidden)]
 pub type CreateCommentInputOperationOutputAlias = crate::operation::CreateComment;
 #[doc(hidden)]
-pub type CreateCommentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCommentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCommentInput {
     /// Consumes the builder and constructs an Operation<[`CreateComment`](crate::operation::CreateComment)>
     #[allow(clippy::let_and_return)]
@@ -805,7 +799,7 @@ impl CreateCommentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateComment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -944,7 +938,7 @@ impl CreateCommentInput {
             "CreateComment",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1004,14 +998,12 @@ pub mod create_custom_metadata_input {
             self.resource_id = input;
             self
         }
-        /// <p>The ID of the version, if the custom metadata is being added to a document
-        /// version.</p>
+        /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The ID of the version, if the custom metadata is being added to a document
-        /// version.</p>
+        /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -1060,7 +1052,7 @@ pub mod create_custom_metadata_input {
 #[doc(hidden)]
 pub type CreateCustomMetadataInputOperationOutputAlias = crate::operation::CreateCustomMetadata;
 #[doc(hidden)]
-pub type CreateCustomMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCustomMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomMetadataInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomMetadata`](crate::operation::CreateCustomMetadata)>
     #[allow(clippy::let_and_return)]
@@ -1071,7 +1063,7 @@ impl CreateCustomMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1208,7 +1200,7 @@ impl CreateCustomMetadataInput {
             "CreateCustomMetadata",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1296,7 +1288,7 @@ pub mod create_folder_input {
 #[doc(hidden)]
 pub type CreateFolderInputOperationOutputAlias = crate::operation::CreateFolder;
 #[doc(hidden)]
-pub type CreateFolderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFolderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFolderInput {
     /// Consumes the builder and constructs an Operation<[`CreateFolder`](crate::operation::CreateFolder)>
     #[allow(clippy::let_and_return)]
@@ -1307,7 +1299,7 @@ impl CreateFolderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFolder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1410,7 +1402,7 @@ impl CreateFolderInput {
             "CreateFolder",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1504,7 +1496,7 @@ pub mod create_labels_input {
 #[doc(hidden)]
 pub type CreateLabelsInputOperationOutputAlias = crate::operation::CreateLabels;
 #[doc(hidden)]
-pub type CreateLabelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLabelsInput {
     /// Consumes the builder and constructs an Operation<[`CreateLabels`](crate::operation::CreateLabels)>
     #[allow(clippy::let_and_return)]
@@ -1515,7 +1507,7 @@ impl CreateLabelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLabels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1638,7 +1630,7 @@ impl CreateLabelsInput {
             "CreateLabels",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1686,26 +1678,22 @@ pub mod create_notification_subscription_input {
             self.organization_id = input;
             self
         }
-        /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
-        /// is a URL that begins with <code>https</code>.</p>
+        /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint = Some(input.into());
             self
         }
-        /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
-        /// is a URL that begins with <code>https</code>.</p>
+        /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
         }
-        /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
-        /// messages using HTTPS POST.</p>
+        /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
         pub fn protocol(mut self, input: crate::model::SubscriptionProtocolType) -> Self {
             self.protocol = Some(input);
             self
         }
-        /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
-        /// messages using HTTPS POST.</p>
+        /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::SubscriptionProtocolType>,
@@ -1746,7 +1734,8 @@ pub mod create_notification_subscription_input {
 pub type CreateNotificationSubscriptionInputOperationOutputAlias =
     crate::operation::CreateNotificationSubscription;
 #[doc(hidden)]
-pub type CreateNotificationSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateNotificationSubscriptionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNotificationSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`CreateNotificationSubscription`](crate::operation::CreateNotificationSubscription)>
     #[allow(clippy::let_and_return)]
@@ -1757,7 +1746,7 @@ impl CreateNotificationSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNotificationSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1858,7 +1847,7 @@ impl CreateNotificationSubscriptionInput {
             "CreateNotificationSubscription",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2024,7 +2013,7 @@ pub mod create_user_input {
 #[doc(hidden)]
 pub type CreateUserInputOperationOutputAlias = crate::operation::CreateUser;
 #[doc(hidden)]
-pub type CreateUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateUser`](crate::operation::CreateUser)>
     #[allow(clippy::let_and_return)]
@@ -2035,7 +2024,7 @@ impl CreateUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2138,7 +2127,7 @@ impl CreateUserInput {
             "CreateUser",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2211,7 +2200,7 @@ pub mod deactivate_user_input {
 #[doc(hidden)]
 pub type DeactivateUserInputOperationOutputAlias = crate::operation::DeactivateUser;
 #[doc(hidden)]
-pub type DeactivateUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeactivateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeactivateUserInput {
     /// Consumes the builder and constructs an Operation<[`DeactivateUser`](crate::operation::DeactivateUser)>
     #[allow(clippy::let_and_return)]
@@ -2222,7 +2211,7 @@ impl DeactivateUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeactivateUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2340,7 +2329,7 @@ impl DeactivateUserInput {
             "DeactivateUser",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2429,7 +2418,7 @@ pub mod delete_comment_input {
 #[doc(hidden)]
 pub type DeleteCommentInputOperationOutputAlias = crate::operation::DeleteComment;
 #[doc(hidden)]
-pub type DeleteCommentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCommentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCommentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteComment`](crate::operation::DeleteComment)>
     #[allow(clippy::let_and_return)]
@@ -2440,7 +2429,7 @@ impl DeleteCommentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteComment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2590,7 +2579,7 @@ impl DeleteCommentInput {
             "DeleteComment",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2641,14 +2630,12 @@ pub mod delete_custom_metadata_input {
             self.resource_id = input;
             self
         }
-        /// <p>The ID of the version, if the custom metadata is being deleted from a document
-        /// version.</p>
+        /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The ID of the version, if the custom metadata is being deleted from a document
-        /// version.</p>
+        /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -2672,14 +2659,12 @@ pub mod delete_custom_metadata_input {
             self.keys = input;
             self
         }
-        /// <p>Flag to indicate removal of all custom metadata properties from the specified
-        /// resource.</p>
+        /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
         pub fn delete_all(mut self, input: bool) -> Self {
             self.delete_all = Some(input);
             self
         }
-        /// <p>Flag to indicate removal of all custom metadata properties from the specified
-        /// resource.</p>
+        /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
         pub fn set_delete_all(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_all = input;
             self
@@ -2704,7 +2689,7 @@ pub mod delete_custom_metadata_input {
 #[doc(hidden)]
 pub type DeleteCustomMetadataInputOperationOutputAlias = crate::operation::DeleteCustomMetadata;
 #[doc(hidden)]
-pub type DeleteCustomMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCustomMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomMetadataInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomMetadata`](crate::operation::DeleteCustomMetadata)>
     #[allow(clippy::let_and_return)]
@@ -2715,7 +2700,7 @@ impl DeleteCustomMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2855,7 +2840,7 @@ impl DeleteCustomMetadataInput {
             "DeleteCustomMetadata",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2920,7 +2905,7 @@ pub mod delete_document_input {
 #[doc(hidden)]
 pub type DeleteDocumentInputOperationOutputAlias = crate::operation::DeleteDocument;
 #[doc(hidden)]
-pub type DeleteDocumentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDocumentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDocumentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDocument`](crate::operation::DeleteDocument)>
     #[allow(clippy::let_and_return)]
@@ -2931,7 +2916,7 @@ impl DeleteDocumentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDocument,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3049,7 +3034,7 @@ impl DeleteDocumentInput {
             "DeleteDocument",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3114,7 +3099,7 @@ pub mod delete_folder_input {
 #[doc(hidden)]
 pub type DeleteFolderInputOperationOutputAlias = crate::operation::DeleteFolder;
 #[doc(hidden)]
-pub type DeleteFolderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFolderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFolderInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFolder`](crate::operation::DeleteFolder)>
     #[allow(clippy::let_and_return)]
@@ -3125,7 +3110,7 @@ impl DeleteFolderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFolder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3239,7 +3224,7 @@ impl DeleteFolderInput {
             "DeleteFolder",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3304,7 +3289,7 @@ pub mod delete_folder_contents_input {
 #[doc(hidden)]
 pub type DeleteFolderContentsInputOperationOutputAlias = crate::operation::DeleteFolderContents;
 #[doc(hidden)]
-pub type DeleteFolderContentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFolderContentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFolderContentsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFolderContents`](crate::operation::DeleteFolderContents)>
     #[allow(clippy::let_and_return)]
@@ -3315,7 +3300,7 @@ impl DeleteFolderContentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFolderContents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3433,7 +3418,7 @@ impl DeleteFolderContentsInput {
             "DeleteFolderContents",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3531,7 +3516,7 @@ pub mod delete_labels_input {
 #[doc(hidden)]
 pub type DeleteLabelsInputOperationOutputAlias = crate::operation::DeleteLabels;
 #[doc(hidden)]
-pub type DeleteLabelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLabelsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLabels`](crate::operation::DeleteLabels)>
     #[allow(clippy::let_and_return)]
@@ -3542,7 +3527,7 @@ impl DeleteLabelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLabels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3679,7 +3664,7 @@ impl DeleteLabelsInput {
             "DeleteLabels",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3748,7 +3733,8 @@ pub mod delete_notification_subscription_input {
 pub type DeleteNotificationSubscriptionInputOperationOutputAlias =
     crate::operation::DeleteNotificationSubscription;
 #[doc(hidden)]
-pub type DeleteNotificationSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteNotificationSubscriptionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNotificationSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNotificationSubscription`](crate::operation::DeleteNotificationSubscription)>
     #[allow(clippy::let_and_return)]
@@ -3759,7 +3745,7 @@ impl DeleteNotificationSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNotificationSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3869,7 +3855,7 @@ impl DeleteNotificationSubscriptionInput {
             "DeleteNotificationSubscription",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3894,14 +3880,12 @@ pub mod delete_user_input {
         pub(crate) user_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Amazon WorkDocs authentication token. Do not set this field when using
-        /// administrative API actions, as in accessing the API using AWS credentials.</p>
+        /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
         pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.authentication_token = Some(input.into());
             self
         }
-        /// <p>Amazon WorkDocs authentication token. Do not set this field when using
-        /// administrative API actions, as in accessing the API using AWS credentials.</p>
+        /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
         pub fn set_authentication_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3936,7 +3920,7 @@ pub mod delete_user_input {
 #[doc(hidden)]
 pub type DeleteUserInputOperationOutputAlias = crate::operation::DeleteUser;
 #[doc(hidden)]
-pub type DeleteUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUser`](crate::operation::DeleteUser)>
     #[allow(clippy::let_and_return)]
@@ -3947,7 +3931,7 @@ impl DeleteUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4061,7 +4045,7 @@ impl DeleteUserInput {
             "DeleteUser",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4107,14 +4091,12 @@ pub mod describe_activities_input {
             self.authentication_token = input;
             self
         }
-        /// <p>The timestamp that determines the starting time of the activities. The response
-        /// includes the activities performed after the specified timestamp.</p>
+        /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The timestamp that determines the starting time of the activities. The response
-        /// includes the activities performed after the specified timestamp.</p>
+        /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4122,14 +4104,12 @@ pub mod describe_activities_input {
             self.start_time = input;
             self
         }
-        /// <p>The timestamp that determines the end time of the activities. The response includes
-        /// the activities performed before the specified timestamp.</p>
+        /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The timestamp that determines the end time of the activities. The response includes
-        /// the activities performed before the specified timestamp.</p>
+        /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4137,14 +4117,12 @@ pub mod describe_activities_input {
             self.end_time = input;
             self
         }
-        /// <p>The ID of the organization. This is a mandatory parameter when using administrative
-        /// API (SigV4) requests.</p>
+        /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The ID of the organization. This is a mandatory parameter when using administrative
-        /// API (SigV4) requests.</p>
+        /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4152,14 +4130,12 @@ pub mod describe_activities_input {
             self.organization_id = input;
             self
         }
-        /// <p>Specifies which activity types to include in the response. If this field is left
-        /// empty, all activity types are returned.</p>
+        /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
         pub fn activity_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.activity_types = Some(input.into());
             self
         }
-        /// <p>Specifies which activity types to include in the response. If this field is left
-        /// empty, all activity types are returned.</p>
+        /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
         pub fn set_activity_types(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4177,32 +4153,22 @@ pub mod describe_activities_input {
             self.resource_id = input;
             self
         }
-        /// <p>The ID of the user who performed the action. The response includes activities
-        /// pertaining to this user. This is an optional parameter and is only applicable for
-        /// administrative API (SigV4) requests.</p>
+        /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
         }
-        /// <p>The ID of the user who performed the action. The response includes activities
-        /// pertaining to this user. This is an optional parameter and is only applicable for
-        /// administrative API (SigV4) requests.</p>
+        /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
         }
-        /// <p>Includes indirect activities. An indirect activity results from a direct activity
-        /// performed on a parent resource. For example, sharing a parent folder (the direct
-        /// activity) shares all of the subfolders and documents within the parent folder (the
-        /// indirect activity).</p>
+        /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
         pub fn include_indirect_activities(mut self, input: bool) -> Self {
             self.include_indirect_activities = Some(input);
             self
         }
-        /// <p>Includes indirect activities. An indirect activity results from a direct activity
-        /// performed on a parent resource. For example, sharing a parent folder (the direct
-        /// activity) shares all of the subfolders and documents within the parent folder (the
-        /// indirect activity).</p>
+        /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
         pub fn set_include_indirect_activities(mut self, input: std::option::Option<bool>) -> Self {
             self.include_indirect_activities = input;
             self
@@ -4252,7 +4218,7 @@ pub mod describe_activities_input {
 #[doc(hidden)]
 pub type DescribeActivitiesInputOperationOutputAlias = crate::operation::DescribeActivities;
 #[doc(hidden)]
-pub type DescribeActivitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeActivitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeActivitiesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeActivities`](crate::operation::DescribeActivities)>
     #[allow(clippy::let_and_return)]
@@ -4263,7 +4229,7 @@ impl DescribeActivitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeActivities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4421,7 +4387,7 @@ impl DescribeActivitiesInput {
             "DescribeActivities",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4492,14 +4458,12 @@ pub mod describe_comments_input {
             self.limit = input;
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4524,7 +4488,7 @@ pub mod describe_comments_input {
 #[doc(hidden)]
 pub type DescribeCommentsInputOperationOutputAlias = crate::operation::DescribeComments;
 #[doc(hidden)]
-pub type DescribeCommentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCommentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCommentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeComments`](crate::operation::DescribeComments)>
     #[allow(clippy::let_and_return)]
@@ -4535,7 +4499,7 @@ impl DescribeCommentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeComments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4686,7 +4650,7 @@ impl DescribeCommentsInput {
             "DescribeComments",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4738,14 +4702,12 @@ pub mod describe_document_versions_input {
             self.document_id = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4760,26 +4722,22 @@ pub mod describe_document_versions_input {
             self.limit = input;
             self
         }
-        /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
-        /// versions.</p>
+        /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
         pub fn include(mut self, input: impl Into<std::string::String>) -> Self {
             self.include = Some(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
-        /// versions.</p>
+        /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
         pub fn set_include(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.include = input;
             self
         }
-        /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
-        /// document.</p>
+        /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.fields = Some(input.into());
             self
         }
-        /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
-        /// document.</p>
+        /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fields = input;
             self
@@ -4806,7 +4764,7 @@ pub mod describe_document_versions_input {
 pub type DescribeDocumentVersionsInputOperationOutputAlias =
     crate::operation::DescribeDocumentVersions;
 #[doc(hidden)]
-pub type DescribeDocumentVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDocumentVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDocumentVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDocumentVersions`](crate::operation::DescribeDocumentVersions)>
     #[allow(clippy::let_and_return)]
@@ -4817,7 +4775,7 @@ impl DescribeDocumentVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDocumentVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4958,7 +4916,7 @@ impl DescribeDocumentVersionsInput {
             "DescribeDocumentVersions",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5045,14 +5003,12 @@ pub mod describe_folder_contents_input {
             self.limit = input;
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5070,14 +5026,12 @@ pub mod describe_folder_contents_input {
             self.r#type = input;
             self
         }
-        /// <p>The contents to include. Specify "INITIALIZED" to include initialized
-        /// documents.</p>
+        /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
         pub fn include(mut self, input: impl Into<std::string::String>) -> Self {
             self.include = Some(input.into());
             self
         }
-        /// <p>The contents to include. Specify "INITIALIZED" to include initialized
-        /// documents.</p>
+        /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
         pub fn set_include(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.include = input;
             self
@@ -5105,7 +5059,7 @@ pub mod describe_folder_contents_input {
 #[doc(hidden)]
 pub type DescribeFolderContentsInputOperationOutputAlias = crate::operation::DescribeFolderContents;
 #[doc(hidden)]
-pub type DescribeFolderContentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFolderContentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFolderContentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFolderContents`](crate::operation::DescribeFolderContents)>
     #[allow(clippy::let_and_return)]
@@ -5116,7 +5070,7 @@ impl DescribeFolderContentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFolderContents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5263,7 +5217,7 @@ impl DescribeFolderContentsInput {
             "DescribeFolderContents",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5327,14 +5281,12 @@ pub mod describe_groups_input {
             self.organization_id = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5369,7 +5321,7 @@ pub mod describe_groups_input {
 #[doc(hidden)]
 pub type DescribeGroupsInputOperationOutputAlias = crate::operation::DescribeGroups;
 #[doc(hidden)]
-pub type DescribeGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGroups`](crate::operation::DescribeGroups)>
     #[allow(clippy::let_and_return)]
@@ -5380,7 +5332,7 @@ impl DescribeGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5507,7 +5459,7 @@ impl DescribeGroupsInput {
             "DescribeGroups",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5546,14 +5498,12 @@ pub mod describe_notification_subscriptions_input {
             self.organization_id = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5587,7 +5537,8 @@ pub mod describe_notification_subscriptions_input {
 pub type DescribeNotificationSubscriptionsInputOperationOutputAlias =
     crate::operation::DescribeNotificationSubscriptions;
 #[doc(hidden)]
-pub type DescribeNotificationSubscriptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeNotificationSubscriptionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNotificationSubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNotificationSubscriptions`](crate::operation::DescribeNotificationSubscriptions)>
     #[allow(clippy::let_and_return)]
@@ -5598,7 +5549,7 @@ impl DescribeNotificationSubscriptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeNotificationSubscriptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5709,7 +5660,7 @@ impl DescribeNotificationSubscriptionsInput {
             "DescribeNotificationSubscriptions",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5780,14 +5731,12 @@ pub mod describe_resource_permissions_input {
             self.limit = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5813,7 +5762,7 @@ pub mod describe_resource_permissions_input {
 pub type DescribeResourcePermissionsInputOperationOutputAlias =
     crate::operation::DescribeResourcePermissions;
 #[doc(hidden)]
-pub type DescribeResourcePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeResourcePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResourcePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResourcePermissions`](crate::operation::DescribeResourcePermissions)>
     #[allow(clippy::let_and_return)]
@@ -5824,7 +5773,7 @@ impl DescribeResourcePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeResourcePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5965,7 +5914,7 @@ impl DescribeResourcePermissionsInput {
             "DescribeResourcePermissions",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6014,14 +5963,12 @@ pub mod describe_root_folders_input {
             self.limit = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6044,7 +5991,7 @@ pub mod describe_root_folders_input {
 #[doc(hidden)]
 pub type DescribeRootFoldersInputOperationOutputAlias = crate::operation::DescribeRootFolders;
 #[doc(hidden)]
-pub type DescribeRootFoldersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRootFoldersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRootFoldersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRootFolders`](crate::operation::DescribeRootFolders)>
     #[allow(clippy::let_and_return)]
@@ -6055,7 +6002,7 @@ impl DescribeRootFoldersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRootFolders,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6170,7 +6117,7 @@ impl DescribeRootFoldersInput {
             "DescribeRootFolders",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6282,14 +6229,12 @@ pub mod describe_users_input {
             self.sort = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6304,14 +6249,12 @@ pub mod describe_users_input {
             self.limit = input;
             self
         }
-        /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
-        /// storage quota and utilization information.</p>
+        /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.fields = Some(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
-        /// storage quota and utilization information.</p>
+        /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fields = input;
             self
@@ -6341,7 +6284,7 @@ pub mod describe_users_input {
 #[doc(hidden)]
 pub type DescribeUsersInputOperationOutputAlias = crate::operation::DescribeUsers;
 #[doc(hidden)]
-pub type DescribeUsersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUsersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUsers`](crate::operation::DescribeUsers)>
     #[allow(clippy::let_and_return)]
@@ -6352,7 +6295,7 @@ impl DescribeUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUsers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6491,7 +6434,7 @@ impl DescribeUsersInput {
             "DescribeUsers",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6544,7 +6487,7 @@ pub mod get_current_user_input {
 #[doc(hidden)]
 pub type GetCurrentUserInputOperationOutputAlias = crate::operation::GetCurrentUser;
 #[doc(hidden)]
-pub type GetCurrentUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCurrentUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCurrentUserInput {
     /// Consumes the builder and constructs an Operation<[`GetCurrentUser`](crate::operation::GetCurrentUser)>
     #[allow(clippy::let_and_return)]
@@ -6555,7 +6498,7 @@ impl GetCurrentUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCurrentUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6653,7 +6596,7 @@ impl GetCurrentUserInput {
             "GetCurrentUser",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6730,7 +6673,7 @@ pub mod get_document_input {
 #[doc(hidden)]
 pub type GetDocumentInputOperationOutputAlias = crate::operation::GetDocument;
 #[doc(hidden)]
-pub type GetDocumentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDocumentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDocumentInput {
     /// Consumes the builder and constructs an Operation<[`GetDocument`](crate::operation::GetDocument)>
     #[allow(clippy::let_and_return)]
@@ -6741,7 +6684,7 @@ impl GetDocumentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDocument,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6874,7 +6817,7 @@ impl GetDocumentInput {
             "GetDocument",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6935,14 +6878,12 @@ pub mod get_document_path_input {
             self.limit = input;
             self
         }
-        /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
-        /// the parent folders.</p>
+        /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.fields = Some(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
-        /// the parent folders.</p>
+        /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fields = input;
             self
@@ -6977,7 +6918,7 @@ pub mod get_document_path_input {
 #[doc(hidden)]
 pub type GetDocumentPathInputOperationOutputAlias = crate::operation::GetDocumentPath;
 #[doc(hidden)]
-pub type GetDocumentPathInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDocumentPathInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDocumentPathInput {
     /// Consumes the builder and constructs an Operation<[`GetDocumentPath`](crate::operation::GetDocumentPath)>
     #[allow(clippy::let_and_return)]
@@ -6988,7 +6929,7 @@ impl GetDocumentPathInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDocumentPath,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7126,7 +7067,7 @@ impl GetDocumentPathInput {
             "GetDocumentPath",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7187,14 +7128,12 @@ pub mod get_document_version_input {
             self.version_id = input;
             self
         }
-        /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
-        /// document.</p>
+        /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.fields = Some(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
-        /// document.</p>
+        /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fields = input;
             self
@@ -7229,7 +7168,7 @@ pub mod get_document_version_input {
 #[doc(hidden)]
 pub type GetDocumentVersionInputOperationOutputAlias = crate::operation::GetDocumentVersion;
 #[doc(hidden)]
-pub type GetDocumentVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDocumentVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDocumentVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetDocumentVersion`](crate::operation::GetDocumentVersion)>
     #[allow(clippy::let_and_return)]
@@ -7240,7 +7179,7 @@ impl GetDocumentVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDocumentVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7392,7 +7331,7 @@ impl GetDocumentVersionInput {
             "GetDocumentVersion",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7467,7 +7406,7 @@ pub mod get_folder_input {
 #[doc(hidden)]
 pub type GetFolderInputOperationOutputAlias = crate::operation::GetFolder;
 #[doc(hidden)]
-pub type GetFolderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFolderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFolderInput {
     /// Consumes the builder and constructs an Operation<[`GetFolder`](crate::operation::GetFolder)>
     #[allow(clippy::let_and_return)]
@@ -7478,7 +7417,7 @@ impl GetFolderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFolder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7605,7 +7544,7 @@ impl GetFolderInput {
                     "GetFolder",
                     "workdocs",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7666,14 +7605,12 @@ pub mod get_folder_path_input {
             self.limit = input;
             self
         }
-        /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
-        /// folders.</p>
+        /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.fields = Some(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
-        /// folders.</p>
+        /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fields = input;
             self
@@ -7708,7 +7645,7 @@ pub mod get_folder_path_input {
 #[doc(hidden)]
 pub type GetFolderPathInputOperationOutputAlias = crate::operation::GetFolderPath;
 #[doc(hidden)]
-pub type GetFolderPathInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFolderPathInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFolderPathInput {
     /// Consumes the builder and constructs an Operation<[`GetFolderPath`](crate::operation::GetFolderPath)>
     #[allow(clippy::let_and_return)]
@@ -7719,7 +7656,7 @@ impl GetFolderPathInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFolderPath,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7857,7 +7794,7 @@ impl GetFolderPathInput {
             "GetFolderPath",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7898,14 +7835,12 @@ pub mod get_resources_input {
             self.authentication_token = input;
             self
         }
-        /// <p>The user ID for the resource collection. This is a required field for accessing the
-        /// API operation using IAM credentials.</p>
+        /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
         }
-        /// <p>The user ID for the resource collection. This is a required field for accessing the
-        /// API operation using IAM credentials.</p>
+        /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -7963,7 +7898,7 @@ pub mod get_resources_input {
 #[doc(hidden)]
 pub type GetResourcesInputOperationOutputAlias = crate::operation::GetResources;
 #[doc(hidden)]
-pub type GetResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourcesInput {
     /// Consumes the builder and constructs an Operation<[`GetResources`](crate::operation::GetResources)>
     #[allow(clippy::let_and_return)]
@@ -7974,7 +7909,7 @@ impl GetResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8098,7 +8033,7 @@ impl GetResourcesInput {
             "GetResources",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8245,7 +8180,8 @@ pub mod initiate_document_version_upload_input {
 pub type InitiateDocumentVersionUploadInputOperationOutputAlias =
     crate::operation::InitiateDocumentVersionUpload;
 #[doc(hidden)]
-pub type InitiateDocumentVersionUploadInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InitiateDocumentVersionUploadInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl InitiateDocumentVersionUploadInput {
     /// Consumes the builder and constructs an Operation<[`InitiateDocumentVersionUpload`](crate::operation::InitiateDocumentVersionUpload)>
     #[allow(clippy::let_and_return)]
@@ -8256,7 +8192,7 @@ impl InitiateDocumentVersionUploadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InitiateDocumentVersionUpload,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8361,7 +8297,7 @@ impl InitiateDocumentVersionUploadInput {
             "InitiateDocumentVersionUpload",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8435,7 +8371,8 @@ pub mod remove_all_resource_permissions_input {
 pub type RemoveAllResourcePermissionsInputOperationOutputAlias =
     crate::operation::RemoveAllResourcePermissions;
 #[doc(hidden)]
-pub type RemoveAllResourcePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveAllResourcePermissionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveAllResourcePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveAllResourcePermissions`](crate::operation::RemoveAllResourcePermissions)>
     #[allow(clippy::let_and_return)]
@@ -8446,7 +8383,7 @@ impl RemoveAllResourcePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveAllResourcePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8564,7 +8501,7 @@ impl RemoveAllResourcePermissionsInput {
             "RemoveAllResourcePermissions",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8657,7 +8594,7 @@ pub mod remove_resource_permission_input {
 pub type RemoveResourcePermissionInputOperationOutputAlias =
     crate::operation::RemoveResourcePermission;
 #[doc(hidden)]
-pub type RemoveResourcePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveResourcePermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveResourcePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemoveResourcePermission`](crate::operation::RemoveResourcePermission)>
     #[allow(clippy::let_and_return)]
@@ -8668,7 +8605,7 @@ impl RemoveResourcePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveResourcePermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8813,7 +8750,7 @@ impl RemoveResourcePermissionInput {
             "RemoveResourcePermission",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8887,14 +8824,12 @@ pub mod update_document_input {
             self.parent_folder_id = input;
             self
         }
-        /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
-        /// supported.</p>
+        /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
         pub fn resource_state(mut self, input: crate::model::ResourceStateType) -> Self {
             self.resource_state = Some(input);
             self
         }
-        /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
-        /// supported.</p>
+        /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
         pub fn set_resource_state(
             mut self,
             input: std::option::Option<crate::model::ResourceStateType>,
@@ -8922,7 +8857,7 @@ pub mod update_document_input {
 #[doc(hidden)]
 pub type UpdateDocumentInputOperationOutputAlias = crate::operation::UpdateDocument;
 #[doc(hidden)]
-pub type UpdateDocumentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDocumentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDocumentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDocument`](crate::operation::UpdateDocument)>
     #[allow(clippy::let_and_return)]
@@ -8933,7 +8868,7 @@ impl UpdateDocumentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDocument,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9057,7 +8992,7 @@ impl UpdateDocumentInput {
             "UpdateDocument",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9157,7 +9092,7 @@ pub mod update_document_version_input {
 #[doc(hidden)]
 pub type UpdateDocumentVersionInputOperationOutputAlias = crate::operation::UpdateDocumentVersion;
 #[doc(hidden)]
-pub type UpdateDocumentVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDocumentVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDocumentVersionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDocumentVersion`](crate::operation::UpdateDocumentVersion)>
     #[allow(clippy::let_and_return)]
@@ -9168,7 +9103,7 @@ impl UpdateDocumentVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDocumentVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9310,7 +9245,7 @@ impl UpdateDocumentVersionInput {
             "UpdateDocumentVersion",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9392,14 +9327,12 @@ pub mod update_folder_input {
             self.parent_folder_id = input;
             self
         }
-        /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
-        /// the API.</p>
+        /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
         pub fn resource_state(mut self, input: crate::model::ResourceStateType) -> Self {
             self.resource_state = Some(input);
             self
         }
-        /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
-        /// the API.</p>
+        /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
         pub fn set_resource_state(
             mut self,
             input: std::option::Option<crate::model::ResourceStateType>,
@@ -9427,7 +9360,7 @@ pub mod update_folder_input {
 #[doc(hidden)]
 pub type UpdateFolderInputOperationOutputAlias = crate::operation::UpdateFolder;
 #[doc(hidden)]
-pub type UpdateFolderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFolderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFolderInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFolder`](crate::operation::UpdateFolder)>
     #[allow(clippy::let_and_return)]
@@ -9438,7 +9371,7 @@ impl UpdateFolderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFolder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9557,7 +9490,7 @@ impl UpdateFolderInput {
             "UpdateFolder",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9720,7 +9653,7 @@ pub mod update_user_input {
 #[doc(hidden)]
 pub type UpdateUserInputOperationOutputAlias = crate::operation::UpdateUser;
 #[doc(hidden)]
-pub type UpdateUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUser`](crate::operation::UpdateUser)>
     #[allow(clippy::let_and_return)]
@@ -9731,7 +9664,7 @@ impl UpdateUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9850,7 +9783,7 @@ impl UpdateUserInput {
             "UpdateUser",
             "workdocs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9967,8 +9900,7 @@ pub struct UpdateFolderInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the parent folder.</p>
     pub parent_folder_id: std::option::Option<std::string::String>,
-    /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
-    /// the API.</p>
+    /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
 }
 impl UpdateFolderInput {
@@ -9988,8 +9920,7 @@ impl UpdateFolderInput {
     pub fn parent_folder_id(&self) -> std::option::Option<&str> {
         self.parent_folder_id.as_deref()
     }
-    /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
-    /// the API.</p>
+    /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
     pub fn resource_state(&self) -> std::option::Option<&crate::model::ResourceStateType> {
         self.resource_state.as_ref()
     }
@@ -10060,8 +9991,7 @@ pub struct UpdateDocumentInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the parent folder.</p>
     pub parent_folder_id: std::option::Option<std::string::String>,
-    /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
-    /// supported.</p>
+    /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
 }
 impl UpdateDocumentInput {
@@ -10081,8 +10011,7 @@ impl UpdateDocumentInput {
     pub fn parent_folder_id(&self) -> std::option::Option<&str> {
         self.parent_folder_id.as_deref()
     }
-    /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
-    /// supported.</p>
+    /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
     pub fn resource_state(&self) -> std::option::Option<&crate::model::ResourceStateType> {
         self.resource_state.as_ref()
     }
@@ -10248,8 +10177,7 @@ impl std::fmt::Debug for InitiateDocumentVersionUploadInput {
 pub struct GetResourcesInput {
     /// <p>The Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     pub authentication_token: std::option::Option<std::string::String>,
-    /// <p>The user ID for the resource collection. This is a required field for accessing the
-    /// API operation using IAM credentials.</p>
+    /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The collection type.</p>
     pub collection_type: std::option::Option<crate::model::ResourceCollectionType>,
@@ -10263,8 +10191,7 @@ impl GetResourcesInput {
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
-    /// <p>The user ID for the resource collection. This is a required field for accessing the
-    /// API operation using IAM credentials.</p>
+    /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -10303,8 +10230,7 @@ pub struct GetFolderPathInput {
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of levels in the hierarchy to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
-    /// folders.</p>
+    /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
     pub fields: std::option::Option<std::string::String>,
     /// <p>This value is not supported.</p>
     pub marker: std::option::Option<std::string::String>,
@@ -10322,8 +10248,7 @@ impl GetFolderPathInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
-    /// folders.</p>
+    /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
     pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
@@ -10389,8 +10314,7 @@ pub struct GetDocumentVersionInput {
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The version ID of the document.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
-    /// document.</p>
+    /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
     pub fields: std::option::Option<std::string::String>,
     /// <p>Set this to TRUE to include custom metadata in the response.</p>
     pub include_custom_metadata: bool,
@@ -10408,8 +10332,7 @@ impl GetDocumentVersionInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
-    /// document.</p>
+    /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
     pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
@@ -10440,8 +10363,7 @@ pub struct GetDocumentPathInput {
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of levels in the hierarchy to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
-    /// the parent folders.</p>
+    /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
     pub fields: std::option::Option<std::string::String>,
     /// <p>This value is not supported.</p>
     pub marker: std::option::Option<std::string::String>,
@@ -10459,8 +10381,7 @@ impl GetDocumentPathInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
-    /// the parent folders.</p>
+    /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
     pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
@@ -10555,13 +10476,11 @@ pub struct DescribeUsersInput {
     pub order: std::option::Option<crate::model::OrderType>,
     /// <p>The sorting criteria.</p>
     pub sort: std::option::Option<crate::model::UserSortType>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
-    /// storage quota and utilization information.</p>
+    /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
     pub fields: std::option::Option<std::string::String>,
 }
 impl DescribeUsersInput {
@@ -10593,8 +10512,7 @@ impl DescribeUsersInput {
     pub fn sort(&self) -> std::option::Option<&crate::model::UserSortType> {
         self.sort.as_ref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10602,8 +10520,7 @@ impl DescribeUsersInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
-    /// storage quota and utilization information.</p>
+    /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
     pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
@@ -10633,8 +10550,7 @@ pub struct DescribeRootFoldersInput {
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeRootFoldersInput {
@@ -10646,8 +10562,7 @@ impl DescribeRootFoldersInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10674,8 +10589,7 @@ pub struct DescribeResourcePermissionsInput {
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeResourcePermissionsInput {
@@ -10695,8 +10609,7 @@ impl DescribeResourcePermissionsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10719,8 +10632,7 @@ impl std::fmt::Debug for DescribeResourcePermissionsInput {
 pub struct DescribeNotificationSubscriptionsInput {
     /// <p>The ID of the organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub limit: std::option::Option<i32>,
@@ -10730,8 +10642,7 @@ impl DescribeNotificationSubscriptionsInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10760,8 +10671,7 @@ pub struct DescribeGroupsInput {
     pub search_query: std::option::Option<std::string::String>,
     /// <p>The ID of the organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub limit: std::option::Option<i32>,
@@ -10779,8 +10689,7 @@ impl DescribeGroupsInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10815,13 +10724,11 @@ pub struct DescribeFolderContentsInput {
     pub order: std::option::Option<crate::model::OrderType>,
     /// <p>The maximum number of items to return with this call.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The marker for the next set of results. This marker was received from a previous
-    /// call.</p>
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The type of items.</p>
     pub r#type: std::option::Option<crate::model::FolderContentType>,
-    /// <p>The contents to include. Specify "INITIALIZED" to include initialized
-    /// documents.</p>
+    /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
     pub include: std::option::Option<std::string::String>,
 }
 impl DescribeFolderContentsInput {
@@ -10845,8 +10752,7 @@ impl DescribeFolderContentsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The marker for the next set of results. This marker was received from a previous
-    /// call.</p>
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10854,8 +10760,7 @@ impl DescribeFolderContentsInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::FolderContentType> {
         self.r#type.as_ref()
     }
-    /// <p>The contents to include. Specify "INITIALIZED" to include initialized
-    /// documents.</p>
+    /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
     pub fn include(&self) -> std::option::Option<&str> {
         self.include.as_deref()
     }
@@ -10883,16 +10788,13 @@ pub struct DescribeDocumentVersionsInput {
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
     pub document_id: std::option::Option<std::string::String>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of versions to return with this call.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
-    /// versions.</p>
+    /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
     pub include: std::option::Option<std::string::String>,
-    /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
-    /// document.</p>
+    /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
     pub fields: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentVersionsInput {
@@ -10904,8 +10806,7 @@ impl DescribeDocumentVersionsInput {
     pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10913,13 +10814,11 @@ impl DescribeDocumentVersionsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
-    /// versions.</p>
+    /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
     pub fn include(&self) -> std::option::Option<&str> {
         self.include.as_deref()
     }
-    /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
-    /// document.</p>
+    /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
     pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
@@ -10949,8 +10848,7 @@ pub struct DescribeCommentsInput {
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The marker for the next set of results. This marker was received from a previous
-    /// call.</p>
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCommentsInput {
@@ -10970,8 +10868,7 @@ impl DescribeCommentsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The marker for the next set of results. This marker was received from a previous
-    /// call.</p>
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10994,28 +10891,19 @@ impl std::fmt::Debug for DescribeCommentsInput {
 pub struct DescribeActivitiesInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     pub authentication_token: std::option::Option<std::string::String>,
-    /// <p>The timestamp that determines the starting time of the activities. The response
-    /// includes the activities performed after the specified timestamp.</p>
+    /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp that determines the end time of the activities. The response includes
-    /// the activities performed before the specified timestamp.</p>
+    /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The ID of the organization. This is a mandatory parameter when using administrative
-    /// API (SigV4) requests.</p>
+    /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>Specifies which activity types to include in the response. If this field is left
-    /// empty, all activity types are returned.</p>
+    /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
     pub activity_types: std::option::Option<std::string::String>,
     /// <p>The document or folder ID for which to describe activity types.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the user who performed the action. The response includes activities
-    /// pertaining to this user. This is an optional parameter and is only applicable for
-    /// administrative API (SigV4) requests.</p>
+    /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
     pub user_id: std::option::Option<std::string::String>,
-    /// <p>Includes indirect activities. An indirect activity results from a direct activity
-    /// performed on a parent resource. For example, sharing a parent folder (the direct
-    /// activity) shares all of the subfolders and documents within the parent folder (the
-    /// indirect activity).</p>
+    /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
     pub include_indirect_activities: bool,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
@@ -11027,23 +10915,19 @@ impl DescribeActivitiesInput {
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
-    /// <p>The timestamp that determines the starting time of the activities. The response
-    /// includes the activities performed after the specified timestamp.</p>
+    /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The timestamp that determines the end time of the activities. The response includes
-    /// the activities performed before the specified timestamp.</p>
+    /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The ID of the organization. This is a mandatory parameter when using administrative
-    /// API (SigV4) requests.</p>
+    /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>Specifies which activity types to include in the response. If this field is left
-    /// empty, all activity types are returned.</p>
+    /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
     pub fn activity_types(&self) -> std::option::Option<&str> {
         self.activity_types.as_deref()
     }
@@ -11051,16 +10935,11 @@ impl DescribeActivitiesInput {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The ID of the user who performed the action. The response includes activities
-    /// pertaining to this user. This is an optional parameter and is only applicable for
-    /// administrative API (SigV4) requests.</p>
+    /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>Includes indirect activities. An indirect activity results from a direct activity
-    /// performed on a parent resource. For example, sharing a parent folder (the direct
-    /// activity) shares all of the subfolders and documents within the parent folder (the
-    /// indirect activity).</p>
+    /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
     pub fn include_indirect_activities(&self) -> bool {
         self.include_indirect_activities
     }
@@ -11097,15 +10976,13 @@ impl std::fmt::Debug for DescribeActivitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
-    /// <p>Amazon WorkDocs authentication token. Do not set this field when using
-    /// administrative API actions, as in accessing the API using AWS credentials.</p>
+    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the user.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DeleteUserInput {
-    /// <p>Amazon WorkDocs authentication token. Do not set this field when using
-    /// administrative API actions, as in accessing the API using AWS credentials.</p>
+    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -11285,13 +11162,11 @@ pub struct DeleteCustomMetadataInput {
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the resource, either a document or folder.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the version, if the custom metadata is being deleted from a document
-    /// version.</p>
+    /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>List of properties to remove.</p>
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Flag to indicate removal of all custom metadata properties from the specified
-    /// resource.</p>
+    /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     pub delete_all: bool,
 }
 impl DeleteCustomMetadataInput {
@@ -11303,8 +11178,7 @@ impl DeleteCustomMetadataInput {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The ID of the version, if the custom metadata is being deleted from a document
-    /// version.</p>
+    /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -11312,8 +11186,7 @@ impl DeleteCustomMetadataInput {
     pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
         self.keys.as_deref()
     }
-    /// <p>Flag to indicate removal of all custom metadata properties from the specified
-    /// resource.</p>
+    /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     pub fn delete_all(&self) -> bool {
         self.delete_all
     }
@@ -11483,11 +11356,9 @@ impl std::fmt::Debug for CreateUserInput {
 pub struct CreateNotificationSubscriptionInput {
     /// <p>The ID of the organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
-    /// is a URL that begins with <code>https</code>.</p>
+    /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
-    /// messages using HTTPS POST.</p>
+    /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
     pub protocol: std::option::Option<crate::model::SubscriptionProtocolType>,
     /// <p>The notification type.</p>
     pub subscription_type: std::option::Option<crate::model::SubscriptionType>,
@@ -11497,13 +11368,11 @@ impl CreateNotificationSubscriptionInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
-    /// is a URL that begins with <code>https</code>.</p>
+    /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
     pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
-    /// messages using HTTPS POST.</p>
+    /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::SubscriptionProtocolType> {
         self.protocol.as_ref()
     }
@@ -11601,8 +11470,7 @@ pub struct CreateCustomMetadataInput {
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the version, if the custom metadata is being added to a document
-    /// version.</p>
+    /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Custom metadata in the form of name-value pairs.</p>
     pub custom_metadata:
@@ -11617,8 +11485,7 @@ impl CreateCustomMetadataInput {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The ID of the version, if the custom metadata is being added to a document
-    /// version.</p>
+    /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -11657,12 +11524,9 @@ pub struct CreateCommentInput {
     pub thread_id: std::option::Option<std::string::String>,
     /// <p>The text of the comment.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-    /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-    /// the comment is visible to document owners, co-owners, and contributors.</p>
+    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
     pub visibility: std::option::Option<crate::model::CommentVisibilityType>,
-    /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
-    /// the comment is created.</p>
+    /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
     pub notify_collaborators: bool,
 }
 impl CreateCommentInput {
@@ -11690,14 +11554,11 @@ impl CreateCommentInput {
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-    /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-    /// the comment is visible to document owners, co-owners, and contributors.</p>
+    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
     pub fn visibility(&self) -> std::option::Option<&crate::model::CommentVisibilityType> {
         self.visibility.as_ref()
     }
-    /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
-    /// the comment is created.</p>
+    /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
     pub fn notify_collaborators(&self) -> bool {
         self.notify_collaborators
     }

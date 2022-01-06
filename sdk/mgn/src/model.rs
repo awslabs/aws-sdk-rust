@@ -563,12 +563,9 @@ pub mod source_properties {
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
         /// <p>Source server network interfaces.</p>
-        pub fn network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interfaces = Some(v);
             self
         }
@@ -585,9 +582,9 @@ pub mod source_properties {
         /// To override the contents of this collection use [`set_disks`](Self::set_disks).
         ///
         /// <p>Source Server disks.</p>
-        pub fn disks(mut self, input: impl Into<crate::model::Disk>) -> Self {
+        pub fn disks(mut self, input: crate::model::Disk) -> Self {
             let mut v = self.disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.disks = Some(v);
             self
         }
@@ -604,9 +601,9 @@ pub mod source_properties {
         /// To override the contents of this collection use [`set_cpus`](Self::set_cpus).
         ///
         /// <p>Source Server CPUs.</p>
-        pub fn cpus(mut self, input: impl Into<crate::model::Cpu>) -> Self {
+        pub fn cpus(mut self, input: crate::model::Cpu) -> Self {
             let mut v = self.cpus.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cpus = Some(v);
             self
         }
@@ -1610,13 +1607,13 @@ impl LifeCycleLastCutoverReverted {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycleLastCutoverInitiated {
-    /// <p/>
+    /// <p></p>
     pub api_call_date_time: std::option::Option<std::string::String>,
     /// <p>Lifecycle last Cutover initiated by Job ID.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastCutoverInitiated {
-    /// <p/>
+    /// <p></p>
     pub fn api_call_date_time(&self) -> std::option::Option<&str> {
         self.api_call_date_time.as_deref()
     }
@@ -1643,12 +1640,12 @@ pub mod life_cycle_last_cutover_initiated {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p/>
+        /// <p></p>
         pub fn api_call_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.api_call_date_time = Some(input.into());
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_api_call_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2094,10 +2091,10 @@ pub mod data_replication_info {
         /// <p>Request to query disks replicated.</p>
         pub fn replicated_disks(
             mut self,
-            input: impl Into<crate::model::DataReplicationInfoReplicatedDisk>,
+            input: crate::model::DataReplicationInfoReplicatedDisk,
         ) -> Self {
             let mut v = self.replicated_disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replicated_disks = Some(v);
             self
         }
@@ -2512,12 +2509,9 @@ pub mod data_replication_initiation {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p>Request to query data initiation steps.</p>
-        pub fn steps(
-            mut self,
-            input: impl Into<crate::model::DataReplicationInitiationStep>,
-        ) -> Self {
+        pub fn steps(mut self, input: crate::model::DataReplicationInitiationStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -4071,12 +4065,9 @@ pub mod job {
         /// To override the contents of this collection use [`set_participating_servers`](Self::set_participating_servers).
         ///
         /// <p>Servers participating in a specific Job.</p>
-        pub fn participating_servers(
-            mut self,
-            input: impl Into<crate::model::ParticipatingServer>,
-        ) -> Self {
+        pub fn participating_servers(mut self, input: crate::model::ParticipatingServer) -> Self {
             let mut v = self.participating_servers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.participating_servers = Some(v);
             self
         }
@@ -4815,12 +4806,9 @@ pub mod describe_source_servers_request_filters {
         /// To override the contents of this collection use [`set_replication_types`](Self::set_replication_types).
         ///
         /// <p>Request to filter Source Servers list by replication type.</p>
-        pub fn replication_types(
-            mut self,
-            input: impl Into<crate::model::ReplicationType>,
-        ) -> Self {
+        pub fn replication_types(mut self, input: crate::model::ReplicationType) -> Self {
             let mut v = self.replication_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_types = Some(v);
             self
         }
@@ -4837,9 +4825,9 @@ pub mod describe_source_servers_request_filters {
         /// To override the contents of this collection use [`set_life_cycle_states`](Self::set_life_cycle_states).
         ///
         /// <p>Request to filter Source Servers list by life cycle states.</p>
-        pub fn life_cycle_states(mut self, input: impl Into<crate::model::LifeCycleState>) -> Self {
+        pub fn life_cycle_states(mut self, input: crate::model::LifeCycleState) -> Self {
             let mut v = self.life_cycle_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.life_cycle_states = Some(v);
             self
         }

@@ -12,14 +12,11 @@ pub struct CancelClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelClusterErrorKind {
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
-    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -64,8 +61,6 @@ impl CancelClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -132,14 +127,11 @@ pub struct CancelJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelJobErrorKind {
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
-    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -184,8 +176,6 @@ impl CancelJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -243,12 +233,9 @@ pub struct CreateAddressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAddressErrorKind {
-    /// <p>The address provided was invalid. Check the address with your region's carrier, and try
-    /// again.</p>
+    /// <p>The address provided was invalid. Check the address with your region's carrier, and try again.</p>
     InvalidAddressException(crate::error::InvalidAddressException),
-    /// <p>The address is either outside the serviceable area for your region, or an error
-    /// occurred. Check the address with your region's carrier and try again. If the issue persists,
-    /// contact Amazon Web Services Support.</p>
+    /// <p>The address is either outside the serviceable area for your region, or an error occurred. Check the address with your region's carrier and try again. If the issue persists, contact Amazon Web Services Support.</p>
     UnsupportedAddressException(crate::error::UnsupportedAddressException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -292,8 +279,6 @@ impl CreateAddressError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -352,16 +337,13 @@ pub struct CreateClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateClusterErrorKind {
-    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-    /// action.</p>
+    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
-    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -407,8 +389,6 @@ impl CreateClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -483,20 +463,15 @@ pub struct CreateJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateJobErrorKind {
-    /// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than
-    /// five nodes for your cluster and you have more nodes to create for this cluster, try again and
-    /// create jobs until your cluster has exactly five nodes.</p>
+    /// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than five nodes for your cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster has exactly five nodes.</p>
     ClusterLimitExceededException(crate::error::ClusterLimitExceededException),
-    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-    /// action.</p>
+    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
-    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -543,8 +518,6 @@ impl CreateJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -618,8 +591,7 @@ pub struct CreateLongTermPricingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLongTermPricingErrorKind {
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -662,8 +634,6 @@ impl CreateLongTermPricingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -714,20 +684,15 @@ pub struct CreateReturnShippingLabelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateReturnShippingLabelErrorKind {
-    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once
-    /// when other requests are not completed.</p>
+    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid
-    /// return shipping label already exists. In this case, use
-    /// <code>DescribeReturnShippingLabel</code> to get the URL.</p>
+    /// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid return shipping label already exists. In this case, use <code>DescribeReturnShippingLabel</code> to get the URL.</p>
     ReturnShippingLabelAlreadyExistsException(
         crate::error::ReturnShippingLabelAlreadyExistsException,
     ),
@@ -780,8 +745,6 @@ impl CreateReturnShippingLabelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -868,8 +831,7 @@ pub struct DescribeAddressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAddressErrorKind {
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -912,8 +874,6 @@ impl DescribeAddressError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -964,12 +924,9 @@ pub struct DescribeAddressesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAddressesErrorKind {
-    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-    /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-    /// again.</p>
+    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1013,8 +970,6 @@ impl DescribeAddressesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1073,8 +1028,7 @@ pub struct DescribeClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClusterErrorKind {
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1117,8 +1071,6 @@ impl DescribeClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1169,8 +1121,7 @@ pub struct DescribeJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJobErrorKind {
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1213,8 +1164,6 @@ impl DescribeJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1265,14 +1214,11 @@ pub struct DescribeReturnShippingLabelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReturnShippingLabelErrorKind {
-    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once
-    /// when other requests are not completed.</p>
+    /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1317,8 +1263,6 @@ impl DescribeReturnShippingLabelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1385,11 +1329,9 @@ pub struct GetJobManifestError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetJobManifestErrorKind {
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1433,8 +1375,6 @@ impl GetJobManifestError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1493,11 +1433,9 @@ pub struct GetJobUnlockCodeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetJobUnlockCodeErrorKind {
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1541,8 +1479,6 @@ impl GetJobUnlockCodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1641,8 +1577,6 @@ impl GetSnowballUsageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1685,11 +1619,9 @@ pub struct GetSoftwareUpdatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSoftwareUpdatesErrorKind {
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1733,8 +1665,6 @@ impl GetSoftwareUpdatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1793,12 +1723,9 @@ pub struct ListClusterJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListClusterJobsErrorKind {
-    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-    /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-    /// again.</p>
+    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1842,8 +1769,6 @@ impl ListClusterJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1902,9 +1827,7 @@ pub struct ListClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListClustersErrorKind {
-    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-    /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-    /// again.</p>
+    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1947,8 +1870,6 @@ impl ListClustersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1999,12 +1920,9 @@ pub struct ListCompatibleImagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCompatibleImagesErrorKind {
-    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-    /// action.</p>
+    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-    /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-    /// again.</p>
+    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2048,8 +1966,6 @@ impl ListCompatibleImagesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2108,9 +2024,7 @@ pub struct ListJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListJobsErrorKind {
-    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-    /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-    /// again.</p>
+    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2153,8 +2067,6 @@ impl ListJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2202,12 +2114,9 @@ pub struct ListLongTermPricingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLongTermPricingErrorKind {
-    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-    /// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-    /// again.</p>
+    /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2251,8 +2160,6 @@ impl ListLongTermPricingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2311,19 +2218,15 @@ pub struct UpdateClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateClusterErrorKind {
-    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-    /// action.</p>
+    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
-    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2370,8 +2273,6 @@ impl UpdateClusterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2454,23 +2355,17 @@ pub struct UpdateJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateJobErrorKind {
-    /// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than
-    /// five nodes for your cluster and you have more nodes to create for this cluster, try again and
-    /// create jobs until your cluster has exactly five nodes.</p>
+    /// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than five nodes for your cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster has exactly five nodes.</p>
     ClusterLimitExceededException(crate::error::ClusterLimitExceededException),
-    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-    /// action.</p>
+    /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
     Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
-    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+    /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
     InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
-    /// <p>The provided Key Management Service key lacks the permissions to perform the specified
-    /// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+    /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
     KmsRequestFailedException(crate::error::KmsRequestFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2518,8 +2413,6 @@ impl UpdateJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2598,11 +2491,9 @@ pub struct UpdateJobShipmentStateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateJobShipmentStateErrorKind {
-    /// <p>The action can't be performed because the job's current state doesn't allow that action
-    /// to be performed.</p>
+    /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2646,8 +2537,6 @@ impl UpdateJobShipmentStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2706,8 +2595,7 @@ pub struct UpdateLongTermPricingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLongTermPricingErrorKind {
-    /// <p>The specified resource can't be found. Check the information you provided in your last
-    /// request, and try again.</p>
+    /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
     InvalidResourceException(crate::error::InvalidResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2750,8 +2638,6 @@ impl UpdateLongTermPricingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2789,8 +2675,7 @@ impl std::error::Error for UpdateLongTermPricingError {
     }
 }
 
-/// <p>The specified resource can't be found. Check the information you provided in your last
-/// request, and try again.</p>
+/// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceException {
@@ -2878,8 +2763,7 @@ impl InvalidResourceException {
     }
 }
 
-/// <p>The action can't be performed because the job's current state doesn't allow that action
-/// to be performed.</p>
+/// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidJobStateException {
@@ -2943,8 +2827,7 @@ impl InvalidJobStateException {
     }
 }
 
-/// <p>The provided Key Management Service key lacks the permissions to perform the specified
-/// <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
+/// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsRequestFailedException {
@@ -3008,7 +2891,7 @@ impl KmsRequestFailedException {
     }
 }
 
-/// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
+/// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputCombinationException {
@@ -3072,8 +2955,7 @@ impl InvalidInputCombinationException {
     }
 }
 
-/// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-/// action.</p>
+/// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2RequestFailedException {
@@ -3137,9 +3019,7 @@ impl Ec2RequestFailedException {
     }
 }
 
-/// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than
-/// five nodes for your cluster and you have more nodes to create for this cluster, try again and
-/// create jobs until your cluster has exactly five nodes.</p>
+/// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than five nodes for your cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster has exactly five nodes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterLimitExceededException {
@@ -3203,9 +3083,7 @@ impl ClusterLimitExceededException {
     }
 }
 
-/// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has
-/// stopped. Run the operation without changing the <code>NextToken</code> string, and try
-/// again.</p>
+/// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
@@ -3269,18 +3147,17 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once
-/// when other requests are not completed.</p>
+/// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You get this resource when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed. .</p>
     pub conflict_resource: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>You get this resource when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed. .</p>
     pub fn conflict_resource(&self) -> std::option::Option<&str> {
         self.conflict_resource.as_deref()
     }
@@ -3319,12 +3196,12 @@ pub mod conflict_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>You get this resource when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed. .</p>
         pub fn conflict_resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.conflict_resource = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>You get this resource when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed. .</p>
         pub fn set_conflict_resource(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3358,9 +3235,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid
-/// return shipping label already exists. In this case, use
-/// <code>DescribeReturnShippingLabel</code> to get the URL.</p>
+/// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid return shipping label already exists. In this case, use <code>DescribeReturnShippingLabel</code> to get the URL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReturnShippingLabelAlreadyExistsException {
@@ -3424,9 +3299,7 @@ impl ReturnShippingLabelAlreadyExistsException {
     }
 }
 
-/// <p>The address is either outside the serviceable area for your region, or an error
-/// occurred. Check the address with your region's carrier and try again. If the issue persists,
-/// contact Amazon Web Services Support.</p>
+/// <p>The address is either outside the serviceable area for your region, or an error occurred. Check the address with your region's carrier and try again. If the issue persists, contact Amazon Web Services Support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedAddressException {
@@ -3490,8 +3363,7 @@ impl UnsupportedAddressException {
     }
 }
 
-/// <p>The address provided was invalid. Check the address with your region's carrier, and try
-/// again.</p>
+/// <p>The address provided was invalid. Check the address with your region's carrier, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAddressException {

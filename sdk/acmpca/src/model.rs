@@ -82,37 +82,21 @@ impl AsRef<str> for CertificateAuthorityStatus {
     }
 }
 
-/// <p>Certificate revocation information used by the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> actions. Your private certificate authority (CA)
-/// can configure Online Certificate Status Protocol (OCSP) support and/or maintain a
-/// certificate revocation list (CRL). OCSP returns validation information about
-/// certificates as requested by clients, and a CRL contains an updated list of certificates
-/// revoked by your CA. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/revocation-setup.html">Setting up a
-/// certificate revocation method</a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User
-/// Guide</i>.</p>
+/// <p>Certificate revocation information used by the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can configure Online Certificate Status Protocol (OCSP) support and/or maintain a certificate revocation list (CRL). OCSP returns validation information about certificates as requested by clients, and a CRL contains an updated list of certificates revoked by your CA. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/revocation-setup.html">Setting up a certificate revocation method</a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevocationConfiguration {
-    /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private
-    /// CA. A CRL is typically updated approximately 30 minutes after a certificate
-    /// is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts
-    /// every 15 minutes.</p>
+    /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private CA. A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts every 15 minutes.</p>
     pub crl_configuration: std::option::Option<crate::model::CrlConfiguration>,
-    /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by
-    /// your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes
-    /// to reflect the new status.</p>
+    /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
     pub ocsp_configuration: std::option::Option<crate::model::OcspConfiguration>,
 }
 impl RevocationConfiguration {
-    /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private
-    /// CA. A CRL is typically updated approximately 30 minutes after a certificate
-    /// is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts
-    /// every 15 minutes.</p>
+    /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private CA. A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts every 15 minutes.</p>
     pub fn crl_configuration(&self) -> std::option::Option<&crate::model::CrlConfiguration> {
         self.crl_configuration.as_ref()
     }
-    /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by
-    /// your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes
-    /// to reflect the new status.</p>
+    /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
     pub fn ocsp_configuration(&self) -> std::option::Option<&crate::model::OcspConfiguration> {
         self.ocsp_configuration.as_ref()
     }
@@ -135,18 +119,12 @@ pub mod revocation_configuration {
         pub(crate) ocsp_configuration: std::option::Option<crate::model::OcspConfiguration>,
     }
     impl Builder {
-        /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private
-        /// CA. A CRL is typically updated approximately 30 minutes after a certificate
-        /// is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts
-        /// every 15 minutes.</p>
+        /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private CA. A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts every 15 minutes.</p>
         pub fn crl_configuration(mut self, input: crate::model::CrlConfiguration) -> Self {
             self.crl_configuration = Some(input);
             self
         }
-        /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private
-        /// CA. A CRL is typically updated approximately 30 minutes after a certificate
-        /// is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts
-        /// every 15 minutes.</p>
+        /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private CA. A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts every 15 minutes.</p>
         pub fn set_crl_configuration(
             mut self,
             input: std::option::Option<crate::model::CrlConfiguration>,
@@ -154,16 +132,12 @@ pub mod revocation_configuration {
             self.crl_configuration = input;
             self
         }
-        /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by
-        /// your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes
-        /// to reflect the new status.</p>
+        /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
         pub fn ocsp_configuration(mut self, input: crate::model::OcspConfiguration) -> Self {
             self.ocsp_configuration = Some(input);
             self
         }
-        /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by
-        /// your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes
-        /// to reflect the new status.</p>
+        /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
         pub fn set_ocsp_configuration(
             mut self,
             input: std::option::Option<crate::model::OcspConfiguration>,
@@ -187,40 +161,26 @@ impl RevocationConfiguration {
     }
 }
 
-/// <p>Contains information to enable and configure Online Certificate Status Protocol (OCSP) for
-/// validating certificate revocation status.</p>
-/// <p>When you revoke a certificate, OCSP responses may take up to 60 minutes
-/// to reflect the new status.</p>
+/// <p>Contains information to enable and configure Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
+/// <p>When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OcspConfiguration {
-    /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating
-    /// certificate revocation status.</p>
+    /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the
-    /// Online Certificate Status Protocol (OCSP). A customer can alternatively use this object
-    /// to define a CNAME specifying a customized OCSP domain.</p>
-    /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or
-    /// "https://".</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
-    /// Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User
-    /// Guide</i>.</p>
+    /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
+    /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
     pub ocsp_custom_cname: std::option::Option<std::string::String>,
 }
 impl OcspConfiguration {
-    /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating
-    /// certificate revocation status.</p>
+    /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the
-    /// Online Certificate Status Protocol (OCSP). A customer can alternatively use this object
-    /// to define a CNAME specifying a customized OCSP domain.</p>
-    /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or
-    /// "https://".</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
-    /// Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User
-    /// Guide</i>.</p>
+    /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
+    /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
     pub fn ocsp_custom_cname(&self) -> std::option::Option<&str> {
         self.ocsp_custom_cname.as_deref()
     }
@@ -243,38 +203,26 @@ pub mod ocsp_configuration {
         pub(crate) ocsp_custom_cname: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating
-        /// certificate revocation status.</p>
+        /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating
-        /// certificate revocation status.</p>
+        /// <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
-        /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the
-        /// Online Certificate Status Protocol (OCSP). A customer can alternatively use this object
-        /// to define a CNAME specifying a customized OCSP domain.</p>
-        /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or
-        /// "https://".</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
-        /// Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User
-        /// Guide</i>.</p>
+        /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
+        /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
         pub fn ocsp_custom_cname(mut self, input: impl Into<std::string::String>) -> Self {
             self.ocsp_custom_cname = Some(input.into());
             self
         }
-        /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the
-        /// Online Certificate Status Protocol (OCSP). A customer can alternatively use this object
-        /// to define a CNAME specifying a customized OCSP domain.</p>
-        /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or
-        /// "https://".</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate
-        /// Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User
-        /// Guide</i>.</p>
+        /// <p>By default, ACM Private CA injects an AWS domain into certificates being validated by the Online Certificate Status Protocol (OCSP). A customer can alternatively use this object to define a CNAME specifying a customized OCSP domain.</p>
+        /// <p>Note: The value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>.</p>
         pub fn set_ocsp_custom_cname(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -298,165 +246,56 @@ impl OcspConfiguration {
     }
 }
 
-/// <p>Contains configuration information for a certificate revocation list (CRL). Your
-/// private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You
-/// can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA
-/// writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by
-/// specifying a value for the <b>CustomCname</b> parameter. Your
-/// private CA copies the CNAME or the S3 bucket name to the <b>CRL
-/// Distribution Points</b> extension of each certificate it issues. Your S3
-/// bucket policy must give write permission to ACM Private CA. </p>
-/// <p>ACM Private CA assets that are stored in Amazon S3 can be protected with encryption.
-/// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting Your
-/// CRLs</a>.</p>
-/// <p>Your private CA uses the value in the <b>ExpirationInDays</b>
-/// parameter to calculate the <b>nextUpdate</b> field in the CRL.
-/// The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked.
-/// When a certificate is revoked, it is recorded in the next CRL that is generated and in
-/// the next audit report. Only time valid certificates are listed in the CRL. Expired
-/// certificates are not included.</p>
-///
-/// <p>A CRL is typically updated approximately 30 minutes after a certificate
-/// is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts
-/// every 15 minutes.</p>
-///
+/// <p>Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA. </p>
+/// <p>ACM Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting Your CRLs</a>.</p>
+/// <p>Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included.</p>
+/// <p>A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts every 15 minutes.</p>
 /// <p>CRLs contain the following fields:</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <b>Version</b>: The current version number defined
-/// in RFC 5280 is V2. The integer value is 0x1. </p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>Signature Algorithm</b>: The name of the
-/// algorithm used to sign the CRL.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>Issuer</b>: The X.500 distinguished name of your
-/// private CA that issued the CRL.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>Last Update</b>: The issue date and time of this
-/// CRL.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>Next Update</b>: The day and time by which the
-/// next CRL will be issued.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>Revoked Certificates</b>: List of revoked
-/// certificates. Each list item contains the following information.</p>
+/// <li> <p> <b>Version</b>: The current version number defined in RFC 5280 is V2. The integer value is 0x1. </p> </li>
+/// <li> <p> <b>Signature Algorithm</b>: The name of the algorithm used to sign the CRL.</p> </li>
+/// <li> <p> <b>Issuer</b>: The X.500 distinguished name of your private CA that issued the CRL.</p> </li>
+/// <li> <p> <b>Last Update</b>: The issue date and time of this CRL.</p> </li>
+/// <li> <p> <b>Next Update</b>: The day and time by which the next CRL will be issued.</p> </li>
+/// <li> <p> <b>Revoked Certificates</b>: List of revoked certificates. Each list item contains the following information.</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <b>Serial Number</b>: The serial number, in
-/// hexadecimal format, of the revoked certificate.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>Revocation Date</b>: Date and time the
-/// certificate was revoked.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>CRL Entry Extensions</b>: Optional
-/// extensions for the CRL entry.</p>
+/// <li> <p> <b>Serial Number</b>: The serial number, in hexadecimal format, of the revoked certificate.</p> </li>
+/// <li> <p> <b>Revocation Date</b>: Date and time the certificate was revoked.</p> </li>
+/// <li> <p> <b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <b>X509v3 CRL Reason Code</b>:
-/// Reason the certificate was revoked.</p>
-/// </li>
-/// </ul>
-/// </li>
-/// </ul>
-/// </li>
-/// <li>
-/// <p>
-/// <b>CRL Extensions</b>: Optional extensions for the
-/// CRL.</p>
+/// <li> <p> <b>X509v3 CRL Reason Code</b>: Reason the certificate was revoked.</p> </li>
+/// </ul> </li>
+/// </ul> </li>
+/// <li> <p> <b>CRL Extensions</b>: Optional extensions for the CRL.</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <b>X509v3 Authority Key Identifier</b>:
-/// Identifies the public key associated with the private key used to sign
-/// the certificate.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>X509v3 CRL Number:</b>: Decimal sequence
-/// number for the CRL.</p>
-/// </li>
+/// <li> <p> <b>X509v3 Authority Key Identifier</b>: Identifies the public key associated with the private key used to sign the certificate.</p> </li>
+/// <li> <p> <b>X509v3 CRL Number:</b>: Decimal sequence number for the CRL.</p> </li>
+/// </ul> </li>
+/// <li> <p> <b>Signature Algorithm</b>: Algorithm used by your private CA to sign the CRL.</p> </li>
+/// <li> <p> <b>Signature Value</b>: Signature computed over the CRL.</p> </li>
 /// </ul>
-/// </li>
-/// <li>
-/// <p>
-/// <b>Signature Algorithm</b>: Algorithm used by your
-/// private CA to sign the CRL.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>Signature Value</b>: Signature computed over the
-/// CRL.</p>
-/// </li>
-/// </ul>
-/// <p>Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the
-/// following OpenSSL command to list a CRL.</p>
-/// <p>
-/// <code>openssl crl -inform DER -text -in <i>crl_path</i>
-/// -noout</code>
-/// </p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning a certificate revocation list (CRL)</a>
-/// in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>
-/// </p>
+/// <p>Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL.</p>
+/// <p> <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> </p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning a certificate revocation list (CRL)</a> in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CrlConfiguration {
-    /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled.
-    /// You can use this value to enable certificate revocation for a new CA when you call the
-    /// <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the
-    /// <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
+    /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
     pub enabled: std::option::Option<bool>,
     /// <p>Validity period of the CRL in days.</p>
     pub expiration_in_days: std::option::Option<i32>,
-    /// <p>Name inserted into the certificate <b>CRL Distribution
-    /// Points</b> extension that enables the use of an alias for the CRL
-    /// distribution point. Use this value if you don't want the name of your S3 bucket to be
-    /// public.</p>
+    /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p>
     pub custom_cname: std::option::Option<std::string::String>,
-    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the
-    /// <b>CustomCname</b> argument, the name of your S3 bucket
-    /// is placed into the <b>CRL Distribution Points</b> extension of
-    /// the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-    /// policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>Determines whether the CRL will be publicly readable or privately held in the CRL
-    /// Amazon S3 bucket. If you choose PUBLIC_READ, the CRL will be accessible over the public
-    /// internet. If you choose BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket
-    /// can access the CRL, and your PKI clients may need an alternative method of access. </p>
+    /// <p>Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you choose PUBLIC_READ, the CRL will be accessible over the public internet. If you choose BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket can access the CRL, and your PKI clients may need an alternative method of access. </p>
     /// <p>If no value is specified, the default is <code>PUBLIC_READ</code>.</p>
-    /// <p>
-    /// <i>Note:</i> This default can cause CA creation to fail in some
-    /// circumstances. If you have have enabled the Block Public Access (BPA) feature in your S3
-    /// account, then you must specify the value of this parameter as
-    /// <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you
-    /// have disabled BPA in S3, then you can specify either
-    /// <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the
-    /// value.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the S3
-    /// bucket</a>.</p>
+    /// <p> <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled the Block Public Access (BPA) feature in your S3 account, then you must specify the value of this parameter as <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have disabled BPA in S3, then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the value.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the S3 bucket</a>.</p>
     pub s3_object_acl: std::option::Option<crate::model::S3ObjectAcl>,
 }
 impl CrlConfiguration {
-    /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled.
-    /// You can use this value to enable certificate revocation for a new CA when you call the
-    /// <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the
-    /// <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
+    /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
@@ -464,36 +303,18 @@ impl CrlConfiguration {
     pub fn expiration_in_days(&self) -> std::option::Option<i32> {
         self.expiration_in_days
     }
-    /// <p>Name inserted into the certificate <b>CRL Distribution
-    /// Points</b> extension that enables the use of an alias for the CRL
-    /// distribution point. Use this value if you don't want the name of your S3 bucket to be
-    /// public.</p>
+    /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p>
     pub fn custom_cname(&self) -> std::option::Option<&str> {
         self.custom_cname.as_deref()
     }
-    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the
-    /// <b>CustomCname</b> argument, the name of your S3 bucket
-    /// is placed into the <b>CRL Distribution Points</b> extension of
-    /// the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-    /// policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>Determines whether the CRL will be publicly readable or privately held in the CRL
-    /// Amazon S3 bucket. If you choose PUBLIC_READ, the CRL will be accessible over the public
-    /// internet. If you choose BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket
-    /// can access the CRL, and your PKI clients may need an alternative method of access. </p>
+    /// <p>Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you choose PUBLIC_READ, the CRL will be accessible over the public internet. If you choose BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket can access the CRL, and your PKI clients may need an alternative method of access. </p>
     /// <p>If no value is specified, the default is <code>PUBLIC_READ</code>.</p>
-    /// <p>
-    /// <i>Note:</i> This default can cause CA creation to fail in some
-    /// circumstances. If you have have enabled the Block Public Access (BPA) feature in your S3
-    /// account, then you must specify the value of this parameter as
-    /// <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you
-    /// have disabled BPA in S3, then you can specify either
-    /// <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the
-    /// value.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the S3
-    /// bucket</a>.</p>
+    /// <p> <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled the Block Public Access (BPA) feature in your S3 account, then you must specify the value of this parameter as <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have disabled BPA in S3, then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the value.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the S3 bucket</a>.</p>
     pub fn s3_object_acl(&self) -> std::option::Option<&crate::model::S3ObjectAcl> {
         self.s3_object_acl.as_ref()
     }
@@ -522,18 +343,12 @@ pub mod crl_configuration {
         pub(crate) s3_object_acl: std::option::Option<crate::model::S3ObjectAcl>,
     }
     impl Builder {
-        /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled.
-        /// You can use this value to enable certificate revocation for a new CA when you call the
-        /// <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the
-        /// <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
+        /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled.
-        /// You can use this value to enable certificate revocation for a new CA when you call the
-        /// <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the
-        /// <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
+        /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -548,36 +363,22 @@ pub mod crl_configuration {
             self.expiration_in_days = input;
             self
         }
-        /// <p>Name inserted into the certificate <b>CRL Distribution
-        /// Points</b> extension that enables the use of an alias for the CRL
-        /// distribution point. Use this value if you don't want the name of your S3 bucket to be
-        /// public.</p>
+        /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p>
         pub fn custom_cname(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_cname = Some(input.into());
             self
         }
-        /// <p>Name inserted into the certificate <b>CRL Distribution
-        /// Points</b> extension that enables the use of an alias for the CRL
-        /// distribution point. Use this value if you don't want the name of your S3 bucket to be
-        /// public.</p>
+        /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p>
         pub fn set_custom_cname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_cname = input;
             self
         }
-        /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the
-        /// <b>CustomCname</b> argument, the name of your S3 bucket
-        /// is placed into the <b>CRL Distribution Points</b> extension of
-        /// the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-        /// policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+        /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
-        /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the
-        /// <b>CustomCname</b> argument, the name of your S3 bucket
-        /// is placed into the <b>CRL Distribution Points</b> extension of
-        /// the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-        /// policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
+        /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows ACM Private CA to write the CRL to your bucket.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -585,40 +386,18 @@ pub mod crl_configuration {
             self.s3_bucket_name = input;
             self
         }
-        /// <p>Determines whether the CRL will be publicly readable or privately held in the CRL
-        /// Amazon S3 bucket. If you choose PUBLIC_READ, the CRL will be accessible over the public
-        /// internet. If you choose BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket
-        /// can access the CRL, and your PKI clients may need an alternative method of access. </p>
+        /// <p>Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you choose PUBLIC_READ, the CRL will be accessible over the public internet. If you choose BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket can access the CRL, and your PKI clients may need an alternative method of access. </p>
         /// <p>If no value is specified, the default is <code>PUBLIC_READ</code>.</p>
-        /// <p>
-        /// <i>Note:</i> This default can cause CA creation to fail in some
-        /// circumstances. If you have have enabled the Block Public Access (BPA) feature in your S3
-        /// account, then you must specify the value of this parameter as
-        /// <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you
-        /// have disabled BPA in S3, then you can specify either
-        /// <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the
-        /// value.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the S3
-        /// bucket</a>.</p>
+        /// <p> <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled the Block Public Access (BPA) feature in your S3 account, then you must specify the value of this parameter as <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have disabled BPA in S3, then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the value.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the S3 bucket</a>.</p>
         pub fn s3_object_acl(mut self, input: crate::model::S3ObjectAcl) -> Self {
             self.s3_object_acl = Some(input);
             self
         }
-        /// <p>Determines whether the CRL will be publicly readable or privately held in the CRL
-        /// Amazon S3 bucket. If you choose PUBLIC_READ, the CRL will be accessible over the public
-        /// internet. If you choose BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket
-        /// can access the CRL, and your PKI clients may need an alternative method of access. </p>
+        /// <p>Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you choose PUBLIC_READ, the CRL will be accessible over the public internet. If you choose BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket can access the CRL, and your PKI clients may need an alternative method of access. </p>
         /// <p>If no value is specified, the default is <code>PUBLIC_READ</code>.</p>
-        /// <p>
-        /// <i>Note:</i> This default can cause CA creation to fail in some
-        /// circumstances. If you have have enabled the Block Public Access (BPA) feature in your S3
-        /// account, then you must specify the value of this parameter as
-        /// <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you
-        /// have disabled BPA in S3, then you can specify either
-        /// <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the
-        /// value.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the S3
-        /// bucket</a>.</p>
+        /// <p> <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled the Block Public Access (BPA) feature in your S3 account, then you must specify the value of this parameter as <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have disabled BPA in S3, then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the value.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the S3 bucket</a>.</p>
         pub fn set_s3_object_acl(
             mut self,
             input: std::option::Option<crate::model::S3ObjectAcl>,
@@ -700,10 +479,7 @@ impl AsRef<str> for S3ObjectAcl {
     }
 }
 
-/// <p>Tags are labels that you can use to identify and organize your private CAs. Each tag
-/// consists of a key and an optional value. You can associate up to 50 tags with a private
-/// CA. To add one or more tags to a private CA, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html">TagCertificateAuthority</a>
-/// action. To remove a tag, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html">UntagCertificateAuthority</a> action. </p>
+/// <p>Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html">TagCertificateAuthority</a> action. To remove a tag, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html">UntagCertificateAuthority</a> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -864,23 +640,15 @@ impl AsRef<str> for RevocationReason {
     }
 }
 
-/// <p>Permissions designate which private CA actions can be performed by an AWS service or
-/// entity. In order for ACM to automatically renew private certificates, you must give
-/// the ACM service principal all available permissions (<code>IssueCertificate</code>,
-/// <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be
-/// assigned with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html">CreatePermission</a> action,
-/// removed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html">DeletePermission</a> action, and
-/// listed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html">ListPermissions</a> action.</p>
+/// <p>Permissions designate which private CA actions can be performed by an AWS service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html">CreatePermission</a> action, removed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html">DeletePermission</a> action, and listed with the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html">ListPermissions</a> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Permission {
-    /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was
-    /// issued.</p>
+    /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the permission was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The AWS service or entity that holds the permission. At this time, the only valid
-    /// principal is <code>acm.amazonaws.com</code>.</p>
+    /// <p>The AWS service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
     pub principal: std::option::Option<std::string::String>,
     /// <p>The ID of the account that assigned the permission.</p>
     pub source_account: std::option::Option<std::string::String>,
@@ -890,8 +658,7 @@ pub struct Permission {
     pub policy: std::option::Option<std::string::String>,
 }
 impl Permission {
-    /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was
-    /// issued.</p>
+    /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -899,8 +666,7 @@ impl Permission {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The AWS service or entity that holds the permission. At this time, the only valid
-    /// principal is <code>acm.amazonaws.com</code>.</p>
+    /// <p>The AWS service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
@@ -943,14 +709,12 @@ pub mod permission {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was
-        /// issued.</p>
+        /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was
-        /// issued.</p>
+        /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -971,14 +735,12 @@ pub mod permission {
             self.created_at = input;
             self
         }
-        /// <p>The AWS service or entity that holds the permission. At this time, the only valid
-        /// principal is <code>acm.amazonaws.com</code>.</p>
+        /// <p>The AWS service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The AWS service or entity that holds the permission. At this time, the only valid
-        /// principal is <code>acm.amazonaws.com</code>.</p>
+        /// <p>The AWS service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -1001,9 +763,9 @@ pub mod permission {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The private CA actions that can be performed by the designated AWS service.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::ActionType>) -> Self {
+        pub fn actions(mut self, input: crate::model::ActionType) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -1104,22 +866,11 @@ impl AsRef<str> for ActionType {
     }
 }
 
-/// <p>Contains information about your private certificate authority (CA). Your private CA
-/// can issue and revoke X.509 digital certificates. Digital certificates verify that the
-/// entity named in the certificate <b>Subject</b> field owns or
-/// controls the public key contained in the <b>Subject Public Key
-/// Info</b> field. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action to create your private CA. You must then
-/// call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a> action to retrieve a private CA
-/// certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises
-/// root or subordinate CA certificate. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a> action to import the signed
-/// certificate into AWS Certificate Manager (ACM). </p>
+/// <p>Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action to create your private CA. You must then call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a> action to import the signed certificate into AWS Certificate Manager (ACM). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateAuthority {
-    /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is
-    /// <code>
-    /// <i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.</p>
+    /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The AWS account ID that owns the certificate authority.</p>
     pub owner_account: std::option::Option<std::string::String>,
@@ -1142,27 +893,18 @@ pub struct CertificateAuthority {
     /// <p>Your private CA configuration.</p>
     pub certificate_authority_configuration:
         std::option::Option<crate::model::CertificateAuthorityConfiguration>,
-    /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or
-    /// certificate revocation list (CRL) created and maintained by your private CA. </p>
+    /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or certificate revocation list (CRL) created and maintained by your private CA. </p>
     pub revocation_configuration: std::option::Option<crate::model::RevocationConfiguration>,
-    /// <p>The period during which a deleted CA can be restored. For more information, see the
-    /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
+    /// <p>The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
     pub restorable_until: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-    /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-    /// explicitly specify this parameter and value when creating a CA in that Region.
-    /// Specifying a different value (or no value) results in an
-    /// <code>InvalidArgsException</code> with the message "A certificate authority cannot
-    /// be created in this region with the specified security standard."</p>
+    /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
     pub key_storage_security_standard:
         std::option::Option<crate::model::KeyStorageSecurityStandard>,
 }
 impl CertificateAuthority {
-    /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is
-    /// <code>
-    /// <i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.</p>
+    /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -1208,25 +950,19 @@ impl CertificateAuthority {
     ) -> std::option::Option<&crate::model::CertificateAuthorityConfiguration> {
         self.certificate_authority_configuration.as_ref()
     }
-    /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or
-    /// certificate revocation list (CRL) created and maintained by your private CA. </p>
+    /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or certificate revocation list (CRL) created and maintained by your private CA. </p>
     pub fn revocation_configuration(
         &self,
     ) -> std::option::Option<&crate::model::RevocationConfiguration> {
         self.revocation_configuration.as_ref()
     }
-    /// <p>The period during which a deleted CA can be restored. For more information, see the
-    /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
+    /// <p>The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
     pub fn restorable_until(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.restorable_until.as_ref()
     }
     /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-    /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-    /// explicitly specify this parameter and value when creating a CA in that Region.
-    /// Specifying a different value (or no value) results in an
-    /// <code>InvalidArgsException</code> with the message "A certificate authority cannot
-    /// be created in this region with the specified security standard."</p>
+    /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
     pub fn key_storage_security_standard(
         &self,
     ) -> std::option::Option<&crate::model::KeyStorageSecurityStandard> {
@@ -1284,18 +1020,12 @@ pub mod certificate_authority {
             std::option::Option<crate::model::KeyStorageSecurityStandard>,
     }
     impl Builder {
-        /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is
-        /// <code>
-        /// <i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.</p>
+        /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is
-        /// <code>
-        /// <i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.</p>
+        /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1430,8 +1160,7 @@ pub mod certificate_authority {
             self.certificate_authority_configuration = input;
             self
         }
-        /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or
-        /// certificate revocation list (CRL) created and maintained by your private CA. </p>
+        /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or certificate revocation list (CRL) created and maintained by your private CA. </p>
         pub fn revocation_configuration(
             mut self,
             input: crate::model::RevocationConfiguration,
@@ -1439,8 +1168,7 @@ pub mod certificate_authority {
             self.revocation_configuration = Some(input);
             self
         }
-        /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or
-        /// certificate revocation list (CRL) created and maintained by your private CA. </p>
+        /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or certificate revocation list (CRL) created and maintained by your private CA. </p>
         pub fn set_revocation_configuration(
             mut self,
             input: std::option::Option<crate::model::RevocationConfiguration>,
@@ -1448,14 +1176,12 @@ pub mod certificate_authority {
             self.revocation_configuration = input;
             self
         }
-        /// <p>The period during which a deleted CA can be restored. For more information, see the
-        /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
+        /// <p>The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
         pub fn restorable_until(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.restorable_until = Some(input);
             self
         }
-        /// <p>The period during which a deleted CA can be restored. For more information, see the
-        /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
+        /// <p>The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
         pub fn set_restorable_until(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1465,11 +1191,7 @@ pub mod certificate_authority {
         }
         /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
         /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-        /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-        /// explicitly specify this parameter and value when creating a CA in that Region.
-        /// Specifying a different value (or no value) results in an
-        /// <code>InvalidArgsException</code> with the message "A certificate authority cannot
-        /// be created in this region with the specified security standard."</p>
+        /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
         pub fn key_storage_security_standard(
             mut self,
             input: crate::model::KeyStorageSecurityStandard,
@@ -1479,11 +1201,7 @@ pub mod certificate_authority {
         }
         /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
         /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
-        /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-        /// explicitly specify this parameter and value when creating a CA in that Region.
-        /// Specifying a different value (or no value) results in an
-        /// <code>InvalidArgsException</code> with the message "A certificate authority cannot
-        /// be created in this region with the specified security standard."</p>
+        /// <p>Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
         pub fn set_key_storage_security_standard(
             mut self,
             input: std::option::Option<crate::model::KeyStorageSecurityStandard>,
@@ -1577,49 +1295,35 @@ impl AsRef<str> for KeyStorageSecurityStandard {
     }
 }
 
-/// <p>Contains configuration information for your private certificate authority (CA). This
-/// includes information about the class of public key algorithm and the key pair that your
-/// private CA creates when it issues a certificate. It also includes the signature
-/// algorithm that it uses when issuing certificates, and its X.500 distinguished name. You
-/// must specify this information when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. </p>
+/// <p>Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateAuthorityConfiguration {
-    /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA
-    /// creates when it issues a certificate. When you create a subordinate CA, you must use a
-    /// key algorithm supported by the parent CA.</p>
+    /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
     pub key_algorithm: std::option::Option<crate::model::KeyAlgorithm>,
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
-    /// used to sign certificates when they are issued.</p>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithm>,
-    /// <p>Structure that contains X.500 distinguished name information for your private
-    /// CA.</p>
+    /// <p>Structure that contains X.500 distinguished name information for your private CA.</p>
     pub subject: std::option::Option<crate::model::Asn1Subject>,
-    /// <p>Specifies information to be added to the extension section of the certificate signing
-    /// request (CSR).</p>
+    /// <p>Specifies information to be added to the extension section of the certificate signing request (CSR).</p>
     pub csr_extensions: std::option::Option<crate::model::CsrExtensions>,
 }
 impl CertificateAuthorityConfiguration {
-    /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA
-    /// creates when it issues a certificate. When you create a subordinate CA, you must use a
-    /// key algorithm supported by the parent CA.</p>
+    /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
     pub fn key_algorithm(&self) -> std::option::Option<&crate::model::KeyAlgorithm> {
         self.key_algorithm.as_ref()
     }
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
-    /// used to sign certificates when they are issued.</p>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
     pub fn signing_algorithm(&self) -> std::option::Option<&crate::model::SigningAlgorithm> {
         self.signing_algorithm.as_ref()
     }
-    /// <p>Structure that contains X.500 distinguished name information for your private
-    /// CA.</p>
+    /// <p>Structure that contains X.500 distinguished name information for your private CA.</p>
     pub fn subject(&self) -> std::option::Option<&crate::model::Asn1Subject> {
         self.subject.as_ref()
     }
-    /// <p>Specifies information to be added to the extension section of the certificate signing
-    /// request (CSR).</p>
+    /// <p>Specifies information to be added to the extension section of the certificate signing request (CSR).</p>
     pub fn csr_extensions(&self) -> std::option::Option<&crate::model::CsrExtensions> {
         self.csr_extensions.as_ref()
     }
@@ -1646,16 +1350,12 @@ pub mod certificate_authority_configuration {
         pub(crate) csr_extensions: std::option::Option<crate::model::CsrExtensions>,
     }
     impl Builder {
-        /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA
-        /// creates when it issues a certificate. When you create a subordinate CA, you must use a
-        /// key algorithm supported by the parent CA.</p>
+        /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
         pub fn key_algorithm(mut self, input: crate::model::KeyAlgorithm) -> Self {
             self.key_algorithm = Some(input);
             self
         }
-        /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA
-        /// creates when it issues a certificate. When you create a subordinate CA, you must use a
-        /// key algorithm supported by the parent CA.</p>
+        /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
         pub fn set_key_algorithm(
             mut self,
             input: std::option::Option<crate::model::KeyAlgorithm>,
@@ -1664,15 +1364,13 @@ pub mod certificate_authority_configuration {
             self
         }
         /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
-        /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
-        /// used to sign certificates when they are issued.</p>
+        /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
         pub fn signing_algorithm(mut self, input: crate::model::SigningAlgorithm) -> Self {
             self.signing_algorithm = Some(input);
             self
         }
         /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
-        /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
-        /// used to sign certificates when they are issued.</p>
+        /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
         pub fn set_signing_algorithm(
             mut self,
             input: std::option::Option<crate::model::SigningAlgorithm>,
@@ -1680,14 +1378,12 @@ pub mod certificate_authority_configuration {
             self.signing_algorithm = input;
             self
         }
-        /// <p>Structure that contains X.500 distinguished name information for your private
-        /// CA.</p>
+        /// <p>Structure that contains X.500 distinguished name information for your private CA.</p>
         pub fn subject(mut self, input: crate::model::Asn1Subject) -> Self {
             self.subject = Some(input);
             self
         }
-        /// <p>Structure that contains X.500 distinguished name information for your private
-        /// CA.</p>
+        /// <p>Structure that contains X.500 distinguished name information for your private CA.</p>
         pub fn set_subject(
             mut self,
             input: std::option::Option<crate::model::Asn1Subject>,
@@ -1695,14 +1391,12 @@ pub mod certificate_authority_configuration {
             self.subject = input;
             self
         }
-        /// <p>Specifies information to be added to the extension section of the certificate signing
-        /// request (CSR).</p>
+        /// <p>Specifies information to be added to the extension section of the certificate signing request (CSR).</p>
         pub fn csr_extensions(mut self, input: crate::model::CsrExtensions) -> Self {
             self.csr_extensions = Some(input);
             self
         }
-        /// <p>Specifies information to be added to the extension section of the certificate signing
-        /// request (CSR).</p>
+        /// <p>Specifies information to be added to the extension section of the certificate signing request (CSR).</p>
         pub fn set_csr_extensions(
             mut self,
             input: std::option::Option<crate::model::CsrExtensions>,
@@ -1728,29 +1422,22 @@ impl CertificateAuthorityConfiguration {
     }
 }
 
-/// <p>Describes the certificate extensions to be added to the certificate signing request
-/// (CSR).</p>
+/// <p>Describes the certificate extensions to be added to the certificate signing request (CSR).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CsrExtensions {
-    /// <p>Indicates the purpose of the certificate and of the key contained in the
-    /// certificate.</p>
+    /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
     pub key_usage: std::option::Option<crate::model::KeyUsage>,
-    /// <p>For CA certificates, provides a path to additional information pertaining to the CA,
-    /// such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
-    /// Access</a> in RFC 5280.</p>
+    /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
     pub subject_information_access:
         std::option::Option<std::vec::Vec<crate::model::AccessDescription>>,
 }
 impl CsrExtensions {
-    /// <p>Indicates the purpose of the certificate and of the key contained in the
-    /// certificate.</p>
+    /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
     pub fn key_usage(&self) -> std::option::Option<&crate::model::KeyUsage> {
         self.key_usage.as_ref()
     }
-    /// <p>For CA certificates, provides a path to additional information pertaining to the CA,
-    /// such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
-    /// Access</a> in RFC 5280.</p>
+    /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
     pub fn subject_information_access(
         &self,
     ) -> std::option::Option<&[crate::model::AccessDescription]> {
@@ -1779,14 +1466,12 @@ pub mod csr_extensions {
             std::option::Option<std::vec::Vec<crate::model::AccessDescription>>,
     }
     impl Builder {
-        /// <p>Indicates the purpose of the certificate and of the key contained in the
-        /// certificate.</p>
+        /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
         pub fn key_usage(mut self, input: crate::model::KeyUsage) -> Self {
             self.key_usage = Some(input);
             self
         }
-        /// <p>Indicates the purpose of the certificate and of the key contained in the
-        /// certificate.</p>
+        /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
         pub fn set_key_usage(mut self, input: std::option::Option<crate::model::KeyUsage>) -> Self {
             self.key_usage = input;
             self
@@ -1795,21 +1480,17 @@ pub mod csr_extensions {
         ///
         /// To override the contents of this collection use [`set_subject_information_access`](Self::set_subject_information_access).
         ///
-        /// <p>For CA certificates, provides a path to additional information pertaining to the CA,
-        /// such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
-        /// Access</a> in RFC 5280.</p>
+        /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
         pub fn subject_information_access(
             mut self,
-            input: impl Into<crate::model::AccessDescription>,
+            input: crate::model::AccessDescription,
         ) -> Self {
             let mut v = self.subject_information_access.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subject_information_access = Some(v);
             self
         }
-        /// <p>For CA certificates, provides a path to additional information pertaining to the CA,
-        /// such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
-        /// Access</a> in RFC 5280.</p>
+        /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
         pub fn set_subject_information_access(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccessDescription>>,
@@ -1833,8 +1514,7 @@ impl CsrExtensions {
     }
 }
 
-/// <p>Provides access information used by the <code>authorityInfoAccess</code> and
-/// <code>subjectInfoAccess</code> extensions described in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.</p>
+/// <p>Provides access information used by the <code>authorityInfoAccess</code> and <code>subjectInfoAccess</code> extensions described in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDescription {
@@ -1913,9 +1593,7 @@ impl AccessDescription {
     }
 }
 
-/// <p>Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. Only one of the
-/// following naming options should be provided. Providing more than one option results in
-/// an <code>InvalidArgsException</code> error.</p>
+/// <p>Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. Only one of the following naming options should be provided. Providing more than one option results in an <code>InvalidArgsException</code> error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneralName {
@@ -1925,11 +1603,7 @@ pub struct GeneralName {
     pub rfc822_name: std::option::Option<std::string::String>,
     /// <p>Represents <code>GeneralName</code> as a DNS name.</p>
     pub dns_name: std::option::Option<std::string::String>,
-    /// <p>Contains information about the certificate subject. The <code>Subject</code> field in
-    /// the certificate identifies the entity that owns or controls the public key in the
-    /// certificate. The entity can be a user, computer, device, or service. The <code>Subject
-    /// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
-    /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+    /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
     pub directory_name: std::option::Option<crate::model::Asn1Subject>,
     /// <p>Represents <code>GeneralName</code> as an <code>EdiPartyName</code> object.</p>
     pub edi_party_name: std::option::Option<crate::model::EdiPartyName>,
@@ -1953,11 +1627,7 @@ impl GeneralName {
     pub fn dns_name(&self) -> std::option::Option<&str> {
         self.dns_name.as_deref()
     }
-    /// <p>Contains information about the certificate subject. The <code>Subject</code> field in
-    /// the certificate identifies the entity that owns or controls the public key in the
-    /// certificate. The entity can be a user, computer, device, or service. The <code>Subject
-    /// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
-    /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+    /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
     pub fn directory_name(&self) -> std::option::Option<&crate::model::Asn1Subject> {
         self.directory_name.as_ref()
     }
@@ -2044,20 +1714,12 @@ pub mod general_name {
             self.dns_name = input;
             self
         }
-        /// <p>Contains information about the certificate subject. The <code>Subject</code> field in
-        /// the certificate identifies the entity that owns or controls the public key in the
-        /// certificate. The entity can be a user, computer, device, or service. The <code>Subject
-        /// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
-        /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+        /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
         pub fn directory_name(mut self, input: crate::model::Asn1Subject) -> Self {
             self.directory_name = Some(input);
             self
         }
-        /// <p>Contains information about the certificate subject. The <code>Subject</code> field in
-        /// the certificate identifies the entity that owns or controls the public key in the
-        /// certificate. The entity can be a user, computer, device, or service. The <code>Subject
-        /// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
-        /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+        /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
         pub fn set_directory_name(
             mut self,
             input: std::option::Option<crate::model::Asn1Subject>,
@@ -2139,9 +1801,7 @@ impl GeneralName {
     }
 }
 
-/// <p>Describes an Electronic Data Interchange (EDI) entity as described in as defined in
-/// <a href="https://tools.ietf.org/html/rfc5280">Subject Alternative Name</a> in
-/// RFC 5280.</p>
+/// <p>Describes an Electronic Data Interchange (EDI) entity as described in as defined in <a href="https://tools.ietf.org/html/rfc5280">Subject Alternative Name</a> in RFC 5280.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EdiPartyName {
@@ -2217,69 +1877,50 @@ impl EdiPartyName {
     }
 }
 
-/// <p>Contains information about the certificate subject. The <code>Subject</code> field in
-/// the certificate identifies the entity that owns or controls the public key in the
-/// certificate. The entity can be a user, computer, device, or service. The <code>Subject
-/// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
-/// distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+/// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Asn1Subject {
-    /// <p>Two-digit code that specifies the country in which the certificate subject
-    /// located.</p>
+    /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
     pub country: std::option::Option<std::string::String>,
-    /// <p>Legal name of the organization with which the certificate subject is affiliated.
-    /// </p>
+    /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
     pub organization: std::option::Option<std::string::String>,
-    /// <p>A subdivision or unit of the organization (such as sales or finance) with which the
-    /// certificate subject is affiliated.</p>
+    /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
     pub organizational_unit: std::option::Option<std::string::String>,
     /// <p>Disambiguating information for the certificate subject.</p>
     pub distinguished_name_qualifier: std::option::Option<std::string::String>,
     /// <p>State in which the subject of the certificate is located.</p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any
-    /// string within the length limit. </p>
-    /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified
-    /// domain name (FQDN) associated with the certificate subject.</p>
+    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
+    /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
     pub common_name: std::option::Option<std::string::String>,
     /// <p>The certificate serial number.</p>
     pub serial_number: std::option::Option<std::string::String>,
-    /// <p>The locality (such as a city or town) in which the certificate subject is
-    /// located.</p>
+    /// <p>The locality (such as a city or town) in which the certificate subject is located.</p>
     pub locality: std::option::Option<std::string::String>,
-    /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the
-    /// certificate subject.</p>
+    /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>
     pub title: std::option::Option<std::string::String>,
-    /// <p>Family name. In the US and the UK, for example, the surname of an individual is
-    /// ordered last. In Asian cultures the surname is typically ordered first.</p>
+    /// <p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>
     pub surname: std::option::Option<std::string::String>,
     /// <p>First name.</p>
     pub given_name: std::option::Option<std::string::String>,
-    /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the
-    /// first letter of the <b>Surname</b>.</p>
+    /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>Surname</b>.</p>
     pub initials: std::option::Option<std::string::String>,
-    /// <p>Typically a shortened version of a longer <b>GivenName</b>.
-    /// For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth,
-    /// Liz, or Eliza.</p>
+    /// <p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>
     pub pseudonym: std::option::Option<std::string::String>,
-    /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for
-    /// junior, Sr. for senior, and III for third.</p>
+    /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
     pub generation_qualifier: std::option::Option<std::string::String>,
 }
 impl Asn1Subject {
-    /// <p>Two-digit code that specifies the country in which the certificate subject
-    /// located.</p>
+    /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
     pub fn country(&self) -> std::option::Option<&str> {
         self.country.as_deref()
     }
-    /// <p>Legal name of the organization with which the certificate subject is affiliated.
-    /// </p>
+    /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
     pub fn organization(&self) -> std::option::Option<&str> {
         self.organization.as_deref()
     }
-    /// <p>A subdivision or unit of the organization (such as sales or finance) with which the
-    /// certificate subject is affiliated.</p>
+    /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
     pub fn organizational_unit(&self) -> std::option::Option<&str> {
         self.organizational_unit.as_deref()
     }
@@ -2291,10 +1932,8 @@ impl Asn1Subject {
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
-    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any
-    /// string within the length limit. </p>
-    /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified
-    /// domain name (FQDN) associated with the certificate subject.</p>
+    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
+    /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
     pub fn common_name(&self) -> std::option::Option<&str> {
         self.common_name.as_deref()
     }
@@ -2302,18 +1941,15 @@ impl Asn1Subject {
     pub fn serial_number(&self) -> std::option::Option<&str> {
         self.serial_number.as_deref()
     }
-    /// <p>The locality (such as a city or town) in which the certificate subject is
-    /// located.</p>
+    /// <p>The locality (such as a city or town) in which the certificate subject is located.</p>
     pub fn locality(&self) -> std::option::Option<&str> {
         self.locality.as_deref()
     }
-    /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the
-    /// certificate subject.</p>
+    /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>Family name. In the US and the UK, for example, the surname of an individual is
-    /// ordered last. In Asian cultures the surname is typically ordered first.</p>
+    /// <p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>
     pub fn surname(&self) -> std::option::Option<&str> {
         self.surname.as_deref()
     }
@@ -2321,19 +1957,15 @@ impl Asn1Subject {
     pub fn given_name(&self) -> std::option::Option<&str> {
         self.given_name.as_deref()
     }
-    /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the
-    /// first letter of the <b>Surname</b>.</p>
+    /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>Surname</b>.</p>
     pub fn initials(&self) -> std::option::Option<&str> {
         self.initials.as_deref()
     }
-    /// <p>Typically a shortened version of a longer <b>GivenName</b>.
-    /// For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth,
-    /// Liz, or Eliza.</p>
+    /// <p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>
     pub fn pseudonym(&self) -> std::option::Option<&str> {
         self.pseudonym.as_deref()
     }
-    /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for
-    /// junior, Sr. for senior, and III for third.</p>
+    /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
     pub fn generation_qualifier(&self) -> std::option::Option<&str> {
         self.generation_qualifier.as_deref()
     }
@@ -2383,38 +2015,32 @@ pub mod asn1_subject {
         pub(crate) generation_qualifier: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Two-digit code that specifies the country in which the certificate subject
-        /// located.</p>
+        /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
         pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
             self.country = Some(input.into());
             self
         }
-        /// <p>Two-digit code that specifies the country in which the certificate subject
-        /// located.</p>
+        /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.country = input;
             self
         }
-        /// <p>Legal name of the organization with which the certificate subject is affiliated.
-        /// </p>
+        /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
         pub fn organization(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization = Some(input.into());
             self
         }
-        /// <p>Legal name of the organization with which the certificate subject is affiliated.
-        /// </p>
+        /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
         pub fn set_organization(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.organization = input;
             self
         }
-        /// <p>A subdivision or unit of the organization (such as sales or finance) with which the
-        /// certificate subject is affiliated.</p>
+        /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
         pub fn organizational_unit(mut self, input: impl Into<std::string::String>) -> Self {
             self.organizational_unit = Some(input.into());
             self
         }
-        /// <p>A subdivision or unit of the organization (such as sales or finance) with which the
-        /// certificate subject is affiliated.</p>
+        /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
         pub fn set_organizational_unit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2448,18 +2074,14 @@ pub mod asn1_subject {
             self.state = input;
             self
         }
-        /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any
-        /// string within the length limit. </p>
-        /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified
-        /// domain name (FQDN) associated with the certificate subject.</p>
+        /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
+        /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
         pub fn common_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.common_name = Some(input.into());
             self
         }
-        /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any
-        /// string within the length limit. </p>
-        /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified
-        /// domain name (FQDN) associated with the certificate subject.</p>
+        /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
+        /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
         pub fn set_common_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.common_name = input;
             self
@@ -2477,38 +2099,32 @@ pub mod asn1_subject {
             self.serial_number = input;
             self
         }
-        /// <p>The locality (such as a city or town) in which the certificate subject is
-        /// located.</p>
+        /// <p>The locality (such as a city or town) in which the certificate subject is located.</p>
         pub fn locality(mut self, input: impl Into<std::string::String>) -> Self {
             self.locality = Some(input.into());
             self
         }
-        /// <p>The locality (such as a city or town) in which the certificate subject is
-        /// located.</p>
+        /// <p>The locality (such as a city or town) in which the certificate subject is located.</p>
         pub fn set_locality(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locality = input;
             self
         }
-        /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the
-        /// certificate subject.</p>
+        /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
             self.title = Some(input.into());
             self
         }
-        /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the
-        /// certificate subject.</p>
+        /// <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
         }
-        /// <p>Family name. In the US and the UK, for example, the surname of an individual is
-        /// ordered last. In Asian cultures the surname is typically ordered first.</p>
+        /// <p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>
         pub fn surname(mut self, input: impl Into<std::string::String>) -> Self {
             self.surname = Some(input.into());
             self
         }
-        /// <p>Family name. In the US and the UK, for example, the surname of an individual is
-        /// ordered last. In Asian cultures the surname is typically ordered first.</p>
+        /// <p>Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures the surname is typically ordered first.</p>
         pub fn set_surname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.surname = input;
             self
@@ -2523,40 +2139,32 @@ pub mod asn1_subject {
             self.given_name = input;
             self
         }
-        /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the
-        /// first letter of the <b>Surname</b>.</p>
+        /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>Surname</b>.</p>
         pub fn initials(mut self, input: impl Into<std::string::String>) -> Self {
             self.initials = Some(input.into());
             self
         }
-        /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the
-        /// first letter of the <b>Surname</b>.</p>
+        /// <p>Concatenation that typically contains the first letter of the <b>GivenName</b>, the first letter of the middle name if one exists, and the first letter of the <b>Surname</b>.</p>
         pub fn set_initials(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.initials = input;
             self
         }
-        /// <p>Typically a shortened version of a longer <b>GivenName</b>.
-        /// For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth,
-        /// Liz, or Eliza.</p>
+        /// <p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>
         pub fn pseudonym(mut self, input: impl Into<std::string::String>) -> Self {
             self.pseudonym = Some(input.into());
             self
         }
-        /// <p>Typically a shortened version of a longer <b>GivenName</b>.
-        /// For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth,
-        /// Liz, or Eliza.</p>
+        /// <p>Typically a shortened version of a longer <b>GivenName</b>. For example, Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz, or Eliza.</p>
         pub fn set_pseudonym(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pseudonym = input;
             self
         }
-        /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for
-        /// junior, Sr. for senior, and III for third.</p>
+        /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
         pub fn generation_qualifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.generation_qualifier = Some(input.into());
             self
         }
-        /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for
-        /// junior, Sr. for senior, and III for third.</p>
+        /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
         pub fn set_generation_qualifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2592,10 +2200,7 @@ impl Asn1Subject {
     }
 }
 
-/// <p>Defines a custom ASN.1 X.400 <code>GeneralName</code> using an object identifier (OID)
-/// and value. The OID must satisfy the regular expression shown below. For more
-/// information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
-/// (OID)</a>.</p>
+/// <p>Defines a custom ASN.1 X.400 <code>GeneralName</code> using an object identifier (OID) and value. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OtherName {
@@ -2668,25 +2273,17 @@ impl OtherName {
     }
 }
 
-/// <p>Describes the type and format of extension access. Only one of
-/// <code>CustomObjectIdentifier</code> or <code>AccessMethodType</code> may be
-/// provided. Providing both results in <code>InvalidArgsException</code>.</p>
+/// <p>Describes the type and format of extension access. Only one of <code>CustomObjectIdentifier</code> or <code>AccessMethodType</code> may be provided. Providing both results in <code>InvalidArgsException</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessMethod {
-    /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must
-    /// satisfy the regular expression shown below. For more information, see NIST's definition
-    /// of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
-    /// (OID)</a>.</p>
+    /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     pub custom_object_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the <code>AccessMethod</code>.</p>
     pub access_method_type: std::option::Option<crate::model::AccessMethodType>,
 }
 impl AccessMethod {
-    /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must
-    /// satisfy the regular expression shown below. For more information, see NIST's definition
-    /// of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
-    /// (OID)</a>.</p>
+    /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     pub fn custom_object_identifier(&self) -> std::option::Option<&str> {
         self.custom_object_identifier.as_deref()
     }
@@ -2713,18 +2310,12 @@ pub mod access_method {
         pub(crate) access_method_type: std::option::Option<crate::model::AccessMethodType>,
     }
     impl Builder {
-        /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must
-        /// satisfy the regular expression shown below. For more information, see NIST's definition
-        /// of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
-        /// (OID)</a>.</p>
+        /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
         pub fn custom_object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_object_identifier = Some(input.into());
             self
         }
-        /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must
-        /// satisfy the regular expression shown below. For more information, see NIST's definition
-        /// of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
-        /// (OID)</a>.</p>
+        /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
         pub fn set_custom_object_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2824,8 +2415,7 @@ impl AsRef<str> for AccessMethodType {
     }
 }
 
-/// <p>Defines one or more purposes for which the key contained in the certificate can be
-/// used. Default value for each option is false.</p>
+/// <p>Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyUsage {
@@ -3341,65 +2931,31 @@ impl AsRef<str> for ResourceOwner {
     }
 }
 
-/// <p>Validity specifies the period of time during which a certificate is valid. Validity
-/// can be expressed as an explicit date and time when the validity of a certificate starts
-/// or expires, or as a span of time after issuance, stated in days, months, or years. For
-/// more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
-/// <p>ACM Private CA API consumes the <code>Validity</code> data type differently in two distinct
-/// parameters of the <code>IssueCertificate</code> action. The required parameter
-/// <code>IssueCertificate</code>:<code>Validity</code> specifies the end of a
-/// certificate's validity period. The optional parameter
-/// <code>IssueCertificate</code>:<code>ValidityNotBefore</code> specifies a customized
-/// starting time for the validity period.</p>
+/// <p>Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the validity of a certificate starts or expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
+/// <p>ACM Private CA API consumes the <code>Validity</code> data type differently in two distinct parameters of the <code>IssueCertificate</code> action. The required parameter <code>IssueCertificate</code>:<code>Validity</code> specifies the end of a certificate's validity period. The optional parameter <code>IssueCertificate</code>:<code>ValidityNotBefore</code> specifies a customized starting time for the validity period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Validity {
     /// <p>A long integer interpreted according to the value of <code>Type</code>, below.</p>
     pub value: std::option::Option<i64>,
-    /// <p>Determines how <i>ACM Private CA</i> interprets the <code>Value</code>
-    /// parameter, an integer. Supported validity types include those listed below. Type
-    /// definitions with values include a sample input value and the resulting output. </p>
-    /// <p>
-    /// <code>END_DATE</code>: The specific date and time when the certificate will expire,
-    /// expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When
-    /// UTCTime is used, if the year field (YY) is greater than or equal to 50, the year is
-    /// interpreted as 19YY. If the year field is less than 50, the year is interpreted as
-    /// 20YY.</p>
+    /// <p>Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity types include those listed below. Type definitions with values include a sample input value and the resulting output. </p>
+    /// <p> <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When UTCTime is used, if the year field (YY) is greater than or equal to 50, the year is interpreted as 19YY. If the year field is less than 50, the year is interpreted as 20YY.</p>
     /// <ul>
-    /// <li>
-    /// <p>Sample input value: 491231235959 (UTCTime format)</p>
-    /// </li>
-    /// <li>
-    /// <p>Output expiration date/time: 12/31/2049 23:59:59</p>
-    /// </li>
+    /// <li> <p>Sample input value: 491231235959 (UTCTime format)</p> </li>
+    /// <li> <p>Output expiration date/time: 12/31/2049 23:59:59</p> </li>
     /// </ul>
-    /// <p>
-    /// <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate
-    /// will start or expire, expressed in seconds since the Unix Epoch. </p>
+    /// <p> <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or expire, expressed in seconds since the Unix Epoch. </p>
     /// <ul>
-    /// <li>
-    /// <p>Sample input value: 2524608000</p>
-    /// </li>
-    /// <li>
-    /// <p>Output expiration date/time: 01/01/2050 00:00:00</p>
-    /// </li>
+    /// <li> <p>Sample input value: 2524608000</p> </li>
+    /// <li> <p>Output expiration date/time: 01/01/2050 00:00:00</p> </li>
     /// </ul>
-    /// <p>
-    /// <code>DAYS</code>, <code>MONTHS</code>, <code>YEARS</code>: The relative time from the
-    /// moment of issuance until the certificate will expire, expressed in days, months, or
-    /// years. </p>
+    /// <p> <code>DAYS</code>, <code>MONTHS</code>, <code>YEARS</code>: The relative time from the moment of issuance until the certificate will expire, expressed in days, months, or years. </p>
     /// <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
     /// <ul>
-    /// <li>
-    /// <p>Sample input value: 90</p>
-    /// </li>
-    /// <li>
-    /// <p>Output expiration date: 01/10/2020 12:34:54 UTC</p>
-    /// </li>
+    /// <li> <p>Sample input value: 90</p> </li>
+    /// <li> <p>Output expiration date: 01/10/2020 12:34:54 UTC</p> </li>
     /// </ul>
-    /// <p>The minimum validity duration for a certificate using relative time
-    /// (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute
-    /// time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
+    /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
     pub r#type: std::option::Option<crate::model::ValidityPeriodType>,
 }
 impl Validity {
@@ -3407,50 +2963,24 @@ impl Validity {
     pub fn value(&self) -> std::option::Option<i64> {
         self.value
     }
-    /// <p>Determines how <i>ACM Private CA</i> interprets the <code>Value</code>
-    /// parameter, an integer. Supported validity types include those listed below. Type
-    /// definitions with values include a sample input value and the resulting output. </p>
-    /// <p>
-    /// <code>END_DATE</code>: The specific date and time when the certificate will expire,
-    /// expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When
-    /// UTCTime is used, if the year field (YY) is greater than or equal to 50, the year is
-    /// interpreted as 19YY. If the year field is less than 50, the year is interpreted as
-    /// 20YY.</p>
+    /// <p>Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity types include those listed below. Type definitions with values include a sample input value and the resulting output. </p>
+    /// <p> <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When UTCTime is used, if the year field (YY) is greater than or equal to 50, the year is interpreted as 19YY. If the year field is less than 50, the year is interpreted as 20YY.</p>
     /// <ul>
-    /// <li>
-    /// <p>Sample input value: 491231235959 (UTCTime format)</p>
-    /// </li>
-    /// <li>
-    /// <p>Output expiration date/time: 12/31/2049 23:59:59</p>
-    /// </li>
+    /// <li> <p>Sample input value: 491231235959 (UTCTime format)</p> </li>
+    /// <li> <p>Output expiration date/time: 12/31/2049 23:59:59</p> </li>
     /// </ul>
-    /// <p>
-    /// <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate
-    /// will start or expire, expressed in seconds since the Unix Epoch. </p>
+    /// <p> <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or expire, expressed in seconds since the Unix Epoch. </p>
     /// <ul>
-    /// <li>
-    /// <p>Sample input value: 2524608000</p>
-    /// </li>
-    /// <li>
-    /// <p>Output expiration date/time: 01/01/2050 00:00:00</p>
-    /// </li>
+    /// <li> <p>Sample input value: 2524608000</p> </li>
+    /// <li> <p>Output expiration date/time: 01/01/2050 00:00:00</p> </li>
     /// </ul>
-    /// <p>
-    /// <code>DAYS</code>, <code>MONTHS</code>, <code>YEARS</code>: The relative time from the
-    /// moment of issuance until the certificate will expire, expressed in days, months, or
-    /// years. </p>
+    /// <p> <code>DAYS</code>, <code>MONTHS</code>, <code>YEARS</code>: The relative time from the moment of issuance until the certificate will expire, expressed in days, months, or years. </p>
     /// <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
     /// <ul>
-    /// <li>
-    /// <p>Sample input value: 90</p>
-    /// </li>
-    /// <li>
-    /// <p>Output expiration date: 01/10/2020 12:34:54 UTC</p>
-    /// </li>
+    /// <li> <p>Sample input value: 90</p> </li>
+    /// <li> <p>Output expiration date: 01/10/2020 12:34:54 UTC</p> </li>
     /// </ul>
-    /// <p>The minimum validity duration for a certificate using relative time
-    /// (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute
-    /// time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
+    /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ValidityPeriodType> {
         self.r#type.as_ref()
     }
@@ -3483,98 +3013,46 @@ pub mod validity {
             self.value = input;
             self
         }
-        /// <p>Determines how <i>ACM Private CA</i> interprets the <code>Value</code>
-        /// parameter, an integer. Supported validity types include those listed below. Type
-        /// definitions with values include a sample input value and the resulting output. </p>
-        /// <p>
-        /// <code>END_DATE</code>: The specific date and time when the certificate will expire,
-        /// expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When
-        /// UTCTime is used, if the year field (YY) is greater than or equal to 50, the year is
-        /// interpreted as 19YY. If the year field is less than 50, the year is interpreted as
-        /// 20YY.</p>
+        /// <p>Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity types include those listed below. Type definitions with values include a sample input value and the resulting output. </p>
+        /// <p> <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When UTCTime is used, if the year field (YY) is greater than or equal to 50, the year is interpreted as 19YY. If the year field is less than 50, the year is interpreted as 20YY.</p>
         /// <ul>
-        /// <li>
-        /// <p>Sample input value: 491231235959 (UTCTime format)</p>
-        /// </li>
-        /// <li>
-        /// <p>Output expiration date/time: 12/31/2049 23:59:59</p>
-        /// </li>
+        /// <li> <p>Sample input value: 491231235959 (UTCTime format)</p> </li>
+        /// <li> <p>Output expiration date/time: 12/31/2049 23:59:59</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate
-        /// will start or expire, expressed in seconds since the Unix Epoch. </p>
+        /// <p> <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or expire, expressed in seconds since the Unix Epoch. </p>
         /// <ul>
-        /// <li>
-        /// <p>Sample input value: 2524608000</p>
-        /// </li>
-        /// <li>
-        /// <p>Output expiration date/time: 01/01/2050 00:00:00</p>
-        /// </li>
+        /// <li> <p>Sample input value: 2524608000</p> </li>
+        /// <li> <p>Output expiration date/time: 01/01/2050 00:00:00</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>DAYS</code>, <code>MONTHS</code>, <code>YEARS</code>: The relative time from the
-        /// moment of issuance until the certificate will expire, expressed in days, months, or
-        /// years. </p>
+        /// <p> <code>DAYS</code>, <code>MONTHS</code>, <code>YEARS</code>: The relative time from the moment of issuance until the certificate will expire, expressed in days, months, or years. </p>
         /// <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
         /// <ul>
-        /// <li>
-        /// <p>Sample input value: 90</p>
-        /// </li>
-        /// <li>
-        /// <p>Output expiration date: 01/10/2020 12:34:54 UTC</p>
-        /// </li>
+        /// <li> <p>Sample input value: 90</p> </li>
+        /// <li> <p>Output expiration date: 01/10/2020 12:34:54 UTC</p> </li>
         /// </ul>
-        /// <p>The minimum validity duration for a certificate using relative time
-        /// (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute
-        /// time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
+        /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
         pub fn r#type(mut self, input: crate::model::ValidityPeriodType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Determines how <i>ACM Private CA</i> interprets the <code>Value</code>
-        /// parameter, an integer. Supported validity types include those listed below. Type
-        /// definitions with values include a sample input value and the resulting output. </p>
-        /// <p>
-        /// <code>END_DATE</code>: The specific date and time when the certificate will expire,
-        /// expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When
-        /// UTCTime is used, if the year field (YY) is greater than or equal to 50, the year is
-        /// interpreted as 19YY. If the year field is less than 50, the year is interpreted as
-        /// 20YY.</p>
+        /// <p>Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity types include those listed below. Type definitions with values include a sample input value and the resulting output. </p>
+        /// <p> <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When UTCTime is used, if the year field (YY) is greater than or equal to 50, the year is interpreted as 19YY. If the year field is less than 50, the year is interpreted as 20YY.</p>
         /// <ul>
-        /// <li>
-        /// <p>Sample input value: 491231235959 (UTCTime format)</p>
-        /// </li>
-        /// <li>
-        /// <p>Output expiration date/time: 12/31/2049 23:59:59</p>
-        /// </li>
+        /// <li> <p>Sample input value: 491231235959 (UTCTime format)</p> </li>
+        /// <li> <p>Output expiration date/time: 12/31/2049 23:59:59</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate
-        /// will start or expire, expressed in seconds since the Unix Epoch. </p>
+        /// <p> <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate will start or expire, expressed in seconds since the Unix Epoch. </p>
         /// <ul>
-        /// <li>
-        /// <p>Sample input value: 2524608000</p>
-        /// </li>
-        /// <li>
-        /// <p>Output expiration date/time: 01/01/2050 00:00:00</p>
-        /// </li>
+        /// <li> <p>Sample input value: 2524608000</p> </li>
+        /// <li> <p>Output expiration date/time: 01/01/2050 00:00:00</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>DAYS</code>, <code>MONTHS</code>, <code>YEARS</code>: The relative time from the
-        /// moment of issuance until the certificate will expire, expressed in days, months, or
-        /// years. </p>
+        /// <p> <code>DAYS</code>, <code>MONTHS</code>, <code>YEARS</code>: The relative time from the moment of issuance until the certificate will expire, expressed in days, months, or years. </p>
         /// <p>Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:</p>
         /// <ul>
-        /// <li>
-        /// <p>Sample input value: 90</p>
-        /// </li>
-        /// <li>
-        /// <p>Output expiration date: 01/10/2020 12:34:54 UTC</p>
-        /// </li>
+        /// <li> <p>Sample input value: 90</p> </li>
+        /// <li> <p>Output expiration date: 01/10/2020 12:34:54 UTC</p> </li>
         /// </ul>
-        /// <p>The minimum validity duration for a certificate using relative time
-        /// (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute
-        /// time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
+        /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ValidityPeriodType>,
@@ -3665,22 +3143,14 @@ impl AsRef<str> for ValidityPeriodType {
     }
 }
 
-/// <p>Contains X.509 certificate information to be placed in an issued certificate. An
-/// <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must
-/// be selected, or else this parameter is ignored. </p>
-/// <p>If conflicting or duplicate certificate information is supplied from other sources,
-/// ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of
-/// operation rules</a> to determine what information is used.</p>
+/// <p>Contains X.509 certificate information to be placed in an issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. </p>
+/// <p>If conflicting or duplicate certificate information is supplied from other sources, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of operation rules</a> to determine what information is used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApiPassthrough {
     /// <p>Specifies X.509 extension information for a certificate.</p>
     pub extensions: std::option::Option<crate::model::Extensions>,
-    /// <p>Contains information about the certificate subject. The <code>Subject</code> field in
-    /// the certificate identifies the entity that owns or controls the public key in the
-    /// certificate. The entity can be a user, computer, device, or service. The <code>Subject
-    /// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
-    /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+    /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
     pub subject: std::option::Option<crate::model::Asn1Subject>,
 }
 impl ApiPassthrough {
@@ -3688,11 +3158,7 @@ impl ApiPassthrough {
     pub fn extensions(&self) -> std::option::Option<&crate::model::Extensions> {
         self.extensions.as_ref()
     }
-    /// <p>Contains information about the certificate subject. The <code>Subject</code> field in
-    /// the certificate identifies the entity that owns or controls the public key in the
-    /// certificate. The entity can be a user, computer, device, or service. The <code>Subject
-    /// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
-    /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+    /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
     pub fn subject(&self) -> std::option::Option<&crate::model::Asn1Subject> {
         self.subject.as_ref()
     }
@@ -3728,20 +3194,12 @@ pub mod api_passthrough {
             self.extensions = input;
             self
         }
-        /// <p>Contains information about the certificate subject. The <code>Subject</code> field in
-        /// the certificate identifies the entity that owns or controls the public key in the
-        /// certificate. The entity can be a user, computer, device, or service. The <code>Subject
-        /// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
-        /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+        /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
         pub fn subject(mut self, input: crate::model::Asn1Subject) -> Self {
             self.subject = Some(input);
             self
         }
-        /// <p>Contains information about the certificate subject. The <code>Subject</code> field in
-        /// the certificate identifies the entity that owns or controls the public key in the
-        /// certificate. The entity can be a user, computer, device, or service. The <code>Subject
-        /// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
-        /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+        /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
         pub fn set_subject(
             mut self,
             input: std::option::Option<crate::model::Asn1Subject>,
@@ -3769,51 +3227,31 @@ impl ApiPassthrough {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Extensions {
-    /// <p>Contains a sequence of one or more policy information terms, each of which consists of
-    /// an object identifier (OID) and optional qualifiers. For more information, see NIST's
-    /// definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object
-    /// Identifier (OID)</a>.</p>
-    /// <p>In an end-entity certificate, these terms indicate the policy under which the
-    /// certificate was issued and the purposes for which it may be used. In a CA certificate,
-    /// these terms limit the set of policies for certification paths that include this
-    /// certificate.</p>
+    /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
+    /// <p>In an end-entity certificate, these terms indicate the policy under which the certificate was issued and the purposes for which it may be used. In a CA certificate, these terms limit the set of policies for certification paths that include this certificate.</p>
     pub certificate_policies: std::option::Option<std::vec::Vec<crate::model::PolicyInformation>>,
-    /// <p>Specifies additional purposes for which the certified public key may be used other
-    /// than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
+    /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
     pub extended_key_usage: std::option::Option<std::vec::Vec<crate::model::ExtendedKeyUsage>>,
-    /// <p>Defines one or more purposes for which the key contained in the certificate can be
-    /// used. Default value for each option is false.</p>
+    /// <p>Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.</p>
     pub key_usage: std::option::Option<crate::model::KeyUsage>,
-    /// <p>The subject alternative name extension allows identities to be bound to the subject of
-    /// the certificate. These identities may be included in addition to or in place of the
-    /// identity in the subject field of the certificate.</p>
+    /// <p>The subject alternative name extension allows identities to be bound to the subject of the certificate. These identities may be included in addition to or in place of the identity in the subject field of the certificate.</p>
     pub subject_alternative_names: std::option::Option<std::vec::Vec<crate::model::GeneralName>>,
 }
 impl Extensions {
-    /// <p>Contains a sequence of one or more policy information terms, each of which consists of
-    /// an object identifier (OID) and optional qualifiers. For more information, see NIST's
-    /// definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object
-    /// Identifier (OID)</a>.</p>
-    /// <p>In an end-entity certificate, these terms indicate the policy under which the
-    /// certificate was issued and the purposes for which it may be used. In a CA certificate,
-    /// these terms limit the set of policies for certification paths that include this
-    /// certificate.</p>
+    /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
+    /// <p>In an end-entity certificate, these terms indicate the policy under which the certificate was issued and the purposes for which it may be used. In a CA certificate, these terms limit the set of policies for certification paths that include this certificate.</p>
     pub fn certificate_policies(&self) -> std::option::Option<&[crate::model::PolicyInformation]> {
         self.certificate_policies.as_deref()
     }
-    /// <p>Specifies additional purposes for which the certified public key may be used other
-    /// than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
+    /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
     pub fn extended_key_usage(&self) -> std::option::Option<&[crate::model::ExtendedKeyUsage]> {
         self.extended_key_usage.as_deref()
     }
-    /// <p>Defines one or more purposes for which the key contained in the certificate can be
-    /// used. Default value for each option is false.</p>
+    /// <p>Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.</p>
     pub fn key_usage(&self) -> std::option::Option<&crate::model::KeyUsage> {
         self.key_usage.as_ref()
     }
-    /// <p>The subject alternative name extension allows identities to be bound to the subject of
-    /// the certificate. These identities may be included in addition to or in place of the
-    /// identity in the subject field of the certificate.</p>
+    /// <p>The subject alternative name extension allows identities to be bound to the subject of the certificate. These identities may be included in addition to or in place of the identity in the subject field of the certificate.</p>
     pub fn subject_alternative_names(&self) -> std::option::Option<&[crate::model::GeneralName]> {
         self.subject_alternative_names.as_deref()
     }
@@ -3847,31 +3285,16 @@ pub mod extensions {
         ///
         /// To override the contents of this collection use [`set_certificate_policies`](Self::set_certificate_policies).
         ///
-        /// <p>Contains a sequence of one or more policy information terms, each of which consists of
-        /// an object identifier (OID) and optional qualifiers. For more information, see NIST's
-        /// definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object
-        /// Identifier (OID)</a>.</p>
-        /// <p>In an end-entity certificate, these terms indicate the policy under which the
-        /// certificate was issued and the purposes for which it may be used. In a CA certificate,
-        /// these terms limit the set of policies for certification paths that include this
-        /// certificate.</p>
-        pub fn certificate_policies(
-            mut self,
-            input: impl Into<crate::model::PolicyInformation>,
-        ) -> Self {
+        /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
+        /// <p>In an end-entity certificate, these terms indicate the policy under which the certificate was issued and the purposes for which it may be used. In a CA certificate, these terms limit the set of policies for certification paths that include this certificate.</p>
+        pub fn certificate_policies(mut self, input: crate::model::PolicyInformation) -> Self {
             let mut v = self.certificate_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificate_policies = Some(v);
             self
         }
-        /// <p>Contains a sequence of one or more policy information terms, each of which consists of
-        /// an object identifier (OID) and optional qualifiers. For more information, see NIST's
-        /// definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object
-        /// Identifier (OID)</a>.</p>
-        /// <p>In an end-entity certificate, these terms indicate the policy under which the
-        /// certificate was issued and the purposes for which it may be used. In a CA certificate,
-        /// these terms limit the set of policies for certification paths that include this
-        /// certificate.</p>
+        /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
+        /// <p>In an end-entity certificate, these terms indicate the policy under which the certificate was issued and the purposes for which it may be used. In a CA certificate, these terms limit the set of policies for certification paths that include this certificate.</p>
         pub fn set_certificate_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyInformation>>,
@@ -3883,19 +3306,14 @@ pub mod extensions {
         ///
         /// To override the contents of this collection use [`set_extended_key_usage`](Self::set_extended_key_usage).
         ///
-        /// <p>Specifies additional purposes for which the certified public key may be used other
-        /// than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
-        pub fn extended_key_usage(
-            mut self,
-            input: impl Into<crate::model::ExtendedKeyUsage>,
-        ) -> Self {
+        /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
+        pub fn extended_key_usage(mut self, input: crate::model::ExtendedKeyUsage) -> Self {
             let mut v = self.extended_key_usage.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.extended_key_usage = Some(v);
             self
         }
-        /// <p>Specifies additional purposes for which the certified public key may be used other
-        /// than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
+        /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
         pub fn set_extended_key_usage(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExtendedKeyUsage>>,
@@ -3903,14 +3321,12 @@ pub mod extensions {
             self.extended_key_usage = input;
             self
         }
-        /// <p>Defines one or more purposes for which the key contained in the certificate can be
-        /// used. Default value for each option is false.</p>
+        /// <p>Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.</p>
         pub fn key_usage(mut self, input: crate::model::KeyUsage) -> Self {
             self.key_usage = Some(input);
             self
         }
-        /// <p>Defines one or more purposes for which the key contained in the certificate can be
-        /// used. Default value for each option is false.</p>
+        /// <p>Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.</p>
         pub fn set_key_usage(mut self, input: std::option::Option<crate::model::KeyUsage>) -> Self {
             self.key_usage = input;
             self
@@ -3919,21 +3335,14 @@ pub mod extensions {
         ///
         /// To override the contents of this collection use [`set_subject_alternative_names`](Self::set_subject_alternative_names).
         ///
-        /// <p>The subject alternative name extension allows identities to be bound to the subject of
-        /// the certificate. These identities may be included in addition to or in place of the
-        /// identity in the subject field of the certificate.</p>
-        pub fn subject_alternative_names(
-            mut self,
-            input: impl Into<crate::model::GeneralName>,
-        ) -> Self {
+        /// <p>The subject alternative name extension allows identities to be bound to the subject of the certificate. These identities may be included in addition to or in place of the identity in the subject field of the certificate.</p>
+        pub fn subject_alternative_names(mut self, input: crate::model::GeneralName) -> Self {
             let mut v = self.subject_alternative_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subject_alternative_names = Some(v);
             self
         }
-        /// <p>The subject alternative name extension allows identities to be bound to the subject of
-        /// the certificate. These identities may be included in addition to or in place of the
-        /// identity in the subject field of the certificate.</p>
+        /// <p>The subject alternative name extension allows identities to be bound to the subject of the certificate. These identities may be included in addition to or in place of the identity in the subject field of the certificate.</p>
         pub fn set_subject_alternative_names(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GeneralName>>,
@@ -3959,15 +3368,13 @@ impl Extensions {
     }
 }
 
-/// <p>Specifies additional purposes for which the certified public key may be used other
-/// than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
+/// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendedKeyUsage {
     /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://tools.ietf.org/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
     pub extended_key_usage_type: std::option::Option<crate::model::ExtendedKeyUsageType>,
-    /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier
-    /// (OID).</p>
+    /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
     pub extended_key_usage_object_identifier: std::option::Option<std::string::String>,
 }
 impl ExtendedKeyUsage {
@@ -3977,8 +3384,7 @@ impl ExtendedKeyUsage {
     ) -> std::option::Option<&crate::model::ExtendedKeyUsageType> {
         self.extended_key_usage_type.as_ref()
     }
-    /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier
-    /// (OID).</p>
+    /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
     pub fn extended_key_usage_object_identifier(&self) -> std::option::Option<&str> {
         self.extended_key_usage_object_identifier.as_deref()
     }
@@ -4020,8 +3426,7 @@ pub mod extended_key_usage {
             self.extended_key_usage_type = input;
             self
         }
-        /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier
-        /// (OID).</p>
+        /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
         pub fn extended_key_usage_object_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -4029,8 +3434,7 @@ pub mod extended_key_usage {
             self.extended_key_usage_object_identifier = Some(input.into());
             self
         }
-        /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier
-        /// (OID).</p>
+        /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
         pub fn set_extended_key_usage_object_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4151,23 +3555,17 @@ impl AsRef<str> for ExtendedKeyUsageType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyInformation {
-    /// <p>Specifies the object identifier (OID) of the certificate policy under which the
-    /// certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
-    /// (OID)</a>.</p>
+    /// <p>Specifies the object identifier (OID) of the certificate policy under which the certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     pub cert_policy_id: std::option::Option<std::string::String>,
-    /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the
-    /// certification practice statement (CPS) qualifier.</p>
+    /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification practice statement (CPS) qualifier.</p>
     pub policy_qualifiers: std::option::Option<std::vec::Vec<crate::model::PolicyQualifierInfo>>,
 }
 impl PolicyInformation {
-    /// <p>Specifies the object identifier (OID) of the certificate policy under which the
-    /// certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
-    /// (OID)</a>.</p>
+    /// <p>Specifies the object identifier (OID) of the certificate policy under which the certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     pub fn cert_policy_id(&self) -> std::option::Option<&str> {
         self.cert_policy_id.as_deref()
     }
-    /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the
-    /// certification practice statement (CPS) qualifier.</p>
+    /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification practice statement (CPS) qualifier.</p>
     pub fn policy_qualifiers(&self) -> std::option::Option<&[crate::model::PolicyQualifierInfo]> {
         self.policy_qualifiers.as_deref()
     }
@@ -4191,16 +3589,12 @@ pub mod policy_information {
             std::option::Option<std::vec::Vec<crate::model::PolicyQualifierInfo>>,
     }
     impl Builder {
-        /// <p>Specifies the object identifier (OID) of the certificate policy under which the
-        /// certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
-        /// (OID)</a>.</p>
+        /// <p>Specifies the object identifier (OID) of the certificate policy under which the certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
         pub fn cert_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cert_policy_id = Some(input.into());
             self
         }
-        /// <p>Specifies the object identifier (OID) of the certificate policy under which the
-        /// certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
-        /// (OID)</a>.</p>
+        /// <p>Specifies the object identifier (OID) of the certificate policy under which the certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
         pub fn set_cert_policy_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4212,19 +3606,14 @@ pub mod policy_information {
         ///
         /// To override the contents of this collection use [`set_policy_qualifiers`](Self::set_policy_qualifiers).
         ///
-        /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the
-        /// certification practice statement (CPS) qualifier.</p>
-        pub fn policy_qualifiers(
-            mut self,
-            input: impl Into<crate::model::PolicyQualifierInfo>,
-        ) -> Self {
+        /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification practice statement (CPS) qualifier.</p>
+        pub fn policy_qualifiers(mut self, input: crate::model::PolicyQualifierInfo) -> Self {
             let mut v = self.policy_qualifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_qualifiers = Some(v);
             self
         }
-        /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the
-        /// certification practice statement (CPS) qualifier.</p>
+        /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification practice statement (CPS) qualifier.</p>
         pub fn set_policy_qualifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyQualifierInfo>>,
@@ -4248,15 +3637,13 @@ impl PolicyInformation {
     }
 }
 
-/// <p>Modifies the <code>CertPolicyId</code> of a <code>PolicyInformation</code> object with
-/// a qualifier. ACM Private CA supports the certification practice statement (CPS) qualifier.</p>
+/// <p>Modifies the <code>CertPolicyId</code> of a <code>PolicyInformation</code> object with a qualifier. ACM Private CA supports the certification practice statement (CPS) qualifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyQualifierInfo {
     /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
     pub policy_qualifier_id: std::option::Option<crate::model::PolicyQualifierId>,
-    /// <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in
-    /// this field.</p>
+    /// <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.</p>
     pub qualifier: std::option::Option<crate::model::Qualifier>,
 }
 impl PolicyQualifierInfo {
@@ -4264,8 +3651,7 @@ impl PolicyQualifierInfo {
     pub fn policy_qualifier_id(&self) -> std::option::Option<&crate::model::PolicyQualifierId> {
         self.policy_qualifier_id.as_ref()
     }
-    /// <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in
-    /// this field.</p>
+    /// <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.</p>
     pub fn qualifier(&self) -> std::option::Option<&crate::model::Qualifier> {
         self.qualifier.as_ref()
     }
@@ -4301,14 +3687,12 @@ pub mod policy_qualifier_info {
             self.policy_qualifier_id = input;
             self
         }
-        /// <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in
-        /// this field.</p>
+        /// <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.</p>
         pub fn qualifier(mut self, input: crate::model::Qualifier) -> Self {
             self.qualifier = Some(input);
             self
         }
-        /// <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in
-        /// this field.</p>
+        /// <p>Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.</p>
         pub fn set_qualifier(
             mut self,
             input: std::option::Option<crate::model::Qualifier>,
@@ -4332,18 +3716,15 @@ impl PolicyQualifierInfo {
     }
 }
 
-/// <p>Defines a <code>PolicyInformation</code> qualifier. ACM Private CA supports the <a href="https://tools.ietf.org/html/rfc5280#section-4.2.1.4">certification practice
-/// statement (CPS) qualifier</a> defined in RFC 5280. </p>
+/// <p>Defines a <code>PolicyInformation</code> qualifier. ACM Private CA supports the <a href="https://tools.ietf.org/html/rfc5280#section-4.2.1.4">certification practice statement (CPS) qualifier</a> defined in RFC 5280. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Qualifier {
-    /// <p>Contains a pointer to a certification practice statement (CPS) published by the
-    /// CA.</p>
+    /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
     pub cps_uri: std::option::Option<std::string::String>,
 }
 impl Qualifier {
-    /// <p>Contains a pointer to a certification practice statement (CPS) published by the
-    /// CA.</p>
+    /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
     pub fn cps_uri(&self) -> std::option::Option<&str> {
         self.cps_uri.as_deref()
     }
@@ -4364,14 +3745,12 @@ pub mod qualifier {
         pub(crate) cps_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Contains a pointer to a certification practice statement (CPS) published by the
-        /// CA.</p>
+        /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
         pub fn cps_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.cps_uri = Some(input.into());
             self
         }
-        /// <p>Contains a pointer to a certification practice statement (CPS) published by the
-        /// CA.</p>
+        /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
         pub fn set_cps_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cps_uri = input;
             self

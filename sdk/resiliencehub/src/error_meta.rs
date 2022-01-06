@@ -3,22 +3,15 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),

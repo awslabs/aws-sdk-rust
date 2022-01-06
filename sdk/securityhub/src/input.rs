@@ -54,7 +54,8 @@ pub mod accept_administrator_invitation_input {
 pub type AcceptAdministratorInvitationInputOperationOutputAlias =
     crate::operation::AcceptAdministratorInvitation;
 #[doc(hidden)]
-pub type AcceptAdministratorInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptAdministratorInvitationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptAdministratorInvitationInput {
     /// Consumes the builder and constructs an Operation<[`AcceptAdministratorInvitation`](crate::operation::AcceptAdministratorInvitation)>
     #[allow(clippy::let_and_return)]
@@ -65,7 +66,7 @@ impl AcceptAdministratorInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptAdministratorInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -146,7 +147,7 @@ impl AcceptAdministratorInvitationInput {
             "AcceptAdministratorInvitation",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -219,7 +220,7 @@ pub mod accept_invitation_input {
 #[doc(hidden)]
 pub type AcceptInvitationInputOperationOutputAlias = crate::operation::AcceptInvitation;
 #[doc(hidden)]
-pub type AcceptInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptInvitationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptInvitationInput {
     /// Consumes the builder and constructs an Operation<[`AcceptInvitation`](crate::operation::AcceptInvitation)>
     #[allow(clippy::let_and_return)]
@@ -230,7 +231,7 @@ impl AcceptInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -310,7 +311,7 @@ impl AcceptInvitationInput {
             "AcceptInvitation",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -381,7 +382,7 @@ pub mod batch_disable_standards_input {
 #[doc(hidden)]
 pub type BatchDisableStandardsInputOperationOutputAlias = crate::operation::BatchDisableStandards;
 #[doc(hidden)]
-pub type BatchDisableStandardsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDisableStandardsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDisableStandardsInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisableStandards`](crate::operation::BatchDisableStandards)>
     #[allow(clippy::let_and_return)]
@@ -392,7 +393,7 @@ impl BatchDisableStandardsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDisableStandards,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -474,7 +475,7 @@ impl BatchDisableStandardsInput {
             "BatchDisableStandards",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -514,10 +515,10 @@ pub mod batch_enable_standards_input {
         /// <p>The list of standards checks to enable.</p>
         pub fn standards_subscription_requests(
             mut self,
-            input: impl Into<crate::model::StandardsSubscriptionRequest>,
+            input: crate::model::StandardsSubscriptionRequest,
         ) -> Self {
             let mut v = self.standards_subscription_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.standards_subscription_requests = Some(v);
             self
         }
@@ -545,7 +546,7 @@ pub mod batch_enable_standards_input {
 #[doc(hidden)]
 pub type BatchEnableStandardsInputOperationOutputAlias = crate::operation::BatchEnableStandards;
 #[doc(hidden)]
-pub type BatchEnableStandardsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchEnableStandardsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchEnableStandardsInput {
     /// Consumes the builder and constructs an Operation<[`BatchEnableStandards`](crate::operation::BatchEnableStandards)>
     #[allow(clippy::let_and_return)]
@@ -556,7 +557,7 @@ impl BatchEnableStandardsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchEnableStandards,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -638,7 +639,7 @@ impl BatchEnableStandardsInput {
             "BatchEnableStandards",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -674,16 +675,14 @@ pub mod batch_import_findings_input {
         ///
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
-        /// <p>A list of findings to import. To successfully import a finding, it must follow the
-        /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
-        pub fn findings(mut self, input: impl Into<crate::model::AwsSecurityFinding>) -> Self {
+        /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+        pub fn findings(mut self, input: crate::model::AwsSecurityFinding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.findings = Some(v);
             self
         }
-        /// <p>A list of findings to import. To successfully import a finding, it must follow the
-        /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+        /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
         pub fn set_findings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AwsSecurityFinding>>,
@@ -707,7 +706,7 @@ pub mod batch_import_findings_input {
 #[doc(hidden)]
 pub type BatchImportFindingsInputOperationOutputAlias = crate::operation::BatchImportFindings;
 #[doc(hidden)]
-pub type BatchImportFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchImportFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchImportFindingsInput {
     /// Consumes the builder and constructs an Operation<[`BatchImportFindings`](crate::operation::BatchImportFindings)>
     #[allow(clippy::let_and_return)]
@@ -718,7 +717,7 @@ impl BatchImportFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchImportFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -798,7 +797,7 @@ impl BatchImportFindingsInput {
             "BatchImportFindings",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -847,23 +846,19 @@ pub mod batch_update_findings_input {
         ///
         /// To override the contents of this collection use [`set_finding_identifiers`](Self::set_finding_identifiers).
         ///
-        /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
-        /// up to 100 findings at a time.</p>
-        /// <p>For each finding, the list provides the finding identifier and the ARN of the finding
-        /// provider.</p>
+        /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
+        /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
         pub fn finding_identifiers(
             mut self,
-            input: impl Into<crate::model::AwsSecurityFindingIdentifier>,
+            input: crate::model::AwsSecurityFindingIdentifier,
         ) -> Self {
             let mut v = self.finding_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.finding_identifiers = Some(v);
             self
         }
-        /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
-        /// up to 100 findings at a time.</p>
-        /// <p>For each finding, the list provides the finding identifier and the ARN of the finding
-        /// provider.</p>
+        /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
+        /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
         pub fn set_finding_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AwsSecurityFindingIdentifier>>,
@@ -895,52 +890,24 @@ pub mod batch_update_findings_input {
             self
         }
         /// <p>Indicates the veracity of a finding.</p>
-        /// <p>The available values for <code>VerificationState</code> are  as follows.</p>
+        /// <p>The available values for <code>VerificationState</code> are as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code> – The default disposition of a security finding</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FALSE_POSITIVE</code> – The security finding was determined to be a false
-        /// alarm</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where
-        /// the finding doesn't pose any threat, is expected, or both</p>
-        /// </li>
+        /// <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
+        /// <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>
+        /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
+        /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
         /// </ul>
         pub fn verification_state(mut self, input: crate::model::VerificationState) -> Self {
             self.verification_state = Some(input);
             self
         }
         /// <p>Indicates the veracity of a finding.</p>
-        /// <p>The available values for <code>VerificationState</code> are  as follows.</p>
+        /// <p>The available values for <code>VerificationState</code> are as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code> – The default disposition of a security finding</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FALSE_POSITIVE</code> – The security finding was determined to be a false
-        /// alarm</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where
-        /// the finding doesn't pose any threat, is expected, or both</p>
-        /// </li>
+        /// <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
+        /// <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>
+        /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
+        /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
         /// </ul>
         pub fn set_verification_state(
             mut self,
@@ -949,36 +916,26 @@ pub mod batch_update_findings_input {
             self.verification_state = input;
             self
         }
-        /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood
-        /// that a finding accurately identifies the behavior or issue that it was intended to
-        /// identify.</p>
-        /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
-        /// confidence and 100 means 100 percent confidence.</p>
+        /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
+        /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
         pub fn confidence(mut self, input: i32) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood
-        /// that a finding accurately identifies the behavior or issue that it was intended to
-        /// identify.</p>
-        /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
-        /// confidence and 100 means 100 percent confidence.</p>
+        /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
+        /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
         pub fn set_confidence(mut self, input: std::option::Option<i32>) -> Self {
             self.confidence = input;
             self
         }
-        /// <p>The updated value for the level of importance assigned to the resources associated with
-        /// the findings.</p>
-        /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100
-        /// is reserved for the most critical resources. </p>
+        /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
+        /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
         pub fn criticality(mut self, input: i32) -> Self {
             self.criticality = Some(input);
             self
         }
-        /// <p>The updated value for the level of importance assigned to the resources associated with
-        /// the findings.</p>
-        /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100
-        /// is reserved for the most critical resources. </p>
+        /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
+        /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
         pub fn set_criticality(mut self, input: std::option::Option<i32>) -> Self {
             self.criticality = input;
             self
@@ -987,25 +944,14 @@ pub mod batch_update_findings_input {
         ///
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
-        /// <p>One or more finding types in the format of namespace/category/classifier that classify a
-        /// finding.</p>
+        /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
         /// <p>Valid namespace values are as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>Software and Configuration Checks</p>
-        /// </li>
-        /// <li>
-        /// <p>TTPs</p>
-        /// </li>
-        /// <li>
-        /// <p>Effects</p>
-        /// </li>
-        /// <li>
-        /// <p>Unusual Behaviors</p>
-        /// </li>
-        /// <li>
-        /// <p>Sensitive Data Identifications </p>
-        /// </li>
+        /// <li> <p>Software and Configuration Checks</p> </li>
+        /// <li> <p>TTPs</p> </li>
+        /// <li> <p>Effects</p> </li>
+        /// <li> <p>Unusual Behaviors</p> </li>
+        /// <li> <p>Sensitive Data Identifications </p> </li>
         /// </ul>
         pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.types.unwrap_or_default();
@@ -1013,25 +959,14 @@ pub mod batch_update_findings_input {
             self.types = Some(v);
             self
         }
-        /// <p>One or more finding types in the format of namespace/category/classifier that classify a
-        /// finding.</p>
+        /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
         /// <p>Valid namespace values are as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>Software and Configuration Checks</p>
-        /// </li>
-        /// <li>
-        /// <p>TTPs</p>
-        /// </li>
-        /// <li>
-        /// <p>Effects</p>
-        /// </li>
-        /// <li>
-        /// <p>Unusual Behaviors</p>
-        /// </li>
-        /// <li>
-        /// <p>Sensitive Data Identifications </p>
-        /// </li>
+        /// <li> <p>Software and Configuration Checks</p> </li>
+        /// <li> <p>TTPs</p> </li>
+        /// <li> <p>Effects</p> </li>
+        /// <li> <p>Unusual Behaviors</p> </li>
+        /// <li> <p>Sensitive Data Identifications </p> </li>
         /// </ul>
         pub fn set_types(
             mut self,
@@ -1044,8 +979,7 @@ pub mod batch_update_findings_input {
         ///
         /// To override the contents of this collection use [`set_user_defined_fields`](Self::set_user_defined_fields).
         ///
-        /// <p>A list of name/value string pairs associated with the finding. These are custom,
-        /// user-defined fields added to a finding.</p>
+        /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
         pub fn user_defined_fields(
             mut self,
             k: impl Into<std::string::String>,
@@ -1056,8 +990,7 @@ pub mod batch_update_findings_input {
             self.user_defined_fields = Some(hash_map);
             self
         }
-        /// <p>A list of name/value string pairs associated with the finding. These are custom,
-        /// user-defined fields added to a finding.</p>
+        /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
         pub fn set_user_defined_fields(
             mut self,
             input: std::option::Option<
@@ -1087,9 +1020,9 @@ pub mod batch_update_findings_input {
         /// To override the contents of this collection use [`set_related_findings`](Self::set_related_findings).
         ///
         /// <p>A list of findings that are related to the updated findings.</p>
-        pub fn related_findings(mut self, input: impl Into<crate::model::RelatedFinding>) -> Self {
+        pub fn related_findings(mut self, input: crate::model::RelatedFinding) -> Self {
             let mut v = self.related_findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.related_findings = Some(v);
             self
         }
@@ -1126,7 +1059,7 @@ pub mod batch_update_findings_input {
 #[doc(hidden)]
 pub type BatchUpdateFindingsInputOperationOutputAlias = crate::operation::BatchUpdateFindings;
 #[doc(hidden)]
-pub type BatchUpdateFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchUpdateFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdateFindingsInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdateFindings`](crate::operation::BatchUpdateFindings)>
     #[allow(clippy::let_and_return)]
@@ -1137,7 +1070,7 @@ impl BatchUpdateFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchUpdateFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1217,7 +1150,7 @@ impl BatchUpdateFindingsInput {
             "BatchUpdateFindings",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1299,7 +1232,7 @@ pub mod create_action_target_input {
 #[doc(hidden)]
 pub type CreateActionTargetInputOperationOutputAlias = crate::operation::CreateActionTarget;
 #[doc(hidden)]
-pub type CreateActionTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateActionTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateActionTargetInput {
     /// Consumes the builder and constructs an Operation<[`CreateActionTarget`](crate::operation::CreateActionTarget)>
     #[allow(clippy::let_and_return)]
@@ -1310,7 +1243,7 @@ impl CreateActionTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateActionTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1390,7 +1323,7 @@ impl CreateActionTargetInput {
             "CreateActionTarget",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1427,21 +1360,9 @@ pub mod create_finding_aggregator_input {
         /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
         /// <p>The options are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
         /// </ul>
         pub fn region_linking_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.region_linking_mode = Some(input.into());
@@ -1451,21 +1372,9 @@ pub mod create_finding_aggregator_input {
         /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
         /// <p>The options are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
         /// </ul>
         pub fn set_region_linking_mode(
             mut self,
@@ -1479,8 +1388,7 @@ pub mod create_finding_aggregator_input {
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
         /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.
-        /// </p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
             v.push(input.into());
@@ -1488,8 +1396,7 @@ pub mod create_finding_aggregator_input {
             self
         }
         /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.
-        /// </p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1515,7 +1422,7 @@ pub mod create_finding_aggregator_input {
 pub type CreateFindingAggregatorInputOperationOutputAlias =
     crate::operation::CreateFindingAggregator;
 #[doc(hidden)]
-pub type CreateFindingAggregatorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFindingAggregatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFindingAggregatorInput {
     /// Consumes the builder and constructs an Operation<[`CreateFindingAggregator`](crate::operation::CreateFindingAggregator)>
     #[allow(clippy::let_and_return)]
@@ -1526,7 +1433,7 @@ impl CreateFindingAggregatorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFindingAggregator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1608,7 +1515,7 @@ impl CreateFindingAggregatorInput {
             "CreateFindingAggregator",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1652,14 +1559,12 @@ pub mod create_insight_input {
             self.name = input;
             self
         }
-        /// <p>One or more attributes used to filter the findings included in the insight. The insight
-        /// only includes findings that match the criteria defined in the filters.</p>
+        /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
         pub fn filters(mut self, input: crate::model::AwsSecurityFindingFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>One or more attributes used to filter the findings included in the insight. The insight
-        /// only includes findings that match the criteria defined in the filters.</p>
+        /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::AwsSecurityFindingFilters>,
@@ -1667,18 +1572,12 @@ pub mod create_insight_input {
             self.filters = input;
             self
         }
-        /// <p>The attribute used to group the findings for the insight. The grouping attribute
-        /// identifies the type of item that the insight applies to. For example, if an insight is
-        /// grouped by resource identifier, then the insight produces a list of resource
-        /// identifiers.</p>
+        /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
         pub fn group_by_attribute(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_by_attribute = Some(input.into());
             self
         }
-        /// <p>The attribute used to group the findings for the insight. The grouping attribute
-        /// identifies the type of item that the insight applies to. For example, if an insight is
-        /// grouped by resource identifier, then the insight produces a list of resource
-        /// identifiers.</p>
+        /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
         pub fn set_group_by_attribute(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1704,7 +1603,7 @@ pub mod create_insight_input {
 #[doc(hidden)]
 pub type CreateInsightInputOperationOutputAlias = crate::operation::CreateInsight;
 #[doc(hidden)]
-pub type CreateInsightInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateInsightInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateInsightInput {
     /// Consumes the builder and constructs an Operation<[`CreateInsight`](crate::operation::CreateInsight)>
     #[allow(clippy::let_and_return)]
@@ -1715,7 +1614,7 @@ impl CreateInsightInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateInsight,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1794,7 +1693,7 @@ impl CreateInsightInput {
             "CreateInsight",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1831,16 +1730,14 @@ pub mod create_members_input {
         ///
         /// To override the contents of this collection use [`set_account_details`](Self::set_account_details).
         ///
-        /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
-        /// list includes the account ID and optionally the email address.</p>
-        pub fn account_details(mut self, input: impl Into<crate::model::AccountDetails>) -> Self {
+        /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
+        pub fn account_details(mut self, input: crate::model::AccountDetails) -> Self {
             let mut v = self.account_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_details = Some(v);
             self
         }
-        /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
-        /// list includes the account ID and optionally the email address.</p>
+        /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
         pub fn set_account_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountDetails>>,
@@ -1864,7 +1761,7 @@ pub mod create_members_input {
 #[doc(hidden)]
 pub type CreateMembersInputOperationOutputAlias = crate::operation::CreateMembers;
 #[doc(hidden)]
-pub type CreateMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMembersInput {
     /// Consumes the builder and constructs an Operation<[`CreateMembers`](crate::operation::CreateMembers)>
     #[allow(clippy::let_and_return)]
@@ -1875,7 +1772,7 @@ impl CreateMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1954,7 +1851,7 @@ impl CreateMembersInput {
             "CreateMembers",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1990,16 +1887,14 @@ pub mod decline_invitations_input {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of account IDs for the accounts from which to decline the invitations to
-        /// Security Hub.</p>
+        /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>The list of account IDs for the accounts from which to decline the invitations to
-        /// Security Hub.</p>
+        /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2023,7 +1918,7 @@ pub mod decline_invitations_input {
 #[doc(hidden)]
 pub type DeclineInvitationsInputOperationOutputAlias = crate::operation::DeclineInvitations;
 #[doc(hidden)]
-pub type DeclineInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeclineInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeclineInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`DeclineInvitations`](crate::operation::DeclineInvitations)>
     #[allow(clippy::let_and_return)]
@@ -2034,7 +1929,7 @@ impl DeclineInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeclineInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2114,7 +2009,7 @@ impl DeclineInvitationsInput {
             "DeclineInvitations",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2175,7 +2070,7 @@ pub mod delete_action_target_input {
 #[doc(hidden)]
 pub type DeleteActionTargetInputOperationOutputAlias = crate::operation::DeleteActionTarget;
 #[doc(hidden)]
-pub type DeleteActionTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteActionTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteActionTargetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteActionTarget`](crate::operation::DeleteActionTarget)>
     #[allow(clippy::let_and_return)]
@@ -2186,7 +2081,7 @@ impl DeleteActionTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteActionTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2280,7 +2175,7 @@ impl DeleteActionTargetInput {
             "DeleteActionTarget",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2334,7 +2229,7 @@ pub mod delete_finding_aggregator_input {
 pub type DeleteFindingAggregatorInputOperationOutputAlias =
     crate::operation::DeleteFindingAggregator;
 #[doc(hidden)]
-pub type DeleteFindingAggregatorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFindingAggregatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFindingAggregatorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFindingAggregator`](crate::operation::DeleteFindingAggregator)>
     #[allow(clippy::let_and_return)]
@@ -2345,7 +2240,7 @@ impl DeleteFindingAggregatorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFindingAggregator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2439,7 +2334,7 @@ impl DeleteFindingAggregatorInput {
             "DeleteFindingAggregator",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2489,7 +2384,7 @@ pub mod delete_insight_input {
 #[doc(hidden)]
 pub type DeleteInsightInputOperationOutputAlias = crate::operation::DeleteInsight;
 #[doc(hidden)]
-pub type DeleteInsightInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteInsightInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInsightInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInsight`](crate::operation::DeleteInsight)>
     #[allow(clippy::let_and_return)]
@@ -2500,7 +2395,7 @@ impl DeleteInsightInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInsight,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2590,7 +2485,7 @@ impl DeleteInsightInput {
             "DeleteInsight",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2649,7 +2544,7 @@ pub mod delete_invitations_input {
 #[doc(hidden)]
 pub type DeleteInvitationsInputOperationOutputAlias = crate::operation::DeleteInvitations;
 #[doc(hidden)]
-pub type DeleteInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInvitations`](crate::operation::DeleteInvitations)>
     #[allow(clippy::let_and_return)]
@@ -2660,7 +2555,7 @@ impl DeleteInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2740,7 +2635,7 @@ impl DeleteInvitationsInput {
             "DeleteInvitations",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2807,7 +2702,7 @@ pub mod delete_members_input {
 #[doc(hidden)]
 pub type DeleteMembersInputOperationOutputAlias = crate::operation::DeleteMembers;
 #[doc(hidden)]
-pub type DeleteMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMembersInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMembers`](crate::operation::DeleteMembers)>
     #[allow(clippy::let_and_return)]
@@ -2818,7 +2713,7 @@ impl DeleteMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2897,7 +2792,7 @@ impl DeleteMembersInput {
             "DeleteMembers",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2950,20 +2845,14 @@ pub mod describe_action_targets_input {
             self.action_target_arns = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeActionTargets</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeActionTargets</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2996,7 +2885,7 @@ pub mod describe_action_targets_input {
 #[doc(hidden)]
 pub type DescribeActionTargetsInputOperationOutputAlias = crate::operation::DescribeActionTargets;
 #[doc(hidden)]
-pub type DescribeActionTargetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeActionTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeActionTargetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeActionTargets`](crate::operation::DescribeActionTargets)>
     #[allow(clippy::let_and_return)]
@@ -3007,7 +2896,7 @@ impl DescribeActionTargetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeActionTargets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3089,7 +2978,7 @@ impl DescribeActionTargetsInput {
             "DescribeActionTargets",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3147,7 +3036,7 @@ pub mod describe_hub_input {
 #[doc(hidden)]
 pub type DescribeHubInputOperationOutputAlias = crate::operation::DescribeHub;
 #[doc(hidden)]
-pub type DescribeHubInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeHubInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHubInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHub`](crate::operation::DescribeHub)>
     #[allow(clippy::let_and_return)]
@@ -3158,7 +3047,7 @@ impl DescribeHubInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHub,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3243,7 +3132,7 @@ impl DescribeHubInput {
             "DescribeHub",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3280,7 +3169,8 @@ pub mod describe_organization_configuration_input {
 pub type DescribeOrganizationConfigurationInputOperationOutputAlias =
     crate::operation::DescribeOrganizationConfiguration;
 #[doc(hidden)]
-pub type DescribeOrganizationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOrganizationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConfiguration`](crate::operation::DescribeOrganizationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -3291,7 +3181,7 @@ impl DescribeOrganizationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3365,7 +3255,7 @@ impl DescribeOrganizationConfigurationInput {
             "DescribeOrganizationConfiguration",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3391,20 +3281,14 @@ pub mod describe_products_input {
         pub(crate) product_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeProducts</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeProducts</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3447,7 +3331,7 @@ pub mod describe_products_input {
 #[doc(hidden)]
 pub type DescribeProductsInputOperationOutputAlias = crate::operation::DescribeProducts;
 #[doc(hidden)]
-pub type DescribeProductsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProductsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProductsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProducts`](crate::operation::DescribeProducts)>
     #[allow(clippy::let_and_return)]
@@ -3458,7 +3342,7 @@ impl DescribeProductsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProducts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3552,7 +3436,7 @@ impl DescribeProductsInput {
             "DescribeProducts",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3577,20 +3461,14 @@ pub mod describe_standards_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeStandards</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeStandards</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3622,7 +3500,7 @@ pub mod describe_standards_input {
 #[doc(hidden)]
 pub type DescribeStandardsInputOperationOutputAlias = crate::operation::DescribeStandards;
 #[doc(hidden)]
-pub type DescribeStandardsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStandardsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStandardsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStandards`](crate::operation::DescribeStandards)>
     #[allow(clippy::let_and_return)]
@@ -3633,7 +3511,7 @@ impl DescribeStandardsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStandards,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3724,7 +3602,7 @@ impl DescribeStandardsInput {
             "DescribeStandards",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3750,14 +3628,12 @@ pub mod describe_standards_controls_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
-        /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+        /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
         pub fn standards_subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.standards_subscription_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
-        /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+        /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
         pub fn set_standards_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3765,20 +3641,14 @@ pub mod describe_standards_controls_input {
             self.standards_subscription_arn = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeStandardsControls</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeStandardsControls</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3812,7 +3682,7 @@ pub mod describe_standards_controls_input {
 pub type DescribeStandardsControlsInputOperationOutputAlias =
     crate::operation::DescribeStandardsControls;
 #[doc(hidden)]
-pub type DescribeStandardsControlsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStandardsControlsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStandardsControlsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStandardsControls`](crate::operation::DescribeStandardsControls)>
     #[allow(clippy::let_and_return)]
@@ -3823,7 +3693,7 @@ impl DescribeStandardsControlsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStandardsControls,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3934,7 +3804,7 @@ impl DescribeStandardsControlsInput {
             "DescribeStandardsControls",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3988,7 +3858,8 @@ pub mod disable_import_findings_for_product_input {
 pub type DisableImportFindingsForProductInputOperationOutputAlias =
     crate::operation::DisableImportFindingsForProduct;
 #[doc(hidden)]
-pub type DisableImportFindingsForProductInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableImportFindingsForProductInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisableImportFindingsForProductInput {
     /// Consumes the builder and constructs an Operation<[`DisableImportFindingsForProduct`](crate::operation::DisableImportFindingsForProduct)>
     #[allow(clippy::let_and_return)]
@@ -3999,7 +3870,7 @@ impl DisableImportFindingsForProductInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableImportFindingsForProduct,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4093,7 +3964,7 @@ impl DisableImportFindingsForProductInput {
             "DisableImportFindingsForProduct",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4147,7 +4018,8 @@ pub mod disable_organization_admin_account_input {
 pub type DisableOrganizationAdminAccountInputOperationOutputAlias =
     crate::operation::DisableOrganizationAdminAccount;
 #[doc(hidden)]
-pub type DisableOrganizationAdminAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableOrganizationAdminAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisableOrganizationAdminAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisableOrganizationAdminAccount`](crate::operation::DisableOrganizationAdminAccount)>
     #[allow(clippy::let_and_return)]
@@ -4158,7 +4030,7 @@ impl DisableOrganizationAdminAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableOrganizationAdminAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4239,7 +4111,7 @@ impl DisableOrganizationAdminAccountInput {
             "DisableOrganizationAdminAccount",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4283,7 +4155,7 @@ pub mod disable_security_hub_input {
 #[doc(hidden)]
 pub type DisableSecurityHubInputOperationOutputAlias = crate::operation::DisableSecurityHub;
 #[doc(hidden)]
-pub type DisableSecurityHubInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableSecurityHubInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableSecurityHubInput {
     /// Consumes the builder and constructs an Operation<[`DisableSecurityHub`](crate::operation::DisableSecurityHub)>
     #[allow(clippy::let_and_return)]
@@ -4294,7 +4166,7 @@ impl DisableSecurityHubInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableSecurityHub,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4368,7 +4240,7 @@ impl DisableSecurityHubInput {
             "DisableSecurityHub",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4406,7 +4278,7 @@ pub type DisassociateFromAdministratorAccountInputOperationOutputAlias =
     crate::operation::DisassociateFromAdministratorAccount;
 #[doc(hidden)]
 pub type DisassociateFromAdministratorAccountInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateFromAdministratorAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateFromAdministratorAccount`](crate::operation::DisassociateFromAdministratorAccount)>
     #[allow(clippy::let_and_return)]
@@ -4417,7 +4289,7 @@ impl DisassociateFromAdministratorAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateFromAdministratorAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4491,7 +4363,7 @@ impl DisassociateFromAdministratorAccountInput {
             "DisassociateFromAdministratorAccount",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4528,7 +4400,8 @@ pub mod disassociate_from_master_account_input {
 pub type DisassociateFromMasterAccountInputOperationOutputAlias =
     crate::operation::DisassociateFromMasterAccount;
 #[doc(hidden)]
-pub type DisassociateFromMasterAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateFromMasterAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateFromMasterAccountInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateFromMasterAccount`](crate::operation::DisassociateFromMasterAccount)>
     #[allow(clippy::let_and_return)]
@@ -4539,7 +4412,7 @@ impl DisassociateFromMasterAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateFromMasterAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4613,7 +4486,7 @@ impl DisassociateFromMasterAccountInput {
             "DisassociateFromMasterAccount",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4672,7 +4545,7 @@ pub mod disassociate_members_input {
 #[doc(hidden)]
 pub type DisassociateMembersInputOperationOutputAlias = crate::operation::DisassociateMembers;
 #[doc(hidden)]
-pub type DisassociateMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateMembersInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateMembers`](crate::operation::DisassociateMembers)>
     #[allow(clippy::let_and_return)]
@@ -4683,7 +4556,7 @@ impl DisassociateMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4763,7 +4636,7 @@ impl DisassociateMembersInput {
             "DisassociateMembers",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4822,7 +4695,8 @@ pub mod enable_import_findings_for_product_input {
 pub type EnableImportFindingsForProductInputOperationOutputAlias =
     crate::operation::EnableImportFindingsForProduct;
 #[doc(hidden)]
-pub type EnableImportFindingsForProductInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableImportFindingsForProductInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableImportFindingsForProductInput {
     /// Consumes the builder and constructs an Operation<[`EnableImportFindingsForProduct`](crate::operation::EnableImportFindingsForProduct)>
     #[allow(clippy::let_and_return)]
@@ -4833,7 +4707,7 @@ impl EnableImportFindingsForProductInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableImportFindingsForProduct,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4914,7 +4788,7 @@ impl EnableImportFindingsForProductInput {
             "EnableImportFindingsForProduct",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4946,14 +4820,12 @@ pub mod enable_organization_admin_account_input {
         pub(crate) admin_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
-        /// account.</p>
+        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_account_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
-        /// account.</p>
+        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4978,7 +4850,8 @@ pub mod enable_organization_admin_account_input {
 pub type EnableOrganizationAdminAccountInputOperationOutputAlias =
     crate::operation::EnableOrganizationAdminAccount;
 #[doc(hidden)]
-pub type EnableOrganizationAdminAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableOrganizationAdminAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableOrganizationAdminAccountInput {
     /// Consumes the builder and constructs an Operation<[`EnableOrganizationAdminAccount`](crate::operation::EnableOrganizationAdminAccount)>
     #[allow(clippy::let_and_return)]
@@ -4989,7 +4862,7 @@ impl EnableOrganizationAdminAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableOrganizationAdminAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5070,7 +4943,7 @@ impl EnableOrganizationAdminAccountInput {
             "EnableOrganizationAdminAccount",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5130,18 +5003,12 @@ pub mod enable_security_hub_input {
             self.tags = input;
             self
         }
-        /// <p>Whether to enable the security standards that Security Hub has designated as automatically
-        /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set
-        /// to <code>true</code>. To not enable the automatically enabled standards, set
-        /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+        /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
         pub fn enable_default_standards(mut self, input: bool) -> Self {
             self.enable_default_standards = Some(input);
             self
         }
-        /// <p>Whether to enable the security standards that Security Hub has designated as automatically
-        /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set
-        /// to <code>true</code>. To not enable the automatically enabled standards, set
-        /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+        /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
         pub fn set_enable_default_standards(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_default_standards = input;
             self
@@ -5163,7 +5030,7 @@ pub mod enable_security_hub_input {
 #[doc(hidden)]
 pub type EnableSecurityHubInputOperationOutputAlias = crate::operation::EnableSecurityHub;
 #[doc(hidden)]
-pub type EnableSecurityHubInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableSecurityHubInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableSecurityHubInput {
     /// Consumes the builder and constructs an Operation<[`EnableSecurityHub`](crate::operation::EnableSecurityHub)>
     #[allow(clippy::let_and_return)]
@@ -5174,7 +5041,7 @@ impl EnableSecurityHubInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableSecurityHub,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5254,7 +5121,7 @@ impl EnableSecurityHubInput {
             "EnableSecurityHub",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5299,7 +5166,7 @@ pub mod get_administrator_account_input {
 pub type GetAdministratorAccountInputOperationOutputAlias =
     crate::operation::GetAdministratorAccount;
 #[doc(hidden)]
-pub type GetAdministratorAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAdministratorAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAdministratorAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetAdministratorAccount`](crate::operation::GetAdministratorAccount)>
     #[allow(clippy::let_and_return)]
@@ -5310,7 +5177,7 @@ impl GetAdministratorAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAdministratorAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5384,7 +5251,7 @@ impl GetAdministratorAccountInput {
             "GetAdministratorAccount",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5433,20 +5300,14 @@ pub mod get_enabled_standards_input {
             self.standards_subscription_arns = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetEnabledStandards</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetEnabledStandards</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5479,7 +5340,7 @@ pub mod get_enabled_standards_input {
 #[doc(hidden)]
 pub type GetEnabledStandardsInputOperationOutputAlias = crate::operation::GetEnabledStandards;
 #[doc(hidden)]
-pub type GetEnabledStandardsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEnabledStandardsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEnabledStandardsInput {
     /// Consumes the builder and constructs an Operation<[`GetEnabledStandards`](crate::operation::GetEnabledStandards)>
     #[allow(clippy::let_and_return)]
@@ -5490,7 +5351,7 @@ impl GetEnabledStandardsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEnabledStandards,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5570,7 +5431,7 @@ impl GetEnabledStandardsInput {
             "GetEnabledStandards",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5631,7 +5492,7 @@ pub mod get_finding_aggregator_input {
 #[doc(hidden)]
 pub type GetFindingAggregatorInputOperationOutputAlias = crate::operation::GetFindingAggregator;
 #[doc(hidden)]
-pub type GetFindingAggregatorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFindingAggregatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingAggregatorInput {
     /// Consumes the builder and constructs an Operation<[`GetFindingAggregator`](crate::operation::GetFindingAggregator)>
     #[allow(clippy::let_and_return)]
@@ -5642,7 +5503,7 @@ impl GetFindingAggregatorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFindingAggregator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5736,7 +5597,7 @@ impl GetFindingAggregatorInput {
             "GetFindingAggregator",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5763,22 +5624,16 @@ pub mod get_findings_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The finding attributes used to define a condition to filter the returned
-        /// findings.</p>
-        /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to
-        /// 20 filter values.</p>
-        /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To
-        /// search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
+        /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
+        /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
+        /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
         pub fn filters(mut self, input: crate::model::AwsSecurityFindingFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>The finding attributes used to define a condition to filter the returned
-        /// findings.</p>
-        /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to
-        /// 20 filter values.</p>
-        /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To
-        /// search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
+        /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
+        /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
+        /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::AwsSecurityFindingFilters>,
@@ -5791,9 +5646,9 @@ pub mod get_findings_input {
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
         /// <p>The finding attributes used to sort the list of returned findings.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::SortCriterion>) -> Self {
+        pub fn sort_criteria(mut self, input: crate::model::SortCriterion) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
@@ -5805,20 +5660,14 @@ pub mod get_findings_input {
             self.sort_criteria = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetFindings</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetFindings</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5852,7 +5701,7 @@ pub mod get_findings_input {
 #[doc(hidden)]
 pub type GetFindingsInputOperationOutputAlias = crate::operation::GetFindings;
 #[doc(hidden)]
-pub type GetFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingsInput {
     /// Consumes the builder and constructs an Operation<[`GetFindings`](crate::operation::GetFindings)>
     #[allow(clippy::let_and_return)]
@@ -5863,7 +5712,7 @@ impl GetFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5942,7 +5791,7 @@ impl GetFindingsInput {
             "GetFindings",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6000,7 +5849,7 @@ pub mod get_insight_results_input {
 #[doc(hidden)]
 pub type GetInsightResultsInputOperationOutputAlias = crate::operation::GetInsightResults;
 #[doc(hidden)]
-pub type GetInsightResultsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInsightResultsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInsightResultsInput {
     /// Consumes the builder and constructs an Operation<[`GetInsightResults`](crate::operation::GetInsightResults)>
     #[allow(clippy::let_and_return)]
@@ -6011,7 +5860,7 @@ impl GetInsightResultsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInsightResults,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6105,7 +5954,7 @@ impl GetInsightResultsInput {
             "GetInsightResults",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6135,18 +5984,14 @@ pub mod get_insights_input {
         ///
         /// To override the contents of this collection use [`set_insight_arns`](Self::set_insight_arns).
         ///
-        /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
-        /// <code>GetInsights</code> returns all of your custom insights. It does not return any
-        /// managed insights.</p>
+        /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
         pub fn insight_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.insight_arns.unwrap_or_default();
             v.push(input.into());
             self.insight_arns = Some(v);
             self
         }
-        /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
-        /// <code>GetInsights</code> returns all of your custom insights. It does not return any
-        /// managed insights.</p>
+        /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
         pub fn set_insight_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6154,20 +5999,14 @@ pub mod get_insights_input {
             self.insight_arns = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetInsights</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetInsights</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6200,7 +6039,7 @@ pub mod get_insights_input {
 #[doc(hidden)]
 pub type GetInsightsInputOperationOutputAlias = crate::operation::GetInsights;
 #[doc(hidden)]
-pub type GetInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInsightsInput {
     /// Consumes the builder and constructs an Operation<[`GetInsights`](crate::operation::GetInsights)>
     #[allow(clippy::let_and_return)]
@@ -6211,7 +6050,7 @@ impl GetInsightsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInsights,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6290,7 +6129,7 @@ impl GetInsightsInput {
             "GetInsights",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6334,7 +6173,7 @@ pub mod get_invitations_count_input {
 #[doc(hidden)]
 pub type GetInvitationsCountInputOperationOutputAlias = crate::operation::GetInvitationsCount;
 #[doc(hidden)]
-pub type GetInvitationsCountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInvitationsCountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInvitationsCountInput {
     /// Consumes the builder and constructs an Operation<[`GetInvitationsCount`](crate::operation::GetInvitationsCount)>
     #[allow(clippy::let_and_return)]
@@ -6345,7 +6184,7 @@ impl GetInvitationsCountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInvitationsCount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6419,7 +6258,7 @@ impl GetInvitationsCountInput {
             "GetInvitationsCount",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6455,7 +6294,7 @@ pub mod get_master_account_input {
 #[doc(hidden)]
 pub type GetMasterAccountInputOperationOutputAlias = crate::operation::GetMasterAccount;
 #[doc(hidden)]
-pub type GetMasterAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMasterAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMasterAccountInput {
     /// Consumes the builder and constructs an Operation<[`GetMasterAccount`](crate::operation::GetMasterAccount)>
     #[allow(clippy::let_and_return)]
@@ -6466,7 +6305,7 @@ impl GetMasterAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMasterAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6540,7 +6379,7 @@ impl GetMasterAccountInput {
             "GetMasterAccount",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6599,7 +6438,7 @@ pub mod get_members_input {
 #[doc(hidden)]
 pub type GetMembersInputOperationOutputAlias = crate::operation::GetMembers;
 #[doc(hidden)]
-pub type GetMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMembersInput {
     /// Consumes the builder and constructs an Operation<[`GetMembers`](crate::operation::GetMembers)>
     #[allow(clippy::let_and_return)]
@@ -6610,7 +6449,7 @@ impl GetMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6689,7 +6528,7 @@ impl GetMembersInput {
             "GetMembers",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6756,7 +6595,7 @@ pub mod invite_members_input {
 #[doc(hidden)]
 pub type InviteMembersInputOperationOutputAlias = crate::operation::InviteMembers;
 #[doc(hidden)]
-pub type InviteMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InviteMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InviteMembersInput {
     /// Consumes the builder and constructs an Operation<[`InviteMembers`](crate::operation::InviteMembers)>
     #[allow(clippy::let_and_return)]
@@ -6767,7 +6606,7 @@ impl InviteMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InviteMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6846,7 +6685,7 @@ impl InviteMembersInput {
             "InviteMembers",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6879,20 +6718,14 @@ pub mod list_enabled_products_for_import_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6925,7 +6758,8 @@ pub mod list_enabled_products_for_import_input {
 pub type ListEnabledProductsForImportInputOperationOutputAlias =
     crate::operation::ListEnabledProductsForImport;
 #[doc(hidden)]
-pub type ListEnabledProductsForImportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEnabledProductsForImportInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListEnabledProductsForImportInput {
     /// Consumes the builder and constructs an Operation<[`ListEnabledProductsForImport`](crate::operation::ListEnabledProductsForImport)>
     #[allow(clippy::let_and_return)]
@@ -6936,7 +6770,7 @@ impl ListEnabledProductsForImportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEnabledProductsForImport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7027,7 +6861,7 @@ impl ListEnabledProductsForImportInput {
             "ListEnabledProductsForImport",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7089,7 +6923,7 @@ pub mod list_finding_aggregators_input {
 #[doc(hidden)]
 pub type ListFindingAggregatorsInputOperationOutputAlias = crate::operation::ListFindingAggregators;
 #[doc(hidden)]
-pub type ListFindingAggregatorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFindingAggregatorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFindingAggregatorsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindingAggregators`](crate::operation::ListFindingAggregators)>
     #[allow(clippy::let_and_return)]
@@ -7100,7 +6934,7 @@ impl ListFindingAggregatorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFindingAggregators,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7191,7 +7025,7 @@ impl ListFindingAggregatorsInput {
             "ListFindingAggregators",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7226,20 +7060,14 @@ pub mod list_invitations_input {
             self.max_results = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListInvitations</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListInvitations</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7261,7 +7089,7 @@ pub mod list_invitations_input {
 #[doc(hidden)]
 pub type ListInvitationsInputOperationOutputAlias = crate::operation::ListInvitations;
 #[doc(hidden)]
-pub type ListInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInvitations`](crate::operation::ListInvitations)>
     #[allow(clippy::let_and_return)]
@@ -7272,7 +7100,7 @@ impl ListInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7363,7 +7191,7 @@ impl ListInvitationsInput {
             "ListInvitations",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7389,22 +7217,16 @@ pub mod list_members_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies which member accounts to include in the response based on their relationship
-        /// status with the administrator account. The default value is <code>TRUE</code>.</p>
-        /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member
-        /// accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
-        /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-        /// existing member accounts. </p>
+        /// <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>
+        /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
+        /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
         pub fn only_associated(mut self, input: bool) -> Self {
             self.only_associated = Some(input);
             self
         }
-        /// <p>Specifies which member accounts to include in the response based on their relationship
-        /// status with the administrator account. The default value is <code>TRUE</code>.</p>
-        /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member
-        /// accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
-        /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-        /// existing member accounts. </p>
+        /// <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>
+        /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
+        /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
         pub fn set_only_associated(mut self, input: std::option::Option<bool>) -> Self {
             self.only_associated = input;
             self
@@ -7419,20 +7241,14 @@ pub mod list_members_input {
             self.max_results = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListMembers</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListMembers</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7455,7 +7271,7 @@ pub mod list_members_input {
 #[doc(hidden)]
 pub type ListMembersInputOperationOutputAlias = crate::operation::ListMembers;
 #[doc(hidden)]
-pub type ListMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListMembers`](crate::operation::ListMembers)>
     #[allow(clippy::let_and_return)]
@@ -7466,7 +7282,7 @@ impl ListMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7563,7 +7379,7 @@ impl ListMembersInput {
             "ListMembers",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7598,18 +7414,12 @@ pub mod list_organization_admin_accounts_input {
             self.max_results = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to
-        /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
-        /// the value of this parameter to the value returned from the previous response. </p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to
-        /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
-        /// the value of this parameter to the value returned from the previous response. </p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7632,7 +7442,8 @@ pub mod list_organization_admin_accounts_input {
 pub type ListOrganizationAdminAccountsInputOperationOutputAlias =
     crate::operation::ListOrganizationAdminAccounts;
 #[doc(hidden)]
-pub type ListOrganizationAdminAccountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOrganizationAdminAccountsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListOrganizationAdminAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListOrganizationAdminAccounts`](crate::operation::ListOrganizationAdminAccounts)>
     #[allow(clippy::let_and_return)]
@@ -7643,7 +7454,7 @@ impl ListOrganizationAdminAccountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOrganizationAdminAccounts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7734,7 +7545,7 @@ impl ListOrganizationAdminAccountsInput {
             "ListOrganizationAdminAccounts",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7784,7 +7595,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -7795,7 +7606,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7885,7 +7696,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7964,7 +7775,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -7975,7 +7786,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8070,7 +7881,7 @@ impl TagResourceInput {
             "TagResource",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8149,7 +7960,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -8160,7 +7971,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8263,7 +8074,7 @@ impl UntagResourceInput {
             "UntagResource",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8340,7 +8151,7 @@ pub mod update_action_target_input {
 #[doc(hidden)]
 pub type UpdateActionTargetInputOperationOutputAlias = crate::operation::UpdateActionTarget;
 #[doc(hidden)]
-pub type UpdateActionTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateActionTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateActionTargetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateActionTarget`](crate::operation::UpdateActionTarget)>
     #[allow(clippy::let_and_return)]
@@ -8351,7 +8162,7 @@ impl UpdateActionTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateActionTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8451,7 +8262,7 @@ impl UpdateActionTargetInput {
             "UpdateActionTarget",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8502,21 +8313,9 @@ pub mod update_finding_aggregator_input {
         /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
         /// <p>The options are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
         /// </ul>
         pub fn region_linking_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.region_linking_mode = Some(input.into());
@@ -8526,21 +8325,9 @@ pub mod update_finding_aggregator_input {
         /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
         /// <p>The options are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
         /// </ul>
         pub fn set_region_linking_mode(
             mut self,
@@ -8589,7 +8376,7 @@ pub mod update_finding_aggregator_input {
 pub type UpdateFindingAggregatorInputOperationOutputAlias =
     crate::operation::UpdateFindingAggregator;
 #[doc(hidden)]
-pub type UpdateFindingAggregatorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFindingAggregatorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFindingAggregatorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFindingAggregator`](crate::operation::UpdateFindingAggregator)>
     #[allow(clippy::let_and_return)]
@@ -8600,7 +8387,7 @@ impl UpdateFindingAggregatorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFindingAggregator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8682,7 +8469,7 @@ impl UpdateFindingAggregatorInput {
             "UpdateFindingAggregator",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8770,7 +8557,7 @@ pub mod update_findings_input {
 #[doc(hidden)]
 pub type UpdateFindingsInputOperationOutputAlias = crate::operation::UpdateFindings;
 #[doc(hidden)]
-pub type UpdateFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFindingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFindings`](crate::operation::UpdateFindings)>
     #[allow(clippy::let_and_return)]
@@ -8781,7 +8568,7 @@ impl UpdateFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8861,7 +8648,7 @@ impl UpdateFindingsInput {
             "UpdateFindings",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8961,7 +8748,7 @@ pub mod update_insight_input {
 #[doc(hidden)]
 pub type UpdateInsightInputOperationOutputAlias = crate::operation::UpdateInsight;
 #[doc(hidden)]
-pub type UpdateInsightInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateInsightInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateInsightInput {
     /// Consumes the builder and constructs an Operation<[`UpdateInsight`](crate::operation::UpdateInsight)>
     #[allow(clippy::let_and_return)]
@@ -8972,7 +8759,7 @@ impl UpdateInsightInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateInsight,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9067,7 +8854,7 @@ impl UpdateInsightInput {
             "UpdateInsight",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9100,16 +8887,14 @@ pub mod update_organization_configuration_input {
     }
     impl Builder {
         /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-        /// <p>By default, this is <code>false</code>, and new accounts are not added
-        /// automatically.</p>
+        /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
         /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
         pub fn auto_enable(mut self, input: bool) -> Self {
             self.auto_enable = Some(input);
             self
         }
         /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-        /// <p>By default, this is <code>false</code>, and new accounts are not added
-        /// automatically.</p>
+        /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
         /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
         pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_enable = input;
@@ -9132,7 +8917,8 @@ pub mod update_organization_configuration_input {
 pub type UpdateOrganizationConfigurationInputOperationOutputAlias =
     crate::operation::UpdateOrganizationConfiguration;
 #[doc(hidden)]
-pub type UpdateOrganizationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateOrganizationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateOrganizationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateOrganizationConfiguration`](crate::operation::UpdateOrganizationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -9143,7 +8929,7 @@ impl UpdateOrganizationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateOrganizationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9224,7 +9010,7 @@ impl UpdateOrganizationConfigurationInput {
             "UpdateOrganizationConfiguration",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9256,20 +9042,14 @@ pub mod update_security_hub_configuration_input {
         pub(crate) auto_enable_controls: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Whether to automatically enable new controls when they are added to standards that are
-        /// enabled.</p>
-        /// <p>By default, this is set to <code>true</code>, and new controls are enabled
-        /// automatically. To not automatically enable new controls, set this to <code>false</code>.
-        /// </p>
+        /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+        /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
         pub fn auto_enable_controls(mut self, input: bool) -> Self {
             self.auto_enable_controls = Some(input);
             self
         }
-        /// <p>Whether to automatically enable new controls when they are added to standards that are
-        /// enabled.</p>
-        /// <p>By default, this is set to <code>true</code>, and new controls are enabled
-        /// automatically. To not automatically enable new controls, set this to <code>false</code>.
-        /// </p>
+        /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+        /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
         pub fn set_auto_enable_controls(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_enable_controls = input;
             self
@@ -9291,7 +9071,8 @@ pub mod update_security_hub_configuration_input {
 pub type UpdateSecurityHubConfigurationInputOperationOutputAlias =
     crate::operation::UpdateSecurityHubConfiguration;
 #[doc(hidden)]
-pub type UpdateSecurityHubConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSecurityHubConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSecurityHubConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSecurityHubConfiguration`](crate::operation::UpdateSecurityHubConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -9302,7 +9083,7 @@ impl UpdateSecurityHubConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSecurityHubConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9383,7 +9164,7 @@ impl UpdateSecurityHubConfigurationInput {
             "UpdateSecurityHubConfiguration",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9443,14 +9224,12 @@ pub mod update_standards_control_input {
             self.control_status = input;
             self
         }
-        /// <p>A description of the reason why you are disabling a security standard control. If you
-        /// are disabling a control, then this is required.</p>
+        /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
         pub fn disabled_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.disabled_reason = Some(input.into());
             self
         }
-        /// <p>A description of the reason why you are disabling a security standard control. If you
-        /// are disabling a control, then this is required.</p>
+        /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
         pub fn set_disabled_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9476,7 +9255,7 @@ pub mod update_standards_control_input {
 #[doc(hidden)]
 pub type UpdateStandardsControlInputOperationOutputAlias = crate::operation::UpdateStandardsControl;
 #[doc(hidden)]
-pub type UpdateStandardsControlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStandardsControlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStandardsControlInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStandardsControl`](crate::operation::UpdateStandardsControl)>
     #[allow(clippy::let_and_return)]
@@ -9487,7 +9266,7 @@ impl UpdateStandardsControlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStandardsControl,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9589,7 +9368,7 @@ impl UpdateStandardsControlInput {
             "UpdateStandardsControl",
             "securityhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9620,8 +9399,7 @@ pub struct UpdateStandardsControlInput {
     pub standards_control_arn: std::option::Option<std::string::String>,
     /// <p>The updated status of the security standard control.</p>
     pub control_status: std::option::Option<crate::model::ControlStatus>,
-    /// <p>A description of the reason why you are disabling a security standard control. If you
-    /// are disabling a control, then this is required.</p>
+    /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
     pub disabled_reason: std::option::Option<std::string::String>,
 }
 impl UpdateStandardsControlInput {
@@ -9633,8 +9411,7 @@ impl UpdateStandardsControlInput {
     pub fn control_status(&self) -> std::option::Option<&crate::model::ControlStatus> {
         self.control_status.as_ref()
     }
-    /// <p>A description of the reason why you are disabling a security standard control. If you
-    /// are disabling a control, then this is required.</p>
+    /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
     pub fn disabled_reason(&self) -> std::option::Option<&str> {
         self.disabled_reason.as_deref()
     }
@@ -9653,19 +9430,13 @@ impl std::fmt::Debug for UpdateStandardsControlInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecurityHubConfigurationInput {
-    /// <p>Whether to automatically enable new controls when they are added to standards that are
-    /// enabled.</p>
-    /// <p>By default, this is set to <code>true</code>, and new controls are enabled
-    /// automatically. To not automatically enable new controls, set this to <code>false</code>.
-    /// </p>
+    /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
     pub auto_enable_controls: bool,
 }
 impl UpdateSecurityHubConfigurationInput {
-    /// <p>Whether to automatically enable new controls when they are added to standards that are
-    /// enabled.</p>
-    /// <p>By default, this is set to <code>true</code>, and new controls are enabled
-    /// automatically. To not automatically enable new controls, set this to <code>false</code>.
-    /// </p>
+    /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
     pub fn auto_enable_controls(&self) -> bool {
         self.auto_enable_controls
     }
@@ -9683,15 +9454,13 @@ impl std::fmt::Debug for UpdateSecurityHubConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-    /// <p>By default, this is <code>false</code>, and new accounts are not added
-    /// automatically.</p>
+    /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
     /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
     pub auto_enable: bool,
 }
 impl UpdateOrganizationConfigurationInput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-    /// <p>By default, this is <code>false</code>, and new accounts are not added
-    /// automatically.</p>
+    /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
     /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
     pub fn auto_enable(&self) -> bool {
         self.auto_enable
@@ -9792,21 +9561,9 @@ pub struct UpdateFindingAggregatorInput {
     /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
     /// <p>The options are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
     pub region_linking_mode: std::option::Option<std::string::String>,
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
@@ -9822,21 +9579,9 @@ impl UpdateFindingAggregatorInput {
     /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
     /// <p>The options are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
     pub fn region_linking_mode(&self) -> std::option::Option<&str> {
         self.region_linking_mode.as_deref()
@@ -9979,10 +9724,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListOrganizationAdminAccountsInput {
     /// <p>The maximum number of items to return in the response.</p>
     pub max_results: i32,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to
-    /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
-    /// the value of this parameter to the value returned from the previous response. </p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationAdminAccountsInput {
@@ -9990,10 +9732,7 @@ impl ListOrganizationAdminAccountsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to
-    /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
-    /// the value of this parameter to the value returned from the previous response. </p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10011,29 +9750,20 @@ impl std::fmt::Debug for ListOrganizationAdminAccountsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersInput {
-    /// <p>Specifies which member accounts to include in the response based on their relationship
-    /// status with the administrator account. The default value is <code>TRUE</code>.</p>
-    /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member
-    /// accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
-    /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-    /// existing member accounts. </p>
+    /// <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>
+    /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
+    /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
     pub only_associated: bool,
     /// <p>The maximum number of items to return in the response. </p>
     pub max_results: i32,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListMembers</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersInput {
-    /// <p>Specifies which member accounts to include in the response based on their relationship
-    /// status with the administrator account. The default value is <code>TRUE</code>.</p>
-    /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member
-    /// accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
-    /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-    /// existing member accounts. </p>
+    /// <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>
+    /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
+    /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
     pub fn only_associated(&self) -> bool {
         self.only_associated
     }
@@ -10041,11 +9771,8 @@ impl ListMembersInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListMembers</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10066,11 +9793,8 @@ impl std::fmt::Debug for ListMembersInput {
 pub struct ListInvitationsInput {
     /// <p>The maximum number of items to return in the response. </p>
     pub max_results: i32,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListInvitations</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsInput {
@@ -10078,11 +9802,8 @@ impl ListInvitationsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListInvitations</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10128,21 +9849,15 @@ impl std::fmt::Debug for ListFindingAggregatorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnabledProductsForImportInput {
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in the response.</p>
     pub max_results: i32,
 }
 impl ListEnabledProductsForImportInput {
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10228,31 +9943,21 @@ impl std::fmt::Debug for GetInvitationsCountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightsInput {
-    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
-    /// <code>GetInsights</code> returns all of your custom insights. It does not return any
-    /// managed insights.</p>
+    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
     pub insight_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>GetInsights</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in the response.</p>
     pub max_results: i32,
 }
 impl GetInsightsInput {
-    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
-    /// <code>GetInsights</code> returns all of your custom insights. It does not return any
-    /// managed insights.</p>
+    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
     pub fn insight_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.insight_arns.as_deref()
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>GetInsights</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10296,31 +10001,22 @@ impl std::fmt::Debug for GetInsightResultsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsInput {
-    /// <p>The finding attributes used to define a condition to filter the returned
-    /// findings.</p>
-    /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to
-    /// 20 filter values.</p>
-    /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To
-    /// search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
+    /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
+    /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
+    /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
     pub filters: std::option::Option<crate::model::AwsSecurityFindingFilters>,
     /// <p>The finding attributes used to sort the list of returned findings.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::SortCriterion>>,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>GetFindings</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of findings to return.</p>
     pub max_results: i32,
 }
 impl GetFindingsInput {
-    /// <p>The finding attributes used to define a condition to filter the returned
-    /// findings.</p>
-    /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to
-    /// 20 filter values.</p>
-    /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To
-    /// search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
+    /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
+    /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
+    /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
     pub fn filters(&self) -> std::option::Option<&crate::model::AwsSecurityFindingFilters> {
         self.filters.as_ref()
     }
@@ -10328,11 +10024,8 @@ impl GetFindingsInput {
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::SortCriterion]> {
         self.sort_criteria.as_deref()
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>GetFindings</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10379,11 +10072,8 @@ impl std::fmt::Debug for GetFindingAggregatorInput {
 pub struct GetEnabledStandardsInput {
     /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
     pub standards_subscription_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>GetEnabledStandards</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: i32,
@@ -10393,11 +10083,8 @@ impl GetEnabledStandardsInput {
     pub fn standards_subscription_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.standards_subscription_arns.as_deref()
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>GetEnabledStandards</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10437,10 +10124,7 @@ pub struct EnableSecurityHubInput {
     /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Whether to enable the security standards that Security Hub has designated as automatically
-    /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set
-    /// to <code>true</code>. To not enable the automatically enabled standards, set
-    /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+    /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     pub enable_default_standards: bool,
 }
 impl EnableSecurityHubInput {
@@ -10451,10 +10135,7 @@ impl EnableSecurityHubInput {
     {
         self.tags.as_ref()
     }
-    /// <p>Whether to enable the security standards that Security Hub has designated as automatically
-    /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set
-    /// to <code>true</code>. To not enable the automatically enabled standards, set
-    /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+    /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     pub fn enable_default_standards(&self) -> bool {
         self.enable_default_standards
     }
@@ -10472,13 +10153,11 @@ impl std::fmt::Debug for EnableSecurityHubInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableOrganizationAdminAccountInput {
-    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
-    /// account.</p>
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
 }
 impl EnableOrganizationAdminAccountInput {
-    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
-    /// account.</p>
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
     pub fn admin_account_id(&self) -> std::option::Option<&str> {
         self.admin_account_id.as_deref()
     }
@@ -10612,29 +10291,21 @@ impl std::fmt::Debug for DisableImportFindingsForProductInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStandardsControlsInput {
-    /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
-    /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+    /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
     pub standards_subscription_arn: std::option::Option<std::string::String>,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeStandardsControls</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of security standard controls to return.</p>
     pub max_results: i32,
 }
 impl DescribeStandardsControlsInput {
-    /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
-    /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+    /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
     pub fn standards_subscription_arn(&self) -> std::option::Option<&str> {
         self.standards_subscription_arn.as_deref()
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeStandardsControls</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10660,21 +10331,15 @@ impl std::fmt::Debug for DescribeStandardsControlsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStandardsInput {
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeStandards</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of standards to return.</p>
     pub max_results: i32,
 }
 impl DescribeStandardsInput {
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeStandards</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10696,11 +10361,8 @@ impl std::fmt::Debug for DescribeStandardsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProductsInput {
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeProducts</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: i32,
@@ -10708,11 +10370,8 @@ pub struct DescribeProductsInput {
     pub product_arn: std::option::Option<std::string::String>,
 }
 impl DescribeProductsInput {
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeProducts</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10773,11 +10432,8 @@ impl std::fmt::Debug for DescribeHubInput {
 pub struct DescribeActionTargetsInput {
     /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
     pub action_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeActionTargets</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: i32,
@@ -10787,11 +10443,8 @@ impl DescribeActionTargetsInput {
     pub fn action_target_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.action_target_arns.as_deref()
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeActionTargets</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10919,13 +10572,11 @@ impl std::fmt::Debug for DeleteActionTargetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsInput {
-    /// <p>The list of account IDs for the accounts from which to decline the invitations to
-    /// Security Hub.</p>
+    /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeclineInvitationsInput {
-    /// <p>The list of account IDs for the accounts from which to decline the invitations to
-    /// Security Hub.</p>
+    /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -10942,13 +10593,11 @@ impl std::fmt::Debug for DeclineInvitationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersInput {
-    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
-    /// list includes the account ID and optionally the email address.</p>
+    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
     pub account_details: std::option::Option<std::vec::Vec<crate::model::AccountDetails>>,
 }
 impl CreateMembersInput {
-    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
-    /// list includes the account ID and optionally the email address.</p>
+    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
     pub fn account_details(&self) -> std::option::Option<&[crate::model::AccountDetails]> {
         self.account_details.as_deref()
     }
@@ -10967,13 +10616,9 @@ impl std::fmt::Debug for CreateMembersInput {
 pub struct CreateInsightInput {
     /// <p>The name of the custom insight to create.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>One or more attributes used to filter the findings included in the insight. The insight
-    /// only includes findings that match the criteria defined in the filters.</p>
+    /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
     pub filters: std::option::Option<crate::model::AwsSecurityFindingFilters>,
-    /// <p>The attribute used to group the findings for the insight. The grouping attribute
-    /// identifies the type of item that the insight applies to. For example, if an insight is
-    /// grouped by resource identifier, then the insight produces a list of resource
-    /// identifiers.</p>
+    /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
     pub group_by_attribute: std::option::Option<std::string::String>,
 }
 impl CreateInsightInput {
@@ -10981,15 +10626,11 @@ impl CreateInsightInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>One or more attributes used to filter the findings included in the insight. The insight
-    /// only includes findings that match the criteria defined in the filters.</p>
+    /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
     pub fn filters(&self) -> std::option::Option<&crate::model::AwsSecurityFindingFilters> {
         self.filters.as_ref()
     }
-    /// <p>The attribute used to group the findings for the insight. The grouping attribute
-    /// identifies the type of item that the insight applies to. For example, if an insight is
-    /// grouped by resource identifier, then the insight produces a list of resource
-    /// identifiers.</p>
+    /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
     pub fn group_by_attribute(&self) -> std::option::Option<&str> {
         self.group_by_attribute.as_deref()
     }
@@ -11012,26 +10653,13 @@ pub struct CreateFindingAggregatorInput {
     /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
     /// <p>The options are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
     pub region_linking_mode: std::option::Option<std::string::String>,
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-    /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.
-    /// </p>
+    /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateFindingAggregatorInput {
@@ -11039,28 +10667,15 @@ impl CreateFindingAggregatorInput {
     /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
     /// <p>The options are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
     pub fn region_linking_mode(&self) -> std::option::Option<&str> {
         self.region_linking_mode.as_deref()
     }
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-    /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.
-    /// </p>
+    /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
     pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
         self.regions.as_deref()
     }
@@ -11113,10 +10728,8 @@ impl std::fmt::Debug for CreateActionTargetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateFindingsInput {
-    /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
-    /// up to 100 findings at a time.</p>
-    /// <p>For each finding, the list provides the finding identifier and the ARN of the finding
-    /// provider.</p>
+    /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
+    /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
     pub finding_identifiers:
         std::option::Option<std::vec::Vec<crate::model::AwsSecurityFindingIdentifier>>,
     /// <p>The updated note.</p>
@@ -11124,62 +10737,31 @@ pub struct BatchUpdateFindingsInput {
     /// <p>Used to update the finding severity.</p>
     pub severity: std::option::Option<crate::model::SeverityUpdate>,
     /// <p>Indicates the veracity of a finding.</p>
-    /// <p>The available values for <code>VerificationState</code> are  as follows.</p>
+    /// <p>The available values for <code>VerificationState</code> are as follows.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code> – The default disposition of a security finding</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FALSE_POSITIVE</code> – The security finding was determined to be a false
-    /// alarm</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where
-    /// the finding doesn't pose any threat, is expected, or both</p>
-    /// </li>
+    /// <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
+    /// <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>
+    /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
+    /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
     /// </ul>
     pub verification_state: std::option::Option<crate::model::VerificationState>,
-    /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood
-    /// that a finding accurately identifies the behavior or issue that it was intended to
-    /// identify.</p>
-    /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
-    /// confidence and 100 means 100 percent confidence.</p>
+    /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
+    /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
     pub confidence: i32,
-    /// <p>The updated value for the level of importance assigned to the resources associated with
-    /// the findings.</p>
-    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100
-    /// is reserved for the most critical resources. </p>
+    /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
+    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
     pub criticality: i32,
-    /// <p>One or more finding types in the format of namespace/category/classifier that classify a
-    /// finding.</p>
+    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
     /// <p>Valid namespace values are as follows.</p>
     /// <ul>
-    /// <li>
-    /// <p>Software and Configuration Checks</p>
-    /// </li>
-    /// <li>
-    /// <p>TTPs</p>
-    /// </li>
-    /// <li>
-    /// <p>Effects</p>
-    /// </li>
-    /// <li>
-    /// <p>Unusual Behaviors</p>
-    /// </li>
-    /// <li>
-    /// <p>Sensitive Data Identifications </p>
-    /// </li>
+    /// <li> <p>Software and Configuration Checks</p> </li>
+    /// <li> <p>TTPs</p> </li>
+    /// <li> <p>Effects</p> </li>
+    /// <li> <p>Unusual Behaviors</p> </li>
+    /// <li> <p>Sensitive Data Identifications </p> </li>
     /// </ul>
     pub types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of name/value string pairs associated with the finding. These are custom,
-    /// user-defined fields added to a finding.</p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub user_defined_fields:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Used to update the workflow status of a finding.</p>
@@ -11189,10 +10771,8 @@ pub struct BatchUpdateFindingsInput {
     pub related_findings: std::option::Option<std::vec::Vec<crate::model::RelatedFinding>>,
 }
 impl BatchUpdateFindingsInput {
-    /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
-    /// up to 100 findings at a time.</p>
-    /// <p>For each finding, the list provides the finding identifier and the ARN of the finding
-    /// provider.</p>
+    /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
+    /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
     pub fn finding_identifiers(
         &self,
     ) -> std::option::Option<&[crate::model::AwsSecurityFindingIdentifier]> {
@@ -11207,70 +10787,39 @@ impl BatchUpdateFindingsInput {
         self.severity.as_ref()
     }
     /// <p>Indicates the veracity of a finding.</p>
-    /// <p>The available values for <code>VerificationState</code> are  as follows.</p>
+    /// <p>The available values for <code>VerificationState</code> are as follows.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code> – The default disposition of a security finding</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FALSE_POSITIVE</code> – The security finding was determined to be a false
-    /// alarm</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where
-    /// the finding doesn't pose any threat, is expected, or both</p>
-    /// </li>
+    /// <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
+    /// <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>
+    /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
+    /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
     /// </ul>
     pub fn verification_state(&self) -> std::option::Option<&crate::model::VerificationState> {
         self.verification_state.as_ref()
     }
-    /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood
-    /// that a finding accurately identifies the behavior or issue that it was intended to
-    /// identify.</p>
-    /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
-    /// confidence and 100 means 100 percent confidence.</p>
+    /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
+    /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
     pub fn confidence(&self) -> i32 {
         self.confidence
     }
-    /// <p>The updated value for the level of importance assigned to the resources associated with
-    /// the findings.</p>
-    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100
-    /// is reserved for the most critical resources. </p>
+    /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
+    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
     pub fn criticality(&self) -> i32 {
         self.criticality
     }
-    /// <p>One or more finding types in the format of namespace/category/classifier that classify a
-    /// finding.</p>
+    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
     /// <p>Valid namespace values are as follows.</p>
     /// <ul>
-    /// <li>
-    /// <p>Software and Configuration Checks</p>
-    /// </li>
-    /// <li>
-    /// <p>TTPs</p>
-    /// </li>
-    /// <li>
-    /// <p>Effects</p>
-    /// </li>
-    /// <li>
-    /// <p>Unusual Behaviors</p>
-    /// </li>
-    /// <li>
-    /// <p>Sensitive Data Identifications </p>
-    /// </li>
+    /// <li> <p>Software and Configuration Checks</p> </li>
+    /// <li> <p>TTPs</p> </li>
+    /// <li> <p>Effects</p> </li>
+    /// <li> <p>Unusual Behaviors</p> </li>
+    /// <li> <p>Sensitive Data Identifications </p> </li>
     /// </ul>
     pub fn types(&self) -> std::option::Option<&[std::string::String]> {
         self.types.as_deref()
     }
-    /// <p>A list of name/value string pairs associated with the finding. These are custom,
-    /// user-defined fields added to a finding.</p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn user_defined_fields(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11308,13 +10857,11 @@ impl std::fmt::Debug for BatchUpdateFindingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchImportFindingsInput {
-    /// <p>A list of findings to import. To successfully import a finding, it must follow the
-    /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+    /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
     pub findings: std::option::Option<std::vec::Vec<crate::model::AwsSecurityFinding>>,
 }
 impl BatchImportFindingsInput {
-    /// <p>A list of findings to import. To successfully import a finding, it must follow the
-    /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+    /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
     pub fn findings(&self) -> std::option::Option<&[crate::model::AwsSecurityFinding]> {
         self.findings.as_deref()
     }

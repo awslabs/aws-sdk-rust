@@ -156,8 +156,7 @@ pub struct WebsiteAuthorizationProviderSummary {
     pub authorization_provider_id: std::option::Option<std::string::String>,
     /// <p>The authorization provider type.</p>
     pub authorization_provider_type: std::option::Option<crate::model::AuthorizationProviderType>,
-    /// <p>The domain name of the authorization provider. This applies only to SAML-based
-    /// authorization providers.</p>
+    /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The time of creation.</p>
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -173,8 +172,7 @@ impl WebsiteAuthorizationProviderSummary {
     ) -> std::option::Option<&crate::model::AuthorizationProviderType> {
         self.authorization_provider_type.as_ref()
     }
-    /// <p>The domain name of the authorization provider. This applies only to SAML-based
-    /// authorization providers.</p>
+    /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -238,14 +236,12 @@ pub mod website_authorization_provider_summary {
             self.authorization_provider_type = input;
             self
         }
-        /// <p>The domain name of the authorization provider. This applies only to SAML-based
-        /// authorization providers.</p>
+        /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The domain name of the authorization provider. This applies only to SAML-based
-        /// authorization providers.</p>
+        /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self

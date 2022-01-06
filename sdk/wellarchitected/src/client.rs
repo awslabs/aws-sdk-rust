@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Well-Architected Tool
@@ -229,6 +229,7 @@ where
     ///
     /// See [`ListAnswers`](crate::client::fluent_builders::ListAnswers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnswers::into_paginator).
     pub fn list_answers(&self) -> fluent_builders::ListAnswers<C, M, R> {
         fluent_builders::ListAnswers::new(self.handle.clone())
     }
@@ -236,6 +237,7 @@ where
     ///
     /// See [`ListLenses`](crate::client::fluent_builders::ListLenses) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLenses::into_paginator).
     pub fn list_lenses(&self) -> fluent_builders::ListLenses<C, M, R> {
         fluent_builders::ListLenses::new(self.handle.clone())
     }
@@ -243,6 +245,7 @@ where
     ///
     /// See [`ListLensReviewImprovements`](crate::client::fluent_builders::ListLensReviewImprovements) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLensReviewImprovements::into_paginator).
     pub fn list_lens_review_improvements(
         &self,
     ) -> fluent_builders::ListLensReviewImprovements<C, M, R> {
@@ -252,6 +255,7 @@ where
     ///
     /// See [`ListLensReviews`](crate::client::fluent_builders::ListLensReviews) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLensReviews::into_paginator).
     pub fn list_lens_reviews(&self) -> fluent_builders::ListLensReviews<C, M, R> {
         fluent_builders::ListLensReviews::new(self.handle.clone())
     }
@@ -259,6 +263,7 @@ where
     ///
     /// See [`ListLensShares`](crate::client::fluent_builders::ListLensShares) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLensShares::into_paginator).
     pub fn list_lens_shares(&self) -> fluent_builders::ListLensShares<C, M, R> {
         fluent_builders::ListLensShares::new(self.handle.clone())
     }
@@ -266,6 +271,7 @@ where
     ///
     /// See [`ListMilestones`](crate::client::fluent_builders::ListMilestones) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMilestones::into_paginator).
     pub fn list_milestones(&self) -> fluent_builders::ListMilestones<C, M, R> {
         fluent_builders::ListMilestones::new(self.handle.clone())
     }
@@ -273,6 +279,7 @@ where
     ///
     /// See [`ListNotifications`](crate::client::fluent_builders::ListNotifications) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNotifications::into_paginator).
     pub fn list_notifications(&self) -> fluent_builders::ListNotifications<C, M, R> {
         fluent_builders::ListNotifications::new(self.handle.clone())
     }
@@ -280,6 +287,7 @@ where
     ///
     /// See [`ListShareInvitations`](crate::client::fluent_builders::ListShareInvitations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListShareInvitations::into_paginator).
     pub fn list_share_invitations(&self) -> fluent_builders::ListShareInvitations<C, M, R> {
         fluent_builders::ListShareInvitations::new(self.handle.clone())
     }
@@ -294,6 +302,7 @@ where
     ///
     /// See [`ListWorkloads`](crate::client::fluent_builders::ListWorkloads) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkloads::into_paginator).
     pub fn list_workloads(&self) -> fluent_builders::ListWorkloads<C, M, R> {
         fluent_builders::ListWorkloads::new(self.handle.clone())
     }
@@ -301,6 +310,7 @@ where
     ///
     /// See [`ListWorkloadShares`](crate::client::fluent_builders::ListWorkloadShares) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkloadShares::into_paginator).
     pub fn list_workload_shares(&self) -> fluent_builders::ListWorkloadShares<C, M, R> {
         fluent_builders::ListWorkloadShares::new(self.handle.clone())
     }
@@ -372,17 +382,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateLenses`.
     ///
     /// <p>Associate a lens to a workload.</p>
-    /// <p>Up to 10 lenses can be associated with a workload in a single API operation. A
-    /// maximum of 20 lenses can be associated with a workload.</p>
-    /// <note>
-    /// <p>
-    /// <b>Disclaimer</b>
-    /// </p>
-    /// <p>By accessing and/or applying custom lenses created by another Amazon Web Services user or account,
-    /// you acknowledge that custom lenses created by other users and shared with you are
-    /// Third Party Content as defined in the Amazon Web Services Customer Agreement.    </p>
+    /// <p>Up to 10 lenses can be associated with a workload in a single API operation. A maximum of 20 lenses can be associated with a workload.</p> <note>
+    /// <p> <b>Disclaimer</b> </p>
+    /// <p>By accessing and/or applying custom lenses created by another Amazon Web Services user or account, you acknowledge that custom lenses created by other users and shared with you are Third Party Content as defined in the Amazon Web Services Customer Agreement. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateLenses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -427,10 +431,10 @@ pub mod fluent_builders {
                 crate::input::AssociateLensesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -439,8 +443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -453,13 +457,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
         ///
         /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_aliases(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_aliases(inp);
+        /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_aliases(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_aliases(input.into());
             self
         }
         /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -471,20 +475,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLensShare`.
     ///
     /// <p>Create a lens share.</p>
-    /// <p>The owner of a lens can share it with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region.
-    /// Shared access to a lens is not removed until the lens invitation is deleted.</p>
-    /// <note>
-    /// <p>
-    /// <b>Disclaimer</b>
-    /// </p>
-    /// <p>By sharing your custom lenses with other Amazon Web Services accounts,
-    /// you acknowledge that Amazon Web Services will make your custom lenses available to those
-    /// other accounts. Those other accounts may continue to access and use your
-    /// shared custom lenses even if you delete the custom lenses
-    /// from your own Amazon Web Services account or terminate
-    /// your Amazon Web Services account.</p>
+    /// <p>The owner of a lens can share it with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Shared access to a lens is not removed until the lens invitation is deleted.</p> <note>
+    /// <p> <b>Disclaimer</b> </p>
+    /// <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLensShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -529,10 +524,10 @@ pub mod fluent_builders {
                 crate::input::CreateLensShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -541,20 +536,20 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
-        pub fn shared_with(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_with(inp);
+        pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_with(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
@@ -562,29 +557,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_shared_with(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -598,10 +581,8 @@ pub mod fluent_builders {
     ///
     /// <p>Create a new lens version.</p>
     /// <p>A lens can have up to 100 versions.</p>
-    /// <p>After a lens has been imported, create a new lens version to publish it.  The owner of a lens can share the lens with other
-    /// Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Only the owner of a lens can delete it.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After a lens has been imported, create a new lens version to publish it. The owner of a lens can share the lens with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Only the owner of a lens can delete it. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLensVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -646,10 +627,10 @@ pub mod fluent_builders {
                 crate::input::CreateLensVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -658,20 +639,20 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The version of the lens being created.</p>
-        pub fn lens_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_version(inp);
+        pub fn lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_version(input.into());
             self
         }
         /// <p>The version of the lens being created.</p>
@@ -680,8 +661,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set to true if this new major lens version.</p>
-        pub fn is_major_version(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_major_version(inp);
+        pub fn is_major_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_major_version(input);
             self
         }
         /// <p>Set to true if this new major lens version.</p>
@@ -689,29 +670,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_is_major_version(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -724,7 +693,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMilestone`.
     ///
     /// <p>Create a milestone for an existing workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMilestone<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -769,10 +738,10 @@ pub mod fluent_builders {
                 crate::input::CreateMilestoneInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -781,8 +750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -792,8 +761,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the milestone in a workload.</p>
         /// <p>Milestone names must be unique within a workload.</p>
-        pub fn milestone_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.milestone_name(inp);
+        pub fn milestone_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.milestone_name(input.into());
             self
         }
         /// <p>The name of the milestone in a workload.</p>
@@ -805,29 +774,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_milestone_name(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -840,11 +797,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkload`.
     ///
     /// <p>Create a new workload.</p>
-    /// <p>The owner of a workload can share the workload with other Amazon Web Services accounts and IAM users
-    /// in the same Amazon Web Services Region. Only the owner of a workload can delete it.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining a Workload</a> in the
-    /// <i>Well-Architected Tool User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The owner of a workload can share the workload with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Only the owner of a workload can delete it.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -889,10 +844,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorkloadInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -901,15 +856,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
-        pub fn workload_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_name(inp);
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+        pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_name(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -918,8 +871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the workload.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the workload.</p>
@@ -928,8 +881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment for the workload.</p>
-        pub fn environment(mut self, inp: crate::model::WorkloadEnvironment) -> Self {
-            self.inner = self.inner.environment(inp);
+        pub fn environment(mut self, input: crate::model::WorkloadEnvironment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         /// <p>The environment for the workload.</p>
@@ -945,8 +898,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
@@ -961,14 +914,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
         ///
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-        pub fn aws_regions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_regions(inp);
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_regions(input.into());
             self
         }
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -981,8 +932,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
         ///
         /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-        pub fn non_aws_regions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.non_aws_regions(inp);
+        pub fn non_aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.non_aws_regions(input.into());
             self
         }
         /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
@@ -997,14 +948,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
         ///
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
-        pub fn pillar_priorities(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pillar_priorities(inp);
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn pillar_priorities(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pillar_priorities(input.into());
             self
         }
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1013,8 +962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL of the architectural design for the workload.</p>
-        pub fn architectural_design(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.architectural_design(inp);
+        pub fn architectural_design(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.architectural_design(input.into());
             self
         }
         /// <p>The URL of the architectural design for the workload.</p>
@@ -1025,299 +974,81 @@ pub mod fluent_builders {
             self.inner = self.inner.set_architectural_design(input);
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
-        pub fn review_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.review_owner(inp);
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
+        pub fn review_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.review_owner(input.into());
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
         pub fn set_review_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_review_owner(input);
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
-        pub fn industry_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.industry_type(inp);
+        pub fn industry_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.industry_type(input.into());
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
         pub fn set_industry_type(
             mut self,
@@ -1327,8 +1058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The industry for the workload.</p>
-        pub fn industry(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.industry(inp);
+        pub fn industry(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.industry(input.into());
             self
         }
         /// <p>The industry for the workload.</p>
@@ -1340,12 +1071,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_lenses`](Self::set_lenses).
         ///
-        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lenses(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lenses(inp);
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lenses(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lenses(input.into());
             self
         }
-        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lenses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1354,8 +1085,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notes associated with the workload.</p>
-        pub fn notes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notes(inp);
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notes(input.into());
             self
         }
         /// <p>The notes associated with the workload.</p>
@@ -1363,29 +1094,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notes(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1404,7 +1123,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be associated with the workload.</p>
@@ -1421,12 +1140,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkloadShare`.
     ///
     /// <p>Create a workload share.</p>
-    /// <p>The owner of a workload can share it with other Amazon Web Services accounts and IAM users in the same
-    /// Amazon Web Services Region. Shared access to a workload is not removed until the workload invitation is
-    /// deleted.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing a Workload</a> in the
-    /// <i>Well-Architected Tool User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The owner of a workload can share it with other Amazon Web Services accounts and IAM users in the same Amazon Web Services Region. Shared access to a workload is not removed until the workload invitation is deleted.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkloadShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1471,10 +1187,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorkloadShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1483,8 +1199,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1493,8 +1209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
-        pub fn shared_with(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_with(inp);
+        pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_with(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
@@ -1503,8 +1219,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Permission granted on a workload share.</p>
-        pub fn permission_type(mut self, inp: crate::model::PermissionType) -> Self {
-            self.inner = self.inner.permission_type(inp);
+        pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
+            self.inner = self.inner.permission_type(input);
             self
         }
         /// <p>Permission granted on a workload share.</p>
@@ -1515,29 +1231,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_type(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1550,21 +1254,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLens`.
     ///
     /// <p>Delete an existing lens.</p>
-    /// <p>Only the owner of a lens can delete it.  After the lens is deleted,  Amazon Web Services accounts and IAM users
-    /// that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// <b>Disclaimer</b>
-    /// </p>
-    /// <p>By sharing your custom lenses with other Amazon Web Services accounts,
-    /// you acknowledge that Amazon Web Services will make your custom lenses available to those
-    /// other accounts. Those other accounts may continue to access and use your
-    /// shared custom lenses even if you delete the custom lenses
-    /// from your own Amazon Web Services account or terminate
-    /// your Amazon Web Services account.</p>
+    /// <p>Only the owner of a lens can delete it. After the lens is deleted, Amazon Web Services accounts and IAM users that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads. </p> <note>
+    /// <p> <b>Disclaimer</b> </p>
+    /// <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLens<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1609,10 +1303,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLensInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1621,40 +1315,28 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1664,8 +1346,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the lens to be deleted.</p>
-        pub fn lens_status(mut self, inp: crate::model::LensStatusType) -> Self {
-            self.inner = self.inner.lens_status(inp);
+        pub fn lens_status(mut self, input: crate::model::LensStatusType) -> Self {
+            self.inner = self.inner.lens_status(input);
             self
         }
         /// <p>The status of the lens to be deleted.</p>
@@ -1680,20 +1362,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLensShare`.
     ///
     /// <p>Delete a lens share.</p>
-    /// <p>After the lens share is deleted,  Amazon Web Services accounts and IAM users
-    /// that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.</p>
-    /// <note>
-    /// <p>
-    /// <b>Disclaimer</b>
-    /// </p>
-    /// <p>By sharing your custom lenses with other Amazon Web Services accounts,
-    /// you acknowledge that Amazon Web Services will make your custom lenses available to those
-    /// other accounts. Those other accounts may continue to access and use your
-    /// shared custom lenses even if you delete the custom lenses
-    /// from your own Amazon Web Services account or terminate
-    /// your Amazon Web Services account.</p>
+    /// <p>After the lens share is deleted, Amazon Web Services accounts and IAM users that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.</p> <note>
+    /// <p> <b>Disclaimer</b> </p>
+    /// <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLensShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1738,10 +1411,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLensShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1750,8 +1423,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID associated with the workload share.</p>
-        pub fn share_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.share_id(inp);
+        pub fn share_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.share_id(input.into());
             self
         }
         /// <p>The ID associated with the workload share.</p>
@@ -1760,40 +1433,28 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1806,7 +1467,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkload`.
     ///
     /// <p>Delete an existing workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1851,10 +1512,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWorkloadInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1863,8 +1524,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1872,29 +1533,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -1907,7 +1556,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkloadShare`.
     ///
     /// <p>Delete a workload share.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkloadShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1952,10 +1601,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWorkloadShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1964,8 +1613,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID associated with the workload share.</p>
-        pub fn share_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.share_id(inp);
+        pub fn share_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.share_id(input.into());
             self
         }
         /// <p>The ID associated with the workload share.</p>
@@ -1974,8 +1623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1983,29 +1632,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_id(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -2018,12 +1655,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateLenses`.
     ///
     /// <p>Disassociate a lens from a workload.</p>
-    /// <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p>
-    /// <note>
-    /// <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be
-    /// removed from a workload.</p>
+    /// <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p> <note>
+    /// <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be removed from a workload.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateLenses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2068,10 +1703,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateLensesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2080,8 +1715,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2094,13 +1729,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
         ///
         /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_aliases(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_aliases(inp);
+        /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_aliases(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_aliases(input.into());
             self
         }
         /// <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>
-        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2112,21 +1747,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExportLens`.
     ///
     /// <p>Export an existing lens.</p>
-    /// <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a>
-    /// in the <i>Well-Architected Tool User Guide</i>. Only the owner of a lens can export it.               
-    /// </p>
-    /// <note>
-    /// <p>
-    /// <b>Disclaimer</b>
-    /// </p>
-    /// <p>Do not include or gather personal identifiable information (PII) of end users or
-    /// other identifiable individuals in or via your custom lenses. If your custom
-    /// lens or those shared with you and used in your account do include or collect
-    /// PII you are responsible for: ensuring that the included PII is processed in accordance
-    /// with applicable law, providing adequate privacy notices, and obtaining necessary
-    /// consents for processing such data.</p>
+    /// <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a> in the <i>Well-Architected Tool User Guide</i>. Only the owner of a lens can export it. </p> <note>
+    /// <p> <b>Disclaimer</b> </p>
+    /// <p>Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your custom lenses. If your custom lens or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportLens<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2171,10 +1796,10 @@ pub mod fluent_builders {
                 crate::input::ExportLensInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2183,20 +1808,20 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The lens version to be exported.</p>
-        pub fn lens_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_version(inp);
+        pub fn lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_version(input.into());
             self
         }
         /// <p>The lens version to be exported.</p>
@@ -2208,7 +1833,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAnswer`.
     ///
     /// <p>Get the answer to a specific question in a workload review.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAnswer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2253,10 +1878,10 @@ pub mod fluent_builders {
                 crate::input::GetAnswerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2265,8 +1890,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2275,20 +1900,20 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The ID of the question.</p>
-        pub fn question_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.question_id(inp);
+        pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.question_id(input.into());
             self
         }
         /// <p>The ID of the question.</p>
@@ -2298,8 +1923,8 @@ pub mod fluent_builders {
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.milestone_number(inp);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -2312,7 +1937,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLens`.
     ///
     /// <p>Get an existing lens.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLens<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2357,10 +1982,10 @@ pub mod fluent_builders {
                 crate::input::GetLensInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2369,20 +1994,20 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The lens version to be retrieved.</p>
-        pub fn lens_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_version(inp);
+        pub fn lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_version(input.into());
             self
         }
         /// <p>The lens version to be retrieved.</p>
@@ -2394,7 +2019,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLensReview`.
     ///
     /// <p>Get lens review.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLensReview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2439,10 +2064,10 @@ pub mod fluent_builders {
                 crate::input::GetLensReviewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2451,8 +2076,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2461,21 +2086,21 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.milestone_number(inp);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -2488,7 +2113,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLensReviewReport`.
     ///
     /// <p>Get lens review report.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLensReviewReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2533,10 +2158,10 @@ pub mod fluent_builders {
                 crate::input::GetLensReviewReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2545,8 +2170,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2555,21 +2180,21 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.milestone_number(inp);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -2582,7 +2207,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLensVersionDifference`.
     ///
     /// <p>Get lens version differences.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLensVersionDifference<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2627,10 +2252,10 @@ pub mod fluent_builders {
                 crate::input::GetLensVersionDifferenceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2639,20 +2264,20 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The base version of the lens.</p>
-        pub fn base_lens_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_lens_version(inp);
+        pub fn base_lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_lens_version(input.into());
             self
         }
         /// <p>The base version of the lens.</p>
@@ -2664,8 +2289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The lens version to target a difference for.</p>
-        pub fn target_lens_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_lens_version(inp);
+        pub fn target_lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_lens_version(input.into());
             self
         }
         /// <p>The lens version to target a difference for.</p>
@@ -2680,7 +2305,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMilestone`.
     ///
     /// <p>Get a milestone for an existing workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMilestone<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2725,10 +2350,10 @@ pub mod fluent_builders {
                 crate::input::GetMilestoneInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2737,8 +2362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2748,8 +2373,8 @@ pub mod fluent_builders {
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.milestone_number(inp);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -2762,7 +2387,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkload`.
     ///
     /// <p>Get an existing workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2807,10 +2432,10 @@ pub mod fluent_builders {
                 crate::input::GetWorkloadInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2819,8 +2444,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2832,25 +2457,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportLens`.
     ///
     /// <p>Import a new lens.</p>
-    /// <p>The lens cannot be applied to workloads or shared with other Amazon Web Services accounts
-    /// until it's published with <a>CreateLensVersion</a>
-    /// </p>
-    /// <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a>
-    /// in the <i>Well-Architected Tool User Guide</i>.</p>
-    /// <p>A custom lens cannot exceed 500 KB in size.</p>
-    ///
-    /// <note>
-    /// <p>
-    /// <b>Disclaimer</b>
-    /// </p>
-    /// <p>Do not include or gather personal identifiable information (PII) of end users or
-    /// other identifiable individuals in or via your custom lenses. If your custom
-    /// lens or those shared with you and used in your account do include or collect
-    /// PII you are responsible for: ensuring that the included PII is processed in accordance
-    /// with applicable law, providing adequate privacy notices, and obtaining necessary
-    /// consents for processing such data.</p>
+    /// <p>The lens cannot be applied to workloads or shared with other Amazon Web Services accounts until it's published with <code>CreateLensVersion</code> </p>
+    /// <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a> in the <i>Well-Architected Tool User Guide</i>.</p>
+    /// <p>A custom lens cannot exceed 500 KB in size.</p> <note>
+    /// <p> <b>Disclaimer</b> </p>
+    /// <p>Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your custom lenses. If your custom lens or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportLens<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2895,10 +2508,10 @@ pub mod fluent_builders {
                 crate::input::ImportLensInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2907,20 +2520,20 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The JSON representation of a lens.</p>
-        pub fn json_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.json_string(inp);
+        pub fn json_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.json_string(input.into());
             self
         }
         /// <p>The JSON representation of a lens.</p>
@@ -2928,29 +2541,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_json_string(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -2969,7 +2570,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags to associate to a lens.</p>
@@ -2986,7 +2587,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAnswers`.
     ///
     /// <p>List of answers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnswers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3031,10 +2632,10 @@ pub mod fluent_builders {
                 crate::input::ListAnswersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3042,9 +2643,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAnswersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAnswersPaginator<C, M, R> {
+            crate::paginator::ListAnswersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -3053,33 +2660,33 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-        pub fn pillar_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pillar_id(inp);
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pillar_id(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_pillar_id(input);
             self
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.milestone_number(inp);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -3089,8 +2696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3099,8 +2706,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3112,7 +2719,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLenses`.
     ///
     /// <p>List the available lenses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLenses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3157,10 +2764,10 @@ pub mod fluent_builders {
                 crate::input::ListLensesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3168,9 +2775,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLensesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLensesPaginator<C, M, R> {
+            crate::paginator::ListLensesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3179,8 +2792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3189,8 +2802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of lenses to be returned.</p>
-        pub fn lens_type(mut self, inp: crate::model::LensType) -> Self {
-            self.inner = self.inner.lens_type(inp);
+        pub fn lens_type(mut self, input: crate::model::LensType) -> Self {
+            self.inner = self.inner.lens_type(input);
             self
         }
         /// <p>The type of lenses to be returned.</p>
@@ -3199,8 +2812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of lenses to be returned.</p>
-        pub fn lens_status(mut self, inp: crate::model::LensStatusType) -> Self {
-            self.inner = self.inner.lens_status(inp);
+        pub fn lens_status(mut self, input: crate::model::LensStatusType) -> Self {
+            self.inner = self.inner.lens_status(input);
             self
         }
         /// <p>The status of lenses to be returned.</p>
@@ -3212,8 +2825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full name of the lens.</p>
-        pub fn lens_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_name(inp);
+        pub fn lens_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_name(input.into());
             self
         }
         /// <p>The full name of the lens.</p>
@@ -3225,7 +2838,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLensReviewImprovements`.
     ///
     /// <p>List lens review improvements.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLensReviewImprovements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3270,10 +2883,10 @@ pub mod fluent_builders {
                 crate::input::ListLensReviewImprovementsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3281,9 +2894,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLensReviewImprovementsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListLensReviewImprovementsPaginator<C, M, R> {
+            crate::paginator::ListLensReviewImprovementsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -3292,33 +2913,33 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-        pub fn pillar_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pillar_id(inp);
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pillar_id(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_pillar_id(input);
             self
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.milestone_number(inp);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -3328,8 +2949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3338,8 +2959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3351,7 +2972,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLensReviews`.
     ///
     /// <p>List lens reviews.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLensReviews<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3396,10 +3017,10 @@ pub mod fluent_builders {
                 crate::input::ListLensReviewsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3407,9 +3028,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLensReviewsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLensReviewsPaginator<C, M, R> {
+            crate::paginator::ListLensReviewsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -3419,8 +3046,8 @@ pub mod fluent_builders {
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, inp: i32) -> Self {
-            self.inner = self.inner.milestone_number(inp);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -3430,8 +3057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3440,8 +3067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3453,7 +3080,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLensShares`.
     ///
     /// <p>List the lens shares associated with the lens.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLensShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3498,10 +3125,10 @@ pub mod fluent_builders {
                 crate::input::ListLensSharesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3509,21 +3136,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLensSharesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLensSharesPaginator<C, M, R> {
+            crate::paginator::ListLensSharesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
-        pub fn shared_with_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_with_prefix(inp);
+        pub fn shared_with_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_with_prefix(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
@@ -3535,8 +3168,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3545,8 +3178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3558,7 +3191,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMilestones`.
     ///
     /// <p>List all milestones for an existing workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMilestones<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3603,10 +3236,10 @@ pub mod fluent_builders {
                 crate::input::ListMilestonesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3614,9 +3247,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMilestonesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMilestonesPaginator<C, M, R> {
+            crate::paginator::ListMilestonesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -3625,8 +3264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3635,8 +3274,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3648,7 +3287,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNotifications`.
     ///
     /// <p>List lens notifications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3693,10 +3332,10 @@ pub mod fluent_builders {
                 crate::input::ListNotificationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3704,9 +3343,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListNotificationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListNotificationsPaginator<C, M, R> {
+            crate::paginator::ListNotificationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -3715,8 +3360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3725,8 +3370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3737,8 +3382,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListShareInvitations`.
     ///
-    /// <p>List  the workload invitations.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>List the workload invitations.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListShareInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3783,10 +3428,10 @@ pub mod fluent_builders {
                 crate::input::ListShareInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3794,14 +3439,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An optional string added to the beginning of each workload name returned in the
-        /// results.</p>
-        pub fn workload_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_name_prefix(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListShareInvitationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListShareInvitationsPaginator<C, M, R> {
+            crate::paginator::ListShareInvitationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
+        pub fn workload_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_name_prefix(input.into());
             self
         }
-        /// <p>An optional string added to the beginning of each workload name returned in the
-        /// results.</p>
+        /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
         pub fn set_workload_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3810,8 +3459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
-        pub fn lens_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_name_prefix(inp);
+        pub fn lens_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_name_prefix(input.into());
             self
         }
         /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
@@ -3823,8 +3472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of share invitations to be returned.</p>
-        pub fn share_resource_type(mut self, inp: crate::model::ShareResourceType) -> Self {
-            self.inner = self.inner.share_resource_type(inp);
+        pub fn share_resource_type(mut self, input: crate::model::ShareResourceType) -> Self {
+            self.inner = self.inner.share_resource_type(input);
             self
         }
         /// <p>The type of share invitations to be returned.</p>
@@ -3836,8 +3485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3846,8 +3495,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3859,7 +3508,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List the tags for a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3904,10 +3553,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3916,8 +3565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN for the workload.</p>
-        pub fn workload_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_arn(inp);
+        pub fn workload_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_arn(input.into());
             self
         }
         /// <p>The ARN for the workload.</p>
@@ -3929,7 +3578,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkloads`.
     ///
     /// <p>List workloads. Paginated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkloads<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3974,10 +3623,10 @@ pub mod fluent_builders {
                 crate::input::ListWorkloadsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3985,14 +3634,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An optional string added to the beginning of each workload name returned in the
-        /// results.</p>
-        pub fn workload_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_name_prefix(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkloadsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorkloadsPaginator<C, M, R> {
+            crate::paginator::ListWorkloadsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
+        pub fn workload_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_name_prefix(input.into());
             self
         }
-        /// <p>An optional string added to the beginning of each workload name returned in the
-        /// results.</p>
+        /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
         pub fn set_workload_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4001,8 +3654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -4011,8 +3664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -4024,7 +3677,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkloadShares`.
     ///
     /// <p>List the workload shares associated with the workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkloadShares<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4069,10 +3722,10 @@ pub mod fluent_builders {
                 crate::input::ListWorkloadSharesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4080,9 +3733,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkloadSharesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorkloadSharesPaginator<C, M, R> {
+            crate::paginator::ListWorkloadSharesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -4091,8 +3750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
-        pub fn shared_with_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_with_prefix(inp);
+        pub fn shared_with_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_with_prefix(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
@@ -4104,8 +3763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -4114,8 +3773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -4127,7 +3786,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4172,10 +3831,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4184,8 +3843,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN for the workload.</p>
-        pub fn workload_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_arn(inp);
+        pub fn workload_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_arn(input.into());
             self
         }
         /// <p>The ARN for the workload.</p>
@@ -4203,7 +3862,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags for the resource.</p>
@@ -4221,10 +3880,8 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes specified tags from a resource.</p>
     /// <p>To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:</p>
-    /// <p>
-    /// <code>DELETE /tags/WorkloadArn?tagKeys=key1&tagKeys=key2</code>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4269,10 +3926,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4281,8 +3938,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN for the workload.</p>
-        pub fn workload_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_arn(inp);
+        pub fn workload_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_arn(input.into());
             self
         }
         /// <p>The ARN for the workload.</p>
@@ -4294,14 +3951,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of tag keys. Existing tags of the resource
-        /// whose keys are members of this list are removed from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A list of tag keys. Existing tags of the resource
-        /// whose keys are members of this list are removed from the resource.</p>
+        /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4313,7 +3968,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAnswer`.
     ///
     /// <p>Update the answer to a specific question in a workload review.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAnswer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4358,10 +4013,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAnswerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4370,8 +4025,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -4380,20 +4035,20 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The ID of the question.</p>
-        pub fn question_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.question_id(inp);
+        pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.question_id(input.into());
             self
         }
         /// <p>The ID of the question.</p>
@@ -4407,8 +4062,8 @@ pub mod fluent_builders {
         ///
         /// <p>List of selected choice IDs in a question answer.</p>
         /// <p>The values entered replace the previously selected choices.</p>
-        pub fn selected_choices(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.selected_choices(inp);
+        pub fn selected_choices(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.selected_choices(input.into());
             self
         }
         /// <p>List of selected choice IDs in a question answer.</p>
@@ -4424,18 +4079,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_choice_updates`](Self::set_choice_updates).
         ///
-        /// <p>A list of choices to update on a question in your workload.  The String key
-        /// corresponds to the choice ID to be updated.</p>
+        /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
         pub fn choice_updates(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ChoiceUpdate>,
+            v: crate::model::ChoiceUpdate,
         ) -> Self {
-            self.inner = self.inner.choice_updates(k, v);
+            self.inner = self.inner.choice_updates(k.into(), v);
             self
         }
-        /// <p>A list of choices to update on a question in your workload.  The String key
-        /// corresponds to the choice ID to be updated.</p>
+        /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
         pub fn set_choice_updates(
             mut self,
             input: std::option::Option<
@@ -4446,8 +4099,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notes associated with the workload.</p>
-        pub fn notes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notes(inp);
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notes(input.into());
             self
         }
         /// <p>The notes associated with the workload.</p>
@@ -4456,8 +4109,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines whether this question is applicable to a lens review.</p>
-        pub fn is_applicable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_applicable(inp);
+        pub fn is_applicable(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_applicable(input);
             self
         }
         /// <p>Defines whether this question is applicable to a lens review.</p>
@@ -4466,8 +4119,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason why a question is not applicable to your workload.</p>
-        pub fn reason(mut self, inp: crate::model::AnswerReason) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: crate::model::AnswerReason) -> Self {
+            self.inner = self.inner.reason(input);
             self
         }
         /// <p>The reason why a question is not applicable to your workload.</p>
@@ -4482,7 +4135,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLensReview`.
     ///
     /// <p>Update lens review.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLensReview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4527,10 +4180,10 @@ pub mod fluent_builders {
                 crate::input::UpdateLensReviewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4539,8 +4192,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -4549,20 +4202,20 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The notes associated with the workload.</p>
-        pub fn lens_notes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_notes(inp);
+        pub fn lens_notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_notes(input.into());
             self
         }
         /// <p>The notes associated with the workload.</p>
@@ -4580,7 +4233,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pillar_notes(k, v);
+            self.inner = self.inner.pillar_notes(k.into(), v.into());
             self
         }
         /// <p>List of pillar notes of a lens review in a workload.</p>
@@ -4597,7 +4250,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateShareInvitation`.
     ///
     /// <p>Update a workload invitation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateShareInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4642,10 +4295,10 @@ pub mod fluent_builders {
                 crate::input::UpdateShareInvitationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4654,8 +4307,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the share invitation.</p>
-        pub fn share_invitation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.share_invitation_id(inp);
+        pub fn share_invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.share_invitation_id(input.into());
             self
         }
         /// <p>The ID assigned to the share invitation.</p>
@@ -4667,8 +4320,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Share invitation action taken by contributor.</p>
-        pub fn share_invitation_action(mut self, inp: crate::model::ShareInvitationAction) -> Self {
-            self.inner = self.inner.share_invitation_action(inp);
+        pub fn share_invitation_action(
+            mut self,
+            input: crate::model::ShareInvitationAction,
+        ) -> Self {
+            self.inner = self.inner.share_invitation_action(input);
             self
         }
         /// <p>Share invitation action taken by contributor.</p>
@@ -4683,7 +4339,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkload`.
     ///
     /// <p>Update an existing workload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4728,10 +4384,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWorkloadInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4740,8 +4396,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -4750,15 +4406,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
-        pub fn workload_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_name(inp);
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+        pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_name(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4767,8 +4421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the workload.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the workload.</p>
@@ -4777,8 +4431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment for the workload.</p>
-        pub fn environment(mut self, inp: crate::model::WorkloadEnvironment) -> Self {
-            self.inner = self.inner.environment(inp);
+        pub fn environment(mut self, input: crate::model::WorkloadEnvironment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         /// <p>The environment for the workload.</p>
@@ -4794,8 +4448,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
@@ -4810,14 +4464,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
         ///
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-        pub fn aws_regions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_regions(inp);
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_regions(input.into());
             self
         }
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4830,8 +4482,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
         ///
         /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-        pub fn non_aws_regions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.non_aws_regions(inp);
+        pub fn non_aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.non_aws_regions(input.into());
             self
         }
         /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
@@ -4846,14 +4498,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
         ///
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
-        pub fn pillar_priorities(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pillar_priorities(inp);
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
+        pub fn pillar_priorities(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pillar_priorities(input.into());
             self
         }
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4862,8 +4512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL of the architectural design for the workload.</p>
-        pub fn architectural_design(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.architectural_design(inp);
+        pub fn architectural_design(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.architectural_design(input.into());
             self
         }
         /// <p>The URL of the architectural design for the workload.</p>
@@ -4874,32 +4524,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_architectural_design(input);
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
-        pub fn review_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.review_owner(inp);
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
+        pub fn review_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.review_owner(input.into());
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
         pub fn set_review_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_review_owner(input);
             self
         }
-        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
-        /// owner</i> field is required.</p>
-        /// <p>If a <b>Review owner</b> is not added to the workload within
-        /// 60 days of acknowledgement, access to the workload is restricted until an owner is
-        /// added.</p>
-        pub fn is_review_owner_update_acknowledged(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_review_owner_update_acknowledged(inp);
+        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+        /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
+        pub fn is_review_owner_update_acknowledged(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_review_owner_update_acknowledged(input);
             self
         }
-        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
-        /// owner</i> field is required.</p>
-        /// <p>If a <b>Review owner</b> is not added to the workload within
-        /// 60 days of acknowledgement, access to the workload is restricted until an owner is
-        /// added.</p>
+        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+        /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
         pub fn set_is_review_owner_update_acknowledged(
             mut self,
             input: std::option::Option<bool>,
@@ -4908,286 +4550,70 @@ pub mod fluent_builders {
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
-        pub fn industry_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.industry_type(inp);
+        pub fn industry_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.industry_type(input.into());
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
         pub fn set_industry_type(
             mut self,
@@ -5197,8 +4623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The industry for the workload.</p>
-        pub fn industry(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.industry(inp);
+        pub fn industry(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.industry(input.into());
             self
         }
         /// <p>The industry for the workload.</p>
@@ -5207,8 +4633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notes associated with the workload.</p>
-        pub fn notes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notes(inp);
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notes(input.into());
             self
         }
         /// <p>The notes associated with the workload.</p>
@@ -5217,8 +4643,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The improvement status for a workload.</p>
-        pub fn improvement_status(mut self, inp: crate::model::WorkloadImprovementStatus) -> Self {
-            self.inner = self.inner.improvement_status(inp);
+        pub fn improvement_status(
+            mut self,
+            input: crate::model::WorkloadImprovementStatus,
+        ) -> Self {
+            self.inner = self.inner.improvement_status(input);
             self
         }
         /// <p>The improvement status for a workload.</p>
@@ -5233,7 +4662,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkloadShare`.
     ///
     /// <p>Update a workload share.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkloadShare<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5278,10 +4707,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWorkloadShareInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5290,8 +4719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID associated with the workload share.</p>
-        pub fn share_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.share_id(inp);
+        pub fn share_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.share_id(input.into());
             self
         }
         /// <p>The ID associated with the workload share.</p>
@@ -5300,8 +4729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -5310,8 +4739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Permission granted on a workload share.</p>
-        pub fn permission_type(mut self, inp: crate::model::PermissionType) -> Self {
-            self.inner = self.inner.permission_type(inp);
+        pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
+            self.inner = self.inner.permission_type(input);
             self
         }
         /// <p>Permission granted on a workload share.</p>
@@ -5326,7 +4755,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpgradeLensReview`.
     ///
     /// <p>Upgrade lens review.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpgradeLensReview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5371,10 +4800,10 @@ pub mod fluent_builders {
                 crate::input::UpgradeLensReviewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5383,8 +4812,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(inp);
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -5393,21 +4822,21 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(inp);
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lens_alias(input);
             self
         }
         /// <p>The name of the milestone in a workload.</p>
         /// <p>Milestone names must be unique within a workload.</p>
-        pub fn milestone_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.milestone_name(inp);
+        pub fn milestone_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.milestone_name(input.into());
             self
         }
         /// <p>The name of the milestone in a workload.</p>
@@ -5419,29 +4848,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_milestone_name(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
-        /// (executes only once).</p>
-        /// <p>You should not reuse the same token for other requests. If you retry a request with
-        /// the same client request token and the same parameters after it has completed
-        /// successfully, the result of the original request is returned. </p>
-        /// <important>
-        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs
-        /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
-        /// you must provide this token or the request will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -5452,6 +4869,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

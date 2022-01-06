@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Connect Customer Profiles
@@ -333,11 +333,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddProfileKey`.
     ///
-    /// <p>Associates a new key value with a specific profile, such as a Contact Trace Record (CTR)
-    /// ContactId.</p>
-    /// <p>A profile object can have a single unique key and any number of additional keys that can
-    /// be used to identify the profile that it belongs to.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates a new key value with a specific profile, such as a Contact Trace Record (CTR) ContactId.</p>
+    /// <p>A profile object can have a single unique key and any number of additional keys that can be used to identify the profile that it belongs to.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddProfileKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -382,10 +380,10 @@ pub mod fluent_builders {
                 crate::input::AddProfileKeyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -394,8 +392,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of a customer profile.</p>
-        pub fn profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_id(inp);
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_id(input.into());
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
@@ -404,8 +402,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A searchable identifier of a customer profile.</p>
-        pub fn key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_name(inp);
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_name(input.into());
             self
         }
         /// <p>A searchable identifier of a customer profile.</p>
@@ -418,8 +416,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>A list of key values.</p>
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.values(inp);
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.values(input.into());
             self
         }
         /// <p>A list of key values.</p>
@@ -431,8 +429,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -443,17 +441,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDomain`.
     ///
-    /// <p>Creates a domain, which is a container for all customer data, such as customer profile
-    /// attributes, object types, profile keys, and encryption keys. You can create multiple
-    /// domains, and each domain can have multiple third-party integrations.</p>
-    /// <p>Each Amazon Connect instance can be associated with only one domain. Multiple Amazon Connect instances can
-    /// be associated with one domain.</p>
-    /// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a> to
-    /// enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-    /// resolution</a>: set <code>Matching</code> to true. </p>
-    /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should
-    /// apply. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a domain, which is a container for all customer data, such as customer profile attributes, object types, profile keys, and encryption keys. You can create multiple domains, and each domain can have multiple third-party integrations.</p>
+    /// <p>Each Amazon Connect instance can be associated with only one domain. Multiple Amazon Connect instances can be associated with one domain.</p>
+    /// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a> to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity resolution</a>: set <code>Matching</code> to true. </p>
+    /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -498,10 +490,10 @@ pub mod fluent_builders {
                 crate::input::CreateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -510,8 +502,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -520,8 +512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The default number of days until the data within the domain expires.</p>
-        pub fn default_expiration_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.default_expiration_days(inp);
+        pub fn default_expiration_days(mut self, input: i32) -> Self {
+            self.inner = self.inner.default_expiration_days(input);
             self
         }
         /// <p>The default number of days until the data within the domain expires.</p>
@@ -529,16 +521,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_expiration_days(input);
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
-        pub fn default_encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_encryption_key(inp);
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
+        pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_encryption_key(input.into());
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn set_default_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -546,18 +534,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_encryption_key(input);
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. You must set up a policy on the
-        /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
-        /// messages to the DeadLetterQueue.</p>
-        pub fn dead_letter_queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dead_letter_queue_url(inp);
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
+        pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dead_letter_queue_url(input.into());
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. You must set up a policy on the
-        /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
-        /// messages to the DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn set_dead_letter_queue_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -565,24 +547,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dead_letter_queue_url(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
-        pub fn matching(mut self, inp: crate::model::MatchingRequest) -> Self {
-            self.inner = self.inner.matching(inp);
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
+        pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
+            self.inner = self.inner.matching(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingRequest>,
@@ -600,7 +572,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -617,9 +589,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProfile`.
     ///
     /// <p>Creates a standard profile.</p>
-    /// <p>A standard profile represents the following attributes for a customer profile in a
-    /// domain.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>A standard profile represents the following attributes for a customer profile in a domain.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -664,10 +635,10 @@ pub mod fluent_builders {
                 crate::input::CreateProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -676,8 +647,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -686,8 +657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique account number that you have given to the customer.</p>
-        pub fn account_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_number(inp);
+        pub fn account_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_number(input.into());
             self
         }
         /// <p>A unique account number that you have given to the customer.</p>
@@ -699,8 +670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Any additional information relevant to the customer’s profile.</p>
-        pub fn additional_information(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.additional_information(inp);
+        pub fn additional_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.additional_information(input.into());
             self
         }
         /// <p>Any additional information relevant to the customer’s profile.</p>
@@ -712,8 +683,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of profile used to describe the customer.</p>
-        pub fn party_type(mut self, inp: crate::model::PartyType) -> Self {
-            self.inner = self.inner.party_type(inp);
+        pub fn party_type(mut self, input: crate::model::PartyType) -> Self {
+            self.inner = self.inner.party_type(input);
             self
         }
         /// <p>The type of profile used to describe the customer.</p>
@@ -725,8 +696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the customer’s business.</p>
-        pub fn business_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.business_name(inp);
+        pub fn business_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.business_name(input.into());
             self
         }
         /// <p>The name of the customer’s business.</p>
@@ -738,8 +709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s first name.</p>
-        pub fn first_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_name(inp);
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.first_name(input.into());
             self
         }
         /// <p>The customer’s first name.</p>
@@ -748,8 +719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s middle name.</p>
-        pub fn middle_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.middle_name(inp);
+        pub fn middle_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.middle_name(input.into());
             self
         }
         /// <p>The customer’s middle name.</p>
@@ -758,8 +729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s last name.</p>
-        pub fn last_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.last_name(inp);
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.last_name(input.into());
             self
         }
         /// <p>The customer’s last name.</p>
@@ -768,8 +739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s birth date. </p>
-        pub fn birth_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.birth_date(inp);
+        pub fn birth_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.birth_date(input.into());
             self
         }
         /// <p>The customer’s birth date. </p>
@@ -778,8 +749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The gender with which the customer identifies. </p>
-        pub fn gender(mut self, inp: crate::model::Gender) -> Self {
-            self.inner = self.inner.gender(inp);
+        pub fn gender(mut self, input: crate::model::Gender) -> Self {
+            self.inner = self.inner.gender(input);
             self
         }
         /// <p>The gender with which the customer identifies. </p>
@@ -787,21 +758,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gender(input);
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_phone_number(input);
             self
         }
         /// <p>The customer’s mobile phone number.</p>
-        pub fn mobile_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mobile_phone_number(inp);
+        pub fn mobile_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mobile_phone_number(input.into());
             self
         }
         /// <p>The customer’s mobile phone number.</p>
@@ -813,8 +782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s home phone number.</p>
-        pub fn home_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_phone_number(inp);
+        pub fn home_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_phone_number(input.into());
             self
         }
         /// <p>The customer’s home phone number.</p>
@@ -826,8 +795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s business phone number.</p>
-        pub fn business_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.business_phone_number(inp);
+        pub fn business_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.business_phone_number(input.into());
             self
         }
         /// <p>The customer’s business phone number.</p>
@@ -838,14 +807,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_business_phone_number(input);
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -854,8 +821,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s personal email address.</p>
-        pub fn personal_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.personal_email_address(inp);
+        pub fn personal_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.personal_email_address(input.into());
             self
         }
         /// <p>The customer’s personal email address.</p>
@@ -867,8 +834,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s business email address.</p>
-        pub fn business_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.business_email_address(inp);
+        pub fn business_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.business_email_address(input.into());
             self
         }
         /// <p>The customer’s business email address.</p>
@@ -879,21 +846,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_business_email_address(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
-        pub fn address(mut self, inp: crate::model::Address) -> Self {
-            self.inner = self.inner.address(inp);
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
+        pub fn address(mut self, input: crate::model::Address) -> Self {
+            self.inner = self.inner.address(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.inner = self.inner.set_address(input);
             self
         }
         /// <p>The customer’s shipping address.</p>
-        pub fn shipping_address(mut self, inp: crate::model::Address) -> Self {
-            self.inner = self.inner.shipping_address(inp);
+        pub fn shipping_address(mut self, input: crate::model::Address) -> Self {
+            self.inner = self.inner.shipping_address(input);
             self
         }
         /// <p>The customer’s shipping address.</p>
@@ -905,8 +870,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s mailing address.</p>
-        pub fn mailing_address(mut self, inp: crate::model::Address) -> Self {
-            self.inner = self.inner.mailing_address(inp);
+        pub fn mailing_address(mut self, input: crate::model::Address) -> Self {
+            self.inner = self.inner.mailing_address(input);
             self
         }
         /// <p>The customer’s mailing address.</p>
@@ -918,8 +883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s billing address.</p>
-        pub fn billing_address(mut self, inp: crate::model::Address) -> Self {
-            self.inner = self.inner.billing_address(inp);
+        pub fn billing_address(mut self, input: crate::model::Address) -> Self {
+            self.inner = self.inner.billing_address(input);
             self
         }
         /// <p>The customer’s billing address.</p>
@@ -940,7 +905,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
         /// <p>A key value pair of attributes of a customer profile.</p>
@@ -956,9 +921,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDomain`.
     ///
-    /// <p>Deletes a specific domain and all of its customer data, such as customer profile
-    /// attributes and their related objects.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a specific domain and all of its customer data, such as customer profile attributes and their related objects.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1003,10 +967,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1015,8 +979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1028,7 +992,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIntegration`.
     ///
     /// <p>Removes an integration from a specific domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1073,10 +1037,10 @@ pub mod fluent_builders {
                 crate::input::DeleteIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1085,8 +1049,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1095,8 +1059,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uri(inp);
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uri(input.into());
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -1108,7 +1072,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProfile`.
     ///
     /// <p>Deletes the standard customer profile and all data pertaining to the profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1153,10 +1117,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1165,8 +1129,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of a customer profile.</p>
-        pub fn profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_id(inp);
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_id(input.into());
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
@@ -1175,8 +1139,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1188,7 +1152,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProfileKey`.
     ///
     /// <p>Removes a searchable key from a customer profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProfileKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1233,10 +1197,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProfileKeyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1245,8 +1209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of a customer profile.</p>
-        pub fn profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_id(inp);
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_id(input.into());
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
@@ -1255,8 +1219,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A searchable identifier of a customer profile.</p>
-        pub fn key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_name(inp);
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_name(input.into());
             self
         }
         /// <p>A searchable identifier of a customer profile.</p>
@@ -1269,8 +1233,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>A list of key values.</p>
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.values(inp);
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.values(input.into());
             self
         }
         /// <p>A list of key values.</p>
@@ -1282,8 +1246,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1295,7 +1259,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProfileObject`.
     ///
     /// <p>Removes an object associated with a profile of a given ProfileObjectType.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProfileObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1340,10 +1304,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProfileObjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1352,8 +1316,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of a customer profile.</p>
-        pub fn profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_id(inp);
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_id(input.into());
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
@@ -1362,8 +1326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the profile object generated by the service.</p>
-        pub fn profile_object_unique_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_object_unique_key(inp);
+        pub fn profile_object_unique_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_object_unique_key(input.into());
             self
         }
         /// <p>The unique identifier of the profile object generated by the service.</p>
@@ -1375,8 +1339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(input.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -1388,8 +1352,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1400,11 +1364,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProfileObjectType`.
     ///
-    /// <p>Removes a ProfileObjectType from a specific domain as well as removes all the
-    /// ProfileObjects of that type. It also disables integrations from this specific
-    /// ProfileObjectType. In addition, it scrubs all of the fields of the standard profile that
-    /// were populated from this ProfileObjectType.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes a ProfileObjectType from a specific domain as well as removes all the ProfileObjects of that type. It also disables integrations from this specific ProfileObjectType. In addition, it scrubs all of the fields of the standard profile that were populated from this ProfileObjectType.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProfileObjectType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1449,10 +1410,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProfileObjectTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1461,8 +1422,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1471,8 +1432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(input.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -1486,21 +1447,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAutoMergingPreview`.
     ///
-    /// <p>Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly
-    /// selects a sample of matching groups from the existing matching results, and applies the
-    /// automerging settings that you provided. You can then view the number of profiles in the
-    /// sample, the number of matches, and the number of profiles identified to be merged. This
-    /// enables you to evaluate the accuracy of the attributes in your matching list. </p>
-    /// <p>You can't view which profiles are matched and would be merged.</p>
-    /// <important>
-    ///
-    /// <p>We strongly recommend you use this API to do a dry run of the automerging process
-    /// before running the Identity Resolution Job. Include <b>at least</b> two matching
-    /// attributes. If your matching list includes too few attributes (such as only
-    /// <code>FirstName</code> or only <code>LastName</code>), there may be a large number of
-    /// matches. This increases the chances of erroneous merges.</p>
+    /// <p>Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly selects a sample of matching groups from the existing matching results, and applies the automerging settings that you provided. You can then view the number of profiles in the sample, the number of matches, and the number of profiles identified to be merged. This enables you to evaluate the accuracy of the attributes in your matching list. </p>
+    /// <p>You can't view which profiles are matched and would be merged.</p> <important>
+    /// <p>We strongly recommend you use this API to do a dry run of the automerging process before running the Identity Resolution Job. Include <b>at least</b> two matching attributes. If your matching list includes too few attributes (such as only <code>FirstName</code> or only <code>LastName</code>), there may be a large number of matches. This increases the chances of erroneous merges.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAutoMergingPreview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1545,10 +1496,10 @@ pub mod fluent_builders {
                 crate::input::GetAutoMergingPreviewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1557,8 +1508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1567,8 +1518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of matching attributes that represent matching criteria.</p>
-        pub fn consolidation(mut self, inp: crate::model::Consolidation) -> Self {
-            self.inner = self.inner.consolidation(inp);
+        pub fn consolidation(mut self, input: crate::model::Consolidation) -> Self {
+            self.inner = self.inner.consolidation(input);
             self
         }
         /// <p>A list of matching attributes that represent matching criteria.</p>
@@ -1580,8 +1531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
-        pub fn conflict_resolution(mut self, inp: crate::model::ConflictResolution) -> Self {
-            self.inner = self.inner.conflict_resolution(inp);
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(input);
             self
         }
         /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
@@ -1596,7 +1547,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDomain`.
     ///
     /// <p>Returns information about a specific domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1641,10 +1592,10 @@ pub mod fluent_builders {
                 crate::input::GetDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1653,8 +1604,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1666,9 +1617,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIdentityResolutionJob`.
     ///
     /// <p>Returns information about an Identity Resolution Job in a specific domain. </p>
-    /// <p>Identity Resolution Jobs are set up using the Amazon Connect admin console. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html">Use
-    /// Identity Resolution to consolidate similar profiles</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Identity Resolution Jobs are set up using the Amazon Connect admin console. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html">Use Identity Resolution to consolidate similar profiles</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityResolutionJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1713,10 +1663,10 @@ pub mod fluent_builders {
                 crate::input::GetIdentityResolutionJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1725,8 +1675,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1735,8 +1685,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the Identity Resolution Job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier of the Identity Resolution Job.</p>
@@ -1748,7 +1698,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIntegration`.
     ///
     /// <p>Returns an integration for a domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1793,10 +1743,10 @@ pub mod fluent_builders {
                 crate::input::GetIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1805,8 +1755,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1815,8 +1765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uri(inp);
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uri(input.into());
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -1827,57 +1777,25 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMatches`.
     ///
-    /// <p>This API is in preview release for Amazon Connect and subject to change.</p>
-    /// <p>Before calling this API, use <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> or
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a> to
-    /// enable identity resolution: set <code>Matching</code> to true.</p>
-    /// <p>GetMatches returns potentially matching profiles, based on the results of the latest run
-    /// of a machine learning process. </p>
-    /// <important>
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>Before calling this API, use <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a> to enable identity resolution: set <code>Matching</code> to true.</p>
+    /// <p>GetMatches returns potentially matching profiles, based on the results of the latest run of a machine learning process. </p> <important>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     /// </important>
-    ///
     /// <p>Amazon Connect uses the following profile attributes to identify matches:</p>
     /// <ul>
-    /// <li>
-    /// <p>PhoneNumber</p>
-    /// </li>
-    /// <li>
-    /// <p>HomePhoneNumber</p>
-    /// </li>
-    /// <li>
-    /// <p>BusinessPhoneNumber</p>
-    /// </li>
-    /// <li>
-    /// <p>MobilePhoneNumber</p>
-    /// </li>
-    /// <li>
-    /// <p>EmailAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>PersonalEmailAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>BusinessEmailAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>FullName</p>
-    /// </li>
-    /// <li>
-    /// <p>BusinessName</p>
-    /// </li>
+    /// <li> <p>PhoneNumber</p> </li>
+    /// <li> <p>HomePhoneNumber</p> </li>
+    /// <li> <p>BusinessPhoneNumber</p> </li>
+    /// <li> <p>MobilePhoneNumber</p> </li>
+    /// <li> <p>EmailAddress</p> </li>
+    /// <li> <p>PersonalEmailAddress</p> </li>
+    /// <li> <p>BusinessEmailAddress</p> </li>
+    /// <li> <p>FullName</p> </li>
+    /// <li> <p>BusinessName</p> </li>
     /// </ul>
-    /// <p>For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different casing
-    /// email addresses such as <b>JOHN_DOE@ANYCOMPANY.COM</b> and
-    /// <b>johndoe@anycompany.com</b>, or different phone number
-    /// formats such as <b>555-010-0000</b> and <b>+1-555-010-0000</b>—can be detected as belonging to the same customer <b>John Doe</b> and merged into a unified profile.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different casing email addresses such as <b>JOHN_DOE@ANYCOMPANY.COM</b> and <b>johndoe@anycompany.com</b>, or different phone number formats such as <b>555-010-0000</b> and <b>+1-555-010-0000</b>—can be detected as belonging to the same customer <b>John Doe</b> and merged into a unified profile.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMatches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1922,10 +1840,10 @@ pub mod fluent_builders {
                 crate::input::GetMatchesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1933,21 +1851,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -1956,8 +1872,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -1969,7 +1885,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProfileObjectType`.
     ///
     /// <p>Returns the object types for a specific domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProfileObjectType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2014,10 +1930,10 @@ pub mod fluent_builders {
                 crate::input::GetProfileObjectTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2026,8 +1942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2036,8 +1952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(input.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -2052,11 +1968,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProfileObjectTypeTemplate`.
     ///
     /// <p>Returns the template information for a specific object type.</p>
-    /// <p>A template is a predefined ProfileObjectType, such as “Salesforce-Account” or
-    /// “Salesforce-Contact.” When a user sends a ProfileObject, using the PutProfileObject API,
-    /// with an ObjectTypeName that matches one of the TemplateIds, it uses the mappings from the
-    /// template.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>A template is a predefined ProfileObjectType, such as “Salesforce-Account” or “Salesforce-Contact.” When a user sends a ProfileObject, using the PutProfileObject API, with an ObjectTypeName that matches one of the TemplateIds, it uses the mappings from the template.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProfileObjectTypeTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2101,10 +2014,10 @@ pub mod fluent_builders {
                 crate::input::GetProfileObjectTypeTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2113,8 +2026,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the object template.</p>
-        pub fn template_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(inp);
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>A unique identifier for the object template.</p>
@@ -2126,7 +2039,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccountIntegrations`.
     ///
     /// <p>Lists all of the integrations associated to a specific URI in the AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountIntegrations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2171,10 +2084,10 @@ pub mod fluent_builders {
                 crate::input::ListAccountIntegrationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2183,8 +2096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uri(inp);
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uri(input.into());
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -2193,8 +2106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
@@ -2203,8 +2116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -2216,7 +2129,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomains`.
     ///
     /// <p>Returns a list of all the domains for an AWS account that have been created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2261,10 +2174,10 @@ pub mod fluent_builders {
                 crate::input::ListDomainsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2273,8 +2186,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token from the previous ListDomain API call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token from the previous ListDomain API call.</p>
@@ -2283,8 +2196,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -2295,9 +2208,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIdentityResolutionJobs`.
     ///
-    /// <p>Lists all of the Identity Resolution Jobs in your domain. The response sorts the list by
-    /// <code>JobStartTime</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all of the Identity Resolution Jobs in your domain. The response sorts the list by <code>JobStartTime</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentityResolutionJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2342,10 +2254,10 @@ pub mod fluent_builders {
                 crate::input::ListIdentityResolutionJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2354,8 +2266,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2363,21 +2275,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -2389,7 +2299,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIntegrations`.
     ///
     /// <p>Lists all of the integrations in your domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIntegrations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2434,10 +2344,10 @@ pub mod fluent_builders {
                 crate::input::ListIntegrationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2446,8 +2356,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2456,8 +2366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token from the previous ListIntegrations API call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token from the previous ListIntegrations API call.</p>
@@ -2466,8 +2376,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -2479,7 +2389,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProfileObjects`.
     ///
     /// <p>Returns a list of objects associated with a profile of a given ProfileObjectType.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProfileObjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2524,10 +2434,10 @@ pub mod fluent_builders {
                 crate::input::ListProfileObjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2536,8 +2446,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token from the previous call to ListProfileObjects.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token from the previous call to ListProfileObjects.</p>
@@ -2546,8 +2456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -2556,8 +2466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2566,8 +2476,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(input.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -2579,8 +2489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
-        pub fn profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_id(inp);
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_id(input.into());
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
@@ -2588,14 +2498,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profile_id(input);
             self
         }
-        /// <p>Applies a filter to the response to include profile objects with the specified index
-        /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
-        pub fn object_filter(mut self, inp: crate::model::ObjectFilter) -> Self {
-            self.inner = self.inner.object_filter(inp);
+        /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
+        pub fn object_filter(mut self, input: crate::model::ObjectFilter) -> Self {
+            self.inner = self.inner.object_filter(input);
             self
         }
-        /// <p>Applies a filter to the response to include profile objects with the specified index
-        /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
+        /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
         pub fn set_object_filter(
             mut self,
             input: std::option::Option<crate::model::ObjectFilter>,
@@ -2607,7 +2515,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProfileObjectTypes`.
     ///
     /// <p>Lists all of the templates available within the service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProfileObjectTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2652,10 +2560,10 @@ pub mod fluent_builders {
                 crate::input::ListProfileObjectTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2664,8 +2572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2674,8 +2582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the next page of results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Identifies the next page of results to return.</p>
@@ -2684,8 +2592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -2697,7 +2605,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProfileObjectTypeTemplates`.
     ///
     /// <p>Lists all of the template information for object types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProfileObjectTypeTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2742,10 +2650,10 @@ pub mod fluent_builders {
                 crate::input::ListProfileObjectTypeTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2754,8 +2662,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token from the previous ListObjectTypeTemplates API call.</p>
@@ -2764,8 +2672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -2776,9 +2684,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Displays the tags associated with an Amazon Connect Customer Profiles resource. In Connect
-    /// Customer Profiles, domains, profile object types, and integrations can be tagged.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Displays the tags associated with an Amazon Connect Customer Profiles resource. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2823,10 +2730,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2835,8 +2742,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource for which you want to view tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource for which you want to view tags.</p>
@@ -2847,52 +2754,24 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `MergeProfiles`.
     ///
-    /// <p>This API is in preview release for Amazon Connect and subject to change.</p>
     /// <p>Runs an AWS Lambda job that does the following:</p>
     /// <ol>
-    /// <li>
-    /// <p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the
-    /// main profile.</p>
-    /// </li>
-    /// <li>
-    /// <p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main
-    /// profile.</p>
-    /// </li>
-    /// <li>
-    /// <p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p>
-    /// </li>
-    /// <li>
-    /// <p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the
-    /// main profile.</p>
-    /// </li>
-    /// <li>
-    /// <p>Standard fields are merged as follows:</p>
+    /// <li> <p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li>
+    /// <li> <p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li>
+    /// <li> <p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p> </li>
+    /// <li> <p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the main profile.</p> </li>
+    /// <li> <p>Standard fields are merged as follows:</p>
     /// <ol>
-    /// <li>
-    /// <p>Fields are always "union"-ed if there are no conflicts in standard fields or
-    /// attributeKeys.</p>
-    /// </li>
-    /// <li>
-    /// <p>When there are conflicting fields:</p>
-    ///
+    /// <li> <p>Fields are always "union"-ed if there are no conflicts in standard fields or attributeKeys.</p> </li>
+    /// <li> <p>When there are conflicting fields:</p>
     /// <ol>
-    /// <li>
-    /// <p>If no <code>SourceProfileIds</code> entry is specified, the main
-    /// Profile value is always taken. </p>
-    /// </li>
-    /// <li>
-    /// <p>If a <code>SourceProfileIds</code> entry is specified, the specified
-    /// profileId is always taken, even if it is a NULL value.</p>
-    /// </li>
+    /// <li> <p>If no <code>SourceProfileIds</code> entry is specified, the main Profile value is always taken. </p> </li>
+    /// <li> <p>If a <code>SourceProfileIds</code> entry is specified, the specified profileId is always taken, even if it is a NULL value.</p> </li>
+    /// </ol> </li>
+    /// </ol> </li>
     /// </ol>
-    /// </li>
-    /// </ol>
-    /// </li>
-    /// </ol>
-    /// <p>You can use MergeProfiles together with <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>, which
-    /// returns potentially matching profiles, or use it with the results of another matching
-    /// system. After profiles have been merged, they cannot be separated (unmerged).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can use MergeProfiles together with <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>, which returns potentially matching profiles, or use it with the results of another matching system. After profiles have been merged, they cannot be separated (unmerged).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MergeProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2937,10 +2816,10 @@ pub mod fluent_builders {
                 crate::input::MergeProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2949,8 +2828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -2959,8 +2838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the profile to be taken.</p>
-        pub fn main_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.main_profile_id(inp);
+        pub fn main_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.main_profile_id(input.into());
             self
         }
         /// <p>The identifier of the profile to be taken.</p>
@@ -2976,8 +2855,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_profile_ids_to_be_merged`](Self::set_profile_ids_to_be_merged).
         ///
         /// <p>The identifier of the profile to be merged into MainProfileId.</p>
-        pub fn profile_ids_to_be_merged(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_ids_to_be_merged(inp);
+        pub fn profile_ids_to_be_merged(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_ids_to_be_merged(input.into());
             self
         }
         /// <p>The identifier of the profile to be merged into MainProfileId.</p>
@@ -2988,19 +2867,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profile_ids_to_be_merged(input);
             self
         }
-        /// <p>The identifiers of the fields in the profile that has the information you want to apply
-        /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
-        /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+        /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
         pub fn field_source_profile_ids(
             mut self,
-            inp: crate::model::FieldSourceProfileIds,
+            input: crate::model::FieldSourceProfileIds,
         ) -> Self {
-            self.inner = self.inner.field_source_profile_ids(inp);
+            self.inner = self.inner.field_source_profile_ids(input);
             self
         }
-        /// <p>The identifiers of the fields in the profile that has the information you want to apply
-        /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
-        /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+        /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
         pub fn set_field_source_profile_ids(
             mut self,
             input: std::option::Option<crate::model::FieldSourceProfileIds>,
@@ -3011,10 +2886,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutIntegration`.
     ///
-    /// <p>Adds an integration between the service and a third-party service, which includes
-    /// Amazon AppFlow and Amazon Connect.</p>
+    /// <p>Adds an integration between the service and a third-party service, which includes Amazon AppFlow and Amazon Connect.</p>
     /// <p>An integration can belong to only one domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3059,10 +2933,10 @@ pub mod fluent_builders {
                 crate::input::PutIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3071,8 +2945,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -3081,8 +2955,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uri(inp);
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uri(input.into());
             self
         }
         /// <p>The URI of the S3 bucket or any other type of data source.</p>
@@ -3091,8 +2965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(input.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -3113,7 +2987,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -3126,14 +3000,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The configuration that controls how Customer Profiles retrieves data from the
-        /// source.</p>
-        pub fn flow_definition(mut self, inp: crate::model::FlowDefinition) -> Self {
-            self.inner = self.inner.flow_definition(inp);
+        /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
+        pub fn flow_definition(mut self, input: crate::model::FlowDefinition) -> Self {
+            self.inner = self.inner.flow_definition(input);
             self
         }
-        /// <p>The configuration that controls how Customer Profiles retrieves data from the
-        /// source.</p>
+        /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
         pub fn set_flow_definition(
             mut self,
             input: std::option::Option<crate::model::FlowDefinition>,
@@ -3141,20 +3013,37 @@ pub mod fluent_builders {
             self.inner = self.inner.set_flow_definition(input);
             self
         }
+        /// Adds a key-value pair to `ObjectTypeNames`.
+        ///
+        /// To override the contents of this collection use [`set_object_type_names`](Self::set_object_type_names).
+        ///
+        /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+        pub fn object_type_names(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.object_type_names(k.into(), v.into());
+            self
+        }
+        /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+        pub fn set_object_type_names(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_object_type_names(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `PutProfileObject`.
     ///
     /// <p>Adds additional objects to customer profiles of a given ObjectType.</p>
-    /// <p>When adding a specific profile object, like a Contact Trace Record (CTR), an inferred
-    /// profile can get created if it is not mapped to an existing profile. The resulting profile
-    /// will only have a phone number populated in the standard ProfileObject. Any additional CTRs
-    /// with the same phone number will be mapped to the same inferred profile.</p>
-    /// <p>When a ProfileObject is created and if a ProfileObjectType already exists for the
-    /// ProfileObject, it will provide data to a standard profile depending on the
-    /// ProfileObjectType definition.</p>
-    /// <p>PutProfileObject needs an ObjectType, which can be created using
-    /// PutProfileObjectType.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When adding a specific profile object, like a Contact Trace Record (CTR), an inferred profile can get created if it is not mapped to an existing profile. The resulting profile will only have a phone number populated in the standard ProfileObject. Any additional CTRs with the same phone number will be mapped to the same inferred profile.</p>
+    /// <p>When a ProfileObject is created and if a ProfileObjectType already exists for the ProfileObject, it will provide data to a standard profile depending on the ProfileObjectType definition.</p>
+    /// <p>PutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutProfileObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3199,10 +3088,10 @@ pub mod fluent_builders {
                 crate::input::PutProfileObjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3211,8 +3100,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(input.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -3224,8 +3113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that is serialized from a JSON object.</p>
-        pub fn object(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object(inp);
+        pub fn object(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object(input.into());
             self
         }
         /// <p>A string that is serialized from a JSON object.</p>
@@ -3234,8 +3123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -3247,7 +3136,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutProfileObjectType`.
     ///
     /// <p>Defines a ProfileObjectType.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutProfileObjectType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3292,10 +3181,10 @@ pub mod fluent_builders {
                 crate::input::PutProfileObjectTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3304,8 +3193,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -3314,8 +3203,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the profile object type.</p>
-        pub fn object_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_type_name(inp);
+        pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_type_name(input.into());
             self
         }
         /// <p>The name of the profile object type.</p>
@@ -3327,8 +3216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the profile object type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Description of the profile object type.</p>
@@ -3337,8 +3226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the object template.</p>
-        pub fn template_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(inp);
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>A unique identifier for the object template.</p>
@@ -3347,8 +3236,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of days until the data in the object expires.</p>
-        pub fn expiration_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.expiration_days(inp);
+        pub fn expiration_days(mut self, input: i32) -> Self {
+            self.inner = self.inner.expiration_days(input);
             self
         }
         /// <p>The number of days until the data in the object expires.</p>
@@ -3356,14 +3245,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_expiration_days(input);
             self
         }
-        /// <p>The customer-provided key to encrypt the profile object that will be created in this
-        /// profile object type.</p>
-        pub fn encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key(inp);
+        /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
+        pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key(input.into());
             self
         }
-        /// <p>The customer-provided key to encrypt the profile object that will be created in this
-        /// profile object type.</p>
+        /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn set_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3371,35 +3258,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_key(input);
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
-        pub fn allow_profile_creation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_profile_creation(inp);
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
+        pub fn allow_profile_creation(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_profile_creation(input);
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_profile_creation(input);
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-        /// </p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
         pub fn source_last_updated_timestamp_format(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_last_updated_timestamp_format(inp);
+            self.inner = self
+                .inner
+                .source_last_updated_timestamp_format(input.into());
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-        /// </p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
         pub fn set_source_last_updated_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3415,9 +3294,9 @@ pub mod fluent_builders {
         pub fn fields(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ObjectTypeField>,
+            v: crate::model::ObjectTypeField,
         ) -> Self {
-            self.inner = self.inner.fields(k, v);
+            self.inner = self.inner.fields(k.into(), v);
             self
         }
         /// <p>A map of the name and ObjectType field.</p>
@@ -3438,9 +3317,9 @@ pub mod fluent_builders {
         pub fn keys(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<crate::model::ObjectTypeKey>>,
+            v: std::vec::Vec<crate::model::ObjectTypeKey>,
         ) -> Self {
-            self.inner = self.inner.keys(k, v);
+            self.inner = self.inner.keys(k.into(), v);
             self
         }
         /// <p>A list of unique keys that can be used to map data to the profile.</p>
@@ -3466,7 +3345,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -3482,9 +3361,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchProfiles`.
     ///
-    /// <p>Searches for profiles within a specific domain name using name, phone number, email
-    /// address, account number, or a custom defined index.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Searches for profiles within a specific domain name using name, phone number, email address, account number, or a custom defined index.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3529,10 +3407,10 @@ pub mod fluent_builders {
                 crate::input::SearchProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3541,8 +3419,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token from the previous SearchProfiles API call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token from the previous SearchProfiles API call.</p>
@@ -3551,8 +3429,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects returned per page.</p>
@@ -3561,8 +3439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -3570,16 +3448,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
-        /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
-        /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
-        pub fn key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_name(inp);
+        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_name(input.into());
             self
         }
-        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
-        /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
-        /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_name(input);
             self
@@ -3589,8 +3463,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>A list of key values.</p>
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.values(inp);
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.values(input.into());
             self
         }
         /// <p>A list of key values.</p>
@@ -3604,19 +3478,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Assigns one or more tags (key-value pairs) to the specified Amazon Connect Customer Profiles
-    /// resource. Tags can help you organize and categorize your resources. You can also use them
-    /// to scope user permissions by granting a user permission to access or change only resources
-    /// with certain tag values. In Connect Customer Profiles, domains, profile object types, and
-    /// integrations can be tagged.</p>
-    /// <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of
-    /// characters.</p>
-    /// <p>You can use the TagResource action with a resource that already has tags. If you specify
-    /// a new tag key, this tag is appended to the list of tags associated with the resource. If
-    /// you specify a tag key that is already associated with the resource, the new tag value that
-    /// you specify replaces the previous value for that tag.</p>
+    /// <p>Assigns one or more tags (key-value pairs) to the specified Amazon Connect Customer Profiles resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.</p>
+    /// <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.</p>
+    /// <p>You can use the TagResource action with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3661,10 +3527,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3673,8 +3539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource that you're adding tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource that you're adding tags to.</p>
@@ -3692,7 +3558,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -3708,9 +3574,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes one or more tags from the specified Amazon Connect Customer Profiles resource. In Connect
-    /// Customer Profiles, domains, profile object types, and integrations can be tagged.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes one or more tags from the specified Amazon Connect Customer Profiles resource. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3755,10 +3620,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3767,8 +3632,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource from which you are removing tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource from which you are removing tags.</p>
@@ -3781,8 +3646,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys to remove from the resource.</p>
@@ -3796,15 +3661,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDomain`.
     ///
-    /// <p>Updates the properties of a domain, including creating or selecting a dead letter queue
-    /// or an encryption key.</p>
+    /// <p>Updates the properties of a domain, including creating or selecting a dead letter queue or an encryption key.</p>
     /// <p>After a domain is created, the name can’t be changed.</p>
-    /// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> to
-    /// enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-    /// resolution</a>: set <code>Matching</code> to true. </p>
-    /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should
-    /// apply. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity resolution</a>: set <code>Matching</code> to true. </p>
+    /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3849,10 +3710,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3861,8 +3722,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -3871,8 +3732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The default number of days until the data within the domain expires.</p>
-        pub fn default_expiration_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.default_expiration_days(inp);
+        pub fn default_expiration_days(mut self, input: i32) -> Self {
+            self.inner = self.inner.default_expiration_days(input);
             self
         }
         /// <p>The default number of days until the data within the domain expires.</p>
@@ -3880,18 +3741,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_expiration_days(input);
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
-        /// existing value.</p>
-        pub fn default_encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_encryption_key(inp);
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
+        pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_encryption_key(input.into());
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
-        /// existing value.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
         pub fn set_default_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3899,20 +3754,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_encryption_key(input);
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. If specified as an empty string, it will
-        /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
-        /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
-        /// DeadLetterQueue.</p>
-        pub fn dead_letter_queue_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dead_letter_queue_url(inp);
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
+        pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dead_letter_queue_url(input.into());
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. If specified as an empty string, it will
-        /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
-        /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
-        /// DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn set_dead_letter_queue_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3920,24 +3767,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dead_letter_queue_url(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
-        pub fn matching(mut self, inp: crate::model::MatchingRequest) -> Self {
-            self.inner = self.inner.matching(inp);
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
+        pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
+            self.inner = self.inner.matching(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingRequest>,
@@ -3955,7 +3792,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -3971,12 +3808,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateProfile`.
     ///
-    /// <p>Updates the properties of a profile. The ProfileId is required for updating a customer
-    /// profile.</p>
-    /// <p>When calling the UpdateProfile API, specifying an empty string value means that any
-    /// existing value will be removed. Not specifying a string value means that any value already
-    /// there will be kept.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the properties of a profile. The ProfileId is required for updating a customer profile.</p>
+    /// <p>When calling the UpdateProfile API, specifying an empty string value means that any existing value will be removed. Not specifying a string value means that any value already there will be kept.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4021,10 +3855,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4033,8 +3867,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The unique name of the domain.</p>
@@ -4043,8 +3877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
-        pub fn profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_id(inp);
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_id(input.into());
             self
         }
         /// <p>The unique identifier of a customer profile.</p>
@@ -4053,8 +3887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Any additional information relevant to the customer’s profile.</p>
-        pub fn additional_information(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.additional_information(inp);
+        pub fn additional_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.additional_information(input.into());
             self
         }
         /// <p>Any additional information relevant to the customer’s profile.</p>
@@ -4066,8 +3900,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique account number that you have given to the customer.</p>
-        pub fn account_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_number(inp);
+        pub fn account_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_number(input.into());
             self
         }
         /// <p>A unique account number that you have given to the customer.</p>
@@ -4079,8 +3913,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of profile used to describe the customer.</p>
-        pub fn party_type(mut self, inp: crate::model::PartyType) -> Self {
-            self.inner = self.inner.party_type(inp);
+        pub fn party_type(mut self, input: crate::model::PartyType) -> Self {
+            self.inner = self.inner.party_type(input);
             self
         }
         /// <p>The type of profile used to describe the customer.</p>
@@ -4092,8 +3926,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the customer’s business.</p>
-        pub fn business_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.business_name(inp);
+        pub fn business_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.business_name(input.into());
             self
         }
         /// <p>The name of the customer’s business.</p>
@@ -4105,8 +3939,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s first name.</p>
-        pub fn first_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_name(inp);
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.first_name(input.into());
             self
         }
         /// <p>The customer’s first name.</p>
@@ -4115,8 +3949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s middle name.</p>
-        pub fn middle_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.middle_name(inp);
+        pub fn middle_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.middle_name(input.into());
             self
         }
         /// <p>The customer’s middle name.</p>
@@ -4125,8 +3959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s last name.</p>
-        pub fn last_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.last_name(inp);
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.last_name(input.into());
             self
         }
         /// <p>The customer’s last name.</p>
@@ -4135,8 +3969,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s birth date. </p>
-        pub fn birth_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.birth_date(inp);
+        pub fn birth_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.birth_date(input.into());
             self
         }
         /// <p>The customer’s birth date. </p>
@@ -4145,8 +3979,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The gender with which the customer identifies. </p>
-        pub fn gender(mut self, inp: crate::model::Gender) -> Self {
-            self.inner = self.inner.gender(inp);
+        pub fn gender(mut self, input: crate::model::Gender) -> Self {
+            self.inner = self.inner.gender(input);
             self
         }
         /// <p>The gender with which the customer identifies. </p>
@@ -4154,21 +3988,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gender(input);
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_phone_number(input);
             self
         }
         /// <p>The customer’s mobile phone number.</p>
-        pub fn mobile_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mobile_phone_number(inp);
+        pub fn mobile_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mobile_phone_number(input.into());
             self
         }
         /// <p>The customer’s mobile phone number.</p>
@@ -4180,8 +4012,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s home phone number.</p>
-        pub fn home_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_phone_number(inp);
+        pub fn home_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_phone_number(input.into());
             self
         }
         /// <p>The customer’s home phone number.</p>
@@ -4193,8 +4025,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s business phone number.</p>
-        pub fn business_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.business_phone_number(inp);
+        pub fn business_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.business_phone_number(input.into());
             self
         }
         /// <p>The customer’s business phone number.</p>
@@ -4205,14 +4037,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_business_phone_number(input);
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4221,8 +4051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s personal email address.</p>
-        pub fn personal_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.personal_email_address(inp);
+        pub fn personal_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.personal_email_address(input.into());
             self
         }
         /// <p>The customer’s personal email address.</p>
@@ -4234,8 +4064,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s business email address.</p>
-        pub fn business_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.business_email_address(inp);
+        pub fn business_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.business_email_address(input.into());
             self
         }
         /// <p>The customer’s business email address.</p>
@@ -4246,14 +4076,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_business_email_address(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
-        pub fn address(mut self, inp: crate::model::UpdateAddress) -> Self {
-            self.inner = self.inner.address(inp);
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
+        pub fn address(mut self, input: crate::model::UpdateAddress) -> Self {
+            self.inner = self.inner.address(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn set_address(
             mut self,
             input: std::option::Option<crate::model::UpdateAddress>,
@@ -4262,8 +4090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s shipping address.</p>
-        pub fn shipping_address(mut self, inp: crate::model::UpdateAddress) -> Self {
-            self.inner = self.inner.shipping_address(inp);
+        pub fn shipping_address(mut self, input: crate::model::UpdateAddress) -> Self {
+            self.inner = self.inner.shipping_address(input);
             self
         }
         /// <p>The customer’s shipping address.</p>
@@ -4275,8 +4103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s mailing address.</p>
-        pub fn mailing_address(mut self, inp: crate::model::UpdateAddress) -> Self {
-            self.inner = self.inner.mailing_address(inp);
+        pub fn mailing_address(mut self, input: crate::model::UpdateAddress) -> Self {
+            self.inner = self.inner.mailing_address(input);
             self
         }
         /// <p>The customer’s mailing address.</p>
@@ -4288,8 +4116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer’s billing address.</p>
-        pub fn billing_address(mut self, inp: crate::model::UpdateAddress) -> Self {
-            self.inner = self.inner.billing_address(inp);
+        pub fn billing_address(mut self, input: crate::model::UpdateAddress) -> Self {
+            self.inner = self.inner.billing_address(input);
             self
         }
         /// <p>The customer’s billing address.</p>
@@ -4310,7 +4138,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
         /// <p>A key value pair of attributes of a customer profile.</p>
@@ -4325,6 +4153,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

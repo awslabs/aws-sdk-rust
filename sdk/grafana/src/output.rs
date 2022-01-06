@@ -41,9 +41,9 @@ pub mod list_workspaces_output {
         /// To override the contents of this collection use [`set_workspaces`](Self::set_workspaces).
         ///
         /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-        pub fn workspaces(mut self, input: impl Into<crate::model::WorkspaceSummary>) -> Self {
+        pub fn workspaces(mut self, input: crate::model::WorkspaceSummary) -> Self {
             let mut v = self.workspaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.workspaces = Some(v);
             self
         }
@@ -343,9 +343,9 @@ pub mod update_permissions_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>An array of structures that contain the errors from the operation, if any.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::UpdateError>) -> Self {
+        pub fn errors(mut self, input: crate::model::UpdateError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -376,15 +376,13 @@ impl UpdatePermissionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsOutput {
-    /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return
-    /// the next set of results.</p>
+    /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The permissions returned by the operation.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::PermissionEntry>>,
 }
 impl ListPermissionsOutput {
-    /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return
-    /// the next set of results.</p>
+    /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -411,14 +409,12 @@ pub mod list_permissions_output {
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::PermissionEntry>>,
     }
     impl Builder {
-        /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return
-        /// the next set of results.</p>
+        /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return
-        /// the next set of results.</p>
+        /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -428,9 +424,9 @@ pub mod list_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The permissions returned by the operation.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::PermissionEntry>) -> Self {
+        pub fn permissions(mut self, input: crate::model::PermissionEntry) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -633,13 +629,11 @@ impl UpdateWorkspaceAuthenticationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceAuthenticationOutput {
-    /// <p>A structure containing information about the authentication methods used in
-    /// the workspace.</p>
+    /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     pub authentication: std::option::Option<crate::model::AuthenticationDescription>,
 }
 impl DescribeWorkspaceAuthenticationOutput {
-    /// <p>A structure containing information about the authentication methods used in
-    /// the workspace.</p>
+    /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     pub fn authentication(&self) -> std::option::Option<&crate::model::AuthenticationDescription> {
         self.authentication.as_ref()
     }
@@ -660,14 +654,12 @@ pub mod describe_workspace_authentication_output {
         pub(crate) authentication: std::option::Option<crate::model::AuthenticationDescription>,
     }
     impl Builder {
-        /// <p>A structure containing information about the authentication methods used in
-        /// the workspace.</p>
+        /// <p>A structure containing information about the authentication methods used in the workspace.</p>
         pub fn authentication(mut self, input: crate::model::AuthenticationDescription) -> Self {
             self.authentication = Some(input);
             self
         }
-        /// <p>A structure containing information about the authentication methods used in
-        /// the workspace.</p>
+        /// <p>A structure containing information about the authentication methods used in the workspace.</p>
         pub fn set_authentication(
             mut self,
             input: std::option::Option<crate::model::AuthenticationDescription>,

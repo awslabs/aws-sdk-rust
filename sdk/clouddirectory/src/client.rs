@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon CloudDirectory
@@ -320,6 +320,7 @@ where
     ///
     /// See [`ListAppliedSchemaArns`](crate::client::fluent_builders::ListAppliedSchemaArns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppliedSchemaArns::into_paginator).
     pub fn list_applied_schema_arns(&self) -> fluent_builders::ListAppliedSchemaArns<C, M, R> {
         fluent_builders::ListAppliedSchemaArns::new(self.handle.clone())
     }
@@ -327,6 +328,7 @@ where
     ///
     /// See [`ListAttachedIndices`](crate::client::fluent_builders::ListAttachedIndices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttachedIndices::into_paginator).
     pub fn list_attached_indices(&self) -> fluent_builders::ListAttachedIndices<C, M, R> {
         fluent_builders::ListAttachedIndices::new(self.handle.clone())
     }
@@ -334,6 +336,7 @@ where
     ///
     /// See [`ListDevelopmentSchemaArns`](crate::client::fluent_builders::ListDevelopmentSchemaArns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevelopmentSchemaArns::into_paginator).
     pub fn list_development_schema_arns(
         &self,
     ) -> fluent_builders::ListDevelopmentSchemaArns<C, M, R> {
@@ -343,6 +346,7 @@ where
     ///
     /// See [`ListDirectories`](crate::client::fluent_builders::ListDirectories) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDirectories::into_paginator).
     pub fn list_directories(&self) -> fluent_builders::ListDirectories<C, M, R> {
         fluent_builders::ListDirectories::new(self.handle.clone())
     }
@@ -350,6 +354,7 @@ where
     ///
     /// See [`ListFacetAttributes`](crate::client::fluent_builders::ListFacetAttributes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFacetAttributes::into_paginator).
     pub fn list_facet_attributes(&self) -> fluent_builders::ListFacetAttributes<C, M, R> {
         fluent_builders::ListFacetAttributes::new(self.handle.clone())
     }
@@ -357,6 +362,7 @@ where
     ///
     /// See [`ListFacetNames`](crate::client::fluent_builders::ListFacetNames) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFacetNames::into_paginator).
     pub fn list_facet_names(&self) -> fluent_builders::ListFacetNames<C, M, R> {
         fluent_builders::ListFacetNames::new(self.handle.clone())
     }
@@ -371,6 +377,7 @@ where
     ///
     /// See [`ListIndex`](crate::client::fluent_builders::ListIndex) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIndex::into_paginator).
     pub fn list_index(&self) -> fluent_builders::ListIndex<C, M, R> {
         fluent_builders::ListIndex::new(self.handle.clone())
     }
@@ -378,6 +385,7 @@ where
     ///
     /// See [`ListManagedSchemaArns`](crate::client::fluent_builders::ListManagedSchemaArns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListManagedSchemaArns::into_paginator).
     pub fn list_managed_schema_arns(&self) -> fluent_builders::ListManagedSchemaArns<C, M, R> {
         fluent_builders::ListManagedSchemaArns::new(self.handle.clone())
     }
@@ -385,6 +393,7 @@ where
     ///
     /// See [`ListObjectAttributes`](crate::client::fluent_builders::ListObjectAttributes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListObjectAttributes::into_paginator).
     pub fn list_object_attributes(&self) -> fluent_builders::ListObjectAttributes<C, M, R> {
         fluent_builders::ListObjectAttributes::new(self.handle.clone())
     }
@@ -392,6 +401,7 @@ where
     ///
     /// See [`ListObjectChildren`](crate::client::fluent_builders::ListObjectChildren) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListObjectChildren::into_paginator).
     pub fn list_object_children(&self) -> fluent_builders::ListObjectChildren<C, M, R> {
         fluent_builders::ListObjectChildren::new(self.handle.clone())
     }
@@ -399,6 +409,7 @@ where
     ///
     /// See [`ListObjectParentPaths`](crate::client::fluent_builders::ListObjectParentPaths) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListObjectParentPaths::into_paginator).
     pub fn list_object_parent_paths(&self) -> fluent_builders::ListObjectParentPaths<C, M, R> {
         fluent_builders::ListObjectParentPaths::new(self.handle.clone())
     }
@@ -406,6 +417,7 @@ where
     ///
     /// See [`ListObjectParents`](crate::client::fluent_builders::ListObjectParents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListObjectParents::into_paginator).
     pub fn list_object_parents(&self) -> fluent_builders::ListObjectParents<C, M, R> {
         fluent_builders::ListObjectParents::new(self.handle.clone())
     }
@@ -413,6 +425,7 @@ where
     ///
     /// See [`ListObjectPolicies`](crate::client::fluent_builders::ListObjectPolicies) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListObjectPolicies::into_paginator).
     pub fn list_object_policies(&self) -> fluent_builders::ListObjectPolicies<C, M, R> {
         fluent_builders::ListObjectPolicies::new(self.handle.clone())
     }
@@ -427,6 +440,7 @@ where
     ///
     /// See [`ListPolicyAttachments`](crate::client::fluent_builders::ListPolicyAttachments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPolicyAttachments::into_paginator).
     pub fn list_policy_attachments(&self) -> fluent_builders::ListPolicyAttachments<C, M, R> {
         fluent_builders::ListPolicyAttachments::new(self.handle.clone())
     }
@@ -434,6 +448,7 @@ where
     ///
     /// See [`ListPublishedSchemaArns`](crate::client::fluent_builders::ListPublishedSchemaArns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPublishedSchemaArns::into_paginator).
     pub fn list_published_schema_arns(&self) -> fluent_builders::ListPublishedSchemaArns<C, M, R> {
         fluent_builders::ListPublishedSchemaArns::new(self.handle.clone())
     }
@@ -441,6 +456,7 @@ where
     ///
     /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
@@ -448,6 +464,7 @@ where
     ///
     /// See [`ListTypedLinkFacetAttributes`](crate::client::fluent_builders::ListTypedLinkFacetAttributes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTypedLinkFacetAttributes::into_paginator).
     pub fn list_typed_link_facet_attributes(
         &self,
     ) -> fluent_builders::ListTypedLinkFacetAttributes<C, M, R> {
@@ -457,6 +474,7 @@ where
     ///
     /// See [`ListTypedLinkFacetNames`](crate::client::fluent_builders::ListTypedLinkFacetNames) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTypedLinkFacetNames::into_paginator).
     pub fn list_typed_link_facet_names(&self) -> fluent_builders::ListTypedLinkFacetNames<C, M, R> {
         fluent_builders::ListTypedLinkFacetNames::new(self.handle.clone())
     }
@@ -464,6 +482,7 @@ where
     ///
     /// See [`LookupPolicy`](crate::client::fluent_builders::LookupPolicy) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::LookupPolicy::into_paginator).
     pub fn lookup_policy(&self) -> fluent_builders::LookupPolicy<C, M, R> {
         fluent_builders::LookupPolicy::new(self.handle.clone())
     }
@@ -562,8 +581,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddFacetToObject`.
     ///
-    /// <p>Adds a new <a>Facet</a> to an object. An object can have more than one facet applied on it.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds a new <code>Facet</code> to an object. An object can have more than one facet applied on it.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddFacetToObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -608,10 +627,10 @@ pub mod fluent_builders {
                 crate::input::AddFacetToObjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -619,14 +638,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -634,12 +651,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_arn(input);
             self
         }
-        /// <p>Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.</p>
-        pub fn schema_facet(mut self, inp: crate::model::SchemaFacet) -> Self {
-            self.inner = self.inner.schema_facet(inp);
+        /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
+        pub fn schema_facet(mut self, input: crate::model::SchemaFacet) -> Self {
+            self.inner = self.inner.schema_facet(input);
             self
         }
-        /// <p>Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.</p>
+        /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
         pub fn set_schema_facet(
             mut self,
             input: std::option::Option<crate::model::SchemaFacet>,
@@ -652,11 +669,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_object_attribute_list`](Self::set_object_attribute_list).
         ///
         /// <p>Attributes on the facet that you are adding to the object.</p>
-        pub fn object_attribute_list(
-            mut self,
-            inp: impl Into<crate::model::AttributeKeyAndValue>,
-        ) -> Self {
-            self.inner = self.inner.object_attribute_list(inp);
+        pub fn object_attribute_list(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
+            self.inner = self.inner.object_attribute_list(input);
             self
         }
         /// <p>Attributes on the facet that you are adding to the object.</p>
@@ -668,8 +682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the object you are adding the specified facet to.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>A reference to the object you are adding the specified facet to.</p>
@@ -683,9 +697,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ApplySchema`.
     ///
-    /// <p>Copies the input published schema, at the specified version, into the <a>Directory</a> with the same
-    /// name and version as that of the published schema.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Copies the input published schema, at the specified version, into the <code>Directory</code> with the same name and version as that of the published schema.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApplySchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -730,10 +743,10 @@ pub mod fluent_builders {
                 crate::input::ApplySchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -741,14 +754,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
-        /// information, see <a>arns</a>.</p>
-        pub fn published_schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.published_schema_arn(inp);
+        /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
+        pub fn published_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.published_schema_arn(input.into());
             self
         }
-        /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
         pub fn set_published_schema_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -756,14 +767,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_published_schema_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// into which the schema is copied. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// into which the schema is copied. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -774,18 +783,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AttachObject`.
     ///
-    /// <p>Attaches an existing object to another object. An object can be accessed in two
-    /// ways:</p>
+    /// <p>Attaches an existing object to another object. An object can be accessed in two ways:</p>
     /// <ol>
-    /// <li>
-    /// <p>Using the path</p>
-    /// </li>
-    /// <li>
-    /// <p>Using <code>ObjectIdentifier</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Using the path</p> </li>
+    /// <li> <p>Using <code>ObjectIdentifier</code> </p> </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -830,10 +833,10 @@ pub mod fluent_builders {
                 crate::input::AttachObjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -841,14 +844,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -857,8 +858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parent object reference.</p>
-        pub fn parent_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.parent_reference(inp);
+        pub fn parent_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.parent_reference(input);
             self
         }
         /// <p>The parent object reference.</p>
@@ -870,8 +871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The child object reference to be attached to the object.</p>
-        pub fn child_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.child_reference(inp);
+        pub fn child_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.child_reference(input);
             self
         }
         /// <p>The child object reference to be attached to the object.</p>
@@ -883,8 +884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The link name with which the child object is attached to the parent.</p>
-        pub fn link_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_name(inp);
+        pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_name(input.into());
             self
         }
         /// <p>The link name with which the child object is attached to the parent.</p>
@@ -895,9 +896,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AttachPolicy`.
     ///
-    /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached
-    /// policies.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -942,10 +942,10 @@ pub mod fluent_builders {
                 crate::input::AttachPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -953,14 +953,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -969,8 +967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference that is associated with the policy object.</p>
-        pub fn policy_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.policy_reference(inp);
+        pub fn policy_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.policy_reference(input);
             self
         }
         /// <p>The reference that is associated with the policy object.</p>
@@ -981,14 +979,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_reference(input);
             self
         }
-        /// <p>The reference that identifies the object to which the policy will be
-        /// attached.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        /// <p>The reference that identifies the object to which the policy will be attached.</p>
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
-        /// <p>The reference that identifies the object to which the policy will be
-        /// attached.</p>
+        /// <p>The reference that identifies the object to which the policy will be attached.</p>
         pub fn set_object_reference(
             mut self,
             input: std::option::Option<crate::model::ObjectReference>,
@@ -1000,7 +996,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AttachToIndex`.
     ///
     /// <p>Attaches the specified object to the specified index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachToIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1045,10 +1041,10 @@ pub mod fluent_builders {
                 crate::input::AttachToIndexInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1056,14 +1052,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where the object and index
-        /// exist.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where the object and index
-        /// exist.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1072,8 +1066,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the index that you are attaching the object to.</p>
-        pub fn index_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.index_reference(inp);
+        pub fn index_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.index_reference(input);
             self
         }
         /// <p>A reference to the index that you are attaching the object to.</p>
@@ -1085,8 +1079,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the object that you are attaching to the index.</p>
-        pub fn target_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.target_reference(inp);
+        pub fn target_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.target_reference(input);
             self
         }
         /// <p>A reference to the object that you are attaching to the index.</p>
@@ -1101,7 +1095,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AttachTypedLink`.
     ///
     /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachTypedLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1146,10 +1140,10 @@ pub mod fluent_builders {
                 crate::input::AttachTypedLinkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1157,14 +1151,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed
-        /// link.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed
-        /// link.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1173,8 +1165,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the source object that the typed link will attach to.</p>
-        pub fn source_object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.source_object_reference(inp);
+        pub fn source_object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.source_object_reference(input);
             self
         }
         /// <p>Identifies the source object that the typed link will attach to.</p>
@@ -1186,8 +1178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the target object that the typed link will attach to.</p>
-        pub fn target_object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.target_object_reference(inp);
+        pub fn target_object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.target_object_reference(input);
             self
         }
         /// <p>Identifies the target object that the typed link will attach to.</p>
@@ -1199,8 +1191,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-        pub fn typed_link_facet(mut self, inp: crate::model::TypedLinkSchemaAndFacetName) -> Self {
-            self.inner = self.inner.typed_link_facet(inp);
+        pub fn typed_link_facet(
+            mut self,
+            input: crate::model::TypedLinkSchemaAndFacetName,
+        ) -> Self {
+            self.inner = self.inner.typed_link_facet(input);
             self
         }
         /// <p>Identifies the typed link facet that is associated with the typed link.</p>
@@ -1216,8 +1211,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A set of attributes that are associated with the typed link.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::AttributeNameAndValue>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, input: crate::model::AttributeNameAndValue) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
         /// <p>A set of attributes that are associated with the typed link.</p>
@@ -1232,7 +1227,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchRead`.
     ///
     /// <p>Performs all the read operations in a batch. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchRead<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1277,10 +1272,10 @@ pub mod fluent_builders {
                 crate::input::BatchReadInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1288,14 +1283,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1308,8 +1301,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>A list of operations that are part of the batch.</p>
-        pub fn operations(mut self, inp: impl Into<crate::model::BatchReadOperation>) -> Self {
-            self.inner = self.inner.operations(inp);
+        pub fn operations(mut self, input: crate::model::BatchReadOperation) -> Self {
+            self.inner = self.inner.operations(input);
             self
         }
         /// <p>A list of operations that are part of the batch.</p>
@@ -1320,14 +1313,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_operations(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -1338,9 +1329,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchWrite`.
     ///
-    /// <p>Performs all the write operations in a batch. Either all the operations succeed or
-    /// none.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Performs all the write operations in a batch. Either all the operations succeed or none.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchWrite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1385,10 +1375,10 @@ pub mod fluent_builders {
                 crate::input::BatchWriteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1396,14 +1386,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1416,8 +1404,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>A list of operations that are part of the batch.</p>
-        pub fn operations(mut self, inp: impl Into<crate::model::BatchWriteOperation>) -> Self {
-            self.inner = self.inner.operations(inp);
+        pub fn operations(mut self, input: crate::model::BatchWriteOperation) -> Self {
+            self.inner = self.inner.operations(input);
             self
         }
         /// <p>A list of operations that are part of the batch.</p>
@@ -1431,11 +1419,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDirectory`.
     ///
-    /// <p>Creates a <a>Directory</a> by copying the published schema into the
-    /// directory. A directory cannot be created without a schema.</p>
-    /// <p>You can also quickly create a directory using a managed schema, called the
-    /// <code>QuickStartSchema</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html">Managed Schema</a> in the <i>Amazon Cloud Directory Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a <code>Directory</code> by copying the published schema into the directory. A directory cannot be created without a schema.</p>
+    /// <p>You can also quickly create a directory using a managed schema, called the <code>QuickStartSchema</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html">Managed Schema</a> in the <i>Amazon Cloud Directory Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1480,10 +1466,10 @@ pub mod fluent_builders {
                 crate::input::CreateDirectoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1491,26 +1477,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the <a>Directory</a>. Should be unique per account, per
-        /// region.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the <a>Directory</a>. Should be unique per account, per
-        /// region.</p>
+        /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the
-        /// data <a>Directory</a>. For more information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the
-        /// data <a>Directory</a>. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -1518,9 +1500,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFacet`.
     ///
-    /// <p>Creates a new <a>Facet</a> in a schema. Facet creation is allowed only
-    /// in development or applied schemas.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new <code>Facet</code> in a schema. Facet creation is allowed only in development or applied schemas.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1565,10 +1546,10 @@ pub mod fluent_builders {
                 crate::input::CreateFacetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1576,24 +1557,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The schema ARN in which the new <a>Facet</a> will be created. For more
-        /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The schema ARN in which the new <a>Facet</a> will be created. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
-        /// <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
+        /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1602,12 +1581,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The attributes that are associated with the <a>Facet</a>.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::FacetAttribute>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        /// <p>The attributes that are associated with the <code>Facet</code>.</p>
+        pub fn attributes(mut self, input: crate::model::FacetAttribute) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
-        /// <p>The attributes that are associated with the <a>Facet</a>.</p>
+        /// <p>The attributes that are associated with the <code>Facet</code>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FacetAttribute>>,
@@ -1615,55 +1594,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attributes(input);
             self
         }
-        /// <p>Specifies whether a given object created from this facet is of type node, leaf node,
-        /// policy or index.</p>
+        /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
         /// <ul>
-        /// <li>
-        /// <p>Node: Can have multiple children but one parent.</p>
-        /// </li>
+        /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Leaf node: Cannot have children but can have multiple parents.</p>
-        /// </li>
+        /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Policy: Allows you to store a policy document and policy type. For more
-        /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-        /// </li>
+        /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Index: Can be created with the Index API.</p>
-        /// </li>
+        /// <li> <p>Index: Can be created with the Index API.</p> </li>
         /// </ul>
-        pub fn object_type(mut self, inp: crate::model::ObjectType) -> Self {
-            self.inner = self.inner.object_type(inp);
+        pub fn object_type(mut self, input: crate::model::ObjectType) -> Self {
+            self.inner = self.inner.object_type(input);
             self
         }
-        /// <p>Specifies whether a given object created from this facet is of type node, leaf node,
-        /// policy or index.</p>
+        /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
         /// <ul>
-        /// <li>
-        /// <p>Node: Can have multiple children but one parent.</p>
-        /// </li>
+        /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Leaf node: Cannot have children but can have multiple parents.</p>
-        /// </li>
+        /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Policy: Allows you to store a policy document and policy type. For more
-        /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-        /// </li>
+        /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Index: Can be created with the Index API.</p>
-        /// </li>
+        /// <li> <p>Index: Can be created with the Index API.</p> </li>
         /// </ul>
         pub fn set_object_type(
             mut self,
@@ -1673,8 +1632,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-        pub fn facet_style(mut self, inp: crate::model::FacetStyle) -> Self {
-            self.inner = self.inner.facet_style(inp);
+        pub fn facet_style(mut self, input: crate::model::FacetStyle) -> Self {
+            self.inner = self.inner.facet_style(input);
             self
         }
         /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
@@ -1689,7 +1648,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIndex`.
     ///
     /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.html">Indexing and search</a> for more information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1734,10 +1693,10 @@ pub mod fluent_builders {
                 crate::input::CreateIndexInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1746,8 +1705,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory where the index should be created.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
         /// <p>The ARN of the directory where the index should be created.</p>
@@ -1762,17 +1721,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ordered_indexed_attribute_list`](Self::set_ordered_indexed_attribute_list).
         ///
-        /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
-        /// is supported.</p>
-        pub fn ordered_indexed_attribute_list(
-            mut self,
-            inp: impl Into<crate::model::AttributeKey>,
-        ) -> Self {
-            self.inner = self.inner.ordered_indexed_attribute_list(inp);
+        /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
+        pub fn ordered_indexed_attribute_list(mut self, input: crate::model::AttributeKey) -> Self {
+            self.inner = self.inner.ordered_indexed_attribute_list(input);
             self
         }
-        /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
-        /// is supported.</p>
+        /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
         pub fn set_ordered_indexed_attribute_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
@@ -1780,21 +1734,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ordered_indexed_attribute_list(input);
             self
         }
-        /// <p>Indicates whether the attribute that is being indexed has unique values or
-        /// not.</p>
-        pub fn is_unique(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_unique(inp);
+        /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
+        pub fn is_unique(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_unique(input);
             self
         }
-        /// <p>Indicates whether the attribute that is being indexed has unique values or
-        /// not.</p>
+        /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
         pub fn set_is_unique(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_unique(input);
             self
         }
         /// <p>A reference to the parent object that contains the index object.</p>
-        pub fn parent_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.parent_reference(inp);
+        pub fn parent_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.parent_reference(input);
             self
         }
         /// <p>A reference to the parent object that contains the index object.</p>
@@ -1806,8 +1758,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the link between the parent object and the index object.</p>
-        pub fn link_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_name(inp);
+        pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_name(input.into());
             self
         }
         /// <p>The name of the link between the parent object and the index object.</p>
@@ -1818,11 +1770,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateObject`.
     ///
-    /// <p>Creates an object in a <a>Directory</a>. Additionally attaches the object to
-    /// a parent, if a parent reference and <code>LinkName</code> is specified. An object is simply a
-    /// collection of <a>Facet</a> attributes. You can also use this API call to create a
-    /// policy object, if the facet from which you create the object is a policy facet. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an object in a <code>Directory</code>. Additionally attaches the object to a parent, if a parent reference and <code>LinkName</code> is specified. An object is simply a collection of <code>Facet</code> attributes. You can also use this API call to create a policy object, if the facet from which you create the object is a policy facet. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1867,10 +1816,10 @@ pub mod fluent_builders {
                 crate::input::CreateObjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1878,14 +1827,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// in which the object will be created. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// in which the object will be created. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1897,12 +1844,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_schema_facets`](Self::set_schema_facets).
         ///
-        /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.</p>
-        pub fn schema_facets(mut self, inp: impl Into<crate::model::SchemaFacet>) -> Self {
-            self.inner = self.inner.schema_facets(inp);
+        /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
+        pub fn schema_facets(mut self, input: crate::model::SchemaFacet) -> Self {
+            self.inner = self.inner.schema_facets(input);
             self
         }
-        /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.</p>
+        /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
         pub fn set_schema_facets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
@@ -1914,17 +1861,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_object_attribute_list`](Self::set_object_attribute_list).
         ///
-        /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map
-        /// value.</p>
-        pub fn object_attribute_list(
-            mut self,
-            inp: impl Into<crate::model::AttributeKeyAndValue>,
-        ) -> Self {
-            self.inner = self.inner.object_attribute_list(inp);
+        /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
+        pub fn object_attribute_list(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
+            self.inner = self.inner.object_attribute_list(input);
             self
         }
-        /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map
-        /// value.</p>
+        /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
         pub fn set_object_attribute_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -1933,8 +1875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If specified, the parent reference to which this object will be attached.</p>
-        pub fn parent_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.parent_reference(inp);
+        pub fn parent_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.parent_reference(input);
             self
         }
         /// <p>If specified, the parent reference to which this object will be attached.</p>
@@ -1946,8 +1888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of link that is used to attach this object to a parent.</p>
-        pub fn link_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_name(inp);
+        pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_name(input.into());
             self
         }
         /// <p>The name of link that is used to attach this object to a parent.</p>
@@ -1958,28 +1900,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSchema`.
     ///
-    /// <p>Creates a new schema in a development state. A schema can exist in three
-    /// phases:</p>
+    /// <p>Creates a new schema in a development state. A schema can exist in three phases:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Development:</i> This is a mutable phase of the schema. All new
-    /// schemas are in the development phase. Once the schema is finalized, it can be
-    /// published.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Published:</i> Published schemas are immutable and have a version
-    /// associated with them.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Applied:</i> Applied schemas are mutable in a way that allows you
-    /// to add new schema facets. You can also add new, nonrequired attributes to existing schema
-    /// facets. You can apply only published schemas to directories. </p>
-    /// </li>
+    /// <li> <p> <i>Development:</i> This is a mutable phase of the schema. All new schemas are in the development phase. Once the schema is finalized, it can be published.</p> </li>
+    /// <li> <p> <i>Published:</i> Published schemas are immutable and have a version associated with them.</p> </li>
+    /// <li> <p> <i>Applied:</i> Applied schemas are mutable in a way that allows you to add new schema facets. You can also add new, nonrequired attributes to existing schema facets. You can apply only published schemas to directories. </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2024,10 +1951,10 @@ pub mod fluent_builders {
                 crate::input::CreateSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2035,14 +1962,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name that is associated with the schema. This is unique to each account and in each
-        /// region.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name that is associated with the schema. This is unique to each account and in each
-        /// region.</p>
+        /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -2050,8 +1975,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTypedLinkFacet`.
     ///
-    /// <p>Creates a <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTypedLinkFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2096,10 +2021,10 @@ pub mod fluent_builders {
                 crate::input::CreateTypedLinkFacetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2107,28 +2032,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
-        /// <p>
-        /// <a>Facet</a> structure that is associated with the typed link
-        /// facet.</p>
-        pub fn facet(mut self, inp: crate::model::TypedLinkFacet) -> Self {
-            self.inner = self.inner.facet(inp);
+        /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
+        pub fn facet(mut self, input: crate::model::TypedLinkFacet) -> Self {
+            self.inner = self.inner.facet(input);
             self
         }
-        /// <p>
-        /// <a>Facet</a> structure that is associated with the typed link
-        /// facet.</p>
+        /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
         pub fn set_facet(
             mut self,
             input: std::option::Option<crate::model::TypedLinkFacet>,
@@ -2139,10 +2058,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDirectory`.
     ///
-    /// <p>Deletes a directory. Only disabled directories can be deleted. A deleted directory cannot be undone. Exercise extreme
-    /// caution
-    /// when deleting directories.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a directory. Only disabled directories can be deleted. A deleted directory cannot be undone. Exercise extreme caution when deleting directories.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2187,10 +2104,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDirectoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2199,8 +2116,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory to delete.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
         /// <p>The ARN of the directory to delete.</p>
@@ -2214,10 +2131,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFacet`.
     ///
-    /// <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s
-    /// that are associated with the facet will be deleted. Only development schema facets are allowed
-    /// deletion.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a given <code>Facet</code>. All attributes and <code>Rule</code>s that are associated with the facet will be deleted. Only development schema facets are allowed deletion.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2262,10 +2177,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFacetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2273,21 +2188,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
         /// <p>The name of the facet to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the facet to delete.</p>
@@ -2298,9 +2211,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteObject`.
     ///
-    /// <p>Deletes an object and its associated attributes. Only objects with no children and no
-    /// parents can be deleted. The maximum number of attributes that can be deleted during an object deletion is 30. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an object and its associated attributes. Only objects with no children and no parents can be deleted. The maximum number of attributes that can be deleted during an object deletion is 30. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2345,10 +2257,10 @@ pub mod fluent_builders {
                 crate::input::DeleteObjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2356,14 +2268,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2372,8 +2282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference that identifies the object.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>A reference that identifies the object.</p>
@@ -2388,7 +2298,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSchema`.
     ///
     /// <p>Deletes a given schema. Schemas in a development and published state can only be deleted. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2433,10 +2343,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2444,14 +2354,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-        /// <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-        /// <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -2459,8 +2367,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTypedLinkFacet`.
     ///
-    /// <p>Deletes a <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTypedLinkFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2505,10 +2413,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTypedLinkFacetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2516,21 +2424,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
         /// <p>The unique name of the typed link facet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The unique name of the typed link facet.</p>
@@ -2542,7 +2448,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachFromIndex`.
     ///
     /// <p>Detaches the specified object from the specified index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachFromIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2587,10 +2493,10 @@ pub mod fluent_builders {
                 crate::input::DetachFromIndexInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2598,14 +2504,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist
-        /// in.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist
-        /// in.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2614,8 +2518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the index object.</p>
-        pub fn index_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.index_reference(inp);
+        pub fn index_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.index_reference(input);
             self
         }
         /// <p>A reference to the index object.</p>
@@ -2627,8 +2531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the object being detached from the index.</p>
-        pub fn target_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.target_reference(inp);
+        pub fn target_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.target_reference(input);
             self
         }
         /// <p>A reference to the object being detached from the index.</p>
@@ -2642,9 +2546,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetachObject`.
     ///
-    /// <p>Detaches a given object from the parent object. The object that is to be detached from the
-    /// parent is specified by the link name.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Detaches a given object from the parent object. The object that is to be detached from the parent is specified by the link name.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2689,10 +2592,10 @@ pub mod fluent_builders {
                 crate::input::DetachObjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2700,14 +2603,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2715,14 +2616,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_arn(input);
             self
         }
-        /// <p>The parent reference from which the object with the specified link name is
-        /// detached.</p>
-        pub fn parent_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.parent_reference(inp);
+        /// <p>The parent reference from which the object with the specified link name is detached.</p>
+        pub fn parent_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.parent_reference(input);
             self
         }
-        /// <p>The parent reference from which the object with the specified link name is
-        /// detached.</p>
+        /// <p>The parent reference from which the object with the specified link name is detached.</p>
         pub fn set_parent_reference(
             mut self,
             input: std::option::Option<crate::model::ObjectReference>,
@@ -2731,8 +2630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The link name associated with the object that needs to be detached.</p>
-        pub fn link_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_name(inp);
+        pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_name(input.into());
             self
         }
         /// <p>The link name associated with the object that needs to be detached.</p>
@@ -2744,7 +2643,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachPolicy`.
     ///
     /// <p>Detaches a policy from an object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2789,10 +2688,10 @@ pub mod fluent_builders {
                 crate::input::DetachPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2800,14 +2699,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2816,8 +2713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reference that identifies the policy object.</p>
-        pub fn policy_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.policy_reference(inp);
+        pub fn policy_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.policy_reference(input);
             self
         }
         /// <p>Reference that identifies the policy object.</p>
@@ -2829,8 +2726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reference that identifies the object whose policy object will be detached.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>Reference that identifies the object whose policy object will be detached.</p>
@@ -2845,7 +2742,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachTypedLink`.
     ///
     /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachTypedLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2890,10 +2787,10 @@ pub mod fluent_builders {
                 crate::input::DetachTypedLinkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2901,14 +2798,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed
-        /// link.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed
-        /// link.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2917,8 +2812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used to accept a typed link specifier as input.</p>
-        pub fn typed_link_specifier(mut self, inp: crate::model::TypedLinkSpecifier) -> Self {
-            self.inner = self.inner.typed_link_specifier(inp);
+        pub fn typed_link_specifier(mut self, input: crate::model::TypedLinkSpecifier) -> Self {
+            self.inner = self.inner.typed_link_specifier(input);
             self
         }
         /// <p>Used to accept a typed link specifier as input.</p>
@@ -2932,9 +2827,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableDirectory`.
     ///
-    /// <p>Disables the specified directory. Disabled directories cannot be read or written to.
-    /// Only enabled directories can be disabled. Disabled directories may be reenabled.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables the specified directory. Disabled directories cannot be read or written to. Only enabled directories can be disabled. Disabled directories may be reenabled.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2979,10 +2873,10 @@ pub mod fluent_builders {
                 crate::input::DisableDirectoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2991,8 +2885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory to disable.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
         /// <p>The ARN of the directory to disable.</p>
@@ -3006,9 +2900,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableDirectory`.
     ///
-    /// <p>Enables the specified directory. Only disabled directories can be enabled. Once
-    /// enabled, the directory can then be read and written to.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Enables the specified directory. Only disabled directories can be enabled. Once enabled, the directory can then be read and written to.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3053,10 +2946,10 @@ pub mod fluent_builders {
                 crate::input::EnableDirectoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3065,8 +2958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory to enable.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
         /// <p>The ARN of the directory to enable.</p>
@@ -3081,7 +2974,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppliedSchemaVersion`.
     ///
     /// <p>Returns current applied schema version ARN, including the minor version in use.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppliedSchemaVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3126,10 +3019,10 @@ pub mod fluent_builders {
                 crate::input::GetAppliedSchemaVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3138,8 +3031,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the applied schema.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
         /// <p>The ARN of the applied schema.</p>
@@ -3151,7 +3044,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDirectory`.
     ///
     /// <p>Retrieves metadata about a directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDirectory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3196,10 +3089,10 @@ pub mod fluent_builders {
                 crate::input::GetDirectoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3208,8 +3101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
         /// <p>The ARN of the directory.</p>
@@ -3223,9 +3116,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetFacet`.
     ///
-    /// <p>Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or <code>ObjectType</code>. You can call this on all kinds of schema
-    /// facets -- published, development, or applied.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets details of the <code>Facet</code>, such as facet name, attributes, <code>Rule</code>s, or <code>ObjectType</code>. You can call this on all kinds of schema facets -- published, development, or applied.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3270,10 +3162,10 @@ pub mod fluent_builders {
                 crate::input::GetFacetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3281,21 +3173,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
         /// <p>The name of the facet to retrieve.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the facet to retrieve.</p>
@@ -3307,7 +3197,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLinkAttributes`.
     ///
     /// <p>Retrieves attributes that are associated with a typed link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLinkAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3352,10 +3242,10 @@ pub mod fluent_builders {
                 crate::input::GetLinkAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3363,12 +3253,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3377,8 +3267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows a typed link specifier to be accepted as input.</p>
-        pub fn typed_link_specifier(mut self, inp: crate::model::TypedLinkSpecifier) -> Self {
-            self.inner = self.inner.typed_link_specifier(inp);
+        pub fn typed_link_specifier(mut self, input: crate::model::TypedLinkSpecifier) -> Self {
+            self.inner = self.inner.typed_link_specifier(input);
             self
         }
         /// <p>Allows a typed link specifier to be accepted as input.</p>
@@ -3394,8 +3284,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
         ///
         /// <p>A list of attribute names whose values will be retrieved.</p>
-        pub fn attribute_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_names(inp);
+        pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_names(input.into());
             self
         }
         /// <p>A list of attribute names whose values will be retrieved.</p>
@@ -3407,8 +3297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
         /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
@@ -3423,7 +3313,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetObjectAttributes`.
     ///
     /// <p>Retrieves attributes within a facet that are associated with an object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetObjectAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3468,10 +3358,10 @@ pub mod fluent_builders {
                 crate::input::GetObjectAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3479,12 +3369,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3493,8 +3383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
@@ -3506,8 +3396,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level at which to retrieve the attributes on an object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
         /// <p>The consistency level at which to retrieve the attributes on an object.</p>
@@ -3518,12 +3408,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_consistency_level(input);
             self
         }
-        /// <p>Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a> for details.</p>
-        pub fn schema_facet(mut self, inp: crate::model::SchemaFacet) -> Self {
-            self.inner = self.inner.schema_facet(inp);
+        /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
+        pub fn schema_facet(mut self, input: crate::model::SchemaFacet) -> Self {
+            self.inner = self.inner.schema_facet(input);
             self
         }
-        /// <p>Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a> for details.</p>
+        /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
         pub fn set_schema_facet(
             mut self,
             input: std::option::Option<crate::model::SchemaFacet>,
@@ -3536,8 +3426,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
         ///
         /// <p>List of attribute names whose values will be retrieved.</p>
-        pub fn attribute_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_names(inp);
+        pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_names(input.into());
             self
         }
         /// <p>List of attribute names whose values will be retrieved.</p>
@@ -3552,7 +3442,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetObjectInformation`.
     ///
     /// <p>Retrieves metadata about an object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetObjectInformation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3597,10 +3487,10 @@ pub mod fluent_builders {
                 crate::input::GetObjectInformationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3609,8 +3499,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory being retrieved.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
         /// <p>The ARN of the directory being retrieved.</p>
@@ -3622,8 +3512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the object.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>A reference to the object.</p>
@@ -3635,8 +3525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level at which to retrieve the object information.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
         /// <p>The consistency level at which to retrieve the object information.</p>
@@ -3651,7 +3541,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSchemaAsJson`.
     ///
     /// <p>Retrieves a JSON representation of the schema. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON Schema Format</a> for more information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSchemaAsJson<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3696,10 +3586,10 @@ pub mod fluent_builders {
                 crate::input::GetSchemaAsJsonInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3708,8 +3598,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the schema to retrieve.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
         /// <p>The ARN of the schema to retrieve.</p>
@@ -3720,8 +3610,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTypedLinkFacetInformation`.
     ///
-    /// <p>Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the identity attribute order for a specific <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTypedLinkFacetInformation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3766,10 +3656,10 @@ pub mod fluent_builders {
                 crate::input::GetTypedLinkFacetInformationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3777,21 +3667,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
         /// <p>The unique name of the typed link facet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The unique name of the typed link facet.</p>
@@ -3803,7 +3691,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppliedSchemaArns`.
     ///
     /// <p>Lists schema major versions applied to a directory. If <code>SchemaArn</code> is provided, lists the minor version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppliedSchemaArns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3848,10 +3736,10 @@ pub mod fluent_builders {
                 crate::input::ListAppliedSchemaArnsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3859,9 +3747,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppliedSchemaArnsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAppliedSchemaArnsPaginator<C, M, R> {
+            crate::paginator::ListAppliedSchemaArnsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the directory you are listing.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
         /// <p>The ARN of the directory you are listing.</p>
@@ -3873,8 +3767,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
         /// <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
@@ -3883,8 +3777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -3893,8 +3787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -3906,7 +3800,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAttachedIndices`.
     ///
     /// <p>Lists indices attached to the specified object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAttachedIndices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3951,10 +3845,10 @@ pub mod fluent_builders {
                 crate::input::ListAttachedIndicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3962,9 +3856,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAttachedIndicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAttachedIndicesPaginator<C, M, R> {
+            crate::paginator::ListAttachedIndicesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the directory.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
         /// <p>The ARN of the directory.</p>
@@ -3976,8 +3876,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the object that has indices attached.</p>
-        pub fn target_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.target_reference(inp);
+        pub fn target_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.target_reference(input);
             self
         }
         /// <p>A reference to the object that has indices attached.</p>
@@ -3989,8 +3889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -3999,8 +3899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4009,8 +3909,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level to use for this operation.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
         /// <p>The consistency level to use for this operation.</p>
@@ -4024,9 +3924,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDevelopmentSchemaArns`.
     ///
-    /// <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development
-    /// state.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development state.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevelopmentSchemaArns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4071,10 +3970,10 @@ pub mod fluent_builders {
                 crate::input::ListDevelopmentSchemaArnsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4082,9 +3981,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDevelopmentSchemaArnsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListDevelopmentSchemaArnsPaginator<C, M, R> {
+            crate::paginator::ListDevelopmentSchemaArnsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4093,8 +4000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4106,7 +4013,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDirectories`.
     ///
     /// <p>Lists directories created within an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDirectories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4151,10 +4058,10 @@ pub mod fluent_builders {
                 crate::input::ListDirectoriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4162,9 +4069,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDirectoriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDirectoriesPaginator<C, M, R> {
+            crate::paginator::ListDirectoriesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4173,8 +4086,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4182,14 +4095,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or
-        /// Deleted.</p>
-        pub fn state(mut self, inp: crate::model::DirectoryState) -> Self {
-            self.inner = self.inner.state(inp);
+        /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
+        pub fn state(mut self, input: crate::model::DirectoryState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
-        /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or
-        /// Deleted.</p>
+        /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::DirectoryState>,
@@ -4201,7 +4112,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFacetAttributes`.
     ///
     /// <p>Retrieves attributes attached to the facet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFacetAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4246,10 +4157,10 @@ pub mod fluent_builders {
                 crate::input::ListFacetAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4257,9 +4168,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFacetAttributesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFacetAttributesPaginator<C, M, R> {
+            crate::paginator::ListFacetAttributesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the schema where the facet resides.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
         /// <p>The ARN of the schema where the facet resides.</p>
@@ -4268,8 +4185,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the facet whose attributes will be retrieved.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the facet whose attributes will be retrieved.</p>
@@ -4278,8 +4195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4288,8 +4205,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4301,7 +4218,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFacetNames`.
     ///
     /// <p>Retrieves the names of facets that exist in a schema.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFacetNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4346,10 +4263,10 @@ pub mod fluent_builders {
                 crate::input::ListFacetNamesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4357,9 +4274,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFacetNamesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFacetNamesPaginator<C, M, R> {
+            crate::paginator::ListFacetNamesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
@@ -4368,8 +4291,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4378,8 +4301,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4390,10 +4313,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIncomingTypedLinks`.
     ///
-    /// <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
-    /// information for an object. It also supports filtering by typed link facet and identity
-    /// attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIncomingTypedLinks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4438,10 +4359,10 @@ pub mod fluent_builders {
                 crate::input::ListIncomingTypedLinksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4449,14 +4370,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-        /// links.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-        /// links.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4465,8 +4384,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reference that identifies the object whose attributes will be listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>Reference that identifies the object whose attributes will be listed.</p>
@@ -4481,19 +4400,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filter_attribute_ranges`](Self::set_filter_attribute_ranges).
         ///
-        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-        /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-        /// range specified are presumed to match the entire range.</p>
+        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
         pub fn filter_attribute_ranges(
             mut self,
-            inp: impl Into<crate::model::TypedLinkAttributeRange>,
+            input: crate::model::TypedLinkAttributeRange,
         ) -> Self {
-            self.inner = self.inner.filter_attribute_ranges(inp);
+            self.inner = self.inner.filter_attribute_ranges(input);
             self
         }
-        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-        /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-        /// range specified are presumed to match the entire range.</p>
+        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
         pub fn set_filter_attribute_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
@@ -4501,14 +4416,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_attribute_ranges(input);
             self
         }
-        /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the
-        /// order in which they are supplied to any API calls.</p>
-        pub fn filter_typed_link(mut self, inp: crate::model::TypedLinkSchemaAndFacetName) -> Self {
-            self.inner = self.inner.filter_typed_link(inp);
+        /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
+        pub fn filter_typed_link(
+            mut self,
+            input: crate::model::TypedLinkSchemaAndFacetName,
+        ) -> Self {
+            self.inner = self.inner.filter_typed_link(input);
             self
         }
-        /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the
-        /// order in which they are supplied to any API calls.</p>
+        /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
         pub fn set_filter_typed_link(
             mut self,
             input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
@@ -4517,8 +4433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4527,8 +4443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4537,8 +4453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level to execute the request at.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
         /// <p>The consistency level to execute the request at.</p>
@@ -4553,7 +4469,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIndex`.
     ///
     /// <p>Lists objects attached to the specified index.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4598,10 +4514,10 @@ pub mod fluent_builders {
                 crate::input::ListIndexInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4609,9 +4525,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListIndexPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListIndexPaginator<C, M, R> {
+            crate::paginator::ListIndexPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the directory that the index exists in.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
         /// <p>The ARN of the directory that the index exists in.</p>
@@ -4629,9 +4551,9 @@ pub mod fluent_builders {
         /// <p>Specifies the ranges of indexed values that you want to query.</p>
         pub fn ranges_on_indexed_values(
             mut self,
-            inp: impl Into<crate::model::ObjectAttributeRange>,
+            input: crate::model::ObjectAttributeRange,
         ) -> Self {
-            self.inner = self.inner.ranges_on_indexed_values(inp);
+            self.inner = self.inner.ranges_on_indexed_values(input);
             self
         }
         /// <p>Specifies the ranges of indexed values that you want to query.</p>
@@ -4643,8 +4565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference to the index to list.</p>
-        pub fn index_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.index_reference(inp);
+        pub fn index_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.index_reference(input);
             self
         }
         /// <p>The reference to the index to list.</p>
@@ -4656,8 +4578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
@@ -4666,8 +4588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4676,8 +4598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level to execute the request at.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
         /// <p>The consistency level to execute the request at.</p>
@@ -4692,7 +4614,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListManagedSchemaArns`.
     ///
     /// <p>Lists the major version families of each managed schema. If a major version ARN is provided as SchemaArn, the minor version revisions in that family are listed instead.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListManagedSchemaArns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4737,10 +4659,10 @@ pub mod fluent_builders {
                 crate::input::ListManagedSchemaArnsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4748,9 +4670,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListManagedSchemaArnsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListManagedSchemaArnsPaginator<C, M, R> {
+            crate::paginator::ListManagedSchemaArnsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
         /// <p>The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed.</p>
@@ -4759,8 +4687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4769,8 +4697,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -4781,9 +4709,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListObjectAttributes`.
     ///
-    /// <p>Lists all attributes that are associated with an object.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all attributes that are associated with an object. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4828,10 +4755,10 @@ pub mod fluent_builders {
                 crate::input::ListObjectAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4839,14 +4766,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListObjectAttributesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListObjectAttributesPaginator<C, M, R> {
+            crate::paginator::ListObjectAttributesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4855,8 +4786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference that identifies the object whose attributes will be listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>The reference that identifies the object whose attributes will be listed.</p>
@@ -4868,8 +4799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -4877,26 +4808,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -4904,14 +4831,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_consistency_level(input);
             self
         }
-        /// <p>Used to filter the list of object attributes that are associated with a certain
-        /// facet.</p>
-        pub fn facet_filter(mut self, inp: crate::model::SchemaFacet) -> Self {
-            self.inner = self.inner.facet_filter(inp);
+        /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
+        pub fn facet_filter(mut self, input: crate::model::SchemaFacet) -> Self {
+            self.inner = self.inner.facet_filter(input);
             self
         }
-        /// <p>Used to filter the list of object attributes that are associated with a certain
-        /// facet.</p>
+        /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
         pub fn set_facet_filter(
             mut self,
             input: std::option::Option<crate::model::SchemaFacet>,
@@ -4922,9 +4847,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListObjectChildren`.
     ///
-    /// <p>Returns a paginated list of child objects that are associated with a given
-    /// object.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectChildren<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4969,10 +4893,10 @@ pub mod fluent_builders {
                 crate::input::ListObjectChildrenInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4980,14 +4904,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListObjectChildrenPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListObjectChildrenPaginator<C, M, R> {
+            crate::paginator::ListObjectChildrenPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4995,14 +4923,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_arn(input);
             self
         }
-        /// <p>The reference that identifies the object for which child objects are being
-        /// listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        /// <p>The reference that identifies the object for which child objects are being listed.</p>
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
-        /// <p>The reference that identifies the object for which child objects are being
-        /// listed.</p>
+        /// <p>The reference that identifies the object for which child objects are being listed.</p>
         pub fn set_object_reference(
             mut self,
             input: std::option::Option<crate::model::ObjectReference>,
@@ -5011,8 +4937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5020,26 +4946,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -5050,15 +4972,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListObjectParentPaths`.
     ///
-    /// <p>Retrieves all available parent paths for any object type such as node, leaf node,
-    /// policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
-    /// <p>Use this API to evaluate all parents for an object. The call returns all objects from
-    /// the root of the directory up to the requested object. The API returns the number of paths
-    /// based on user-defined <code>MaxResults</code>, in case there are multiple paths to the parent.
-    /// The order of the paths and nodes returned is consistent among multiple API calls unless the
-    /// objects are deleted or moved. Paths not leading to the directory root are ignored from the
-    /// target object.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
+    /// <p>Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among multiple API calls unless the objects are deleted or moved. Paths not leading to the directory root are ignored from the target object.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectParentPaths<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5103,10 +5019,10 @@ pub mod fluent_builders {
                 crate::input::ListObjectParentPathsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5114,9 +5030,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListObjectParentPathsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListObjectParentPathsPaginator<C, M, R> {
+            crate::paginator::ListObjectParentPathsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the directory to which the parent path applies.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
         /// <p>The ARN of the directory to which the parent path applies.</p>
@@ -5128,8 +5050,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference that identifies the object whose parent paths are listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>The reference that identifies the object whose parent paths are listed.</p>
@@ -5141,8 +5063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5150,14 +5072,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5165,9 +5085,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListObjectParents`.
     ///
-    /// <p>Lists parent objects that are associated with a given object in pagination
-    /// fashion.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectParents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5212,10 +5131,10 @@ pub mod fluent_builders {
                 crate::input::ListObjectParentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5223,14 +5142,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListObjectParentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListObjectParentsPaginator<C, M, R> {
+            crate::paginator::ListObjectParentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5238,14 +5161,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_arn(input);
             self
         }
-        /// <p>The reference that identifies the object for which parent objects are being
-        /// listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        /// <p>The reference that identifies the object for which parent objects are being listed.</p>
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
-        /// <p>The reference that identifies the object for which parent objects are being
-        /// listed.</p>
+        /// <p>The reference that identifies the object for which parent objects are being listed.</p>
         pub fn set_object_reference(
             mut self,
             input: std::option::Option<crate::model::ObjectReference>,
@@ -5254,8 +5175,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5263,26 +5184,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -5290,12 +5207,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_consistency_level(input);
             self
         }
-        /// <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair.</p>
-        pub fn include_all_links_to_each_parent(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_all_links_to_each_parent(inp);
+        /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
+        pub fn include_all_links_to_each_parent(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_all_links_to_each_parent(input);
             self
         }
-        /// <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair.</p>
+        /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
         pub fn set_include_all_links_to_each_parent(
             mut self,
             input: std::option::Option<bool>,
@@ -5307,7 +5224,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListObjectPolicies`.
     ///
     /// <p>Returns policies attached to an object in pagination fashion.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5352,10 +5269,10 @@ pub mod fluent_builders {
                 crate::input::ListObjectPoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5363,14 +5280,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListObjectPoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListObjectPoliciesPaginator<C, M, R> {
+            crate::paginator::ListObjectPoliciesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5379,8 +5300,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reference that identifies the object for which policies will be listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>Reference that identifies the object for which policies will be listed.</p>
@@ -5392,8 +5313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5401,26 +5322,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -5431,10 +5348,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOutgoingTypedLinks`.
     ///
-    /// <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
-    /// information for an object. It also supports filtering by typed link facet and identity
-    /// attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOutgoingTypedLinks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5479,10 +5394,10 @@ pub mod fluent_builders {
                 crate::input::ListOutgoingTypedLinksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5490,14 +5405,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-        /// links.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-        /// links.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5506,8 +5419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference that identifies the object whose attributes will be listed.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>A reference that identifies the object whose attributes will be listed.</p>
@@ -5522,19 +5435,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filter_attribute_ranges`](Self::set_filter_attribute_ranges).
         ///
-        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-        /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-        /// range specified are presumed to match the entire range.</p>
+        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
         pub fn filter_attribute_ranges(
             mut self,
-            inp: impl Into<crate::model::TypedLinkAttributeRange>,
+            input: crate::model::TypedLinkAttributeRange,
         ) -> Self {
-            self.inner = self.inner.filter_attribute_ranges(inp);
+            self.inner = self.inner.filter_attribute_ranges(input);
             self
         }
-        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-        /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-        /// range specified are presumed to match the entire range.</p>
+        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
         pub fn set_filter_attribute_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
@@ -5542,14 +5451,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_attribute_ranges(input);
             self
         }
-        /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet,
-        /// not the order they are supplied to any API calls.</p>
-        pub fn filter_typed_link(mut self, inp: crate::model::TypedLinkSchemaAndFacetName) -> Self {
-            self.inner = self.inner.filter_typed_link(inp);
+        /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
+        pub fn filter_typed_link(
+            mut self,
+            input: crate::model::TypedLinkSchemaAndFacetName,
+        ) -> Self {
+            self.inner = self.inner.filter_typed_link(input);
             self
         }
-        /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet,
-        /// not the order they are supplied to any API calls.</p>
+        /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
         pub fn set_filter_typed_link(
             mut self,
             input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
@@ -5558,8 +5468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5568,8 +5478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -5578,8 +5488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The consistency level to execute the request at.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
         /// <p>The consistency level to execute the request at.</p>
@@ -5594,7 +5504,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPolicyAttachments`.
     ///
     /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPolicyAttachments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5639,10 +5549,10 @@ pub mod fluent_builders {
                 crate::input::ListPolicyAttachmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5650,14 +5560,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPolicyAttachmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPolicyAttachmentsPaginator<C, M, R> {
+            crate::paginator::ListPolicyAttachmentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5666,8 +5580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference that identifies the policy object.</p>
-        pub fn policy_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.policy_reference(inp);
+        pub fn policy_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.policy_reference(input);
             self
         }
         /// <p>The reference that identifies the policy object.</p>
@@ -5679,8 +5593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5688,26 +5602,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
-        pub fn consistency_level(mut self, inp: crate::model::ConsistencyLevel) -> Self {
-            self.inner = self.inner.consistency_level(inp);
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
+        pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
+            self.inner = self.inner.consistency_level(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -5719,7 +5629,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPublishedSchemaArns`.
     ///
     /// <p>Lists the major version families of each published schema. If a major version ARN is provided as <code>SchemaArn</code>, the minor version revisions in that family are listed instead.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPublishedSchemaArns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5764,10 +5674,10 @@ pub mod fluent_builders {
                 crate::input::ListPublishedSchemaArnsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5775,9 +5685,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPublishedSchemaArnsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPublishedSchemaArnsPaginator<C, M, R> {
+            crate::paginator::ListPublishedSchemaArnsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
         /// <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
@@ -5786,8 +5702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5796,8 +5712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -5808,10 +5724,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Returns tags for a resource. Tagging is currently supported only for directories with a
-    /// limit of 50 tags per directory. All 50 tags are returned for a given directory with this API
-    /// call.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns tags for a resource. Tagging is currently supported only for directories with a limit of 50 tags per directory. All 50 tags are returned for a given directory with this API call.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5856,10 +5770,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5867,38 +5781,38 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsForResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator<C, M, R> {
+            crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The pagination token. This is for future use. Currently pagination is not supported for
-        /// tagging.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token. This is for future use. Currently pagination is not supported for tagging.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token. This is for future use. Currently pagination is not supported for
-        /// tagging.</p>
+        /// <p>The pagination token. This is for future use. Currently pagination is not supported for tagging.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a
-        /// single page. This is for future use and is not supported currently.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a
-        /// single page. This is for future use and is not supported currently.</p>
+        /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5906,8 +5820,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTypedLinkFacetAttributes`.
     ///
-    /// <p>Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a paginated list of all attribute definitions for a particular <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTypedLinkFacetAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5952,10 +5866,10 @@ pub mod fluent_builders {
                 crate::input::ListTypedLinkFacetAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5963,21 +5877,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTypedLinkFacetAttributesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListTypedLinkFacetAttributesPaginator<C, M, R> {
+            crate::paginator::ListTypedLinkFacetAttributesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
         /// <p>The unique name of the typed link facet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The unique name of the typed link facet.</p>
@@ -5986,8 +5906,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -5996,8 +5916,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -6008,9 +5928,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTypedLinkFacetNames`.
     ///
-    /// <p>Returns a paginated list of <code>TypedLink</code> facet names for a particular schema.
-    /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a paginated list of <code>TypedLink</code> facet names for a particular schema. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTypedLinkFacetNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6055,10 +5974,10 @@ pub mod fluent_builders {
                 crate::input::ListTypedLinkFacetNamesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6066,21 +5985,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTypedLinkFacetNamesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTypedLinkFacetNamesPaginator<C, M, R> {
+            crate::paginator::ListTypedLinkFacetNamesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -6089,8 +6012,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve.</p>
@@ -6101,13 +6024,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `LookupPolicy`.
     ///
-    /// <p>Lists all policies from the root of the <a>Directory</a> to the object
-    /// specified. If there are no policies present, an empty list is returned. If policies are
-    /// present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
-    /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
-    /// <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more
-    /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct LookupPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6152,10 +6070,10 @@ pub mod fluent_builders {
                 crate::input::LookupPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6163,14 +6081,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::LookupPolicyPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::LookupPolicyPaginator<C, M, R> {
+            crate::paginator::LookupPolicyPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6179,8 +6101,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reference that identifies the object whose policies will be looked up.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>Reference that identifies the object whose policies will be looked up.</p>
@@ -6192,8 +6114,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -6201,14 +6123,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -6217,7 +6137,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PublishSchema`.
     ///
     /// <p>Publishes a development schema with a major version and a recommended minor version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6262,10 +6182,10 @@ pub mod fluent_builders {
                 crate::input::PublishSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6273,14 +6193,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For
-        /// more information, see <a>arns</a>.</p>
-        pub fn development_schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.development_schema_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
+        pub fn development_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.development_schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For
-        /// more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
         pub fn set_development_schema_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6289,8 +6207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
@@ -6299,8 +6217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
-        pub fn minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(inp);
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
@@ -6311,14 +6229,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_minor_version(input);
             self
         }
-        /// <p>The new name under which the schema will be published. If this is not provided, the
-        /// development schema is considered.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The new name under which the schema will be published. If this is not provided, the
-        /// development schema is considered.</p>
+        /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -6327,7 +6243,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutSchemaFromJson`.
     ///
     /// <p>Allows a schema to be updated using JSON upload. Only available for development schemas. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON Schema Format</a> for more information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSchemaFromJson<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6372,10 +6288,10 @@ pub mod fluent_builders {
                 crate::input::PutSchemaFromJsonInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6384,8 +6300,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the schema to update.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
         /// <p>The ARN of the schema to update.</p>
@@ -6394,8 +6310,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The replacement JSON schema.</p>
-        pub fn document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document(inp);
+        pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document(input.into());
             self
         }
         /// <p>The replacement JSON schema.</p>
@@ -6407,7 +6323,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveFacetFromObject`.
     ///
     /// <p>Removes the specified facet from the specified object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveFacetFromObject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6452,10 +6368,10 @@ pub mod fluent_builders {
                 crate::input::RemoveFacetFromObjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6464,8 +6380,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the directory in which the object resides.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
         /// <p>The ARN of the directory in which the object resides.</p>
@@ -6476,12 +6392,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_arn(input);
             self
         }
-        /// <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
-        pub fn schema_facet(mut self, inp: crate::model::SchemaFacet) -> Self {
-            self.inner = self.inner.schema_facet(inp);
+        /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
+        pub fn schema_facet(mut self, input: crate::model::SchemaFacet) -> Self {
+            self.inner = self.inner.schema_facet(input);
             self
         }
-        /// <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
+        /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
         pub fn set_schema_facet(
             mut self,
             input: std::option::Option<crate::model::SchemaFacet>,
@@ -6490,8 +6406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A reference to the object to remove the facet from.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>A reference to the object to remove the facet from.</p>
@@ -6506,7 +6422,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>An API operation for adding tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6551,10 +6467,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6562,14 +6478,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6579,8 +6493,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key-value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tag key-value pairs.</p>
@@ -6595,7 +6509,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>An API operation for removing tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6640,10 +6554,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6651,14 +6565,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6668,8 +6580,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Keys of the tag that need to be removed from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Keys of the tag that need to be removed from the resource.</p>
@@ -6685,17 +6597,11 @@ pub mod fluent_builders {
     ///
     /// <p>Does the following:</p>
     /// <ol>
-    /// <li>
-    /// <p>Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
-    /// </li>
+    /// <li> <p>Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li>
+    /// <li> <p>Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li>
+    /// <li> <p>Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6740,10 +6646,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFacetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6751,21 +6657,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
         /// <p>The name of the facet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the facet.</p>
@@ -6777,19 +6681,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
         ///
-        /// <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
-        /// Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update
-        /// operation to perform. </p>
-        pub fn attribute_updates(
-            mut self,
-            inp: impl Into<crate::model::FacetAttributeUpdate>,
-        ) -> Self {
-            self.inner = self.inner.attribute_updates(inp);
+        /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+        pub fn attribute_updates(mut self, input: crate::model::FacetAttributeUpdate) -> Self {
+            self.inner = self.inner.attribute_updates(input);
             self
         }
-        /// <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
-        /// Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update
-        /// operation to perform. </p>
+        /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
         pub fn set_attribute_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FacetAttributeUpdate>>,
@@ -6797,12 +6694,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attribute_updates(input);
             self
         }
-        /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
-        pub fn object_type(mut self, inp: crate::model::ObjectType) -> Self {
-            self.inner = self.inner.object_type(inp);
+        /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
+        pub fn object_type(mut self, input: crate::model::ObjectType) -> Self {
+            self.inner = self.inner.object_type(input);
             self
         }
-        /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
+        /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
         pub fn set_object_type(
             mut self,
             input: std::option::Option<crate::model::ObjectType>,
@@ -6814,7 +6711,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLinkAttributes`.
     ///
     /// <p>Updates a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLinkAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6859,10 +6756,10 @@ pub mod fluent_builders {
                 crate::input::UpdateLinkAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6870,12 +6767,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6884,8 +6781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows a typed link specifier to be accepted as input.</p>
-        pub fn typed_link_specifier(mut self, inp: crate::model::TypedLinkSpecifier) -> Self {
-            self.inner = self.inner.typed_link_specifier(inp);
+        pub fn typed_link_specifier(mut self, input: crate::model::TypedLinkSpecifier) -> Self {
+            self.inner = self.inner.typed_link_specifier(input);
             self
         }
         /// <p>Allows a typed link specifier to be accepted as input.</p>
@@ -6901,11 +6798,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
         ///
         /// <p>The attributes update structure.</p>
-        pub fn attribute_updates(
-            mut self,
-            inp: impl Into<crate::model::LinkAttributeUpdate>,
-        ) -> Self {
-            self.inner = self.inner.attribute_updates(inp);
+        pub fn attribute_updates(mut self, input: crate::model::LinkAttributeUpdate) -> Self {
+            self.inner = self.inner.attribute_updates(input);
             self
         }
         /// <p>The attributes update structure.</p>
@@ -6920,7 +6814,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateObjectAttributes`.
     ///
     /// <p>Updates a given object's attributes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateObjectAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6965,10 +6859,10 @@ pub mod fluent_builders {
                 crate::input::UpdateObjectAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6976,14 +6870,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6992,8 +6884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference that identifies the object.</p>
-        pub fn object_reference(mut self, inp: crate::model::ObjectReference) -> Self {
-            self.inner = self.inner.object_reference(inp);
+        pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
+            self.inner = self.inner.object_reference(input);
             self
         }
         /// <p>The reference that identifies the object.</p>
@@ -7009,11 +6901,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
         ///
         /// <p>The attributes update structure.</p>
-        pub fn attribute_updates(
-            mut self,
-            inp: impl Into<crate::model::ObjectAttributeUpdate>,
-        ) -> Self {
-            self.inner = self.inner.attribute_updates(inp);
+        pub fn attribute_updates(mut self, input: crate::model::ObjectAttributeUpdate) -> Self {
+            self.inner = self.inner.attribute_updates(input);
             self
         }
         /// <p>The attributes update structure.</p>
@@ -7027,9 +6916,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSchema`.
     ///
-    /// <p>Updates the schema name with a new name. Only development schema names can be
-    /// updated.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the schema name with a new name. Only development schema names can be updated.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7074,10 +6962,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7085,21 +6973,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-        /// <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-        /// <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -7110,8 +6996,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateTypedLinkFacet`.
     ///
-    /// <p>Updates a <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTypedLinkFacet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7156,10 +7042,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTypedLinkFacetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7167,21 +7053,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
-        pub fn schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+        pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
         /// <p>The unique name of the typed link facet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The unique name of the typed link facet.</p>
@@ -7196,9 +7080,9 @@ pub mod fluent_builders {
         /// <p>Attributes update structure.</p>
         pub fn attribute_updates(
             mut self,
-            inp: impl Into<crate::model::TypedLinkFacetAttributeUpdate>,
+            input: crate::model::TypedLinkFacetAttributeUpdate,
         ) -> Self {
-            self.inner = self.inner.attribute_updates(inp);
+            self.inner = self.inner.attribute_updates(input);
             self
         }
         /// <p>Attributes update structure.</p>
@@ -7213,22 +7097,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_identity_attribute_order`](Self::set_identity_attribute_order).
         ///
-        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
-        /// links considers the order that the attributes are defined on the typed link facet.  When
-        /// providing ranges to a typed link selection, any inexact ranges must be specified at the end.
-        /// Any attributes that do not have a range specified are presumed to match the entire range.
-        /// Filters are interpreted in the order of the attributes on the typed link facet, not the order
-        /// in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn identity_attribute_order(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_attribute_order(inp);
+        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        pub fn identity_attribute_order(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_attribute_order(input.into());
             self
         }
-        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
-        /// links considers the order that the attributes are defined on the typed link facet.  When
-        /// providing ranges to a typed link selection, any inexact ranges must be specified at the end.
-        /// Any attributes that do not have a range specified are presumed to match the entire range.
-        /// Filters are interpreted in the order of the attributes on the typed link facet, not the order
-        /// in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn set_identity_attribute_order(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7240,7 +7114,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpgradeAppliedSchema`.
     ///
     /// <p>Upgrades a single directory in-place using the <code>PublishedSchemaArn</code> with schema updates found in <code>MinorVersion</code>. Backwards-compatible minor version upgrades are instantaneously available for readers on all objects in the directory. Note: This is a synchronous API call and upgrades only one schema on a given directory per call. To upgrade multiple directories from one schema, you would need to call this API on each directory.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpgradeAppliedSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7285,10 +7159,10 @@ pub mod fluent_builders {
                 crate::input::UpgradeAppliedSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7297,8 +7171,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The revision of the published schema to upgrade the directory to.</p>
-        pub fn published_schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.published_schema_arn(inp);
+        pub fn published_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.published_schema_arn(input.into());
             self
         }
         /// <p>The revision of the published schema to upgrade the directory to.</p>
@@ -7310,8 +7184,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
-        pub fn directory_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_arn(inp);
+        pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_arn(input.into());
             self
         }
         /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
@@ -7323,8 +7197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
@@ -7336,7 +7210,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpgradePublishedSchema`.
     ///
     /// <p>Upgrades a published schema under a new minor version revision using the current contents of <code>DevelopmentSchemaArn</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpgradePublishedSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7381,10 +7255,10 @@ pub mod fluent_builders {
                 crate::input::UpgradePublishedSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7393,8 +7267,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
-        pub fn development_schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.development_schema_arn(inp);
+        pub fn development_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.development_schema_arn(input.into());
             self
         }
         /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
@@ -7406,8 +7280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the published schema to be upgraded.</p>
-        pub fn published_schema_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.published_schema_arn(inp);
+        pub fn published_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.published_schema_arn(input.into());
             self
         }
         /// <p>The ARN of the published schema to be upgraded.</p>
@@ -7419,8 +7293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
-        pub fn minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(inp);
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
@@ -7432,8 +7306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p>Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false.</p>
@@ -7443,6 +7317,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

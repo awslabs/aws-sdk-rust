@@ -1614,9 +1614,9 @@ pub mod job_entry {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>Errors for jobs.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::JobError>) -> Self {
+        pub fn errors(mut self, input: crate::model::JobError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -2228,12 +2228,12 @@ pub mod details {
         /// <p>Information about the job error.</p>
         pub fn import_assets_from_s3_job_error_details(
             mut self,
-            input: impl Into<crate::model::AssetSourceEntry>,
+            input: crate::model::AssetSourceEntry,
         ) -> Self {
             let mut v = self
                 .import_assets_from_s3_job_error_details
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.import_assets_from_s3_job_error_details = Some(v);
             self
         }
@@ -3058,10 +3058,10 @@ pub mod import_assets_from_redshift_data_shares_response_details {
         /// A list of Amazon Redshift datashare asset sources.
         pub fn asset_sources(
             mut self,
-            input: impl Into<crate::model::RedshiftDataShareAssetSourceEntry>,
+            input: crate::model::RedshiftDataShareAssetSourceEntry,
         ) -> Self {
             let mut v = self.asset_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_sources = Some(v);
             self
         }
@@ -3221,9 +3221,9 @@ pub mod import_assets_from_s3_response_details {
         /// To override the contents of this collection use [`set_asset_sources`](Self::set_asset_sources).
         ///
         /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
-        pub fn asset_sources(mut self, input: impl Into<crate::model::AssetSourceEntry>) -> Self {
+        pub fn asset_sources(mut self, input: crate::model::AssetSourceEntry) -> Self {
             let mut v = self.asset_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_sources = Some(v);
             self
         }
@@ -3511,10 +3511,10 @@ pub mod export_revisions_to_s3_response_details {
         /// <p>The destination in Amazon S3 where the revision is exported.</p>
         pub fn revision_destinations(
             mut self,
-            input: impl Into<crate::model::RevisionDestinationEntry>,
+            input: crate::model::RevisionDestinationEntry,
         ) -> Self {
             let mut v = self.revision_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revision_destinations = Some(v);
             self
         }
@@ -3710,12 +3710,9 @@ pub mod export_assets_to_s3_response_details {
         /// To override the contents of this collection use [`set_asset_destinations`](Self::set_asset_destinations).
         ///
         /// <p>The destination in Amazon S3 where the asset is exported.</p>
-        pub fn asset_destinations(
-            mut self,
-            input: impl Into<crate::model::AssetDestinationEntry>,
-        ) -> Self {
+        pub fn asset_destinations(mut self, input: crate::model::AssetDestinationEntry) -> Self {
             let mut v = self.asset_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_destinations = Some(v);
             self
         }
@@ -4407,7 +4404,8 @@ pub struct RevisionEntry {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this revision.</p>
     pub data_set_id: std::option::Option<std::string::String>,
-    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub finalized: bool,
     /// <p>The unique identifier for the revision.</p>
     pub id: std::option::Option<std::string::String>,
@@ -4433,7 +4431,8 @@ impl RevisionEntry {
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
-    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub fn finalized(&self) -> bool {
         self.finalized
     }
@@ -4523,12 +4522,14 @@ pub mod revision_entry {
             self.data_set_id = input;
             self
         }
-        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+        /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn finalized(mut self, input: bool) -> Self {
             self.finalized = Some(input);
             self
         }
-        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+        /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn set_finalized(mut self, input: std::option::Option<bool>) -> Self {
             self.finalized = input;
             self
@@ -5113,10 +5114,10 @@ pub mod import_assets_from_redshift_data_shares_request_details {
         /// A list of Amazon Redshift datashare assets.
         pub fn asset_sources(
             mut self,
-            input: impl Into<crate::model::RedshiftDataShareAssetSourceEntry>,
+            input: crate::model::RedshiftDataShareAssetSourceEntry,
         ) -> Self {
             let mut v = self.asset_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_sources = Some(v);
             self
         }
@@ -5219,9 +5220,9 @@ pub mod import_assets_from_s3_request_details {
         /// To override the contents of this collection use [`set_asset_sources`](Self::set_asset_sources).
         ///
         /// <p>Is a list of S3 bucket and object key pairs.</p>
-        pub fn asset_sources(mut self, input: impl Into<crate::model::AssetSourceEntry>) -> Self {
+        pub fn asset_sources(mut self, input: crate::model::AssetSourceEntry) -> Self {
             let mut v = self.asset_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_sources = Some(v);
             self
         }
@@ -5460,10 +5461,10 @@ pub mod export_revisions_to_s3_request_details {
         /// <p>The destination for the revision.</p>
         pub fn revision_destinations(
             mut self,
-            input: impl Into<crate::model::RevisionDestinationEntry>,
+            input: crate::model::RevisionDestinationEntry,
         ) -> Self {
             let mut v = self.revision_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revision_destinations = Some(v);
             self
         }
@@ -5553,12 +5554,9 @@ pub mod export_assets_to_s3_request_details {
         /// To override the contents of this collection use [`set_asset_destinations`](Self::set_asset_destinations).
         ///
         /// <p>The destination for the asset.</p>
-        pub fn asset_destinations(
-            mut self,
-            input: impl Into<crate::model::AssetDestinationEntry>,
-        ) -> Self {
+        pub fn asset_destinations(mut self, input: crate::model::AssetDestinationEntry) -> Self {
             let mut v = self.asset_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.asset_destinations = Some(v);
             self
         }

@@ -344,7 +344,7 @@ impl AsRef<str> for ParameterExceptionField {
     }
 }
 
-/// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. This is available at the web ACL level and in each rule.  </p>
+/// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. This is available at the web ACL level and in each rule. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptchaConfig {
@@ -457,33 +457,25 @@ impl ImmunityTimeProperty {
     }
 }
 
-/// <p>The response body to use in a custom response to a web request. This is referenced by
-/// key from <a>CustomResponse</a>
-/// <code>CustomResponseBodyKey</code>.</p>
+/// <p>The response body to use in a custom response to a web request. This is referenced by key from <code>CustomResponse</code> <code>CustomResponseBodyKey</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomResponseBody {
-    /// <p>The type of content in the payload that you are defining in the <code>Content</code>
-    /// string.</p>
+    /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
     pub content_type: std::option::Option<crate::model::ResponseContentType>,
     /// <p>The payload of the custom response. </p>
-    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON
-    /// content in the <code>ContentType</code> setting. </p>
-    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub content: std::option::Option<std::string::String>,
 }
 impl CustomResponseBody {
-    /// <p>The type of content in the payload that you are defining in the <code>Content</code>
-    /// string.</p>
+    /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
     pub fn content_type(&self) -> std::option::Option<&crate::model::ResponseContentType> {
         self.content_type.as_ref()
     }
     /// <p>The payload of the custom response. </p>
-    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON
-    /// content in the <code>ContentType</code> setting. </p>
-    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -506,14 +498,12 @@ pub mod custom_response_body {
         pub(crate) content: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of content in the payload that you are defining in the <code>Content</code>
-        /// string.</p>
+        /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
         pub fn content_type(mut self, input: crate::model::ResponseContentType) -> Self {
             self.content_type = Some(input);
             self
         }
-        /// <p>The type of content in the payload that you are defining in the <code>Content</code>
-        /// string.</p>
+        /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
         pub fn set_content_type(
             mut self,
             input: std::option::Option<crate::model::ResponseContentType>,
@@ -522,19 +512,15 @@ pub mod custom_response_body {
             self
         }
         /// <p>The payload of the custom response. </p>
-        /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON
-        /// content in the <code>ContentType</code> setting. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
         /// <p>The payload of the custom response. </p>
-        /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON
-        /// content in the <code>ContentType</code> setting. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -614,39 +600,27 @@ impl AsRef<str> for ResponseContentType {
     }
 }
 
-/// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+/// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VisibilityConfig {
-    /// <p>A boolean indicating whether WAF should store a sampling of the web requests that
-    /// match the rules. You can view the sampled requests through the WAF console. </p>
+    /// <p>A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
     pub sampled_requests_enabled: bool,
-    /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the
-    /// list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-    /// Metrics</a>.</p>
+    /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a>.</p>
     pub cloud_watch_metrics_enabled: bool,
-    /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9,
-    /// - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't
-    /// contain whitespace or metric names reserved for WAF, for example "All" and
-    /// "Default_Action." </p>
+    /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example "All" and "Default_Action." </p>
     pub metric_name: std::option::Option<std::string::String>,
 }
 impl VisibilityConfig {
-    /// <p>A boolean indicating whether WAF should store a sampling of the web requests that
-    /// match the rules. You can view the sampled requests through the WAF console. </p>
+    /// <p>A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
     pub fn sampled_requests_enabled(&self) -> bool {
         self.sampled_requests_enabled
     }
-    /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the
-    /// list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-    /// Metrics</a>.</p>
+    /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a>.</p>
     pub fn cloud_watch_metrics_enabled(&self) -> bool {
         self.cloud_watch_metrics_enabled
     }
-    /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9,
-    /// - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't
-    /// contain whitespace or metric names reserved for WAF, for example "All" and
-    /// "Default_Action." </p>
+    /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example "All" and "Default_Action." </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
@@ -674,44 +648,32 @@ pub mod visibility_config {
         pub(crate) metric_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A boolean indicating whether WAF should store a sampling of the web requests that
-        /// match the rules. You can view the sampled requests through the WAF console. </p>
+        /// <p>A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
         pub fn sampled_requests_enabled(mut self, input: bool) -> Self {
             self.sampled_requests_enabled = Some(input);
             self
         }
-        /// <p>A boolean indicating whether WAF should store a sampling of the web requests that
-        /// match the rules. You can view the sampled requests through the WAF console. </p>
+        /// <p>A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
         pub fn set_sampled_requests_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sampled_requests_enabled = input;
             self
         }
-        /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the
-        /// list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-        /// Metrics</a>.</p>
+        /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a>.</p>
         pub fn cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
             self.cloud_watch_metrics_enabled = Some(input);
             self
         }
-        /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the
-        /// list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-        /// Metrics</a>.</p>
+        /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a>.</p>
         pub fn set_cloud_watch_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cloud_watch_metrics_enabled = input;
             self
         }
-        /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9,
-        /// - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't
-        /// contain whitespace or metric names reserved for WAF, for example "All" and
-        /// "Default_Action." </p>
+        /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example "All" and "Default_Action." </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9,
-        /// - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't
-        /// contain whitespace or metric names reserved for WAF, for example "All" and
-        /// "Default_Action." </p>
+        /// <p>A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names reserved for WAF, for example "All" and "Default_Action." </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -733,87 +695,55 @@ impl VisibilityConfig {
     }
 }
 
-/// <p>A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify web requests that you want to allow, block, or count.
-/// Each rule includes one top-level <a>Statement</a> that WAF uses to
-/// identify matching web requests, and parameters that govern how WAF handles them. </p>
+/// <p>A single rule, which you can use in a <code>WebACL</code> or <code>RuleGroup</code> to identify web requests that you want to allow, block, or count. Each rule includes one top-level <code>Statement</code> that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Rule {
-    /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create
-    /// it. </p>
+    /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create it. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF
-    /// evaluates each request against the <code>Rules</code> in order based on the value of
-    /// <code>Priority</code>. WAF processes rules with lower priority first. The priorities
-    /// don't need to be consecutive, but they must all be different.</p>
+    /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.</p>
     pub priority: i32,
-    /// <p>The WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or <a>SizeConstraintStatement</a>. </p>
+    /// <p>The WAF processing statement for the rule, for example <code>ByteMatchStatement</code> or <code>SizeConstraintStatement</code>. </p>
     pub statement: std::option::Option<crate::model::Statement>,
     /// <p>The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL level can override the rule action setting. </p>
     /// <p>This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
     /// <p>You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not both:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting. </p>
-    /// </li>
-    /// <li>
-    /// <p>If the rule statement references a rule group, use the override action setting and not this action setting.  </p>
-    /// </li>
+    /// <li> <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting. </p> </li>
+    /// <li> <p>If the rule statement references a rule group, use the override action setting and not this action setting. </p> </li>
     /// </ul>
     pub action: std::option::Option<crate::model::RuleAction>,
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-    /// <note>
-    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-    /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
     /// </note>
     pub override_action: std::option::Option<crate::model::OverrideAction>,
-    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies
-    /// fully qualified labels to matching web requests. A fully qualified label is the
-    /// concatenation of a label namespace and a rule label. The rule's rule group or web ACL
-    /// defines the label namespace. </p>
-    /// <p>Rules that run after this rule in the web ACL can match against these labels using a
-    /// <code>LabelMatchStatement</code>.</p>
-    /// <p>For each label, provide a case-sensitive string containing optional namespaces and a
-    /// label name, according to the following guidelines:</p>
+    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
+    /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
+    /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
     /// <ul>
-    /// <li>
-    /// <p>Separate each component of the label with a colon. </p>
-    /// </li>
-    /// <li>
-    /// <p>Each namespace or name can have up to 128 characters.</p>
-    /// </li>
-    /// <li>
-    /// <p>You can specify up to 5 namespaces in a label.</p>
-    /// </li>
-    /// <li>
-    /// <p>Don't use the following reserved words in your label specification:
-    /// <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>,
-    /// <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p>
-    /// </li>
+    /// <li> <p>Separate each component of the label with a colon. </p> </li>
+    /// <li> <p>Each namespace or name can have up to 128 characters.</p> </li>
+    /// <li> <p>You can specify up to 5 namespaces in a label.</p> </li>
+    /// <li> <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p> </li>
     /// </ul>
-    /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
-    /// </p>
+    /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
     pub rule_labels: std::option::Option<std::vec::Vec<crate::model::Label>>,
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub visibility_config: std::option::Option<crate::model::VisibilityConfig>,
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the <code>CAPTCHA</code> configuration that's defined for the web ACL. </p>
     pub captcha_config: std::option::Option<crate::model::CaptchaConfig>,
 }
 impl Rule {
-    /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create
-    /// it. </p>
+    /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create it. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF
-    /// evaluates each request against the <code>Rules</code> in order based on the value of
-    /// <code>Priority</code>. WAF processes rules with lower priority first. The priorities
-    /// don't need to be consecutive, but they must all be different.</p>
+    /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>The WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or <a>SizeConstraintStatement</a>. </p>
+    /// <p>The WAF processing statement for the rule, for example <code>ByteMatchStatement</code> or <code>SizeConstraintStatement</code>. </p>
     pub fn statement(&self) -> std::option::Option<&crate::model::Statement> {
         self.statement.as_ref()
     }
@@ -821,55 +751,33 @@ impl Rule {
     /// <p>This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
     /// <p>You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not both:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting. </p>
-    /// </li>
-    /// <li>
-    /// <p>If the rule statement references a rule group, use the override action setting and not this action setting.  </p>
-    /// </li>
+    /// <li> <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting. </p> </li>
+    /// <li> <p>If the rule statement references a rule group, use the override action setting and not this action setting. </p> </li>
     /// </ul>
     pub fn action(&self) -> std::option::Option<&crate::model::RuleAction> {
         self.action.as_ref()
     }
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-    /// <note>
-    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-    /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
     /// </note>
     pub fn override_action(&self) -> std::option::Option<&crate::model::OverrideAction> {
         self.override_action.as_ref()
     }
-    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies
-    /// fully qualified labels to matching web requests. A fully qualified label is the
-    /// concatenation of a label namespace and a rule label. The rule's rule group or web ACL
-    /// defines the label namespace. </p>
-    /// <p>Rules that run after this rule in the web ACL can match against these labels using a
-    /// <code>LabelMatchStatement</code>.</p>
-    /// <p>For each label, provide a case-sensitive string containing optional namespaces and a
-    /// label name, according to the following guidelines:</p>
+    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
+    /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
+    /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
     /// <ul>
-    /// <li>
-    /// <p>Separate each component of the label with a colon. </p>
-    /// </li>
-    /// <li>
-    /// <p>Each namespace or name can have up to 128 characters.</p>
-    /// </li>
-    /// <li>
-    /// <p>You can specify up to 5 namespaces in a label.</p>
-    /// </li>
-    /// <li>
-    /// <p>Don't use the following reserved words in your label specification:
-    /// <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>,
-    /// <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p>
-    /// </li>
+    /// <li> <p>Separate each component of the label with a colon. </p> </li>
+    /// <li> <p>Each namespace or name can have up to 128 characters.</p> </li>
+    /// <li> <p>You can specify up to 5 namespaces in a label.</p> </li>
+    /// <li> <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p> </li>
     /// </ul>
-    /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
-    /// </p>
+    /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
     pub fn rule_labels(&self) -> std::option::Option<&[crate::model::Label]> {
         self.rule_labels.as_deref()
     }
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(&self) -> std::option::Option<&crate::model::VisibilityConfig> {
         self.visibility_config.as_ref()
     }
@@ -908,40 +816,32 @@ pub mod rule {
         pub(crate) captcha_config: std::option::Option<crate::model::CaptchaConfig>,
     }
     impl Builder {
-        /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create
-        /// it. </p>
+        /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create it. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create
-        /// it. </p>
+        /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create it. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF
-        /// evaluates each request against the <code>Rules</code> in order based on the value of
-        /// <code>Priority</code>. WAF processes rules with lower priority first. The priorities
-        /// don't need to be consecutive, but they must all be different.</p>
+        /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF
-        /// evaluates each request against the <code>Rules</code> in order based on the value of
-        /// <code>Priority</code>. WAF processes rules with lower priority first. The priorities
-        /// don't need to be consecutive, but they must all be different.</p>
+        /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
         }
-        /// <p>The WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or <a>SizeConstraintStatement</a>. </p>
+        /// <p>The WAF processing statement for the rule, for example <code>ByteMatchStatement</code> or <code>SizeConstraintStatement</code>. </p>
         pub fn statement(mut self, input: crate::model::Statement) -> Self {
             self.statement = Some(input);
             self
         }
-        /// <p>The WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or <a>SizeConstraintStatement</a>. </p>
+        /// <p>The WAF processing statement for the rule, for example <code>ByteMatchStatement</code> or <code>SizeConstraintStatement</code>. </p>
         pub fn set_statement(
             mut self,
             input: std::option::Option<crate::model::Statement>,
@@ -953,12 +853,8 @@ pub mod rule {
         /// <p>This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
         /// <p>You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not both:</p>
         /// <ul>
-        /// <li>
-        /// <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting. </p>
-        /// </li>
-        /// <li>
-        /// <p>If the rule statement references a rule group, use the override action setting and not this action setting.  </p>
-        /// </li>
+        /// <li> <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting. </p> </li>
+        /// <li> <p>If the rule statement references a rule group, use the override action setting and not this action setting. </p> </li>
         /// </ul>
         pub fn action(mut self, input: crate::model::RuleAction) -> Self {
             self.action = Some(input);
@@ -968,32 +864,24 @@ pub mod rule {
         /// <p>This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
         /// <p>You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not both:</p>
         /// <ul>
-        /// <li>
-        /// <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting. </p>
-        /// </li>
-        /// <li>
-        /// <p>If the rule statement references a rule group, use the override action setting and not this action setting.  </p>
-        /// </li>
+        /// <li> <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting. </p> </li>
+        /// <li> <p>If the rule statement references a rule group, use the override action setting and not this action setting. </p> </li>
         /// </ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::RuleAction>) -> Self {
             self.action = input;
             self
         }
         /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-        /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-        /// <note>
-        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-        /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+        /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
+        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
         /// </note>
         pub fn override_action(mut self, input: crate::model::OverrideAction) -> Self {
             self.override_action = Some(input);
             self
         }
         /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-        /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-        /// <note>
-        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-        /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+        /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
+        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
         /// </note>
         pub fn set_override_action(
             mut self,
@@ -1006,64 +894,32 @@ pub mod rule {
         ///
         /// To override the contents of this collection use [`set_rule_labels`](Self::set_rule_labels).
         ///
-        /// <p>Labels to apply to web requests that match the rule match statement. WAF applies
-        /// fully qualified labels to matching web requests. A fully qualified label is the
-        /// concatenation of a label namespace and a rule label. The rule's rule group or web ACL
-        /// defines the label namespace. </p>
-        /// <p>Rules that run after this rule in the web ACL can match against these labels using a
-        /// <code>LabelMatchStatement</code>.</p>
-        /// <p>For each label, provide a case-sensitive string containing optional namespaces and a
-        /// label name, according to the following guidelines:</p>
+        /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
+        /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
+        /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
         /// <ul>
-        /// <li>
-        /// <p>Separate each component of the label with a colon. </p>
-        /// </li>
-        /// <li>
-        /// <p>Each namespace or name can have up to 128 characters.</p>
-        /// </li>
-        /// <li>
-        /// <p>You can specify up to 5 namespaces in a label.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use the following reserved words in your label specification:
-        /// <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>,
-        /// <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p>
-        /// </li>
+        /// <li> <p>Separate each component of the label with a colon. </p> </li>
+        /// <li> <p>Each namespace or name can have up to 128 characters.</p> </li>
+        /// <li> <p>You can specify up to 5 namespaces in a label.</p> </li>
+        /// <li> <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p> </li>
         /// </ul>
-        /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
-        /// </p>
-        pub fn rule_labels(mut self, input: impl Into<crate::model::Label>) -> Self {
+        /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
+        pub fn rule_labels(mut self, input: crate::model::Label) -> Self {
             let mut v = self.rule_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_labels = Some(v);
             self
         }
-        /// <p>Labels to apply to web requests that match the rule match statement. WAF applies
-        /// fully qualified labels to matching web requests. A fully qualified label is the
-        /// concatenation of a label namespace and a rule label. The rule's rule group or web ACL
-        /// defines the label namespace. </p>
-        /// <p>Rules that run after this rule in the web ACL can match against these labels using a
-        /// <code>LabelMatchStatement</code>.</p>
-        /// <p>For each label, provide a case-sensitive string containing optional namespaces and a
-        /// label name, according to the following guidelines:</p>
+        /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
+        /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
+        /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
         /// <ul>
-        /// <li>
-        /// <p>Separate each component of the label with a colon. </p>
-        /// </li>
-        /// <li>
-        /// <p>Each namespace or name can have up to 128 characters.</p>
-        /// </li>
-        /// <li>
-        /// <p>You can specify up to 5 namespaces in a label.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use the following reserved words in your label specification:
-        /// <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>,
-        /// <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p>
-        /// </li>
+        /// <li> <p>Separate each component of the label with a colon. </p> </li>
+        /// <li> <p>Each namespace or name can have up to 128 characters.</p> </li>
+        /// <li> <p>You can specify up to 5 namespaces in a label.</p> </li>
+        /// <li> <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p> </li>
         /// </ul>
-        /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
-        /// </p>
+        /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
         pub fn set_rule_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Label>>,
@@ -1071,12 +927,12 @@ pub mod rule {
             self.rule_labels = input;
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
         pub fn visibility_config(mut self, input: crate::model::VisibilityConfig) -> Self {
             self.visibility_config = Some(input);
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
         pub fn set_visibility_config(
             mut self,
             input: std::option::Option<crate::model::VisibilityConfig>,
@@ -1119,9 +975,7 @@ impl Rule {
     }
 }
 
-/// <p>A single label container. This is used as an element of a label array in multiple
-/// contexts, for example, in <code>RuleLabels</code> inside a <a>Rule</a> and in
-/// <code>Labels</code> inside a <a>SampledHTTPRequest</a>. </p>
+/// <p>A single label container. This is used as an element of a label array in multiple contexts, for example, in <code>RuleLabels</code> inside a <code>Rule</code> and in <code>Labels</code> inside a <code>SampledHTTPRequest</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Label {
@@ -1174,28 +1028,22 @@ impl Label {
 }
 
 /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-/// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-/// <note>
-/// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-/// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+/// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
+/// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OverrideAction {
-    /// <p>Override the rule group evaluation result to count only. </p>
-    /// <note>
-    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-    /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+    /// <p>Override the rule group evaluation result to count only. </p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
     /// </note>
     pub count: std::option::Option<crate::model::CountAction>,
     /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
     pub none: std::option::Option<crate::model::NoneAction>,
 }
 impl OverrideAction {
-    /// <p>Override the rule group evaluation result to count only. </p>
-    /// <note>
-    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-    /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+    /// <p>Override the rule group evaluation result to count only. </p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
     /// </note>
     pub fn count(&self) -> std::option::Option<&crate::model::CountAction> {
         self.count.as_ref()
@@ -1223,19 +1071,15 @@ pub mod override_action {
         pub(crate) none: std::option::Option<crate::model::NoneAction>,
     }
     impl Builder {
-        /// <p>Override the rule group evaluation result to count only. </p>
-        /// <note>
-        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-        /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+        /// <p>Override the rule group evaluation result to count only. </p> <note>
+        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
         /// </note>
         pub fn count(mut self, input: crate::model::CountAction) -> Self {
             self.count = Some(input);
             self
         }
-        /// <p>Override the rule group evaluation result to count only. </p>
-        /// <note>
-        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-        /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+        /// <p>Override the rule group evaluation result to count only. </p> <note>
+        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
         /// </note>
         pub fn set_count(mut self, input: std::option::Option<crate::model::CountAction>) -> Self {
             self.count = input;
@@ -1267,11 +1111,9 @@ impl OverrideAction {
     }
 }
 
-/// <p>Specifies that WAF should do nothing. This is used for the <code>OverrideAction</code> setting
-/// on a <a>Rule</a> when the rule uses a rule group reference statement. </p>
-/// <p>This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p>
-/// <p>JSON specification: <code>"None": {}</code>
-/// </p>
+/// <p>Specifies that WAF should do nothing. This is used for the <code>OverrideAction</code> setting on a <code>Rule</code> when the rule uses a rule group reference statement. </p>
+/// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
+/// <p>JSON specification: <code>"None": {}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoneAction {}
@@ -1301,21 +1143,18 @@ impl NoneAction {
     }
 }
 
-/// <p>Specifies that WAF should count the request. Optionally defines additional custom
-/// handling for the request.</p>
-/// <p>This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p>
+/// <p>Specifies that WAF should count the request. Optionally defines additional custom handling for the request.</p>
+/// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CountAction {
     /// <p>Defines custom handling for the web request.</p>
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub custom_request_handling: std::option::Option<crate::model::CustomRequestHandling>,
 }
 impl CountAction {
     /// <p>Defines custom handling for the web request.</p>
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn custom_request_handling(
         &self,
     ) -> std::option::Option<&crate::model::CustomRequestHandling> {
@@ -1340,8 +1179,7 @@ pub mod count_action {
     }
     impl Builder {
         /// <p>Defines custom handling for the web request.</p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_request_handling(
             mut self,
             input: crate::model::CustomRequestHandling,
@@ -1350,8 +1188,7 @@ pub mod count_action {
             self
         }
         /// <p>Defines custom handling for the web request.</p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_request_handling(
             mut self,
             input: std::option::Option<crate::model::CustomRequestHandling>,
@@ -1374,22 +1211,18 @@ impl CountAction {
     }
 }
 
-/// <p>Custom request handling behavior that inserts custom headers into a web request. You can
-/// add custom request handling for the rule actions allow and count. </p>
-/// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-/// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+/// <p>Custom request handling behavior that inserts custom headers into a web request. You can add custom request handling for the rule actions allow and count. </p>
+/// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomRequestHandling {
     /// <p>The HTTP headers to insert into the request. Duplicate header names are not allowed. </p>
-    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub insert_headers: std::option::Option<std::vec::Vec<crate::model::CustomHttpHeader>>,
 }
 impl CustomRequestHandling {
     /// <p>The HTTP headers to insert into the request. Duplicate header names are not allowed. </p>
-    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn insert_headers(&self) -> std::option::Option<&[crate::model::CustomHttpHeader]> {
         self.insert_headers.as_deref()
     }
@@ -1416,17 +1249,15 @@ pub mod custom_request_handling {
         /// To override the contents of this collection use [`set_insert_headers`](Self::set_insert_headers).
         ///
         /// <p>The HTTP headers to insert into the request. Duplicate header names are not allowed. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        pub fn insert_headers(mut self, input: impl Into<crate::model::CustomHttpHeader>) -> Self {
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        pub fn insert_headers(mut self, input: crate::model::CustomHttpHeader) -> Self {
             let mut v = self.insert_headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insert_headers = Some(v);
             self
         }
         /// <p>The HTTP headers to insert into the request. Duplicate header names are not allowed. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_insert_headers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomHttpHeader>>,
@@ -1449,25 +1280,19 @@ impl CustomRequestHandling {
     }
 }
 
-/// <p>A custom header for custom request and response handling. This is used in <a>CustomResponse</a> and <a>CustomRequestHandling</a>.</p>
+/// <p>A custom header for custom request and response handling. This is used in <code>CustomResponse</code> and <code>CustomRequestHandling</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomHttpHeader {
     /// <p>The name of the custom header. </p>
-    /// <p>For custom request header insertion, when WAF inserts the header into the request,
-    /// it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that
-    /// are already in the request. For example, for the header name <code>sample</code>, WAF
-    /// inserts the header <code>x-amzn-waf-sample</code>.</p>
+    /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the custom header.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl CustomHttpHeader {
     /// <p>The name of the custom header. </p>
-    /// <p>For custom request header insertion, when WAF inserts the header into the request,
-    /// it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that
-    /// are already in the request. For example, for the header name <code>sample</code>, WAF
-    /// inserts the header <code>x-amzn-waf-sample</code>.</p>
+    /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -1495,19 +1320,13 @@ pub mod custom_http_header {
     }
     impl Builder {
         /// <p>The name of the custom header. </p>
-        /// <p>For custom request header insertion, when WAF inserts the header into the request,
-        /// it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that
-        /// are already in the request. For example, for the header name <code>sample</code>, WAF
-        /// inserts the header <code>x-amzn-waf-sample</code>.</p>
+        /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the custom header. </p>
-        /// <p>For custom request header insertion, when WAF inserts the header into the request,
-        /// it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that
-        /// are already in the request. For example, for the header name <code>sample</code>, WAF
-        /// inserts the header <code>x-amzn-waf-sample</code>.</p>
+        /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1538,8 +1357,7 @@ impl CustomHttpHeader {
     }
 }
 
-/// <p>The action that WAF should take on a web request when it matches a rule's
-/// statement. Settings at the web ACL level can override the rule action setting. </p>
+/// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleAction {
@@ -1655,45 +1473,27 @@ impl RuleAction {
 
 /// <p>Specifies that WAF should run a <code>CAPTCHA</code> check against the request: </p>
 /// <ul>
-/// <li>
-/// <p>If the request includes a valid, unexpired <code>CAPTCHA</code> token,
-/// WAF allows the web request inspection to
-/// proceed to the next rule, similar to a <code>CountAction</code>. </p>
-/// </li>
-/// <li>
-/// <p>If the request doesn't include a valid, unexpired <code>CAPTCHA</code> token, WAF
-/// discontinues the web ACL evaluation of the request and blocks it from going to its intended destination.</p>
-/// <p>WAF generates a response that it sends back to the client, which includes the following: </p>
+/// <li> <p>If the request includes a valid, unexpired <code>CAPTCHA</code> token, WAF allows the web request inspection to proceed to the next rule, similar to a <code>CountAction</code>. </p> </li>
+/// <li> <p>If the request doesn't include a valid, unexpired <code>CAPTCHA</code> token, WAF discontinues the web ACL evaluation of the request and blocks it from going to its intended destination.</p> <p>WAF generates a response that it sends back to the client, which includes the following: </p>
 /// <ul>
-/// <li>
-/// <p>The header <code>x-amzn-waf-action</code> with a value of <code>captcha</code>. </p>
-/// </li>
-/// <li>
-/// <p>The HTTP status code <code>405 Method Not Allowed</code>. </p>
-/// </li>
-/// <li>
-/// <p>If the request contains an <code>Accept</code> header with a value of <code>text/html</code>, the response includes a <code>CAPTCHA</code> challenge. </p>
-/// </li>
+/// <li> <p>The header <code>x-amzn-waf-action</code> with a value of <code>captcha</code>. </p> </li>
+/// <li> <p>The HTTP status code <code>405 Method Not Allowed</code>. </p> </li>
+/// <li> <p>If the request contains an <code>Accept</code> header with a value of <code>text/html</code>, the response includes a <code>CAPTCHA</code> challenge. </p> </li>
+/// </ul> </li>
 /// </ul>
-/// </li>
-/// </ul>
-/// <p>You can configure the expiration time
-/// in the <code>CaptchaConfig</code>
-/// <code>ImmunityTimeProperty</code> setting at the rule and web ACL level. The rule setting overrides the web ACL setting. </p>
+/// <p>You can configure the expiration time in the <code>CaptchaConfig</code> <code>ImmunityTimeProperty</code> setting at the rule and web ACL level. The rule setting overrides the web ACL setting. </p>
 /// <p>This action option is available for rules. It isn't available for web ACL default actions. </p>
-/// <p>This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p>
+/// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaptchaAction {
     /// <p>Defines custom handling for the web request.</p>
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub custom_request_handling: std::option::Option<crate::model::CustomRequestHandling>,
 }
 impl CaptchaAction {
     /// <p>Defines custom handling for the web request.</p>
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn custom_request_handling(
         &self,
     ) -> std::option::Option<&crate::model::CustomRequestHandling> {
@@ -1718,8 +1518,7 @@ pub mod captcha_action {
     }
     impl Builder {
         /// <p>Defines custom handling for the web request.</p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_request_handling(
             mut self,
             input: crate::model::CustomRequestHandling,
@@ -1728,8 +1527,7 @@ pub mod captcha_action {
             self
         }
         /// <p>Defines custom handling for the web request.</p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_request_handling(
             mut self,
             input: std::option::Option<crate::model::CustomRequestHandling>,
@@ -1752,21 +1550,18 @@ impl CaptchaAction {
     }
 }
 
-/// <p>Specifies that WAF should allow the request and optionally defines additional
-/// custom handling for the request.</p>
-/// <p>This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p>
+/// <p>Specifies that WAF should allow the request and optionally defines additional custom handling for the request.</p>
+/// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllowAction {
     /// <p>Defines custom handling for the web request.</p>
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub custom_request_handling: std::option::Option<crate::model::CustomRequestHandling>,
 }
 impl AllowAction {
     /// <p>Defines custom handling for the web request.</p>
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn custom_request_handling(
         &self,
     ) -> std::option::Option<&crate::model::CustomRequestHandling> {
@@ -1791,8 +1586,7 @@ pub mod allow_action {
     }
     impl Builder {
         /// <p>Defines custom handling for the web request.</p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_request_handling(
             mut self,
             input: crate::model::CustomRequestHandling,
@@ -1801,8 +1595,7 @@ pub mod allow_action {
             self
         }
         /// <p>Defines custom handling for the web request.</p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_request_handling(
             mut self,
             input: std::option::Option<crate::model::CustomRequestHandling>,
@@ -1825,21 +1618,18 @@ impl AllowAction {
     }
 }
 
-/// <p>Specifies that WAF should block the request and optionally defines additional
-/// custom handling for the response to the web request.</p>
-/// <p>This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p>
+/// <p>Specifies that WAF should block the request and optionally defines additional custom handling for the response to the web request.</p>
+/// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockAction {
     /// <p>Defines a custom response for the web request.</p>
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub custom_response: std::option::Option<crate::model::CustomResponse>,
 }
 impl BlockAction {
     /// <p>Defines a custom response for the web request.</p>
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn custom_response(&self) -> std::option::Option<&crate::model::CustomResponse> {
         self.custom_response.as_ref()
     }
@@ -1861,15 +1651,13 @@ pub mod block_action {
     }
     impl Builder {
         /// <p>Defines a custom response for the web request.</p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_response(mut self, input: crate::model::CustomResponse) -> Self {
             self.custom_response = Some(input);
             self
         }
         /// <p>Defines a custom response for the web request.</p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_response(
             mut self,
             input: std::option::Option<crate::model::CustomResponse>,
@@ -1892,48 +1680,32 @@ impl BlockAction {
     }
 }
 
-/// <p>A custom response to send to the client. You can define a custom response for rule
-/// actions and default web ACL actions that are set to <a>BlockAction</a>. </p>
-/// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-/// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+/// <p>A custom response to send to the client. You can define a custom response for rule actions and default web ACL actions that are set to <code>BlockAction</code>. </p>
+/// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomResponse {
     /// <p>The HTTP status code to return to the client. </p>
-    /// <p>For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub response_code: std::option::Option<i32>,
-    /// <p>References the response body that you want WAF to return to the web request
-    /// client. You can define a custom response for a rule action or a default web ACL action that
-    /// is set to block. To do this, you first define the response body key and value in the
-    /// <code>CustomResponseBodies</code> setting for the <a>WebACL</a> or <a>RuleGroup</a> where you want to use it. Then, in the rule action or web ACL
-    /// default action <code>BlockAction</code> setting, you reference the response body using this
-    /// key. </p>
+    /// <p>References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. To do this, you first define the response body key and value in the <code>CustomResponseBodies</code> setting for the <code>WebACL</code> or <code>RuleGroup</code> where you want to use it. Then, in the rule action or web ACL default action <code>BlockAction</code> setting, you reference the response body using this key. </p>
     pub custom_response_body_key: std::option::Option<std::string::String>,
     /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
-    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub response_headers: std::option::Option<std::vec::Vec<crate::model::CustomHttpHeader>>,
 }
 impl CustomResponse {
     /// <p>The HTTP status code to return to the client. </p>
-    /// <p>For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn response_code(&self) -> std::option::Option<i32> {
         self.response_code
     }
-    /// <p>References the response body that you want WAF to return to the web request
-    /// client. You can define a custom response for a rule action or a default web ACL action that
-    /// is set to block. To do this, you first define the response body key and value in the
-    /// <code>CustomResponseBodies</code> setting for the <a>WebACL</a> or <a>RuleGroup</a> where you want to use it. Then, in the rule action or web ACL
-    /// default action <code>BlockAction</code> setting, you reference the response body using this
-    /// key. </p>
+    /// <p>References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. To do this, you first define the response body key and value in the <code>CustomResponseBodies</code> setting for the <code>WebACL</code> or <code>RuleGroup</code> where you want to use it. Then, in the rule action or web ACL default action <code>BlockAction</code> setting, you reference the response body using this key. </p>
     pub fn custom_response_body_key(&self) -> std::option::Option<&str> {
         self.custom_response_body_key.as_deref()
     }
     /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
-    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn response_headers(&self) -> std::option::Option<&[crate::model::CustomHttpHeader]> {
         self.response_headers.as_deref()
     }
@@ -1960,35 +1732,23 @@ pub mod custom_response {
     }
     impl Builder {
         /// <p>The HTTP status code to return to the client. </p>
-        /// <p>For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn response_code(mut self, input: i32) -> Self {
             self.response_code = Some(input);
             self
         }
         /// <p>The HTTP status code to return to the client. </p>
-        /// <p>For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For a list of status codes that you can use in your custom reqponses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_response_code(mut self, input: std::option::Option<i32>) -> Self {
             self.response_code = input;
             self
         }
-        /// <p>References the response body that you want WAF to return to the web request
-        /// client. You can define a custom response for a rule action or a default web ACL action that
-        /// is set to block. To do this, you first define the response body key and value in the
-        /// <code>CustomResponseBodies</code> setting for the <a>WebACL</a> or <a>RuleGroup</a> where you want to use it. Then, in the rule action or web ACL
-        /// default action <code>BlockAction</code> setting, you reference the response body using this
-        /// key. </p>
+        /// <p>References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. To do this, you first define the response body key and value in the <code>CustomResponseBodies</code> setting for the <code>WebACL</code> or <code>RuleGroup</code> where you want to use it. Then, in the rule action or web ACL default action <code>BlockAction</code> setting, you reference the response body using this key. </p>
         pub fn custom_response_body_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_response_body_key = Some(input.into());
             self
         }
-        /// <p>References the response body that you want WAF to return to the web request
-        /// client. You can define a custom response for a rule action or a default web ACL action that
-        /// is set to block. To do this, you first define the response body key and value in the
-        /// <code>CustomResponseBodies</code> setting for the <a>WebACL</a> or <a>RuleGroup</a> where you want to use it. Then, in the rule action or web ACL
-        /// default action <code>BlockAction</code> setting, you reference the response body using this
-        /// key. </p>
+        /// <p>References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. To do this, you first define the response body key and value in the <code>CustomResponseBodies</code> setting for the <code>WebACL</code> or <code>RuleGroup</code> where you want to use it. Then, in the rule action or web ACL default action <code>BlockAction</code> setting, you reference the response body using this key. </p>
         pub fn set_custom_response_body_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2001,20 +1761,15 @@ pub mod custom_response {
         /// To override the contents of this collection use [`set_response_headers`](Self::set_response_headers).
         ///
         /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        pub fn response_headers(
-            mut self,
-            input: impl Into<crate::model::CustomHttpHeader>,
-        ) -> Self {
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        pub fn response_headers(mut self, input: crate::model::CustomHttpHeader) -> Self {
             let mut v = self.response_headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.response_headers = Some(v);
             self
         }
         /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_response_headers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomHttpHeader>>,
@@ -2039,7 +1794,7 @@ impl CustomResponse {
     }
 }
 
-/// <p>The processing guidance for a <a>Rule</a>, used by WAF to determine whether a web request matches the rule. </p>
+/// <p>The processing guidance for a <code>Rule</code>, used by WAF to determine whether a web request matches the rule. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statement {
@@ -2047,27 +1802,22 @@ pub struct Statement {
     pub byte_match_statement: std::option::Option<crate::model::ByteMatchStatement>,
     /// <p>Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.</p>
     pub sqli_match_statement: std::option::Option<crate::model::SqliMatchStatement>,
-    /// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests.
-    /// XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
-    /// client-site scripts into other legitimate web browsers.  
-    /// The XSS match statement provides the location in requests that you want WAF to search and text transformations
-    /// to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
+    /// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want WAF to search and text transformations to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
     pub xss_match_statement: std::option::Option<crate::model::XssMatchStatement>,
-    /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (>) or less than (<). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
+    /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
     /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes.</p>
     /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
     pub size_constraint_statement: std::option::Option<crate::model::SizeConstraintStatement>,
-    /// <p>A rule statement used to identify web requests based on country of origin.  </p>
+    /// <p>A rule statement used to identify web requests based on country of origin. </p>
     pub geo_match_statement: std::option::Option<crate::model::GeoMatchStatement>,
-    /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
-    /// can only use a rule group reference statement at the top level inside a web ACL. </p>
+    /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
+    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
     pub rule_group_reference_statement:
         std::option::Option<crate::model::RuleGroupReferenceStatement>,
-    /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>.</p>
+    /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <code>IPSet</code> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <code>CreateIPSet</code>.</p>
     /// <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
     pub ip_set_reference_statement: std::option::Option<crate::model::IpSetReferenceStatement>,
-    /// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p>
+    /// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <code>RegexPatternSet</code> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <code>CreateRegexPatternSet</code>.</p>
     /// <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
     pub regex_pattern_set_reference_statement:
         std::option::Option<crate::model::RegexPatternSetReferenceStatement>,
@@ -2076,27 +1826,23 @@ pub struct Statement {
     /// <p>When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls below the limit.</p>
     /// <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:</p>
     /// <ul>
-    /// <li>
-    /// <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p>
-    /// </li>
-    /// <li>
-    /// <p>A string match statement that searches in the User-Agent header for the string BadBot.</p>
-    /// </li>
+    /// <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li>
+    /// <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li>
     /// </ul>
     /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
     /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
     pub rate_based_statement: std::option::Option<crate::model::RateBasedStatement>,
-    /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <a>Statement</a> within the <code>AndStatement</code>. </p>
+    /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
     pub and_statement: std::option::Option<crate::model::AndStatement>,
-    /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <a>Statement</a> within the <code>OrStatement</code>. </p>
+    /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <code>Statement</code> within the <code>OrStatement</code>. </p>
     pub or_statement: std::option::Option<crate::model::OrStatement>,
-    /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <a>Statement</a> within the <code>NotStatement</code>.</p>
+    /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
     pub not_statement: std::option::Option<crate::model::NotStatement>,
-    /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p>
+    /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
     /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
     pub managed_rule_group_statement: std::option::Option<crate::model::ManagedRuleGroupStatement>,
     /// <p>A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. </p>
-    /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.  If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
+    /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
     pub label_match_statement: std::option::Option<crate::model::LabelMatchStatement>,
     /// <p>A rule statement used to search web request components for a match against a single regular expression. </p>
     pub regex_match_statement: std::option::Option<crate::model::RegexMatchStatement>,
@@ -2110,15 +1856,11 @@ impl Statement {
     pub fn sqli_match_statement(&self) -> std::option::Option<&crate::model::SqliMatchStatement> {
         self.sqli_match_statement.as_ref()
     }
-    /// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests.
-    /// XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
-    /// client-site scripts into other legitimate web browsers.  
-    /// The XSS match statement provides the location in requests that you want WAF to search and text transformations
-    /// to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
+    /// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want WAF to search and text transformations to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
     pub fn xss_match_statement(&self) -> std::option::Option<&crate::model::XssMatchStatement> {
         self.xss_match_statement.as_ref()
     }
-    /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (>) or less than (<). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
+    /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
     /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes.</p>
     /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
     pub fn size_constraint_statement(
@@ -2126,26 +1868,25 @@ impl Statement {
     ) -> std::option::Option<&crate::model::SizeConstraintStatement> {
         self.size_constraint_statement.as_ref()
     }
-    /// <p>A rule statement used to identify web requests based on country of origin.  </p>
+    /// <p>A rule statement used to identify web requests based on country of origin. </p>
     pub fn geo_match_statement(&self) -> std::option::Option<&crate::model::GeoMatchStatement> {
         self.geo_match_statement.as_ref()
     }
-    /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
-    /// can only use a rule group reference statement at the top level inside a web ACL. </p>
+    /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
+    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
     pub fn rule_group_reference_statement(
         &self,
     ) -> std::option::Option<&crate::model::RuleGroupReferenceStatement> {
         self.rule_group_reference_statement.as_ref()
     }
-    /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>.</p>
+    /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <code>IPSet</code> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <code>CreateIPSet</code>.</p>
     /// <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
     pub fn ip_set_reference_statement(
         &self,
     ) -> std::option::Option<&crate::model::IpSetReferenceStatement> {
         self.ip_set_reference_statement.as_ref()
     }
-    /// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p>
+    /// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <code>RegexPatternSet</code> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <code>CreateRegexPatternSet</code>.</p>
     /// <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
     pub fn regex_pattern_set_reference_statement(
         &self,
@@ -2157,31 +1898,27 @@ impl Statement {
     /// <p>When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls below the limit.</p>
     /// <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:</p>
     /// <ul>
-    /// <li>
-    /// <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p>
-    /// </li>
-    /// <li>
-    /// <p>A string match statement that searches in the User-Agent header for the string BadBot.</p>
-    /// </li>
+    /// <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li>
+    /// <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li>
     /// </ul>
     /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
     /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
     pub fn rate_based_statement(&self) -> std::option::Option<&crate::model::RateBasedStatement> {
         self.rate_based_statement.as_ref()
     }
-    /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <a>Statement</a> within the <code>AndStatement</code>. </p>
+    /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
     pub fn and_statement(&self) -> std::option::Option<&crate::model::AndStatement> {
         self.and_statement.as_ref()
     }
-    /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <a>Statement</a> within the <code>OrStatement</code>. </p>
+    /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <code>Statement</code> within the <code>OrStatement</code>. </p>
     pub fn or_statement(&self) -> std::option::Option<&crate::model::OrStatement> {
         self.or_statement.as_ref()
     }
-    /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <a>Statement</a> within the <code>NotStatement</code>.</p>
+    /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
     pub fn not_statement(&self) -> std::option::Option<&crate::model::NotStatement> {
         self.not_statement.as_ref()
     }
-    /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p>
+    /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
     /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
     pub fn managed_rule_group_statement(
         &self,
@@ -2189,7 +1926,7 @@ impl Statement {
         self.managed_rule_group_statement.as_ref()
     }
     /// <p>A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. </p>
-    /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.  If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
+    /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
     pub fn label_match_statement(&self) -> std::option::Option<&crate::model::LabelMatchStatement> {
         self.label_match_statement.as_ref()
     }
@@ -2285,20 +2022,12 @@ pub mod statement {
             self.sqli_match_statement = input;
             self
         }
-        /// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests.
-        /// XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
-        /// client-site scripts into other legitimate web browsers.  
-        /// The XSS match statement provides the location in requests that you want WAF to search and text transformations
-        /// to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
+        /// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want WAF to search and text transformations to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
         pub fn xss_match_statement(mut self, input: crate::model::XssMatchStatement) -> Self {
             self.xss_match_statement = Some(input);
             self
         }
-        /// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests.
-        /// XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
-        /// client-site scripts into other legitimate web browsers.  
-        /// The XSS match statement provides the location in requests that you want WAF to search and text transformations
-        /// to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
+        /// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want WAF to search and text transformations to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
         pub fn set_xss_match_statement(
             mut self,
             input: std::option::Option<crate::model::XssMatchStatement>,
@@ -2306,7 +2035,7 @@ pub mod statement {
             self.xss_match_statement = input;
             self
         }
-        /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (>) or less than (<). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
+        /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
         /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes.</p>
         /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
         pub fn size_constraint_statement(
@@ -2316,7 +2045,7 @@ pub mod statement {
             self.size_constraint_statement = Some(input);
             self
         }
-        /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (>) or less than (<). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
+        /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
         /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes.</p>
         /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
         pub fn set_size_constraint_statement(
@@ -2326,12 +2055,12 @@ pub mod statement {
             self.size_constraint_statement = input;
             self
         }
-        /// <p>A rule statement used to identify web requests based on country of origin.  </p>
+        /// <p>A rule statement used to identify web requests based on country of origin. </p>
         pub fn geo_match_statement(mut self, input: crate::model::GeoMatchStatement) -> Self {
             self.geo_match_statement = Some(input);
             self
         }
-        /// <p>A rule statement used to identify web requests based on country of origin.  </p>
+        /// <p>A rule statement used to identify web requests based on country of origin. </p>
         pub fn set_geo_match_statement(
             mut self,
             input: std::option::Option<crate::model::GeoMatchStatement>,
@@ -2339,9 +2068,8 @@ pub mod statement {
             self.geo_match_statement = input;
             self
         }
-        /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-        /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
-        /// can only use a rule group reference statement at the top level inside a web ACL. </p>
+        /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
+        /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
         pub fn rule_group_reference_statement(
             mut self,
             input: crate::model::RuleGroupReferenceStatement,
@@ -2349,9 +2077,8 @@ pub mod statement {
             self.rule_group_reference_statement = Some(input);
             self
         }
-        /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-        /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
-        /// can only use a rule group reference statement at the top level inside a web ACL. </p>
+        /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
+        /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
         pub fn set_rule_group_reference_statement(
             mut self,
             input: std::option::Option<crate::model::RuleGroupReferenceStatement>,
@@ -2359,7 +2086,7 @@ pub mod statement {
             self.rule_group_reference_statement = input;
             self
         }
-        /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>.</p>
+        /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <code>IPSet</code> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <code>CreateIPSet</code>.</p>
         /// <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
         pub fn ip_set_reference_statement(
             mut self,
@@ -2368,7 +2095,7 @@ pub mod statement {
             self.ip_set_reference_statement = Some(input);
             self
         }
-        /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>.</p>
+        /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <code>IPSet</code> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <code>CreateIPSet</code>.</p>
         /// <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
         pub fn set_ip_set_reference_statement(
             mut self,
@@ -2377,7 +2104,7 @@ pub mod statement {
             self.ip_set_reference_statement = input;
             self
         }
-        /// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p>
+        /// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <code>RegexPatternSet</code> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <code>CreateRegexPatternSet</code>.</p>
         /// <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
         pub fn regex_pattern_set_reference_statement(
             mut self,
@@ -2386,7 +2113,7 @@ pub mod statement {
             self.regex_pattern_set_reference_statement = Some(input);
             self
         }
-        /// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p>
+        /// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <code>RegexPatternSet</code> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <code>CreateRegexPatternSet</code>.</p>
         /// <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
         pub fn set_regex_pattern_set_reference_statement(
             mut self,
@@ -2400,12 +2127,8 @@ pub mod statement {
         /// <p>When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls below the limit.</p>
         /// <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:</p>
         /// <ul>
-        /// <li>
-        /// <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p>
-        /// </li>
-        /// <li>
-        /// <p>A string match statement that searches in the User-Agent header for the string BadBot.</p>
-        /// </li>
+        /// <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li>
+        /// <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li>
         /// </ul>
         /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
         /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
@@ -2418,12 +2141,8 @@ pub mod statement {
         /// <p>When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls below the limit.</p>
         /// <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:</p>
         /// <ul>
-        /// <li>
-        /// <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p>
-        /// </li>
-        /// <li>
-        /// <p>A string match statement that searches in the User-Agent header for the string BadBot.</p>
-        /// </li>
+        /// <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li>
+        /// <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li>
         /// </ul>
         /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
         /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
@@ -2434,12 +2153,12 @@ pub mod statement {
             self.rate_based_statement = input;
             self
         }
-        /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <a>Statement</a> within the <code>AndStatement</code>. </p>
+        /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
         pub fn and_statement(mut self, input: crate::model::AndStatement) -> Self {
             self.and_statement = Some(input);
             self
         }
-        /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <a>Statement</a> within the <code>AndStatement</code>. </p>
+        /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
         pub fn set_and_statement(
             mut self,
             input: std::option::Option<crate::model::AndStatement>,
@@ -2447,12 +2166,12 @@ pub mod statement {
             self.and_statement = input;
             self
         }
-        /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <a>Statement</a> within the <code>OrStatement</code>. </p>
+        /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <code>Statement</code> within the <code>OrStatement</code>. </p>
         pub fn or_statement(mut self, input: crate::model::OrStatement) -> Self {
             self.or_statement = Some(input);
             self
         }
-        /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <a>Statement</a> within the <code>OrStatement</code>. </p>
+        /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <code>Statement</code> within the <code>OrStatement</code>. </p>
         pub fn set_or_statement(
             mut self,
             input: std::option::Option<crate::model::OrStatement>,
@@ -2460,12 +2179,12 @@ pub mod statement {
             self.or_statement = input;
             self
         }
-        /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <a>Statement</a> within the <code>NotStatement</code>.</p>
+        /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
         pub fn not_statement(mut self, input: crate::model::NotStatement) -> Self {
             self.not_statement = Some(input);
             self
         }
-        /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <a>Statement</a> within the <code>NotStatement</code>.</p>
+        /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
         pub fn set_not_statement(
             mut self,
             input: std::option::Option<crate::model::NotStatement>,
@@ -2473,7 +2192,7 @@ pub mod statement {
             self.not_statement = input;
             self
         }
-        /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p>
+        /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
         /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
         pub fn managed_rule_group_statement(
             mut self,
@@ -2482,7 +2201,7 @@ pub mod statement {
             self.managed_rule_group_statement = Some(input);
             self
         }
-        /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p>
+        /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
         /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
         pub fn set_managed_rule_group_statement(
             mut self,
@@ -2492,13 +2211,13 @@ pub mod statement {
             self
         }
         /// <p>A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. </p>
-        /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.  If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
+        /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
         pub fn label_match_statement(mut self, input: crate::model::LabelMatchStatement) -> Self {
             self.label_match_statement = Some(input);
             self
         }
         /// <p>A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. </p>
-        /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.  If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
+        /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
         pub fn set_label_match_statement(
             mut self,
             input: std::option::Option<crate::model::LabelMatchStatement>,
@@ -2554,11 +2273,9 @@ impl Statement {
 pub struct RegexMatchStatement {
     /// <p>The string representing the regular expression.</p>
     pub regex_string: std::option::Option<std::string::String>,
-    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
 }
 impl RegexMatchStatement {
@@ -2566,13 +2283,11 @@ impl RegexMatchStatement {
     pub fn regex_string(&self) -> std::option::Option<&str> {
         self.regex_string.as_deref()
     }
-    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
     pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub fn text_transformations(&self) -> std::option::Option<&[crate::model::TextTransformation]> {
         self.text_transformations.as_deref()
     }
@@ -2608,12 +2323,12 @@ pub mod regex_match_statement {
             self.regex_string = input;
             self
         }
-        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
         pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
             self.field_to_match = Some(input);
             self
         }
-        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
         pub fn set_field_to_match(
             mut self,
             input: std::option::Option<crate::model::FieldToMatch>,
@@ -2625,21 +2340,14 @@ pub mod regex_match_statement {
         ///
         /// To override the contents of this collection use [`set_text_transformations`](Self::set_text_transformations).
         ///
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-        /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-        /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-        pub fn text_transformations(
-            mut self,
-            input: impl Into<crate::model::TextTransformation>,
-        ) -> Self {
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+        pub fn text_transformations(mut self, input: crate::model::TextTransformation) -> Self {
             let mut v = self.text_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_transformations = Some(v);
             self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-        /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-        /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
         pub fn set_text_transformations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
@@ -2664,326 +2372,111 @@ impl RegexMatchStatement {
     }
 }
 
-/// <p>Text transformations eliminate some of the unusual formatting that attackers use in web
-/// requests in an effort to bypass detection. </p>
+/// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextTransformation {
-    /// <p>Sets the relative processing order for multiple transformations that are defined for a
-    /// rule statement. WAF processes all transformations, from lowest priority to highest,
-    /// before inspecting the transformed content. The priorities don't need to be consecutive, but
-    /// they must all be different. </p>
+    /// <p>Sets the relative processing order for multiple transformations that are defined for a rule statement. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
     pub priority: i32,
     /// <p>You can specify the following transformation types:</p>
-    /// <p>
-    /// <b>BASE64_DECODE</b> - Decode a <code>Base64</code>-encoded
-    /// string.</p>
-    /// <p>
-    /// <b>BASE64_DECODE_EXT</b> - Decode a
-    /// <code>Base64</code>-encoded string, but use a forgiving implementation that ignores
-    /// characters that aren't valid.</p>
-    /// <p>
-    /// <b>CMD_LINE</b> - Command-line transformations. These are
-    /// helpful in reducing effectiveness of attackers who inject an operating system command-line
-    /// command and use unusual formatting to disguise some or all of the command. </p>
+    /// <p> <b>BASE64_DECODE</b> - Decode a <code>Base64</code>-encoded string.</p>
+    /// <p> <b>BASE64_DECODE_EXT</b> - Decode a <code>Base64</code>-encoded string, but use a forgiving implementation that ignores characters that aren't valid.</p>
+    /// <p> <b>CMD_LINE</b> - Command-line transformations. These are helpful in reducing effectiveness of attackers who inject an operating system command-line command and use unusual formatting to disguise some or all of the command. </p>
     /// <ul>
-    /// <li>
-    /// <p>Delete the following characters: <code>\ " ' ^</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Delete spaces before the following characters: <code>/ (</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Replace the following characters with a space: <code>, ;</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Replace multiple spaces with one space</p>
-    /// </li>
-    /// <li>
-    /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p>
-    /// </li>
+    /// <li> <p>Delete the following characters: <code>\ " ' ^</code> </p> </li>
+    /// <li> <p>Delete spaces before the following characters: <code>/ (</code> </p> </li>
+    /// <li> <p>Replace the following characters with a space: <code>, ;</code> </p> </li>
+    /// <li> <p>Replace multiple spaces with one space</p> </li>
+    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
     /// </ul>
-    ///
-    /// <p>
-    /// <b>COMPRESS_WHITE_SPACE</b> - Replace these characters
-    /// with a space character (decimal 32): </p>
+    /// <p> <b>COMPRESS_WHITE_SPACE</b> - Replace these characters with a space character (decimal 32): </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>\f</code>, formfeed, decimal 12</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>\t</code>, tab, decimal 9</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>\n</code>, newline, decimal 10</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>\r</code>, carriage return, decimal 13</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>\v</code>, vertical tab, decimal 11</p>
-    /// </li>
-    /// <li>
-    /// <p>Non-breaking space, decimal 160</p>
-    /// </li>
+    /// <li> <p> <code>\f</code>, formfeed, decimal 12</p> </li>
+    /// <li> <p> <code>\t</code>, tab, decimal 9</p> </li>
+    /// <li> <p> <code>\n</code>, newline, decimal 10</p> </li>
+    /// <li> <p> <code>\r</code>, carriage return, decimal 13</p> </li>
+    /// <li> <p> <code>\v</code>, vertical tab, decimal 11</p> </li>
+    /// <li> <p>Non-breaking space, decimal 160</p> </li>
     /// </ul>
-    /// <p>
-    /// <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>    
-    /// <p>
-    /// <b>CSS_DECODE</b> - Decode characters that were encoded
-    /// using CSS 2.x escape rules <code>syndata.html#characters</code>. This function uses up to two bytes in
-    /// the decoding process, so it can help to uncover ASCII characters that were encoded using
-    /// CSS encoding that wouldn’t typically be encoded. It's also useful in countering evasion,
-    /// which is a combination of a backslash and non-hexadecimal characters. For example,
-    /// <code>ja\vascript</code> for javascript. </p>
-    /// <p>
-    /// <b>ESCAPE_SEQ_DECODE</b> - Decode the following ANSI C escape sequences:
-    /// <code>\a</code>, <code>\b</code>, <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>, <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>, <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal). Encodings
-    /// that aren't valid remain in the output. </p>
-    /// <p>
-    /// <b>HEX_DECODE</b> - Decode a string of hexadecimal characters into a binary.</p>
-    /// <p>
-    /// <b>HTML_ENTITY_DECODE</b> - Replace HTML-encoded
-    /// characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs these
-    /// operations: </p>
+    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
+    /// <p> <b>CSS_DECODE</b> - Decode characters that were encoded using CSS 2.x escape rules <code>syndata.html#characters</code>. This function uses up to two bytes in the decoding process, so it can help to uncover ASCII characters that were encoded using CSS encoding that wouldn’t typically be encoded. It's also useful in countering evasion, which is a combination of a backslash and non-hexadecimal characters. For example, <code>ja\vascript</code> for javascript. </p>
+    /// <p> <b>ESCAPE_SEQ_DECODE</b> - Decode the following ANSI C escape sequences: <code>\a</code>, <code>\b</code>, <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>, <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>, <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal). Encodings that aren't valid remain in the output. </p>
+    /// <p> <b>HEX_DECODE</b> - Decode a string of hexadecimal characters into a binary.</p>
+    /// <p> <b>HTML_ENTITY_DECODE</b> - Replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs these operations: </p>
     /// <ul>
-    /// <li>
-    /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p>
-    /// </li>
-    /// <li>
-    /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p>
-    /// </li>
-    /// <li>
-    /// <p>Replaces <code>(ampersand)gt;</code> with <code>></code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding
-    /// characters</p>
-    /// </li>
-    /// </ul>    
-    /// <p>
-    /// <b>JS_DECODE</b> - Decode JavaScript escape sequences. If
-    /// a <code>\</code>
-    /// <code>u</code>
-    /// <code>HHHH</code> code is in the full-width ASCII code range of <code>FF01-FF5E</code>, then the higher byte is
-    /// used to detect and adjust the lower byte. If not, only the lower byte is used and the
-    /// higher byte is zeroed, causing a possible loss of information. </p>
-    /// <p>
-    /// <b>LOWERCASE</b> - Convert uppercase letters (A-Z) to
-    /// lowercase (a-z). </p>
-    /// <p>
-    /// <b>MD5</b> - Calculate an MD5 hash from the data in the
-    /// input. The computed hash is in a raw binary form. </p>
-    /// <p>
-    /// <b>NONE</b> - Specify <code>NONE</code> if you don't want any text transformations.
-    /// </p>
-    /// <p>
-    /// <b>NORMALIZE_PATH</b> - Remove multiple slashes, directory
-    /// self-references, and directory back-references that are not at the beginning of the input
-    /// from an input string. </p>
-    /// <p>
-    /// <b>NORMALIZE_PATH_WIN</b> - This is the same as
-    /// <code>NORMALIZE_PATH</code>, but first converts backslash characters to forward slashes. </p>
-    /// <p>
-    /// <b>REMOVE_NULLS</b> - Remove all <code>NULL</code> bytes
-    /// from the input. </p>
-    /// <p>
-    /// <b>REPLACE_COMMENTS</b> - Replace each occurrence of a
-    /// C-style comment (<code>/* ... */</code>) with a single space. Multiple consecutive occurrences are not
-    /// compressed. Unterminated comments are also replaced with a space (ASCII 0x20). However, a
-    /// standalone termination of a comment (<code>*/</code>) is not acted upon. </p>
-    /// <p>
-    /// <b>REPLACE_NULLS</b> - Replace NULL bytes in the input
-    /// with space characters (ASCII <code>0x20</code>). </p>
-    /// <p>
-    /// <b>SQL_HEX_DECODE</b> - Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to (<code>ABC</code>).</p>
-    /// <p>
-    /// <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
-    /// <p>
-    /// <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support
-    /// for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of
-    /// <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the
-    /// lower byte is used and the higher byte is zeroed. </p>
-    /// <p>
-    /// <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character
-    /// sequences to Unicode. This helps input normalization, and minimizing false-positives and
-    /// false-negatives for non-English languages.</p>
+    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
+    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
+    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
+    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
+    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
+    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
+    /// </ul>
+    /// <p> <b>JS_DECODE</b> - Decode JavaScript escape sequences. If a <code>\</code> <code>u</code> <code>HHHH</code> code is in the full-width ASCII code range of <code>FF01-FF5E</code>, then the higher byte is used to detect and adjust the lower byte. If not, only the lower byte is used and the higher byte is zeroed, causing a possible loss of information. </p>
+    /// <p> <b>LOWERCASE</b> - Convert uppercase letters (A-Z) to lowercase (a-z). </p>
+    /// <p> <b>MD5</b> - Calculate an MD5 hash from the data in the input. The computed hash is in a raw binary form. </p>
+    /// <p> <b>NONE</b> - Specify <code>NONE</code> if you don't want any text transformations. </p>
+    /// <p> <b>NORMALIZE_PATH</b> - Remove multiple slashes, directory self-references, and directory back-references that are not at the beginning of the input from an input string. </p>
+    /// <p> <b>NORMALIZE_PATH_WIN</b> - This is the same as <code>NORMALIZE_PATH</code>, but first converts backslash characters to forward slashes. </p>
+    /// <p> <b>REMOVE_NULLS</b> - Remove all <code>NULL</code> bytes from the input. </p>
+    /// <p> <b>REPLACE_COMMENTS</b> - Replace each occurrence of a C-style comment (<code>/* ... */</code>) with a single space. Multiple consecutive occurrences are not compressed. Unterminated comments are also replaced with a space (ASCII 0x20). However, a standalone termination of a comment (<code>*/</code>) is not acted upon. </p>
+    /// <p> <b>REPLACE_NULLS</b> - Replace NULL bytes in the input with space characters (ASCII <code>0x20</code>). </p>
+    /// <p> <b>SQL_HEX_DECODE</b> - Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to (<code>ABC</code>).</p>
+    /// <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
+    /// <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
+    /// <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode. This helps input normalization, and minimizing false-positives and false-negatives for non-English languages.</p>
     pub r#type: std::option::Option<crate::model::TextTransformationType>,
 }
 impl TextTransformation {
-    /// <p>Sets the relative processing order for multiple transformations that are defined for a
-    /// rule statement. WAF processes all transformations, from lowest priority to highest,
-    /// before inspecting the transformed content. The priorities don't need to be consecutive, but
-    /// they must all be different. </p>
+    /// <p>Sets the relative processing order for multiple transformations that are defined for a rule statement. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
     /// <p>You can specify the following transformation types:</p>
-    /// <p>
-    /// <b>BASE64_DECODE</b> - Decode a <code>Base64</code>-encoded
-    /// string.</p>
-    /// <p>
-    /// <b>BASE64_DECODE_EXT</b> - Decode a
-    /// <code>Base64</code>-encoded string, but use a forgiving implementation that ignores
-    /// characters that aren't valid.</p>
-    /// <p>
-    /// <b>CMD_LINE</b> - Command-line transformations. These are
-    /// helpful in reducing effectiveness of attackers who inject an operating system command-line
-    /// command and use unusual formatting to disguise some or all of the command. </p>
+    /// <p> <b>BASE64_DECODE</b> - Decode a <code>Base64</code>-encoded string.</p>
+    /// <p> <b>BASE64_DECODE_EXT</b> - Decode a <code>Base64</code>-encoded string, but use a forgiving implementation that ignores characters that aren't valid.</p>
+    /// <p> <b>CMD_LINE</b> - Command-line transformations. These are helpful in reducing effectiveness of attackers who inject an operating system command-line command and use unusual formatting to disguise some or all of the command. </p>
     /// <ul>
-    /// <li>
-    /// <p>Delete the following characters: <code>\ " ' ^</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Delete spaces before the following characters: <code>/ (</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Replace the following characters with a space: <code>, ;</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Replace multiple spaces with one space</p>
-    /// </li>
-    /// <li>
-    /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p>
-    /// </li>
+    /// <li> <p>Delete the following characters: <code>\ " ' ^</code> </p> </li>
+    /// <li> <p>Delete spaces before the following characters: <code>/ (</code> </p> </li>
+    /// <li> <p>Replace the following characters with a space: <code>, ;</code> </p> </li>
+    /// <li> <p>Replace multiple spaces with one space</p> </li>
+    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
     /// </ul>
-    ///
-    /// <p>
-    /// <b>COMPRESS_WHITE_SPACE</b> - Replace these characters
-    /// with a space character (decimal 32): </p>
+    /// <p> <b>COMPRESS_WHITE_SPACE</b> - Replace these characters with a space character (decimal 32): </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>\f</code>, formfeed, decimal 12</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>\t</code>, tab, decimal 9</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>\n</code>, newline, decimal 10</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>\r</code>, carriage return, decimal 13</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>\v</code>, vertical tab, decimal 11</p>
-    /// </li>
-    /// <li>
-    /// <p>Non-breaking space, decimal 160</p>
-    /// </li>
+    /// <li> <p> <code>\f</code>, formfeed, decimal 12</p> </li>
+    /// <li> <p> <code>\t</code>, tab, decimal 9</p> </li>
+    /// <li> <p> <code>\n</code>, newline, decimal 10</p> </li>
+    /// <li> <p> <code>\r</code>, carriage return, decimal 13</p> </li>
+    /// <li> <p> <code>\v</code>, vertical tab, decimal 11</p> </li>
+    /// <li> <p>Non-breaking space, decimal 160</p> </li>
     /// </ul>
-    /// <p>
-    /// <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>    
-    /// <p>
-    /// <b>CSS_DECODE</b> - Decode characters that were encoded
-    /// using CSS 2.x escape rules <code>syndata.html#characters</code>. This function uses up to two bytes in
-    /// the decoding process, so it can help to uncover ASCII characters that were encoded using
-    /// CSS encoding that wouldn’t typically be encoded. It's also useful in countering evasion,
-    /// which is a combination of a backslash and non-hexadecimal characters. For example,
-    /// <code>ja\vascript</code> for javascript. </p>
-    /// <p>
-    /// <b>ESCAPE_SEQ_DECODE</b> - Decode the following ANSI C escape sequences:
-    /// <code>\a</code>, <code>\b</code>, <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>, <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>, <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal). Encodings
-    /// that aren't valid remain in the output. </p>
-    /// <p>
-    /// <b>HEX_DECODE</b> - Decode a string of hexadecimal characters into a binary.</p>
-    /// <p>
-    /// <b>HTML_ENTITY_DECODE</b> - Replace HTML-encoded
-    /// characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs these
-    /// operations: </p>
+    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
+    /// <p> <b>CSS_DECODE</b> - Decode characters that were encoded using CSS 2.x escape rules <code>syndata.html#characters</code>. This function uses up to two bytes in the decoding process, so it can help to uncover ASCII characters that were encoded using CSS encoding that wouldn’t typically be encoded. It's also useful in countering evasion, which is a combination of a backslash and non-hexadecimal characters. For example, <code>ja\vascript</code> for javascript. </p>
+    /// <p> <b>ESCAPE_SEQ_DECODE</b> - Decode the following ANSI C escape sequences: <code>\a</code>, <code>\b</code>, <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>, <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>, <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal). Encodings that aren't valid remain in the output. </p>
+    /// <p> <b>HEX_DECODE</b> - Decode a string of hexadecimal characters into a binary.</p>
+    /// <p> <b>HTML_ENTITY_DECODE</b> - Replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs these operations: </p>
     /// <ul>
-    /// <li>
-    /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p>
-    /// </li>
-    /// <li>
-    /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p>
-    /// </li>
-    /// <li>
-    /// <p>Replaces <code>(ampersand)gt;</code> with <code>></code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding
-    /// characters</p>
-    /// </li>
-    /// </ul>    
-    /// <p>
-    /// <b>JS_DECODE</b> - Decode JavaScript escape sequences. If
-    /// a <code>\</code>
-    /// <code>u</code>
-    /// <code>HHHH</code> code is in the full-width ASCII code range of <code>FF01-FF5E</code>, then the higher byte is
-    /// used to detect and adjust the lower byte. If not, only the lower byte is used and the
-    /// higher byte is zeroed, causing a possible loss of information. </p>
-    /// <p>
-    /// <b>LOWERCASE</b> - Convert uppercase letters (A-Z) to
-    /// lowercase (a-z). </p>
-    /// <p>
-    /// <b>MD5</b> - Calculate an MD5 hash from the data in the
-    /// input. The computed hash is in a raw binary form. </p>
-    /// <p>
-    /// <b>NONE</b> - Specify <code>NONE</code> if you don't want any text transformations.
-    /// </p>
-    /// <p>
-    /// <b>NORMALIZE_PATH</b> - Remove multiple slashes, directory
-    /// self-references, and directory back-references that are not at the beginning of the input
-    /// from an input string. </p>
-    /// <p>
-    /// <b>NORMALIZE_PATH_WIN</b> - This is the same as
-    /// <code>NORMALIZE_PATH</code>, but first converts backslash characters to forward slashes. </p>
-    /// <p>
-    /// <b>REMOVE_NULLS</b> - Remove all <code>NULL</code> bytes
-    /// from the input. </p>
-    /// <p>
-    /// <b>REPLACE_COMMENTS</b> - Replace each occurrence of a
-    /// C-style comment (<code>/* ... */</code>) with a single space. Multiple consecutive occurrences are not
-    /// compressed. Unterminated comments are also replaced with a space (ASCII 0x20). However, a
-    /// standalone termination of a comment (<code>*/</code>) is not acted upon. </p>
-    /// <p>
-    /// <b>REPLACE_NULLS</b> - Replace NULL bytes in the input
-    /// with space characters (ASCII <code>0x20</code>). </p>
-    /// <p>
-    /// <b>SQL_HEX_DECODE</b> - Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to (<code>ABC</code>).</p>
-    /// <p>
-    /// <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
-    /// <p>
-    /// <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support
-    /// for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of
-    /// <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the
-    /// lower byte is used and the higher byte is zeroed. </p>
-    /// <p>
-    /// <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character
-    /// sequences to Unicode. This helps input normalization, and minimizing false-positives and
-    /// false-negatives for non-English languages.</p>
+    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
+    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
+    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
+    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
+    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
+    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
+    /// </ul>
+    /// <p> <b>JS_DECODE</b> - Decode JavaScript escape sequences. If a <code>\</code> <code>u</code> <code>HHHH</code> code is in the full-width ASCII code range of <code>FF01-FF5E</code>, then the higher byte is used to detect and adjust the lower byte. If not, only the lower byte is used and the higher byte is zeroed, causing a possible loss of information. </p>
+    /// <p> <b>LOWERCASE</b> - Convert uppercase letters (A-Z) to lowercase (a-z). </p>
+    /// <p> <b>MD5</b> - Calculate an MD5 hash from the data in the input. The computed hash is in a raw binary form. </p>
+    /// <p> <b>NONE</b> - Specify <code>NONE</code> if you don't want any text transformations. </p>
+    /// <p> <b>NORMALIZE_PATH</b> - Remove multiple slashes, directory self-references, and directory back-references that are not at the beginning of the input from an input string. </p>
+    /// <p> <b>NORMALIZE_PATH_WIN</b> - This is the same as <code>NORMALIZE_PATH</code>, but first converts backslash characters to forward slashes. </p>
+    /// <p> <b>REMOVE_NULLS</b> - Remove all <code>NULL</code> bytes from the input. </p>
+    /// <p> <b>REPLACE_COMMENTS</b> - Replace each occurrence of a C-style comment (<code>/* ... */</code>) with a single space. Multiple consecutive occurrences are not compressed. Unterminated comments are also replaced with a space (ASCII 0x20). However, a standalone termination of a comment (<code>*/</code>) is not acted upon. </p>
+    /// <p> <b>REPLACE_NULLS</b> - Replace NULL bytes in the input with space characters (ASCII <code>0x20</code>). </p>
+    /// <p> <b>SQL_HEX_DECODE</b> - Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to (<code>ABC</code>).</p>
+    /// <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
+    /// <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
+    /// <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode. This helps input normalization, and minimizing false-positives and false-negatives for non-English languages.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::TextTransformationType> {
         self.r#type.as_ref()
     }
@@ -3006,326 +2499,112 @@ pub mod text_transformation {
         pub(crate) r#type: std::option::Option<crate::model::TextTransformationType>,
     }
     impl Builder {
-        /// <p>Sets the relative processing order for multiple transformations that are defined for a
-        /// rule statement. WAF processes all transformations, from lowest priority to highest,
-        /// before inspecting the transformed content. The priorities don't need to be consecutive, but
-        /// they must all be different. </p>
+        /// <p>Sets the relative processing order for multiple transformations that are defined for a rule statement. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>Sets the relative processing order for multiple transformations that are defined for a
-        /// rule statement. WAF processes all transformations, from lowest priority to highest,
-        /// before inspecting the transformed content. The priorities don't need to be consecutive, but
-        /// they must all be different. </p>
+        /// <p>Sets the relative processing order for multiple transformations that are defined for a rule statement. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
         }
         /// <p>You can specify the following transformation types:</p>
-        /// <p>
-        /// <b>BASE64_DECODE</b> - Decode a <code>Base64</code>-encoded
-        /// string.</p>
-        /// <p>
-        /// <b>BASE64_DECODE_EXT</b> - Decode a
-        /// <code>Base64</code>-encoded string, but use a forgiving implementation that ignores
-        /// characters that aren't valid.</p>
-        /// <p>
-        /// <b>CMD_LINE</b> - Command-line transformations. These are
-        /// helpful in reducing effectiveness of attackers who inject an operating system command-line
-        /// command and use unusual formatting to disguise some or all of the command. </p>
+        /// <p> <b>BASE64_DECODE</b> - Decode a <code>Base64</code>-encoded string.</p>
+        /// <p> <b>BASE64_DECODE_EXT</b> - Decode a <code>Base64</code>-encoded string, but use a forgiving implementation that ignores characters that aren't valid.</p>
+        /// <p> <b>CMD_LINE</b> - Command-line transformations. These are helpful in reducing effectiveness of attackers who inject an operating system command-line command and use unusual formatting to disguise some or all of the command. </p>
         /// <ul>
-        /// <li>
-        /// <p>Delete the following characters: <code>\ " ' ^</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Delete spaces before the following characters: <code>/ (</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Replace the following characters with a space: <code>, ;</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Replace multiple spaces with one space</p>
-        /// </li>
-        /// <li>
-        /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p>
-        /// </li>
+        /// <li> <p>Delete the following characters: <code>\ " ' ^</code> </p> </li>
+        /// <li> <p>Delete spaces before the following characters: <code>/ (</code> </p> </li>
+        /// <li> <p>Replace the following characters with a space: <code>, ;</code> </p> </li>
+        /// <li> <p>Replace multiple spaces with one space</p> </li>
+        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        /// <b>COMPRESS_WHITE_SPACE</b> - Replace these characters
-        /// with a space character (decimal 32): </p>
+        /// <p> <b>COMPRESS_WHITE_SPACE</b> - Replace these characters with a space character (decimal 32): </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>\f</code>, formfeed, decimal 12</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>\t</code>, tab, decimal 9</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>\n</code>, newline, decimal 10</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>\r</code>, carriage return, decimal 13</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>\v</code>, vertical tab, decimal 11</p>
-        /// </li>
-        /// <li>
-        /// <p>Non-breaking space, decimal 160</p>
-        /// </li>
+        /// <li> <p> <code>\f</code>, formfeed, decimal 12</p> </li>
+        /// <li> <p> <code>\t</code>, tab, decimal 9</p> </li>
+        /// <li> <p> <code>\n</code>, newline, decimal 10</p> </li>
+        /// <li> <p> <code>\r</code>, carriage return, decimal 13</p> </li>
+        /// <li> <p> <code>\v</code>, vertical tab, decimal 11</p> </li>
+        /// <li> <p>Non-breaking space, decimal 160</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>    
-        /// <p>
-        /// <b>CSS_DECODE</b> - Decode characters that were encoded
-        /// using CSS 2.x escape rules <code>syndata.html#characters</code>. This function uses up to two bytes in
-        /// the decoding process, so it can help to uncover ASCII characters that were encoded using
-        /// CSS encoding that wouldn’t typically be encoded. It's also useful in countering evasion,
-        /// which is a combination of a backslash and non-hexadecimal characters. For example,
-        /// <code>ja\vascript</code> for javascript. </p>
-        /// <p>
-        /// <b>ESCAPE_SEQ_DECODE</b> - Decode the following ANSI C escape sequences:
-        /// <code>\a</code>, <code>\b</code>, <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>, <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>, <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal). Encodings
-        /// that aren't valid remain in the output. </p>
-        /// <p>
-        /// <b>HEX_DECODE</b> - Decode a string of hexadecimal characters into a binary.</p>
-        /// <p>
-        /// <b>HTML_ENTITY_DECODE</b> - Replace HTML-encoded
-        /// characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs these
-        /// operations: </p>
+        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
+        /// <p> <b>CSS_DECODE</b> - Decode characters that were encoded using CSS 2.x escape rules <code>syndata.html#characters</code>. This function uses up to two bytes in the decoding process, so it can help to uncover ASCII characters that were encoded using CSS encoding that wouldn’t typically be encoded. It's also useful in countering evasion, which is a combination of a backslash and non-hexadecimal characters. For example, <code>ja\vascript</code> for javascript. </p>
+        /// <p> <b>ESCAPE_SEQ_DECODE</b> - Decode the following ANSI C escape sequences: <code>\a</code>, <code>\b</code>, <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>, <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>, <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal). Encodings that aren't valid remain in the output. </p>
+        /// <p> <b>HEX_DECODE</b> - Decode a string of hexadecimal characters into a binary.</p>
+        /// <p> <b>HTML_ENTITY_DECODE</b> - Replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs these operations: </p>
         /// <ul>
-        /// <li>
-        /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p>
-        /// </li>
-        /// <li>
-        /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p>
-        /// </li>
-        /// <li>
-        /// <p>Replaces <code>(ampersand)gt;</code> with <code>></code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding
-        /// characters</p>
-        /// </li>
-        /// </ul>    
-        /// <p>
-        /// <b>JS_DECODE</b> - Decode JavaScript escape sequences. If
-        /// a <code>\</code>
-        /// <code>u</code>
-        /// <code>HHHH</code> code is in the full-width ASCII code range of <code>FF01-FF5E</code>, then the higher byte is
-        /// used to detect and adjust the lower byte. If not, only the lower byte is used and the
-        /// higher byte is zeroed, causing a possible loss of information. </p>
-        /// <p>
-        /// <b>LOWERCASE</b> - Convert uppercase letters (A-Z) to
-        /// lowercase (a-z). </p>
-        /// <p>
-        /// <b>MD5</b> - Calculate an MD5 hash from the data in the
-        /// input. The computed hash is in a raw binary form. </p>
-        /// <p>
-        /// <b>NONE</b> - Specify <code>NONE</code> if you don't want any text transformations.
-        /// </p>
-        /// <p>
-        /// <b>NORMALIZE_PATH</b> - Remove multiple slashes, directory
-        /// self-references, and directory back-references that are not at the beginning of the input
-        /// from an input string. </p>
-        /// <p>
-        /// <b>NORMALIZE_PATH_WIN</b> - This is the same as
-        /// <code>NORMALIZE_PATH</code>, but first converts backslash characters to forward slashes. </p>
-        /// <p>
-        /// <b>REMOVE_NULLS</b> - Remove all <code>NULL</code> bytes
-        /// from the input. </p>
-        /// <p>
-        /// <b>REPLACE_COMMENTS</b> - Replace each occurrence of a
-        /// C-style comment (<code>/* ... */</code>) with a single space. Multiple consecutive occurrences are not
-        /// compressed. Unterminated comments are also replaced with a space (ASCII 0x20). However, a
-        /// standalone termination of a comment (<code>*/</code>) is not acted upon. </p>
-        /// <p>
-        /// <b>REPLACE_NULLS</b> - Replace NULL bytes in the input
-        /// with space characters (ASCII <code>0x20</code>). </p>
-        /// <p>
-        /// <b>SQL_HEX_DECODE</b> - Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to (<code>ABC</code>).</p>
-        /// <p>
-        /// <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
-        /// <p>
-        /// <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support
-        /// for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of
-        /// <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the
-        /// lower byte is used and the higher byte is zeroed. </p>
-        /// <p>
-        /// <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character
-        /// sequences to Unicode. This helps input normalization, and minimizing false-positives and
-        /// false-negatives for non-English languages.</p>
+        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
+        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
+        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
+        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
+        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
+        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
+        /// </ul>
+        /// <p> <b>JS_DECODE</b> - Decode JavaScript escape sequences. If a <code>\</code> <code>u</code> <code>HHHH</code> code is in the full-width ASCII code range of <code>FF01-FF5E</code>, then the higher byte is used to detect and adjust the lower byte. If not, only the lower byte is used and the higher byte is zeroed, causing a possible loss of information. </p>
+        /// <p> <b>LOWERCASE</b> - Convert uppercase letters (A-Z) to lowercase (a-z). </p>
+        /// <p> <b>MD5</b> - Calculate an MD5 hash from the data in the input. The computed hash is in a raw binary form. </p>
+        /// <p> <b>NONE</b> - Specify <code>NONE</code> if you don't want any text transformations. </p>
+        /// <p> <b>NORMALIZE_PATH</b> - Remove multiple slashes, directory self-references, and directory back-references that are not at the beginning of the input from an input string. </p>
+        /// <p> <b>NORMALIZE_PATH_WIN</b> - This is the same as <code>NORMALIZE_PATH</code>, but first converts backslash characters to forward slashes. </p>
+        /// <p> <b>REMOVE_NULLS</b> - Remove all <code>NULL</code> bytes from the input. </p>
+        /// <p> <b>REPLACE_COMMENTS</b> - Replace each occurrence of a C-style comment (<code>/* ... */</code>) with a single space. Multiple consecutive occurrences are not compressed. Unterminated comments are also replaced with a space (ASCII 0x20). However, a standalone termination of a comment (<code>*/</code>) is not acted upon. </p>
+        /// <p> <b>REPLACE_NULLS</b> - Replace NULL bytes in the input with space characters (ASCII <code>0x20</code>). </p>
+        /// <p> <b>SQL_HEX_DECODE</b> - Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to (<code>ABC</code>).</p>
+        /// <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
+        /// <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
+        /// <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode. This helps input normalization, and minimizing false-positives and false-negatives for non-English languages.</p>
         pub fn r#type(mut self, input: crate::model::TextTransformationType) -> Self {
             self.r#type = Some(input);
             self
         }
         /// <p>You can specify the following transformation types:</p>
-        /// <p>
-        /// <b>BASE64_DECODE</b> - Decode a <code>Base64</code>-encoded
-        /// string.</p>
-        /// <p>
-        /// <b>BASE64_DECODE_EXT</b> - Decode a
-        /// <code>Base64</code>-encoded string, but use a forgiving implementation that ignores
-        /// characters that aren't valid.</p>
-        /// <p>
-        /// <b>CMD_LINE</b> - Command-line transformations. These are
-        /// helpful in reducing effectiveness of attackers who inject an operating system command-line
-        /// command and use unusual formatting to disguise some or all of the command. </p>
+        /// <p> <b>BASE64_DECODE</b> - Decode a <code>Base64</code>-encoded string.</p>
+        /// <p> <b>BASE64_DECODE_EXT</b> - Decode a <code>Base64</code>-encoded string, but use a forgiving implementation that ignores characters that aren't valid.</p>
+        /// <p> <b>CMD_LINE</b> - Command-line transformations. These are helpful in reducing effectiveness of attackers who inject an operating system command-line command and use unusual formatting to disguise some or all of the command. </p>
         /// <ul>
-        /// <li>
-        /// <p>Delete the following characters: <code>\ " ' ^</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Delete spaces before the following characters: <code>/ (</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Replace the following characters with a space: <code>, ;</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Replace multiple spaces with one space</p>
-        /// </li>
-        /// <li>
-        /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p>
-        /// </li>
+        /// <li> <p>Delete the following characters: <code>\ " ' ^</code> </p> </li>
+        /// <li> <p>Delete spaces before the following characters: <code>/ (</code> </p> </li>
+        /// <li> <p>Replace the following characters with a space: <code>, ;</code> </p> </li>
+        /// <li> <p>Replace multiple spaces with one space</p> </li>
+        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        /// <b>COMPRESS_WHITE_SPACE</b> - Replace these characters
-        /// with a space character (decimal 32): </p>
+        /// <p> <b>COMPRESS_WHITE_SPACE</b> - Replace these characters with a space character (decimal 32): </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>\f</code>, formfeed, decimal 12</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>\t</code>, tab, decimal 9</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>\n</code>, newline, decimal 10</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>\r</code>, carriage return, decimal 13</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>\v</code>, vertical tab, decimal 11</p>
-        /// </li>
-        /// <li>
-        /// <p>Non-breaking space, decimal 160</p>
-        /// </li>
+        /// <li> <p> <code>\f</code>, formfeed, decimal 12</p> </li>
+        /// <li> <p> <code>\t</code>, tab, decimal 9</p> </li>
+        /// <li> <p> <code>\n</code>, newline, decimal 10</p> </li>
+        /// <li> <p> <code>\r</code>, carriage return, decimal 13</p> </li>
+        /// <li> <p> <code>\v</code>, vertical tab, decimal 11</p> </li>
+        /// <li> <p>Non-breaking space, decimal 160</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>    
-        /// <p>
-        /// <b>CSS_DECODE</b> - Decode characters that were encoded
-        /// using CSS 2.x escape rules <code>syndata.html#characters</code>. This function uses up to two bytes in
-        /// the decoding process, so it can help to uncover ASCII characters that were encoded using
-        /// CSS encoding that wouldn’t typically be encoded. It's also useful in countering evasion,
-        /// which is a combination of a backslash and non-hexadecimal characters. For example,
-        /// <code>ja\vascript</code> for javascript. </p>
-        /// <p>
-        /// <b>ESCAPE_SEQ_DECODE</b> - Decode the following ANSI C escape sequences:
-        /// <code>\a</code>, <code>\b</code>, <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>, <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>, <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal). Encodings
-        /// that aren't valid remain in the output. </p>
-        /// <p>
-        /// <b>HEX_DECODE</b> - Decode a string of hexadecimal characters into a binary.</p>
-        /// <p>
-        /// <b>HTML_ENTITY_DECODE</b> - Replace HTML-encoded
-        /// characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs these
-        /// operations: </p>
+        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
+        /// <p> <b>CSS_DECODE</b> - Decode characters that were encoded using CSS 2.x escape rules <code>syndata.html#characters</code>. This function uses up to two bytes in the decoding process, so it can help to uncover ASCII characters that were encoded using CSS encoding that wouldn’t typically be encoded. It's also useful in countering evasion, which is a combination of a backslash and non-hexadecimal characters. For example, <code>ja\vascript</code> for javascript. </p>
+        /// <p> <b>ESCAPE_SEQ_DECODE</b> - Decode the following ANSI C escape sequences: <code>\a</code>, <code>\b</code>, <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>, <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>, <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal). Encodings that aren't valid remain in the output. </p>
+        /// <p> <b>HEX_DECODE</b> - Decode a string of hexadecimal characters into a binary.</p>
+        /// <p> <b>HTML_ENTITY_DECODE</b> - Replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs these operations: </p>
         /// <ul>
-        /// <li>
-        /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p>
-        /// </li>
-        /// <li>
-        /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p>
-        /// </li>
-        /// <li>
-        /// <p>Replaces <code>(ampersand)gt;</code> with <code>></code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding
-        /// characters</p>
-        /// </li>
-        /// </ul>    
-        /// <p>
-        /// <b>JS_DECODE</b> - Decode JavaScript escape sequences. If
-        /// a <code>\</code>
-        /// <code>u</code>
-        /// <code>HHHH</code> code is in the full-width ASCII code range of <code>FF01-FF5E</code>, then the higher byte is
-        /// used to detect and adjust the lower byte. If not, only the lower byte is used and the
-        /// higher byte is zeroed, causing a possible loss of information. </p>
-        /// <p>
-        /// <b>LOWERCASE</b> - Convert uppercase letters (A-Z) to
-        /// lowercase (a-z). </p>
-        /// <p>
-        /// <b>MD5</b> - Calculate an MD5 hash from the data in the
-        /// input. The computed hash is in a raw binary form. </p>
-        /// <p>
-        /// <b>NONE</b> - Specify <code>NONE</code> if you don't want any text transformations.
-        /// </p>
-        /// <p>
-        /// <b>NORMALIZE_PATH</b> - Remove multiple slashes, directory
-        /// self-references, and directory back-references that are not at the beginning of the input
-        /// from an input string. </p>
-        /// <p>
-        /// <b>NORMALIZE_PATH_WIN</b> - This is the same as
-        /// <code>NORMALIZE_PATH</code>, but first converts backslash characters to forward slashes. </p>
-        /// <p>
-        /// <b>REMOVE_NULLS</b> - Remove all <code>NULL</code> bytes
-        /// from the input. </p>
-        /// <p>
-        /// <b>REPLACE_COMMENTS</b> - Replace each occurrence of a
-        /// C-style comment (<code>/* ... */</code>) with a single space. Multiple consecutive occurrences are not
-        /// compressed. Unterminated comments are also replaced with a space (ASCII 0x20). However, a
-        /// standalone termination of a comment (<code>*/</code>) is not acted upon. </p>
-        /// <p>
-        /// <b>REPLACE_NULLS</b> - Replace NULL bytes in the input
-        /// with space characters (ASCII <code>0x20</code>). </p>
-        /// <p>
-        /// <b>SQL_HEX_DECODE</b> - Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to (<code>ABC</code>).</p>
-        /// <p>
-        /// <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
-        /// <p>
-        /// <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support
-        /// for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of
-        /// <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the
-        /// lower byte is used and the higher byte is zeroed. </p>
-        /// <p>
-        /// <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character
-        /// sequences to Unicode. This helps input normalization, and minimizing false-positives and
-        /// false-negatives for non-English languages.</p>
+        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
+        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
+        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
+        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
+        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
+        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
+        /// </ul>
+        /// <p> <b>JS_DECODE</b> - Decode JavaScript escape sequences. If a <code>\</code> <code>u</code> <code>HHHH</code> code is in the full-width ASCII code range of <code>FF01-FF5E</code>, then the higher byte is used to detect and adjust the lower byte. If not, only the lower byte is used and the higher byte is zeroed, causing a possible loss of information. </p>
+        /// <p> <b>LOWERCASE</b> - Convert uppercase letters (A-Z) to lowercase (a-z). </p>
+        /// <p> <b>MD5</b> - Calculate an MD5 hash from the data in the input. The computed hash is in a raw binary form. </p>
+        /// <p> <b>NONE</b> - Specify <code>NONE</code> if you don't want any text transformations. </p>
+        /// <p> <b>NORMALIZE_PATH</b> - Remove multiple slashes, directory self-references, and directory back-references that are not at the beginning of the input from an input string. </p>
+        /// <p> <b>NORMALIZE_PATH_WIN</b> - This is the same as <code>NORMALIZE_PATH</code>, but first converts backslash characters to forward slashes. </p>
+        /// <p> <b>REMOVE_NULLS</b> - Remove all <code>NULL</code> bytes from the input. </p>
+        /// <p> <b>REPLACE_COMMENTS</b> - Replace each occurrence of a C-style comment (<code>/* ... */</code>) with a single space. Multiple consecutive occurrences are not compressed. Unterminated comments are also replaced with a space (ASCII 0x20). However, a standalone termination of a comment (<code>*/</code>) is not acted upon. </p>
+        /// <p> <b>REPLACE_NULLS</b> - Replace NULL bytes in the input with space characters (ASCII <code>0x20</code>). </p>
+        /// <p> <b>SQL_HEX_DECODE</b> - Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to (<code>ABC</code>).</p>
+        /// <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
+        /// <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
+        /// <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode. This helps input normalization, and minimizing false-positives and false-negatives for non-English languages.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::TextTransformationType>,
@@ -3504,78 +2783,43 @@ impl AsRef<str> for TextTransformationType {
 
 /// <p>The part of a web request that you want WAF to inspect. Include the single <code>FieldToMatch</code> type that you want to inspect, with additional specifications as needed, according to the type. You specify a single request component in <code>FieldToMatch</code> for each rule statement that requires it. To inspect more than one component of a web request, create a separate rule statement for each component.</p>
 /// <p>JSON specification for a <code>QueryString</code> field to match: </p>
-/// <p>
-/// <code>    "FieldToMatch": { "QueryString": {} }</code>
-/// </p>
+/// <p> <code> "FieldToMatch": { "QueryString": {} }</code> </p>
 /// <p>Example JSON for a <code>Method</code> field to match specification:</p>
-/// <p>
-/// <code>    "FieldToMatch": { "Method": { "Name": "DELETE" } }</code>
-/// </p>
+/// <p> <code> "FieldToMatch": { "Method": { "Name": "DELETE" } }</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FieldToMatch {
-    /// <p>Inspect a single header. Provide the name of the header to inspect, for example,
-    /// <code>User-Agent</code> or <code>Referer</code>. This setting isn't case
-    /// sensitive.</p>
-    /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
-    /// </p>
+    /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
+    /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> </p>
     pub single_header: std::option::Option<crate::model::SingleHeader>,
-    /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such
-    /// as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to
-    /// 30 characters long and isn't case sensitive. </p>
-    /// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
-    /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
-    /// </p>
+    /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive. </p>
+    /// <p>This is used only to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+    /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p>
     pub single_query_argument: std::option::Option<crate::model::SingleQueryArgument>,
     /// <p>Inspect all query arguments. </p>
     pub all_query_arguments: std::option::Option<crate::model::AllQueryArguments>,
-    /// <p>Inspect the request URI path. This is the part of a web request that identifies a
-    /// resource, for example, <code>/images/daily-ad.jpg</code>.</p>
+    /// <p>Inspect the request URI path. This is the part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p>
     pub uri_path: std::option::Option<crate::model::UriPath>,
-    /// <p>Inspect the query string. This is the part of a URL that appears after a <code>?</code>
-    /// character, if any.</p>
+    /// <p>Inspect the query string. This is the part of a URL that appears after a <code>?</code> character, if any.</p>
     pub query_string: std::option::Option<crate::model::QueryString>,
-    /// <p>Inspect the request body as plain text. The request body immediately follows the request
-    /// headers. This is the part of a request that contains any additional data that you want to
-    /// send to your web server as the HTTP request body, such as data from a form. </p>
-    /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to
-    /// WAF for inspection by the underlying host service. If you don't need to inspect more
-    /// than 8 KB, you can guarantee that you don't allow additional bytes in by combining a
-    /// statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>,
-    /// with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the
-    /// body of the request. WAF doesn't support inspecting the entire contents of web requests
-    /// whose bodies exceed the 8 KB limit.</p>
+    /// <p>Inspect the request body as plain text. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
+    /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining a statement that inspects the body of the web request, such as <code>ByteMatchStatement</code> or <code>RegexPatternSetReferenceStatement</code>, with a <code>SizeConstraintStatement</code> that enforces an 8 KB size limit on the body of the request. WAF doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.</p>
     pub body: std::option::Option<crate::model::Body>,
-    /// <p>Inspect the HTTP method. The method indicates the type of operation that the request is
-    /// asking the origin to perform. </p>
+    /// <p>Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform. </p>
     pub method: std::option::Option<crate::model::Method>,
-    /// <p>Inspect the request body as JSON. The request body immediately follows the request
-    /// headers. This is the part of a request that contains any additional data that you want to
-    /// send to your web server as the HTTP request body, such as data from a form. </p>
-    /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to
-    /// WAF for inspection by the underlying host service. If you don't need to inspect more
-    /// than 8 KB, you can guarantee that you don't allow additional bytes in by combining a
-    /// statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>,
-    /// with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the
-    /// body of the request. WAF doesn't support inspecting the entire contents of web requests
-    /// whose bodies exceed the 8 KB limit.</p>
+    /// <p>Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
+    /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining a statement that inspects the body of the web request, such as <code>ByteMatchStatement</code> or <code>RegexPatternSetReferenceStatement</code>, with a <code>SizeConstraintStatement</code> that enforces an 8 KB size limit on the body of the request. WAF doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.</p>
     pub json_body: std::option::Option<crate::model::JsonBody>,
 }
 impl FieldToMatch {
-    /// <p>Inspect a single header. Provide the name of the header to inspect, for example,
-    /// <code>User-Agent</code> or <code>Referer</code>. This setting isn't case
-    /// sensitive.</p>
-    /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
-    /// </p>
+    /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
+    /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> </p>
     pub fn single_header(&self) -> std::option::Option<&crate::model::SingleHeader> {
         self.single_header.as_ref()
     }
-    /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such
-    /// as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to
-    /// 30 characters long and isn't case sensitive. </p>
-    /// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
-    /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
-    /// </p>
+    /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive. </p>
+    /// <p>This is used only to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+    /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p>
     pub fn single_query_argument(&self) -> std::option::Option<&crate::model::SingleQueryArgument> {
         self.single_query_argument.as_ref()
     }
@@ -3583,44 +2827,25 @@ impl FieldToMatch {
     pub fn all_query_arguments(&self) -> std::option::Option<&crate::model::AllQueryArguments> {
         self.all_query_arguments.as_ref()
     }
-    /// <p>Inspect the request URI path. This is the part of a web request that identifies a
-    /// resource, for example, <code>/images/daily-ad.jpg</code>.</p>
+    /// <p>Inspect the request URI path. This is the part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p>
     pub fn uri_path(&self) -> std::option::Option<&crate::model::UriPath> {
         self.uri_path.as_ref()
     }
-    /// <p>Inspect the query string. This is the part of a URL that appears after a <code>?</code>
-    /// character, if any.</p>
+    /// <p>Inspect the query string. This is the part of a URL that appears after a <code>?</code> character, if any.</p>
     pub fn query_string(&self) -> std::option::Option<&crate::model::QueryString> {
         self.query_string.as_ref()
     }
-    /// <p>Inspect the request body as plain text. The request body immediately follows the request
-    /// headers. This is the part of a request that contains any additional data that you want to
-    /// send to your web server as the HTTP request body, such as data from a form. </p>
-    /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to
-    /// WAF for inspection by the underlying host service. If you don't need to inspect more
-    /// than 8 KB, you can guarantee that you don't allow additional bytes in by combining a
-    /// statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>,
-    /// with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the
-    /// body of the request. WAF doesn't support inspecting the entire contents of web requests
-    /// whose bodies exceed the 8 KB limit.</p>
+    /// <p>Inspect the request body as plain text. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
+    /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining a statement that inspects the body of the web request, such as <code>ByteMatchStatement</code> or <code>RegexPatternSetReferenceStatement</code>, with a <code>SizeConstraintStatement</code> that enforces an 8 KB size limit on the body of the request. WAF doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.</p>
     pub fn body(&self) -> std::option::Option<&crate::model::Body> {
         self.body.as_ref()
     }
-    /// <p>Inspect the HTTP method. The method indicates the type of operation that the request is
-    /// asking the origin to perform. </p>
+    /// <p>Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform. </p>
     pub fn method(&self) -> std::option::Option<&crate::model::Method> {
         self.method.as_ref()
     }
-    /// <p>Inspect the request body as JSON. The request body immediately follows the request
-    /// headers. This is the part of a request that contains any additional data that you want to
-    /// send to your web server as the HTTP request body, such as data from a form. </p>
-    /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to
-    /// WAF for inspection by the underlying host service. If you don't need to inspect more
-    /// than 8 KB, you can guarantee that you don't allow additional bytes in by combining a
-    /// statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>,
-    /// with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the
-    /// body of the request. WAF doesn't support inspecting the entire contents of web requests
-    /// whose bodies exceed the 8 KB limit.</p>
+    /// <p>Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
+    /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining a statement that inspects the body of the web request, such as <code>ByteMatchStatement</code> or <code>RegexPatternSetReferenceStatement</code>, with a <code>SizeConstraintStatement</code> that enforces an 8 KB size limit on the body of the request. WAF doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.</p>
     pub fn json_body(&self) -> std::option::Option<&crate::model::JsonBody> {
         self.json_body.as_ref()
     }
@@ -3655,20 +2880,14 @@ pub mod field_to_match {
         pub(crate) json_body: std::option::Option<crate::model::JsonBody>,
     }
     impl Builder {
-        /// <p>Inspect a single header. Provide the name of the header to inspect, for example,
-        /// <code>User-Agent</code> or <code>Referer</code>. This setting isn't case
-        /// sensitive.</p>
-        /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
-        /// </p>
+        /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
+        /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> </p>
         pub fn single_header(mut self, input: crate::model::SingleHeader) -> Self {
             self.single_header = Some(input);
             self
         }
-        /// <p>Inspect a single header. Provide the name of the header to inspect, for example,
-        /// <code>User-Agent</code> or <code>Referer</code>. This setting isn't case
-        /// sensitive.</p>
-        /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
-        /// </p>
+        /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
+        /// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> </p>
         pub fn set_single_header(
             mut self,
             input: std::option::Option<crate::model::SingleHeader>,
@@ -3676,22 +2895,16 @@ pub mod field_to_match {
             self.single_header = input;
             self
         }
-        /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such
-        /// as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to
-        /// 30 characters long and isn't case sensitive. </p>
-        /// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
-        /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
-        /// </p>
+        /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive. </p>
+        /// <p>This is used only to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+        /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p>
         pub fn single_query_argument(mut self, input: crate::model::SingleQueryArgument) -> Self {
             self.single_query_argument = Some(input);
             self
         }
-        /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such
-        /// as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to
-        /// 30 characters long and isn't case sensitive. </p>
-        /// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
-        /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
-        /// </p>
+        /// <p>Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive. </p>
+        /// <p>This is used only to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+        /// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p>
         pub fn set_single_query_argument(
             mut self,
             input: std::option::Option<crate::model::SingleQueryArgument>,
@@ -3712,26 +2925,22 @@ pub mod field_to_match {
             self.all_query_arguments = input;
             self
         }
-        /// <p>Inspect the request URI path. This is the part of a web request that identifies a
-        /// resource, for example, <code>/images/daily-ad.jpg</code>.</p>
+        /// <p>Inspect the request URI path. This is the part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p>
         pub fn uri_path(mut self, input: crate::model::UriPath) -> Self {
             self.uri_path = Some(input);
             self
         }
-        /// <p>Inspect the request URI path. This is the part of a web request that identifies a
-        /// resource, for example, <code>/images/daily-ad.jpg</code>.</p>
+        /// <p>Inspect the request URI path. This is the part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p>
         pub fn set_uri_path(mut self, input: std::option::Option<crate::model::UriPath>) -> Self {
             self.uri_path = input;
             self
         }
-        /// <p>Inspect the query string. This is the part of a URL that appears after a <code>?</code>
-        /// character, if any.</p>
+        /// <p>Inspect the query string. This is the part of a URL that appears after a <code>?</code> character, if any.</p>
         pub fn query_string(mut self, input: crate::model::QueryString) -> Self {
             self.query_string = Some(input);
             self
         }
-        /// <p>Inspect the query string. This is the part of a URL that appears after a <code>?</code>
-        /// character, if any.</p>
+        /// <p>Inspect the query string. This is the part of a URL that appears after a <code>?</code> character, if any.</p>
         pub fn set_query_string(
             mut self,
             input: std::option::Option<crate::model::QueryString>,
@@ -3739,70 +2948,36 @@ pub mod field_to_match {
             self.query_string = input;
             self
         }
-        /// <p>Inspect the request body as plain text. The request body immediately follows the request
-        /// headers. This is the part of a request that contains any additional data that you want to
-        /// send to your web server as the HTTP request body, such as data from a form. </p>
-        /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to
-        /// WAF for inspection by the underlying host service. If you don't need to inspect more
-        /// than 8 KB, you can guarantee that you don't allow additional bytes in by combining a
-        /// statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>,
-        /// with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the
-        /// body of the request. WAF doesn't support inspecting the entire contents of web requests
-        /// whose bodies exceed the 8 KB limit.</p>
+        /// <p>Inspect the request body as plain text. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
+        /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining a statement that inspects the body of the web request, such as <code>ByteMatchStatement</code> or <code>RegexPatternSetReferenceStatement</code>, with a <code>SizeConstraintStatement</code> that enforces an 8 KB size limit on the body of the request. WAF doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.</p>
         pub fn body(mut self, input: crate::model::Body) -> Self {
             self.body = Some(input);
             self
         }
-        /// <p>Inspect the request body as plain text. The request body immediately follows the request
-        /// headers. This is the part of a request that contains any additional data that you want to
-        /// send to your web server as the HTTP request body, such as data from a form. </p>
-        /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to
-        /// WAF for inspection by the underlying host service. If you don't need to inspect more
-        /// than 8 KB, you can guarantee that you don't allow additional bytes in by combining a
-        /// statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>,
-        /// with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the
-        /// body of the request. WAF doesn't support inspecting the entire contents of web requests
-        /// whose bodies exceed the 8 KB limit.</p>
+        /// <p>Inspect the request body as plain text. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
+        /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining a statement that inspects the body of the web request, such as <code>ByteMatchStatement</code> or <code>RegexPatternSetReferenceStatement</code>, with a <code>SizeConstraintStatement</code> that enforces an 8 KB size limit on the body of the request. WAF doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.</p>
         pub fn set_body(mut self, input: std::option::Option<crate::model::Body>) -> Self {
             self.body = input;
             self
         }
-        /// <p>Inspect the HTTP method. The method indicates the type of operation that the request is
-        /// asking the origin to perform. </p>
+        /// <p>Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform. </p>
         pub fn method(mut self, input: crate::model::Method) -> Self {
             self.method = Some(input);
             self
         }
-        /// <p>Inspect the HTTP method. The method indicates the type of operation that the request is
-        /// asking the origin to perform. </p>
+        /// <p>Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform. </p>
         pub fn set_method(mut self, input: std::option::Option<crate::model::Method>) -> Self {
             self.method = input;
             self
         }
-        /// <p>Inspect the request body as JSON. The request body immediately follows the request
-        /// headers. This is the part of a request that contains any additional data that you want to
-        /// send to your web server as the HTTP request body, such as data from a form. </p>
-        /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to
-        /// WAF for inspection by the underlying host service. If you don't need to inspect more
-        /// than 8 KB, you can guarantee that you don't allow additional bytes in by combining a
-        /// statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>,
-        /// with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the
-        /// body of the request. WAF doesn't support inspecting the entire contents of web requests
-        /// whose bodies exceed the 8 KB limit.</p>
+        /// <p>Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
+        /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining a statement that inspects the body of the web request, such as <code>ByteMatchStatement</code> or <code>RegexPatternSetReferenceStatement</code>, with a <code>SizeConstraintStatement</code> that enforces an 8 KB size limit on the body of the request. WAF doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.</p>
         pub fn json_body(mut self, input: crate::model::JsonBody) -> Self {
             self.json_body = Some(input);
             self
         }
-        /// <p>Inspect the request body as JSON. The request body immediately follows the request
-        /// headers. This is the part of a request that contains any additional data that you want to
-        /// send to your web server as the HTTP request body, such as data from a form. </p>
-        /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to
-        /// WAF for inspection by the underlying host service. If you don't need to inspect more
-        /// than 8 KB, you can guarantee that you don't allow additional bytes in by combining a
-        /// statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>,
-        /// with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the
-        /// body of the request. WAF doesn't support inspecting the entire contents of web requests
-        /// whose bodies exceed the 8 KB limit.</p>
+        /// <p>Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. </p>
+        /// <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining a statement that inspects the body of the web request, such as <code>ByteMatchStatement</code> or <code>RegexPatternSetReferenceStatement</code>, with a <code>SizeConstraintStatement</code> that enforces an 8 KB size limit on the body of the request. WAF doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.</p>
         pub fn set_json_body(mut self, input: std::option::Option<crate::model::JsonBody>) -> Self {
             self.json_body = input;
             self
@@ -3829,116 +3004,54 @@ impl FieldToMatch {
     }
 }
 
-/// <p>The body of a web request, inspected as JSON. The body immediately follows the request
-/// headers. This is used in the <a>FieldToMatch</a> specification.</p>
-/// <p>Use the specifications in this object to indicate which parts of the JSON body to
-/// inspect using the rule's inspection criteria. WAF inspects only the parts of the JSON
-/// that result from the matches that you
-/// indicate.
-/// </p>
-/// <p>Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL" }</code>
-/// </p>
+/// <p>The body of a web request, inspected as JSON. The body immediately follows the request headers. This is used in the <code>FieldToMatch</code> specification.</p>
+/// <p>Use the specifications in this object to indicate which parts of the JSON body to inspect using the rule's inspection criteria. WAF inspects only the parts of the JSON that result from the matches that you indicate. </p>
+/// <p>Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL" }</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JsonBody {
-    /// <p>The patterns to look for in the JSON body. WAF inspects the results of these
-    /// pattern matches against the rule inspection criteria. </p>
+    /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. </p>
     pub match_pattern: std::option::Option<crate::model::JsonMatchPattern>,
-    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you
-    /// specify <code>All</code>, WAF matches against keys and values. </p>
+    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF matches against keys and values. </p>
     pub match_scope: std::option::Option<crate::model::JsonMatchScope>,
-    /// <p>What WAF should do if it fails to completely parse the JSON body. The options are
-    /// the following:</p>
+    /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies
-    /// the text transformations and inspection criteria that you defined for the JSON
-    /// inspection to the body text string.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF
-    /// applies the rule action to the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NO_MATCH</code> - Treat the web request as not matching the rule
-    /// statement.</p>
-    /// </li>
+    /// <li> <p> <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p> </li>
+    /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+    /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the
-    /// first parsing failure that it encounters. </p>
-    /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for
-    /// reasons such as invalid characters, duplicate keys, truncation, and any content whose root
-    /// node isn't an object or an array. </p>
+    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters. </p>
+    /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array. </p>
     /// <p>WAF parses the JSON in the following examples as two valid key, value pairs: </p>
     /// <ul>
-    /// <li>
-    /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li>
+    /// <li> <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li>
+    /// <li> <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li>
     /// </ul>
     pub invalid_fallback_behavior: std::option::Option<crate::model::BodyParsingFallbackBehavior>,
 }
 impl JsonBody {
-    /// <p>The patterns to look for in the JSON body. WAF inspects the results of these
-    /// pattern matches against the rule inspection criteria. </p>
+    /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. </p>
     pub fn match_pattern(&self) -> std::option::Option<&crate::model::JsonMatchPattern> {
         self.match_pattern.as_ref()
     }
-    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you
-    /// specify <code>All</code>, WAF matches against keys and values. </p>
+    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF matches against keys and values. </p>
     pub fn match_scope(&self) -> std::option::Option<&crate::model::JsonMatchScope> {
         self.match_scope.as_ref()
     }
-    /// <p>What WAF should do if it fails to completely parse the JSON body. The options are
-    /// the following:</p>
+    /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies
-    /// the text transformations and inspection criteria that you defined for the JSON
-    /// inspection to the body text string.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF
-    /// applies the rule action to the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NO_MATCH</code> - Treat the web request as not matching the rule
-    /// statement.</p>
-    /// </li>
+    /// <li> <p> <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p> </li>
+    /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+    /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the
-    /// first parsing failure that it encounters. </p>
-    /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for
-    /// reasons such as invalid characters, duplicate keys, truncation, and any content whose root
-    /// node isn't an object or an array. </p>
+    /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters. </p>
+    /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array. </p>
     /// <p>WAF parses the JSON in the following examples as two valid key, value pairs: </p>
     /// <ul>
-    /// <li>
-    /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li>
+    /// <li> <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li>
+    /// <li> <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li>
     /// </ul>
     pub fn invalid_fallback_behavior(
         &self,
@@ -3967,14 +3080,12 @@ pub mod json_body {
             std::option::Option<crate::model::BodyParsingFallbackBehavior>,
     }
     impl Builder {
-        /// <p>The patterns to look for in the JSON body. WAF inspects the results of these
-        /// pattern matches against the rule inspection criteria. </p>
+        /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. </p>
         pub fn match_pattern(mut self, input: crate::model::JsonMatchPattern) -> Self {
             self.match_pattern = Some(input);
             self
         }
-        /// <p>The patterns to look for in the JSON body. WAF inspects the results of these
-        /// pattern matches against the rule inspection criteria. </p>
+        /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. </p>
         pub fn set_match_pattern(
             mut self,
             input: std::option::Option<crate::model::JsonMatchPattern>,
@@ -3982,14 +3093,12 @@ pub mod json_body {
             self.match_pattern = input;
             self
         }
-        /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you
-        /// specify <code>All</code>, WAF matches against keys and values. </p>
+        /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF matches against keys and values. </p>
         pub fn match_scope(mut self, input: crate::model::JsonMatchScope) -> Self {
             self.match_scope = Some(input);
             self
         }
-        /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you
-        /// specify <code>All</code>, WAF matches against keys and values. </p>
+        /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF matches against keys and values. </p>
         pub fn set_match_scope(
             mut self,
             input: std::option::Option<crate::model::JsonMatchScope>,
@@ -3997,45 +3106,19 @@ pub mod json_body {
             self.match_scope = input;
             self
         }
-        /// <p>What WAF should do if it fails to completely parse the JSON body. The options are
-        /// the following:</p>
+        /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies
-        /// the text transformations and inspection criteria that you defined for the JSON
-        /// inspection to the body text string.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF
-        /// applies the rule action to the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NO_MATCH</code> - Treat the web request as not matching the rule
-        /// statement.</p>
-        /// </li>
+        /// <li> <p> <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p> </li>
+        /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+        /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
         /// </ul>
-        /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the
-        /// first parsing failure that it encounters. </p>
-        /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for
-        /// reasons such as invalid characters, duplicate keys, truncation, and any content whose root
-        /// node isn't an object or an array. </p>
+        /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters. </p>
+        /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array. </p>
         /// <p>WAF parses the JSON in the following examples as two valid key, value pairs: </p>
         /// <ul>
-        /// <li>
-        /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li>
+        /// <li> <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li>
+        /// <li> <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li>
         /// </ul>
         pub fn invalid_fallback_behavior(
             mut self,
@@ -4044,45 +3127,19 @@ pub mod json_body {
             self.invalid_fallback_behavior = Some(input);
             self
         }
-        /// <p>What WAF should do if it fails to completely parse the JSON body. The options are
-        /// the following:</p>
+        /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies
-        /// the text transformations and inspection criteria that you defined for the JSON
-        /// inspection to the body text string.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF
-        /// applies the rule action to the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NO_MATCH</code> - Treat the web request as not matching the rule
-        /// statement.</p>
-        /// </li>
+        /// <li> <p> <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p> </li>
+        /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+        /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
         /// </ul>
-        /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the
-        /// first parsing failure that it encounters. </p>
-        /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for
-        /// reasons such as invalid characters, duplicate keys, truncation, and any content whose root
-        /// node isn't an object or an array. </p>
+        /// <p>If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that it encounters. </p>
+        /// <p>WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an array. </p>
         /// <p>WAF parses the JSON in the following examples as two valid key, value pairs: </p>
         /// <ul>
-        /// <li>
-        /// <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li>
+        /// <li> <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li>
+        /// <li> <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li>
         /// </ul>
         pub fn set_invalid_fallback_behavior(
             mut self,
@@ -4226,53 +3283,30 @@ impl AsRef<str> for JsonMatchScope {
     }
 }
 
-/// <p>The patterns to look for in the JSON body. WAF inspects the results of these
-/// pattern matches against the rule inspection criteria. This is used with the <a>FieldToMatch</a> option <code>JsonBody</code>. </p>
+/// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. This is used with the <code>FieldToMatch</code> option <code>JsonBody</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JsonMatchPattern {
-    /// <p>Match all of the elements. See also
-    /// <code>MatchScope</code>
-    /// in <a>JsonBody</a>. </p>
-    /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not
-    /// both.</p>
+    /// <p>Match all of the elements. See also <code>MatchScope</code> in <code>JsonBody</code>. </p>
+    /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not both.</p>
     pub all: std::option::Option<crate::model::All>,
-    /// <p>Match only the specified include paths. See also
-    /// <code>MatchScope</code>
-    /// in <a>JsonBody</a>. </p>
-    /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths":
-    /// ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the
-    /// Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-    /// Pointer</a>. </p>
-    /// <p>You must specify either this setting or the <code>All</code> setting, but not
-    /// both.</p>
-    /// <note>
-    /// <p>Don't use this option to include all paths. Instead, use the <code>All</code>
-    /// setting. </p>
+    /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>. </p>
+    /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p>
+    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
+    /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting. </p>
     /// </note>
     pub included_paths: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl JsonMatchPattern {
-    /// <p>Match all of the elements. See also
-    /// <code>MatchScope</code>
-    /// in <a>JsonBody</a>. </p>
-    /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not
-    /// both.</p>
+    /// <p>Match all of the elements. See also <code>MatchScope</code> in <code>JsonBody</code>. </p>
+    /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not both.</p>
     pub fn all(&self) -> std::option::Option<&crate::model::All> {
         self.all.as_ref()
     }
-    /// <p>Match only the specified include paths. See also
-    /// <code>MatchScope</code>
-    /// in <a>JsonBody</a>. </p>
-    /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths":
-    /// ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the
-    /// Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-    /// Pointer</a>. </p>
-    /// <p>You must specify either this setting or the <code>All</code> setting, but not
-    /// both.</p>
-    /// <note>
-    /// <p>Don't use this option to include all paths. Instead, use the <code>All</code>
-    /// setting. </p>
+    /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>. </p>
+    /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p>
+    /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
+    /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting. </p>
     /// </note>
     pub fn included_paths(&self) -> std::option::Option<&[std::string::String]> {
         self.included_paths.as_deref()
@@ -4296,20 +3330,14 @@ pub mod json_match_pattern {
         pub(crate) included_paths: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Match all of the elements. See also
-        /// <code>MatchScope</code>
-        /// in <a>JsonBody</a>. </p>
-        /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not
-        /// both.</p>
+        /// <p>Match all of the elements. See also <code>MatchScope</code> in <code>JsonBody</code>. </p>
+        /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not both.</p>
         pub fn all(mut self, input: crate::model::All) -> Self {
             self.all = Some(input);
             self
         }
-        /// <p>Match all of the elements. See also
-        /// <code>MatchScope</code>
-        /// in <a>JsonBody</a>. </p>
-        /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not
-        /// both.</p>
+        /// <p>Match all of the elements. See also <code>MatchScope</code> in <code>JsonBody</code>. </p>
+        /// <p>You must specify either this setting or the <code>IncludedPaths</code> setting, but not both.</p>
         pub fn set_all(mut self, input: std::option::Option<crate::model::All>) -> Self {
             self.all = input;
             self
@@ -4318,18 +3346,10 @@ pub mod json_match_pattern {
         ///
         /// To override the contents of this collection use [`set_included_paths`](Self::set_included_paths).
         ///
-        /// <p>Match only the specified include paths. See also
-        /// <code>MatchScope</code>
-        /// in <a>JsonBody</a>. </p>
-        /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths":
-        /// ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the
-        /// Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-        /// Pointer</a>. </p>
-        /// <p>You must specify either this setting or the <code>All</code> setting, but not
-        /// both.</p>
-        /// <note>
-        /// <p>Don't use this option to include all paths. Instead, use the <code>All</code>
-        /// setting. </p>
+        /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>. </p>
+        /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p>
+        /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
+        /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting. </p>
         /// </note>
         pub fn included_paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.included_paths.unwrap_or_default();
@@ -4337,18 +3357,10 @@ pub mod json_match_pattern {
             self.included_paths = Some(v);
             self
         }
-        /// <p>Match only the specified include paths. See also
-        /// <code>MatchScope</code>
-        /// in <a>JsonBody</a>. </p>
-        /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths":
-        /// ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the
-        /// Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON)
-        /// Pointer</a>. </p>
-        /// <p>You must specify either this setting or the <code>All</code> setting, but not
-        /// both.</p>
-        /// <note>
-        /// <p>Don't use this option to include all paths. Instead, use the <code>All</code>
-        /// setting. </p>
+        /// <p>Match only the specified include paths. See also <code>MatchScope</code> in <code>JsonBody</code>. </p>
+        /// <p>Provide the include paths using JSON Pointer syntax. For example, <code>"IncludedPaths": ["/dogs/0/name", "/dogs/1/name"]</code>. For information about this syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p>
+        /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
+        /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting. </p>
         /// </note>
         pub fn set_included_paths(
             mut self,
@@ -4373,15 +3385,9 @@ impl JsonMatchPattern {
     }
 }
 
-/// <p>Inspect all of the elements that WAF has parsed and extracted from the web request
-/// JSON body that are within the <a>JsonBody</a>
-/// <code>MatchScope</code>. This is used with the <a>FieldToMatch</a> option
-/// <code>JsonBody</code>.
-///
-/// </p>
-/// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
-/// <p>JSON specification: <code>"All": {}</code>
-/// </p>
+/// <p>Inspect all of the elements that WAF has parsed and extracted from the web request JSON body that are within the <code>JsonBody</code> <code>MatchScope</code>. This is used with the <code>FieldToMatch</code> option <code>JsonBody</code>. </p>
+/// <p>This is used only to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>JSON specification: <code>"All": {}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct All {}
@@ -4412,9 +3418,8 @@ impl All {
 }
 
 /// <p>The HTTP method of a web request. The method indicates the type of operation that the request is asking the origin to perform. </p>
-/// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
-/// <p>JSON specification: <code>"Method": {}</code>
-/// </p>
+/// <p>This is used only to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>JSON specification: <code>"Method": {}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Method {}
@@ -4445,9 +3450,8 @@ impl Method {
 }
 
 /// <p>The body of a web request. This immediately follows the request headers.</p>
-/// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
-/// <p>JSON specification: <code>"Body": {}</code>
-/// </p>
+/// <p>This is used only to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>JSON specification: <code>"Body": {}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Body {}
@@ -4478,9 +3482,8 @@ impl Body {
 }
 
 /// <p>The query string of a web request. This is the part of a URL that appears after a <code>?</code> character, if any.</p>
-/// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
-/// <p>JSON specification: <code>"QueryString": {}</code>
-/// </p>
+/// <p>This is used only to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>JSON specification: <code>"QueryString": {}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryString {}
@@ -4511,9 +3514,8 @@ impl QueryString {
 }
 
 /// <p>The path component of the URI of a web request. This is the part of a web request that identifies a resource. For example, <code>/images/daily-ad.jpg</code>.</p>
-/// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
-/// <p>JSON specification: <code>"UriPath": {}</code>
-/// </p>
+/// <p>This is used only to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>JSON specification: <code>"UriPath": {}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UriPath {}
@@ -4544,9 +3546,8 @@ impl UriPath {
 }
 
 /// <p>All query arguments of a web request. </p>
-/// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
-/// <p>JSON specification: <code>"AllQueryArguments": {}</code>
-/// </p>
+/// <p>This is used only to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>JSON specification: <code>"AllQueryArguments": {}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllQueryArguments {}
@@ -4576,11 +3577,8 @@ impl AllQueryArguments {
     }
 }
 
-/// <p>One query argument in a web request, identified by name, for example
-/// <i>UserName</i> or <i>SalesRegion</i>. The name can be up to
-/// 30 characters long and isn't case sensitive. </p>
-/// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
-/// </p>
+/// <p>One query argument in a web request, identified by name, for example <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive. </p>
+/// <p>Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingleQueryArgument {
@@ -4632,12 +3630,9 @@ impl SingleQueryArgument {
     }
 }
 
-/// <p>One of the headers in a web request, identified by name, for example,
-/// <code>User-Agent</code> or <code>Referer</code>. This setting isn't case
-/// sensitive.</p>
-/// <p>This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. </p>
-/// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
-/// </p>
+/// <p>One of the headers in a web request, identified by name, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
+/// <p>This is used only to indicate the web request component for WAF to inspect, in the <code>FieldToMatch</code> specification. </p>
+/// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingleHeader {
@@ -4690,29 +3685,18 @@ impl SingleHeader {
 }
 
 /// <p>A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. </p>
-/// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.  If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
+/// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelMatchStatement {
     /// <p>Specify whether you want to match using the label name or just the namespace. </p>
     pub scope: std::option::Option<crate::model::LabelMatchScope>,
-    /// <p>The string to match against. The setting you provide for this depends on the match
-    /// statement's <code>Scope</code> setting: </p>
+    /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting: </p>
     /// <ul>
-    /// <li>
-    /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification
-    /// must include the name and can include any number of preceding namespace
-    /// specifications and prefix up to providing the fully qualified label name. </p>
-    /// </li>
-    /// <li>
-    /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this
-    /// specification can include any number of contiguous namespace strings, and can include
-    /// the entire label namespace prefix from the rule group or web ACL where the label
-    /// originates.</p>
-    /// </li>
+    /// <li> <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name. </p> </li>
+    /// <li> <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p> </li>
     /// </ul>
-    /// <p>Labels are case sensitive and components of a label must be separated by colon, for
-    /// example <code>NS1:NS2:name</code>.</p>
+    /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
     pub key: std::option::Option<std::string::String>,
 }
 impl LabelMatchStatement {
@@ -4720,23 +3704,12 @@ impl LabelMatchStatement {
     pub fn scope(&self) -> std::option::Option<&crate::model::LabelMatchScope> {
         self.scope.as_ref()
     }
-    /// <p>The string to match against. The setting you provide for this depends on the match
-    /// statement's <code>Scope</code> setting: </p>
+    /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting: </p>
     /// <ul>
-    /// <li>
-    /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification
-    /// must include the name and can include any number of preceding namespace
-    /// specifications and prefix up to providing the fully qualified label name. </p>
-    /// </li>
-    /// <li>
-    /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this
-    /// specification can include any number of contiguous namespace strings, and can include
-    /// the entire label namespace prefix from the rule group or web ACL where the label
-    /// originates.</p>
-    /// </li>
+    /// <li> <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name. </p> </li>
+    /// <li> <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p> </li>
     /// </ul>
-    /// <p>Labels are case sensitive and components of a label must be separated by colon, for
-    /// example <code>NS1:NS2:name</code>.</p>
+    /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -4772,44 +3745,22 @@ pub mod label_match_statement {
             self.scope = input;
             self
         }
-        /// <p>The string to match against. The setting you provide for this depends on the match
-        /// statement's <code>Scope</code> setting: </p>
+        /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting: </p>
         /// <ul>
-        /// <li>
-        /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification
-        /// must include the name and can include any number of preceding namespace
-        /// specifications and prefix up to providing the fully qualified label name. </p>
-        /// </li>
-        /// <li>
-        /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this
-        /// specification can include any number of contiguous namespace strings, and can include
-        /// the entire label namespace prefix from the rule group or web ACL where the label
-        /// originates.</p>
-        /// </li>
+        /// <li> <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name. </p> </li>
+        /// <li> <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p> </li>
         /// </ul>
-        /// <p>Labels are case sensitive and components of a label must be separated by colon, for
-        /// example <code>NS1:NS2:name</code>.</p>
+        /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The string to match against. The setting you provide for this depends on the match
-        /// statement's <code>Scope</code> setting: </p>
+        /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting: </p>
         /// <ul>
-        /// <li>
-        /// <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification
-        /// must include the name and can include any number of preceding namespace
-        /// specifications and prefix up to providing the fully qualified label name. </p>
-        /// </li>
-        /// <li>
-        /// <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this
-        /// specification can include any number of contiguous namespace strings, and can include
-        /// the entire label namespace prefix from the rule group or web ACL where the label
-        /// originates.</p>
-        /// </li>
+        /// <li> <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name. </p> </li>
+        /// <li> <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p> </li>
         /// </ul>
-        /// <p>Labels are case sensitive and components of a label must be separated by colon, for
-        /// example <code>NS1:NS2:name</code>.</p>
+        /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -4885,7 +3836,7 @@ impl AsRef<str> for LabelMatchScope {
     }
 }
 
-/// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p>
+/// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
 /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4894,20 +3845,11 @@ pub struct ManagedRuleGroupStatement {
     pub vendor_name: std::option::Option<std::string::String>,
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The version of the managed rule group to use. If you specify this, the version setting
-    /// is fixed until you change it.
-    /// If you don't specify this, WAF uses the vendor's default version, and then keeps the version
-    /// at the vendor's default when the vendor updates the managed rule group settings. </p>
+    /// <p>The version of the managed rule group to use. If you specify this, the version setting is fixed until you change it. If you don't specify this, WAF uses the vendor's default version, and then keeps the version at the vendor's default when the vendor updates the managed rule group settings. </p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
-    /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
-    /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
+    /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
     pub excluded_rules: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
-    /// <p>An optional nested statement that narrows the scope of the web requests that are
-    /// evaluated by the managed rule group. Requests are only evaluated by the rule group if they
-    /// match the scope-down statement. You can use any nestable <a>Statement</a> in the
-    /// scope-down statement, and you can nest statements at any level, the same as you can for a
-    /// rule statement. </p>
+    /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
     pub scope_down_statement: std::option::Option<std::boxed::Box<crate::model::Statement>>,
 }
 impl ManagedRuleGroupStatement {
@@ -4919,24 +3861,15 @@ impl ManagedRuleGroupStatement {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The version of the managed rule group to use. If you specify this, the version setting
-    /// is fixed until you change it.
-    /// If you don't specify this, WAF uses the vendor's default version, and then keeps the version
-    /// at the vendor's default when the vendor updates the managed rule group settings. </p>
+    /// <p>The version of the managed rule group to use. If you specify this, the version setting is fixed until you change it. If you don't specify this, WAF uses the vendor's default version, and then keeps the version at the vendor's default when the vendor updates the managed rule group settings. </p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
-    /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
-    /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
+    /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
     pub fn excluded_rules(&self) -> std::option::Option<&[crate::model::ExcludedRule]> {
         self.excluded_rules.as_deref()
     }
-    /// <p>An optional nested statement that narrows the scope of the web requests that are
-    /// evaluated by the managed rule group. Requests are only evaluated by the rule group if they
-    /// match the scope-down statement. You can use any nestable <a>Statement</a> in the
-    /// scope-down statement, and you can nest statements at any level, the same as you can for a
-    /// rule statement. </p>
+    /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
     pub fn scope_down_statement(&self) -> std::option::Option<&crate::model::Statement> {
         self.scope_down_statement.as_deref()
     }
@@ -4986,18 +3919,12 @@ pub mod managed_rule_group_statement {
             self.name = input;
             self
         }
-        /// <p>The version of the managed rule group to use. If you specify this, the version setting
-        /// is fixed until you change it.
-        /// If you don't specify this, WAF uses the vendor's default version, and then keeps the version
-        /// at the vendor's default when the vendor updates the managed rule group settings. </p>
+        /// <p>The version of the managed rule group to use. If you specify this, the version setting is fixed until you change it. If you don't specify this, WAF uses the vendor's default version, and then keeps the version at the vendor's default when the vendor updates the managed rule group settings. </p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The version of the managed rule group to use. If you specify this, the version setting
-        /// is fixed until you change it.
-        /// If you don't specify this, WAF uses the vendor's default version, and then keeps the version
-        /// at the vendor's default when the vendor updates the managed rule group settings. </p>
+        /// <p>The version of the managed rule group to use. If you specify this, the version setting is fixed until you change it. If you don't specify this, WAF uses the vendor's default version, and then keeps the version at the vendor's default when the vendor updates the managed rule group settings. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -5006,18 +3933,14 @@ pub mod managed_rule_group_statement {
         ///
         /// To override the contents of this collection use [`set_excluded_rules`](Self::set_excluded_rules).
         ///
-        /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
-        /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
-        /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
-        pub fn excluded_rules(mut self, input: impl Into<crate::model::ExcludedRule>) -> Self {
+        /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
+        pub fn excluded_rules(mut self, input: crate::model::ExcludedRule) -> Self {
             let mut v = self.excluded_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excluded_rules = Some(v);
             self
         }
-        /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
-        /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
-        /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
+        /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
         pub fn set_excluded_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
@@ -5025,11 +3948,7 @@ pub mod managed_rule_group_statement {
             self.excluded_rules = input;
             self
         }
-        /// <p>An optional nested statement that narrows the scope of the web requests that are
-        /// evaluated by the managed rule group. Requests are only evaluated by the rule group if they
-        /// match the scope-down statement. You can use any nestable <a>Statement</a> in the
-        /// scope-down statement, and you can nest statements at any level, the same as you can for a
-        /// rule statement. </p>
+        /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
         pub fn scope_down_statement(
             mut self,
             input: impl Into<std::boxed::Box<crate::model::Statement>>,
@@ -5037,11 +3956,7 @@ pub mod managed_rule_group_statement {
             self.scope_down_statement = Some(input.into());
             self
         }
-        /// <p>An optional nested statement that narrows the scope of the web requests that are
-        /// evaluated by the managed rule group. Requests are only evaluated by the rule group if they
-        /// match the scope-down statement. You can use any nestable <a>Statement</a> in the
-        /// scope-down statement, and you can nest statements at any level, the same as you can for a
-        /// rule statement. </p>
+        /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
         pub fn set_scope_down_statement(
             mut self,
             input: std::option::Option<std::boxed::Box<crate::model::Statement>>,
@@ -5068,9 +3983,7 @@ impl ManagedRuleGroupStatement {
     }
 }
 
-/// <p>Specifies a single rule in a rule group whose action you want to override to <code>Count</code>. When you exclude a rule,
-/// WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
-/// testing the rules in a rule group without modifying how they handle your web traffic. </p>
+/// <p>Specifies a single rule in a rule group whose action you want to override to <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExcludedRule {
@@ -5122,7 +4035,7 @@ impl ExcludedRule {
     }
 }
 
-/// <p>A logical rule statement used to negate the results of another rule statement. You provide one <a>Statement</a> within the <code>NotStatement</code>.</p>
+/// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotStatement {
@@ -5182,17 +4095,15 @@ impl NotStatement {
     }
 }
 
-/// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <a>Statement</a> within the <code>OrStatement</code>. </p>
+/// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <code>Statement</code> within the <code>OrStatement</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrStatement {
-    /// <p>The statements to combine with OR logic. You can use any statements that can be
-    /// nested.</p>
+    /// <p>The statements to combine with OR logic. You can use any statements that can be nested.</p>
     pub statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
 }
 impl OrStatement {
-    /// <p>The statements to combine with OR logic. You can use any statements that can be
-    /// nested.</p>
+    /// <p>The statements to combine with OR logic. You can use any statements that can be nested.</p>
     pub fn statements(&self) -> std::option::Option<&[crate::model::Statement]> {
         self.statements.as_deref()
     }
@@ -5217,16 +4128,14 @@ pub mod or_statement {
         ///
         /// To override the contents of this collection use [`set_statements`](Self::set_statements).
         ///
-        /// <p>The statements to combine with OR logic. You can use any statements that can be
-        /// nested.</p>
-        pub fn statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
+        /// <p>The statements to combine with OR logic. You can use any statements that can be nested.</p>
+        pub fn statements(mut self, input: crate::model::Statement) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statements = Some(v);
             self
         }
-        /// <p>The statements to combine with OR logic. You can use any statements that can be
-        /// nested.</p>
+        /// <p>The statements to combine with OR logic. You can use any statements that can be nested.</p>
         pub fn set_statements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Statement>>,
@@ -5249,17 +4158,15 @@ impl OrStatement {
     }
 }
 
-/// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <a>Statement</a> within the <code>AndStatement</code>. </p>
+/// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AndStatement {
-    /// <p>The statements to combine with AND logic. You can use any statements that can be nested.
-    /// </p>
+    /// <p>The statements to combine with AND logic. You can use any statements that can be nested. </p>
     pub statements: std::option::Option<std::vec::Vec<crate::model::Statement>>,
 }
 impl AndStatement {
-    /// <p>The statements to combine with AND logic. You can use any statements that can be nested.
-    /// </p>
+    /// <p>The statements to combine with AND logic. You can use any statements that can be nested. </p>
     pub fn statements(&self) -> std::option::Option<&[crate::model::Statement]> {
         self.statements.as_deref()
     }
@@ -5284,16 +4191,14 @@ pub mod and_statement {
         ///
         /// To override the contents of this collection use [`set_statements`](Self::set_statements).
         ///
-        /// <p>The statements to combine with AND logic. You can use any statements that can be nested.
-        /// </p>
-        pub fn statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
+        /// <p>The statements to combine with AND logic. You can use any statements that can be nested. </p>
+        pub fn statements(mut self, input: crate::model::Statement) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statements = Some(v);
             self
         }
-        /// <p>The statements to combine with AND logic. You can use any statements that can be nested.
-        /// </p>
+        /// <p>The statements to combine with AND logic. You can use any statements that can be nested. </p>
         pub fn set_statements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Statement>>,
@@ -5321,93 +4226,53 @@ impl AndStatement {
 /// <p>When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls below the limit.</p>
 /// <p>You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:</p>
 /// <ul>
-/// <li>
-/// <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p>
-/// </li>
-/// <li>
-/// <p>A string match statement that searches in the User-Agent header for the string BadBot.</p>
-/// </li>
+/// <li> <p>An IP match statement with an IP set that specified the address 192.0.2.44.</p> </li>
+/// <li> <p>A string match statement that searches in the User-Agent header for the string BadBot.</p> </li>
 /// </ul>
 /// <p>In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.</p>
 /// <p>You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RateBasedStatement {
-    /// <p>The limit on requests per 5-minute period for a single originating IP address. If the
-    /// statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the
-    /// requests that match the statement.</p>
+    /// <p>The limit on requests per 5-minute period for a single originating IP address. If the statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     pub limit: i64,
-    /// <p>Setting that indicates how to aggregate the request counts. The options are the
-    /// following:</p>
+    /// <p>Setting that indicates how to aggregate the request counts. The options are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>IP - Aggregate the request counts on the IP address from the web request
-    /// origin.</p>
-    /// </li>
-    /// <li>
-    /// <p>FORWARDED_IP - Aggregate the request counts on the first IP address in an
-    /// HTTP header. If you use this, configure the <code>ForwardedIPConfig</code>, to
-    /// specify the header to use. </p>
-    /// </li>
+    /// <li> <p>IP - Aggregate the request counts on the IP address from the web request origin.</p> </li>
+    /// <li> <p>FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this, configure the <code>ForwardedIPConfig</code>, to specify the header to use. </p> </li>
     /// </ul>
     pub aggregate_key_type: std::option::Option<crate::model::RateBasedStatementAggregateKeyType>,
-    /// <p>An optional nested statement that narrows the scope of the web requests that are
-    /// evaluated by the rate-based statement. Requests are only tracked by the rate-based
-    /// statement if they match the scope-down statement. You can use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any
-    /// level, the same as you can for a rule statement. </p>
+    /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the rate-based statement. Requests are only tracked by the rate-based statement if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
     pub scope_down_statement: std::option::Option<std::boxed::Box<crate::model::Statement>>,
-    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-    ///
-    /// <note>
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    ///
-    ///
-    /// <p>This is required if <code>AggregateKeyType</code> is set to
-    /// <code>FORWARDED_IP</code>.</p>
+    /// <p>This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.</p>
     pub forwarded_ip_config: std::option::Option<crate::model::ForwardedIpConfig>,
 }
 impl RateBasedStatement {
-    /// <p>The limit on requests per 5-minute period for a single originating IP address. If the
-    /// statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the
-    /// requests that match the statement.</p>
+    /// <p>The limit on requests per 5-minute period for a single originating IP address. If the statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     pub fn limit(&self) -> i64 {
         self.limit
     }
-    /// <p>Setting that indicates how to aggregate the request counts. The options are the
-    /// following:</p>
+    /// <p>Setting that indicates how to aggregate the request counts. The options are the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>IP - Aggregate the request counts on the IP address from the web request
-    /// origin.</p>
-    /// </li>
-    /// <li>
-    /// <p>FORWARDED_IP - Aggregate the request counts on the first IP address in an
-    /// HTTP header. If you use this, configure the <code>ForwardedIPConfig</code>, to
-    /// specify the header to use. </p>
-    /// </li>
+    /// <li> <p>IP - Aggregate the request counts on the IP address from the web request origin.</p> </li>
+    /// <li> <p>FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this, configure the <code>ForwardedIPConfig</code>, to specify the header to use. </p> </li>
     /// </ul>
     pub fn aggregate_key_type(
         &self,
     ) -> std::option::Option<&crate::model::RateBasedStatementAggregateKeyType> {
         self.aggregate_key_type.as_ref()
     }
-    /// <p>An optional nested statement that narrows the scope of the web requests that are
-    /// evaluated by the rate-based statement. Requests are only tracked by the rate-based
-    /// statement if they match the scope-down statement. You can use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any
-    /// level, the same as you can for a rule statement. </p>
+    /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the rate-based statement. Requests are only tracked by the rate-based statement if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
     pub fn scope_down_statement(&self) -> std::option::Option<&crate::model::Statement> {
         self.scope_down_statement.as_deref()
     }
-    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-    ///
-    /// <note>
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    ///
-    ///
-    /// <p>This is required if <code>AggregateKeyType</code> is set to
-    /// <code>FORWARDED_IP</code>.</p>
+    /// <p>This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.</p>
     pub fn forwarded_ip_config(&self) -> std::option::Option<&crate::model::ForwardedIpConfig> {
         self.forwarded_ip_config.as_ref()
     }
@@ -5436,32 +4301,20 @@ pub mod rate_based_statement {
         pub(crate) forwarded_ip_config: std::option::Option<crate::model::ForwardedIpConfig>,
     }
     impl Builder {
-        /// <p>The limit on requests per 5-minute period for a single originating IP address. If the
-        /// statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the
-        /// requests that match the statement.</p>
+        /// <p>The limit on requests per 5-minute period for a single originating IP address. If the statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
         pub fn limit(mut self, input: i64) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The limit on requests per 5-minute period for a single originating IP address. If the
-        /// statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the
-        /// requests that match the statement.</p>
+        /// <p>The limit on requests per 5-minute period for a single originating IP address. If the statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
         pub fn set_limit(mut self, input: std::option::Option<i64>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>Setting that indicates how to aggregate the request counts. The options are the
-        /// following:</p>
+        /// <p>Setting that indicates how to aggregate the request counts. The options are the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>IP - Aggregate the request counts on the IP address from the web request
-        /// origin.</p>
-        /// </li>
-        /// <li>
-        /// <p>FORWARDED_IP - Aggregate the request counts on the first IP address in an
-        /// HTTP header. If you use this, configure the <code>ForwardedIPConfig</code>, to
-        /// specify the header to use. </p>
-        /// </li>
+        /// <li> <p>IP - Aggregate the request counts on the IP address from the web request origin.</p> </li>
+        /// <li> <p>FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this, configure the <code>ForwardedIPConfig</code>, to specify the header to use. </p> </li>
         /// </ul>
         pub fn aggregate_key_type(
             mut self,
@@ -5470,18 +4323,10 @@ pub mod rate_based_statement {
             self.aggregate_key_type = Some(input);
             self
         }
-        /// <p>Setting that indicates how to aggregate the request counts. The options are the
-        /// following:</p>
+        /// <p>Setting that indicates how to aggregate the request counts. The options are the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>IP - Aggregate the request counts on the IP address from the web request
-        /// origin.</p>
-        /// </li>
-        /// <li>
-        /// <p>FORWARDED_IP - Aggregate the request counts on the first IP address in an
-        /// HTTP header. If you use this, configure the <code>ForwardedIPConfig</code>, to
-        /// specify the header to use. </p>
-        /// </li>
+        /// <li> <p>IP - Aggregate the request counts on the IP address from the web request origin.</p> </li>
+        /// <li> <p>FORWARDED_IP - Aggregate the request counts on the first IP address in an HTTP header. If you use this, configure the <code>ForwardedIPConfig</code>, to specify the header to use. </p> </li>
         /// </ul>
         pub fn set_aggregate_key_type(
             mut self,
@@ -5490,10 +4335,7 @@ pub mod rate_based_statement {
             self.aggregate_key_type = input;
             self
         }
-        /// <p>An optional nested statement that narrows the scope of the web requests that are
-        /// evaluated by the rate-based statement. Requests are only tracked by the rate-based
-        /// statement if they match the scope-down statement. You can use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any
-        /// level, the same as you can for a rule statement. </p>
+        /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the rate-based statement. Requests are only tracked by the rate-based statement if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
         pub fn scope_down_statement(
             mut self,
             input: impl Into<std::boxed::Box<crate::model::Statement>>,
@@ -5501,10 +4343,7 @@ pub mod rate_based_statement {
             self.scope_down_statement = Some(input.into());
             self
         }
-        /// <p>An optional nested statement that narrows the scope of the web requests that are
-        /// evaluated by the rate-based statement. Requests are only tracked by the rate-based
-        /// statement if they match the scope-down statement. You can use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any
-        /// level, the same as you can for a rule statement. </p>
+        /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the rate-based statement. Requests are only tracked by the rate-based statement if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
         pub fn set_scope_down_statement(
             mut self,
             input: std::option::Option<std::boxed::Box<crate::model::Statement>>,
@@ -5512,28 +4351,18 @@ pub mod rate_based_statement {
             self.scope_down_statement = input;
             self
         }
-        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-        ///
-        /// <note>
+        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
-        ///
-        ///
-        /// <p>This is required if <code>AggregateKeyType</code> is set to
-        /// <code>FORWARDED_IP</code>.</p>
+        /// <p>This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.</p>
         pub fn forwarded_ip_config(mut self, input: crate::model::ForwardedIpConfig) -> Self {
             self.forwarded_ip_config = Some(input);
             self
         }
-        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-        ///
-        /// <note>
+        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
-        ///
-        ///
-        /// <p>This is required if <code>AggregateKeyType</code> is set to
-        /// <code>FORWARDED_IP</code>.</p>
+        /// <p>This is required if <code>AggregateKeyType</code> is set to <code>FORWARDED_IP</code>.</p>
         pub fn set_forwarded_ip_config(
             mut self,
             input: std::option::Option<crate::model::ForwardedIpConfig>,
@@ -5559,69 +4388,42 @@ impl RateBasedStatement {
     }
 }
 
-/// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-///
-/// <note>
+/// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
 /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
 /// </note>
-///
-///
-/// <p>This configuration is used for <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>. For <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead. </p>
-/// <p>WAF only evaluates the first IP address found in the specified HTTP header.
-/// </p>
+/// <p>This configuration is used for <code>GeoMatchStatement</code> and <code>RateBasedStatement</code>. For <code>IPSetReferenceStatement</code>, use <code>IPSetForwardedIPConfig</code> instead. </p>
+/// <p>WAF only evaluates the first IP address found in the specified HTTP header. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForwardedIpConfig {
-    /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-    ///
-    /// <note>
+    /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     pub header_name: std::option::Option<std::string::String>,
-    /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p>
-    ///
-    /// <note>
+    /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    ///
     /// <p>You can specify the following fallback behaviors:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p>
-    /// </li>
+    /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+    /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
     pub fallback_behavior: std::option::Option<crate::model::FallbackBehavior>,
 }
 impl ForwardedIpConfig {
-    /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-    ///
-    /// <note>
+    /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     pub fn header_name(&self) -> std::option::Option<&str> {
         self.header_name.as_deref()
     }
-    /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p>
-    ///
-    /// <note>
+    /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    ///
     /// <p>You can specify the following fallback behaviors:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p>
-    /// </li>
+    /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+    /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
     pub fn fallback_behavior(&self) -> std::option::Option<&crate::model::FallbackBehavior> {
         self.fallback_behavior.as_ref()
@@ -5645,61 +4447,39 @@ pub mod forwarded_ip_config {
         pub(crate) fallback_behavior: std::option::Option<crate::model::FallbackBehavior>,
     }
     impl Builder {
-        /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-        ///
-        /// <note>
+        /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
         pub fn header_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.header_name = Some(input.into());
             self
         }
-        /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-        ///
-        /// <note>
+        /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
         pub fn set_header_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.header_name = input;
             self
         }
-        /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p>
-        ///
-        /// <note>
+        /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
-        ///
         /// <p>You can specify the following fallback behaviors:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p>
-        /// </li>
+        /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+        /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
         /// </ul>
         pub fn fallback_behavior(mut self, input: crate::model::FallbackBehavior) -> Self {
             self.fallback_behavior = Some(input);
             self
         }
-        /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p>
-        ///
-        /// <note>
+        /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
-        ///
         /// <p>You can specify the following fallback behaviors:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p>
-        /// </li>
+        /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+        /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
         /// </ul>
         pub fn set_fallback_behavior(
             mut self,
@@ -5834,34 +4614,28 @@ impl AsRef<str> for RateBasedStatementAggregateKeyType {
     }
 }
 
-/// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p>
+/// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <code>RegexPatternSet</code> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <code>CreateRegexPatternSet</code>.</p>
 /// <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegexPatternSetReferenceStatement {
-    /// <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
-    /// statement references.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>RegexPatternSet</code> that this statement references.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
 }
 impl RegexPatternSetReferenceStatement {
-    /// <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
-    /// statement references.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>RegexPatternSet</code> that this statement references.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
     pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub fn text_transformations(&self) -> std::option::Option<&[crate::model::TextTransformation]> {
         self.text_transformations.as_deref()
     }
@@ -5887,24 +4661,22 @@ pub mod regex_pattern_set_reference_statement {
             std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
-        /// statement references.</p>
+        /// <p>The Amazon Resource Name (ARN) of the <code>RegexPatternSet</code> that this statement references.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
-        /// statement references.</p>
+        /// <p>The Amazon Resource Name (ARN) of the <code>RegexPatternSet</code> that this statement references.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
         pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
             self.field_to_match = Some(input);
             self
         }
-        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
         pub fn set_field_to_match(
             mut self,
             input: std::option::Option<crate::model::FieldToMatch>,
@@ -5916,21 +4688,14 @@ pub mod regex_pattern_set_reference_statement {
         ///
         /// To override the contents of this collection use [`set_text_transformations`](Self::set_text_transformations).
         ///
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-        /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-        /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-        pub fn text_transformations(
-            mut self,
-            input: impl Into<crate::model::TextTransformation>,
-        ) -> Self {
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+        pub fn text_transformations(mut self, input: crate::model::TextTransformation) -> Self {
             let mut v = self.text_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_transformations = Some(v);
             self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-        /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-        /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
         pub fn set_text_transformations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
@@ -5955,30 +4720,24 @@ impl RegexPatternSetReferenceStatement {
     }
 }
 
-/// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>.</p>
+/// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <code>IPSet</code> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <code>CreateIPSet</code>.</p>
 /// <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpSetReferenceStatement {
-    /// <p>The Amazon Resource Name (ARN) of the <a>IPSet</a> that this statement
-    /// references.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>IPSet</code> that this statement references.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-    ///
-    /// <note>
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     pub ip_set_forwarded_ip_config: std::option::Option<crate::model::IpSetForwardedIpConfig>,
 }
 impl IpSetReferenceStatement {
-    /// <p>The Amazon Resource Name (ARN) of the <a>IPSet</a> that this statement
-    /// references.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>IPSet</code> that this statement references.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-    ///
-    /// <note>
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     pub fn ip_set_forwarded_ip_config(
@@ -6009,21 +4768,17 @@ pub mod ip_set_reference_statement {
             std::option::Option<crate::model::IpSetForwardedIpConfig>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the <a>IPSet</a> that this statement
-        /// references.</p>
+        /// <p>The Amazon Resource Name (ARN) of the <code>IPSet</code> that this statement references.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a>IPSet</a> that this statement
-        /// references.</p>
+        /// <p>The Amazon Resource Name (ARN) of the <code>IPSet</code> that this statement references.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-        ///
-        /// <note>
+        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
         pub fn ip_set_forwarded_ip_config(
@@ -6033,9 +4788,7 @@ pub mod ip_set_reference_statement {
             self.ip_set_forwarded_ip_config = Some(input);
             self
         }
-        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-        ///
-        /// <note>
+        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
         pub fn set_ip_set_forwarded_ip_config(
@@ -6061,109 +4814,59 @@ impl IpSetReferenceStatement {
     }
 }
 
-/// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-///
-/// <note>
+/// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
 /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
 /// </note>
-///
-///
-/// <p>This configuration is used only for <a>IPSetReferenceStatement</a>. For <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>, use <a>ForwardedIPConfig</a> instead. </p>
+/// <p>This configuration is used only for <code>IPSetReferenceStatement</code>. For <code>GeoMatchStatement</code> and <code>RateBasedStatement</code>, use <code>ForwardedIPConfig</code> instead. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpSetForwardedIpConfig {
-    /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-    ///
-    /// <note>
+    /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     pub header_name: std::option::Option<std::string::String>,
-    /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p>
-    ///
-    /// <note>
+    /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    ///
     /// <p>You can specify the following fallback behaviors:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p>
-    /// </li>
+    /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+    /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
     pub fallback_behavior: std::option::Option<crate::model::FallbackBehavior>,
-    /// <p>The position in the header to search for the IP address. The header can contain IP
-    /// addresses of the original client and also of proxies. For example, the header value could
-    /// be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the
-    /// original client and the rest identify proxies that the request went through. </p>
+    /// <p>The position in the header to search for the IP address. The header can contain IP addresses of the original client and also of proxies. For example, the header value could be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the original client and the rest identify proxies that the request went through. </p>
     /// <p>The options for this setting are the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>FIRST - Inspect the first IP address in the list of IP addresses in the
-    /// header. This is usually the client's original IP.</p>
-    /// </li>
-    /// <li>
-    /// <p>LAST - Inspect the last IP address in the list of IP addresses in the
-    /// header.</p>
-    /// </li>
-    /// <li>
-    /// <p>ANY - Inspect all IP addresses in the header for a match. If the header
-    /// contains more than 10 IP addresses, WAF inspects the last 10.</p>
-    /// </li>
+    /// <li> <p>FIRST - Inspect the first IP address in the list of IP addresses in the header. This is usually the client's original IP.</p> </li>
+    /// <li> <p>LAST - Inspect the last IP address in the list of IP addresses in the header.</p> </li>
+    /// <li> <p>ANY - Inspect all IP addresses in the header for a match. If the header contains more than 10 IP addresses, WAF inspects the last 10.</p> </li>
     /// </ul>
     pub position: std::option::Option<crate::model::ForwardedIpPosition>,
 }
 impl IpSetForwardedIpConfig {
-    /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-    ///
-    /// <note>
+    /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     pub fn header_name(&self) -> std::option::Option<&str> {
         self.header_name.as_deref()
     }
-    /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p>
-    ///
-    /// <note>
+    /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    ///
     /// <p>You can specify the following fallback behaviors:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p>
-    /// </li>
+    /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+    /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
     pub fn fallback_behavior(&self) -> std::option::Option<&crate::model::FallbackBehavior> {
         self.fallback_behavior.as_ref()
     }
-    /// <p>The position in the header to search for the IP address. The header can contain IP
-    /// addresses of the original client and also of proxies. For example, the header value could
-    /// be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the
-    /// original client and the rest identify proxies that the request went through. </p>
+    /// <p>The position in the header to search for the IP address. The header can contain IP addresses of the original client and also of proxies. For example, the header value could be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the original client and the rest identify proxies that the request went through. </p>
     /// <p>The options for this setting are the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>FIRST - Inspect the first IP address in the list of IP addresses in the
-    /// header. This is usually the client's original IP.</p>
-    /// </li>
-    /// <li>
-    /// <p>LAST - Inspect the last IP address in the list of IP addresses in the
-    /// header.</p>
-    /// </li>
-    /// <li>
-    /// <p>ANY - Inspect all IP addresses in the header for a match. If the header
-    /// contains more than 10 IP addresses, WAF inspects the last 10.</p>
-    /// </li>
+    /// <li> <p>FIRST - Inspect the first IP address in the list of IP addresses in the header. This is usually the client's original IP.</p> </li>
+    /// <li> <p>LAST - Inspect the last IP address in the list of IP addresses in the header.</p> </li>
+    /// <li> <p>ANY - Inspect all IP addresses in the header for a match. If the header contains more than 10 IP addresses, WAF inspects the last 10.</p> </li>
     /// </ul>
     pub fn position(&self) -> std::option::Option<&crate::model::ForwardedIpPosition> {
         self.position.as_ref()
@@ -6189,61 +4892,39 @@ pub mod ip_set_forwarded_ip_config {
         pub(crate) position: std::option::Option<crate::model::ForwardedIpPosition>,
     }
     impl Builder {
-        /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-        ///
-        /// <note>
+        /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
         pub fn header_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.header_name = Some(input.into());
             self
         }
-        /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-        ///
-        /// <note>
+        /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
         pub fn set_header_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.header_name = input;
             self
         }
-        /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p>
-        ///
-        /// <note>
+        /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
-        ///
         /// <p>You can specify the following fallback behaviors:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p>
-        /// </li>
+        /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+        /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
         /// </ul>
         pub fn fallback_behavior(mut self, input: crate::model::FallbackBehavior) -> Self {
             self.fallback_behavior = Some(input);
             self
         }
-        /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p>
-        ///
-        /// <note>
+        /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
-        ///
         /// <p>You can specify the following fallback behaviors:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p>
-        /// </li>
+        /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
+        /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
         /// </ul>
         pub fn set_fallback_behavior(
             mut self,
@@ -6252,47 +4933,23 @@ pub mod ip_set_forwarded_ip_config {
             self.fallback_behavior = input;
             self
         }
-        /// <p>The position in the header to search for the IP address. The header can contain IP
-        /// addresses of the original client and also of proxies. For example, the header value could
-        /// be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the
-        /// original client and the rest identify proxies that the request went through. </p>
+        /// <p>The position in the header to search for the IP address. The header can contain IP addresses of the original client and also of proxies. For example, the header value could be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the original client and the rest identify proxies that the request went through. </p>
         /// <p>The options for this setting are the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>FIRST - Inspect the first IP address in the list of IP addresses in the
-        /// header. This is usually the client's original IP.</p>
-        /// </li>
-        /// <li>
-        /// <p>LAST - Inspect the last IP address in the list of IP addresses in the
-        /// header.</p>
-        /// </li>
-        /// <li>
-        /// <p>ANY - Inspect all IP addresses in the header for a match. If the header
-        /// contains more than 10 IP addresses, WAF inspects the last 10.</p>
-        /// </li>
+        /// <li> <p>FIRST - Inspect the first IP address in the list of IP addresses in the header. This is usually the client's original IP.</p> </li>
+        /// <li> <p>LAST - Inspect the last IP address in the list of IP addresses in the header.</p> </li>
+        /// <li> <p>ANY - Inspect all IP addresses in the header for a match. If the header contains more than 10 IP addresses, WAF inspects the last 10.</p> </li>
         /// </ul>
         pub fn position(mut self, input: crate::model::ForwardedIpPosition) -> Self {
             self.position = Some(input);
             self
         }
-        /// <p>The position in the header to search for the IP address. The header can contain IP
-        /// addresses of the original client and also of proxies. For example, the header value could
-        /// be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the
-        /// original client and the rest identify proxies that the request went through. </p>
+        /// <p>The position in the header to search for the IP address. The header can contain IP addresses of the original client and also of proxies. For example, the header value could be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the original client and the rest identify proxies that the request went through. </p>
         /// <p>The options for this setting are the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>FIRST - Inspect the first IP address in the list of IP addresses in the
-        /// header. This is usually the client's original IP.</p>
-        /// </li>
-        /// <li>
-        /// <p>LAST - Inspect the last IP address in the list of IP addresses in the
-        /// header.</p>
-        /// </li>
-        /// <li>
-        /// <p>ANY - Inspect all IP addresses in the header for a match. If the header
-        /// contains more than 10 IP addresses, WAF inspects the last 10.</p>
-        /// </li>
+        /// <li> <p>FIRST - Inspect the first IP address in the list of IP addresses in the header. This is usually the client's original IP.</p> </li>
+        /// <li> <p>LAST - Inspect the last IP address in the list of IP addresses in the header.</p> </li>
+        /// <li> <p>ANY - Inspect all IP addresses in the header for a match. If the header contains more than 10 IP addresses, WAF inspects the last 10.</p> </li>
         /// </ul>
         pub fn set_position(
             mut self,
@@ -6377,17 +5034,14 @@ impl AsRef<str> for ForwardedIpPosition {
     }
 }
 
-/// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-/// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
-/// can only use a rule group reference statement at the top level inside a web ACL. </p>
+/// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
+/// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleGroupReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
-    /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
-    /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
+    /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
     pub excluded_rules: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
 }
 impl RuleGroupReferenceStatement {
@@ -6395,9 +5049,7 @@ impl RuleGroupReferenceStatement {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
-    /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
-    /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
+    /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
     pub fn excluded_rules(&self) -> std::option::Option<&[crate::model::ExcludedRule]> {
         self.excluded_rules.as_deref()
     }
@@ -6434,18 +5086,14 @@ pub mod rule_group_reference_statement {
         ///
         /// To override the contents of this collection use [`set_excluded_rules`](Self::set_excluded_rules).
         ///
-        /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
-        /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
-        /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
-        pub fn excluded_rules(mut self, input: impl Into<crate::model::ExcludedRule>) -> Self {
+        /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
+        pub fn excluded_rules(mut self, input: crate::model::ExcludedRule) -> Self {
             let mut v = self.excluded_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.excluded_rules = Some(v);
             self
         }
-        /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>.  
-        /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>.
-        /// This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
+        /// <p>The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.</p>
         pub fn set_excluded_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
@@ -6469,29 +5117,23 @@ impl RuleGroupReferenceStatement {
     }
 }
 
-/// <p>A rule statement used to identify web requests based on country of origin.  </p>
+/// <p>A rule statement used to identify web requests based on country of origin. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeoMatchStatement {
-    /// <p>An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from
-    /// the alpha-2 country ISO codes of the ISO 3166 international standard. </p>
+    /// <p>An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard. </p>
     pub country_codes: std::option::Option<std::vec::Vec<crate::model::CountryCode>>,
-    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-    ///
-    /// <note>
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     pub forwarded_ip_config: std::option::Option<crate::model::ForwardedIpConfig>,
 }
 impl GeoMatchStatement {
-    /// <p>An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from
-    /// the alpha-2 country ISO codes of the ISO 3166 international standard. </p>
+    /// <p>An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard. </p>
     pub fn country_codes(&self) -> std::option::Option<&[crate::model::CountryCode]> {
         self.country_codes.as_deref()
     }
-    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-    ///
-    /// <note>
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     pub fn forwarded_ip_config(&self) -> std::option::Option<&crate::model::ForwardedIpConfig> {
@@ -6520,16 +5162,14 @@ pub mod geo_match_statement {
         ///
         /// To override the contents of this collection use [`set_country_codes`](Self::set_country_codes).
         ///
-        /// <p>An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from
-        /// the alpha-2 country ISO codes of the ISO 3166 international standard. </p>
-        pub fn country_codes(mut self, input: impl Into<crate::model::CountryCode>) -> Self {
+        /// <p>An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard. </p>
+        pub fn country_codes(mut self, input: crate::model::CountryCode) -> Self {
             let mut v = self.country_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.country_codes = Some(v);
             self
         }
-        /// <p>An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from
-        /// the alpha-2 country ISO codes of the ISO 3166 international standard. </p>
+        /// <p>An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard. </p>
         pub fn set_country_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CountryCode>>,
@@ -6537,18 +5177,14 @@ pub mod geo_match_statement {
             self.country_codes = input;
             self
         }
-        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-        ///
-        /// <note>
+        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
         pub fn forwarded_ip_config(mut self, input: crate::model::ForwardedIpConfig) -> Self {
             self.forwarded_ip_config = Some(input);
             self
         }
-        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p>
-        ///
-        /// <note>
+        /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
         /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
         /// </note>
         pub fn set_forwarded_ip_config(
@@ -7636,25 +6272,23 @@ impl AsRef<str> for CountryCode {
     }
 }
 
-/// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (>) or less than (<). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
+/// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
 /// <p>If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes.</p>
 /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SizeConstraintStatement {
-    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
     /// <p>The operator to use to compare the request part to the size setting. </p>
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
     /// <p>The size, in byte, to compare to the request part, after any transformations.</p>
     pub size: i64,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
 }
 impl SizeConstraintStatement {
-    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
     pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
@@ -7666,9 +6300,7 @@ impl SizeConstraintStatement {
     pub fn size(&self) -> i64 {
         self.size
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub fn text_transformations(&self) -> std::option::Option<&[crate::model::TextTransformation]> {
         self.text_transformations.as_deref()
     }
@@ -7696,12 +6328,12 @@ pub mod size_constraint_statement {
             std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
     }
     impl Builder {
-        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
         pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
             self.field_to_match = Some(input);
             self
         }
-        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
         pub fn set_field_to_match(
             mut self,
             input: std::option::Option<crate::model::FieldToMatch>,
@@ -7736,21 +6368,14 @@ pub mod size_constraint_statement {
         ///
         /// To override the contents of this collection use [`set_text_transformations`](Self::set_text_transformations).
         ///
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-        /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-        /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-        pub fn text_transformations(
-            mut self,
-            input: impl Into<crate::model::TextTransformation>,
-        ) -> Self {
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+        pub fn text_transformations(mut self, input: crate::model::TextTransformation) -> Self {
             let mut v = self.text_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_transformations = Some(v);
             self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-        /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-        /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
         pub fn set_text_transformations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
@@ -7847,29 +6472,21 @@ impl AsRef<str> for ComparisonOperator {
     }
 }
 
-/// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests.
-/// XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
-/// client-site scripts into other legitimate web browsers.  
-/// The XSS match statement provides the location in requests that you want WAF to search and text transformations
-/// to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
+/// <p>A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want WAF to search and text transformations to use on the search area before WAF searches for character sequences that are likely to be malicious strings. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct XssMatchStatement {
-    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
 }
 impl XssMatchStatement {
-    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
     pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub fn text_transformations(&self) -> std::option::Option<&[crate::model::TextTransformation]> {
         self.text_transformations.as_deref()
     }
@@ -7893,12 +6510,12 @@ pub mod xss_match_statement {
             std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
     }
     impl Builder {
-        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
         pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
             self.field_to_match = Some(input);
             self
         }
-        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
         pub fn set_field_to_match(
             mut self,
             input: std::option::Option<crate::model::FieldToMatch>,
@@ -7910,21 +6527,14 @@ pub mod xss_match_statement {
         ///
         /// To override the contents of this collection use [`set_text_transformations`](Self::set_text_transformations).
         ///
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-        /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-        /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-        pub fn text_transformations(
-            mut self,
-            input: impl Into<crate::model::TextTransformation>,
-        ) -> Self {
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+        pub fn text_transformations(mut self, input: crate::model::TextTransformation) -> Self {
             let mut v = self.text_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_transformations = Some(v);
             self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-        /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-        /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
         pub fn set_text_transformations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
@@ -7952,21 +6562,17 @@ impl XssMatchStatement {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqliMatchStatement {
-    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
 }
 impl SqliMatchStatement {
-    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
     pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub fn text_transformations(&self) -> std::option::Option<&[crate::model::TextTransformation]> {
         self.text_transformations.as_deref()
     }
@@ -7990,12 +6596,12 @@ pub mod sqli_match_statement {
             std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
     }
     impl Builder {
-        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
         pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
             self.field_to_match = Some(input);
             self
         }
-        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
         pub fn set_field_to_match(
             mut self,
             input: std::option::Option<crate::model::FieldToMatch>,
@@ -8007,21 +6613,14 @@ pub mod sqli_match_statement {
         ///
         /// To override the contents of this collection use [`set_text_transformations`](Self::set_text_transformations).
         ///
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-        /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-        /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-        pub fn text_transformations(
-            mut self,
-            input: impl Into<crate::model::TextTransformation>,
-        ) -> Self {
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+        pub fn text_transformations(mut self, input: crate::model::TextTransformation) -> Self {
             let mut v = self.text_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_transformations = Some(v);
             self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-        /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-        /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
         pub fn set_text_transformations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
@@ -8049,185 +6648,79 @@ impl SqliMatchStatement {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ByteMatchStatement {
-    /// <p>A string value that you want WAF to search for. WAF searches only in the part of
-    /// web requests that you designate for inspection in <a>FieldToMatch</a>. The
-    /// maximum length of the value is 50 bytes.</p>
-    /// <p>Valid values depend on the component that you specify for inspection in
-    /// <code>FieldToMatch</code>:</p>
+    /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
+    /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Method</code>: The HTTP method that you want WAF to search for. This
-    /// indicates the type of operation specified in the request. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UriPath</code>: The value that you want WAF to search for in the URI path,
-    /// for example, <code>/images/daily-ad.jpg</code>. </p>
-    /// </li>
+    /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
+    /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
     /// </ul>
-    /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the
-    /// value is case sensitive.</p>
-    /// <p>
-    /// <b>If you're using the WAF API</b>
-    /// </p>
-    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before
-    /// you base64-encode it is 50 bytes.</p>
-    /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value
-    /// of <code>Data</code> is <code>User-Agent</code>. If you want to search the
-    /// <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode
-    /// <code>BadBot</code> using MIME base64-encoding and include the resulting value,
-    /// <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
-    /// <p>
-    /// <b>If you're using the CLI or one of the Amazon Web Services SDKs</b>
-    /// </p>
-    /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the
-    /// value.</p>
+    /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
+    /// <p> <b>If you're using the WAF API</b> </p>
+    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p>
+    /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
+    /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
+    /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
     pub search_string: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub text_transformations: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
-    /// <p>The area within the portion of a web request that you want WAF to search for
-    /// <code>SearchString</code>. Valid values include the following:</p>
-    /// <p>
-    /// <b>CONTAINS</b>
-    /// </p>
-    /// <p>The specified part of the web request must include the value of
-    /// <code>SearchString</code>, but the location doesn't matter.</p>
-    /// <p>
-    /// <b>CONTAINS_WORD</b>
-    /// </p>
-    /// <p>The specified part of the web request must include the value of
-    /// <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric
-    /// characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must
-    /// be a word, which means that both of the following are true:</p>
+    /// <p>The area within the portion of a web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
+    /// <p> <b>CONTAINS</b> </p>
+    /// <p>The specified part of the web request must include the value of <code>SearchString</code>, but the location doesn't matter.</p>
+    /// <p> <b>CONTAINS_WORD</b> </p>
+    /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SearchString</code> is at the beginning of the specified part of the web
-    /// request or is preceded by a character other than an alphanumeric character or
-    /// underscore (_). Examples include the value of a header and
-    /// <code>;BadBot</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SearchString</code> is at the end of the specified part of the web request or
-    /// is followed by a character other than an alphanumeric character or underscore (_),
-    /// for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p>
-    /// </li>
+    /// <li> <p> <code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p> </li>
+    /// <li> <p> <code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p> </li>
     /// </ul>
-    /// <p>
-    /// <b>EXACTLY</b>
-    /// </p>
-    /// <p>The value of the specified part of the web request must exactly match the value of
-    /// <code>SearchString</code>.</p>
-    /// <p>
-    /// <b>STARTS_WITH</b>
-    /// </p>
-    /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified
-    /// part of the web request.</p>
-    /// <p>
-    /// <b>ENDS_WITH</b>
-    /// </p>
-    /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of
-    /// the web request.</p>
+    /// <p> <b>EXACTLY</b> </p>
+    /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
+    /// <p> <b>STARTS_WITH</b> </p>
+    /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified part of the web request.</p>
+    /// <p> <b>ENDS_WITH</b> </p>
+    /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
     pub positional_constraint: std::option::Option<crate::model::PositionalConstraint>,
 }
 impl ByteMatchStatement {
-    /// <p>A string value that you want WAF to search for. WAF searches only in the part of
-    /// web requests that you designate for inspection in <a>FieldToMatch</a>. The
-    /// maximum length of the value is 50 bytes.</p>
-    /// <p>Valid values depend on the component that you specify for inspection in
-    /// <code>FieldToMatch</code>:</p>
+    /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
+    /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Method</code>: The HTTP method that you want WAF to search for. This
-    /// indicates the type of operation specified in the request. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UriPath</code>: The value that you want WAF to search for in the URI path,
-    /// for example, <code>/images/daily-ad.jpg</code>. </p>
-    /// </li>
+    /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
+    /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
     /// </ul>
-    /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the
-    /// value is case sensitive.</p>
-    /// <p>
-    /// <b>If you're using the WAF API</b>
-    /// </p>
-    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before
-    /// you base64-encode it is 50 bytes.</p>
-    /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value
-    /// of <code>Data</code> is <code>User-Agent</code>. If you want to search the
-    /// <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode
-    /// <code>BadBot</code> using MIME base64-encoding and include the resulting value,
-    /// <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
-    /// <p>
-    /// <b>If you're using the CLI or one of the Amazon Web Services SDKs</b>
-    /// </p>
-    /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the
-    /// value.</p>
+    /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
+    /// <p> <b>If you're using the WAF API</b> </p>
+    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p>
+    /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
+    /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
+    /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
     pub fn search_string(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.search_string.as_ref()
     }
-    /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+    /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
     pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-    /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-    /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub fn text_transformations(&self) -> std::option::Option<&[crate::model::TextTransformation]> {
         self.text_transformations.as_deref()
     }
-    /// <p>The area within the portion of a web request that you want WAF to search for
-    /// <code>SearchString</code>. Valid values include the following:</p>
-    /// <p>
-    /// <b>CONTAINS</b>
-    /// </p>
-    /// <p>The specified part of the web request must include the value of
-    /// <code>SearchString</code>, but the location doesn't matter.</p>
-    /// <p>
-    /// <b>CONTAINS_WORD</b>
-    /// </p>
-    /// <p>The specified part of the web request must include the value of
-    /// <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric
-    /// characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must
-    /// be a word, which means that both of the following are true:</p>
+    /// <p>The area within the portion of a web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
+    /// <p> <b>CONTAINS</b> </p>
+    /// <p>The specified part of the web request must include the value of <code>SearchString</code>, but the location doesn't matter.</p>
+    /// <p> <b>CONTAINS_WORD</b> </p>
+    /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SearchString</code> is at the beginning of the specified part of the web
-    /// request or is preceded by a character other than an alphanumeric character or
-    /// underscore (_). Examples include the value of a header and
-    /// <code>;BadBot</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SearchString</code> is at the end of the specified part of the web request or
-    /// is followed by a character other than an alphanumeric character or underscore (_),
-    /// for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p>
-    /// </li>
+    /// <li> <p> <code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p> </li>
+    /// <li> <p> <code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p> </li>
     /// </ul>
-    /// <p>
-    /// <b>EXACTLY</b>
-    /// </p>
-    /// <p>The value of the specified part of the web request must exactly match the value of
-    /// <code>SearchString</code>.</p>
-    /// <p>
-    /// <b>STARTS_WITH</b>
-    /// </p>
-    /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified
-    /// part of the web request.</p>
-    /// <p>
-    /// <b>ENDS_WITH</b>
-    /// </p>
-    /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of
-    /// the web request.</p>
+    /// <p> <b>EXACTLY</b> </p>
+    /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
+    /// <p> <b>STARTS_WITH</b> </p>
+    /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified part of the web request.</p>
+    /// <p> <b>ENDS_WITH</b> </p>
+    /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
     pub fn positional_constraint(
         &self,
     ) -> std::option::Option<&crate::model::PositionalConstraint> {
@@ -8257,78 +6750,34 @@ pub mod byte_match_statement {
         pub(crate) positional_constraint: std::option::Option<crate::model::PositionalConstraint>,
     }
     impl Builder {
-        /// <p>A string value that you want WAF to search for. WAF searches only in the part of
-        /// web requests that you designate for inspection in <a>FieldToMatch</a>. The
-        /// maximum length of the value is 50 bytes.</p>
-        /// <p>Valid values depend on the component that you specify for inspection in
-        /// <code>FieldToMatch</code>:</p>
+        /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
+        /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Method</code>: The HTTP method that you want WAF to search for. This
-        /// indicates the type of operation specified in the request. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UriPath</code>: The value that you want WAF to search for in the URI path,
-        /// for example, <code>/images/daily-ad.jpg</code>. </p>
-        /// </li>
+        /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
+        /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
         /// </ul>
-        /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the
-        /// value is case sensitive.</p>
-        /// <p>
-        /// <b>If you're using the WAF API</b>
-        /// </p>
-        /// <p>Specify a base64-encoded version of the value. The maximum length of the value before
-        /// you base64-encode it is 50 bytes.</p>
-        /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value
-        /// of <code>Data</code> is <code>User-Agent</code>. If you want to search the
-        /// <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode
-        /// <code>BadBot</code> using MIME base64-encoding and include the resulting value,
-        /// <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
-        /// <p>
-        /// <b>If you're using the CLI or one of the Amazon Web Services SDKs</b>
-        /// </p>
-        /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the
-        /// value.</p>
+        /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
+        /// <p> <b>If you're using the WAF API</b> </p>
+        /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p>
+        /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
+        /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
+        /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
         pub fn search_string(mut self, input: aws_smithy_types::Blob) -> Self {
             self.search_string = Some(input);
             self
         }
-        /// <p>A string value that you want WAF to search for. WAF searches only in the part of
-        /// web requests that you designate for inspection in <a>FieldToMatch</a>. The
-        /// maximum length of the value is 50 bytes.</p>
-        /// <p>Valid values depend on the component that you specify for inspection in
-        /// <code>FieldToMatch</code>:</p>
+        /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
+        /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Method</code>: The HTTP method that you want WAF to search for. This
-        /// indicates the type of operation specified in the request. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UriPath</code>: The value that you want WAF to search for in the URI path,
-        /// for example, <code>/images/daily-ad.jpg</code>. </p>
-        /// </li>
+        /// <li> <p> <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation specified in the request. </p> </li>
+        /// <li> <p> <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example, <code>/images/daily-ad.jpg</code>. </p> </li>
         /// </ul>
-        /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the
-        /// value is case sensitive.</p>
-        /// <p>
-        /// <b>If you're using the WAF API</b>
-        /// </p>
-        /// <p>Specify a base64-encoded version of the value. The maximum length of the value before
-        /// you base64-encode it is 50 bytes.</p>
-        /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value
-        /// of <code>Data</code> is <code>User-Agent</code>. If you want to search the
-        /// <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode
-        /// <code>BadBot</code> using MIME base64-encoding and include the resulting value,
-        /// <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
-        /// <p>
-        /// <b>If you're using the CLI or one of the Amazon Web Services SDKs</b>
-        /// </p>
-        /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the
-        /// value.</p>
+        /// <p>If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
+        /// <p> <b>If you're using the WAF API</b> </p>
+        /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p>
+        /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
+        /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
+        /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
         pub fn set_search_string(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -8336,12 +6785,12 @@ pub mod byte_match_statement {
             self.search_string = input;
             self
         }
-        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
         pub fn field_to_match(mut self, input: crate::model::FieldToMatch) -> Self {
             self.field_to_match = Some(input);
             self
         }
-        /// <p>The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>. </p>
+        /// <p>The part of a web request that you want WAF to inspect. For more information, see <code>FieldToMatch</code>. </p>
         pub fn set_field_to_match(
             mut self,
             input: std::option::Option<crate::model::FieldToMatch>,
@@ -8353,21 +6802,14 @@ pub mod byte_match_statement {
         ///
         /// To override the contents of this collection use [`set_text_transformations`](Self::set_text_transformations).
         ///
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-        /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-        /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-        pub fn text_transformations(
-            mut self,
-            input: impl Into<crate::model::TextTransformation>,
-        ) -> Self {
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+        pub fn text_transformations(mut self, input: crate::model::TextTransformation) -> Self {
             let mut v = self.text_transformations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_transformations = Some(v);
             self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
-        /// If you specify one or more transformations in a rule statement, WAF performs all transformations on the
-        /// content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
         pub fn set_text_transformations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TextTransformation>>,
@@ -8375,98 +6817,40 @@ pub mod byte_match_statement {
             self.text_transformations = input;
             self
         }
-        /// <p>The area within the portion of a web request that you want WAF to search for
-        /// <code>SearchString</code>. Valid values include the following:</p>
-        /// <p>
-        /// <b>CONTAINS</b>
-        /// </p>
-        /// <p>The specified part of the web request must include the value of
-        /// <code>SearchString</code>, but the location doesn't matter.</p>
-        /// <p>
-        /// <b>CONTAINS_WORD</b>
-        /// </p>
-        /// <p>The specified part of the web request must include the value of
-        /// <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric
-        /// characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must
-        /// be a word, which means that both of the following are true:</p>
+        /// <p>The area within the portion of a web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
+        /// <p> <b>CONTAINS</b> </p>
+        /// <p>The specified part of the web request must include the value of <code>SearchString</code>, but the location doesn't matter.</p>
+        /// <p> <b>CONTAINS_WORD</b> </p>
+        /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SearchString</code> is at the beginning of the specified part of the web
-        /// request or is preceded by a character other than an alphanumeric character or
-        /// underscore (_). Examples include the value of a header and
-        /// <code>;BadBot</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SearchString</code> is at the end of the specified part of the web request or
-        /// is followed by a character other than an alphanumeric character or underscore (_),
-        /// for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p>
-        /// </li>
+        /// <li> <p> <code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p> </li>
+        /// <li> <p> <code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p> </li>
         /// </ul>
-        /// <p>
-        /// <b>EXACTLY</b>
-        /// </p>
-        /// <p>The value of the specified part of the web request must exactly match the value of
-        /// <code>SearchString</code>.</p>
-        /// <p>
-        /// <b>STARTS_WITH</b>
-        /// </p>
-        /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified
-        /// part of the web request.</p>
-        /// <p>
-        /// <b>ENDS_WITH</b>
-        /// </p>
-        /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of
-        /// the web request.</p>
+        /// <p> <b>EXACTLY</b> </p>
+        /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
+        /// <p> <b>STARTS_WITH</b> </p>
+        /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified part of the web request.</p>
+        /// <p> <b>ENDS_WITH</b> </p>
+        /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
         pub fn positional_constraint(mut self, input: crate::model::PositionalConstraint) -> Self {
             self.positional_constraint = Some(input);
             self
         }
-        /// <p>The area within the portion of a web request that you want WAF to search for
-        /// <code>SearchString</code>. Valid values include the following:</p>
-        /// <p>
-        /// <b>CONTAINS</b>
-        /// </p>
-        /// <p>The specified part of the web request must include the value of
-        /// <code>SearchString</code>, but the location doesn't matter.</p>
-        /// <p>
-        /// <b>CONTAINS_WORD</b>
-        /// </p>
-        /// <p>The specified part of the web request must include the value of
-        /// <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric
-        /// characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must
-        /// be a word, which means that both of the following are true:</p>
+        /// <p>The area within the portion of a web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
+        /// <p> <b>CONTAINS</b> </p>
+        /// <p>The specified part of the web request must include the value of <code>SearchString</code>, but the location doesn't matter.</p>
+        /// <p> <b>CONTAINS_WORD</b> </p>
+        /// <p>The specified part of the web request must include the value of <code>SearchString</code>, and <code>SearchString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>SearchString</code> must be a word, which means that both of the following are true:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SearchString</code> is at the beginning of the specified part of the web
-        /// request or is preceded by a character other than an alphanumeric character or
-        /// underscore (_). Examples include the value of a header and
-        /// <code>;BadBot</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SearchString</code> is at the end of the specified part of the web request or
-        /// is followed by a character other than an alphanumeric character or underscore (_),
-        /// for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p>
-        /// </li>
+        /// <li> <p> <code>SearchString</code> is at the beginning of the specified part of the web request or is preceded by a character other than an alphanumeric character or underscore (_). Examples include the value of a header and <code>;BadBot</code>.</p> </li>
+        /// <li> <p> <code>SearchString</code> is at the end of the specified part of the web request or is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code> and <code>-BadBot;</code>.</p> </li>
         /// </ul>
-        /// <p>
-        /// <b>EXACTLY</b>
-        /// </p>
-        /// <p>The value of the specified part of the web request must exactly match the value of
-        /// <code>SearchString</code>.</p>
-        /// <p>
-        /// <b>STARTS_WITH</b>
-        /// </p>
-        /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified
-        /// part of the web request.</p>
-        /// <p>
-        /// <b>ENDS_WITH</b>
-        /// </p>
-        /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of
-        /// the web request.</p>
+        /// <p> <b>EXACTLY</b> </p>
+        /// <p>The value of the specified part of the web request must exactly match the value of <code>SearchString</code>.</p>
+        /// <p> <b>STARTS_WITH</b> </p>
+        /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified part of the web request.</p>
+        /// <p> <b>ENDS_WITH</b> </p>
+        /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
         pub fn set_positional_constraint(
             mut self,
             input: std::option::Option<crate::model::PositionalConstraint>,
@@ -8565,9 +6949,7 @@ impl AsRef<str> for PositionalConstraint {
     }
 }
 
-/// <p>In a <a>WebACL</a>, this is the action that you want WAF to perform
-/// when a web request doesn't match any of the rules in the <code>WebACL</code>. The default
-/// action must be a terminating action, so you can't use count.</p>
+/// <p>In a <code>WebACL</code>, this is the action that you want WAF to perform when a web request doesn't match any of the rules in the <code>WebACL</code>. The default action must be a terminating action, so you can't use count.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultAction {
@@ -8695,7 +7077,7 @@ impl AsRef<str> for Scope {
     }
 }
 
-/// <p>A single regular expression. This is used in a <a>RegexPatternSet</a>.</p>
+/// <p>A single regular expression. This is used in a <code>RegexPatternSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Regex {
@@ -8749,36 +7131,22 @@ impl Regex {
     }
 }
 
-/// <p>A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to
-/// categorize and manage your resources, for purposes like billing or other management.
-/// Typically, the tag key represents a category, such as "environment", and the tag value
-/// represents a specific value within that category, such as "test," "development," or
-/// "production". Or you might set the tag key to "customer" and the value to the customer name
-/// or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a
-/// resource.</p>
-/// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule
-/// groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF
-/// console. </p>
+/// <p>A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+/// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a
-    /// category of information, such as "customer." Tag keys are case-sensitive.</p>
+    /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a
-    /// specific value within a category, such as "companyA" or "companyB." Tag values are
-    /// case-sensitive.</p>
+    /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a
-    /// category of information, such as "customer." Tag keys are case-sensitive.</p>
+    /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a
-    /// specific value within a category, such as "companyA" or "companyB." Tag values are
-    /// case-sensitive.</p>
+    /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -8801,28 +7169,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a
-        /// category of information, such as "customer." Tag keys are case-sensitive.</p>
+        /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a
-        /// category of information, such as "customer." Tag keys are case-sensitive.</p>
+        /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a
-        /// specific value within a category, such as "companyA" or "companyB." Tag values are
-        /// case-sensitive.</p>
+        /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a
-        /// specific value within a category, such as "companyA" or "companyB." Tag values are
-        /// case-sensitive.</p>
+        /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -8843,30 +7205,24 @@ impl Tag {
     }
 }
 
-/// <p>A version of the named managed rule group, that the rule group's vendor publishes for
-/// use by customers. </p>
-/// <note>
+/// <p>A version of the named managed rule group, that the rule group's vendor publishes for use by customers. </p> <note>
 /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersionToPublish {
-    /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published
-    /// managed rule group version. </p>
+    /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
     pub associated_rule_group_arn: std::option::Option<std::string::String>,
-    /// <p>The amount of time the vendor expects this version of the managed rule group to last, in
-    /// days. </p>
+    /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days. </p>
     pub forecasted_lifetime: std::option::Option<i32>,
 }
 impl VersionToPublish {
-    /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published
-    /// managed rule group version. </p>
+    /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
     pub fn associated_rule_group_arn(&self) -> std::option::Option<&str> {
         self.associated_rule_group_arn.as_deref()
     }
-    /// <p>The amount of time the vendor expects this version of the managed rule group to last, in
-    /// days. </p>
+    /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days. </p>
     pub fn forecasted_lifetime(&self) -> std::option::Option<i32> {
         self.forecasted_lifetime
     }
@@ -8889,14 +7245,12 @@ pub mod version_to_publish {
         pub(crate) forecasted_lifetime: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published
-        /// managed rule group version. </p>
+        /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
         pub fn associated_rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.associated_rule_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published
-        /// managed rule group version. </p>
+        /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
         pub fn set_associated_rule_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8904,14 +7258,12 @@ pub mod version_to_publish {
             self.associated_rule_group_arn = input;
             self
         }
-        /// <p>The amount of time the vendor expects this version of the managed rule group to last, in
-        /// days. </p>
+        /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days. </p>
         pub fn forecasted_lifetime(mut self, input: i32) -> Self {
             self.forecasted_lifetime = Some(input);
             self
         }
-        /// <p>The amount of time the vendor expects this version of the managed rule group to last, in
-        /// days. </p>
+        /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days. </p>
         pub fn set_forecasted_lifetime(mut self, input: std::option::Option<i32>) -> Self {
             self.forecasted_lifetime = input;
             self
@@ -8932,65 +7284,44 @@ impl VersionToPublish {
     }
 }
 
-/// <p>Defines an association between logging destinations and a web ACL
-/// resource, for logging from WAF. As part of the association, you can specify parts of
-/// the standard logging fields to keep out of the logs and you can specify filters so that you
-/// log only a subset of the logging records. </p>
-/// <p>For information about configuring web ACL logging destinations, see
-/// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a>
-/// in the <i>WAF Developer Guide</i>.</p>
+/// <p>Defines an association between logging destinations and a web ACL resource, for logging from WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs and you can specify filters so that you log only a subset of the logging records. </p>
+/// <p>For information about configuring web ACL logging destinations, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
-    /// <code>LogDestinationConfigs</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate
-    /// with the web ACL.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate with the web ACL.</p>
     pub log_destination_configs: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The parts of the request that you want to keep out of the logs. For
-    /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p>
-    /// <note>
+    /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p> <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
     /// </note>
     pub redacted_fields: std::option::Option<std::vec::Vec<crate::model::FieldToMatch>>,
-    /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an
-    /// WAF policy configuration. If true, only Firewall Manager can modify or delete the
-    /// configuration. </p>
+    /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration. </p>
     pub managed_by_firewall_manager: bool,
-    /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped.
-    /// You can filter on the rule action and on the web request labels that were applied by
-    /// matching rules during web ACL evaluation. </p>
+    /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
     pub logging_filter: std::option::Option<crate::model::LoggingFilter>,
 }
 impl LoggingConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
-    /// <code>LogDestinationConfigs</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate
-    /// with the web ACL.</p>
+    /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate with the web ACL.</p>
     pub fn log_destination_configs(&self) -> std::option::Option<&[std::string::String]> {
         self.log_destination_configs.as_deref()
     }
-    /// <p>The parts of the request that you want to keep out of the logs. For
-    /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p>
-    /// <note>
+    /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p> <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
     /// </note>
     pub fn redacted_fields(&self) -> std::option::Option<&[crate::model::FieldToMatch]> {
         self.redacted_fields.as_deref()
     }
-    /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an
-    /// WAF policy configuration. If true, only Firewall Manager can modify or delete the
-    /// configuration. </p>
+    /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration. </p>
     pub fn managed_by_firewall_manager(&self) -> bool {
         self.managed_by_firewall_manager
     }
-    /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped.
-    /// You can filter on the rule action and on the web request labels that were applied by
-    /// matching rules during web ACL evaluation. </p>
+    /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
     pub fn logging_filter(&self) -> std::option::Option<&crate::model::LoggingFilter> {
         self.logging_filter.as_ref()
     }
@@ -9022,14 +7353,12 @@ pub mod logging_configuration {
         pub(crate) logging_filter: std::option::Option<crate::model::LoggingFilter>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
-        /// <code>LogDestinationConfigs</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
-        /// <code>LogDestinationConfigs</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -9038,16 +7367,14 @@ pub mod logging_configuration {
         ///
         /// To override the contents of this collection use [`set_log_destination_configs`](Self::set_log_destination_configs).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate
-        /// with the web ACL.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate with the web ACL.</p>
         pub fn log_destination_configs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_destination_configs.unwrap_or_default();
             v.push(input.into());
             self.log_destination_configs = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate
-        /// with the web ACL.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to associate with the web ACL.</p>
         pub fn set_log_destination_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9059,20 +7386,16 @@ pub mod logging_configuration {
         ///
         /// To override the contents of this collection use [`set_redacted_fields`](Self::set_redacted_fields).
         ///
-        /// <p>The parts of the request that you want to keep out of the logs. For
-        /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p>
-        /// <note>
+        /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p> <note>
         /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
         /// </note>
-        pub fn redacted_fields(mut self, input: impl Into<crate::model::FieldToMatch>) -> Self {
+        pub fn redacted_fields(mut self, input: crate::model::FieldToMatch) -> Self {
             let mut v = self.redacted_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.redacted_fields = Some(v);
             self
         }
-        /// <p>The parts of the request that you want to keep out of the logs. For
-        /// example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p>
-        /// <note>
+        /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>xxx</code>. </p> <note>
         /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
         /// </note>
         pub fn set_redacted_fields(
@@ -9082,30 +7405,22 @@ pub mod logging_configuration {
             self.redacted_fields = input;
             self
         }
-        /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an
-        /// WAF policy configuration. If true, only Firewall Manager can modify or delete the
-        /// configuration. </p>
+        /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration. </p>
         pub fn managed_by_firewall_manager(mut self, input: bool) -> Self {
             self.managed_by_firewall_manager = Some(input);
             self
         }
-        /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an
-        /// WAF policy configuration. If true, only Firewall Manager can modify or delete the
-        /// configuration. </p>
+        /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration. </p>
         pub fn set_managed_by_firewall_manager(mut self, input: std::option::Option<bool>) -> Self {
             self.managed_by_firewall_manager = input;
             self
         }
-        /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped.
-        /// You can filter on the rule action and on the web request labels that were applied by
-        /// matching rules during web ACL evaluation. </p>
+        /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
         pub fn logging_filter(mut self, input: crate::model::LoggingFilter) -> Self {
             self.logging_filter = Some(input);
             self
         }
-        /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped.
-        /// You can filter on the rule action and on the web request labels that were applied by
-        /// matching rules during web ACL evaluation. </p>
+        /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
         pub fn set_logging_filter(
             mut self,
             input: std::option::Option<crate::model::LoggingFilter>,
@@ -9132,17 +7447,14 @@ impl LoggingConfiguration {
     }
 }
 
-/// <p>Filtering that specifies which web requests are kept in the logs and which are dropped,
-/// defined for a web ACL's <a>LoggingConfiguration</a>. </p>
-/// <p>You can filter on the rule action and on the web request labels that were applied by
-/// matching rules during web ACL evaluation. </p>
+/// <p>Filtering that specifies which web requests are kept in the logs and which are dropped, defined for a web ACL's <code>LoggingConfiguration</code>. </p>
+/// <p>You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingFilter {
     /// <p>The filters that you want to apply to the logs. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>Default handling for logs that don't match any of the specified filtering conditions.
-    /// </p>
+    /// <p>Default handling for logs that don't match any of the specified filtering conditions. </p>
     pub default_behavior: std::option::Option<crate::model::FilterBehavior>,
 }
 impl LoggingFilter {
@@ -9150,8 +7462,7 @@ impl LoggingFilter {
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>Default handling for logs that don't match any of the specified filtering conditions.
-    /// </p>
+    /// <p>Default handling for logs that don't match any of the specified filtering conditions. </p>
     pub fn default_behavior(&self) -> std::option::Option<&crate::model::FilterBehavior> {
         self.default_behavior.as_ref()
     }
@@ -9179,9 +7490,9 @@ pub mod logging_filter {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters that you want to apply to the logs. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -9193,14 +7504,12 @@ pub mod logging_filter {
             self.filters = input;
             self
         }
-        /// <p>Default handling for logs that don't match any of the specified filtering conditions.
-        /// </p>
+        /// <p>Default handling for logs that don't match any of the specified filtering conditions. </p>
         pub fn default_behavior(mut self, input: crate::model::FilterBehavior) -> Self {
             self.default_behavior = Some(input);
             self
         }
-        /// <p>Default handling for logs that don't match any of the specified filtering conditions.
-        /// </p>
+        /// <p>Default handling for logs that don't match any of the specified filtering conditions. </p>
         pub fn set_default_behavior(
             mut self,
             input: std::option::Option<crate::model::FilterBehavior>,
@@ -9279,14 +7588,13 @@ impl AsRef<str> for FilterBehavior {
     }
 }
 
-/// <p>A single logging filter, used in <a>LoggingFilter</a>. </p>
+/// <p>A single logging filter, used in <code>LoggingFilter</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
     pub behavior: std::option::Option<crate::model::FilterBehavior>,
-    /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy
-    /// the filter, a log must match all conditions or must match at least one condition.</p>
+    /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
     pub requirement: std::option::Option<crate::model::FilterRequirement>,
     /// <p>Match conditions for the filter.</p>
     pub conditions: std::option::Option<std::vec::Vec<crate::model::Condition>>,
@@ -9296,8 +7604,7 @@ impl Filter {
     pub fn behavior(&self) -> std::option::Option<&crate::model::FilterBehavior> {
         self.behavior.as_ref()
     }
-    /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy
-    /// the filter, a log must match all conditions or must match at least one condition.</p>
+    /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
     pub fn requirement(&self) -> std::option::Option<&crate::model::FilterRequirement> {
         self.requirement.as_ref()
     }
@@ -9339,14 +7646,12 @@ pub mod filter {
             self.behavior = input;
             self
         }
-        /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy
-        /// the filter, a log must match all conditions or must match at least one condition.</p>
+        /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
         pub fn requirement(mut self, input: crate::model::FilterRequirement) -> Self {
             self.requirement = Some(input);
             self
         }
-        /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy
-        /// the filter, a log must match all conditions or must match at least one condition.</p>
+        /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
         pub fn set_requirement(
             mut self,
             input: std::option::Option<crate::model::FilterRequirement>,
@@ -9359,9 +7664,9 @@ pub mod filter {
         /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
         ///
         /// <p>Match conditions for the filter.</p>
-        pub fn conditions(mut self, input: impl Into<crate::model::Condition>) -> Self {
+        pub fn conditions(mut self, input: crate::model::Condition) -> Self {
             let mut v = self.conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conditions = Some(v);
             self
         }
@@ -9390,7 +7695,7 @@ impl Filter {
     }
 }
 
-/// <p>A single match condition for a <a>Filter</a>.</p>
+/// <p>A single match condition for a <code>Filter</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Condition {
@@ -9469,18 +7774,15 @@ impl Condition {
     }
 }
 
-/// <p>A single label name condition for a <a>Condition</a> in a logging
-/// filter.</p>
+/// <p>A single label name condition for a <code>Condition</code> in a logging filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelNameCondition {
-    /// <p>The label name that a log record must contain in order to meet the condition. This must
-    /// be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.  </p>
+    /// <p>The label name that a log record must contain in order to meet the condition. This must be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
     pub label_name: std::option::Option<std::string::String>,
 }
 impl LabelNameCondition {
-    /// <p>The label name that a log record must contain in order to meet the condition. This must
-    /// be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.  </p>
+    /// <p>The label name that a log record must contain in order to meet the condition. This must be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
     pub fn label_name(&self) -> std::option::Option<&str> {
         self.label_name.as_deref()
     }
@@ -9501,14 +7803,12 @@ pub mod label_name_condition {
         pub(crate) label_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The label name that a log record must contain in order to meet the condition. This must
-        /// be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.  </p>
+        /// <p>The label name that a log record must contain in order to meet the condition. This must be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
         pub fn label_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.label_name = Some(input.into());
             self
         }
-        /// <p>The label name that a log record must contain in order to meet the condition. This must
-        /// be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.  </p>
+        /// <p>The label name that a log record must contain in order to meet the condition. This must be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
         pub fn set_label_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label_name = input;
             self
@@ -9528,17 +7828,15 @@ impl LabelNameCondition {
     }
 }
 
-/// <p>A single action condition for a <a>Condition</a> in a logging filter.</p>
+/// <p>A single action condition for a <code>Condition</code> in a logging filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActionCondition {
-    /// <p>The action setting that a log record must contain in order to meet the condition.
-    /// </p>
+    /// <p>The action setting that a log record must contain in order to meet the condition. </p>
     pub action: std::option::Option<crate::model::ActionValue>,
 }
 impl ActionCondition {
-    /// <p>The action setting that a log record must contain in order to meet the condition.
-    /// </p>
+    /// <p>The action setting that a log record must contain in order to meet the condition. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::ActionValue> {
         self.action.as_ref()
     }
@@ -9559,14 +7857,12 @@ pub mod action_condition {
         pub(crate) action: std::option::Option<crate::model::ActionValue>,
     }
     impl Builder {
-        /// <p>The action setting that a log record must contain in order to meet the condition.
-        /// </p>
+        /// <p>The action setting that a log record must contain in order to meet the condition. </p>
         pub fn action(mut self, input: crate::model::ActionValue) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>The action setting that a log record must contain in order to meet the condition.
-        /// </p>
+        /// <p>The action setting that a log record must contain in order to meet the condition. </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::ActionValue>) -> Self {
             self.action = input;
             self
@@ -9708,7 +8004,7 @@ impl AsRef<str> for FilterRequirement {
     }
 }
 
-/// <p>High-level information about a <a>WebACL</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.</p>
+/// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebAclSummary {
@@ -9838,22 +8134,14 @@ impl WebAclSummary {
     }
 }
 
-/// <p>The collection of tagging definitions for an Amazon Web Services resource. Tags are key:value pairs
-/// that you can use to categorize and manage your resources, for purposes like billing or
-/// other management. Typically, the tag key represents a category, such as "environment", and
-/// the tag value represents a specific value within that category, such as "test,"
-/// "development," or "production". Or you might set the tag key to "customer" and the value to
-/// the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up
-/// to 50 tags for a resource.</p>
-/// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule
-/// groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF
-/// console. </p>
+/// <p>The collection of tagging definitions for an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+/// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagInfoForResource {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The array of <a>Tag</a> objects defined for the resource. </p>
+    /// <p>The array of <code>Tag</code> objects defined for the resource. </p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagInfoForResource {
@@ -9861,7 +8149,7 @@ impl TagInfoForResource {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The array of <a>Tag</a> objects defined for the resource. </p>
+    /// <p>The array of <code>Tag</code> objects defined for the resource. </p>
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
     }
@@ -9898,14 +8186,14 @@ pub mod tag_info_for_resource {
         ///
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
-        /// <p>The array of <a>Tag</a> objects defined for the resource. </p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>The array of <code>Tag</code> objects defined for the resource. </p>
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
-        /// <p>The array of <a>Tag</a> objects defined for the resource. </p>
+        /// <p>The array of <code>Tag</code> objects defined for the resource. </p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9929,7 +8217,7 @@ impl TagInfoForResource {
     }
 }
 
-/// <p>High-level information about a <a>RuleGroup</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.</p>
+/// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleGroupSummary {
@@ -10118,7 +8406,7 @@ impl AsRef<str> for ResourceType {
     }
 }
 
-/// <p>High-level information about a <a>RegexPatternSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set in a <a>Rule</a>.</p>
+/// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegexPatternSetSummary {
@@ -10248,8 +8536,7 @@ impl RegexPatternSetSummary {
     }
 }
 
-/// <p>High-level information for a managed rule set. </p>
-/// <note>
+/// <p>High-level information for a managed rule set. </p> <note>
 /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
@@ -10269,18 +8556,12 @@ pub struct ManagedRuleSetSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix. </p>
     /// <ul>
-    /// <li>
-    /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
-    /// <p>
-    /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
-    /// </li>
-    /// <li>
-    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-    /// <p>
-    /// <code><label namespace>:<label from rule></code>
-    /// </p>
-    ///
-    /// </li>
+    /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+    /// <vendor>
+    /// :
+    /// <rule group name></rule>
+    /// </vendor></code>:</p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
     pub label_namespace: std::option::Option<std::string::String>,
 }
@@ -10308,18 +8589,12 @@ impl ManagedRuleSetSummary {
     }
     /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix. </p>
     /// <ul>
-    /// <li>
-    /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
-    /// <p>
-    /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
-    /// </li>
-    /// <li>
-    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-    /// <p>
-    /// <code><label namespace>:<label from rule></code>
-    /// </p>
-    ///
-    /// </li>
+    /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+    /// <vendor>
+    /// :
+    /// <rule group name></rule>
+    /// </vendor></code>:</p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
     pub fn label_namespace(&self) -> std::option::Option<&str> {
         self.label_namespace.as_deref()
@@ -10405,18 +8680,12 @@ pub mod managed_rule_set_summary {
         }
         /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix. </p>
         /// <ul>
-        /// <li>
-        /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
-        /// <p>
-        /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
-        /// </li>
-        /// <li>
-        /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-        /// <p>
-        /// <code><label namespace>:<label from rule></code>
-        /// </p>
-        ///
-        /// </li>
+        /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+        /// <vendor>
+        /// :
+        /// <rule group name></rule>
+        /// </vendor></code>:</p> </li>
+        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
         /// </ul>
         pub fn label_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.label_namespace = Some(input.into());
@@ -10424,18 +8693,12 @@ pub mod managed_rule_set_summary {
         }
         /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix. </p>
         /// <ul>
-        /// <li>
-        /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
-        /// <p>
-        /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
-        /// </li>
-        /// <li>
-        /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-        /// <p>
-        /// <code><label namespace>:<label from rule></code>
-        /// </p>
-        ///
-        /// </li>
+        /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+        /// <vendor>
+        /// :
+        /// <rule group name></rule>
+        /// </vendor></code>:</p> </li>
+        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
         /// </ul>
         pub fn set_label_namespace(
             mut self,
@@ -10464,7 +8727,7 @@ impl ManagedRuleSetSummary {
     }
 }
 
-/// <p>High-level information about an <a>IPSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
+/// <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpSetSummary {
@@ -10600,8 +8863,7 @@ impl IpSetSummary {
 pub struct ManagedRuleGroupVersion {
     /// <p>The version name. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The date and time that the managed rule group owner updated the rule group version
-    /// information. </p>
+    /// <p>The date and time that the managed rule group owner updated the rule group version information. </p>
     pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ManagedRuleGroupVersion {
@@ -10609,8 +8871,7 @@ impl ManagedRuleGroupVersion {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The date and time that the managed rule group owner updated the rule group version
-    /// information. </p>
+    /// <p>The date and time that the managed rule group owner updated the rule group version information. </p>
     pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
@@ -10643,14 +8904,12 @@ pub mod managed_rule_group_version {
             self.name = input;
             self
         }
-        /// <p>The date and time that the managed rule group owner updated the rule group version
-        /// information. </p>
+        /// <p>The date and time that the managed rule group owner updated the rule group version information. </p>
         pub fn last_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_update_timestamp = Some(input);
             self
         }
-        /// <p>The date and time that the managed rule group owner updated the rule group version
-        /// information. </p>
+        /// <p>The date and time that the managed rule group owner updated the rule group version information. </p>
         pub fn set_last_update_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10674,7 +8933,7 @@ impl ManagedRuleGroupVersion {
     }
 }
 
-/// <p>High-level information about a managed rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides information like the name and vendor name, that you provide when you add a <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include Amazon Web Services Managed Rules rule groups, which are free of charge to WAF customers, and Amazon Web Services Marketplace managed rule groups, which you can subscribe to through Amazon Web Services Marketplace. </p>
+/// <p>High-level information about a managed rule group, returned by <code>ListAvailableManagedRuleGroups</code>. This provides information like the name and vendor name, that you provide when you add a <code>ManagedRuleGroupStatement</code> to a web ACL. Managed rule groups include Amazon Web Services Managed Rules rule groups, which are free of charge to WAF customers, and Amazon Web Services Marketplace managed rule groups, which you can subscribe to through Amazon Web Services Marketplace. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedRuleGroupSummary {
@@ -10766,83 +9025,52 @@ impl ManagedRuleGroupSummary {
     }
 }
 
-/// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API.  </p>
+/// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebAcl {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to
-    /// create and list commands. You use this ID to do things like get, update, and delete a
-    /// <code>WebACL</code>.</p>
+    /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to create and list commands. You use this ID to do things like get, update, and delete a <code>WebACL</code>.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
-    /// resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
     pub default_action: std::option::Option<crate::model::DefaultAction>,
     /// <p>A description of the web ACL that helps with identification. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The <a>Rule</a> statements used to identify the web requests that you
-    /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-    /// web requests, and parameters that govern how WAF handles them.
-    /// </p>
+    /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub visibility_config: std::option::Option<crate::model::VisibilityConfig>,
     /// <p>The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
-    /// <p>WAF uses WCUs to calculate and control the operating
-    /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-    /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-    /// Simple rules that cost little to run use fewer WCUs than more complex rules
-    /// that use more processing power.
-    /// Rule group capacity is fixed at creation, which helps users plan their  
-    /// web ACL WCU usage when they use a rule group.
-    /// The WCU limit for web ACLs is 1,500.  </p>
+    /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
     pub capacity: i64,
-    /// <p>The first set of rules for WAF to process in the web ACL. This is defined in an
-    /// Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any
-    /// rules and rule groups that you define for the web ACL are prioritized after these. </p>
-    /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
-    /// first in the web ACL and a set of rule groups to run last. Within each set, the
-    /// administrator prioritizes the rule groups, to determine their relative processing
-    /// order.</p>
+    /// <p>The first set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized after these. </p>
+    /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
     pub pre_process_firewall_manager_rule_groups:
         std::option::Option<std::vec::Vec<crate::model::FirewallManagerRuleGroup>>,
-    /// <p>The last set of rules for WAF to process in the web ACL. This is defined in an
-    /// Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any
-    /// rules and rule groups that you define for the web ACL are prioritized before these. </p>
-    /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
-    /// first in the web ACL and a set of rule groups to run last. Within each set, the
-    /// administrator prioritizes the rule groups, to determine their relative processing
-    /// order.</p>
+    /// <p>The last set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized before these. </p>
+    /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
     pub post_process_firewall_manager_rule_groups:
         std::option::Option<std::vec::Vec<crate::model::FirewallManagerRuleGroup>>,
-    /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can
-    /// delete the web ACL or any Firewall Manager rule groups in the web ACL. </p>
+    /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL. </p>
     pub managed_by_firewall_manager: bool,
     /// <p>The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix. </p>
     /// <ul>
-    /// <li>
-    /// <p>The syntax for the label namespace prefix for a web ACL is the following: </p>
-    /// <p>
-    /// <code>awswaf:<account ID>:webacl:<web ACL name>:</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-    /// <p>
-    /// <code><label namespace>:<label from rule></code>
-    /// </p>
-    ///
-    /// </li>
+    /// <li> <p>The syntax for the label namespace prefix for a web ACL is the following: </p> <p> <code>awswaf:
+    /// <account id>
+    /// :webacl:
+    /// <web acl name>
+    /// :
+    /// </web>
+    /// </account></code> </p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
     pub label_namespace: std::option::Option<std::string::String>,
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub custom_response_bodies: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CustomResponseBody>,
     >,
@@ -10854,14 +9082,11 @@ impl WebAcl {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to
-    /// create and list commands. You use this ID to do things like get, update, and delete a
-    /// <code>WebACL</code>.</p>
+    /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to create and list commands. You use this ID to do things like get, update, and delete a <code>WebACL</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
-    /// resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -10873,82 +9098,54 @@ impl WebAcl {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The <a>Rule</a> statements used to identify the web requests that you
-    /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-    /// web requests, and parameters that govern how WAF handles them.
-    /// </p>
+    /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
         self.rules.as_deref()
     }
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(&self) -> std::option::Option<&crate::model::VisibilityConfig> {
         self.visibility_config.as_ref()
     }
     /// <p>The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
-    /// <p>WAF uses WCUs to calculate and control the operating
-    /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-    /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-    /// Simple rules that cost little to run use fewer WCUs than more complex rules
-    /// that use more processing power.
-    /// Rule group capacity is fixed at creation, which helps users plan their  
-    /// web ACL WCU usage when they use a rule group.
-    /// The WCU limit for web ACLs is 1,500.  </p>
+    /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
     pub fn capacity(&self) -> i64 {
         self.capacity
     }
-    /// <p>The first set of rules for WAF to process in the web ACL. This is defined in an
-    /// Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any
-    /// rules and rule groups that you define for the web ACL are prioritized after these. </p>
-    /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
-    /// first in the web ACL and a set of rule groups to run last. Within each set, the
-    /// administrator prioritizes the rule groups, to determine their relative processing
-    /// order.</p>
+    /// <p>The first set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized after these. </p>
+    /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
     pub fn pre_process_firewall_manager_rule_groups(
         &self,
     ) -> std::option::Option<&[crate::model::FirewallManagerRuleGroup]> {
         self.pre_process_firewall_manager_rule_groups.as_deref()
     }
-    /// <p>The last set of rules for WAF to process in the web ACL. This is defined in an
-    /// Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any
-    /// rules and rule groups that you define for the web ACL are prioritized before these. </p>
-    /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
-    /// first in the web ACL and a set of rule groups to run last. Within each set, the
-    /// administrator prioritizes the rule groups, to determine their relative processing
-    /// order.</p>
+    /// <p>The last set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized before these. </p>
+    /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
     pub fn post_process_firewall_manager_rule_groups(
         &self,
     ) -> std::option::Option<&[crate::model::FirewallManagerRuleGroup]> {
         self.post_process_firewall_manager_rule_groups.as_deref()
     }
-    /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can
-    /// delete the web ACL or any Firewall Manager rule groups in the web ACL. </p>
+    /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL. </p>
     pub fn managed_by_firewall_manager(&self) -> bool {
         self.managed_by_firewall_manager
     }
     /// <p>The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix. </p>
     /// <ul>
-    /// <li>
-    /// <p>The syntax for the label namespace prefix for a web ACL is the following: </p>
-    /// <p>
-    /// <code>awswaf:<account ID>:webacl:<web ACL name>:</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-    /// <p>
-    /// <code><label namespace>:<label from rule></code>
-    /// </p>
-    ///
-    /// </li>
+    /// <li> <p>The syntax for the label namespace prefix for a web ACL is the following: </p> <p> <code>awswaf:
+    /// <account id>
+    /// :webacl:
+    /// <web acl name>
+    /// :
+    /// </web>
+    /// </account></code> </p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
     pub fn label_namespace(&self) -> std::option::Option<&str> {
         self.label_namespace.as_deref()
     }
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn custom_response_bodies(
         &self,
     ) -> std::option::Option<
@@ -11026,28 +9223,22 @@ pub mod web_acl {
             self.name = input;
             self
         }
-        /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to
-        /// create and list commands. You use this ID to do things like get, update, and delete a
-        /// <code>WebACL</code>.</p>
+        /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to create and list commands. You use this ID to do things like get, update, and delete a <code>WebACL</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to
-        /// create and list commands. You use this ID to do things like get, update, and delete a
-        /// <code>WebACL</code>.</p>
+        /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to create and list commands. You use this ID to do things like get, update, and delete a <code>WebACL</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
-        /// resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
-        /// resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -11079,20 +9270,14 @@ pub mod web_acl {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The <a>Rule</a> statements used to identify the web requests that you
-        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-        /// web requests, and parameters that govern how WAF handles them.
-        /// </p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
-        /// <p>The <a>Rule</a> statements used to identify the web requests that you
-        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-        /// web requests, and parameters that govern how WAF handles them.
-        /// </p>
+        /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -11100,12 +9285,12 @@ pub mod web_acl {
             self.rules = input;
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
         pub fn visibility_config(mut self, input: crate::model::VisibilityConfig) -> Self {
             self.visibility_config = Some(input);
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
         pub fn set_visibility_config(
             mut self,
             input: std::option::Option<crate::model::VisibilityConfig>,
@@ -11114,27 +9299,13 @@ pub mod web_acl {
             self
         }
         /// <p>The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
-        /// <p>WAF uses WCUs to calculate and control the operating
-        /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-        /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-        /// Simple rules that cost little to run use fewer WCUs than more complex rules
-        /// that use more processing power.
-        /// Rule group capacity is fixed at creation, which helps users plan their  
-        /// web ACL WCU usage when they use a rule group.
-        /// The WCU limit for web ACLs is 1,500.  </p>
+        /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
         pub fn capacity(mut self, input: i64) -> Self {
             self.capacity = Some(input);
             self
         }
         /// <p>The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
-        /// <p>WAF uses WCUs to calculate and control the operating
-        /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-        /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-        /// Simple rules that cost little to run use fewer WCUs than more complex rules
-        /// that use more processing power.
-        /// Rule group capacity is fixed at creation, which helps users plan their  
-        /// web ACL WCU usage when they use a rule group.
-        /// The WCU limit for web ACLs is 1,500.  </p>
+        /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
         pub fn set_capacity(mut self, input: std::option::Option<i64>) -> Self {
             self.capacity = input;
             self
@@ -11143,31 +9314,21 @@ pub mod web_acl {
         ///
         /// To override the contents of this collection use [`set_pre_process_firewall_manager_rule_groups`](Self::set_pre_process_firewall_manager_rule_groups).
         ///
-        /// <p>The first set of rules for WAF to process in the web ACL. This is defined in an
-        /// Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any
-        /// rules and rule groups that you define for the web ACL are prioritized after these. </p>
-        /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
-        /// first in the web ACL and a set of rule groups to run last. Within each set, the
-        /// administrator prioritizes the rule groups, to determine their relative processing
-        /// order.</p>
+        /// <p>The first set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized after these. </p>
+        /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
         pub fn pre_process_firewall_manager_rule_groups(
             mut self,
-            input: impl Into<crate::model::FirewallManagerRuleGroup>,
+            input: crate::model::FirewallManagerRuleGroup,
         ) -> Self {
             let mut v = self
                 .pre_process_firewall_manager_rule_groups
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pre_process_firewall_manager_rule_groups = Some(v);
             self
         }
-        /// <p>The first set of rules for WAF to process in the web ACL. This is defined in an
-        /// Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any
-        /// rules and rule groups that you define for the web ACL are prioritized after these. </p>
-        /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
-        /// first in the web ACL and a set of rule groups to run last. Within each set, the
-        /// administrator prioritizes the rule groups, to determine their relative processing
-        /// order.</p>
+        /// <p>The first set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized after these. </p>
+        /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
         pub fn set_pre_process_firewall_manager_rule_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FirewallManagerRuleGroup>>,
@@ -11179,31 +9340,21 @@ pub mod web_acl {
         ///
         /// To override the contents of this collection use [`set_post_process_firewall_manager_rule_groups`](Self::set_post_process_firewall_manager_rule_groups).
         ///
-        /// <p>The last set of rules for WAF to process in the web ACL. This is defined in an
-        /// Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any
-        /// rules and rule groups that you define for the web ACL are prioritized before these. </p>
-        /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
-        /// first in the web ACL and a set of rule groups to run last. Within each set, the
-        /// administrator prioritizes the rule groups, to determine their relative processing
-        /// order.</p>
+        /// <p>The last set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized before these. </p>
+        /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
         pub fn post_process_firewall_manager_rule_groups(
             mut self,
-            input: impl Into<crate::model::FirewallManagerRuleGroup>,
+            input: crate::model::FirewallManagerRuleGroup,
         ) -> Self {
             let mut v = self
                 .post_process_firewall_manager_rule_groups
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.post_process_firewall_manager_rule_groups = Some(v);
             self
         }
-        /// <p>The last set of rules for WAF to process in the web ACL. This is defined in an
-        /// Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any
-        /// rules and rule groups that you define for the web ACL are prioritized before these. </p>
-        /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
-        /// first in the web ACL and a set of rule groups to run last. Within each set, the
-        /// administrator prioritizes the rule groups, to determine their relative processing
-        /// order.</p>
+        /// <p>The last set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized before these. </p>
+        /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
         pub fn set_post_process_firewall_manager_rule_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FirewallManagerRuleGroup>>,
@@ -11211,33 +9362,26 @@ pub mod web_acl {
             self.post_process_firewall_manager_rule_groups = input;
             self
         }
-        /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can
-        /// delete the web ACL or any Firewall Manager rule groups in the web ACL. </p>
+        /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL. </p>
         pub fn managed_by_firewall_manager(mut self, input: bool) -> Self {
             self.managed_by_firewall_manager = Some(input);
             self
         }
-        /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can
-        /// delete the web ACL or any Firewall Manager rule groups in the web ACL. </p>
+        /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL. </p>
         pub fn set_managed_by_firewall_manager(mut self, input: std::option::Option<bool>) -> Self {
             self.managed_by_firewall_manager = input;
             self
         }
         /// <p>The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix. </p>
         /// <ul>
-        /// <li>
-        /// <p>The syntax for the label namespace prefix for a web ACL is the following: </p>
-        /// <p>
-        /// <code>awswaf:<account ID>:webacl:<web ACL name>:</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-        /// <p>
-        /// <code><label namespace>:<label from rule></code>
-        /// </p>
-        ///
-        /// </li>
+        /// <li> <p>The syntax for the label namespace prefix for a web ACL is the following: </p> <p> <code>awswaf:
+        /// <account id>
+        /// :webacl:
+        /// <web acl name>
+        /// :
+        /// </web>
+        /// </account></code> </p> </li>
+        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
         /// </ul>
         pub fn label_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.label_namespace = Some(input.into());
@@ -11245,19 +9389,14 @@ pub mod web_acl {
         }
         /// <p>The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix. </p>
         /// <ul>
-        /// <li>
-        /// <p>The syntax for the label namespace prefix for a web ACL is the following: </p>
-        /// <p>
-        /// <code>awswaf:<account ID>:webacl:<web ACL name>:</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-        /// <p>
-        /// <code><label namespace>:<label from rule></code>
-        /// </p>
-        ///
-        /// </li>
+        /// <li> <p>The syntax for the label namespace prefix for a web ACL is the following: </p> <p> <code>awswaf:
+        /// <account id>
+        /// :webacl:
+        /// <web acl name>
+        /// :
+        /// </web>
+        /// </account></code> </p> </li>
+        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
         /// </ul>
         pub fn set_label_namespace(
             mut self,
@@ -11271,25 +9410,21 @@ pub mod web_acl {
         /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
         ///
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
             let mut hash_map = self.custom_response_bodies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.custom_response_bodies = Some(hash_map);
             self
         }
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_response_bodies(
             mut self,
             input: std::option::Option<
@@ -11348,21 +9483,16 @@ impl WebAcl {
 pub struct FirewallManagerRuleGroup {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF
-    /// evaluates each request against the rule groups in order, starting from the lowest priority
-    /// setting. The priorities don't need to be consecutive, but they must all be
-    /// different.</p>
+    /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to be consecutive, but they must all be different.</p>
     pub priority: i32,
-    /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can only contain a rule group reference.</p>
+    /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
     pub firewall_manager_statement: std::option::Option<crate::model::FirewallManagerStatement>,
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-    /// <note>
-    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-    /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
     /// </note>
     pub override_action: std::option::Option<crate::model::OverrideAction>,
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub visibility_config: std::option::Option<crate::model::VisibilityConfig>,
 }
 impl FirewallManagerRuleGroup {
@@ -11370,29 +9500,24 @@ impl FirewallManagerRuleGroup {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF
-    /// evaluates each request against the rule groups in order, starting from the lowest priority
-    /// setting. The priorities don't need to be consecutive, but they must all be
-    /// different.</p>
+    /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to be consecutive, but they must all be different.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can only contain a rule group reference.</p>
+    /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
     pub fn firewall_manager_statement(
         &self,
     ) -> std::option::Option<&crate::model::FirewallManagerStatement> {
         self.firewall_manager_statement.as_ref()
     }
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-    /// <note>
-    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-    /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
     /// </note>
     pub fn override_action(&self) -> std::option::Option<&crate::model::OverrideAction> {
         self.override_action.as_ref()
     }
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(&self) -> std::option::Option<&crate::model::VisibilityConfig> {
         self.visibility_config.as_ref()
     }
@@ -11435,23 +9560,17 @@ pub mod firewall_manager_rule_group {
             self.name = input;
             self
         }
-        /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF
-        /// evaluates each request against the rule groups in order, starting from the lowest priority
-        /// setting. The priorities don't need to be consecutive, but they must all be
-        /// different.</p>
+        /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to be consecutive, but they must all be different.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF
-        /// evaluates each request against the rule groups in order, starting from the lowest priority
-        /// setting. The priorities don't need to be consecutive, but they must all be
-        /// different.</p>
+        /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to be consecutive, but they must all be different.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
         }
-        /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can only contain a rule group reference.</p>
+        /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
         pub fn firewall_manager_statement(
             mut self,
             input: crate::model::FirewallManagerStatement,
@@ -11459,7 +9578,7 @@ pub mod firewall_manager_rule_group {
             self.firewall_manager_statement = Some(input);
             self
         }
-        /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can only contain a rule group reference.</p>
+        /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
         pub fn set_firewall_manager_statement(
             mut self,
             input: std::option::Option<crate::model::FirewallManagerStatement>,
@@ -11468,20 +9587,16 @@ pub mod firewall_manager_rule_group {
             self
         }
         /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-        /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-        /// <note>
-        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-        /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+        /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
+        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
         /// </note>
         pub fn override_action(mut self, input: crate::model::OverrideAction) -> Self {
             self.override_action = Some(input);
             self
         }
         /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
-        /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
-        /// <note>
-        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count  
-        /// matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
+        /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
+        /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings. </p>
         /// </note>
         pub fn set_override_action(
             mut self,
@@ -11490,12 +9605,12 @@ pub mod firewall_manager_rule_group {
             self.override_action = input;
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
         pub fn visibility_config(mut self, input: crate::model::VisibilityConfig) -> Self {
             self.visibility_config = Some(input);
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
         pub fn set_visibility_config(
             mut self,
             input: std::option::Option<crate::model::VisibilityConfig>,
@@ -11522,30 +9637,28 @@ impl FirewallManagerRuleGroup {
     }
 }
 
-/// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can only contain a rule group reference.</p>
+/// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FirewallManagerStatement {
-    /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p>
+    /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
     /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
     pub managed_rule_group_statement: std::option::Option<crate::model::ManagedRuleGroupStatement>,
-    /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
-    /// can only use a rule group reference statement at the top level inside a web ACL. </p>
+    /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
+    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
     pub rule_group_reference_statement:
         std::option::Option<crate::model::RuleGroupReferenceStatement>,
 }
 impl FirewallManagerStatement {
-    /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p>
+    /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
     /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
     pub fn managed_rule_group_statement(
         &self,
     ) -> std::option::Option<&crate::model::ManagedRuleGroupStatement> {
         self.managed_rule_group_statement.as_ref()
     }
-    /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
-    /// can only use a rule group reference statement at the top level inside a web ACL. </p>
+    /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
+    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
     pub fn rule_group_reference_statement(
         &self,
     ) -> std::option::Option<&crate::model::RuleGroupReferenceStatement> {
@@ -11578,7 +9691,7 @@ pub mod firewall_manager_statement {
             std::option::Option<crate::model::RuleGroupReferenceStatement>,
     }
     impl Builder {
-        /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p>
+        /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
         /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
         pub fn managed_rule_group_statement(
             mut self,
@@ -11587,7 +9700,7 @@ pub mod firewall_manager_statement {
             self.managed_rule_group_statement = Some(input);
             self
         }
-        /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.</p>
+        /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
         /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p>
         pub fn set_managed_rule_group_statement(
             mut self,
@@ -11596,9 +9709,8 @@ pub mod firewall_manager_statement {
             self.managed_rule_group_statement = input;
             self
         }
-        /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-        /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
-        /// can only use a rule group reference statement at the top level inside a web ACL. </p>
+        /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
+        /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
         pub fn rule_group_reference_statement(
             mut self,
             input: crate::model::RuleGroupReferenceStatement,
@@ -11606,9 +9718,8 @@ pub mod firewall_manager_statement {
             self.rule_group_reference_statement = Some(input);
             self
         }
-        /// <p>A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-        /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You
-        /// can only use a rule group reference statement at the top level inside a web ACL. </p>
+        /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
+        /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
         pub fn set_rule_group_reference_statement(
             mut self,
             input: std::option::Option<crate::model::RuleGroupReferenceStatement>,
@@ -11632,50 +9743,23 @@ impl FirewallManagerStatement {
     }
 }
 
-/// <p>In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and
-/// <code>EndTime</code> objects specify the time range for which you want WAF to
-/// return a sample of web requests.</p>
-/// <p>You must specify the times in Coordinated Universal Time (UTC) format. UTC format
-/// includes the special designator, <code>Z</code>. For example,
-/// <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three
-/// hours.</p>
-/// <p>In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and
-/// <code>EndTime</code> objects specify the time range for which WAF actually returned a
-/// sample of web requests. WAF gets the specified number of requests from among the first
-/// 5,000 requests that your Amazon Web Services resource receives during the specified time period. If your
-/// resource receives more than 5,000 requests during that period, WAF stops sampling after
-/// the 5,000th request. In that case, <code>EndTime</code> is the time that WAF received the
-/// 5,000th request.</p>
+/// <p>In a <code>GetSampledRequests</code> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want WAF to return a sample of web requests.</p>
+/// <p>You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+/// <p>In a <code>GetSampledRequests</code> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which WAF actually returned a sample of web requests. WAF gets the specified number of requests from among the first 5,000 requests that your Amazon Web Services resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that WAF received the 5,000th request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeWindow {
-    /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to
-    /// return a sample of the requests that your Amazon Web Services resource received. You must specify the
-    /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
-    /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-    /// any time range in the previous three hours.</p>
+    /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return
-    /// a sample of the requests that your Amazon Web Services resource received. You must specify the times in
-    /// Coordinated Universal Time (UTC) format. UTC format includes the special designator,
-    /// <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time
-    /// range in the previous three hours.</p>
+    /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimeWindow {
-    /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to
-    /// return a sample of the requests that your Amazon Web Services resource received. You must specify the
-    /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
-    /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-    /// any time range in the previous three hours.</p>
+    /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return
-    /// a sample of the requests that your Amazon Web Services resource received. You must specify the times in
-    /// Coordinated Universal Time (UTC) format. UTC format includes the special designator,
-    /// <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time
-    /// range in the previous three hours.</p>
+    /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -11698,20 +9782,12 @@ pub mod time_window {
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to
-        /// return a sample of the requests that your Amazon Web Services resource received. You must specify the
-        /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
-        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-        /// any time range in the previous three hours.</p>
+        /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to
-        /// return a sample of the requests that your Amazon Web Services resource received. You must specify the
-        /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
-        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-        /// any time range in the previous three hours.</p>
+        /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11719,20 +9795,12 @@ pub mod time_window {
             self.start_time = input;
             self
         }
-        /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return
-        /// a sample of the requests that your Amazon Web Services resource received. You must specify the times in
-        /// Coordinated Universal Time (UTC) format. UTC format includes the special designator,
-        /// <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time
-        /// range in the previous three hours.</p>
+        /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return
-        /// a sample of the requests that your Amazon Web Services resource received. You must specify the times in
-        /// Coordinated Universal Time (UTC) format. UTC format includes the special designator,
-        /// <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time
-        /// range in the previous three hours.</p>
+        /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your Amazon Web Services resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11756,43 +9824,37 @@ impl TimeWindow {
     }
 }
 
-/// <p>Represents a single sampled web request. The response from <a>GetSampledRequests</a> includes a <code>SampledHTTPRequests</code> complex type
-/// that appears as <code>SampledRequests</code> in the response syntax.
-/// <code>SampledHTTPRequests</code> contains an array of <code>SampledHTTPRequest</code>
-/// objects.</p>
+/// <p>Represents a single sampled web request. The response from <code>GetSampledRequests</code> includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code> in the response syntax. <code>SampledHTTPRequests</code> contains an array of <code>SampledHTTPRequest</code> objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SampledHttpRequest {
     /// <p>A complex type that contains detailed information about the request.</p>
     pub request: std::option::Option<crate::model::HttpRequest>,
-    /// <p>A value that indicates how one result in the response relates proportionally to other
-    /// results in the response. For example, a result that has a weight of <code>2</code>
-    /// represents roughly twice as many web requests as a result that has a weight of
-    /// <code>1</code>.</p>
+    /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. For example, a result that has a weight of <code>2</code> represents roughly twice as many web requests as a result that has a weight of <code>1</code>.</p>
     pub weight: i64,
-    /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time
-    /// format (in seconds).</p>
+    /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in seconds).</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The action for the <code>Rule</code> that the request matched: <code>Allow</code>,
-    /// <code>Block</code>, or <code>Count</code>.</p>
+    /// <p>The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
     pub action: std::option::Option<std::string::String>,
-    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the
-    /// format for this name is <code><vendor name>#<managed rule group name>#<rule
-    /// name></code>. For your own rule groups, the format for this name is <code><rule
-    /// group name>#<rule name></code>. If the rule is not in a rule group, this field
-    /// is absent. </p>
+    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code>
+    /// <vendor name>
+    /// #
+    /// <managed rule group name>
+    /// #
+    /// <rule name></rule>
+    /// </managed>
+    /// </vendor></code>. For your own rule groups, the format for this name is <code>
+    /// <rule group name>
+    /// #
+    /// <rule name></rule>
+    /// </rule></code>. If the rule is not in a rule group, this field is absent. </p>
     pub rule_name_within_rule_group: std::option::Option<std::string::String>,
-    /// <p>Custom request headers inserted by WAF into the request, according to the custom
-    /// request configuration for the matching rule action.</p>
+    /// <p>Custom request headers inserted by WAF into the request, according to the custom request configuration for the matching rule action.</p>
     pub request_headers_inserted: std::option::Option<std::vec::Vec<crate::model::HttpHeader>>,
     /// <p>The response code that was sent for the request.</p>
     pub response_code_sent: std::option::Option<i32>,
-    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified
-    /// labels to matching web requests. A fully qualified label is the concatenation of a label
-    /// namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
-    /// <p>For example,
-    /// <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
-    /// <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
+    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
     pub labels: std::option::Option<std::vec::Vec<crate::model::Label>>,
     /// <p>The <code>CAPTCHA</code> response for the request.</p>
     pub captcha_response: std::option::Option<crate::model::CaptchaResponse>,
@@ -11802,33 +9864,34 @@ impl SampledHttpRequest {
     pub fn request(&self) -> std::option::Option<&crate::model::HttpRequest> {
         self.request.as_ref()
     }
-    /// <p>A value that indicates how one result in the response relates proportionally to other
-    /// results in the response. For example, a result that has a weight of <code>2</code>
-    /// represents roughly twice as many web requests as a result that has a weight of
-    /// <code>1</code>.</p>
+    /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. For example, a result that has a weight of <code>2</code> represents roughly twice as many web requests as a result that has a weight of <code>1</code>.</p>
     pub fn weight(&self) -> i64 {
         self.weight
     }
-    /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time
-    /// format (in seconds).</p>
+    /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in seconds).</p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// <p>The action for the <code>Rule</code> that the request matched: <code>Allow</code>,
-    /// <code>Block</code>, or <code>Count</code>.</p>
+    /// <p>The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
     pub fn action(&self) -> std::option::Option<&str> {
         self.action.as_deref()
     }
-    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the
-    /// format for this name is <code><vendor name>#<managed rule group name>#<rule
-    /// name></code>. For your own rule groups, the format for this name is <code><rule
-    /// group name>#<rule name></code>. If the rule is not in a rule group, this field
-    /// is absent. </p>
+    /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code>
+    /// <vendor name>
+    /// #
+    /// <managed rule group name>
+    /// #
+    /// <rule name></rule>
+    /// </managed>
+    /// </vendor></code>. For your own rule groups, the format for this name is <code>
+    /// <rule group name>
+    /// #
+    /// <rule name></rule>
+    /// </rule></code>. If the rule is not in a rule group, this field is absent. </p>
     pub fn rule_name_within_rule_group(&self) -> std::option::Option<&str> {
         self.rule_name_within_rule_group.as_deref()
     }
-    /// <p>Custom request headers inserted by WAF into the request, according to the custom
-    /// request configuration for the matching rule action.</p>
+    /// <p>Custom request headers inserted by WAF into the request, according to the custom request configuration for the matching rule action.</p>
     pub fn request_headers_inserted(&self) -> std::option::Option<&[crate::model::HttpHeader]> {
         self.request_headers_inserted.as_deref()
     }
@@ -11836,12 +9899,8 @@ impl SampledHttpRequest {
     pub fn response_code_sent(&self) -> std::option::Option<i32> {
         self.response_code_sent
     }
-    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified
-    /// labels to matching web requests. A fully qualified label is the concatenation of a label
-    /// namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
-    /// <p>For example,
-    /// <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
-    /// <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
+    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
     pub fn labels(&self) -> std::option::Option<&[crate::model::Label]> {
         self.labels.as_deref()
     }
@@ -11899,30 +9958,22 @@ pub mod sampled_http_request {
             self.request = input;
             self
         }
-        /// <p>A value that indicates how one result in the response relates proportionally to other
-        /// results in the response. For example, a result that has a weight of <code>2</code>
-        /// represents roughly twice as many web requests as a result that has a weight of
-        /// <code>1</code>.</p>
+        /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. For example, a result that has a weight of <code>2</code> represents roughly twice as many web requests as a result that has a weight of <code>1</code>.</p>
         pub fn weight(mut self, input: i64) -> Self {
             self.weight = Some(input);
             self
         }
-        /// <p>A value that indicates how one result in the response relates proportionally to other
-        /// results in the response. For example, a result that has a weight of <code>2</code>
-        /// represents roughly twice as many web requests as a result that has a weight of
-        /// <code>1</code>.</p>
+        /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. For example, a result that has a weight of <code>2</code> represents roughly twice as many web requests as a result that has a weight of <code>1</code>.</p>
         pub fn set_weight(mut self, input: std::option::Option<i64>) -> Self {
             self.weight = input;
             self
         }
-        /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time
-        /// format (in seconds).</p>
+        /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in seconds).</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
-        /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time
-        /// format (in seconds).</p>
+        /// <p>The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in seconds).</p>
         pub fn set_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11930,23 +9981,28 @@ pub mod sampled_http_request {
             self.timestamp = input;
             self
         }
-        /// <p>The action for the <code>Rule</code> that the request matched: <code>Allow</code>,
-        /// <code>Block</code>, or <code>Count</code>.</p>
+        /// <p>The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             self.action = Some(input.into());
             self
         }
-        /// <p>The action for the <code>Rule</code> that the request matched: <code>Allow</code>,
-        /// <code>Block</code>, or <code>Count</code>.</p>
+        /// <p>The action for the <code>Rule</code> that the request matched: <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action = input;
             self
         }
-        /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the
-        /// format for this name is <code><vendor name>#<managed rule group name>#<rule
-        /// name></code>. For your own rule groups, the format for this name is <code><rule
-        /// group name>#<rule name></code>. If the rule is not in a rule group, this field
-        /// is absent. </p>
+        /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code>
+        /// <vendor name>
+        /// #
+        /// <managed rule group name>
+        /// #
+        /// <rule name></rule>
+        /// </managed>
+        /// </vendor></code>. For your own rule groups, the format for this name is <code>
+        /// <rule group name>
+        /// #
+        /// <rule name></rule>
+        /// </rule></code>. If the rule is not in a rule group, this field is absent. </p>
         pub fn rule_name_within_rule_group(
             mut self,
             input: impl Into<std::string::String>,
@@ -11954,11 +10010,18 @@ pub mod sampled_http_request {
             self.rule_name_within_rule_group = Some(input.into());
             self
         }
-        /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the
-        /// format for this name is <code><vendor name>#<managed rule group name>#<rule
-        /// name></code>. For your own rule groups, the format for this name is <code><rule
-        /// group name>#<rule name></code>. If the rule is not in a rule group, this field
-        /// is absent. </p>
+        /// <p>The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is <code>
+        /// <vendor name>
+        /// #
+        /// <managed rule group name>
+        /// #
+        /// <rule name></rule>
+        /// </managed>
+        /// </vendor></code>. For your own rule groups, the format for this name is <code>
+        /// <rule group name>
+        /// #
+        /// <rule name></rule>
+        /// </rule></code>. If the rule is not in a rule group, this field is absent. </p>
         pub fn set_rule_name_within_rule_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11970,19 +10033,14 @@ pub mod sampled_http_request {
         ///
         /// To override the contents of this collection use [`set_request_headers_inserted`](Self::set_request_headers_inserted).
         ///
-        /// <p>Custom request headers inserted by WAF into the request, according to the custom
-        /// request configuration for the matching rule action.</p>
-        pub fn request_headers_inserted(
-            mut self,
-            input: impl Into<crate::model::HttpHeader>,
-        ) -> Self {
+        /// <p>Custom request headers inserted by WAF into the request, according to the custom request configuration for the matching rule action.</p>
+        pub fn request_headers_inserted(mut self, input: crate::model::HttpHeader) -> Self {
             let mut v = self.request_headers_inserted.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.request_headers_inserted = Some(v);
             self
         }
-        /// <p>Custom request headers inserted by WAF into the request, according to the custom
-        /// request configuration for the matching rule action.</p>
+        /// <p>Custom request headers inserted by WAF into the request, according to the custom request configuration for the matching rule action.</p>
         pub fn set_request_headers_inserted(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HttpHeader>>,
@@ -12004,24 +10062,16 @@ pub mod sampled_http_request {
         ///
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
-        /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified
-        /// labels to matching web requests. A fully qualified label is the concatenation of a label
-        /// namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
-        /// <p>For example,
-        /// <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
-        /// <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
-        pub fn labels(mut self, input: impl Into<crate::model::Label>) -> Self {
+        /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
+        /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+        pub fn labels(mut self, input: crate::model::Label) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.labels = Some(v);
             self
         }
-        /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified
-        /// labels to matching web requests. A fully qualified label is the concatenation of a label
-        /// namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
-        /// <p>For example,
-        /// <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
-        /// <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+        /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
+        /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Label>>,
@@ -12215,10 +10265,7 @@ impl AsRef<str> for FailureReason {
     }
 }
 
-/// <p>Part of the response from <a>GetSampledRequests</a>. This is a complex type
-/// that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code>
-/// contains the names and values of all of the headers that appear in one of the web requests.
-/// </p>
+/// <p>Part of the response from <code>GetSampledRequests</code>. This is a complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpHeader {
@@ -12291,71 +10338,41 @@ impl HttpHeader {
     }
 }
 
-/// <p>Part of the response from <a>GetSampledRequests</a>. This is a complex type
-/// that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code>
-/// contains information about one of the web requests. </p>
+/// <p>Part of the response from <code>GetSampledRequests</code>. This is a complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpRequest {
-    /// <p>The IP address that the request originated from. If the web ACL is associated with a
-    /// CloudFront distribution, this is the value of one of the following fields in CloudFront access
-    /// logs:</p>
+    /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send
-    /// the request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer
-    /// to send the request</p>
-    /// </li>
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
     /// </ul>
     pub client_ip: std::option::Option<std::string::String>,
-    /// <p>The two-letter country code for the country that the request originated from. For a
-    /// current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1
-    /// alpha-2</a>.</p>
+    /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
     pub country: std::option::Option<std::string::String>,
-    /// <p>The URI path of the request, which identifies the resource, for example,
-    /// <code>/images/daily-ad.jpg</code>.</p>
+    /// <p>The URI path of the request, which identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
     pub uri: std::option::Option<std::string::String>,
     /// <p>The HTTP method specified in the sampled web request. </p>
     pub method: std::option::Option<std::string::String>,
-    /// <p>The HTTP version specified in the sampled web request, for example,
-    /// <code>HTTP/1.1</code>.</p>
+    /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
     pub http_version: std::option::Option<std::string::String>,
-    /// <p>A complex type that contains the name and value for each header in the sampled web
-    /// request.</p>
+    /// <p>A complex type that contains the name and value for each header in the sampled web request.</p>
     pub headers: std::option::Option<std::vec::Vec<crate::model::HttpHeader>>,
 }
 impl HttpRequest {
-    /// <p>The IP address that the request originated from. If the web ACL is associated with a
-    /// CloudFront distribution, this is the value of one of the following fields in CloudFront access
-    /// logs:</p>
+    /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send
-    /// the request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer
-    /// to send the request</p>
-    /// </li>
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
     /// </ul>
     pub fn client_ip(&self) -> std::option::Option<&str> {
         self.client_ip.as_deref()
     }
-    /// <p>The two-letter country code for the country that the request originated from. For a
-    /// current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1
-    /// alpha-2</a>.</p>
+    /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
     pub fn country(&self) -> std::option::Option<&str> {
         self.country.as_deref()
     }
-    /// <p>The URI path of the request, which identifies the resource, for example,
-    /// <code>/images/daily-ad.jpg</code>.</p>
+    /// <p>The URI path of the request, which identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
@@ -12363,13 +10380,11 @@ impl HttpRequest {
     pub fn method(&self) -> std::option::Option<&str> {
         self.method.as_deref()
     }
-    /// <p>The HTTP version specified in the sampled web request, for example,
-    /// <code>HTTP/1.1</code>.</p>
+    /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
     pub fn http_version(&self) -> std::option::Option<&str> {
         self.http_version.as_deref()
     }
-    /// <p>A complex type that contains the name and value for each header in the sampled web
-    /// request.</p>
+    /// <p>A complex type that contains the name and value for each header in the sampled web request.</p>
     pub fn headers(&self) -> std::option::Option<&[crate::model::HttpHeader]> {
         self.headers.as_deref()
     }
@@ -12400,66 +10415,40 @@ pub mod http_request {
         pub(crate) headers: std::option::Option<std::vec::Vec<crate::model::HttpHeader>>,
     }
     impl Builder {
-        /// <p>The IP address that the request originated from. If the web ACL is associated with a
-        /// CloudFront distribution, this is the value of one of the following fields in CloudFront access
-        /// logs:</p>
+        /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send
-        /// the request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer
-        /// to send the request</p>
-        /// </li>
+        /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+        /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
         /// </ul>
         pub fn client_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_ip = Some(input.into());
             self
         }
-        /// <p>The IP address that the request originated from. If the web ACL is associated with a
-        /// CloudFront distribution, this is the value of one of the following fields in CloudFront access
-        /// logs:</p>
+        /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send
-        /// the request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer
-        /// to send the request</p>
-        /// </li>
+        /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+        /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
         /// </ul>
         pub fn set_client_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_ip = input;
             self
         }
-        /// <p>The two-letter country code for the country that the request originated from. For a
-        /// current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1
-        /// alpha-2</a>.</p>
+        /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
         pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
             self.country = Some(input.into());
             self
         }
-        /// <p>The two-letter country code for the country that the request originated from. For a
-        /// current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1
-        /// alpha-2</a>.</p>
+        /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.country = input;
             self
         }
-        /// <p>The URI path of the request, which identifies the resource, for example,
-        /// <code>/images/daily-ad.jpg</code>.</p>
+        /// <p>The URI path of the request, which identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.uri = Some(input.into());
             self
         }
-        /// <p>The URI path of the request, which identifies the resource, for example,
-        /// <code>/images/daily-ad.jpg</code>.</p>
+        /// <p>The URI path of the request, which identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -12474,14 +10463,12 @@ pub mod http_request {
             self.method = input;
             self
         }
-        /// <p>The HTTP version specified in the sampled web request, for example,
-        /// <code>HTTP/1.1</code>.</p>
+        /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
         pub fn http_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_version = Some(input.into());
             self
         }
-        /// <p>The HTTP version specified in the sampled web request, for example,
-        /// <code>HTTP/1.1</code>.</p>
+        /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
         pub fn set_http_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_version = input;
             self
@@ -12490,16 +10477,14 @@ pub mod http_request {
         ///
         /// To override the contents of this collection use [`set_headers`](Self::set_headers).
         ///
-        /// <p>A complex type that contains the name and value for each header in the sampled web
-        /// request.</p>
-        pub fn headers(mut self, input: impl Into<crate::model::HttpHeader>) -> Self {
+        /// <p>A complex type that contains the name and value for each header in the sampled web request.</p>
+        pub fn headers(mut self, input: crate::model::HttpHeader) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.headers = Some(v);
             self
         }
-        /// <p>A complex type that contains the name and value for each header in the sampled web
-        /// request.</p>
+        /// <p>A complex type that contains the name and value for each header in the sampled web request.</p>
         pub fn set_headers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HttpHeader>>,
@@ -12527,7 +10512,7 @@ impl HttpRequest {
     }
 }
 
-/// <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>
+/// <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <code>WebACL</code>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleGroup {
@@ -12536,57 +10521,38 @@ pub struct RuleGroup {
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
-    /// <p>When you create your own rule group, you define this, and you cannot change it after creation.
-    /// When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity
-    /// for a set of rules using <a>CheckCapacity</a>.</p>
-    /// <p>WAF uses WCUs to calculate and control the operating
-    /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-    /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-    /// Simple rules that cost little to run use fewer WCUs than more complex rules
-    /// that use more processing power.
-    /// Rule group capacity is fixed at creation, which helps users plan their  
-    /// web ACL WCU usage when they use a rule group.
-    /// The WCU limit for web ACLs is 1,500.  </p>
+    /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
+    /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
     pub capacity: i64,
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>A description of the rule group that helps with identification. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The <a>Rule</a> statements used to identify the web requests that you
-    /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-    /// web requests, and parameters that govern how WAF handles them.
-    /// </p>
+    /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub visibility_config: std::option::Option<crate::model::VisibilityConfig>,
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
     /// <ul>
-    /// <li>
-    /// <p>The syntax for the label namespace prefix for your rule groups is the following: </p>
-    /// <p>
-    /// <code>awswaf:<account ID>:rulegroup:<rule group name>:</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-    /// <p>
-    /// <code><label namespace>:<label from rule></code>
-    /// </p>
-    ///
-    /// </li>
+    /// <li> <p>The syntax for the label namespace prefix for your rule groups is the following: </p> <p> <code>awswaf:
+    /// <account id>
+    /// :rulegroup:
+    /// <rule group name>
+    /// :
+    /// </rule>
+    /// </account></code> </p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
     pub label_namespace: std::option::Option<std::string::String>,
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub custom_response_bodies: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CustomResponseBody>,
     >,
-    /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.</p>
+    /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
     pub available_labels: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
-    /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
+    /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
     pub consumed_labels: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
 }
 impl RuleGroup {
@@ -12599,17 +10565,8 @@ impl RuleGroup {
         self.id.as_deref()
     }
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
-    /// <p>When you create your own rule group, you define this, and you cannot change it after creation.
-    /// When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity
-    /// for a set of rules using <a>CheckCapacity</a>.</p>
-    /// <p>WAF uses WCUs to calculate and control the operating
-    /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-    /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-    /// Simple rules that cost little to run use fewer WCUs than more complex rules
-    /// that use more processing power.
-    /// Rule group capacity is fixed at creation, which helps users plan their  
-    /// web ACL WCU usage when they use a rule group.
-    /// The WCU limit for web ACLs is 1,500.  </p>
+    /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
+    /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
     pub fn capacity(&self) -> i64 {
         self.capacity
     }
@@ -12621,41 +10578,31 @@ impl RuleGroup {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The <a>Rule</a> statements used to identify the web requests that you
-    /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-    /// web requests, and parameters that govern how WAF handles them.
-    /// </p>
+    /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
         self.rules.as_deref()
     }
-    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(&self) -> std::option::Option<&crate::model::VisibilityConfig> {
         self.visibility_config.as_ref()
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
     /// <ul>
-    /// <li>
-    /// <p>The syntax for the label namespace prefix for your rule groups is the following: </p>
-    /// <p>
-    /// <code>awswaf:<account ID>:rulegroup:<rule group name>:</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-    /// <p>
-    /// <code><label namespace>:<label from rule></code>
-    /// </p>
-    ///
-    /// </li>
+    /// <li> <p>The syntax for the label namespace prefix for your rule groups is the following: </p> <p> <code>awswaf:
+    /// <account id>
+    /// :rulegroup:
+    /// <rule group name>
+    /// :
+    /// </rule>
+    /// </account></code> </p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
     pub fn label_namespace(&self) -> std::option::Option<&str> {
         self.label_namespace.as_deref()
     }
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn custom_response_bodies(
         &self,
     ) -> std::option::Option<
@@ -12663,11 +10610,11 @@ impl RuleGroup {
     > {
         self.custom_response_bodies.as_ref()
     }
-    /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.</p>
+    /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
     pub fn available_labels(&self) -> std::option::Option<&[crate::model::LabelSummary]> {
         self.available_labels.as_deref()
     }
-    /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
+    /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
     pub fn consumed_labels(&self) -> std::option::Option<&[crate::model::LabelSummary]> {
         self.consumed_labels.as_deref()
     }
@@ -12731,33 +10678,15 @@ pub mod rule_group {
             self
         }
         /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
-        /// <p>When you create your own rule group, you define this, and you cannot change it after creation.
-        /// When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity
-        /// for a set of rules using <a>CheckCapacity</a>.</p>
-        /// <p>WAF uses WCUs to calculate and control the operating
-        /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-        /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-        /// Simple rules that cost little to run use fewer WCUs than more complex rules
-        /// that use more processing power.
-        /// Rule group capacity is fixed at creation, which helps users plan their  
-        /// web ACL WCU usage when they use a rule group.
-        /// The WCU limit for web ACLs is 1,500.  </p>
+        /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
+        /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
         pub fn capacity(mut self, input: i64) -> Self {
             self.capacity = Some(input);
             self
         }
         /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
-        /// <p>When you create your own rule group, you define this, and you cannot change it after creation.
-        /// When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity
-        /// for a set of rules using <a>CheckCapacity</a>.</p>
-        /// <p>WAF uses WCUs to calculate and control the operating
-        /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-        /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-        /// Simple rules that cost little to run use fewer WCUs than more complex rules
-        /// that use more processing power.
-        /// Rule group capacity is fixed at creation, which helps users plan their  
-        /// web ACL WCU usage when they use a rule group.
-        /// The WCU limit for web ACLs is 1,500.  </p>
+        /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
+        /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
         pub fn set_capacity(mut self, input: std::option::Option<i64>) -> Self {
             self.capacity = input;
             self
@@ -12786,20 +10715,14 @@ pub mod rule_group {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The <a>Rule</a> statements used to identify the web requests that you
-        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-        /// web requests, and parameters that govern how WAF handles them.
-        /// </p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
-        /// <p>The <a>Rule</a> statements used to identify the web requests that you
-        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
-        /// web requests, and parameters that govern how WAF handles them.
-        /// </p>
+        /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -12807,12 +10730,12 @@ pub mod rule_group {
             self.rules = input;
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
         pub fn visibility_config(mut self, input: crate::model::VisibilityConfig) -> Self {
             self.visibility_config = Some(input);
             self
         }
-        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
         pub fn set_visibility_config(
             mut self,
             input: std::option::Option<crate::model::VisibilityConfig>,
@@ -12822,19 +10745,14 @@ pub mod rule_group {
         }
         /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
         /// <ul>
-        /// <li>
-        /// <p>The syntax for the label namespace prefix for your rule groups is the following: </p>
-        /// <p>
-        /// <code>awswaf:<account ID>:rulegroup:<rule group name>:</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-        /// <p>
-        /// <code><label namespace>:<label from rule></code>
-        /// </p>
-        ///
-        /// </li>
+        /// <li> <p>The syntax for the label namespace prefix for your rule groups is the following: </p> <p> <code>awswaf:
+        /// <account id>
+        /// :rulegroup:
+        /// <rule group name>
+        /// :
+        /// </rule>
+        /// </account></code> </p> </li>
+        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
         /// </ul>
         pub fn label_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.label_namespace = Some(input.into());
@@ -12842,19 +10760,14 @@ pub mod rule_group {
         }
         /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
         /// <ul>
-        /// <li>
-        /// <p>The syntax for the label namespace prefix for your rule groups is the following: </p>
-        /// <p>
-        /// <code>awswaf:<account ID>:rulegroup:<rule group name>:</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-        /// <p>
-        /// <code><label namespace>:<label from rule></code>
-        /// </p>
-        ///
-        /// </li>
+        /// <li> <p>The syntax for the label namespace prefix for your rule groups is the following: </p> <p> <code>awswaf:
+        /// <account id>
+        /// :rulegroup:
+        /// <rule group name>
+        /// :
+        /// </rule>
+        /// </account></code> </p> </li>
+        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
         /// </ul>
         pub fn set_label_namespace(
             mut self,
@@ -12868,25 +10781,21 @@ pub mod rule_group {
         /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
         ///
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::CustomResponseBody>,
+            v: crate::model::CustomResponseBody,
         ) -> Self {
             let mut hash_map = self.custom_response_bodies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.custom_response_bodies = Some(hash_map);
             self
         }
         /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
-        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_response_bodies(
             mut self,
             input: std::option::Option<
@@ -12900,14 +10809,14 @@ pub mod rule_group {
         ///
         /// To override the contents of this collection use [`set_available_labels`](Self::set_available_labels).
         ///
-        /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.</p>
-        pub fn available_labels(mut self, input: impl Into<crate::model::LabelSummary>) -> Self {
+        /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
+        pub fn available_labels(mut self, input: crate::model::LabelSummary) -> Self {
             let mut v = self.available_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.available_labels = Some(v);
             self
         }
-        /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.</p>
+        /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
         pub fn set_available_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
@@ -12919,14 +10828,14 @@ pub mod rule_group {
         ///
         /// To override the contents of this collection use [`set_consumed_labels`](Self::set_consumed_labels).
         ///
-        /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
-        pub fn consumed_labels(mut self, input: impl Into<crate::model::LabelSummary>) -> Self {
+        /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
+        pub fn consumed_labels(mut self, input: crate::model::LabelSummary) -> Self {
             let mut v = self.consumed_labels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.consumed_labels = Some(v);
             self
         }
-        /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
+        /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
         pub fn set_consumed_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
@@ -12959,19 +10868,10 @@ impl RuleGroup {
     }
 }
 
-/// <p>List of labels used by one or more of the rules of a <a>RuleGroup</a>. This
-/// summary object is used for the following rule group lists: </p>
+/// <p>List of labels used by one or more of the rules of a <code>RuleGroup</code>. This summary object is used for the following rule group lists: </p>
 /// <ul>
-/// <li>
-/// <p>
-/// <code>AvailableLabels</code> - Labels that rules add to matching requests.
-/// These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>. </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>ConsumedLabels</code> - Labels that rules match against.
-/// These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
-/// </li>
+/// <li> <p> <code>AvailableLabels</code> - Labels that rules add to matching requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>. </p> </li>
+/// <li> <p> <code>ConsumedLabels</code> - Labels that rules match against. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -13025,8 +10925,7 @@ impl LabelSummary {
 }
 
 /// <p>Contains one or more regular expressions. </p>
-/// <p>WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a
-/// set in a rule, you provide the ARN to the <a>Rule</a> statement <a>RegexPatternSetReferenceStatement</a>. </p>
+/// <p>WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a set in a rule, you provide the ARN to the <code>Rule</code> statement <code>RegexPatternSetReferenceStatement</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegexPatternSet {
@@ -13132,9 +11031,9 @@ pub mod regex_pattern_set {
         /// To override the contents of this collection use [`set_regular_expression_list`](Self::set_regular_expression_list).
         ///
         /// <p>The regular expression patterns in the set.</p>
-        pub fn regular_expression_list(mut self, input: impl Into<crate::model::Regex>) -> Self {
+        pub fn regular_expression_list(mut self, input: crate::model::Regex) -> Self {
             let mut v = self.regular_expression_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.regular_expression_list = Some(v);
             self
         }
@@ -13165,7 +11064,7 @@ impl RegexPatternSet {
     }
 }
 
-/// <p>The set of IP addresses that are currently blocked for a <a>RateBasedStatement</a>.</p>
+/// <p>The set of IP addresses that are currently blocked for a <code>RateBasedStatement</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RateBasedStatementManagedKeysIpSet {
@@ -13305,9 +11204,7 @@ impl AsRef<str> for IpAddressVersion {
     }
 }
 
-/// <p>A set of rules that is managed by Amazon Web Services and Amazon Web Services Marketplace sellers to provide versioned managed
-/// rule groups for customers of WAF.</p>
-/// <note>
+/// <p>A set of rules that is managed by Amazon Web Services and Amazon Web Services Marketplace sellers to provide versioned managed rule groups for customers of WAF.</p> <note>
 /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
@@ -13331,18 +11228,12 @@ pub struct ManagedRuleSet {
     pub recommended_version: std::option::Option<std::string::String>,
     /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix. </p>
     /// <ul>
-    /// <li>
-    /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
-    /// <p>
-    /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
-    /// </li>
-    /// <li>
-    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-    /// <p>
-    /// <code><label namespace>:<label from rule></code>
-    /// </p>
-    ///
-    /// </li>
+    /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+    /// <vendor>
+    /// :
+    /// <rule group name></rule>
+    /// </vendor></code>:</p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
     pub label_namespace: std::option::Option<std::string::String>,
 }
@@ -13378,18 +11269,12 @@ impl ManagedRuleSet {
     }
     /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix. </p>
     /// <ul>
-    /// <li>
-    /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
-    /// <p>
-    /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
-    /// </li>
-    /// <li>
-    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-    /// <p>
-    /// <code><label namespace>:<label from rule></code>
-    /// </p>
-    ///
-    /// </li>
+    /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+    /// <vendor>
+    /// :
+    /// <rule group name></rule>
+    /// </vendor></code>:</p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
     pub fn label_namespace(&self) -> std::option::Option<&str> {
         self.label_namespace.as_deref()
@@ -13475,10 +11360,10 @@ pub mod managed_rule_set {
         pub fn published_versions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ManagedRuleSetVersion>,
+            v: crate::model::ManagedRuleSetVersion,
         ) -> Self {
             let mut hash_map = self.published_versions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.published_versions = Some(hash_map);
             self
         }
@@ -13507,18 +11392,12 @@ pub mod managed_rule_set {
         }
         /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix. </p>
         /// <ul>
-        /// <li>
-        /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
-        /// <p>
-        /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
-        /// </li>
-        /// <li>
-        /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-        /// <p>
-        /// <code><label namespace>:<label from rule></code>
-        /// </p>
-        ///
-        /// </li>
+        /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+        /// <vendor>
+        /// :
+        /// <rule group name></rule>
+        /// </vendor></code>:</p> </li>
+        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
         /// </ul>
         pub fn label_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.label_namespace = Some(input.into());
@@ -13526,18 +11405,12 @@ pub mod managed_rule_set {
         }
         /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix. </p>
         /// <ul>
-        /// <li>
-        /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
-        /// <p>
-        /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
-        /// </li>
-        /// <li>
-        /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-        /// <p>
-        /// <code><label namespace>:<label from rule></code>
-        /// </p>
-        ///
-        /// </li>
+        /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+        /// <vendor>
+        /// :
+        /// <rule group name></rule>
+        /// </vendor></code>:</p> </li>
+        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
         /// </ul>
         pub fn set_label_namespace(
             mut self,
@@ -13567,29 +11440,19 @@ impl ManagedRuleSet {
     }
 }
 
-/// <p>Information for a single version of a managed rule set. </p>
-/// <note>
+/// <p>Information for a single version of a managed rule set. </p> <note>
 /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedRuleSetVersion {
-    /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the
-    /// published version of your managed rule group. </p>
+    /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the published version of your managed rule group. </p>
     pub associated_rule_group_arn: std::option::Option<std::string::String>,
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
-    /// <p>WAF uses WCUs to calculate and control the operating
-    /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-    /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-    /// Simple rules that cost little to run use fewer WCUs than more complex rules
-    /// that use more processing power.
-    /// Rule group capacity is fixed at creation, which helps users plan their  
-    /// web ACL WCU usage when they use a rule group.
-    /// The WCU limit for web ACLs is 1,500.  </p>
+    /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
     pub capacity: i64,
-    /// <p>The amount of time you expect this version of your managed rule group to last, in days.
-    /// </p>
+    /// <p>The amount of time you expect this version of your managed rule group to last, in days. </p>
     pub forecasted_lifetime: std::option::Option<i32>,
     /// <p>The time that you first published this version. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
@@ -13602,25 +11465,16 @@ pub struct ManagedRuleSetVersion {
     pub expiry_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ManagedRuleSetVersion {
-    /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the
-    /// published version of your managed rule group. </p>
+    /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the published version of your managed rule group. </p>
     pub fn associated_rule_group_arn(&self) -> std::option::Option<&str> {
         self.associated_rule_group_arn.as_deref()
     }
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
-    /// <p>WAF uses WCUs to calculate and control the operating
-    /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-    /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-    /// Simple rules that cost little to run use fewer WCUs than more complex rules
-    /// that use more processing power.
-    /// Rule group capacity is fixed at creation, which helps users plan their  
-    /// web ACL WCU usage when they use a rule group.
-    /// The WCU limit for web ACLs is 1,500.  </p>
+    /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
     pub fn capacity(&self) -> i64 {
         self.capacity
     }
-    /// <p>The amount of time you expect this version of your managed rule group to last, in days.
-    /// </p>
+    /// <p>The amount of time you expect this version of your managed rule group to last, in days. </p>
     pub fn forecasted_lifetime(&self) -> std::option::Option<i32> {
         self.forecasted_lifetime
     }
@@ -13666,14 +11520,12 @@ pub mod managed_rule_set_version {
         pub(crate) expiry_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the
-        /// published version of your managed rule group. </p>
+        /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the published version of your managed rule group. </p>
         pub fn associated_rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.associated_rule_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the
-        /// published version of your managed rule group. </p>
+        /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the published version of your managed rule group. </p>
         pub fn set_associated_rule_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13682,39 +11534,23 @@ pub mod managed_rule_set_version {
             self
         }
         /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
-        /// <p>WAF uses WCUs to calculate and control the operating
-        /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-        /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-        /// Simple rules that cost little to run use fewer WCUs than more complex rules
-        /// that use more processing power.
-        /// Rule group capacity is fixed at creation, which helps users plan their  
-        /// web ACL WCU usage when they use a rule group.
-        /// The WCU limit for web ACLs is 1,500.  </p>
+        /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
         pub fn capacity(mut self, input: i64) -> Self {
             self.capacity = Some(input);
             self
         }
         /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
-        /// <p>WAF uses WCUs to calculate and control the operating
-        /// resources that are used to run your rules, rule groups, and web ACLs. WAF
-        /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
-        /// Simple rules that cost little to run use fewer WCUs than more complex rules
-        /// that use more processing power.
-        /// Rule group capacity is fixed at creation, which helps users plan their  
-        /// web ACL WCU usage when they use a rule group.
-        /// The WCU limit for web ACLs is 1,500.  </p>
+        /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
         pub fn set_capacity(mut self, input: std::option::Option<i64>) -> Self {
             self.capacity = input;
             self
         }
-        /// <p>The amount of time you expect this version of your managed rule group to last, in days.
-        /// </p>
+        /// <p>The amount of time you expect this version of your managed rule group to last, in days. </p>
         pub fn forecasted_lifetime(mut self, input: i32) -> Self {
             self.forecasted_lifetime = Some(input);
             self
         }
-        /// <p>The amount of time you expect this version of your managed rule group to last, in days.
-        /// </p>
+        /// <p>The amount of time you expect this version of your managed rule group to last, in days. </p>
         pub fn set_forecasted_lifetime(mut self, input: std::option::Option<i32>) -> Self {
             self.forecasted_lifetime = input;
             self
@@ -13784,12 +11620,8 @@ impl ManagedRuleSetVersion {
     }
 }
 
-/// <p>Contains one or more IP addresses or blocks of IP addresses specified in Classless
-/// Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges
-/// except for /0. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-/// Inter-Domain Routing</a>. </p>
-/// <p>WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a
-/// rule, you provide the ARN to the <a>Rule</a> statement <a>IPSetReferenceStatement</a>. </p>
+/// <p>Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p>
+/// <p>WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <code>Rule</code> statement <code>IPSetReferenceStatement</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpSet {
@@ -13806,19 +11638,10 @@ pub struct IpSet {
     /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
     /// <p>Examples: </p>
     /// <ul>
-    /// <li>
-    /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
-    /// <code>192.0.2.0/24</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
-    /// </li>
+    /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+    /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     pub addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13847,19 +11670,10 @@ impl IpSet {
     /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
     /// <p>Examples: </p>
     /// <ul>
-    /// <li>
-    /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
-    /// <code>192.0.2.0/24</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
-    /// </li>
+    /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+    /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     pub fn addresses(&self) -> std::option::Option<&[std::string::String]> {
@@ -13952,19 +11766,10 @@ pub mod ip_set {
         /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
         /// <p>Examples: </p>
         /// <ul>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
-        /// <code>192.0.2.0/24</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
-        /// </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13976,19 +11781,10 @@ pub mod ip_set {
         /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
         /// <p>Examples: </p>
         /// <ul>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
-        /// <code>192.0.2.0/24</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
-        /// </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+        /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
         /// </ul>
         /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn set_addresses(
@@ -14018,14 +11814,13 @@ impl IpSet {
     }
 }
 
-/// <p>High-level information about a <a>Rule</a>, returned by operations like <a>DescribeManagedRuleGroup</a>. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.</p>
+/// <p>High-level information about a <code>Rule</code>, returned by operations like <code>DescribeManagedRuleGroup</code>. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleSummary {
     /// <p>The name of the rule. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The action that WAF should take on a web request when it matches a rule's
-    /// statement. Settings at the web ACL level can override the rule action setting. </p>
+    /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
     pub action: std::option::Option<crate::model::RuleAction>,
 }
 impl RuleSummary {
@@ -14033,8 +11828,7 @@ impl RuleSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The action that WAF should take on a web request when it matches a rule's
-    /// statement. Settings at the web ACL level can override the rule action setting. </p>
+    /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::RuleAction> {
         self.action.as_ref()
     }
@@ -14067,14 +11861,12 @@ pub mod rule_summary {
             self.name = input;
             self
         }
-        /// <p>The action that WAF should take on a web request when it matches a rule's
-        /// statement. Settings at the web ACL level can override the rule action setting. </p>
+        /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
         pub fn action(mut self, input: crate::model::RuleAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>The action that WAF should take on a web request when it matches a rule's
-        /// statement. Settings at the web ACL level can override the rule action setting. </p>
+        /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::RuleAction>) -> Self {
             self.action = input;
             self

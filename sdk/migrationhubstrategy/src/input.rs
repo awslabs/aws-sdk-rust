@@ -39,7 +39,8 @@ pub mod get_application_component_details_input {
 pub type GetApplicationComponentDetailsInputOperationOutputAlias =
     crate::operation::GetApplicationComponentDetails;
 #[doc(hidden)]
-pub type GetApplicationComponentDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApplicationComponentDetailsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetApplicationComponentDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetApplicationComponentDetails`](crate::operation::GetApplicationComponentDetails)>
     #[allow(clippy::let_and_return)]
@@ -50,7 +51,7 @@ impl GetApplicationComponentDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApplicationComponentDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -144,7 +145,7 @@ impl GetApplicationComponentDetailsInput {
             "GetApplicationComponentDetails",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -198,7 +199,8 @@ pub mod get_application_component_strategies_input {
 pub type GetApplicationComponentStrategiesInputOperationOutputAlias =
     crate::operation::GetApplicationComponentStrategies;
 #[doc(hidden)]
-pub type GetApplicationComponentStrategiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApplicationComponentStrategiesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetApplicationComponentStrategiesInput {
     /// Consumes the builder and constructs an Operation<[`GetApplicationComponentStrategies`](crate::operation::GetApplicationComponentStrategies)>
     #[allow(clippy::let_and_return)]
@@ -209,7 +211,7 @@ impl GetApplicationComponentStrategiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApplicationComponentStrategies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -303,7 +305,7 @@ impl GetApplicationComponentStrategiesInput {
             "GetApplicationComponentStrategies",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -327,12 +329,12 @@ pub mod get_assessment_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The <code>assessmentid</code> returned by <a>StartAssessment</a>.</p>
+        /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p> The <code>assessmentid</code> returned by <a>StartAssessment</a>.</p>
+        /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -351,7 +353,7 @@ pub mod get_assessment_input {
 #[doc(hidden)]
 pub type GetAssessmentInputOperationOutputAlias = crate::operation::GetAssessment;
 #[doc(hidden)]
-pub type GetAssessmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAssessmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssessmentInput {
     /// Consumes the builder and constructs an Operation<[`GetAssessment`](crate::operation::GetAssessment)>
     #[allow(clippy::let_and_return)]
@@ -362,7 +364,7 @@ impl GetAssessmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAssessment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -451,7 +453,7 @@ impl GetAssessmentInput {
             "GetAssessment",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -475,14 +477,12 @@ pub mod get_import_file_task_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The ID of the import file task. This ID is returned in the response of
-        /// <a>StartImportFileTask</a>. </p>
+        /// <p> The ID of the import file task. This ID is returned in the response of <code>StartImportFileTask</code>. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p> The ID of the import file task. This ID is returned in the response of
-        /// <a>StartImportFileTask</a>. </p>
+        /// <p> The ID of the import file task. This ID is returned in the response of <code>StartImportFileTask</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -501,7 +501,7 @@ pub mod get_import_file_task_input {
 #[doc(hidden)]
 pub type GetImportFileTaskInputOperationOutputAlias = crate::operation::GetImportFileTask;
 #[doc(hidden)]
-pub type GetImportFileTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetImportFileTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetImportFileTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetImportFileTask`](crate::operation::GetImportFileTask)>
     #[allow(clippy::let_and_return)]
@@ -512,7 +512,7 @@ impl GetImportFileTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetImportFileTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -602,7 +602,7 @@ impl GetImportFileTaskInput {
             "GetImportFileTask",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -639,7 +639,7 @@ pub mod get_portfolio_preferences_input {
 pub type GetPortfolioPreferencesInputOperationOutputAlias =
     crate::operation::GetPortfolioPreferences;
 #[doc(hidden)]
-pub type GetPortfolioPreferencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPortfolioPreferencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPortfolioPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`GetPortfolioPreferences`](crate::operation::GetPortfolioPreferences)>
     #[allow(clippy::let_and_return)]
@@ -650,7 +650,7 @@ impl GetPortfolioPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPortfolioPreferences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -724,7 +724,7 @@ impl GetPortfolioPreferencesInput {
             "GetPortfolioPreferences",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -760,7 +760,7 @@ pub mod get_portfolio_summary_input {
 #[doc(hidden)]
 pub type GetPortfolioSummaryInputOperationOutputAlias = crate::operation::GetPortfolioSummary;
 #[doc(hidden)]
-pub type GetPortfolioSummaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPortfolioSummaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPortfolioSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetPortfolioSummary`](crate::operation::GetPortfolioSummary)>
     #[allow(clippy::let_and_return)]
@@ -771,7 +771,7 @@ impl GetPortfolioSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPortfolioSummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -845,7 +845,7 @@ impl GetPortfolioSummaryInput {
             "GetPortfolioSummary",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -869,14 +869,12 @@ pub mod get_recommendation_report_details_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The recommendation report generation task <code>id</code> returned by
-        /// <a>StartRecommendationReportGeneration</a>. </p>
+        /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p> The recommendation report generation task <code>id</code> returned by
-        /// <a>StartRecommendationReportGeneration</a>. </p>
+        /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -896,7 +894,8 @@ pub mod get_recommendation_report_details_input {
 pub type GetRecommendationReportDetailsInputOperationOutputAlias =
     crate::operation::GetRecommendationReportDetails;
 #[doc(hidden)]
-pub type GetRecommendationReportDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecommendationReportDetailsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommendationReportDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendationReportDetails`](crate::operation::GetRecommendationReportDetails)>
     #[allow(clippy::let_and_return)]
@@ -907,7 +906,7 @@ impl GetRecommendationReportDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecommendationReportDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -997,7 +996,7 @@ impl GetRecommendationReportDetailsInput {
             "GetRecommendationReportDetails",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1033,16 +1032,12 @@ pub mod get_server_details_input {
             self.server_id = input;
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1075,7 +1070,7 @@ pub mod get_server_details_input {
 #[doc(hidden)]
 pub type GetServerDetailsInputOperationOutputAlias = crate::operation::GetServerDetails;
 #[doc(hidden)]
-pub type GetServerDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServerDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServerDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetServerDetails`](crate::operation::GetServerDetails)>
     #[allow(clippy::let_and_return)]
@@ -1086,7 +1081,7 @@ impl GetServerDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServerDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1197,7 +1192,7 @@ impl GetServerDetailsInput {
             "GetServerDetails",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1247,7 +1242,7 @@ pub mod get_server_strategies_input {
 #[doc(hidden)]
 pub type GetServerStrategiesInputOperationOutputAlias = crate::operation::GetServerStrategies;
 #[doc(hidden)]
-pub type GetServerStrategiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServerStrategiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServerStrategiesInput {
     /// Consumes the builder and constructs an Operation<[`GetServerStrategies`](crate::operation::GetServerStrategies)>
     #[allow(clippy::let_and_return)]
@@ -1258,7 +1253,7 @@ impl GetServerStrategiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServerStrategies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1352,7 +1347,7 @@ impl GetServerStrategiesInput {
             "GetServerStrategies",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1398,30 +1393,22 @@ pub mod list_application_components_input {
             self.application_component_criteria = input;
             self
         }
-        /// <p> Specify the value based on the application component criteria type. For example, if
-        /// <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and
-        /// <code>filterValue</code> is set to <code>server1</code>, then <a>ListApplicationComponents</a> returns all the application components running on
-        /// server1. </p>
+        /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
         pub fn filter_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_value = Some(input.into());
             self
         }
-        /// <p> Specify the value based on the application component criteria type. For example, if
-        /// <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and
-        /// <code>filterValue</code> is set to <code>server1</code>, then <a>ListApplicationComponents</a> returns all the application components running on
-        /// server1. </p>
+        /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
         pub fn set_filter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_value = input;
             self
         }
-        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
-        /// (<code>DESC</code>) order. </p>
+        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
         pub fn sort(mut self, input: crate::model::SortOrder) -> Self {
             self.sort = Some(input);
             self
         }
-        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
-        /// (<code>DESC</code>) order. </p>
+        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
             self.sort = input;
             self
@@ -1431,9 +1418,9 @@ pub mod list_application_components_input {
         /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).
         ///
         /// <p> The group ID specified in to filter on. </p>
-        pub fn group_id_filter(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn group_id_filter(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_id_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_id_filter = Some(v);
             self
         }
@@ -1445,16 +1432,12 @@ pub mod list_application_components_input {
             self.group_id_filter = input;
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1491,7 +1474,7 @@ pub mod list_application_components_input {
 pub type ListApplicationComponentsInputOperationOutputAlias =
     crate::operation::ListApplicationComponents;
 #[doc(hidden)]
-pub type ListApplicationComponentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApplicationComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationComponents`](crate::operation::ListApplicationComponents)>
     #[allow(clippy::let_and_return)]
@@ -1502,7 +1485,7 @@ impl ListApplicationComponentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplicationComponents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1584,7 +1567,7 @@ impl ListApplicationComponentsInput {
             "ListApplicationComponents",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1617,16 +1600,12 @@ pub mod list_collectors_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1658,7 +1637,7 @@ pub mod list_collectors_input {
 #[doc(hidden)]
 pub type ListCollectorsInputOperationOutputAlias = crate::operation::ListCollectors;
 #[doc(hidden)]
-pub type ListCollectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCollectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCollectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListCollectors`](crate::operation::ListCollectors)>
     #[allow(clippy::let_and_return)]
@@ -1669,7 +1648,7 @@ impl ListCollectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCollectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1760,7 +1739,7 @@ impl ListCollectorsInput {
             "ListCollectors",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1785,16 +1764,12 @@ pub mod list_import_file_task_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1826,7 +1801,7 @@ pub mod list_import_file_task_input {
 #[doc(hidden)]
 pub type ListImportFileTaskInputOperationOutputAlias = crate::operation::ListImportFileTask;
 #[doc(hidden)]
-pub type ListImportFileTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListImportFileTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListImportFileTaskInput {
     /// Consumes the builder and constructs an Operation<[`ListImportFileTask`](crate::operation::ListImportFileTask)>
     #[allow(clippy::let_and_return)]
@@ -1837,7 +1812,7 @@ impl ListImportFileTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListImportFileTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1928,7 +1903,7 @@ impl ListImportFileTaskInput {
             "ListImportFileTask",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1970,30 +1945,22 @@ pub mod list_servers_input {
             self.server_criteria = input;
             self
         }
-        /// <p> Specifies the filter value, which is based on the type of server criteria. For example,
-        /// if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is
-        /// equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers
-        /// matching the OS name <code>WindowsServer</code>. </p>
+        /// <p> Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>. </p>
         pub fn filter_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_value = Some(input.into());
             self
         }
-        /// <p> Specifies the filter value, which is based on the type of server criteria. For example,
-        /// if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is
-        /// equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers
-        /// matching the OS name <code>WindowsServer</code>. </p>
+        /// <p> Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>. </p>
         pub fn set_filter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_value = input;
             self
         }
-        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
-        /// (<code>DESC</code>) order. </p>
+        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
         pub fn sort(mut self, input: crate::model::SortOrder) -> Self {
             self.sort = Some(input);
             self
         }
-        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
-        /// (<code>DESC</code>) order. </p>
+        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
             self.sort = input;
             self
@@ -2003,9 +1970,9 @@ pub mod list_servers_input {
         /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).
         ///
         /// <p> Specifies the group ID to filter on. </p>
-        pub fn group_id_filter(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn group_id_filter(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_id_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_id_filter = Some(v);
             self
         }
@@ -2017,16 +1984,12 @@ pub mod list_servers_input {
             self.group_id_filter = input;
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2062,7 +2025,7 @@ pub mod list_servers_input {
 #[doc(hidden)]
 pub type ListServersInputOperationOutputAlias = crate::operation::ListServers;
 #[doc(hidden)]
-pub type ListServersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServersInput {
     /// Consumes the builder and constructs an Operation<[`ListServers`](crate::operation::ListServers)>
     #[allow(clippy::let_and_return)]
@@ -2073,7 +2036,7 @@ impl ListServersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2152,7 +2115,7 @@ impl ListServersInput {
             "ListServers",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2252,7 +2215,7 @@ pub mod put_portfolio_preferences_input {
 pub type PutPortfolioPreferencesInputOperationOutputAlias =
     crate::operation::PutPortfolioPreferences;
 #[doc(hidden)]
-pub type PutPortfolioPreferencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutPortfolioPreferencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPortfolioPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`PutPortfolioPreferences`](crate::operation::PutPortfolioPreferences)>
     #[allow(clippy::let_and_return)]
@@ -2263,7 +2226,7 @@ impl PutPortfolioPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPortfolioPreferences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2345,7 +2308,7 @@ impl PutPortfolioPreferencesInput {
             "PutPortfolioPreferences",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2378,18 +2341,12 @@ pub mod start_assessment_input {
         pub(crate) s3bucket_for_report_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The S3 bucket used by the collectors to send analysis data to the service.
-        /// The bucket name must begin with <code>migrationhub-strategy-</code>.
-        /// </p>
+        /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
         pub fn s3bucket_for_analysis_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3bucket_for_analysis_data = Some(input.into());
             self
         }
-        /// <p>
-        /// The S3 bucket used by the collectors to send analysis data to the service.
-        /// The bucket name must begin with <code>migrationhub-strategy-</code>.
-        /// </p>
+        /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
         pub fn set_s3bucket_for_analysis_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2397,18 +2354,12 @@ pub mod start_assessment_input {
             self.s3bucket_for_analysis_data = input;
             self
         }
-        /// <p>
-        /// The S3 bucket where all the reports generated by the service are stored.
-        /// The bucket name must begin with <code>migrationhub-strategy-</code>.
-        /// </p>
+        /// <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
         pub fn s3bucket_for_report_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3bucket_for_report_data = Some(input.into());
             self
         }
-        /// <p>
-        /// The S3 bucket where all the reports generated by the service are stored.
-        /// The bucket name must begin with <code>migrationhub-strategy-</code>.
-        /// </p>
+        /// <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
         pub fn set_s3bucket_for_report_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2433,7 +2384,7 @@ pub mod start_assessment_input {
 #[doc(hidden)]
 pub type StartAssessmentInputOperationOutputAlias = crate::operation::StartAssessment;
 #[doc(hidden)]
-pub type StartAssessmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartAssessmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartAssessmentInput {
     /// Consumes the builder and constructs an Operation<[`StartAssessment`](crate::operation::StartAssessment)>
     #[allow(clippy::let_and_return)]
@@ -2444,7 +2395,7 @@ impl StartAssessmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartAssessment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2524,7 +2475,7 @@ impl StartAssessmentInput {
             "StartAssessment",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2571,14 +2522,12 @@ pub mod start_import_file_task_input {
             self.name = input;
             self
         }
-        /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with
-        /// <code>migrationhub-strategy-</code>.</p>
+        /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket = Some(input.into());
             self
         }
-        /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with
-        /// <code>migrationhub-strategy-</code>.</p>
+        /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_bucket = input;
             self
@@ -2593,14 +2542,12 @@ pub mod start_import_file_task_input {
             self.s3key = input;
             self
         }
-        /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that
-        /// the servers specified in the import file are available in AWS Application Discovery Service. </p>
+        /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
         pub fn data_source_type(mut self, input: crate::model::DataSourceType) -> Self {
             self.data_source_type = Some(input);
             self
         }
-        /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that
-        /// the servers specified in the import file are available in AWS Application Discovery Service. </p>
+        /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
         pub fn set_data_source_type(
             mut self,
             input: std::option::Option<crate::model::DataSourceType>,
@@ -2612,16 +2559,14 @@ pub mod start_import_file_task_input {
         ///
         /// To override the contents of this collection use [`set_group_id`](Self::set_group_id).
         ///
-        /// <p>Groups the resources in the import file together with a unique name. This ID can be as
-        /// filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
-        pub fn group_id(mut self, input: impl Into<crate::model::Group>) -> Self {
+        /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
+        pub fn group_id(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_id.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_id = Some(v);
             self
         }
-        /// <p>Groups the resources in the import file together with a unique name. This ID can be as
-        /// filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
+        /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
         pub fn set_group_id(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -2629,14 +2574,12 @@ pub mod start_import_file_task_input {
             self.group_id = input;
             self
         }
-        /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to
-        /// begin with migrationhub-strategy-. </p>
+        /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
         pub fn s3bucket_for_report_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3bucket_for_report_data = Some(input.into());
             self
         }
-        /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to
-        /// begin with migrationhub-strategy-. </p>
+        /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
         pub fn set_s3bucket_for_report_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2665,7 +2608,7 @@ pub mod start_import_file_task_input {
 #[doc(hidden)]
 pub type StartImportFileTaskInputOperationOutputAlias = crate::operation::StartImportFileTask;
 #[doc(hidden)]
-pub type StartImportFileTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartImportFileTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartImportFileTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartImportFileTask`](crate::operation::StartImportFileTask)>
     #[allow(clippy::let_and_return)]
@@ -2676,7 +2619,7 @@ impl StartImportFileTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartImportFileTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2758,7 +2701,7 @@ impl StartImportFileTaskInput {
             "StartImportFileTask",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2809,9 +2752,9 @@ pub mod start_recommendation_report_generation_input {
         /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).
         ///
         /// <p> Groups the resources in the recommendation report with a unique name. </p>
-        pub fn group_id_filter(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn group_id_filter(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_id_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_id_filter = Some(v);
             self
         }
@@ -2842,7 +2785,7 @@ pub type StartRecommendationReportGenerationInputOperationOutputAlias =
     crate::operation::StartRecommendationReportGeneration;
 #[doc(hidden)]
 pub type StartRecommendationReportGenerationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartRecommendationReportGenerationInput {
     /// Consumes the builder and constructs an Operation<[`StartRecommendationReportGeneration`](crate::operation::StartRecommendationReportGeneration)>
     #[allow(clippy::let_and_return)]
@@ -2853,7 +2796,7 @@ impl StartRecommendationReportGenerationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartRecommendationReportGeneration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2935,7 +2878,7 @@ impl StartRecommendationReportGenerationInput {
             "StartRecommendationReportGeneration",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2967,12 +2910,12 @@ pub mod stop_assessment_input {
         pub(crate) assessment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The <code>assessmentId</code> returned by <a>StartAssessment</a>. </p>
+        /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
         pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_id = Some(input.into());
             self
         }
-        /// <p> The <code>assessmentId</code> returned by <a>StartAssessment</a>. </p>
+        /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2996,7 +2939,7 @@ pub mod stop_assessment_input {
 #[doc(hidden)]
 pub type StopAssessmentInputOperationOutputAlias = crate::operation::StopAssessment;
 #[doc(hidden)]
-pub type StopAssessmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopAssessmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopAssessmentInput {
     /// Consumes the builder and constructs an Operation<[`StopAssessment`](crate::operation::StopAssessment)>
     #[allow(clippy::let_and_return)]
@@ -3007,7 +2950,7 @@ impl StopAssessmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopAssessment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3087,7 +3030,7 @@ impl StopAssessmentInput {
             "StopAssessment",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3136,14 +3079,12 @@ pub mod update_application_component_config_input {
             self.application_component_id = input;
             self
         }
-        /// <p> Indicates whether the application component has been included for server recommendation
-        /// or not. </p>
+        /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
         pub fn inclusion_status(mut self, input: crate::model::InclusionStatus) -> Self {
             self.inclusion_status = Some(input);
             self
         }
-        /// <p> Indicates whether the application component has been included for server recommendation
-        /// or not. </p>
+        /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
         pub fn set_inclusion_status(
             mut self,
             input: std::option::Option<crate::model::InclusionStatus>,
@@ -3151,12 +3092,12 @@ pub mod update_application_component_config_input {
             self.inclusion_status = input;
             self
         }
-        /// <p> The preferred strategy options for the application component. Use values from the <a>GetApplicationComponentStrategies</a> response. </p>
+        /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
         pub fn strategy_option(mut self, input: crate::model::StrategyOption) -> Self {
             self.strategy_option = Some(input);
             self
         }
-        /// <p> The preferred strategy options for the application component. Use values from the <a>GetApplicationComponentStrategies</a> response. </p>
+        /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
         pub fn set_strategy_option(
             mut self,
             input: std::option::Option<crate::model::StrategyOption>,
@@ -3169,9 +3110,9 @@ pub mod update_application_component_config_input {
         /// To override the contents of this collection use [`set_source_code_list`](Self::set_source_code_list).
         ///
         /// <p> The list of source code configurations to update for the application component. </p>
-        pub fn source_code_list(mut self, input: impl Into<crate::model::SourceCode>) -> Self {
+        pub fn source_code_list(mut self, input: crate::model::SourceCode) -> Self {
             let mut v = self.source_code_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_code_list = Some(v);
             self
         }
@@ -3217,7 +3158,8 @@ pub mod update_application_component_config_input {
 pub type UpdateApplicationComponentConfigInputOperationOutputAlias =
     crate::operation::UpdateApplicationComponentConfig;
 #[doc(hidden)]
-pub type UpdateApplicationComponentConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApplicationComponentConfigInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationComponentConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplicationComponentConfig`](crate::operation::UpdateApplicationComponentConfig)>
     #[allow(clippy::let_and_return)]
@@ -3228,7 +3170,7 @@ impl UpdateApplicationComponentConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplicationComponentConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3310,7 +3252,7 @@ impl UpdateApplicationComponentConfigInput {
             "UpdateApplicationComponentConfig",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3353,12 +3295,12 @@ pub mod update_server_config_input {
             self.server_id = input;
             self
         }
-        /// <p> The preferred strategy options for the application component. See the response from <a>GetServerStrategies</a>.</p>
+        /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
         pub fn strategy_option(mut self, input: crate::model::StrategyOption) -> Self {
             self.strategy_option = Some(input);
             self
         }
-        /// <p> The preferred strategy options for the application component. See the response from <a>GetServerStrategies</a>.</p>
+        /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
         pub fn set_strategy_option(
             mut self,
             input: std::option::Option<crate::model::StrategyOption>,
@@ -3383,7 +3325,7 @@ pub mod update_server_config_input {
 #[doc(hidden)]
 pub type UpdateServerConfigInputOperationOutputAlias = crate::operation::UpdateServerConfig;
 #[doc(hidden)]
-pub type UpdateServerConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateServerConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServerConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServerConfig`](crate::operation::UpdateServerConfig)>
     #[allow(clippy::let_and_return)]
@@ -3394,7 +3336,7 @@ impl UpdateServerConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateServerConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3474,7 +3416,7 @@ impl UpdateServerConfigInput {
             "UpdateServerConfig",
             "migrationhubstrategy",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3503,7 +3445,7 @@ impl UpdateServerConfigInput {
 pub struct UpdateServerConfigInput {
     /// <p> The ID of the server. </p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p> The preferred strategy options for the application component. See the response from <a>GetServerStrategies</a>.</p>
+    /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub strategy_option: std::option::Option<crate::model::StrategyOption>,
 }
 impl UpdateServerConfigInput {
@@ -3511,7 +3453,7 @@ impl UpdateServerConfigInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p> The preferred strategy options for the application component. See the response from <a>GetServerStrategies</a>.</p>
+    /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub fn strategy_option(&self) -> std::option::Option<&crate::model::StrategyOption> {
         self.strategy_option.as_ref()
     }
@@ -3531,10 +3473,9 @@ impl std::fmt::Debug for UpdateServerConfigInput {
 pub struct UpdateApplicationComponentConfigInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
     pub application_component_id: std::option::Option<std::string::String>,
-    /// <p> Indicates whether the application component has been included for server recommendation
-    /// or not. </p>
+    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub inclusion_status: std::option::Option<crate::model::InclusionStatus>,
-    /// <p> The preferred strategy options for the application component. Use values from the <a>GetApplicationComponentStrategies</a> response. </p>
+    /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
     pub strategy_option: std::option::Option<crate::model::StrategyOption>,
     /// <p> The list of source code configurations to update for the application component. </p>
     pub source_code_list: std::option::Option<std::vec::Vec<crate::model::SourceCode>>,
@@ -3546,12 +3487,11 @@ impl UpdateApplicationComponentConfigInput {
     pub fn application_component_id(&self) -> std::option::Option<&str> {
         self.application_component_id.as_deref()
     }
-    /// <p> Indicates whether the application component has been included for server recommendation
-    /// or not. </p>
+    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub fn inclusion_status(&self) -> std::option::Option<&crate::model::InclusionStatus> {
         self.inclusion_status.as_ref()
     }
-    /// <p> The preferred strategy options for the application component. Use values from the <a>GetApplicationComponentStrategies</a> response. </p>
+    /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
     pub fn strategy_option(&self) -> std::option::Option<&crate::model::StrategyOption> {
         self.strategy_option.as_ref()
     }
@@ -3580,11 +3520,11 @@ impl std::fmt::Debug for UpdateApplicationComponentConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopAssessmentInput {
-    /// <p> The <code>assessmentId</code> returned by <a>StartAssessment</a>. </p>
+    /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl StopAssessmentInput {
-    /// <p> The <code>assessmentId</code> returned by <a>StartAssessment</a>. </p>
+    /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
     pub fn assessment_id(&self) -> std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
@@ -3631,19 +3571,15 @@ impl std::fmt::Debug for StartRecommendationReportGenerationInput {
 pub struct StartImportFileTaskInput {
     /// <p> A descriptive name for the request. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with
-    /// <code>migrationhub-strategy-</code>.</p>
+    /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p> The Amazon S3 key name of the import file. </p>
     pub s3key: std::option::Option<std::string::String>,
-    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that
-    /// the servers specified in the import file are available in AWS Application Discovery Service. </p>
+    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub data_source_type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>Groups the resources in the import file together with a unique name. This ID can be as
-    /// filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
+    /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
     pub group_id: std::option::Option<std::vec::Vec<crate::model::Group>>,
-    /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to
-    /// begin with migrationhub-strategy-. </p>
+    /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
     pub s3bucket_for_report_data: std::option::Option<std::string::String>,
 }
 impl StartImportFileTaskInput {
@@ -3651,8 +3587,7 @@ impl StartImportFileTaskInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with
-    /// <code>migrationhub-strategy-</code>.</p>
+    /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
     pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
@@ -3660,18 +3595,15 @@ impl StartImportFileTaskInput {
     pub fn s3key(&self) -> std::option::Option<&str> {
         self.s3key.as_deref()
     }
-    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that
-    /// the servers specified in the import file are available in AWS Application Discovery Service. </p>
+    /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub fn data_source_type(&self) -> std::option::Option<&crate::model::DataSourceType> {
         self.data_source_type.as_ref()
     }
-    /// <p>Groups the resources in the import file together with a unique name. This ID can be as
-    /// filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
+    /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
     pub fn group_id(&self) -> std::option::Option<&[crate::model::Group]> {
         self.group_id.as_deref()
     }
-    /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to
-    /// begin with migrationhub-strategy-. </p>
+    /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
     pub fn s3bucket_for_report_data(&self) -> std::option::Option<&str> {
         self.s3bucket_for_report_data.as_deref()
     }
@@ -3693,29 +3625,17 @@ impl std::fmt::Debug for StartImportFileTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAssessmentInput {
-    /// <p>
-    /// The S3 bucket used by the collectors to send analysis data to the service.
-    /// The bucket name must begin with <code>migrationhub-strategy-</code>.
-    /// </p>
+    /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
     pub s3bucket_for_analysis_data: std::option::Option<std::string::String>,
-    /// <p>
-    /// The S3 bucket where all the reports generated by the service are stored.
-    /// The bucket name must begin with <code>migrationhub-strategy-</code>.
-    /// </p>
+    /// <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
     pub s3bucket_for_report_data: std::option::Option<std::string::String>,
 }
 impl StartAssessmentInput {
-    /// <p>
-    /// The S3 bucket used by the collectors to send analysis data to the service.
-    /// The bucket name must begin with <code>migrationhub-strategy-</code>.
-    /// </p>
+    /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
     pub fn s3bucket_for_analysis_data(&self) -> std::option::Option<&str> {
         self.s3bucket_for_analysis_data.as_deref()
     }
-    /// <p>
-    /// The S3 bucket where all the reports generated by the service are stored.
-    /// The bucket name must begin with <code>migrationhub-strategy-</code>.
-    /// </p>
+    /// <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
     pub fn s3bucket_for_report_data(&self) -> std::option::Option<&str> {
         self.s3bucket_for_report_data.as_deref()
     }
@@ -3777,19 +3697,13 @@ impl std::fmt::Debug for PutPortfolioPreferencesInput {
 pub struct ListServersInput {
     /// <p> Criteria for filtering servers. </p>
     pub server_criteria: std::option::Option<crate::model::ServerCriteria>,
-    /// <p> Specifies the filter value, which is based on the type of server criteria. For example,
-    /// if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is
-    /// equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers
-    /// matching the OS name <code>WindowsServer</code>. </p>
+    /// <p> Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>. </p>
     pub filter_value: std::option::Option<std::string::String>,
-    /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
-    /// (<code>DESC</code>) order. </p>
+    /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
     pub sort: std::option::Option<crate::model::SortOrder>,
     /// <p> Specifies the group ID to filter on. </p>
     pub group_id_filter: std::option::Option<std::vec::Vec<crate::model::Group>>,
-    /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-    /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-    /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     pub max_results: std::option::Option<i32>,
@@ -3799,15 +3713,11 @@ impl ListServersInput {
     pub fn server_criteria(&self) -> std::option::Option<&crate::model::ServerCriteria> {
         self.server_criteria.as_ref()
     }
-    /// <p> Specifies the filter value, which is based on the type of server criteria. For example,
-    /// if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is
-    /// equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers
-    /// matching the OS name <code>WindowsServer</code>. </p>
+    /// <p> Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>. </p>
     pub fn filter_value(&self) -> std::option::Option<&str> {
         self.filter_value.as_deref()
     }
-    /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
-    /// (<code>DESC</code>) order. </p>
+    /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
     pub fn sort(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort.as_ref()
     }
@@ -3815,9 +3725,7 @@ impl ListServersInput {
     pub fn group_id_filter(&self) -> std::option::Option<&[crate::model::Group]> {
         self.group_id_filter.as_deref()
     }
-    /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-    /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-    /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3843,17 +3751,13 @@ impl std::fmt::Debug for ListServersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImportFileTaskInput {
-    /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-    /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-    /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The total number of items to return. The maximum value is 100. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListImportFileTaskInput {
-    /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-    /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-    /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3875,17 +3779,13 @@ impl std::fmt::Debug for ListImportFileTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCollectorsInput {
-    /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-    /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-    /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListCollectorsInput {
-    /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-    /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-    /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3910,19 +3810,13 @@ pub struct ListApplicationComponentsInput {
     /// <p> Criteria for filtering the list of application components. </p>
     pub application_component_criteria:
         std::option::Option<crate::model::ApplicationComponentCriteria>,
-    /// <p> Specify the value based on the application component criteria type. For example, if
-    /// <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and
-    /// <code>filterValue</code> is set to <code>server1</code>, then <a>ListApplicationComponents</a> returns all the application components running on
-    /// server1. </p>
+    /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
     pub filter_value: std::option::Option<std::string::String>,
-    /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
-    /// (<code>DESC</code>) order. </p>
+    /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
     pub sort: std::option::Option<crate::model::SortOrder>,
     /// <p> The group ID specified in to filter on. </p>
     pub group_id_filter: std::option::Option<std::vec::Vec<crate::model::Group>>,
-    /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-    /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-    /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     pub max_results: std::option::Option<i32>,
@@ -3934,15 +3828,11 @@ impl ListApplicationComponentsInput {
     ) -> std::option::Option<&crate::model::ApplicationComponentCriteria> {
         self.application_component_criteria.as_ref()
     }
-    /// <p> Specify the value based on the application component criteria type. For example, if
-    /// <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and
-    /// <code>filterValue</code> is set to <code>server1</code>, then <a>ListApplicationComponents</a> returns all the application components running on
-    /// server1. </p>
+    /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
     pub fn filter_value(&self) -> std::option::Option<&str> {
         self.filter_value.as_deref()
     }
-    /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
-    /// (<code>DESC</code>) order. </p>
+    /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
     pub fn sort(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort.as_ref()
     }
@@ -3950,9 +3840,7 @@ impl ListApplicationComponentsInput {
     pub fn group_id_filter(&self) -> std::option::Option<&[crate::model::Group]> {
         self.group_id_filter.as_deref()
     }
-    /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-    /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-    /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4004,9 +3892,7 @@ impl std::fmt::Debug for GetServerStrategiesInput {
 pub struct GetServerDetailsInput {
     /// <p> The ID of the server. </p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-    /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-    /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     pub max_results: std::option::Option<i32>,
@@ -4016,9 +3902,7 @@ impl GetServerDetailsInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-    /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-    /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4041,13 +3925,11 @@ impl std::fmt::Debug for GetServerDetailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationReportDetailsInput {
-    /// <p> The recommendation report generation task <code>id</code> returned by
-    /// <a>StartRecommendationReportGeneration</a>. </p>
+    /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetRecommendationReportDetailsInput {
-    /// <p> The recommendation report generation task <code>id</code> returned by
-    /// <a>StartRecommendationReportGeneration</a>. </p>
+    /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -4086,13 +3968,11 @@ impl std::fmt::Debug for GetPortfolioPreferencesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportFileTaskInput {
-    /// <p> The ID of the import file task. This ID is returned in the response of
-    /// <a>StartImportFileTask</a>. </p>
+    /// <p> The ID of the import file task. This ID is returned in the response of <code>StartImportFileTask</code>. </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetImportFileTaskInput {
-    /// <p> The ID of the import file task. This ID is returned in the response of
-    /// <a>StartImportFileTask</a>. </p>
+    /// <p> The ID of the import file task. This ID is returned in the response of <code>StartImportFileTask</code>. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -4109,11 +3989,11 @@ impl std::fmt::Debug for GetImportFileTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentInput {
-    /// <p> The <code>assessmentid</code> returned by <a>StartAssessment</a>.</p>
+    /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetAssessmentInput {
-    /// <p> The <code>assessmentid</code> returned by <a>StartAssessment</a>.</p>
+    /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }

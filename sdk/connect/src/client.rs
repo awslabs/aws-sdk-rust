@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Connect Service
@@ -508,6 +508,7 @@ where
     ///
     /// See [`GetCurrentMetricData`](crate::client::fluent_builders::GetCurrentMetricData) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCurrentMetricData::into_paginator).
     pub fn get_current_metric_data(&self) -> fluent_builders::GetCurrentMetricData<C, M, R> {
         fluent_builders::GetCurrentMetricData::new(self.handle.clone())
     }
@@ -522,6 +523,7 @@ where
     ///
     /// See [`GetMetricData`](crate::client::fluent_builders::GetMetricData) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetMetricData::into_paginator).
     pub fn get_metric_data(&self) -> fluent_builders::GetMetricData<C, M, R> {
         fluent_builders::GetMetricData::new(self.handle.clone())
     }
@@ -529,6 +531,7 @@ where
     ///
     /// See [`ListAgentStatuses`](crate::client::fluent_builders::ListAgentStatuses) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAgentStatuses::into_paginator).
     pub fn list_agent_statuses(&self) -> fluent_builders::ListAgentStatuses<C, M, R> {
         fluent_builders::ListAgentStatuses::new(self.handle.clone())
     }
@@ -536,6 +539,7 @@ where
     ///
     /// See [`ListApprovedOrigins`](crate::client::fluent_builders::ListApprovedOrigins) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApprovedOrigins::into_paginator).
     pub fn list_approved_origins(&self) -> fluent_builders::ListApprovedOrigins<C, M, R> {
         fluent_builders::ListApprovedOrigins::new(self.handle.clone())
     }
@@ -543,6 +547,7 @@ where
     ///
     /// See [`ListBots`](crate::client::fluent_builders::ListBots) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBots::into_paginator).
     pub fn list_bots(&self) -> fluent_builders::ListBots<C, M, R> {
         fluent_builders::ListBots::new(self.handle.clone())
     }
@@ -550,6 +555,7 @@ where
     ///
     /// See [`ListContactFlowModules`](crate::client::fluent_builders::ListContactFlowModules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContactFlowModules::into_paginator).
     pub fn list_contact_flow_modules(&self) -> fluent_builders::ListContactFlowModules<C, M, R> {
         fluent_builders::ListContactFlowModules::new(self.handle.clone())
     }
@@ -557,6 +563,7 @@ where
     ///
     /// See [`ListContactFlows`](crate::client::fluent_builders::ListContactFlows) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContactFlows::into_paginator).
     pub fn list_contact_flows(&self) -> fluent_builders::ListContactFlows<C, M, R> {
         fluent_builders::ListContactFlows::new(self.handle.clone())
     }
@@ -564,6 +571,7 @@ where
     ///
     /// See [`ListContactReferences`](crate::client::fluent_builders::ListContactReferences) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContactReferences::into_paginator).
     pub fn list_contact_references(&self) -> fluent_builders::ListContactReferences<C, M, R> {
         fluent_builders::ListContactReferences::new(self.handle.clone())
     }
@@ -571,6 +579,7 @@ where
     ///
     /// See [`ListHoursOfOperations`](crate::client::fluent_builders::ListHoursOfOperations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHoursOfOperations::into_paginator).
     pub fn list_hours_of_operations(&self) -> fluent_builders::ListHoursOfOperations<C, M, R> {
         fluent_builders::ListHoursOfOperations::new(self.handle.clone())
     }
@@ -578,6 +587,7 @@ where
     ///
     /// See [`ListInstanceAttributes`](crate::client::fluent_builders::ListInstanceAttributes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstanceAttributes::into_paginator).
     pub fn list_instance_attributes(&self) -> fluent_builders::ListInstanceAttributes<C, M, R> {
         fluent_builders::ListInstanceAttributes::new(self.handle.clone())
     }
@@ -585,6 +595,7 @@ where
     ///
     /// See [`ListInstances`](crate::client::fluent_builders::ListInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstances::into_paginator).
     pub fn list_instances(&self) -> fluent_builders::ListInstances<C, M, R> {
         fluent_builders::ListInstances::new(self.handle.clone())
     }
@@ -592,6 +603,7 @@ where
     ///
     /// See [`ListInstanceStorageConfigs`](crate::client::fluent_builders::ListInstanceStorageConfigs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstanceStorageConfigs::into_paginator).
     pub fn list_instance_storage_configs(
         &self,
     ) -> fluent_builders::ListInstanceStorageConfigs<C, M, R> {
@@ -601,6 +613,7 @@ where
     ///
     /// See [`ListIntegrationAssociations`](crate::client::fluent_builders::ListIntegrationAssociations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIntegrationAssociations::into_paginator).
     pub fn list_integration_associations(
         &self,
     ) -> fluent_builders::ListIntegrationAssociations<C, M, R> {
@@ -610,6 +623,7 @@ where
     ///
     /// See [`ListLambdaFunctions`](crate::client::fluent_builders::ListLambdaFunctions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLambdaFunctions::into_paginator).
     pub fn list_lambda_functions(&self) -> fluent_builders::ListLambdaFunctions<C, M, R> {
         fluent_builders::ListLambdaFunctions::new(self.handle.clone())
     }
@@ -617,6 +631,7 @@ where
     ///
     /// See [`ListLexBots`](crate::client::fluent_builders::ListLexBots) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLexBots::into_paginator).
     pub fn list_lex_bots(&self) -> fluent_builders::ListLexBots<C, M, R> {
         fluent_builders::ListLexBots::new(self.handle.clone())
     }
@@ -624,6 +639,7 @@ where
     ///
     /// See [`ListPhoneNumbers`](crate::client::fluent_builders::ListPhoneNumbers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPhoneNumbers::into_paginator).
     pub fn list_phone_numbers(&self) -> fluent_builders::ListPhoneNumbers<C, M, R> {
         fluent_builders::ListPhoneNumbers::new(self.handle.clone())
     }
@@ -631,6 +647,7 @@ where
     ///
     /// See [`ListPrompts`](crate::client::fluent_builders::ListPrompts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPrompts::into_paginator).
     pub fn list_prompts(&self) -> fluent_builders::ListPrompts<C, M, R> {
         fluent_builders::ListPrompts::new(self.handle.clone())
     }
@@ -638,6 +655,7 @@ where
     ///
     /// See [`ListQueueQuickConnects`](crate::client::fluent_builders::ListQueueQuickConnects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQueueQuickConnects::into_paginator).
     pub fn list_queue_quick_connects(&self) -> fluent_builders::ListQueueQuickConnects<C, M, R> {
         fluent_builders::ListQueueQuickConnects::new(self.handle.clone())
     }
@@ -645,6 +663,7 @@ where
     ///
     /// See [`ListQueues`](crate::client::fluent_builders::ListQueues) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQueues::into_paginator).
     pub fn list_queues(&self) -> fluent_builders::ListQueues<C, M, R> {
         fluent_builders::ListQueues::new(self.handle.clone())
     }
@@ -652,6 +671,7 @@ where
     ///
     /// See [`ListQuickConnects`](crate::client::fluent_builders::ListQuickConnects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQuickConnects::into_paginator).
     pub fn list_quick_connects(&self) -> fluent_builders::ListQuickConnects<C, M, R> {
         fluent_builders::ListQuickConnects::new(self.handle.clone())
     }
@@ -659,6 +679,7 @@ where
     ///
     /// See [`ListRoutingProfileQueues`](crate::client::fluent_builders::ListRoutingProfileQueues) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRoutingProfileQueues::into_paginator).
     pub fn list_routing_profile_queues(
         &self,
     ) -> fluent_builders::ListRoutingProfileQueues<C, M, R> {
@@ -668,6 +689,7 @@ where
     ///
     /// See [`ListRoutingProfiles`](crate::client::fluent_builders::ListRoutingProfiles) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRoutingProfiles::into_paginator).
     pub fn list_routing_profiles(&self) -> fluent_builders::ListRoutingProfiles<C, M, R> {
         fluent_builders::ListRoutingProfiles::new(self.handle.clone())
     }
@@ -675,6 +697,7 @@ where
     ///
     /// See [`ListSecurityKeys`](crate::client::fluent_builders::ListSecurityKeys) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSecurityKeys::into_paginator).
     pub fn list_security_keys(&self) -> fluent_builders::ListSecurityKeys<C, M, R> {
         fluent_builders::ListSecurityKeys::new(self.handle.clone())
     }
@@ -682,6 +705,7 @@ where
     ///
     /// See [`ListSecurityProfilePermissions`](crate::client::fluent_builders::ListSecurityProfilePermissions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSecurityProfilePermissions::into_paginator).
     pub fn list_security_profile_permissions(
         &self,
     ) -> fluent_builders::ListSecurityProfilePermissions<C, M, R> {
@@ -691,6 +715,7 @@ where
     ///
     /// See [`ListSecurityProfiles`](crate::client::fluent_builders::ListSecurityProfiles) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSecurityProfiles::into_paginator).
     pub fn list_security_profiles(&self) -> fluent_builders::ListSecurityProfiles<C, M, R> {
         fluent_builders::ListSecurityProfiles::new(self.handle.clone())
     }
@@ -705,6 +730,7 @@ where
     ///
     /// See [`ListUseCases`](crate::client::fluent_builders::ListUseCases) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUseCases::into_paginator).
     pub fn list_use_cases(&self) -> fluent_builders::ListUseCases<C, M, R> {
         fluent_builders::ListUseCases::new(self.handle.clone())
     }
@@ -712,6 +738,7 @@ where
     ///
     /// See [`ListUserHierarchyGroups`](crate::client::fluent_builders::ListUserHierarchyGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUserHierarchyGroups::into_paginator).
     pub fn list_user_hierarchy_groups(&self) -> fluent_builders::ListUserHierarchyGroups<C, M, R> {
         fluent_builders::ListUserHierarchyGroups::new(self.handle.clone())
     }
@@ -719,6 +746,7 @@ where
     ///
     /// See [`ListUsers`](crate::client::fluent_builders::ListUsers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
     pub fn list_users(&self) -> fluent_builders::ListUsers<C, M, R> {
         fluent_builders::ListUsers::new(self.handle.clone())
     }
@@ -1070,7 +1098,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Associates an approved origin to an Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateApprovedOrigin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1115,10 +1143,10 @@ pub mod fluent_builders {
                 crate::input::AssociateApprovedOriginInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1127,8 +1155,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1137,8 +1165,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain to add to your allow list.</p>
-        pub fn origin(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.origin(inp);
+        pub fn origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.origin(input.into());
             self
         }
         /// <p>The domain to add to your allow list.</p>
@@ -1151,7 +1179,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Allows the specified Amazon Connect instance to access the specified Amazon Lex or Amazon Lex V2 bot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1196,10 +1224,10 @@ pub mod fluent_builders {
                 crate::input::AssociateBotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1208,8 +1236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1218,8 +1246,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information of an Amazon Lex bot.</p>
-        pub fn lex_bot(mut self, inp: crate::model::LexBot) -> Self {
-            self.inner = self.inner.lex_bot(inp);
+        pub fn lex_bot(mut self, input: crate::model::LexBot) -> Self {
+            self.inner = self.inner.lex_bot(input);
             self
         }
         /// <p>Configuration information of an Amazon Lex bot.</p>
@@ -1228,8 +1256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
-        pub fn lex_v2_bot(mut self, inp: crate::model::LexV2Bot) -> Self {
-            self.inner = self.inner.lex_v2_bot(inp);
+        pub fn lex_v2_bot(mut self, input: crate::model::LexV2Bot) -> Self {
+            self.inner = self.inner.lex_v2_bot(input);
             self
         }
         /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
@@ -1244,13 +1272,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateInstanceStorageConfig`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Associates a storage resource type for the first time. You can only associate one type of
-    /// storage configuration in a single call. This means, for example, that you can't define an
-    /// instance with multiple S3 buckets for storing chat transcripts.</p>
-    /// <p>This API does not create a resource that doesn't exist. It only associates it to the
-    /// instance. Ensure that the resource being specified in the storage configuration, like an S3
-    /// bucket, exists when being used for association.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates a storage resource type for the first time. You can only associate one type of storage configuration in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing chat transcripts.</p>
+    /// <p>This API does not create a resource that doesn't exist. It only associates it to the instance. Ensure that the resource being specified in the storage configuration, like an S3 bucket, exists when being used for association.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateInstanceStorageConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1295,10 +1319,10 @@ pub mod fluent_builders {
                 crate::input::AssociateInstanceStorageConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1307,8 +1331,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1317,8 +1341,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid resource type.</p>
-        pub fn resource_type(mut self, inp: crate::model::InstanceStorageResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::InstanceStorageResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>A valid resource type.</p>
@@ -1330,8 +1354,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid storage type.</p>
-        pub fn storage_config(mut self, inp: crate::model::InstanceStorageConfig) -> Self {
-            self.inner = self.inner.storage_config(inp);
+        pub fn storage_config(mut self, input: crate::model::InstanceStorageConfig) -> Self {
+            self.inner = self.inner.storage_config(input);
             self
         }
         /// <p>A valid storage type.</p>
@@ -1347,7 +1371,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Allows the specified Amazon Connect instance to access the specified Lambda function.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateLambdaFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1392,10 +1416,10 @@ pub mod fluent_builders {
                 crate::input::AssociateLambdaFunctionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1404,8 +1428,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1413,14 +1437,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is
-        /// 140.</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.</p>
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is
-        /// 140.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_function_arn(input);
             self
@@ -1430,7 +1452,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateLexBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1475,10 +1497,10 @@ pub mod fluent_builders {
                 crate::input::AssociateLexBotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1487,8 +1509,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1497,8 +1519,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Lex bot to associate with the instance.</p>
-        pub fn lex_bot(mut self, inp: crate::model::LexBot) -> Self {
-            self.inner = self.inner.lex_bot(inp);
+        pub fn lex_bot(mut self, input: crate::model::LexBot) -> Self {
+            self.inner = self.inner.lex_bot(input);
             self
         }
         /// <p>The Amazon Lex bot to associate with the instance.</p>
@@ -1511,7 +1533,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Associates a set of quick connects with a queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateQueueQuickConnects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1556,10 +1578,10 @@ pub mod fluent_builders {
                 crate::input::AssociateQueueQuickConnectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1568,8 +1590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1578,8 +1600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(inp);
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -1592,8 +1614,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_quick_connect_ids`](Self::set_quick_connect_ids).
         ///
         /// <p>The quick connects to associate with this queue.</p>
-        pub fn quick_connect_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quick_connect_ids(inp);
+        pub fn quick_connect_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quick_connect_ids(input.into());
             self
         }
         /// <p>The quick connects to associate with this queue.</p>
@@ -1608,7 +1630,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateRoutingProfileQueues`.
     ///
     /// <p>Associates a set of queues with a routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateRoutingProfileQueues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1653,10 +1675,10 @@ pub mod fluent_builders {
                 crate::input::AssociateRoutingProfileQueuesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1665,8 +1687,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1675,8 +1697,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(inp);
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -1692,11 +1714,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_queue_configs`](Self::set_queue_configs).
         ///
         /// <p>The queues to associate with this routing profile.</p>
-        pub fn queue_configs(
-            mut self,
-            inp: impl Into<crate::model::RoutingProfileQueueConfig>,
-        ) -> Self {
-            self.inner = self.inner.queue_configs(inp);
+        pub fn queue_configs(mut self, input: crate::model::RoutingProfileQueueConfig) -> Self {
+            self.inner = self.inner.queue_configs(input);
             self
         }
         /// <p>The queues to associate with this routing profile.</p>
@@ -1712,7 +1731,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Associates a security key to the instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateSecurityKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1757,10 +1776,10 @@ pub mod fluent_builders {
                 crate::input::AssociateSecurityKeyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1769,8 +1788,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1779,8 +1798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid security key in PEM format.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(inp);
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(input.into());
             self
         }
         /// <p>A valid security key in PEM format.</p>
@@ -1793,7 +1812,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Creates an agent status for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAgentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1838,10 +1857,10 @@ pub mod fluent_builders {
                 crate::input::CreateAgentStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1850,8 +1869,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1860,8 +1879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the status.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the status.</p>
@@ -1870,8 +1889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the status.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the status.</p>
@@ -1880,8 +1899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the status.</p>
-        pub fn state(mut self, inp: crate::model::AgentStatusState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, input: crate::model::AgentStatusState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The state of the status.</p>
@@ -1893,8 +1912,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display order of the status.</p>
-        pub fn display_order(mut self, inp: i32) -> Self {
-            self.inner = self.inner.display_order(inp);
+        pub fn display_order(mut self, input: i32) -> Self {
+            self.inner = self.inner.display_order(input);
             self
         }
         /// <p>The display order of the status.</p>
@@ -1912,7 +1931,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -1929,9 +1948,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContactFlow`.
     ///
     /// <p>Creates a contact flow for the specified Amazon Connect instance.</p>
-    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect
-    /// Flow language</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1976,10 +1994,10 @@ pub mod fluent_builders {
                 crate::input::CreateContactFlowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1988,8 +2006,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -1998,8 +2016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact flow.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the contact flow.</p>
@@ -2007,14 +2025,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.</p>
-        pub fn r#type(mut self, inp: crate::model::ContactFlowType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        pub fn r#type(mut self, input: crate::model::ContactFlowType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.</p>
+        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ContactFlowType>,
@@ -2023,8 +2039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the contact flow. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the contact flow. </p>
@@ -2033,8 +2049,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the contact flow. </p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the contact flow. </p>
@@ -2052,7 +2068,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags.</p>
@@ -2069,7 +2085,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContactFlowModule`.
     ///
     /// <p>Creates a contact flow module for the specified Amazon Connect instance. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactFlowModule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2114,10 +2130,10 @@ pub mod fluent_builders {
                 crate::input::CreateContactFlowModuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2126,8 +2142,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -2136,8 +2152,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact flow module.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the contact flow module.</p>
@@ -2146,8 +2162,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the contact flow module. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the contact flow module. </p>
@@ -2156,8 +2172,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the contact flow module.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the contact flow module.</p>
@@ -2175,7 +2191,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -2188,14 +2204,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2205,7 +2219,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Creates hours of operation. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2250,10 +2264,10 @@ pub mod fluent_builders {
                 crate::input::CreateHoursOfOperationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2262,8 +2276,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -2272,8 +2286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the hours of operation.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the hours of operation.</p>
@@ -2282,8 +2296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the hours of operation.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the hours of operation.</p>
@@ -2292,8 +2306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time zone of the hours of operation.</p>
-        pub fn time_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.time_zone(inp);
+        pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_zone(input.into());
             self
         }
         /// <p>The time zone of the hours of operation.</p>
@@ -2306,8 +2320,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_config`](Self::set_config).
         ///
         /// <p>Configuration information for the hours of operation: day, start time, and end time.</p>
-        pub fn config(mut self, inp: impl Into<crate::model::HoursOfOperationConfig>) -> Self {
-            self.inner = self.inner.config(inp);
+        pub fn config(mut self, input: crate::model::HoursOfOperationConfig) -> Self {
+            self.inner = self.inner.config(input);
             self
         }
         /// <p>Configuration information for the hours of operation: day, start time, and end time.</p>
@@ -2328,7 +2342,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -2345,13 +2359,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateInstance`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any
-    /// storage, such as Amazon Simple Storage Service (Amazon S3) or Amazon Kinesis. It also does not
-    /// allow for any configurations on features, such as Contact Lens for Amazon Connect. </p>
-    /// <p>Amazon Connect enforces a limit on the total number of instances that you can create or delete in 30 days.
-    /// If you exceed this limit, you will get an error message indicating there has been an excessive number of attempts at creating or deleting instances.
-    /// You must wait 30 days before you can restart creating and deleting instances in your account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage, such as Amazon Simple Storage Service (Amazon S3) or Amazon Kinesis. It also does not allow for any configurations on features, such as Contact Lens for Amazon Connect. </p>
+    /// <p>Amazon Connect enforces a limit on the total number of instances that you can create or delete in 30 days. If you exceed this limit, you will get an error message indicating there has been an excessive number of attempts at creating or deleting instances. You must wait 30 days before you can restart creating and deleting instances in your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2396,10 +2406,10 @@ pub mod fluent_builders {
                 crate::input::CreateInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2408,8 +2418,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The idempotency token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token.</p>
@@ -2418,8 +2428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of identity management for your Amazon Connect users.</p>
-        pub fn identity_management_type(mut self, inp: crate::model::DirectoryType) -> Self {
-            self.inner = self.inner.identity_management_type(inp);
+        pub fn identity_management_type(mut self, input: crate::model::DirectoryType) -> Self {
+            self.inner = self.inner.identity_management_type(input);
             self
         }
         /// <p>The type of identity management for your Amazon Connect users.</p>
@@ -2431,8 +2441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for your instance.</p>
-        pub fn instance_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_alias(inp);
+        pub fn instance_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_alias(input.into());
             self
         }
         /// <p>The name for your instance.</p>
@@ -2444,8 +2454,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the directory.</p>
-        pub fn directory_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(inp);
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier for the directory.</p>
@@ -2454,8 +2464,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Your contact center handles incoming contacts.</p>
-        pub fn inbound_calls_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.inbound_calls_enabled(inp);
+        pub fn inbound_calls_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.inbound_calls_enabled(input);
             self
         }
         /// <p>Your contact center handles incoming contacts.</p>
@@ -2464,8 +2474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Your contact center allows outbound calls.</p>
-        pub fn outbound_calls_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.outbound_calls_enabled(inp);
+        pub fn outbound_calls_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.outbound_calls_enabled(input);
             self
         }
         /// <p>Your contact center allows outbound calls.</p>
@@ -2477,7 +2487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIntegrationAssociation`.
     ///
     /// <p>Creates an AWS resource association with an Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIntegrationAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2522,10 +2532,10 @@ pub mod fluent_builders {
                 crate::input::CreateIntegrationAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2534,8 +2544,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -2544,8 +2554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of information to be ingested.</p>
-        pub fn integration_type(mut self, inp: crate::model::IntegrationType) -> Self {
-            self.inner = self.inner.integration_type(inp);
+        pub fn integration_type(mut self, input: crate::model::IntegrationType) -> Self {
+            self.inner = self.inner.integration_type(input);
             self
         }
         /// <p>The type of information to be ingested.</p>
@@ -2557,8 +2567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the integration.</p>
-        pub fn integration_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_arn(inp);
+        pub fn integration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the integration.</p>
@@ -2570,8 +2580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
-        pub fn source_application_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_application_url(inp);
+        pub fn source_application_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_application_url(input.into());
             self
         }
         /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
@@ -2583,8 +2593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
-        pub fn source_application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_application_name(inp);
+        pub fn source_application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_application_name(input.into());
             self
         }
         /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
@@ -2596,8 +2606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
-        pub fn source_type(mut self, inp: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
         /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
@@ -2618,7 +2628,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -2636,7 +2646,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Creates a new queue for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateQueue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2681,10 +2691,10 @@ pub mod fluent_builders {
                 crate::input::CreateQueueInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2693,8 +2703,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -2703,8 +2713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the queue.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the queue.</p>
@@ -2713,8 +2723,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the queue.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the queue.</p>
@@ -2723,8 +2733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-        pub fn outbound_caller_config(mut self, inp: crate::model::OutboundCallerConfig) -> Self {
-            self.inner = self.inner.outbound_caller_config(inp);
+        pub fn outbound_caller_config(mut self, input: crate::model::OutboundCallerConfig) -> Self {
+            self.inner = self.inner.outbound_caller_config(input);
             self
         }
         /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
@@ -2736,8 +2746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the hours of operation.</p>
-        pub fn hours_of_operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hours_of_operation_id(inp);
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hours_of_operation_id(input.into());
             self
         }
         /// <p>The identifier for the hours of operation.</p>
@@ -2749,8 +2759,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
-        pub fn max_contacts(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_contacts(inp);
+        pub fn max_contacts(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_contacts(input);
             self
         }
         /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
@@ -2763,8 +2773,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_quick_connect_ids`](Self::set_quick_connect_ids).
         ///
         /// <p>The quick connects available to agents who are working the queue.</p>
-        pub fn quick_connect_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quick_connect_ids(inp);
+        pub fn quick_connect_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quick_connect_ids(input.into());
             self
         }
         /// <p>The quick connects available to agents who are working the queue.</p>
@@ -2785,7 +2795,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -2802,7 +2812,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateQuickConnect`.
     ///
     /// <p>Creates a quick connect for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateQuickConnect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2847,10 +2857,10 @@ pub mod fluent_builders {
                 crate::input::CreateQuickConnectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2859,8 +2869,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -2869,8 +2879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the quick connect.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the quick connect.</p>
@@ -2879,8 +2889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the quick connect.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the quick connect.</p>
@@ -2889,8 +2899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration settings for the quick connect.</p>
-        pub fn quick_connect_config(mut self, inp: crate::model::QuickConnectConfig) -> Self {
-            self.inner = self.inner.quick_connect_config(inp);
+        pub fn quick_connect_config(mut self, input: crate::model::QuickConnectConfig) -> Self {
+            self.inner = self.inner.quick_connect_config(input);
             self
         }
         /// <p>Configuration settings for the quick connect.</p>
@@ -2911,7 +2921,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -2928,7 +2938,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRoutingProfile`.
     ///
     /// <p>Creates a new routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoutingProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2973,10 +2983,10 @@ pub mod fluent_builders {
                 crate::input::CreateRoutingProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2985,8 +2995,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -2995,8 +3005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
@@ -3005,8 +3015,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
@@ -3015,8 +3025,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The default outbound queue for the routing profile.</p>
-        pub fn default_outbound_queue_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_outbound_queue_id(inp);
+        pub fn default_outbound_queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_outbound_queue_id(input.into());
             self
         }
         /// <p>The default outbound queue for the routing profile.</p>
@@ -3031,17 +3041,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_queue_configs`](Self::set_queue_configs).
         ///
-        /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can
-        /// make only outbound calls.</p>
-        pub fn queue_configs(
-            mut self,
-            inp: impl Into<crate::model::RoutingProfileQueueConfig>,
-        ) -> Self {
-            self.inner = self.inner.queue_configs(inp);
+        /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
+        pub fn queue_configs(mut self, input: crate::model::RoutingProfileQueueConfig) -> Self {
+            self.inner = self.inner.queue_configs(input);
             self
         }
-        /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can
-        /// make only outbound calls.</p>
+        /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
         pub fn set_queue_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfig>>,
@@ -3053,17 +3058,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_media_concurrencies`](Self::set_media_concurrencies).
         ///
-        /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing
-        /// profile.</p>
-        pub fn media_concurrencies(
-            mut self,
-            inp: impl Into<crate::model::MediaConcurrency>,
-        ) -> Self {
-            self.inner = self.inner.media_concurrencies(inp);
+        /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
+        pub fn media_concurrencies(mut self, input: crate::model::MediaConcurrency) -> Self {
+            self.inner = self.inner.media_concurrencies(input);
             self
         }
-        /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing
-        /// profile.</p>
+        /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
         pub fn set_media_concurrencies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
@@ -3081,7 +3081,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags.</p>
@@ -3099,7 +3099,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Creates a security profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSecurityProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3144,10 +3144,10 @@ pub mod fluent_builders {
                 crate::input::CreateSecurityProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3156,8 +3156,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the security profile.</p>
-        pub fn security_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_profile_name(inp);
+        pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_name(input.into());
             self
         }
         /// <p>The name of the security profile.</p>
@@ -3169,8 +3169,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the security profile.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the security profile.</p>
@@ -3183,8 +3183,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>Permissions assigned to the security profile.</p>
-        pub fn permissions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permissions(inp);
+        pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permissions(input.into());
             self
         }
         /// <p>Permissions assigned to the security profile.</p>
@@ -3196,8 +3196,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3215,7 +3215,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -3232,7 +3232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUseCase`.
     ///
     /// <p>Creates a use case for an integration association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUseCase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3277,10 +3277,10 @@ pub mod fluent_builders {
                 crate::input::CreateUseCaseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3289,8 +3289,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3299,8 +3299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the integration association.</p>
-        pub fn integration_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_association_id(inp);
+        pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_association_id(input.into());
             self
         }
         /// <p>The identifier for the integration association.</p>
@@ -3311,14 +3311,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integration_association_id(input);
             self
         }
-        /// <p>The type of use case to associate to the integration association. Each integration
-        /// association can have only one of each use case type.</p>
-        pub fn use_case_type(mut self, inp: crate::model::UseCaseType) -> Self {
-            self.inner = self.inner.use_case_type(inp);
+        /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
+        pub fn use_case_type(mut self, input: crate::model::UseCaseType) -> Self {
+            self.inner = self.inner.use_case_type(input);
             self
         }
-        /// <p>The type of use case to associate to the integration association. Each integration
-        /// association can have only one of each use case type.</p>
+        /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
         pub fn set_use_case_type(
             mut self,
             input: std::option::Option<crate::model::UseCaseType>,
@@ -3336,7 +3334,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -3353,9 +3351,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUser`.
     ///
     /// <p>Creates a user account for the specified Amazon Connect instance.</p>
-    /// <p>For information about how to create user accounts using the Amazon Connect console, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add Users</a> in
-    /// the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For information about how to create user accounts using the Amazon Connect console, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3400,10 +3397,10 @@ pub mod fluent_builders {
                 crate::input::CreateUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3411,35 +3408,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The user name for the account. For instances not using SAML for identity management, the
-        /// user name can include up to 20 characters. If you are using SAML for identity management, the
-        /// user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
-        /// <p>The user name for the account. For instances not using SAML for identity management, the
-        /// user name can include up to 20 characters. If you are using SAML for identity management, the
-        /// user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+        /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_username(input);
             self
         }
-        /// <p>The password for the user account. A password is required if you are using Amazon Connect for
-        /// identity management. Otherwise, it is an error to include a password.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        /// <p>The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.</p>
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
-        /// <p>The password for the user account. A password is required if you are using Amazon Connect for
-        /// identity management. Otherwise, it is an error to include a password.</p>
+        /// <p>The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_password(input);
             self
         }
         /// <p>The information about the identity of the user.</p>
-        pub fn identity_info(mut self, inp: crate::model::UserIdentityInfo) -> Self {
-            self.inner = self.inner.identity_info(inp);
+        pub fn identity_info(mut self, input: crate::model::UserIdentityInfo) -> Self {
+            self.inner = self.inner.identity_info(input);
             self
         }
         /// <p>The information about the identity of the user.</p>
@@ -3451,8 +3442,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The phone settings for the user.</p>
-        pub fn phone_config(mut self, inp: crate::model::UserPhoneConfig) -> Self {
-            self.inner = self.inner.phone_config(inp);
+        pub fn phone_config(mut self, input: crate::model::UserPhoneConfig) -> Self {
+            self.inner = self.inner.phone_config(input);
             self
         }
         /// <p>The phone settings for the user.</p>
@@ -3463,24 +3454,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_phone_config(input);
             self
         }
-        /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect
-        /// cannot access the directory, you can specify this identifier to authenticate users. If you
-        /// include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity
-        /// information is used to authenticate users from your directory.</p>
-        /// <p>This parameter is required if you are using an existing directory for identity management in
-        /// Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for
-        /// identity management and include this parameter, an error is returned.</p>
-        pub fn directory_user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_user_id(inp);
+        /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
+        /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
+        pub fn directory_user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_user_id(input.into());
             self
         }
-        /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect
-        /// cannot access the directory, you can specify this identifier to authenticate users. If you
-        /// include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity
-        /// information is used to authenticate users from your directory.</p>
-        /// <p>This parameter is required if you are using an existing directory for identity management in
-        /// Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for
-        /// identity management and include this parameter, an error is returned.</p>
+        /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
+        /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
         pub fn set_directory_user_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3493,8 +3474,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_profile_ids`](Self::set_security_profile_ids).
         ///
         /// <p>The identifier of the security profile for the user.</p>
-        pub fn security_profile_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_profile_ids(inp);
+        pub fn security_profile_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_ids(input.into());
             self
         }
         /// <p>The identifier of the security profile for the user.</p>
@@ -3506,8 +3487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile for the user.</p>
-        pub fn routing_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(inp);
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile for the user.</p>
@@ -3519,8 +3500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the hierarchy group for the user.</p>
-        pub fn hierarchy_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_group_id(inp);
+        pub fn hierarchy_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_group_id(input.into());
             self
         }
         /// <p>The identifier of the hierarchy group for the user.</p>
@@ -3532,8 +3513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3551,7 +3532,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags.</p>
@@ -3568,7 +3549,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUserHierarchyGroup`.
     ///
     /// <p>Creates a new user hierarchy group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserHierarchyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3613,10 +3594,10 @@ pub mod fluent_builders {
                 crate::input::CreateUserHierarchyGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3625,8 +3606,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
@@ -3634,14 +3615,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if
-        /// the parent group ID is null.</p>
-        pub fn parent_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_group_id(inp);
+        /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
+        pub fn parent_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_group_id(input.into());
             self
         }
-        /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if
-        /// the parent group ID is null.</p>
+        /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
         pub fn set_parent_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3650,8 +3629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3663,7 +3642,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContactFlow`.
     ///
     /// <p>Deletes a contact flow for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3708,10 +3687,10 @@ pub mod fluent_builders {
                 crate::input::DeleteContactFlowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3720,8 +3699,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3730,8 +3709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow.</p>
-        pub fn contact_flow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(inp);
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow.</p>
@@ -3746,7 +3725,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContactFlowModule`.
     ///
     /// <p>Deletes the specified contact flow module.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactFlowModule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3791,10 +3770,10 @@ pub mod fluent_builders {
                 crate::input::DeleteContactFlowModuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3803,8 +3782,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3813,8 +3792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow module.</p>
-        pub fn contact_flow_module_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_module_id(inp);
+        pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_module_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow module.</p>
@@ -3830,7 +3809,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Deletes an hours of operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3875,10 +3854,10 @@ pub mod fluent_builders {
                 crate::input::DeleteHoursOfOperationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3887,8 +3866,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3897,8 +3876,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the hours of operation.</p>
-        pub fn hours_of_operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hours_of_operation_id(inp);
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hours_of_operation_id(input.into());
             self
         }
         /// <p>The identifier for the hours of operation.</p>
@@ -3914,10 +3893,8 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Deletes the Amazon Connect instance.</p>
-    /// <p>Amazon Connect enforces a limit on the total number of instances that you can create or delete in 30 days.
-    /// If you exceed this limit, you will get an error message indicating there has been an excessive number of attempts at creating or deleting instances.
-    /// You must wait 30 days before you can restart creating and deleting instances in your account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Amazon Connect enforces a limit on the total number of instances that you can create or delete in 30 days. If you exceed this limit, you will get an error message indicating there has been an excessive number of attempts at creating or deleting instances. You must wait 30 days before you can restart creating and deleting instances in your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3962,10 +3939,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3974,8 +3951,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3986,9 +3963,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteIntegrationAssociation`.
     ///
-    /// <p>Deletes an AWS resource association from an Amazon Connect instance. The association must not have
-    /// any use cases associated with it.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an AWS resource association from an Amazon Connect instance. The association must not have any use cases associated with it.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntegrationAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4033,10 +4009,10 @@ pub mod fluent_builders {
                 crate::input::DeleteIntegrationAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4045,8 +4021,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4055,8 +4031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the integration association.</p>
-        pub fn integration_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_association_id(inp);
+        pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_association_id(input.into());
             self
         }
         /// <p>The identifier for the integration association.</p>
@@ -4071,7 +4047,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteQuickConnect`.
     ///
     /// <p>Deletes a quick connect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteQuickConnect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4116,10 +4092,10 @@ pub mod fluent_builders {
                 crate::input::DeleteQuickConnectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4128,8 +4104,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4138,8 +4114,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the quick connect.</p>
-        pub fn quick_connect_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quick_connect_id(inp);
+        pub fn quick_connect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quick_connect_id(input.into());
             self
         }
         /// <p>The identifier for the quick connect.</p>
@@ -4155,7 +4131,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Deletes a security profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSecurityProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4200,10 +4176,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSecurityProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4212,8 +4188,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4222,8 +4198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the security profle.</p>
-        pub fn security_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_profile_id(inp);
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_id(input.into());
             self
         }
         /// <p>The identifier for the security profle.</p>
@@ -4238,7 +4214,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUseCase`.
     ///
     /// <p>Deletes a use case from an integration association.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUseCase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4283,10 +4259,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUseCaseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4295,8 +4271,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4305,8 +4281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the integration association.</p>
-        pub fn integration_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_association_id(inp);
+        pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_association_id(input.into());
             self
         }
         /// <p>The identifier for the integration association.</p>
@@ -4318,8 +4294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the use case.</p>
-        pub fn use_case_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.use_case_id(inp);
+        pub fn use_case_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.use_case_id(input.into());
             self
         }
         /// <p>The identifier for the use case.</p>
@@ -4331,10 +4307,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
     /// <p>Deletes a user account from the specified Amazon Connect instance.</p>
-    /// <p>For information about what happens to a user's data when their account is deleted, see
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete Users from
-    /// Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For information about what happens to a user's data when their account is deleted, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4379,10 +4353,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4391,8 +4365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4401,8 +4375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user.</p>
@@ -4413,9 +4387,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteUserHierarchyGroup`.
     ///
-    /// <p>Deletes an existing user hierarchy group. It must not be associated with any agents or have
-    /// any active child groups.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an existing user hierarchy group. It must not be associated with any agents or have any active child groups.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserHierarchyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4460,10 +4433,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUserHierarchyGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4472,8 +4445,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the hierarchy group.</p>
-        pub fn hierarchy_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_group_id(inp);
+        pub fn hierarchy_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_group_id(input.into());
             self
         }
         /// <p>The identifier of the hierarchy group.</p>
@@ -4485,8 +4458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4499,7 +4472,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Describes an agent status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAgentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4544,10 +4517,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAgentStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4556,8 +4529,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4566,8 +4539,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the agent status.</p>
-        pub fn agent_status_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_status_id(inp);
+        pub fn agent_status_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_status_id(input.into());
             self
         }
         /// <p>The identifier for the agent status.</p>
@@ -4582,12 +4555,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeContact`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Describes the specified contact. </p>
-    /// <important>
-    /// <p>Contact information remains available in Amazon Connect for 24 months, and then it is
-    /// deleted.</p>
+    /// <p>Describes the specified contact. </p> <important>
+    /// <p>Contact information remains available in Amazon Connect for 24 months, and then it is deleted.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4632,10 +4603,10 @@ pub mod fluent_builders {
                 crate::input::DescribeContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4644,8 +4615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4654,8 +4625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -4667,9 +4638,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeContactFlow`.
     ///
     /// <p>Describes the specified contact flow.</p>
-    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect
-    /// Flow language</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContactFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4714,10 +4684,10 @@ pub mod fluent_builders {
                 crate::input::DescribeContactFlowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4726,8 +4696,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -4736,8 +4706,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow.</p>
-        pub fn contact_flow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(inp);
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow.</p>
@@ -4752,7 +4722,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeContactFlowModule`.
     ///
     /// <p>Describes the specified contact flow module.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContactFlowModule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4797,10 +4767,10 @@ pub mod fluent_builders {
                 crate::input::DescribeContactFlowModuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4809,8 +4779,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4819,8 +4789,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow module.</p>
-        pub fn contact_flow_module_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_module_id(inp);
+        pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_module_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow module.</p>
@@ -4836,7 +4806,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Describes the hours of operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4881,10 +4851,10 @@ pub mod fluent_builders {
                 crate::input::DescribeHoursOfOperationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4893,8 +4863,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4903,8 +4873,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the hours of operation.</p>
-        pub fn hours_of_operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hours_of_operation_id(inp);
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hours_of_operation_id(input.into());
             self
         }
         /// <p>The identifier for the hours of operation.</p>
@@ -4919,12 +4889,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInstance`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Returns the current state of the specified instance identifier. It tracks the instance while
-    /// it is being created and returns an error status, if applicable. </p>
-    /// <p>If an instance is not created successfully, the instance status reason field returns details
-    /// relevant to the reason. The instance in a failed state is returned only for 24 hours after the
-    /// CreateInstance API was invoked.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the current state of the specified instance identifier. It tracks the instance while it is being created and returns an error status, if applicable. </p>
+    /// <p>If an instance is not created successfully, the instance status reason field returns details relevant to the reason. The instance in a failed state is returned only for 24 hours after the CreateInstance API was invoked.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4969,10 +4936,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4981,8 +4948,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4995,7 +4962,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Describes the specified instance attribute.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5040,10 +5007,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInstanceAttributeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5052,8 +5019,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5062,8 +5029,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of attribute.</p>
-        pub fn attribute_type(mut self, inp: crate::model::InstanceAttributeType) -> Self {
-            self.inner = self.inner.attribute_type(inp);
+        pub fn attribute_type(mut self, input: crate::model::InstanceAttributeType) -> Self {
+            self.inner = self.inner.attribute_type(input);
             self
         }
         /// <p>The type of attribute.</p>
@@ -5078,9 +5045,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInstanceStorageConfig`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Retrieves the current storage configurations for the specified resource type, association
-    /// ID, and instance ID.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the current storage configurations for the specified resource type, association ID, and instance ID.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceStorageConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5125,10 +5091,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInstanceStorageConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5137,8 +5103,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5147,8 +5113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(inp);
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
@@ -5160,8 +5126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid resource type.</p>
-        pub fn resource_type(mut self, inp: crate::model::InstanceStorageResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::InstanceStorageResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>A valid resource type.</p>
@@ -5177,7 +5143,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Describes the specified queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeQueue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5222,10 +5188,10 @@ pub mod fluent_builders {
                 crate::input::DescribeQueueInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5234,8 +5200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5244,8 +5210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(inp);
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -5257,7 +5223,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeQuickConnect`.
     ///
     /// <p>Describes the quick connect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeQuickConnect<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5302,10 +5268,10 @@ pub mod fluent_builders {
                 crate::input::DescribeQuickConnectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5314,8 +5280,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5324,8 +5290,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the quick connect.</p>
-        pub fn quick_connect_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quick_connect_id(inp);
+        pub fn quick_connect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quick_connect_id(input.into());
             self
         }
         /// <p>The identifier for the quick connect.</p>
@@ -5340,7 +5306,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRoutingProfile`.
     ///
     /// <p>Describes the specified routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRoutingProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5385,10 +5351,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRoutingProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5397,8 +5363,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5407,8 +5373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(inp);
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -5424,7 +5390,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Gets basic information about the security profle.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSecurityProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5469,10 +5435,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSecurityProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5481,8 +5447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the security profle.</p>
-        pub fn security_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_profile_id(inp);
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_id(input.into());
             self
         }
         /// <p>The identifier for the security profle.</p>
@@ -5494,8 +5460,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5506,10 +5472,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeUser`.
     ///
-    /// <p>Describes the specified user account. You can find the instance ID in the console (it’s the
-    /// final part of the ARN). The console does not display the user IDs. Instead, list the users and
-    /// note the IDs provided in the output.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the specified user account. You can find the instance ID in the console (it’s the final part of the ARN). The console does not display the user IDs. Instead, list the users and note the IDs provided in the output.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5554,10 +5518,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5566,8 +5530,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the user account.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user account.</p>
@@ -5576,8 +5540,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5589,7 +5553,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUserHierarchyGroup`.
     ///
     /// <p>Describes the specified hierarchy group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserHierarchyGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5634,10 +5598,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUserHierarchyGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5646,8 +5610,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the hierarchy group.</p>
-        pub fn hierarchy_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_group_id(inp);
+        pub fn hierarchy_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_group_id(input.into());
             self
         }
         /// <p>The identifier of the hierarchy group.</p>
@@ -5659,8 +5623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5672,7 +5636,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUserHierarchyStructure`.
     ///
     /// <p>Describes the hierarchy structure of the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserHierarchyStructure<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5717,10 +5681,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUserHierarchyStructureInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5729,8 +5693,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5743,7 +5707,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Revokes access to integrated applications from Amazon Connect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateApprovedOrigin<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5788,10 +5752,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateApprovedOriginInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5800,8 +5764,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5810,8 +5774,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain URL of the integrated application.</p>
-        pub fn origin(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.origin(inp);
+        pub fn origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.origin(input.into());
             self
         }
         /// <p>The domain URL of the integrated application.</p>
@@ -5823,9 +5787,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateBot`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Revokes authorization from the specified instance to access the specified Amazon Lex or Amazon Lex V2
-    /// bot. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Revokes authorization from the specified instance to access the specified Amazon Lex or Amazon Lex V2 bot. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5870,10 +5833,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateBotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5882,8 +5845,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5892,8 +5855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information of an Amazon Lex bot.</p>
-        pub fn lex_bot(mut self, inp: crate::model::LexBot) -> Self {
-            self.inner = self.inner.lex_bot(inp);
+        pub fn lex_bot(mut self, input: crate::model::LexBot) -> Self {
+            self.inner = self.inner.lex_bot(input);
             self
         }
         /// <p>Configuration information of an Amazon Lex bot.</p>
@@ -5902,8 +5865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
-        pub fn lex_v2_bot(mut self, inp: crate::model::LexV2Bot) -> Self {
-            self.inner = self.inner.lex_v2_bot(inp);
+        pub fn lex_v2_bot(mut self, input: crate::model::LexV2Bot) -> Self {
+            self.inner = self.inner.lex_v2_bot(input);
             self
         }
         /// <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
@@ -5918,9 +5881,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateInstanceStorageConfig`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Removes the storage type configurations for the specified resource type and association
-    /// ID.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the storage type configurations for the specified resource type and association ID.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateInstanceStorageConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5965,10 +5927,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateInstanceStorageConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5977,8 +5939,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5987,8 +5949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(inp);
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
@@ -6000,8 +5962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid resource type.</p>
-        pub fn resource_type(mut self, inp: crate::model::InstanceStorageResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::InstanceStorageResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>A valid resource type.</p>
@@ -6016,9 +5978,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateLambdaFunction`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Remove the Lambda function from the dropdown options available in the relevant contact flow
-    /// blocks.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Remove the Lambda function from the dropdown options available in the relevant contact flow blocks.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateLambdaFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6063,10 +6024,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateLambdaFunctionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6075,8 +6036,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance..</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance..</p>
@@ -6085,8 +6046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
-        pub fn function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_arn(inp);
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
@@ -6099,7 +6060,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Revokes authorization from the specified instance to access the specified Amazon Lex bot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateLexBot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6144,10 +6105,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateLexBotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6156,8 +6117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -6166,8 +6127,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon Lex bot. Maximum character limit of 50.</p>
-        pub fn bot_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(inp);
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
         /// <p>The name of the Amazon Lex bot. Maximum character limit of 50.</p>
@@ -6176,8 +6137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Region in which the Amazon Lex bot has been created.</p>
-        pub fn lex_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lex_region(inp);
+        pub fn lex_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lex_region(input.into());
             self
         }
         /// <p>The Region in which the Amazon Lex bot has been created.</p>
@@ -6190,7 +6151,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Disassociates a set of quick connects from a queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateQueueQuickConnects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6235,10 +6196,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateQueueQuickConnectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6247,8 +6208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -6257,8 +6218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(inp);
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -6271,8 +6232,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_quick_connect_ids`](Self::set_quick_connect_ids).
         ///
         /// <p>The quick connects to disassociate from the queue.</p>
-        pub fn quick_connect_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quick_connect_ids(inp);
+        pub fn quick_connect_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quick_connect_ids(input.into());
             self
         }
         /// <p>The quick connects to disassociate from the queue.</p>
@@ -6287,7 +6248,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateRoutingProfileQueues`.
     ///
     /// <p>Disassociates a set of queues from a routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateRoutingProfileQueues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6332,10 +6293,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateRoutingProfileQueuesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6344,8 +6305,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -6354,8 +6315,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(inp);
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -6373,9 +6334,9 @@ pub mod fluent_builders {
         /// <p>The queues to disassociate from this routing profile.</p>
         pub fn queue_references(
             mut self,
-            inp: impl Into<crate::model::RoutingProfileQueueReference>,
+            input: crate::model::RoutingProfileQueueReference,
         ) -> Self {
-            self.inner = self.inner.queue_references(inp);
+            self.inner = self.inner.queue_references(input);
             self
         }
         /// <p>The queues to disassociate from this routing profile.</p>
@@ -6391,7 +6352,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Deletes the specified security key.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateSecurityKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6436,10 +6397,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateSecurityKeyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6448,8 +6409,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -6458,8 +6419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(inp);
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
@@ -6474,7 +6435,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContactAttributes`.
     ///
     /// <p>Retrieves the contact attributes for the specified contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6519,10 +6480,10 @@ pub mod fluent_builders {
                 crate::input::GetContactAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6531,8 +6492,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -6541,8 +6502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the initial contact.</p>
-        pub fn initial_contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.initial_contact_id(inp);
+        pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.initial_contact_id(input.into());
             self
         }
         /// <p>The identifier of the initial contact.</p>
@@ -6557,9 +6518,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCurrentMetricData`.
     ///
     /// <p>Gets the real-time metric data from the specified Amazon Connect instance.</p>
-    /// <p>For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics
-    /// Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCurrentMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6604,10 +6564,10 @@ pub mod fluent_builders {
                 crate::input::GetCurrentMetricDataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6615,9 +6575,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetCurrentMetricDataPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetCurrentMetricDataPaginator<C, M, R> {
+            crate::paginator::GetCurrentMetricDataPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -6625,16 +6591,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
-        /// retrieved only for the resources associated with the queues or channels included in the filter.
-        /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
-        pub fn filters(mut self, inp: crate::model::Filters) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+        pub fn filters(mut self, input: crate::model::Filters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
-        /// retrieved only for the resources associated with the queues or channels included in the filter.
-        /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
         pub fn set_filters(mut self, input: std::option::Option<crate::model::Filters>) -> Self {
             self.inner = self.inner.set_filters(input);
             self
@@ -6643,22 +6605,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_groupings`](Self::set_groupings).
         ///
-        /// <p>The grouping applied to the metrics returned. For example, when grouped by
-        /// <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all
-        /// queues. If you group by <code>CHANNEL</code>, you should include a Channels filter.
-        /// VOICE, CHAT, and TASK channels are supported.</p>
-        /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is
-        /// returned.</p>
-        pub fn groupings(mut self, inp: impl Into<crate::model::Grouping>) -> Self {
-            self.inner = self.inner.groupings(inp);
+        /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
+        /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p>
+        pub fn groupings(mut self, input: crate::model::Grouping) -> Self {
+            self.inner = self.inner.groupings(input);
             self
         }
-        /// <p>The grouping applied to the metrics returned. For example, when grouped by
-        /// <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all
-        /// queues. If you group by <code>CHANNEL</code>, you should include a Channels filter.
-        /// VOICE, CHAT, and TASK channels are supported.</p>
-        /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is
-        /// returned.</p>
+        /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>
+        /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p>
         pub fn set_groupings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Grouping>>,
@@ -6670,198 +6624,204 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_current_metrics`](Self::set_current_metrics).
         ///
-        /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics
-        /// are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics
-        /// Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         /// <dl>
-        /// <dt>AGENTS_AFTER_CONTACT_WORK</dt>
+        /// <dt>
+        /// AGENTS_AFTER_CONTACT_WORK
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
-        /// </p>
-        ///
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>
         /// </dd>
-        /// <dt>AGENTS_AVAILABLE</dt>
+        /// <dt>
+        /// AGENTS_AVAILABLE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ERROR</dt>
+        /// <dt>
+        /// AGENTS_ERROR
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>
         /// </dd>
-        /// <dt>AGENTS_NON_PRODUCTIVE</dt>
+        /// <dt>
+        /// AGENTS_NON_PRODUCTIVE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ON_CALL</dt>
+        /// <dt>
+        /// AGENTS_ON_CALL
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
-        /// contact</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ON_CONTACT</dt>
+        /// <dt>
+        /// AGENTS_ON_CONTACT
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
-        /// contact</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ONLINE</dt>
+        /// <dt>
+        /// AGENTS_ONLINE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>
         /// </dd>
-        /// <dt>AGENTS_STAFFED</dt>
+        /// <dt>
+        /// AGENTS_STAFFED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>
         /// </dd>
-        /// <dt>CONTACTS_IN_QUEUE</dt>
+        /// <dt>
+        /// CONTACTS_IN_QUEUE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
-        /// queue</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>
         /// </dd>
-        /// <dt>CONTACTS_SCHEDULED</dt>
+        /// <dt>
+        /// CONTACTS_SCHEDULED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>
         /// </dd>
-        /// <dt>OLDEST_CONTACT_AGE</dt>
+        /// <dt>
+        /// OLDEST_CONTACT_AGE
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
-        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-        /// example, if you get a response like this:</p>
-        /// <p>
-        /// <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
-        /// </code>}</p>
+        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>
+        /// <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
         /// <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>
-        ///
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>
         /// </dd>
-        /// <dt>SLOTS_ACTIVE</dt>
+        /// <dt>
+        /// SLOTS_ACTIVE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>
         /// </dd>
-        /// <dt>SLOTS_AVAILABLE</dt>
+        /// <dt>
+        /// SLOTS_AVAILABLE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
         /// </dd>
         /// </dl>
-        pub fn current_metrics(mut self, inp: impl Into<crate::model::CurrentMetric>) -> Self {
-            self.inner = self.inner.current_metrics(inp);
+        pub fn current_metrics(mut self, input: crate::model::CurrentMetric) -> Self {
+            self.inner = self.inner.current_metrics(input);
             self
         }
-        /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics
-        /// are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics
-        /// Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         /// <dl>
-        /// <dt>AGENTS_AFTER_CONTACT_WORK</dt>
+        /// <dt>
+        /// AGENTS_AFTER_CONTACT_WORK
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a>
-        /// </p>
-        ///
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>
         /// </dd>
-        /// <dt>AGENTS_AVAILABLE</dt>
+        /// <dt>
+        /// AGENTS_AVAILABLE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ERROR</dt>
+        /// <dt>
+        /// AGENTS_ERROR
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>
         /// </dd>
-        /// <dt>AGENTS_NON_PRODUCTIVE</dt>
+        /// <dt>
+        /// AGENTS_NON_PRODUCTIVE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ON_CALL</dt>
+        /// <dt>
+        /// AGENTS_ON_CALL
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
-        /// contact</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ON_CONTACT</dt>
+        /// <dt>
+        /// AGENTS_ON_CONTACT
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On
-        /// contact</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>
         /// </dd>
-        /// <dt>AGENTS_ONLINE</dt>
+        /// <dt>
+        /// AGENTS_ONLINE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>
         /// </dd>
-        /// <dt>AGENTS_STAFFED</dt>
+        /// <dt>
+        /// AGENTS_STAFFED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>
         /// </dd>
-        /// <dt>CONTACTS_IN_QUEUE</dt>
+        /// <dt>
+        /// CONTACTS_IN_QUEUE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In
-        /// queue</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>
         /// </dd>
-        /// <dt>CONTACTS_SCHEDULED</dt>
+        /// <dt>
+        /// CONTACTS_SCHEDULED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>
         /// </dd>
-        /// <dt>OLDEST_CONTACT_AGE</dt>
+        /// <dt>
+        /// OLDEST_CONTACT_AGE
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
-        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-        /// example, if you get a response like this:</p>
-        /// <p>
-        /// <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
-        /// </code>}</p>
+        /// <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>
+        /// <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>
         /// <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>
-        ///
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>
         /// </dd>
-        /// <dt>SLOTS_ACTIVE</dt>
+        /// <dt>
+        /// SLOTS_ACTIVE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>
         /// </dd>
-        /// <dt>SLOTS_AVAILABLE</dt>
+        /// <dt>
+        /// SLOTS_AVAILABLE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
-        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
-        /// </p>
+        /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
         /// </dd>
         /// </dl>
         pub fn set_current_metrics(
@@ -6871,25 +6831,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_metrics(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-        /// the token must use the same request parameters as the request that generated the token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-        /// the token must use the same request parameters as the request that generated the token.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -6900,16 +6856,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetFederationToken`.
     ///
-    /// <p>Retrieves a token for federation.</p>
-    /// <note>
-    /// <p>This API doesn't support root users. If you try to invoke GetFederationToken with root
-    /// credentials, an error message similar to the following one appears: </p>
-    /// <p>
-    /// <code>Provided identity: Principal: .... User: .... cannot be used for federation with
-    /// Amazon Connect</code>
-    /// </p>
+    /// <p>Retrieves a token for federation.</p> <note>
+    /// <p>This API doesn't support root users. If you try to invoke GetFederationToken with root credentials, an error message similar to the following one appears: </p>
+    /// <p> <code>Provided identity: Principal: .... User: .... cannot be used for federation with Amazon Connect</code> </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFederationToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6954,10 +6905,10 @@ pub mod fluent_builders {
                 crate::input::GetFederationTokenInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6966,8 +6917,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -6979,10 +6930,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMetricData`.
     ///
     /// <p>Gets historical metric data from the specified Amazon Connect instance.</p>
-    ///
-    /// <p>For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics
-    /// Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7027,10 +6976,10 @@ pub mod fluent_builders {
                 crate::input::GetMetricDataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7038,9 +6987,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetMetricDataPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetMetricDataPaginator<C, M, R> {
+            crate::paginator::GetMetricDataPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7048,20 +7003,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the
-        /// retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes,
-        /// such as 10:05, 10:10, 10:15.</p>
-        /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical
-        /// metrics are available only for 24 hours.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
+        /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the
-        /// retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes,
-        /// such as 10:05, 10:10, 10:15.</p>
-        /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical
-        /// metrics are available only for 24 hours.</p>
+        /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
+        /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7069,17 +7018,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the
-        /// retrieval of historical metrics data. The time must be specified using an interval of 5 minutes,
-        /// such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
+        /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
         /// <p>The time range between the start and end time must be less than 24 hours.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the
-        /// retrieval of historical metrics data. The time must be specified using an interval of 5 minutes,
-        /// such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
+        /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
         /// <p>The time range between the start and end time must be less than 24 hours.</p>
         pub fn set_end_time(
             mut self,
@@ -7088,23 +7033,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
-        /// retrieved only for the resources associated with the queues or channels included in the filter.
-        /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
-        /// <note>
-        /// <p>To filter by <code>Queues</code>, enter the queue
-        /// ID/ARN, not the name of the queue.</p>
+        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+        /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
         /// </note>
-        pub fn filters(mut self, inp: crate::model::Filters) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
-        /// retrieved only for the resources associated with the queues or channels included in the filter.
-        /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
-        /// <note>
-        /// <p>To filter by <code>Queues</code>, enter the queue
-        /// ID/ARN, not the name of the queue.</p>
+        /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+        /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
         /// </note>
         pub fn set_filters(mut self, input: std::option::Option<crate::model::Filters>) -> Self {
             self.inner = self.inner.set_filters(input);
@@ -7114,19 +7051,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_groupings`](Self::set_groupings).
         ///
-        /// <p>The grouping applied to the metrics returned. For example, when results are grouped by
-        /// queue, the metrics returned are grouped by queue. The values returned apply to the metrics for
-        /// each queue rather than aggregated for all queues.</p>
-        ///
+        /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
         /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
-        pub fn groupings(mut self, inp: impl Into<crate::model::Grouping>) -> Self {
-            self.inner = self.inner.groupings(inp);
+        pub fn groupings(mut self, input: crate::model::Grouping) -> Self {
+            self.inner = self.inner.groupings(input);
             self
         }
-        /// <p>The grouping applied to the metrics returned. For example, when results are grouped by
-        /// queue, the metrics returned are grouped by queue. The values returned apply to the metrics for
-        /// each queue rather than aggregated for all queues.</p>
-        ///
+        /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
         /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
         pub fn set_groupings(
             mut self,
@@ -7139,289 +7070,372 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_historical_metrics`](Self::set_historical_metrics).
         ///
-        /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The
-        /// following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.</p>
-        /// <note>
-        /// <p>This API does not support a contacts
-        /// incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+        /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+        /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
         /// </note>
-        ///
         /// <dl>
-        /// <dt>ABANDON_TIME</dt>
+        /// <dt>
+        /// ABANDON_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>AFTER_CONTACT_WORK_TIME</dt>
+        /// <dt>
+        /// AFTER_CONTACT_WORK_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>API_CONTACTS_HANDLED</dt>
+        /// <dt>
+        /// API_CONTACTS_HANDLED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CALLBACK_CONTACTS_HANDLED</dt>
+        /// <dt>
+        /// CALLBACK_CONTACTS_HANDLED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_ABANDONED</dt>
+        /// <dt>
+        /// CONTACTS_ABANDONED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt>
+        /// <dt>
+        /// CONTACTS_AGENT_HUNG_UP_FIRST
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_CONSULTED</dt>
+        /// <dt>
+        /// CONTACTS_CONSULTED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HANDLED</dt>
+        /// <dt>
+        /// CONTACTS_HANDLED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HANDLED_INCOMING</dt>
+        /// <dt>
+        /// CONTACTS_HANDLED_INCOMING
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HANDLED_OUTBOUND</dt>
+        /// <dt>
+        /// CONTACTS_HANDLED_OUTBOUND
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HOLD_ABANDONS</dt>
+        /// <dt>
+        /// CONTACTS_HOLD_ABANDONS
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_MISSED</dt>
+        /// <dt>
+        /// CONTACTS_MISSED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_QUEUED</dt>
+        /// <dt>
+        /// CONTACTS_QUEUED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_IN</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_IN
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_IN_FROM_QUEUE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_OUT</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_OUT
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>HANDLE_TIME</dt>
+        /// <dt>
+        /// HANDLE_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>HOLD_TIME</dt>
+        /// <dt>
+        /// HOLD_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>INTERACTION_AND_HOLD_TIME</dt>
+        /// <dt>
+        /// INTERACTION_AND_HOLD_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>INTERACTION_TIME</dt>
+        /// <dt>
+        /// INTERACTION_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>OCCUPANCY</dt>
+        /// <dt>
+        /// OCCUPANCY
+        /// </dt>
         /// <dd>
         /// <p>Unit: PERCENT</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>QUEUE_ANSWER_TIME</dt>
+        /// <dt>
+        /// QUEUE_ANSWER_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>QUEUED_TIME</dt>
+        /// <dt>
+        /// QUEUED_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: MAX</p>
         /// </dd>
-        /// <dt>SERVICE_LEVEL</dt>
+        /// <dt>
+        /// SERVICE_LEVEL
+        /// </dt>
         /// <dd>
         /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
         /// <p>Unit: PERCENT</p>
         /// <p>Statistic: AVG</p>
-        /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
-        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for
-        /// "Less than"). </p>
+        /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
         /// </dd>
         /// </dl>
-        pub fn historical_metrics(
-            mut self,
-            inp: impl Into<crate::model::HistoricalMetric>,
-        ) -> Self {
-            self.inner = self.inner.historical_metrics(inp);
+        pub fn historical_metrics(mut self, input: crate::model::HistoricalMetric) -> Self {
+            self.inner = self.inner.historical_metrics(input);
             self
         }
-        /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The
-        /// following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.</p>
-        /// <note>
-        /// <p>This API does not support a contacts
-        /// incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
+        /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+        /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>
         /// </note>
-        ///
         /// <dl>
-        /// <dt>ABANDON_TIME</dt>
+        /// <dt>
+        /// ABANDON_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>AFTER_CONTACT_WORK_TIME</dt>
+        /// <dt>
+        /// AFTER_CONTACT_WORK_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>API_CONTACTS_HANDLED</dt>
+        /// <dt>
+        /// API_CONTACTS_HANDLED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CALLBACK_CONTACTS_HANDLED</dt>
+        /// <dt>
+        /// CALLBACK_CONTACTS_HANDLED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_ABANDONED</dt>
+        /// <dt>
+        /// CONTACTS_ABANDONED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt>
+        /// <dt>
+        /// CONTACTS_AGENT_HUNG_UP_FIRST
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_CONSULTED</dt>
+        /// <dt>
+        /// CONTACTS_CONSULTED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HANDLED</dt>
+        /// <dt>
+        /// CONTACTS_HANDLED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HANDLED_INCOMING</dt>
+        /// <dt>
+        /// CONTACTS_HANDLED_INCOMING
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HANDLED_OUTBOUND</dt>
+        /// <dt>
+        /// CONTACTS_HANDLED_OUTBOUND
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_HOLD_ABANDONS</dt>
+        /// <dt>
+        /// CONTACTS_HOLD_ABANDONS
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_MISSED</dt>
+        /// <dt>
+        /// CONTACTS_MISSED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_QUEUED</dt>
+        /// <dt>
+        /// CONTACTS_QUEUED
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_IN</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_IN
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_IN_FROM_QUEUE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_OUT</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_OUT
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt>
+        /// <dt>
+        /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
+        /// </dt>
         /// <dd>
         /// <p>Unit: COUNT</p>
         /// <p>Statistic: SUM</p>
         /// </dd>
-        /// <dt>HANDLE_TIME</dt>
+        /// <dt>
+        /// HANDLE_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>HOLD_TIME</dt>
+        /// <dt>
+        /// HOLD_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>INTERACTION_AND_HOLD_TIME</dt>
+        /// <dt>
+        /// INTERACTION_AND_HOLD_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>INTERACTION_TIME</dt>
+        /// <dt>
+        /// INTERACTION_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>OCCUPANCY</dt>
+        /// <dt>
+        /// OCCUPANCY
+        /// </dt>
         /// <dd>
         /// <p>Unit: PERCENT</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>QUEUE_ANSWER_TIME</dt>
+        /// <dt>
+        /// QUEUE_ANSWER_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: AVG</p>
         /// </dd>
-        /// <dt>QUEUED_TIME</dt>
+        /// <dt>
+        /// QUEUED_TIME
+        /// </dt>
         /// <dd>
         /// <p>Unit: SECONDS</p>
         /// <p>Statistic: MAX</p>
         /// </dd>
-        /// <dt>SERVICE_LEVEL</dt>
+        /// <dt>
+        /// SERVICE_LEVEL
+        /// </dt>
         /// <dd>
         /// <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>
         /// <p>Unit: PERCENT</p>
         /// <p>Statistic: AVG</p>
-        /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
-        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for
-        /// "Less than"). </p>
+        /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
         /// </dd>
         /// </dl>
         pub fn set_historical_metrics(
@@ -7431,21 +7445,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_historical_metrics(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -7458,7 +7470,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Lists agent statuses.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAgentStatuses<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7503,10 +7515,10 @@ pub mod fluent_builders {
                 crate::input::ListAgentStatusesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7514,9 +7526,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAgentStatusesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAgentStatusesPaginator<C, M, R> {
+            crate::paginator::ListAgentStatusesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7524,21 +7542,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -7551,8 +7567,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_agent_status_types`](Self::set_agent_status_types).
         ///
         /// <p>Available agent status types.</p>
-        pub fn agent_status_types(mut self, inp: impl Into<crate::model::AgentStatusType>) -> Self {
-            self.inner = self.inner.agent_status_types(inp);
+        pub fn agent_status_types(mut self, input: crate::model::AgentStatusType) -> Self {
+            self.inner = self.inner.agent_status_types(input);
             self
         }
         /// <p>Available agent status types.</p>
@@ -7568,7 +7584,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Returns a paginated list of all approved origins associated with the instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApprovedOrigins<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7613,10 +7629,10 @@ pub mod fluent_builders {
                 crate::input::ListApprovedOriginsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7624,9 +7640,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApprovedOriginsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListApprovedOriginsPaginator<C, M, R> {
+            crate::paginator::ListApprovedOriginsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7634,21 +7656,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -7660,9 +7680,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBots`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated with the
-    /// instance. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated with the instance. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7707,10 +7726,10 @@ pub mod fluent_builders {
                 crate::input::ListBotsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7718,9 +7737,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBotsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBotsPaginator<C, M, R> {
+            crate::paginator::ListBotsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7728,21 +7753,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -7751,8 +7774,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of Amazon Lex or Amazon Lex V2.</p>
-        pub fn lex_version(mut self, inp: crate::model::LexVersion) -> Self {
-            self.inner = self.inner.lex_version(inp);
+        pub fn lex_version(mut self, input: crate::model::LexVersion) -> Self {
+            self.inner = self.inner.lex_version(input);
             self
         }
         /// <p>The version of Amazon Lex or Amazon Lex V2.</p>
@@ -7767,7 +7790,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContactFlowModules`.
     ///
     /// <p>Provides information about the contact flow modules for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactFlowModules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7812,10 +7835,10 @@ pub mod fluent_builders {
                 crate::input::ListContactFlowModulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7823,9 +7846,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContactFlowModulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContactFlowModulesPaginator<C, M, R> {
+            crate::paginator::ListContactFlowModulesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7833,21 +7862,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -7858,9 +7885,9 @@ pub mod fluent_builders {
         /// <p>The state of the contact flow module.</p>
         pub fn contact_flow_module_state(
             mut self,
-            inp: crate::model::ContactFlowModuleState,
+            input: crate::model::ContactFlowModuleState,
         ) -> Self {
-            self.inner = self.inner.contact_flow_module_state(inp);
+            self.inner = self.inner.contact_flow_module_state(input);
             self
         }
         /// <p>The state of the contact flow module.</p>
@@ -7875,11 +7902,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContactFlows`.
     ///
     /// <p>Provides information about the contact flows for the specified Amazon Connect instance.</p>
-    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect
-    /// Flow language</a>.</p>
-    /// <p>For more information about contact flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact Flows</a> in the
-    /// <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    /// <p>For more information about contact flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactFlows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7924,10 +7949,10 @@ pub mod fluent_builders {
                 crate::input::ListContactFlowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7935,9 +7960,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContactFlowsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContactFlowsPaginator<C, M, R> {
+            crate::paginator::ListContactFlowsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7950,8 +7981,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_contact_flow_types`](Self::set_contact_flow_types).
         ///
         /// <p>The type of contact flow.</p>
-        pub fn contact_flow_types(mut self, inp: impl Into<crate::model::ContactFlowType>) -> Self {
-            self.inner = self.inner.contact_flow_types(inp);
+        pub fn contact_flow_types(mut self, input: crate::model::ContactFlowType) -> Self {
+            self.inner = self.inner.contact_flow_types(input);
             self
         }
         /// <p>The type of contact flow.</p>
@@ -7962,21 +7993,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_flow_types(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -7988,9 +8017,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContactReferences`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>For the specified <code>referenceTypes</code>, returns a list of references associated with
-    /// the contact. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For the specified <code>referenceTypes</code>, returns a list of references associated with the contact. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactReferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8035,10 +8063,10 @@ pub mod fluent_builders {
                 crate::input::ListContactReferencesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8046,9 +8074,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContactReferencesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContactReferencesPaginator<C, M, R> {
+            crate::paginator::ListContactReferencesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8057,8 +8091,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the initial contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the initial contact.</p>
@@ -8071,8 +8105,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_reference_types`](Self::set_reference_types).
         ///
         /// <p>The type of reference.</p>
-        pub fn reference_types(mut self, inp: impl Into<crate::model::ReferenceType>) -> Self {
-            self.inner = self.inner.reference_types(inp);
+        pub fn reference_types(mut self, input: crate::model::ReferenceType) -> Self {
+            self.inner = self.inner.reference_types(input);
             self
         }
         /// <p>The type of reference.</p>
@@ -8083,21 +8117,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_reference_types(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        /// <important>
-        /// <p>This is not expected to be set, because the value returned in the previous response is
-        /// always null.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
+        /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
         /// </important>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        /// <important>
-        /// <p>This is not expected to be set, because the value returned in the previous response is
-        /// always null.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
+        /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
         /// </important>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
@@ -8107,9 +8135,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListHoursOfOperations`.
     ///
     /// <p>Provides information about the hours of operation for the specified Amazon Connect instance.</p>
-    /// <p>For more information about hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set the Hours of Operation for a
-    /// Queue</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information about hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set the Hours of Operation for a Queue</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHoursOfOperations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8154,10 +8181,10 @@ pub mod fluent_builders {
                 crate::input::ListHoursOfOperationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8165,9 +8192,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListHoursOfOperationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListHoursOfOperationsPaginator<C, M, R> {
+            crate::paginator::ListHoursOfOperationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8175,21 +8208,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8202,7 +8233,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Returns a paginated list of all attribute types for the given instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8247,10 +8278,10 @@ pub mod fluent_builders {
                 crate::input::ListInstanceAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8258,9 +8289,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInstanceAttributesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInstanceAttributesPaginator<C, M, R> {
+            crate::paginator::ListInstanceAttributesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8268,21 +8305,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8294,10 +8329,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInstances`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Return a list of instances which are in active state, creation-in-progress state, and failed
-    /// state. Instances that aren't successfully created (they are in a failed state) are returned only
-    /// for 24 hours after the CreateInstance API was invoked.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Return a list of instances which are in active state, creation-in-progress state, and failed state. Instances that aren't successfully created (they are in a failed state) are returned only for 24 hours after the CreateInstance API was invoked.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8342,10 +8375,10 @@ pub mod fluent_builders {
                 crate::input::ListInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8353,21 +8386,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInstancesPaginator<C, M, R> {
+            crate::paginator::ListInstancesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8379,10 +8416,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInstanceStorageConfigs`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    ///
-    /// <p>Returns a paginated list of storage configs for the identified instance and resource
-    /// type.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a paginated list of storage configs for the identified instance and resource type.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceStorageConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8427,10 +8462,10 @@ pub mod fluent_builders {
                 crate::input::ListInstanceStorageConfigsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8438,9 +8473,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInstanceStorageConfigsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListInstanceStorageConfigsPaginator<C, M, R> {
+            crate::paginator::ListInstanceStorageConfigsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8449,8 +8492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid resource type.</p>
-        pub fn resource_type(mut self, inp: crate::model::InstanceStorageResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::InstanceStorageResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>A valid resource type.</p>
@@ -8461,21 +8504,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8486,9 +8527,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIntegrationAssociations`.
     ///
-    /// <p>Provides summary information about the AWS resource associations for the specified Amazon Connect
-    /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides summary information about the AWS resource associations for the specified Amazon Connect instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIntegrationAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8533,10 +8573,10 @@ pub mod fluent_builders {
                 crate::input::ListIntegrationAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8544,9 +8584,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListIntegrationAssociationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListIntegrationAssociationsPaginator<C, M, R> {
+            crate::paginator::ListIntegrationAssociationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8555,8 +8603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration type.</p>
-        pub fn integration_type(mut self, inp: crate::model::IntegrationType) -> Self {
-            self.inner = self.inner.integration_type(inp);
+        pub fn integration_type(mut self, input: crate::model::IntegrationType) -> Self {
+            self.inner = self.inner.integration_type(input);
             self
         }
         /// <p>The integration type.</p>
@@ -8567,21 +8615,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integration_type(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8593,9 +8639,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLambdaFunctions`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Returns a paginated list of all Lambda functions that display in the dropdown options in the
-    /// relevant contact flow blocks.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a paginated list of all Lambda functions that display in the dropdown options in the relevant contact flow blocks.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLambdaFunctions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8640,10 +8685,10 @@ pub mod fluent_builders {
                 crate::input::ListLambdaFunctionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8651,9 +8696,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLambdaFunctionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLambdaFunctionsPaginator<C, M, R> {
+            crate::paginator::ListLambdaFunctionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8661,21 +8712,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8687,9 +8736,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLexBots`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Returns a paginated list of all the Amazon Lex bots currently associated with the
-    /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a paginated list of all the Amazon Lex bots currently associated with the instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLexBots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8734,10 +8782,10 @@ pub mod fluent_builders {
                 crate::input::ListLexBotsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8745,9 +8793,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLexBotsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLexBotsPaginator<C, M, R> {
+            crate::paginator::ListLexBotsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8755,21 +8809,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
@@ -8781,9 +8833,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPhoneNumbers`.
     ///
     /// <p>Provides information about the phone numbers for the specified Amazon Connect instance. </p>
-    /// <p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your
-    /// Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPhoneNumbers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8828,10 +8879,10 @@ pub mod fluent_builders {
                 crate::input::ListPhoneNumbersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8839,9 +8890,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPhoneNumbersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPhoneNumbersPaginator<C, M, R> {
+            crate::paginator::ListPhoneNumbersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8854,8 +8911,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_phone_number_types`](Self::set_phone_number_types).
         ///
         /// <p>The type of phone number.</p>
-        pub fn phone_number_types(mut self, inp: impl Into<crate::model::PhoneNumberType>) -> Self {
-            self.inner = self.inner.phone_number_types(inp);
+        pub fn phone_number_types(mut self, input: crate::model::PhoneNumberType) -> Self {
+            self.inner = self.inner.phone_number_types(input);
             self
         }
         /// <p>The type of phone number.</p>
@@ -8873,9 +8930,9 @@ pub mod fluent_builders {
         /// <p>The ISO country code.</p>
         pub fn phone_number_country_codes(
             mut self,
-            inp: impl Into<crate::model::PhoneNumberCountryCode>,
+            input: crate::model::PhoneNumberCountryCode,
         ) -> Self {
-            self.inner = self.inner.phone_number_country_codes(inp);
+            self.inner = self.inner.phone_number_country_codes(input);
             self
         }
         /// <p>The ISO country code.</p>
@@ -8886,21 +8943,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_phone_number_country_codes(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8912,7 +8967,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPrompts`.
     ///
     /// <p>Provides information about the prompts for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrompts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8957,10 +9012,10 @@ pub mod fluent_builders {
                 crate::input::ListPromptsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8968,9 +9023,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPromptsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPromptsPaginator<C, M, R> {
+            crate::paginator::ListPromptsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -8978,21 +9039,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous response in
-        /// the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous response in
-        /// the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9005,7 +9064,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Lists the quick connects associated with a queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQueueQuickConnects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9050,10 +9109,10 @@ pub mod fluent_builders {
                 crate::input::ListQueueQuickConnectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9061,9 +9120,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListQueueQuickConnectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListQueueQuickConnectsPaginator<C, M, R> {
+            crate::paginator::ListQueueQuickConnectsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9072,8 +9137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(inp);
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -9081,21 +9146,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_queue_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9107,13 +9170,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListQueues`.
     ///
     /// <p>Provides information about the queues for the specified Amazon Connect instance.</p>
-    /// <p>If you do not specify a <code>QueueTypes</code>
-    /// parameter, both standard and agent queues are returned. This might cause an unexpected truncation
-    /// of results if you have more than 1000 agents and you limit the number of results of the API call
-    /// in code.</p>
-    /// <p>For more information about queues, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues: Standard and
-    /// Agent</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you do not specify a <code>QueueTypes</code> parameter, both standard and agent queues are returned. This might cause an unexpected truncation of results if you have more than 1000 agents and you limit the number of results of the API call in code.</p>
+    /// <p>For more information about queues, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues: Standard and Agent</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQueues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9158,10 +9217,10 @@ pub mod fluent_builders {
                 crate::input::ListQueuesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9169,9 +9228,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListQueuesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListQueuesPaginator<C, M, R> {
+            crate::paginator::ListQueuesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9184,8 +9249,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_queue_types`](Self::set_queue_types).
         ///
         /// <p>The type of queue.</p>
-        pub fn queue_types(mut self, inp: impl Into<crate::model::QueueType>) -> Self {
-            self.inner = self.inner.queue_types(inp);
+        pub fn queue_types(mut self, input: crate::model::QueueType) -> Self {
+            self.inner = self.inner.queue_types(input);
             self
         }
         /// <p>The type of queue.</p>
@@ -9196,21 +9261,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_queue_types(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9222,7 +9285,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListQuickConnects`.
     ///
     /// <p>Provides information about the quick connects for the specified Amazon Connect instance. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQuickConnects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9267,10 +9330,10 @@ pub mod fluent_builders {
                 crate::input::ListQuickConnectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9278,9 +9341,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListQuickConnectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListQuickConnectsPaginator<C, M, R> {
+            crate::paginator::ListQuickConnectsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9288,21 +9357,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9314,17 +9381,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_quick_connect_types`](Self::set_quick_connect_types).
         ///
-        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-        /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-        pub fn quick_connect_types(
-            mut self,
-            inp: impl Into<crate::model::QuickConnectType>,
-        ) -> Self {
-            self.inner = self.inner.quick_connect_types(inp);
+        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+        pub fn quick_connect_types(mut self, input: crate::model::QuickConnectType) -> Self {
+            self.inner = self.inner.quick_connect_types(input);
             self
         }
-        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-        /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
         pub fn set_quick_connect_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QuickConnectType>>,
@@ -9336,7 +9398,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRoutingProfileQueues`.
     ///
     /// <p>Lists the queues associated with a routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRoutingProfileQueues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9381,10 +9443,10 @@ pub mod fluent_builders {
                 crate::input::ListRoutingProfileQueuesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9392,9 +9454,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRoutingProfileQueuesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListRoutingProfileQueuesPaginator<C, M, R> {
+            crate::paginator::ListRoutingProfileQueuesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9403,8 +9473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(inp);
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -9415,21 +9485,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_routing_profile_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9440,11 +9508,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRoutingProfiles`.
     ///
-    /// <p>Provides summary information about the routing profiles for the specified Amazon Connect
-    /// instance.</p>
-    /// <p>For more information about routing profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing Profiles</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create a Routing
-    /// Profile</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides summary information about the routing profiles for the specified Amazon Connect instance.</p>
+    /// <p>For more information about routing profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing Profiles</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create a Routing Profile</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRoutingProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9489,10 +9555,10 @@ pub mod fluent_builders {
                 crate::input::ListRoutingProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9500,9 +9566,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRoutingProfilesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRoutingProfilesPaginator<C, M, R> {
+            crate::paginator::ListRoutingProfilesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9510,21 +9582,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9537,7 +9607,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Returns a paginated list of all security keys associated with the instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecurityKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9582,10 +9652,10 @@ pub mod fluent_builders {
                 crate::input::ListSecurityKeysInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9593,9 +9663,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSecurityKeysPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSecurityKeysPaginator<C, M, R> {
+            crate::paginator::ListSecurityKeysPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9603,21 +9679,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9630,7 +9704,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Lists the permissions granted to a security profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecurityProfilePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9675,10 +9749,10 @@ pub mod fluent_builders {
                 crate::input::ListSecurityProfilePermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9686,9 +9760,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSecurityProfilePermissionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListSecurityProfilePermissionsPaginator<C, M, R> {
+            crate::paginator::ListSecurityProfilePermissionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier for the security profle.</p>
-        pub fn security_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_profile_id(inp);
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_id(input.into());
             self
         }
         /// <p>The identifier for the security profle.</p>
@@ -9700,8 +9782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9709,21 +9791,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9734,11 +9814,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSecurityProfiles`.
     ///
-    /// <p>Provides summary information about the security profiles for the specified Amazon Connect
-    /// instance.</p>
-    /// <p>For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security Profiles</a> in the
-    /// <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides summary information about the security profiles for the specified Amazon Connect instance.</p>
+    /// <p>For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSecurityProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9783,10 +9861,10 @@ pub mod fluent_builders {
                 crate::input::ListSecurityProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9794,9 +9872,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSecurityProfilesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSecurityProfilesPaginator<C, M, R> {
+            crate::paginator::ListSecurityProfilesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9804,21 +9888,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9830,9 +9912,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for the specified resource.</p>
-    /// <p>For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon Connect Identity-Based
-    /// Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9877,10 +9958,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9889,8 +9970,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -9902,7 +9983,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUseCases`.
     ///
     /// <p>Lists the use cases for the integration association. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUseCases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9947,10 +10028,10 @@ pub mod fluent_builders {
                 crate::input::ListUseCasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9958,9 +10039,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListUseCasesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListUseCasesPaginator<C, M, R> {
+            crate::paginator::ListUseCasesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9969,8 +10056,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the integration association.</p>
-        pub fn integration_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_association_id(inp);
+        pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_association_id(input.into());
             self
         }
         /// <p>The identifier for the integration association.</p>
@@ -9981,21 +10068,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_integration_association_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -10006,11 +10091,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListUserHierarchyGroups`.
     ///
-    /// <p>Provides summary information about the hierarchy groups for the specified Amazon Connect
-    /// instance.</p>
-    /// <p>For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set Up Agent Hierarchies</a> in the
-    /// <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides summary information about the hierarchy groups for the specified Amazon Connect instance.</p>
+    /// <p>For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUserHierarchyGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10055,10 +10138,10 @@ pub mod fluent_builders {
                 crate::input::ListUserHierarchyGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10066,9 +10149,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListUserHierarchyGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListUserHierarchyGroupsPaginator<C, M, R> {
+            crate::paginator::ListUserHierarchyGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10076,21 +10165,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -10102,7 +10189,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUsers`.
     ///
     /// <p>Provides summary information about the users for the specified Amazon Connect instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10147,10 +10234,10 @@ pub mod fluent_builders {
                 crate::input::ListUsersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10158,9 +10245,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListUsersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListUsersPaginator<C, M, R> {
+            crate::paginator::ListUsersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10168,21 +10261,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -10193,11 +10284,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResumeContactRecording`.
     ///
-    /// <p>When a contact is being recorded, and the recording has been suspended using
-    /// SuspendContactRecording, this API resumes recording the call.</p>
-    ///
+    /// <p>When a contact is being recorded, and the recording has been suspended using SuspendContactRecording, this API resumes recording the call.</p>
     /// <p>Only voice recordings are supported at this time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResumeContactRecording<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10242,10 +10331,10 @@ pub mod fluent_builders {
                 crate::input::ResumeContactRecordingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10254,8 +10343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10264,8 +10353,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -10273,14 +10362,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_id(input);
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
-        pub fn initial_contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.initial_contact_id(inp);
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+        pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.initial_contact_id(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn set_initial_contact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10291,28 +10378,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartChatContact`.
     ///
-    /// <p>Initiates a contact flow to start a new chat for the customer. Response of this API provides
-    /// a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API in the Amazon Connect Participant Service.</p>
-    ///
-    /// <p>When a new chat contact is successfully created, clients must subscribe to the participant’s
-    /// connection for the created chat within 5 minutes. This is achieved by invoking <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS. </p>
-    ///
+    /// <p>Initiates a contact flow to start a new chat for the customer. Response of this API provides a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API in the Amazon Connect Participant Service.</p>
+    /// <p>When a new chat contact is successfully created, clients must subscribe to the participant’s connection for the created chat within 5 minutes. This is achieved by invoking <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS. </p>
     /// <p>A 429 error occurs in two situations:</p>
     /// <ul>
-    /// <li>
-    /// <p>API rate limit is exceeded. API TPS throttling returns a <code>TooManyRequests</code>
-    /// exception.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota for concurrent active
-    /// chats</a> is exceeded. Active chat throttling returns a
-    /// <code>LimitExceededException</code>.</p>
-    /// </li>
+    /// <li> <p>API rate limit is exceeded. API TPS throttling returns a <code>TooManyRequests</code> exception.</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota for concurrent active chats</a> is exceeded. Active chat throttling returns a <code>LimitExceededException</code>.</p> </li>
     /// </ul>
-    ///
-    /// <p>For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a> in the <i>Amazon Connect Administrator
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartChatContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10357,10 +10431,10 @@ pub mod fluent_builders {
                 crate::input::StartChatContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10369,8 +10443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10378,24 +10452,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact flow for initiating the chat.
-        /// To
-        /// see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
-        /// contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
-        /// the ARN, shown here in bold: </p>
-        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-        /// </p>
-        pub fn contact_flow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(inp);
+        /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow for initiating the chat.
-        /// To
-        /// see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
-        /// contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
-        /// the ARN, shown here in bold: </p>
-        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-        /// </p>
+        /// <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10407,22 +10471,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-        /// attributes. They can be accessed in contact flows just like any other contact attributes. </p>
-        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-        /// attributes. They can be accessed in contact flows just like any other contact attributes. </p>
-        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>
+        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -10433,8 +10493,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information identifying the participant.</p>
-        pub fn participant_details(mut self, inp: crate::model::ParticipantDetails) -> Self {
-            self.inner = self.inner.participant_details(inp);
+        pub fn participant_details(mut self, input: crate::model::ParticipantDetails) -> Self {
+            self.inner = self.inner.participant_details(input);
             self
         }
         /// <p>Information identifying the participant.</p>
@@ -10446,8 +10506,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The initial message to be sent to the newly created chat.</p>
-        pub fn initial_message(mut self, inp: crate::model::ChatMessage) -> Self {
-            self.inner = self.inner.initial_message(inp);
+        pub fn initial_message(mut self, input: crate::model::ChatMessage) -> Self {
+            self.inner = self.inner.initial_message(input);
             self
         }
         /// <p>The initial message to be sent to the newly created chat.</p>
@@ -10458,14 +10518,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_initial_message(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -10473,15 +10531,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartContactRecording`.
     ///
-    /// <p>Starts recording the contact when the agent joins the call. StartContactRecording is a
-    /// one-time action. For example, if you use StopContactRecording to stop recording an ongoing call,
-    /// you can't use StartContactRecording to restart it. For scenarios where the recording has started
-    /// and you want to suspend and resume it, such as when collecting sensitive information (for
-    /// example, a credit card number), use SuspendContactRecording and ResumeContactRecording.</p>
-    /// <p>You can use this API to override the recording behavior configured in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set recording
-    /// behavior</a> block.</p>
+    /// <p>Starts recording the contact when the agent joins the call. StartContactRecording is a one-time action. For example, if you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart it. For scenarios where the recording has started and you want to suspend and resume it, such as when collecting sensitive information (for example, a credit card number), use SuspendContactRecording and ResumeContactRecording.</p>
+    /// <p>You can use this API to override the recording behavior configured in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set recording behavior</a> block.</p>
     /// <p>Only voice recordings are supported at this time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartContactRecording<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10526,10 +10579,10 @@ pub mod fluent_builders {
                 crate::input::StartContactRecordingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10538,8 +10591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10548,8 +10601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -10557,14 +10610,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_id(input);
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
-        pub fn initial_contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.initial_contact_id(inp);
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+        pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.initial_contact_id(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn set_initial_contact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10575,9 +10626,9 @@ pub mod fluent_builders {
         /// <p>The person being recorded.</p>
         pub fn voice_recording_configuration(
             mut self,
-            inp: crate::model::VoiceRecordingConfiguration,
+            input: crate::model::VoiceRecordingConfiguration,
         ) -> Self {
-            self.inner = self.inner.voice_recording_configuration(inp);
+            self.inner = self.inner.voice_recording_configuration(input);
             self
         }
         /// <p>The person being recorded.</p>
@@ -10592,9 +10643,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartContactStreaming`.
     ///
     /// <p> Initiates real-time message streaming for a new chat contact.</p>
-    /// <p> For more information about message streaming, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable real-time chat message
-    /// streaming</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> For more information about message streaming, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable real-time chat message streaming</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartContactStreaming<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10639,10 +10689,10 @@ pub mod fluent_builders {
                 crate::input::StartContactStreamingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10651,8 +10701,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10660,14 +10710,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_contact_id(input);
             self
@@ -10675,9 +10723,9 @@ pub mod fluent_builders {
         /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
         pub fn chat_streaming_configuration(
             mut self,
-            inp: crate::model::ChatStreamingConfiguration,
+            input: crate::model::ChatStreamingConfiguration,
         ) -> Self {
-            self.inner = self.inner.chat_streaming_configuration(inp);
+            self.inner = self.inner.chat_streaming_configuration(input);
             self
         }
         /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
@@ -10688,14 +10736,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_chat_streaming_configuration(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -10703,26 +10749,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartOutboundVoiceContact`.
     ///
-    /// <p>Places an outbound call to a contact, and then initiates the contact flow. It performs the
-    /// actions in the contact flow that's specified (in <code>ContactFlowId</code>).</p>
-    ///
-    /// <p>Agents do not initiate the outbound API, which means that they do not dial the contact. If
-    /// the contact flow places an outbound call to a contact, and then puts the contact in queue, the
-    /// call is then routed to the agent, like any other inbound case.</p>
-    ///
-    /// <p>There is a 60-second dialing timeout for this operation. If the call is not connected after
-    /// 60 seconds, it fails.</p>
-    /// <note>
-    /// <p>UK numbers with a 447 prefix are not allowed by default. Before you can dial these UK
-    /// mobile numbers, you must submit a service quota increase request. For more information, see
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+    /// <p>Places an outbound call to a contact, and then initiates the contact flow. It performs the actions in the contact flow that's specified (in <code>ContactFlowId</code>).</p>
+    /// <p>Agents do not initiate the outbound API, which means that they do not dial the contact. If the contact flow places an outbound call to a contact, and then puts the contact in queue, the call is then routed to the agent, like any other inbound case.</p>
+    /// <p>There is a 60-second dialing timeout for this operation. If the call is not connected after 60 seconds, it fails.</p> <note>
+    /// <p>UK numbers with a 447 prefix are not allowed by default. Before you can dial these UK mobile numbers, you must submit a service quota increase request. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+    /// </note> <note>
+    /// <p>Campaign calls are not allowed by default. Before you can make a call with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must submit a service quota increase request. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     /// </note>
-    /// <note>
-    /// <p>Campaign calls are not allowed by default. Before you can make a call with
-    /// <code>TrafficType</code> = <code>CAMPAIGN</code>, you must submit a service quota increase request. For more information, see
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
-    /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartOutboundVoiceContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10767,10 +10801,10 @@ pub mod fluent_builders {
                 crate::input::StartOutboundVoiceContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10779,8 +10813,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number of the customer, in E.164 format.</p>
-        pub fn destination_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_phone_number(inp);
+        pub fn destination_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_phone_number(input.into());
             self
         }
         /// <p>The phone number of the customer, in E.164 format.</p>
@@ -10791,26 +10825,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_phone_number(input);
             self
         }
-        /// <p>The
-        /// identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect
-        /// console user interface, on the navigation menu go to <b>Routing</b>,
-        /// <b>Contact Flows</b>. Choose the contact flow. On the contact flow
-        /// page, under the name of the contact flow, choose <b>Show additional flow
-        /// information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
-        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-        /// </p>
-        pub fn contact_flow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(inp);
+        /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The
-        /// identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect
-        /// console user interface, on the navigation menu go to <b>Routing</b>,
-        /// <b>Contact Flows</b>. Choose the contact flow. On the contact flow
-        /// page, under the name of the contact flow, choose <b>Show additional flow
-        /// information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
-        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-        /// </p>
+        /// <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10819,8 +10841,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10828,30 +10850,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. The token is valid for 7 days after creation. If a contact is already started, the
-        /// contact ID is returned.
-        /// </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. The token is valid for 7 days after creation. If a contact is already started, the
-        /// contact ID is returned.
-        /// </p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify
-        /// a source phone number, you must specify a queue.</p>
-        pub fn source_phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_phone_number(inp);
+        /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
+        pub fn source_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_phone_number(input.into());
             self
         }
-        /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify
-        /// a source phone number, you must specify a queue.</p>
+        /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
         pub fn set_source_phone_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10859,18 +10873,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_phone_number(input);
             self
         }
-        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the
-        /// phone number specified in the queue. If you do not specify a queue, the queue defined in the
-        /// contact flow is used. If you do not specify a queue, you must specify a source phone
-        /// number.</p>
-        pub fn queue_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(inp);
+        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
-        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the
-        /// phone number specified in the queue. If you do not specify a queue, the queue defined in the
-        /// contact flow is used. If you do not specify a queue, you must specify a source phone
-        /// number.</p>
+        /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
         pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_queue_id(input);
             self
@@ -10879,22 +10887,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-        /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
-        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-        /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
-        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -10907,9 +10911,9 @@ pub mod fluent_builders {
         /// <p>Configuration of the answering machine detection for this outbound call. </p>
         pub fn answer_machine_detection_config(
             mut self,
-            inp: crate::model::AnswerMachineDetectionConfig,
+            input: crate::model::AnswerMachineDetectionConfig,
         ) -> Self {
-            self.inner = self.inner.answer_machine_detection_config(inp);
+            self.inner = self.inner.answer_machine_detection_config(input);
             self
         }
         /// <p>Configuration of the answering machine detection for this outbound call. </p>
@@ -10921,8 +10925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The campaign identifier of the outbound communication.</p>
-        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(inp);
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The campaign identifier of the outbound communication.</p>
@@ -10930,18 +10934,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_campaign_id(input);
             self
         }
-        /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by
-        /// Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if
-        /// <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use
-        /// <code>GENERAL</code>. </p>
-        pub fn traffic_type(mut self, inp: crate::model::TrafficType) -> Self {
-            self.inner = self.inner.traffic_type(inp);
+        /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
+        pub fn traffic_type(mut self, input: crate::model::TrafficType) -> Self {
+            self.inner = self.inner.traffic_type(input);
             self
         }
-        /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by
-        /// Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if
-        /// <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use
-        /// <code>GENERAL</code>. </p>
+        /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
         pub fn set_traffic_type(
             mut self,
             input: std::option::Option<crate::model::TrafficType>,
@@ -10953,7 +10951,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartTaskContact`.
     ///
     /// <p>Initiates a contact flow to start a new task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTaskContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10998,10 +10996,10 @@ pub mod fluent_builders {
                 crate::input::StartTaskContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11010,8 +11008,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11020,8 +11018,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the previous chat, voice, or task contact. </p>
-        pub fn previous_contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.previous_contact_id(inp);
+        pub fn previous_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.previous_contact_id(input.into());
             self
         }
         /// <p>The identifier of the previous chat, voice, or task contact. </p>
@@ -11032,24 +11030,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_previous_contact_id(input);
             self
         }
-        /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the
-        /// Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On
-        /// the contact flow page, under the name of the contact flow, choose <b>Show
-        /// additional flow information</b>. The ContactFlowId is the last part of the ARN, shown
-        /// here in bold: </p>
-        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-        /// </p>
-        pub fn contact_flow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(inp);
+        /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
-        /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the
-        /// Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On
-        /// the contact flow page, under the name of the contact flow, choose <b>Show
-        /// additional flow information</b>. The ContactFlowId is the last part of the ARN, shown
-        /// here in bold: </p>
-        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
-        /// </p>
+        /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+        /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11061,22 +11049,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-        /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
-        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-        /// attributes, and can be accessed in contact flows just like any other contact attributes.</p>
-        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -11087,8 +11071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -11104,9 +11088,9 @@ pub mod fluent_builders {
         pub fn references(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Reference>,
+            v: crate::model::Reference,
         ) -> Self {
-            self.inner = self.inner.references(k, v);
+            self.inner = self.inner.references(k.into(), v);
             self
         }
         /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -11119,33 +11103,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_references(input);
             self
         }
-        /// <p>A description of the task that is shown to an agent in the Contact Control Panel
-        /// (CCP).</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description of the task that is shown to an agent in the Contact Control Panel
-        /// (CCP).</p>
+        /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
-        pub fn scheduled_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.scheduled_time(inp);
+        pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_time(input);
             self
         }
         /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
@@ -11160,7 +11140,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopContact`.
     ///
     /// <p>Ends the specified contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11205,10 +11185,10 @@ pub mod fluent_builders {
                 crate::input::StopContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11217,8 +11197,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The ID of the contact.</p>
@@ -11227,8 +11207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11239,14 +11219,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopContactRecording`.
     ///
-    /// <p>Stops recording a call when a contact is being recorded. StopContactRecording is a one-time
-    /// action. If you use StopContactRecording to stop recording an ongoing call, you can't use
-    /// StartContactRecording to restart it. For scenarios where the recording has started and you want
-    /// to suspend it for sensitive information (for example, to collect a credit card number), and then
-    /// restart it, use SuspendContactRecording and ResumeContactRecording.</p>
-    ///
+    /// <p>Stops recording a call when a contact is being recorded. StopContactRecording is a one-time action. If you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart it. For scenarios where the recording has started and you want to suspend it for sensitive information (for example, to collect a credit card number), and then restart it, use SuspendContactRecording and ResumeContactRecording.</p>
     /// <p>Only voice recordings are supported at this time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopContactRecording<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11291,10 +11266,10 @@ pub mod fluent_builders {
                 crate::input::StopContactRecordingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11303,8 +11278,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11313,8 +11288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -11322,14 +11297,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_id(input);
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
-        pub fn initial_contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.initial_contact_id(inp);
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+        pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.initial_contact_id(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn set_initial_contact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11340,10 +11313,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopContactStreaming`.
     ///
-    /// <p> Ends message streaming on a specified contact. To restart message streaming on that
-    /// contact, call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>
-    /// API. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Ends message streaming on a specified contact. To restart message streaming on that contact, call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a> API. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopContactStreaming<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11388,10 +11359,10 @@ pub mod fluent_builders {
                 crate::input::StopContactStreamingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11400,8 +11371,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11409,21 +11380,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact that is associated with
-        /// the first interaction with the contact center.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact that is associated with
-        /// the first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_contact_id(input);
             self
         }
         /// <p>The identifier of the streaming configuration enabled. </p>
-        pub fn streaming_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.streaming_id(inp);
+        pub fn streaming_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.streaming_id(input.into());
             self
         }
         /// <p>The identifier of the streaming configuration enabled. </p>
@@ -11434,13 +11403,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SuspendContactRecording`.
     ///
-    /// <p>When a contact is being recorded, this API suspends recording the call. For example, you
-    /// might suspend the call recording while collecting sensitive information, such as a credit card
-    /// number. Then use ResumeContactRecording to restart recording. </p>
-    /// <p>The period of time that the recording is suspended is filled with silence in the final
-    /// recording. </p>
+    /// <p>When a contact is being recorded, this API suspends recording the call. For example, you might suspend the call recording while collecting sensitive information, such as a credit card number. Then use ResumeContactRecording to restart recording. </p>
+    /// <p>The period of time that the recording is suspended is filled with silence in the final recording. </p>
     /// <p>Only voice recordings are supported at this time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SuspendContactRecording<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11485,10 +11451,10 @@ pub mod fluent_builders {
                 crate::input::SuspendContactRecordingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11497,8 +11463,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11507,8 +11473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -11516,14 +11482,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_id(input);
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
-        pub fn initial_contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.initial_contact_id(inp);
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+        pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.initial_contact_id(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn set_initial_contact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11535,11 +11499,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds the specified tags to the specified resource.</p>
-    /// <p>The supported resource types are users, routing profiles, queues, quick connects,
-    /// contact flows, agent status, and hours of operation.</p>
-    /// <p>For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon Connect Identity-Based
-    /// Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The supported resource types are users, routing profiles, queues, quick connects, contact flows, agent status, and hours of operation.</p>
+    /// <p>For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11584,10 +11546,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11596,8 +11558,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -11615,7 +11577,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
@@ -11632,7 +11594,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11677,10 +11639,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11689,8 +11651,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -11703,8 +11665,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -11720,7 +11682,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates agent status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAgentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11765,10 +11727,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAgentStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11777,8 +11739,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11787,8 +11749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the agent status.</p>
-        pub fn agent_status_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_status_id(inp);
+        pub fn agent_status_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_status_id(input.into());
             self
         }
         /// <p>The identifier of the agent status.</p>
@@ -11800,8 +11762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the agent status.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the agent status.</p>
@@ -11810,8 +11772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the agent status.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the agent status.</p>
@@ -11820,8 +11782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the agent status.</p>
-        pub fn state(mut self, inp: crate::model::AgentStatusState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, input: crate::model::AgentStatusState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The state of the agent status.</p>
@@ -11833,8 +11795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display order of the agent status.</p>
-        pub fn display_order(mut self, inp: i32) -> Self {
-            self.inner = self.inner.display_order(inp);
+        pub fn display_order(mut self, input: i32) -> Self {
+            self.inner = self.inner.display_order(input);
             self
         }
         /// <p>The display order of the agent status.</p>
@@ -11843,8 +11805,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A number indicating the reset order of the agent status.</p>
-        pub fn reset_order_number(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reset_order_number(inp);
+        pub fn reset_order_number(mut self, input: bool) -> Self {
+            self.inner = self.inner.reset_order_number(input);
             self
         }
         /// <p>A number indicating the reset order of the agent status.</p>
@@ -11856,13 +11818,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContact`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Adds or updates user-defined contact information associated with the specified contact. At
-    /// least one field to be updated must be present in the request.</p>
-    /// <important>
-    /// <p>You can add or update user-defined contact information for both ongoing and completed
-    /// contacts.</p>
+    /// <p>Adds or updates user-defined contact information associated with the specified contact. At least one field to be updated must be present in the request.</p> <important>
+    /// <p>You can add or update user-defined contact information for both ongoing and completed contacts.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11907,10 +11866,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11919,8 +11878,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11928,21 +11887,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with your contact center.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.</p>
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with your contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_contact_id(input);
             self
         }
         /// <p>The name of the contact.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the contact.</p>
@@ -11951,8 +11908,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the contact.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the contact.</p>
@@ -11968,9 +11925,9 @@ pub mod fluent_builders {
         pub fn references(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Reference>,
+            v: crate::model::Reference,
         ) -> Self {
-            self.inner = self.inner.references(k, v);
+            self.inner = self.inner.references(k.into(), v);
             self
         }
         /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -11986,27 +11943,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateContactAttributes`.
     ///
-    /// <p>Creates or updates
-    /// user-defined contact attributes
-    /// associated with the specified contact.</p>
-    /// <p>You can create or update user-defined attributes for both ongoing and completed contacts.
-    /// For example, while the call is active, you can update the customer's name or the reason the
-    /// customer called. You can add notes about steps that the agent took during the call that display
-    /// to the next agent that takes the call. You can also update attributes for a contact using data
-    /// from your CRM application and save the data with the contact in Amazon Connect. You could also flag calls
-    /// for additional analysis, such as legal review or to identify abusive callers.</p>
-    /// <p>Contact attributes are available in Amazon Connect for 24 months, and are then deleted. For
-    /// information about CTR retention and the maximum size of the CTR attributes section, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
-    /// specifications</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
-    ///
-    /// <p>
-    /// <b>Important:</b> You cannot use the operation to update
-    /// attributes for contacts that occurred prior to the release of the API, which was September 12,
-    /// 2018. You can update attributes only for contacts that started after the release of the API. If
-    /// you attempt to update attributes for a contact that occurred prior to the release of the API, a
-    /// 400 error is returned. This applies also to queued callbacks that were initiated prior to the
-    /// release of the API but are still active in your instance.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates or updates user-defined contact attributes associated with the specified contact.</p>
+    /// <p>You can create or update user-defined attributes for both ongoing and completed contacts. For example, while the call is active, you can update the customer's name or the reason the customer called. You can add notes about steps that the agent took during the call that display to the next agent that takes the call. You can also update attributes for a contact using data from your CRM application and save the data with the contact in Amazon Connect. You could also flag calls for additional analysis, such as legal review or to identify abusive callers.</p>
+    /// <p>Contact attributes are available in Amazon Connect for 24 months, and are then deleted. For information about CTR retention and the maximum size of the CTR attributes section, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+    /// <p> <b>Important:</b> You cannot use the operation to update attributes for contacts that occurred prior to the release of the API, which was September 12, 2018. You can update attributes only for contacts that started after the release of the API. If you attempt to update attributes for a contact that occurred prior to the release of the API, a 400 error is returned. This applies also to queued callbacks that were initiated prior to the release of the API but are still active in your instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12051,10 +11992,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContactAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12062,14 +12003,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
-        pub fn initial_contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.initial_contact_id(inp);
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+        pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.initial_contact_id(input.into());
             self
         }
-        /// <p>The identifier of the contact. This is the identifier of the contact associated with the
-        /// first interaction with the contact center.</p>
+        /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
         pub fn set_initial_contact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12078,8 +12017,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12091,22 +12030,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other
-        /// contact attributes.</p>
-        /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other
-        /// contact attributes.</p>
-        /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys
-        /// can include only alphanumeric, dash, and underscore characters.</p>
+        /// <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>
+        /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -12120,9 +12055,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactFlowContent`.
     ///
     /// <p>Updates the specified contact flow.</p>
-    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect
-    /// Flow language</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12167,10 +12101,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContactFlowContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12179,8 +12113,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -12189,8 +12123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow.</p>
-        pub fn contact_flow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(inp);
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow.</p>
@@ -12201,16 +12135,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_flow_id(input);
             self
         }
-        /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
-        /// flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
-        /// </p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
-        /// flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
-        /// </p>
+        /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
             self
@@ -12219,7 +12149,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactFlowMetadata`.
     ///
     /// <p>Updates metadata about specified contact flow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12264,10 +12194,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContactFlowMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12276,8 +12206,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12286,8 +12216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow.</p>
-        pub fn contact_flow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(inp);
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow.</p>
@@ -12299,8 +12229,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>TThe name of the contact flow.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>TThe name of the contact flow.</p>
@@ -12309,8 +12239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the contact flow.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the contact flow.</p>
@@ -12319,8 +12249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of contact flow.</p>
-        pub fn contact_flow_state(mut self, inp: crate::model::ContactFlowState) -> Self {
-            self.inner = self.inner.contact_flow_state(inp);
+        pub fn contact_flow_state(mut self, input: crate::model::ContactFlowState) -> Self {
+            self.inner = self.inner.contact_flow_state(input);
             self
         }
         /// <p>The state of contact flow.</p>
@@ -12335,7 +12265,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactFlowModuleContent`.
     ///
     /// <p>Updates specified contact flow module for the specified Amazon Connect instance. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowModuleContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12380,10 +12310,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContactFlowModuleContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12392,8 +12322,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12402,8 +12332,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow module.</p>
-        pub fn contact_flow_module_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_module_id(inp);
+        pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_module_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow module.</p>
@@ -12415,8 +12345,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the contact flow module.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the contact flow module.</p>
@@ -12428,7 +12358,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactFlowModuleMetadata`.
     ///
     /// <p>Updates metadata about specified contact flow module.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowModuleMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12473,10 +12403,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContactFlowModuleMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12485,8 +12415,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12495,8 +12425,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow module.</p>
-        pub fn contact_flow_module_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_module_id(inp);
+        pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_module_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow module.</p>
@@ -12508,8 +12438,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact flow module.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the contact flow module.</p>
@@ -12518,8 +12448,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the contact flow module.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the contact flow module.</p>
@@ -12528,8 +12458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of contact flow module.</p>
-        pub fn state(mut self, inp: crate::model::ContactFlowModuleState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, input: crate::model::ContactFlowModuleState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The state of contact flow module.</p>
@@ -12544,9 +12474,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactFlowName`.
     ///
     /// <p>The name of the contact flow.</p>
-    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect
-    /// Flow language</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactFlowName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12591,10 +12520,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContactFlowNameInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12603,8 +12532,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -12613,8 +12542,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow.</p>
-        pub fn contact_flow_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(inp);
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow.</p>
@@ -12626,8 +12555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact flow.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the contact flow.</p>
@@ -12636,8 +12565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the contact flow.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the contact flow.</p>
@@ -12649,7 +12578,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactSchedule`.
     ///
     /// <p>Updates the scheduled time of a task contact that is already scheduled.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12694,10 +12623,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContactScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12706,8 +12635,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12716,8 +12645,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -12726,8 +12655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
-        pub fn scheduled_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.scheduled_time(inp);
+        pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_time(input);
             self
         }
         /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
@@ -12743,7 +12672,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the hours of operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12788,10 +12717,10 @@ pub mod fluent_builders {
                 crate::input::UpdateHoursOfOperationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12800,8 +12729,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12810,8 +12739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the hours of operation.</p>
-        pub fn hours_of_operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hours_of_operation_id(inp);
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hours_of_operation_id(input.into());
             self
         }
         /// <p>The identifier of the hours of operation.</p>
@@ -12823,8 +12752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the hours of operation.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the hours of operation.</p>
@@ -12833,8 +12762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the hours of operation.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the hours of operation.</p>
@@ -12843,8 +12772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time zone of the hours of operation.</p>
-        pub fn time_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.time_zone(inp);
+        pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_zone(input.into());
             self
         }
         /// <p>The time zone of the hours of operation.</p>
@@ -12857,8 +12786,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_config`](Self::set_config).
         ///
         /// <p>Configuration information of the hours of operation.</p>
-        pub fn config(mut self, inp: impl Into<crate::model::HoursOfOperationConfig>) -> Self {
-            self.inner = self.inner.config(inp);
+        pub fn config(mut self, input: crate::model::HoursOfOperationConfig) -> Self {
+            self.inner = self.inner.config(input);
             self
         }
         /// <p>Configuration information of the hours of operation.</p>
@@ -12874,7 +12803,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the value for the specified attribute type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstanceAttribute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12919,10 +12848,10 @@ pub mod fluent_builders {
                 crate::input::UpdateInstanceAttributeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12931,8 +12860,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12940,16 +12869,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The type of attribute.</p>
-        /// <note>
+        /// <p>The type of attribute.</p> <note>
         /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>
         /// </note>
-        pub fn attribute_type(mut self, inp: crate::model::InstanceAttributeType) -> Self {
-            self.inner = self.inner.attribute_type(inp);
+        pub fn attribute_type(mut self, input: crate::model::InstanceAttributeType) -> Self {
+            self.inner = self.inner.attribute_type(input);
             self
         }
-        /// <p>The type of attribute.</p>
-        /// <note>
+        /// <p>The type of attribute.</p> <note>
         /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>
         /// </note>
         pub fn set_attribute_type(
@@ -12960,8 +12887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value for the attribute. Maximum character limit is 100. </p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(inp);
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(input.into());
             self
         }
         /// <p>The value for the attribute. Maximum character limit is 100. </p>
@@ -12974,7 +12901,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates an existing configuration for a resource type. This API is idempotent.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstanceStorageConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13019,10 +12946,10 @@ pub mod fluent_builders {
                 crate::input::UpdateInstanceStorageConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13031,8 +12958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13041,8 +12968,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(inp);
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
@@ -13054,8 +12981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid resource type.</p>
-        pub fn resource_type(mut self, inp: crate::model::InstanceStorageResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::InstanceStorageResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>A valid resource type.</p>
@@ -13067,8 +12994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The storage configuration for the instance.</p>
-        pub fn storage_config(mut self, inp: crate::model::InstanceStorageConfig) -> Self {
-            self.inner = self.inner.storage_config(inp);
+        pub fn storage_config(mut self, input: crate::model::InstanceStorageConfig) -> Self {
+            self.inner = self.inner.storage_config(input);
             self
         }
         /// <p>The storage configuration for the instance.</p>
@@ -13084,7 +13011,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the hours of operation for the specified queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQueueHoursOfOperation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13129,10 +13056,10 @@ pub mod fluent_builders {
                 crate::input::UpdateQueueHoursOfOperationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13141,8 +13068,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13151,8 +13078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(inp);
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -13161,8 +13088,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the hours of operation.</p>
-        pub fn hours_of_operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hours_of_operation_id(inp);
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hours_of_operation_id(input.into());
             self
         }
         /// <p>The identifier for the hours of operation.</p>
@@ -13177,9 +13104,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateQueueMaxContacts`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Updates the maximum number of contacts allowed in a queue before it is considered
-    /// full.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the maximum number of contacts allowed in a queue before it is considered full.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQueueMaxContacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13224,10 +13150,10 @@ pub mod fluent_builders {
                 crate::input::UpdateQueueMaxContactsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13236,8 +13162,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13246,8 +13172,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(inp);
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -13256,8 +13182,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
-        pub fn max_contacts(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_contacts(inp);
+        pub fn max_contacts(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_contacts(input);
             self
         }
         /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
@@ -13270,7 +13196,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the name and description of a queue. At least <code>Name</code> or <code>Description</code> must be provided.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQueueName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13315,10 +13241,10 @@ pub mod fluent_builders {
                 crate::input::UpdateQueueNameInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13327,8 +13253,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13337,8 +13263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(inp);
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -13347,8 +13273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the queue.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the queue.</p>
@@ -13357,8 +13283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the queue.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the queue.</p>
@@ -13370,9 +13296,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateQueueOutboundCallerConfig`.
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>Updates the outbound caller ID name, number, and outbound whisper flow for a specified
-    /// queue.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQueueOutboundCallerConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13417,10 +13342,10 @@ pub mod fluent_builders {
                 crate::input::UpdateQueueOutboundCallerConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13429,8 +13354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13439,8 +13364,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(inp);
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -13449,8 +13374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-        pub fn outbound_caller_config(mut self, inp: crate::model::OutboundCallerConfig) -> Self {
-            self.inner = self.inner.outbound_caller_config(inp);
+        pub fn outbound_caller_config(mut self, input: crate::model::OutboundCallerConfig) -> Self {
+            self.inner = self.inner.outbound_caller_config(input);
             self
         }
         /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
@@ -13466,7 +13391,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates the status of the queue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQueueStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13511,10 +13436,10 @@ pub mod fluent_builders {
                 crate::input::UpdateQueueStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13523,8 +13448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13533,8 +13458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(inp);
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -13543,8 +13468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the queue.</p>
-        pub fn status(mut self, inp: crate::model::QueueStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::QueueStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the queue.</p>
@@ -13556,7 +13481,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateQuickConnectConfig`.
     ///
     /// <p>Updates the configuration settings for the specified quick connect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQuickConnectConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13601,10 +13526,10 @@ pub mod fluent_builders {
                 crate::input::UpdateQuickConnectConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13613,8 +13538,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13623,8 +13548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the quick connect.</p>
-        pub fn quick_connect_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quick_connect_id(inp);
+        pub fn quick_connect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quick_connect_id(input.into());
             self
         }
         /// <p>The identifier for the quick connect.</p>
@@ -13636,8 +13561,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the configuration settings for the quick connect.</p>
-        pub fn quick_connect_config(mut self, inp: crate::model::QuickConnectConfig) -> Self {
-            self.inner = self.inner.quick_connect_config(inp);
+        pub fn quick_connect_config(mut self, input: crate::model::QuickConnectConfig) -> Self {
+            self.inner = self.inner.quick_connect_config(input);
             self
         }
         /// <p>Information about the configuration settings for the quick connect.</p>
@@ -13652,7 +13577,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateQuickConnectName`.
     ///
     /// <p>Updates the name and description of a quick connect. The request accepts the following data in JSON format. At least <code>Name</code> or <code>Description</code> must be provided.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateQuickConnectName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13697,10 +13622,10 @@ pub mod fluent_builders {
                 crate::input::UpdateQuickConnectNameInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13709,8 +13634,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13719,8 +13644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the quick connect.</p>
-        pub fn quick_connect_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quick_connect_id(inp);
+        pub fn quick_connect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quick_connect_id(input.into());
             self
         }
         /// <p>The identifier for the quick connect.</p>
@@ -13732,8 +13657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the quick connect.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the quick connect.</p>
@@ -13742,8 +13667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the quick connect.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the quick connect.</p>
@@ -13754,9 +13679,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRoutingProfileConcurrency`.
     ///
-    /// <p>Updates the channels that agents can handle in the Contact Control Panel (CCP) for a routing
-    /// profile.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the channels that agents can handle in the Contact Control Panel (CCP) for a routing profile.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingProfileConcurrency<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13801,10 +13725,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRoutingProfileConcurrencyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13813,8 +13737,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13823,8 +13747,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(inp);
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -13840,11 +13764,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_media_concurrencies`](Self::set_media_concurrencies).
         ///
         /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
-        pub fn media_concurrencies(
-            mut self,
-            inp: impl Into<crate::model::MediaConcurrency>,
-        ) -> Self {
-            self.inner = self.inner.media_concurrencies(inp);
+        pub fn media_concurrencies(mut self, input: crate::model::MediaConcurrency) -> Self {
+            self.inner = self.inner.media_concurrencies(input);
             self
         }
         /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
@@ -13859,7 +13780,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRoutingProfileDefaultOutboundQueue`.
     ///
     /// <p>Updates the default outbound queue of a routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingProfileDefaultOutboundQueue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13906,10 +13827,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRoutingProfileDefaultOutboundQueueInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13918,8 +13839,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13928,8 +13849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(inp);
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -13941,8 +13862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the default outbound queue.</p>
-        pub fn default_outbound_queue_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_outbound_queue_id(inp);
+        pub fn default_outbound_queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_outbound_queue_id(input.into());
             self
         }
         /// <p>The identifier for the default outbound queue.</p>
@@ -13956,9 +13877,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRoutingProfileName`.
     ///
-    /// <p>Updates the name and description of a routing profile. The request accepts the following data in JSON format.
-    /// At least <code>Name</code> or <code>Description</code> must be provided.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the name and description of a routing profile. The request accepts the following data in JSON format. At least <code>Name</code> or <code>Description</code> must be provided.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingProfileName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14003,10 +13923,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRoutingProfileNameInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14015,8 +13935,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14025,8 +13945,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(inp);
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -14038,8 +13958,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
@@ -14048,8 +13968,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the routing profile. Must not be more than 250 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the routing profile. Must not be more than 250 characters.</p>
@@ -14061,7 +13981,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRoutingProfileQueues`.
     ///
     /// <p>Updates the properties associated with a set of queues for a routing profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingProfileQueues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14106,10 +14026,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRoutingProfileQueuesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14118,8 +14038,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14128,8 +14048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(inp);
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -14144,19 +14064,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_queue_configs`](Self::set_queue_configs).
         ///
-        /// <p>The queues to be updated for this routing profile.
-        /// Queues must first be associated to the routing
-        /// profile. You can do this using AssociateRoutingProfileQueues.</p>
-        pub fn queue_configs(
-            mut self,
-            inp: impl Into<crate::model::RoutingProfileQueueConfig>,
-        ) -> Self {
-            self.inner = self.inner.queue_configs(inp);
+        /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
+        pub fn queue_configs(mut self, input: crate::model::RoutingProfileQueueConfig) -> Self {
+            self.inner = self.inner.queue_configs(input);
             self
         }
-        /// <p>The queues to be updated for this routing profile.
-        /// Queues must first be associated to the routing
-        /// profile. You can do this using AssociateRoutingProfileQueues.</p>
+        /// <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
         pub fn set_queue_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RoutingProfileQueueConfig>>,
@@ -14169,7 +14082,7 @@ pub mod fluent_builders {
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>Updates a security profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSecurityProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14214,10 +14127,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSecurityProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14226,8 +14139,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The description of the security profile.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the security profile.</p>
@@ -14240,8 +14153,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The permissions granted to a security profile.</p>
-        pub fn permissions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permissions(inp);
+        pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permissions(input.into());
             self
         }
         /// <p>The permissions granted to a security profile.</p>
@@ -14253,8 +14166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the security profle.</p>
-        pub fn security_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_profile_id(inp);
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_id(input.into());
             self
         }
         /// <p>The identifier for the security profle.</p>
@@ -14266,8 +14179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14279,7 +14192,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserHierarchy`.
     ///
     /// <p>Assigns the specified hierarchy group to the specified user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserHierarchy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14324,10 +14237,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserHierarchyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14336,8 +14249,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the hierarchy group.</p>
-        pub fn hierarchy_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_group_id(inp);
+        pub fn hierarchy_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_group_id(input.into());
             self
         }
         /// <p>The identifier of the hierarchy group.</p>
@@ -14349,8 +14262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user account.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user account.</p>
@@ -14359,8 +14272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14372,7 +14285,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserHierarchyGroupName`.
     ///
     /// <p>Updates the name of the user hierarchy group. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserHierarchyGroupName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14417,10 +14330,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserHierarchyGroupNameInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14429,8 +14342,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
@@ -14439,8 +14352,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the hierarchy group.</p>
-        pub fn hierarchy_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_group_id(inp);
+        pub fn hierarchy_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_group_id(input.into());
             self
         }
         /// <p>The identifier of the hierarchy group.</p>
@@ -14452,8 +14365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14465,7 +14378,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserHierarchyStructure`.
     ///
     /// <p>Updates the user hierarchy structure: add, remove, and rename user hierarchy levels.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserHierarchyStructure<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14510,10 +14423,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserHierarchyStructureInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14522,8 +14435,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The hierarchy levels to update.</p>
-        pub fn hierarchy_structure(mut self, inp: crate::model::HierarchyStructureUpdate) -> Self {
-            self.inner = self.inner.hierarchy_structure(inp);
+        pub fn hierarchy_structure(
+            mut self,
+            input: crate::model::HierarchyStructureUpdate,
+        ) -> Self {
+            self.inner = self.inner.hierarchy_structure(input);
             self
         }
         /// <p>The hierarchy levels to update.</p>
@@ -14535,8 +14451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14547,16 +14463,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateUserIdentityInfo`.
     ///
-    /// <p>Updates the identity information for the specified user.</p>
-    /// <important>
-    /// <p>We strongly recommend limiting who has the ability to invoke
-    /// <code>UpdateUserIdentityInfo</code>. Someone with that ability can change the login credentials
-    /// of other users by changing their email address. This poses a security risk to your organization.
-    /// They can change the email address of a user to the attacker's email address, and then reset the
-    /// password through email. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best Practices for
-    /// Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>Updates the identity information for the specified user.</p> <important>
+    /// <p>We strongly recommend limiting who has the ability to invoke <code>UpdateUserIdentityInfo</code>. Someone with that ability can change the login credentials of other users by changing their email address. This poses a security risk to your organization. They can change the email address of a user to the attacker's email address, and then reset the password through email. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserIdentityInfo<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14601,10 +14511,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserIdentityInfoInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14613,8 +14523,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identity information for the user.</p>
-        pub fn identity_info(mut self, inp: crate::model::UserIdentityInfo) -> Self {
-            self.inner = self.inner.identity_info(inp);
+        pub fn identity_info(mut self, input: crate::model::UserIdentityInfo) -> Self {
+            self.inner = self.inner.identity_info(input);
             self
         }
         /// <p>The identity information for the user.</p>
@@ -14626,8 +14536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user account.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user account.</p>
@@ -14636,8 +14546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14649,7 +14559,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserPhoneConfig`.
     ///
     /// <p>Updates the phone configuration settings for the specified user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserPhoneConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14694,10 +14604,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserPhoneConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14706,8 +14616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Information about phone configuration settings for the user.</p>
-        pub fn phone_config(mut self, inp: crate::model::UserPhoneConfig) -> Self {
-            self.inner = self.inner.phone_config(inp);
+        pub fn phone_config(mut self, input: crate::model::UserPhoneConfig) -> Self {
+            self.inner = self.inner.phone_config(input);
             self
         }
         /// <p>Information about phone configuration settings for the user.</p>
@@ -14719,8 +14629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user account.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user account.</p>
@@ -14729,8 +14639,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14742,7 +14652,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserRoutingProfile`.
     ///
     /// <p>Assigns the specified routing profile to the specified user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserRoutingProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14787,10 +14697,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserRoutingProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14799,8 +14709,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the routing profile for the user.</p>
-        pub fn routing_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(inp);
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile for the user.</p>
@@ -14812,8 +14722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user account.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user account.</p>
@@ -14822,8 +14732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14835,7 +14745,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserSecurityProfiles`.
     ///
     /// <p>Assigns the specified security profiles to the specified user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserSecurityProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14880,10 +14790,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserSecurityProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14896,8 +14806,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_profile_ids`](Self::set_security_profile_ids).
         ///
         /// <p>The identifiers of the security profiles for the user.</p>
-        pub fn security_profile_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_profile_ids(inp);
+        pub fn security_profile_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_ids(input.into());
             self
         }
         /// <p>The identifiers of the security profiles for the user.</p>
@@ -14909,8 +14819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user account.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user account.</p>
@@ -14919,8 +14829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14930,6 +14840,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

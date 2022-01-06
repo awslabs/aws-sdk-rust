@@ -5,22 +5,17 @@
 pub enum Error {
     /// <p>The required resource already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>Backup can't perform the action that you requested until it finishes
-    /// performing a previous action. Try again later.</p>
+    /// <p>Backup can't perform the action that you requested until it finishes performing a previous action. Try again later.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>A dependent Amazon Web Services service or resource returned an error to the Backup service, and the action cannot be completed.</p>
     DependencyFailureException(crate::error::DependencyFailureException),
-    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is
-    /// out of range.</p>
+    /// <p>Indicates that something is wrong with a parameter's value. For example, the value is out of range.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// parameter is of the wrong type.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong type.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>Backup is already performing an action on this recovery point. It can't
-    /// perform the action you requested until the first action finishes. Try again later.</p>
+    /// <p>Backup is already performing an action on this recovery point. It can't perform the action you requested until the first action finishes. Try again later.</p>
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
-    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed
-    /// in a request.</p>
+    /// <p>A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that a required parameter is missing.</p>
     MissingParameterValueException(crate::error::MissingParameterValueException),

@@ -7,26 +7,19 @@ pub struct UpdateTrailOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery.
-    /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
-    /// <p>This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.</p>
+    /// <p>This field is no longer in use. Use <code>UpdateTrailResponse$SnsTopicARN</code>.</p>
     pub sns_topic_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
-    /// when log files are delivered. The following is the format of a topic ARN.</p>
-    /// <p>
-    /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
-    /// </p>
+    /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
+    /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
     pub include_global_service_events: std::option::Option<bool>,
     /// <p>Specifies whether the trail exists in one region or in all regions.</p>
     pub is_multi_region_trail: std::option::Option<bool>,
     /// <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub trail_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether log file integrity validation is enabled.</p>
     pub log_file_validation_enabled: std::option::Option<bool>,
@@ -35,10 +28,7 @@ pub struct UpdateTrailOutput {
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
-    ///
-    /// <p>
-    /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-    /// </p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is an organization trail.</p>
     pub is_organization_trail: std::option::Option<bool>,
@@ -52,21 +42,16 @@ impl UpdateTrailOutput {
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery.
-    /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
-    /// <p>This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.</p>
+    /// <p>This field is no longer in use. Use <code>UpdateTrailResponse$SnsTopicARN</code>.</p>
     pub fn sns_topic_name(&self) -> std::option::Option<&str> {
         self.sns_topic_name.as_deref()
     }
-    /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
-    /// when log files are delivered. The following is the format of a topic ARN.</p>
-    /// <p>
-    /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
-    /// </p>
+    /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
+    /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
@@ -79,9 +64,7 @@ impl UpdateTrailOutput {
         self.is_multi_region_trail
     }
     /// <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn trail_arn(&self) -> std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
@@ -98,10 +81,7 @@ impl UpdateTrailOutput {
         self.cloud_watch_logs_role_arn.as_deref()
     }
     /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
-    ///
-    /// <p>
-    /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-    /// </p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -182,16 +162,12 @@ pub mod update_trail_output {
             self.s3_bucket_name = input;
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
         pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_key_prefix = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -199,12 +175,12 @@ pub mod update_trail_output {
             self.s3_key_prefix = input;
             self
         }
-        /// <p>This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.</p>
+        /// <p>This field is no longer in use. Use <code>UpdateTrailResponse$SnsTopicARN</code>.</p>
         pub fn sns_topic_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_name = Some(input.into());
             self
         }
-        /// <p>This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.</p>
+        /// <p>This field is no longer in use. Use <code>UpdateTrailResponse$SnsTopicARN</code>.</p>
         pub fn set_sns_topic_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -212,20 +188,14 @@ pub mod update_trail_output {
             self.sns_topic_name = input;
             self
         }
-        /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
-        /// when log files are delivered. The following is the format of a topic ARN.</p>
-        /// <p>
-        /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
-        /// </p>
+        /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
+        /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
-        /// when log files are delivered. The following is the format of a topic ARN.</p>
-        /// <p>
-        /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
-        /// </p>
+        /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
+        /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -257,17 +227,13 @@ pub mod update_trail_output {
             self
         }
         /// <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn trail_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.trail_arn = Some(input.into());
             self
         }
         /// <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_arn = input;
             self
@@ -312,19 +278,13 @@ pub mod update_trail_output {
             self
         }
         /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
-        ///
-        /// <p>
-        /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
         /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
-        ///
-        /// <p>
-        /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -366,6 +326,265 @@ impl UpdateTrailOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateEventDataStoreOutput {
+    /// <p>The ARN of the event data store.</p>
+    pub event_data_store_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the event data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    pub status: std::option::Option<crate::model::EventDataStoreStatus>,
+    /// <p>The advanced event selectors that are applied to the event data store.</p>
+    pub advanced_event_selectors:
+        std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    pub multi_region_enabled: std::option::Option<bool>,
+    /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    pub organization_enabled: std::option::Option<bool>,
+    /// <p>The retention period, in days.</p>
+    pub retention_period: std::option::Option<i32>,
+    /// <p>Indicates whether termination protection is enabled for the event data store.</p>
+    pub termination_protection_enabled: std::option::Option<bool>,
+    /// <p>The timestamp that shows when an event data store was first created.</p>
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl UpdateEventDataStoreOutput {
+    /// <p>The ARN of the event data store.</p>
+    pub fn event_data_store_arn(&self) -> std::option::Option<&str> {
+        self.event_data_store_arn.as_deref()
+    }
+    /// <p>The name of the event data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EventDataStoreStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The advanced event selectors that are applied to the event data store.</p>
+    pub fn advanced_event_selectors(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
+        self.advanced_event_selectors.as_deref()
+    }
+    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    pub fn multi_region_enabled(&self) -> std::option::Option<bool> {
+        self.multi_region_enabled
+    }
+    /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    pub fn organization_enabled(&self) -> std::option::Option<bool> {
+        self.organization_enabled
+    }
+    /// <p>The retention period, in days.</p>
+    pub fn retention_period(&self) -> std::option::Option<i32> {
+        self.retention_period
+    }
+    /// <p>Indicates whether termination protection is enabled for the event data store.</p>
+    pub fn termination_protection_enabled(&self) -> std::option::Option<bool> {
+        self.termination_protection_enabled
+    }
+    /// <p>The timestamp that shows when an event data store was first created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateEventDataStoreOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateEventDataStoreOutput");
+        formatter.field("event_data_store_arn", &self.event_data_store_arn);
+        formatter.field("name", &self.name);
+        formatter.field("status", &self.status);
+        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
+        formatter.field("multi_region_enabled", &self.multi_region_enabled);
+        formatter.field("organization_enabled", &self.organization_enabled);
+        formatter.field("retention_period", &self.retention_period);
+        formatter.field(
+            "termination_protection_enabled",
+            &self.termination_protection_enabled,
+        );
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("updated_timestamp", &self.updated_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput)
+pub mod update_event_data_store_output {
+    /// A builder for [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::EventDataStoreStatus>,
+        pub(crate) advanced_event_selectors:
+            std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        pub(crate) multi_region_enabled: std::option::Option<bool>,
+        pub(crate) organization_enabled: std::option::Option<bool>,
+        pub(crate) retention_period: std::option::Option<i32>,
+        pub(crate) termination_protection_enabled: std::option::Option<bool>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ARN of the event data store.</p>
+        pub fn event_data_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the event data store.</p>
+        pub fn set_event_data_store_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store_arn = input;
+            self
+        }
+        /// <p>The name of the event data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the event data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+        pub fn status(mut self, input: crate::model::EventDataStoreStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::EventDataStoreStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Appends an item to `advanced_event_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
+        ///
+        /// <p>The advanced event selectors that are applied to the event data store.</p>
+        pub fn advanced_event_selectors(
+            mut self,
+            input: crate::model::AdvancedEventSelector,
+        ) -> Self {
+            let mut v = self.advanced_event_selectors.unwrap_or_default();
+            v.push(input);
+            self.advanced_event_selectors = Some(v);
+            self
+        }
+        /// <p>The advanced event selectors that are applied to the event data store.</p>
+        pub fn set_advanced_event_selectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        ) -> Self {
+            self.advanced_event_selectors = input;
+            self
+        }
+        /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+        pub fn multi_region_enabled(mut self, input: bool) -> Self {
+            self.multi_region_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+        pub fn set_multi_region_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_region_enabled = input;
+            self
+        }
+        /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+        pub fn organization_enabled(mut self, input: bool) -> Self {
+            self.organization_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+        pub fn set_organization_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.organization_enabled = input;
+            self
+        }
+        /// <p>The retention period, in days.</p>
+        pub fn retention_period(mut self, input: i32) -> Self {
+            self.retention_period = Some(input);
+            self
+        }
+        /// <p>The retention period, in days.</p>
+        pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.retention_period = input;
+            self
+        }
+        /// <p>Indicates whether termination protection is enabled for the event data store.</p>
+        pub fn termination_protection_enabled(mut self, input: bool) -> Self {
+            self.termination_protection_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether termination protection is enabled for the event data store.</p>
+        pub fn set_termination_protection_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.termination_protection_enabled = input;
+            self
+        }
+        /// <p>The timestamp that shows when an event data store was first created.</p>
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_timestamp = Some(input);
+            self
+        }
+        /// <p>The timestamp that shows when an event data store was first created.</p>
+        pub fn set_created_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_timestamp = input;
+            self
+        }
+        /// <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_timestamp = Some(input);
+            self
+        }
+        /// <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+        pub fn set_updated_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput)
+        pub fn build(self) -> crate::output::UpdateEventDataStoreOutput {
+            crate::output::UpdateEventDataStoreOutput {
+                event_data_store_arn: self.event_data_store_arn,
+                name: self.name,
+                status: self.status,
+                advanced_event_selectors: self.advanced_event_selectors,
+                multi_region_enabled: self.multi_region_enabled,
+                organization_enabled: self.organization_enabled,
+                retention_period: self.retention_period,
+                termination_protection_enabled: self.termination_protection_enabled,
+                created_timestamp: self.created_timestamp,
+                updated_timestamp: self.updated_timestamp,
+            }
+        }
+    }
+}
+impl UpdateEventDataStoreOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput)
+    pub fn builder() -> crate::output::update_event_data_store_output::Builder {
+        crate::output::update_event_data_store_output::Builder::default()
+    }
+}
+
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -396,6 +615,60 @@ impl StopLoggingOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartQueryOutput {
+    /// <p>The ID of the started query.</p>
+    pub query_id: std::option::Option<std::string::String>,
+}
+impl StartQueryOutput {
+    /// <p>The ID of the started query.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+}
+impl std::fmt::Debug for StartQueryOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartQueryOutput");
+        formatter.field("query_id", &self.query_id);
+        formatter.finish()
+    }
+}
+/// See [`StartQueryOutput`](crate::output::StartQueryOutput)
+pub mod start_query_output {
+    /// A builder for [`StartQueryOutput`](crate::output::StartQueryOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) query_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the started query.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the started query.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartQueryOutput`](crate::output::StartQueryOutput)
+        pub fn build(self) -> crate::output::StartQueryOutput {
+            crate::output::StartQueryOutput {
+                query_id: self.query_id,
+            }
+        }
+    }
+}
+impl StartQueryOutput {
+    /// Creates a new builder-style object to manufacture [`StartQueryOutput`](crate::output::StartQueryOutput)
+    pub fn builder() -> crate::output::start_query_output::Builder {
+        crate::output::start_query_output::Builder::default()
+    }
+}
+
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -423,6 +696,265 @@ impl StartLoggingOutput {
     /// Creates a new builder-style object to manufacture [`StartLoggingOutput`](crate::output::StartLoggingOutput)
     pub fn builder() -> crate::output::start_logging_output::Builder {
         crate::output::start_logging_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RestoreEventDataStoreOutput {
+    /// <p>The event data store ARN.</p>
+    pub event_data_store_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the event data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The status of the event data store.</p>
+    pub status: std::option::Option<crate::model::EventDataStoreStatus>,
+    /// <p>The advanced event selectors that were used to select events.</p>
+    pub advanced_event_selectors:
+        std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+    /// <p>Indicates whether the event data store is collecting events from all regions, or only from the region in which the event data store was created.</p>
+    pub multi_region_enabled: std::option::Option<bool>,
+    /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    pub organization_enabled: std::option::Option<bool>,
+    /// <p>The retention period, in days.</p>
+    pub retention_period: std::option::Option<i32>,
+    /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+    pub termination_protection_enabled: std::option::Option<bool>,
+    /// <p>The timestamp of an event data store's creation.</p>
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl RestoreEventDataStoreOutput {
+    /// <p>The event data store ARN.</p>
+    pub fn event_data_store_arn(&self) -> std::option::Option<&str> {
+        self.event_data_store_arn.as_deref()
+    }
+    /// <p>The name of the event data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the event data store.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EventDataStoreStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The advanced event selectors that were used to select events.</p>
+    pub fn advanced_event_selectors(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
+        self.advanced_event_selectors.as_deref()
+    }
+    /// <p>Indicates whether the event data store is collecting events from all regions, or only from the region in which the event data store was created.</p>
+    pub fn multi_region_enabled(&self) -> std::option::Option<bool> {
+        self.multi_region_enabled
+    }
+    /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    pub fn organization_enabled(&self) -> std::option::Option<bool> {
+        self.organization_enabled
+    }
+    /// <p>The retention period, in days.</p>
+    pub fn retention_period(&self) -> std::option::Option<i32> {
+        self.retention_period
+    }
+    /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+    pub fn termination_protection_enabled(&self) -> std::option::Option<bool> {
+        self.termination_protection_enabled
+    }
+    /// <p>The timestamp of an event data store's creation.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for RestoreEventDataStoreOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RestoreEventDataStoreOutput");
+        formatter.field("event_data_store_arn", &self.event_data_store_arn);
+        formatter.field("name", &self.name);
+        formatter.field("status", &self.status);
+        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
+        formatter.field("multi_region_enabled", &self.multi_region_enabled);
+        formatter.field("organization_enabled", &self.organization_enabled);
+        formatter.field("retention_period", &self.retention_period);
+        formatter.field(
+            "termination_protection_enabled",
+            &self.termination_protection_enabled,
+        );
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("updated_timestamp", &self.updated_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput)
+pub mod restore_event_data_store_output {
+    /// A builder for [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::EventDataStoreStatus>,
+        pub(crate) advanced_event_selectors:
+            std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        pub(crate) multi_region_enabled: std::option::Option<bool>,
+        pub(crate) organization_enabled: std::option::Option<bool>,
+        pub(crate) retention_period: std::option::Option<i32>,
+        pub(crate) termination_protection_enabled: std::option::Option<bool>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The event data store ARN.</p>
+        pub fn event_data_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store_arn = Some(input.into());
+            self
+        }
+        /// <p>The event data store ARN.</p>
+        pub fn set_event_data_store_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store_arn = input;
+            self
+        }
+        /// <p>The name of the event data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the event data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The status of the event data store.</p>
+        pub fn status(mut self, input: crate::model::EventDataStoreStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the event data store.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::EventDataStoreStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Appends an item to `advanced_event_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
+        ///
+        /// <p>The advanced event selectors that were used to select events.</p>
+        pub fn advanced_event_selectors(
+            mut self,
+            input: crate::model::AdvancedEventSelector,
+        ) -> Self {
+            let mut v = self.advanced_event_selectors.unwrap_or_default();
+            v.push(input);
+            self.advanced_event_selectors = Some(v);
+            self
+        }
+        /// <p>The advanced event selectors that were used to select events.</p>
+        pub fn set_advanced_event_selectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        ) -> Self {
+            self.advanced_event_selectors = input;
+            self
+        }
+        /// <p>Indicates whether the event data store is collecting events from all regions, or only from the region in which the event data store was created.</p>
+        pub fn multi_region_enabled(mut self, input: bool) -> Self {
+            self.multi_region_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether the event data store is collecting events from all regions, or only from the region in which the event data store was created.</p>
+        pub fn set_multi_region_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_region_enabled = input;
+            self
+        }
+        /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+        pub fn organization_enabled(mut self, input: bool) -> Self {
+            self.organization_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+        pub fn set_organization_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.organization_enabled = input;
+            self
+        }
+        /// <p>The retention period, in days.</p>
+        pub fn retention_period(mut self, input: i32) -> Self {
+            self.retention_period = Some(input);
+            self
+        }
+        /// <p>The retention period, in days.</p>
+        pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.retention_period = input;
+            self
+        }
+        /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+        pub fn termination_protection_enabled(mut self, input: bool) -> Self {
+            self.termination_protection_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+        pub fn set_termination_protection_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.termination_protection_enabled = input;
+            self
+        }
+        /// <p>The timestamp of an event data store's creation.</p>
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_timestamp = Some(input);
+            self
+        }
+        /// <p>The timestamp of an event data store's creation.</p>
+        pub fn set_created_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_timestamp = input;
+            self
+        }
+        /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_timestamp = Some(input);
+            self
+        }
+        /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+        pub fn set_updated_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput)
+        pub fn build(self) -> crate::output::RestoreEventDataStoreOutput {
+            crate::output::RestoreEventDataStoreOutput {
+                event_data_store_arn: self.event_data_store_arn,
+                name: self.name,
+                status: self.status,
+                advanced_event_selectors: self.advanced_event_selectors,
+                multi_region_enabled: self.multi_region_enabled,
+                organization_enabled: self.organization_enabled,
+                retention_period: self.retention_period,
+                termination_protection_enabled: self.termination_protection_enabled,
+                created_timestamp: self.created_timestamp,
+                updated_timestamp: self.updated_timestamp,
+            }
+        }
+    }
+}
+impl RestoreEventDataStoreOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput)
+    pub fn builder() -> crate::output::restore_event_data_store_output::Builder {
+        crate::output::restore_event_data_store_output::Builder::default()
     }
 }
 
@@ -462,7 +994,7 @@ impl RemoveTagsOutput {
 pub struct PutInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to change or add Insights selectors.</p>
     pub trail_arn: std::option::Option<std::string::String>,
-    /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
+    /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
     pub insight_selectors: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
 }
 impl PutInsightSelectorsOutput {
@@ -470,7 +1002,7 @@ impl PutInsightSelectorsOutput {
     pub fn trail_arn(&self) -> std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
-    /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
+    /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
     pub fn insight_selectors(&self) -> std::option::Option<&[crate::model::InsightSelector]> {
         self.insight_selectors.as_deref()
     }
@@ -508,17 +1040,14 @@ pub mod put_insight_selectors_output {
         ///
         /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
         ///
-        /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
-        pub fn insight_selectors(
-            mut self,
-            input: impl Into<crate::model::InsightSelector>,
-        ) -> Self {
+        /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+        pub fn insight_selectors(mut self, input: crate::model::InsightSelector) -> Self {
             let mut v = self.insight_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insight_selectors = Some(v);
             self
         }
-        /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
+        /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
         pub fn set_insight_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
@@ -547,9 +1076,7 @@ impl PutInsightSelectorsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventSelectorsOutput {
     /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub trail_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the event selectors configured for your trail.</p>
     pub event_selectors: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
@@ -559,9 +1086,7 @@ pub struct PutEventSelectorsOutput {
 }
 impl PutEventSelectorsOutput {
     /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn trail_arn(&self) -> std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
@@ -598,17 +1123,13 @@ pub mod put_event_selectors_output {
     }
     impl Builder {
         /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn trail_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.trail_arn = Some(input.into());
             self
         }
         /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_arn = input;
             self
@@ -618,9 +1139,9 @@ pub mod put_event_selectors_output {
         /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
         ///
         /// <p>Specifies the event selectors configured for your trail.</p>
-        pub fn event_selectors(mut self, input: impl Into<crate::model::EventSelector>) -> Self {
+        pub fn event_selectors(mut self, input: crate::model::EventSelector) -> Self {
             let mut v = self.event_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_selectors = Some(v);
             self
         }
@@ -639,10 +1160,10 @@ pub mod put_event_selectors_output {
         /// <p>Specifies the advanced event selectors configured for your trail.</p>
         pub fn advanced_event_selectors(
             mut self,
-            input: impl Into<crate::model::AdvancedEventSelector>,
+            input: crate::model::AdvancedEventSelector,
         ) -> Self {
             let mut v = self.advanced_event_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.advanced_event_selectors = Some(v);
             self
         }
@@ -677,10 +1198,7 @@ impl PutEventSelectorsOutput {
 pub struct LookupEventsOutput {
     /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
-    /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear,
-    /// there are no more results to return. The token must be passed in with the same parameters as the previous call.
-    /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with
-    /// NextToken should include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl LookupEventsOutput {
@@ -688,10 +1206,7 @@ impl LookupEventsOutput {
     pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
         self.events.as_deref()
     }
-    /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear,
-    /// there are no more results to return. The token must be passed in with the same parameters as the previous call.
-    /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with
-    /// NextToken should include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -719,9 +1234,9 @@ pub mod lookup_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -733,18 +1248,12 @@ pub mod lookup_events_output {
             self.events = input;
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear,
-        /// there are no more results to return. The token must be passed in with the same parameters as the previous call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with
-        /// NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear,
-        /// there are no more results to return. The token must be passed in with the same parameters as the previous call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with
-        /// NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -771,10 +1280,7 @@ impl LookupEventsOutput {
 pub struct ListTrailsOutput {
     /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
     pub trails: std::option::Option<std::vec::Vec<crate::model::TrailInfo>>,
-    /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear,
-    /// there are no more results to return. The token must be passed in with the same parameters as the previous call.
-    /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with
-    /// NextToken should include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrailsOutput {
@@ -782,10 +1288,7 @@ impl ListTrailsOutput {
     pub fn trails(&self) -> std::option::Option<&[crate::model::TrailInfo]> {
         self.trails.as_deref()
     }
-    /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear,
-    /// there are no more results to return. The token must be passed in with the same parameters as the previous call.
-    /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with
-    /// NextToken should include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -813,9 +1316,9 @@ pub mod list_trails_output {
         /// To override the contents of this collection use [`set_trails`](Self::set_trails).
         ///
         /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
-        pub fn trails(mut self, input: impl Into<crate::model::TrailInfo>) -> Self {
+        pub fn trails(mut self, input: crate::model::TrailInfo) -> Self {
             let mut v = self.trails.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trails = Some(v);
             self
         }
@@ -827,18 +1330,12 @@ pub mod list_trails_output {
             self.trails = input;
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear,
-        /// there are no more results to return. The token must be passed in with the same parameters as the previous call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with
-        /// NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear,
-        /// there are no more results to return. The token must be passed in with the same parameters as the previous call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with
-        /// NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -901,9 +1398,9 @@ pub mod list_tags_output {
         /// To override the contents of this collection use [`set_resource_tag_list`](Self::set_resource_tag_list).
         ///
         /// <p>A list of resource tags.</p>
-        pub fn resource_tag_list(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tag_list(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tag_list = Some(v);
             self
         }
@@ -941,12 +1438,93 @@ impl ListTagsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListQueriesOutput {
+    /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
+    pub queries: std::option::Option<std::vec::Vec<crate::model::Query>>,
+    /// <p>A token you can use to get the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListQueriesOutput {
+    /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
+    pub fn queries(&self) -> std::option::Option<&[crate::model::Query]> {
+        self.queries.as_deref()
+    }
+    /// <p>A token you can use to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListQueriesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListQueriesOutput");
+        formatter.field("queries", &self.queries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListQueriesOutput`](crate::output::ListQueriesOutput)
+pub mod list_queries_output {
+    /// A builder for [`ListQueriesOutput`](crate::output::ListQueriesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) queries: std::option::Option<std::vec::Vec<crate::model::Query>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `queries`.
+        ///
+        /// To override the contents of this collection use [`set_queries`](Self::set_queries).
+        ///
+        /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
+        pub fn queries(mut self, input: crate::model::Query) -> Self {
+            let mut v = self.queries.unwrap_or_default();
+            v.push(input);
+            self.queries = Some(v);
+            self
+        }
+        /// <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
+        pub fn set_queries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Query>>,
+        ) -> Self {
+            self.queries = input;
+            self
+        }
+        /// <p>A token you can use to get the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token you can use to get the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListQueriesOutput`](crate::output::ListQueriesOutput)
+        pub fn build(self) -> crate::output::ListQueriesOutput {
+            crate::output::ListQueriesOutput {
+                queries: self.queries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListQueriesOutput {
+    /// Creates a new builder-style object to manufacture [`ListQueriesOutput`](crate::output::ListQueriesOutput)
+    pub fn builder() -> crate::output::list_queries_output::Builder {
+        crate::output::list_queries_output::Builder::default()
+    }
+}
+
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublicKeysOutput {
-    /// <p>Contains an array of PublicKey objects.</p>
-    /// <note>
+    /// <p>Contains an array of PublicKey objects.</p> <note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
     pub public_key_list: std::option::Option<std::vec::Vec<crate::model::PublicKey>>,
@@ -954,8 +1532,7 @@ pub struct ListPublicKeysOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPublicKeysOutput {
-    /// <p>Contains an array of PublicKey objects.</p>
-    /// <note>
+    /// <p>Contains an array of PublicKey objects.</p> <note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
     pub fn public_key_list(&self) -> std::option::Option<&[crate::model::PublicKey]> {
@@ -988,18 +1565,16 @@ pub mod list_public_keys_output {
         ///
         /// To override the contents of this collection use [`set_public_key_list`](Self::set_public_key_list).
         ///
-        /// <p>Contains an array of PublicKey objects.</p>
-        /// <note>
+        /// <p>Contains an array of PublicKey objects.</p> <note>
         /// <p>The returned public keys may have validity time ranges that overlap.</p>
         /// </note>
-        pub fn public_key_list(mut self, input: impl Into<crate::model::PublicKey>) -> Self {
+        pub fn public_key_list(mut self, input: crate::model::PublicKey) -> Self {
             let mut v = self.public_key_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.public_key_list = Some(v);
             self
         }
-        /// <p>Contains an array of PublicKey objects.</p>
-        /// <note>
+        /// <p>Contains an array of PublicKey objects.</p> <note>
         /// <p>The returned public keys may have validity time ranges that overlap.</p>
         /// </note>
         pub fn set_public_key_list(
@@ -1035,25 +1610,100 @@ impl ListPublicKeysOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEventDataStoresOutput {
+    /// <p>Contains information about event data stores in the account, in the current region.</p>
+    pub event_data_stores: std::option::Option<std::vec::Vec<crate::model::EventDataStore>>,
+    /// <p>A token you can use to get the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEventDataStoresOutput {
+    /// <p>Contains information about event data stores in the account, in the current region.</p>
+    pub fn event_data_stores(&self) -> std::option::Option<&[crate::model::EventDataStore]> {
+        self.event_data_stores.as_deref()
+    }
+    /// <p>A token you can use to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListEventDataStoresOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEventDataStoresOutput");
+        formatter.field("event_data_stores", &self.event_data_stores);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput)
+pub mod list_event_data_stores_output {
+    /// A builder for [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_stores:
+            std::option::Option<std::vec::Vec<crate::model::EventDataStore>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `event_data_stores`.
+        ///
+        /// To override the contents of this collection use [`set_event_data_stores`](Self::set_event_data_stores).
+        ///
+        /// <p>Contains information about event data stores in the account, in the current region.</p>
+        pub fn event_data_stores(mut self, input: crate::model::EventDataStore) -> Self {
+            let mut v = self.event_data_stores.unwrap_or_default();
+            v.push(input);
+            self.event_data_stores = Some(v);
+            self
+        }
+        /// <p>Contains information about event data stores in the account, in the current region.</p>
+        pub fn set_event_data_stores(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EventDataStore>>,
+        ) -> Self {
+            self.event_data_stores = input;
+            self
+        }
+        /// <p>A token you can use to get the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token you can use to get the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput)
+        pub fn build(self) -> crate::output::ListEventDataStoresOutput {
+            crate::output::ListEventDataStoresOutput {
+                event_data_stores: self.event_data_stores,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListEventDataStoresOutput {
+    /// Creates a new builder-style object to manufacture [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput)
+    pub fn builder() -> crate::output::list_event_data_stores_output::Builder {
+        crate::output::list_event_data_stores_output::Builder::default()
+    }
+}
+
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrailStatusOutput {
     /// <p>Whether the CloudTrail trail is currently logging Amazon Web Services API calls.</p>
     pub is_logging: std::option::Option<bool>,
-    /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files
-    /// to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-    /// Responses</a> in the Amazon S3 API Reference. </p>
-    /// <note>
-    /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does
-    /// not occur for requests that time out. To resolve the issue, create a new bucket, and then call
-    /// <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that
-    /// CloudTrail can again write to the bucket.</p>
+    /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+    /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
     /// </note>
     pub latest_delivery_error: std::option::Option<std::string::String>,
-    /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a
-    /// notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
-    /// </p>
+    /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>. </p>
     pub latest_notification_error: std::option::Option<std::string::String>,
     /// <p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>
     pub latest_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1069,14 +1719,8 @@ pub struct GetTrailStatusOutput {
     pub latest_cloud_watch_logs_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
     pub latest_digest_delivery_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest
-    /// file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-    /// Responses</a> in the Amazon S3 API Reference. </p>
-    /// <note>
-    /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does
-    /// not occur for requests that time out. To resolve the issue, create a new bucket, and then call
-    /// <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that
-    /// CloudTrail can again write to the bucket.</p>
+    /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+    /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
     /// </note>
     pub latest_digest_delivery_error: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use.</p>
@@ -1097,21 +1741,13 @@ impl GetTrailStatusOutput {
     pub fn is_logging(&self) -> std::option::Option<bool> {
         self.is_logging
     }
-    /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files
-    /// to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-    /// Responses</a> in the Amazon S3 API Reference. </p>
-    /// <note>
-    /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does
-    /// not occur for requests that time out. To resolve the issue, create a new bucket, and then call
-    /// <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that
-    /// CloudTrail can again write to the bucket.</p>
+    /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+    /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
     /// </note>
     pub fn latest_delivery_error(&self) -> std::option::Option<&str> {
         self.latest_delivery_error.as_deref()
     }
-    /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a
-    /// notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
-    /// </p>
+    /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>. </p>
     pub fn latest_notification_error(&self) -> std::option::Option<&str> {
         self.latest_notification_error.as_deref()
     }
@@ -1145,14 +1781,8 @@ impl GetTrailStatusOutput {
     pub fn latest_digest_delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_digest_delivery_time.as_ref()
     }
-    /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest
-    /// file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-    /// Responses</a> in the Amazon S3 API Reference. </p>
-    /// <note>
-    /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does
-    /// not occur for requests that time out. To resolve the issue, create a new bucket, and then call
-    /// <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that
-    /// CloudTrail can again write to the bucket.</p>
+    /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+    /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
     /// </note>
     pub fn latest_digest_delivery_error(&self) -> std::option::Option<&str> {
         self.latest_digest_delivery_error.as_deref()
@@ -1265,27 +1895,15 @@ pub mod get_trail_status_output {
             self.is_logging = input;
             self
         }
-        /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files
-        /// to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-        /// Responses</a> in the Amazon S3 API Reference. </p>
-        /// <note>
-        /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does
-        /// not occur for requests that time out. To resolve the issue, create a new bucket, and then call
-        /// <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that
-        /// CloudTrail can again write to the bucket.</p>
+        /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+        /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
         /// </note>
         pub fn latest_delivery_error(mut self, input: impl Into<std::string::String>) -> Self {
             self.latest_delivery_error = Some(input.into());
             self
         }
-        /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files
-        /// to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-        /// Responses</a> in the Amazon S3 API Reference. </p>
-        /// <note>
-        /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does
-        /// not occur for requests that time out. To resolve the issue, create a new bucket, and then call
-        /// <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that
-        /// CloudTrail can again write to the bucket.</p>
+        /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+        /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
         /// </note>
         pub fn set_latest_delivery_error(
             mut self,
@@ -1294,16 +1912,12 @@ pub mod get_trail_status_output {
             self.latest_delivery_error = input;
             self
         }
-        /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a
-        /// notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
-        /// </p>
+        /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>. </p>
         pub fn latest_notification_error(mut self, input: impl Into<std::string::String>) -> Self {
             self.latest_notification_error = Some(input.into());
             self
         }
-        /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a
-        /// notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
-        /// </p>
+        /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>. </p>
         pub fn set_latest_notification_error(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1408,14 +2022,8 @@ pub mod get_trail_status_output {
             self.latest_digest_delivery_time = input;
             self
         }
-        /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest
-        /// file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-        /// Responses</a> in the Amazon S3 API Reference. </p>
-        /// <note>
-        /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does
-        /// not occur for requests that time out. To resolve the issue, create a new bucket, and then call
-        /// <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that
-        /// CloudTrail can again write to the bucket.</p>
+        /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+        /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
         /// </note>
         pub fn latest_digest_delivery_error(
             mut self,
@@ -1424,14 +2032,8 @@ pub mod get_trail_status_output {
             self.latest_digest_delivery_error = Some(input.into());
             self
         }
-        /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest
-        /// file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-        /// Responses</a> in the Amazon S3 API Reference. </p>
-        /// <note>
-        /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does
-        /// not occur for requests that time out. To resolve the issue, create a new bucket, and then call
-        /// <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that
-        /// CloudTrail can again write to the bucket.</p>
+        /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+        /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>
         /// </note>
         pub fn set_latest_digest_delivery_error(
             mut self,
@@ -1616,10 +2218,181 @@ impl GetTrailOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetQueryResultsOutput {
+    /// <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+    pub query_status: std::option::Option<crate::model::QueryStatus>,
+    /// <p>Shows the count of query results.</p>
+    pub query_statistics: std::option::Option<crate::model::QueryStatistics>,
+    /// <p>Contains the individual event results of the query.</p>
+    pub query_result_rows: std::option::Option<
+        std::vec::Vec<
+            std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+        >,
+    >,
+    /// <p>A token you can use to get the next page of query results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The error message returned if a query failed.</p>
+    pub error_message: std::option::Option<std::string::String>,
+}
+impl GetQueryResultsOutput {
+    /// <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+    pub fn query_status(&self) -> std::option::Option<&crate::model::QueryStatus> {
+        self.query_status.as_ref()
+    }
+    /// <p>Shows the count of query results.</p>
+    pub fn query_statistics(&self) -> std::option::Option<&crate::model::QueryStatistics> {
+        self.query_statistics.as_ref()
+    }
+    /// <p>Contains the individual event results of the query.</p>
+    pub fn query_result_rows(
+        &self,
+    ) -> std::option::Option<
+        &[std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>],
+    > {
+        self.query_result_rows.as_deref()
+    }
+    /// <p>A token you can use to get the next page of query results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The error message returned if a query failed.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
+impl std::fmt::Debug for GetQueryResultsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetQueryResultsOutput");
+        formatter.field("query_status", &self.query_status);
+        formatter.field("query_statistics", &self.query_statistics);
+        formatter.field("query_result_rows", &self.query_result_rows);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("error_message", &self.error_message);
+        formatter.finish()
+    }
+}
+/// See [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput)
+pub mod get_query_results_output {
+    /// A builder for [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) query_status: std::option::Option<crate::model::QueryStatus>,
+        pub(crate) query_statistics: std::option::Option<crate::model::QueryStatistics>,
+        pub(crate) query_result_rows: std::option::Option<
+            std::vec::Vec<
+                std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+            >,
+        >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+        pub fn query_status(mut self, input: crate::model::QueryStatus) -> Self {
+            self.query_status = Some(input);
+            self
+        }
+        /// <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+        pub fn set_query_status(
+            mut self,
+            input: std::option::Option<crate::model::QueryStatus>,
+        ) -> Self {
+            self.query_status = input;
+            self
+        }
+        /// <p>Shows the count of query results.</p>
+        pub fn query_statistics(mut self, input: crate::model::QueryStatistics) -> Self {
+            self.query_statistics = Some(input);
+            self
+        }
+        /// <p>Shows the count of query results.</p>
+        pub fn set_query_statistics(
+            mut self,
+            input: std::option::Option<crate::model::QueryStatistics>,
+        ) -> Self {
+            self.query_statistics = input;
+            self
+        }
+        /// Appends an item to `query_result_rows`.
+        ///
+        /// To override the contents of this collection use [`set_query_result_rows`](Self::set_query_result_rows).
+        ///
+        /// <p>Contains the individual event results of the query.</p>
+        pub fn query_result_rows(
+            mut self,
+            input: std::vec::Vec<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            let mut v = self.query_result_rows.unwrap_or_default();
+            v.push(input);
+            self.query_result_rows = Some(v);
+            self
+        }
+        /// <p>Contains the individual event results of the query.</p>
+        pub fn set_query_result_rows(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<
+                    std::vec::Vec<
+                        std::collections::HashMap<std::string::String, std::string::String>,
+                    >,
+                >,
+            >,
+        ) -> Self {
+            self.query_result_rows = input;
+            self
+        }
+        /// <p>A token you can use to get the next page of query results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token you can use to get the next page of query results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The error message returned if a query failed.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>The error message returned if a query failed.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput)
+        pub fn build(self) -> crate::output::GetQueryResultsOutput {
+            crate::output::GetQueryResultsOutput {
+                query_status: self.query_status,
+                query_statistics: self.query_statistics,
+                query_result_rows: self.query_result_rows,
+                next_token: self.next_token,
+                error_message: self.error_message,
+            }
+        }
+    }
+}
+impl GetQueryResultsOutput {
+    /// Creates a new builder-style object to manufacture [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput)
+    pub fn builder() -> crate::output::get_query_results_output::Builder {
+        crate::output::get_query_results_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
     pub trail_arn: std::option::Option<std::string::String>,
-    /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, only <code>ApiCallRateInsight</code> is supported as an insight type.</p>
+    /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
     pub insight_selectors: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
 }
 impl GetInsightSelectorsOutput {
@@ -1627,7 +2400,7 @@ impl GetInsightSelectorsOutput {
     pub fn trail_arn(&self) -> std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
-    /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, only <code>ApiCallRateInsight</code> is supported as an insight type.</p>
+    /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
     pub fn insight_selectors(&self) -> std::option::Option<&[crate::model::InsightSelector]> {
         self.insight_selectors.as_deref()
     }
@@ -1665,17 +2438,14 @@ pub mod get_insight_selectors_output {
         ///
         /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
         ///
-        /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, only <code>ApiCallRateInsight</code> is supported as an insight type.</p>
-        pub fn insight_selectors(
-            mut self,
-            input: impl Into<crate::model::InsightSelector>,
-        ) -> Self {
+        /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
+        pub fn insight_selectors(mut self, input: crate::model::InsightSelector) -> Self {
             let mut v = self.insight_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insight_selectors = Some(v);
             self
         }
-        /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, only <code>ApiCallRateInsight</code> is supported as an insight type.</p>
+        /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
         pub fn set_insight_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
@@ -1707,9 +2477,7 @@ pub struct GetEventSelectorsOutput {
     pub trail_arn: std::option::Option<std::string::String>,
     /// <p>The event selectors that are configured for the trail.</p>
     pub event_selectors: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
-    /// <p>
-    /// The advanced event selectors that are configured for the trail.
-    /// </p>
+    /// <p> The advanced event selectors that are configured for the trail. </p>
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
 }
@@ -1722,9 +2490,7 @@ impl GetEventSelectorsOutput {
     pub fn event_selectors(&self) -> std::option::Option<&[crate::model::EventSelector]> {
         self.event_selectors.as_deref()
     }
-    /// <p>
-    /// The advanced event selectors that are configured for the trail.
-    /// </p>
+    /// <p> The advanced event selectors that are configured for the trail. </p>
     pub fn advanced_event_selectors(
         &self,
     ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
@@ -1767,9 +2533,9 @@ pub mod get_event_selectors_output {
         /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
         ///
         /// <p>The event selectors that are configured for the trail.</p>
-        pub fn event_selectors(mut self, input: impl Into<crate::model::EventSelector>) -> Self {
+        pub fn event_selectors(mut self, input: crate::model::EventSelector) -> Self {
             let mut v = self.event_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_selectors = Some(v);
             self
         }
@@ -1785,21 +2551,17 @@ pub mod get_event_selectors_output {
         ///
         /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
         ///
-        /// <p>
-        /// The advanced event selectors that are configured for the trail.
-        /// </p>
+        /// <p> The advanced event selectors that are configured for the trail. </p>
         pub fn advanced_event_selectors(
             mut self,
-            input: impl Into<crate::model::AdvancedEventSelector>,
+            input: crate::model::AdvancedEventSelector,
         ) -> Self {
             let mut v = self.advanced_event_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.advanced_event_selectors = Some(v);
             self
         }
-        /// <p>
-        /// The advanced event selectors that are configured for the trail.
-        /// </p>
+        /// <p> The advanced event selectors that are configured for the trail. </p>
         pub fn set_advanced_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
@@ -1824,19 +2586,274 @@ impl GetEventSelectorsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetEventDataStoreOutput {
+    /// <p>The event data store Amazon Resource Number (ARN).</p>
+    pub event_data_store_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the event data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    pub status: std::option::Option<crate::model::EventDataStoreStatus>,
+    /// <p>The advanced event selectors used to select events for the data store.</p>
+    pub advanced_event_selectors:
+        std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    pub multi_region_enabled: std::option::Option<bool>,
+    /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    pub organization_enabled: std::option::Option<bool>,
+    /// <p>The retention period of the event data store, in days.</p>
+    pub retention_period: std::option::Option<i32>,
+    /// <p>Indicates that termination protection is enabled.</p>
+    pub termination_protection_enabled: std::option::Option<bool>,
+    /// <p>The timestamp of the event data store's creation.</p>
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Shows the time that an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl GetEventDataStoreOutput {
+    /// <p>The event data store Amazon Resource Number (ARN).</p>
+    pub fn event_data_store_arn(&self) -> std::option::Option<&str> {
+        self.event_data_store_arn.as_deref()
+    }
+    /// <p>The name of the event data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EventDataStoreStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The advanced event selectors used to select events for the data store.</p>
+    pub fn advanced_event_selectors(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
+        self.advanced_event_selectors.as_deref()
+    }
+    /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    pub fn multi_region_enabled(&self) -> std::option::Option<bool> {
+        self.multi_region_enabled
+    }
+    /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    pub fn organization_enabled(&self) -> std::option::Option<bool> {
+        self.organization_enabled
+    }
+    /// <p>The retention period of the event data store, in days.</p>
+    pub fn retention_period(&self) -> std::option::Option<i32> {
+        self.retention_period
+    }
+    /// <p>Indicates that termination protection is enabled.</p>
+    pub fn termination_protection_enabled(&self) -> std::option::Option<bool> {
+        self.termination_protection_enabled
+    }
+    /// <p>The timestamp of the event data store's creation.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>Shows the time that an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for GetEventDataStoreOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetEventDataStoreOutput");
+        formatter.field("event_data_store_arn", &self.event_data_store_arn);
+        formatter.field("name", &self.name);
+        formatter.field("status", &self.status);
+        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
+        formatter.field("multi_region_enabled", &self.multi_region_enabled);
+        formatter.field("organization_enabled", &self.organization_enabled);
+        formatter.field("retention_period", &self.retention_period);
+        formatter.field(
+            "termination_protection_enabled",
+            &self.termination_protection_enabled,
+        );
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("updated_timestamp", &self.updated_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput)
+pub mod get_event_data_store_output {
+    /// A builder for [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::EventDataStoreStatus>,
+        pub(crate) advanced_event_selectors:
+            std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        pub(crate) multi_region_enabled: std::option::Option<bool>,
+        pub(crate) organization_enabled: std::option::Option<bool>,
+        pub(crate) retention_period: std::option::Option<i32>,
+        pub(crate) termination_protection_enabled: std::option::Option<bool>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The event data store Amazon Resource Number (ARN).</p>
+        pub fn event_data_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store_arn = Some(input.into());
+            self
+        }
+        /// <p>The event data store Amazon Resource Number (ARN).</p>
+        pub fn set_event_data_store_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store_arn = input;
+            self
+        }
+        /// <p>The name of the event data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the event data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+        pub fn status(mut self, input: crate::model::EventDataStoreStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::EventDataStoreStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Appends an item to `advanced_event_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
+        ///
+        /// <p>The advanced event selectors used to select events for the data store.</p>
+        pub fn advanced_event_selectors(
+            mut self,
+            input: crate::model::AdvancedEventSelector,
+        ) -> Self {
+            let mut v = self.advanced_event_selectors.unwrap_or_default();
+            v.push(input);
+            self.advanced_event_selectors = Some(v);
+            self
+        }
+        /// <p>The advanced event selectors used to select events for the data store.</p>
+        pub fn set_advanced_event_selectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        ) -> Self {
+            self.advanced_event_selectors = input;
+            self
+        }
+        /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+        pub fn multi_region_enabled(mut self, input: bool) -> Self {
+            self.multi_region_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+        pub fn set_multi_region_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_region_enabled = input;
+            self
+        }
+        /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+        pub fn organization_enabled(mut self, input: bool) -> Self {
+            self.organization_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+        pub fn set_organization_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.organization_enabled = input;
+            self
+        }
+        /// <p>The retention period of the event data store, in days.</p>
+        pub fn retention_period(mut self, input: i32) -> Self {
+            self.retention_period = Some(input);
+            self
+        }
+        /// <p>The retention period of the event data store, in days.</p>
+        pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.retention_period = input;
+            self
+        }
+        /// <p>Indicates that termination protection is enabled.</p>
+        pub fn termination_protection_enabled(mut self, input: bool) -> Self {
+            self.termination_protection_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates that termination protection is enabled.</p>
+        pub fn set_termination_protection_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.termination_protection_enabled = input;
+            self
+        }
+        /// <p>The timestamp of the event data store's creation.</p>
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_timestamp = Some(input);
+            self
+        }
+        /// <p>The timestamp of the event data store's creation.</p>
+        pub fn set_created_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_timestamp = input;
+            self
+        }
+        /// <p>Shows the time that an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_timestamp = Some(input);
+            self
+        }
+        /// <p>Shows the time that an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+        pub fn set_updated_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput)
+        pub fn build(self) -> crate::output::GetEventDataStoreOutput {
+            crate::output::GetEventDataStoreOutput {
+                event_data_store_arn: self.event_data_store_arn,
+                name: self.name,
+                status: self.status,
+                advanced_event_selectors: self.advanced_event_selectors,
+                multi_region_enabled: self.multi_region_enabled,
+                organization_enabled: self.organization_enabled,
+                retention_period: self.retention_period,
+                termination_protection_enabled: self.termination_protection_enabled,
+                created_timestamp: self.created_timestamp,
+                updated_timestamp: self.updated_timestamp,
+            }
+        }
+    }
+}
+impl GetEventDataStoreOutput {
+    /// Creates a new builder-style object to manufacture [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput)
+    pub fn builder() -> crate::output::get_event_data_store_output::Builder {
+        crate::output::get_event_data_store_output::Builder::default()
+    }
+}
+
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrailsOutput {
-    /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration.
-    /// For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly,
-    /// <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
+    /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
     pub trail_list: std::option::Option<std::vec::Vec<crate::model::Trail>>,
 }
 impl DescribeTrailsOutput {
-    /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration.
-    /// For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly,
-    /// <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
+    /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
     pub fn trail_list(&self) -> std::option::Option<&[crate::model::Trail]> {
         self.trail_list.as_deref()
     }
@@ -1861,18 +2878,14 @@ pub mod describe_trails_output {
         ///
         /// To override the contents of this collection use [`set_trail_list`](Self::set_trail_list).
         ///
-        /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration.
-        /// For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly,
-        /// <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
-        pub fn trail_list(mut self, input: impl Into<crate::model::Trail>) -> Self {
+        /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
+        pub fn trail_list(mut self, input: crate::model::Trail) -> Self {
             let mut v = self.trail_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.trail_list = Some(v);
             self
         }
-        /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration.
-        /// For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly,
-        /// <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
+        /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
         pub fn set_trail_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Trail>>,
@@ -1892,6 +2905,151 @@ impl DescribeTrailsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput)
     pub fn builder() -> crate::output::describe_trails_output::Builder {
         crate::output::describe_trails_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeQueryOutput {
+    /// <p>The ID of the query.</p>
+    pub query_id: std::option::Option<std::string::String>,
+    /// <p>The SQL code of a query.</p>
+    pub query_string: std::option::Option<std::string::String>,
+    /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code> </p>
+    pub query_status: std::option::Option<crate::model::QueryStatus>,
+    /// <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
+    pub query_statistics: std::option::Option<crate::model::QueryStatisticsForDescribeQuery>,
+    /// <p>The error message returned if a query failed.</p>
+    pub error_message: std::option::Option<std::string::String>,
+}
+impl DescribeQueryOutput {
+    /// <p>The ID of the query.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+    /// <p>The SQL code of a query.</p>
+    pub fn query_string(&self) -> std::option::Option<&str> {
+        self.query_string.as_deref()
+    }
+    /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code> </p>
+    pub fn query_status(&self) -> std::option::Option<&crate::model::QueryStatus> {
+        self.query_status.as_ref()
+    }
+    /// <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
+    pub fn query_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::QueryStatisticsForDescribeQuery> {
+        self.query_statistics.as_ref()
+    }
+    /// <p>The error message returned if a query failed.</p>
+    pub fn error_message(&self) -> std::option::Option<&str> {
+        self.error_message.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeQueryOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeQueryOutput");
+        formatter.field("query_id", &self.query_id);
+        formatter.field("query_string", &self.query_string);
+        formatter.field("query_status", &self.query_status);
+        formatter.field("query_statistics", &self.query_statistics);
+        formatter.field("error_message", &self.error_message);
+        formatter.finish()
+    }
+}
+/// See [`DescribeQueryOutput`](crate::output::DescribeQueryOutput)
+pub mod describe_query_output {
+    /// A builder for [`DescribeQueryOutput`](crate::output::DescribeQueryOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) query_id: std::option::Option<std::string::String>,
+        pub(crate) query_string: std::option::Option<std::string::String>,
+        pub(crate) query_status: std::option::Option<crate::model::QueryStatus>,
+        pub(crate) query_statistics:
+            std::option::Option<crate::model::QueryStatisticsForDescribeQuery>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the query.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the query.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_id = input;
+            self
+        }
+        /// <p>The SQL code of a query.</p>
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_string = Some(input.into());
+            self
+        }
+        /// <p>The SQL code of a query.</p>
+        pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_string = input;
+            self
+        }
+        /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code> </p>
+        pub fn query_status(mut self, input: crate::model::QueryStatus) -> Self {
+            self.query_status = Some(input);
+            self
+        }
+        /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code> </p>
+        pub fn set_query_status(
+            mut self,
+            input: std::option::Option<crate::model::QueryStatus>,
+        ) -> Self {
+            self.query_status = input;
+            self
+        }
+        /// <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
+        pub fn query_statistics(
+            mut self,
+            input: crate::model::QueryStatisticsForDescribeQuery,
+        ) -> Self {
+            self.query_statistics = Some(input);
+            self
+        }
+        /// <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
+        pub fn set_query_statistics(
+            mut self,
+            input: std::option::Option<crate::model::QueryStatisticsForDescribeQuery>,
+        ) -> Self {
+            self.query_statistics = input;
+            self
+        }
+        /// <p>The error message returned if a query failed.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        /// <p>The error message returned if a query failed.</p>
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeQueryOutput`](crate::output::DescribeQueryOutput)
+        pub fn build(self) -> crate::output::DescribeQueryOutput {
+            crate::output::DescribeQueryOutput {
+                query_id: self.query_id,
+                query_string: self.query_string,
+                query_status: self.query_status,
+                query_statistics: self.query_statistics,
+                error_message: self.error_message,
+            }
+        }
+    }
+}
+impl DescribeQueryOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeQueryOutput`](crate::output::DescribeQueryOutput)
+    pub fn builder() -> crate::output::describe_query_output::Builder {
+        crate::output::describe_query_output::Builder::default()
     }
 }
 
@@ -1925,6 +3083,36 @@ impl DeleteTrailOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEventDataStoreOutput {}
+impl std::fmt::Debug for DeleteEventDataStoreOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEventDataStoreOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput)
+pub mod delete_event_data_store_output {
+    /// A builder for [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput)
+        pub fn build(self) -> crate::output::DeleteEventDataStoreOutput {
+            crate::output::DeleteEventDataStoreOutput {}
+        }
+    }
+}
+impl DeleteEventDataStoreOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput)
+    pub fn builder() -> crate::output::delete_event_data_store_output::Builder {
+        crate::output::delete_event_data_store_output::Builder::default()
+    }
+}
+
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1933,25 +3121,19 @@ pub struct CreateTrailOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use. Use SnsTopicARN.</p>
     pub sns_topic_name: std::option::Option<std::string::String>,
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The format of a topic ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
-    /// </p>
+    /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
     pub include_global_service_events: std::option::Option<bool>,
     /// <p>Specifies whether the trail exists in one region or in all regions.</p>
     pub is_multi_region_trail: std::option::Option<bool>,
-    /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN
-    /// is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN is:</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub trail_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether log file integrity validation is enabled.</p>
     pub log_file_validation_enabled: std::option::Option<bool>,
@@ -1959,11 +3141,8 @@ pub struct CreateTrailOutput {
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
-    /// The value is a fully specified ARN to a KMS key in the following format.</p>
-    /// <p>
-    /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-    /// </p>
+    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is an organization trail.</p>
     pub is_organization_trail: std::option::Option<bool>,
@@ -1977,8 +3156,7 @@ impl CreateTrailOutput {
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
@@ -1987,9 +3165,7 @@ impl CreateTrailOutput {
         self.sns_topic_name.as_deref()
     }
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The format of a topic ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
-    /// </p>
+    /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
@@ -2001,11 +3177,8 @@ impl CreateTrailOutput {
     pub fn is_multi_region_trail(&self) -> std::option::Option<bool> {
         self.is_multi_region_trail
     }
-    /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN
-    /// is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN is:</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn trail_arn(&self) -> std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
@@ -2021,11 +3194,8 @@ impl CreateTrailOutput {
     pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
-    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
-    /// The value is a fully specified ARN to a KMS key in the following format.</p>
-    /// <p>
-    /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-    /// </p>
+    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -2106,14 +3276,12 @@ pub mod create_trail_output {
             self.s3_bucket_name = input;
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
         pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_key_prefix = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2135,17 +3303,13 @@ pub mod create_trail_output {
             self
         }
         /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The format of a topic ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
-        /// </p>
+        /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
         /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The format of a topic ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
-        /// </p>
+        /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2176,20 +3340,14 @@ pub mod create_trail_output {
             self.is_multi_region_trail = input;
             self
         }
-        /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN
-        /// is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN is:</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn trail_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.trail_arn = Some(input.into());
             self
         }
-        /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN
-        /// is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN is:</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_arn = input;
             self
@@ -2233,20 +3391,14 @@ pub mod create_trail_output {
             self.cloud_watch_logs_role_arn = input;
             self
         }
-        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
-        /// The value is a fully specified ARN to a KMS key in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
-        /// The value is a fully specified ARN to a KMS key in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -2285,6 +3437,369 @@ impl CreateTrailOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrailOutput`](crate::output::CreateTrailOutput)
     pub fn builder() -> crate::output::create_trail_output::Builder {
         crate::output::create_trail_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateEventDataStoreOutput {
+    /// <p>The ARN of the event data store.</p>
+    pub event_data_store_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the event data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The status of event data store creation.</p>
+    pub status: std::option::Option<crate::model::EventDataStoreStatus>,
+    /// <p>The advanced event selectors that were used to select the events for the data store.</p>
+    pub advanced_event_selectors:
+        std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+    /// <p>Indicates whether the event data store collects events from all regions, or only from the region in which it was created.</p>
+    pub multi_region_enabled: std::option::Option<bool>,
+    /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    pub organization_enabled: std::option::Option<bool>,
+    /// <p>The retention period of an event data store, in days.</p>
+    pub retention_period: std::option::Option<i32>,
+    /// <p>Indicates whether termination protection is enabled for the event data store.</p>
+    pub termination_protection_enabled: std::option::Option<bool>,
+    /// <p>A list of tags.</p>
+    pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The timestamp that shows when the event data store was created.</p>
+    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl CreateEventDataStoreOutput {
+    /// <p>The ARN of the event data store.</p>
+    pub fn event_data_store_arn(&self) -> std::option::Option<&str> {
+        self.event_data_store_arn.as_deref()
+    }
+    /// <p>The name of the event data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of event data store creation.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::EventDataStoreStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The advanced event selectors that were used to select the events for the data store.</p>
+    pub fn advanced_event_selectors(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
+        self.advanced_event_selectors.as_deref()
+    }
+    /// <p>Indicates whether the event data store collects events from all regions, or only from the region in which it was created.</p>
+    pub fn multi_region_enabled(&self) -> std::option::Option<bool> {
+        self.multi_region_enabled
+    }
+    /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    pub fn organization_enabled(&self) -> std::option::Option<bool> {
+        self.organization_enabled
+    }
+    /// <p>The retention period of an event data store, in days.</p>
+    pub fn retention_period(&self) -> std::option::Option<i32> {
+        self.retention_period
+    }
+    /// <p>Indicates whether termination protection is enabled for the event data store.</p>
+    pub fn termination_protection_enabled(&self) -> std::option::Option<bool> {
+        self.termination_protection_enabled
+    }
+    /// <p>A list of tags.</p>
+    pub fn tags_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags_list.as_deref()
+    }
+    /// <p>The timestamp that shows when the event data store was created.</p>
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.created_timestamp.as_ref()
+    }
+    /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.updated_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateEventDataStoreOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateEventDataStoreOutput");
+        formatter.field("event_data_store_arn", &self.event_data_store_arn);
+        formatter.field("name", &self.name);
+        formatter.field("status", &self.status);
+        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
+        formatter.field("multi_region_enabled", &self.multi_region_enabled);
+        formatter.field("organization_enabled", &self.organization_enabled);
+        formatter.field("retention_period", &self.retention_period);
+        formatter.field(
+            "termination_protection_enabled",
+            &self.termination_protection_enabled,
+        );
+        formatter.field("tags_list", &self.tags_list);
+        formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("updated_timestamp", &self.updated_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput)
+pub mod create_event_data_store_output {
+    /// A builder for [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::EventDataStoreStatus>,
+        pub(crate) advanced_event_selectors:
+            std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        pub(crate) multi_region_enabled: std::option::Option<bool>,
+        pub(crate) organization_enabled: std::option::Option<bool>,
+        pub(crate) retention_period: std::option::Option<i32>,
+        pub(crate) termination_protection_enabled: std::option::Option<bool>,
+        pub(crate) tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ARN of the event data store.</p>
+        pub fn event_data_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the event data store.</p>
+        pub fn set_event_data_store_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store_arn = input;
+            self
+        }
+        /// <p>The name of the event data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the event data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The status of event data store creation.</p>
+        pub fn status(mut self, input: crate::model::EventDataStoreStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of event data store creation.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::EventDataStoreStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Appends an item to `advanced_event_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
+        ///
+        /// <p>The advanced event selectors that were used to select the events for the data store.</p>
+        pub fn advanced_event_selectors(
+            mut self,
+            input: crate::model::AdvancedEventSelector,
+        ) -> Self {
+            let mut v = self.advanced_event_selectors.unwrap_or_default();
+            v.push(input);
+            self.advanced_event_selectors = Some(v);
+            self
+        }
+        /// <p>The advanced event selectors that were used to select the events for the data store.</p>
+        pub fn set_advanced_event_selectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        ) -> Self {
+            self.advanced_event_selectors = input;
+            self
+        }
+        /// <p>Indicates whether the event data store collects events from all regions, or only from the region in which it was created.</p>
+        pub fn multi_region_enabled(mut self, input: bool) -> Self {
+            self.multi_region_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether the event data store collects events from all regions, or only from the region in which it was created.</p>
+        pub fn set_multi_region_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_region_enabled = input;
+            self
+        }
+        /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+        pub fn organization_enabled(mut self, input: bool) -> Self {
+            self.organization_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+        pub fn set_organization_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.organization_enabled = input;
+            self
+        }
+        /// <p>The retention period of an event data store, in days.</p>
+        pub fn retention_period(mut self, input: i32) -> Self {
+            self.retention_period = Some(input);
+            self
+        }
+        /// <p>The retention period of an event data store, in days.</p>
+        pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.retention_period = input;
+            self
+        }
+        /// <p>Indicates whether termination protection is enabled for the event data store.</p>
+        pub fn termination_protection_enabled(mut self, input: bool) -> Self {
+            self.termination_protection_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates whether termination protection is enabled for the event data store.</p>
+        pub fn set_termination_protection_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.termination_protection_enabled = input;
+            self
+        }
+        /// Appends an item to `tags_list`.
+        ///
+        /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
+        ///
+        /// <p>A list of tags.</p>
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags_list.unwrap_or_default();
+            v.push(input);
+            self.tags_list = Some(v);
+            self
+        }
+        /// <p>A list of tags.</p>
+        pub fn set_tags_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags_list = input;
+            self
+        }
+        /// <p>The timestamp that shows when the event data store was created.</p>
+        pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.created_timestamp = Some(input);
+            self
+        }
+        /// <p>The timestamp that shows when the event data store was created.</p>
+        pub fn set_created_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.created_timestamp = input;
+            self
+        }
+        /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+        pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.updated_timestamp = Some(input);
+            self
+        }
+        /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+        pub fn set_updated_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.updated_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput)
+        pub fn build(self) -> crate::output::CreateEventDataStoreOutput {
+            crate::output::CreateEventDataStoreOutput {
+                event_data_store_arn: self.event_data_store_arn,
+                name: self.name,
+                status: self.status,
+                advanced_event_selectors: self.advanced_event_selectors,
+                multi_region_enabled: self.multi_region_enabled,
+                organization_enabled: self.organization_enabled,
+                retention_period: self.retention_period,
+                termination_protection_enabled: self.termination_protection_enabled,
+                tags_list: self.tags_list,
+                created_timestamp: self.created_timestamp,
+                updated_timestamp: self.updated_timestamp,
+            }
+        }
+    }
+}
+impl CreateEventDataStoreOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput)
+    pub fn builder() -> crate::output::create_event_data_store_output::Builder {
+        crate::output::create_event_data_store_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelQueryOutput {
+    /// <p>The ID of the canceled query.</p>
+    pub query_id: std::option::Option<std::string::String>,
+    /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
+    pub query_status: std::option::Option<crate::model::QueryStatus>,
+}
+impl CancelQueryOutput {
+    /// <p>The ID of the canceled query.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+    /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
+    pub fn query_status(&self) -> std::option::Option<&crate::model::QueryStatus> {
+        self.query_status.as_ref()
+    }
+}
+impl std::fmt::Debug for CancelQueryOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CancelQueryOutput");
+        formatter.field("query_id", &self.query_id);
+        formatter.field("query_status", &self.query_status);
+        formatter.finish()
+    }
+}
+/// See [`CancelQueryOutput`](crate::output::CancelQueryOutput)
+pub mod cancel_query_output {
+    /// A builder for [`CancelQueryOutput`](crate::output::CancelQueryOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) query_id: std::option::Option<std::string::String>,
+        pub(crate) query_status: std::option::Option<crate::model::QueryStatus>,
+    }
+    impl Builder {
+        /// <p>The ID of the canceled query.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the canceled query.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_id = input;
+            self
+        }
+        /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
+        pub fn query_status(mut self, input: crate::model::QueryStatus) -> Self {
+            self.query_status = Some(input);
+            self
+        }
+        /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
+        pub fn set_query_status(
+            mut self,
+            input: std::option::Option<crate::model::QueryStatus>,
+        ) -> Self {
+            self.query_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CancelQueryOutput`](crate::output::CancelQueryOutput)
+        pub fn build(self) -> crate::output::CancelQueryOutput {
+            crate::output::CancelQueryOutput {
+                query_id: self.query_id,
+                query_status: self.query_status,
+            }
+        }
+    }
+}
+impl CancelQueryOutput {
+    /// Creates a new builder-style object to manufacture [`CancelQueryOutput`](crate::output::CancelQueryOutput)
+    pub fn builder() -> crate::output::cancel_query_output::Builder {
+        crate::output::cancel_query_output::Builder::default()
     }
 }
 

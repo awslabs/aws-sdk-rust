@@ -24,18 +24,14 @@ pub mod add_listener_certificates_input {
         ///
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
-        /// <p>The certificate to add. You can specify one certificate per call. Set
-        /// <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
-        /// <p>The certificate to add. You can specify one certificate per call. Set
-        /// <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
+        /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
@@ -61,7 +57,7 @@ pub mod add_listener_certificates_input {
 pub type AddListenerCertificatesInputOperationOutputAlias =
     crate::operation::AddListenerCertificates;
 #[doc(hidden)]
-pub type AddListenerCertificatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddListenerCertificatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddListenerCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`AddListenerCertificates`](crate::operation::AddListenerCertificates)>
     #[allow(clippy::let_and_return)]
@@ -72,7 +68,7 @@ impl AddListenerCertificatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddListenerCertificates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -154,7 +150,7 @@ impl AddListenerCertificatesInput {
             "AddListenerCertificates",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -211,9 +207,9 @@ pub mod add_tags_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -240,7 +236,7 @@ pub mod add_tags_input {
 #[doc(hidden)]
 pub type AddTagsInputOperationOutputAlias = crate::operation::AddTags;
 #[doc(hidden)]
-pub type AddTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
     #[allow(clippy::let_and_return)]
@@ -251,7 +247,7 @@ impl AddTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -328,7 +324,7 @@ impl AddTagsInput {
                     "AddTags",
                     "elasticloadbalancingv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -380,20 +376,12 @@ pub mod create_listener_input {
             self.load_balancer_arn = input;
             self
         }
-        /// <p>The protocol for connections from clients to the load balancer. For Application Load
-        /// Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the
-        /// supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP
-        /// protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load
-        /// Balancer.</p>
+        /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
         pub fn protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
             self.protocol = Some(input);
             self
         }
-        /// <p>The protocol for connections from clients to the load balancer. For Application Load
-        /// Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the
-        /// supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP
-        /// protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load
-        /// Balancer.</p>
+        /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::ProtocolEnum>,
@@ -401,30 +389,24 @@ pub mod create_listener_input {
             self.protocol = input;
             self
         }
-        /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway
-        /// Load Balancer.</p>
+        /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway
-        /// Load Balancer.</p>
+        /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
         }
-        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are
-        /// supported.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and
-        /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn ssl_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssl_policy = Some(input.into());
             self
         }
-        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are
-        /// supported.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and
-        /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn set_ssl_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssl_policy = input;
             self
@@ -433,18 +415,14 @@ pub mod create_listener_input {
         ///
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
-        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
-        /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
-        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
-        /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
+        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
@@ -457,9 +435,9 @@ pub mod create_listener_input {
         /// To override the contents of this collection use [`set_default_actions`](Self::set_default_actions).
         ///
         /// <p>The actions for the default rule.</p>
-        pub fn default_actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn default_actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.default_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_actions = Some(v);
             self
         }
@@ -475,74 +453,30 @@ pub mod create_listener_input {
         ///
         /// To override the contents of this collection use [`set_alpn_policy`](Self::set_alpn_policy).
         ///
-        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You
-        /// can specify one policy name. The following are the possible values:</p>
+        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HTTP1Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Optional</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Preferred</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>None</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>HTTP1Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+        /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+        /// <li> <p> <code>None</code> </p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-        /// policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn alpn_policy(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alpn_policy.unwrap_or_default();
             v.push(input.into());
             self.alpn_policy = Some(v);
             self
         }
-        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You
-        /// can specify one policy name. The following are the possible values:</p>
+        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HTTP1Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Optional</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Preferred</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>None</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>HTTP1Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+        /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+        /// <li> <p> <code>None</code> </p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-        /// policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn set_alpn_policy(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -555,9 +489,9 @@ pub mod create_listener_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the listener.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -592,7 +526,7 @@ pub mod create_listener_input {
 #[doc(hidden)]
 pub type CreateListenerInputOperationOutputAlias = crate::operation::CreateListener;
 #[doc(hidden)]
-pub type CreateListenerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateListenerInput {
     /// Consumes the builder and constructs an Operation<[`CreateListener`](crate::operation::CreateListener)>
     #[allow(clippy::let_and_return)]
@@ -603,7 +537,7 @@ impl CreateListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateListener,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -683,7 +617,7 @@ impl CreateListenerInput {
             "CreateListener",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -724,17 +658,13 @@ pub mod create_load_balancer_input {
     }
     impl Builder {
         /// <p>The name of the load balancer.</p>
-        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must
-        /// contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must
-        /// not begin with "internal-".</p>
+        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
-        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must
-        /// contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must
-        /// not begin with "internal-".</p>
+        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -743,34 +673,24 @@ pub mod create_load_balancer_input {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability
-        /// Zones.</p>
-        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability
-        /// Zones.</p>
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability
-        /// Zones.</p>
-        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability
-        /// Zones.</p>
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -782,40 +702,24 @@ pub mod create_load_balancer_input {
         ///
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You
-        /// can specify one Elastic IP address per subnet if you need static IP addresses for your
-        /// internet-facing load balancer. For internal load balancers, you can specify one private IP
-        /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
-        /// can specify one IPv6 address per subnet.</p>
-        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You
-        /// cannot specify Elastic IP addresses for your subnets.</p>
-        pub fn subnet_mappings(mut self, input: impl Into<crate::model::SubnetMapping>) -> Self {
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_mappings = Some(v);
             self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You
-        /// can specify one Elastic IP address per subnet if you need static IP addresses for your
-        /// internet-facing load balancer. For internal load balancers, you can specify one private IP
-        /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
-        /// can specify one IPv6 address per subnet.</p>
-        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You
-        /// cannot specify Elastic IP addresses for your subnets.</p>
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         pub fn set_subnet_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
@@ -842,28 +746,16 @@ pub mod create_load_balancer_input {
             self.security_groups = input;
             self
         }
-        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
-        /// Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes.
-        /// Therefore, Internet-facing load balancers can route requests from clients over the
-        /// internet.</p>
-        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an
-        /// internal load balancer is publicly resolvable to the private IP addresses of the nodes.
-        /// Therefore, internal load balancers can route requests only from clients with access to the VPC
-        /// for the load balancer.</p>
+        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
+        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
         /// <p>The default is an Internet-facing load balancer.</p>
         /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
         pub fn scheme(mut self, input: crate::model::LoadBalancerSchemeEnum) -> Self {
             self.scheme = Some(input);
             self
         }
-        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
-        /// Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes.
-        /// Therefore, Internet-facing load balancers can route requests from clients over the
-        /// internet.</p>
-        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an
-        /// internal load balancer is publicly resolvable to the private IP addresses of the nodes.
-        /// Therefore, internal load balancers can route requests only from clients with access to the VPC
-        /// for the load balancer.</p>
+        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
+        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
         /// <p>The default is an Internet-facing load balancer.</p>
         /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
         pub fn set_scheme(
@@ -878,9 +770,9 @@ pub mod create_load_balancer_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the load balancer.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -905,16 +797,12 @@ pub mod create_load_balancer_input {
             self.r#type = input;
             self
         }
-        /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
-        /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-        /// addresses). </p>
+        /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.ip_address_type = Some(input);
             self
         }
-        /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
-        /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-        /// addresses). </p>
+        /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -922,14 +810,12 @@ pub mod create_load_balancer_input {
             self.ip_address_type = input;
             self
         }
-        /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP
-        /// pool).</p>
+        /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
         pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
             self.customer_owned_ipv4_pool = Some(input.into());
             self
         }
-        /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP
-        /// pool).</p>
+        /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
         pub fn set_customer_owned_ipv4_pool(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -961,7 +847,7 @@ pub mod create_load_balancer_input {
 #[doc(hidden)]
 pub type CreateLoadBalancerInputOperationOutputAlias = crate::operation::CreateLoadBalancer;
 #[doc(hidden)]
-pub type CreateLoadBalancerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLoadBalancerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`CreateLoadBalancer`](crate::operation::CreateLoadBalancer)>
     #[allow(clippy::let_and_return)]
@@ -972,7 +858,7 @@ impl CreateLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLoadBalancer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1052,7 +938,7 @@ impl CreateLoadBalancerInput {
             "CreateLoadBalancer",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1103,9 +989,9 @@ pub mod create_rule_input {
         /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
         ///
         /// <p>The conditions.</p>
-        pub fn conditions(mut self, input: impl Into<crate::model::RuleCondition>) -> Self {
+        pub fn conditions(mut self, input: crate::model::RuleCondition) -> Self {
             let mut v = self.conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conditions = Some(v);
             self
         }
@@ -1132,9 +1018,9 @@ pub mod create_rule_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -1151,9 +1037,9 @@ pub mod create_rule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the rule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1185,7 +1071,7 @@ pub mod create_rule_input {
 #[doc(hidden)]
 pub type CreateRuleInputOperationOutputAlias = crate::operation::CreateRule;
 #[doc(hidden)]
-pub type CreateRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateRule`](crate::operation::CreateRule)>
     #[allow(clippy::let_and_return)]
@@ -1196,7 +1082,7 @@ impl CreateRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1275,7 +1161,7 @@ impl CreateRuleInput {
             "CreateRule",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1324,35 +1210,23 @@ pub mod create_target_group_input {
     }
     impl Builder {
         /// <p>The name of the target group.</p>
-        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must
-        /// contain only alphanumeric characters or hyphens, and must not begin or end with a
-        /// hyphen.</p>
+        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the target group.</p>
-        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must
-        /// contain only alphanumeric characters or hyphens, and must not begin or end with a
-        /// hyphen.</p>
+        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers,
-        /// the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported
-        /// protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is
-        /// GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a
-        /// Lambda function, this parameter does not apply.</p>
+        /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
         pub fn protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
             self.protocol = Some(input);
             self
         }
-        /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers,
-        /// the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported
-        /// protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is
-        /// GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a
-        /// Lambda function, this parameter does not apply.</p>
+        /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::ProtocolEnum>,
@@ -1360,16 +1234,12 @@ pub mod create_target_group_input {
             self.protocol = input;
             self
         }
-        /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to
-        /// targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The
-        /// default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
+        /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
         pub fn protocol_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.protocol_version = Some(input.into());
             self
         }
-        /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to
-        /// targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The
-        /// default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
+        /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
         pub fn set_protocol_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1377,46 +1247,32 @@ pub mod create_target_group_input {
             self.protocol_version = input;
             self
         }
-        /// <p>The port on which the targets receive traffic. This port is used unless you specify a port
-        /// override when registering the target. If the target is a Lambda function, this parameter does
-        /// not apply. If the protocol is GENEVE, the supported port is 6081.</p>
+        /// <p>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply. If the protocol is GENEVE, the supported port is 6081.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>The port on which the targets receive traffic. This port is used unless you specify a port
-        /// override when registering the target. If the target is a Lambda function, this parameter does
-        /// not apply. If the protocol is GENEVE, the supported port is 6081.</p>
+        /// <p>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply. If the protocol is GENEVE, the supported port is 6081.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
         }
-        /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function,
-        /// this parameter does not apply. Otherwise, this parameter is required.</p>
+        /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function,
-        /// this parameter does not apply. Otherwise, this parameter is required.</p>
+        /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
-        /// <p>The protocol the load balancer uses when performing health checks on targets. For
-        /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
-        /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
-        /// protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are
-        /// not supported for health checks.</p>
+        /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
         pub fn health_check_protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
             self.health_check_protocol = Some(input);
             self
         }
-        /// <p>The protocol the load balancer uses when performing health checks on targets. For
-        /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
-        /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
-        /// protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are
-        /// not supported for health checks.</p>
+        /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::ProtocolEnum>,
@@ -1424,18 +1280,12 @@ pub mod create_target_group_input {
             self.health_check_protocol = input;
             self
         }
-        /// <p>The port the load balancer uses when performing health checks on targets. If the protocol
-        /// is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is
-        /// the port on which each target receives traffic from the load balancer. If the protocol is
-        /// GENEVE, the default is port 80.</p>
+        /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
         pub fn health_check_port(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_check_port = Some(input.into());
             self
         }
-        /// <p>The port the load balancer uses when performing health checks on targets. If the protocol
-        /// is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is
-        /// the port on which each target receives traffic from the load balancer. If the protocol is
-        /// GENEVE, the default is port 80.</p>
+        /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
         pub fn set_health_check_port(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1443,34 +1293,26 @@ pub mod create_target_group_input {
             self.health_check_port = input;
             self
         }
-        /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>,
-        /// health checks are disabled by default but can be enabled. If the target type is
-        /// <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always
-        /// enabled and cannot be disabled.</p>
+        /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
         pub fn health_check_enabled(mut self, input: bool) -> Self {
             self.health_check_enabled = Some(input);
             self
         }
-        /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>,
-        /// health checks are disabled by default but can be enabled. If the target type is
-        /// <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always
-        /// enabled and cannot be disabled.</p>
+        /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
         pub fn set_health_check_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.health_check_enabled = input;
             self
         }
         /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
         /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-        /// <p>[GRPC protocol version] The path of a custom health check method with the format
-        /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+        /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
         pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_check_path = Some(input.into());
             self
         }
         /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
         /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-        /// <p>[GRPC protocol version] The path of a custom health check method with the format
-        /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+        /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1478,20 +1320,12 @@ pub mod create_target_group_input {
             self.health_check_path = input;
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
-        /// If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30
-        /// seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the
-        /// target group protocol is GENEVE, the default is 10 seconds. If the target type is
-        /// <code>lambda</code>, the default is 35 seconds.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
         pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
             self.health_check_interval_seconds = Some(input);
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
-        /// If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30
-        /// seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the
-        /// target group protocol is GENEVE, the default is 10 seconds. If the target type is
-        /// <code>lambda</code>, the default is 35 seconds.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
         pub fn set_health_check_interval_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -1499,121 +1333,63 @@ pub mod create_target_group_input {
             self.health_check_interval_seconds = input;
             self
         }
-        /// <p>The amount of time, in seconds, during which no response from a target means a failed
-        /// health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5
-        /// seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for
-        /// HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is
-        /// <code>lambda</code>, the default is 30 seconds.</p>
+        /// <p>The amount of time, in seconds, during which no response from a target means a failed health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
         pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
             self.health_check_timeout_seconds = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, during which no response from a target means a failed
-        /// health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5
-        /// seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for
-        /// HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is
-        /// <code>lambda</code>, the default is 30 seconds.</p>
+        /// <p>The amount of time, in seconds, during which no response from a target means a failed health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
         pub fn set_health_check_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_timeout_seconds = input;
             self
         }
-        /// <p>The number of consecutive health checks successes required before considering an unhealthy
-        /// target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For
-        /// target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is
-        /// <code>lambda</code>, the default is 5.</p>
+        /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
         pub fn healthy_threshold_count(mut self, input: i32) -> Self {
             self.healthy_threshold_count = Some(input);
             self
         }
-        /// <p>The number of consecutive health checks successes required before considering an unhealthy
-        /// target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For
-        /// target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is
-        /// <code>lambda</code>, the default is 5.</p>
+        /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
         pub fn set_healthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.healthy_threshold_count = input;
             self
         }
-        /// <p>The number of consecutive health check failures required before considering a target
-        /// unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target
-        /// group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If
-        /// the target group protocol is GENEVE, the default is 3. If the target type is
-        /// <code>lambda</code>, the default is 2.</p>
+        /// <p>The number of consecutive health check failures required before considering a target unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 2.</p>
         pub fn unhealthy_threshold_count(mut self, input: i32) -> Self {
             self.unhealthy_threshold_count = Some(input);
             self
         }
-        /// <p>The number of consecutive health check failures required before considering a target
-        /// unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target
-        /// group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If
-        /// the target group protocol is GENEVE, the default is 3. If the target type is
-        /// <code>lambda</code>, the default is 2.</p>
+        /// <p>The number of consecutive health check failures required before considering a target unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 2.</p>
         pub fn set_unhealthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.unhealthy_threshold_count = input;
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-        /// response from a target.</p>
+        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
         pub fn matcher(mut self, input: crate::model::Matcher) -> Self {
             self.matcher = Some(input);
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-        /// response from a target.</p>
+        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
         pub fn set_matcher(mut self, input: std::option::Option<crate::model::Matcher>) -> Self {
             self.matcher = input;
             self
         }
-        /// <p>The type of target that you must specify when registering targets with this target group.
-        /// You can't specify targets for a target group using more than one target type.</p>
+        /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>instance</code> - Register targets by instance ID. This is the default
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ip</code> - Register targets by IP address. You can specify IP addresses from
-        /// the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range
-        /// (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10).
-        /// You can't specify publicly routable IP addresses.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>lambda</code> - Register a single Lambda function as a target.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>alb</code> - Register a single Application Load Balancer as a target.</p>
-        /// </li>
+        /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
+        /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
+        /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
+        /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
         /// </ul>
         pub fn target_type(mut self, input: crate::model::TargetTypeEnum) -> Self {
             self.target_type = Some(input);
             self
         }
-        /// <p>The type of target that you must specify when registering targets with this target group.
-        /// You can't specify targets for a target group using more than one target type.</p>
+        /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>instance</code> - Register targets by instance ID. This is the default
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ip</code> - Register targets by IP address. You can specify IP addresses from
-        /// the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range
-        /// (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10).
-        /// You can't specify publicly routable IP addresses.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>lambda</code> - Register a single Lambda function as a target.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>alb</code> - Register a single Application Load Balancer as a target.</p>
-        /// </li>
+        /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
+        /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
+        /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
+        /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
         /// </ul>
         pub fn set_target_type(
             mut self,
@@ -1627,9 +1403,9 @@ pub mod create_target_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the target group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1641,9 +1417,7 @@ pub mod create_target_group_input {
             self.tags = input;
             self
         }
-        /// <p>The type of IP address used for this target group. The possible values are
-        /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
-        /// the IP address type defaults to <code>ipv4</code>.</p>
+        /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
         pub fn ip_address_type(
             mut self,
             input: crate::model::TargetGroupIpAddressTypeEnum,
@@ -1651,9 +1425,7 @@ pub mod create_target_group_input {
             self.ip_address_type = Some(input);
             self
         }
-        /// <p>The type of IP address used for this target group. The possible values are
-        /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
-        /// the IP address type defaults to <code>ipv4</code>.</p>
+        /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
@@ -1693,7 +1465,7 @@ pub mod create_target_group_input {
 #[doc(hidden)]
 pub type CreateTargetGroupInputOperationOutputAlias = crate::operation::CreateTargetGroup;
 #[doc(hidden)]
-pub type CreateTargetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTargetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTargetGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateTargetGroup`](crate::operation::CreateTargetGroup)>
     #[allow(clippy::let_and_return)]
@@ -1704,7 +1476,7 @@ impl CreateTargetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTargetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1784,7 +1556,7 @@ impl CreateTargetGroupInput {
             "CreateTargetGroup",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1842,7 +1614,7 @@ pub mod delete_listener_input {
 #[doc(hidden)]
 pub type DeleteListenerInputOperationOutputAlias = crate::operation::DeleteListener;
 #[doc(hidden)]
-pub type DeleteListenerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteListenerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteListener`](crate::operation::DeleteListener)>
     #[allow(clippy::let_and_return)]
@@ -1853,7 +1625,7 @@ impl DeleteListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteListener,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1933,7 +1705,7 @@ impl DeleteListenerInput {
             "DeleteListener",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1994,7 +1766,7 @@ pub mod delete_load_balancer_input {
 #[doc(hidden)]
 pub type DeleteLoadBalancerInputOperationOutputAlias = crate::operation::DeleteLoadBalancer;
 #[doc(hidden)]
-pub type DeleteLoadBalancerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLoadBalancerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLoadBalancerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLoadBalancer`](crate::operation::DeleteLoadBalancer)>
     #[allow(clippy::let_and_return)]
@@ -2005,7 +1777,7 @@ impl DeleteLoadBalancerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLoadBalancer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2085,7 +1857,7 @@ impl DeleteLoadBalancerInput {
             "DeleteLoadBalancer",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2143,7 +1915,7 @@ pub mod delete_rule_input {
 #[doc(hidden)]
 pub type DeleteRuleInputOperationOutputAlias = crate::operation::DeleteRule;
 #[doc(hidden)]
-pub type DeleteRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRule`](crate::operation::DeleteRule)>
     #[allow(clippy::let_and_return)]
@@ -2154,7 +1926,7 @@ impl DeleteRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2233,7 +2005,7 @@ impl DeleteRuleInput {
             "DeleteRule",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2294,7 +2066,7 @@ pub mod delete_target_group_input {
 #[doc(hidden)]
 pub type DeleteTargetGroupInputOperationOutputAlias = crate::operation::DeleteTargetGroup;
 #[doc(hidden)]
-pub type DeleteTargetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTargetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTargetGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTargetGroup`](crate::operation::DeleteTargetGroup)>
     #[allow(clippy::let_and_return)]
@@ -2305,7 +2077,7 @@ impl DeleteTargetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTargetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2385,7 +2157,7 @@ impl DeleteTargetGroupInput {
             "DeleteTargetGroup",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2435,16 +2207,14 @@ pub mod deregister_targets_input {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets. If you specified a port override when you registered a target, you must
-        /// specify both the target ID and the port when you deregister it.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::TargetDescription>) -> Self {
+        /// <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
+        pub fn targets(mut self, input: crate::model::TargetDescription) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
-        /// <p>The targets. If you specified a port override when you registered a target, you must
-        /// specify both the target ID and the port when you deregister it.</p>
+        /// <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetDescription>>,
@@ -2469,7 +2239,7 @@ pub mod deregister_targets_input {
 #[doc(hidden)]
 pub type DeregisterTargetsInputOperationOutputAlias = crate::operation::DeregisterTargets;
 #[doc(hidden)]
-pub type DeregisterTargetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterTargetsInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterTargets`](crate::operation::DeregisterTargets)>
     #[allow(clippy::let_and_return)]
@@ -2480,7 +2250,7 @@ impl DeregisterTargetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterTargets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2560,7 +2330,7 @@ impl DeregisterTargetsInput {
             "DeregisterTargets",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2593,14 +2363,12 @@ pub mod describe_account_limits_input {
         pub(crate) page_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2632,7 +2400,7 @@ pub mod describe_account_limits_input {
 #[doc(hidden)]
 pub type DescribeAccountLimitsInputOperationOutputAlias = crate::operation::DescribeAccountLimits;
 #[doc(hidden)]
-pub type DescribeAccountLimitsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccountLimitsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountLimitsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountLimits`](crate::operation::DescribeAccountLimits)>
     #[allow(clippy::let_and_return)]
@@ -2643,7 +2411,7 @@ impl DescribeAccountLimitsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountLimits,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2725,7 +2493,7 @@ impl DescribeAccountLimitsInput {
             "DescribeAccountLimits",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2769,14 +2537,12 @@ pub mod describe_listener_certificates_input {
             self.listener_arn = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2810,7 +2576,8 @@ pub mod describe_listener_certificates_input {
 pub type DescribeListenerCertificatesInputOperationOutputAlias =
     crate::operation::DescribeListenerCertificates;
 #[doc(hidden)]
-pub type DescribeListenerCertificatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeListenerCertificatesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeListenerCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeListenerCertificates`](crate::operation::DescribeListenerCertificates)>
     #[allow(clippy::let_and_return)]
@@ -2821,7 +2588,7 @@ impl DescribeListenerCertificatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeListenerCertificates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2902,7 +2669,7 @@ impl DescribeListenerCertificatesInput {
             "DescribeListenerCertificates",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2969,14 +2736,12 @@ pub mod describe_listeners_input {
             self.listener_arns = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3010,7 +2775,7 @@ pub mod describe_listeners_input {
 #[doc(hidden)]
 pub type DescribeListenersInputOperationOutputAlias = crate::operation::DescribeListeners;
 #[doc(hidden)]
-pub type DescribeListenersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeListenersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeListenersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeListeners`](crate::operation::DescribeListeners)>
     #[allow(clippy::let_and_return)]
@@ -3021,7 +2786,7 @@ impl DescribeListenersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeListeners,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3101,7 +2866,7 @@ impl DescribeListenersInput {
             "DescribeListeners",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3163,7 +2928,8 @@ pub mod describe_load_balancer_attributes_input {
 pub type DescribeLoadBalancerAttributesInputOperationOutputAlias =
     crate::operation::DescribeLoadBalancerAttributes;
 #[doc(hidden)]
-pub type DescribeLoadBalancerAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLoadBalancerAttributesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancerAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancerAttributes`](crate::operation::DescribeLoadBalancerAttributes)>
     #[allow(clippy::let_and_return)]
@@ -3174,7 +2940,7 @@ impl DescribeLoadBalancerAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBalancerAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3255,7 +3021,7 @@ impl DescribeLoadBalancerAttributesInput {
             "DescribeLoadBalancerAttributes",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3294,16 +3060,14 @@ pub mod describe_load_balancers_input {
         ///
         /// To override the contents of this collection use [`set_load_balancer_arns`](Self::set_load_balancer_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load
-        /// balancers in a single call.</p>
+        /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
         pub fn load_balancer_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.load_balancer_arns.unwrap_or_default();
             v.push(input.into());
             self.load_balancer_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load
-        /// balancers in a single call.</p>
+        /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
         pub fn set_load_balancer_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3330,14 +3094,12 @@ pub mod describe_load_balancers_input {
             self.names = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3371,7 +3133,7 @@ pub mod describe_load_balancers_input {
 #[doc(hidden)]
 pub type DescribeLoadBalancersInputOperationOutputAlias = crate::operation::DescribeLoadBalancers;
 #[doc(hidden)]
-pub type DescribeLoadBalancersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLoadBalancersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoadBalancersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoadBalancers`](crate::operation::DescribeLoadBalancers)>
     #[allow(clippy::let_and_return)]
@@ -3382,7 +3144,7 @@ impl DescribeLoadBalancersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBalancers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3464,7 +3226,7 @@ impl DescribeLoadBalancersInput {
             "DescribeLoadBalancers",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3528,14 +3290,12 @@ pub mod describe_rules_input {
             self.rule_arns = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3569,7 +3329,7 @@ pub mod describe_rules_input {
 #[doc(hidden)]
 pub type DescribeRulesInputOperationOutputAlias = crate::operation::DescribeRules;
 #[doc(hidden)]
-pub type DescribeRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRules`](crate::operation::DescribeRules)>
     #[allow(clippy::let_and_return)]
@@ -3580,7 +3340,7 @@ impl DescribeRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3659,7 +3419,7 @@ impl DescribeRulesInput {
             "DescribeRules",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3713,14 +3473,12 @@ pub mod describe_ssl_policies_input {
             self.names = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3735,14 +3493,12 @@ pub mod describe_ssl_policies_input {
             self.page_size = input;
             self
         }
-        /// <p> The type of load balancer. The default lists the SSL policies for all load
-        /// balancers.</p>
+        /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
         pub fn load_balancer_type(mut self, input: crate::model::LoadBalancerTypeEnum) -> Self {
             self.load_balancer_type = Some(input);
             self
         }
-        /// <p> The type of load balancer. The default lists the SSL policies for all load
-        /// balancers.</p>
+        /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
         pub fn set_load_balancer_type(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerTypeEnum>,
@@ -3769,7 +3525,7 @@ pub mod describe_ssl_policies_input {
 #[doc(hidden)]
 pub type DescribeSslPoliciesInputOperationOutputAlias = crate::operation::DescribeSSLPolicies;
 #[doc(hidden)]
-pub type DescribeSslPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSslPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSslPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSSLPolicies`](crate::operation::DescribeSSLPolicies)>
     #[allow(clippy::let_and_return)]
@@ -3780,7 +3536,7 @@ impl DescribeSslPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSSLPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3860,7 +3616,7 @@ impl DescribeSslPoliciesInput {
             "DescribeSSLPolicies",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3896,16 +3652,14 @@ pub mod describe_tags_input {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a
-        /// single call.</p>
+        /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a
-        /// single call.</p>
+        /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3929,7 +3683,7 @@ pub mod describe_tags_input {
 #[doc(hidden)]
 pub type DescribeTagsInputOperationOutputAlias = crate::operation::DescribeTags;
 #[doc(hidden)]
-pub type DescribeTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(clippy::let_and_return)]
@@ -3940,7 +3694,7 @@ impl DescribeTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4019,7 +3773,7 @@ impl DescribeTagsInput {
             "DescribeTags",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4081,7 +3835,8 @@ pub mod describe_target_group_attributes_input {
 pub type DescribeTargetGroupAttributesInputOperationOutputAlias =
     crate::operation::DescribeTargetGroupAttributes;
 #[doc(hidden)]
-pub type DescribeTargetGroupAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTargetGroupAttributesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTargetGroupAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTargetGroupAttributes`](crate::operation::DescribeTargetGroupAttributes)>
     #[allow(clippy::let_and_return)]
@@ -4092,7 +3847,7 @@ impl DescribeTargetGroupAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTargetGroupAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4173,7 +3928,7 @@ impl DescribeTargetGroupAttributesInput {
             "DescribeTargetGroupAttributes",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4260,14 +4015,12 @@ pub mod describe_target_groups_input {
             self.names = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4302,7 +4055,7 @@ pub mod describe_target_groups_input {
 #[doc(hidden)]
 pub type DescribeTargetGroupsInputOperationOutputAlias = crate::operation::DescribeTargetGroups;
 #[doc(hidden)]
-pub type DescribeTargetGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTargetGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTargetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTargetGroups`](crate::operation::DescribeTargetGroups)>
     #[allow(clippy::let_and_return)]
@@ -4313,7 +4066,7 @@ impl DescribeTargetGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTargetGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4395,7 +4148,7 @@ impl DescribeTargetGroupsInput {
             "DescribeTargetGroups",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4446,9 +4199,9 @@ pub mod describe_target_health_input {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::TargetDescription>) -> Self {
+        pub fn targets(mut self, input: crate::model::TargetDescription) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -4477,7 +4230,7 @@ pub mod describe_target_health_input {
 #[doc(hidden)]
 pub type DescribeTargetHealthInputOperationOutputAlias = crate::operation::DescribeTargetHealth;
 #[doc(hidden)]
-pub type DescribeTargetHealthInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTargetHealthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTargetHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTargetHealth`](crate::operation::DescribeTargetHealth)>
     #[allow(clippy::let_and_return)]
@@ -4488,7 +4241,7 @@ impl DescribeTargetHealthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTargetHealth,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4570,7 +4323,7 @@ impl DescribeTargetHealthInput {
             "DescribeTargetHealth",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4618,30 +4371,22 @@ pub mod modify_listener_input {
             self.listener_arn = input;
             self
         }
-        /// <p>The port for connections from clients to the load balancer. You cannot specify a port for
-        /// a Gateway Load Balancer.</p>
+        /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>The port for connections from clients to the load balancer. You cannot specify a port for
-        /// a Gateway Load Balancer.</p>
+        /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
         }
-        /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers
-        /// support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and
-        /// TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is
-        /// enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+        /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
         pub fn protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
             self.protocol = Some(input);
             self
         }
-        /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers
-        /// support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and
-        /// TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is
-        /// enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+        /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::ProtocolEnum>,
@@ -4649,18 +4394,14 @@ pub mod modify_listener_input {
             self.protocol = input;
             self
         }
-        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are
-        /// supported.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or
-        /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn ssl_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssl_policy = Some(input.into());
             self
         }
-        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are
-        /// supported.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or
-        /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn set_ssl_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssl_policy = input;
             self
@@ -4669,18 +4410,14 @@ pub mod modify_listener_input {
         ///
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
-        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
-        /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
-        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
-        /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
+        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
@@ -4693,9 +4430,9 @@ pub mod modify_listener_input {
         /// To override the contents of this collection use [`set_default_actions`](Self::set_default_actions).
         ///
         /// <p>The actions for the default rule.</p>
-        pub fn default_actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn default_actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.default_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_actions = Some(v);
             self
         }
@@ -4711,74 +4448,30 @@ pub mod modify_listener_input {
         ///
         /// To override the contents of this collection use [`set_alpn_policy`](Self::set_alpn_policy).
         ///
-        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You
-        /// can specify one policy name. The following are the possible values:</p>
+        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HTTP1Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Optional</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Preferred</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>None</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>HTTP1Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+        /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+        /// <li> <p> <code>None</code> </p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-        /// policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn alpn_policy(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alpn_policy.unwrap_or_default();
             v.push(input.into());
             self.alpn_policy = Some(v);
             self
         }
-        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You
-        /// can specify one policy name. The following are the possible values:</p>
+        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HTTP1Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Optional</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Preferred</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>None</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>HTTP1Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+        /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+        /// <li> <p> <code>None</code> </p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-        /// policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn set_alpn_policy(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4808,7 +4501,7 @@ pub mod modify_listener_input {
 #[doc(hidden)]
 pub type ModifyListenerInputOperationOutputAlias = crate::operation::ModifyListener;
 #[doc(hidden)]
-pub type ModifyListenerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyListenerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyListenerInput {
     /// Consumes the builder and constructs an Operation<[`ModifyListener`](crate::operation::ModifyListener)>
     #[allow(clippy::let_and_return)]
@@ -4819,7 +4512,7 @@ impl ModifyListenerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyListener,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4899,7 +4592,7 @@ impl ModifyListenerInput {
             "ModifyListener",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4951,9 +4644,9 @@ pub mod modify_load_balancer_attributes_input {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The load balancer attributes.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::LoadBalancerAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::LoadBalancerAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -4983,7 +4676,8 @@ pub mod modify_load_balancer_attributes_input {
 pub type ModifyLoadBalancerAttributesInputOperationOutputAlias =
     crate::operation::ModifyLoadBalancerAttributes;
 #[doc(hidden)]
-pub type ModifyLoadBalancerAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyLoadBalancerAttributesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyLoadBalancerAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyLoadBalancerAttributes`](crate::operation::ModifyLoadBalancerAttributes)>
     #[allow(clippy::let_and_return)]
@@ -4994,7 +4688,7 @@ impl ModifyLoadBalancerAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyLoadBalancerAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5075,7 +4769,7 @@ impl ModifyLoadBalancerAttributesInput {
             "ModifyLoadBalancerAttributes",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5124,9 +4818,9 @@ pub mod modify_rule_input {
         /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
         ///
         /// <p>The conditions.</p>
-        pub fn conditions(mut self, input: impl Into<crate::model::RuleCondition>) -> Self {
+        pub fn conditions(mut self, input: crate::model::RuleCondition) -> Self {
             let mut v = self.conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conditions = Some(v);
             self
         }
@@ -5143,9 +4837,9 @@ pub mod modify_rule_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -5175,7 +4869,7 @@ pub mod modify_rule_input {
 #[doc(hidden)]
 pub type ModifyRuleInputOperationOutputAlias = crate::operation::ModifyRule;
 #[doc(hidden)]
-pub type ModifyRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyRuleInput {
     /// Consumes the builder and constructs an Operation<[`ModifyRule`](crate::operation::ModifyRule)>
     #[allow(clippy::let_and_return)]
@@ -5186,7 +4880,7 @@ impl ModifyRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5265,7 +4959,7 @@ impl ModifyRuleInput {
             "ModifyRule",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5319,23 +5013,13 @@ pub mod modify_target_group_input {
             self.target_group_arn = input;
             self
         }
-        /// <p>The protocol the load balancer uses when performing health checks on targets. For
-        /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
-        /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
-        /// protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the
-        /// protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
-        /// protocols are not supported for health checks.</p>
+        /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn health_check_protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
             self.health_check_protocol = Some(input);
             self
         }
-        /// <p>The protocol the load balancer uses when performing health checks on targets. For
-        /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
-        /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
-        /// protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the
-        /// protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
-        /// protocols are not supported for health checks.</p>
+        /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_health_check_protocol(
             mut self,
@@ -5359,16 +5043,14 @@ pub mod modify_target_group_input {
         }
         /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
         /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-        /// <p>[GRPC protocol version] The path of a custom health check method with the format
-        /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+        /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
         pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_check_path = Some(input.into());
             self
         }
         /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
         /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-        /// <p>[GRPC protocol version] The path of a custom health check method with the format
-        /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+        /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5386,15 +5068,13 @@ pub mod modify_target_group_input {
             self.health_check_enabled = input;
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
-        /// For TCP health checks, the supported values are 10 or 30 seconds.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
             self.health_check_interval_seconds = Some(input);
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
-        /// For TCP health checks, the supported values are 10 or 30 seconds.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_health_check_interval_seconds(
             mut self,
@@ -5403,55 +5083,45 @@ pub mod modify_target_group_input {
             self.health_check_interval_seconds = input;
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means
-        /// a failed health check.</p>
+        /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
             self.health_check_timeout_seconds = Some(input);
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means
-        /// a failed health check.</p>
+        /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_health_check_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_timeout_seconds = input;
             self
         }
-        /// <p>The number of consecutive health checks successes required before considering an unhealthy
-        /// target healthy.</p>
+        /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
         pub fn healthy_threshold_count(mut self, input: i32) -> Self {
             self.healthy_threshold_count = Some(input);
             self
         }
-        /// <p>The number of consecutive health checks successes required before considering an unhealthy
-        /// target healthy.</p>
+        /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
         pub fn set_healthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.healthy_threshold_count = input;
             self
         }
-        /// <p>The number of consecutive health check failures required before considering the target
-        /// unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the
-        /// healthy threshold count.</p>
+        /// <p>The number of consecutive health check failures required before considering the target unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.</p>
         pub fn unhealthy_threshold_count(mut self, input: i32) -> Self {
             self.unhealthy_threshold_count = Some(input);
             self
         }
-        /// <p>The number of consecutive health check failures required before considering the target
-        /// unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the
-        /// healthy threshold count.</p>
+        /// <p>The number of consecutive health check failures required before considering the target unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.</p>
         pub fn set_unhealthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.unhealthy_threshold_count = input;
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-        /// response from a target.</p>
+        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn matcher(mut self, input: crate::model::Matcher) -> Self {
             self.matcher = Some(input);
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-        /// response from a target.</p>
+        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_matcher(mut self, input: std::option::Option<crate::model::Matcher>) -> Self {
             self.matcher = input;
@@ -5482,7 +5152,7 @@ pub mod modify_target_group_input {
 #[doc(hidden)]
 pub type ModifyTargetGroupInputOperationOutputAlias = crate::operation::ModifyTargetGroup;
 #[doc(hidden)]
-pub type ModifyTargetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyTargetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyTargetGroupInput {
     /// Consumes the builder and constructs an Operation<[`ModifyTargetGroup`](crate::operation::ModifyTargetGroup)>
     #[allow(clippy::let_and_return)]
@@ -5493,7 +5163,7 @@ impl ModifyTargetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyTargetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5573,7 +5243,7 @@ impl ModifyTargetGroupInput {
             "ModifyTargetGroup",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5625,9 +5295,9 @@ pub mod modify_target_group_attributes_input {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::TargetGroupAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::TargetGroupAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -5657,7 +5327,7 @@ pub mod modify_target_group_attributes_input {
 pub type ModifyTargetGroupAttributesInputOperationOutputAlias =
     crate::operation::ModifyTargetGroupAttributes;
 #[doc(hidden)]
-pub type ModifyTargetGroupAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyTargetGroupAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyTargetGroupAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyTargetGroupAttributes`](crate::operation::ModifyTargetGroupAttributes)>
     #[allow(clippy::let_and_return)]
@@ -5668,7 +5338,7 @@ impl ModifyTargetGroupAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyTargetGroupAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5749,7 +5419,7 @@ impl ModifyTargetGroupAttributesInput {
             "ModifyTargetGroupAttributes",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5800,9 +5470,9 @@ pub mod register_targets_input {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::TargetDescription>) -> Self {
+        pub fn targets(mut self, input: crate::model::TargetDescription) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -5831,7 +5501,7 @@ pub mod register_targets_input {
 #[doc(hidden)]
 pub type RegisterTargetsInputOperationOutputAlias = crate::operation::RegisterTargets;
 #[doc(hidden)]
-pub type RegisterTargetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterTargetsInput {
     /// Consumes the builder and constructs an Operation<[`RegisterTargets`](crate::operation::RegisterTargets)>
     #[allow(clippy::let_and_return)]
@@ -5842,7 +5512,7 @@ impl RegisterTargetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterTargets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5922,7 +5592,7 @@ impl RegisterTargetsInput {
             "RegisterTargets",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5969,18 +5639,14 @@ pub mod remove_listener_certificates_input {
         ///
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
-        /// <p>The certificate to remove. You can specify one certificate per call. Set
-        /// <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
-        /// <p>The certificate to remove. You can specify one certificate per call. Set
-        /// <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
+        /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
@@ -6006,7 +5672,7 @@ pub mod remove_listener_certificates_input {
 pub type RemoveListenerCertificatesInputOperationOutputAlias =
     crate::operation::RemoveListenerCertificates;
 #[doc(hidden)]
-pub type RemoveListenerCertificatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveListenerCertificatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveListenerCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`RemoveListenerCertificates`](crate::operation::RemoveListenerCertificates)>
     #[allow(clippy::let_and_return)]
@@ -6017,7 +5683,7 @@ impl RemoveListenerCertificatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveListenerCertificates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6099,7 +5765,7 @@ impl RemoveListenerCertificatesInput {
             "RemoveListenerCertificates",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6187,7 +5853,7 @@ pub mod remove_tags_input {
 #[doc(hidden)]
 pub type RemoveTagsInputOperationOutputAlias = crate::operation::RemoveTags;
 #[doc(hidden)]
-pub type RemoveTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
     #[allow(clippy::let_and_return)]
@@ -6198,7 +5864,7 @@ impl RemoveTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6277,7 +5943,7 @@ impl RemoveTagsInput {
             "RemoveTags",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6323,18 +5989,12 @@ pub mod set_ip_address_type_input {
             self.load_balancer_arn = input;
             self
         }
-        /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-        /// <code>dualstack</code> (for IPv4 and IPv6 addresses).
-        /// You can’t specify
-        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+        /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.ip_address_type = Some(input);
             self
         }
-        /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-        /// <code>dualstack</code> (for IPv4 and IPv6 addresses).
-        /// You can’t specify
-        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+        /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -6359,7 +6019,7 @@ pub mod set_ip_address_type_input {
 #[doc(hidden)]
 pub type SetIpAddressTypeInputOperationOutputAlias = crate::operation::SetIpAddressType;
 #[doc(hidden)]
-pub type SetIpAddressTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetIpAddressTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetIpAddressTypeInput {
     /// Consumes the builder and constructs an Operation<[`SetIpAddressType`](crate::operation::SetIpAddressType)>
     #[allow(clippy::let_and_return)]
@@ -6370,7 +6030,7 @@ impl SetIpAddressTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIpAddressType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6450,7 +6110,7 @@ impl SetIpAddressTypeInput {
             "SetIpAddressType",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6488,9 +6148,9 @@ pub mod set_rule_priorities_input {
         /// To override the contents of this collection use [`set_rule_priorities`](Self::set_rule_priorities).
         ///
         /// <p>The rule priorities.</p>
-        pub fn rule_priorities(mut self, input: impl Into<crate::model::RulePriorityPair>) -> Self {
+        pub fn rule_priorities(mut self, input: crate::model::RulePriorityPair) -> Self {
             let mut v = self.rule_priorities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rule_priorities = Some(v);
             self
         }
@@ -6518,7 +6178,7 @@ pub mod set_rule_priorities_input {
 #[doc(hidden)]
 pub type SetRulePrioritiesInputOperationOutputAlias = crate::operation::SetRulePriorities;
 #[doc(hidden)]
-pub type SetRulePrioritiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetRulePrioritiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetRulePrioritiesInput {
     /// Consumes the builder and constructs an Operation<[`SetRulePriorities`](crate::operation::SetRulePriorities)>
     #[allow(clippy::let_and_return)]
@@ -6529,7 +6189,7 @@ impl SetRulePrioritiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetRulePriorities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6609,7 +6269,7 @@ impl SetRulePrioritiesInput {
             "SetRulePriorities",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6691,7 +6351,7 @@ pub mod set_security_groups_input {
 #[doc(hidden)]
 pub type SetSecurityGroupsInputOperationOutputAlias = crate::operation::SetSecurityGroups;
 #[doc(hidden)]
-pub type SetSecurityGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetSecurityGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetSecurityGroupsInput {
     /// Consumes the builder and constructs an Operation<[`SetSecurityGroups`](crate::operation::SetSecurityGroups)>
     #[allow(clippy::let_and_return)]
@@ -6702,7 +6362,7 @@ impl SetSecurityGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetSecurityGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6782,7 +6442,7 @@ impl SetSecurityGroupsInput {
             "SetSecurityGroups",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6834,30 +6494,22 @@ pub mod set_subnets_input {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability
-        /// Zones.</p>
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability
-        /// Zones.</p>
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6869,36 +6521,22 @@ pub mod set_subnets_input {
         ///
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You
-        /// can specify one Elastic IP address per subnet if you need static IP addresses for your
-        /// internet-facing load balancer. For internal load balancers, you can specify one private IP
-        /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
-        /// can specify one IPv6 address per subnet.</p>
-        pub fn subnet_mappings(mut self, input: impl Into<crate::model::SubnetMapping>) -> Self {
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subnet_mappings = Some(v);
             self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You
-        /// can specify one Elastic IP address per subnet if you need static IP addresses for your
-        /// internet-facing load balancer. For internal load balancers, you can specify one private IP
-        /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
-        /// can specify one IPv6 address per subnet.</p>
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
         pub fn set_subnet_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
@@ -6906,20 +6544,12 @@ pub mod set_subnets_input {
             self.subnet_mappings = input;
             self
         }
-        /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load
-        /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-        /// <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
-        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
-        /// .</p>
+        /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.ip_address_type = Some(input);
             self
         }
-        /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load
-        /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-        /// <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
-        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
-        /// .</p>
+        /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -6946,7 +6576,7 @@ pub mod set_subnets_input {
 #[doc(hidden)]
 pub type SetSubnetsInputOperationOutputAlias = crate::operation::SetSubnets;
 #[doc(hidden)]
-pub type SetSubnetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetSubnetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetSubnetsInput {
     /// Consumes the builder and constructs an Operation<[`SetSubnets`](crate::operation::SetSubnets)>
     #[allow(clippy::let_and_return)]
@@ -6957,7 +6587,7 @@ impl SetSubnetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetSubnets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7036,7 +6666,7 @@ impl SetSubnetsInput {
             "SetSubnets",
             "elasticloadbalancingv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7065,34 +6695,19 @@ impl SetSubnetsInput {
 pub struct SetSubnetsInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub load_balancer_arn: std::option::Option<std::string::String>,
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-    /// must specify either subnets or subnet mappings.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-    /// Zones.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-    /// Zones.</p>
-    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability
-    /// Zones.</p>
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-    /// must specify either subnets or subnet mappings.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-    /// Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-    /// Zones.</p>
-    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You
-    /// can specify one Elastic IP address per subnet if you need static IP addresses for your
-    /// internet-facing load balancer. For internal load balancers, you can specify one private IP
-    /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
-    /// can specify one IPv6 address per subnet.</p>
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
     pub subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
-    /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load
-    /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-    /// <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
-    /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
-    /// .</p>
+    /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
 impl SetSubnetsInput {
@@ -7100,38 +6715,23 @@ impl SetSubnetsInput {
     pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
         self.load_balancer_arn.as_deref()
     }
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-    /// must specify either subnets or subnet mappings.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-    /// Zones.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-    /// Zones.</p>
-    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability
-    /// Zones.</p>
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-    /// must specify either subnets or subnet mappings.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-    /// Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-    /// Zones.</p>
-    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You
-    /// can specify one Elastic IP address per subnet if you need static IP addresses for your
-    /// internet-facing load balancer. For internal load balancers, you can specify one private IP
-    /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
-    /// can specify one IPv6 address per subnet.</p>
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
     pub fn subnet_mappings(&self) -> std::option::Option<&[crate::model::SubnetMapping]> {
         self.subnet_mappings.as_deref()
     }
-    /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load
-    /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-    /// <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
-    /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
-    /// .</p>
+    /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
     pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
@@ -7202,10 +6802,7 @@ impl std::fmt::Debug for SetRulePrioritiesInput {
 pub struct SetIpAddressTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub load_balancer_arn: std::option::Option<std::string::String>,
-    /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-    /// <code>dualstack</code> (for IPv4 and IPv6 addresses).
-    /// You can’t specify
-    /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+    /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
 }
 impl SetIpAddressTypeInput {
@@ -7213,10 +6810,7 @@ impl SetIpAddressTypeInput {
     pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
         self.load_balancer_arn.as_deref()
     }
-    /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-    /// <code>dualstack</code> (for IPv4 and IPv6 addresses).
-    /// You can’t specify
-    /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+    /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
     pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
@@ -7264,9 +6858,7 @@ impl std::fmt::Debug for RemoveTagsInput {
 pub struct RemoveListenerCertificatesInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub listener_arn: std::option::Option<std::string::String>,
-    /// <p>The certificate to remove. You can specify one certificate per call. Set
-    /// <code>CertificateArn</code> to the certificate ARN but do not set
-    /// <code>IsDefault</code>.</p>
+    /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
 }
 impl RemoveListenerCertificatesInput {
@@ -7274,9 +6866,7 @@ impl RemoveListenerCertificatesInput {
     pub fn listener_arn(&self) -> std::option::Option<&str> {
         self.listener_arn.as_deref()
     }
-    /// <p>The certificate to remove. You can specify one certificate per call. Set
-    /// <code>CertificateArn</code> to the certificate ARN but do not set
-    /// <code>IsDefault</code>.</p>
+    /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
     pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
         self.certificates.as_deref()
     }
@@ -7352,40 +6942,28 @@ impl std::fmt::Debug for ModifyTargetGroupAttributesInput {
 pub struct ModifyTargetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub target_group_arn: std::option::Option<std::string::String>,
-    /// <p>The protocol the load balancer uses when performing health checks on targets. For
-    /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
-    /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
-    /// protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the
-    /// protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
-    /// protocols are not supported for health checks.</p>
+    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
     /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub health_check_protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
     pub health_check_port: std::option::Option<std::string::String>,
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-    /// <p>[GRPC protocol version] The path of a custom health check method with the format
-    /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub health_check_path: std::option::Option<std::string::String>,
     /// <p>Indicates whether health checks are enabled.</p>
     pub health_check_enabled: std::option::Option<bool>,
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
-    /// For TCP health checks, the supported values are 10 or 30 seconds.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
     /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub health_check_interval_seconds: std::option::Option<i32>,
-    /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means
-    /// a failed health check.</p>
+    /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
     /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub health_check_timeout_seconds: std::option::Option<i32>,
-    /// <p>The number of consecutive health checks successes required before considering an unhealthy
-    /// target healthy.</p>
+    /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
     pub healthy_threshold_count: std::option::Option<i32>,
-    /// <p>The number of consecutive health check failures required before considering the target
-    /// unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the
-    /// healthy threshold count.</p>
+    /// <p>The number of consecutive health check failures required before considering the target unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.</p>
     pub unhealthy_threshold_count: std::option::Option<i32>,
-    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-    /// response from a target.</p>
+    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
     /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub matcher: std::option::Option<crate::model::Matcher>,
 }
@@ -7394,12 +6972,7 @@ impl ModifyTargetGroupInput {
     pub fn target_group_arn(&self) -> std::option::Option<&str> {
         self.target_group_arn.as_deref()
     }
-    /// <p>The protocol the load balancer uses when performing health checks on targets. For
-    /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
-    /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
-    /// protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the
-    /// protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
-    /// protocols are not supported for health checks.</p>
+    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
     /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub fn health_check_protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
         self.health_check_protocol.as_ref()
@@ -7410,8 +6983,7 @@ impl ModifyTargetGroupInput {
     }
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-    /// <p>[GRPC protocol version] The path of a custom health check method with the format
-    /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub fn health_check_path(&self) -> std::option::Option<&str> {
         self.health_check_path.as_deref()
     }
@@ -7419,31 +6991,25 @@ impl ModifyTargetGroupInput {
     pub fn health_check_enabled(&self) -> std::option::Option<bool> {
         self.health_check_enabled
     }
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
-    /// For TCP health checks, the supported values are 10 or 30 seconds.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
     /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub fn health_check_interval_seconds(&self) -> std::option::Option<i32> {
         self.health_check_interval_seconds
     }
-    /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means
-    /// a failed health check.</p>
+    /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
     /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub fn health_check_timeout_seconds(&self) -> std::option::Option<i32> {
         self.health_check_timeout_seconds
     }
-    /// <p>The number of consecutive health checks successes required before considering an unhealthy
-    /// target healthy.</p>
+    /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
     pub fn healthy_threshold_count(&self) -> std::option::Option<i32> {
         self.healthy_threshold_count
     }
-    /// <p>The number of consecutive health check failures required before considering the target
-    /// unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the
-    /// healthy threshold count.</p>
+    /// <p>The number of consecutive health check failures required before considering the target unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.</p>
     pub fn unhealthy_threshold_count(&self) -> std::option::Option<i32> {
         self.unhealthy_threshold_count
     }
-    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-    /// response from a target.</p>
+    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
     /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub fn matcher(&self) -> std::option::Option<&crate::model::Matcher> {
         self.matcher.as_ref()
@@ -7541,56 +7107,26 @@ impl std::fmt::Debug for ModifyLoadBalancerAttributesInput {
 pub struct ModifyListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub listener_arn: std::option::Option<std::string::String>,
-    /// <p>The port for connections from clients to the load balancer. You cannot specify a port for
-    /// a Gateway Load Balancer.</p>
+    /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
     pub port: std::option::Option<i32>,
-    /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers
-    /// support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and
-    /// TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is
-    /// enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+    /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
     pub protocol: std::option::Option<crate::model::ProtocolEnum>,
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are
-    /// supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub ssl_policy: std::option::Option<std::string::String>,
-    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
-    /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-    /// <code>IsDefault</code>.</p>
+    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
     /// <p>The actions for the default rule.</p>
     pub default_actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You
-    /// can specify one policy name. The following are the possible values:</p>
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HTTP1Only</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HTTP2Only</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HTTP2Optional</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HTTP2Preferred</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>None</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>HTTP1Only</code> </p> </li>
+    /// <li> <p> <code>HTTP2Only</code> </p> </li>
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+    /// <li> <p> <code>None</code> </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-    /// policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub alpn_policy: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyListenerInput {
@@ -7598,28 +7134,20 @@ impl ModifyListenerInput {
     pub fn listener_arn(&self) -> std::option::Option<&str> {
         self.listener_arn.as_deref()
     }
-    /// <p>The port for connections from clients to the load balancer. You cannot specify a port for
-    /// a Gateway Load Balancer.</p>
+    /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers
-    /// support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and
-    /// TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is
-    /// enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+    /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
         self.protocol.as_ref()
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are
-    /// supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn ssl_policy(&self) -> std::option::Option<&str> {
         self.ssl_policy.as_deref()
     }
-    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
-    /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-    /// <code>IsDefault</code>.</p>
+    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
     pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
         self.certificates.as_deref()
     }
@@ -7627,37 +7155,15 @@ impl ModifyListenerInput {
     pub fn default_actions(&self) -> std::option::Option<&[crate::model::Action]> {
         self.default_actions.as_deref()
     }
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You
-    /// can specify one policy name. The following are the possible values:</p>
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HTTP1Only</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HTTP2Only</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HTTP2Optional</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HTTP2Preferred</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>None</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>HTTP1Only</code> </p> </li>
+    /// <li> <p> <code>HTTP2Only</code> </p> </li>
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+    /// <li> <p> <code>None</code> </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-    /// policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn alpn_policy(&self) -> std::option::Option<&[std::string::String]> {
         self.alpn_policy.as_deref()
     }
@@ -7714,8 +7220,7 @@ pub struct DescribeTargetGroupsInput {
     pub target_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of the target groups.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: std::option::Option<i32>,
@@ -7733,8 +7238,7 @@ impl DescribeTargetGroupsInput {
     pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -7780,13 +7284,11 @@ impl std::fmt::Debug for DescribeTargetGroupAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
-    /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a
-    /// single call.</p>
+    /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTagsInput {
-    /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a
-    /// single call.</p>
+    /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
     pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arns.as_deref()
     }
@@ -7805,13 +7307,11 @@ impl std::fmt::Debug for DescribeTagsInput {
 pub struct DescribeSslPoliciesInput {
     /// <p>The names of the policies.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: std::option::Option<i32>,
-    /// <p> The type of load balancer. The default lists the SSL policies for all load
-    /// balancers.</p>
+    /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
     pub load_balancer_type: std::option::Option<crate::model::LoadBalancerTypeEnum>,
 }
 impl DescribeSslPoliciesInput {
@@ -7819,8 +7319,7 @@ impl DescribeSslPoliciesInput {
     pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -7828,8 +7327,7 @@ impl DescribeSslPoliciesInput {
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
-    /// <p> The type of load balancer. The default lists the SSL policies for all load
-    /// balancers.</p>
+    /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
     pub fn load_balancer_type(&self) -> std::option::Option<&crate::model::LoadBalancerTypeEnum> {
         self.load_balancer_type.as_ref()
     }
@@ -7853,8 +7351,7 @@ pub struct DescribeRulesInput {
     pub listener_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the rules.</p>
     pub rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: std::option::Option<i32>,
@@ -7868,8 +7365,7 @@ impl DescribeRulesInput {
     pub fn rule_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.rule_arns.as_deref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -7893,20 +7389,17 @@ impl std::fmt::Debug for DescribeRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancersInput {
-    /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load
-    /// balancers in a single call.</p>
+    /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
     pub load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The names of the load balancers.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: std::option::Option<i32>,
 }
 impl DescribeLoadBalancersInput {
-    /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load
-    /// balancers in a single call.</p>
+    /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
     pub fn load_balancer_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.load_balancer_arns.as_deref()
     }
@@ -7914,8 +7407,7 @@ impl DescribeLoadBalancersInput {
     pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -7964,8 +7456,7 @@ pub struct DescribeListenersInput {
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
     pub listener_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: std::option::Option<i32>,
@@ -7979,8 +7470,7 @@ impl DescribeListenersInput {
     pub fn listener_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.listener_arns.as_deref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -8006,8 +7496,7 @@ impl std::fmt::Debug for DescribeListenersInput {
 pub struct DescribeListenerCertificatesInput {
     /// <p>The Amazon Resource Names (ARN) of the listener.</p>
     pub listener_arn: std::option::Option<std::string::String>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: std::option::Option<i32>,
@@ -8017,8 +7506,7 @@ impl DescribeListenerCertificatesInput {
     pub fn listener_arn(&self) -> std::option::Option<&str> {
         self.listener_arn.as_deref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -8041,15 +7529,13 @@ impl std::fmt::Debug for DescribeListenerCertificatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountLimitsInput {
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: std::option::Option<i32>,
 }
 impl DescribeAccountLimitsInput {
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -8073,8 +7559,7 @@ impl std::fmt::Debug for DescribeAccountLimitsInput {
 pub struct DeregisterTargetsInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub target_group_arn: std::option::Option<std::string::String>,
-    /// <p>The targets. If you specified a port override when you registered a target, you must
-    /// specify both the target ID and the port when you deregister it.</p>
+    /// <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::TargetDescription>>,
 }
 impl DeregisterTargetsInput {
@@ -8082,8 +7567,7 @@ impl DeregisterTargetsInput {
     pub fn target_group_arn(&self) -> std::option::Option<&str> {
         self.target_group_arn.as_deref()
     }
-    /// <p>The targets. If you specified a port override when you registered a target, you must
-    /// specify both the target ID and the port when you deregister it.</p>
+    /// <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
     pub fn targets(&self) -> std::option::Option<&[crate::model::TargetDescription]> {
         self.targets.as_deref()
     }
@@ -8186,227 +7670,115 @@ impl std::fmt::Debug for DeleteListenerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTargetGroupInput {
     /// <p>The name of the target group.</p>
-    /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must
-    /// contain only alphanumeric characters or hyphens, and must not begin or end with a
-    /// hyphen.</p>
+    /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers,
-    /// the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported
-    /// protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is
-    /// GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a
-    /// Lambda function, this parameter does not apply.</p>
+    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
     pub protocol: std::option::Option<crate::model::ProtocolEnum>,
-    /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to
-    /// targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The
-    /// default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
+    /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
     pub protocol_version: std::option::Option<std::string::String>,
-    /// <p>The port on which the targets receive traffic. This port is used unless you specify a port
-    /// override when registering the target. If the target is a Lambda function, this parameter does
-    /// not apply. If the protocol is GENEVE, the supported port is 6081.</p>
+    /// <p>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply. If the protocol is GENEVE, the supported port is 6081.</p>
     pub port: std::option::Option<i32>,
-    /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function,
-    /// this parameter does not apply. Otherwise, this parameter is required.</p>
+    /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The protocol the load balancer uses when performing health checks on targets. For
-    /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
-    /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
-    /// protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are
-    /// not supported for health checks.</p>
+    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
     pub health_check_protocol: std::option::Option<crate::model::ProtocolEnum>,
-    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol
-    /// is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is
-    /// the port on which each target receives traffic from the load balancer. If the protocol is
-    /// GENEVE, the default is port 80.</p>
+    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
     pub health_check_port: std::option::Option<std::string::String>,
-    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>,
-    /// health checks are disabled by default but can be enabled. If the target type is
-    /// <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always
-    /// enabled and cannot be disabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
     pub health_check_enabled: std::option::Option<bool>,
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-    /// <p>[GRPC protocol version] The path of a custom health check method with the format
-    /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub health_check_path: std::option::Option<std::string::String>,
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
-    /// If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30
-    /// seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the
-    /// target group protocol is GENEVE, the default is 10 seconds. If the target type is
-    /// <code>lambda</code>, the default is 35 seconds.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
     pub health_check_interval_seconds: std::option::Option<i32>,
-    /// <p>The amount of time, in seconds, during which no response from a target means a failed
-    /// health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5
-    /// seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for
-    /// HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is
-    /// <code>lambda</code>, the default is 30 seconds.</p>
+    /// <p>The amount of time, in seconds, during which no response from a target means a failed health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
     pub health_check_timeout_seconds: std::option::Option<i32>,
-    /// <p>The number of consecutive health checks successes required before considering an unhealthy
-    /// target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For
-    /// target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is
-    /// <code>lambda</code>, the default is 5.</p>
+    /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
     pub healthy_threshold_count: std::option::Option<i32>,
-    /// <p>The number of consecutive health check failures required before considering a target
-    /// unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target
-    /// group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If
-    /// the target group protocol is GENEVE, the default is 3. If the target type is
-    /// <code>lambda</code>, the default is 2.</p>
+    /// <p>The number of consecutive health check failures required before considering a target unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 2.</p>
     pub unhealthy_threshold_count: std::option::Option<i32>,
-    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-    /// response from a target.</p>
+    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
     pub matcher: std::option::Option<crate::model::Matcher>,
-    /// <p>The type of target that you must specify when registering targets with this target group.
-    /// You can't specify targets for a target group using more than one target type.</p>
+    /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>instance</code> - Register targets by instance ID. This is the default
-    /// value.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ip</code> - Register targets by IP address. You can specify IP addresses from
-    /// the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range
-    /// (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10).
-    /// You can't specify publicly routable IP addresses.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>lambda</code> - Register a single Lambda function as a target.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>alb</code> - Register a single Application Load Balancer as a target.</p>
-    /// </li>
+    /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
+    /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
+    /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
+    /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
     /// </ul>
     pub target_type: std::option::Option<crate::model::TargetTypeEnum>,
     /// <p>The tags to assign to the target group.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The type of IP address used for this target group. The possible values are
-    /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
-    /// the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     pub ip_address_type: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
 }
 impl CreateTargetGroupInput {
     /// <p>The name of the target group.</p>
-    /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must
-    /// contain only alphanumeric characters or hyphens, and must not begin or end with a
-    /// hyphen.</p>
+    /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers,
-    /// the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported
-    /// protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is
-    /// GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a
-    /// Lambda function, this parameter does not apply.</p>
+    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
         self.protocol.as_ref()
     }
-    /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to
-    /// targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The
-    /// default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
+    /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
     pub fn protocol_version(&self) -> std::option::Option<&str> {
         self.protocol_version.as_deref()
     }
-    /// <p>The port on which the targets receive traffic. This port is used unless you specify a port
-    /// override when registering the target. If the target is a Lambda function, this parameter does
-    /// not apply. If the protocol is GENEVE, the supported port is 6081.</p>
+    /// <p>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply. If the protocol is GENEVE, the supported port is 6081.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function,
-    /// this parameter does not apply. Otherwise, this parameter is required.</p>
+    /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The protocol the load balancer uses when performing health checks on targets. For
-    /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
-    /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
-    /// protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are
-    /// not supported for health checks.</p>
+    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
     pub fn health_check_protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
         self.health_check_protocol.as_ref()
     }
-    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol
-    /// is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is
-    /// the port on which each target receives traffic from the load balancer. If the protocol is
-    /// GENEVE, the default is port 80.</p>
+    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
     pub fn health_check_port(&self) -> std::option::Option<&str> {
         self.health_check_port.as_deref()
     }
-    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>,
-    /// health checks are disabled by default but can be enabled. If the target type is
-    /// <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always
-    /// enabled and cannot be disabled.</p>
+    /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
     pub fn health_check_enabled(&self) -> std::option::Option<bool> {
         self.health_check_enabled
     }
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-    /// <p>[GRPC protocol version] The path of a custom health check method with the format
-    /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub fn health_check_path(&self) -> std::option::Option<&str> {
         self.health_check_path.as_deref()
     }
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
-    /// If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30
-    /// seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the
-    /// target group protocol is GENEVE, the default is 10 seconds. If the target type is
-    /// <code>lambda</code>, the default is 35 seconds.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
     pub fn health_check_interval_seconds(&self) -> std::option::Option<i32> {
         self.health_check_interval_seconds
     }
-    /// <p>The amount of time, in seconds, during which no response from a target means a failed
-    /// health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5
-    /// seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for
-    /// HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is
-    /// <code>lambda</code>, the default is 30 seconds.</p>
+    /// <p>The amount of time, in seconds, during which no response from a target means a failed health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
     pub fn health_check_timeout_seconds(&self) -> std::option::Option<i32> {
         self.health_check_timeout_seconds
     }
-    /// <p>The number of consecutive health checks successes required before considering an unhealthy
-    /// target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For
-    /// target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is
-    /// <code>lambda</code>, the default is 5.</p>
+    /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
     pub fn healthy_threshold_count(&self) -> std::option::Option<i32> {
         self.healthy_threshold_count
     }
-    /// <p>The number of consecutive health check failures required before considering a target
-    /// unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target
-    /// group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If
-    /// the target group protocol is GENEVE, the default is 3. If the target type is
-    /// <code>lambda</code>, the default is 2.</p>
+    /// <p>The number of consecutive health check failures required before considering a target unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 2.</p>
     pub fn unhealthy_threshold_count(&self) -> std::option::Option<i32> {
         self.unhealthy_threshold_count
     }
-    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-    /// response from a target.</p>
+    /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
     pub fn matcher(&self) -> std::option::Option<&crate::model::Matcher> {
         self.matcher.as_ref()
     }
-    /// <p>The type of target that you must specify when registering targets with this target group.
-    /// You can't specify targets for a target group using more than one target type.</p>
+    /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>instance</code> - Register targets by instance ID. This is the default
-    /// value.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ip</code> - Register targets by IP address. You can specify IP addresses from
-    /// the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range
-    /// (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10).
-    /// You can't specify publicly routable IP addresses.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>lambda</code> - Register a single Lambda function as a target.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>alb</code> - Register a single Application Load Balancer as a target.</p>
-    /// </li>
+    /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
+    /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
+    /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
+    /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
     /// </ul>
     pub fn target_type(&self) -> std::option::Option<&crate::model::TargetTypeEnum> {
         self.target_type.as_ref()
@@ -8415,9 +7787,7 @@ impl CreateTargetGroupInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The type of IP address used for this target group. The possible values are
-    /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
-    /// the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     pub fn ip_address_type(
         &self,
     ) -> std::option::Option<&crate::model::TargetGroupIpAddressTypeEnum> {
@@ -8508,47 +7878,26 @@ impl std::fmt::Debug for CreateRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must
-    /// contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must
-    /// not begin with "internal-".</p>
+    /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-    /// must specify either subnets or subnet mappings.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-    /// Zones.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-    /// Zones.</p>
-    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability
-    /// Zones.</p>
-    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability
-    /// Zones.</p>
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-    /// must specify either subnets or subnet mappings.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-    /// Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-    /// Zones.</p>
-    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You
-    /// can specify one Elastic IP address per subnet if you need static IP addresses for your
-    /// internet-facing load balancer. For internal load balancers, you can specify one private IP
-    /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
-    /// can specify one IPv6 address per subnet.</p>
-    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You
-    /// cannot specify Elastic IP addresses for your subnets.</p>
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     pub subnet_mappings: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
     /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
-    /// Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes.
-    /// Therefore, Internet-facing load balancers can route requests from clients over the
-    /// internet.</p>
-    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an
-    /// internal load balancer is publicly resolvable to the private IP addresses of the nodes.
-    /// Therefore, internal load balancers can route requests only from clients with access to the VPC
-    /// for the load balancer.</p>
+    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
+    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
     /// <p>The default is an Internet-facing load balancer.</p>
     /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
     pub scheme: std::option::Option<crate::model::LoadBalancerSchemeEnum>,
@@ -8556,50 +7905,32 @@ pub struct CreateLoadBalancerInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The type of load balancer. The default is <code>application</code>.</p>
     pub r#type: std::option::Option<crate::model::LoadBalancerTypeEnum>,
-    /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
-    /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-    /// addresses). </p>
+    /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
-    /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP
-    /// pool).</p>
+    /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
 }
 impl CreateLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must
-    /// contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must
-    /// not begin with "internal-".</p>
+    /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-    /// must specify either subnets or subnet mappings.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-    /// Zones.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-    /// Zones.</p>
-    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability
-    /// Zones.</p>
-    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability
-    /// Zones.</p>
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
-    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-    /// must specify either subnets or subnet mappings.</p>
-    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-    /// Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-    /// Zones.</p>
-    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You
-    /// can specify one Elastic IP address per subnet if you need static IP addresses for your
-    /// internet-facing load balancer. For internal load balancers, you can specify one private IP
-    /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
-    /// can specify one IPv6 address per subnet.</p>
-    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You
-    /// cannot specify Elastic IP addresses for your subnets.</p>
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     pub fn subnet_mappings(&self) -> std::option::Option<&[crate::model::SubnetMapping]> {
         self.subnet_mappings.as_deref()
     }
@@ -8607,14 +7938,8 @@ impl CreateLoadBalancerInput {
     pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
-    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
-    /// Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes.
-    /// Therefore, Internet-facing load balancers can route requests from clients over the
-    /// internet.</p>
-    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an
-    /// internal load balancer is publicly resolvable to the private IP addresses of the nodes.
-    /// Therefore, internal load balancers can route requests only from clients with access to the VPC
-    /// for the load balancer.</p>
+    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
+    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
     /// <p>The default is an Internet-facing load balancer.</p>
     /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
     pub fn scheme(&self) -> std::option::Option<&crate::model::LoadBalancerSchemeEnum> {
@@ -8628,14 +7953,11 @@ impl CreateLoadBalancerInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::LoadBalancerTypeEnum> {
         self.r#type.as_ref()
     }
-    /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
-    /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-    /// addresses). </p>
+    /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
     pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
-    /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP
-    /// pool).</p>
+    /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
     pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
@@ -8662,57 +7984,26 @@ impl std::fmt::Debug for CreateLoadBalancerInput {
 pub struct CreateListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub load_balancer_arn: std::option::Option<std::string::String>,
-    /// <p>The protocol for connections from clients to the load balancer. For Application Load
-    /// Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the
-    /// supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP
-    /// protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load
-    /// Balancer.</p>
+    /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
     pub protocol: std::option::Option<crate::model::ProtocolEnum>,
-    /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway
-    /// Load Balancer.</p>
+    /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
     pub port: std::option::Option<i32>,
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are
-    /// supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub ssl_policy: std::option::Option<std::string::String>,
-    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
-    /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-    /// <code>IsDefault</code>.</p>
+    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
     /// <p>The actions for the default rule.</p>
     pub default_actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You
-    /// can specify one policy name. The following are the possible values:</p>
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HTTP1Only</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HTTP2Only</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HTTP2Optional</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HTTP2Preferred</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>None</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>HTTP1Only</code> </p> </li>
+    /// <li> <p> <code>HTTP2Only</code> </p> </li>
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+    /// <li> <p> <code>None</code> </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-    /// policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub alpn_policy: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to assign to the listener.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8722,29 +8013,20 @@ impl CreateListenerInput {
     pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
         self.load_balancer_arn.as_deref()
     }
-    /// <p>The protocol for connections from clients to the load balancer. For Application Load
-    /// Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the
-    /// supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP
-    /// protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load
-    /// Balancer.</p>
+    /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
         self.protocol.as_ref()
     }
-    /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway
-    /// Load Balancer.</p>
+    /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are
-    /// supported.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn ssl_policy(&self) -> std::option::Option<&str> {
         self.ssl_policy.as_deref()
     }
-    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
-    /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-    /// <code>IsDefault</code>.</p>
+    /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
     pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
         self.certificates.as_deref()
     }
@@ -8752,37 +8034,15 @@ impl CreateListenerInput {
     pub fn default_actions(&self) -> std::option::Option<&[crate::model::Action]> {
         self.default_actions.as_deref()
     }
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You
-    /// can specify one policy name. The following are the possible values:</p>
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HTTP1Only</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HTTP2Only</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HTTP2Optional</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HTTP2Preferred</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>None</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>HTTP1Only</code> </p> </li>
+    /// <li> <p> <code>HTTP2Only</code> </p> </li>
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+    /// <li> <p> <code>None</code> </p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-    /// policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn alpn_policy(&self) -> std::option::Option<&[std::string::String]> {
         self.alpn_policy.as_deref()
     }
@@ -8840,9 +8100,7 @@ impl std::fmt::Debug for AddTagsInput {
 pub struct AddListenerCertificatesInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub listener_arn: std::option::Option<std::string::String>,
-    /// <p>The certificate to add. You can specify one certificate per call. Set
-    /// <code>CertificateArn</code> to the certificate ARN but do not set
-    /// <code>IsDefault</code>.</p>
+    /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
 }
 impl AddListenerCertificatesInput {
@@ -8850,9 +8108,7 @@ impl AddListenerCertificatesInput {
     pub fn listener_arn(&self) -> std::option::Option<&str> {
         self.listener_arn.as_deref()
     }
-    /// <p>The certificate to add. You can specify one certificate per call. Set
-    /// <code>CertificateArn</code> to the certificate ARN but do not set
-    /// <code>IsDefault</code>.</p>
+    /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
     pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
         self.certificates.as_deref()
     }

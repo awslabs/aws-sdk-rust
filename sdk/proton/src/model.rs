@@ -846,10 +846,10 @@ pub mod service_template_version {
         /// <p>An array of compatible environment template names for the major version of a service template.</p>
         pub fn compatible_environment_templates(
             mut self,
-            input: impl Into<crate::model::CompatibleEnvironmentTemplate>,
+            input: crate::model::CompatibleEnvironmentTemplate,
         ) -> Self {
             let mut v = self.compatible_environment_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_environment_templates = Some(v);
             self
         }
@@ -1256,8 +1256,7 @@ pub struct ServiceTemplateSummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>The recommended version of the service template.</p>
     pub recommended_version: std::option::Option<std::string::String>,
-    /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service
-    /// pipeline <i>isn't</i> included in the service template.</p>
+    /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
     pub pipeline_provisioning: std::option::Option<crate::model::Provisioning>,
 }
 impl ServiceTemplateSummary {
@@ -1289,8 +1288,7 @@ impl ServiceTemplateSummary {
     pub fn recommended_version(&self) -> std::option::Option<&str> {
         self.recommended_version.as_deref()
     }
-    /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service
-    /// pipeline <i>isn't</i> included in the service template.</p>
+    /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
     pub fn pipeline_provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
         self.pipeline_provisioning.as_ref()
     }
@@ -1404,14 +1402,12 @@ pub mod service_template_summary {
             self.recommended_version = input;
             self
         }
-        /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service
-        /// pipeline <i>isn't</i> included in the service template.</p>
+        /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
         pub fn pipeline_provisioning(mut self, input: crate::model::Provisioning) -> Self {
             self.pipeline_provisioning = Some(input);
             self
         }
-        /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service
-        /// pipeline <i>isn't</i> included in the service template.</p>
+        /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
         pub fn set_pipeline_provisioning(
             mut self,
             input: std::option::Option<crate::model::Provisioning>,
@@ -1512,8 +1508,7 @@ pub struct ServiceTemplate {
     pub recommended_version: std::option::Option<std::string::String>,
     /// <p>The customer provided service template encryption key that's used to encrypt data.</p>
     pub encryption_key: std::option::Option<std::string::String>,
-    /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service
-    /// pipeline <i>isn't</i> included in the service template.</p>
+    /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service pipeline <i>isn't</i> included in the service template.</p>
     pub pipeline_provisioning: std::option::Option<crate::model::Provisioning>,
 }
 impl ServiceTemplate {
@@ -1549,8 +1544,7 @@ impl ServiceTemplate {
     pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
-    /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service
-    /// pipeline <i>isn't</i> included in the service template.</p>
+    /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service pipeline <i>isn't</i> included in the service template.</p>
     pub fn pipeline_provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
         self.pipeline_provisioning.as_ref()
     }
@@ -1679,14 +1673,12 @@ pub mod service_template {
             self.encryption_key = input;
             self
         }
-        /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service
-        /// pipeline <i>isn't</i> included in the service template.</p>
+        /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service pipeline <i>isn't</i> included in the service template.</p>
         pub fn pipeline_provisioning(mut self, input: crate::model::Provisioning) -> Self {
             self.pipeline_provisioning = Some(input);
             self
         }
-        /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service
-        /// pipeline <i>isn't</i> included in the service template.</p>
+        /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service pipeline <i>isn't</i> included in the service template.</p>
         pub fn set_pipeline_provisioning(
             mut self,
             input: std::option::Option<crate::model::Provisioning>,
@@ -2061,9 +2053,7 @@ pub struct Service {
     pub spec: std::option::Option<std::string::String>,
     /// <p>The service pipeline detail data.</p>
     pub pipeline: std::option::Option<crate::model::ServicePipeline>,
-    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton
-    /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-    /// with Proton</a> in the <i>Proton User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>.</p>
     pub repository_connection_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the source code repository.</p>
     pub repository_id: std::option::Option<std::string::String>,
@@ -2111,9 +2101,7 @@ impl Service {
     pub fn pipeline(&self) -> std::option::Option<&crate::model::ServicePipeline> {
         self.pipeline.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton
-    /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-    /// with Proton</a> in the <i>Proton User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>.</p>
     pub fn repository_connection_arn(&self) -> std::option::Option<&str> {
         self.repository_connection_arn.as_deref()
     }
@@ -2284,16 +2272,12 @@ pub mod service {
             self.pipeline = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-        /// with Proton</a> in the <i>Proton User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>.</p>
         pub fn repository_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_connection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-        /// with Proton</a> in the <i>Proton User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_repository_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2768,12 +2752,8 @@ pub struct ProvisionedResource {
     pub name: std::option::Option<std::string::String>,
     /// <p>The provisioned resource identifier.</p>
     pub identifier: std::option::Option<std::string::String>,
-    /// <p>The resource provisioning engine.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The resource provisioning engine.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub provisioning_engine: std::option::Option<crate::model::ProvisionedResourceEngine>,
 }
@@ -2786,12 +2766,8 @@ impl ProvisionedResource {
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>The resource provisioning engine.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The resource provisioning engine.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub fn provisioning_engine(
         &self,
@@ -2840,12 +2816,8 @@ pub mod provisioned_resource {
             self.identifier = input;
             self
         }
-        /// <p>The resource provisioning engine.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The resource provisioning engine.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn provisioning_engine(
             mut self,
@@ -2854,12 +2826,8 @@ pub mod provisioned_resource {
             self.provisioning_engine = Some(input);
             self
         }
-        /// <p>The resource provisioning engine.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The resource provisioning engine.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_provisioning_engine(
             mut self,
@@ -5287,12 +5255,8 @@ pub struct Environment {
     pub spec: std::option::Option<std::string::String>,
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub provisioning: std::option::Option<crate::model::Provisioning>,
-    /// <p>The repository that you provide with pull request provisioning.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
 }
@@ -5361,12 +5325,8 @@ impl Environment {
     pub fn provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
         self.provisioning.as_ref()
     }
-    /// <p>The repository that you provide with pull request provisioning.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub fn provisioning_repository(&self) -> std::option::Option<&crate::model::RepositoryBranch> {
         self.provisioning_repository.as_ref()
@@ -5631,23 +5591,15 @@ pub mod environment {
             self.provisioning = input;
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn provisioning_repository(mut self, input: crate::model::RepositoryBranch) -> Self {
             self.provisioning_repository = Some(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_provisioning_repository(
             mut self,
@@ -5687,12 +5639,8 @@ impl Environment {
     }
 }
 
-/// <p>Detail data for a repository branch.</p>
-/// <important>
-/// <p>Provisioning by pull request is currently in feature preview and is
-/// only usable with Terraform based Proton Templates. To learn more about
-/// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-/// Previews.</p>
+/// <p>Detail data for a repository branch.</p> <important>
+/// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5807,12 +5755,8 @@ impl RepositoryBranch {
     }
 }
 
-/// <p>Detail input data for a repository branch.</p>
-/// <important>
-/// <p>Provisioning by pull request is currently in feature preview and is
-/// only usable with Terraform based Proton Templates. To learn more about
-/// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-/// Previews.</p>
+/// <p>Detail input data for a repository branch.</p> <important>
+/// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6484,12 +6428,8 @@ impl AsRef<str> for EnvironmentAccountConnectionRequesterAccountType {
 pub struct AccountSettings {
     /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
     pub pipeline_service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The repository that you provide with pull request provisioning.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub pipeline_provisioning_repository: std::option::Option<crate::model::RepositoryBranch>,
 }
@@ -6498,12 +6438,8 @@ impl AccountSettings {
     pub fn pipeline_service_role_arn(&self) -> std::option::Option<&str> {
         self.pipeline_service_role_arn.as_deref()
     }
-    /// <p>The repository that you provide with pull request provisioning.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub fn pipeline_provisioning_repository(
         &self,
@@ -6546,12 +6482,8 @@ pub mod account_settings {
             self.pipeline_service_role_arn = input;
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn pipeline_provisioning_repository(
             mut self,
@@ -6560,12 +6492,8 @@ pub mod account_settings {
             self.pipeline_provisioning_repository = Some(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_pipeline_provisioning_repository(
             mut self,
@@ -7083,9 +7011,9 @@ pub mod resource_sync_attempt {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>An array of events with detail data.</p>
-        pub fn events(mut self, input: impl Into<crate::model::ResourceSyncEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::ResourceSyncEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -7371,9 +7299,9 @@ pub mod repository_sync_attempt {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>Detail data for sync attempt events.</p>
-        pub fn events(mut self, input: impl Into<crate::model::RepositorySyncEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::RepositorySyncEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon CodeGuru Profiler
@@ -129,6 +129,7 @@ where
     ///
     /// See [`GetFindingsReportAccountSummary`](crate::client::fluent_builders::GetFindingsReportAccountSummary) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetFindingsReportAccountSummary::into_paginator).
     pub fn get_findings_report_account_summary(
         &self,
     ) -> fluent_builders::GetFindingsReportAccountSummary<C, M, R> {
@@ -168,6 +169,7 @@ where
     ///
     /// See [`ListFindingsReports`](crate::client::fluent_builders::ListFindingsReports) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindingsReports::into_paginator).
     pub fn list_findings_reports(&self) -> fluent_builders::ListFindingsReports<C, M, R> {
         fluent_builders::ListFindingsReports::new(self.handle.clone())
     }
@@ -175,6 +177,7 @@ where
     ///
     /// See [`ListProfileTimes`](crate::client::fluent_builders::ListProfileTimes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProfileTimes::into_paginator).
     pub fn list_profile_times(&self) -> fluent_builders::ListProfileTimes<C, M, R> {
         fluent_builders::ListProfileTimes::new(self.handle.clone())
     }
@@ -182,6 +185,7 @@ where
     ///
     /// See [`ListProfilingGroups`](crate::client::fluent_builders::ListProfilingGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProfilingGroups::into_paginator).
     pub fn list_profiling_groups(&self) -> fluent_builders::ListProfilingGroups<C, M, R> {
         fluent_builders::ListProfilingGroups::new(self.handle.clone())
     }
@@ -262,7 +266,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddNotificationChannels`.
     ///
     /// <p>Add up to 2 anomaly notifications channels for a profiling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddNotificationChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -307,10 +311,10 @@ pub mod fluent_builders {
                 crate::input::AddNotificationChannelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -319,8 +323,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group that we are setting up notifications for.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group that we are setting up notifications for.</p>
@@ -336,8 +340,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// <p>One or 2 channels to report to when anomalies are detected.</p>
-        pub fn channels(mut self, inp: impl Into<crate::model::Channel>) -> Self {
-            self.inner = self.inner.channels(inp);
+        pub fn channels(mut self, input: crate::model::Channel) -> Self {
+            self.inner = self.inner.channels(input);
             self
         }
         /// <p>One or 2 channels to report to when anomalies are detected.</p>
@@ -351,10 +355,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetFrameMetricData`.
     ///
-    /// <p>
-    /// Returns the time series of values for a requested list
-    /// of frame metrics from a time period.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns the time series of values for a requested list of frame metrics from a time period.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetFrameMetricData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -399,10 +401,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetFrameMetricDataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -410,18 +412,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the profiling group associated with the
-        /// the frame metrics used to return the time series values.
-        /// </p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
-        /// <p>
-        /// The name of the profiling group associated with the
-        /// the frame metrics used to return the time series values.
-        /// </p>
+        /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -429,22 +425,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profiling_group_name(input);
             self
         }
-        /// <p>
-        /// The start time of the time period for the frame metrics used to return the time series values.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>
-        /// The start time of the time period for the frame metrics used to return the time series values.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -452,22 +438,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>
-        /// The end time of the time period for the returned time series values.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>
-        /// The end time of the time period for the returned time series values.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -475,71 +451,31 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>
-        /// The duration of the frame metrics used to return the time series values.
-        /// Specify using the ISO 8601 format. The maximum period duration
-        /// is one day (<code>PT24H</code> or <code>P1D</code>).
-        /// </p>
-        pub fn period(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.period(inp);
+        /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
+        pub fn period(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.period(input.into());
             self
         }
-        /// <p>
-        /// The duration of the frame metrics used to return the time series values.
-        /// Specify using the ISO 8601 format. The maximum period duration
-        /// is one day (<code>PT24H</code> or <code>P1D</code>).
-        /// </p>
+        /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
         pub fn set_period(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_period(input);
             self
         }
-        /// <p>The requested resolution of time steps for the returned time series of values.
-        /// If the requested target resolution is not available due to data not being retained we provide a best effort
-        /// result by falling back to the most granular available resolution after the target resolution.
-        /// There are 3 valid values.
-        /// </p>
+        /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>P1D</code> — 1 day
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT1H</code> — 1 hour
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT5M</code> — 5 minutes
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
         /// </ul>
-        pub fn target_resolution(mut self, inp: crate::model::AggregationPeriod) -> Self {
-            self.inner = self.inner.target_resolution(inp);
+        pub fn target_resolution(mut self, input: crate::model::AggregationPeriod) -> Self {
+            self.inner = self.inner.target_resolution(input);
             self
         }
-        /// <p>The requested resolution of time steps for the returned time series of values.
-        /// If the requested target resolution is not available due to data not being retained we provide a best effort
-        /// result by falling back to the most granular available resolution after the target resolution.
-        /// There are 3 valid values.
-        /// </p>
+        /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>P1D</code> — 1 day
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT1H</code> — 1 hour
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT5M</code> — 5 minutes
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
         /// </ul>
         pub fn set_target_resolution(
             mut self,
@@ -552,18 +488,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_frame_metrics`](Self::set_frame_metrics).
         ///
-        /// <p>
-        /// The details of the metrics that are used to request a time series of values. The metric includes
-        /// the name of the frame, the aggregation type to calculate the metric value for the
-        /// frame, and the thread states to use to get the count for the metric value of the frame.</p>
-        pub fn frame_metrics(mut self, inp: impl Into<crate::model::FrameMetric>) -> Self {
-            self.inner = self.inner.frame_metrics(inp);
+        /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
+        pub fn frame_metrics(mut self, input: crate::model::FrameMetric) -> Self {
+            self.inner = self.inner.frame_metrics(input);
             self
         }
-        /// <p>
-        /// The details of the metrics that are used to request a time series of values. The metric includes
-        /// the name of the frame, the aggregation type to calculate the metric value for the
-        /// frame, and the thread states to use to get the count for the metric value of the frame.</p>
+        /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
         pub fn set_frame_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FrameMetric>>,
@@ -574,12 +504,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ConfigureAgent`.
     ///
-    /// <p>
-    /// Used by profiler agents to report their current state and to receive remote
-    /// configuration updates. For example, <code>ConfigureAgent</code> can be used
-    /// to tell an agent whether to profile or not and for how long to return profiling data.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Used by profiler agents to report their current state and to receive remote configuration updates. For example, <code>ConfigureAgent</code> can be used to tell an agent whether to profile or not and for how long to return profiling data. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfigureAgent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -624,10 +550,10 @@ pub mod fluent_builders {
                 crate::input::ConfigureAgentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -635,16 +561,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the profiling group for which the configured agent is collecting profiling data.
-        /// </p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
-        /// <p>
-        /// The name of the profiling group for which the configured agent is collecting profiling data.
-        /// </p>
+        /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -652,16 +574,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profiling_group_name(input);
             self
         }
-        /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the
-        /// profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS
-        /// Fargate container, it is the container's task ID. </p>
-        pub fn fleet_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_instance_id(inp);
+        /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
+        pub fn fleet_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_instance_id(input.into());
             self
         }
-        /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the
-        /// profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS
-        /// Fargate container, it is the container's task ID. </p>
+        /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
         pub fn set_fleet_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -673,111 +591,37 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p> Metadata captured about the compute platform the agent is running on. It includes
-        /// information about sampling and reporting. The valid fields are:</p>
+        /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AGENT_ID</code> - The ID for an agent instance.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li>
+        /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li>
+        /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li>
+        /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li>
+        /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li>
+        /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li>
+        /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li>
+        /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
+        /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
         /// </ul>
         pub fn metadata(
             mut self,
-            k: impl Into<crate::model::MetadataField>,
+            k: crate::model::MetadataField,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.metadata(k, v);
+            self.inner = self.inner.metadata(k, v.into());
             self
         }
-        /// <p> Metadata captured about the compute platform the agent is running on. It includes
-        /// information about sampling and reporting. The valid fields are:</p>
+        /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AGENT_ID</code> - The ID for an agent instance.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li>
+        /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li>
+        /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li>
+        /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li>
+        /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li>
+        /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li>
+        /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li>
+        /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
+        /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
         /// </ul>
         pub fn set_metadata(
             mut self,
@@ -792,7 +636,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProfilingGroup`.
     ///
     /// <p>Creates a profiling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProfilingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -837,10 +681,10 @@ pub mod fluent_builders {
                 crate::input::CreateProfilingGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -849,8 +693,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group to create.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group to create.</p>
@@ -861,22 +705,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profiling_group_name(input);
             self
         }
-        /// <p>
-        /// The compute platform of the profiling group. Use <code>AWSLambda</code> if your application
-        /// runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that
-        /// is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform.
-        /// If not specified, <code>Default</code> is used.         
-        /// </p>
-        pub fn compute_platform(mut self, inp: crate::model::ComputePlatform) -> Self {
-            self.inner = self.inner.compute_platform(inp);
+        /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
+        pub fn compute_platform(mut self, input: crate::model::ComputePlatform) -> Self {
+            self.inner = self.inner.compute_platform(input);
             self
         }
-        /// <p>
-        /// The compute platform of the profiling group. Use <code>AWSLambda</code> if your application
-        /// runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that
-        /// is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform.
-        /// If not specified, <code>Default</code> is used.         
-        /// </p>
+        /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
         pub fn set_compute_platform(
             mut self,
             input: std::option::Option<crate::model::ComputePlatform>,
@@ -884,31 +718,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compute_platform(input);
             self
         }
-        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
-        /// accidental creation of duplicate profiling groups if there are failures and retries. </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
-        /// accidental creation of duplicate profiling groups if there are failures and retries. </p>
+        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>
-        /// Specifies whether profiling is enabled or disabled for the created profiling group.
-        /// </p>
+        /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
         pub fn agent_orchestration_config(
             mut self,
-            inp: crate::model::AgentOrchestrationConfig,
+            input: crate::model::AgentOrchestrationConfig,
         ) -> Self {
-            self.inner = self.inner.agent_orchestration_config(inp);
+            self.inner = self.inner.agent_orchestration_config(input);
             self
         }
-        /// <p>
-        /// Specifies whether profiling is enabled or disabled for the created profiling group.
-        /// </p>
+        /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
         pub fn set_agent_orchestration_config(
             mut self,
             input: std::option::Option<crate::model::AgentOrchestrationConfig>,
@@ -920,20 +748,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// A list of tags to add to the created profiling group.
-        /// </p>
+        /// <p> A list of tags to add to the created profiling group. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>
-        /// A list of tags to add to the created profiling group.
-        /// </p>
+        /// <p> A list of tags to add to the created profiling group. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -947,7 +771,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProfilingGroup`.
     ///
     /// <p>Deletes a profiling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProfilingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -992,10 +816,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProfilingGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1004,8 +828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group to delete.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group to delete.</p>
@@ -1019,13 +843,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeProfilingGroup`.
     ///
-    /// <p>
-    /// Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-    /// <code>ProfilingGroupDescription</code>
-    /// </a>
-    /// object that contains information about the requested profiling group.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProfilingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1070,10 +889,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProfilingGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1081,16 +900,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the profiling group to get information about.
-        /// </p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        /// <p> The name of the profiling group to get information about. </p>
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
-        /// <p>
-        /// The name of the profiling group to get information about.
-        /// </p>
+        /// <p> The name of the profiling group to get information about. </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1101,14 +916,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetFindingsReportAccountSummary`.
     ///
-    /// <p>
-    /// Returns a list of
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html">
-    /// <code>FindingsReportSummary</code>
-    /// </a>
-    /// objects that contain analysis results for all profiling groups in your AWS account.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects that contain analysis results for all profiling groups in your AWS account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingsReportAccountSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1153,10 +962,10 @@ pub mod fluent_builders {
                 crate::input::GetFindingsReportAccountSummaryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1164,58 +973,44 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-        /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetFindingsReportAccountSummaryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetFindingsReportAccountSummaryPaginator<C, M, R> {
+            crate::paginator::GetFindingsReportAccountSummaryPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-        /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output.
-        /// When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial
-        /// request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned
-        /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output.
-        /// When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial
-        /// request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned
-        /// <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
-        /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
-        /// analysis data is returned from smaller time windows (for example, one hour).</p>
-        pub fn daily_reports_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.daily_reports_only(inp);
+        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
+        pub fn daily_reports_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.daily_reports_only(input);
             self
         }
-        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
-        /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
-        /// analysis data is returned from smaller time windows (for example, one hour).</p>
+        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
         pub fn set_daily_reports_only(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_daily_reports_only(input);
             self
@@ -1224,7 +1019,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNotificationConfiguration`.
     ///
     /// <p>Get the current configuration for anomaly notifications for a profiling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNotificationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1269,10 +1064,10 @@ pub mod fluent_builders {
                 crate::input::GetNotificationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1281,8 +1076,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group we want to get the notification configuration for.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group we want to get the notification configuration for.</p>
@@ -1296,10 +1091,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPolicy`.
     ///
-    /// <p>
-    /// Returns the JSON-formatted resource-based policy on a profiling group.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns the JSON-formatted resource-based policy on a profiling group. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1344,10 +1137,10 @@ pub mod fluent_builders {
                 crate::input::GetPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1356,8 +1149,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group.</p>
@@ -1371,79 +1164,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetProfile`.
     ///
-    /// <p>
-    /// Gets the aggregated profile of a profiling group for a specified time range.
-    /// Amazon CodeGuru Profiler collects posted agent profiles for a profiling group
-    /// into aggregated profiles.  
-    /// </p>
-    ///
-    /// <note>
-    /// <p>
-    /// Because aggregated profiles expire over time <code>GetProfile</code> is not idempotent.
-    /// </p>
+    /// <p> Gets the aggregated profile of a profiling group for a specified time range. Amazon CodeGuru Profiler collects posted agent profiles for a profiling group into aggregated profiles. </p> <note>
+    /// <p> Because aggregated profiles expire over time <code>GetProfile</code> is not idempotent. </p>
     /// </note>
-    ///
-    /// <p>
-    /// Specify the time range for the requested aggregated profile using 1 or 2 of the following parameters: <code>startTime</code>,
-    /// <code>endTime</code>, <code>period</code>. The maximum time range allowed is 7 days. If you specify all 3 parameters,
-    /// an exception is thrown. If you specify only <code>period</code>, the latest aggregated profile is returned.
-    /// </p>
-    ///
-    /// <p>
-    /// Aggregated profiles are available with aggregation periods of 5 minutes, 1 hour, and 1 day, aligned to
-    /// UTC. The aggregation period of an aggregated profile determines how long it is retained. For more
-    /// information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html">
-    /// <code>AggregatedProfileTime</code>
-    /// </a>. The aggregated profile's aggregation period determines how long  
-    /// it is retained by CodeGuru Profiler.
-    /// </p>
-    ///
+    /// <p> Specify the time range for the requested aggregated profile using 1 or 2 of the following parameters: <code>startTime</code>, <code>endTime</code>, <code>period</code>. The maximum time range allowed is 7 days. If you specify all 3 parameters, an exception is thrown. If you specify only <code>period</code>, the latest aggregated profile is returned. </p>
+    /// <p> Aggregated profiles are available with aggregation periods of 5 minutes, 1 hour, and 1 day, aligned to UTC. The aggregation period of an aggregated profile determines how long it is retained. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html"> <code>AggregatedProfileTime</code> </a>. The aggregated profile's aggregation period determines how long it is retained by CodeGuru Profiler. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// If the aggregation period is 5 minutes, the aggregated profile is retained for 15 days.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// If the aggregation period is 1 hour, the aggregated profile is retained for 60 days.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// If the aggregation period is 1 day, the aggregated profile is retained for 3 years.
-    /// </p>
-    /// </li>
+    /// <li> <p> If the aggregation period is 5 minutes, the aggregated profile is retained for 15 days. </p> </li>
+    /// <li> <p> If the aggregation period is 1 hour, the aggregated profile is retained for 60 days. </p> </li>
+    /// <li> <p> If the aggregation period is 1 day, the aggregated profile is retained for 3 years. </p> </li>
     /// </ul>
-    ///
     /// <p>There are two use cases for calling <code>GetProfile</code>.</p>
     /// <ol>
-    /// <li>
-    /// <p>
-    /// If you want to return an aggregated profile that already exists, use
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfileTimes.html">
-    /// <code>ListProfileTimes</code>
-    /// </a> to
-    /// view the time ranges of existing aggregated profiles. Use them in a <code>GetProfile</code> request to return a specific,
-    /// existing aggregated profile.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// If you want to return an aggregated profile for a time range that doesn't align with an existing aggregated profile,
-    /// then CodeGuru Profiler makes a best effort to combine existing aggregated profiles from the requested time
-    /// range and return them as one aggregated profile.
-    /// </p>
-    ///
-    /// <p> If aggregated profiles do not exist for the full time range requested, then
-    /// aggregated profiles for a smaller time range are returned. For example, if the
-    /// requested time range is from 00:00 to 00:20, and the existing aggregated profiles are
-    /// from 00:15 and 00:25, then the aggregated profiles from 00:15 to 00:20 are returned. </p>
-    ///
-    ///
-    /// </li>
+    /// <li> <p> If you want to return an aggregated profile that already exists, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfileTimes.html"> <code>ListProfileTimes</code> </a> to view the time ranges of existing aggregated profiles. Use them in a <code>GetProfile</code> request to return a specific, existing aggregated profile. </p> </li>
+    /// <li> <p> If you want to return an aggregated profile for a time range that doesn't align with an existing aggregated profile, then CodeGuru Profiler makes a best effort to combine existing aggregated profiles from the requested time range and return them as one aggregated profile. </p> <p> If aggregated profiles do not exist for the full time range requested, then aggregated profiles for a smaller time range are returned. For example, if the requested time range is from 00:00 to 00:20, and the existing aggregated profiles are from 00:15 and 00:25, then the aggregated profiles from 00:15 to 00:20 are returned. </p> </li>
     /// </ol>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1488,10 +1224,10 @@ pub mod fluent_builders {
                 crate::input::GetProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1500,8 +1236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group to get.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group to get.</p>
@@ -1512,26 +1248,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profiling_group_name(input);
             self
         }
-        /// <p>The start time of the profile to get. Specify using
-        /// the ISO 8601 format. For example,
-        /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-        ///
-        /// <p>
-        /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
-        /// or <code>endTime</code>, but not both.
-        /// </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+        /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The start time of the profile to get. Specify using
-        /// the ISO 8601 format. For example,
-        /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-        ///
-        /// <p>
-        /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
-        /// or <code>endTime</code>, but not both.
-        /// </p>
+        /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+        /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1539,54 +1263,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>
-        /// Used with <code>startTime</code> or <code>endTime</code> to specify
-        /// the time range for the returned aggregated profile. Specify using
-        /// the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
-        /// </p>
-        ///
-        /// <p>
-        /// To get the latest aggregated profile, specify only <code>period</code>.
-        /// </p>
-        pub fn period(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.period(inp);
+        /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+        /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
+        pub fn period(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.period(input.into());
             self
         }
-        /// <p>
-        /// Used with <code>startTime</code> or <code>endTime</code> to specify
-        /// the time range for the returned aggregated profile. Specify using
-        /// the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
-        /// </p>
-        ///
-        /// <p>
-        /// To get the latest aggregated profile, specify only <code>period</code>.
-        /// </p>
+        /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+        /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
         pub fn set_period(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_period(input);
             self
         }
-        /// <p>
-        /// The end time of the requested profile. Specify using
-        /// the ISO 8601 format. For example,
-        /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
-        /// <p>
-        /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
-        /// or <code>startTime</code>, but not both.
-        /// </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+        /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>
-        /// The end time of the requested profile. Specify using
-        /// the ISO 8601 format. For example,
-        /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
-        /// <p>
-        /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
-        /// or <code>startTime</code>, but not both.
-        /// </p>
+        /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+        /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1594,73 +1290,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>
-        /// The maximum depth of the stacks in the code that is represented in
-        /// the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>,
-        /// which calls method <code>B</code>, which calls method <code>C</code>, which
-        /// calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is
-        /// set to 2, then the aggregated profile contains representations of methods <code>A</code>
-        /// and <code>B</code>.
-        /// </p>
-        pub fn max_depth(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_depth(inp);
+        /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
+        pub fn max_depth(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_depth(input);
             self
         }
-        /// <p>
-        /// The maximum depth of the stacks in the code that is represented in
-        /// the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>,
-        /// which calls method <code>B</code>, which calls method <code>C</code>, which
-        /// calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is
-        /// set to 2, then the aggregated profile contains representations of methods <code>A</code>
-        /// and <code>B</code>.
-        /// </p>
+        /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
         pub fn set_max_depth(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_depth(input);
             self
         }
-        /// <p>
-        /// The format of the returned profiling data. The format maps to the
-        /// <code>Accept</code> and <code>Content-Type</code> headers of the
-        /// HTTP request. You can specify one of the following:
-        /// or the default .
-        /// </p>
-        ///
+        /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>application/json</code> — standard JSON format
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
-        /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
         /// </ul>
-        pub fn accept(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept(inp);
+        pub fn accept(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept(input.into());
             self
         }
-        /// <p>
-        /// The format of the returned profiling data. The format maps to the
-        /// <code>Accept</code> and <code>Content-Type</code> headers of the
-        /// HTTP request. You can specify one of the following:
-        /// or the default .
-        /// </p>
-        ///
+        /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>application/json</code> — standard JSON format
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
-        /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
         /// </ul>
         pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_accept(input);
@@ -1669,19 +1321,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRecommendations`.
     ///
-    /// <p>
-    /// Returns a list of
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Recommendation.html">
-    /// <code>Recommendation</code>
-    /// </a>
-    /// objects that contain recommendations for a profiling group for a given time period. A list of
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html">
-    /// <code>Anomaly</code>
-    /// </a>
-    /// objects that contains details about anomalies detected in the profiling group for the same time period is also
-    /// returned.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Recommendation.html"> <code>Recommendation</code> </a> objects that contain recommendations for a profiling group for a given time period. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html"> <code>Anomaly</code> </a> objects that contains details about anomalies detected in the profiling group for the same time period is also returned. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1726,10 +1367,10 @@ pub mod fluent_builders {
                 crate::input::GetRecommendationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1737,16 +1378,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the profiling group to get analysis data about.
-        /// </p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        /// <p> The name of the profiling group to get analysis data about. </p>
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
-        /// <p>
-        /// The name of the profiling group to get analysis data about.
-        /// </p>
+        /// <p> The name of the profiling group to get analysis data about. </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1754,22 +1391,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profiling_group_name(input);
             self
         }
-        /// <p>
-        /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>
-        /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1777,22 +1404,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>
-        /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>
-        /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1800,131 +1417,37 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>
-        /// The language used to provide analysis. Specify using a string that is one
-        /// of the following <code>BCP 47</code> language codes.
-        /// </p>
+        /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>de-DE</code> - German, Germany
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>en-GB</code> - English, United Kingdom
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>en-US</code> - English, United States
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>es-ES</code> - Spanish, Spain
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>fr-FR</code> - French, France
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>it-IT</code> - Italian, Italy
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ja-JP</code> - Japanese, Japan
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ko-KR</code> - Korean, Republic of Korea
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pt-BR</code> - Portugese, Brazil
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh-CN</code> - Chinese, China
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh-TW</code> - Chinese, Taiwan
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
+        /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
+        /// <li> <p> <code>en-US</code> - English, United States </p> </li>
+        /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
+        /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
+        /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
+        /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
+        /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
+        /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
+        /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
+        /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
         /// </ul>
-        pub fn locale(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(input.into());
             self
         }
-        /// <p>
-        /// The language used to provide analysis. Specify using a string that is one
-        /// of the following <code>BCP 47</code> language codes.
-        /// </p>
+        /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>de-DE</code> - German, Germany
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>en-GB</code> - English, United Kingdom
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>en-US</code> - English, United States
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>es-ES</code> - Spanish, Spain
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>fr-FR</code> - French, France
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>it-IT</code> - Italian, Italy
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ja-JP</code> - Japanese, Japan
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ko-KR</code> - Korean, Republic of Korea
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pt-BR</code> - Portugese, Brazil
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh-CN</code> - Chinese, China
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh-TW</code> - Chinese, Taiwan
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
+        /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
+        /// <li> <p> <code>en-US</code> - English, United States </p> </li>
+        /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
+        /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
+        /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
+        /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
+        /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
+        /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
+        /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
+        /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
         /// </ul>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_locale(input);
@@ -1934,7 +1457,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindingsReports`.
     ///
     /// <p>List the available reports for a given profiling group and time range.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindingsReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1979,10 +1502,10 @@ pub mod fluent_builders {
                 crate::input::ListFindingsReportsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1990,9 +1513,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFindingsReportsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFindingsReportsPaginator<C, M, R> {
+            crate::paginator::ListFindingsReportsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the profiling group from which to search for analysis data.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group from which to search for analysis data.</p>
@@ -2003,22 +1532,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profiling_group_name(input);
             self
         }
-        /// <p>
-        /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>
-        /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2026,22 +1545,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>
-        /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>
-        /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2049,60 +1558,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-        /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-        /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of report results returned by <code>ListFindingsReports</code>
-        /// in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListFindingsReports</code> request with the returned
-        /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of report results returned by <code>ListFindingsReports</code> in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFindingsReports</code> request with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of report results returned by <code>ListFindingsReports</code>
-        /// in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListFindingsReports</code> request with the returned
-        /// <code>nextToken</code> value.</p>
+        /// <p>The maximum number of report results returned by <code>ListFindingsReports</code> in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFindingsReports</code> request with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
-        /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
-        /// analysis data is returned from smaller time windows (for example, one hour).</p>
-        pub fn daily_reports_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.daily_reports_only(inp);
+        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
+        pub fn daily_reports_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.daily_reports_only(input);
             self
         }
-        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
-        /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
-        /// analysis data is returned from smaller time windows (for example, one hour).</p>
+        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
         pub fn set_daily_reports_only(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_daily_reports_only(input);
             self
@@ -2110,9 +1595,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListProfileTimes`.
     ///
-    /// <p>Lists the start times of the available aggregated profiles of a profiling group
-    /// for an aggregation period within the specified time range.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the start times of the available aggregated profiles of a profiling group for an aggregation period within the specified time range.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProfileTimes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2157,10 +1641,10 @@ pub mod fluent_builders {
                 crate::input::ListProfileTimesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2168,9 +1652,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProfileTimesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProfileTimesPaginator<C, M, R> {
+            crate::paginator::ListProfileTimesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the profiling group.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group.</p>
@@ -2182,8 +1672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start time of the time range from which to list the profiles.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start time of the time range from which to list the profiles.</p>
@@ -2195,8 +1685,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end time of the time range from which to list the profiles.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end time of the time range from which to list the profiles.</p>
@@ -2207,51 +1697,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>
-        /// The aggregation period. This specifies the period during which an aggregation profile
-        /// collects posted agent profiles for a profiling group. There are 3 valid values.
-        /// </p>
+        /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>P1D</code> — 1 day
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT1H</code> — 1 hour
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT5M</code> — 5 minutes
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
         /// </ul>
-        pub fn period(mut self, inp: crate::model::AggregationPeriod) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, input: crate::model::AggregationPeriod) -> Self {
+            self.inner = self.inner.period(input);
             self
         }
-        /// <p>
-        /// The aggregation period. This specifies the period during which an aggregation profile
-        /// collects posted agent profiles for a profiling group. There are 3 valid values.
-        /// </p>
+        /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>P1D</code> — 1 day
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT1H</code> — 1 hour
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT5M</code> — 5 minutes
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
         /// </ul>
         pub fn set_period(
             mut self,
@@ -2260,63 +1720,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_period(input);
             self
         }
-        /// <p>The order (ascending or descending by start time of the profile) to
-        /// use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>.
-        /// </p>
-        pub fn order_by(mut self, inp: crate::model::OrderBy) -> Self {
-            self.inner = self.inner.order_by(inp);
+        /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
+        pub fn order_by(mut self, input: crate::model::OrderBy) -> Self {
+            self.inner = self.inner.order_by(input);
             self
         }
-        /// <p>The order (ascending or descending by start time of the profile) to
-        /// use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>.
-        /// </p>
+        /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
             self.inner = self.inner.set_order_by(input);
             self
         }
-        /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code>
-        /// in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns
-        /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListProfileTimes</code> request with the returned
-        /// <code>nextToken</code> value.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code>
-        /// in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns
-        /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListProfileTimes</code> request with the returned
-        /// <code>nextToken</code> value.
-        /// </p>
+        /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-        /// that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-        /// that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
@@ -2325,14 +1757,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListProfilingGroups`.
     ///
-    /// <p>
-    /// Returns a list of profiling groups. The profiling groups are returned as
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-    /// <code>ProfilingGroupDescription</code>
-    /// </a>
-    /// objects.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of profiling groups. The profiling groups are returned as <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProfilingGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2377,10 +1803,10 @@ pub mod fluent_builders {
                 crate::input::ListProfilingGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2388,72 +1814,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-        /// that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProfilingGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProfilingGroupsPaginator<C, M, R> {
+            crate::paginator::ListProfilingGroupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-        /// that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code>
-        /// in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListProfilingGroups</code> request with the returned
-        /// <code>nextToken</code> value.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code>
-        /// in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListProfilingGroups</code> request with the returned
-        /// <code>nextToken</code> value.
-        /// </p>
+        /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>,
-        /// then a list of
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-        /// <code>ProfilingGroupDescription</code>
-        /// </a> objects
-        /// that contain detailed information about profiling groups is returned. If <code>false</code>, then
-        /// a list of profiling group names is returned.</p>
-        pub fn include_description(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_description(inp);
+        /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is returned. If <code>false</code>, then a list of profiling group names is returned.</p>
+        pub fn include_description(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_description(input);
             self
         }
-        /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>,
-        /// then a list of
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-        /// <code>ProfilingGroupDescription</code>
-        /// </a> objects
-        /// that contain detailed information about profiling groups is returned. If <code>false</code>, then
-        /// a list of profiling group names is returned.</p>
+        /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is returned. If <code>false</code>, then a list of profiling group names is returned.</p>
         pub fn set_include_description(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_description(input);
             self
@@ -2461,10 +1857,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>
-    /// Returns a list of the tags that are assigned to a specified resource.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of the tags that are assigned to a specified resource. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2509,10 +1903,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2520,16 +1914,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the resource that contains the tags to return.
-        /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to return. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the resource that contains the tags to return.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to return. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2537,14 +1927,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PostAgentProfile`.
     ///
-    /// <p>
-    /// Submits profiling data to an aggregated profile of a profiling group. To get an  
-    /// aggregated profile that is created with this profiling data, use
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html">
-    /// <code>GetProfile</code>
-    /// </a>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Submits profiling data to an aggregated profile of a profiling group. To get an aggregated profile that is created with this profiling data, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html"> <code>GetProfile</code> </a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PostAgentProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2589,10 +1973,10 @@ pub mod fluent_builders {
                 crate::input::PostAgentProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2600,18 +1984,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the profiling group with the aggregated profile that receives the
-        /// submitted profiling data.
-        /// </p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
-        /// <p>
-        /// The name of the profiling group with the aggregated profile that receives the
-        /// submitted profiling data.
-        /// </p>
+        /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2619,16 +1997,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profiling_group_name(input);
             self
         }
-        /// <p>
-        /// The submitted profiling data.
-        /// </p>
-        pub fn agent_profile(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.agent_profile(inp);
+        /// <p> The submitted profiling data. </p>
+        pub fn agent_profile(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.agent_profile(input);
             self
         }
-        /// <p>
-        /// The submitted profiling data.
-        /// </p>
+        /// <p> The submitted profiling data. </p>
         pub fn set_agent_profile(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -2636,14 +2010,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_agent_profile(input);
             self
         }
-        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
-        /// accidental submission of duplicate profiling data if there are failures and retries. </p>
-        pub fn profile_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_token(inp);
+        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
+        pub fn profile_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_token(input.into());
             self
         }
-        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
-        /// accidental submission of duplicate profiling data if there are failures and retries. </p>
+        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
         pub fn set_profile_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2651,49 +2023,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profile_token(input);
             self
         }
-        /// <p>
-        /// The format of the submitted profiling data. The format maps to the
-        /// <code>Accept</code> and <code>Content-Type</code> headers of the
-        /// HTTP request. You can specify one of the following:
-        /// or the default .
-        /// </p>
-        ///
+        /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>application/json</code> — standard JSON format
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
-        /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
         /// </ul>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
-        /// <p>
-        /// The format of the submitted profiling data. The format maps to the
-        /// <code>Accept</code> and <code>Content-Type</code> headers of the
-        /// HTTP request. You can specify one of the following:
-        /// or the default .
-        /// </p>
-        ///
+        /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>application/json</code> — standard JSON format
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
-        /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
         /// </ul>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content_type(input);
@@ -2702,33 +2044,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutPermission`.
     ///
-    /// <p>
-    /// Adds permissions to a profiling group's resource-based policy
-    /// that are provided using an action group. If a profiling group doesn't have
-    /// a resource-based policy, one is created for it using the permissions in the action group and
-    /// the roles and users in the <code>principals</code> parameter.
-    /// </p>
-    ///
-    /// <p> The one supported action group that can be added is <code>agentPermission</code>
-    /// which grants <code>ConfigureAgent</code> and <code>PostAgent</code> permissions. For
-    /// more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html">Resource-based
-    /// policies in CodeGuru Profiler</a> in the <i>Amazon CodeGuru Profiler User
-    /// Guide</i>, <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html">
-    /// <code>ConfigureAgent</code>
-    /// </a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html">
-    /// <code>PostAgentProfile</code>
-    /// </a>. </p>
-    ///
-    /// <p>
-    /// The first time you call <code>PutPermission</code> on a profiling group, do not specify a <code>revisionId</code> because
-    /// it doesn't have a resource-based policy. Subsequent calls must provide a <code>revisionId</code> to specify
-    /// which revision of the resource-based policy to add the permissions to.
-    /// </p>
-    ///
-    /// <p>
-    /// The response contains the profiling group's JSON-formatted resource policy.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Adds permissions to a profiling group's resource-based policy that are provided using an action group. If a profiling group doesn't have a resource-based policy, one is created for it using the permissions in the action group and the roles and users in the <code>principals</code> parameter. </p>
+    /// <p> The one supported action group that can be added is <code>agentPermission</code> which grants <code>ConfigureAgent</code> and <code>PostAgent</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html">Resource-based policies in CodeGuru Profiler</a> in the <i>Amazon CodeGuru Profiler User Guide</i>, <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html"> <code>PostAgentProfile</code> </a>. </p>
+    /// <p> The first time you call <code>PutPermission</code> on a profiling group, do not specify a <code>revisionId</code> because it doesn't have a resource-based policy. Subsequent calls must provide a <code>revisionId</code> to specify which revision of the resource-based policy to add the permissions to. </p>
+    /// <p> The response contains the profiling group's JSON-formatted resource policy. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2773,10 +2093,10 @@ pub mod fluent_builders {
                 crate::input::PutPermissionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2785,8 +2105,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group to grant access to.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group to grant access to.</p>
@@ -2797,22 +2117,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profiling_group_name(input);
             self
         }
-        /// <p>
-        /// Specifies an action group that contains permissions to add to
-        /// a profiling group resource. One action group is supported, <code>agentPermissions</code>, which
-        /// grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code>
-        /// and <code>PostAgentProfile</code> permissions.
-        /// </p>
-        pub fn action_group(mut self, inp: crate::model::ActionGroup) -> Self {
-            self.inner = self.inner.action_group(inp);
+        /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
+        pub fn action_group(mut self, input: crate::model::ActionGroup) -> Self {
+            self.inner = self.inner.action_group(input);
             self
         }
-        /// <p>
-        /// Specifies an action group that contains permissions to add to
-        /// a profiling group resource. One action group is supported, <code>agentPermissions</code>, which
-        /// grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code>
-        /// and <code>PostAgentProfile</code> permissions.
-        /// </p>
+        /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
         pub fn set_action_group(
             mut self,
             input: std::option::Option<crate::model::ActionGroup>,
@@ -2824,18 +2134,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>
-        /// A list ARNs for the roles and users you want to grant access to the profiling group.
-        /// Wildcards are not are supported in the ARNs.
-        /// </p>
-        pub fn principals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principals(inp);
+        /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
+        pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principals(input.into());
             self
         }
-        /// <p>
-        /// A list ARNs for the roles and users you want to grant access to the profiling group.
-        /// Wildcards are not are supported in the ARNs.
-        /// </p>
+        /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2843,22 +2147,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principals(input);
             self
         }
-        /// <p>
-        /// A universally unique identifier (UUID) for the revision of the policy you
-        /// are adding to the profiling group. Do not specify
-        /// this when you add permissions to a profiling group for the first time. If a policy already exists on the
-        /// profiling group, you must specify the <code>revisionId</code>.
-        /// </p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
-        /// <p>
-        /// A universally unique identifier (UUID) for the revision of the policy you
-        /// are adding to the profiling group. Do not specify
-        /// this when you add permissions to a profiling group for the first time. If a policy already exists on the
-        /// profiling group, you must specify the <code>revisionId</code>.
-        /// </p>
+        /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_revision_id(input);
             self
@@ -2867,7 +2161,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveNotificationChannel`.
     ///
     /// <p>Remove one anomaly notifications channel for a profiling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2912,10 +2206,10 @@ pub mod fluent_builders {
                 crate::input::RemoveNotificationChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2924,8 +2218,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group we want to change notification configuration for.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group we want to change notification configuration for.</p>
@@ -2937,8 +2231,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The id of the channel that we want to stop receiving notifications.</p>
-        pub fn channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(inp);
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input.into());
             self
         }
         /// <p>The id of the channel that we want to stop receiving notifications.</p>
@@ -2949,16 +2243,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemovePermission`.
     ///
-    /// <p> Removes permissions from a profiling group's resource-based policy that are provided
-    /// using an action group. The one supported action group that can be removed is
-    /// <code>agentPermission</code> which grants <code>ConfigureAgent</code> and
-    /// <code>PostAgent</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html">Resource-based policies in CodeGuru Profiler</a> in the <i>Amazon
-    /// CodeGuru Profiler User Guide</i>, <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html">
-    /// <code>ConfigureAgent</code>
-    /// </a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html">
-    /// <code>PostAgentProfile</code>
-    /// </a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Removes permissions from a profiling group's resource-based policy that are provided using an action group. The one supported action group that can be removed is <code>agentPermission</code> which grants <code>ConfigureAgent</code> and <code>PostAgent</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html">Resource-based policies in CodeGuru Profiler</a> in the <i>Amazon CodeGuru Profiler User Guide</i>, <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html"> <code>PostAgentProfile</code> </a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemovePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3003,10 +2289,10 @@ pub mod fluent_builders {
                 crate::input::RemovePermissionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3015,8 +2301,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group.</p>
@@ -3027,20 +2313,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profiling_group_name(input);
             self
         }
-        /// <p>
-        /// Specifies an action group that contains the permissions to remove from
-        /// a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which
-        /// grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
-        /// </p>
-        pub fn action_group(mut self, inp: crate::model::ActionGroup) -> Self {
-            self.inner = self.inner.action_group(inp);
+        /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
+        pub fn action_group(mut self, input: crate::model::ActionGroup) -> Self {
+            self.inner = self.inner.action_group(input);
             self
         }
-        /// <p>
-        /// Specifies an action group that contains the permissions to remove from
-        /// a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which
-        /// grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
-        /// </p>
+        /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
         pub fn set_action_group(
             mut self,
             input: std::option::Option<crate::model::ActionGroup>,
@@ -3048,18 +2326,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_group(input);
             self
         }
-        /// <p>
-        /// A universally unique identifier (UUID) for the revision of the resource-based policy from which
-        /// you want to remove permissions.
-        /// </p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
-        /// <p>
-        /// A universally unique identifier (UUID) for the revision of the resource-based policy from which
-        /// you want to remove permissions.
-        /// </p>
+        /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_revision_id(input);
             self
@@ -3067,9 +2339,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SubmitFeedback`.
     ///
-    /// <p>Sends feedback to CodeGuru Profiler about whether the anomaly detected by the analysis is
-    /// useful or not.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sends feedback to CodeGuru Profiler about whether the anomaly detected by the analysis is useful or not.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SubmitFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3114,10 +2385,10 @@ pub mod fluent_builders {
                 crate::input::SubmitFeedbackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3126,8 +2397,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group that is associated with the analysis data.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group that is associated with the analysis data.</p>
@@ -3138,20 +2409,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profiling_group_name(input);
             self
         }
-        /// <p>The universally unique identifier (UUID) of the
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html">
-        /// <code>AnomalyInstance</code>
-        /// </a> object
-        /// that is included in the analysis data.</p>
-        pub fn anomaly_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_instance_id(inp);
+        /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
+        pub fn anomaly_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_instance_id(input.into());
             self
         }
-        /// <p>The universally unique identifier (UUID) of the
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html">
-        /// <code>AnomalyInstance</code>
-        /// </a> object
-        /// that is included in the analysis data.</p>
+        /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
         pub fn set_anomaly_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3159,23 +2422,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_anomaly_instance_id(input);
             self
         }
-        /// <p>
-        /// The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.
-        /// </p>
-        pub fn r#type(mut self, inp: crate::model::FeedbackType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+        pub fn r#type(mut self, input: crate::model::FeedbackType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>
-        /// The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.
-        /// </p>
+        /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::FeedbackType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
         /// <p>Optional feedback about this anomaly.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(inp);
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p>Optional feedback about this anomaly.</p>
@@ -3186,10 +2445,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>
-    /// Use to assign one or more tags to a resource.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Use to assign one or more tags to a resource. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3234,10 +2491,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3245,16 +2502,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the resource that the tags are added to.
-        /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the resource that the tags are added to.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3263,20 +2516,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The list of tags that are added to the specified resource.
-        /// </p>
+        /// <p> The list of tags that are added to the specified resource. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>
-        /// The list of tags that are added to the specified resource.
-        /// </p>
+        /// <p> The list of tags that are added to the specified resource. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3289,10 +2538,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>
-    /// Use to remove one or more tags from a resource.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Use to remove one or more tags from a resource. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3337,10 +2584,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3348,16 +2595,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the resource that contains the tags to remove.
-        /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to remove. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the resource that contains the tags to remove.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to remove. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3366,18 +2609,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>
-        /// A list of tag keys. Existing tags of resources with keys in this list are removed from
-        /// the specified resource.
-        /// </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p> A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource. </p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>
-        /// A list of tag keys. Existing tags of resources with keys in this list are removed from
-        /// the specified resource.
-        /// </p>
+        /// <p> A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3389,7 +2626,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProfilingGroup`.
     ///
     /// <p>Updates a profiling group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProfilingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3434,10 +2671,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProfilingGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3446,8 +2683,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group to update.</p>
-        pub fn profiling_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(inp);
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group to update.</p>
@@ -3458,19 +2695,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profiling_group_name(input);
             self
         }
-        /// <p>
-        /// Specifies whether profiling is enabled or disabled for a profiling group.
-        /// </p>
+        /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
         pub fn agent_orchestration_config(
             mut self,
-            inp: crate::model::AgentOrchestrationConfig,
+            input: crate::model::AgentOrchestrationConfig,
         ) -> Self {
-            self.inner = self.inner.agent_orchestration_config(inp);
+            self.inner = self.inner.agent_orchestration_config(input);
             self
         }
-        /// <p>
-        /// Specifies whether profiling is enabled or disabled for a profiling group.
-        /// </p>
+        /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
         pub fn set_agent_orchestration_config(
             mut self,
             input: std::option::Option<crate::model::AgentOrchestrationConfig>,
@@ -3480,6 +2713,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

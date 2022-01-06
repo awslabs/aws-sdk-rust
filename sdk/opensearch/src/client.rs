@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon OpenSearch Service
@@ -173,6 +173,7 @@ where
     ///
     /// See [`DescribeDomainAutoTunes`](crate::client::fluent_builders::DescribeDomainAutoTunes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDomainAutoTunes::into_paginator).
     pub fn describe_domain_auto_tunes(&self) -> fluent_builders::DescribeDomainAutoTunes<C, M, R> {
         fluent_builders::DescribeDomainAutoTunes::new(self.handle.clone())
     }
@@ -194,6 +195,7 @@ where
     ///
     /// See [`DescribeInboundConnections`](crate::client::fluent_builders::DescribeInboundConnections) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeInboundConnections::into_paginator).
     pub fn describe_inbound_connections(
         &self,
     ) -> fluent_builders::DescribeInboundConnections<C, M, R> {
@@ -212,6 +214,7 @@ where
     ///
     /// See [`DescribeOutboundConnections`](crate::client::fluent_builders::DescribeOutboundConnections) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOutboundConnections::into_paginator).
     pub fn describe_outbound_connections(
         &self,
     ) -> fluent_builders::DescribeOutboundConnections<C, M, R> {
@@ -221,6 +224,7 @@ where
     ///
     /// See [`DescribePackages`](crate::client::fluent_builders::DescribePackages) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePackages::into_paginator).
     pub fn describe_packages(&self) -> fluent_builders::DescribePackages<C, M, R> {
         fluent_builders::DescribePackages::new(self.handle.clone())
     }
@@ -228,6 +232,7 @@ where
     ///
     /// See [`DescribeReservedInstanceOfferings`](crate::client::fluent_builders::DescribeReservedInstanceOfferings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedInstanceOfferings::into_paginator).
     pub fn describe_reserved_instance_offerings(
         &self,
     ) -> fluent_builders::DescribeReservedInstanceOfferings<C, M, R> {
@@ -237,6 +242,7 @@ where
     ///
     /// See [`DescribeReservedInstances`](crate::client::fluent_builders::DescribeReservedInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedInstances::into_paginator).
     pub fn describe_reserved_instances(
         &self,
     ) -> fluent_builders::DescribeReservedInstances<C, M, R> {
@@ -260,6 +266,7 @@ where
     ///
     /// See [`GetPackageVersionHistory`](crate::client::fluent_builders::GetPackageVersionHistory) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetPackageVersionHistory::into_paginator).
     pub fn get_package_version_history(
         &self,
     ) -> fluent_builders::GetPackageVersionHistory<C, M, R> {
@@ -269,6 +276,7 @@ where
     ///
     /// See [`GetUpgradeHistory`](crate::client::fluent_builders::GetUpgradeHistory) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetUpgradeHistory::into_paginator).
     pub fn get_upgrade_history(&self) -> fluent_builders::GetUpgradeHistory<C, M, R> {
         fluent_builders::GetUpgradeHistory::new(self.handle.clone())
     }
@@ -290,6 +298,7 @@ where
     ///
     /// See [`ListDomainsForPackage`](crate::client::fluent_builders::ListDomainsForPackage) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomainsForPackage::into_paginator).
     pub fn list_domains_for_package(&self) -> fluent_builders::ListDomainsForPackage<C, M, R> {
         fluent_builders::ListDomainsForPackage::new(self.handle.clone())
     }
@@ -297,6 +306,7 @@ where
     ///
     /// See [`ListInstanceTypeDetails`](crate::client::fluent_builders::ListInstanceTypeDetails) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstanceTypeDetails::into_paginator).
     pub fn list_instance_type_details(&self) -> fluent_builders::ListInstanceTypeDetails<C, M, R> {
         fluent_builders::ListInstanceTypeDetails::new(self.handle.clone())
     }
@@ -304,6 +314,7 @@ where
     ///
     /// See [`ListPackagesForDomain`](crate::client::fluent_builders::ListPackagesForDomain) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackagesForDomain::into_paginator).
     pub fn list_packages_for_domain(&self) -> fluent_builders::ListPackagesForDomain<C, M, R> {
         fluent_builders::ListPackagesForDomain::new(self.handle.clone())
     }
@@ -318,6 +329,7 @@ where
     ///
     /// See [`ListVersions`](crate::client::fluent_builders::ListVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVersions::into_paginator).
     pub fn list_versions(&self) -> fluent_builders::ListVersions<C, M, R> {
         fluent_builders::ListVersions::new(self.handle.clone())
     }
@@ -386,7 +398,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptInboundConnection`.
     ///
     /// <p>Allows the remote domain owner to accept an inbound cross-cluster connection request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInboundConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -431,10 +443,10 @@ pub mod fluent_builders {
                 crate::input::AcceptInboundConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -443,8 +455,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the inbound connection you want to accept.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the inbound connection you want to accept.</p>
@@ -458,12 +470,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddTags`.
     ///
-    /// <p>Attaches tags to an existing domain. Tags are a set of case-sensitive key value pairs. An
-    /// domain can have up to 10 tags. See
-    /// <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging" target="_blank">
-    /// Tagging Amazon OpenSearch Service domains</a> for more information.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Attaches tags to an existing domain. Tags are a set of case-sensitive key value pairs. An domain can have up to 10 tags. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging" target="_blank"> Tagging Amazon OpenSearch Service domains</a> for more information. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -508,10 +516,10 @@ pub mod fluent_builders {
                 crate::input::AddTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -519,14 +527,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specify the <code>ARN</code> of the domain you want to add tags to.
-        /// </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>Specify the <code>ARN</code> of the domain you want to add tags to.
-        /// </p>
+        /// <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -535,14 +541,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
-        /// <p>List of <code>Tag</code> to add to the domain.
-        /// </p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        /// <p>List of <code>Tag</code> to add to the domain. </p>
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
-        /// <p>List of <code>Tag</code> to add to the domain.
-        /// </p>
+        /// <p>List of <code>Tag</code> to add to the domain. </p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -554,7 +558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociatePackage`.
     ///
     /// <p>Associates a package with an Amazon OpenSearch Service domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -599,10 +603,10 @@ pub mod fluent_builders {
                 crate::input::AssociatePackageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -610,23 +614,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find
-        /// this value.
-        /// </p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
+        pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(input.into());
             self
         }
-        /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find
-        /// this value.
-        /// </p>
+        /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package_id(input);
             self
         }
         /// <p>The name of the domain to associate the package with.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain to associate the package with.</p>
@@ -637,10 +637,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelServiceSoftwareUpdate`.
     ///
-    /// <p>Cancels a scheduled service software update for an Amazon OpenSearch Service domain. You can only perform this operation before
-    /// the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code> state.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Cancels a scheduled service software update for an Amazon OpenSearch Service domain. You can only perform this operation before the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code> state. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelServiceSoftwareUpdate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -685,10 +683,10 @@ pub mod fluent_builders {
                 crate::input::CancelServiceSoftwareUpdateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -697,8 +695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to stop the latest service software update on.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain that you want to stop the latest service software update on.</p>
@@ -709,11 +707,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDomain`.
     ///
-    /// <p>Creates a new Amazon OpenSearch Service domain. For more information,
-    /// see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html" target="_blank">Creating and managing Amazon OpenSearch Service domains
-    /// </a> in the <i>Amazon OpenSearch Service Developer Guide</i>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new Amazon OpenSearch Service domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html" target="_blank">Creating and managing Amazon OpenSearch Service domains </a> in the <i>Amazon OpenSearch Service Developer Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -758,10 +753,10 @@ pub mod fluent_builders {
                 crate::input::CreateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -769,36 +764,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains owned by
-        /// an account within an AWS region. Domain names must start with a lowercase letter and can contain the following
-        /// characters: a-z (lowercase), 0-9, and - (hyphen).
-        /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        /// <p>The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains owned by
-        /// an account within an AWS region. Domain names must start with a lowercase letter and can contain the following
-        /// characters: a-z (lowercase), 0-9, and - (hyphen).
-        /// </p>
+        /// <p>The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch Service domain.
-        /// For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information,
-        /// see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains" target="_blank">Creating and managing Amazon OpenSearch Service domains
-        /// </a>.
-        /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains" target="_blank">Creating and managing Amazon OpenSearch Service domains </a>. </p>
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
-        /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch Service domain.
-        /// For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information,
-        /// see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains" target="_blank">Creating and managing Amazon OpenSearch Service domains
-        /// </a>.
-        /// </p>
+        /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains" target="_blank">Creating and managing Amazon OpenSearch Service domains </a>. </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -806,16 +787,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine_version(input);
             self
         }
-        /// <p>Configuration options for a domain. Specifies the instance type and number of instances in the
-        /// domain.
-        /// </p>
-        pub fn cluster_config(mut self, inp: crate::model::ClusterConfig) -> Self {
-            self.inner = self.inner.cluster_config(inp);
+        /// <p>Configuration options for a domain. Specifies the instance type and number of instances in the domain. </p>
+        pub fn cluster_config(mut self, input: crate::model::ClusterConfig) -> Self {
+            self.inner = self.inner.cluster_config(input);
             self
         }
-        /// <p>Configuration options for a domain. Specifies the instance type and number of instances in the
-        /// domain.
-        /// </p>
+        /// <p>Configuration options for a domain. Specifies the instance type and number of instances in the domain. </p>
         pub fn set_cluster_config(
             mut self,
             input: std::option::Option<crate::model::ClusterConfig>,
@@ -824,8 +801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Options to enable, disable, and specify the type and size of EBS storage volumes.</p>
-        pub fn ebs_options(mut self, inp: crate::model::EbsOptions) -> Self {
-            self.inner = self.inner.ebs_options(inp);
+        pub fn ebs_options(mut self, input: crate::model::EbsOptions) -> Self {
+            self.inner = self.inner.ebs_options(input);
             self
         }
         /// <p>Options to enable, disable, and specify the type and size of EBS storage volumes.</p>
@@ -837,8 +814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>IAM access policy as a JSON-formatted string.</p>
-        pub fn access_policies(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policies(inp);
+        pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policies(input.into());
             self
         }
         /// <p>IAM access policy as a JSON-formatted string.</p>
@@ -850,8 +827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
-        pub fn snapshot_options(mut self, inp: crate::model::SnapshotOptions) -> Self {
-            self.inner = self.inner.snapshot_options(inp);
+        pub fn snapshot_options(mut self, input: crate::model::SnapshotOptions) -> Self {
+            self.inner = self.inner.snapshot_options(input);
             self
         }
         /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
@@ -862,16 +839,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_options(input);
             self
         }
-        /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC
-        /// </a>.
-        /// </p>
-        pub fn vpc_options(mut self, inp: crate::model::VpcOptions) -> Self {
-            self.inner = self.inner.vpc_options(inp);
+        /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>. </p>
+        pub fn vpc_options(mut self, input: crate::model::VpcOptions) -> Self {
+            self.inner = self.inner.vpc_options(input);
             self
         }
-        /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC
-        /// </a>.
-        /// </p>
+        /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>. </p>
         pub fn set_vpc_options(
             mut self,
             input: std::option::Option<crate::model::VpcOptions>,
@@ -879,14 +852,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_options(input);
             self
         }
-        /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-        /// </p>
-        pub fn cognito_options(mut self, inp: crate::model::CognitoOptions) -> Self {
-            self.inner = self.inner.cognito_options(inp);
+        /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
+        pub fn cognito_options(mut self, input: crate::model::CognitoOptions) -> Self {
+            self.inner = self.inner.cognito_options(input);
             self
         }
-        /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-        /// </p>
+        /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
         pub fn set_cognito_options(
             mut self,
             input: std::option::Option<crate::model::CognitoOptions>,
@@ -897,9 +868,9 @@ pub mod fluent_builders {
         /// <p>Options for encryption of data at rest.</p>
         pub fn encryption_at_rest_options(
             mut self,
-            inp: crate::model::EncryptionAtRestOptions,
+            input: crate::model::EncryptionAtRestOptions,
         ) -> Self {
-            self.inner = self.inner.encryption_at_rest_options(inp);
+            self.inner = self.inner.encryption_at_rest_options(input);
             self
         }
         /// <p>Options for encryption of data at rest.</p>
@@ -913,9 +884,9 @@ pub mod fluent_builders {
         /// <p>Node-to-node encryption options.</p>
         pub fn node_to_node_encryption_options(
             mut self,
-            inp: crate::model::NodeToNodeEncryptionOptions,
+            input: crate::model::NodeToNodeEncryptionOptions,
         ) -> Self {
-            self.inner = self.inner.node_to_node_encryption_options(inp);
+            self.inner = self.inner.node_to_node_encryption_options(input);
             self
         }
         /// <p>Node-to-node encryption options.</p>
@@ -930,24 +901,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
         ///
-        /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
-        /// to individual sub-resources. By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters
-        /// </a> for more information.
-        /// </p>
+        /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.advanced_options(k, v);
+            self.inner = self.inner.advanced_options(k.into(), v.into());
             self
         }
-        /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
-        /// to individual sub-resources. By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters
-        /// </a> for more information.
-        /// </p>
+        /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -961,20 +924,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_log_publishing_options`](Self::set_log_publishing_options).
         ///
-        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
-        /// of OpenSearch log.
-        /// </p>
+        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of OpenSearch log. </p>
         pub fn log_publishing_options(
             mut self,
-            k: impl Into<crate::model::LogType>,
-            v: impl Into<crate::model::LogPublishingOption>,
+            k: crate::model::LogType,
+            v: crate::model::LogPublishingOption,
         ) -> Self {
             self.inner = self.inner.log_publishing_options(k, v);
             self
         }
-        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
-        /// of OpenSearch log.
-        /// </p>
+        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of OpenSearch log. </p>
         pub fn set_log_publishing_options(
             mut self,
             input: std::option::Option<
@@ -985,8 +944,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Options to specify configurations that will be applied to the domain endpoint.</p>
-        pub fn domain_endpoint_options(mut self, inp: crate::model::DomainEndpointOptions) -> Self {
-            self.inner = self.inner.domain_endpoint_options(inp);
+        pub fn domain_endpoint_options(
+            mut self,
+            input: crate::model::DomainEndpointOptions,
+        ) -> Self {
+            self.inner = self.inner.domain_endpoint_options(input);
             self
         }
         /// <p>Options to specify configurations that will be applied to the domain endpoint.</p>
@@ -1000,9 +962,9 @@ pub mod fluent_builders {
         /// <p>Specifies advanced security options.</p>
         pub fn advanced_security_options(
             mut self,
-            inp: crate::model::AdvancedSecurityOptionsInput,
+            input: crate::model::AdvancedSecurityOptionsInput,
         ) -> Self {
-            self.inner = self.inner.advanced_security_options(inp);
+            self.inner = self.inner.advanced_security_options(input);
             self
         }
         /// <p>Specifies advanced security options.</p>
@@ -1017,14 +979,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
-        /// <p>A list of <code>Tag</code> added during domain creation.
-        /// </p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        /// <p>A list of <code>Tag</code> added during domain creation. </p>
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
-        /// <p>A list of <code>Tag</code> added during domain creation.
-        /// </p>
+        /// <p>A list of <code>Tag</code> added during domain creation. </p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1033,8 +993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies Auto-Tune options.</p>
-        pub fn auto_tune_options(mut self, inp: crate::model::AutoTuneOptionsInput) -> Self {
-            self.inner = self.inner.auto_tune_options(inp);
+        pub fn auto_tune_options(mut self, input: crate::model::AutoTuneOptionsInput) -> Self {
+            self.inner = self.inner.auto_tune_options(input);
             self
         }
         /// <p>Specifies Auto-Tune options.</p>
@@ -1049,7 +1009,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateOutboundConnection`.
     ///
     /// <p>Creates a new cross-cluster connection from a local OpenSearch domain to a remote OpenSearch domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOutboundConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1094,10 +1054,10 @@ pub mod fluent_builders {
                 crate::input::CreateOutboundConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1105,22 +1065,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The
-        /// <code>
-        /// <a>AWSDomainInformation</a>
-        /// </code>
-        /// for the local OpenSearch domain.
-        /// </p>
-        pub fn local_domain_info(mut self, inp: crate::model::DomainInformationContainer) -> Self {
-            self.inner = self.inner.local_domain_info(inp);
+        /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
+        pub fn local_domain_info(
+            mut self,
+            input: crate::model::DomainInformationContainer,
+        ) -> Self {
+            self.inner = self.inner.local_domain_info(input);
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>AWSDomainInformation</a>
-        /// </code>
-        /// for the local OpenSearch domain.
-        /// </p>
+        /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
         pub fn set_local_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformationContainer>,
@@ -1128,22 +1081,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_local_domain_info(input);
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>AWSDomainInformation</a>
-        /// </code>
-        /// for the remote OpenSearch domain.
-        /// </p>
-        pub fn remote_domain_info(mut self, inp: crate::model::DomainInformationContainer) -> Self {
-            self.inner = self.inner.remote_domain_info(inp);
+        /// <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
+        pub fn remote_domain_info(
+            mut self,
+            input: crate::model::DomainInformationContainer,
+        ) -> Self {
+            self.inner = self.inner.remote_domain_info(input);
             self
         }
-        /// <p>The
-        /// <code>
-        /// <a>AWSDomainInformation</a>
-        /// </code>
-        /// for the remote OpenSearch domain.
-        /// </p>
+        /// <p>The <code> <code>AWSDomainInformation</code> </code> for the remote OpenSearch domain. </p>
         pub fn set_remote_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformationContainer>,
@@ -1152,8 +1098,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The connection alias used used by the customer for this cross-cluster connection.</p>
-        pub fn connection_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_alias(inp);
+        pub fn connection_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_alias(input.into());
             self
         }
         /// <p>The connection alias used used by the customer for this cross-cluster connection.</p>
@@ -1168,7 +1114,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePackage`.
     ///
     /// <p>Create a package for use with Amazon OpenSearch Service domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1213,10 +1159,10 @@ pub mod fluent_builders {
                 crate::input::CreatePackageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1225,8 +1171,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Unique identifier for the package.</p>
-        pub fn package_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_name(inp);
+        pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_name(input.into());
             self
         }
         /// <p>Unique identifier for the package.</p>
@@ -1235,8 +1181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
-        pub fn package_type(mut self, inp: crate::model::PackageType) -> Self {
-            self.inner = self.inner.package_type(inp);
+        pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
+            self.inner = self.inner.package_type(input);
             self
         }
         /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
@@ -1248,8 +1194,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the package.</p>
-        pub fn package_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_description(inp);
+        pub fn package_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_description(input.into());
             self
         }
         /// <p>Description of the package.</p>
@@ -1260,14 +1206,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package_description(input);
             self
         }
-        /// <p>The Amazon S3 location from which to import the package.
-        /// </p>
-        pub fn package_source(mut self, inp: crate::model::PackageSource) -> Self {
-            self.inner = self.inner.package_source(inp);
+        /// <p>The Amazon S3 location from which to import the package. </p>
+        pub fn package_source(mut self, input: crate::model::PackageSource) -> Self {
+            self.inner = self.inner.package_source(input);
             self
         }
-        /// <p>The Amazon S3 location from which to import the package.
-        /// </p>
+        /// <p>The Amazon S3 location from which to import the package. </p>
         pub fn set_package_source(
             mut self,
             input: std::option::Option<crate::model::PackageSource>,
@@ -1278,10 +1222,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDomain`.
     ///
-    /// <p>Permanently deletes the specified domain and all of its data. Once a domain is deleted, it cannot
-    /// be recovered.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Permanently deletes the specified domain and all of its data. Once a domain is deleted, it cannot be recovered. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1326,10 +1268,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1338,8 +1280,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to permanently delete.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to permanently delete.</p>
@@ -1351,7 +1293,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInboundConnection`.
     ///
     /// <p>Allows the remote domain owner to delete an existing inbound cross-cluster connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInboundConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1396,10 +1338,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInboundConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1408,8 +1350,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the inbound connection to permanently delete.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the inbound connection to permanently delete.</p>
@@ -1424,7 +1366,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteOutboundConnection`.
     ///
     /// <p>Allows the local domain owner to delete an existing outbound cross-cluster connection.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteOutboundConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1469,10 +1411,10 @@ pub mod fluent_builders {
                 crate::input::DeleteOutboundConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1481,8 +1423,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the outbound connection you want to permanently delete.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the outbound connection you want to permanently delete.</p>
@@ -1497,7 +1439,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePackage`.
     ///
     /// <p>Deletes the package.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1542,10 +1484,10 @@ pub mod fluent_builders {
                 crate::input::DeletePackageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1553,14 +1495,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.
-        /// </p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value. </p>
+        pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(input.into());
             self
         }
-        /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.
-        /// </p>
+        /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value. </p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package_id(input);
             self
@@ -1568,10 +1508,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDomain`.
     ///
-    /// <p>Returns domain configuration information about the specified domain, including the domain ID,
-    /// domain endpoint, and domain ARN.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns domain configuration information about the specified domain, including the domain ID, domain endpoint, and domain ARN. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1616,10 +1554,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1628,8 +1566,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain for which you want information.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain for which you want information.</p>
@@ -1640,10 +1578,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDomainAutoTunes`.
     ///
-    /// <p>Provides scheduled Auto-Tune action details for the domain, such as Auto-Tune action type,
-    /// description, severity, and scheduled date.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides scheduled Auto-Tune action details for the domain, such as Auto-Tune action type, description, severity, and scheduled date. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomainAutoTunes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1688,10 +1624,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDomainAutoTunesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1699,9 +1635,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeDomainAutoTunesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeDomainAutoTunesPaginator<C, M, R> {
+            crate::paginator::DescribeDomainAutoTunesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The domain name for which you want Auto-Tune action details.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name for which you want Auto-Tune action details.</p>
@@ -1710,8 +1652,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -1720,8 +1662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>NextToken is sent in case the earlier API call results contain the NextToken. Used for pagination.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>NextToken is sent in case the earlier API call results contain the NextToken. Used for pagination.</p>
@@ -1732,10 +1674,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDomainConfig`.
     ///
-    /// <p>Provides cluster configuration information about the specified domain, such as the state, creation
-    /// date, update version, and update date for cluster options.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides cluster configuration information about the specified domain, such as the state, creation date, update version, and update date for cluster options. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomainConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1780,10 +1720,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDomainConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1792,8 +1732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain you want to get information about.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain you want to get information about.</p>
@@ -1804,10 +1744,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDomains`.
     ///
-    /// <p>Returns domain configuration information about the specified domains, including the domain ID,
-    /// domain endpoint, and domain ARN.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns domain configuration information about the specified domains, including the domain ID, domain endpoint, and domain ARN. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1852,10 +1790,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDomainsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1868,8 +1806,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
         ///
         /// <p>The domains for which you want information.</p>
-        pub fn domain_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_names(inp);
+        pub fn domain_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_names(input.into());
             self
         }
         /// <p>The domains for which you want information.</p>
@@ -1884,7 +1822,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInboundConnections`.
     ///
     /// <p>Lists all the inbound cross-cluster connections for a remote domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInboundConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1929,10 +1867,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInboundConnectionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1940,17 +1878,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeInboundConnectionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeInboundConnectionsPaginator<C, M, R> {
+            crate::paginator::DescribeInboundConnectionsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>
-        /// A list of filters used to match properties for inbound cross-cluster connections.
-        /// Available
-        /// <code>
-        /// <a>Filter</a>
-        /// </code>
-        /// values are:
+        /// <p> A list of filters used to match properties for inbound cross-cluster connections. Available <code> <code>Filter</code> </code> values are: </p>
         /// <ul>
         /// <li>connection-id</li>
         /// <li>local-domain-info.domain-name</li>
@@ -1958,18 +1898,12 @@ pub mod fluent_builders {
         /// <li>local-domain-info.region</li>
         /// <li>remote-domain-info.domain-name</li>
         /// </ul>
-        /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p></p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>
-        /// A list of filters used to match properties for inbound cross-cluster connections.
-        /// Available
-        /// <code>
-        /// <a>Filter</a>
-        /// </code>
-        /// values are:
+        /// <p> A list of filters used to match properties for inbound cross-cluster connections. Available <code> <code>Filter</code> </code> values are: </p>
         /// <ul>
         /// <li>connection-id</li>
         /// <li>local-domain-info.domain-name</li>
@@ -1977,7 +1911,7 @@ pub mod fluent_builders {
         /// <li>local-domain-info.region</li>
         /// <li>remote-domain-info.domain-name</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -1986,8 +1920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -1995,14 +1929,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If more results are available and NextToken is present, make the next request to the same API with the received
-        /// NextToken to paginate the remaining results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If more results are available and NextToken is present, make the next request to the same API with the received
-        /// NextToken to paginate the remaining results.</p>
+        /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2010,15 +1942,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstanceTypeLimits`.
     ///
-    /// <p>
-    /// Describe the limits for a given instance type and OpenSearch or Elasticsearch version.
-    /// When modifying an existing domain, specify the
-    /// <code>
-    /// <a>DomainName</a>
-    /// </code>
-    /// to see which limits you can modify.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Describe the limits for a given instance type and OpenSearch or Elasticsearch version. When modifying an existing domain, specify the <code> <code>DomainName</code> </code> to see which limits you can modify. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceTypeLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2063,10 +1988,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInstanceTypeLimitsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2074,48 +1999,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the domain you want to modify. Only include this value if you're
-        /// querying OpenSearch
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// for an existing domain.
-        /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        /// <p> The name of the domain you want to modify. Only include this value if you're querying OpenSearch <code> <code>Limits</code> </code> for an existing domain. </p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>
-        /// The name of the domain you want to modify. Only include this value if you're
-        /// querying OpenSearch
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// for an existing domain.
-        /// </p>
+        /// <p> The name of the domain you want to modify. Only include this value if you're querying OpenSearch <code> <code>Limits</code> </code> for an existing domain. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>
-        /// The instance type for an OpenSearch cluster for which OpenSearch
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// are needed.
-        /// </p>
-        pub fn instance_type(mut self, inp: crate::model::OpenSearchPartitionInstanceType) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        /// <p> The instance type for an OpenSearch cluster for which OpenSearch <code> <code>Limits</code> </code> are needed. </p>
+        pub fn instance_type(
+            mut self,
+            input: crate::model::OpenSearchPartitionInstanceType,
+        ) -> Self {
+            self.inner = self.inner.instance_type(input);
             self
         }
-        /// <p>
-        /// The instance type for an OpenSearch cluster for which OpenSearch
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// are needed.
-        /// </p>
+        /// <p> The instance type for an OpenSearch cluster for which OpenSearch <code> <code>Limits</code> </code> are needed. </p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<crate::model::OpenSearchPartitionInstanceType>,
@@ -2123,24 +2025,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_type(input);
             self
         }
-        /// <p>
-        /// Version of OpenSearch for which
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// are needed.
-        /// </p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        /// <p> Version of OpenSearch for which <code> <code>Limits</code> </code> are needed. </p>
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
-        /// <p>
-        /// Version of OpenSearch for which
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// are needed.
-        /// </p>
+        /// <p> Version of OpenSearch for which <code> <code>Limits</code> </code> are needed. </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2152,7 +2042,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOutboundConnections`.
     ///
     /// <p>Lists all the outbound cross-cluster connections for a local domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOutboundConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2197,10 +2087,10 @@ pub mod fluent_builders {
                 crate::input::DescribeOutboundConnectionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2208,17 +2098,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeOutboundConnectionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeOutboundConnectionsPaginator<C, M, R> {
+            crate::paginator::DescribeOutboundConnectionsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>
-        /// A list of filters used to match properties for outbound cross-cluster connections.
-        /// Available
-        /// <code>
-        /// <a>Filter</a>
-        /// </code>
-        /// names for this operation are:
+        /// <p> A list of filters used to match properties for outbound cross-cluster connections. Available <code> <code>Filter</code> </code> names for this operation are: </p>
         /// <ul>
         /// <li>connection-id</li>
         /// <li>remote-domain-info.domain-name</li>
@@ -2226,18 +2118,12 @@ pub mod fluent_builders {
         /// <li>remote-domain-info.region</li>
         /// <li>local-domain-info.domain-name</li>
         /// </ul>
-        /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p></p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>
-        /// A list of filters used to match properties for outbound cross-cluster connections.
-        /// Available
-        /// <code>
-        /// <a>Filter</a>
-        /// </code>
-        /// names for this operation are:
+        /// <p> A list of filters used to match properties for outbound cross-cluster connections. Available <code> <code>Filter</code> </code> names for this operation are: </p>
         /// <ul>
         /// <li>connection-id</li>
         /// <li>remote-domain-info.domain-name</li>
@@ -2245,7 +2131,7 @@ pub mod fluent_builders {
         /// <li>remote-domain-info.region</li>
         /// <li>local-domain-info.domain-name</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -2254,8 +2140,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -2264,8 +2150,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.</p>
@@ -2276,10 +2162,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePackages`.
     ///
-    /// <p>Describes all packages available to Amazon OpenSearch Service domains. Includes options for filtering, limiting the number of results,
-    /// and pagination.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes all packages available to Amazon OpenSearch Service domains. Includes options for filtering, limiting the number of results, and pagination. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePackages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2324,10 +2208,10 @@ pub mod fluent_builders {
                 crate::input::DescribePackagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2335,18 +2219,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribePackagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribePackagesPaginator<C, M, R> {
+            crate::paginator::DescribePackagesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.
-        /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::DescribePackagesFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values. </p>
+        pub fn filters(mut self, input: crate::model::DescribePackagesFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.
-        /// </p>
+        /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DescribePackagesFilter>>,
@@ -2355,8 +2243,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits results to a maximum number of packages.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Limits results to a maximum number of packages.</p>
@@ -2364,16 +2252,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-        /// returns results for the next page.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-        /// returns results for the next page.
-        /// </p>
+        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2382,7 +2266,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReservedInstanceOfferings`.
     ///
     /// <p>Lists available reserved OpenSearch instance offerings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedInstanceOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2427,10 +2311,10 @@ pub mod fluent_builders {
                 crate::input::DescribeReservedInstanceOfferingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2438,19 +2322,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the
-        /// specified reservation identifier.
-        /// </p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReservedInstanceOfferingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeReservedInstanceOfferingsPaginator<C, M, R> {
+            crate::paginator::DescribeReservedInstanceOfferingsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier. </p>
         pub fn reserved_instance_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.reserved_instance_offering_id(inp);
+            self.inner = self.inner.reserved_instance_offering_id(input.into());
             self
         }
-        /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the
-        /// specified reservation identifier.
-        /// </p>
+        /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier. </p>
         pub fn set_reserved_instance_offering_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2459,8 +2350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -2468,14 +2359,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Provides an identifier to allow retrieval of paginated results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Provides an identifier to allow retrieval of paginated results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Provides an identifier to allow retrieval of paginated results.
-        /// </p>
+        /// <p>Provides an identifier to allow retrieval of paginated results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2484,7 +2373,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReservedInstances`.
     ///
     /// <p>Returns information about reserved OpenSearch instances for this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReservedInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2529,10 +2418,10 @@ pub mod fluent_builders {
                 crate::input::DescribeReservedInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2540,16 +2429,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the
-        /// specified reserved OpenSearch instance ID.
-        /// </p>
-        pub fn reserved_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved_instance_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReservedInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeReservedInstancesPaginator<C, M, R> {
+            crate::paginator::DescribeReservedInstancesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID. </p>
+        pub fn reserved_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_instance_id(input.into());
             self
         }
-        /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the
-        /// specified reserved OpenSearch instance ID.
-        /// </p>
+        /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID. </p>
         pub fn set_reserved_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2558,8 +2451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -2567,14 +2460,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Provides an identifier to allow retrieval of paginated results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Provides an identifier to allow retrieval of paginated results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Provides an identifier to allow retrieval of paginated results.
-        /// </p>
+        /// <p>Provides an identifier to allow retrieval of paginated results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2583,7 +2474,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DissociatePackage`.
     ///
     /// <p>Dissociates a package from the Amazon OpenSearch Service domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DissociatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2628,10 +2519,10 @@ pub mod fluent_builders {
                 crate::input::DissociatePackageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2639,23 +2530,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find
-        /// this value.
-        /// </p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        /// <p>The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
+        pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(input.into());
             self
         }
-        /// <p>The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find
-        /// this value.
-        /// </p>
+        /// <p>The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_package_id(input);
             self
         }
         /// <p>The name of the domain to associate the package with.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain to associate the package with.</p>
@@ -2666,15 +2553,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCompatibleVersions`.
     ///
-    /// <p>
-    /// Returns a list of upgrade-compatible versions of OpenSearch/Elasticsearch.
-    /// You can optionally pass a
-    /// <code>
-    /// <a>DomainName</a>
-    /// </code>
-    /// to get all upgrade-compatible versions of OpenSearch/Elasticsearch for that specific domain.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of upgrade-compatible versions of OpenSearch/Elasticsearch. You can optionally pass a <code> <code>DomainName</code> </code> to get all upgrade-compatible versions of OpenSearch/Elasticsearch for that specific domain. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCompatibleVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2719,10 +2599,10 @@ pub mod fluent_builders {
                 crate::input::GetCompatibleVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2730,18 +2610,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -2750,7 +2624,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPackageVersionHistory`.
     ///
     /// <p>Returns a list of package versions, along with their creation time and commit message.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPackageVersionHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2795,10 +2669,10 @@ pub mod fluent_builders {
                 crate::input::GetPackageVersionHistoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2806,9 +2680,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetPackageVersionHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetPackageVersionHistoryPaginator<C, M, R> {
+            crate::paginator::GetPackageVersionHistoryPaginator::new(self.handle, self.inner)
+        }
         /// <p>Returns an audit history of package versions.</p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(input.into());
             self
         }
         /// <p>Returns an audit history of package versions.</p>
@@ -2817,8 +2699,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits results to a maximum number of package versions.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Limits results to a maximum number of package versions.</p>
@@ -2826,16 +2708,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-        /// returns results for the next page.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-        /// returns results for the next page.
-        /// </p>
+        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2844,7 +2722,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUpgradeHistory`.
     ///
     /// <p>Retrieves the complete history of the last 10 upgrades performed on the domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUpgradeHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2889,10 +2767,10 @@ pub mod fluent_builders {
                 crate::input::GetUpgradeHistoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2900,48 +2778,38 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetUpgradeHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetUpgradeHistoryPaginator<C, M, R> {
+            crate::paginator::GetUpgradeHistoryPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> Set this value to limit the number of results returned. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// Paginated APIs accept the NextToken input to return the next page of results and provide
-        /// a NextToken output in the response, which you can use to retrieve more results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// Paginated APIs accept the NextToken input to return the next page of results and provide
-        /// a NextToken output in the response, which you can use to retrieve more results.
-        /// </p>
+        /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2949,9 +2817,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetUpgradeStatus`.
     ///
-    /// <p>Retrieves the latest status of the last upgrade or upgrade eligibility check performed on the domain.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the latest status of the last upgrade or upgrade eligibility check performed on the domain. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUpgradeStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2996,10 +2863,10 @@ pub mod fluent_builders {
                 crate::input::GetUpgradeStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3007,18 +2874,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -3027,7 +2888,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomainNames`.
     ///
     /// <p>Returns the names of all domains owned by the current user's account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3072,10 +2933,10 @@ pub mod fluent_builders {
                 crate::input::ListDomainNamesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3084,8 +2945,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
-        pub fn engine_type(mut self, inp: crate::model::EngineType) -> Self {
-            self.inner = self.inner.engine_type(inp);
+        pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
+            self.inner = self.inner.engine_type(input);
             self
         }
         /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
@@ -3100,7 +2961,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomainsForPackage`.
     ///
     /// <p>Lists all Amazon OpenSearch Service domains associated with the package.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainsForPackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3145,10 +3006,10 @@ pub mod fluent_builders {
                 crate::input::ListDomainsForPackageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3156,9 +3017,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDomainsForPackagePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDomainsForPackagePaginator<C, M, R> {
+            crate::paginator::ListDomainsForPackagePaginator::new(self.handle, self.inner)
+        }
         /// <p>The package for which to list associated domains.</p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(input.into());
             self
         }
         /// <p>The package for which to list associated domains.</p>
@@ -3167,8 +3034,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits the results to a maximum number of domains.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Limits the results to a maximum number of domains.</p>
@@ -3176,16 +3043,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-        /// returns results for the next page.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-        /// returns results for the next page.
-        /// </p>
+        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3193,7 +3056,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInstanceTypeDetails`.
     ///
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceTypeDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3238,10 +3101,10 @@ pub mod fluent_builders {
                 crate::input::ListInstanceTypeDetailsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3249,9 +3112,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInstanceTypeDetailsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInstanceTypeDetailsPaginator<C, M, R> {
+            crate::paginator::ListInstanceTypeDetailsPaginator::new(self.handle, self.inner)
+        }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -3262,48 +3131,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine_version(input);
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> Set this value to limit the number of results returned. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// Paginated APIs accept the NextToken input to return the next page of results and provide
-        /// a NextToken output in the response, which you can use to retrieve more results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// Paginated APIs accept the NextToken input to return the next page of results and provide
-        /// a NextToken output in the response, which you can use to retrieve more results.
-        /// </p>
+        /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3312,7 +3165,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPackagesForDomain`.
     ///
     /// <p>Lists all packages associated with the Amazon OpenSearch Service domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackagesForDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3357,10 +3210,10 @@ pub mod fluent_builders {
                 crate::input::ListPackagesForDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3368,9 +3221,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPackagesForDomainPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPackagesForDomainPaginator<C, M, R> {
+            crate::paginator::ListPackagesForDomainPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the domain for which you want to list associated packages.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain for which you want to list associated packages.</p>
@@ -3379,8 +3238,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits results to a maximum number of packages.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Limits results to a maximum number of packages.</p>
@@ -3388,16 +3247,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-        /// returns results for the next page.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-        /// returns results for the next page.
-        /// </p>
+        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3406,7 +3261,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTags`.
     ///
     /// <p>Returns all tags for the given domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3451,10 +3306,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3462,16 +3317,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specify the <code>ARN</code> of the domain that the tags you want
-        /// to view are attached to.
-        /// </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>Specify the <code>ARN</code> of the domain that the tags you want to view are attached to. </p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>Specify the <code>ARN</code> of the domain that the tags you want
-        /// to view are attached to.
-        /// </p>
+        /// <p>Specify the <code>ARN</code> of the domain that the tags you want to view are attached to. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -3480,7 +3331,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListVersions`.
     ///
     /// <p>List all supported versions of OpenSearch and Elasticsearch.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3525,10 +3376,10 @@ pub mod fluent_builders {
                 crate::input::ListVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3536,34 +3387,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// Value must be greater than 10 or it won't be honored.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListVersionsPaginator<C, M, R> {
+            crate::paginator::ListVersionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> Set this value to limit the number of results returned. Value must be greater than 10 or it won't be honored. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// Value must be greater than 10 or it won't be honored.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. Value must be greater than 10 or it won't be honored. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// Paginated APIs accept the NextToken input to return the next page of results and provide
-        /// a NextToken output in the response, which you can use to retrieve more results.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// Paginated APIs accept the NextToken input to return the next page of results and provide
-        /// a NextToken output in the response, which you can use to retrieve more results.
-        /// </p>
+        /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3572,7 +3417,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PurchaseReservedInstanceOffering`.
     ///
     /// <p>Allows you to purchase reserved OpenSearch instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseReservedInstanceOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3617,10 +3462,10 @@ pub mod fluent_builders {
                 crate::input::PurchaseReservedInstanceOfferingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3631,9 +3476,9 @@ pub mod fluent_builders {
         /// <p>The ID of the reserved OpenSearch instance offering to purchase.</p>
         pub fn reserved_instance_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.reserved_instance_offering_id(inp);
+            self.inner = self.inner.reserved_instance_offering_id(input.into());
             self
         }
         /// <p>The ID of the reserved OpenSearch instance offering to purchase.</p>
@@ -3645,8 +3490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A customer-specified identifier to track this reservation.</p>
-        pub fn reservation_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reservation_name(inp);
+        pub fn reservation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reservation_name(input.into());
             self
         }
         /// <p>A customer-specified identifier to track this reservation.</p>
@@ -3658,8 +3503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of OpenSearch instances to reserve.</p>
-        pub fn instance_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.instance_count(inp);
+        pub fn instance_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.instance_count(input);
             self
         }
         /// <p>The number of OpenSearch instances to reserve.</p>
@@ -3671,7 +3516,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectInboundConnection`.
     ///
     /// <p>Allows the remote domain owner to reject an inbound cross-cluster connection request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectInboundConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3716,10 +3561,10 @@ pub mod fluent_builders {
                 crate::input::RejectInboundConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3728,8 +3573,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the inbound connection to reject.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the inbound connection to reject.</p>
@@ -3744,7 +3589,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
     /// <p>Removes the specified set of tags from the given domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3789,10 +3634,10 @@ pub mod fluent_builders {
                 crate::input::RemoveTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3800,14 +3645,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>ARN</code> of the domain from which you want to delete the specified tags.
-        /// </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>The <code>ARN</code> of the domain from which you want to delete the specified tags. </p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The <code>ARN</code> of the domain from which you want to delete the specified tags.
-        /// </p>
+        /// <p>The <code>ARN</code> of the domain from which you want to delete the specified tags. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -3816,14 +3659,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The <code>TagKey</code> list you want to remove from the domain.
-        /// </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>The <code>TagKey</code> list you want to remove from the domain. </p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The <code>TagKey</code> list you want to remove from the domain.
-        /// </p>
+        /// <p>The <code>TagKey</code> list you want to remove from the domain. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3835,7 +3676,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartServiceSoftwareUpdate`.
     ///
     /// <p>Schedules a service software update for an Amazon OpenSearch Service domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartServiceSoftwareUpdate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3880,10 +3721,10 @@ pub mod fluent_builders {
                 crate::input::StartServiceSoftwareUpdateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3892,8 +3733,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that you want to update to the latest service software.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain that you want to update to the latest service software.</p>
@@ -3904,10 +3745,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDomainConfig`.
     ///
-    /// <p>Modifies the cluster configuration of the specified domain, such as setting the instance type
-    /// and the number of instances.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the cluster configuration of the specified domain, such as setting the instance type and the number of instances. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3952,10 +3791,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDomainConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3964,8 +3803,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you're updating.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you're updating.</p>
@@ -3974,8 +3813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type and number of instances to instantiate for the domain cluster.</p>
-        pub fn cluster_config(mut self, inp: crate::model::ClusterConfig) -> Self {
-            self.inner = self.inner.cluster_config(inp);
+        pub fn cluster_config(mut self, input: crate::model::ClusterConfig) -> Self {
+            self.inner = self.inner.cluster_config(input);
             self
         }
         /// <p>The type and number of instances to instantiate for the domain cluster.</p>
@@ -3987,8 +3826,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the type and size of the EBS volume to use.</p>
-        pub fn ebs_options(mut self, inp: crate::model::EbsOptions) -> Self {
-            self.inner = self.inner.ebs_options(inp);
+        pub fn ebs_options(mut self, input: crate::model::EbsOptions) -> Self {
+            self.inner = self.inner.ebs_options(input);
             self
         }
         /// <p>Specify the type and size of the EBS volume to use.</p>
@@ -3999,14 +3838,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ebs_options(input);
             self
         }
-        /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.
-        /// </p>
-        pub fn snapshot_options(mut self, inp: crate::model::SnapshotOptions) -> Self {
-            self.inner = self.inner.snapshot_options(inp);
+        /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
+        pub fn snapshot_options(mut self, input: crate::model::SnapshotOptions) -> Self {
+            self.inner = self.inner.snapshot_options(input);
             self
         }
-        /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.
-        /// </p>
+        /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
         pub fn set_snapshot_options(
             mut self,
             input: std::option::Option<crate::model::SnapshotOptions>,
@@ -4014,16 +3851,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snapshot_options(input);
             self
         }
-        /// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC
-        /// </a>.
-        /// </p>
-        pub fn vpc_options(mut self, inp: crate::model::VpcOptions) -> Self {
-            self.inner = self.inner.vpc_options(inp);
+        /// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>. </p>
+        pub fn vpc_options(mut self, input: crate::model::VpcOptions) -> Self {
+            self.inner = self.inner.vpc_options(input);
             self
         }
-        /// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC
-        /// </a>.
-        /// </p>
+        /// <p>Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>. </p>
         pub fn set_vpc_options(
             mut self,
             input: std::option::Option<crate::model::VpcOptions>,
@@ -4031,14 +3864,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_options(input);
             self
         }
-        /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-        /// </p>
-        pub fn cognito_options(mut self, inp: crate::model::CognitoOptions) -> Self {
-            self.inner = self.inner.cognito_options(inp);
+        /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
+        pub fn cognito_options(mut self, input: crate::model::CognitoOptions) -> Self {
+            self.inner = self.inner.cognito_options(input);
             self
         }
-        /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-        /// </p>
+        /// <p>Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>. </p>
         pub fn set_cognito_options(
             mut self,
             input: std::option::Option<crate::model::CognitoOptions>,
@@ -4050,24 +3881,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
         ///
-        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when
-        /// configuring access to individual sub-resources. By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options
-        /// </a> for more information.
-        /// </p>
+        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options </a> for more information. </p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.advanced_options(k, v);
+            self.inner = self.inner.advanced_options(k.into(), v.into());
             self
         }
-        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when
-        /// configuring access to individual sub-resources. By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options
-        /// </a> for more information.
-        /// </p>
+        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced options </a> for more information. </p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -4078,8 +3901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>IAM access policy as a JSON-formatted string.</p>
-        pub fn access_policies(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policies(inp);
+        pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policies(input.into());
             self
         }
         /// <p>IAM access policy as a JSON-formatted string.</p>
@@ -4094,20 +3917,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_log_publishing_options`](Self::set_log_publishing_options).
         ///
-        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
-        /// of OpenSearch log.
-        /// </p>
+        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of OpenSearch log. </p>
         pub fn log_publishing_options(
             mut self,
-            k: impl Into<crate::model::LogType>,
-            v: impl Into<crate::model::LogPublishingOption>,
+            k: crate::model::LogType,
+            v: crate::model::LogPublishingOption,
         ) -> Self {
             self.inner = self.inner.log_publishing_options(k, v);
             self
         }
-        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
-        /// of OpenSearch log.
-        /// </p>
+        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of OpenSearch log. </p>
         pub fn set_log_publishing_options(
             mut self,
             input: std::option::Option<
@@ -4120,9 +3939,9 @@ pub mod fluent_builders {
         /// <p>Specifies encryption of data at rest options.</p>
         pub fn encryption_at_rest_options(
             mut self,
-            inp: crate::model::EncryptionAtRestOptions,
+            input: crate::model::EncryptionAtRestOptions,
         ) -> Self {
-            self.inner = self.inner.encryption_at_rest_options(inp);
+            self.inner = self.inner.encryption_at_rest_options(input);
             self
         }
         /// <p>Specifies encryption of data at rest options.</p>
@@ -4134,8 +3953,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
-        pub fn domain_endpoint_options(mut self, inp: crate::model::DomainEndpointOptions) -> Self {
-            self.inner = self.inner.domain_endpoint_options(inp);
+        pub fn domain_endpoint_options(
+            mut self,
+            input: crate::model::DomainEndpointOptions,
+        ) -> Self {
+            self.inner = self.inner.domain_endpoint_options(input);
             self
         }
         /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
@@ -4149,9 +3971,9 @@ pub mod fluent_builders {
         /// <p>Specifies node-to-node encryption options.</p>
         pub fn node_to_node_encryption_options(
             mut self,
-            inp: crate::model::NodeToNodeEncryptionOptions,
+            input: crate::model::NodeToNodeEncryptionOptions,
         ) -> Self {
-            self.inner = self.inner.node_to_node_encryption_options(inp);
+            self.inner = self.inner.node_to_node_encryption_options(input);
             self
         }
         /// <p>Specifies node-to-node encryption options.</p>
@@ -4165,9 +3987,9 @@ pub mod fluent_builders {
         /// <p>Specifies advanced security options.</p>
         pub fn advanced_security_options(
             mut self,
-            inp: crate::model::AdvancedSecurityOptionsInput,
+            input: crate::model::AdvancedSecurityOptionsInput,
         ) -> Self {
-            self.inner = self.inner.advanced_security_options(inp);
+            self.inner = self.inner.advanced_security_options(input);
             self
         }
         /// <p>Specifies advanced security options.</p>
@@ -4179,8 +4001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies Auto-Tune options.</p>
-        pub fn auto_tune_options(mut self, inp: crate::model::AutoTuneOptions) -> Self {
-            self.inner = self.inner.auto_tune_options(inp);
+        pub fn auto_tune_options(mut self, input: crate::model::AutoTuneOptions) -> Self {
+            self.inner = self.inner.auto_tune_options(input);
             self
         }
         /// <p>Specifies Auto-Tune options.</p>
@@ -4192,8 +4014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation checks (DryRunResults) without actually applying the change.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of validation checks (DryRunResults) without actually applying the change.</p>
@@ -4205,7 +4027,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePackage`.
     ///
     /// <p>Updates a package for use with Amazon OpenSearch Service domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePackage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4250,10 +4072,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePackageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4262,8 +4084,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the package.</p>
-        pub fn package_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_id(inp);
+        pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_id(input.into());
             self
         }
         /// <p>The unique identifier for the package.</p>
@@ -4271,16 +4093,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package_id(input);
             self
         }
-        /// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and
-        /// <code>S3Key</code>
-        /// </p>
-        pub fn package_source(mut self, inp: crate::model::PackageSource) -> Self {
-            self.inner = self.inner.package_source(inp);
+        /// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> </p>
+        pub fn package_source(mut self, input: crate::model::PackageSource) -> Self {
+            self.inner = self.inner.package_source(input);
             self
         }
-        /// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and
-        /// <code>S3Key</code>
-        /// </p>
+        /// <p>The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> </p>
         pub fn set_package_source(
             mut self,
             input: std::option::Option<crate::model::PackageSource>,
@@ -4289,8 +4107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description of the package.</p>
-        pub fn package_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.package_description(inp);
+        pub fn package_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.package_description(input.into());
             self
         }
         /// <p>A new description of the package.</p>
@@ -4301,14 +4119,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package_description(input);
             self
         }
-        /// <p>A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
-        /// </p>
-        pub fn commit_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(inp);
+        /// <p>A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>. </p>
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
-        /// <p>A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
-        /// </p>
+        /// <p>A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>. </p>
         pub fn set_commit_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4319,9 +4135,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpgradeDomain`.
     ///
-    /// <p>Allows you to either upgrade your domain or perform an upgrade eligibility check to a compatible version of OpenSearch or Elasticsearch.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Allows you to either upgrade your domain or perform an upgrade eligibility check to a compatible version of OpenSearch or Elasticsearch. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpgradeDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4366,10 +4181,10 @@ pub mod fluent_builders {
                 crate::input::UpgradeDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4377,25 +4192,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
-        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-        /// and - (hyphen).
-        /// </p>
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
         }
         /// <p>The version of OpenSearch you intend to upgrade the domain to.</p>
-        pub fn target_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_version(inp);
+        pub fn target_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_version(input.into());
             self
         }
         /// <p>The version of OpenSearch you intend to upgrade the domain to.</p>
@@ -4406,18 +4215,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_version(input);
             self
         }
-        /// <p>
-        /// When true, indicates that an upgrade eligibility check needs to be performed.
-        /// Does not actually perform the upgrade.
-        /// </p>
-        pub fn perform_check_only(mut self, inp: bool) -> Self {
-            self.inner = self.inner.perform_check_only(inp);
+        /// <p> When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade. </p>
+        pub fn perform_check_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.perform_check_only(input);
             self
         }
-        /// <p>
-        /// When true, indicates that an upgrade eligibility check needs to be performed.
-        /// Does not actually perform the upgrade.
-        /// </p>
+        /// <p> When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade. </p>
         pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_perform_check_only(input);
             self
@@ -4426,46 +4229,26 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
         ///
-        /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the
-        /// following advanced options are available:
-        /// </p>
+        /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the following advanced options are available: </p>
         /// <ul>
-        /// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring
-        /// access to individual sub-resources. By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters
-        /// </a> for more information.
-        /// </li>
-        /// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is
-        /// unbounded.
-        /// </li>
+        /// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </li>
+        /// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is unbounded. </li>
         /// </ul>
-        /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">
-        /// Advanced cluster parameters</a>.
-        /// </p>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"> Advanced cluster parameters</a>. </p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.advanced_options(k, v);
+            self.inner = self.inner.advanced_options(k.into(), v.into());
             self
         }
-        /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the
-        /// following advanced options are available:
-        /// </p>
+        /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the following advanced options are available: </p>
         /// <ul>
-        /// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring
-        /// access to individual sub-resources. By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters
-        /// </a> for more information.
-        /// </li>
-        /// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is
-        /// unbounded.
-        /// </li>
+        /// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. </li>
+        /// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is unbounded. </li>
         /// </ul>
-        /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">
-        /// Advanced cluster parameters</a>.
-        /// </p>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"> Advanced cluster parameters</a>. </p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -4477,6 +4260,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

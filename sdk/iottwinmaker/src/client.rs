@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS IoT TwinMaker
@@ -171,6 +171,7 @@ where
     ///
     /// See [`GetPropertyValueHistory`](crate::client::fluent_builders::GetPropertyValueHistory) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetPropertyValueHistory::into_paginator).
     pub fn get_property_value_history(&self) -> fluent_builders::GetPropertyValueHistory<C, M, R> {
         fluent_builders::GetPropertyValueHistory::new(self.handle.clone())
     }
@@ -192,6 +193,7 @@ where
     ///
     /// See [`ListComponentTypes`](crate::client::fluent_builders::ListComponentTypes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComponentTypes::into_paginator).
     pub fn list_component_types(&self) -> fluent_builders::ListComponentTypes<C, M, R> {
         fluent_builders::ListComponentTypes::new(self.handle.clone())
     }
@@ -199,6 +201,7 @@ where
     ///
     /// See [`ListEntities`](crate::client::fluent_builders::ListEntities) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEntities::into_paginator).
     pub fn list_entities(&self) -> fluent_builders::ListEntities<C, M, R> {
         fluent_builders::ListEntities::new(self.handle.clone())
     }
@@ -206,6 +209,7 @@ where
     ///
     /// See [`ListScenes`](crate::client::fluent_builders::ListScenes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListScenes::into_paginator).
     pub fn list_scenes(&self) -> fluent_builders::ListScenes<C, M, R> {
         fluent_builders::ListScenes::new(self.handle.clone())
     }
@@ -220,6 +224,7 @@ where
     ///
     /// See [`ListWorkspaces`](crate::client::fluent_builders::ListWorkspaces) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkspaces::into_paginator).
     pub fn list_workspaces(&self) -> fluent_builders::ListWorkspaces<C, M, R> {
         fluent_builders::ListWorkspaces::new(self.handle.clone())
     }
@@ -277,7 +282,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchPutPropertyValues`.
     ///
     /// <p>Sets values for multiple time series properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutPropertyValues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -322,10 +327,10 @@ pub mod fluent_builders {
                 crate::input::BatchPutPropertyValuesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -334,8 +339,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the properties to set.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace that contains the properties to set.</p>
@@ -347,14 +352,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>An object that maps strings to the property value entries to set. Each string
-        /// in the mapping must be unique to this object.</p>
-        pub fn entries(mut self, inp: impl Into<crate::model::PropertyValueEntry>) -> Self {
-            self.inner = self.inner.entries(inp);
+        /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
+        pub fn entries(mut self, input: crate::model::PropertyValueEntry) -> Self {
+            self.inner = self.inner.entries(input);
             self
         }
-        /// <p>An object that maps strings to the property value entries to set. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PropertyValueEntry>>,
@@ -365,13 +368,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateComponentType`.
     ///
-    /// <p>Creates a component type.</p>
-    /// <important>
-    /// <p>
-    /// TwinMaker is in public preview and is subject to change.
-    /// </p>
+    /// <p>Creates a component type.</p> <important>
+    /// <p> TwinMaker is in public preview and is subject to change. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComponentType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -416,10 +416,10 @@ pub mod fluent_builders {
                 crate::input::CreateComponentTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -428,8 +428,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the component type.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace that contains the component type.</p>
@@ -437,21 +437,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workspace_id(input);
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of
-        /// this type.</p>
-        pub fn is_singleton(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_singleton(inp);
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
+        pub fn is_singleton(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_singleton(input);
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of
-        /// this type.</p>
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
         pub fn set_is_singleton(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_singleton(input);
             self
         }
         /// <p>The ID of the component type.</p>
-        pub fn component_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_type_id(inp);
+        pub fn component_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_id(input.into());
             self
         }
         /// <p>The ID of the component type.</p>
@@ -463,8 +461,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the component type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the component type.</p>
@@ -476,18 +474,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_property_definitions`](Self::set_property_definitions).
         ///
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn property_definitions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyDefinitionRequest>,
+            v: crate::model::PropertyDefinitionRequest,
         ) -> Self {
-            self.inner = self.inner.property_definitions(k, v);
+            self.inner = self.inner.property_definitions(k.into(), v);
             self
         }
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_property_definitions(
             mut self,
             input: std::option::Option<
@@ -505,8 +501,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_extends_from`](Self::set_extends_from).
         ///
         /// <p>Specifies the parent component type to extend.</p>
-        pub fn extends_from(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extends_from(inp);
+        pub fn extends_from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extends_from(input.into());
             self
         }
         /// <p>Specifies the parent component type to extend.</p>
@@ -521,18 +517,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
-        /// <p>An object that maps strings to the functions in the component type. Each string in the
-        /// mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn functions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FunctionRequest>,
+            v: crate::model::FunctionRequest,
         ) -> Self {
-            self.inner = self.inner.functions(k, v);
+            self.inner = self.inner.functions(k.into(), v);
             self
         }
-        /// <p>An object that maps strings to the functions in the component type. Each string in the
-        /// mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_functions(
             mut self,
             input: std::option::Option<
@@ -552,7 +546,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata that you can use to manage the component type.</p>
@@ -569,7 +563,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateEntity`.
     ///
     /// <p>Creates an entity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEntity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -614,10 +608,10 @@ pub mod fluent_builders {
                 crate::input::CreateEntityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -626,8 +620,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the entity.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace that contains the entity.</p>
@@ -636,8 +630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The ID of the entity.</p>
@@ -646,8 +640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the entity.</p>
-        pub fn entity_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_name(inp);
+        pub fn entity_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_name(input.into());
             self
         }
         /// <p>The name of the entity.</p>
@@ -656,8 +650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the entity.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the entity.</p>
@@ -669,18 +663,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>An object that maps strings to the components in the entity. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentRequest>,
+            v: crate::model::ComponentRequest,
         ) -> Self {
-            self.inner = self.inner.components(k, v);
+            self.inner = self.inner.components(k.into(), v);
             self
         }
-        /// <p>An object that maps strings to the components in the entity. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<
@@ -691,8 +683,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity's parent entity.</p>
-        pub fn parent_entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_entity_id(inp);
+        pub fn parent_entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_entity_id(input.into());
             self
         }
         /// <p>The ID of the entity's parent entity.</p>
@@ -713,7 +705,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata that you can use to manage the entity.</p>
@@ -730,7 +722,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateScene`.
     ///
     /// <p>Creates a scene.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateScene<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -775,10 +767,10 @@ pub mod fluent_builders {
                 crate::input::CreateSceneInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -787,8 +779,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the scene.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace that contains the scene.</p>
@@ -797,8 +789,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the scene.</p>
-        pub fn scene_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scene_id(inp);
+        pub fn scene_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scene_id(input.into());
             self
         }
         /// <p>The ID of the scene.</p>
@@ -807,8 +799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The relative path that specifies the location of the content definition file.</p>
-        pub fn content_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_location(inp);
+        pub fn content_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_location(input.into());
             self
         }
         /// <p>The relative path that specifies the location of the content definition file.</p>
@@ -820,8 +812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for this scene.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for this scene.</p>
@@ -834,8 +826,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
         /// <p>A list of capabilities that the scene uses to render itself.</p>
-        pub fn capabilities(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capabilities(inp);
+        pub fn capabilities(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capabilities(input.into());
             self
         }
         /// <p>A list of capabilities that the scene uses to render itself.</p>
@@ -856,7 +848,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata that you can use to manage the scene.</p>
@@ -873,7 +865,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkspace`.
     ///
     /// <p>Creates a workplace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -918,10 +910,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorkspaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -930,8 +922,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -940,8 +932,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the workspace.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the workspace.</p>
@@ -950,8 +942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-        pub fn s3_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_location(inp);
+        pub fn s3_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_location(input.into());
             self
         }
         /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
@@ -960,8 +952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the execution role associated with the workspace.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>The ARN of the execution role associated with the workspace.</p>
@@ -979,7 +971,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata that you can use to manage the workspace</p>
@@ -996,7 +988,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteComponentType`.
     ///
     /// <p>Deletes a component type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteComponentType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1041,10 +1033,10 @@ pub mod fluent_builders {
                 crate::input::DeleteComponentTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1053,8 +1045,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the component type.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace that contains the component type.</p>
@@ -1063,8 +1055,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the component type to delete.</p>
-        pub fn component_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_type_id(inp);
+        pub fn component_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_id(input.into());
             self
         }
         /// <p>The ID of the component type to delete.</p>
@@ -1079,7 +1071,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEntity`.
     ///
     /// <p>Deletes an entity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEntity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1124,10 +1116,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEntityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1136,8 +1128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the entity to delete.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace that contains the entity to delete.</p>
@@ -1146,8 +1138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity to delete.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The ID of the entity to delete.</p>
@@ -1156,8 +1148,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
-        pub fn is_recursive(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_recursive(inp);
+        pub fn is_recursive(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_recursive(input);
             self
         }
         /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
@@ -1169,7 +1161,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteScene`.
     ///
     /// <p>Deletes a scene.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteScene<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1214,10 +1206,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSceneInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1226,8 +1218,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -1236,8 +1228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the scene to delete.</p>
-        pub fn scene_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scene_id(inp);
+        pub fn scene_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scene_id(input.into());
             self
         }
         /// <p>The ID of the scene to delete.</p>
@@ -1249,7 +1241,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkspace`.
     ///
     /// <p>Deletes a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1294,10 +1286,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWorkspaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1306,8 +1298,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to delete.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace to delete.</p>
@@ -1319,7 +1311,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetComponentType`.
     ///
     /// <p>Retrieves information about a component type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponentType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1364,10 +1356,10 @@ pub mod fluent_builders {
                 crate::input::GetComponentTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1376,8 +1368,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the component type.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace that contains the component type.</p>
@@ -1386,8 +1378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the component type.</p>
-        pub fn component_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_type_id(inp);
+        pub fn component_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_id(input.into());
             self
         }
         /// <p>The ID of the component type.</p>
@@ -1402,7 +1394,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEntity`.
     ///
     /// <p>Retrieves information about an entity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEntity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1447,10 +1439,10 @@ pub mod fluent_builders {
                 crate::input::GetEntityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1459,8 +1451,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -1469,8 +1461,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The ID of the entity.</p>
@@ -1483,7 +1475,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the property values for a component, component type, entity, or workspace.</p>
     /// <p>You must specify a value for either <code>componentName</code>, <code>componentTypeId</code>, <code>entityId</code>, or <code>workspaceId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPropertyValue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1528,10 +1520,10 @@ pub mod fluent_builders {
                 crate::input::GetPropertyValueInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1540,8 +1532,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the component whose property values the operation returns.</p>
-        pub fn component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(inp);
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component whose property values the operation returns.</p>
@@ -1553,8 +1545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the component type whose property values the operation returns.</p>
-        pub fn component_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_type_id(inp);
+        pub fn component_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_id(input.into());
             self
         }
         /// <p>The ID of the component type whose property values the operation returns.</p>
@@ -1566,8 +1558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity whose property values the operation returns.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The ID of the entity whose property values the operation returns.</p>
@@ -1580,8 +1572,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_selected_properties`](Self::set_selected_properties).
         ///
         /// <p>The properties whose values the operation returns.</p>
-        pub fn selected_properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.selected_properties(inp);
+        pub fn selected_properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.selected_properties(input.into());
             self
         }
         /// <p>The properties whose values the operation returns.</p>
@@ -1593,8 +1585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workspace whose values the operation returns.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace whose values the operation returns.</p>
@@ -1606,9 +1598,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPropertyValueHistory`.
     ///
     /// <p>Retrieves information about the history of a time series property value for a component, component type, entity, or workspace.</p>
-    /// <p>You must specify a value for <code>workspaceId</code>. For entity-specific queries, specify values for <code>componentName</code> and
-    /// <code>entityId</code>. For cross-entity quries, specify a value for <code>componentTypeId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You must specify a value for <code>workspaceId</code>. For entity-specific queries, specify values for <code>componentName</code> and <code>entityId</code>. For cross-entity quries, specify a value for <code>componentTypeId</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPropertyValueHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1653,10 +1644,10 @@ pub mod fluent_builders {
                 crate::input::GetPropertyValueHistoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1664,9 +1655,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetPropertyValueHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetPropertyValueHistoryPaginator<C, M, R> {
+            crate::paginator::GetPropertyValueHistoryPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -1675,8 +1672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The ID of the entity.</p>
@@ -1685,8 +1682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(inp);
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -1698,8 +1695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the component type.</p>
-        pub fn component_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_type_id(inp);
+        pub fn component_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_id(input.into());
             self
         }
         /// <p>The ID of the component type.</p>
@@ -1715,8 +1712,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_selected_properties`](Self::set_selected_properties).
         ///
         /// <p>A list of properties whose value histories the request retrieves.</p>
-        pub fn selected_properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.selected_properties(inp);
+        pub fn selected_properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.selected_properties(input.into());
             self
         }
         /// <p>A list of properties whose value histories the request retrieves.</p>
@@ -1732,8 +1729,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_property_filters`](Self::set_property_filters).
         ///
         /// <p>A list of objects that filter the property value history request.</p>
-        pub fn property_filters(mut self, inp: impl Into<crate::model::PropertyFilter>) -> Self {
-            self.inner = self.inner.property_filters(inp);
+        pub fn property_filters(mut self, input: crate::model::PropertyFilter) -> Self {
+            self.inner = self.inner.property_filters(input);
             self
         }
         /// <p>A list of objects that filter the property value history request.</p>
@@ -1745,8 +1742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time of the earliest property value to return.</p>
-        pub fn start_date_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_date_time(inp);
+        pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_date_time(input);
             self
         }
         /// <p>The date and time of the earliest property value to return.</p>
@@ -1758,8 +1755,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time of the latest property value to return.</p>
-        pub fn end_date_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_date_time(inp);
+        pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_date_time(input);
             self
         }
         /// <p>The date and time of the latest property value to return.</p>
@@ -1771,8 +1768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
-        pub fn interpolation(mut self, inp: crate::model::InterpolationParameters) -> Self {
-            self.inner = self.inner.interpolation(inp);
+        pub fn interpolation(mut self, input: crate::model::InterpolationParameters) -> Self {
+            self.inner = self.inner.interpolation(input);
             self
         }
         /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
@@ -1784,8 +1781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results.</p>
@@ -1794,8 +1791,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -1804,8 +1801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time direction to use in the result order.</p>
-        pub fn order_by_time(mut self, inp: crate::model::OrderByTime) -> Self {
-            self.inner = self.inner.order_by_time(inp);
+        pub fn order_by_time(mut self, input: crate::model::OrderByTime) -> Self {
+            self.inner = self.inner.order_by_time(input);
             self
         }
         /// <p>The time direction to use in the result order.</p>
@@ -1820,7 +1817,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetScene`.
     ///
     /// <p>Retrieves information about a scene.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetScene<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1865,10 +1862,10 @@ pub mod fluent_builders {
                 crate::input::GetSceneInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1877,8 +1874,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the scene.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace that contains the scene.</p>
@@ -1887,8 +1884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the scene.</p>
-        pub fn scene_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scene_id(inp);
+        pub fn scene_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scene_id(input.into());
             self
         }
         /// <p>The ID of the scene.</p>
@@ -1900,7 +1897,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkspace`.
     ///
     /// <p>Retrieves information about a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1945,10 +1942,10 @@ pub mod fluent_builders {
                 crate::input::GetWorkspaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1957,8 +1954,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -1970,7 +1967,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListComponentTypes`.
     ///
     /// <p>Lists all component types in a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponentTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2015,10 +2012,10 @@ pub mod fluent_builders {
                 crate::input::ListComponentTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2026,9 +2023,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListComponentTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListComponentTypesPaginator<C, M, R> {
+            crate::paginator::ListComponentTypesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -2041,8 +2044,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of objects that filter the request.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::ListComponentTypesFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ListComponentTypesFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A list of objects that filter the request.</p>
@@ -2054,8 +2057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results.</p>
@@ -2064,8 +2067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to display.</p>
@@ -2077,7 +2080,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEntities`.
     ///
     /// <p>Lists all entities in a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEntities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2122,10 +2125,10 @@ pub mod fluent_builders {
                 crate::input::ListEntitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2133,9 +2136,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEntitiesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEntitiesPaginator<C, M, R> {
+            crate::paginator::ListEntitiesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -2148,8 +2157,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of objects that filter the request.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::ListEntitiesFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::ListEntitiesFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A list of objects that filter the request.</p>
@@ -2161,8 +2170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to display.</p>
@@ -2171,8 +2180,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results.</p>
@@ -2184,7 +2193,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListScenes`.
     ///
     /// <p>Lists all scenes in a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListScenes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2229,10 +2238,10 @@ pub mod fluent_builders {
                 crate::input::ListScenesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2240,9 +2249,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListScenesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListScenesPaginator<C, M, R> {
+            crate::paginator::ListScenesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the workspace that contains the scenes.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace that contains the scenes.</p>
@@ -2251,8 +2266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the maximum number of results to display.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the maximum number of results to display.</p>
@@ -2261,8 +2276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results.</p>
@@ -2274,7 +2289,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags associated with a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2319,10 +2334,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2331,8 +2346,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2341,8 +2356,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to display.</p>
@@ -2351,8 +2366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results.</p>
@@ -2364,7 +2379,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkspaces`.
     ///
     /// <p>Retrieves information about workspaces in the current account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2409,10 +2424,10 @@ pub mod fluent_builders {
                 crate::input::ListWorkspacesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2420,9 +2435,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkspacesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorkspacesPaginator<C, M, R> {
+            crate::paginator::ListWorkspacesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to display.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to display.</p>
@@ -2431,8 +2452,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that specifies the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The string that specifies the next page of results.</p>
@@ -2444,7 +2465,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2489,10 +2510,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2501,8 +2522,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2520,7 +2541,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Metadata to add to this resource.</p>
@@ -2537,7 +2558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2582,10 +2603,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2594,8 +2615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2608,8 +2629,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed.</p>
@@ -2624,7 +2645,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateComponentType`.
     ///
     /// <p>Updates information in a component type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateComponentType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2669,10 +2690,10 @@ pub mod fluent_builders {
                 crate::input::UpdateComponentTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2681,8 +2702,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the component type.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace that contains the component type.</p>
@@ -2690,21 +2711,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workspace_id(input);
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of this
-        /// type.</p>
-        pub fn is_singleton(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_singleton(inp);
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
+        pub fn is_singleton(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_singleton(input);
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of this
-        /// type.</p>
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
         pub fn set_is_singleton(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_singleton(input);
             self
         }
         /// <p>The ID of the component type.</p>
-        pub fn component_type_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_type_id(inp);
+        pub fn component_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_type_id(input.into());
             self
         }
         /// <p>The ID of the component type.</p>
@@ -2716,8 +2735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the component type.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the component type.</p>
@@ -2729,18 +2748,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_property_definitions`](Self::set_property_definitions).
         ///
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn property_definitions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyDefinitionRequest>,
+            v: crate::model::PropertyDefinitionRequest,
         ) -> Self {
-            self.inner = self.inner.property_definitions(k, v);
+            self.inner = self.inner.property_definitions(k.into(), v);
             self
         }
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_property_definitions(
             mut self,
             input: std::option::Option<
@@ -2758,8 +2775,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_extends_from`](Self::set_extends_from).
         ///
         /// <p>Specifies the component type that this component type extends.</p>
-        pub fn extends_from(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extends_from(inp);
+        pub fn extends_from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extends_from(input.into());
             self
         }
         /// <p>Specifies the component type that this component type extends.</p>
@@ -2774,18 +2791,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
-        /// <p>An object that maps strings to the functions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn functions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FunctionRequest>,
+            v: crate::model::FunctionRequest,
         ) -> Self {
-            self.inner = self.inner.functions(k, v);
+            self.inner = self.inner.functions(k.into(), v);
             self
         }
-        /// <p>An object that maps strings to the functions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_functions(
             mut self,
             input: std::option::Option<
@@ -2799,7 +2814,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEntity`.
     ///
     /// <p>Updates an entity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEntity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2844,10 +2859,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEntityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2856,8 +2871,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the entity.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace that contains the entity.</p>
@@ -2866,8 +2881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the entity.</p>
-        pub fn entity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(inp);
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The ID of the entity.</p>
@@ -2876,8 +2891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the entity.</p>
-        pub fn entity_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_name(inp);
+        pub fn entity_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_name(input.into());
             self
         }
         /// <p>The name of the entity.</p>
@@ -2886,8 +2901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the entity.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the entity.</p>
@@ -2899,18 +2914,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_component_updates`](Self::set_component_updates).
         ///
-        /// <p>An object that maps strings to the component updates in the request. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
         pub fn component_updates(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ComponentUpdateRequest>,
+            v: crate::model::ComponentUpdateRequest,
         ) -> Self {
-            self.inner = self.inner.component_updates(k, v);
+            self.inner = self.inner.component_updates(k.into(), v);
             self
         }
-        /// <p>An object that maps strings to the component updates in the request. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
         pub fn set_component_updates(
             mut self,
             input: std::option::Option<
@@ -2926,9 +2939,9 @@ pub mod fluent_builders {
         /// <p>An object that describes the update request for a parent entity.</p>
         pub fn parent_entity_update(
             mut self,
-            inp: crate::model::ParentEntityUpdateRequest,
+            input: crate::model::ParentEntityUpdateRequest,
         ) -> Self {
-            self.inner = self.inner.parent_entity_update(inp);
+            self.inner = self.inner.parent_entity_update(input);
             self
         }
         /// <p>An object that describes the update request for a parent entity.</p>
@@ -2943,7 +2956,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateScene`.
     ///
     /// <p>Updates a scene.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateScene<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2988,10 +3001,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSceneInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3000,8 +3013,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace that contains the scene.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace that contains the scene.</p>
@@ -3010,8 +3023,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the scene.</p>
-        pub fn scene_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scene_id(inp);
+        pub fn scene_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scene_id(input.into());
             self
         }
         /// <p>The ID of the scene.</p>
@@ -3020,8 +3033,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The relative path that specifies the location of the content definition file.</p>
-        pub fn content_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_location(inp);
+        pub fn content_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_location(input.into());
             self
         }
         /// <p>The relative path that specifies the location of the content definition file.</p>
@@ -3033,8 +3046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of this scene.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of this scene.</p>
@@ -3047,8 +3060,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
         /// <p>A list of capabilities that the scene uses to render.</p>
-        pub fn capabilities(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capabilities(inp);
+        pub fn capabilities(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capabilities(input.into());
             self
         }
         /// <p>A list of capabilities that the scene uses to render.</p>
@@ -3063,7 +3076,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkspace`.
     ///
     /// <p>Updates a workspace.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3108,10 +3121,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWorkspaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3120,8 +3133,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace.</p>
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace.</p>
@@ -3130,8 +3143,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the workspace.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the workspace.</p>
@@ -3140,8 +3153,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the execution role associated with the workspace.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>The ARN of the execution role associated with the workspace.</p>
@@ -3151,6 +3164,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -468,9 +468,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -499,13 +499,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateLayerUploadOutput {
-    /// <p>The upload ID for the layer upload. This parameter is passed to further <a>UploadLayerPart</a> and <a>CompleteLayerUpload</a> operations.</p>
+    /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
     pub part_size: std::option::Option<i64>,
 }
 impl InitiateLayerUploadOutput {
-    /// <p>The upload ID for the layer upload. This parameter is passed to further <a>UploadLayerPart</a> and <a>CompleteLayerUpload</a> operations.</p>
+    /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
@@ -532,12 +532,12 @@ pub mod initiate_layer_upload_output {
         pub(crate) part_size: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The upload ID for the layer upload. This parameter is passed to further <a>UploadLayerPart</a> and <a>CompleteLayerUpload</a> operations.</p>
+        /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.upload_id = Some(input.into());
             self
         }
-        /// <p>The upload ID for the layer upload. This parameter is passed to further <a>UploadLayerPart</a> and <a>CompleteLayerUpload</a> operations.</p>
+        /// <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upload_id = input;
             self
@@ -576,8 +576,7 @@ pub struct GetRepositoryPolicyOutput {
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository name associated with the request.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The repository policy text associated with the repository. The policy text will be in
-    /// JSON format.</p>
+    /// <p>The repository policy text associated with the repository. The policy text will be in JSON format.</p>
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl GetRepositoryPolicyOutput {
@@ -589,8 +588,7 @@ impl GetRepositoryPolicyOutput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The repository policy text associated with the repository. The policy text will be in
-    /// JSON format.</p>
+    /// <p>The repository policy text associated with the repository. The policy text will be in JSON format.</p>
     pub fn policy_text(&self) -> std::option::Option<&str> {
         self.policy_text.as_deref()
     }
@@ -638,14 +636,12 @@ pub mod get_repository_policy_output {
             self.repository_name = input;
             self
         }
-        /// <p>The repository policy text associated with the repository. The policy text will be in
-        /// JSON format.</p>
+        /// <p>The repository policy text associated with the repository. The policy text will be in JSON format.</p>
         pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_text = Some(input.into());
             self
         }
-        /// <p>The repository policy text associated with the repository. The policy text will be in
-        /// JSON format.</p>
+        /// <p>The repository policy text associated with the repository. The policy text will be in JSON format.</p>
         pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_text = input;
             self
@@ -844,11 +840,7 @@ impl GetAuthorizationTokenOutput {
 pub struct DescribeRepositoriesOutput {
     /// <p>A list of repository objects corresponding to valid repositories.</p>
     pub repositories: std::option::Option<std::vec::Vec<crate::model::Repository>>,
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>DescribeRepositories</code> request. When the results of a
-    /// <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can
-    /// be used to retrieve the next page of results. This value is <code>null</code> when there
-    /// are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRepositoriesOutput {
@@ -856,11 +848,7 @@ impl DescribeRepositoriesOutput {
     pub fn repositories(&self) -> std::option::Option<&[crate::model::Repository]> {
         self.repositories.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>DescribeRepositories</code> request. When the results of a
-    /// <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can
-    /// be used to retrieve the next page of results. This value is <code>null</code> when there
-    /// are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -888,9 +876,9 @@ pub mod describe_repositories_output {
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
         /// <p>A list of repository objects corresponding to valid repositories.</p>
-        pub fn repositories(mut self, input: impl Into<crate::model::Repository>) -> Self {
+        pub fn repositories(mut self, input: crate::model::Repository) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.repositories = Some(v);
             self
         }
@@ -902,20 +890,12 @@ pub mod describe_repositories_output {
             self.repositories = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>DescribeRepositories</code> request. When the results of a
-        /// <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can
-        /// be used to retrieve the next page of results. This value is <code>null</code> when there
-        /// are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>DescribeRepositories</code> request. When the results of a
-        /// <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can
-        /// be used to retrieve the next page of results. This value is <code>null</code> when there
-        /// are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -942,11 +922,7 @@ impl DescribeRepositoriesOutput {
 pub struct DescribeRegistriesOutput {
     /// <p>An object containing the details for a public registry.</p>
     pub registries: std::option::Option<std::vec::Vec<crate::model::Registry>>,
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>DescribeRepositories</code> request. When the results of a
-    /// <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can
-    /// be used to retrieve the next page of results. This value is <code>null</code> when there
-    /// are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRegistriesOutput {
@@ -954,11 +930,7 @@ impl DescribeRegistriesOutput {
     pub fn registries(&self) -> std::option::Option<&[crate::model::Registry]> {
         self.registries.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>DescribeRepositories</code> request. When the results of a
-    /// <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can
-    /// be used to retrieve the next page of results. This value is <code>null</code> when there
-    /// are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -986,9 +958,9 @@ pub mod describe_registries_output {
         /// To override the contents of this collection use [`set_registries`](Self::set_registries).
         ///
         /// <p>An object containing the details for a public registry.</p>
-        pub fn registries(mut self, input: impl Into<crate::model::Registry>) -> Self {
+        pub fn registries(mut self, input: crate::model::Registry) -> Self {
             let mut v = self.registries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.registries = Some(v);
             self
         }
@@ -1000,20 +972,12 @@ pub mod describe_registries_output {
             self.registries = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>DescribeRepositories</code> request. When the results of a
-        /// <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can
-        /// be used to retrieve the next page of results. This value is <code>null</code> when there
-        /// are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>DescribeRepositories</code> request. When the results of a
-        /// <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can
-        /// be used to retrieve the next page of results. This value is <code>null</code> when there
-        /// are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1040,10 +1004,7 @@ impl DescribeRegistriesOutput {
 pub struct DescribeImageTagsOutput {
     /// <p>The image tag details for the images in the requested repository.</p>
     pub image_tag_details: std::option::Option<std::vec::Vec<crate::model::ImageTagDetail>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code>
-    /// request. When the results of a <code>DescribeImageTags</code> request exceed
-    /// <code>maxResults</code>, this value can be used to retrieve the next page of results.
-    /// This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImageTagsOutput {
@@ -1051,10 +1012,7 @@ impl DescribeImageTagsOutput {
     pub fn image_tag_details(&self) -> std::option::Option<&[crate::model::ImageTagDetail]> {
         self.image_tag_details.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code>
-    /// request. When the results of a <code>DescribeImageTags</code> request exceed
-    /// <code>maxResults</code>, this value can be used to retrieve the next page of results.
-    /// This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1083,9 +1041,9 @@ pub mod describe_image_tags_output {
         /// To override the contents of this collection use [`set_image_tag_details`](Self::set_image_tag_details).
         ///
         /// <p>The image tag details for the images in the requested repository.</p>
-        pub fn image_tag_details(mut self, input: impl Into<crate::model::ImageTagDetail>) -> Self {
+        pub fn image_tag_details(mut self, input: crate::model::ImageTagDetail) -> Self {
             let mut v = self.image_tag_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_tag_details = Some(v);
             self
         }
@@ -1097,18 +1055,12 @@ pub mod describe_image_tags_output {
             self.image_tag_details = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code>
-        /// request. When the results of a <code>DescribeImageTags</code> request exceed
-        /// <code>maxResults</code>, this value can be used to retrieve the next page of results.
-        /// This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code>
-        /// request. When the results of a <code>DescribeImageTags</code> request exceed
-        /// <code>maxResults</code>, this value can be used to retrieve the next page of results.
-        /// This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1133,25 +1085,17 @@ impl DescribeImageTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImagesOutput {
-    /// <p>A list of <a>ImageDetail</a> objects that contain data about the
-    /// image.</p>
+    /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
     pub image_details: std::option::Option<std::vec::Vec<crate::model::ImageDetail>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code>
-    /// request. When the results of a <code>DescribeImages</code> request exceed
-    /// <code>maxResults</code>, this value can be used to retrieve the next page of results.
-    /// This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImagesOutput {
-    /// <p>A list of <a>ImageDetail</a> objects that contain data about the
-    /// image.</p>
+    /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
     pub fn image_details(&self) -> std::option::Option<&[crate::model::ImageDetail]> {
         self.image_details.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code>
-    /// request. When the results of a <code>DescribeImages</code> request exceed
-    /// <code>maxResults</code>, this value can be used to retrieve the next page of results.
-    /// This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1178,16 +1122,14 @@ pub mod describe_images_output {
         ///
         /// To override the contents of this collection use [`set_image_details`](Self::set_image_details).
         ///
-        /// <p>A list of <a>ImageDetail</a> objects that contain data about the
-        /// image.</p>
-        pub fn image_details(mut self, input: impl Into<crate::model::ImageDetail>) -> Self {
+        /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
+        pub fn image_details(mut self, input: crate::model::ImageDetail) -> Self {
             let mut v = self.image_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_details = Some(v);
             self
         }
-        /// <p>A list of <a>ImageDetail</a> objects that contain data about the
-        /// image.</p>
+        /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
         pub fn set_image_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImageDetail>>,
@@ -1195,18 +1137,12 @@ pub mod describe_images_output {
             self.image_details = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code>
-        /// request. When the results of a <code>DescribeImages</code> request exceed
-        /// <code>maxResults</code>, this value can be used to retrieve the next page of results.
-        /// This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code>
-        /// request. When the results of a <code>DescribeImages</code> request exceed
-        /// <code>maxResults</code>, this value can be used to retrieve the next page of results.
-        /// This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1385,8 +1321,7 @@ impl DeleteRepositoryOutput {
 pub struct CreateRepositoryOutput {
     /// <p>The repository that was created.</p>
     pub repository: std::option::Option<crate::model::Repository>,
-    /// <p>The catalog data for a repository. This data is publicly visible in the
-    /// Amazon ECR Public Gallery.</p>
+    /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
     pub catalog_data: std::option::Option<crate::model::RepositoryCatalogData>,
 }
 impl CreateRepositoryOutput {
@@ -1394,8 +1329,7 @@ impl CreateRepositoryOutput {
     pub fn repository(&self) -> std::option::Option<&crate::model::Repository> {
         self.repository.as_ref()
     }
-    /// <p>The catalog data for a repository. This data is publicly visible in the
-    /// Amazon ECR Public Gallery.</p>
+    /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
     pub fn catalog_data(&self) -> std::option::Option<&crate::model::RepositoryCatalogData> {
         self.catalog_data.as_ref()
     }
@@ -1431,14 +1365,12 @@ pub mod create_repository_output {
             self.repository = input;
             self
         }
-        /// <p>The catalog data for a repository. This data is publicly visible in the
-        /// Amazon ECR Public Gallery.</p>
+        /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
         pub fn catalog_data(mut self, input: crate::model::RepositoryCatalogData) -> Self {
             self.catalog_data = Some(input);
             self
         }
-        /// <p>The catalog data for a repository. This data is publicly visible in the
-        /// Amazon ECR Public Gallery.</p>
+        /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
         pub fn set_catalog_data(
             mut self,
             input: std::option::Option<crate::model::RepositoryCatalogData>,
@@ -1618,9 +1550,9 @@ pub mod batch_delete_image_output {
         /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
         ///
         /// <p>The image IDs of the deleted images.</p>
-        pub fn image_ids(mut self, input: impl Into<crate::model::ImageIdentifier>) -> Self {
+        pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
             let mut v = self.image_ids.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_ids = Some(v);
             self
         }
@@ -1637,9 +1569,9 @@ pub mod batch_delete_image_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::ImageFailure>) -> Self {
+        pub fn failures(mut self, input: crate::model::ImageFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -1671,15 +1603,13 @@ impl BatchDeleteImageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCheckLayerAvailabilityOutput {
-    /// <p>A list of image layer objects corresponding to the image layer references in the
-    /// request.</p>
+    /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::LayerFailure>>,
 }
 impl BatchCheckLayerAvailabilityOutput {
-    /// <p>A list of image layer objects corresponding to the image layer references in the
-    /// request.</p>
+    /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
     pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
         self.layers.as_deref()
     }
@@ -1710,16 +1640,14 @@ pub mod batch_check_layer_availability_output {
         ///
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
-        /// <p>A list of image layer objects corresponding to the image layer references in the
-        /// request.</p>
-        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
+        /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
+        pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layers = Some(v);
             self
         }
-        /// <p>A list of image layer objects corresponding to the image layer references in the
-        /// request.</p>
+        /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
         pub fn set_layers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
@@ -1732,9 +1660,9 @@ pub mod batch_check_layer_availability_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>Any failures associated with the call.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::LayerFailure>) -> Self {
+        pub fn failures(mut self, input: crate::model::LayerFailure) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }

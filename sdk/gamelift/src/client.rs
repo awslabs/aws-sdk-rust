@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon GameLift
@@ -329,6 +329,7 @@ where
     ///
     /// See [`DescribeFleetAttributes`](crate::client::fluent_builders::DescribeFleetAttributes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAttributes::into_paginator).
     pub fn describe_fleet_attributes(&self) -> fluent_builders::DescribeFleetAttributes<C, M, R> {
         fluent_builders::DescribeFleetAttributes::new(self.handle.clone())
     }
@@ -336,6 +337,7 @@ where
     ///
     /// See [`DescribeFleetCapacity`](crate::client::fluent_builders::DescribeFleetCapacity) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetCapacity::into_paginator).
     pub fn describe_fleet_capacity(&self) -> fluent_builders::DescribeFleetCapacity<C, M, R> {
         fluent_builders::DescribeFleetCapacity::new(self.handle.clone())
     }
@@ -343,6 +345,7 @@ where
     ///
     /// See [`DescribeFleetEvents`](crate::client::fluent_builders::DescribeFleetEvents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetEvents::into_paginator).
     pub fn describe_fleet_events(&self) -> fluent_builders::DescribeFleetEvents<C, M, R> {
         fluent_builders::DescribeFleetEvents::new(self.handle.clone())
     }
@@ -350,6 +353,7 @@ where
     ///
     /// See [`DescribeFleetLocationAttributes`](crate::client::fluent_builders::DescribeFleetLocationAttributes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetLocationAttributes::into_paginator).
     pub fn describe_fleet_location_attributes(
         &self,
     ) -> fluent_builders::DescribeFleetLocationAttributes<C, M, R> {
@@ -386,6 +390,7 @@ where
     ///
     /// See [`DescribeFleetUtilization`](crate::client::fluent_builders::DescribeFleetUtilization) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetUtilization::into_paginator).
     pub fn describe_fleet_utilization(&self) -> fluent_builders::DescribeFleetUtilization<C, M, R> {
         fluent_builders::DescribeFleetUtilization::new(self.handle.clone())
     }
@@ -407,6 +412,7 @@ where
     ///
     /// See [`DescribeGameServerInstances`](crate::client::fluent_builders::DescribeGameServerInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeGameServerInstances::into_paginator).
     pub fn describe_game_server_instances(
         &self,
     ) -> fluent_builders::DescribeGameServerInstances<C, M, R> {
@@ -416,6 +422,7 @@ where
     ///
     /// See [`DescribeGameSessionDetails`](crate::client::fluent_builders::DescribeGameSessionDetails) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeGameSessionDetails::into_paginator).
     pub fn describe_game_session_details(
         &self,
     ) -> fluent_builders::DescribeGameSessionDetails<C, M, R> {
@@ -434,6 +441,7 @@ where
     ///
     /// See [`DescribeGameSessionQueues`](crate::client::fluent_builders::DescribeGameSessionQueues) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeGameSessionQueues::into_paginator).
     pub fn describe_game_session_queues(
         &self,
     ) -> fluent_builders::DescribeGameSessionQueues<C, M, R> {
@@ -443,6 +451,7 @@ where
     ///
     /// See [`DescribeGameSessions`](crate::client::fluent_builders::DescribeGameSessions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeGameSessions::into_paginator).
     pub fn describe_game_sessions(&self) -> fluent_builders::DescribeGameSessions<C, M, R> {
         fluent_builders::DescribeGameSessions::new(self.handle.clone())
     }
@@ -450,6 +459,7 @@ where
     ///
     /// See [`DescribeInstances`](crate::client::fluent_builders::DescribeInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeInstances::into_paginator).
     pub fn describe_instances(&self) -> fluent_builders::DescribeInstances<C, M, R> {
         fluent_builders::DescribeInstances::new(self.handle.clone())
     }
@@ -464,6 +474,7 @@ where
     ///
     /// See [`DescribeMatchmakingConfigurations`](crate::client::fluent_builders::DescribeMatchmakingConfigurations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMatchmakingConfigurations::into_paginator).
     pub fn describe_matchmaking_configurations(
         &self,
     ) -> fluent_builders::DescribeMatchmakingConfigurations<C, M, R> {
@@ -473,6 +484,7 @@ where
     ///
     /// See [`DescribeMatchmakingRuleSets`](crate::client::fluent_builders::DescribeMatchmakingRuleSets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMatchmakingRuleSets::into_paginator).
     pub fn describe_matchmaking_rule_sets(
         &self,
     ) -> fluent_builders::DescribeMatchmakingRuleSets<C, M, R> {
@@ -482,6 +494,7 @@ where
     ///
     /// See [`DescribePlayerSessions`](crate::client::fluent_builders::DescribePlayerSessions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePlayerSessions::into_paginator).
     pub fn describe_player_sessions(&self) -> fluent_builders::DescribePlayerSessions<C, M, R> {
         fluent_builders::DescribePlayerSessions::new(self.handle.clone())
     }
@@ -498,6 +511,7 @@ where
     ///
     /// See [`DescribeScalingPolicies`](crate::client::fluent_builders::DescribeScalingPolicies) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeScalingPolicies::into_paginator).
     pub fn describe_scaling_policies(&self) -> fluent_builders::DescribeScalingPolicies<C, M, R> {
         fluent_builders::DescribeScalingPolicies::new(self.handle.clone())
     }
@@ -544,6 +558,7 @@ where
     ///
     /// See [`ListAliases`](crate::client::fluent_builders::ListAliases) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAliases::into_paginator).
     pub fn list_aliases(&self) -> fluent_builders::ListAliases<C, M, R> {
         fluent_builders::ListAliases::new(self.handle.clone())
     }
@@ -551,6 +566,7 @@ where
     ///
     /// See [`ListBuilds`](crate::client::fluent_builders::ListBuilds) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBuilds::into_paginator).
     pub fn list_builds(&self) -> fluent_builders::ListBuilds<C, M, R> {
         fluent_builders::ListBuilds::new(self.handle.clone())
     }
@@ -558,6 +574,7 @@ where
     ///
     /// See [`ListFleets`](crate::client::fluent_builders::ListFleets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFleets::into_paginator).
     pub fn list_fleets(&self) -> fluent_builders::ListFleets<C, M, R> {
         fluent_builders::ListFleets::new(self.handle.clone())
     }
@@ -565,6 +582,7 @@ where
     ///
     /// See [`ListGameServerGroups`](crate::client::fluent_builders::ListGameServerGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGameServerGroups::into_paginator).
     pub fn list_game_server_groups(&self) -> fluent_builders::ListGameServerGroups<C, M, R> {
         fluent_builders::ListGameServerGroups::new(self.handle.clone())
     }
@@ -572,6 +590,7 @@ where
     ///
     /// See [`ListGameServers`](crate::client::fluent_builders::ListGameServers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGameServers::into_paginator).
     pub fn list_game_servers(&self) -> fluent_builders::ListGameServers<C, M, R> {
         fluent_builders::ListGameServers::new(self.handle.clone())
     }
@@ -579,6 +598,7 @@ where
     ///
     /// See [`ListScripts`](crate::client::fluent_builders::ListScripts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListScripts::into_paginator).
     pub fn list_scripts(&self) -> fluent_builders::ListScripts<C, M, R> {
         fluent_builders::ListScripts::new(self.handle.clone())
     }
@@ -628,6 +648,7 @@ where
     ///
     /// See [`SearchGameSessions`](crate::client::fluent_builders::SearchGameSessions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchGameSessions::into_paginator).
     pub fn search_game_sessions(&self) -> fluent_builders::SearchGameSessions<C, M, R> {
         fluent_builders::SearchGameSessions::new(self.handle.clone())
     }
@@ -813,46 +834,16 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AcceptMatch`.
     ///
-    /// <p>Registers a player's acceptance or rejection of a proposed FlexMatch match. A
-    /// matchmaking configuration may require player acceptance; if so, then matches built with
-    /// that configuration cannot be completed unless all players accept the proposed match
-    /// within a specified time limit. </p>
-    /// <p>When FlexMatch builds a match, all the matchmaking tickets involved in the proposed
-    /// match are placed into status <code>REQUIRES_ACCEPTANCE</code>. This is a trigger for
-    /// your game to get acceptance from all players in the ticket. Acceptances are only valid
-    /// for tickets when they are in this status; all other acceptances result in an
-    /// error.</p>
-    /// <p>To register acceptance, specify the ticket ID, a response, and one or more players.
-    /// Once all players have registered acceptance, the matchmaking tickets advance to status
-    /// <code>PLACING</code>, where a new game session is created for the match. </p>
-    /// <p>If any player rejects the match, or if acceptances are not received before a specified
-    /// timeout, the proposed match is dropped. The matchmaking tickets are then handled in one
-    /// of two ways: For tickets where one or more players rejected the match, the ticket status
-    /// is returned to <code>SEARCHING</code> to find a new match. For tickets where one or more
-    /// players failed to respond, the ticket status is set to <code>CANCELLED</code>, and
-    /// processing is terminated. A new matchmaking request for these players can be submitted
-    /// as needed. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html">
-    /// Add FlexMatch to a game client</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html"> FlexMatch events</a> (reference)</p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>StartMatchmaking</a> |
-    /// <a>DescribeMatchmaking</a> |
-    /// <a>StopMatchmaking</a> |
-    /// <a>AcceptMatch</a> |
-    /// <a>StartMatchBackfill</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registers a player's acceptance or rejection of a proposed FlexMatch match. A matchmaking configuration may require player acceptance; if so, then matches built with that configuration cannot be completed unless all players accept the proposed match within a specified time limit. </p>
+    /// <p>When FlexMatch builds a match, all the matchmaking tickets involved in the proposed match are placed into status <code>REQUIRES_ACCEPTANCE</code>. This is a trigger for your game to get acceptance from all players in the ticket. Acceptances are only valid for tickets when they are in this status; all other acceptances result in an error.</p>
+    /// <p>To register acceptance, specify the ticket ID, a response, and one or more players. Once all players have registered acceptance, the matchmaking tickets advance to status <code>PLACING</code>, where a new game session is created for the match. </p>
+    /// <p>If any player rejects the match, or if acceptances are not received before a specified timeout, the proposed match is dropped. The matchmaking tickets are then handled in one of two ways: For tickets where one or more players rejected the match, the ticket status is returned to <code>SEARCHING</code> to find a new match. For tickets where one or more players failed to respond, the ticket status is set to <code>CANCELLED</code>, and processing is terminated. A new matchmaking request for these players can be submitted as needed. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html"> Add FlexMatch to a game client</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html"> FlexMatch events</a> (reference)</p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>StartMatchmaking</code> | <code>DescribeMatchmaking</code> | <code>StopMatchmaking</code> | <code>AcceptMatch</code> | <code>StartMatchBackfill</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptMatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -897,10 +888,10 @@ pub mod fluent_builders {
                 crate::input::AcceptMatchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -908,14 +899,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this
-        /// request will fail.</p>
-        pub fn ticket_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ticket_id(inp);
+        /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
+        pub fn ticket_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ticket_id(input.into());
             self
         }
-        /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this
-        /// request will fail.</p>
+        /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ticket_id(input);
             self
@@ -924,14 +913,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_player_ids`](Self::set_player_ids).
         ///
-        /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple
-        /// player IDs.</p>
-        pub fn player_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_ids(inp);
+        /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
+        pub fn player_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.player_ids(input.into());
             self
         }
-        /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple
-        /// player IDs.</p>
+        /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
         pub fn set_player_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -940,8 +927,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Player response to the proposed match.</p>
-        pub fn acceptance_type(mut self, inp: crate::model::AcceptanceType) -> Self {
-            self.inner = self.inner.acceptance_type(inp);
+        pub fn acceptance_type(mut self, input: crate::model::AcceptanceType) -> Self {
+            self.inner = self.inner.acceptance_type(input);
             self
         }
         /// <p>Player response to the proposed match.</p>
@@ -955,60 +942,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ClaimGameServer`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Locates an available game server and temporarily reserves it to host gameplay and
-    /// players. This operation is called from a game client or client service (such as a
-    /// matchmaker) to request hosting resources for a new game session. In response, GameLift FleetIQ
-    /// locates an available game server, places it in <code>CLAIMED</code> status for 60
-    /// seconds, and returns connection information that players can use to connect to the game
-    /// server. </p>
-    /// <p>To claim a game server, identify a game server group. You can also specify a game
-    /// server ID, although this approach bypasses GameLift FleetIQ placement optimization. Optionally,
-    /// include game data to pass to the game server at the start of a game session, such as a
-    /// game map or player information. </p>
-    /// <p>When a game server is successfully claimed, connection information is returned. A
-    /// claimed game server's utilization status remains <code>AVAILABLE</code> while the claim
-    /// status is set to <code>CLAIMED</code> for up to 60 seconds. This time period gives the
-    /// game server time to update its status to <code>UTILIZED</code> (using <a>UpdateGameServer</a>) once players join. If the game server's status is not
-    /// updated within 60 seconds, the game server reverts to unclaimed status and is available
-    /// to be claimed by another request. The claim time period is a fixed value and is not
-    /// configurable.</p>
-    /// <p>If you try to claim a specific game server, this request will fail in the following
-    /// cases:</p>
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Locates an available game server and temporarily reserves it to host gameplay and players. This operation is called from a game client or client service (such as a matchmaker) to request hosting resources for a new game session. In response, GameLift FleetIQ locates an available game server, places it in <code>CLAIMED</code> status for 60 seconds, and returns connection information that players can use to connect to the game server. </p>
+    /// <p>To claim a game server, identify a game server group. You can also specify a game server ID, although this approach bypasses GameLift FleetIQ placement optimization. Optionally, include game data to pass to the game server at the start of a game session, such as a game map or player information. </p>
+    /// <p>When a game server is successfully claimed, connection information is returned. A claimed game server's utilization status remains <code>AVAILABLE</code> while the claim status is set to <code>CLAIMED</code> for up to 60 seconds. This time period gives the game server time to update its status to <code>UTILIZED</code> (using <code>UpdateGameServer</code>) once players join. If the game server's status is not updated within 60 seconds, the game server reverts to unclaimed status and is available to be claimed by another request. The claim time period is a fixed value and is not configurable.</p>
+    /// <p>If you try to claim a specific game server, this request will fail in the following cases:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the game server utilization status is <code>UTILIZED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the game server claim status is <code>CLAIMED</code>.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>When claiming a specific game server, this request will succeed even if the game
-    /// server is running on an instance in <code>DRAINING</code> status. To avoid this,
-    /// first check the instance status by calling <a>DescribeGameServerInstances</a>.</p>
+    /// <li> <p>If the game server utilization status is <code>UTILIZED</code>.</p> </li>
+    /// <li> <p>If the game server claim status is <code>CLAIMED</code>.</p> </li>
+    /// </ul> <note>
+    /// <p>When claiming a specific game server, this request will succeed even if the game server is running on an instance in <code>DRAINING</code> status. To avoid this, first check the instance status by calling <code>DescribeGameServerInstances</code>.</p>
     /// </note>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>RegisterGameServer</a> |
-    /// <a>ListGameServers</a> |
-    /// <a>ClaimGameServer</a> |
-    /// <a>DescribeGameServer</a> |
-    /// <a>UpdateGameServer</a> |
-    /// <a>DeregisterGameServer</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>RegisterGameServer</code> | <code>ListGameServers</code> | <code>ClaimGameServer</code> | <code>DescribeGameServer</code> | <code>UpdateGameServer</code> | <code>DeregisterGameServer</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ClaimGameServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1053,10 +1002,10 @@ pub mod fluent_builders {
                 crate::input::ClaimGameServerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1064,16 +1013,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value identifies
-        /// where you want GameLift FleetIQ to look for an available game server to claim. </p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value. If you are not specifying a game server to claim, this value identifies where you want GameLift FleetIQ to look for an available game server to claim. </p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value identifies
-        /// where you want GameLift FleetIQ to look for an available game server to claim. </p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value. If you are not specifying a game server to claim, this value identifies where you want GameLift FleetIQ to look for an available game server to claim. </p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1081,16 +1026,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_group_name(input);
             self
         }
-        /// <p>A custom string that uniquely identifies the game server to claim. If this parameter
-        /// is left empty, GameLift FleetIQ searches for an available game server in the specified game
-        /// server group.</p>
-        pub fn game_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_id(inp);
+        /// <p>A custom string that uniquely identifies the game server to claim. If this parameter is left empty, GameLift FleetIQ searches for an available game server in the specified game server group.</p>
+        pub fn game_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_id(input.into());
             self
         }
-        /// <p>A custom string that uniquely identifies the game server to claim. If this parameter
-        /// is left empty, GameLift FleetIQ searches for an available game server in the specified game
-        /// server group.</p>
+        /// <p>A custom string that uniquely identifies the game server to claim. If this parameter is left empty, GameLift FleetIQ searches for an available game server in the specified game server group.</p>
         pub fn set_game_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1098,16 +1039,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_id(input);
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers using
-        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
-        pub fn game_server_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_data(inp);
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
+        pub fn game_server_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_data(input.into());
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers using
-        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
         pub fn set_game_server_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1118,33 +1055,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAlias`.
     ///
-    /// <p>Creates an alias for a fleet. In most situations, you can use an alias ID in place of
-    /// a fleet ID. An alias provides a level of abstraction for a fleet that is useful when
-    /// redirecting player traffic from one fleet to another, such as when updating your game
-    /// build.  </p>
-    /// <p>Amazon GameLift supports two types of routing strategies for aliases: simple and terminal. A
-    /// simple alias points to an active fleet. A terminal alias is used to display messaging or
-    /// link to a URL instead of routing players to an active fleet. For example, you might use
-    /// a terminal alias when a game version is no longer supported and you want to direct
-    /// players to an upgrade site. </p>
-    /// <p>To create a fleet alias, specify an alias name, routing strategy, and optional
-    /// description. Each simple alias can point to only one fleet, but a fleet can have
-    /// multiple aliases. If successful, a new alias record is returned, including an alias ID
-    /// and an ARN. You can reassign an alias to another fleet by calling
-    /// <code>UpdateAlias</code>.</p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateAlias</a> |
-    /// <a>ListAliases</a> |
-    /// <a>DescribeAlias</a> |
-    /// <a>UpdateAlias</a> |
-    /// <a>DeleteAlias</a> |
-    /// <a>ResolveAlias</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an alias for a fleet. In most situations, you can use an alias ID in place of a fleet ID. An alias provides a level of abstraction for a fleet that is useful when redirecting player traffic from one fleet to another, such as when updating your game build. </p>
+    /// <p>Amazon GameLift supports two types of routing strategies for aliases: simple and terminal. A simple alias points to an active fleet. A terminal alias is used to display messaging or link to a URL instead of routing players to an active fleet. For example, you might use a terminal alias when a game version is no longer supported and you want to direct players to an upgrade site. </p>
+    /// <p>To create a fleet alias, specify an alias name, routing strategy, and optional description. Each simple alias can point to only one fleet, but a fleet can have multiple aliases. If successful, a new alias record is returned, including an alias ID and an ARN. You can reassign an alias to another fleet by calling <code>UpdateAlias</code>.</p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateAlias</code> | <code>ListAliases</code> | <code>DescribeAlias</code> | <code>UpdateAlias</code> | <code>DeleteAlias</code> | <code>ResolveAlias</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1189,10 +1105,10 @@ pub mod fluent_builders {
                 crate::input::CreateAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1201,8 +1117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
@@ -1211,8 +1127,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A human-readable description of the alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A human-readable description of the alias.</p>
@@ -1221,8 +1137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
-        pub fn routing_strategy(mut self, inp: crate::model::RoutingStrategy) -> Self {
-            self.inner = self.inner.routing_strategy(inp);
+        pub fn routing_strategy(mut self, input: crate::model::RoutingStrategy) -> Self {
+            self.inner = self.inner.routing_strategy(input);
             self
         }
         /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
@@ -1237,28 +1153,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1269,61 +1169,21 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBuild`.
     ///
-    /// <p>Creates a new Amazon GameLift build resource for your game server binary files. Game server
-    /// binaries must be combined into a zip file for use with Amazon GameLift. </p>
-    /// <important>
-    /// <p>When setting up a new game build for GameLift, we recommend using the AWS CLI
-    /// command <b>
-    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
-    /// </b>. This helper command combines two tasks: (1) it
-    /// uploads your build files from a file directory to a GameLift Amazon S3 location, and (2)
-    /// it creates a new build resource. </p>
+    /// <p>Creates a new Amazon GameLift build resource for your game server binary files. Game server binaries must be combined into a zip file for use with Amazon GameLift. </p> <important>
+    /// <p>When setting up a new game build for GameLift, we recommend using the AWS CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a> </b>. This helper command combines two tasks: (1) it uploads your build files from a file directory to a GameLift Amazon S3 location, and (2) it creates a new build resource. </p>
     /// </important>
     /// <p>The <code>CreateBuild</code> operation can used in the following scenarios:</p>
     /// <ul>
-    /// <li>
-    /// <p>To create a new game build with build files that are in an Amazon S3 location under
-    /// an AWS account that you control. To use this option, you must first give Amazon GameLift
-    /// access to the Amazon S3 bucket. With permissions in place, call
-    /// <code>CreateBuild</code> and specify a build name, operating system, and the
-    /// Amazon S3 storage location of your game build.</p>
-    /// </li>
-    /// <li>
-    /// <p>To directly upload your build files to a GameLift Amazon S3 location. To use this
-    /// option, first call <code>CreateBuild</code> and specify a build name and
-    /// operating system. This operation creates a new build resource and also returns an
-    /// Amazon S3 location with temporary access credentials. Use the credentials to manually
-    /// upload your build files to the specified Amazon S3 location. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading Objects</a> in the <i>Amazon S3 Developer
-    /// Guide</i>. Build files can be uploaded to the GameLift Amazon S3 location
-    /// once only; that can't be updated. </p>
-    /// </li>
+    /// <li> <p>To create a new game build with build files that are in an Amazon S3 location under an AWS account that you control. To use this option, you must first give Amazon GameLift access to the Amazon S3 bucket. With permissions in place, call <code>CreateBuild</code> and specify a build name, operating system, and the Amazon S3 storage location of your game build.</p> </li>
+    /// <li> <p>To directly upload your build files to a GameLift Amazon S3 location. To use this option, first call <code>CreateBuild</code> and specify a build name and operating system. This operation creates a new build resource and also returns an Amazon S3 location with temporary access credentials. Use the credentials to manually upload your build files to the specified Amazon S3 location. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading Objects</a> in the <i>Amazon S3 Developer Guide</i>. Build files can be uploaded to the GameLift Amazon S3 location once only; that can't be updated. </p> </li>
     /// </ul>
-    /// <p>If successful, this operation creates a new build resource with a unique build ID and
-    /// places it in <code>INITIALIZED</code> status. A build must be in <code>READY</code>
-    /// status before you can create fleets with it.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading Your
-    /// Game</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"> Create a Build with Files in Amazon S3</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateBuild</a> |
-    /// <a>ListBuilds</a> |
-    /// <a>DescribeBuild</a> |
-    /// <a>UpdateBuild</a> |
-    /// <a>DeleteBuild</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, this operation creates a new build resource with a unique build ID and places it in <code>INITIALIZED</code> status. A build must be in <code>READY</code> status before you can create fleets with it.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading Your Game</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"> Create a Build with Files in Amazon S3</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateBuild</code> | <code>ListBuilds</code> | <code>DescribeBuild</code> | <code>UpdateBuild</code> | <code>DeleteBuild</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBuild<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1368,10 +1228,10 @@ pub mod fluent_builders {
                 crate::input::CreateBuildInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1379,44 +1239,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-        /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-        /// </p>
+        /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-        /// </p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-        /// </p>
+        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
         }
-        /// <p>Information indicating where your game build files are stored. Use this parameter only
-        /// when creating a build with files stored in an Amazon S3 bucket that you own. The storage
-        /// location must specify an Amazon S3 bucket name and key. The location must also specify a role
-        /// ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your
-        /// new build must be in the same Region.</p>
-        pub fn storage_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.storage_location(inp);
+        /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+        pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
+            self.inner = self.inner.storage_location(input);
             self
         }
-        /// <p>Information indicating where your game build files are stored. Use this parameter only
-        /// when creating a build with files stored in an Amazon S3 bucket that you own. The storage
-        /// location must specify an Amazon S3 bucket name and key. The location must also specify a role
-        /// ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your
-        /// new build must be in the same Region.</p>
+        /// <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -1424,20 +1272,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_storage_location(input);
             self
         }
-        /// <p>The operating system that the game server binaries are built to run on. This value
-        /// determines the type of fleet resources that you can use for this build. If your game
-        /// build contains multiple executables, they all must run on the same operating system. If
-        /// an operating system is not specified when creating a build, Amazon GameLift uses the
-        /// default value (WINDOWS_2012). This value cannot be changed later.</p>
-        pub fn operating_system(mut self, inp: crate::model::OperatingSystem) -> Self {
-            self.inner = self.inner.operating_system(inp);
+        /// <p>The operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build. If your game build contains multiple executables, they all must run on the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.</p>
+        pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
+            self.inner = self.inner.operating_system(input);
             self
         }
-        /// <p>The operating system that the game server binaries are built to run on. This value
-        /// determines the type of fleet resources that you can use for this build. If your game
-        /// build contains multiple executables, they all must run on the same operating system. If
-        /// an operating system is not specified when creating a build, Amazon GameLift uses the
-        /// default value (WINDOWS_2012). This value cannot be changed later.</p>
+        /// <p>The operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build. If your game build contains multiple executables, they all must run on the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.</p>
         pub fn set_operating_system(
             mut self,
             input: std::option::Option<crate::model::OperatingSystem>,
@@ -1449,28 +1289,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1481,59 +1305,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFleet`.
     ///
-    /// <p>Creates a fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances to host your
-    /// custom game server or Realtime Servers. Use this operation to configure the computing resources for
-    /// your fleet and provide instructions for running game servers on each instance.</p>
-    /// <p>Most GameLift fleets can deploy instances to multiple locations, including the home
-    /// Region (where the fleet is created) and an optional set of remote locations. Fleets that
-    /// are created in the following AWS Regions support multiple locations: us-east-1 (N.
-    /// Virginia), us-west-2 (Oregon), eu-central-1 (Frankfurt), eu-west-1 (Ireland),
-    /// ap-southeast-2 (Sydney), ap-northeast-1 (Tokyo), and ap-northeast-2 (Seoul). Fleets that
-    /// are created in other GameLift Regions can deploy instances in the fleet's home Region
-    /// only. All fleet instances use the same configuration regardless of location; however,
-    /// you can adjust capacity settings and turn auto-scaling on/off for each location.</p>
-    /// <p>To create a fleet, choose the hardware for your instances, specify a game server build
-    /// or Realtime script to deploy, and provide a runtime configuration to direct GameLift how
-    /// to start and run game servers on each instance in the fleet. Set permissions for inbound
-    /// traffic to your game servers, and enable optional features as needed. When creating a
-    /// multi-location fleet, provide a list of additional remote locations.</p>
-    ///
-    /// <p>If successful, this operation creates a new Fleet resource and places it in
-    /// <code>NEW</code> status, which prompts GameLift to initiate the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creation-workflow.html">fleet creation
-    /// workflow</a>. You can track fleet creation by checking fleet status using <a>DescribeFleetAttributes</a> and <a>DescribeFleetLocationAttributes</a>/, or by monitoring fleet creation events
-    /// using <a>DescribeFleetEvents</a>. As soon as the fleet status changes to
-    /// <code>ACTIVE</code>, you can enable automatic scaling for the fleet with <a>PutScalingPolicy</a> and set capacity for the home Region with <a>UpdateFleetCapacity</a>. When the status of each remote location reaches
-    /// <code>ACTIVE</code>, you can set capacity by location using <a>UpdateFleetCapacity</a>.</p>
-    ///
-    ///
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up fleets</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug fleet creation issues</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleet</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>UpdateFleetAttributes</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>DeleteFleet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances to host your custom game server or Realtime Servers. Use this operation to configure the computing resources for your fleet and provide instructions for running game servers on each instance.</p>
+    /// <p>Most GameLift fleets can deploy instances to multiple locations, including the home Region (where the fleet is created) and an optional set of remote locations. Fleets that are created in the following AWS Regions support multiple locations: us-east-1 (N. Virginia), us-west-2 (Oregon), eu-central-1 (Frankfurt), eu-west-1 (Ireland), ap-southeast-2 (Sydney), ap-northeast-1 (Tokyo), and ap-northeast-2 (Seoul). Fleets that are created in other GameLift Regions can deploy instances in the fleet's home Region only. All fleet instances use the same configuration regardless of location; however, you can adjust capacity settings and turn auto-scaling on/off for each location.</p>
+    /// <p>To create a fleet, choose the hardware for your instances, specify a game server build or Realtime script to deploy, and provide a runtime configuration to direct GameLift how to start and run game servers on each instance in the fleet. Set permissions for inbound traffic to your game servers, and enable optional features as needed. When creating a multi-location fleet, provide a list of additional remote locations.</p>
+    /// <p>If successful, this operation creates a new Fleet resource and places it in <code>NEW</code> status, which prompts GameLift to initiate the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creation-workflow.html">fleet creation workflow</a>. You can track fleet creation by checking fleet status using <code>DescribeFleetAttributes</code> and <code>DescribeFleetLocationAttributes</code>/, or by monitoring fleet creation events using <code>DescribeFleetEvents</code>. As soon as the fleet status changes to <code>ACTIVE</code>, you can enable automatic scaling for the fleet with <code>PutScalingPolicy</code> and set capacity for the home Region with <code>UpdateFleetCapacity</code>. When the status of each remote location reaches <code>ACTIVE</code>, you can set capacity by location using <code>UpdateFleetCapacity</code>.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up fleets</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug fleet creation issues</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleet</code> | <code>UpdateFleetCapacity</code> | <code>PutScalingPolicy</code> | <code>DescribeEC2InstanceLimits</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetLocationAttributes</code> | <code>UpdateFleetAttributes</code> | <code>StopFleetActions</code> | <code>DeleteFleet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1578,10 +1360,10 @@ pub mod fluent_builders {
                 crate::input::CreateFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1590,8 +1372,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
@@ -1600,8 +1382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A human-readable description of the fleet.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A human-readable description of the fleet.</p>
@@ -1609,46 +1391,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The unique identifier for a custom game server build to be deployed on fleet
-        /// instances. You can use either the build ID or ARN. The build must be uploaded to GameLift
-        /// and in <code>READY</code> status. This fleet property cannot be changed later.</p>
-        pub fn build_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_id(inp);
+        /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to GameLift and in <code>READY</code> status. This fleet property cannot be changed later.</p>
+        pub fn build_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_id(input.into());
             self
         }
-        /// <p>The unique identifier for a custom game server build to be deployed on fleet
-        /// instances. You can use either the build ID or ARN. The build must be uploaded to GameLift
-        /// and in <code>READY</code> status. This fleet property cannot be changed later.</p>
+        /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to GameLift and in <code>READY</code> status. This fleet property cannot be changed later.</p>
         pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_build_id(input);
             self
         }
-        /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet
-        /// instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift
-        /// prior to creating the fleet. This fleet property cannot be changed later.</p>
-        pub fn script_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.script_id(inp);
+        /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift prior to creating the fleet. This fleet property cannot be changed later.</p>
+        pub fn script_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.script_id(input.into());
             self
         }
-        /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet
-        /// instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift
-        /// prior to creating the fleet. This fleet property cannot be changed later.</p>
+        /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift prior to creating the fleet. This fleet property cannot be changed later.</p>
         pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_script_id(input);
             self
         }
-        /// <p>
-        /// <b>This parameter is no longer used.</b> Specify a server
-        /// launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use
-        /// this parameter instead continue to be valid.</p>
-        pub fn server_launch_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_launch_path(inp);
+        /// <p> <b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
+        pub fn server_launch_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_launch_path(input.into());
             self
         }
-        /// <p>
-        /// <b>This parameter is no longer used.</b> Specify a server
-        /// launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use
-        /// this parameter instead continue to be valid.</p>
+        /// <p> <b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
         pub fn set_server_launch_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1656,18 +1424,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_launch_path(input);
             self
         }
-        /// <p>
-        /// <b>This parameter is no longer used.</b> Specify server
-        /// launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that
-        /// use this parameter instead continue to be valid.</p>
-        pub fn server_launch_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_launch_parameters(inp);
+        /// <p> <b>This parameter is no longer used.</b> Specify server launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
+        pub fn server_launch_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_launch_parameters(input.into());
             self
         }
-        /// <p>
-        /// <b>This parameter is no longer used.</b> Specify server
-        /// launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that
-        /// use this parameter instead continue to be valid.</p>
+        /// <p> <b>This parameter is no longer used.</b> Specify server launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
         pub fn set_server_launch_parameters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1679,20 +1441,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_log_paths`](Self::set_log_paths).
         ///
-        /// <p>
-        /// <b>This parameter is no longer used.</b> To specify where
-        /// GameLift should store log files once a server process shuts down, use the GameLift server
-        /// API <code>ProcessReady()</code> and specify one or more directory paths in
-        /// <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
-        pub fn log_paths(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_paths(inp);
+        /// <p> <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
+        pub fn log_paths(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_paths(input.into());
             self
         }
-        /// <p>
-        /// <b>This parameter is no longer used.</b> To specify where
-        /// GameLift should store log files once a server process shuts down, use the GameLift server
-        /// API <code>ProcessReady()</code> and specify one or more directory paths in
-        /// <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
+        /// <p> <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
         pub fn set_log_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1700,18 +1454,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_paths(input);
             self
         }
-        /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance
-        /// type determines the computing resources that will be used to host your game servers,
-        /// including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions
-        /// of EC2 instance types.</p>
-        pub fn ec2_instance_type(mut self, inp: crate::model::Ec2InstanceType) -> Self {
-            self.inner = self.inner.ec2_instance_type(inp);
+        /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions of EC2 instance types.</p>
+        pub fn ec2_instance_type(mut self, input: crate::model::Ec2InstanceType) -> Self {
+            self.inner = self.inner.ec2_instance_type(input);
             self
         }
-        /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance
-        /// type determines the computing resources that will be used to host your game servers,
-        /// including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions
-        /// of EC2 instance types.</p>
+        /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions of EC2 instance types.</p>
         pub fn set_ec2_instance_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -1723,21 +1471,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ec2_inbound_permissions`](Self::set_ec2_inbound_permissions).
         ///
-        /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access
-        /// game sessions on this fleet. If the fleet is hosting a custom game build, this property
-        /// must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift
-        /// automatically sets TCP and UDP ranges. </p>
-        pub fn ec2_inbound_permissions(
-            mut self,
-            inp: impl Into<crate::model::IpPermission>,
-        ) -> Self {
-            self.inner = self.inner.ec2_inbound_permissions(inp);
+        /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
+        pub fn ec2_inbound_permissions(mut self, input: crate::model::IpPermission) -> Self {
+            self.inner = self.inner.ec2_inbound_permissions(input);
             self
         }
-        /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access
-        /// game sessions on this fleet. If the fleet is hosting a custom game build, this property
-        /// must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift
-        /// automatically sets TCP and UDP ranges. </p>
+        /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
         pub fn set_ec2_inbound_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
@@ -1745,44 +1484,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ec2_inbound_permissions(input);
             self
         }
-        /// <p>The status of termination protection for active game sessions on the fleet. By
-        /// default, this property is set to <code>NoProtection</code>. You can also set game
-        /// session protection for an individual game session by calling <a>UpdateGameSession</a>.</p>
+        /// <p>The status of termination protection for active game sessions on the fleet. By default, this property is set to <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <code>UpdateGameSession</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>NoProtection</b> - Game sessions can be terminated
-        /// during active gameplay as a result of a scale-down event. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FullProtection</b> - Game sessions in
-        /// <code>ACTIVE</code> status cannot be terminated during a scale-down
-        /// event.</p>
-        /// </li>
+        /// <li> <p> <b>NoProtection</b> - Game sessions can be terminated during active gameplay as a result of a scale-down event. </p> </li>
+        /// <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p> </li>
         /// </ul>
         pub fn new_game_session_protection_policy(
             mut self,
-            inp: crate::model::ProtectionPolicy,
+            input: crate::model::ProtectionPolicy,
         ) -> Self {
-            self.inner = self.inner.new_game_session_protection_policy(inp);
+            self.inner = self.inner.new_game_session_protection_policy(input);
             self
         }
-        /// <p>The status of termination protection for active game sessions on the fleet. By
-        /// default, this property is set to <code>NoProtection</code>. You can also set game
-        /// session protection for an individual game session by calling <a>UpdateGameSession</a>.</p>
+        /// <p>The status of termination protection for active game sessions on the fleet. By default, this property is set to <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <code>UpdateGameSession</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>NoProtection</b> - Game sessions can be terminated
-        /// during active gameplay as a result of a scale-down event. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FullProtection</b> - Game sessions in
-        /// <code>ACTIVE</code> status cannot be terminated during a scale-down
-        /// event.</p>
-        /// </li>
+        /// <li> <p> <b>NoProtection</b> - Game sessions can be terminated during active gameplay as a result of a scale-down event. </p> </li>
+        /// <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p> </li>
         /// </ul>
         pub fn set_new_game_session_protection_policy(
             mut self,
@@ -1791,29 +1508,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_new_game_session_protection_policy(input);
             self
         }
-        /// <p>Instructions for how to launch and maintain server processes on instances in the
-        /// fleet. The runtime configuration defines one or more server process configurations, each
-        /// identifying a build executable or Realtime script file and the number of processes of
-        /// that type to run concurrently. </p>
-        /// <note>
-        /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is
-        /// being configured using the older parameters <code>ServerLaunchPath</code> and
-        /// <code>ServerLaunchParameters</code>, which are still supported for backward
-        /// compatibility.</p>
+        /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently. </p> <note>
+        /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
         /// </note>
-        pub fn runtime_configuration(mut self, inp: crate::model::RuntimeConfiguration) -> Self {
-            self.inner = self.inner.runtime_configuration(inp);
+        pub fn runtime_configuration(mut self, input: crate::model::RuntimeConfiguration) -> Self {
+            self.inner = self.inner.runtime_configuration(input);
             self
         }
-        /// <p>Instructions for how to launch and maintain server processes on instances in the
-        /// fleet. The runtime configuration defines one or more server process configurations, each
-        /// identifying a build executable or Realtime script file and the number of processes of
-        /// that type to run concurrently. </p>
-        /// <note>
-        /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is
-        /// being configured using the older parameters <code>ServerLaunchPath</code> and
-        /// <code>ServerLaunchParameters</code>, which are still supported for backward
-        /// compatibility.</p>
+        /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently. </p> <note>
+        /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
         /// </note>
         pub fn set_runtime_configuration(
             mut self,
@@ -1822,17 +1525,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_runtime_configuration(input);
             self
         }
-        /// <p>A policy that limits the number of game sessions that an individual player can create
-        /// on instances in this fleet within a specified span of time.</p>
+        /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
         pub fn resource_creation_limit_policy(
             mut self,
-            inp: crate::model::ResourceCreationLimitPolicy,
+            input: crate::model::ResourceCreationLimitPolicy,
         ) -> Self {
-            self.inner = self.inner.resource_creation_limit_policy(inp);
+            self.inner = self.inner.resource_creation_limit_policy(input);
             self
         }
-        /// <p>A policy that limits the number of game sessions that an individual player can create
-        /// on instances in this fleet within a specified span of time.</p>
+        /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
         pub fn set_resource_creation_limit_policy(
             mut self,
             input: std::option::Option<crate::model::ResourceCreationLimitPolicy>,
@@ -1844,18 +1545,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
         ///
-        /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is
-        /// used to aggregate the metrics for multiple fleets. You can specify an existing metric
-        /// group name or set a new name to create a new metric group. A fleet can be included in
-        /// only one metric group at a time. </p>
-        pub fn metric_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_groups(inp);
+        /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
+        pub fn metric_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_groups(input.into());
             self
         }
-        /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is
-        /// used to aggregate the metrics for multiple fleets. You can specify an existing metric
-        /// group name or set a new name to create a new metric group. A fleet can be included in
-        /// only one metric group at a time. </p>
+        /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
         pub fn set_metric_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1863,16 +1558,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metric_groups(input);
             self
         }
-        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS
-        /// account that owns the VPC. You can find your account ID in the AWS Management Console under account
-        /// settings. </p>
-        pub fn peer_vpc_aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.peer_vpc_aws_account_id(inp);
+        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS account that owns the VPC. You can find your account ID in the AWS Management Console under account settings. </p>
+        pub fn peer_vpc_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peer_vpc_aws_account_id(input.into());
             self
         }
-        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS
-        /// account that owns the VPC. You can find your account ID in the AWS Management Console under account
-        /// settings. </p>
+        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS account that owns the VPC. You can find your account ID in the AWS Management Console under account settings. </p>
         pub fn set_peer_vpc_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1880,32 +1571,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_peer_vpc_aws_account_id(input);
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
-        pub fn peer_vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.peer_vpc_id(inp);
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
+        pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peer_vpc_id(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_peer_vpc_id(input);
             self
         }
-        /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
-        /// property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the
-        /// fleet is created.</p>
-        pub fn fleet_type(mut self, inp: crate::model::FleetType) -> Self {
-            self.inner = self.inner.fleet_type(inp);
+        /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
+        pub fn fleet_type(mut self, input: crate::model::FleetType) -> Self {
+            self.inner = self.inner.fleet_type(input);
             self
         }
-        /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
-        /// property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the
-        /// fleet is created.</p>
+        /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
         pub fn set_fleet_type(
             mut self,
             input: std::option::Option<crate::model::FleetType>,
@@ -1913,24 +1594,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_type(input);
             self
         }
-        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services.
-        /// With an instance role ARN set, any application that runs on an instance in this fleet can assume the role,
-        /// including install scripts, server processes, and daemons (background processes). Create a role or look up a role's
-        /// ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console.
-        /// Learn more about using on-box credentials for your game servers at
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-        /// Access external resources from a game server</a>.  This property cannot be changed after the fleet is created.</p>
-        pub fn instance_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_role_arn(inp);
+        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
+        pub fn instance_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_role_arn(input.into());
             self
         }
-        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services.
-        /// With an instance role ARN set, any application that runs on an instance in this fleet can assume the role,
-        /// including install scripts, server processes, and daemons (background processes). Create a role or look up a role's
-        /// ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console.
-        /// Learn more about using on-box credentials for your game servers at
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-        /// Access external resources from a game server</a>.  This property cannot be changed after the fleet is created.</p>
+        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
         pub fn set_instance_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1938,31 +1607,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_role_arn(input);
             self
         }
-        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are
-        /// used for encrypting traffic between game clients and the game servers that are running
-        /// on GameLift. By default, the <code>CertificateConfiguration</code> is set to
-        /// <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after
-        /// the fleet is created. </p>
-        /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not
-        /// available in all AWS regions. When working in a region that does not support this
-        /// feature, a fleet creation request with certificate generation fails with a 4xx
-        /// error.</p>
+        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after the fleet is created. </p>
+        /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not available in all AWS regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
         pub fn certificate_configuration(
             mut self,
-            inp: crate::model::CertificateConfiguration,
+            input: crate::model::CertificateConfiguration,
         ) -> Self {
-            self.inner = self.inner.certificate_configuration(inp);
+            self.inner = self.inner.certificate_configuration(input);
             self
         }
-        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are
-        /// used for encrypting traffic between game clients and the game servers that are running
-        /// on GameLift. By default, the <code>CertificateConfiguration</code> is set to
-        /// <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after
-        /// the fleet is created. </p>
-        /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not
-        /// available in all AWS regions. When working in a region that does not support this
-        /// feature, a fleet creation request with certificate generation fails with a 4xx
-        /// error.</p>
+        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after the fleet is created. </p>
+        /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not available in all AWS regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
         pub fn set_certificate_configuration(
             mut self,
             input: std::option::Option<crate::model::CertificateConfiguration>,
@@ -1974,20 +1629,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>A set of remote locations to deploy additional instances to and manage as part of the
-        /// fleet. This parameter can only be used when creating fleets in AWS Regions that support
-        /// multiple locations. You can add any GameLift-supported AWS Region as a remote location,
-        /// in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with
-        /// instances in the home Region only, omit this parameter. </p>
-        pub fn locations(mut self, inp: impl Into<crate::model::LocationConfiguration>) -> Self {
-            self.inner = self.inner.locations(inp);
+        /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in AWS Regions that support multiple locations. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
+        pub fn locations(mut self, input: crate::model::LocationConfiguration) -> Self {
+            self.inner = self.inner.locations(input);
             self
         }
-        /// <p>A set of remote locations to deploy additional instances to and manage as part of the
-        /// fleet. This parameter can only be used when creating fleets in AWS Regions that support
-        /// multiple locations. You can add any GameLift-supported AWS Region as a remote location,
-        /// in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with
-        /// instances in the home Region only, omit this parameter. </p>
+        /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in AWS Regions that support multiple locations. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationConfiguration>>,
@@ -1999,24 +1646,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined
-        /// key-value pairs. Tagging AWS resources are useful for resource management, access
-        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the fleet is created, you can use
-        /// <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-        /// may be lower than stated. See the <i>AWS General Reference</i> for actual
-        /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>AWS General Reference</i> for actual tagging limits.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined
-        /// key-value pairs. Tagging AWS resources are useful for resource management, access
-        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the fleet is created, you can use
-        /// <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-        /// may be lower than stated. See the <i>AWS General Reference</i> for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>AWS General Reference</i> for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2027,50 +1662,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFleetLocations`.
     ///
-    /// <p>Adds remote locations to a fleet and begins populating the new locations with EC2
-    /// instances. The new instances conform to the fleet's instance type, auto-scaling, and
-    /// other configuration settings. </p>
-    /// <note>
-    /// <p>This operation cannot be used with fleets that don't support remote locations. Fleets
-    /// can have multiple locations only if they reside in AWS Regions that support this
-    /// feature (see <a>CreateFleet</a> for the complete list) and were created
-    /// after the feature was released in March 2021.</p>
+    /// <p>Adds remote locations to a fleet and begins populating the new locations with EC2 instances. The new instances conform to the fleet's instance type, auto-scaling, and other configuration settings. </p> <note>
+    /// <p>This operation cannot be used with fleets that don't support remote locations. Fleets can have multiple locations only if they reside in AWS Regions that support this feature (see <code>CreateFleet</code> for the complete list) and were created after the feature was released in March 2021.</p>
     /// </note>
-    /// <p>To add fleet locations, specify the fleet to be updated and provide a list of one or
-    /// more locations. </p>
-    /// <p>If successful, this operation returns the list of added locations with their status set
-    /// to <code>NEW</code>. GameLift initiates the process of starting an instance in each added
-    /// location. You can track the status of each new location by monitoring location creation
-    /// events using <a>DescribeFleetEvents</a>. Alternatively, you can poll location
-    /// status by calling <a>DescribeFleetLocationAttributes</a>. After a location
-    /// status becomes <code>ACTIVE</code>, you can adjust the location's capacity as needed
-    /// with <a>UpdateFleetCapacity</a>.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up fleets</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleetLocations</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>DescribeFleetLocationCapacity</a> |
-    /// <a>DescribeFleetLocationUtilization</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>DescribeFleetUtilization</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>DeleteFleetLocations</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To add fleet locations, specify the fleet to be updated and provide a list of one or more locations. </p>
+    /// <p>If successful, this operation returns the list of added locations with their status set to <code>NEW</code>. GameLift initiates the process of starting an instance in each added location. You can track the status of each new location by monitoring location creation events using <code>DescribeFleetEvents</code>. Alternatively, you can poll location status by calling <code>DescribeFleetLocationAttributes</code>. After a location status becomes <code>ACTIVE</code>, you can adjust the location's capacity as needed with <code>UpdateFleetCapacity</code>.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up fleets</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleetLocations</code> | <code>DescribeFleetLocationAttributes</code> | <code>DescribeFleetLocationCapacity</code> | <code>DescribeFleetLocationUtilization</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetCapacity</code> | <code>DescribeFleetUtilization</code> | <code>UpdateFleetCapacity</code> | <code>StopFleetActions</code> | <code>DeleteFleetLocations</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleetLocations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2115,10 +1717,10 @@ pub mod fluent_builders {
                 crate::input::CreateFleetLocationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2127,8 +1729,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
         /// <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
@@ -2140,16 +1742,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet.
-        /// You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>. </p>
-        pub fn locations(mut self, inp: impl Into<crate::model::LocationConfiguration>) -> Self {
-            self.inner = self.inner.locations(inp);
+        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
+        pub fn locations(mut self, input: crate::model::LocationConfiguration) -> Self {
+            self.inner = self.inner.locations(input);
             self
         }
-        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet.
-        /// You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>. </p>
+        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationConfiguration>>,
@@ -2160,61 +1758,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGameServerGroup`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Creates a GameLift FleetIQ game server group for managing game hosting on a collection of
-    /// Amazon EC2 instances for game hosting. This operation creates the game server group,
-    /// creates an Auto Scaling group in your AWS account, and establishes a link between the
-    /// two groups. You can view the status of your game server groups in the GameLift console.
-    /// Game server group metrics and events are emitted to Amazon CloudWatch.</p>
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Creates a GameLift FleetIQ game server group for managing game hosting on a collection of Amazon EC2 instances for game hosting. This operation creates the game server group, creates an Auto Scaling group in your AWS account, and establishes a link between the two groups. You can view the status of your game server groups in the GameLift console. Game server group metrics and events are emitted to Amazon CloudWatch.</p>
     /// <p>Before creating a new game server group, you must have the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon EC2 launch template that specifies how to launch Amazon EC2 instances
-    /// with your game server build. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html"> Launching an Instance from a Launch Template</a> in the
-    /// <i>Amazon EC2 User Guide</i>. </p>
-    /// </li>
-    /// <li>
-    /// <p>An IAM role that extends limited access to your AWS account to allow GameLift FleetIQ to create and
-    /// interact with the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-iam-permissions-roles.html">Create IAM roles for cross-service interaction</a> in the <i>GameLift FleetIQ Developer
-    /// Guide</i>.</p>
-    /// </li>
+    /// <li> <p>An Amazon EC2 launch template that specifies how to launch Amazon EC2 instances with your game server build. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html"> Launching an Instance from a Launch Template</a> in the <i>Amazon EC2 User Guide</i>. </p> </li>
+    /// <li> <p>An IAM role that extends limited access to your AWS account to allow GameLift FleetIQ to create and interact with the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-iam-permissions-roles.html">Create IAM roles for cross-service interaction</a> in the <i>GameLift FleetIQ Developer Guide</i>.</p> </li>
     /// </ul>
-    /// <p>To create a new game server group, specify a unique group name, IAM role and Amazon EC2
-    /// launch template, and provide a list of instance types that can be used in the group. You
-    /// must also set initial maximum and minimum limits on the group's instance count. You can
-    /// optionally set an Auto Scaling policy with target tracking based on a GameLift FleetIQ
-    /// metric.</p>
-    /// <p>Once the game server group and corresponding Auto Scaling group are created, you have
-    /// full access to change the Auto Scaling group's configuration as needed. Several
-    /// properties that are set when creating a game server group, including maximum/minimum
-    /// size and auto-scaling policy settings, must be updated directly in the Auto Scaling
-    /// group. Keep in mind that some Auto Scaling group properties are periodically updated by
-    /// GameLift FleetIQ as part of its balancing activities to optimize for availability and
-    /// cost.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    ///
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameServerGroup</a> |
-    /// <a>ListGameServerGroups</a> |
-    /// <a>DescribeGameServerGroup</a> |
-    /// <a>UpdateGameServerGroup</a> |
-    /// <a>DeleteGameServerGroup</a> |
-    /// <a>ResumeGameServerGroup</a> |
-    /// <a>SuspendGameServerGroup</a> |
-    /// <a>DescribeGameServerInstances</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To create a new game server group, specify a unique group name, IAM role and Amazon EC2 launch template, and provide a list of instance types that can be used in the group. You must also set initial maximum and minimum limits on the group's instance count. You can optionally set an Auto Scaling policy with target tracking based on a GameLift FleetIQ metric.</p>
+    /// <p>Once the game server group and corresponding Auto Scaling group are created, you have full access to change the Auto Scaling group's configuration as needed. Several properties that are set when creating a game server group, including maximum/minimum size and auto-scaling policy settings, must be updated directly in the Auto Scaling group. Keep in mind that some Auto Scaling group properties are periodically updated by GameLift FleetIQ as part of its balancing activities to optimize for availability and cost.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGameServerGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2259,10 +1816,10 @@ pub mod fluent_builders {
                 crate::input::CreateGameServerGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2270,16 +1827,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier for the new game server group. This value is used to generate unique ARN
-        /// identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name
-        /// must be unique per Region per AWS account.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per AWS account.</p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>An identifier for the new game server group. This value is used to generate unique ARN
-        /// identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name
-        /// must be unique per Region per AWS account.</p>
+        /// <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per AWS account.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2287,81 +1840,45 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_group_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-        /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-        /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During
-        /// automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this
-        /// minimum. In production, this value should be set to at least 1. After the Auto Scaling
-        /// group is created, update this value directly in the Auto Scaling group using the AWS
-        /// console or APIs.</p>
-        pub fn min_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_size(inp);
+        /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
+        pub fn min_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.min_size(input);
             self
         }
-        /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During
-        /// automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this
-        /// minimum. In production, this value should be set to at least 1. After the Auto Scaling
-        /// group is created, update this value directly in the Auto Scaling group using the AWS
-        /// console or APIs.</p>
+        /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_min_size(input);
             self
         }
-        /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During
-        /// automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum.
-        /// After the Auto Scaling group is created, update this value directly in the Auto Scaling
-        /// group using the AWS console or APIs.</p>
-        pub fn max_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_size(inp);
+        /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
+        pub fn max_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_size(input);
             self
         }
-        /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During
-        /// automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum.
-        /// After the Auto Scaling group is created, update this value directly in the Auto Scaling
-        /// group using the AWS console or APIs.</p>
+        /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_size(input);
             self
         }
-        /// <p>The EC2 launch template that contains configuration settings and game server code to
-        /// be deployed to all instances in the game server group. You can specify the template
-        /// using either the template name or ID. For help with creating a launch template, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
-        /// Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-        /// User Guide</i>. After the Auto Scaling group is created, update this value
-        /// directly in the Auto Scaling group using the AWS console or APIs.</p>
-        /// <note>
-        /// <p>If you specify network interfaces in your launch template, you must explicitly set
-        /// the property <code>AssociatePublicIpAddress</code> to "true". If no network
-        /// interface is specified in the launch template,  GameLift FleetIQ uses your account's default
-        /// VPC.</p>
+        /// <p>The EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p> <note>
+        /// <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, GameLift FleetIQ uses your account's default VPC.</p>
         /// </note>
-        pub fn launch_template(mut self, inp: crate::model::LaunchTemplateSpecification) -> Self {
-            self.inner = self.inner.launch_template(inp);
+        pub fn launch_template(mut self, input: crate::model::LaunchTemplateSpecification) -> Self {
+            self.inner = self.inner.launch_template(input);
             self
         }
-        /// <p>The EC2 launch template that contains configuration settings and game server code to
-        /// be deployed to all instances in the game server group. You can specify the template
-        /// using either the template name or ID. For help with creating a launch template, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
-        /// Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-        /// User Guide</i>. After the Auto Scaling group is created, update this value
-        /// directly in the Auto Scaling group using the AWS console or APIs.</p>
-        /// <note>
-        /// <p>If you specify network interfaces in your launch template, you must explicitly set
-        /// the property <code>AssociatePublicIpAddress</code> to "true". If no network
-        /// interface is specified in the launch template,  GameLift FleetIQ uses your account's default
-        /// VPC.</p>
+        /// <p>The EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p> <note>
+        /// <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, GameLift FleetIQ uses your account's default VPC.</p>
         /// </note>
         pub fn set_launch_template(
             mut self,
@@ -2374,29 +1891,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_definitions`](Self::set_instance_definitions).
         ///
-        /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance
-        /// definitions must specify at least two different instance types that are supported by
-        /// GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
-        /// <i>Amazon EC2 User Guide</i>. You can optionally specify capacity
-        /// weighting for each instance type. If no weight value is specified for an instance type,
-        /// it is set to the default value "1". For more information about capacity weighting, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
-        /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-        pub fn instance_definitions(
-            mut self,
-            inp: impl Into<crate::model::InstanceDefinition>,
-        ) -> Self {
-            self.inner = self.inner.instance_definitions(inp);
+        /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+        pub fn instance_definitions(mut self, input: crate::model::InstanceDefinition) -> Self {
+            self.inner = self.inner.instance_definitions(input);
             self
         }
-        /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance
-        /// definitions must specify at least two different instance types that are supported by
-        /// GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
-        /// <i>Amazon EC2 User Guide</i>. You can optionally specify capacity
-        /// weighting for each instance type. If no weight value is specified for an instance type,
-        /// it is set to the default value "1". For more information about capacity weighting, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
-        /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+        /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn set_instance_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
@@ -2404,25 +1904,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_definitions(input);
             self
         }
-        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is
-        /// optimized for game hosting. The scaling policy uses the metric
-        /// <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers
-        /// that can immediately accommodate new games and players. After the Auto Scaling group is
-        /// created, update this value directly in the Auto Scaling group using the AWS console or
-        /// APIs.</p>
+        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
         pub fn auto_scaling_policy(
             mut self,
-            inp: crate::model::GameServerGroupAutoScalingPolicy,
+            input: crate::model::GameServerGroupAutoScalingPolicy,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_policy(inp);
+            self.inner = self.inner.auto_scaling_policy(input);
             self
         }
-        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is
-        /// optimized for game hosting. The scaling policy uses the metric
-        /// <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers
-        /// that can immediately accommodate new games and players. After the Auto Scaling group is
-        /// created, update this value directly in the Auto Scaling group using the AWS console or
-        /// APIs.</p>
+        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
         pub fn set_auto_scaling_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerGroupAutoScalingPolicy>,
@@ -2430,61 +1920,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_policy(input);
             self
         }
-        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
-        /// game server group. Method options include the following:</p>
+        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
-        /// Instances are unavailable or not viable for game hosting, the game server group
-        /// provides no hosting capacity until Spot Instances can again be used. Until then,
-        /// no new instances are started, and the existing nonviable Spot Instances are
-        /// terminated (after current gameplay ends) and are not replaced.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
-        /// the game server group. If Spot Instances are unavailable, the game server group
-        /// continues to provide hosting capacity by falling back to On-Demand Instances.
-        /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
-        /// and are replaced with new On-Demand Instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
-        /// server group. No Spot Instances are used, even when available, while this
-        /// balancing strategy is in force.</p>
-        /// </li>
+        /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+        /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+        /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
         /// </ul>
-        pub fn balancing_strategy(mut self, inp: crate::model::BalancingStrategy) -> Self {
-            self.inner = self.inner.balancing_strategy(inp);
+        pub fn balancing_strategy(mut self, input: crate::model::BalancingStrategy) -> Self {
+            self.inner = self.inner.balancing_strategy(input);
             self
         }
-        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
-        /// game server group. Method options include the following:</p>
+        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
-        /// Instances are unavailable or not viable for game hosting, the game server group
-        /// provides no hosting capacity until Spot Instances can again be used. Until then,
-        /// no new instances are started, and the existing nonviable Spot Instances are
-        /// terminated (after current gameplay ends) and are not replaced.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
-        /// the game server group. If Spot Instances are unavailable, the game server group
-        /// continues to provide hosting capacity by falling back to On-Demand Instances.
-        /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
-        /// and are replaced with new On-Demand Instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
-        /// server group. No Spot Instances are used, even when available, while this
-        /// balancing strategy is in force.</p>
-        /// </li>
+        /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+        /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+        /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
         /// </ul>
         pub fn set_balancing_strategy(
             mut self,
@@ -2493,25 +1943,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_balancing_strategy(input);
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected
-        /// from early termination. Unprotected instances that have active game servers running might
-        /// be terminated during a scale-down event, causing players to be dropped from the game.
-        /// Protected instances cannot be terminated while there are active game servers running except
-        /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
-        /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn game_server_protection_policy(
             mut self,
-            inp: crate::model::GameServerProtectionPolicy,
+            input: crate::model::GameServerProtectionPolicy,
         ) -> Self {
-            self.inner = self.inner.game_server_protection_policy(inp);
+            self.inner = self.inner.game_server_protection_policy(input);
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected
-        /// from early termination. Unprotected instances that have active game servers running might
-        /// be terminated during a scale-down event, causing players to be dropped from the game.
-        /// Protected instances cannot be terminated while there are active game servers running except
-        /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
-        /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn set_game_server_protection_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerProtectionPolicy>,
@@ -2523,22 +1963,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_vpc_subnets`](Self::set_vpc_subnets).
         ///
-        /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server
-        /// group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this
-        /// parameter to specify VPCs that you've set up. This property cannot be updated after the
-        /// game server group is created, and the corresponding Auto Scaling group will always use
-        /// the property value that is set with this request, even if the Auto Scaling group is
-        /// updated directly.</p>
-        pub fn vpc_subnets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_subnets(inp);
+        /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
+        pub fn vpc_subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_subnets(input.into());
             self
         }
-        /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server
-        /// group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this
-        /// parameter to specify VPCs that you've set up. This property cannot be updated after the
-        /// game server group is created, and the corresponding Auto Scaling group will always use
-        /// the property value that is set with this request, even if the Auto Scaling group is
-        /// updated directly.</p>
+        /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
         pub fn set_vpc_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2550,24 +1980,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new game server group resource. Tags are
-        /// developer-defined key-value pairs. Tagging AWS resources is useful for resource
-        /// management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
-        /// Resources</a> in the <i>AWS General Reference</i>. Once the
-        /// resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
-        /// and view tags, respectively. The maximum tag limit may be lower than stated. See the
-        /// AWS General Reference for actual tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new game server group resource. Tags are
-        /// developer-defined key-value pairs. Tagging AWS resources is useful for resource
-        /// management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
-        /// Resources</a> in the <i>AWS General Reference</i>. Once the
-        /// resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
-        /// and view tags, respectively. The maximum tag limit may be lower than stated. See the
-        /// AWS General Reference for actual tagging limits.</p>
+        /// <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2578,61 +1996,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGameSession`.
     ///
-    /// <p>Creates a multiplayer game session for players in a specific fleet location. This
-    /// operation prompts an available server process to start a game session and retrieves
-    /// connection information for the new game session. As an alternative, consider using the
-    /// GameLift game session placement feature with </p>
-    /// <p>with <a>StartGameSessionPlacement</a>, which uses FleetIQ algorithms and
-    /// queues to optimize the placement process.</p>
-    /// <p>When creating a game session, you specify exactly where you want to place it and
-    /// provide a set of game session configuration settings. The fleet must be in
-    /// <code>ACTIVE</code> status before a game session can be created in it. </p>
+    /// <p>Creates a multiplayer game session for players in a specific fleet location. This operation prompts an available server process to start a game session and retrieves connection information for the new game session. As an alternative, consider using the GameLift game session placement feature with </p>
+    /// <p>with <code>StartGameSessionPlacement</code>, which uses FleetIQ algorithms and queues to optimize the placement process.</p>
+    /// <p>When creating a game session, you specify exactly where you want to place it and provide a set of game session configuration settings. The fleet must be in <code>ACTIVE</code> status before a game session can be created in it. </p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To create a game session on an instance in a fleet's home Region, provide a
-    /// fleet or alias ID along with your game session configuration. </p>
-    /// </li>
-    /// <li>
-    /// <p>To create a game session on an instance in a fleet's remote location, provide
-    /// a fleet or alias ID and a location name, along with your game session
-    /// configuration. </p>
-    /// </li>
+    /// <li> <p>To create a game session on an instance in a fleet's home Region, provide a fleet or alias ID along with your game session configuration. </p> </li>
+    /// <li> <p>To create a game session on an instance in a fleet's remote location, provide a fleet or alias ID and a location name, along with your game session configuration. </p> </li>
     /// </ul>
-    /// <p>If successful, a workflow is initiated to start a new game session. A
-    /// <code>GameSession</code> object is returned containing the game session
-    /// configuration and status. When the status is <code>ACTIVE</code>, game session
-    /// connection information is provided and player sessions can be created for the game
-    /// session. By default, newly created game sessions are open to new players. You can
-    /// restrict new player access by using <a>UpdateGameSession</a> to change the
-    /// game session's player session creation policy.</p>
-    /// <p>Game session logs are retained for all active game sessions for 14 days. To access the
-    /// logs, call <a>GetGameSessionLogUrl</a> to download the log files.</p>
-    /// <p>
-    /// <i>Available in GameLift Local.</i>
-    /// </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSession</a> |
-    /// <a>DescribeGameSessions</a> |
-    /// <a>DescribeGameSessionDetails</a> |
-    /// <a>SearchGameSessions</a> |
-    /// <a>UpdateGameSession</a> |
-    /// <a>GetGameSessionLogUrl</a> |
-    /// <a>StartGameSessionPlacement</a> |
-    /// <a>DescribeGameSessionPlacement</a> |
-    /// <a>StopGameSessionPlacement</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, a workflow is initiated to start a new game session. A <code>GameSession</code> object is returned containing the game session configuration and status. When the status is <code>ACTIVE</code>, game session connection information is provided and player sessions can be created for the game session. By default, newly created game sessions are open to new players. You can restrict new player access by using <code>UpdateGameSession</code> to change the game session's player session creation policy.</p>
+    /// <p>Game session logs are retained for all active game sessions for 14 days. To access the logs, call <code>GetGameSessionLogUrl</code> to download the log files.</p>
+    /// <p> <i>Available in GameLift Local.</i> </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGameSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2677,10 +2056,10 @@ pub mod fluent_builders {
                 crate::input::CreateGameSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2688,35 +2067,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each
-        /// request must reference either a fleet ID or alias ID, but not both.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each
-        /// request must reference either a fleet ID or alias ID, but not both.</p>
+        /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the
-        /// alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but
-        /// not both.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the
-        /// alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but
-        /// not both.</p>
+        /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias_id(input);
             self
         }
         /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-        pub fn maximum_player_session_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_player_session_count(inp);
+        pub fn maximum_player_session_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_player_session_count(input);
             self
         }
         /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -2725,8 +2098,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
@@ -2738,14 +2111,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session.</p>
-        pub fn game_properties(mut self, inp: impl Into<crate::model::GameProperty>) -> Self {
-            self.inner = self.inner.game_properties(inp);
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
+            self.inner = self.inner.game_properties(input);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -2753,38 +2124,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_properties(input);
             self
         }
-        /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when
-        /// requesting a new game session on a fleet with a resource creation limit policy. This
-        /// type of policy limits the number of concurrent active game sessions that one player can
-        /// create within a certain time span. GameLift uses the CreatorId to evaluate the new
-        /// request against the policy.</p>
-        pub fn creator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_id(inp);
+        /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when requesting a new game session on a fleet with a resource creation limit policy. This type of policy limits the number of concurrent active game sessions that one player can create within a certain time span. GameLift uses the CreatorId to evaluate the new request against the policy.</p>
+        pub fn creator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_id(input.into());
             self
         }
-        /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when
-        /// requesting a new game session on a fleet with a resource creation limit policy. This
-        /// type of policy limits the number of concurrent active game sessions that one player can
-        /// create within a certain time span. GameLift uses the CreatorId to evaluate the new
-        /// request against the policy.</p>
+        /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when requesting a new game session on a fleet with a resource creation limit policy. This type of policy limits the number of concurrent active game sessions that one player can create within a certain time span. GameLift uses the CreatorId to evaluate the new request against the policy.</p>
         pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_creator_id(input);
             self
         }
-        /// <p>
-        /// <i>This parameter is no longer preferred. Please use
-        /// <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-        /// identifies a request for a new game session. Maximum token length is 48 characters. If
-        /// provided, this string is included in the new game session's ID.</p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        /// <p> <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
+        pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(input.into());
             self
         }
-        /// <p>
-        /// <i>This parameter is no longer preferred. Please use
-        /// <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-        /// identifies a request for a new game session. Maximum token length is 48 characters. If
-        /// provided, this string is included in the new game session's ID.</p>
+        /// <p> <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
         pub fn set_game_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2792,26 +2147,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_session_id(input);
             self
         }
-        /// <p>Custom string that uniquely identifies the new game session request.  This is useful
-        /// for ensuring that game session requests with the same idempotency token are processed
-        /// only once. Subsequent requests with the same string return the original
-        /// <code>GameSession</code> object, with an updated status. Maximum token length is 48
-        /// characters. If provided, this string is included in the new game session's ID.
-        /// A game session ARN has the following format:
-        /// <code>arn:aws:gamelift:<region>::gamesession/<fleet ID>/<custom ID string or idempotency token></code>. Idempotency tokens remain in use for 30 days after a game session has ended;
-        /// game session objects are retained for this time period and then deleted.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:
+        /// <region>
+        /// ::gamesession/
+        /// <fleet id>
+        /// /
+        /// <custom id string or idempotency token></custom>
+        /// </fleet>
+        /// </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>Custom string that uniquely identifies the new game session request.  This is useful
-        /// for ensuring that game session requests with the same idempotency token are processed
-        /// only once. Subsequent requests with the same string return the original
-        /// <code>GameSession</code> object, with an updated status. Maximum token length is 48
-        /// characters. If provided, this string is included in the new game session's ID.
-        /// A game session ARN has the following format:
-        /// <code>arn:aws:gamelift:<region>::gamesession/<fleet ID>/<custom ID string or idempotency token></code>. Idempotency tokens remain in use for 30 days after a game session has ended;
-        /// game session objects are retained for this time period and then deleted.</p>
+        /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:
+        /// <region>
+        /// ::gamesession/
+        /// <fleet id>
+        /// /
+        /// <custom id string or idempotency token></custom>
+        /// </fleet>
+        /// </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2819,14 +2174,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_idempotency_token(input);
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session.</p>
-        pub fn game_session_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_data(inp);
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+        pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_data(input.into());
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2834,16 +2187,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_session_data(input);
             self
         }
-        /// <p>A fleet's remote location to place the new game session in. If this parameter is not
-        /// set, the new game session is placed in the fleet's home Region. Specify a remote
-        /// location with an AWS Region code such as <code>us-west-2</code>.  </p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>A fleet's remote location to place the new game session in. If this parameter is not
-        /// set, the new game session is placed in the fleet's home Region. Specify a remote
-        /// location with an AWS Region code such as <code>us-west-2</code>.  </p>
+        /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an AWS Region code such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -2851,51 +2200,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGameSessionQueue`.
     ///
-    /// <p>Creates a placement queue that processes requests for new game sessions. A queue uses
-    /// FleetIQ algorithms to determine the best placement locations and find an
-    /// available game server there, then prompts the game server process to start a new game
-    /// session. </p>
-    /// <p>A game session queue is configured with a set of destinations (GameLift fleets or
-    /// aliases), which determine the locations where the queue can place new game sessions.
-    /// These destinations can span multiple fleet types (Spot and On-Demand), instance types,
-    /// and AWS Regions. If the queue includes multi-location fleets, the queue is able to place
-    /// game sessions in all of a fleet's remote locations. You can opt to filter out individual
-    /// locations if needed.</p>
-    /// <p>The queue configuration also determines how FleetIQ selects the best available placement
-    /// for a new game session. Before searching for an available game server, FleetIQ first
-    /// prioritizes the queue's destinations and locations, with the best placement locations on
-    /// top. You can set up the queue to use the FleetIQ default prioritization or provide an
-    /// alternate set of priorities.</p>
-    /// <p>To create a new queue, provide a name, timeout value, and a list of destinations.
-    /// Optionally, specify a sort configuration and/or a filter, and define a set of latency
-    /// cap policies. You can also include the ARN for an Amazon Simple Notification Service
-    /// (SNS) topic to receive notifications of game session placement activity. Notifications
-    /// using SNS or CloudWatch events is the preferred way to track placement activity.</p>
-    /// <p>If successful, a new <code>GameSessionQueue</code> object is returned with an assigned
-    /// queue ARN. New game session requests, which are submitted to the  queue with <a>StartGameSessionPlacement</a> or <a>StartMatchmaking</a>,
-    /// reference a queue's name or ARN. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-design.html">
-    /// Design a game session queue</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-creating.html">
-    /// Create a game session queue</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSessionQueue</a> |
-    /// <a>DescribeGameSessionQueues</a> |
-    /// <a>UpdateGameSessionQueue</a> |
-    /// <a>DeleteGameSessionQueue</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a placement queue that processes requests for new game sessions. A queue uses FleetIQ algorithms to determine the best placement locations and find an available game server there, then prompts the game server process to start a new game session. </p>
+    /// <p>A game session queue is configured with a set of destinations (GameLift fleets or aliases), which determine the locations where the queue can place new game sessions. These destinations can span multiple fleet types (Spot and On-Demand), instance types, and AWS Regions. If the queue includes multi-location fleets, the queue is able to place game sessions in all of a fleet's remote locations. You can opt to filter out individual locations if needed.</p>
+    /// <p>The queue configuration also determines how FleetIQ selects the best available placement for a new game session. Before searching for an available game server, FleetIQ first prioritizes the queue's destinations and locations, with the best placement locations on top. You can set up the queue to use the FleetIQ default prioritization or provide an alternate set of priorities.</p>
+    /// <p>To create a new queue, provide a name, timeout value, and a list of destinations. Optionally, specify a sort configuration and/or a filter, and define a set of latency cap policies. You can also include the ARN for an Amazon Simple Notification Service (SNS) topic to receive notifications of game session placement activity. Notifications using SNS or CloudWatch events is the preferred way to track placement activity.</p>
+    /// <p>If successful, a new <code>GameSessionQueue</code> object is returned with an assigned queue ARN. New game session requests, which are submitted to the queue with <code>StartGameSessionPlacement</code> or <code>StartMatchmaking</code>, reference a queue's name or ARN. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-design.html"> Design a game session queue</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-creating.html"> Create a game session queue</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSessionQueue</code> | <code>DescribeGameSessionQueues</code> | <code>UpdateGameSessionQueue</code> | <code>DeleteGameSessionQueue</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGameSessionQueue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2940,10 +2255,10 @@ pub mod fluent_builders {
                 crate::input::CreateGameSessionQueueInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2952,8 +2267,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
@@ -2962,8 +2277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
-        pub fn timeout_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout_in_seconds(inp);
+        pub fn timeout_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_in_seconds(input);
             self
         }
         /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
@@ -2975,23 +2290,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_player_latency_policies`](Self::set_player_latency_policies).
         ///
-        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
-        /// deliver low latency for most players in a game session. These policies ensure that no
-        /// individual player can be placed into a game with unreasonably high latency. Use multiple
-        /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
-        /// maximum allowed latency, starting with the lowest value.</p>
-        pub fn player_latency_policies(
-            mut self,
-            inp: impl Into<crate::model::PlayerLatencyPolicy>,
-        ) -> Self {
-            self.inner = self.inner.player_latency_policies(inp);
+        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
+        pub fn player_latency_policies(mut self, input: crate::model::PlayerLatencyPolicy) -> Self {
+            self.inner = self.inner.player_latency_policies(input);
             self
         }
-        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
-        /// deliver low latency for most players in a game session. These policies ensure that no
-        /// individual player can be placed into a game with unreasonably high latency. Use multiple
-        /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
-        /// maximum allowed latency, starting with the lowest value.</p>
+        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
         pub fn set_player_latency_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerLatencyPolicy>>,
@@ -3003,17 +2307,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
-        /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-        pub fn destinations(
-            mut self,
-            inp: impl Into<crate::model::GameSessionQueueDestination>,
-        ) -> Self {
-            self.inner = self.inner.destinations(inp);
+        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
+        pub fn destinations(mut self, input: crate::model::GameSessionQueueDestination) -> Self {
+            self.inner = self.inner.destinations(input);
             self
         }
-        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
-        /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
+        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameSessionQueueDestination>>,
@@ -3021,16 +2320,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destinations(input);
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
-        /// not set, game sessions can be placed in any queue location. </p>
-        pub fn filter_configuration(mut self, inp: crate::model::FilterConfiguration) -> Self {
-            self.inner = self.inner.filter_configuration(inp);
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+        pub fn filter_configuration(mut self, input: crate::model::FilterConfiguration) -> Self {
+            self.inner = self.inner.filter_configuration(input);
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
-        /// not set, game sessions can be placed in any queue location. </p>
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
         pub fn set_filter_configuration(
             mut self,
             input: std::option::Option<crate::model::FilterConfiguration>,
@@ -3038,16 +2333,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_configuration(input);
             self
         }
-        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
-        /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
-        /// named will be automatically applied at the end of the prioritization process. </p>
-        pub fn priority_configuration(mut self, inp: crate::model::PriorityConfiguration) -> Self {
-            self.inner = self.inner.priority_configuration(inp);
+        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
+        pub fn priority_configuration(
+            mut self,
+            input: crate::model::PriorityConfiguration,
+        ) -> Self {
+            self.inner = self.inner.priority_configuration(input);
             self
         }
-        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
-        /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
-        /// named will be automatically applied at the end of the prioritization process. </p>
+        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
         pub fn set_priority_configuration(
             mut self,
             input: std::option::Option<crate::model::PriorityConfiguration>,
@@ -3055,16 +2349,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_priority_configuration(input);
             self
         }
-        /// <p>
-        /// Information to be added to all events that are related to this game session queue.
-        /// </p>
-        pub fn custom_event_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_event_data(inp);
+        /// <p> Information to be added to all events that are related to this game session queue. </p>
+        pub fn custom_event_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_event_data(input.into());
             self
         }
-        /// <p>
-        /// Information to be added to all events that are related to this game session queue.
-        /// </p>
+        /// <p> Information to be added to all events that are related to this game session queue. </p>
         pub fn set_custom_event_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3072,14 +2362,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_event_data(input);
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
-        /// Setting up notifications for game session placement</a>.</p>
-        pub fn notification_target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_target(inp);
+        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
+        pub fn notification_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_target(input.into());
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
-        /// Setting up notifications for game session placement</a>.</p>
+        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
         pub fn set_notification_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3091,28 +2379,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3123,49 +2395,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMatchmakingConfiguration`.
     ///
-    /// <p>Defines a new matchmaking configuration for use with FlexMatch. Whether your are using
-    /// FlexMatch with GameLift hosting or as a standalone matchmaking service, the matchmaking
-    /// configuration sets out rules for matching players and forming teams. If you're also
-    /// using GameLift hosting, it defines how to start game sessions for each match. Your
-    /// matchmaking system can use multiple configurations to handle different game scenarios.
-    /// All matchmaking requests (<a>StartMatchmaking</a> or <a>StartMatchBackfill</a>) identify the matchmaking configuration to use and
-    /// provide player attributes consistent with that configuration. </p>
-    /// <p>To create a matchmaking configuration, you must provide the following: configuration
-    /// name and FlexMatch mode (with or without GameLift hosting); a rule set that specifies how
-    /// to evaluate players and find acceptable matches; whether player acceptance is required;
-    /// and the maximum time allowed for a matchmaking attempt. When using FlexMatch with GameLift
-    /// hosting, you also need to identify the game session queue to use when starting a game
-    /// session for the match.</p>
-    /// <p>In addition, you must set up an Amazon Simple Notification Service (SNS) topic to receive matchmaking notifications.
-    /// Provide the topic ARN in the matchmaking configuration. An alternative method,
-    /// continuously polling ticket status with <a>DescribeMatchmaking</a>, is only
-    /// suitable for games in development with low matchmaking usage.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html">
-    /// Design a FlexMatch matchmaker</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-    /// Set up FlexMatch event notification</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateMatchmakingConfiguration</a> |
-    /// <a>DescribeMatchmakingConfigurations</a> |
-    /// <a>UpdateMatchmakingConfiguration</a> |
-    /// <a>DeleteMatchmakingConfiguration</a> |
-    /// <a>CreateMatchmakingRuleSet</a> |
-    /// <a>DescribeMatchmakingRuleSets</a> |
-    /// <a>ValidateMatchmakingRuleSet</a> |
-    /// <a>DeleteMatchmakingRuleSet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Defines a new matchmaking configuration for use with FlexMatch. Whether your are using FlexMatch with GameLift hosting or as a standalone matchmaking service, the matchmaking configuration sets out rules for matching players and forming teams. If you're also using GameLift hosting, it defines how to start game sessions for each match. Your matchmaking system can use multiple configurations to handle different game scenarios. All matchmaking requests (<code>StartMatchmaking</code> or <code>StartMatchBackfill</code>) identify the matchmaking configuration to use and provide player attributes consistent with that configuration. </p>
+    /// <p>To create a matchmaking configuration, you must provide the following: configuration name and FlexMatch mode (with or without GameLift hosting); a rule set that specifies how to evaluate players and find acceptable matches; whether player acceptance is required; and the maximum time allowed for a matchmaking attempt. When using FlexMatch with GameLift hosting, you also need to identify the game session queue to use when starting a game session for the match.</p>
+    /// <p>In addition, you must set up an Amazon Simple Notification Service (SNS) topic to receive matchmaking notifications. Provide the topic ARN in the matchmaking configuration. An alternative method, continuously polling ticket status with <code>DescribeMatchmaking</code>, is only suitable for games in development with low matchmaking usage.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html"> Design a FlexMatch matchmaker</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Set up FlexMatch event notification</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateMatchmakingConfiguration</code> | <code>DescribeMatchmakingConfigurations</code> | <code>UpdateMatchmakingConfiguration</code> | <code>DeleteMatchmakingConfiguration</code> | <code>CreateMatchmakingRuleSet</code> | <code>DescribeMatchmakingRuleSets</code> | <code>ValidateMatchmakingRuleSet</code> | <code>DeleteMatchmakingRuleSet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMatchmakingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3210,10 +2448,10 @@ pub mod fluent_builders {
                 crate::input::CreateMatchmakingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3221,21 +2459,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a
-        /// matchmaking request or ticket.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a
-        /// matchmaking request or ticket.</p>
+        /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>A human-readable description of the matchmaking configuration. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A human-readable description of the matchmaking configuration. </p>
@@ -3247,18 +2483,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_game_session_queue_arns`](Self::set_game_session_queue_arns).
         ///
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
-        /// GameLift-hosted game sessions for matches that are created with this matchmaking
-        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
-        /// set this parameter.  </p>
-        pub fn game_session_queue_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_queue_arns(inp);
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::gamesessionqueue/
+        /// <queue name></queue>
+        /// </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
+        pub fn game_session_queue_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_queue_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
-        /// GameLift-hosted game sessions for matches that are created with this matchmaking
-        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
-        /// set this parameter.  </p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::gamesessionqueue/
+        /// <queue name></queue>
+        /// </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
         pub fn set_game_session_queue_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3266,60 +2504,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_session_queue_arns(input);
             self
         }
-        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
-        /// before timing out. Requests that fail due to timing out can be resubmitted as
-        /// needed.</p>
-        pub fn request_timeout_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.request_timeout_seconds(inp);
+        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
+        pub fn request_timeout_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.request_timeout_seconds(input);
             self
         }
-        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
-        /// before timing out. Requests that fail due to timing out can be resubmitted as
-        /// needed.</p>
+        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
         pub fn set_request_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_request_timeout_seconds(input);
             self
         }
-        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
-        /// acceptance is required. </p>
-        pub fn acceptance_timeout_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.acceptance_timeout_seconds(inp);
+        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. </p>
+        pub fn acceptance_timeout_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.acceptance_timeout_seconds(input);
             self
         }
-        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
-        /// acceptance is required. </p>
+        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. </p>
         pub fn set_acceptance_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_acceptance_timeout_seconds(input);
             self
         }
-        /// <p>A flag that determines whether a match that was created with this configuration must
-        /// be accepted by the matched players. To require acceptance, set to <code>TRUE</code>.
-        /// With this option enabled, matchmaking tickets use the status
-        /// <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is
-        /// waiting for player acceptance. </p>
-        pub fn acceptance_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.acceptance_required(inp);
+        /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
+        pub fn acceptance_required(mut self, input: bool) -> Self {
+            self.inner = self.inner.acceptance_required(input);
             self
         }
-        /// <p>A flag that determines whether a match that was created with this configuration must
-        /// be accepted by the matched players. To require acceptance, set to <code>TRUE</code>.
-        /// With this option enabled, matchmaking tickets use the status
-        /// <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is
-        /// waiting for player acceptance. </p>
+        /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
         pub fn set_acceptance_required(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_acceptance_required(input);
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
-        /// value. A matchmaking configuration can only use rule sets that are defined in the same
-        /// Region.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
+        pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
-        /// value. A matchmaking configuration can only use rule sets that are defined in the same
-        /// Region.</p>
+        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3327,14 +2547,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_set_name(input);
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-        /// Setting up notifications for matchmaking</a> for more information.</p>
-        pub fn notification_target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_target(inp);
+        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
+        pub fn notification_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_target(input.into());
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-        /// Setting up notifications for matchmaking</a> for more information.</p>
+        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
         pub fn set_notification_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3342,28 +2560,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_target(input);
             self
         }
-        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
-        /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-        /// <code>STANDALONE</code>.</p>
-        pub fn additional_player_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.additional_player_count(inp);
+        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        pub fn additional_player_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.additional_player_count(input);
             self
         }
-        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
-        /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-        /// <code>STANDALONE</code>.</p>
+        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_additional_player_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_additional_player_count(input);
             self
         }
-        /// <p>Information to be added to all events related to this matchmaking configuration.
-        /// </p>
-        pub fn custom_event_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_event_data(inp);
+        /// <p>Information to be added to all events related to this matchmaking configuration. </p>
+        pub fn custom_event_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_event_data(input.into());
             self
         }
-        /// <p>Information to be added to all events related to this matchmaking configuration.
-        /// </p>
+        /// <p>Information to be added to all events related to this matchmaking configuration. </p>
         pub fn set_custom_event_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3375,18 +2587,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
-        /// object that is created for a successful match. This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn game_properties(mut self, inp: impl Into<crate::model::GameProperty>) -> Self {
-            self.inner = self.inner.game_properties(inp);
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
+            self.inner = self.inner.game_properties(input);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
-        /// object that is created for a successful match. This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -3394,18 +2600,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_properties(input);
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
-        /// that is created for a successful match. This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn game_session_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_data(inp);
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_data(input.into());
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
-        /// that is created for a successful match. This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3413,24 +2613,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_session_data(input);
             self
         }
-        /// <p>The method used to backfill game sessions that are created with this matchmaking
-        /// configuration. Specify <code>MANUAL</code> when your game manages backfill requests
-        /// manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to
-        /// have GameLift create a <a>StartMatchBackfill</a> request whenever a game
-        /// session has one or more open slots. Learn more about manual and automatic backfill in
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not
-        /// available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn backfill_mode(mut self, inp: crate::model::BackfillMode) -> Self {
-            self.inner = self.inner.backfill_mode(inp);
+        /// <p>The method used to backfill game sessions that are created with this matchmaking configuration. Specify <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        pub fn backfill_mode(mut self, input: crate::model::BackfillMode) -> Self {
+            self.inner = self.inner.backfill_mode(input);
             self
         }
-        /// <p>The method used to backfill game sessions that are created with this matchmaking
-        /// configuration. Specify <code>MANUAL</code> when your game manages backfill requests
-        /// manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to
-        /// have GameLift create a <a>StartMatchBackfill</a> request whenever a game
-        /// session has one or more open slots. Learn more about manual and automatic backfill in
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not
-        /// available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>The method used to backfill game sessions that are created with this matchmaking configuration. Specify <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_backfill_mode(
             mut self,
             input: std::option::Option<crate::model::BackfillMode>,
@@ -3438,41 +2626,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backfill_mode(input);
             self
         }
-        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
-        /// as a standalone matchmaking solution. </p>
+        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>STANDALONE</b> - FlexMatch forms matches and returns
-        /// match information, including players and team assignments, in a
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
-        /// MatchmakingSucceeded</a> event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
-        /// start a game session for the match. </p>
-        /// </li>
+        /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+        /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>
         /// </ul>
-        pub fn flex_match_mode(mut self, inp: crate::model::FlexMatchMode) -> Self {
-            self.inner = self.inner.flex_match_mode(inp);
+        pub fn flex_match_mode(mut self, input: crate::model::FlexMatchMode) -> Self {
+            self.inner = self.inner.flex_match_mode(input);
             self
         }
-        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
-        /// as a standalone matchmaking solution. </p>
+        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>STANDALONE</b> - FlexMatch forms matches and returns
-        /// match information, including players and team assignments, in a
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
-        /// MatchmakingSucceeded</a> event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
-        /// start a game session for the match. </p>
-        /// </li>
+        /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+        /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>
         /// </ul>
         pub fn set_flex_match_mode(
             mut self,
@@ -3485,28 +2651,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3517,54 +2667,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMatchmakingRuleSet`.
     ///
-    /// <p>Creates a new rule set for FlexMatch matchmaking. A rule set describes the type of match
-    /// to create, such as the number and size of teams. It also sets the parameters for
-    /// acceptable player matches, such as minimum skill level or character type. A rule set is
-    /// used by a <a>MatchmakingConfiguration</a>. </p>
-    /// <p>To create a matchmaking rule set, provide unique rule set name and the rule set body
-    /// in JSON format. Rule sets must be defined in the same Region as the matchmaking
-    /// configuration they are used with.</p>
-    /// <p>Since matchmaking rule sets cannot be edited, it is a good idea to check the rule
-    /// set syntax using <a>ValidateMatchmakingRuleSet</a> before creating a new rule
-    /// set.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
+    /// <p>Creates a new rule set for FlexMatch matchmaking. A rule set describes the type of match to create, such as the number and size of teams. It also sets the parameters for acceptable player matches, such as minimum skill level or character type. A rule set is used by a <code>MatchmakingConfiguration</code>. </p>
+    /// <p>To create a matchmaking rule set, provide unique rule set name and the rule set body in JSON format. Rule sets must be defined in the same Region as the matchmaking configuration they are used with.</p>
+    /// <p>Since matchmaking rule sets cannot be edited, it is a good idea to check the rule set syntax using <code>ValidateMatchmakingRuleSet</code> before creating a new rule set.</p>
+    /// <p> <b>Learn more</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a rule
-    /// set</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html">Design a
-    /// matchmaker</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-intro.html">Matchmaking with
-    /// FlexMatch</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a rule set</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html">Design a matchmaker</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-intro.html">Matchmaking with FlexMatch</a> </p> </li>
     /// </ul>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateMatchmakingConfiguration</a> |
-    /// <a>DescribeMatchmakingConfigurations</a> |
-    /// <a>UpdateMatchmakingConfiguration</a> |
-    /// <a>DeleteMatchmakingConfiguration</a> |
-    /// <a>CreateMatchmakingRuleSet</a> |
-    /// <a>DescribeMatchmakingRuleSets</a> |
-    /// <a>ValidateMatchmakingRuleSet</a> |
-    /// <a>DeleteMatchmakingRuleSet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateMatchmakingConfiguration</code> | <code>DescribeMatchmakingConfigurations</code> | <code>UpdateMatchmakingConfiguration</code> | <code>DeleteMatchmakingConfiguration</code> | <code>CreateMatchmakingRuleSet</code> | <code>DescribeMatchmakingRuleSets</code> | <code>ValidateMatchmakingRuleSet</code> | <code>DeleteMatchmakingRuleSet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMatchmakingRuleSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3609,10 +2723,10 @@ pub mod fluent_builders {
                 crate::input::CreateMatchmakingRuleSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3620,28 +2734,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name
-        /// value. Note that the rule set name is different from the optional <code>name</code>
-        /// field in the rule set body.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule set body.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name
-        /// value. Note that the rule set name is different from the optional <code>name</code>
-        /// field in the rule set body.</p>
+        /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule set body.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not
-        /// allowed in JSON, but most elements support a description field.</p>
-        pub fn rule_set_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_body(inp);
+        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
+        pub fn rule_set_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_body(input.into());
             self
         }
-        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not
-        /// allowed in JSON, but most elements support a description field.</p>
+        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
         pub fn set_rule_set_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3653,28 +2761,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3685,31 +2777,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePlayerSession`.
     ///
-    /// <p>Reserves an open player slot in a game session for a player. New player sessions can be
-    /// created in any game session with an open slot that is in <code>ACTIVE</code> status and
-    /// has a player creation policy of <code>ACCEPT_ALL</code>. You can add a group of players
-    /// to a game session with <a>CreatePlayerSessions</a>. </p>
-    /// <p>To create a player session, specify a game session ID, player ID, and optionally a set of
-    /// player data. </p>
-    /// <p>If successful, a slot is reserved in the game session for the player and a new <a>PlayerSession</a> object is returned with a player session ID. The player
-    /// references the player session ID when sending a connection request to the game session,
-    /// and the game server can use it to validate the player reservation with the GameLift service. Player
-    /// sessions cannot be updated. </p>
-    /// <p>
-    /// <i>Available in Amazon GameLift Local.</i>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreatePlayerSession</a> |
-    /// <a>CreatePlayerSessions</a> |
-    /// <a>DescribePlayerSessions</a> |
-    /// <a>StartGameSessionPlacement</a> |
-    /// <a>DescribeGameSessionPlacement</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Reserves an open player slot in a game session for a player. New player sessions can be created in any game session with an open slot that is in <code>ACTIVE</code> status and has a player creation policy of <code>ACCEPT_ALL</code>. You can add a group of players to a game session with <code>CreatePlayerSessions</code>. </p>
+    /// <p>To create a player session, specify a game session ID, player ID, and optionally a set of player data. </p>
+    /// <p>If successful, a slot is reserved in the game session for the player and a new <code>PlayerSession</code> object is returned with a player session ID. The player references the player session ID when sending a connection request to the game session, and the game server can use it to validate the player reservation with the GameLift service. Player sessions cannot be updated. </p>
+    /// <p> <i>Available in Amazon GameLift Local.</i> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreatePlayerSession</code> | <code>CreatePlayerSessions</code> | <code>DescribePlayerSessions</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePlayerSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3754,10 +2828,10 @@ pub mod fluent_builders {
                 crate::input::CreatePlayerSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3766,8 +2840,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game session to add a player to.</p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(input.into());
             self
         }
         /// <p>A unique identifier for the game session to add a player to.</p>
@@ -3779,8 +2853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for a player. Player IDs are developer-defined.</p>
-        pub fn player_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_id(inp);
+        pub fn player_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.player_id(input.into());
             self
         }
         /// <p>A unique identifier for a player. Player IDs are developer-defined.</p>
@@ -3789,8 +2863,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
-        pub fn player_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_data(inp);
+        pub fn player_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.player_data(input.into());
             self
         }
         /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
@@ -3801,31 +2875,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePlayerSessions`.
     ///
-    /// <p>Reserves open slots in a game session for a group of players. New player sessions can be
-    /// created in any game session with an open slot that is in <code>ACTIVE</code> status and
-    /// has a player creation policy of <code>ACCEPT_ALL</code>.  To add a single player to a
-    /// game session, use <a>CreatePlayerSession</a>. </p>
-    /// <p>To create player sessions, specify a game session ID and a list of player IDs. Optionally,
-    /// provide a set of player data for each player ID. </p>
-    /// <p>If successful, a slot is reserved in the game session for each player, and new <a>PlayerSession</a> objects are returned with player session IDs. Each player
-    /// references their player session ID when sending a connection request to the game
-    /// session, and the game server can use it to validate the player reservation with the
-    /// GameLift service. Player sessions cannot be updated.</p>
-    /// <p>
-    /// <i>Available in Amazon GameLift Local.</i>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreatePlayerSession</a> |
-    /// <a>CreatePlayerSessions</a> |
-    /// <a>DescribePlayerSessions</a> |
-    /// <a>StartGameSessionPlacement</a> |
-    /// <a>DescribeGameSessionPlacement</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Reserves open slots in a game session for a group of players. New player sessions can be created in any game session with an open slot that is in <code>ACTIVE</code> status and has a player creation policy of <code>ACCEPT_ALL</code>. To add a single player to a game session, use <code>CreatePlayerSession</code>. </p>
+    /// <p>To create player sessions, specify a game session ID and a list of player IDs. Optionally, provide a set of player data for each player ID. </p>
+    /// <p>If successful, a slot is reserved in the game session for each player, and new <code>PlayerSession</code> objects are returned with player session IDs. Each player references their player session ID when sending a connection request to the game session, and the game server can use it to validate the player reservation with the GameLift service. Player sessions cannot be updated.</p>
+    /// <p> <i>Available in Amazon GameLift Local.</i> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreatePlayerSession</code> | <code>CreatePlayerSessions</code> | <code>DescribePlayerSessions</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePlayerSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3870,10 +2926,10 @@ pub mod fluent_builders {
                 crate::input::CreatePlayerSessionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3882,8 +2938,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game session to add players to.</p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(input.into());
             self
         }
         /// <p>A unique identifier for the game session to add players to.</p>
@@ -3899,8 +2955,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_player_ids`](Self::set_player_ids).
         ///
         /// <p>List of unique identifiers for the players to be added.</p>
-        pub fn player_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_ids(inp);
+        pub fn player_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.player_ids(input.into());
             self
         }
         /// <p>List of unique identifiers for the players to be added.</p>
@@ -3915,22 +2971,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_player_data_map`](Self::set_player_data_map).
         ///
-        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined
-        /// information related to the player. Amazon GameLift does not use this data, so it can be formatted
-        /// as needed for use in the game. Any player data strings for player IDs that are not
-        /// included in the <code>PlayerIds</code> parameter are ignored. </p>
+        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
         pub fn player_data_map(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.player_data_map(k, v);
+            self.inner = self.inner.player_data_map(k.into(), v.into());
             self
         }
-        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined
-        /// information related to the player. Amazon GameLift does not use this data, so it can be formatted
-        /// as needed for use in the game. Any player data strings for player IDs that are not
-        /// included in the <code>PlayerIds</code> parameter are ignored. </p>
+        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
         pub fn set_player_data_map(
             mut self,
             input: std::option::Option<
@@ -3943,51 +2993,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateScript`.
     ///
-    /// <p>Creates a new script record for your Realtime Servers script. Realtime scripts are JavaScript that
-    /// provide configuration settings and optional custom game logic for your game. The script
-    /// is deployed when you create a Realtime Servers fleet to host your game sessions. Script logic is
-    /// executed during an active game session. </p>
-    /// <p>To create a new script record, specify a script name and provide the script file(s).
-    /// The script files and all dependencies must be zipped into a single file. You can pull
-    /// the zip file from either of these locations: </p>
+    /// <p>Creates a new script record for your Realtime Servers script. Realtime scripts are JavaScript that provide configuration settings and optional custom game logic for your game. The script is deployed when you create a Realtime Servers fleet to host your game sessions. Script logic is executed during an active game session. </p>
+    /// <p>To create a new script record, specify a script name and provide the script file(s). The script files and all dependencies must be zipped into a single file. You can pull the zip file from either of these locations: </p>
     /// <ul>
-    /// <li>
-    /// <p>A locally available directory. Use the <i>ZipFile</i> parameter for this
-    /// option.</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon Simple Storage Service (Amazon S3) bucket under your AWS account. Use the
-    /// <i>StorageLocation</i> parameter for this option. You'll need
-    /// to have an Identity Access Management (IAM) role that allows the Amazon GameLift
-    /// service to access your S3 bucket. </p>
-    /// </li>
+    /// <li> <p>A locally available directory. Use the <i>ZipFile</i> parameter for this option.</p> </li>
+    /// <li> <p>An Amazon Simple Storage Service (Amazon S3) bucket under your AWS account. Use the <i>StorageLocation</i> parameter for this option. You'll need to have an Identity Access Management (IAM) role that allows the Amazon GameLift service to access your S3 bucket. </p> </li>
     /// </ul>
-    /// <p>If the call is successful, a new script record is created with a unique script ID. If the
-    /// script file is provided as a local file, the file is uploaded to an Amazon GameLift-owned S3 bucket
-    /// and the script record's storage location reflects this location. If the script file is provided
-    /// as an S3 bucket, Amazon GameLift accesses the file at this storage location as needed for deployment.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    ///
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set Up a Role for Amazon GameLift Access</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateScript</a> |
-    /// <a>ListScripts</a> |
-    /// <a>DescribeScript</a> |
-    /// <a>UpdateScript</a> |
-    /// <a>DeleteScript</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the call is successful, a new script record is created with a unique script ID. If the script file is provided as a local file, the file is uploaded to an Amazon GameLift-owned S3 bucket and the script record's storage location reflects this location. If the script file is provided as an S3 bucket, Amazon GameLift accesses the file at this storage location as needed for deployment.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set Up a Role for Amazon GameLift Access</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateScript</code> | <code>ListScripts</code> | <code>DescribeScript</code> | <code>UpdateScript</code> | <code>DeleteScript</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateScript<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4032,10 +3050,10 @@ pub mod fluent_builders {
                 crate::input::CreateScriptInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4043,48 +3061,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-        /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-        /// </p>
+        /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-        /// </p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
-        /// </p>
+        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
-        /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
-        /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
-        /// bucket must be in the same Region where you want to create a new script. By default,
-        /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
-        /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
-        /// version. </p>
-        pub fn storage_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.storage_location(inp);
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+        pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
+            self.inner = self.inner.storage_location(input);
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
-        /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
-        /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
-        /// bucket must be in the same Region where you want to create a new script. By default,
-        /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
-        /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
-        /// version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -4092,18 +3094,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_storage_location(input);
             self
         }
-        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
-        /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the
-        /// string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
-        pub fn zip_file(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.zip_file(inp);
+        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+        pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.zip_file(input);
             self
         }
-        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
-        /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the
-        /// string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.inner = self.inner.set_zip_file(input);
             self
@@ -4112,28 +3110,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined
-        /// key-value pairs. Tagging
-        /// AWS resources are useful for resource management, access management and cost allocation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-        /// <i>AWS General Reference</i>. Once the resource is created, you can
-        /// use <a>TagResource</a>, <a>UntagResource</a>, and
-        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
-        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
-        /// tagging limits.</p>
+        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4144,41 +3126,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateVpcPeeringAuthorization`.
     ///
-    /// <p>Requests authorization to create or delete a peer connection between the VPC for
-    /// your Amazon GameLift fleet and a virtual private cloud (VPC) in your AWS account. VPC peering enables the game
-    /// servers on your fleet to communicate directly with other AWS resources. Once you've
-    /// received authorization, call <a>CreateVpcPeeringConnection</a> to establish
-    /// the peering connection. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift
-    /// Fleets</a>.</p>
-    /// <p>You can peer with VPCs that are owned by any AWS account you have access to,
-    /// including the account that you use to manage your Amazon GameLift fleets. You cannot peer with
-    /// VPCs that are in different Regions.</p>
-    /// <p>To request authorization to create a connection, call this operation from the AWS
-    /// account with the VPC that you want to peer to your Amazon GameLift fleet. For example, to
-    /// enable your game servers to retrieve data from a DynamoDB table, use the account that
-    /// manages that DynamoDB resource. Identify the following values: (1) The ID of the VPC
-    /// that you want to peer with, and (2) the ID of the AWS account that you use to manage
-    /// Amazon GameLift. If successful, VPC peering is authorized for the specified VPC. </p>
-    /// <p>To request authorization to delete a connection, call this operation from the AWS
-    /// account with the VPC that is peered with your Amazon GameLift fleet. Identify the following
-    /// values: (1) VPC ID that you want to delete the peering connection for, and (2) ID of the
-    /// AWS account that you use to manage Amazon GameLift. </p>
-    /// <p>The authorization remains valid for 24 hours unless it is canceled by a call to
-    /// <a>DeleteVpcPeeringAuthorization</a>. You must create or delete the
-    /// peering connection while the authorization is valid. </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateVpcPeeringAuthorization</a> |
-    /// <a>DescribeVpcPeeringAuthorizations</a> |
-    /// <a>DeleteVpcPeeringAuthorization</a> |
-    /// <a>CreateVpcPeeringConnection</a> |
-    /// <a>DescribeVpcPeeringConnections</a> |
-    /// <a>DeleteVpcPeeringConnection</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Requests authorization to create or delete a peer connection between the VPC for your Amazon GameLift fleet and a virtual private cloud (VPC) in your AWS account. VPC peering enables the game servers on your fleet to communicate directly with other AWS resources. Once you've received authorization, call <code>CreateVpcPeeringConnection</code> to establish the peering connection. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
+    /// <p>You can peer with VPCs that are owned by any AWS account you have access to, including the account that you use to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in different Regions.</p>
+    /// <p>To request authorization to create a connection, call this operation from the AWS account with the VPC that you want to peer to your Amazon GameLift fleet. For example, to enable your game servers to retrieve data from a DynamoDB table, use the account that manages that DynamoDB resource. Identify the following values: (1) The ID of the VPC that you want to peer with, and (2) the ID of the AWS account that you use to manage Amazon GameLift. If successful, VPC peering is authorized for the specified VPC. </p>
+    /// <p>To request authorization to delete a connection, call this operation from the AWS account with the VPC that is peered with your Amazon GameLift fleet. Identify the following values: (1) VPC ID that you want to delete the peering connection for, and (2) ID of the AWS account that you use to manage Amazon GameLift. </p>
+    /// <p>The authorization remains valid for 24 hours unless it is canceled by a call to <code>DeleteVpcPeeringAuthorization</code>. You must create or delete the peering connection while the authorization is valid. </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVpcPeeringAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4223,10 +3178,10 @@ pub mod fluent_builders {
                 crate::input::CreateVpcPeeringAuthorizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4234,14 +3189,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
-        /// You can find your Account ID in the AWS Management Console under account settings.</p>
-        pub fn game_lift_aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_lift_aws_account_id(inp);
+        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
+        pub fn game_lift_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_lift_aws_account_id(input.into());
             self
         }
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
-        /// You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
         pub fn set_game_lift_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4249,18 +3202,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_lift_aws_account_id(input);
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-        pub fn peer_vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.peer_vpc_id(inp);
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peer_vpc_id(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_peer_vpc_id(input);
             self
@@ -4268,38 +3215,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateVpcPeeringConnection`.
     ///
-    /// <p>Establishes a VPC peering connection between a virtual private cloud (VPC) in an AWS account with the VPC
-    /// for your Amazon GameLift fleet. VPC peering enables the game servers on your fleet to
-    /// communicate directly with other AWS resources. You can peer with VPCs in any AWS account
-    /// that you have access to, including the account that you use to manage your Amazon GameLift
-    /// fleets. You cannot peer with VPCs that are in different Regions. For more information,
-    /// see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
-    /// <p>Before calling this operation to establish the peering connection, you first need
-    /// to call <a>CreateVpcPeeringAuthorization</a> and identify the VPC you want to
-    /// peer with. Once the authorization for the specified VPC is issued, you have 24 hours to
-    /// establish the connection. These two operations handle all tasks necessary to peer the
-    /// two VPCs, including acceptance, updating routing tables, etc. </p>
-    /// <p>To establish the connection, call this operation from the AWS account that is used
-    /// to manage the Amazon GameLift fleets. Identify the following values: (1) The ID of the fleet
-    /// you want to be enable a VPC peering connection for; (2) The AWS account with the VPC
-    /// that you want to peer with; and (3) The ID of the VPC you want to peer with. This
-    /// operation is asynchronous. If successful, a <a>VpcPeeringConnection</a>
-    /// request is created. You can use continuous polling to track the request's status using
-    /// <a>DescribeVpcPeeringConnections</a>, or by monitoring fleet events for
-    /// success or failure using <a>DescribeFleetEvents</a>. </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateVpcPeeringAuthorization</a> |
-    /// <a>DescribeVpcPeeringAuthorizations</a> |
-    /// <a>DeleteVpcPeeringAuthorization</a> |
-    /// <a>CreateVpcPeeringConnection</a> |
-    /// <a>DescribeVpcPeeringConnections</a> |
-    /// <a>DeleteVpcPeeringConnection</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Establishes a VPC peering connection between a virtual private cloud (VPC) in an AWS account with the VPC for your Amazon GameLift fleet. VPC peering enables the game servers on your fleet to communicate directly with other AWS resources. You can peer with VPCs in any AWS account that you have access to, including the account that you use to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in different Regions. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
+    /// <p>Before calling this operation to establish the peering connection, you first need to call <code>CreateVpcPeeringAuthorization</code> and identify the VPC you want to peer with. Once the authorization for the specified VPC is issued, you have 24 hours to establish the connection. These two operations handle all tasks necessary to peer the two VPCs, including acceptance, updating routing tables, etc. </p>
+    /// <p>To establish the connection, call this operation from the AWS account that is used to manage the Amazon GameLift fleets. Identify the following values: (1) The ID of the fleet you want to be enable a VPC peering connection for; (2) The AWS account with the VPC that you want to peer with; and (3) The ID of the VPC you want to peer with. This operation is asynchronous. If successful, a <code>VpcPeeringConnection</code> request is created. You can use continuous polling to track the request's status using <code>DescribeVpcPeeringConnections</code>, or by monitoring fleet events for success or failure using <code>DescribeFleetEvents</code>. </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVpcPeeringConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4344,10 +3265,10 @@ pub mod fluent_builders {
                 crate::input::CreateVpcPeeringConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4355,28 +3276,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift
-        /// VPC to peer with. </p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift
-        /// VPC to peer with. </p>
+        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>A unique identifier for the AWS account with the VPC that you want to peer your
-        /// Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account
-        /// settings.</p>
-        pub fn peer_vpc_aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.peer_vpc_aws_account_id(inp);
+        /// <p>A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account settings.</p>
+        pub fn peer_vpc_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peer_vpc_aws_account_id(input.into());
             self
         }
-        /// <p>A unique identifier for the AWS account with the VPC that you want to peer your
-        /// Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account
-        /// settings.</p>
+        /// <p>A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account settings.</p>
         pub fn set_peer_vpc_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4384,18 +3299,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_peer_vpc_aws_account_id(input);
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-        pub fn peer_vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.peer_vpc_id(inp);
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peer_vpc_id(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_peer_vpc_id(input);
             self
@@ -4403,22 +3312,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAlias`.
     ///
-    /// <p>Deletes an alias. This operation removes all record of the alias. Game clients
-    /// attempting to access a server process using the deleted alias receive an error. To
-    /// delete an alias, specify the alias ID to be deleted.</p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateAlias</a> |
-    /// <a>ListAliases</a> |
-    /// <a>DescribeAlias</a> |
-    /// <a>UpdateAlias</a> |
-    /// <a>DeleteAlias</a> |
-    /// <a>ResolveAlias</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an alias. This operation removes all record of the alias. Game clients attempting to access a server process using the deleted alias receive an error. To delete an alias, specify the alias ID to be deleted.</p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateAlias</code> | <code>ListAliases</code> | <code>DescribeAlias</code> | <code>UpdateAlias</code> | <code>DeleteAlias</code> | <code>ResolveAlias</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4463,10 +3360,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4474,14 +3371,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier of the alias that you want to delete. You can use either the alias
-        /// ID or ARN value.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
-        /// <p>A unique identifier of the alias that you want to delete. You can use either the alias
-        /// ID or ARN value.</p>
+        /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias_id(input);
             self
@@ -4489,29 +3384,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBuild`.
     ///
-    /// <p>Deletes a build. This operation permanently deletes the build resource and any uploaded
-    /// build files. Deleting a build does not affect the status of any active fleets using the
-    /// build, but you can no longer create new fleets with the deleted build.</p>
+    /// <p>Deletes a build. This operation permanently deletes the build resource and any uploaded build files. Deleting a build does not affect the status of any active fleets using the build, but you can no longer create new fleets with the deleted build.</p>
     /// <p>To delete a build, specify the build ID. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
-    /// Upload a Custom Server Build</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateBuild</a> |
-    /// <a>ListBuilds</a> |
-    /// <a>DescribeBuild</a> |
-    /// <a>UpdateBuild</a> |
-    /// <a>DeleteBuild</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"> Upload a Custom Server Build</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateBuild</code> | <code>ListBuilds</code> | <code>DescribeBuild</code> | <code>UpdateBuild</code> | <code>DeleteBuild</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBuild<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4556,10 +3435,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBuildInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4568,8 +3447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value. </p>
-        pub fn build_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_id(inp);
+        pub fn build_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_id(input.into());
             self
         }
         /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value. </p>
@@ -4580,42 +3459,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFleet`.
     ///
-    /// <p>Deletes all resources and information related a fleet. Any current fleet instances,
-    /// including those in remote locations, are shut down. You don't need to call
-    /// <code>DeleteFleetLocations</code> separately.</p>
-    /// <note>
-    /// <p>If the fleet being deleted has a VPC peering connection, you first need to get a
-    /// valid authorization (good for 24 hours) by calling <a>CreateVpcPeeringAuthorization</a>. You do not need to explicitly delete
-    /// the VPC peering connection--this is done as part of the delete fleet process.</p>
+    /// <p>Deletes all resources and information related a fleet. Any current fleet instances, including those in remote locations, are shut down. You don't need to call <code>DeleteFleetLocations</code> separately.</p> <note>
+    /// <p>If the fleet being deleted has a VPC peering connection, you first need to get a valid authorization (good for 24 hours) by calling <code>CreateVpcPeeringAuthorization</code>. You do not need to explicitly delete the VPC peering connection--this is done as part of the delete fleet process.</p>
     /// </note>
-    /// <p>To delete a fleet, specify the fleet ID to be terminated. During the deletion process
-    /// the fleet status is changed to <code>DELETING</code>. When completed, the status
-    /// switches to <code>TERMINATED</code> and the fleet event <code>FLEET_DELETED</code> is
-    /// sent.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift Fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleetLocations</a> |
-    /// <a>UpdateFleetAttributes</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>UpdateFleetPortSettings</a> |
-    /// <a>UpdateRuntimeConfiguration</a> |
-    /// <a>StopFleetActions</a> |  
-    /// <a>StartFleetActions</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DeleteFleet</a> |
-    /// <a>DeleteFleetLocations</a> |
-    /// <a>DeleteScalingPolicy</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To delete a fleet, specify the fleet ID to be terminated. During the deletion process the fleet status is changed to <code>DELETING</code>. When completed, the status switches to <code>TERMINATED</code> and the fleet event <code>FLEET_DELETED</code> is sent.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift Fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleetLocations</code> | <code>UpdateFleetAttributes</code> | <code>UpdateFleetCapacity</code> | <code>UpdateFleetPortSettings</code> | <code>UpdateRuntimeConfiguration</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <code>PutScalingPolicy</code> | <code>DeleteFleet</code> | <code>DeleteFleetLocations</code> | <code>DeleteScalingPolicy</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4660,10 +3512,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4672,8 +3524,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
         /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
@@ -4684,36 +3536,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFleetLocations`.
     ///
-    /// <p>Removes locations from a multi-location fleet. When deleting a location, all game
-    /// server process and all instances that are still active in the location are shut down. </p>
-    /// <p>To delete fleet locations, identify the fleet ID and provide a list of the locations
-    /// to be deleted. </p>
-    /// <p>If successful, GameLift sets the location status to <code>DELETING</code>, and begins
-    /// to shut down existing server processes and terminate instances in each location being
-    /// deleted. When completed, the location status changes to <code>TERMINATED</code>.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleetLocations</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>DescribeFleetLocationCapacity</a> |
-    /// <a>DescribeFleetLocationUtilization</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>DescribeFleetUtilization</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>DeleteFleetLocations</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes locations from a multi-location fleet. When deleting a location, all game server process and all instances that are still active in the location are shut down. </p>
+    /// <p>To delete fleet locations, identify the fleet ID and provide a list of the locations to be deleted. </p>
+    /// <p>If successful, GameLift sets the location status to <code>DELETING</code>, and begins to shut down existing server processes and terminate instances in each location being deleted. When completed, the location status changes to <code>TERMINATED</code>.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleetLocations</code> | <code>DescribeFleetLocationAttributes</code> | <code>DescribeFleetLocationCapacity</code> | <code>DescribeFleetLocationUtilization</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetCapacity</code> | <code>DescribeFleetUtilization</code> | <code>UpdateFleetCapacity</code> | <code>StopFleetActions</code> | <code>DeleteFleetLocations</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFleetLocations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4758,10 +3588,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFleetLocationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4769,14 +3599,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to delete locations for.
-        /// You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to delete locations for.
-        /// You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
@@ -4785,14 +3613,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
-        pub fn locations(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locations(inp);
+        /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        pub fn locations(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locations(input.into());
             self
         }
-        /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4803,55 +3629,21 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteGameServerGroup`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Terminates a game server group and permanently deletes the game server group record.
-    /// You have several options for how these resources are impacted when deleting the game
-    /// server group. Depending on the type of delete operation selected, this operation might
-    /// affect these resources:</p>
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Terminates a game server group and permanently deletes the game server group record. You have several options for how these resources are impacted when deleting the game server group. Depending on the type of delete operation selected, this operation might affect these resources:</p>
     /// <ul>
-    /// <li>
-    /// <p>The game server group</p>
-    /// </li>
-    /// <li>
-    /// <p>The corresponding Auto Scaling group</p>
-    /// </li>
-    /// <li>
-    /// <p>All game servers that are currently running in the group</p>
-    /// </li>
+    /// <li> <p>The game server group</p> </li>
+    /// <li> <p>The corresponding Auto Scaling group</p> </li>
+    /// <li> <p>All game servers that are currently running in the group</p> </li>
     /// </ul>
-    /// <p>To delete a game server group, identify the game server group to delete and specify
-    /// the type of delete operation to initiate. Game server groups can only be deleted if they
-    /// are in <code>ACTIVE</code> or <code>ERROR</code> status.</p>
-    /// <p>If the delete request is successful, a series of operations are kicked off. The game
-    /// server group status is changed to <code>DELETE_SCHEDULED</code>, which prevents new game
-    /// servers from being registered and stops automatic scaling activity. Once all game
-    /// servers in the game server group are deregistered, GameLift FleetIQ can begin deleting resources.
-    /// If any of the delete operations fail, the game server group is placed in
-    /// <code>ERROR</code> status.</p>
+    /// <p>To delete a game server group, identify the game server group to delete and specify the type of delete operation to initiate. Game server groups can only be deleted if they are in <code>ACTIVE</code> or <code>ERROR</code> status.</p>
+    /// <p>If the delete request is successful, a series of operations are kicked off. The game server group status is changed to <code>DELETE_SCHEDULED</code>, which prevents new game servers from being registered and stops automatic scaling activity. Once all game servers in the game server group are deregistered, GameLift FleetIQ can begin deleting resources. If any of the delete operations fail, the game server group is placed in <code>ERROR</code> status.</p>
     /// <p>GameLift FleetIQ emits delete events to Amazon CloudWatch.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameServerGroup</a> |
-    /// <a>ListGameServerGroups</a> |
-    /// <a>DescribeGameServerGroup</a> |
-    /// <a>UpdateGameServerGroup</a> |
-    /// <a>DeleteGameServerGroup</a> |
-    /// <a>ResumeGameServerGroup</a> |
-    /// <a>SuspendGameServerGroup</a> |
-    /// <a>DescribeGameServerInstances</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGameServerGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4896,10 +3688,10 @@ pub mod fluent_builders {
                 crate::input::DeleteGameServerGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4907,12 +3699,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4922,47 +3714,19 @@ pub mod fluent_builders {
         }
         /// <p>The type of delete to perform. Options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SAFE_DELETE</code> – (default) Terminates the game server group and
-        /// EC2 Auto Scaling group only when it has no game servers that are in
-        /// <code>UTILIZED</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FORCE_DELETE</code> – Terminates the game server group, including all
-        /// active game servers regardless of their utilization status, and the EC2 Auto
-        /// Scaling group. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RETAIN</code> – Does a safe delete of the game server group but retains
-        /// the EC2 Auto Scaling group as is.</p>
-        /// </li>
+        /// <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>
+        /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the EC2 Auto Scaling group. </p> </li>
+        /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the EC2 Auto Scaling group as is.</p> </li>
         /// </ul>
-        pub fn delete_option(mut self, inp: crate::model::GameServerGroupDeleteOption) -> Self {
-            self.inner = self.inner.delete_option(inp);
+        pub fn delete_option(mut self, input: crate::model::GameServerGroupDeleteOption) -> Self {
+            self.inner = self.inner.delete_option(input);
             self
         }
         /// <p>The type of delete to perform. Options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SAFE_DELETE</code> – (default) Terminates the game server group and
-        /// EC2 Auto Scaling group only when it has no game servers that are in
-        /// <code>UTILIZED</code> status.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FORCE_DELETE</code> – Terminates the game server group, including all
-        /// active game servers regardless of their utilization status, and the EC2 Auto
-        /// Scaling group. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RETAIN</code> – Does a safe delete of the game server group but retains
-        /// the EC2 Auto Scaling group as is.</p>
-        /// </li>
+        /// <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>
+        /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the EC2 Auto Scaling group. </p> </li>
+        /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the EC2 Auto Scaling group as is.</p> </li>
         /// </ul>
         pub fn set_delete_option(
             mut self,
@@ -4974,26 +3738,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteGameSessionQueue`.
     ///
-    /// <p>Deletes a game session queue. Once a queue is successfully deleted, unfulfilled <a>StartGameSessionPlacement</a> requests that reference the queue will fail.
-    /// To delete a queue, specify the queue name.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">
-    /// Using Multi-Region Queues</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSessionQueue</a> |
-    /// <a>DescribeGameSessionQueues</a> |
-    /// <a>UpdateGameSessionQueue</a> |
-    /// <a>DeleteGameSessionQueue</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a game session queue. Once a queue is successfully deleted, unfulfilled <code>StartGameSessionPlacement</code> requests that reference the queue will fail. To delete a queue, specify the queue name.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html"> Using Multi-Region Queues</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSessionQueue</code> | <code>DescribeGameSessionQueues</code> | <code>UpdateGameSessionQueue</code> | <code>DeleteGameSessionQueue</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGameSessionQueue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5038,10 +3788,10 @@ pub mod fluent_builders {
                 crate::input::DeleteGameSessionQueueInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5050,8 +3800,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
@@ -5062,24 +3812,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMatchmakingConfiguration`.
     ///
-    /// <p>Permanently removes a FlexMatch matchmaking configuration. To delete, specify the
-    /// configuration name. A matchmaking configuration cannot be deleted if it is being used in
-    /// any active matchmaking tickets.</p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateMatchmakingConfiguration</a> |
-    /// <a>DescribeMatchmakingConfigurations</a> |
-    /// <a>UpdateMatchmakingConfiguration</a> |
-    /// <a>DeleteMatchmakingConfiguration</a> |
-    /// <a>CreateMatchmakingRuleSet</a> |
-    /// <a>DescribeMatchmakingRuleSets</a> |
-    /// <a>ValidateMatchmakingRuleSet</a> |
-    /// <a>DeleteMatchmakingRuleSet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Permanently removes a FlexMatch matchmaking configuration. To delete, specify the configuration name. A matchmaking configuration cannot be deleted if it is being used in any active matchmaking tickets.</p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateMatchmakingConfiguration</code> | <code>DescribeMatchmakingConfigurations</code> | <code>UpdateMatchmakingConfiguration</code> | <code>DeleteMatchmakingConfiguration</code> | <code>CreateMatchmakingRuleSet</code> | <code>DescribeMatchmakingRuleSets</code> | <code>ValidateMatchmakingRuleSet</code> | <code>DeleteMatchmakingRuleSet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMatchmakingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5124,10 +3860,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMatchmakingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5135,12 +3871,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the matchmaking configuration.  You can use either the configuration name or ARN value.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking configuration.  You can use either the configuration name or ARN value.</p>
+        /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -5148,35 +3884,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMatchmakingRuleSet`.
     ///
-    /// <p>Deletes an existing matchmaking rule set. To delete the rule set, provide the rule
-    /// set name. Rule sets cannot be deleted if they are currently being used by a matchmaking
-    /// configuration. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
+    /// <p>Deletes an existing matchmaking rule set. To delete the rule set, provide the rule set name. Rule sets cannot be deleted if they are currently being used by a matchmaking configuration. </p>
+    /// <p> <b>Learn more</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a rule
-    /// set</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a rule set</a> </p> </li>
     /// </ul>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateMatchmakingConfiguration</a> |
-    /// <a>DescribeMatchmakingConfigurations</a> |
-    /// <a>UpdateMatchmakingConfiguration</a> |
-    /// <a>DeleteMatchmakingConfiguration</a> |
-    /// <a>CreateMatchmakingRuleSet</a> |
-    /// <a>DescribeMatchmakingRuleSets</a> |
-    /// <a>ValidateMatchmakingRuleSet</a> |
-    /// <a>DeleteMatchmakingRuleSet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateMatchmakingConfiguration</code> | <code>DescribeMatchmakingConfigurations</code> | <code>UpdateMatchmakingConfiguration</code> | <code>DeleteMatchmakingConfiguration</code> | <code>CreateMatchmakingRuleSet</code> | <code>DescribeMatchmakingRuleSets</code> | <code>ValidateMatchmakingRuleSet</code> | <code>DeleteMatchmakingRuleSet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMatchmakingRuleSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5221,10 +3936,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMatchmakingRuleSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5232,14 +3947,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name"
-        /// field in the rule set body.)  You can use either the rule set name or ARN value.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name"
-        /// field in the rule set body.)  You can use either the rule set name or ARN value.</p>
+        /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -5247,26 +3960,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteScalingPolicy`.
     ///
-    /// <p>Deletes a fleet scaling policy. Once deleted, the policy is no longer in
-    /// force and GameLift removes all record of it. To delete a scaling policy, specify both the scaling
-    /// policy name and the fleet ID it is associated with.</p>
-    /// <p>To temporarily suspend scaling policies, call <a>StopFleetActions</a>.
-    /// This operation suspends all policies for the fleet.</p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DescribeScalingPolicies</a> |
-    /// <a>DeleteScalingPolicy</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>StartFleetActions</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a fleet scaling policy. Once deleted, the policy is no longer in force and GameLift removes all record of it. To delete a scaling policy, specify both the scaling policy name and the fleet ID it is associated with.</p>
+    /// <p>To temporarily suspend scaling policies, call <code>StopFleetActions</code>. This operation suspends all policies for the fleet.</p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>DescribeFleetCapacity</code> | <code>UpdateFleetCapacity</code> | <code>DescribeEC2InstanceLimits</code> | <code>PutScalingPolicy</code> | <code>DescribeScalingPolicies</code> | <code>DeleteScalingPolicy</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5311,10 +4009,10 @@ pub mod fluent_builders {
                 crate::input::DeleteScalingPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5323,8 +4021,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
@@ -5333,8 +4031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
         /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
@@ -5345,31 +4043,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteScript`.
     ///
-    /// <p>Deletes a Realtime script. This operation permanently deletes the script record. If
-    /// script files were uploaded, they are also deleted (files stored in an S3 bucket are not
-    /// deleted). </p>
-    /// <p>To delete a script, specify the script ID.  Before deleting a script, be sure to
-    /// terminate all fleets that are deployed with the script being deleted. Fleet instances
-    /// periodically check for script updates, and if the script record no longer exists, the
-    /// instance will go into an error state and be unable to host game sessions.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateScript</a> |
-    /// <a>ListScripts</a> |
-    /// <a>DescribeScript</a> |
-    /// <a>UpdateScript</a> |
-    /// <a>DeleteScript</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a Realtime script. This operation permanently deletes the script record. If script files were uploaded, they are also deleted (files stored in an S3 bucket are not deleted). </p>
+    /// <p>To delete a script, specify the script ID. Before deleting a script, be sure to terminate all fleets that are deployed with the script being deleted. Fleet instances periodically check for script updates, and if the script record no longer exists, the instance will go into an error state and be unable to host game sessions.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateScript</code> | <code>ListScripts</code> | <code>DescribeScript</code> | <code>UpdateScript</code> | <code>DeleteScript</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteScript<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5414,10 +4094,10 @@ pub mod fluent_builders {
                 crate::input::DeleteScriptInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5426,8 +4106,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
-        pub fn script_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.script_id(inp);
+        pub fn script_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.script_id(input.into());
             self
         }
         /// <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
@@ -5438,21 +4118,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteVpcPeeringAuthorization`.
     ///
-    /// <p>Cancels a pending VPC peering authorization for the specified VPC. If you need to
-    /// delete an existing VPC peering connection, call <a>DeleteVpcPeeringConnection</a>. </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateVpcPeeringAuthorization</a> |
-    /// <a>DescribeVpcPeeringAuthorizations</a> |
-    /// <a>DeleteVpcPeeringAuthorization</a> |
-    /// <a>CreateVpcPeeringConnection</a> |
-    /// <a>DescribeVpcPeeringConnections</a> |
-    /// <a>DeleteVpcPeeringConnection</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Cancels a pending VPC peering authorization for the specified VPC. If you need to delete an existing VPC peering connection, call <code>DeleteVpcPeeringConnection</code>. </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVpcPeeringAuthorization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5497,10 +4166,10 @@ pub mod fluent_builders {
                 crate::input::DeleteVpcPeeringAuthorizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5508,14 +4177,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
-        /// You can find your Account ID in the AWS Management Console under account settings.</p>
-        pub fn game_lift_aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_lift_aws_account_id(inp);
+        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
+        pub fn game_lift_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_lift_aws_account_id(input.into());
             self
         }
-        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
-        /// You can find your Account ID in the AWS Management Console under account settings.</p>
+        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
         pub fn set_game_lift_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5523,18 +4190,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_lift_aws_account_id(input);
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
-        pub fn peer_vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.peer_vpc_id(inp);
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peer_vpc_id(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
-        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
-        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
-        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_peer_vpc_id(input);
             self
@@ -5542,26 +4203,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteVpcPeeringConnection`.
     ///
-    /// <p>Removes a VPC peering connection. To delete the connection, you must have a valid
-    /// authorization for the VPC peering connection that you want to delete. You can check for
-    /// an authorization by calling <a>DescribeVpcPeeringAuthorizations</a> or
-    /// request a new one using <a>CreateVpcPeeringAuthorization</a>. </p>
-    /// <p>Once a valid authorization exists, call this operation from the AWS account that is
-    /// used to manage the Amazon GameLift fleets. Identify the connection to delete by the connection
-    /// ID and fleet ID. If successful, the connection is removed. </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateVpcPeeringAuthorization</a> |
-    /// <a>DescribeVpcPeeringAuthorizations</a> |
-    /// <a>DeleteVpcPeeringAuthorization</a> |
-    /// <a>CreateVpcPeeringConnection</a> |
-    /// <a>DescribeVpcPeeringConnections</a> |
-    /// <a>DeleteVpcPeeringConnection</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes a VPC peering connection. To delete the connection, you must have a valid authorization for the VPC peering connection that you want to delete. You can check for an authorization by calling <code>DescribeVpcPeeringAuthorizations</code> or request a new one using <code>CreateVpcPeeringAuthorization</code>. </p>
+    /// <p>Once a valid authorization exists, call this operation from the AWS account that is used to manage the Amazon GameLift fleets. Identify the connection to delete by the connection ID and fleet ID. If successful, the connection is removed. </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVpcPeeringConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5606,10 +4252,10 @@ pub mod fluent_builders {
                 crate::input::DeleteVpcPeeringConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5617,24 +4263,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
-        /// connection record. You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
-        /// connection record. You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.</p>
-        pub fn vpc_peering_connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_peering_connection_id(inp);
+        /// <p>A unique identifier for a VPC peering connection. This value is included in the <code>VpcPeeringConnection</code> object, which can be retrieved by calling <code>DescribeVpcPeeringConnections</code>.</p>
+        pub fn vpc_peering_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_peering_connection_id(input.into());
             self
         }
-        /// <p>A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.</p>
+        /// <p>A unique identifier for a VPC peering connection. This value is included in the <code>VpcPeeringConnection</code> object, which can be retrieved by calling <code>DescribeVpcPeeringConnections</code>.</p>
         pub fn set_vpc_peering_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5645,34 +4289,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterGameServer`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Removes the game server from a game server group. As a result of this operation, the
-    /// deregistered game server can no longer be claimed and will not be returned in a list of
-    /// active game servers. </p>
-    /// <p>To deregister a game server, specify the game server group and game server ID. If
-    /// successful, this operation emits a CloudWatch event with termination timestamp and
-    /// reason.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>RegisterGameServer</a> |
-    /// <a>ListGameServers</a> |
-    /// <a>ClaimGameServer</a> |
-    /// <a>DescribeGameServer</a> |
-    /// <a>UpdateGameServer</a> |
-    /// <a>DeregisterGameServer</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Removes the game server from a game server group. As a result of this operation, the deregistered game server can no longer be claimed and will not be returned in a list of active game servers. </p>
+    /// <p>To deregister a game server, specify the game server group and game server ID. If successful, this operation emits a CloudWatch event with termination timestamp and reason.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>RegisterGameServer</code> | <code>ListGameServers</code> | <code>ClaimGameServer</code> | <code>DescribeGameServer</code> | <code>UpdateGameServer</code> | <code>DeregisterGameServer</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterGameServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5717,10 +4341,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterGameServerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5728,14 +4352,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5744,8 +4366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom string that uniquely identifies the game server to deregister.</p>
-        pub fn game_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_id(inp);
+        pub fn game_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_id(input.into());
             self
         }
         /// <p>A custom string that uniquely identifies the game server to deregister.</p>
@@ -5759,23 +4381,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAlias`.
     ///
-    /// <p>Retrieves properties for an alias. This operation returns all alias metadata and
-    /// settings. To get an alias's target fleet ID only, use <code>ResolveAlias</code>. </p>
-    /// <p>To get alias properties, specify the alias ID. If successful, the requested alias
-    /// record is returned.</p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateAlias</a> |
-    /// <a>ListAliases</a> |
-    /// <a>DescribeAlias</a> |
-    /// <a>UpdateAlias</a> |
-    /// <a>DeleteAlias</a> |
-    /// <a>ResolveAlias</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves properties for an alias. This operation returns all alias metadata and settings. To get an alias's target fleet ID only, use <code>ResolveAlias</code>. </p>
+    /// <p>To get alias properties, specify the alias ID. If successful, the requested alias record is returned.</p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateAlias</code> | <code>ListAliases</code> | <code>DescribeAlias</code> | <code>UpdateAlias</code> | <code>DeleteAlias</code> | <code>ResolveAlias</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5820,10 +4430,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5831,14 +4441,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use
-        /// either the alias ID or ARN value. </p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
-        /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use
-        /// either the alias ID or ARN value. </p>
+        /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias_id(input);
             self
@@ -5846,27 +4454,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBuild`.
     ///
-    /// <p>Retrieves properties for a custom game build. To request a build resource, specify a
-    /// build ID. If successful, an object containing the build properties is returned.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
-    /// Upload a Custom Server Build</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateBuild</a> |
-    /// <a>ListBuilds</a> |
-    /// <a>DescribeBuild</a> |
-    /// <a>UpdateBuild</a> |
-    /// <a>DeleteBuild</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves properties for a custom game build. To request a build resource, specify a build ID. If successful, an object containing the build properties is returned.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"> Upload a Custom Server Build</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateBuild</code> | <code>ListBuilds</code> | <code>DescribeBuild</code> | <code>UpdateBuild</code> | <code>DeleteBuild</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBuild<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5911,10 +4504,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBuildInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5923,8 +4516,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
-        pub fn build_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_id(inp);
+        pub fn build_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_id(input.into());
             self
         }
         /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
@@ -5935,78 +4528,24 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEC2InstanceLimits`.
     ///
-    /// <p>The GameLift service limits and current utilization for an AWS Region or location.
-    /// Instance limits control the number of instances, per instance type, per location, that
-    /// your AWS account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>. The information
-    /// returned includes the maximum number of instances allowed and your account's current
-    /// usage across all fleets. This information can affect your ability to scale your GameLift
-    /// fleets. You can request a limit increase for your account by using the <b>Service limits</b> page in the GameLift console.</p>
-    /// <p>Instance limits differ based on whether the instances are deployed in a fleet's home
-    /// Region or in a remote location. For remote locations, limits also differ based on the
-    /// combination of home Region and remote location. All  requests must specify an AWS Region
-    /// (either explicitly or as your default settings). To get the limit for a remote location,
-    /// you must also specify the location. For example, the following requests all return
-    /// different results: </p>
+    /// <p>The GameLift service limits and current utilization for an AWS Region or location. Instance limits control the number of instances, per instance type, per location, that your AWS account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>. The information returned includes the maximum number of instances allowed and your account's current usage across all fleets. This information can affect your ability to scale your GameLift fleets. You can request a limit increase for your account by using the <b>Service limits</b> page in the GameLift console.</p>
+    /// <p>Instance limits differ based on whether the instances are deployed in a fleet's home Region or in a remote location. For remote locations, limits also differ based on the combination of home Region and remote location. All requests must specify an AWS Region (either explicitly or as your default settings). To get the limit for a remote location, you must also specify the location. For example, the following requests all return different results: </p>
     /// <ul>
-    /// <li>
-    /// <p>Request specifies the Region <code>ap-northeast-1</code> with no location. The
-    /// result is limits and usage data on all instance types that are deployed in
-    /// <code>us-east-2</code>, by all of the fleets that reside in
-    /// <code>ap-northeast-1</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>Request specifies the Region <code>us-east-1</code> with location
-    /// <code>ca-central-1</code>. The result is limits and usage data on all
-    /// instance types that are deployed in <code>ca-central-1</code>, by all of the
-    /// fleets that reside in <code>us-east-2</code>. These limits do not affect fleets
-    /// in any other Regions that deploy instances to <code>ca-central-1</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Request specifies the Region <code>eu-west-1</code> with location
-    /// <code>ca-central-1</code>. The result is limits and usage data on all
-    /// instance types that are deployed in <code>ca-central-1</code>, by all of the
-    /// fleets that reside in <code>eu-west-1</code>.</p>
-    /// </li>
+    /// <li> <p>Request specifies the Region <code>ap-northeast-1</code> with no location. The result is limits and usage data on all instance types that are deployed in <code>us-east-2</code>, by all of the fleets that reside in <code>ap-northeast-1</code>. </p> </li>
+    /// <li> <p>Request specifies the Region <code>us-east-1</code> with location <code>ca-central-1</code>. The result is limits and usage data on all instance types that are deployed in <code>ca-central-1</code>, by all of the fleets that reside in <code>us-east-2</code>. These limits do not affect fleets in any other Regions that deploy instances to <code>ca-central-1</code>.</p> </li>
+    /// <li> <p>Request specifies the Region <code>eu-west-1</code> with location <code>ca-central-1</code>. The result is limits and usage data on all instance types that are deployed in <code>ca-central-1</code>, by all of the fleets that reside in <code>eu-west-1</code>.</p> </li>
     /// </ul>
     /// <p>This operation can be used in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>To get limit and usage data for all instance types that are deployed in an AWS
-    /// Region by fleets that reside in the same Region: Specify the Region only.
-    /// Optionally, specify a single instance type to retrieve information for.</p>
-    /// </li>
-    /// <li>
-    /// <p>To get limit and usage data for all instance types that are deployed to a
-    /// remote location by fleets that reside in different AWS Region: Provide both the
-    /// AWS Region and the remote location. Optionally, specify a single instance type
-    /// to retrieve information for.</p>
-    /// </li>
+    /// <li> <p>To get limit and usage data for all instance types that are deployed in an AWS Region by fleets that reside in the same Region: Specify the Region only. Optionally, specify a single instance type to retrieve information for.</p> </li>
+    /// <li> <p>To get limit and usage data for all instance types that are deployed to a remote location by fleets that reside in different AWS Region: Provide both the AWS Region and the remote location. Optionally, specify a single instance type to retrieve information for.</p> </li>
     /// </ul>
-    /// <p>If successful, an <code>EC2InstanceLimits</code> object is returned with limits and
-    /// usage data for each requested instance type.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    ///
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleet</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>UpdateFleetAttributes</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>DeleteFleet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, an <code>EC2InstanceLimits</code> object is returned with limits and usage data for each requested instance type.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleet</code> | <code>UpdateFleetCapacity</code> | <code>PutScalingPolicy</code> | <code>DescribeEC2InstanceLimits</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetLocationAttributes</code> | <code>UpdateFleetAttributes</code> | <code>StopFleetActions</code> | <code>DeleteFleet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEC2InstanceLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6051,10 +4590,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEc2InstanceLimitsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6062,18 +4601,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type
-        /// determines the computing resources of each instance in the fleet, including CPU, memory,
-        /// storage, and networking capacity. Do not specify a value for this parameter to retrieve
-        /// limits for all instance types.</p>
-        pub fn ec2_instance_type(mut self, inp: crate::model::Ec2InstanceType) -> Self {
-            self.inner = self.inner.ec2_instance_type(inp);
+        /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
+        pub fn ec2_instance_type(mut self, input: crate::model::Ec2InstanceType) -> Self {
+            self.inner = self.inner.ec2_instance_type(input);
             self
         }
-        /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type
-        /// determines the computing resources of each instance in the fleet, including CPU, memory,
-        /// storage, and networking capacity. Do not specify a value for this parameter to retrieve
-        /// limits for all instance types.</p>
+        /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
         pub fn set_ec2_instance_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -6081,14 +4614,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ec2_instance_type(input);
             self
         }
-        /// <p>The name of a remote location to request instance limits for, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>The name of a remote location to request instance limits for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The name of a remote location to request instance limits for, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>.</p>
+        /// <p>The name of a remote location to request instance limits for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -6096,50 +4627,21 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFleetAttributes`.
     ///
-    /// <p>Retrieves core fleet-wide properties, including the computing hardware and deployment
-    /// configuration for all instances in the fleet.</p>
+    /// <p>Retrieves core fleet-wide properties, including the computing hardware and deployment configuration for all instances in the fleet.</p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To get attributes for one or more specific fleets, provide a list of fleet IDs
-    /// or fleet ARNs. </p>
-    /// </li>
-    /// <li>
-    /// <p>To get attributes for all fleets, do not provide a fleet identifier. </p>
-    /// </li>
+    /// <li> <p>To get attributes for one or more specific fleets, provide a list of fleet IDs or fleet ARNs. </p> </li>
+    /// <li> <p>To get attributes for all fleets, do not provide a fleet identifier. </p> </li>
     /// </ul>
-    /// <p>When requesting attributes for multiple fleets, use the pagination parameters to
-    /// retrieve results as a set of sequential pages. </p>
-    /// <p>If successful, a <code>FleetAttributes</code> object is returned for each fleet
-    /// requested, unless the fleet identifier is not found. </p>
-    /// <note>
-    /// <p>Some API operations limit the number of fleet IDs that allowed in one request. If a
-    /// request exceeds this limit, the request fails and the error message contains the
-    /// maximum allowed number.</p>
+    /// <p>When requesting attributes for multiple fleets, use the pagination parameters to retrieve results as a set of sequential pages. </p>
+    /// <p>If successful, a <code>FleetAttributes</code> object is returned for each fleet requested, unless the fleet identifier is not found. </p> <note>
+    /// <p>Some API operations limit the number of fleet IDs that allowed in one request. If a request exceeds this limit, the request fails and the error message contains the maximum allowed number.</p>
     /// </note>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>ListFleets</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>DescribeFleetEvents</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>DescribeFleetPortSettings</a> |
-    /// <a>DescribeFleetUtilization</a> |
-    /// <a>DescribeRuntimeConfiguration</a> |
-    /// <a>DescribeScalingPolicies</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>ListFleets</code> | <code>DescribeEC2InstanceLimits</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetCapacity</code> | <code>DescribeFleetEvents</code> | <code>DescribeFleetLocationAttributes</code> | <code>DescribeFleetPortSettings</code> | <code>DescribeFleetUtilization</code> | <code>DescribeRuntimeConfiguration</code> | <code>DescribeScalingPolicies</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6184,10 +4686,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFleetAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6195,20 +4697,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeFleetAttributesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeFleetAttributesPaginator<C, M, R> {
+            crate::paginator::DescribeFleetAttributesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `FleetIds`.
         ///
         /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
         ///
-        /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the
-        /// fleet ID or ARN value. To retrieve attributes for all current fleets, do not include
-        /// this parameter. </p>
-        pub fn fleet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_ids(inp);
+        /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
+        pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_ids(input.into());
             self
         }
-        /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the
-        /// fleet ID or ARN value. To retrieve attributes for all current fleets, do not include
-        /// this parameter. </p>
+        /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
         pub fn set_fleet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6216,26 +4720,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_ids(input);
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6243,57 +4743,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFleetCapacity`.
     ///
-    /// <p>Retrieves the resource capacity settings for one or more fleets. The data returned
-    /// includes the current fleet capacity (number of EC2 instances), and settings that can
-    /// control how capacity scaling. For fleets with remote locations, this operation retrieves
-    /// data for the fleet's home Region only. See <a>DescribeFleetLocationCapacity</a> to get capacity settings for a fleet's remote locations.</p>
+    /// <p>Retrieves the resource capacity settings for one or more fleets. The data returned includes the current fleet capacity (number of EC2 instances), and settings that can control how capacity scaling. For fleets with remote locations, this operation retrieves data for the fleet's home Region only. See <code>DescribeFleetLocationCapacity</code> to get capacity settings for a fleet's remote locations.</p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To get capacity data for one or more specific fleets, provide a list of fleet
-    /// IDs or fleet ARNs. </p>
-    /// </li>
-    /// <li>
-    /// <p>To get capacity data for all fleets, do not provide a fleet identifier. </p>
-    /// </li>
+    /// <li> <p>To get capacity data for one or more specific fleets, provide a list of fleet IDs or fleet ARNs. </p> </li>
+    /// <li> <p>To get capacity data for all fleets, do not provide a fleet identifier. </p> </li>
     /// </ul>
-    /// <p>When requesting multiple fleets, use the pagination parameters to retrieve results as
-    /// a set of sequential pages. </p>
-    /// <p>If successful, a <a>FleetCapacity</a> object is returned for each requested
-    /// fleet ID. Each FleetCapacity object includes a <code>Location</code> property, which is
-    /// set to the fleet's home Region. When a list of fleet IDs is provided, attribute objects
-    /// are returned only for fleets that currently exist.</p>
-    /// <note>
-    /// <p>Some API operations may limit the number of fleet IDs that are allowed in one
-    /// request. If a request exceeds this limit, the request fails and the error message
-    /// includes the maximum allowed.</p>
+    /// <p>When requesting multiple fleets, use the pagination parameters to retrieve results as a set of sequential pages. </p>
+    /// <p>If successful, a <code>FleetCapacity</code> object is returned for each requested fleet ID. Each FleetCapacity object includes a <code>Location</code> property, which is set to the fleet's home Region. When a list of fleet IDs is provided, attribute objects are returned only for fleets that currently exist.</p> <note>
+    /// <p>Some API operations may limit the number of fleet IDs that are allowed in one request. If a request exceeds this limit, the request fails and the error message includes the maximum allowed.</p>
     /// </note>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>ListFleets</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>DescribeFleetEvents</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>DescribeFleetPortSettings</a> |
-    /// <a>DescribeFleetUtilization</a> |
-    /// <a>DescribeRuntimeConfiguration</a> |
-    /// <a>DescribeScalingPolicies</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>ListFleets</code> | <code>DescribeEC2InstanceLimits</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetCapacity</code> | <code>DescribeFleetEvents</code> | <code>DescribeFleetLocationAttributes</code> | <code>DescribeFleetPortSettings</code> | <code>DescribeFleetUtilization</code> | <code>DescribeRuntimeConfiguration</code> | <code>DescribeScalingPolicies</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetCapacity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6338,10 +4803,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFleetCapacityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6349,20 +4814,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeFleetCapacityPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeFleetCapacityPaginator<C, M, R> {
+            crate::paginator::DescribeFleetCapacityPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `FleetIds`.
         ///
         /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
         ///
-        /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
-        /// value. Leave this parameter empty to retrieve capacity information for all
-        /// fleets.</p>
-        pub fn fleet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_ids(inp);
+        /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
+        pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_ids(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
-        /// value. Leave this parameter empty to retrieve capacity information for all
-        /// fleets.</p>
+        /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
         pub fn set_fleet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6370,26 +4837,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_ids(input);
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6397,37 +4860,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFleetEvents`.
     ///
-    /// <p>Retrieves entries from a fleet's event log. Fleet events are initiated by changes in
-    /// status, such as during fleet creation and termination, changes in capacity, etc. If a
-    /// fleet has multiple locations, events are also initiated by changes to status and
-    /// capacity in remote locations. </p>
-    /// <p>You can specify a time range to limit the result set. Use the pagination parameters to
-    /// retrieve results as a set of sequential pages. </p>
-    /// <p>If successful, a collection of event log entries matching the request are
-    /// returned.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>ListFleets</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>DescribeFleetEvents</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>DescribeFleetPortSettings</a> |
-    /// <a>DescribeFleetUtilization</a> |
-    /// <a>DescribeRuntimeConfiguration</a> |
-    /// <a>DescribeScalingPolicies</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves entries from a fleet's event log. Fleet events are initiated by changes in status, such as during fleet creation and termination, changes in capacity, etc. If a fleet has multiple locations, events are also initiated by changes to status and capacity in remote locations. </p>
+    /// <p>You can specify a time range to limit the result set. Use the pagination parameters to retrieve results as a set of sequential pages. </p>
+    /// <p>If successful, a collection of event log entries matching the request are returned.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>ListFleets</code> | <code>DescribeEC2InstanceLimits</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetCapacity</code> | <code>DescribeFleetEvents</code> | <code>DescribeFleetLocationAttributes</code> | <code>DescribeFleetPortSettings</code> | <code>DescribeFleetUtilization</code> | <code>DescribeRuntimeConfiguration</code> | <code>DescribeScalingPolicies</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6472,10 +4912,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFleetEventsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6483,26 +4923,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to get event logs for.  You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeFleetEventsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeFleetEventsPaginator<C, M, R> {
+            crate::paginator::DescribeFleetEventsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to get event logs for.  You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call
-        /// returns entries starting from when the fleet was created to the specified end time.
-        /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call
-        /// returns entries starting from when the fleet was created to the specified end time.
-        /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+        /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6510,16 +4952,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The most recent date to retrieve event logs for. If no end time is specified, this
-        /// call returns entries from the specified start time up to the present. Format is a number
-        /// expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p>The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The most recent date to retrieve event logs for. If no end time is specified, this
-        /// call returns entries from the specified start time up to the present. Format is a number
-        /// expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+        /// <p>The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6528,8 +4966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -6538,8 +4976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -6550,48 +4988,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFleetLocationAttributes`.
     ///
-    /// <p>Retrieves information on a fleet's remote locations, including life-cycle status and
-    /// any suspended fleet activity. </p>
+    /// <p>Retrieves information on a fleet's remote locations, including life-cycle status and any suspended fleet activity. </p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To get data for specific locations, provide a fleet identifier and a list of
-    /// locations. Location data is returned in the order that it is requested. </p>
-    /// </li>
-    /// <li>
-    /// <p>To get data for all locations, provide a fleet identifier only. Location data
-    /// is returned in no particular order. </p>
-    /// </li>
+    /// <li> <p>To get data for specific locations, provide a fleet identifier and a list of locations. Location data is returned in the order that it is requested. </p> </li>
+    /// <li> <p>To get data for all locations, provide a fleet identifier only. Location data is returned in no particular order. </p> </li>
     /// </ul>
-    /// <p>When requesting attributes for multiple locations, use the pagination parameters to
-    /// retrieve results as a set of sequential pages. </p>
-    /// <p>If successful, a <code>LocationAttributes</code> object is returned for each requested
-    /// location. If the fleet does not have a requested location, no information is returned.
-    /// This operation does not return the home Region. To get information on a fleet's home
-    /// Region, call <code>DescribeFleetAttributes</code>.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleetLocations</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>DescribeFleetLocationCapacity</a> |
-    /// <a>DescribeFleetLocationUtilization</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>DescribeFleetUtilization</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>DeleteFleetLocations</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When requesting attributes for multiple locations, use the pagination parameters to retrieve results as a set of sequential pages. </p>
+    /// <p>If successful, a <code>LocationAttributes</code> object is returned for each requested location. If the fleet does not have a requested location, no information is returned. This operation does not return the home Region. To get information on a fleet's home Region, call <code>DescribeFleetAttributes</code>.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleetLocations</code> | <code>DescribeFleetLocationAttributes</code> | <code>DescribeFleetLocationCapacity</code> | <code>DescribeFleetLocationUtilization</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetCapacity</code> | <code>DescribeFleetUtilization</code> | <code>UpdateFleetCapacity</code> | <code>StopFleetActions</code> | <code>DeleteFleetLocations</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetLocationAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6636,10 +5045,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFleetLocationAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6647,14 +5056,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN
-        /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeFleetLocationAttributesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeFleetLocationAttributesPaginator<C, M, R> {
+            crate::paginator::DescribeFleetLocationAttributesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
@@ -6663,14 +5078,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
-        pub fn locations(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locations(inp);
+        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        pub fn locations(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locations(input.into());
             self
         }
-        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6679,8 +5092,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This limit is not currently enforced. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This limit is not currently enforced. </p>
@@ -6689,8 +5102,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -6701,40 +5114,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFleetLocationCapacity`.
     ///
-    /// <p>Retrieves the resource capacity settings for a fleet location. The data returned
-    /// includes the current capacity (number of EC2 instances) and some scaling settings for
-    /// the requested fleet location. Use this operation to retrieve capacity information for a
-    /// fleet's remote location or home Region (you can also retrieve home Region capacity by
-    /// calling <code>DescribeFleetCapacity</code>).</p>
+    /// <p>Retrieves the resource capacity settings for a fleet location. The data returned includes the current capacity (number of EC2 instances) and some scaling settings for the requested fleet location. Use this operation to retrieve capacity information for a fleet's remote location or home Region (you can also retrieve home Region capacity by calling <code>DescribeFleetCapacity</code>).</p>
     /// <p>To retrieve capacity data, identify a fleet and location. </p>
-    /// <p>If successful, a <code>FleetCapacity</code> object is returned for the requested fleet
-    /// location. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleetLocations</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>DescribeFleetLocationCapacity</a> |
-    /// <a>DescribeFleetLocationUtilization</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>DescribeFleetUtilization</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>DeleteFleetLocations</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, a <code>FleetCapacity</code> object is returned for the requested fleet location. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleetLocations</code> | <code>DescribeFleetLocationAttributes</code> | <code>DescribeFleetLocationCapacity</code> | <code>DescribeFleetLocationUtilization</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetCapacity</code> | <code>DescribeFleetUtilization</code> | <code>UpdateFleetCapacity</code> | <code>StopFleetActions</code> | <code>DeleteFleetLocations</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetLocationCapacity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6779,10 +5167,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFleetLocationCapacityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6790,26 +5178,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to request location capacity for.
-        /// You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to request location capacity for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to request location capacity for.
-        /// You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to request location capacity for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -6817,40 +5201,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFleetLocationUtilization`.
     ///
-    /// <p>Retrieves current usage data for a fleet location. Utilization data provides a
-    /// snapshot of current game hosting activity at the requested location. Use this operation
-    /// to retrieve utilization information for a fleet's remote location or home Region (you
-    /// can also retrieve home Region utilization by calling
-    /// <code>DescribeFleetUtilization</code>).</p>
+    /// <p>Retrieves current usage data for a fleet location. Utilization data provides a snapshot of current game hosting activity at the requested location. Use this operation to retrieve utilization information for a fleet's remote location or home Region (you can also retrieve home Region utilization by calling <code>DescribeFleetUtilization</code>).</p>
     /// <p>To retrieve utilization data, identify a fleet and location. </p>
-    /// <p>If successful, a <code>FleetUtilization</code> object is returned for the requested
-    /// fleet location. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleetLocations</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>DescribeFleetLocationCapacity</a> |
-    /// <a>DescribeFleetLocationUtilization</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>DescribeFleetUtilization</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>DeleteFleetLocations</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, a <code>FleetUtilization</code> object is returned for the requested fleet location. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleetLocations</code> | <code>DescribeFleetLocationAttributes</code> | <code>DescribeFleetLocationCapacity</code> | <code>DescribeFleetLocationUtilization</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetCapacity</code> | <code>DescribeFleetUtilization</code> | <code>UpdateFleetCapacity</code> | <code>StopFleetActions</code> | <code>DeleteFleetLocations</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetLocationUtilization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6895,10 +5254,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFleetLocationUtilizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6906,26 +5265,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to request location utilization for.
-        /// You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to request location utilization for.
-        /// You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -6933,48 +5288,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFleetPortSettings`.
     ///
-    /// <p>Retrieves a fleet's inbound connection permissions. Connection permissions specify the
-    /// range of IP addresses and port settings that incoming traffic can use to access server
-    /// processes in the fleet. Game sessions that are running on instances in the fleet must
-    /// use connections that fall in this range.</p>
+    /// <p>Retrieves a fleet's inbound connection permissions. Connection permissions specify the range of IP addresses and port settings that incoming traffic can use to access server processes in the fleet. Game sessions that are running on instances in the fleet must use connections that fall in this range.</p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To retrieve the inbound connection permissions for a fleet, identify the
-    /// fleet's unique identifier. </p>
-    /// </li>
-    /// <li>
-    /// <p>To check the status of recent updates to a fleet remote location, specify
-    /// the fleet ID and a location. Port setting updates can take time to
-    /// propagate across all locations. </p>
-    /// </li>
+    /// <li> <p>To retrieve the inbound connection permissions for a fleet, identify the fleet's unique identifier. </p> </li>
+    /// <li> <p>To check the status of recent updates to a fleet remote location, specify the fleet ID and a location. Port setting updates can take time to propagate across all locations. </p> </li>
     /// </ul>
-    /// <p>If successful, a set of <a>IpPermission</a> objects is returned for the
-    /// requested fleet ID. When a location is specified, a pending status is included. If the
-    /// requested fleet has been deleted, the result set is empty.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>ListFleets</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>DescribeFleetEvents</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>DescribeFleetPortSettings</a> |
-    /// <a>DescribeFleetUtilization</a> |
-    /// <a>DescribeRuntimeConfiguration</a> |
-    /// <a>DescribeScalingPolicies</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, a set of <code>IpPermission</code> objects is returned for the requested fleet ID. When a location is specified, a pending status is included. If the requested fleet has been deleted, the result set is empty.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>ListFleets</code> | <code>DescribeEC2InstanceLimits</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetCapacity</code> | <code>DescribeFleetEvents</code> | <code>DescribeFleetLocationAttributes</code> | <code>DescribeFleetPortSettings</code> | <code>DescribeFleetUtilization</code> | <code>DescribeRuntimeConfiguration</code> | <code>DescribeScalingPolicies</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetPortSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7019,10 +5344,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFleetPortSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7030,26 +5355,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN
-        /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>A remote location to check for status of port setting updates. Use the AWS Region code
-        /// format, such as <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>A remote location to check for status of port setting updates. Use the AWS Region code format, such as <code>us-west-2</code>.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>A remote location to check for status of port setting updates. Use the AWS Region code
-        /// format, such as <code>us-west-2</code>.</p>
+        /// <p>A remote location to check for status of port setting updates. Use the AWS Region code format, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -7057,58 +5378,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFleetUtilization`.
     ///
-    /// <p>Retrieves utilization statistics for one or more fleets. Utilization data provides a
-    /// snapshot of how the fleet's hosting resources are currently being used. For fleets with
-    /// remote locations, this operation retrieves data for the fleet's home Region only. See <a>DescribeFleetLocationUtilization</a> to get utilization statistics for a
-    /// fleet's remote locations.</p>
+    /// <p>Retrieves utilization statistics for one or more fleets. Utilization data provides a snapshot of how the fleet's hosting resources are currently being used. For fleets with remote locations, this operation retrieves data for the fleet's home Region only. See <code>DescribeFleetLocationUtilization</code> to get utilization statistics for a fleet's remote locations.</p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To get utilization data for one or more specific fleets, provide a list of
-    /// fleet IDs or fleet ARNs. </p>
-    /// </li>
-    /// <li>
-    /// <p>To get utilization data for all fleets, do not provide a fleet identifier.
-    /// </p>
-    /// </li>
+    /// <li> <p>To get utilization data for one or more specific fleets, provide a list of fleet IDs or fleet ARNs. </p> </li>
+    /// <li> <p>To get utilization data for all fleets, do not provide a fleet identifier. </p> </li>
     /// </ul>
-    /// <p>When requesting multiple fleets, use the pagination parameters to retrieve results as
-    /// a set of sequential pages. </p>
-    /// <p>If successful, a <a>FleetUtilization</a> object is returned for each
-    /// requested fleet ID, unless the fleet identifier is not found. Each fleet utilization
-    /// object includes a <code>Location</code> property, which is set to the fleet's home
-    /// Region. </p>
-    /// <note>
-    /// <p>Some API operations may limit the number of fleet IDs allowed in one request. If a
-    /// request exceeds this limit, the request fails and the error message includes the
-    /// maximum allowed.</p>
+    /// <p>When requesting multiple fleets, use the pagination parameters to retrieve results as a set of sequential pages. </p>
+    /// <p>If successful, a <code>FleetUtilization</code> object is returned for each requested fleet ID, unless the fleet identifier is not found. Each fleet utilization object includes a <code>Location</code> property, which is set to the fleet's home Region. </p> <note>
+    /// <p>Some API operations may limit the number of fleet IDs allowed in one request. If a request exceeds this limit, the request fails and the error message includes the maximum allowed.</p>
     /// </note>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift Fleets</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift Metrics for Fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>ListFleets</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>DescribeFleetEvents</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>DescribeFleetPortSettings</a> |
-    /// <a>DescribeFleetUtilization</a> |
-    /// <a>DescribeRuntimeConfiguration</a> |
-    /// <a>DescribeScalingPolicies</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift Fleets</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift Metrics for Fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>ListFleets</code> | <code>DescribeEC2InstanceLimits</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetCapacity</code> | <code>DescribeFleetEvents</code> | <code>DescribeFleetLocationAttributes</code> | <code>DescribeFleetPortSettings</code> | <code>DescribeFleetUtilization</code> | <code>DescribeRuntimeConfiguration</code> | <code>DescribeScalingPolicies</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetUtilization<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7153,10 +5438,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFleetUtilizationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7164,18 +5449,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeFleetUtilizationPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeFleetUtilizationPaginator<C, M, R> {
+            crate::paginator::DescribeFleetUtilizationPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `FleetIds`.
         ///
         /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
         ///
-        /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
-        /// value. To retrieve attributes for all current fleets, do not include this parameter. </p>
-        pub fn fleet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_ids(inp);
+        /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
+        pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_ids(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
-        /// value. To retrieve attributes for all current fleets, do not include this parameter. </p>
+        /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
         pub fn set_fleet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7183,26 +5474,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_ids(input);
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
-        /// IDs.</p>
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7210,32 +5497,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeGameServer`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Retrieves information for a registered game server. Information includes game server
-    /// status, health check info, and the instance that the game server is running on. </p>
-    /// <p>To retrieve game server information, specify the game server ID. If successful, the
-    /// requested game server object is returned. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>RegisterGameServer</a> |
-    /// <a>ListGameServers</a> |
-    /// <a>ClaimGameServer</a> |
-    /// <a>DescribeGameServer</a> |
-    /// <a>UpdateGameServer</a> |
-    /// <a>DeregisterGameServer</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Retrieves information for a registered game server. Information includes game server status, health check info, and the instance that the game server is running on. </p>
+    /// <p>To retrieve game server information, specify the game server ID. If successful, the requested game server object is returned. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>RegisterGameServer</code> | <code>ListGameServers</code> | <code>ClaimGameServer</code> | <code>DescribeGameServer</code> | <code>UpdateGameServer</code> | <code>DeregisterGameServer</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGameServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7280,10 +5549,10 @@ pub mod fluent_builders {
                 crate::input::DescribeGameServerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7291,14 +5560,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7307,8 +5574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom string that uniquely identifies the game server information to be retrieved.</p>
-        pub fn game_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_id(inp);
+        pub fn game_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_id(input.into());
             self
         }
         /// <p>A custom string that uniquely identifies the game server information to be retrieved.</p>
@@ -7322,36 +5589,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeGameServerGroup`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Retrieves information on a game server group. This operation returns only properties
-    /// related to GameLift FleetIQ. To view or update properties for the corresponding Auto Scaling group,
-    /// such as launch template, auto scaling policies, and maximum/minimum group size, access
-    /// the Auto Scaling group directly.</p>
-    /// <p>To get attributes for a game server group, provide a group name or ARN value. If
-    /// successful, a <a>GameServerGroup</a> object is returned.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameServerGroup</a> |
-    /// <a>ListGameServerGroups</a> |
-    /// <a>DescribeGameServerGroup</a> |
-    /// <a>UpdateGameServerGroup</a> |
-    /// <a>DeleteGameServerGroup</a> |
-    /// <a>ResumeGameServerGroup</a> |
-    /// <a>SuspendGameServerGroup</a> |
-    /// <a>DescribeGameServerInstances</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Retrieves information on a game server group. This operation returns only properties related to GameLift FleetIQ. To view or update properties for the corresponding Auto Scaling group, such as launch template, auto scaling policies, and maximum/minimum group size, access the Auto Scaling group directly.</p>
+    /// <p>To get attributes for a game server group, provide a group name or ARN value. If successful, a <code>GameServerGroup</code> object is returned.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGameServerGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7396,10 +5641,10 @@ pub mod fluent_builders {
                 crate::input::DescribeGameServerGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7407,12 +5652,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7423,46 +5668,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeGameServerInstances`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Retrieves status information about the Amazon EC2 instances associated with a GameLift FleetIQ
-    /// game server group. Use this operation to detect when instances are active or not
-    /// available to host new game servers. If you are looking for instance configuration
-    /// information, call <a>DescribeGameServerGroup</a> or access the corresponding
-    /// Auto Scaling group properties.</p>
-    /// <p>To request status for all instances in the game server group, provide a game server
-    /// group ID only. To request status for specific instances, provide the game server group
-    /// ID and one or more instance IDs. Use the pagination parameters to retrieve results in
-    /// sequential segments. If successful, a collection of <code>GameServerInstance</code>
-    /// objects is returned.
-    ///
-    /// </p>
-    /// <p>This operation is not designed to be called with every game server claim request; this
-    /// practice can cause you to exceed your API limit, which results in errors. Instead, as a
-    /// best practice, cache the results and refresh your cache no more than once every 10
-    /// seconds.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameServerGroup</a> |
-    /// <a>ListGameServerGroups</a> |
-    /// <a>DescribeGameServerGroup</a> |
-    /// <a>UpdateGameServerGroup</a> |
-    /// <a>DeleteGameServerGroup</a> |
-    /// <a>ResumeGameServerGroup</a> |
-    /// <a>SuspendGameServerGroup</a> |
-    /// <a>DescribeGameServerInstances</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Retrieves status information about the Amazon EC2 instances associated with a GameLift FleetIQ game server group. Use this operation to detect when instances are active or not available to host new game servers. If you are looking for instance configuration information, call <code>DescribeGameServerGroup</code> or access the corresponding Auto Scaling group properties.</p>
+    /// <p>To request status for all instances in the game server group, provide a game server group ID only. To request status for specific instances, provide the game server group ID and one or more instance IDs. Use the pagination parameters to retrieve results in sequential segments. If successful, a collection of <code>GameServerInstance</code> objects is returned. </p>
+    /// <p>This operation is not designed to be called with every game server claim request; this practice can cause you to exceed your API limit, which results in errors. Instead, as a best practice, cache the results and refresh your cache no more than once every 10 seconds.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGameServerInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7507,10 +5721,10 @@ pub mod fluent_builders {
                 crate::input::DescribeGameServerInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7518,12 +5732,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeGameServerInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeGameServerInstancesPaginator<C, M, R> {
+            crate::paginator::DescribeGameServerInstancesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7535,16 +5757,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a
-        /// 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all
-        /// instances in the game server group, leave this parameter empty. </p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
-        /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a
-        /// 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all
-        /// instances in the game server group, leave this parameter empty. </p>
+        /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7552,30 +5770,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_ids(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
-        /// </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p> The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. </p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
-        /// </p>
+        /// <p> The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>
-        /// A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.
-        /// </p>
+        /// <p> A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7583,56 +5793,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeGameSessionDetails`.
     ///
-    /// <p>Retrieves additional game session properties, including the game session protection
-    /// policy in force, a set of one or more game sessions in a specific fleet location. You
-    /// can optionally filter the results by current game session status. Alternatively, use
-    /// <a>SearchGameSessions</a> to request a set of active game sessions that
-    /// are filtered by certain criteria. To retrieve all game session properties, use <a>DescribeGameSessions</a>. </p>
+    /// <p>Retrieves additional game session properties, including the game session protection policy in force, a set of one or more game sessions in a specific fleet location. You can optionally filter the results by current game session status. Alternatively, use <code>SearchGameSessions</code> to request a set of active game sessions that are filtered by certain criteria. To retrieve all game session properties, use <code>DescribeGameSessions</code>. </p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To retrieve details for all game sessions that are currently running on all
-    /// locations in a fleet, provide a fleet or alias ID, with an optional status
-    /// filter. This approach returns details from the fleet's home Region and all
-    /// remote locations.</p>
-    /// </li>
-    /// <li>
-    /// <p>To retrieve details for all game sessions that are currently running on a
-    /// specific fleet location, provide a fleet or alias ID and a location name, with
-    /// optional status filter. The location can be the fleet's home Region or any
-    /// remote location.</p>
-    /// </li>
-    /// <li>
-    /// <p>To retrieve details for a specific game session, provide the game session ID.
-    /// This approach looks for the game session ID in all fleets that reside in the AWS
-    /// Region defined in the request.</p>
-    /// </li>
+    /// <li> <p>To retrieve details for all game sessions that are currently running on all locations in a fleet, provide a fleet or alias ID, with an optional status filter. This approach returns details from the fleet's home Region and all remote locations.</p> </li>
+    /// <li> <p>To retrieve details for all game sessions that are currently running on a specific fleet location, provide a fleet or alias ID and a location name, with optional status filter. The location can be the fleet's home Region or any remote location.</p> </li>
+    /// <li> <p>To retrieve details for a specific game session, provide the game session ID. This approach looks for the game session ID in all fleets that reside in the AWS Region defined in the request.</p> </li>
     /// </ul>
     /// <p>Use the pagination parameters to retrieve results as a set of sequential pages. </p>
-    /// <p>If successful, a <code>GameSessionDetail</code> object is returned for each game
-    /// session that matches the request.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-find">Find a game session</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSession</a> |
-    /// <a>DescribeGameSessions</a> |
-    /// <a>DescribeGameSessionDetails</a> |
-    /// <a>SearchGameSessions</a> |
-    /// <a>UpdateGameSession</a> |
-    /// <a>GetGameSessionLogUrl</a> |
-    /// <a>StartGameSessionPlacement</a> |
-    /// <a>DescribeGameSessionPlacement</a> |
-    /// <a>StopGameSessionPlacement</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, a <code>GameSessionDetail</code> object is returned for each game session that matches the request.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-find">Find a game session</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGameSessionDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7677,10 +5851,10 @@ pub mod fluent_builders {
                 crate::input::DescribeGameSessionDetailsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7688,21 +5862,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet
-        /// ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeGameSessionDetailsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeGameSessionDetailsPaginator<C, M, R> {
+            crate::paginator::DescribeGameSessionDetailsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet
-        /// ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
         /// <p>A unique identifier for the game session to retrieve. </p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(input.into());
             self
         }
         /// <p>A unique identifier for the game session to retrieve. </p>
@@ -7713,40 +5893,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_session_id(input);
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either
-        /// the alias ID or ARN value.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either the alias ID or ARN value.</p>
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either
-        /// the alias ID or ARN value.</p>
+        /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either the alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias_id(input);
             self
         }
-        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a
-        /// remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a
-        /// remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
         }
-        /// <p>Game session status to filter results on. Possible game session statuses include
-        /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and
-        /// <code>TERMINATING</code> (the last two are transitory). </p>
-        pub fn status_filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_filter(inp);
+        /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory). </p>
+        pub fn status_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_filter(input.into());
             self
         }
-        /// <p>Game session status to filter results on. Possible game session statuses include
-        /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and
-        /// <code>TERMINATING</code> (the last two are transitory). </p>
+        /// <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory). </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7755,8 +5927,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -7765,8 +5937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -7779,23 +5951,10 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves information, including current status, about a game session placement request. </p>
     /// <p>To get game session placement details, specify the placement ID.</p>
-    /// <p>If successful, a <a>GameSessionPlacement</a> object is returned.</p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSession</a> |
-    /// <a>DescribeGameSessions</a> |
-    /// <a>DescribeGameSessionDetails</a> |
-    /// <a>SearchGameSessions</a> |
-    /// <a>UpdateGameSession</a> |
-    /// <a>GetGameSessionLogUrl</a> |
-    /// <a>StartGameSessionPlacement</a> |
-    /// <a>DescribeGameSessionPlacement</a> |
-    /// <a>StopGameSessionPlacement</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, a <code>GameSessionPlacement</code> object is returned.</p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGameSessionPlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7840,10 +5999,10 @@ pub mod fluent_builders {
                 crate::input::DescribeGameSessionPlacementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7852,8 +6011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for a game session placement to retrieve.</p>
-        pub fn placement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_id(inp);
+        pub fn placement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_id(input.into());
             self
         }
         /// <p>A unique identifier for a game session placement to retrieve.</p>
@@ -7864,29 +6023,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeGameSessionQueues`.
     ///
-    /// <p>Retrieves the properties for one or more game session queues. When requesting
-    /// multiple queues, use the pagination parameters to retrieve results as a set of
-    /// sequential pages. If successful, a <a>GameSessionQueue</a> object is returned
-    /// for each requested queue. When specifying a list of queues, objects are returned only
-    /// for queues that currently exist in the Region.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-console.html">
-    /// View Your Queues</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSessionQueue</a> |
-    /// <a>DescribeGameSessionQueues</a> |
-    /// <a>UpdateGameSessionQueue</a> |
-    /// <a>DeleteGameSessionQueue</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the properties for one or more game session queues. When requesting multiple queues, use the pagination parameters to retrieve results as a set of sequential pages. If successful, a <code>GameSessionQueue</code> object is returned for each requested queue. When specifying a list of queues, objects are returned only for queues that currently exist in the Region.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-console.html"> View Your Queues</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSessionQueue</code> | <code>DescribeGameSessionQueues</code> | <code>UpdateGameSessionQueue</code> | <code>DeleteGameSessionQueue</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGameSessionQueues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7931,10 +6073,10 @@ pub mod fluent_builders {
                 crate::input::DescribeGameSessionQueuesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7942,18 +6084,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeGameSessionQueuesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeGameSessionQueuesPaginator<C, M, R> {
+            crate::paginator::DescribeGameSessionQueuesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Names`.
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
-        /// <p>A list of queue names to retrieve information for. You can use either the queue ID or
-        /// ARN value. To request settings for all queues, leave this parameter empty. </p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
-        /// <p>A list of queue names to retrieve information for. You can use either the queue ID or
-        /// ARN value. To request settings for all queues, leave this parameter empty. </p>
+        /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7962,8 +6110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
@@ -7972,8 +6120,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -7984,58 +6132,21 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeGameSessions`.
     ///
-    /// <p>Retrieves a set of one or more game sessions in a specific fleet location. You can
-    /// optionally filter the results by current game session status. Alternatively, use <a>SearchGameSessions</a> to request a set of active game sessions that are
-    /// filtered by certain criteria. To retrieve the protection policy for game sessions, use
-    /// <a>DescribeGameSessionDetails</a>.</p>
+    /// <p>Retrieves a set of one or more game sessions in a specific fleet location. You can optionally filter the results by current game session status. Alternatively, use <code>SearchGameSessions</code> to request a set of active game sessions that are filtered by certain criteria. To retrieve the protection policy for game sessions, use <code>DescribeGameSessionDetails</code>.</p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To retrieve all game sessions that are currently running on all locations in a
-    /// fleet, provide a fleet or alias ID, with an optional status filter. This
-    /// approach returns all game sessions in the fleet's home Region and all remote
-    /// locations.</p>
-    /// </li>
-    /// <li>
-    /// <p>To retrieve all game sessions that are currently running on a specific fleet
-    /// location, provide a fleet or alias ID and a location name, with optional status
-    /// filter. The location can be the fleet's home Region or any remote
-    /// location.</p>
-    /// </li>
-    /// <li>
-    /// <p>To retrieve a specific game session, provide the game session ID. This
-    /// approach looks for the game session ID in all fleets that reside in the AWS
-    /// Region defined in the request.</p>
-    /// </li>
+    /// <li> <p>To retrieve all game sessions that are currently running on all locations in a fleet, provide a fleet or alias ID, with an optional status filter. This approach returns all game sessions in the fleet's home Region and all remote locations.</p> </li>
+    /// <li> <p>To retrieve all game sessions that are currently running on a specific fleet location, provide a fleet or alias ID and a location name, with optional status filter. The location can be the fleet's home Region or any remote location.</p> </li>
+    /// <li> <p>To retrieve a specific game session, provide the game session ID. This approach looks for the game session ID in all fleets that reside in the AWS Region defined in the request.</p> </li>
     /// </ul>
     /// <p>Use the pagination parameters to retrieve results as a set of sequential pages. </p>
-    /// <p>If successful, a <code>GameSession</code> object is returned for each game session
-    /// that matches the request.</p>
-    /// <p>
-    /// <i>Available in GameLift Local.</i>
-    /// </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-find">Find a game session</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSession</a> |
-    /// <a>DescribeGameSessions</a> |
-    /// <a>DescribeGameSessionDetails</a> |
-    /// <a>SearchGameSessions</a> |
-    /// <a>UpdateGameSession</a> |
-    /// <a>GetGameSessionLogUrl</a> |
-    /// <a>StartGameSessionPlacement</a> |
-    /// <a>DescribeGameSessionPlacement</a> |
-    /// <a>StopGameSessionPlacement</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, a <code>GameSession</code> object is returned for each game session that matches the request.</p>
+    /// <p> <i>Available in GameLift Local.</i> </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-find">Find a game session</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGameSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8080,10 +6191,10 @@ pub mod fluent_builders {
                 crate::input::DescribeGameSessionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8091,9 +6202,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeGameSessionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeGameSessionsPaginator<C, M, R> {
+            crate::paginator::DescribeGameSessionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
         /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
@@ -8102,8 +6219,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the game session to retrieve. </p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(input.into());
             self
         }
         /// <p>A unique identifier for the game session to retrieve. </p>
@@ -8114,44 +6231,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_session_id(input);
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the
-        /// alias ID or ARN value.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the alias ID or ARN value.</p>
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the
-        /// alias ID or ARN value.</p>
+        /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias_id(input);
             self
         }
-        /// <p>A fleet location to get game session details for. You can specify a fleet's home
-        /// Region or a remote location. Use the AWS Region code format, such as
-        /// <code>us-west-2</code>. </p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>A fleet location to get game session details for. You can specify a fleet's home
-        /// Region or a remote location. Use the AWS Region code format, such as
-        /// <code>us-west-2</code>. </p>
+        /// <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
         }
-        /// <p>Game session status to filter results on. You can filter on the following states:
-        /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and
-        /// <code>TERMINATING</code>. The last two are transitory and used for only very brief
-        /// periods of time. </p>
-        pub fn status_filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_filter(inp);
+        /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
+        pub fn status_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_filter(input.into());
             self
         }
-        /// <p>Game session status to filter results on. You can filter on the following states:
-        /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and
-        /// <code>TERMINATING</code>. The last two are transitory and used for only very brief
-        /// periods of time. </p>
+        /// <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8160,8 +6265,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -8170,8 +6275,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -8182,46 +6287,21 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstances`.
     ///
-    /// <p>Retrieves information about a fleet's instances, including instance IDs, connection
-    /// data, and status. </p>
+    /// <p>Retrieves information about a fleet's instances, including instance IDs, connection data, and status. </p>
     /// <p>This operation can be used in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>To get information on all instances that are deployed to a fleet's home
-    /// Region, provide the fleet ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>To get information on all instances that are deployed to a fleet's remote
-    /// location, provide the fleet ID and location name.</p>
-    /// </li>
-    /// <li>
-    /// <p>To get information on a specific instance in a fleet, provide the fleet ID and
-    /// instance ID.</p>
-    /// </li>
+    /// <li> <p>To get information on all instances that are deployed to a fleet's home Region, provide the fleet ID.</p> </li>
+    /// <li> <p>To get information on all instances that are deployed to a fleet's remote location, provide the fleet ID and location name.</p> </li>
+    /// <li> <p>To get information on a specific instance in a fleet, provide the fleet ID and instance ID.</p> </li>
     /// </ul>
     /// <p>Use the pagination parameters to retrieve results as a set of sequential pages. </p>
-    /// <p>If successful, an <code>Instance</code> object is returned for each requested
-    /// instance. Instances are not returned in any particular order. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely Access Fleet Instances</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug Fleet Issues</a>
-    /// </p>
-    ///
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>DescribeInstances</a> |
-    /// <a>GetInstanceAccess</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, an <code>Instance</code> object is returned for each requested instance. Instances are not returned in any particular order. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely Access Fleet Instances</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug Fleet Issues</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>DescribeInstances</code> | <code>GetInstanceAccess</code> | <code>DescribeEC2InstanceLimits</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8266,10 +6346,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8277,33 +6357,35 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to retrieve instance information for.  You can use either the fleet ID or ARN
-        /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeInstancesPaginator<C, M, R> {
+            crate::paginator::DescribeInstancesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to retrieve instance information for.  You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave
-        /// blank to retrieve all instances in the fleet.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances in the fleet.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave
-        /// blank to retrieve all instances in the fleet.</p>
+        /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances in the fleet.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -8312,8 +6394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -8321,14 +6403,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The name of a location to retrieve instance information for, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>. </p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>The name of a location to retrieve instance information for, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The name of a location to retrieve instance information for, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>. </p>
+        /// <p>The name of a location to retrieve instance information for, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -8336,42 +6416,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeMatchmaking`.
     ///
-    /// <p>Retrieves one or more matchmaking tickets. Use this operation to retrieve ticket
-    /// information, including--after a successful match is made--connection information for the
-    /// resulting new game session. </p>
-    /// <p>To request matchmaking tickets, provide a list of up to 10 ticket IDs. If the
-    /// request is successful, a ticket object is returned for each requested ID that currently
-    /// exists.</p>
-    /// <p>This operation is not designed to be continually called to track matchmaking ticket
-    /// status. This practice can cause you to exceed your API limit, which results in errors.
-    /// Instead, as a best practice, set up an Amazon Simple Notification Service (SNS) to receive notifications, and provide
-    /// the topic ARN in the matchmaking configuration. Continuously poling ticket status with
-    /// <a>DescribeMatchmaking</a> should only be used for games in development
-    /// with low matchmaking usage.</p>
+    /// <p>Retrieves one or more matchmaking tickets. Use this operation to retrieve ticket information, including--after a successful match is made--connection information for the resulting new game session. </p>
+    /// <p>To request matchmaking tickets, provide a list of up to 10 ticket IDs. If the request is successful, a ticket object is returned for each requested ID that currently exists.</p>
+    /// <p>This operation is not designed to be continually called to track matchmaking ticket status. This practice can cause you to exceed your API limit, which results in errors. Instead, as a best practice, set up an Amazon Simple Notification Service (SNS) to receive notifications, and provide the topic ARN in the matchmaking configuration. Continuously poling ticket status with <code>DescribeMatchmaking</code> should only be used for games in development with low matchmaking usage.</p>
     /// <p></p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html">
-    /// Add FlexMatch to a game client</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-    /// Set Up FlexMatch event notification</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>StartMatchmaking</a> |
-    /// <a>DescribeMatchmaking</a> |
-    /// <a>StopMatchmaking</a> |
-    /// <a>AcceptMatch</a> |
-    /// <a>StartMatchBackfill</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html"> Add FlexMatch to a game client</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Set Up FlexMatch event notification</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>StartMatchmaking</code> | <code>DescribeMatchmaking</code> | <code>StopMatchmaking</code> | <code>AcceptMatch</code> | <code>StartMatchBackfill</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMatchmaking<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8416,10 +6470,10 @@ pub mod fluent_builders {
                 crate::input::DescribeMatchmakingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8432,8 +6486,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ticket_ids`](Self::set_ticket_ids).
         ///
         /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
-        pub fn ticket_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ticket_ids(inp);
+        pub fn ticket_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ticket_ids(input.into());
             self
         }
         /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
@@ -8448,34 +6502,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMatchmakingConfigurations`.
     ///
     /// <p>Retrieves the details of FlexMatch matchmaking configurations. </p>
-    /// <p>This operation offers the following options: (1) retrieve all matchmaking
-    /// configurations, (2) retrieve configurations for a specified list, or (3) retrieve all
-    /// configurations that use a specified rule set name. When requesting multiple items, use
-    /// the pagination parameters to retrieve results as a set of sequential pages. </p>
-    /// <p>If successful, a configuration is returned for each requested name. When specifying a
-    /// list of names, only configurations that currently exist are returned. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/matchmaker-build.html"> Setting up FlexMatch
-    /// matchmakers</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateMatchmakingConfiguration</a> |
-    /// <a>DescribeMatchmakingConfigurations</a> |
-    /// <a>UpdateMatchmakingConfiguration</a> |
-    /// <a>DeleteMatchmakingConfiguration</a> |
-    /// <a>CreateMatchmakingRuleSet</a> |
-    /// <a>DescribeMatchmakingRuleSets</a> |
-    /// <a>ValidateMatchmakingRuleSet</a> |
-    /// <a>DeleteMatchmakingRuleSet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation offers the following options: (1) retrieve all matchmaking configurations, (2) retrieve configurations for a specified list, or (3) retrieve all configurations that use a specified rule set name. When requesting multiple items, use the pagination parameters to retrieve results as a set of sequential pages. </p>
+    /// <p>If successful, a configuration is returned for each requested name. When specifying a list of names, only configurations that currently exist are returned. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/matchmaker-build.html"> Setting up FlexMatch matchmakers</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateMatchmakingConfiguration</code> | <code>DescribeMatchmakingConfigurations</code> | <code>UpdateMatchmakingConfiguration</code> | <code>DeleteMatchmakingConfiguration</code> | <code>CreateMatchmakingRuleSet</code> | <code>DescribeMatchmakingRuleSets</code> | <code>ValidateMatchmakingRuleSet</code> | <code>DeleteMatchmakingRuleSet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMatchmakingConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8520,10 +6553,10 @@ pub mod fluent_builders {
                 crate::input::DescribeMatchmakingConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8531,18 +6564,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeMatchmakingConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeMatchmakingConfigurationsPaginator<C, M, R> {
+            crate::paginator::DescribeMatchmakingConfigurationsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// Appends an item to `Names`.
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
-        /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To
-        /// request all existing configurations, leave this parameter empty.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To request all existing configurations, leave this parameter empty.</p>
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To
-        /// request all existing configurations, leave this parameter empty.</p>
+        /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To request all existing configurations, leave this parameter empty.</p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8550,14 +6592,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_names(input);
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to
-        /// retrieve all matchmaking configurations that use this rule set.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to retrieve all matchmaking configurations that use this rule set.</p>
+        pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to
-        /// retrieve all matchmaking configurations that use this rule set.</p>
+        /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to retrieve all matchmaking configurations that use this rule set.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8566,8 +6606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is limited to 10.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is limited to 10.</p>
@@ -8576,8 +6616,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -8588,36 +6628,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeMatchmakingRuleSets`.
     ///
-    /// <p>Retrieves the details for FlexMatch matchmaking rule sets. You can request all
-    /// existing rule sets for the Region, or provide a list of one or more rule set names. When
-    /// requesting multiple items, use the pagination parameters to retrieve results as a set of
-    /// sequential pages. If successful, a rule set is returned for each requested name. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
+    /// <p>Retrieves the details for FlexMatch matchmaking rule sets. You can request all existing rule sets for the Region, or provide a list of one or more rule set names. When requesting multiple items, use the pagination parameters to retrieve results as a set of sequential pages. If successful, a rule set is returned for each requested name. </p>
+    /// <p> <b>Learn more</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a rule
-    /// set</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a rule set</a> </p> </li>
     /// </ul>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateMatchmakingConfiguration</a> |
-    /// <a>DescribeMatchmakingConfigurations</a> |
-    /// <a>UpdateMatchmakingConfiguration</a> |
-    /// <a>DeleteMatchmakingConfiguration</a> |
-    /// <a>CreateMatchmakingRuleSet</a> |
-    /// <a>DescribeMatchmakingRuleSets</a> |
-    /// <a>ValidateMatchmakingRuleSet</a> |
-    /// <a>DeleteMatchmakingRuleSet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateMatchmakingConfiguration</code> | <code>DescribeMatchmakingConfigurations</code> | <code>UpdateMatchmakingConfiguration</code> | <code>DeleteMatchmakingConfiguration</code> | <code>CreateMatchmakingRuleSet</code> | <code>DescribeMatchmakingRuleSets</code> | <code>ValidateMatchmakingRuleSet</code> | <code>DeleteMatchmakingRuleSet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMatchmakingRuleSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8662,10 +6680,10 @@ pub mod fluent_builders {
                 crate::input::DescribeMatchmakingRuleSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8673,20 +6691,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeMatchmakingRuleSetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeMatchmakingRuleSetsPaginator<C, M, R> {
+            crate::paginator::DescribeMatchmakingRuleSetsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Names`.
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
-        /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The
-        /// rule set name is different from the optional "name" field in the rule set body.) You can
-        /// use either the rule set name or ARN value. </p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
-        /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The
-        /// rule set name is different from the optional "name" field in the rule set body.) You can
-        /// use either the rule set name or ARN value. </p>
+        /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8695,8 +6717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -8705,8 +6727,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -8720,39 +6742,16 @@ pub mod fluent_builders {
     /// <p>Retrieves properties for one or more player sessions. </p>
     /// <p>This action can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To retrieve a specific player session, provide the player session ID
-    /// only.</p>
-    /// </li>
-    /// <li>
-    /// <p>To retrieve all player sessions in a game session, provide the game session ID
-    /// only.</p>
-    /// </li>
-    /// <li>
-    /// <p>To retrieve all player sessions for a specific player, provide a player ID
-    /// only.</p>
-    /// </li>
+    /// <li> <p>To retrieve a specific player session, provide the player session ID only.</p> </li>
+    /// <li> <p>To retrieve all player sessions in a game session, provide the game session ID only.</p> </li>
+    /// <li> <p>To retrieve all player sessions for a specific player, provide a player ID only.</p> </li>
     /// </ul>
-    /// <p>To request player sessions, specify either a player session ID, game session ID, or player
-    /// ID. You can filter this request by player session status. Use the pagination parameters
-    /// to retrieve results as a set of sequential pages. </p>
-    /// <p>If successful, a <code>PlayerSession</code> object is returned for each session that
-    /// matches the request.</p>
-    /// <p>
-    /// <i>Available in Amazon GameLift Local.</i>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreatePlayerSession</a> |
-    /// <a>CreatePlayerSessions</a> |
-    /// <a>DescribePlayerSessions</a> |
-    /// <a>StartGameSessionPlacement</a> |
-    /// <a>DescribeGameSessionPlacement</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To request player sessions, specify either a player session ID, game session ID, or player ID. You can filter this request by player session status. Use the pagination parameters to retrieve results as a set of sequential pages. </p>
+    /// <p>If successful, a <code>PlayerSession</code> object is returned for each session that matches the request.</p>
+    /// <p> <i>Available in Amazon GameLift Local.</i> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreatePlayerSession</code> | <code>CreatePlayerSessions</code> | <code>DescribePlayerSessions</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePlayerSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8797,10 +6796,10 @@ pub mod fluent_builders {
                 crate::input::DescribePlayerSessionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8808,9 +6807,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribePlayerSessionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribePlayerSessionsPaginator<C, M, R> {
+            crate::paginator::DescribePlayerSessionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(input.into());
             self
         }
         /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
@@ -8822,8 +6827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for a player to retrieve player sessions for.</p>
-        pub fn player_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_id(inp);
+        pub fn player_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.player_id(input.into());
             self
         }
         /// <p>A unique identifier for a player to retrieve player sessions for.</p>
@@ -8832,8 +6837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for a player session to retrieve.</p>
-        pub fn player_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_session_id(inp);
+        pub fn player_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.player_session_id(input.into());
             self
         }
         /// <p>A unique identifier for a player session to retrieve.</p>
@@ -8847,58 +6852,25 @@ pub mod fluent_builders {
         /// <p>Player session status to filter results on.</p>
         /// <p>Possible player session statuses include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>RESERVED</b> -- The player session request has been
-        /// received, but the player has not yet connected to the server process and/or been
-        /// validated. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ACTIVE</b> -- The player has been validated by the
-        /// server process and is currently connected.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>COMPLETED</b> -- The player connection has been
-        /// dropped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TIMEDOUT</b> -- A player session request was
-        /// received, but the player did not connect and/or was not validated within the
-        /// timeout limit (60 seconds).</p>
-        /// </li>
+        /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
+        /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
+        /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
+        /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
         /// </ul>
-        pub fn player_session_status_filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.player_session_status_filter(inp);
+        pub fn player_session_status_filter(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.player_session_status_filter(input.into());
             self
         }
         /// <p>Player session status to filter results on.</p>
         /// <p>Possible player session statuses include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>RESERVED</b> -- The player session request has been
-        /// received, but the player has not yet connected to the server process and/or been
-        /// validated. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ACTIVE</b> -- The player has been validated by the
-        /// server process and is currently connected.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>COMPLETED</b> -- The player connection has been
-        /// dropped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TIMEDOUT</b> -- A player session request was
-        /// received, but the player did not connect and/or was not validated within the
-        /// timeout limit (60 seconds).</p>
-        /// </li>
+        /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
+        /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
+        /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
+        /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
         /// </ul>
         pub fn set_player_session_status_filter(
             mut self,
@@ -8908,8 +6880,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
@@ -8918,8 +6890,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
@@ -8930,40 +6902,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRuntimeConfiguration`.
     ///
-    /// <p>Retrieves a fleet's runtime configuration settings. The runtime configuration tells
-    /// GameLift which server processes to run (and how) on each instance in the fleet.</p>
-    /// <p>To get the runtime configuration that is currently in forces for a fleet, provide the
-    /// fleet ID. </p>
-    /// <p>If successful, a <a>RuntimeConfiguration</a> object is returned for the
-    /// requested fleet. If the requested fleet has been deleted, the result set is
-    /// empty.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">Running multiple
-    /// processes on a fleet</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>ListFleets</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>DescribeFleetEvents</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>DescribeFleetPortSettings</a> |
-    /// <a>DescribeFleetUtilization</a> |
-    /// <a>DescribeRuntimeConfiguration</a> |
-    /// <a>DescribeScalingPolicies</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a fleet's runtime configuration settings. The runtime configuration tells GameLift which server processes to run (and how) on each instance in the fleet.</p>
+    /// <p>To get the runtime configuration that is currently in forces for a fleet, provide the fleet ID. </p>
+    /// <p>If successful, a <code>RuntimeConfiguration</code> object is returned for the requested fleet. If the requested fleet has been deleted, the result set is empty.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">Running multiple processes on a fleet</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>ListFleets</code> | <code>DescribeEC2InstanceLimits</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetCapacity</code> | <code>DescribeFleetEvents</code> | <code>DescribeFleetLocationAttributes</code> | <code>DescribeFleetPortSettings</code> | <code>DescribeFleetUtilization</code> | <code>DescribeRuntimeConfiguration</code> | <code>DescribeScalingPolicies</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRuntimeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9008,10 +6955,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRuntimeConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9019,14 +6966,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
-        /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
@@ -9035,29 +6980,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeScalingPolicies`.
     ///
     /// <p>Retrieves all scaling policies applied to a fleet.</p>
-    /// <p>To get a fleet's scaling policies, specify the fleet ID. You can filter this
-    /// request by policy status, such as to retrieve only active scaling policies. Use the
-    /// pagination parameters to retrieve results as a set of sequential pages. If successful,
-    /// set of <a>ScalingPolicy</a> objects is returned for the fleet.</p>
-    /// <p>A fleet may have all of its scaling policies suspended (<a>StopFleetActions</a>). This operation does not affect the status of the scaling
-    /// policies, which remains ACTIVE. To see whether a fleet's scaling policies are in force
-    /// or suspended, call <a>DescribeFleetAttributes</a> and check the stopped
-    /// actions.</p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DescribeScalingPolicies</a> |
-    /// <a>DeleteScalingPolicy</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>StartFleetActions</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To get a fleet's scaling policies, specify the fleet ID. You can filter this request by policy status, such as to retrieve only active scaling policies. Use the pagination parameters to retrieve results as a set of sequential pages. If successful, set of <code>ScalingPolicy</code> objects is returned for the fleet.</p>
+    /// <p>A fleet may have all of its scaling policies suspended (<code>StopFleetActions</code>). This operation does not affect the status of the scaling policies, which remains ACTIVE. To see whether a fleet's scaling policies are in force or suspended, call <code>DescribeFleetAttributes</code> and check the stopped actions.</p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>DescribeFleetCapacity</code> | <code>UpdateFleetCapacity</code> | <code>DescribeEC2InstanceLimits</code> | <code>PutScalingPolicy</code> | <code>DescribeScalingPolicies</code> | <code>DeleteScalingPolicy</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScalingPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9102,10 +7029,10 @@ pub mod fluent_builders {
                 crate::input::DescribeScalingPoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9113,99 +7040,45 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
-        /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeScalingPoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeScalingPoliciesPaginator<C, M, R> {
+            crate::paginator::DescribeScalingPoliciesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>Scaling policy status to filter results on. A scaling policy is only in force when
-        /// in an <code>ACTIVE</code> status.</p>
+        /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>ACTIVE</b> -- The scaling policy is currently in
-        /// force.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>UPDATEREQUESTED</b> -- A request to update the
-        /// scaling policy has been received.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>UPDATING</b> -- A change is being made to the
-        /// scaling policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>DELETEREQUESTED</b> -- A request to delete the
-        /// scaling policy has been received.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>DELETING</b> -- The scaling policy is being
-        /// deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>DELETED</b> -- The scaling policy has been
-        /// deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ERROR</b> -- An error occurred in creating the
-        /// policy. It should be removed and recreated.</p>
-        /// </li>
+        /// <li> <p> <b>ACTIVE</b> -- The scaling policy is currently in force.</p> </li>
+        /// <li> <p> <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
+        /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
+        /// <li> <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
+        /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
+        /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
+        /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
         /// </ul>
-        pub fn status_filter(mut self, inp: crate::model::ScalingStatusType) -> Self {
-            self.inner = self.inner.status_filter(inp);
+        pub fn status_filter(mut self, input: crate::model::ScalingStatusType) -> Self {
+            self.inner = self.inner.status_filter(input);
             self
         }
-        /// <p>Scaling policy status to filter results on. A scaling policy is only in force when
-        /// in an <code>ACTIVE</code> status.</p>
+        /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>ACTIVE</b> -- The scaling policy is currently in
-        /// force.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>UPDATEREQUESTED</b> -- A request to update the
-        /// scaling policy has been received.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>UPDATING</b> -- A change is being made to the
-        /// scaling policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>DELETEREQUESTED</b> -- A request to delete the
-        /// scaling policy has been received.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>DELETING</b> -- The scaling policy is being
-        /// deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>DELETED</b> -- The scaling policy has been
-        /// deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ERROR</b> -- An error occurred in creating the
-        /// policy. It should be removed and recreated.</p>
-        /// </li>
+        /// <li> <p> <b>ACTIVE</b> -- The scaling policy is currently in force.</p> </li>
+        /// <li> <p> <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>
+        /// <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>
+        /// <li> <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>
+        /// <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>
+        /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
+        /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
         /// </ul>
         pub fn set_status_filter(
             mut self,
@@ -9215,8 +7088,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -9225,8 +7098,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -9234,16 +7107,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// CONTENT TODO
-        /// </p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p> CONTENT TODO </p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>
-        /// CONTENT TODO
-        /// </p>
+        /// <p> CONTENT TODO </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -9252,26 +7121,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeScript`.
     ///
     /// <p>Retrieves properties for a Realtime script. </p>
-    /// <p>To request a script record, specify the script ID. If successful, an object containing the script properties
-    /// is returned.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateScript</a> |
-    /// <a>ListScripts</a> |
-    /// <a>DescribeScript</a> |
-    /// <a>UpdateScript</a> |
-    /// <a>DeleteScript</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To request a script record, specify the script ID. If successful, an object containing the script properties is returned.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateScript</code> | <code>ListScripts</code> | <code>DescribeScript</code> | <code>UpdateScript</code> | <code>DeleteScript</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScript<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9316,10 +7171,10 @@ pub mod fluent_builders {
                 crate::input::DescribeScriptInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9327,14 +7182,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN
-        /// value.</p>
-        pub fn script_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.script_id(inp);
+        /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
+        pub fn script_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.script_id(input.into());
             self
         }
-        /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
         pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_script_id(input);
             self
@@ -9342,22 +7195,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeVpcPeeringAuthorizations`.
     ///
-    /// <p>Retrieves valid VPC peering authorizations that are pending for the AWS account.
-    /// This operation returns all VPC peering authorizations and requests for peering. This
-    /// includes those initiated and received by this account. </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateVpcPeeringAuthorization</a> |
-    /// <a>DescribeVpcPeeringAuthorizations</a> |
-    /// <a>DeleteVpcPeeringAuthorization</a> |
-    /// <a>CreateVpcPeeringConnection</a> |
-    /// <a>DescribeVpcPeeringConnections</a> |
-    /// <a>DeleteVpcPeeringConnection</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves valid VPC peering authorizations that are pending for the AWS account. This operation returns all VPC peering authorizations and requests for peering. This includes those initiated and received by this account. </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcPeeringAuthorizations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9402,10 +7243,10 @@ pub mod fluent_builders {
                 crate::input::DescribeVpcPeeringAuthorizationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9416,26 +7257,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeVpcPeeringConnections`.
     ///
-    /// <p>Retrieves information on VPC peering connections. Use this operation to get peering
-    /// information for all fleets or for one specific fleet ID. </p>
-    /// <p>To retrieve connection information, call this operation from the AWS account that
-    /// is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave the parameter empty
-    /// to retrieve all connection records. If successful, the retrieved information includes
-    /// both active and pending connections. Active connections identify the IpV4 CIDR block
-    /// that the VPC uses to connect. </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateVpcPeeringAuthorization</a> |
-    /// <a>DescribeVpcPeeringAuthorizations</a> |
-    /// <a>DeleteVpcPeeringAuthorization</a> |
-    /// <a>CreateVpcPeeringConnection</a> |
-    /// <a>DescribeVpcPeeringConnections</a> |
-    /// <a>DeleteVpcPeeringConnection</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves information on VPC peering connections. Use this operation to get peering information for all fleets or for one specific fleet ID. </p>
+    /// <p>To retrieve connection information, call this operation from the AWS account that is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave the parameter empty to retrieve all connection records. If successful, the retrieved information includes both active and pending connections. Active connections identify the IpV4 CIDR block that the VPC uses to connect. </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateVpcPeeringAuthorization</code> | <code>DescribeVpcPeeringAuthorizations</code> | <code>DeleteVpcPeeringAuthorization</code> | <code>CreateVpcPeeringConnection</code> | <code>DescribeVpcPeeringConnections</code> | <code>DeleteVpcPeeringConnection</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVpcPeeringConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9480,10 +7306,10 @@ pub mod fluent_builders {
                 crate::input::DescribeVpcPeeringConnectionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9492,8 +7318,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
         /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value.</p>
@@ -9504,30 +7330,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetGameSessionLogUrl`.
     ///
-    /// <p>Retrieves the location of stored game session logs for a specified game session.
-    /// When a game session is terminated, GameLift automatically stores the logs in Amazon S3 and
-    /// retains them for 14 days. Use this URL to download the logs.</p>
-    /// <note>
-    /// <p>See the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS Service
-    /// Limits</a> page for maximum log file sizes. Log files that exceed this limit
-    /// are not saved.</p>
+    /// <p>Retrieves the location of stored game session logs for a specified game session. When a game session is terminated, GameLift automatically stores the logs in Amazon S3 and retains them for 14 days. Use this URL to download the logs.</p> <note>
+    /// <p>See the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS Service Limits</a> page for maximum log file sizes. Log files that exceed this limit are not saved.</p>
     /// </note>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSession</a> |
-    /// <a>DescribeGameSessions</a> |
-    /// <a>DescribeGameSessionDetails</a> |
-    /// <a>SearchGameSessions</a> |
-    /// <a>UpdateGameSession</a> |
-    /// <a>GetGameSessionLogUrl</a> |
-    /// <a>StartGameSessionPlacement</a> |
-    /// <a>DescribeGameSessionPlacement</a> |
-    /// <a>StopGameSessionPlacement</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGameSessionLogUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9572,10 +7380,10 @@ pub mod fluent_builders {
                 crate::input::GetGameSessionLogUrlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9584,8 +7392,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game session to get logs for. </p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(input.into());
             self
         }
         /// <p>A unique identifier for the game session to get logs for. </p>
@@ -9599,42 +7407,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInstanceAccess`.
     ///
-    /// <p>Requests remote access to a fleet instance. Remote access is useful for debugging,
-    /// gathering benchmarking data, or observing activity in real time. </p>
-    /// <p>To remotely access an instance, you need credentials that match the operating system
-    /// of the instance. For a Windows instance, GameLift returns a user name and password as
-    /// strings for use with a Windows Remote Desktop client. For a Linux instance, GameLift
-    /// returns a user name and RSA private key, also as strings, for use with an SSH client.
-    /// The private key must be saved in the proper format to a <code>.pem</code> file before
-    /// using. If you're making this request using the AWS CLI, saving the secret can be handled
-    /// as part of the <code>GetInstanceAccess</code> request, as shown in one of the examples
-    /// for this operation. </p>
-    /// <p>To request access to a specific instance, specify the IDs of both the instance and the
-    /// fleet it belongs to. You can retrieve a fleet's instance IDs by calling <a>DescribeInstances</a>. If successful, an <a>InstanceAccess</a>
-    /// object is returned that contains the instance's IP address and a set of
-    /// credentials.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely Access Fleet
-    /// Instances</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug Fleet
-    /// Issues</a>
-    /// </p>
-    ///
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>DescribeInstances</a> |
-    /// <a>GetInstanceAccess</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Requests remote access to a fleet instance. Remote access is useful for debugging, gathering benchmarking data, or observing activity in real time. </p>
+    /// <p>To remotely access an instance, you need credentials that match the operating system of the instance. For a Windows instance, GameLift returns a user name and password as strings for use with a Windows Remote Desktop client. For a Linux instance, GameLift returns a user name and RSA private key, also as strings, for use with an SSH client. The private key must be saved in the proper format to a <code>.pem</code> file before using. If you're making this request using the AWS CLI, saving the secret can be handled as part of the <code>GetInstanceAccess</code> request, as shown in one of the examples for this operation. </p>
+    /// <p>To request access to a specific instance, specify the IDs of both the instance and the fleet it belongs to. You can retrieve a fleet's instance IDs by calling <code>DescribeInstances</code>. If successful, an <code>InstanceAccess</code> object is returned that contains the instance's IP address and a set of credentials.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely Access Fleet Instances</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug Fleet Issues</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>DescribeInstances</code> | <code>GetInstanceAccess</code> | <code>DescribeEC2InstanceLimits</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstanceAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9679,10 +7460,10 @@ pub mod fluent_builders {
                 crate::input::GetInstanceAccessInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9690,32 +7471,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID
-        /// or ARN value. The fleet can be in any of the following statuses:
-        /// <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an
-        /// <code>ERROR</code> status may be accessible for a short time before they are
-        /// deleted.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are deleted.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID
-        /// or ARN value. The fleet can be in any of the following statuses:
-        /// <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an
-        /// <code>ERROR</code> status may be accessible for a short time before they are
-        /// deleted.</p>
+        /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are deleted.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any
-        /// status.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any status.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any
-        /// status.</p>
+        /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any status.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -9723,25 +7494,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAliases`.
     ///
-    /// <p>Retrieves all aliases for this AWS account. You can filter the result set by
-    /// alias name and/or routing strategy type. Use the pagination parameters to retrieve
-    /// results in sequential pages.</p>
-    /// <note>
+    /// <p>Retrieves all aliases for this AWS account. You can filter the result set by alias name and/or routing strategy type. Use the pagination parameters to retrieve results in sequential pages.</p> <note>
     /// <p>Returned aliases are not listed in any particular order.</p>
     /// </note>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateAlias</a> |
-    /// <a>ListAliases</a> |
-    /// <a>DescribeAlias</a> |
-    /// <a>UpdateAlias</a> |
-    /// <a>DeleteAlias</a> |
-    /// <a>ResolveAlias</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateAlias</code> | <code>ListAliases</code> | <code>DescribeAlias</code> | <code>UpdateAlias</code> | <code>DeleteAlias</code> | <code>ResolveAlias</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9786,10 +7544,10 @@ pub mod fluent_builders {
                 crate::input::ListAliasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9797,41 +7555,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases
-        /// with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAliasesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAliasesPaginator<C, M, R> {
+            crate::paginator::ListAliasesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
         /// <p>Possible routing types include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>SIMPLE</b> -- The alias resolves to one specific
-        /// fleet. Use this type when routing to active fleets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TERMINAL</b> -- The alias does not resolve to a
-        /// fleet but instead can be used to display a message to the user. A terminal alias
-        /// throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.</p>
-        /// </li>
+        /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+        /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <code>RoutingStrategy</code> message embedded.</p> </li>
         /// </ul>
-        pub fn routing_strategy_type(mut self, inp: crate::model::RoutingStrategyType) -> Self {
-            self.inner = self.inner.routing_strategy_type(inp);
+        pub fn routing_strategy_type(mut self, input: crate::model::RoutingStrategyType) -> Self {
+            self.inner = self.inner.routing_strategy_type(input);
             self
         }
-        /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases
-        /// with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
+        /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
         /// <p>Possible routing types include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>SIMPLE</b> -- The alias resolves to one specific
-        /// fleet. Use this type when routing to active fleets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TERMINAL</b> -- The alias does not resolve to a
-        /// fleet but instead can be used to display a message to the user. A terminal alias
-        /// throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.</p>
-        /// </li>
+        /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+        /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <code>RoutingStrategy</code> message embedded.</p> </li>
         /// </ul>
         pub fn set_routing_strategy_type(
             mut self,
@@ -9841,8 +7585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
@@ -9851,8 +7595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -9861,8 +7605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -9873,32 +7617,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBuilds`.
     ///
-    /// <p>Retrieves build resources for all builds associated with the AWS account in use. You
-    /// can limit results to builds that are in a specific status by using the
-    /// <code>Status</code> parameter. Use the pagination parameters to retrieve results in
-    /// a set of sequential pages. </p>
-    /// <note>
+    /// <p>Retrieves build resources for all builds associated with the AWS account in use. You can limit results to builds that are in a specific status by using the <code>Status</code> parameter. Use the pagination parameters to retrieve results in a set of sequential pages. </p> <note>
     /// <p>Build resources are not listed in any particular order.</p>
     /// </note>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
-    /// Upload a Custom Server Build</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateBuild</a> |
-    /// <a>ListBuilds</a> |
-    /// <a>DescribeBuild</a> |
-    /// <a>UpdateBuild</a> |
-    /// <a>DeleteBuild</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"> Upload a Custom Server Build</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateBuild</code> | <code>ListBuilds</code> | <code>DescribeBuild</code> | <code>UpdateBuild</code> | <code>DeleteBuild</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBuilds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9943,10 +7669,10 @@ pub mod fluent_builders {
                 crate::input::ListBuildsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9954,61 +7680,37 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Build status to filter results by. To retrieve all builds, leave this parameter
-        /// empty.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBuildsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBuildsPaginator<C, M, R> {
+            crate::paginator::ListBuildsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Build status to filter results by. To retrieve all builds, leave this parameter empty.</p>
         /// <p>Possible build statuses include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>INITIALIZED</b> -- A new build has been defined,
-        /// but no files have been uploaded. You cannot create fleets for builds that are in
-        /// this status. When a build is successfully created, the build status is set to
-        /// this value. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>READY</b> -- The game build has been successfully
-        /// uploaded. You can now create new fleets for this build.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FAILED</b> -- The game build upload failed. You
-        /// cannot create new fleets for this build. </p>
-        /// </li>
+        /// <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value. </p> </li>
+        /// <li> <p> <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p> </li>
+        /// <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build. </p> </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::BuildStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::BuildStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        /// <p>Build status to filter results by. To retrieve all builds, leave this parameter
-        /// empty.</p>
+        /// <p>Build status to filter results by. To retrieve all builds, leave this parameter empty.</p>
         /// <p>Possible build statuses include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>INITIALIZED</b> -- A new build has been defined,
-        /// but no files have been uploaded. You cannot create fleets for builds that are in
-        /// this status. When a build is successfully created, the build status is set to
-        /// this value. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>READY</b> -- The game build has been successfully
-        /// uploaded. You can now create new fleets for this build.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FAILED</b> -- The game build upload failed. You
-        /// cannot create new fleets for this build. </p>
-        /// </li>
+        /// <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value. </p> </li>
+        /// <li> <p> <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p> </li>
+        /// <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build. </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::BuildStatus>) -> Self {
             self.inner = self.inner.set_status(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -10017,8 +7719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -10029,54 +7731,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFleets`.
     ///
-    /// <p>Retrieves a collection of fleet resources in an AWS Region. You can call this operation
-    /// to get fleets in a previously selected default Region (see <a href="https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html">https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html</a>or specify a Region in your
-    /// request. You can filter the result set to find only those fleets that are deployed with
-    /// a specific build or script. For fleets that have multiple locations, this operation
-    /// retrieves fleets based on their home Region only.</p>
+    /// <p>Retrieves a collection of fleet resources in an AWS Region. You can call this operation to get fleets in a previously selected default Region (see <a href="https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html">https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html</a>or specify a Region in your request. You can filter the result set to find only those fleets that are deployed with a specific build or script. For fleets that have multiple locations, this operation retrieves fleets based on their home Region only.</p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To get a list of all fleets in a Region, don't provide a build or script
-    /// identifier. </p>
-    /// </li>
-    /// <li>
-    /// <p>To get a list of all fleets where a specific custom game build is deployed,
-    /// provide the build ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>To get a list of all Realtime Servers fleets with a specific configuration script,
-    /// provide the script ID. </p>
-    /// </li>
+    /// <li> <p>To get a list of all fleets in a Region, don't provide a build or script identifier. </p> </li>
+    /// <li> <p>To get a list of all fleets where a specific custom game build is deployed, provide the build ID.</p> </li>
+    /// <li> <p>To get a list of all Realtime Servers fleets with a specific configuration script, provide the script ID. </p> </li>
     /// </ul>
     /// <p>Use the pagination parameters to retrieve results as a set of sequential pages. </p>
-    /// <p>If successful, a list of fleet IDs that match the request parameters is returned. A
-    /// NextToken value is also returned if there are more result pages to retrieve.</p>
-    /// <note>
+    /// <p>If successful, a list of fleet IDs that match the request parameters is returned. A NextToken value is also returned if there are more result pages to retrieve.</p> <note>
     /// <p>Fleet resources are not listed in a particular order.</p>
     /// </note>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleet</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>UpdateFleetAttributes</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>DeleteFleet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleet</code> | <code>UpdateFleetCapacity</code> | <code>PutScalingPolicy</code> | <code>DescribeEC2InstanceLimits</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetLocationAttributes</code> | <code>UpdateFleetAttributes</code> | <code>StopFleetActions</code> | <code>DeleteFleet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10121,10 +7791,10 @@ pub mod fluent_builders {
                 crate::input::ListFleetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10132,33 +7802,35 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a
-        /// specified build. Use either the build ID or ARN value.</p>
-        pub fn build_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFleetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFleetsPaginator<C, M, R> {
+            crate::paginator::ListFleetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
+        pub fn build_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_id(input.into());
             self
         }
-        /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a
-        /// specified build. Use either the build ID or ARN value.</p>
+        /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
         pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_build_id(input);
             self
         }
-        /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a
-        /// specified script. Use either the script ID or ARN value.</p>
-        pub fn script_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.script_id(inp);
+        /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
+        pub fn script_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.script_id(input.into());
             self
         }
-        /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a
-        /// specified script. Use either the script ID or ARN value.</p>
+        /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
         pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_script_id(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -10167,8 +7839,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -10179,33 +7851,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGameServerGroups`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Retrieves information on all game servers groups that exist in the current AWS
-    /// account for the selected Region. Use the pagination parameters to retrieve results in a
-    /// set of sequential segments. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameServerGroup</a> |
-    /// <a>ListGameServerGroups</a> |
-    /// <a>DescribeGameServerGroup</a> |
-    /// <a>UpdateGameServerGroup</a> |
-    /// <a>DeleteGameServerGroup</a> |
-    /// <a>ResumeGameServerGroup</a> |
-    /// <a>SuspendGameServerGroup</a> |
-    /// <a>DescribeGameServerInstances</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Retrieves information on all game servers groups that exist in the current AWS account for the selected Region. Use the pagination parameters to retrieve results in a set of sequential segments. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGameServerGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10250,10 +7902,10 @@ pub mod fluent_builders {
                 crate::input::ListGameServerGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10261,9 +7913,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGameServerGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGameServerGroupsPaginator<C, M, R> {
+            crate::paginator::ListGameServerGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -10272,8 +7930,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -10284,31 +7942,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGameServers`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Retrieves information on all game servers that are currently active in a specified
-    /// game server group. You can opt to sort the list by game server age. Use the
-    /// pagination parameters to retrieve results in a set of sequential segments. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>RegisterGameServer</a> |
-    /// <a>ListGameServers</a> |
-    /// <a>ClaimGameServer</a> |
-    /// <a>DescribeGameServer</a> |
-    /// <a>UpdateGameServer</a> |
-    /// <a>DeregisterGameServer</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Retrieves information on all game servers that are currently active in a specified game server group. You can opt to sort the list by game server age. Use the pagination parameters to retrieve results in a set of sequential segments. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>RegisterGameServer</code> | <code>ListGameServers</code> | <code>ClaimGameServer</code> | <code>DescribeGameServer</code> | <code>UpdateGameServer</code> | <code>DeregisterGameServer</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGameServers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10353,10 +7993,10 @@ pub mod fluent_builders {
                 crate::input::ListGameServersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10364,14 +8004,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier for the game server group to retrieve a list of game servers from.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGameServersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGameServersPaginator<C, M, R> {
+            crate::paginator::ListGameServersPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>An identifier for the game server group to retrieve a list of game servers from.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10379,18 +8023,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_group_name(input);
             self
         }
-        /// <p>Indicates how to sort the returned data based on game server registration timestamp.
-        /// Use <code>ASCENDING</code> to retrieve oldest game servers first, or use
-        /// <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is
-        /// left empty, game servers are returned in no particular order.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        /// <p>Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>Indicates how to sort the returned data based on game server registration timestamp.
-        /// Use <code>ASCENDING</code> to retrieve oldest game servers first, or use
-        /// <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is
-        /// left empty, game servers are returned in no particular order.</p>
+        /// <p>Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -10399,8 +8037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -10409,8 +8047,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -10422,24 +8060,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListScripts`.
     ///
     /// <p>Retrieves script records for all Realtime scripts that are associated with the AWS account in use. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateScript</a> |
-    /// <a>ListScripts</a> |
-    /// <a>DescribeScript</a> |
-    /// <a>UpdateScript</a> |
-    /// <a>DeleteScript</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateScript</code> | <code>ListScripts</code> | <code>DescribeScript</code> | <code>UpdateScript</code> | <code>DeleteScript</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListScripts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10484,10 +8109,10 @@ pub mod fluent_builders {
                 crate::input::ListScriptsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10495,9 +8120,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListScriptsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListScriptsPaginator<C, M, R> {
+            crate::paginator::ListScriptsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -10506,8 +8137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -10518,56 +8149,23 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>
-    /// Retrieves all tags that are assigned to a GameLift resource.
-    /// Resource tags are used to organize AWS resources for a range of purposes.
-    /// This operation handles the permissions necessary to manage tags for the following
-    /// GameLift resource types:</p>
+    /// <p> Retrieves all tags that are assigned to a GameLift resource. Resource tags are used to organize AWS resources for a range of purposes. This operation handles the permissions necessary to manage tags for the following GameLift resource types:</p>
     /// <ul>
-    /// <li>
-    /// <p>Build</p>
-    /// </li>
-    /// <li>
-    /// <p>Script</p>
-    /// </li>
-    /// <li>
-    /// <p>Fleet</p>
-    /// </li>
-    /// <li>
-    /// <p>Alias</p>
-    /// </li>
-    /// <li>
-    /// <p>GameSessionQueue</p>
-    /// </li>
-    /// <li>
-    /// <p>MatchmakingConfiguration</p>
-    /// </li>
-    /// <li>
-    /// <p>MatchmakingRuleSet</p>
-    /// </li>
+    /// <li> <p>Build</p> </li>
+    /// <li> <p>Script</p> </li>
+    /// <li> <p>Fleet</p> </li>
+    /// <li> <p>Alias</p> </li>
+    /// <li> <p>GameSessionQueue</p> </li>
+    /// <li> <p>MatchmakingConfiguration</p> </li>
+    /// <li> <p>MatchmakingRuleSet</p> </li>
     /// </ul>
     /// <p>To list tags for a resource, specify the unique ARN value for the resource.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>
-    /// </p>
-    /// <p>
-    /// <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/">
-    /// AWS Tagging Strategies</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>TagResource</a> |
-    /// <a>UntagResource</a> |
-    /// <a>ListTagsForResource</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the <i>AWS General Reference</i> </p>
+    /// <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> AWS Tagging Strategies</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>TagResource</code> | <code>UntagResource</code> | <code>ListTagsForResource</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10612,10 +8210,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10623,22 +8221,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The Amazon Resource Name
-        /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to and uniquely identifies the GameLift resource that you want to retrieve
-        /// tags for. GameLift resource ARNs are included in the data object for the resource, which
-        /// can be retrieved by calling a List or Describe operation for the resource type. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to retrieve tags for. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name
-        /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to and uniquely identifies the GameLift resource that you want to retrieve
-        /// tags for. GameLift resource ARNs are included in the data object for the resource, which
-        /// can be retrieved by calling a List or Describe operation for the resource type. </p>
+        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to retrieve tags for. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -10646,84 +8234,25 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutScalingPolicy`.
     ///
-    /// <p>Creates or updates a scaling policy for a fleet. Scaling policies are used to
-    /// automatically scale a fleet's hosting capacity to meet player demand. An active scaling
-    /// policy instructs Amazon GameLift to track a fleet metric and automatically change the fleet's
-    /// capacity when a certain threshold is reached. There are two types of scaling policies:
-    /// target-based and rule-based. Use a target-based policy to quickly and efficiently manage
-    /// fleet scaling; this option is the most commonly used. Use rule-based policies when you
-    /// need to exert fine-grained control over auto-scaling. </p>
-    /// <p>Fleets can have multiple scaling policies of each type in force at the same time;
-    /// you can have one target-based policy, one or multiple rule-based scaling policies, or
-    /// both. We recommend caution, however, because multiple auto-scaling policies can have
-    /// unintended consequences.</p>
-    /// <p>You can temporarily suspend all scaling policies for a fleet by calling <a>StopFleetActions</a> with the fleet action AUTO_SCALING. To resume scaling
-    /// policies, call <a>StartFleetActions</a> with the same fleet action. To stop
-    /// just one scaling policy--or to permanently remove it, you must delete the policy with
-    /// <a>DeleteScalingPolicy</a>.</p>
-    /// <p>Learn more about how to work with auto-scaling in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set Up Fleet Automatic
-    /// Scaling</a>.</p>
-    /// <p>
-    /// <b>Target-based policy</b>
-    /// </p>
-    /// <p>A target-based policy tracks a single metric: PercentAvailableGameSessions. This
-    /// metric tells us how much of a fleet's hosting capacity is ready to host game sessions
-    /// but is not currently in use. This is the fleet's buffer; it measures the additional
-    /// player demand that the fleet could handle at current capacity. With a target-based
-    /// policy, you set your ideal buffer size and leave it to Amazon GameLift to take whatever action
-    /// is needed to maintain that target. </p>
-    /// <p>For example, you might choose to maintain a 10% buffer for a fleet that has the
-    /// capacity to host 100 simultaneous game sessions. This policy tells Amazon GameLift to take
-    /// action whenever the fleet's available capacity falls below or rises above 10 game
-    /// sessions. Amazon GameLift will start new instances or stop unused instances in order to return
-    /// to the 10% buffer. </p>
-    /// <p>To create or update a target-based policy, specify a fleet ID and name, and set the
-    /// policy type to "TargetBased". Specify the metric to track (PercentAvailableGameSessions)
-    /// and reference a <a>TargetConfiguration</a> object with your desired buffer
-    /// value. Exclude all other parameters. On a successful request, the policy name is
-    /// returned. The scaling policy is automatically in force as soon as it's successfully
-    /// created. If the fleet's auto-scaling actions are temporarily suspended, the new policy
-    /// will be in force once the fleet actions are restarted.</p>
-    /// <p>
-    /// <b>Rule-based policy</b>
-    /// </p>
-    /// <p>A rule-based policy tracks specified fleet metric, sets a threshold value, and
-    /// specifies the type of action to initiate when triggered. With a rule-based policy, you
-    /// can select from several available fleet metrics. Each policy specifies whether to scale
-    /// up or scale down (and by how much), so you need one policy for each type of action. </p>
-    /// <p>For example, a policy may make the following statement: "If the percentage of idle
-    /// instances is greater than 20% for more than 15 minutes, then reduce the fleet capacity
-    /// by 10%."</p>
+    /// <p>Creates or updates a scaling policy for a fleet. Scaling policies are used to automatically scale a fleet's hosting capacity to meet player demand. An active scaling policy instructs Amazon GameLift to track a fleet metric and automatically change the fleet's capacity when a certain threshold is reached. There are two types of scaling policies: target-based and rule-based. Use a target-based policy to quickly and efficiently manage fleet scaling; this option is the most commonly used. Use rule-based policies when you need to exert fine-grained control over auto-scaling. </p>
+    /// <p>Fleets can have multiple scaling policies of each type in force at the same time; you can have one target-based policy, one or multiple rule-based scaling policies, or both. We recommend caution, however, because multiple auto-scaling policies can have unintended consequences.</p>
+    /// <p>You can temporarily suspend all scaling policies for a fleet by calling <code>StopFleetActions</code> with the fleet action AUTO_SCALING. To resume scaling policies, call <code>StartFleetActions</code> with the same fleet action. To stop just one scaling policy--or to permanently remove it, you must delete the policy with <code>DeleteScalingPolicy</code>.</p>
+    /// <p>Learn more about how to work with auto-scaling in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set Up Fleet Automatic Scaling</a>.</p>
+    /// <p> <b>Target-based policy</b> </p>
+    /// <p>A target-based policy tracks a single metric: PercentAvailableGameSessions. This metric tells us how much of a fleet's hosting capacity is ready to host game sessions but is not currently in use. This is the fleet's buffer; it measures the additional player demand that the fleet could handle at current capacity. With a target-based policy, you set your ideal buffer size and leave it to Amazon GameLift to take whatever action is needed to maintain that target. </p>
+    /// <p>For example, you might choose to maintain a 10% buffer for a fleet that has the capacity to host 100 simultaneous game sessions. This policy tells Amazon GameLift to take action whenever the fleet's available capacity falls below or rises above 10 game sessions. Amazon GameLift will start new instances or stop unused instances in order to return to the 10% buffer. </p>
+    /// <p>To create or update a target-based policy, specify a fleet ID and name, and set the policy type to "TargetBased". Specify the metric to track (PercentAvailableGameSessions) and reference a <code>TargetConfiguration</code> object with your desired buffer value. Exclude all other parameters. On a successful request, the policy name is returned. The scaling policy is automatically in force as soon as it's successfully created. If the fleet's auto-scaling actions are temporarily suspended, the new policy will be in force once the fleet actions are restarted.</p>
+    /// <p> <b>Rule-based policy</b> </p>
+    /// <p>A rule-based policy tracks specified fleet metric, sets a threshold value, and specifies the type of action to initiate when triggered. With a rule-based policy, you can select from several available fleet metrics. Each policy specifies whether to scale up or scale down (and by how much), so you need one policy for each type of action. </p>
+    /// <p>For example, a policy may make the following statement: "If the percentage of idle instances is greater than 20% for more than 15 minutes, then reduce the fleet capacity by 10%."</p>
     /// <p>A policy's rule statement has the following structure:</p>
-    /// <p>If <code>[MetricName]</code> is <code>[ComparisonOperator]</code>
-    /// <code>[Threshold]</code> for <code>[EvaluationPeriods]</code> minutes, then
-    /// <code>[ScalingAdjustmentType]</code> to/by
-    /// <code>[ScalingAdjustment]</code>.</p>
+    /// <p>If <code>[MetricName]</code> is <code>[ComparisonOperator]</code> <code>[Threshold]</code> for <code>[EvaluationPeriods]</code> minutes, then <code>[ScalingAdjustmentType]</code> to/by <code>[ScalingAdjustment]</code>.</p>
     /// <p>To implement the example, the rule statement would look like this:</p>
-    /// <p>If <code>[PercentIdleInstances]</code> is <code>[GreaterThanThreshold]</code>
-    /// <code>[20]</code> for <code>[15]</code> minutes, then
-    /// <code>[PercentChangeInCapacity]</code> to/by <code>[10]</code>.</p>
-    /// <p>To create or update a scaling policy, specify a unique combination of name and
-    /// fleet ID, and set the policy type to "RuleBased". Specify the parameter values for a
-    /// policy rule statement. On a successful request, the policy name is returned. Scaling
-    /// policies are automatically in force as soon as they're successfully created. If the
-    /// fleet's auto-scaling actions are temporarily suspended, the new policy will be in force
-    /// once the fleet actions are restarted.</p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>DescribeFleetCapacity</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DescribeScalingPolicies</a> |
-    /// <a>DeleteScalingPolicy</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>StartFleetActions</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If <code>[PercentIdleInstances]</code> is <code>[GreaterThanThreshold]</code> <code>[20]</code> for <code>[15]</code> minutes, then <code>[PercentChangeInCapacity]</code> to/by <code>[10]</code>.</p>
+    /// <p>To create or update a scaling policy, specify a unique combination of name and fleet ID, and set the policy type to "RuleBased". Specify the parameter values for a policy rule statement. On a successful request, the policy name is returned. Scaling policies are automatically in force as soon as they're successfully created. If the fleet's auto-scaling actions are temporarily suspended, the new policy will be in force once the fleet actions are restarted.</p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>DescribeFleetCapacity</code> | <code>UpdateFleetCapacity</code> | <code>DescribeEC2InstanceLimits</code> | <code>PutScalingPolicy</code> | <code>DescribeScalingPolicies</code> | <code>DeleteScalingPolicy</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10768,10 +8297,10 @@ pub mod fluent_builders {
                 crate::input::PutScalingPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10780,8 +8309,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
@@ -10789,21 +8318,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
-        /// cannot be in any of the following statuses: ERROR or DELETING.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
-        /// cannot be in any of the following statuses: ERROR or DELETING.</p>
+        /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
         /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
-        pub fn scaling_adjustment(mut self, inp: i32) -> Self {
-            self.inner = self.inner.scaling_adjustment(inp);
+        pub fn scaling_adjustment(mut self, input: i32) -> Self {
+            self.inner = self.inner.scaling_adjustment(input);
             self
         }
         /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
@@ -10811,51 +8338,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scaling_adjustment(input);
             self
         }
-        /// <p>The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+        /// <p>The type of adjustment to make to a fleet's instance count (see <code>FleetCapacity</code>):</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>ChangeInCapacity</b> -- add (or subtract) the
-        /// scaling adjustment value from the current instance count. Positive values scale
-        /// up while negative values scale down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ExactCapacity</b> -- set the instance count to the
-        /// scaling adjustment value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PercentChangeInCapacity</b> -- increase or reduce
-        /// the current instance count by the scaling adjustment, read as a percentage.
-        /// Positive values scale up while negative values scale down; for example, a value
-        /// of "-10" scales the fleet down by 10%.</p>
-        /// </li>
+        /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
+        /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
+        /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</p> </li>
         /// </ul>
-        pub fn scaling_adjustment_type(mut self, inp: crate::model::ScalingAdjustmentType) -> Self {
-            self.inner = self.inner.scaling_adjustment_type(inp);
+        pub fn scaling_adjustment_type(
+            mut self,
+            input: crate::model::ScalingAdjustmentType,
+        ) -> Self {
+            self.inner = self.inner.scaling_adjustment_type(input);
             self
         }
-        /// <p>The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+        /// <p>The type of adjustment to make to a fleet's instance count (see <code>FleetCapacity</code>):</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>ChangeInCapacity</b> -- add (or subtract) the
-        /// scaling adjustment value from the current instance count. Positive values scale
-        /// up while negative values scale down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ExactCapacity</b> -- set the instance count to the
-        /// scaling adjustment value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PercentChangeInCapacity</b> -- increase or reduce
-        /// the current instance count by the scaling adjustment, read as a percentage.
-        /// Positive values scale up while negative values scale down; for example, a value
-        /// of "-10" scales the fleet down by 10%.</p>
-        /// </li>
+        /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
+        /// <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>
+        /// <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</p> </li>
         /// </ul>
         pub fn set_scaling_adjustment_type(
             mut self,
@@ -10865,8 +8365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Metric value used to trigger a scaling event.</p>
-        pub fn threshold(mut self, inp: f64) -> Self {
-            self.inner = self.inner.threshold(inp);
+        pub fn threshold(mut self, input: f64) -> Self {
+            self.inner = self.inner.threshold(input);
             self
         }
         /// <p>Metric value used to trigger a scaling event.</p>
@@ -10874,14 +8374,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_threshold(input);
             self
         }
-        /// <p>Comparison operator to use when measuring the metric against the threshold
-        /// value.</p>
-        pub fn comparison_operator(mut self, inp: crate::model::ComparisonOperatorType) -> Self {
-            self.inner = self.inner.comparison_operator(inp);
+        /// <p>Comparison operator to use when measuring the metric against the threshold value.</p>
+        pub fn comparison_operator(mut self, input: crate::model::ComparisonOperatorType) -> Self {
+            self.inner = self.inner.comparison_operator(input);
             self
         }
-        /// <p>Comparison operator to use when measuring the metric against the threshold
-        /// value.</p>
+        /// <p>Comparison operator to use when measuring the metric against the threshold value.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperatorType>,
@@ -10889,155 +8387,47 @@ pub mod fluent_builders {
             self.inner = self.inner.set_comparison_operator(input);
             self
         }
-        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a
-        /// scaling event is triggered.</p>
-        pub fn evaluation_periods(mut self, inp: i32) -> Self {
-            self.inner = self.inner.evaluation_periods(inp);
+        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
+        pub fn evaluation_periods(mut self, input: i32) -> Self {
+            self.inner = self.inner.evaluation_periods(input);
             self
         }
-        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a
-        /// scaling event is triggered.</p>
+        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
         pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_evaluation_periods(input);
             self
         }
-        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For
-        /// detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift
-        /// with Amazon CloudWatch</a>. </p>
+        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>ActivatingGameSessions</b> -- Game sessions in
-        /// the process of being created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ActiveGameSessions</b> -- Game sessions that
-        /// are currently running.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ActiveInstances</b> -- Fleet instances that
-        /// are currently running at least one game session.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AvailableGameSessions</b> -- Additional game
-        /// sessions that fleet could host simultaneously, given current capacity.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AvailablePlayerSessions</b> -- Empty player
-        /// slots in currently active game sessions. This includes game sessions that are
-        /// not currently accepting players. Reserved player slots are not
-        /// included.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>CurrentPlayerSessions</b> -- Player slots in
-        /// active game sessions that are being used by a player or are reserved for a
-        /// player. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>IdleInstances</b> -- Active instances that are
-        /// currently hosting zero game sessions. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PercentAvailableGameSessions</b> -- Unused
-        /// percentage of the total number of game sessions that a fleet could host
-        /// simultaneously, given current capacity. Use this metric for a target-based
-        /// scaling policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PercentIdleInstances</b> -- Percentage of the
-        /// total number of active instances that are hosting zero game sessions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>QueueDepth</b> -- Pending game session
-        /// placement requests, in any queue, where the current fleet is the top-priority
-        /// destination.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>WaitTime</b> -- Current wait time for pending
-        /// game session placement requests, in any queue, where the current fleet is the
-        /// top-priority destination. </p>
-        /// </li>
+        /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
+        /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
+        /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
+        /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
+        /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
+        /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
+        /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
+        /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
+        /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
+        /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
+        /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
         /// </ul>
-        pub fn metric_name(mut self, inp: crate::model::MetricName) -> Self {
-            self.inner = self.inner.metric_name(inp);
+        pub fn metric_name(mut self, input: crate::model::MetricName) -> Self {
+            self.inner = self.inner.metric_name(input);
             self
         }
-        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For
-        /// detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift
-        /// with Amazon CloudWatch</a>. </p>
+        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>ActivatingGameSessions</b> -- Game sessions in
-        /// the process of being created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ActiveGameSessions</b> -- Game sessions that
-        /// are currently running.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ActiveInstances</b> -- Fleet instances that
-        /// are currently running at least one game session.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AvailableGameSessions</b> -- Additional game
-        /// sessions that fleet could host simultaneously, given current capacity.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AvailablePlayerSessions</b> -- Empty player
-        /// slots in currently active game sessions. This includes game sessions that are
-        /// not currently accepting players. Reserved player slots are not
-        /// included.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>CurrentPlayerSessions</b> -- Player slots in
-        /// active game sessions that are being used by a player or are reserved for a
-        /// player. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>IdleInstances</b> -- Active instances that are
-        /// currently hosting zero game sessions. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PercentAvailableGameSessions</b> -- Unused
-        /// percentage of the total number of game sessions that a fleet could host
-        /// simultaneously, given current capacity. Use this metric for a target-based
-        /// scaling policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>PercentIdleInstances</b> -- Percentage of the
-        /// total number of active instances that are hosting zero game sessions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>QueueDepth</b> -- Pending game session
-        /// placement requests, in any queue, where the current fleet is the top-priority
-        /// destination.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>WaitTime</b> -- Current wait time for pending
-        /// game session placement requests, in any queue, where the current fleet is the
-        /// top-priority destination. </p>
-        /// </li>
+        /// <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>
+        /// <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>
+        /// <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>
+        /// <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>
+        /// <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>
+        /// <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>
+        /// <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>
+        /// <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>
+        /// <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>
+        /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
+        /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
         /// </ul>
         pub fn set_metric_name(
             mut self,
@@ -11046,24 +8436,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metric_name(input);
             self
         }
-        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter
-        /// <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
-        /// <i>TargetConfiguration</i>. For a rule-based policy set the following
-        /// parameters: <i>MetricName</i>, <i>ComparisonOperator</i>,
-        /// <i>Threshold</i>, <i>EvaluationPeriods</i>,
-        /// <i>ScalingAdjustmentType</i>, and
-        /// <i>ScalingAdjustment</i>.</p>
-        pub fn policy_type(mut self, inp: crate::model::PolicyType) -> Self {
-            self.inner = self.inner.policy_type(inp);
+        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
+        pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
+            self.inner = self.inner.policy_type(input);
             self
         }
-        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter
-        /// <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
-        /// <i>TargetConfiguration</i>. For a rule-based policy set the following
-        /// parameters: <i>MetricName</i>, <i>ComparisonOperator</i>,
-        /// <i>Threshold</i>, <i>EvaluationPeriods</i>,
-        /// <i>ScalingAdjustmentType</i>, and
-        /// <i>ScalingAdjustment</i>.</p>
+        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
         pub fn set_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicyType>,
@@ -11072,8 +8450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that contains settings for a target-based scaling policy.</p>
-        pub fn target_configuration(mut self, inp: crate::model::TargetConfiguration) -> Self {
-            self.inner = self.inner.target_configuration(inp);
+        pub fn target_configuration(mut self, input: crate::model::TargetConfiguration) -> Self {
+            self.inner = self.inner.target_configuration(input);
             self
         }
         /// <p>An object that contains settings for a target-based scaling policy.</p>
@@ -11087,42 +8465,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterGameServer`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Creates a new game server resource and notifies GameLift FleetIQ that the game server is ready to
-    /// host gameplay and players. This operation is called by a game server process that is
-    /// running on an instance in a game server group. Registering game servers enables GameLift FleetIQ to
-    /// track available game servers and enables game clients and services to claim a game
-    /// server for a new game session. </p>
-    /// <p>To register a game server, identify the game server group and instance where the game
-    /// server is running, and provide a unique identifier for the game server. You can also
-    /// include connection and game server data. When a game client or service requests a game
-    /// server by calling <a>ClaimGameServer</a>, this information is returned in the
-    /// response.</p>
-    /// <p>Once a game server is successfully registered, it is put in status
-    /// <code>AVAILABLE</code>. A request to register a game server may fail if the instance
-    /// it is running on is in the process of shutting down as part of instance balancing or
-    /// scale-down activity. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>RegisterGameServer</a> |
-    /// <a>ListGameServers</a> |
-    /// <a>ClaimGameServer</a> |
-    /// <a>DescribeGameServer</a> |
-    /// <a>UpdateGameServer</a> |
-    /// <a>DeregisterGameServer</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Creates a new game server resource and notifies GameLift FleetIQ that the game server is ready to host gameplay and players. This operation is called by a game server process that is running on an instance in a game server group. Registering game servers enables GameLift FleetIQ to track available game servers and enables game clients and services to claim a game server for a new game session. </p>
+    /// <p>To register a game server, identify the game server group and instance where the game server is running, and provide a unique identifier for the game server. You can also include connection and game server data. When a game client or service requests a game server by calling <code>ClaimGameServer</code>, this information is returned in the response.</p>
+    /// <p>Once a game server is successfully registered, it is put in status <code>AVAILABLE</code>. A request to register a game server may fail if the instance it is running on is in the process of shutting down as part of instance balancing or scale-down activity. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>RegisterGameServer</code> | <code>ListGameServers</code> | <code>ClaimGameServer</code> | <code>DescribeGameServer</code> | <code>UpdateGameServer</code> | <code>DeregisterGameServer</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterGameServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11167,10 +8518,10 @@ pub mod fluent_builders {
                 crate::input::RegisterGameServerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11178,14 +8529,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11193,14 +8542,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_group_name(input);
             self
         }
-        /// <p>A custom string that uniquely identifies the game server to register.  
-        /// Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
-        pub fn game_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_id(inp);
+        /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
+        pub fn game_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_id(input.into());
             self
         }
-        /// <p>A custom string that uniquely identifies the game server to register.  
-        /// Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
+        /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
         pub fn set_game_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11208,28 +8555,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_id(input);
             self
         }
-        /// <p>The unique identifier for the instance where the game server is running. This ID is
-        /// available in the instance metadata. EC2 instance IDs
-        /// use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>The unique identifier for the instance where the game server is running. This ID is
-        /// available in the instance metadata. EC2 instance IDs
-        /// use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
+        /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>Information that is needed to make inbound client connections to the game server. This
-        /// might include the IP address and port, DNS name, and other information.</p>
-        pub fn connection_info(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_info(inp);
+        /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
+        pub fn connection_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_info(input.into());
             self
         }
-        /// <p>Information that is needed to make inbound client connections to the game server. This
-        /// might include the IP address and port, DNS name, and other information.</p>
+        /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
         pub fn set_connection_info(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11237,16 +8578,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_info(input);
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers using
-        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
-        pub fn game_server_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_data(inp);
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
+        pub fn game_server_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_data(input.into());
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers using
-        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
         pub fn set_game_server_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11257,31 +8594,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RequestUploadCredentials`.
     ///
-    /// <p>Retrieves a fresh set of credentials for use when uploading a new set of game build
-    /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process; see
-    /// <a>CreateBuild</a>.</p>
-    /// <p>To request new credentials, specify the build ID as returned with an initial
-    /// <code>CreateBuild</code> request. If successful, a new set of credentials are
-    /// returned, along with the S3 storage location associated with the build ID.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
-    /// Create a Build with Files in S3</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateBuild</a> |
-    /// <a>ListBuilds</a> |
-    /// <a>DescribeBuild</a> |
-    /// <a>UpdateBuild</a> |
-    /// <a>DeleteBuild</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a fresh set of credentials for use when uploading a new set of game build files to Amazon GameLift's Amazon S3. This is done as part of the build creation process; see <code>CreateBuild</code>.</p>
+    /// <p>To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code> request. If successful, a new set of credentials are returned, along with the S3 storage location associated with the build ID.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"> Create a Build with Files in S3</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateBuild</code> | <code>ListBuilds</code> | <code>DescribeBuild</code> | <code>UpdateBuild</code> | <code>DeleteBuild</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RequestUploadCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11326,10 +8645,10 @@ pub mod fluent_builders {
                 crate::input::RequestUploadCredentialsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11338,8 +8657,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
-        pub fn build_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_id(inp);
+        pub fn build_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_id(input.into());
             self
         }
         /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
@@ -11351,19 +8670,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResolveAlias`.
     ///
     /// <p>Retrieves the fleet ID that an alias is currently pointing to.</p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateAlias</a> |
-    /// <a>ListAliases</a> |
-    /// <a>DescribeAlias</a> |
-    /// <a>UpdateAlias</a> |
-    /// <a>DeleteAlias</a> |
-    /// <a>ResolveAlias</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateAlias</code> | <code>ListAliases</code> | <code>DescribeAlias</code> | <code>UpdateAlias</code> | <code>DeleteAlias</code> | <code>ResolveAlias</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResolveAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11408,10 +8717,10 @@ pub mod fluent_builders {
                 crate::input::ResolveAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11419,14 +8728,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can
-        /// use either the alias ID or ARN value.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
-        /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can
-        /// use either the alias ID or ARN value.</p>
+        /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias_id(input);
             self
@@ -11434,39 +8741,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResumeGameServerGroup`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Reinstates activity on a game server group after it has been suspended. A game server
-    /// group might be suspended by the<a>SuspendGameServerGroup</a> operation, or it
-    /// might be suspended involuntarily due to a configuration problem. In the second case, you
-    /// can manually resume activity on the group once the configuration problem has been
-    /// resolved. Refer to the game server group status and status reason for more information
-    /// on why group activity is suspended.</p>
-    /// <p>To resume activity, specify a game server group ARN and the type of activity to be
-    /// resumed. If successful, a <a>GameServerGroup</a> object is returned showing
-    /// that the resumed activity is no longer listed in <code>SuspendedActions</code>. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameServerGroup</a> |
-    /// <a>ListGameServerGroups</a> |
-    /// <a>DescribeGameServerGroup</a> |
-    /// <a>UpdateGameServerGroup</a> |
-    /// <a>DeleteGameServerGroup</a> |
-    /// <a>ResumeGameServerGroup</a> |
-    /// <a>SuspendGameServerGroup</a> |
-    /// <a>DescribeGameServerInstances</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Reinstates activity on a game server group after it has been suspended. A game server group might be suspended by the<code>SuspendGameServerGroup</code> operation, or it might be suspended involuntarily due to a configuration problem. In the second case, you can manually resume activity on the group once the configuration problem has been resolved. Refer to the game server group status and status reason for more information on why group activity is suspended.</p>
+    /// <p>To resume activity, specify a game server group ARN and the type of activity to be resumed. If successful, a <code>GameServerGroup</code> object is returned showing that the resumed activity is no longer listed in <code>SuspendedActions</code>. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResumeGameServerGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11511,10 +8793,10 @@ pub mod fluent_builders {
                 crate::input::ResumeGameServerGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11522,12 +8804,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11540,11 +8822,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resume_actions`](Self::set_resume_actions).
         ///
         /// <p>The activity to resume for this game server group.</p>
-        pub fn resume_actions(
-            mut self,
-            inp: impl Into<crate::model::GameServerGroupAction>,
-        ) -> Self {
-            self.inner = self.inner.resume_actions(inp);
+        pub fn resume_actions(mut self, input: crate::model::GameServerGroupAction) -> Self {
+            self.inner = self.inner.resume_actions(input);
             self
         }
         /// <p>The activity to resume for this game server group.</p>
@@ -11558,104 +8837,30 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchGameSessions`.
     ///
-    /// <p>Retrieves all active game sessions that match a set of search criteria and sorts them
-    /// into a specified order. </p>
-    /// <p>When searching for game sessions, you specify exactly where you want to search and
-    /// provide a search filter expression, a sort expression, or both. A search request can
-    /// search only one fleet, but it can search all of a fleet's locations.  </p>
+    /// <p>Retrieves all active game sessions that match a set of search criteria and sorts them into a specified order. </p>
+    /// <p>When searching for game sessions, you specify exactly where you want to search and provide a search filter expression, a sort expression, or both. A search request can search only one fleet, but it can search all of a fleet's locations. </p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To search all game sessions that are currently running on all locations in a
-    /// fleet, provide a fleet or alias ID. This approach returns game sessions in the
-    /// fleet's home Region and all remote locations that fit the search
-    /// criteria.</p>
-    /// </li>
-    /// <li>
-    /// <p>To search all game sessions that are currently running on a specific fleet
-    /// location, provide a fleet or alias ID and a location name. For location, you can
-    /// specify a fleet's home Region or any remote location.</p>
-    /// </li>
+    /// <li> <p>To search all game sessions that are currently running on all locations in a fleet, provide a fleet or alias ID. This approach returns game sessions in the fleet's home Region and all remote locations that fit the search criteria.</p> </li>
+    /// <li> <p>To search all game sessions that are currently running on a specific fleet location, provide a fleet or alias ID and a location name. For location, you can specify a fleet's home Region or any remote location.</p> </li>
     /// </ul>
     /// <p>Use the pagination parameters to retrieve results as a set of sequential pages. </p>
-    /// <p>If successful, a <code>GameSession</code> object is returned for each game session
-    /// that matches the request. Search finds game sessions that are in <code>ACTIVE</code>
-    /// status only. To retrieve information on game sessions in other statuses, use <a>DescribeGameSessions</a>.</p>
+    /// <p>If successful, a <code>GameSession</code> object is returned for each game session that matches the request. Search finds game sessions that are in <code>ACTIVE</code> status only. To retrieve information on game sessions in other statuses, use <code>DescribeGameSessions</code>.</p>
     /// <p>You can search or sort by the following game session attributes:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>gameSessionId</b> -- A unique identifier for the game session. You can use
-    /// either a <code>GameSessionId</code> or <code>GameSessionArn</code> value.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>gameSessionName</b> -- Name assigned to a game
-    /// session. This value is set when requesting a new game session with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>. Game session names do not need to be unique
-    /// to a game session.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>gameSessionProperties</b> -- Custom data
-    /// defined in a game session's <code>GameProperty</code> parameter.
-    /// <code>GameProperty</code> values are stored as key:value pairs; the filter
-    /// expression must indicate the key and a string to search the data values for. For
-    /// example, to search for game sessions with custom data containing the key:value
-    /// pair "gameMode:brawl", specify the following:
-    /// <code>gameSessionProperties.gameMode = "brawl"</code>. All custom data
-    /// values are searched as strings.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>maximumSessions</b> -- Maximum number of
-    /// player sessions allowed for a game session. This value is set when requesting a
-    /// new game session with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>creationTimeMillis</b> -- Value indicating
-    /// when a game session was created. It is expressed in Unix time as
-    /// milliseconds.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>playerSessionCount</b> -- Number of players
-    /// currently connected to a game session. This value changes rapidly as players
-    /// join the session or drop out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>hasAvailablePlayerSessions</b> -- Boolean
-    /// value indicating whether a game session has reached its maximum number of
-    /// players. It is highly recommended that all search requests include this filter
-    /// attribute to optimize search performance and return only sessions that players
-    /// can join. </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Returned values for <code>playerSessionCount</code> and
-    /// <code>hasAvailablePlayerSessions</code> change quickly as players join sessions
-    /// and others drop out. Results should be considered a snapshot in time. Be sure to
-    /// refresh search results often, and handle sessions that fill up before a player can
-    /// join. </p>
+    /// <li> <p> <b>gameSessionId</b> -- A unique identifier for the game session. You can use either a <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p> </li>
+    /// <li> <p> <b>gameSessionName</b> -- Name assigned to a game session. This value is set when requesting a new game session with <code>CreateGameSession</code> or updating with <code>UpdateGameSession</code>. Game session names do not need to be unique to a game session.</p> </li>
+    /// <li> <p> <b>gameSessionProperties</b> -- Custom data defined in a game session's <code>GameProperty</code> parameter. <code>GameProperty</code> values are stored as key:value pairs; the filter expression must indicate the key and a string to search the data values for. For example, to search for game sessions with custom data containing the key:value pair "gameMode:brawl", specify the following: <code>gameSessionProperties.gameMode = "brawl"</code>. All custom data values are searched as strings.</p> </li>
+    /// <li> <p> <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game session. This value is set when requesting a new game session with <code>CreateGameSession</code> or updating with <code>UpdateGameSession</code>.</p> </li>
+    /// <li> <p> <b>creationTimeMillis</b> -- Value indicating when a game session was created. It is expressed in Unix time as milliseconds.</p> </li>
+    /// <li> <p> <b>playerSessionCount</b> -- Number of players currently connected to a game session. This value changes rapidly as players join the session or drop out.</p> </li>
+    /// <li> <p> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether a game session has reached its maximum number of players. It is highly recommended that all search requests include this filter attribute to optimize search performance and return only sessions that players can join. </p> </li>
+    /// </ul> <note>
+    /// <p>Returned values for <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code> change quickly as players join sessions and others drop out. Results should be considered a snapshot in time. Be sure to refresh search results often, and handle sessions that fill up before a player can join. </p>
     /// </note>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSession</a> |
-    /// <a>DescribeGameSessions</a> |
-    /// <a>DescribeGameSessionDetails</a> |
-    /// <a>SearchGameSessions</a> |
-    /// <a>UpdateGameSession</a> |
-    /// <a>GetGameSessionLogUrl</a> |
-    /// <a>StartGameSessionPlacement</a> |
-    /// <a>DescribeGameSessionPlacement</a> |
-    /// <a>StopGameSessionPlacement</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchGameSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11700,10 +8905,10 @@ pub mod fluent_builders {
                 crate::input::SearchGameSessionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11711,172 +8916,82 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN
-        /// value. Each request must reference either a fleet ID or alias ID, but not both.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchGameSessionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchGameSessionsPaginator<C, M, R> {
+            crate::paginator::SearchGameSessionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN
-        /// value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+        /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either
-        /// the alias ID or ARN value. Each request must reference either a fleet ID or alias ID,
-        /// but not both.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
-        /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either
-        /// the alias ID or ARN value. Each request must reference either a fleet ID or alias ID,
-        /// but not both.</p>
+        /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias_id(input);
             self
         }
-        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or
-        /// a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
         /// <p> </p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or
-        /// a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
         /// <p> </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
         }
-        /// <p>String containing the search criteria for the session search. If no filter
-        /// expression is included, the request returns results for all game sessions in the fleet
-        /// that are in <code>ACTIVE</code> status.</p>
-        /// <p>A filter expression can contain one or multiple conditions. Each condition consists
-        /// of the following:</p>
+        /// <p>String containing the search criteria for the session search. If no filter expression is included, the request returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.</p>
+        /// <p>A filter expression can contain one or multiple conditions. Each condition consists of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Operand</b> -- Name of a game session
-        /// attribute. Valid values are <code>gameSessionName</code>,
-        /// <code>gameSessionId</code>, <code>gameSessionProperties</code>,
-        /// <code>maximumSessions</code>, <code>creationTimeMillis</code>,
-        /// <code>playerSessionCount</code>,
-        /// <code>hasAvailablePlayerSessions</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Comparator</b> -- Valid comparators are:
-        /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
-        /// <code><=</code>, <code>>=</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Value</b> -- Value to be searched for. Values
-        /// may be numbers, boolean values (true/false) or strings depending on the operand.
-        /// String values are case sensitive and must be enclosed in single quotes. Special
-        /// characters must be escaped. Boolean and string values can only be used with the
-        /// comparators <code>=</code> and <code><></code>. For example, the following
-        /// filter expression searches on <code>gameSessionName</code>:
-        /// "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game
-        /// 1'"</code>. </p>
-        /// </li>
+        /// <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
+        /// <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li>
+        /// <li> <p> <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings depending on the operand. String values are case sensitive and must be enclosed in single quotes. Special characters must be escaped. Boolean and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter expression searches on <code>gameSessionName</code>: "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>. </p> </li>
         /// </ul>
-        /// <p>To chain multiple conditions in a single expression, use the logical keywords
-        /// <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed.
-        /// For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
-        /// <p>Session search evaluates conditions from left to right using the following
-        /// precedence rules:</p>
+        /// <p>To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed. For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
+        /// <p>Session search evaluates conditions from left to right using the following precedence rules:</p>
         /// <ol>
-        /// <li>
-        /// <p>
-        /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
-        /// <code><=</code>, <code>>=</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Parentheses</p>
-        /// </li>
-        /// <li>
-        /// <p>NOT</p>
-        /// </li>
-        /// <li>
-        /// <p>AND</p>
-        /// </li>
-        /// <li>
-        /// <p>OR</p>
-        /// </li>
+        /// <li> <p> <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> </p> </li>
+        /// <li> <p>Parentheses</p> </li>
+        /// <li> <p>NOT</p> </li>
+        /// <li> <p>AND</p> </li>
+        /// <li> <p>OR</p> </li>
         /// </ol>
-        /// <p>For example, this filter expression retrieves game sessions hosting at least ten
-        /// players that have an open player slot: <code>"maximumSessions>=10 AND
-        /// hasAvailablePlayerSessions=true"</code>. </p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(inp);
+        /// <p>For example, this filter expression retrieves game sessions hosting at least ten players that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>. </p>
+        pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(input.into());
             self
         }
-        /// <p>String containing the search criteria for the session search. If no filter
-        /// expression is included, the request returns results for all game sessions in the fleet
-        /// that are in <code>ACTIVE</code> status.</p>
-        /// <p>A filter expression can contain one or multiple conditions. Each condition consists
-        /// of the following:</p>
+        /// <p>String containing the search criteria for the session search. If no filter expression is included, the request returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.</p>
+        /// <p>A filter expression can contain one or multiple conditions. Each condition consists of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Operand</b> -- Name of a game session
-        /// attribute. Valid values are <code>gameSessionName</code>,
-        /// <code>gameSessionId</code>, <code>gameSessionProperties</code>,
-        /// <code>maximumSessions</code>, <code>creationTimeMillis</code>,
-        /// <code>playerSessionCount</code>,
-        /// <code>hasAvailablePlayerSessions</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Comparator</b> -- Valid comparators are:
-        /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
-        /// <code><=</code>, <code>>=</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Value</b> -- Value to be searched for. Values
-        /// may be numbers, boolean values (true/false) or strings depending on the operand.
-        /// String values are case sensitive and must be enclosed in single quotes. Special
-        /// characters must be escaped. Boolean and string values can only be used with the
-        /// comparators <code>=</code> and <code><></code>. For example, the following
-        /// filter expression searches on <code>gameSessionName</code>:
-        /// "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game
-        /// 1'"</code>. </p>
-        /// </li>
+        /// <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
+        /// <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li>
+        /// <li> <p> <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings depending on the operand. String values are case sensitive and must be enclosed in single quotes. Special characters must be escaped. Boolean and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter expression searches on <code>gameSessionName</code>: "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>. </p> </li>
         /// </ul>
-        /// <p>To chain multiple conditions in a single expression, use the logical keywords
-        /// <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed.
-        /// For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
-        /// <p>Session search evaluates conditions from left to right using the following
-        /// precedence rules:</p>
+        /// <p>To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed. For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
+        /// <p>Session search evaluates conditions from left to right using the following precedence rules:</p>
         /// <ol>
-        /// <li>
-        /// <p>
-        /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
-        /// <code><=</code>, <code>>=</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Parentheses</p>
-        /// </li>
-        /// <li>
-        /// <p>NOT</p>
-        /// </li>
-        /// <li>
-        /// <p>AND</p>
-        /// </li>
-        /// <li>
-        /// <p>OR</p>
-        /// </li>
+        /// <li> <p> <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> </p> </li>
+        /// <li> <p>Parentheses</p> </li>
+        /// <li> <p>NOT</p> </li>
+        /// <li> <p>AND</p> </li>
+        /// <li> <p>OR</p> </li>
         /// </ol>
-        /// <p>For example, this filter expression retrieves game sessions hosting at least ten
-        /// players that have an open player slot: <code>"maximumSessions>=10 AND
-        /// hasAvailablePlayerSessions=true"</code>. </p>
+        /// <p>For example, this filter expression retrieves game sessions hosting at least ten players that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>. </p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11884,52 +8999,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_expression(input);
             self
         }
-        /// <p>Instructions on how to sort the search results. If no sort expression is included,
-        /// the request returns results in random order. A sort expression consists of the following
-        /// elements:</p>
+        /// <p>Instructions on how to sort the search results. If no sort expression is included, the request returns results in random order. A sort expression consists of the following elements:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Operand</b> -- Name of a game session attribute.
-        /// Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
-        /// <code>gameSessionProperties</code>, <code>maximumSessions</code>,
-        /// <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-        /// <code>hasAvailablePlayerSessions</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Order</b> -- Valid sort orders are <code>ASC</code>
-        /// (ascending) and <code>DESC</code> (descending).</p>
-        /// </li>
+        /// <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
+        /// <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p> </li>
         /// </ul>
-        /// <p>For example, this sort expression returns the oldest active sessions first:
-        /// <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value
-        /// for the sort operand are returned at the end of the list.</p>
-        pub fn sort_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sort_expression(inp);
+        /// <p>For example, this sort expression returns the oldest active sessions first: <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are returned at the end of the list.</p>
+        pub fn sort_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sort_expression(input.into());
             self
         }
-        /// <p>Instructions on how to sort the search results. If no sort expression is included,
-        /// the request returns results in random order. A sort expression consists of the following
-        /// elements:</p>
+        /// <p>Instructions on how to sort the search results. If no sort expression is included, the request returns results in random order. A sort expression consists of the following elements:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Operand</b> -- Name of a game session attribute.
-        /// Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
-        /// <code>gameSessionProperties</code>, <code>maximumSessions</code>,
-        /// <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-        /// <code>hasAvailablePlayerSessions</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Order</b> -- Valid sort orders are <code>ASC</code>
-        /// (ascending) and <code>DESC</code> (descending).</p>
-        /// </li>
+        /// <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>
+        /// <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p> </li>
         /// </ul>
-        /// <p>For example, this sort expression returns the oldest active sessions first:
-        /// <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value
-        /// for the sort operand are returned at the end of the list.</p>
+        /// <p>For example, this sort expression returns the oldest active sessions first: <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are returned at the end of the list.</p>
         pub fn set_sort_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11937,21 +9022,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_expression(input);
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set
-        /// or is set higher than 20. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher than 20. </p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set
-        /// or is set higher than 20. </p>
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher than 20. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -11962,45 +9045,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartFleetActions`.
     ///
-    /// <p>Resumes certain types of activity on fleet instances that were suspended with <a>StopFleetActions</a>. For multi-location fleets, fleet actions are managed
-    /// separately for each location. Currently, this operation is used to restart a fleet's
-    /// auto-scaling activity.</p>
+    /// <p>Resumes certain types of activity on fleet instances that were suspended with <code>StopFleetActions</code>. For multi-location fleets, fleet actions are managed separately for each location. Currently, this operation is used to restart a fleet's auto-scaling activity.</p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To restart actions on instances in the fleet's home Region, provide a fleet ID
-    /// and the type of actions to resume. </p>
-    /// </li>
-    /// <li>
-    /// <p>To restart actions on instances in one of the fleet's remote locations,
-    /// provide a fleet ID, a location name, and the type of actions to resume.  </p>
-    /// </li>
+    /// <li> <p>To restart actions on instances in the fleet's home Region, provide a fleet ID and the type of actions to resume. </p> </li>
+    /// <li> <p>To restart actions on instances in one of the fleet's remote locations, provide a fleet ID, a location name, and the type of actions to resume. </p> </li>
     /// </ul>
-    /// <p>If successful, GameLift once again initiates scaling events as triggered by the fleet's
-    /// scaling policies. If actions on the fleet location were never stopped, this operation
-    /// will have no effect. You can view a fleet's stopped actions using <a>DescribeFleetAttributes</a> or <a>DescribeFleetLocationAttributes</a>.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleet</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>UpdateFleetAttributes</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>DeleteFleet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, GameLift once again initiates scaling events as triggered by the fleet's scaling policies. If actions on the fleet location were never stopped, this operation will have no effect. You can view a fleet's stopped actions using <code>DescribeFleetAttributes</code> or <code>DescribeFleetLocationAttributes</code>.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleet</code> | <code>UpdateFleetCapacity</code> | <code>PutScalingPolicy</code> | <code>DescribeEC2InstanceLimits</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetLocationAttributes</code> | <code>UpdateFleetAttributes</code> | <code>StopFleetActions</code> | <code>DeleteFleet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFleetActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12045,10 +9101,10 @@ pub mod fluent_builders {
                 crate::input::StartFleetActionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12056,12 +9112,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to restart actions on.  You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to restart actions on.  You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
@@ -12071,8 +9127,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>List of actions to restart on the fleet.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::FleetAction>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::FleetAction) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>List of actions to restart on the fleet.</p>
@@ -12083,14 +9139,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actions(input);
             self
         }
-        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of
-        /// an AWS Region code, such as <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of
-        /// an AWS Region code, such as <code>us-west-2</code>.</p>
+        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -12098,62 +9152,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartGameSessionPlacement`.
     ///
-    /// <p>Places a request for a new game session in a queue (see <a>CreateGameSessionQueue</a>). When processing a placement request, Amazon GameLift
-    /// searches for available resources on the queue's destinations, scanning each until it
-    /// finds resources or the placement request times out.</p>
-    /// <p>A game session placement request can also request player sessions. When a new game
-    /// session is successfully created, Amazon GameLift creates a player session for each player
-    /// included in the request.</p>
-    /// <p>When placing a game session, by default Amazon GameLift tries each fleet in the order they
-    /// are listed in the queue configuration. Ideally, a queue's destinations are listed in
-    /// preference order.</p>
-    /// <p>Alternatively, when requesting a game session with players, you can also provide
-    /// latency data for each player in relevant Regions. Latency data indicates the performance
-    /// lag a player experiences when connected to a fleet in the Region. Amazon GameLift uses latency
-    /// data to reorder the list of destinations to place the game session in a Region with
-    /// minimal lag. If latency data is provided for multiple players, Amazon GameLift calculates each
-    /// Region's average lag for all players and reorders to get the best game play across all
-    /// players. </p>
+    /// <p>Places a request for a new game session in a queue (see <code>CreateGameSessionQueue</code>). When processing a placement request, Amazon GameLift searches for available resources on the queue's destinations, scanning each until it finds resources or the placement request times out.</p>
+    /// <p>A game session placement request can also request player sessions. When a new game session is successfully created, Amazon GameLift creates a player session for each player included in the request.</p>
+    /// <p>When placing a game session, by default Amazon GameLift tries each fleet in the order they are listed in the queue configuration. Ideally, a queue's destinations are listed in preference order.</p>
+    /// <p>Alternatively, when requesting a game session with players, you can also provide latency data for each player in relevant Regions. Latency data indicates the performance lag a player experiences when connected to a fleet in the Region. Amazon GameLift uses latency data to reorder the list of destinations to place the game session in a Region with minimal lag. If latency data is provided for multiple players, Amazon GameLift calculates each Region's average lag for all players and reorders to get the best game play across all players. </p>
     /// <p>To place a new game session request, specify the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The queue name and a set of game session properties and settings</p>
-    /// </li>
-    /// <li>
-    /// <p>A unique ID (such as a UUID) for the placement. You use this ID to track
-    /// the status of the placement request</p>
-    /// </li>
-    /// <li>
-    /// <p>(Optional) A set of player data and a unique player ID for each player that
-    /// you are joining to the new game session (player data is optional, but if you
-    /// include it, you must also provide a unique ID for each player)</p>
-    /// </li>
-    /// <li>
-    /// <p>Latency data for all players (if you want to optimize game play for the
-    /// players)</p>
-    /// </li>
+    /// <li> <p>The queue name and a set of game session properties and settings</p> </li>
+    /// <li> <p>A unique ID (such as a UUID) for the placement. You use this ID to track the status of the placement request</p> </li>
+    /// <li> <p>(Optional) A set of player data and a unique player ID for each player that you are joining to the new game session (player data is optional, but if you include it, you must also provide a unique ID for each player)</p> </li>
+    /// <li> <p>Latency data for all players (if you want to optimize game play for the players)</p> </li>
     /// </ul>
     /// <p>If successful, a new game session placement is created.</p>
-    /// <p>To track the status of a placement request, call <a>DescribeGameSessionPlacement</a> and check the request's status. If the
-    /// status is <code>FULFILLED</code>, a new game session has been created and a game session
-    /// ARN and Region are referenced. If the placement request times out, you can resubmit the
-    /// request or retry it with a different queue. </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSession</a> |
-    /// <a>DescribeGameSessions</a> |
-    /// <a>DescribeGameSessionDetails</a> |
-    /// <a>SearchGameSessions</a> |
-    /// <a>UpdateGameSession</a> |
-    /// <a>GetGameSessionLogUrl</a> |
-    /// <a>StartGameSessionPlacement</a> |
-    /// <a>DescribeGameSessionPlacement</a> |
-    /// <a>StopGameSessionPlacement</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To track the status of a placement request, call <code>DescribeGameSessionPlacement</code> and check the request's status. If the status is <code>FULFILLED</code>, a new game session has been created and a game session ARN and Region are referenced. If the placement request times out, you can resubmit the request or retry it with a different queue. </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartGameSessionPlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12198,10 +9212,10 @@ pub mod fluent_builders {
                 crate::input::StartGameSessionPlacementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12209,28 +9223,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier to assign to the new game session placement. This value is
-        /// developer-defined. The value must be unique across all Regions and cannot be reused
-        /// unless you are resubmitting a canceled or timed-out placement request.</p>
-        pub fn placement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_id(inp);
+        /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused unless you are resubmitting a canceled or timed-out placement request.</p>
+        pub fn placement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_id(input.into());
             self
         }
-        /// <p>A unique identifier to assign to the new game session placement. This value is
-        /// developer-defined. The value must be unique across all Regions and cannot be reused
-        /// unless you are resubmitting a canceled or timed-out placement request.</p>
+        /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused unless you are resubmitting a canceled or timed-out placement request.</p>
         pub fn set_placement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_placement_id(input);
             self
         }
-        /// <p>Name of the queue to use to place the new game session. You can use either the queue name
-        /// or ARN value. </p>
-        pub fn game_session_queue_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_queue_name(inp);
+        /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
+        pub fn game_session_queue_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_queue_name(input.into());
             self
         }
-        /// <p>Name of the queue to use to place the new game session. You can use either the queue name
-        /// or ARN value. </p>
+        /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
         pub fn set_game_session_queue_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12242,14 +9250,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-        pub fn game_properties(mut self, inp: impl Into<crate::model::GameProperty>) -> Self {
-            self.inner = self.inner.game_properties(inp);
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
+            self.inner = self.inner.game_properties(input);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -12258,8 +9264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-        pub fn maximum_player_session_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_player_session_count(inp);
+        pub fn maximum_player_session_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_player_session_count(input);
             self
         }
         /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -12268,8 +9274,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-        pub fn game_session_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_name(inp);
+        pub fn game_session_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
@@ -12284,14 +9290,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_player_latencies`](Self::set_player_latencies).
         ///
-        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where
-        /// it can offer the best possible gameplay experience for the players. </p>
-        pub fn player_latencies(mut self, inp: impl Into<crate::model::PlayerLatency>) -> Self {
-            self.inner = self.inner.player_latencies(inp);
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
+        pub fn player_latencies(mut self, input: crate::model::PlayerLatency) -> Self {
+            self.inner = self.inner.player_latencies(input);
             self
         }
-        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where
-        /// it can offer the best possible gameplay experience for the players. </p>
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
         pub fn set_player_latencies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerLatency>>,
@@ -12306,9 +9310,9 @@ pub mod fluent_builders {
         /// <p>Set of information on each player to create a player session for.</p>
         pub fn desired_player_sessions(
             mut self,
-            inp: impl Into<crate::model::DesiredPlayerSession>,
+            input: crate::model::DesiredPlayerSession,
         ) -> Self {
-            self.inner = self.inner.desired_player_sessions(inp);
+            self.inner = self.inner.desired_player_sessions(input);
             self
         }
         /// <p>Set of information on each player to create a player session for.</p>
@@ -12319,14 +9323,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_desired_player_sessions(input);
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-        pub fn game_session_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_data(inp);
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+        pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_data(input.into());
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12337,54 +9339,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMatchBackfill`.
     ///
-    /// <p>Finds new players to fill open slots in currently running game sessions.
-    /// The backfill match process is essentially identical to the process of forming new
-    /// matches. Backfill
-    /// requests use the same matchmaker that was used to make the original match, and they provide
-    /// matchmaking data for all players currently in the game session. FlexMatch uses this information
-    /// to select new players so that backfilled match continues to meet the original match requirements. </p>
-    /// <p>When using FlexMatch with GameLift managed hosting, you can request a backfill match from
-    /// a client service by calling this operation with a <a>GameSession</a>
-    /// identifier. You also have the option of making backfill requests directly from your game
-    /// server. In response to a request, FlexMatch creates player sessions for the new players,
-    /// updates the <code>GameSession</code> resource, and sends updated matchmaking data to the
-    /// game server. You can request a backfill match at any point after a game session is
-    /// started. Each game session can have only one active backfill request at a time; a
-    /// subsequent request automatically replaces the earlier request.</p>
-    /// <p>When using FlexMatch as a standalone component, request a backfill match by calling this operation
-    /// without a game session identifier. As with newly formed matches, matchmaking results are returned
-    /// in a matchmaking event so that your game can update the game session that is being backfilled.</p>
-    /// <p>To request a backfill match, specify a unique ticket ID, the original matchmaking
-    /// configuration, and matchmaking data for all current players in the game session being
-    /// backfilled. Optionally, specify the <code>GameSession</code> ARN. If successful, a match
-    /// backfill ticket is created and returned with status set to QUEUED. Track the status of
-    /// backfill tickets using the same method for tracking tickets for new matches.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">
-    /// Backfill existing games with FlexMatch</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html">
-    /// Matchmaking events</a> (reference)</p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
-    /// How GameLift FlexMatch works</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>StartMatchmaking</a> |
-    /// <a>DescribeMatchmaking</a> |
-    /// <a>StopMatchmaking</a> |
-    /// <a>AcceptMatch</a> |
-    /// <a>StartMatchBackfill</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Finds new players to fill open slots in currently running game sessions. The backfill match process is essentially identical to the process of forming new matches. Backfill requests use the same matchmaker that was used to make the original match, and they provide matchmaking data for all players currently in the game session. FlexMatch uses this information to select new players so that backfilled match continues to meet the original match requirements. </p>
+    /// <p>When using FlexMatch with GameLift managed hosting, you can request a backfill match from a client service by calling this operation with a <code>GameSession</code> identifier. You also have the option of making backfill requests directly from your game server. In response to a request, FlexMatch creates player sessions for the new players, updates the <code>GameSession</code> resource, and sends updated matchmaking data to the game server. You can request a backfill match at any point after a game session is started. Each game session can have only one active backfill request at a time; a subsequent request automatically replaces the earlier request.</p>
+    /// <p>When using FlexMatch as a standalone component, request a backfill match by calling this operation without a game session identifier. As with newly formed matches, matchmaking results are returned in a matchmaking event so that your game can update the game session that is being backfilled.</p>
+    /// <p>To request a backfill match, specify a unique ticket ID, the original matchmaking configuration, and matchmaking data for all current players in the game session being backfilled. Optionally, specify the <code>GameSession</code> ARN. If successful, a match backfill ticket is created and returned with status set to QUEUED. Track the status of backfill tickets using the same method for tracking tickets for new matches.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill existing games with FlexMatch</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html"> Matchmaking events</a> (reference)</p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html"> How GameLift FlexMatch works</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>StartMatchmaking</code> | <code>DescribeMatchmaking</code> | <code>StopMatchmaking</code> | <code>AcceptMatch</code> | <code>StartMatchBackfill</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMatchBackfill<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12429,10 +9394,10 @@ pub mod fluent_builders {
                 crate::input::StartMatchBackfillInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12440,32 +9405,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
-        /// a UUID. Use this identifier to track the match backfill ticket status and retrieve match
-        /// results.</p>
-        pub fn ticket_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ticket_id(inp);
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
+        pub fn ticket_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ticket_id(input.into());
             self
         }
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
-        /// a UUID. Use this identifier to track the match backfill ticket status and retrieve match
-        /// results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ticket_id(input);
             self
         }
-        /// <p>Name of the matchmaker to use for this request. You can use either the configuration
-        /// name or ARN value. The ARN of the matchmaker that was used with the original game
-        /// session is listed in the <a>GameSession</a> object,
-        /// <code>MatchmakerData</code> property.</p>
-        pub fn configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_name(inp);
+        /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
+        pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_name(input.into());
             self
         }
-        /// <p>Name of the matchmaker to use for this request. You can use either the configuration
-        /// name or ARN value. The ARN of the matchmaker that was used with the original game
-        /// session is listed in the <a>GameSession</a> object,
-        /// <code>MatchmakerData</code> property.</p>
+        /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
         pub fn set_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12473,14 +9428,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_name(input);
             self
         }
-        /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking
-        /// solution, this parameter is not needed. </p>
-        pub fn game_session_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_arn(inp);
+        /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
+        pub fn game_session_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_arn(input.into());
             self
         }
-        /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking
-        /// solution, this parameter is not needed. </p>
+        /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
         pub fn set_game_session_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12492,43 +9445,19 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_players`](Self::set_players).
         ///
-        /// <p>Match information on all players that are currently assigned to the game session.
-        /// This information is used by the matchmaker to find new players and add them to the
-        /// existing game.</p>
+        /// <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>
         /// <ul>
-        /// <li>
-        /// <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the
-        /// <a>GameSession</a> object, <code>MatchmakerData</code> property,
-        /// for all players who are currently assigned to the game session. The matchmaker
-        /// data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-        /// Match Data</a>. </p>
-        /// </li>
-        /// <li>
-        /// <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
-        /// value, in milliseconds, for the Region that the game session is currently in. Do
-        /// not include latency values for any other Region.</p>
-        /// </li>
+        /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> </li>
+        /// <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>
         /// </ul>
-        pub fn players(mut self, inp: impl Into<crate::model::Player>) -> Self {
-            self.inner = self.inner.players(inp);
+        pub fn players(mut self, input: crate::model::Player) -> Self {
+            self.inner = self.inner.players(input);
             self
         }
-        /// <p>Match information on all players that are currently assigned to the game session.
-        /// This information is used by the matchmaker to find new players and add them to the
-        /// existing game.</p>
+        /// <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>
         /// <ul>
-        /// <li>
-        /// <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the
-        /// <a>GameSession</a> object, <code>MatchmakerData</code> property,
-        /// for all players who are currently assigned to the game session. The matchmaker
-        /// data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
-        /// Match Data</a>. </p>
-        /// </li>
-        /// <li>
-        /// <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
-        /// value, in milliseconds, for the Region that the game session is currently in. Do
-        /// not include latency values for any other Region.</p>
-        /// </li>
+        /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> </li>
+        /// <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>
         /// </ul>
         pub fn set_players(
             mut self,
@@ -12540,48 +9469,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMatchmaking`.
     ///
-    /// <p>Uses FlexMatch to create a game match for a group of players based on custom matchmaking
-    /// rules. With games that use GameLift managed hosting, this operation also triggers GameLift
-    /// to find hosting resources and start a new game session for the new match. Each
-    /// matchmaking request includes information on one or more players and specifies the
-    /// FlexMatch matchmaker to use. When a request is for multiple players, FlexMatch attempts to
-    /// build a match that includes all players in the request, placing them in the same team
-    /// and finding additional players as needed to fill the match. </p>
-    /// <p>To start matchmaking, provide a unique ticket ID, specify a matchmaking configuration,
-    /// and include the players to be matched. You must also include any player attributes that
-    /// are required by the matchmaking configuration's rule set. If successful, a matchmaking
-    /// ticket is returned with status set to <code>QUEUED</code>. </p>
-    /// <p>Track matchmaking events to respond as needed and acquire game session connection
-    /// information for successfully completed matches. Ticket status updates are tracked using
-    /// event notification through Amazon Simple Notification Service (SNS), which is defined in the matchmaking
-    /// configuration.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html">
-    /// Add FlexMatch to a game client</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-    /// Set Up FlexMatch event notification</a>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
-    /// How GameLift FlexMatch works</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>StartMatchmaking</a> |
-    /// <a>DescribeMatchmaking</a> |
-    /// <a>StopMatchmaking</a> |
-    /// <a>AcceptMatch</a> |
-    /// <a>StartMatchBackfill</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Uses FlexMatch to create a game match for a group of players based on custom matchmaking rules. With games that use GameLift managed hosting, this operation also triggers GameLift to find hosting resources and start a new game session for the new match. Each matchmaking request includes information on one or more players and specifies the FlexMatch matchmaker to use. When a request is for multiple players, FlexMatch attempts to build a match that includes all players in the request, placing them in the same team and finding additional players as needed to fill the match. </p>
+    /// <p>To start matchmaking, provide a unique ticket ID, specify a matchmaking configuration, and include the players to be matched. You must also include any player attributes that are required by the matchmaking configuration's rule set. If successful, a matchmaking ticket is returned with status set to <code>QUEUED</code>. </p>
+    /// <p>Track matchmaking events to respond as needed and acquire game session connection information for successfully completed matches. Ticket status updates are tracked using event notification through Amazon Simple Notification Service (SNS), which is defined in the matchmaking configuration.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html"> Add FlexMatch to a game client</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Set Up FlexMatch event notification</a> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html"> How GameLift FlexMatch works</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>StartMatchmaking</code> | <code>DescribeMatchmaking</code> | <code>StopMatchmaking</code> | <code>AcceptMatch</code> | <code>StartMatchBackfill</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMatchmaking<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12626,10 +9523,10 @@ pub mod fluent_builders {
                 crate::input::StartMatchmakingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12637,30 +9534,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
-        /// a UUID. Use this identifier to track the matchmaking ticket status and retrieve match
-        /// results.</p>
-        pub fn ticket_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ticket_id(inp);
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+        pub fn ticket_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ticket_id(input.into());
             self
         }
-        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
-        /// a UUID. Use this identifier to track the matchmaking ticket status and retrieve match
-        /// results.</p>
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ticket_id(input);
             self
         }
-        /// <p>Name of the matchmaking configuration to use for this request. Matchmaking
-        /// configurations must exist in the same Region as this request. You can use either the
-        /// configuration name or ARN value.</p>
-        pub fn configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_name(inp);
+        /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
+        pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_name(input.into());
             self
         }
-        /// <p>Name of the matchmaking configuration to use for this request. Matchmaking
-        /// configurations must exist in the same Region as this request. You can use either the
-        /// configuration name or ARN value.</p>
+        /// <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
         pub fn set_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12672,18 +9561,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_players`](Self::set_players).
         ///
-        /// <p>Information on each player to be matched. This information must include a player
-        /// ID, and may contain player attributes and latency data to be used in the matchmaking
-        /// process. After a successful match, <code>Player</code> objects contain the name of the
-        /// team the player is assigned to.</p>
-        pub fn players(mut self, inp: impl Into<crate::model::Player>) -> Self {
-            self.inner = self.inner.players(inp);
+        /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
+        pub fn players(mut self, input: crate::model::Player) -> Self {
+            self.inner = self.inner.players(input);
             self
         }
-        /// <p>Information on each player to be matched. This information must include a player
-        /// ID, and may contain player attributes and latency data to be used in the matchmaking
-        /// process. After a successful match, <code>Player</code> objects contain the name of the
-        /// team the player is assigned to.</p>
+        /// <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
         pub fn set_players(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Player>>,
@@ -12694,50 +9577,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopFleetActions`.
     ///
-    /// <p>Suspends certain types of activity in a fleet location. Currently, this operation is
-    /// used to stop auto-scaling activity. For multi-location fleets, fleet actions are managed
-    /// separately for each location. </p>
-    /// <p>Stopping fleet actions has several potential purposes. It allows you to temporarily
-    /// stop auto-scaling activity but retain your scaling policies for use in the future. For
-    /// multi-location fleets, you can set up fleet-wide auto-scaling, and then opt out of it
-    /// for certain locations. </p>
+    /// <p>Suspends certain types of activity in a fleet location. Currently, this operation is used to stop auto-scaling activity. For multi-location fleets, fleet actions are managed separately for each location. </p>
+    /// <p>Stopping fleet actions has several potential purposes. It allows you to temporarily stop auto-scaling activity but retain your scaling policies for use in the future. For multi-location fleets, you can set up fleet-wide auto-scaling, and then opt out of it for certain locations. </p>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To stop actions on instances in the fleet's home Region, provide a fleet ID
-    /// and the type of actions to suspend. </p>
-    /// </li>
-    /// <li>
-    /// <p>To stop actions on instances in one of the fleet's remote locations, provide a
-    /// fleet ID, a location name, and the type of actions to suspend. </p>
-    /// </li>
+    /// <li> <p>To stop actions on instances in the fleet's home Region, provide a fleet ID and the type of actions to suspend. </p> </li>
+    /// <li> <p>To stop actions on instances in one of the fleet's remote locations, provide a fleet ID, a location name, and the type of actions to suspend. </p> </li>
     /// </ul>
-    /// <p>If successful, GameLift no longer initiates scaling events except in response to manual
-    /// changes using <a>UpdateFleetCapacity</a>. You can view a fleet's stopped
-    /// actions using <a>DescribeFleetAttributes</a> or <a>DescribeFleetLocationAttributes</a>. Suspended activity can be restarted
-    /// using <a>StartFleetActions</a>.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift Fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleet</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DescribeEC2InstanceLimits</a> |
-    /// <a>DescribeFleetAttributes</a> |
-    /// <a>DescribeFleetLocationAttributes</a> |
-    /// <a>UpdateFleetAttributes</a> |
-    /// <a>StopFleetActions</a> |
-    /// <a>DeleteFleet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, GameLift no longer initiates scaling events except in response to manual changes using <code>UpdateFleetCapacity</code>. You can view a fleet's stopped actions using <code>DescribeFleetAttributes</code> or <code>DescribeFleetLocationAttributes</code>. Suspended activity can be restarted using <code>StartFleetActions</code>.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift Fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleet</code> | <code>UpdateFleetCapacity</code> | <code>PutScalingPolicy</code> | <code>DescribeEC2InstanceLimits</code> | <code>DescribeFleetAttributes</code> | <code>DescribeFleetLocationAttributes</code> | <code>UpdateFleetAttributes</code> | <code>StopFleetActions</code> | <code>DeleteFleet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopFleetActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12782,10 +9634,10 @@ pub mod fluent_builders {
                 crate::input::StopFleetActionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12793,12 +9645,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to stop actions on.  You can use either the fleet ID or ARN value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to stop actions on. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to stop actions on.  You can use either the fleet ID or ARN value.</p>
+        /// <p>A unique identifier for the fleet to stop actions on. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
@@ -12808,8 +9660,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>List of actions to suspend on the fleet. </p>
-        pub fn actions(mut self, inp: impl Into<crate::model::FleetAction>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::FleetAction) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>List of actions to suspend on the fleet. </p>
@@ -12820,14 +9672,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actions(input);
             self
         }
-        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as
-        /// <code>us-west-2</code>.</p>
+        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -12835,25 +9685,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopGameSessionPlacement`.
     ///
-    /// <p>Cancels a game session placement that is in <code>PENDING</code> status. To stop a
-    /// placement, provide the placement ID values. If successful, the placement is moved to
-    /// <code>CANCELLED</code> status.</p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSession</a> |
-    /// <a>DescribeGameSessions</a> |
-    /// <a>DescribeGameSessionDetails</a> |
-    /// <a>SearchGameSessions</a> |
-    /// <a>UpdateGameSession</a> |
-    /// <a>GetGameSessionLogUrl</a> |
-    /// <a>StartGameSessionPlacement</a> |
-    /// <a>DescribeGameSessionPlacement</a> |
-    /// <a>StopGameSessionPlacement</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Cancels a game session placement that is in <code>PENDING</code> status. To stop a placement, provide the placement ID values. If successful, the placement is moved to <code>CANCELLED</code> status.</p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopGameSessionPlacement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12898,10 +9733,10 @@ pub mod fluent_builders {
                 crate::input::StopGameSessionPlacementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12910,8 +9745,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for a game session placement to cancel.</p>
-        pub fn placement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.placement_id(inp);
+        pub fn placement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.placement_id(input.into());
             self
         }
         /// <p>A unique identifier for a game session placement to cancel.</p>
@@ -12922,37 +9757,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopMatchmaking`.
     ///
-    /// <p>Cancels a matchmaking ticket or match backfill ticket that is currently being
-    /// processed. To stop the matchmaking operation, specify the ticket ID. If successful, work
-    /// on the ticket is stopped, and the ticket status is changed to
-    /// <code>CANCELLED</code>.</p>
-    /// <p>This call is also used to turn off automatic backfill for an individual game session.
-    /// This is for game sessions that are created with a matchmaking configuration that has
-    /// automatic backfill enabled. The ticket ID is included in the <code>MatchmakerData</code>
-    /// of an updated game session object, which is provided to the game server.</p>
-    /// <note>
-    /// <p>If the operation is successful, the service sends back an empty JSON struct with the HTTP 200 response
-    /// (not an empty HTTP body).</p>
+    /// <p>Cancels a matchmaking ticket or match backfill ticket that is currently being processed. To stop the matchmaking operation, specify the ticket ID. If successful, work on the ticket is stopped, and the ticket status is changed to <code>CANCELLED</code>.</p>
+    /// <p>This call is also used to turn off automatic backfill for an individual game session. This is for game sessions that are created with a matchmaking configuration that has automatic backfill enabled. The ticket ID is included in the <code>MatchmakerData</code> of an updated game session object, which is provided to the game server.</p> <note>
+    /// <p>If the operation is successful, the service sends back an empty JSON struct with the HTTP 200 response (not an empty HTTP body).</p>
     /// </note>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html">
-    /// Add FlexMatch to a game client</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>StartMatchmaking</a> |
-    /// <a>DescribeMatchmaking</a> |
-    /// <a>StopMatchmaking</a> |
-    /// <a>AcceptMatch</a> |
-    /// <a>StartMatchBackfill</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html"> Add FlexMatch to a game client</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>StartMatchmaking</code> | <code>DescribeMatchmaking</code> | <code>StopMatchmaking</code> | <code>AcceptMatch</code> | <code>StartMatchBackfill</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopMatchmaking<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12997,10 +9810,10 @@ pub mod fluent_builders {
                 crate::input::StopMatchmakingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13009,8 +9822,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for a matchmaking ticket.</p>
-        pub fn ticket_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ticket_id(inp);
+        pub fn ticket_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ticket_id(input.into());
             self
         }
         /// <p>A unique identifier for a matchmaking ticket.</p>
@@ -13021,49 +9834,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SuspendGameServerGroup`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Temporarily stops activity on a game server group without terminating instances or the
-    /// game server group. You can restart activity by calling <a>ResumeGameServerGroup</a>. You can suspend the following activity:</p>
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Temporarily stops activity on a game server group without terminating instances or the game server group. You can restart activity by calling <code>ResumeGameServerGroup</code>. You can suspend the following activity:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Instance type replacement</b> - This activity
-    /// evaluates the current game hosting viability of all Spot instance types that are
-    /// defined for the game server group. It updates the Auto Scaling group to remove
-    /// nonviable Spot Instance types, which have a higher chance of game server
-    /// interruptions. It then balances capacity across the remaining viable Spot
-    /// Instance types. When this activity is suspended, the Auto Scaling group
-    /// continues with its current balance, regardless of viability. Instance
-    /// protection, utilization metrics, and capacity scaling activities continue to be
-    /// active. </p>
-    /// </li>
+    /// <li> <p> <b>Instance type replacement</b> - This activity evaluates the current game hosting viability of all Spot instance types that are defined for the game server group. It updates the Auto Scaling group to remove nonviable Spot Instance types, which have a higher chance of game server interruptions. It then balances capacity across the remaining viable Spot Instance types. When this activity is suspended, the Auto Scaling group continues with its current balance, regardless of viability. Instance protection, utilization metrics, and capacity scaling activities continue to be active. </p> </li>
     /// </ul>
-    /// <p>To suspend activity, specify a game server group ARN and the type of activity to be
-    /// suspended. If successful, a <a>GameServerGroup</a> object is returned showing
-    /// that the activity is listed in <code>SuspendedActions</code>.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameServerGroup</a> |
-    /// <a>ListGameServerGroups</a> |
-    /// <a>DescribeGameServerGroup</a> |
-    /// <a>UpdateGameServerGroup</a> |
-    /// <a>DeleteGameServerGroup</a> |
-    /// <a>ResumeGameServerGroup</a> |
-    /// <a>SuspendGameServerGroup</a> |
-    /// <a>DescribeGameServerInstances</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To suspend activity, specify a game server group ARN and the type of activity to be suspended. If successful, a <code>GameServerGroup</code> object is returned showing that the activity is listed in <code>SuspendedActions</code>.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SuspendGameServerGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13108,10 +9889,10 @@ pub mod fluent_builders {
                 crate::input::SuspendGameServerGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13119,12 +9900,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13137,11 +9918,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_suspend_actions`](Self::set_suspend_actions).
         ///
         /// <p>The activity to suspend for this game server group.</p>
-        pub fn suspend_actions(
-            mut self,
-            inp: impl Into<crate::model::GameServerGroupAction>,
-        ) -> Self {
-            self.inner = self.inner.suspend_actions(inp);
+        pub fn suspend_actions(mut self, input: crate::model::GameServerGroupAction) -> Self {
+            self.inner = self.inner.suspend_actions(input);
             self
         }
         /// <p>The activity to suspend for this game server group.</p>
@@ -13155,58 +9933,23 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p> Assigns a tag to a GameLift resource. AWS resource tags provide an additional
-    /// management tool set. You can use tags to organize resources, create IAM permissions
-    /// policies to manage access to groups of resources, customize AWS cost breakdowns, etc.
-    /// This operation handles the permissions necessary to manage tags for the following GameLift
-    /// resource types:</p>
+    /// <p> Assigns a tag to a GameLift resource. AWS resource tags provide an additional management tool set. You can use tags to organize resources, create IAM permissions policies to manage access to groups of resources, customize AWS cost breakdowns, etc. This operation handles the permissions necessary to manage tags for the following GameLift resource types:</p>
     /// <ul>
-    /// <li>
-    /// <p>Build</p>
-    /// </li>
-    /// <li>
-    /// <p>Script</p>
-    /// </li>
-    /// <li>
-    /// <p>Fleet</p>
-    /// </li>
-    /// <li>
-    /// <p>Alias</p>
-    /// </li>
-    /// <li>
-    /// <p>GameSessionQueue</p>
-    /// </li>
-    /// <li>
-    /// <p>MatchmakingConfiguration</p>
-    /// </li>
-    /// <li>
-    /// <p>MatchmakingRuleSet</p>
-    /// </li>
+    /// <li> <p>Build</p> </li>
+    /// <li> <p>Script</p> </li>
+    /// <li> <p>Fleet</p> </li>
+    /// <li> <p>Alias</p> </li>
+    /// <li> <p>GameSessionQueue</p> </li>
+    /// <li> <p>MatchmakingConfiguration</p> </li>
+    /// <li> <p>MatchmakingRuleSet</p> </li>
     /// </ul>
-    /// <p>To add a tag to a resource, specify the unique ARN value for the resource and provide
-    /// a tag list containing one or more tags. The operation succeeds even if the list includes
-    /// tags that are already assigned to the specified resource. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>
-    /// </p>
-    /// <p>
-    /// <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/">
-    /// AWS Tagging Strategies</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>TagResource</a> |
-    /// <a>UntagResource</a> |
-    /// <a>ListTagsForResource</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To add a tag to a resource, specify the unique ARN value for the resource and provide a tag list containing one or more tags. The operation succeeds even if the list includes tags that are already assigned to the specified resource. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the <i>AWS General Reference</i> </p>
+    /// <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> AWS Tagging Strategies</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>TagResource</code> | <code>UntagResource</code> | <code>ListTagsForResource</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13251,10 +9994,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13262,22 +10005,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The Amazon Resource Name
-        /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to and uniquely identifies the GameLift resource that you want to assign
-        /// tags to. GameLift resource ARNs are included in the data object for the resource, which
-        /// can be retrieved by calling a List or Describe operation for the resource type. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to assign tags to. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name
-        /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to and uniquely identifies the GameLift resource that you want to assign
-        /// tags to. GameLift resource ARNs are included in the data object for the resource, which
-        /// can be retrieved by calling a List or Describe operation for the resource type. </p>
+        /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to assign tags to. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -13286,18 +10019,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of one or more tags to assign to the specified GameLift resource.
-        /// Tags are developer-defined and structured as key-value pairs.
-        /// The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a>
-        /// for actual tagging limits.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> for actual tagging limits.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of one or more tags to assign to the specified GameLift resource.
-        /// Tags are developer-defined and structured as key-value pairs.
-        /// The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a>
-        /// for actual tagging limits.</p>
+        /// <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13308,58 +10035,23 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes a tag that is assigned to a GameLift resource.
-    /// Resource tags are used to organize AWS resources for a range of purposes.  
-    /// This operation handles the permissions necessary to manage tags for the following
-    /// GameLift resource types:</p>
+    /// <p>Removes a tag that is assigned to a GameLift resource. Resource tags are used to organize AWS resources for a range of purposes. This operation handles the permissions necessary to manage tags for the following GameLift resource types:</p>
     /// <ul>
-    /// <li>
-    /// <p>Build</p>
-    /// </li>
-    /// <li>
-    /// <p>Script</p>
-    /// </li>
-    /// <li>
-    /// <p>Fleet</p>
-    /// </li>
-    /// <li>
-    /// <p>Alias</p>
-    /// </li>
-    /// <li>
-    /// <p>GameSessionQueue</p>
-    /// </li>
-    /// <li>
-    /// <p>MatchmakingConfiguration</p>
-    /// </li>
-    /// <li>
-    /// <p>MatchmakingRuleSet</p>
-    /// </li>
+    /// <li> <p>Build</p> </li>
+    /// <li> <p>Script</p> </li>
+    /// <li> <p>Fleet</p> </li>
+    /// <li> <p>Alias</p> </li>
+    /// <li> <p>GameSessionQueue</p> </li>
+    /// <li> <p>MatchmakingConfiguration</p> </li>
+    /// <li> <p>MatchmakingRuleSet</p> </li>
     /// </ul>
-    /// <p>To remove a tag from a resource, specify the unique ARN value for the resource and provide
-    /// a string list containing one or more tags to be removed.
-    /// This operation succeeds even if the list includes tags that are not currently assigned to the
-    /// specified resource.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the
-    /// <i>AWS General Reference</i>
-    /// </p>
-    /// <p>
-    /// <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/">
-    /// AWS Tagging Strategies</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>TagResource</a> |
-    /// <a>UntagResource</a> |
-    /// <a>ListTagsForResource</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To remove a tag from a resource, specify the unique ARN value for the resource and provide a string list containing one or more tags to be removed. This operation succeeds even if the list includes tags that are not currently assigned to the specified resource.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> in the <i>AWS General Reference</i> </p>
+    /// <p> <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/"> AWS Tagging Strategies</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>TagResource</code> | <code>UntagResource</code> | <code>ListTagsForResource</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13404,10 +10096,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13415,18 +10107,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and
-        /// uniquely identifies the GameLift resource that you want to remove tags from. GameLift
-        /// resource ARNs are included in the data object for the resource, which can be retrieved
-        /// by calling a List or Describe operation for the resource type. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and
-        /// uniquely identifies the GameLift resource that you want to remove tags from. GameLift
-        /// resource ARNs are included in the data object for the resource, which can be retrieved
-        /// by calling a List or Describe operation for the resource type. </p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -13435,16 +10121,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An
-        /// AWS resource can have only one tag with a specific tag key, so specifying the tag key
-        /// identifies which tag to remove. </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An
-        /// AWS resource can have only one tag with a specific tag key, so specifying the tag key
-        /// identifies which tag to remove. </p>
+        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13455,23 +10137,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAlias`.
     ///
-    /// <p>Updates properties for an alias. To update properties, specify the alias ID to be
-    /// updated and provide the information to be changed. To reassign an alias to another
-    /// fleet, provide an updated routing strategy. If successful, the updated alias record is
-    /// returned.</p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateAlias</a> |
-    /// <a>ListAliases</a> |
-    /// <a>DescribeAlias</a> |
-    /// <a>UpdateAlias</a> |
-    /// <a>DeleteAlias</a> |
-    /// <a>ResolveAlias</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates properties for an alias. To update properties, specify the alias ID to be updated and provide the information to be changed. To reassign an alias to another fleet, provide an updated routing strategy. If successful, the updated alias record is returned.</p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateAlias</code> | <code>ListAliases</code> | <code>DescribeAlias</code> | <code>UpdateAlias</code> | <code>DeleteAlias</code> | <code>ResolveAlias</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13516,10 +10185,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13527,21 +10196,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the alias that you want to update. You can use either the
-        /// alias ID or ARN value.</p>
-        pub fn alias_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(inp);
+        /// <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
-        /// <p>A unique identifier for the alias that you want to update. You can use either the
-        /// alias ID or ARN value.</p>
+        /// <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias_id(input);
             self
         }
         /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
@@ -13550,8 +10217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A human-readable description of the alias.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A human-readable description of the alias.</p>
@@ -13559,14 +10226,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The routing configuration, including routing type and fleet target, for the
-        /// alias.</p>
-        pub fn routing_strategy(mut self, inp: crate::model::RoutingStrategy) -> Self {
-            self.inner = self.inner.routing_strategy(inp);
+        /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
+        pub fn routing_strategy(mut self, input: crate::model::RoutingStrategy) -> Self {
+            self.inner = self.inner.routing_strategy(input);
             self
         }
-        /// <p>The routing configuration, including routing type and fleet target, for the
-        /// alias.</p>
+        /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
         pub fn set_routing_strategy(
             mut self,
             input: std::option::Option<crate::model::RoutingStrategy>,
@@ -13577,28 +10242,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateBuild`.
     ///
-    /// <p>Updates metadata in a build resource, including the build name and version. To update
-    /// the metadata, specify the build ID to update and provide the new values. If successful,
-    /// a build object containing the updated metadata is returned.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
-    /// Upload a Custom Server Build</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateBuild</a> |
-    /// <a>ListBuilds</a> |
-    /// <a>DescribeBuild</a> |
-    /// <a>UpdateBuild</a> |
-    /// <a>DeleteBuild</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates metadata in a build resource, including the build name and version. To update the metadata, specify the build ID to update and provide the new values. If successful, a build object containing the updated metadata is returned.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"> Upload a Custom Server Build</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateBuild</code> | <code>ListBuilds</code> | <code>DescribeBuild</code> | <code>UpdateBuild</code> | <code>DeleteBuild</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBuild<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13643,10 +10292,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBuildInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13654,19 +10303,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.  </p>
-        pub fn build_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_id(inp);
+        /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
+        pub fn build_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_id(input.into());
             self
         }
-        /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.  </p>
+        /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
         pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_build_id(input);
             self
         }
         /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. </p>
@@ -13675,8 +10324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
@@ -13687,35 +10336,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFleetAttributes`.
     ///
-    /// <p>Updates a fleet's mutable attributes, including game session protection and resource
-    /// creation limits.</p>
-    /// <p>To update fleet attributes, specify the fleet ID and the property values that you want
-    /// to change. </p>
+    /// <p>Updates a fleet's mutable attributes, including game session protection and resource creation limits.</p>
+    /// <p>To update fleet attributes, specify the fleet ID and the property values that you want to change. </p>
     /// <p>If successful, an updated <code>FleetAttributes</code> object is returned.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleetLocations</a> |
-    /// <a>UpdateFleetAttributes</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>UpdateFleetPortSettings</a> |
-    /// <a>UpdateRuntimeConfiguration</a> |
-    /// <a>StopFleetActions</a> |  
-    /// <a>StartFleetActions</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DeleteFleet</a> |
-    /// <a>DeleteFleetLocations</a> |
-    /// <a>DeleteScalingPolicy</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleetLocations</code> | <code>UpdateFleetAttributes</code> | <code>UpdateFleetCapacity</code> | <code>UpdateFleetPortSettings</code> | <code>UpdateRuntimeConfiguration</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <code>PutScalingPolicy</code> | <code>DeleteFleet</code> | <code>DeleteFleetLocations</code> | <code>DeleteScalingPolicy</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFleetAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13760,10 +10388,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFleetAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13771,21 +10399,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN
-        /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
         /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
@@ -13794,8 +10420,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A human-readable description of a fleet.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A human-readable description of a fleet.</p>
@@ -13803,44 +10429,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The game session protection policy to apply to all new instances created in this
-        /// fleet. Instances that already exist are not affected. You can set protection for
-        /// individual instances using <a>UpdateGameSession</a>.</p>
+        /// <p>The game session protection policy to apply to all new instances created in this fleet. Instances that already exist are not affected. You can set protection for individual instances using <code>UpdateGameSession</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>NoProtection</b> -- The game session can be
-        /// terminated during a scale-down event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FullProtection</b> -- If the game session is in an
-        /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-        /// event.</p>
-        /// </li>
+        /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+        /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
         /// </ul>
         pub fn new_game_session_protection_policy(
             mut self,
-            inp: crate::model::ProtectionPolicy,
+            input: crate::model::ProtectionPolicy,
         ) -> Self {
-            self.inner = self.inner.new_game_session_protection_policy(inp);
+            self.inner = self.inner.new_game_session_protection_policy(input);
             self
         }
-        /// <p>The game session protection policy to apply to all new instances created in this
-        /// fleet. Instances that already exist are not affected. You can set protection for
-        /// individual instances using <a>UpdateGameSession</a>.</p>
+        /// <p>The game session protection policy to apply to all new instances created in this fleet. Instances that already exist are not affected. You can set protection for individual instances using <code>UpdateGameSession</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>NoProtection</b> -- The game session can be
-        /// terminated during a scale-down event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FullProtection</b> -- If the game session is in an
-        /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-        /// event.</p>
-        /// </li>
+        /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+        /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
         /// </ul>
         pub fn set_new_game_session_protection_policy(
             mut self,
@@ -13849,17 +10453,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_new_game_session_protection_policy(input);
             self
         }
-        /// <p>Policy settings that limit the number of game sessions an individual player can create
-        /// over a span of time. </p>
+        /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
         pub fn resource_creation_limit_policy(
             mut self,
-            inp: crate::model::ResourceCreationLimitPolicy,
+            input: crate::model::ResourceCreationLimitPolicy,
         ) -> Self {
-            self.inner = self.inner.resource_creation_limit_policy(inp);
+            self.inner = self.inner.resource_creation_limit_policy(input);
             self
         }
-        /// <p>Policy settings that limit the number of game sessions an individual player can create
-        /// over a span of time. </p>
+        /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
         pub fn set_resource_creation_limit_policy(
             mut self,
             input: std::option::Option<crate::model::ResourceCreationLimitPolicy>,
@@ -13871,18 +10473,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
         ///
-        /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon
-        /// CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric
-        /// group name, or create a new metric group by providing a new name. A fleet can only be in
-        /// one metric group at a time.</p>
-        pub fn metric_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_groups(inp);
+        /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
+        pub fn metric_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_groups(input.into());
             self
         }
-        /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon
-        /// CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric
-        /// group name, or create a new metric group by providing a new name. A fleet can only be in
-        /// one metric group at a time.</p>
+        /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
         pub fn set_metric_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13893,68 +10489,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFleetCapacity`.
     ///
-    /// <p>Updates capacity settings for a fleet. For fleets with multiple locations, use this
-    /// operation to manage capacity settings in each location individually. Fleet capacity
-    /// determines the number of game sessions and players that can be hosted based on the fleet
-    /// configuration. Use this operation to set the following fleet capacity properties: </p>
+    /// <p>Updates capacity settings for a fleet. For fleets with multiple locations, use this operation to manage capacity settings in each location individually. Fleet capacity determines the number of game sessions and players that can be hosted based on the fleet configuration. Use this operation to set the following fleet capacity properties: </p>
     /// <ul>
-    /// <li>
-    /// <p>Minimum/maximum size: Set hard limits on fleet capacity. GameLift cannot set
-    /// the fleet's capacity to a value outside of this range, whether the capacity is
-    /// changed manually or through automatic scaling. </p>
-    /// </li>
-    /// <li>
-    /// <p>Desired capacity: Manually set the number of EC2 instances to be maintained
-    /// in a fleet location. Before changing a fleet's desired capacity, you may want to
-    /// call <a>DescribeEC2InstanceLimits</a> to get the maximum capacity of
-    /// the fleet's EC2 instance type. Alternatively, consider using automatic scaling
-    /// to adjust capacity based on player demand.</p>
-    /// </li>
+    /// <li> <p>Minimum/maximum size: Set hard limits on fleet capacity. GameLift cannot set the fleet's capacity to a value outside of this range, whether the capacity is changed manually or through automatic scaling. </p> </li>
+    /// <li> <p>Desired capacity: Manually set the number of EC2 instances to be maintained in a fleet location. Before changing a fleet's desired capacity, you may want to call <code>DescribeEC2InstanceLimits</code> to get the maximum capacity of the fleet's EC2 instance type. Alternatively, consider using automatic scaling to adjust capacity based on player demand.</p> </li>
     /// </ul>
     /// <p>This operation can be used in the following ways: </p>
     /// <ul>
-    /// <li>
-    /// <p>To update capacity for a fleet's home Region, or if the fleet has no remote
-    /// locations, omit the <code>Location</code> parameter. The fleet must be in
-    /// <code>ACTIVE</code> status. </p>
-    /// </li>
-    /// <li>
-    /// <p>To update capacity for a fleet's remote location, include the
-    /// <code>Location</code> parameter set to the location to be updated. The
-    /// location must be in <code>ACTIVE</code> status.</p>
-    /// </li>
+    /// <li> <p>To update capacity for a fleet's home Region, or if the fleet has no remote locations, omit the <code>Location</code> parameter. The fleet must be in <code>ACTIVE</code> status. </p> </li>
+    /// <li> <p>To update capacity for a fleet's remote location, include the <code>Location</code> parameter set to the location to be updated. The location must be in <code>ACTIVE</code> status.</p> </li>
     /// </ul>
-    /// <p>If successful, capacity settings are updated immediately. In response a change in
-    /// desired capacity, GameLift initiates steps to start new instances or terminate existing
-    /// instances in the requested fleet location. This continues until the location's active
-    /// instance count matches the new desired instance count. You can track a fleet's current
-    /// capacity by calling <a>DescribeFleetCapacity</a> or <a>DescribeFleetLocationCapacity</a>. If the requested desired instance count
-    /// is higher than the instance type's limit, the <code>LimitExceeded</code> exception
-    /// occurs.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-manage-capacity.html">Scaling fleet capacity</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleetLocations</a> |
-    /// <a>UpdateFleetAttributes</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>UpdateFleetPortSettings</a> |
-    /// <a>UpdateRuntimeConfiguration</a> |
-    /// <a>StopFleetActions</a> |  
-    /// <a>StartFleetActions</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DeleteFleet</a> |
-    /// <a>DeleteFleetLocations</a> |
-    /// <a>DeleteScalingPolicy</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If successful, capacity settings are updated immediately. In response a change in desired capacity, GameLift initiates steps to start new instances or terminate existing instances in the requested fleet location. This continues until the location's active instance count matches the new desired instance count. You can track a fleet's current capacity by calling <code>DescribeFleetCapacity</code> or <code>DescribeFleetLocationCapacity</code>. If the requested desired instance count is higher than the instance type's limit, the <code>LimitExceeded</code> exception occurs.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-manage-capacity.html">Scaling fleet capacity</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleetLocations</code> | <code>UpdateFleetAttributes</code> | <code>UpdateFleetCapacity</code> | <code>UpdateFleetPortSettings</code> | <code>UpdateRuntimeConfiguration</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <code>PutScalingPolicy</code> | <code>DeleteFleet</code> | <code>DeleteFleetLocations</code> | <code>DeleteScalingPolicy</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFleetCapacity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13999,10 +10549,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFleetCapacityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14010,62 +10560,52 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN
-        /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>The number of EC2 instances you want to maintain in the specified fleet location.
-        /// This value must fall between the minimum and maximum size limits.</p>
-        pub fn desired_instances(mut self, inp: i32) -> Self {
-            self.inner = self.inner.desired_instances(inp);
+        /// <p>The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
+        pub fn desired_instances(mut self, input: i32) -> Self {
+            self.inner = self.inner.desired_instances(input);
             self
         }
-        /// <p>The number of EC2 instances you want to maintain in the specified fleet location.
-        /// This value must fall between the minimum and maximum size limits.</p>
+        /// <p>The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
         pub fn set_desired_instances(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_desired_instances(input);
             self
         }
-        /// <p>The minimum number of instances that are allowed in the specified fleet location. If
-        /// this parameter is not set, the default is 0.</p>
-        pub fn min_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.min_size(inp);
+        /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
+        pub fn min_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.min_size(input);
             self
         }
-        /// <p>The minimum number of instances that are allowed in the specified fleet location. If
-        /// this parameter is not set, the default is 0.</p>
+        /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_min_size(input);
             self
         }
-        /// <p>The maximum number of instances that are allowed in the specified fleet location. If
-        /// this parameter is not set, the default is 1.</p>
-        pub fn max_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_size(inp);
+        /// <p>The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1.</p>
+        pub fn max_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_size(input);
             self
         }
-        /// <p>The maximum number of instances that are allowed in the specified fleet location. If
-        /// this parameter is not set, the default is 1.</p>
+        /// <p>The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_size(input);
             self
         }
-        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an
-        /// AWS Region code such as <code>us-west-2</code>.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an
-        /// AWS Region code such as <code>us-west-2</code>.</p>
+        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -14073,41 +10613,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFleetPortSettings`.
     ///
-    /// <p>Updates permissions that allow inbound traffic to connect to game sessions that are
-    /// being hosted on instances in the fleet. </p>
-    /// <p>To update settings, specify the fleet ID to be updated and specify the changes to be
-    /// made. List the permissions you want to add in
-    /// <code>InboundPermissionAuthorizations</code>, and permissions you want to remove in
-    /// <code>InboundPermissionRevocations</code>. Permissions to be removed must match
-    /// existing fleet permissions. </p>
-    /// <p>If successful, the fleet ID for the updated fleet is returned. For fleets with remote
-    /// locations, port setting updates can take time to propagate across all locations. You can
-    /// check the status of updates in each location by calling
-    /// <code>DescribeFleetPortSettings</code> with a location name.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleetLocations</a> |
-    /// <a>UpdateFleetAttributes</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>UpdateFleetPortSettings</a> |
-    /// <a>UpdateRuntimeConfiguration</a> |
-    /// <a>StopFleetActions</a> |  
-    /// <a>StartFleetActions</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DeleteFleet</a> |
-    /// <a>DeleteFleetLocations</a> |
-    /// <a>DeleteScalingPolicy</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates permissions that allow inbound traffic to connect to game sessions that are being hosted on instances in the fleet. </p>
+    /// <p>To update settings, specify the fleet ID to be updated and specify the changes to be made. List the permissions you want to add in <code>InboundPermissionAuthorizations</code>, and permissions you want to remove in <code>InboundPermissionRevocations</code>. Permissions to be removed must match existing fleet permissions. </p>
+    /// <p>If successful, the fleet ID for the updated fleet is returned. For fleets with remote locations, port setting updates can take time to propagate across all locations. You can check the status of updates in each location by calling <code>DescribeFleetPortSettings</code> with a location name.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleetLocations</code> | <code>UpdateFleetAttributes</code> | <code>UpdateFleetCapacity</code> | <code>UpdateFleetPortSettings</code> | <code>UpdateRuntimeConfiguration</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <code>PutScalingPolicy</code> | <code>DeleteFleet</code> | <code>DeleteFleetLocations</code> | <code>DeleteScalingPolicy</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFleetPortSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14152,10 +10665,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFleetPortSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14163,14 +10676,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN
-        /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
@@ -14182,9 +10693,9 @@ pub mod fluent_builders {
         /// <p>A collection of port settings to be added to the fleet resource.</p>
         pub fn inbound_permission_authorizations(
             mut self,
-            inp: impl Into<crate::model::IpPermission>,
+            input: crate::model::IpPermission,
         ) -> Self {
-            self.inner = self.inner.inbound_permission_authorizations(inp);
+            self.inner = self.inner.inbound_permission_authorizations(input);
             self
         }
         /// <p>A collection of port settings to be added to the fleet resource.</p>
@@ -14200,11 +10711,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_inbound_permission_revocations`](Self::set_inbound_permission_revocations).
         ///
         /// <p>A collection of port settings to be removed from the fleet resource.</p>
-        pub fn inbound_permission_revocations(
-            mut self,
-            inp: impl Into<crate::model::IpPermission>,
-        ) -> Self {
-            self.inner = self.inner.inbound_permission_revocations(inp);
+        pub fn inbound_permission_revocations(mut self, input: crate::model::IpPermission) -> Self {
+            self.inner = self.inner.inbound_permission_revocations(input);
             self
         }
         /// <p>A collection of port settings to be removed from the fleet resource.</p>
@@ -14218,53 +10726,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGameServer`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Updates information about a registered game server to help GameLift FleetIQ to track game server
-    /// availability. This operation is called by a game server process that is running on an
-    /// instance in a game server group. </p>
-    /// <p>Use this operation to update the following types of game server information. You can
-    /// make all three types of updates in the same request:</p>
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Updates information about a registered game server to help GameLift FleetIQ to track game server availability. This operation is called by a game server process that is running on an instance in a game server group. </p>
+    /// <p>Use this operation to update the following types of game server information. You can make all three types of updates in the same request:</p>
     /// <ul>
-    /// <li>
-    /// <p>To update the game server's utilization status, identify the game server and game server group
-    /// and specify the current utilization status. Use this status to identify when
-    /// game servers are currently hosting games and when they are available to be
-    /// claimed.</p>
-    /// </li>
-    /// <li>
-    /// <p>To report health status, identify the game server and game server group and set health check
-    /// to <code>HEALTHY</code>. If a game server does not report health status for a
-    /// certain length of time, the game server is no longer considered healthy. As a
-    /// result, it will be eventually deregistered from the game server group to avoid
-    /// affecting utilization metrics. The best practice is to report health every 60
-    /// seconds.</p>
-    /// </li>
-    /// <li>
-    /// <p>To change game server metadata, provide updated game server data.</p>
-    /// </li>
+    /// <li> <p>To update the game server's utilization status, identify the game server and game server group and specify the current utilization status. Use this status to identify when game servers are currently hosting games and when they are available to be claimed.</p> </li>
+    /// <li> <p>To report health status, identify the game server and game server group and set health check to <code>HEALTHY</code>. If a game server does not report health status for a certain length of time, the game server is no longer considered healthy. As a result, it will be eventually deregistered from the game server group to avoid affecting utilization metrics. The best practice is to report health every 60 seconds.</p> </li>
+    /// <li> <p>To change game server metadata, provide updated game server data.</p> </li>
     /// </ul>
     /// <p>Once a game server is successfully updated, the relevant statuses and timestamps are updated.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>RegisterGameServer</a> |
-    /// <a>ListGameServers</a> |
-    /// <a>ClaimGameServer</a> |
-    /// <a>DescribeGameServer</a> |
-    /// <a>UpdateGameServer</a> |
-    /// <a>DeregisterGameServer</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>RegisterGameServer</code> | <code>ListGameServers</code> | <code>ClaimGameServer</code> | <code>DescribeGameServer</code> | <code>UpdateGameServer</code> | <code>DeregisterGameServer</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGameServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14309,10 +10784,10 @@ pub mod fluent_builders {
                 crate::input::UpdateGameServerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14320,14 +10795,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group where the game server is running.
-        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14336,8 +10809,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom string that uniquely identifies the game server to update.</p>
-        pub fn game_server_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_id(inp);
+        pub fn game_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_id(input.into());
             self
         }
         /// <p>A custom string that uniquely identifies the game server to update.</p>
@@ -14348,16 +10821,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_id(input);
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers using
-        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
-        pub fn game_server_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_data(inp);
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
+        pub fn game_server_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_data(input.into());
             self
         }
-        /// <p>A set of custom game server properties, formatted as a single string value. This data
-        /// is passed to a game client or service when it requests information on game servers using
-        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+        /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
         pub fn set_game_server_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14365,17 +10834,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_data(input);
             self
         }
-        /// <p>Indicates whether the game server is available or is currently hosting
-        /// gameplay.</p>
+        /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
         pub fn utilization_status(
             mut self,
-            inp: crate::model::GameServerUtilizationStatus,
+            input: crate::model::GameServerUtilizationStatus,
         ) -> Self {
-            self.inner = self.inner.utilization_status(inp);
+            self.inner = self.inner.utilization_status(input);
             self
         }
-        /// <p>Indicates whether the game server is available or is currently hosting
-        /// gameplay.</p>
+        /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
         pub fn set_utilization_status(
             mut self,
             input: std::option::Option<crate::model::GameServerUtilizationStatus>,
@@ -14383,14 +10850,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_utilization_status(input);
             self
         }
-        /// <p>Indicates health status of the game server. A request that includes this parameter
-        /// updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
-        pub fn health_check(mut self, inp: crate::model::GameServerHealthCheck) -> Self {
-            self.inner = self.inner.health_check(inp);
+        /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+        pub fn health_check(mut self, input: crate::model::GameServerHealthCheck) -> Self {
+            self.inner = self.inner.health_check(input);
             self
         }
-        /// <p>Indicates health status of the game server. A request that includes this parameter
-        /// updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+        /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
         pub fn set_health_check(
             mut self,
             input: std::option::Option<crate::model::GameServerHealthCheck>,
@@ -14401,37 +10866,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGameServerGroup`.
     ///
-    /// <p>
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// </p>
-    /// <p>Updates GameLift FleetIQ-specific properties for a game server group. Many Auto Scaling group
-    /// properties are updated on the Auto Scaling group directly, including the launch
-    /// template, Auto Scaling policies, and maximum/minimum/desired instance counts.</p>
-    /// <p>To update the game server group, specify the game server group ID and provide the
-    /// updated values. Before applying the updates, the new values are validated to ensure that
-    /// GameLift FleetIQ can continue to perform instance balancing activity. If successful, a <a>GameServerGroup</a> object is returned.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a>
-    /// </p>
-    ///
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameServerGroup</a> |
-    /// <a>ListGameServerGroups</a> |
-    /// <a>DescribeGameServerGroup</a> |
-    /// <a>UpdateGameServerGroup</a> |
-    /// <a>DeleteGameServerGroup</a> |
-    /// <a>ResumeGameServerGroup</a> |
-    /// <a>SuspendGameServerGroup</a> |
-    /// <a>DescribeGameServerInstances</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
+    /// <p>Updates GameLift FleetIQ-specific properties for a game server group. Many Auto Scaling group properties are updated on the Auto Scaling group directly, including the launch template, Auto Scaling policies, and maximum/minimum/desired instance counts.</p>
+    /// <p>To update the game server group, specify the game server group ID and provide the updated values. Before applying the updates, the new values are validated to ensure that GameLift FleetIQ can continue to perform instance balancing activity. If successful, a <code>GameServerGroup</code> object is returned.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameServerGroup</code> | <code>ListGameServerGroups</code> | <code>DescribeGameServerGroup</code> | <code>UpdateGameServerGroup</code> | <code>DeleteGameServerGroup</code> | <code>ResumeGameServerGroup</code> | <code>SuspendGameServerGroup</code> | <code>DescribeGameServerInstances</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGameServerGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14476,10 +10918,10 @@ pub mod fluent_builders {
                 crate::input::UpdateGameServerGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14487,12 +10929,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
-        pub fn game_server_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_server_group_name(inp);
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+        pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_server_group_name(input.into());
             self
         }
-        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+        /// <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14500,14 +10942,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_group_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-        /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-        /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -14516,31 +10956,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_definitions`](Self::set_instance_definitions).
         ///
-        /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance
-        /// definitions must specify at least two different instance types that are supported by
-        /// GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for
-        /// the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-        /// Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
-        /// specify capacity weighting for each instance type. If no weight value is specified for
-        /// an instance type, it is set to the default value "1". For more information about
-        /// capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
-        /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-        pub fn instance_definitions(
-            mut self,
-            inp: impl Into<crate::model::InstanceDefinition>,
-        ) -> Self {
-            self.inner = self.inner.instance_definitions(inp);
+        /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+        pub fn instance_definitions(mut self, input: crate::model::InstanceDefinition) -> Self {
+            self.inner = self.inner.instance_definitions(input);
             self
         }
-        /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance
-        /// definitions must specify at least two different instance types that are supported by
-        /// GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for
-        /// the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-        /// Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
-        /// specify capacity weighting for each instance type. If no weight value is specified for
-        /// an instance type, it is set to the default value "1". For more information about
-        /// capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
-        /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+        /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn set_instance_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
@@ -14548,25 +10969,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_definitions(input);
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected
-        /// from early termination. Unprotected instances that have active game servers running might
-        /// be terminated during a scale-down event, causing players to be dropped from the game.
-        /// Protected instances cannot be terminated while there are active game servers running except
-        /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
-        /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn game_server_protection_policy(
             mut self,
-            inp: crate::model::GameServerProtectionPolicy,
+            input: crate::model::GameServerProtectionPolicy,
         ) -> Self {
-            self.inner = self.inner.game_server_protection_policy(inp);
+            self.inner = self.inner.game_server_protection_policy(input);
             self
         }
-        /// <p>A flag that indicates whether instances in the game server group are protected
-        /// from early termination. Unprotected instances that have active game servers running might
-        /// be terminated during a scale-down event, causing players to be dropped from the game.
-        /// Protected instances cannot be terminated while there are active game servers running except
-        /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
-        /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+        /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn set_game_server_protection_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerProtectionPolicy>,
@@ -14574,61 +10985,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_server_protection_policy(input);
             self
         }
-        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
-        /// game server group. Method options include the following:</p>
+        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
-        /// Instances are unavailable or not viable for game hosting, the game server group
-        /// provides no hosting capacity until Spot Instances can again be used. Until then,
-        /// no new instances are started, and the existing nonviable Spot Instances are
-        /// terminated (after current gameplay ends) and are not replaced.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
-        /// the game server group. If Spot Instances are unavailable, the game server group
-        /// continues to provide hosting capacity by falling back to On-Demand Instances.
-        /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
-        /// and are replaced with new On-Demand Instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
-        /// server group. No Spot Instances are used, even when available, while this
-        /// balancing strategy is in force.</p>
-        /// </li>
+        /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+        /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+        /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
         /// </ul>
-        pub fn balancing_strategy(mut self, inp: crate::model::BalancingStrategy) -> Self {
-            self.inner = self.inner.balancing_strategy(inp);
+        pub fn balancing_strategy(mut self, input: crate::model::BalancingStrategy) -> Self {
+            self.inner = self.inner.balancing_strategy(input);
             self
         }
-        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
-        /// game server group. Method options include the following:</p>
+        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
-        /// Instances are unavailable or not viable for game hosting, the game server group
-        /// provides no hosting capacity until Spot Instances can again be used. Until then,
-        /// no new instances are started, and the existing nonviable Spot Instances are
-        /// terminated (after current gameplay ends) and are not replaced.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
-        /// the game server group. If Spot Instances are unavailable, the game server group
-        /// continues to provide hosting capacity by falling back to On-Demand Instances.
-        /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
-        /// and are replaced with new On-Demand Instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
-        /// server group. No Spot Instances are used, even when available, while this
-        /// balancing strategy is in force.</p>
-        /// </li>
+        /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+        /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+        /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
         /// </ul>
         pub fn set_balancing_strategy(
             mut self,
@@ -14641,25 +11012,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGameSession`.
     ///
     /// <p>Updates the mutable properties of a game session. </p>
-    /// <p>To update a game session, specify the game session ID and the values you want to
-    /// change. </p>
+    /// <p>To update a game session, specify the game session ID and the values you want to change. </p>
     /// <p>If successful, the updated <code>GameSession</code> object is returned. </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSession</a> |
-    /// <a>DescribeGameSessions</a> |
-    /// <a>DescribeGameSessionDetails</a> |
-    /// <a>SearchGameSessions</a> |
-    /// <a>UpdateGameSession</a> |
-    /// <a>GetGameSessionLogUrl</a> |
-    /// <a>StartGameSessionPlacement</a> |
-    /// <a>DescribeGameSessionPlacement</a> |
-    /// <a>StopGameSessionPlacement</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSession</code> | <code>DescribeGameSessions</code> | <code>DescribeGameSessionDetails</code> | <code>SearchGameSessions</code> | <code>UpdateGameSession</code> | <code>GetGameSessionLogUrl</code> | <code>StartGameSessionPlacement</code> | <code>DescribeGameSessionPlacement</code> | <code>StopGameSessionPlacement</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGameSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14704,10 +11061,10 @@ pub mod fluent_builders {
                 crate::input::UpdateGameSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14716,8 +11073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the game session to update. </p>
-        pub fn game_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_id(inp);
+        pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_id(input.into());
             self
         }
         /// <p>A unique identifier for the game session to update. </p>
@@ -14729,8 +11086,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-        pub fn maximum_player_session_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_player_session_count(inp);
+        pub fn maximum_player_session_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_player_session_count(input);
             self
         }
         /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -14739,8 +11096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
@@ -14751,9 +11108,9 @@ pub mod fluent_builders {
         /// <p>A policy that determines whether the game session is accepting new players.</p>
         pub fn player_session_creation_policy(
             mut self,
-            inp: crate::model::PlayerSessionCreationPolicy,
+            input: crate::model::PlayerSessionCreationPolicy,
         ) -> Self {
-            self.inner = self.inner.player_session_creation_policy(inp);
+            self.inner = self.inner.player_session_creation_policy(input);
             self
         }
         /// <p>A policy that determines whether the game session is accepting new players.</p>
@@ -14766,35 +11123,17 @@ pub mod fluent_builders {
         }
         /// <p>Game session protection policy to apply to this game session only.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>NoProtection</b> -- The game session can be
-        /// terminated during a scale-down event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FullProtection</b> -- If the game session is in an
-        /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-        /// event.</p>
-        /// </li>
+        /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+        /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
         /// </ul>
-        pub fn protection_policy(mut self, inp: crate::model::ProtectionPolicy) -> Self {
-            self.inner = self.inner.protection_policy(inp);
+        pub fn protection_policy(mut self, input: crate::model::ProtectionPolicy) -> Self {
+            self.inner = self.inner.protection_policy(input);
             self
         }
         /// <p>Game session protection policy to apply to this game session only.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>NoProtection</b> -- The game session can be
-        /// terminated during a scale-down event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>FullProtection</b> -- If the game session is in an
-        /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-        /// event.</p>
-        /// </li>
+        /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+        /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
         /// </ul>
         pub fn set_protection_policy(
             mut self,
@@ -14806,28 +11145,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGameSessionQueue`.
     ///
-    /// <p>Updates the configuration of a game session queue, which determines how the queue
-    /// processes new game session requests. To update settings, specify the queue name to be
-    /// updated and provide the new settings. When updating destinations, provide a complete
-    /// list of destinations. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">
-    /// Using Multi-Region Queues</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateGameSessionQueue</a> |
-    /// <a>DescribeGameSessionQueues</a> |
-    /// <a>UpdateGameSessionQueue</a> |
-    /// <a>DeleteGameSessionQueue</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the configuration of a game session queue, which determines how the queue processes new game session requests. To update settings, specify the queue name to be updated and provide the new settings. When updating destinations, provide a complete list of destinations. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html"> Using Multi-Region Queues</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateGameSessionQueue</code> | <code>DescribeGameSessionQueues</code> | <code>UpdateGameSessionQueue</code> | <code>DeleteGameSessionQueue</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGameSessionQueue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14872,10 +11195,10 @@ pub mod fluent_builders {
                 crate::input::UpdateGameSessionQueueInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14884,8 +11207,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
@@ -14894,8 +11217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
-        pub fn timeout_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout_in_seconds(inp);
+        pub fn timeout_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_in_seconds(input);
             self
         }
         /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
@@ -14907,25 +11230,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_player_latency_policies`](Self::set_player_latency_policies).
         ///
-        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
-        /// deliver low latency for most players in a game session. These policies ensure that no
-        /// individual player can be placed into a game with unreasonably high latency. Use multiple
-        /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
-        /// maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of
-        /// policies.</p>
-        pub fn player_latency_policies(
-            mut self,
-            inp: impl Into<crate::model::PlayerLatencyPolicy>,
-        ) -> Self {
-            self.inner = self.inner.player_latency_policies(inp);
+        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
+        pub fn player_latency_policies(mut self, input: crate::model::PlayerLatencyPolicy) -> Self {
+            self.inner = self.inner.player_latency_policies(input);
             self
         }
-        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
-        /// deliver low latency for most players in a game session. These policies ensure that no
-        /// individual player can be placed into a game with unreasonably high latency. Use multiple
-        /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
-        /// maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of
-        /// policies.</p>
+        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
         pub fn set_player_latency_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerLatencyPolicy>>,
@@ -14937,17 +11247,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
-        /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
-        pub fn destinations(
-            mut self,
-            inp: impl Into<crate::model::GameSessionQueueDestination>,
-        ) -> Self {
-            self.inner = self.inner.destinations(inp);
+        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
+        pub fn destinations(mut self, input: crate::model::GameSessionQueueDestination) -> Self {
+            self.inner = self.inner.destinations(input);
             self
         }
-        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
-        /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
+        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameSessionQueueDestination>>,
@@ -14955,16 +11260,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destinations(input);
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
-        /// not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
-        pub fn filter_configuration(mut self, inp: crate::model::FilterConfiguration) -> Self {
-            self.inner = self.inner.filter_configuration(inp);
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
+        pub fn filter_configuration(mut self, input: crate::model::FilterConfiguration) -> Self {
+            self.inner = self.inner.filter_configuration(input);
             self
         }
-        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
-        /// not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
         pub fn set_filter_configuration(
             mut self,
             input: std::option::Option<crate::model::FilterConfiguration>,
@@ -14972,16 +11273,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_configuration(input);
             self
         }
-        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
-        /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
-        /// named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
-        pub fn priority_configuration(mut self, inp: crate::model::PriorityConfiguration) -> Self {
-            self.inner = self.inner.priority_configuration(inp);
+        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
+        pub fn priority_configuration(
+            mut self,
+            input: crate::model::PriorityConfiguration,
+        ) -> Self {
+            self.inner = self.inner.priority_configuration(input);
             self
         }
-        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
-        /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
-        /// named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
+        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
         pub fn set_priority_configuration(
             mut self,
             input: std::option::Option<crate::model::PriorityConfiguration>,
@@ -14989,16 +11289,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_priority_configuration(input);
             self
         }
-        /// <p>
-        /// Information to be added to all events that are related to this game session queue.
-        /// </p>
-        pub fn custom_event_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_event_data(inp);
+        /// <p> Information to be added to all events that are related to this game session queue. </p>
+        pub fn custom_event_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_event_data(input.into());
             self
         }
-        /// <p>
-        /// Information to be added to all events that are related to this game session queue.
-        /// </p>
+        /// <p> Information to be added to all events that are related to this game session queue. </p>
         pub fn set_custom_event_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15006,14 +11302,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_event_data(input);
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
-        /// Setting up notifications for game session placement</a>.</p>
-        pub fn notification_target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_target(inp);
+        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
+        pub fn notification_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_target(input.into());
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
-        /// Setting up notifications for game session placement</a>.</p>
+        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
         pub fn set_notification_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15024,31 +11318,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateMatchmakingConfiguration`.
     ///
-    /// <p>Updates settings for a FlexMatch matchmaking configuration. These changes affect all matches and game sessions
-    /// that are created after the update. To update settings,
-    /// specify the configuration name to be updated and provide the new settings. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html">
-    /// Design a FlexMatch matchmaker</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateMatchmakingConfiguration</a> |
-    /// <a>DescribeMatchmakingConfigurations</a> |
-    /// <a>UpdateMatchmakingConfiguration</a> |
-    /// <a>DeleteMatchmakingConfiguration</a> |
-    /// <a>CreateMatchmakingRuleSet</a> |
-    /// <a>DescribeMatchmakingRuleSets</a> |
-    /// <a>ValidateMatchmakingRuleSet</a> |
-    /// <a>DeleteMatchmakingRuleSet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates settings for a FlexMatch matchmaking configuration. These changes affect all matches and game sessions that are created after the update. To update settings, specify the configuration name to be updated and provide the new settings. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html"> Design a FlexMatch matchmaker</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateMatchmakingConfiguration</code> | <code>DescribeMatchmakingConfigurations</code> | <code>UpdateMatchmakingConfiguration</code> | <code>DeleteMatchmakingConfiguration</code> | <code>CreateMatchmakingRuleSet</code> | <code>DescribeMatchmakingRuleSets</code> | <code>ValidateMatchmakingRuleSet</code> | <code>DeleteMatchmakingRuleSet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMatchmakingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15093,10 +11368,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMatchmakingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15105,8 +11380,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the matchmaking configuration to update. You can use either the configuration name or ARN value. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A unique identifier for the matchmaking configuration to update. You can use either the configuration name or ARN value. </p>
@@ -15115,8 +11390,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with matchmaking configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A descriptive label that is associated with matchmaking configuration.</p>
@@ -15128,18 +11403,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_game_session_queue_arns`](Self::set_game_session_queue_arns).
         ///
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
-        /// GameLift-hosted game sessions for matches that are created with this matchmaking
-        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
-        /// set this parameter.</p>
-        pub fn game_session_queue_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_queue_arns(inp);
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::gamesessionqueue/
+        /// <queue name></queue>
+        /// </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+        pub fn game_session_queue_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_queue_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
-        /// GameLift-hosted game sessions for matches that are created with this matchmaking
-        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
-        /// set this parameter.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+        /// <region>
+        /// ::gamesessionqueue/
+        /// <queue name></queue>
+        /// </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
         pub fn set_game_session_queue_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15147,58 +11424,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_session_queue_arns(input);
             self
         }
-        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
-        /// before timing out. Requests that fail due to timing out can be resubmitted as
-        /// needed.</p>
-        pub fn request_timeout_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.request_timeout_seconds(inp);
+        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
+        pub fn request_timeout_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.request_timeout_seconds(input);
             self
         }
-        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
-        /// before timing out. Requests that fail due to timing out can be resubmitted as
-        /// needed.</p>
+        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
         pub fn set_request_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_request_timeout_seconds(input);
             self
         }
-        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
-        /// acceptance is required.</p>
-        pub fn acceptance_timeout_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.acceptance_timeout_seconds(inp);
+        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.</p>
+        pub fn acceptance_timeout_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.acceptance_timeout_seconds(input);
             self
         }
-        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
-        /// acceptance is required.</p>
+        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.</p>
         pub fn set_acceptance_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_acceptance_timeout_seconds(input);
             self
         }
-        /// <p>A flag that indicates whether a match that was created with this configuration must be
-        /// accepted by the matched players. To require acceptance, set to TRUE. With this option
-        /// enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate
-        /// when a completed potential match is waiting for player acceptance. </p>
-        pub fn acceptance_required(mut self, inp: bool) -> Self {
-            self.inner = self.inner.acceptance_required(inp);
+        /// <p>A flag that indicates whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to TRUE. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
+        pub fn acceptance_required(mut self, input: bool) -> Self {
+            self.inner = self.inner.acceptance_required(input);
             self
         }
-        /// <p>A flag that indicates whether a match that was created with this configuration must be
-        /// accepted by the matched players. To require acceptance, set to TRUE. With this option
-        /// enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate
-        /// when a completed potential match is waiting for player acceptance. </p>
+        /// <p>A flag that indicates whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to TRUE. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
         pub fn set_acceptance_required(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_acceptance_required(input);
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
-        /// value. A matchmaking configuration can only use rule sets that are defined in the same
-        /// Region.</p>
-        pub fn rule_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_name(inp);
+        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
+        pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_name(input.into());
             self
         }
-        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
-        /// value. A matchmaking configuration can only use rule sets that are defined in the same
-        /// Region.</p>
+        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15206,14 +11467,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_set_name(input);
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-        /// Setting up notifications for matchmaking</a> for more information.</p>
-        pub fn notification_target(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_target(inp);
+        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
+        pub fn notification_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_target(input.into());
             self
         }
-        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
-        /// Setting up notifications for matchmaking</a> for more information.</p>
+        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
         pub fn set_notification_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15221,23 +11480,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_target(input);
             self
         }
-        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
-        /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-        /// <code>STANDALONE</code>.</p>
-        pub fn additional_player_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.additional_player_count(inp);
+        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        pub fn additional_player_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.additional_player_count(input);
             self
         }
-        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
-        /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
-        /// <code>STANDALONE</code>.</p>
+        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_additional_player_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_additional_player_count(input);
             self
         }
         /// <p>Information to add to all events related to the matchmaking configuration. </p>
-        pub fn custom_event_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_event_data(inp);
+        pub fn custom_event_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_event_data(input.into());
             self
         }
         /// <p>Information to add to all events related to the matchmaking configuration. </p>
@@ -15252,18 +11507,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
         ///
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
-        /// object that is created for a successful match.  This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn game_properties(mut self, inp: impl Into<crate::model::GameProperty>) -> Self {
-            self.inner = self.inner.game_properties(inp);
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        pub fn game_properties(mut self, input: crate::model::GameProperty) -> Self {
+            self.inner = self.inner.game_properties(input);
             self
         }
-        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
-        /// object that is created for a successful match.  This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -15271,18 +11520,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_properties(input);
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
-        /// that is created for a successful match.  This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn game_session_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.game_session_data(inp);
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.game_session_data(input.into());
             self
         }
-        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
-        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
-        /// that is created for a successful match.  This parameter is not used if
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15290,22 +11533,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_game_session_data(input);
             self
         }
-        /// <p>The method that is used to backfill game sessions created with this matchmaking
-        /// configuration. Specify MANUAL when your game manages backfill requests manually or does
-        /// not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <a>StartMatchBackfill</a> request whenever a game session has one or more open
-        /// slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
-        /// with FlexMatch</a>. Automatic backfill is not available when
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-        pub fn backfill_mode(mut self, inp: crate::model::BackfillMode) -> Self {
-            self.inner = self.inner.backfill_mode(inp);
+        /// <p>The method that is used to backfill game sessions created with this matchmaking configuration. Specify MANUAL when your game manages backfill requests manually or does not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        pub fn backfill_mode(mut self, input: crate::model::BackfillMode) -> Self {
+            self.inner = self.inner.backfill_mode(input);
             self
         }
-        /// <p>The method that is used to backfill game sessions created with this matchmaking
-        /// configuration. Specify MANUAL when your game manages backfill requests manually or does
-        /// not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <a>StartMatchBackfill</a> request whenever a game session has one or more open
-        /// slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
-        /// with FlexMatch</a>. Automatic backfill is not available when
-        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+        /// <p>The method that is used to backfill game sessions created with this matchmaking configuration. Specify MANUAL when your game manages backfill requests manually or does not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_backfill_mode(
             mut self,
             input: std::option::Option<crate::model::BackfillMode>,
@@ -15313,41 +11546,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backfill_mode(input);
             self
         }
-        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
-        /// as a standalone matchmaking solution. </p>
+        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>STANDALONE</b> - FlexMatch forms matches and returns
-        /// match information, including players and team assignments, in a
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
-        /// MatchmakingSucceeded</a> event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
-        /// start a game session for the match. </p>
-        /// </li>
+        /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+        /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>
         /// </ul>
-        pub fn flex_match_mode(mut self, inp: crate::model::FlexMatchMode) -> Self {
-            self.inner = self.inner.flex_match_mode(inp);
+        pub fn flex_match_mode(mut self, input: crate::model::FlexMatchMode) -> Self {
+            self.inner = self.inner.flex_match_mode(input);
             self
         }
-        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
-        /// as a standalone matchmaking solution. </p>
+        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>STANDALONE</b> - FlexMatch forms matches and returns
-        /// match information, including players and team assignments, in a
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
-        /// MatchmakingSucceeded</a> event.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
-        /// start a game session for the match. </p>
-        /// </li>
+        /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+        /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>
         /// </ul>
         pub fn set_flex_match_mode(
             mut self,
@@ -15359,42 +11570,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRuntimeConfiguration`.
     ///
-    /// <p>Updates the current runtime configuration for the specified fleet, which tells GameLift
-    /// how to launch server processes on all instances in the fleet. You can update a fleet's
-    /// runtime configuration at any time after the fleet is created; it does not need to be in
-    /// <code>ACTIVE</code> status.</p>
-    /// <p>To update runtime configuration, specify the fleet ID and provide a
-    /// <code>RuntimeConfiguration</code> with an updated set of server process
-    /// configurations.</p>
-    /// <p>If successful, the fleet's runtime configuration settings are updated. Each instance
-    /// in the fleet regularly checks for and retrieves updated runtime configurations.
-    /// Instances immediately begin complying with the new configuration by launching new server
-    /// processes or not replacing existing processes when they shut down. Updating a fleet's
-    /// runtime configuration never affects existing server processes.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateFleetLocations</a> |
-    /// <a>UpdateFleetAttributes</a> |
-    /// <a>UpdateFleetCapacity</a> |
-    /// <a>UpdateFleetPortSettings</a> |
-    /// <a>UpdateRuntimeConfiguration</a> |
-    /// <a>StopFleetActions</a> |  
-    /// <a>StartFleetActions</a> |
-    /// <a>PutScalingPolicy</a> |
-    /// <a>DeleteFleet</a> |
-    /// <a>DeleteFleetLocations</a> |
-    /// <a>DeleteScalingPolicy</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the current runtime configuration for the specified fleet, which tells GameLift how to launch server processes on all instances in the fleet. You can update a fleet's runtime configuration at any time after the fleet is created; it does not need to be in <code>ACTIVE</code> status.</p>
+    /// <p>To update runtime configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code> with an updated set of server process configurations.</p>
+    /// <p>If successful, the fleet's runtime configuration settings are updated. Each instance in the fleet regularly checks for and retrieves updated runtime configurations. Instances immediately begin complying with the new configuration by launching new server processes or not replacing existing processes when they shut down. Updating a fleet's runtime configuration never affects existing server processes.</p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up GameLift fleets</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateFleetLocations</code> | <code>UpdateFleetAttributes</code> | <code>UpdateFleetCapacity</code> | <code>UpdateFleetPortSettings</code> | <code>UpdateRuntimeConfiguration</code> | <code>StopFleetActions</code> | <code>StartFleetActions</code> | <code>PutScalingPolicy</code> | <code>DeleteFleet</code> | <code>DeleteFleetLocations</code> | <code>DeleteScalingPolicy</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRuntimeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15439,10 +11622,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRuntimeConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15450,30 +11633,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN
-        /// value.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_id(inp);
+        /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_id(input.into());
             self
         }
-        /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN
-        /// value.</p>
+        /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_fleet_id(input);
             self
         }
-        /// <p>Instructions for launching server processes on each instance in the fleet. Server
-        /// processes run either a custom game build executable or a Realtime Servers script. The runtime
-        /// configuration lists the types of server processes to run on an instance, how to launch
-        /// them, and the number of processes to run concurrently.</p>
-        pub fn runtime_configuration(mut self, inp: crate::model::RuntimeConfiguration) -> Self {
-            self.inner = self.inner.runtime_configuration(inp);
+        /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
+        pub fn runtime_configuration(mut self, input: crate::model::RuntimeConfiguration) -> Self {
+            self.inner = self.inner.runtime_configuration(input);
             self
         }
-        /// <p>Instructions for launching server processes on each instance in the fleet. Server
-        /// processes run either a custom game build executable or a Realtime Servers script. The runtime
-        /// configuration lists the types of server processes to run on an instance, how to launch
-        /// them, and the number of processes to run concurrently.</p>
+        /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
         pub fn set_runtime_configuration(
             mut self,
             input: std::option::Option<crate::model::RuntimeConfiguration>,
@@ -15485,33 +11660,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateScript`.
     ///
     /// <p>Updates Realtime script metadata and content.</p>
-    /// <p>To update script metadata, specify the script ID and provide updated name and/or
-    /// version values. </p>
-    /// <p>To update script content, provide an updated zip file by pointing to either a local
-    /// file or an Amazon S3 bucket location. You can use either method regardless of how the
-    /// original script was uploaded. Use the <i>Version</i> parameter to track
-    /// updates to the script.</p>
-    /// <p>If the call is successful, the updated metadata is stored in the script record and a
-    /// revised script is uploaded to the Amazon GameLift service. Once the script is updated and
-    /// acquired by a fleet instance, the new version is used for all new game sessions. </p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a>
-    /// </p>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateScript</a> |
-    /// <a>ListScripts</a> |
-    /// <a>DescribeScript</a> |
-    /// <a>UpdateScript</a> |
-    /// <a>DeleteScript</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To update script metadata, specify the script ID and provide updated name and/or version values. </p>
+    /// <p>To update script content, provide an updated zip file by pointing to either a local file or an Amazon S3 bucket location. You can use either method regardless of how the original script was uploaded. Use the <i>Version</i> parameter to track updates to the script.</p>
+    /// <p>If the call is successful, the updated metadata is stored in the script record and a revised script is uploaded to the Amazon GameLift service. Once the script is updated and acquired by a fleet instance, the new version is used for all new game sessions. </p>
+    /// <p> <b>Learn more</b> </p>
+    /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon GameLift Realtime Servers</a> </p>
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateScript</code> | <code>ListScripts</code> | <code>DescribeScript</code> | <code>UpdateScript</code> | <code>DeleteScript</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateScript<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15556,10 +11712,10 @@ pub mod fluent_builders {
                 crate::input::UpdateScriptInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15568,8 +11724,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the Realtime script to update. You can use either the script ID or ARN value.</p>
-        pub fn script_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.script_id(inp);
+        pub fn script_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.script_id(input.into());
             self
         }
         /// <p>A unique identifier for the Realtime script to update. You can use either the script ID or ARN value.</p>
@@ -15578,8 +11734,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
@@ -15588,8 +11744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
@@ -15597,24 +11753,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version(input);
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
-        /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
-        /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
-        /// bucket must be in the same Region where you want to create a new script. By default,
-        /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
-        /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
-        /// version. </p>
-        pub fn storage_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.storage_location(inp);
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+        pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
+            self.inner = self.inner.storage_location(input);
             self
         }
-        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
-        /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
-        /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
-        /// bucket must be in the same Region where you want to create a new script. By default,
-        /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
-        /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
-        /// version. </p>
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -15622,22 +11766,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_storage_location(input);
             self
         }
-        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
-        /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file
-        /// name. It must be prepended with the string "fileb://" to indicate that the file data is
-        /// a binary object. For example: <code>--zip-file
-        /// fileb://myRealtimeScript.zip</code>.</p>
-        pub fn zip_file(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.zip_file(inp);
+        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+        pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.zip_file(input);
             self
         }
-        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
-        /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
-        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file
-        /// name. It must be prepended with the string "fileb://" to indicate that the file data is
-        /// a binary object. For example: <code>--zip-file
-        /// fileb://myRealtimeScript.zip</code>.</p>
+        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.inner = self.inner.set_zip_file(input);
             self
@@ -15645,35 +11781,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ValidateMatchmakingRuleSet`.
     ///
-    /// <p>Validates the syntax of a matchmaking rule or rule set. This operation checks that
-    /// the rule set is using syntactically correct JSON and that it conforms to allowed
-    /// property expressions. To validate syntax, provide a rule set JSON string.</p>
-    /// <p>
-    /// <b>Learn more</b>
-    /// </p>
+    /// <p>Validates the syntax of a matchmaking rule or rule set. This operation checks that the rule set is using syntactically correct JSON and that it conforms to allowed property expressions. To validate syntax, provide a rule set JSON string.</p>
+    /// <p> <b>Learn more</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a rule
-    /// set</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a rule set</a> </p> </li>
     /// </ul>
-    /// <p>
-    /// <b>Related actions</b>
-    /// </p>
-    /// <p>
-    /// <a>CreateMatchmakingConfiguration</a> |
-    /// <a>DescribeMatchmakingConfigurations</a> |
-    /// <a>UpdateMatchmakingConfiguration</a> |
-    /// <a>DeleteMatchmakingConfiguration</a> |
-    /// <a>CreateMatchmakingRuleSet</a> |
-    /// <a>DescribeMatchmakingRuleSets</a> |
-    /// <a>ValidateMatchmakingRuleSet</a> |
-    /// <a>DeleteMatchmakingRuleSet</a> |
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Related actions</b> </p>
+    /// <p> <code>CreateMatchmakingConfiguration</code> | <code>DescribeMatchmakingConfigurations</code> | <code>UpdateMatchmakingConfiguration</code> | <code>DeleteMatchmakingConfiguration</code> | <code>CreateMatchmakingRuleSet</code> | <code>DescribeMatchmakingRuleSets</code> | <code>ValidateMatchmakingRuleSet</code> | <code>DeleteMatchmakingRuleSet</code> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ValidateMatchmakingRuleSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15718,10 +11833,10 @@ pub mod fluent_builders {
                 crate::input::ValidateMatchmakingRuleSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15730,8 +11845,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
-        pub fn rule_set_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_set_body(inp);
+        pub fn rule_set_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_set_body(input.into());
             self
         }
         /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
@@ -15744,6 +11859,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

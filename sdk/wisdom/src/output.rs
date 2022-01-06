@@ -234,9 +234,9 @@ pub mod search_content_output {
         /// To override the contents of this collection use [`set_content_summaries`](Self::set_content_summaries).
         ///
         /// <p>Summary information about the content.</p>
-        pub fn content_summaries(mut self, input: impl Into<crate::model::ContentSummary>) -> Self {
+        pub fn content_summaries(mut self, input: crate::model::ContentSummary) -> Self {
             let mut v = self.content_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content_summaries = Some(v);
             self
         }
@@ -352,10 +352,10 @@ pub mod list_knowledge_bases_output {
         /// <p>Information about the knowledge bases.</p>
         pub fn knowledge_base_summaries(
             mut self,
-            input: impl Into<crate::model::KnowledgeBaseSummary>,
+            input: crate::model::KnowledgeBaseSummary,
         ) -> Self {
             let mut v = self.knowledge_base_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.knowledge_base_summaries = Some(v);
             self
         }
@@ -637,9 +637,9 @@ pub mod list_contents_output {
         /// To override the contents of this collection use [`set_content_summaries`](Self::set_content_summaries).
         ///
         /// <p>Information about the content.</p>
-        pub fn content_summaries(mut self, input: impl Into<crate::model::ContentSummary>) -> Self {
+        pub fn content_summaries(mut self, input: crate::model::ContentSummary) -> Self {
             let mut v = self.content_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content_summaries = Some(v);
             self
         }
@@ -921,9 +921,9 @@ pub mod search_sessions_output {
         /// To override the contents of this collection use [`set_session_summaries`](Self::set_session_summaries).
         ///
         /// <p>Summary information about the sessions.</p>
-        pub fn session_summaries(mut self, input: impl Into<crate::model::SessionSummary>) -> Self {
+        pub fn session_summaries(mut self, input: crate::model::SessionSummary) -> Self {
             let mut v = self.session_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.session_summaries = Some(v);
             self
         }
@@ -1003,9 +1003,9 @@ pub mod query_assistant_output {
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
         /// <p>The results of the query.</p>
-        pub fn results(mut self, input: impl Into<crate::model::ResultData>) -> Self {
+        pub fn results(mut self, input: crate::model::ResultData) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
@@ -1108,12 +1108,9 @@ pub mod notify_recommendations_received_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The identifiers of recommendations that are causing errors.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::NotifyRecommendationsReceivedError>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::NotifyRecommendationsReceivedError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -1178,12 +1175,9 @@ pub mod get_recommendations_output {
         /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
         ///
         /// <p>The recommendations.</p>
-        pub fn recommendations(
-            mut self,
-            input: impl Into<crate::model::RecommendationData>,
-        ) -> Self {
+        pub fn recommendations(mut self, input: crate::model::RecommendationData) -> Self {
             let mut v = self.recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendations = Some(v);
             self
         }
@@ -1253,12 +1247,9 @@ pub mod list_assistants_output {
         /// To override the contents of this collection use [`set_assistant_summaries`](Self::set_assistant_summaries).
         ///
         /// <p>Information about the assistants.</p>
-        pub fn assistant_summaries(
-            mut self,
-            input: impl Into<crate::model::AssistantSummary>,
-        ) -> Self {
+        pub fn assistant_summaries(mut self, input: crate::model::AssistantSummary) -> Self {
             let mut v = self.assistant_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assistant_summaries = Some(v);
             self
         }
@@ -1605,10 +1596,10 @@ pub mod list_assistant_associations_output {
         /// <p>Summary information about assistant associations.</p>
         pub fn assistant_association_summaries(
             mut self,
-            input: impl Into<crate::model::AssistantAssociationSummary>,
+            input: crate::model::AssistantAssociationSummary,
         ) -> Self {
             let mut v = self.assistant_association_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assistant_association_summaries = Some(v);
             self
         }

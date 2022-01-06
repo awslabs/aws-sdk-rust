@@ -11,8 +11,7 @@ pub enum Error {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request exceeds a limit of the service.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),

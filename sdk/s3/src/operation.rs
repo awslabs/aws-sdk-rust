@@ -2661,7 +2661,7 @@ mod put_bucket_lifecycle_configuration_request_test {
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "PUT");
         assert_eq!(http_request.uri().path(), "/test-bucket");
-        let expected_headers = &[("content-md5", "JP8DTuCSH6yDC8wNGg4+mA==")];
+        let expected_headers = [("content-md5", "JP8DTuCSH6yDC8wNGg4+mA==")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,
             expected_headers,
@@ -3063,7 +3063,7 @@ mod put_object_request_test {
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "PUT");
         assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
-        let expected_headers = &[("content-type", "text/html")];
+        let expected_headers = [("content-type", "text/html")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,
             expected_headers,
@@ -3089,7 +3089,7 @@ mod put_object_request_test {
         let (http_request, parts) = input.into_request_response().0.into_parts();
         assert_eq!(http_request.method(), "PUT");
         assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
-        let expected_headers = &[("content-length", "2")];
+        let expected_headers = [("content-length", "2")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,
             expected_headers,

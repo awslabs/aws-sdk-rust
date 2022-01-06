@@ -70,8 +70,7 @@ pub struct TemplateParameter {
     pub parameter_key: std::option::Option<std::string::String>,
     /// <p>The default value associated with the parameter.</p>
     pub default_value: std::option::Option<std::string::String>,
-    /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and
-    /// UIs.</p>
+    /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
     pub no_echo: std::option::Option<bool>,
     /// <p>User defined description associated with the parameter.</p>
     pub description: std::option::Option<std::string::String>,
@@ -85,8 +84,7 @@ impl TemplateParameter {
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
-    /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and
-    /// UIs.</p>
+    /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
     pub fn no_echo(&self) -> std::option::Option<bool> {
         self.no_echo
     }
@@ -143,14 +141,12 @@ pub mod template_parameter {
             self.default_value = input;
             self
         }
-        /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and
-        /// UIs.</p>
+        /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
         pub fn no_echo(mut self, input: bool) -> Self {
             self.no_echo = Some(input);
             self
         }
-        /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and
-        /// UIs.</p>
+        /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
         pub fn set_no_echo(mut self, input: std::option::Option<bool>) -> Self {
             self.no_echo = input;
             self
@@ -183,36 +179,23 @@ impl TemplateParameter {
     }
 }
 
-/// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
-/// conflicting operations.</p>
+/// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedExecution {
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and
-    /// queues conflicting operations. After conflicting operations finish, StackSets starts queued
-    /// operations in request order.</p>
-    /// <note>
-    /// <p>If there are already running or queued operations, StackSets queues all incoming
-    /// operations even if they are non-conflicting.</p>
-    /// <p>You can't modify your stack set's execution configuration while there are running or
-    /// queued operations for that stack set.</p>
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
+    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
+    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
     /// </note>
-    /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request
-    /// order.</p>
+    /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
     pub active: std::option::Option<bool>,
 }
 impl ManagedExecution {
-    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and
-    /// queues conflicting operations. After conflicting operations finish, StackSets starts queued
-    /// operations in request order.</p>
-    /// <note>
-    /// <p>If there are already running or queued operations, StackSets queues all incoming
-    /// operations even if they are non-conflicting.</p>
-    /// <p>You can't modify your stack set's execution configuration while there are running or
-    /// queued operations for that stack set.</p>
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
+    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
+    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
     /// </note>
-    /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request
-    /// order.</p>
+    /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
     pub fn active(&self) -> std::option::Option<bool> {
         self.active
     }
@@ -233,32 +216,20 @@ pub mod managed_execution {
         pub(crate) active: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and
-        /// queues conflicting operations. After conflicting operations finish, StackSets starts queued
-        /// operations in request order.</p>
-        /// <note>
-        /// <p>If there are already running or queued operations, StackSets queues all incoming
-        /// operations even if they are non-conflicting.</p>
-        /// <p>You can't modify your stack set's execution configuration while there are running or
-        /// queued operations for that stack set.</p>
+        /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
+        /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
+        /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
         /// </note>
-        /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request
-        /// order.</p>
+        /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
         pub fn active(mut self, input: bool) -> Self {
             self.active = Some(input);
             self
         }
-        /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and
-        /// queues conflicting operations. After conflicting operations finish, StackSets starts queued
-        /// operations in request order.</p>
-        /// <note>
-        /// <p>If there are already running or queued operations, StackSets queues all incoming
-        /// operations even if they are non-conflicting.</p>
-        /// <p>You can't modify your stack set's execution configuration while there are running or
-        /// queued operations for that stack set.</p>
+        /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
+        /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
+        /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
         /// </note>
-        /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request
-        /// order.</p>
+        /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
             self.active = input;
             self
@@ -333,33 +304,21 @@ impl AsRef<str> for CallAs {
     }
 }
 
-/// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
-/// Organizations accounts that are added to a target organization or organizational
-/// unit (OU).</p>
+/// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoDeployment {
-    /// <p>If set to <code>true</code>, StackSets automatically deploys additional stack instances
-    /// to Organizations accounts that are added to a target organization or organizational
-    /// unit (OU) in the specified Regions. If an account is removed from a target organization or
-    /// OU, StackSets deletes stack instances from the account in the specified Regions.</p>
+    /// <p>If set to <code>true</code>, StackSets automatically deploys additional stack instances to Organizations accounts that are added to a target organization or organizational unit (OU) in the specified Regions. If an account is removed from a target organization or OU, StackSets deletes stack instances from the account in the specified Regions.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>If set to <code>true</code>, stack resources are retained when an account is removed
-    /// from a target organization or OU. If set to <code>false</code>, stack resources are
-    /// deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
+    /// <p>If set to <code>true</code>, stack resources are retained when an account is removed from a target organization or OU. If set to <code>false</code>, stack resources are deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
     pub retain_stacks_on_account_removal: std::option::Option<bool>,
 }
 impl AutoDeployment {
-    /// <p>If set to <code>true</code>, StackSets automatically deploys additional stack instances
-    /// to Organizations accounts that are added to a target organization or organizational
-    /// unit (OU) in the specified Regions. If an account is removed from a target organization or
-    /// OU, StackSets deletes stack instances from the account in the specified Regions.</p>
+    /// <p>If set to <code>true</code>, StackSets automatically deploys additional stack instances to Organizations accounts that are added to a target organization or organizational unit (OU) in the specified Regions. If an account is removed from a target organization or OU, StackSets deletes stack instances from the account in the specified Regions.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>If set to <code>true</code>, stack resources are retained when an account is removed
-    /// from a target organization or OU. If set to <code>false</code>, stack resources are
-    /// deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
+    /// <p>If set to <code>true</code>, stack resources are retained when an account is removed from a target organization or OU. If set to <code>false</code>, stack resources are deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
     pub fn retain_stacks_on_account_removal(&self) -> std::option::Option<bool> {
         self.retain_stacks_on_account_removal
     }
@@ -385,32 +344,22 @@ pub mod auto_deployment {
         pub(crate) retain_stacks_on_account_removal: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>If set to <code>true</code>, StackSets automatically deploys additional stack instances
-        /// to Organizations accounts that are added to a target organization or organizational
-        /// unit (OU) in the specified Regions. If an account is removed from a target organization or
-        /// OU, StackSets deletes stack instances from the account in the specified Regions.</p>
+        /// <p>If set to <code>true</code>, StackSets automatically deploys additional stack instances to Organizations accounts that are added to a target organization or organizational unit (OU) in the specified Regions. If an account is removed from a target organization or OU, StackSets deletes stack instances from the account in the specified Regions.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>If set to <code>true</code>, StackSets automatically deploys additional stack instances
-        /// to Organizations accounts that are added to a target organization or organizational
-        /// unit (OU) in the specified Regions. If an account is removed from a target organization or
-        /// OU, StackSets deletes stack instances from the account in the specified Regions.</p>
+        /// <p>If set to <code>true</code>, StackSets automatically deploys additional stack instances to Organizations accounts that are added to a target organization or organizational unit (OU) in the specified Regions. If an account is removed from a target organization or OU, StackSets deletes stack instances from the account in the specified Regions.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
-        /// <p>If set to <code>true</code>, stack resources are retained when an account is removed
-        /// from a target organization or OU. If set to <code>false</code>, stack resources are
-        /// deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
+        /// <p>If set to <code>true</code>, stack resources are retained when an account is removed from a target organization or OU. If set to <code>false</code>, stack resources are deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
         pub fn retain_stacks_on_account_removal(mut self, input: bool) -> Self {
             self.retain_stacks_on_account_removal = Some(input);
             self
         }
-        /// <p>If set to <code>true</code>, stack resources are retained when an account is removed
-        /// from a target organization or OU. If set to <code>false</code>, stack resources are
-        /// deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
+        /// <p>If set to <code>true</code>, stack resources are retained when an account is removed from a target organization or OU. If set to <code>false</code>, stack resources are deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
         pub fn set_retain_stacks_on_account_removal(
             mut self,
             input: std::option::Option<bool>,
@@ -489,28 +438,20 @@ impl AsRef<str> for PermissionModels {
     }
 }
 
-/// <p>[Service-managed permissions] The Organizations accounts to which StackSets
-/// deploys. StackSets does not deploy stack instances to the organization management account,
-/// even if the organization management account is in your organization or in an OU in your
-/// organization.</p>
-/// <p>For update operations, you can specify either <code>Accounts</code> or
-/// <code>OrganizationalUnitIds</code>. For create and delete operations, specify
-/// <code>OrganizationalUnitIds</code>.</p>
+/// <p>[Service-managed permissions] The Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization.</p>
+/// <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentTargets {
-    /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack
-    /// set updates.</p>
+    /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Returns the value of the <code>AccountsUrl</code> property.</p>
     pub accounts_url: std::option::Option<std::string::String>,
-    /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-    /// deploys.</p>
+    /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeploymentTargets {
-    /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack
-    /// set updates.</p>
+    /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
     pub fn accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.accounts.as_deref()
     }
@@ -518,8 +459,7 @@ impl DeploymentTargets {
     pub fn accounts_url(&self) -> std::option::Option<&str> {
         self.accounts_url.as_deref()
     }
-    /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-    /// deploys.</p>
+    /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
     pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.organizational_unit_ids.as_deref()
     }
@@ -548,16 +488,14 @@ pub mod deployment_targets {
         ///
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
-        /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack
-        /// set updates.</p>
+        /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
         pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input.into());
             self.accounts = Some(v);
             self
         }
-        /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack
-        /// set updates.</p>
+        /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -579,16 +517,14 @@ pub mod deployment_targets {
         ///
         /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
         ///
-        /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-        /// deploys.</p>
+        /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
         pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.organizational_unit_ids.unwrap_or_default();
             v.push(input.into());
             self.organizational_unit_ids = Some(v);
             self
         }
-        /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets
-        /// deploys.</p>
+        /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
         pub fn set_organizational_unit_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -613,60 +549,38 @@ impl DeploymentTargets {
     }
 }
 
-/// <p>The user-specified preferences for how CloudFormation performs a stack set
-/// operation. </p>
+/// <p>The user-specified preferences for how CloudFormation performs a stack set operation. </p>
 /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackSetOperationPreferences {
-    /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel
-    /// or one Region at a time.</p>
+    /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
     pub region_concurrency_type: std::option::Option<crate::model::RegionConcurrencyType>,
     /// <p>The order of the Regions in where you want to perform the stack operation.</p>
     pub region_order: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a
-    /// Region, CloudFormation doesn't attempt the operation in any subsequent
-    /// Regions.</p>
-    /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
-    /// <code>FailureTolerancePercentage</code> (but not both).</p>
+    /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
+    /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code> (but not both).</p>
     /// <p>By default, <code>0</code> is specified.</p>
     pub failure_tolerance_count: std::option::Option<i32>,
-    /// <p>The percentage of accounts, per Region, for which this stack operation can fail before
-    /// CloudFormation stops the operation in that Region. If the operation is stopped
-    /// in a Region, CloudFormation doesn't attempt the operation in any subsequent
-    /// Regions.</p>
+    /// <p>The percentage of accounts, per Region, for which this stack operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds <i>down</i> to the next whole number.</p>
-    /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
-    /// <code>FailureTolerancePercentage</code>, but not both.</p>
+    /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>, but not both.</p>
     /// <p>By default, <code>0</code> is specified.</p>
     pub failure_tolerance_percentage: std::option::Option<i32>,
-    /// <p>The maximum number of accounts in which to perform this operation at one time. This is
-    /// dependent on the value of <code>FailureToleranceCount</code>.
-    /// <code>MaxConcurrentCount</code> is at most one more than the
-    /// <code>FailureToleranceCount</code>.</p>
-    /// <p>Note that this setting lets you specify the <i>maximum</i> for operations.
-    /// For large deployments, under certain circumstances the actual number of accounts acted upon
-    /// concurrently may be lower due to service throttling.</p>
-    /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
-    /// <code>MaxConcurrentPercentage</code>, but not both.</p>
+    /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code>.</p>
+    /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+    /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
     /// <p>By default, <code>1</code> is specified.</p>
     pub max_concurrent_count: std::option::Option<i32>,
-    /// <p>The maximum percentage of accounts in which to perform this operation at one
-    /// time.</p>
-    /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds down to the next whole number. This is true except in cases where
-    /// rounding down would result is zero. In this case, CloudFormation sets the number
-    /// as one instead.</p>
-    /// <p>Note that this setting lets you specify the <i>maximum</i> for operations.
-    /// For large deployments, under certain circumstances the actual number of accounts acted upon
-    /// concurrently may be lower due to service throttling.</p>
-    /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
-    /// <code>MaxConcurrentPercentage</code>, but not both.</p>
+    /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, CloudFormation sets the number as one instead.</p>
+    /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+    /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
     /// <p>By default, <code>1</code> is specified.</p>
     pub max_concurrent_percentage: std::option::Option<i32>,
 }
 impl StackSetOperationPreferences {
-    /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel
-    /// or one Region at a time.</p>
+    /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
     pub fn region_concurrency_type(
         &self,
     ) -> std::option::Option<&crate::model::RegionConcurrencyType> {
@@ -676,49 +590,30 @@ impl StackSetOperationPreferences {
     pub fn region_order(&self) -> std::option::Option<&[std::string::String]> {
         self.region_order.as_deref()
     }
-    /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a
-    /// Region, CloudFormation doesn't attempt the operation in any subsequent
-    /// Regions.</p>
-    /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
-    /// <code>FailureTolerancePercentage</code> (but not both).</p>
+    /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
+    /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code> (but not both).</p>
     /// <p>By default, <code>0</code> is specified.</p>
     pub fn failure_tolerance_count(&self) -> std::option::Option<i32> {
         self.failure_tolerance_count
     }
-    /// <p>The percentage of accounts, per Region, for which this stack operation can fail before
-    /// CloudFormation stops the operation in that Region. If the operation is stopped
-    /// in a Region, CloudFormation doesn't attempt the operation in any subsequent
-    /// Regions.</p>
+    /// <p>The percentage of accounts, per Region, for which this stack operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds <i>down</i> to the next whole number.</p>
-    /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
-    /// <code>FailureTolerancePercentage</code>, but not both.</p>
+    /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>, but not both.</p>
     /// <p>By default, <code>0</code> is specified.</p>
     pub fn failure_tolerance_percentage(&self) -> std::option::Option<i32> {
         self.failure_tolerance_percentage
     }
-    /// <p>The maximum number of accounts in which to perform this operation at one time. This is
-    /// dependent on the value of <code>FailureToleranceCount</code>.
-    /// <code>MaxConcurrentCount</code> is at most one more than the
-    /// <code>FailureToleranceCount</code>.</p>
-    /// <p>Note that this setting lets you specify the <i>maximum</i> for operations.
-    /// For large deployments, under certain circumstances the actual number of accounts acted upon
-    /// concurrently may be lower due to service throttling.</p>
-    /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
-    /// <code>MaxConcurrentPercentage</code>, but not both.</p>
+    /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code>.</p>
+    /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+    /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
     /// <p>By default, <code>1</code> is specified.</p>
     pub fn max_concurrent_count(&self) -> std::option::Option<i32> {
         self.max_concurrent_count
     }
-    /// <p>The maximum percentage of accounts in which to perform this operation at one
-    /// time.</p>
-    /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds down to the next whole number. This is true except in cases where
-    /// rounding down would result is zero. In this case, CloudFormation sets the number
-    /// as one instead.</p>
-    /// <p>Note that this setting lets you specify the <i>maximum</i> for operations.
-    /// For large deployments, under certain circumstances the actual number of accounts acted upon
-    /// concurrently may be lower due to service throttling.</p>
-    /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
-    /// <code>MaxConcurrentPercentage</code>, but not both.</p>
+    /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
+    /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, CloudFormation sets the number as one instead.</p>
+    /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+    /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
     /// <p>By default, <code>1</code> is specified.</p>
     pub fn max_concurrent_percentage(&self) -> std::option::Option<i32> {
         self.max_concurrent_percentage
@@ -754,8 +649,7 @@ pub mod stack_set_operation_preferences {
         pub(crate) max_concurrent_percentage: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel
-        /// or one Region at a time.</p>
+        /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
         pub fn region_concurrency_type(
             mut self,
             input: crate::model::RegionConcurrencyType,
@@ -763,8 +657,7 @@ pub mod stack_set_operation_preferences {
             self.region_concurrency_type = Some(input);
             self
         }
-        /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel
-        /// or one Region at a time.</p>
+        /// <p>The concurrency type of deploying StackSets operations in Regions, could be in parallel or one Region at a time.</p>
         pub fn set_region_concurrency_type(
             mut self,
             input: std::option::Option<crate::model::RegionConcurrencyType>,
@@ -791,103 +684,65 @@ pub mod stack_set_operation_preferences {
             self.region_order = input;
             self
         }
-        /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a
-        /// Region, CloudFormation doesn't attempt the operation in any subsequent
-        /// Regions.</p>
-        /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
-        /// <code>FailureTolerancePercentage</code> (but not both).</p>
+        /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
+        /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code> (but not both).</p>
         /// <p>By default, <code>0</code> is specified.</p>
         pub fn failure_tolerance_count(mut self, input: i32) -> Self {
             self.failure_tolerance_count = Some(input);
             self
         }
-        /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a
-        /// Region, CloudFormation doesn't attempt the operation in any subsequent
-        /// Regions.</p>
-        /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
-        /// <code>FailureTolerancePercentage</code> (but not both).</p>
+        /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
+        /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code> (but not both).</p>
         /// <p>By default, <code>0</code> is specified.</p>
         pub fn set_failure_tolerance_count(mut self, input: std::option::Option<i32>) -> Self {
             self.failure_tolerance_count = input;
             self
         }
-        /// <p>The percentage of accounts, per Region, for which this stack operation can fail before
-        /// CloudFormation stops the operation in that Region. If the operation is stopped
-        /// in a Region, CloudFormation doesn't attempt the operation in any subsequent
-        /// Regions.</p>
+        /// <p>The percentage of accounts, per Region, for which this stack operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
         /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds <i>down</i> to the next whole number.</p>
-        /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
-        /// <code>FailureTolerancePercentage</code>, but not both.</p>
+        /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>, but not both.</p>
         /// <p>By default, <code>0</code> is specified.</p>
         pub fn failure_tolerance_percentage(mut self, input: i32) -> Self {
             self.failure_tolerance_percentage = Some(input);
             self
         }
-        /// <p>The percentage of accounts, per Region, for which this stack operation can fail before
-        /// CloudFormation stops the operation in that Region. If the operation is stopped
-        /// in a Region, CloudFormation doesn't attempt the operation in any subsequent
-        /// Regions.</p>
+        /// <p>The percentage of accounts, per Region, for which this stack operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
         /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds <i>down</i> to the next whole number.</p>
-        /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
-        /// <code>FailureTolerancePercentage</code>, but not both.</p>
+        /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>, but not both.</p>
         /// <p>By default, <code>0</code> is specified.</p>
         pub fn set_failure_tolerance_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.failure_tolerance_percentage = input;
             self
         }
-        /// <p>The maximum number of accounts in which to perform this operation at one time. This is
-        /// dependent on the value of <code>FailureToleranceCount</code>.
-        /// <code>MaxConcurrentCount</code> is at most one more than the
-        /// <code>FailureToleranceCount</code>.</p>
-        /// <p>Note that this setting lets you specify the <i>maximum</i> for operations.
-        /// For large deployments, under certain circumstances the actual number of accounts acted upon
-        /// concurrently may be lower due to service throttling.</p>
-        /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
-        /// <code>MaxConcurrentPercentage</code>, but not both.</p>
+        /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code>.</p>
+        /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+        /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
         /// <p>By default, <code>1</code> is specified.</p>
         pub fn max_concurrent_count(mut self, input: i32) -> Self {
             self.max_concurrent_count = Some(input);
             self
         }
-        /// <p>The maximum number of accounts in which to perform this operation at one time. This is
-        /// dependent on the value of <code>FailureToleranceCount</code>.
-        /// <code>MaxConcurrentCount</code> is at most one more than the
-        /// <code>FailureToleranceCount</code>.</p>
-        /// <p>Note that this setting lets you specify the <i>maximum</i> for operations.
-        /// For large deployments, under certain circumstances the actual number of accounts acted upon
-        /// concurrently may be lower due to service throttling.</p>
-        /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
-        /// <code>MaxConcurrentPercentage</code>, but not both.</p>
+        /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the <code>FailureToleranceCount</code>.</p>
+        /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+        /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
         /// <p>By default, <code>1</code> is specified.</p>
         pub fn set_max_concurrent_count(mut self, input: std::option::Option<i32>) -> Self {
             self.max_concurrent_count = input;
             self
         }
-        /// <p>The maximum percentage of accounts in which to perform this operation at one
-        /// time.</p>
-        /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds down to the next whole number. This is true except in cases where
-        /// rounding down would result is zero. In this case, CloudFormation sets the number
-        /// as one instead.</p>
-        /// <p>Note that this setting lets you specify the <i>maximum</i> for operations.
-        /// For large deployments, under certain circumstances the actual number of accounts acted upon
-        /// concurrently may be lower due to service throttling.</p>
-        /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
-        /// <code>MaxConcurrentPercentage</code>, but not both.</p>
+        /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, CloudFormation sets the number as one instead.</p>
+        /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+        /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
         /// <p>By default, <code>1</code> is specified.</p>
         pub fn max_concurrent_percentage(mut self, input: i32) -> Self {
             self.max_concurrent_percentage = Some(input);
             self
         }
-        /// <p>The maximum percentage of accounts in which to perform this operation at one
-        /// time.</p>
-        /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds down to the next whole number. This is true except in cases where
-        /// rounding down would result is zero. In this case, CloudFormation sets the number
-        /// as one instead.</p>
-        /// <p>Note that this setting lets you specify the <i>maximum</i> for operations.
-        /// For large deployments, under certain circumstances the actual number of accounts acted upon
-        /// concurrently may be lower due to service throttling.</p>
-        /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
-        /// <code>MaxConcurrentPercentage</code>, but not both.</p>
+        /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, CloudFormation rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, CloudFormation sets the number as one instead.</p>
+        /// <p>Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+        /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not both.</p>
         /// <p>By default, <code>1</code> is specified.</p>
         pub fn set_max_concurrent_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.max_concurrent_percentage = input;
@@ -968,30 +823,21 @@ impl AsRef<str> for RegionConcurrencyType {
     }
 }
 
-/// <p>The Tag type enables you to specify a key-value pair that can be used to store
-/// information about an CloudFormation stack.</p>
+/// <p>The Tag type enables you to specify a key-value pair that can be used to store information about an CloudFormation stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>
-    /// <i>Required</i>. A string used to identify this tag. You can specify a
-    /// maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
+    /// <p> <i>Required</i>. A string used to identify this tag. You can specify a maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>
-    /// <i>Required</i>. A string containing the value for this tag. You can specify
-    /// a maximum of 256 characters for a tag value.</p>
+    /// <p> <i>Required</i>. A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>
-    /// <i>Required</i>. A string used to identify this tag. You can specify a
-    /// maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
+    /// <p> <i>Required</i>. A string used to identify this tag. You can specify a maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>
-    /// <i>Required</i>. A string containing the value for this tag. You can specify
-    /// a maximum of 256 characters for a tag value.</p>
+    /// <p> <i>Required</i>. A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -1014,30 +860,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// <i>Required</i>. A string used to identify this tag. You can specify a
-        /// maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
+        /// <p> <i>Required</i>. A string used to identify this tag. You can specify a maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>
-        /// <i>Required</i>. A string used to identify this tag. You can specify a
-        /// maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
+        /// <p> <i>Required</i>. A string used to identify this tag. You can specify a maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>
-        /// <i>Required</i>. A string containing the value for this tag. You can specify
-        /// a maximum of 256 characters for a tag value.</p>
+        /// <p> <i>Required</i>. A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>
-        /// <i>Required</i>. A string containing the value for this tag. You can specify
-        /// a maximum of 256 characters for a tag value.</p>
+        /// <p> <i>Required</i>. A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1062,26 +900,17 @@ impl Tag {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameter {
-    /// <p>The key associated with the parameter. If you don't specify a key and value for a
-    /// particular parameter, CloudFormation uses the default value that is specified in
-    /// your template.</p>
+    /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, CloudFormation uses the default value that is specified in your template.</p>
     pub parameter_key: std::option::Option<std::string::String>,
     /// <p>The input value associated with the parameter.</p>
     pub parameter_value: std::option::Option<std::string::String>,
-    /// <p>During a stack update, use the existing parameter value that the stack is using for a
-    /// given parameter key. If you specify <code>true</code>, do not specify a parameter
-    /// value.</p>
+    /// <p>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <code>true</code>, do not specify a parameter value.</p>
     pub use_previous_value: std::option::Option<bool>,
-    /// <p>Read-only. Read-only. The value that corresponds to a SSM parameter key.
-    /// This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-    /// <code>SSM</code>
-    /// </a> parameter types in the template.</p>
+    /// <p>Read-only. Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> <code>SSM</code> </a> parameter types in the template.</p>
     pub resolved_value: std::option::Option<std::string::String>,
 }
 impl Parameter {
-    /// <p>The key associated with the parameter. If you don't specify a key and value for a
-    /// particular parameter, CloudFormation uses the default value that is specified in
-    /// your template.</p>
+    /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, CloudFormation uses the default value that is specified in your template.</p>
     pub fn parameter_key(&self) -> std::option::Option<&str> {
         self.parameter_key.as_deref()
     }
@@ -1089,16 +918,11 @@ impl Parameter {
     pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
     }
-    /// <p>During a stack update, use the existing parameter value that the stack is using for a
-    /// given parameter key. If you specify <code>true</code>, do not specify a parameter
-    /// value.</p>
+    /// <p>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <code>true</code>, do not specify a parameter value.</p>
     pub fn use_previous_value(&self) -> std::option::Option<bool> {
         self.use_previous_value
     }
-    /// <p>Read-only. Read-only. The value that corresponds to a SSM parameter key.
-    /// This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-    /// <code>SSM</code>
-    /// </a> parameter types in the template.</p>
+    /// <p>Read-only. Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> <code>SSM</code> </a> parameter types in the template.</p>
     pub fn resolved_value(&self) -> std::option::Option<&str> {
         self.resolved_value.as_deref()
     }
@@ -1125,16 +949,12 @@ pub mod parameter {
         pub(crate) resolved_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The key associated with the parameter. If you don't specify a key and value for a
-        /// particular parameter, CloudFormation uses the default value that is specified in
-        /// your template.</p>
+        /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, CloudFormation uses the default value that is specified in your template.</p>
         pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter_key = Some(input.into());
             self
         }
-        /// <p>The key associated with the parameter. If you don't specify a key and value for a
-        /// particular parameter, CloudFormation uses the default value that is specified in
-        /// your template.</p>
+        /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, CloudFormation uses the default value that is specified in your template.</p>
         pub fn set_parameter_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1155,32 +975,22 @@ pub mod parameter {
             self.parameter_value = input;
             self
         }
-        /// <p>During a stack update, use the existing parameter value that the stack is using for a
-        /// given parameter key. If you specify <code>true</code>, do not specify a parameter
-        /// value.</p>
+        /// <p>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <code>true</code>, do not specify a parameter value.</p>
         pub fn use_previous_value(mut self, input: bool) -> Self {
             self.use_previous_value = Some(input);
             self
         }
-        /// <p>During a stack update, use the existing parameter value that the stack is using for a
-        /// given parameter key. If you specify <code>true</code>, do not specify a parameter
-        /// value.</p>
+        /// <p>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <code>true</code>, do not specify a parameter value.</p>
         pub fn set_use_previous_value(mut self, input: std::option::Option<bool>) -> Self {
             self.use_previous_value = input;
             self
         }
-        /// <p>Read-only. Read-only. The value that corresponds to a SSM parameter key.
-        /// This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-        /// <code>SSM</code>
-        /// </a> parameter types in the template.</p>
+        /// <p>Read-only. Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> <code>SSM</code> </a> parameter types in the template.</p>
         pub fn resolved_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.resolved_value = Some(input.into());
             self
         }
-        /// <p>Read-only. Read-only. The value that corresponds to a SSM parameter key.
-        /// This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-        /// <code>SSM</code>
-        /// </a> parameter types in the template.</p>
+        /// <p>Read-only. Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> <code>SSM</code> </a> parameter types in the template.</p>
         pub fn set_resolved_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1206,92 +1016,42 @@ impl Parameter {
     }
 }
 
-/// <p>Structure containing the rollback triggers for CloudFormation to monitor during stack creation
-/// and updating operations, and for the specified monitoring period afterwards.</p>
-/// <p>Rollback triggers enable you to have CloudFormation monitor the state of your application during
-/// stack creation and updating, and to roll back that operation if the application breaches
-/// the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack
-/// Operations</a>.</p>
+/// <p>Structure containing the rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
+/// <p>Rollback triggers enable you to have CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackConfiguration {
     /// <p>The triggers to monitor during stack creation or update actions. </p>
-    /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to
-    /// any subsequent update operations for the stack, unless you specify otherwise. If you do
-    /// specify rollback triggers for this parameter, those triggers replace any list of triggers
-    /// previously specified for the stack. This means:</p>
+    /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to any subsequent update operations for the stack, unless you specify otherwise. If you do specify rollback triggers for this parameter, those triggers replace any list of triggers previously specified for the stack. This means:</p>
     /// <ul>
-    /// <li>
-    /// <p>To use the rollback triggers previously specified for this stack, if any, don't
-    /// specify this parameter.</p>
-    /// </li>
-    /// <li>
-    /// <p>To specify new or updated rollback triggers, you must specify
-    /// <i>all</i> the triggers that you want used for this stack, even
-    /// triggers you've specifed before (for example, when creating the stack or during a
-    /// previous stack update). Any triggers that you don't include in the updated list of
-    /// triggers are no longer applied to the stack.</p>
-    /// </li>
-    /// <li>
-    /// <p>To remove all currently specified triggers, specify an empty list for this
-    /// parameter.</p>
-    /// </li>
+    /// <li> <p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p> </li>
+    /// <li> <p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specifed before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p> </li>
+    /// <li> <p>To remove all currently specified triggers, specify an empty list for this parameter.</p> </li>
     /// </ul>
-    /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.
-    /// </p>
+    /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back. </p>
     pub rollback_triggers: std::option::Option<std::vec::Vec<crate::model::RollbackTrigger>>,
-    /// <p>The amount of time, in minutes, during which CloudFormation should monitor all
-    /// the rollback triggers after the stack creation or update operation deploys all necessary
-    /// resources.</p>
+    /// <p>The amount of time, in minutes, during which CloudFormation should monitor all the rollback triggers after the stack creation or update operation deploys all necessary resources.</p>
     /// <p>The default is 0 minutes.</p>
-    /// <p>If you specify a monitoring period but do not specify any rollback triggers, CloudFormation still waits the specified period of time before cleaning up old
-    /// resources after update operations. You can use this monitoring period to perform any manual
-    /// stack validation desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>, for example) as necessary.</p>
-    /// <p>If you specify 0 for this parameter, CloudFormation still monitors the
-    /// specified rollback triggers during stack creation and update operations. Then, for update
-    /// operations, it begins disposing of old resources immediately once the operation
-    /// completes.</p>
+    /// <p>If you specify a monitoring period but do not specify any rollback triggers, CloudFormation still waits the specified period of time before cleaning up old resources after update operations. You can use this monitoring period to perform any manual stack validation desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>, for example) as necessary.</p>
+    /// <p>If you specify 0 for this parameter, CloudFormation still monitors the specified rollback triggers during stack creation and update operations. Then, for update operations, it begins disposing of old resources immediately once the operation completes.</p>
     pub monitoring_time_in_minutes: std::option::Option<i32>,
 }
 impl RollbackConfiguration {
     /// <p>The triggers to monitor during stack creation or update actions. </p>
-    /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to
-    /// any subsequent update operations for the stack, unless you specify otherwise. If you do
-    /// specify rollback triggers for this parameter, those triggers replace any list of triggers
-    /// previously specified for the stack. This means:</p>
+    /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to any subsequent update operations for the stack, unless you specify otherwise. If you do specify rollback triggers for this parameter, those triggers replace any list of triggers previously specified for the stack. This means:</p>
     /// <ul>
-    /// <li>
-    /// <p>To use the rollback triggers previously specified for this stack, if any, don't
-    /// specify this parameter.</p>
-    /// </li>
-    /// <li>
-    /// <p>To specify new or updated rollback triggers, you must specify
-    /// <i>all</i> the triggers that you want used for this stack, even
-    /// triggers you've specifed before (for example, when creating the stack or during a
-    /// previous stack update). Any triggers that you don't include in the updated list of
-    /// triggers are no longer applied to the stack.</p>
-    /// </li>
-    /// <li>
-    /// <p>To remove all currently specified triggers, specify an empty list for this
-    /// parameter.</p>
-    /// </li>
+    /// <li> <p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p> </li>
+    /// <li> <p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specifed before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p> </li>
+    /// <li> <p>To remove all currently specified triggers, specify an empty list for this parameter.</p> </li>
     /// </ul>
-    /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.
-    /// </p>
+    /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back. </p>
     pub fn rollback_triggers(&self) -> std::option::Option<&[crate::model::RollbackTrigger]> {
         self.rollback_triggers.as_deref()
     }
-    /// <p>The amount of time, in minutes, during which CloudFormation should monitor all
-    /// the rollback triggers after the stack creation or update operation deploys all necessary
-    /// resources.</p>
+    /// <p>The amount of time, in minutes, during which CloudFormation should monitor all the rollback triggers after the stack creation or update operation deploys all necessary resources.</p>
     /// <p>The default is 0 minutes.</p>
-    /// <p>If you specify a monitoring period but do not specify any rollback triggers, CloudFormation still waits the specified period of time before cleaning up old
-    /// resources after update operations. You can use this monitoring period to perform any manual
-    /// stack validation desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>, for example) as necessary.</p>
-    /// <p>If you specify 0 for this parameter, CloudFormation still monitors the
-    /// specified rollback triggers during stack creation and update operations. Then, for update
-    /// operations, it begins disposing of old resources immediately once the operation
-    /// completes.</p>
+    /// <p>If you specify a monitoring period but do not specify any rollback triggers, CloudFormation still waits the specified period of time before cleaning up old resources after update operations. You can use this monitoring period to perform any manual stack validation desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>, for example) as necessary.</p>
+    /// <p>If you specify 0 for this parameter, CloudFormation still monitors the specified rollback triggers during stack creation and update operations. Then, for update operations, it begins disposing of old resources immediately once the operation completes.</p>
     pub fn monitoring_time_in_minutes(&self) -> std::option::Option<i32> {
         self.monitoring_time_in_minutes
     }
@@ -1323,62 +1083,27 @@ pub mod rollback_configuration {
         /// To override the contents of this collection use [`set_rollback_triggers`](Self::set_rollback_triggers).
         ///
         /// <p>The triggers to monitor during stack creation or update actions. </p>
-        /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to
-        /// any subsequent update operations for the stack, unless you specify otherwise. If you do
-        /// specify rollback triggers for this parameter, those triggers replace any list of triggers
-        /// previously specified for the stack. This means:</p>
+        /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to any subsequent update operations for the stack, unless you specify otherwise. If you do specify rollback triggers for this parameter, those triggers replace any list of triggers previously specified for the stack. This means:</p>
         /// <ul>
-        /// <li>
-        /// <p>To use the rollback triggers previously specified for this stack, if any, don't
-        /// specify this parameter.</p>
-        /// </li>
-        /// <li>
-        /// <p>To specify new or updated rollback triggers, you must specify
-        /// <i>all</i> the triggers that you want used for this stack, even
-        /// triggers you've specifed before (for example, when creating the stack or during a
-        /// previous stack update). Any triggers that you don't include in the updated list of
-        /// triggers are no longer applied to the stack.</p>
-        /// </li>
-        /// <li>
-        /// <p>To remove all currently specified triggers, specify an empty list for this
-        /// parameter.</p>
-        /// </li>
+        /// <li> <p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p> </li>
+        /// <li> <p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specifed before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p> </li>
+        /// <li> <p>To remove all currently specified triggers, specify an empty list for this parameter.</p> </li>
         /// </ul>
-        /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.
-        /// </p>
-        pub fn rollback_triggers(
-            mut self,
-            input: impl Into<crate::model::RollbackTrigger>,
-        ) -> Self {
+        /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back. </p>
+        pub fn rollback_triggers(mut self, input: crate::model::RollbackTrigger) -> Self {
             let mut v = self.rollback_triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rollback_triggers = Some(v);
             self
         }
         /// <p>The triggers to monitor during stack creation or update actions. </p>
-        /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to
-        /// any subsequent update operations for the stack, unless you specify otherwise. If you do
-        /// specify rollback triggers for this parameter, those triggers replace any list of triggers
-        /// previously specified for the stack. This means:</p>
+        /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to any subsequent update operations for the stack, unless you specify otherwise. If you do specify rollback triggers for this parameter, those triggers replace any list of triggers previously specified for the stack. This means:</p>
         /// <ul>
-        /// <li>
-        /// <p>To use the rollback triggers previously specified for this stack, if any, don't
-        /// specify this parameter.</p>
-        /// </li>
-        /// <li>
-        /// <p>To specify new or updated rollback triggers, you must specify
-        /// <i>all</i> the triggers that you want used for this stack, even
-        /// triggers you've specifed before (for example, when creating the stack or during a
-        /// previous stack update). Any triggers that you don't include in the updated list of
-        /// triggers are no longer applied to the stack.</p>
-        /// </li>
-        /// <li>
-        /// <p>To remove all currently specified triggers, specify an empty list for this
-        /// parameter.</p>
-        /// </li>
+        /// <li> <p>To use the rollback triggers previously specified for this stack, if any, don't specify this parameter.</p> </li>
+        /// <li> <p>To specify new or updated rollback triggers, you must specify <i>all</i> the triggers that you want used for this stack, even triggers you've specifed before (for example, when creating the stack or during a previous stack update). Any triggers that you don't include in the updated list of triggers are no longer applied to the stack.</p> </li>
+        /// <li> <p>To remove all currently specified triggers, specify an empty list for this parameter.</p> </li>
         /// </ul>
-        /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.
-        /// </p>
+        /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back. </p>
         pub fn set_rollback_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RollbackTrigger>>,
@@ -1386,32 +1111,18 @@ pub mod rollback_configuration {
             self.rollback_triggers = input;
             self
         }
-        /// <p>The amount of time, in minutes, during which CloudFormation should monitor all
-        /// the rollback triggers after the stack creation or update operation deploys all necessary
-        /// resources.</p>
+        /// <p>The amount of time, in minutes, during which CloudFormation should monitor all the rollback triggers after the stack creation or update operation deploys all necessary resources.</p>
         /// <p>The default is 0 minutes.</p>
-        /// <p>If you specify a monitoring period but do not specify any rollback triggers, CloudFormation still waits the specified period of time before cleaning up old
-        /// resources after update operations. You can use this monitoring period to perform any manual
-        /// stack validation desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>, for example) as necessary.</p>
-        /// <p>If you specify 0 for this parameter, CloudFormation still monitors the
-        /// specified rollback triggers during stack creation and update operations. Then, for update
-        /// operations, it begins disposing of old resources immediately once the operation
-        /// completes.</p>
+        /// <p>If you specify a monitoring period but do not specify any rollback triggers, CloudFormation still waits the specified period of time before cleaning up old resources after update operations. You can use this monitoring period to perform any manual stack validation desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>, for example) as necessary.</p>
+        /// <p>If you specify 0 for this parameter, CloudFormation still monitors the specified rollback triggers during stack creation and update operations. Then, for update operations, it begins disposing of old resources immediately once the operation completes.</p>
         pub fn monitoring_time_in_minutes(mut self, input: i32) -> Self {
             self.monitoring_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time, in minutes, during which CloudFormation should monitor all
-        /// the rollback triggers after the stack creation or update operation deploys all necessary
-        /// resources.</p>
+        /// <p>The amount of time, in minutes, during which CloudFormation should monitor all the rollback triggers after the stack creation or update operation deploys all necessary resources.</p>
         /// <p>The default is 0 minutes.</p>
-        /// <p>If you specify a monitoring period but do not specify any rollback triggers, CloudFormation still waits the specified period of time before cleaning up old
-        /// resources after update operations. You can use this monitoring period to perform any manual
-        /// stack validation desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>, for example) as necessary.</p>
-        /// <p>If you specify 0 for this parameter, CloudFormation still monitors the
-        /// specified rollback triggers during stack creation and update operations. Then, for update
-        /// operations, it begins disposing of old resources immediately once the operation
-        /// completes.</p>
+        /// <p>If you specify a monitoring period but do not specify any rollback triggers, CloudFormation still waits the specified period of time before cleaning up old resources after update operations. You can use this monitoring period to perform any manual stack validation desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>, for example) as necessary.</p>
+        /// <p>If you specify 0 for this parameter, CloudFormation still monitors the specified rollback triggers during stack creation and update operations. Then, for update operations, it begins disposing of old resources immediately once the operation completes.</p>
         pub fn set_monitoring_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.monitoring_time_in_minutes = input;
             self
@@ -1432,24 +1143,19 @@ impl RollbackConfiguration {
     }
 }
 
-/// <p>A rollback trigger CloudFormation monitors during creation and updating of stacks. If any of the
-/// alarms you specify goes to ALARM state during the stack operation or within the specified
-/// monitoring period afterwards, CloudFormation rolls back the entire stack
-/// operation. </p>
+/// <p>A rollback trigger CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackTrigger {
     /// <p>The Amazon Resource Name (ARN) of the rollback trigger.</p>
-    /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.
-    /// </p>
+    /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The resource type of the rollback trigger. Specify either <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html">AWS::CloudWatch::Alarm</a> or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html">AWS::CloudWatch::CompositeAlarm</a> resource types.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl RollbackTrigger {
     /// <p>The Amazon Resource Name (ARN) of the rollback trigger.</p>
-    /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.
-    /// </p>
+    /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -1477,15 +1183,13 @@ pub mod rollback_trigger {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the rollback trigger.</p>
-        /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.
-        /// </p>
+        /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rollback trigger.</p>
-        /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.
-        /// </p>
+        /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1685,21 +1389,17 @@ impl AsRef<str> for RegistryType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfig {
-    /// <p>The ARN of the role that CloudFormation should assume when sending log entries
-    /// to CloudWatch logs.</p>
+    /// <p>The ARN of the role that CloudFormation should assume when sending log entries to CloudWatch logs.</p>
     pub log_role_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging
-    /// information when invoking the extension's handlers.</p>
+    /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the extension's handlers.</p>
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl LoggingConfig {
-    /// <p>The ARN of the role that CloudFormation should assume when sending log entries
-    /// to CloudWatch logs.</p>
+    /// <p>The ARN of the role that CloudFormation should assume when sending log entries to CloudWatch logs.</p>
     pub fn log_role_arn(&self) -> std::option::Option<&str> {
         self.log_role_arn.as_deref()
     }
-    /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging
-    /// information when invoking the extension's handlers.</p>
+    /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the extension's handlers.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
@@ -1722,26 +1422,22 @@ pub mod logging_config {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the role that CloudFormation should assume when sending log entries
-        /// to CloudWatch logs.</p>
+        /// <p>The ARN of the role that CloudFormation should assume when sending log entries to CloudWatch logs.</p>
         pub fn log_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that CloudFormation should assume when sending log entries
-        /// to CloudWatch logs.</p>
+        /// <p>The ARN of the role that CloudFormation should assume when sending log entries to CloudWatch logs.</p>
         pub fn set_log_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_role_arn = input;
             self
         }
-        /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging
-        /// information when invoking the extension's handlers.</p>
+        /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the extension's handlers.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_name = Some(input.into());
             self
         }
-        /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging
-        /// information when invoking the extension's handlers.</p>
+        /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the extension's handlers.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1951,8 +1647,7 @@ impl AsRef<str> for OperationStatus {
     }
 }
 
-/// <p>Contains summary information about a specific version of a CloudFormation
-/// extension.</p>
+/// <p>Contains summary information about a specific version of a CloudFormation extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeVersionSummary {
@@ -1960,14 +1655,10 @@ pub struct TypeVersionSummary {
     pub r#type: std::option::Option<crate::model::RegistryType>,
     /// <p>The name of the extension.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
-    /// the Amazon Resource Name (ARN) assigned to the extension version when it is
-    /// registered.</p>
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Whether the specified extension version is set as the default version.</p>
-    /// <p>This applies only to private extensions you have registered in your account, and
-    /// extensions published by Amazon. For public third-party extensions, whether or not they are
-    /// activated in your account, CloudFormation returns <code>null</code>.</p>
+    /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, whether or not they are activated in your account, CloudFormation returns <code>null</code>.</p>
     pub is_default_version: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -1975,14 +1666,8 @@ pub struct TypeVersionSummary {
     pub time_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the extension version.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>For public extensions that have been activated for this account and region, the version
-    /// of the public extension to be used for CloudFormation operations in this account and
-    /// region. For any extensions other than activated third-arty extensions, CloudFormation
-    /// returns <code>null</code>.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-    /// CloudFormation automatically updates the extention in this account and region when a new
-    /// version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of
-    /// extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub public_version_number: std::option::Option<std::string::String>,
 }
 impl TypeVersionSummary {
@@ -1994,16 +1679,12 @@ impl TypeVersionSummary {
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
-    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
-    /// the Amazon Resource Name (ARN) assigned to the extension version when it is
-    /// registered.</p>
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>Whether the specified extension version is set as the default version.</p>
-    /// <p>This applies only to private extensions you have registered in your account, and
-    /// extensions published by Amazon. For public third-party extensions, whether or not they are
-    /// activated in your account, CloudFormation returns <code>null</code>.</p>
+    /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, whether or not they are activated in your account, CloudFormation returns <code>null</code>.</p>
     pub fn is_default_version(&self) -> std::option::Option<bool> {
         self.is_default_version
     }
@@ -2019,14 +1700,8 @@ impl TypeVersionSummary {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>For public extensions that have been activated for this account and region, the version
-    /// of the public extension to be used for CloudFormation operations in this account and
-    /// region. For any extensions other than activated third-arty extensions, CloudFormation
-    /// returns <code>null</code>.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-    /// CloudFormation automatically updates the extention in this account and region when a new
-    /// version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of
-    /// extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn public_version_number(&self) -> std::option::Option<&str> {
         self.public_version_number.as_deref()
     }
@@ -2081,32 +1756,24 @@ pub mod type_version_summary {
             self.type_name = input;
             self
         }
-        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
-        /// the Amazon Resource Name (ARN) assigned to the extension version when it is
-        /// registered.</p>
+        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
-        /// the Amazon Resource Name (ARN) assigned to the extension version when it is
-        /// registered.</p>
+        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
         }
         /// <p>Whether the specified extension version is set as the default version.</p>
-        /// <p>This applies only to private extensions you have registered in your account, and
-        /// extensions published by Amazon. For public third-party extensions, whether or not they are
-        /// activated in your account, CloudFormation returns <code>null</code>.</p>
+        /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, whether or not they are activated in your account, CloudFormation returns <code>null</code>.</p>
         pub fn is_default_version(mut self, input: bool) -> Self {
             self.is_default_version = Some(input);
             self
         }
         /// <p>Whether the specified extension version is set as the default version.</p>
-        /// <p>This applies only to private extensions you have registered in your account, and
-        /// extensions published by Amazon. For public third-party extensions, whether or not they are
-        /// activated in your account, CloudFormation returns <code>null</code>.</p>
+        /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, whether or not they are activated in your account, CloudFormation returns <code>null</code>.</p>
         pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default_version = input;
             self
@@ -2144,26 +1811,14 @@ pub mod type_version_summary {
             self.description = input;
             self
         }
-        /// <p>For public extensions that have been activated for this account and region, the version
-        /// of the public extension to be used for CloudFormation operations in this account and
-        /// region. For any extensions other than activated third-arty extensions, CloudFormation
-        /// returns <code>null</code>.</p>
-        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-        /// CloudFormation automatically updates the extention in this account and region when a new
-        /// version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of
-        /// extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn public_version_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_version_number = Some(input.into());
             self
         }
-        /// <p>For public extensions that have been activated for this account and region, the version
-        /// of the public extension to be used for CloudFormation operations in this account and
-        /// region. For any extensions other than activated third-arty extensions, CloudFormation
-        /// returns <code>null</code>.</p>
-        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-        /// CloudFormation automatically updates the extention in this account and region when a new
-        /// version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of
-        /// extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_public_version_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2248,81 +1903,48 @@ impl AsRef<str> for DeprecatedStatus {
     }
 }
 
-/// <p>Contains summary information about the specified CloudFormation
-/// extension.</p>
+/// <p>Contains summary information about the specified CloudFormation extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeSummary {
     /// <p>The kind of extension.</p>
     pub r#type: std::option::Option<crate::model::RegistryType>,
     /// <p>The name of the extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and region, CloudFormation considers
-    /// that alias as the type name.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and region, CloudFormation considers that alias as the type name.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the default version of the extension. The default version is used when the
-    /// extension version is not specified.</p>
-    /// <p>This applies only to private extensions you have registered in your account. For public
-    /// extensions, both those provided by Amazon and published by third parties, CloudFormation
-    /// returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-    /// <p>To set the default version of an extension, use <code>
-    /// <a>SetTypeDefaultVersion</a>
-    /// </code>. </p>
+    /// <p>The ID of the default version of the extension. The default version is used when the extension version is not specified.</p>
+    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p>To set the default version of an extension, use <code> <code>SetTypeDefaultVersion</code> </code>. </p>
     pub default_version_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     pub type_arn: std::option::Option<std::string::String>,
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
-    /// <li>
-    /// <p>Private extensions you have registered in your account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Public extensions you have activated in your account with auto-update specified.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
-    /// </li>
+    /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
+    /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
     /// </ul>
     /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the extension.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ID of the extension publisher, if the extension is published by a third party.
-    /// Extensions published by Amazon do not return a publisher ID.</p>
+    /// <p>The ID of the extension publisher, if the extension is published by a third party. Extensions published by Amazon do not return a publisher ID.</p>
     pub publisher_id: std::option::Option<std::string::String>,
-    /// <p>For public extensions that have been activated for this account and region, the type
-    /// name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this
-    /// account and region, CloudFormation treats that alias as the extension's type name within
-    /// the account and region, not the type name of the public extension. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the
-    /// <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub original_type_name: std::option::Option<std::string::String>,
-    /// <p>For public extensions that have been activated for this account and region, the version
-    /// of the public extension to be used for CloudFormation operations in this account and
-    /// region.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-    /// CloudFormation automatically updates the extention in this account and region when a new
-    /// version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of
-    /// extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub public_version_number: std::option::Option<std::string::String>,
-    /// <p>For public extensions that have been activated for this account and region, the latest
-    /// version of the public extension <i>that is available</i>. For any extensions
-    /// other than activated third-arty extensions, CloudFormation returns
-    /// <code>null</code>.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-    /// CloudFormation automatically updates the extention in this account and region when a new
-    /// version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of
-    /// extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub latest_public_version: std::option::Option<std::string::String>,
     /// <p>The service used to verify the publisher identity.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i>
-    /// CFN-CLI User Guide for Extension Development</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide for Extension Development</i>.</p>
     pub publisher_identity: std::option::Option<crate::model::IdentityProvider>,
-    /// <p>The publisher name, as defined in the public profile for that publisher in the service
-    /// used to verify the publisher identity.</p>
+    /// <p>The publisher name, as defined in the public profile for that publisher in the service used to verify the publisher identity.</p>
     pub publisher_name: std::option::Option<std::string::String>,
     /// <p>Whether or not the extension is activated for this account and region. </p>
-    /// <p>This applies only to third-party public extensions. Extensions published by Amazon are
-    /// activated by default.</p>
+    /// <p>This applies only to third-party public extensions. Extensions published by Amazon are activated by default.</p>
     pub is_activated: std::option::Option<bool>,
 }
 impl TypeSummary {
@@ -2331,19 +1953,13 @@ impl TypeSummary {
         self.r#type.as_ref()
     }
     /// <p>The name of the extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and region, CloudFormation considers
-    /// that alias as the type name.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and region, CloudFormation considers that alias as the type name.</p>
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
-    /// <p>The ID of the default version of the extension. The default version is used when the
-    /// extension version is not specified.</p>
-    /// <p>This applies only to private extensions you have registered in your account. For public
-    /// extensions, both those provided by Amazon and published by third parties, CloudFormation
-    /// returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-    /// <p>To set the default version of an extension, use <code>
-    /// <a>SetTypeDefaultVersion</a>
-    /// </code>. </p>
+    /// <p>The ID of the default version of the extension. The default version is used when the extension version is not specified.</p>
+    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p>To set the default version of an extension, use <code> <code>SetTypeDefaultVersion</code> </code>. </p>
     pub fn default_version_id(&self) -> std::option::Option<&str> {
         self.default_version_id.as_deref()
     }
@@ -2353,14 +1969,8 @@ impl TypeSummary {
     }
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
-    /// <li>
-    /// <p>Private extensions you have registered in your account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Public extensions you have activated in your account with auto-update specified.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
-    /// </li>
+    /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
+    /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
     /// </ul>
     /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
@@ -2370,56 +1980,36 @@ impl TypeSummary {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ID of the extension publisher, if the extension is published by a third party.
-    /// Extensions published by Amazon do not return a publisher ID.</p>
+    /// <p>The ID of the extension publisher, if the extension is published by a third party. Extensions published by Amazon do not return a publisher ID.</p>
     pub fn publisher_id(&self) -> std::option::Option<&str> {
         self.publisher_id.as_deref()
     }
-    /// <p>For public extensions that have been activated for this account and region, the type
-    /// name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this
-    /// account and region, CloudFormation treats that alias as the extension's type name within
-    /// the account and region, not the type name of the public extension. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the
-    /// <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn original_type_name(&self) -> std::option::Option<&str> {
         self.original_type_name.as_deref()
     }
-    /// <p>For public extensions that have been activated for this account and region, the version
-    /// of the public extension to be used for CloudFormation operations in this account and
-    /// region.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-    /// CloudFormation automatically updates the extention in this account and region when a new
-    /// version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of
-    /// extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn public_version_number(&self) -> std::option::Option<&str> {
         self.public_version_number.as_deref()
     }
-    /// <p>For public extensions that have been activated for this account and region, the latest
-    /// version of the public extension <i>that is available</i>. For any extensions
-    /// other than activated third-arty extensions, CloudFormation returns
-    /// <code>null</code>.</p>
-    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-    /// CloudFormation automatically updates the extention in this account and region when a new
-    /// version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of
-    /// extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>For public extensions that have been activated for this account and region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn latest_public_version(&self) -> std::option::Option<&str> {
         self.latest_public_version.as_deref()
     }
     /// <p>The service used to verify the publisher identity.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i>
-    /// CFN-CLI User Guide for Extension Development</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide for Extension Development</i>.</p>
     pub fn publisher_identity(&self) -> std::option::Option<&crate::model::IdentityProvider> {
         self.publisher_identity.as_ref()
     }
-    /// <p>The publisher name, as defined in the public profile for that publisher in the service
-    /// used to verify the publisher identity.</p>
+    /// <p>The publisher name, as defined in the public profile for that publisher in the service used to verify the publisher identity.</p>
     pub fn publisher_name(&self) -> std::option::Option<&str> {
         self.publisher_name.as_deref()
     }
     /// <p>Whether or not the extension is activated for this account and region. </p>
-    /// <p>This applies only to third-party public extensions. Extensions published by Amazon are
-    /// activated by default.</p>
+    /// <p>This applies only to third-party public extensions. Extensions published by Amazon are activated by default.</p>
     pub fn is_activated(&self) -> std::option::Option<bool> {
         self.is_activated
     }
@@ -2475,39 +2065,27 @@ pub mod type_summary {
             self
         }
         /// <p>The name of the extension.</p>
-        /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and region, CloudFormation considers
-        /// that alias as the type name.</p>
+        /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and region, CloudFormation considers that alias as the type name.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
         }
         /// <p>The name of the extension.</p>
-        /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and region, CloudFormation considers
-        /// that alias as the type name.</p>
+        /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and region, CloudFormation considers that alias as the type name.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
         }
-        /// <p>The ID of the default version of the extension. The default version is used when the
-        /// extension version is not specified.</p>
-        /// <p>This applies only to private extensions you have registered in your account. For public
-        /// extensions, both those provided by Amazon and published by third parties, CloudFormation
-        /// returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-        /// <p>To set the default version of an extension, use <code>
-        /// <a>SetTypeDefaultVersion</a>
-        /// </code>. </p>
+        /// <p>The ID of the default version of the extension. The default version is used when the extension version is not specified.</p>
+        /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+        /// <p>To set the default version of an extension, use <code> <code>SetTypeDefaultVersion</code> </code>. </p>
         pub fn default_version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_version_id = Some(input.into());
             self
         }
-        /// <p>The ID of the default version of the extension. The default version is used when the
-        /// extension version is not specified.</p>
-        /// <p>This applies only to private extensions you have registered in your account. For public
-        /// extensions, both those provided by Amazon and published by third parties, CloudFormation
-        /// returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-        /// <p>To set the default version of an extension, use <code>
-        /// <a>SetTypeDefaultVersion</a>
-        /// </code>. </p>
+        /// <p>The ID of the default version of the extension. The default version is used when the extension version is not specified.</p>
+        /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+        /// <p>To set the default version of an extension, use <code> <code>SetTypeDefaultVersion</code> </code>. </p>
         pub fn set_default_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2527,14 +2105,8 @@ pub mod type_summary {
         }
         /// <p>When the specified extension version was registered. This applies only to:</p>
         /// <ul>
-        /// <li>
-        /// <p>Private extensions you have registered in your account. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Public extensions you have activated in your account with auto-update specified.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
-        /// </li>
+        /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
+        /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
         /// </ul>
         /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
         pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2543,14 +2115,8 @@ pub mod type_summary {
         }
         /// <p>When the specified extension version was registered. This applies only to:</p>
         /// <ul>
-        /// <li>
-        /// <p>Private extensions you have registered in your account. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Public extensions you have activated in your account with auto-update specified.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
-        /// </li>
+        /// <li> <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p> </li>
+        /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
         /// </ul>
         /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
         pub fn set_last_updated(
@@ -2570,36 +2136,24 @@ pub mod type_summary {
             self.description = input;
             self
         }
-        /// <p>The ID of the extension publisher, if the extension is published by a third party.
-        /// Extensions published by Amazon do not return a publisher ID.</p>
+        /// <p>The ID of the extension publisher, if the extension is published by a third party. Extensions published by Amazon do not return a publisher ID.</p>
         pub fn publisher_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.publisher_id = Some(input.into());
             self
         }
-        /// <p>The ID of the extension publisher, if the extension is published by a third party.
-        /// Extensions published by Amazon do not return a publisher ID.</p>
+        /// <p>The ID of the extension publisher, if the extension is published by a third party. Extensions published by Amazon do not return a publisher ID.</p>
         pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.publisher_id = input;
             self
         }
-        /// <p>For public extensions that have been activated for this account and region, the type
-        /// name of the public extension.</p>
-        /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this
-        /// account and region, CloudFormation treats that alias as the extension's type name within
-        /// the account and region, not the type name of the public extension. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the
-        /// <i>CloudFormation User Guide</i>.</p>
+        /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
+        /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn original_type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.original_type_name = Some(input.into());
             self
         }
-        /// <p>For public extensions that have been activated for this account and region, the type
-        /// name of the public extension.</p>
-        /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this
-        /// account and region, CloudFormation treats that alias as the extension's type name within
-        /// the account and region, not the type name of the public extension. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the
-        /// <i>CloudFormation User Guide</i>.</p>
+        /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
+        /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_original_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2607,24 +2161,14 @@ pub mod type_summary {
             self.original_type_name = input;
             self
         }
-        /// <p>For public extensions that have been activated for this account and region, the version
-        /// of the public extension to be used for CloudFormation operations in this account and
-        /// region.</p>
-        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-        /// CloudFormation automatically updates the extention in this account and region when a new
-        /// version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of
-        /// extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region.</p>
+        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn public_version_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_version_number = Some(input.into());
             self
         }
-        /// <p>For public extensions that have been activated for this account and region, the version
-        /// of the public extension to be used for CloudFormation operations in this account and
-        /// region.</p>
-        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-        /// CloudFormation automatically updates the extention in this account and region when a new
-        /// version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of
-        /// extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region.</p>
+        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_public_version_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2632,26 +2176,14 @@ pub mod type_summary {
             self.public_version_number = input;
             self
         }
-        /// <p>For public extensions that have been activated for this account and region, the latest
-        /// version of the public extension <i>that is available</i>. For any extensions
-        /// other than activated third-arty extensions, CloudFormation returns
-        /// <code>null</code>.</p>
-        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-        /// CloudFormation automatically updates the extention in this account and region when a new
-        /// version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of
-        /// extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p>For public extensions that have been activated for this account and region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn latest_public_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.latest_public_version = Some(input.into());
             self
         }
-        /// <p>For public extensions that have been activated for this account and region, the latest
-        /// version of the public extension <i>that is available</i>. For any extensions
-        /// other than activated third-arty extensions, CloudFormation returns
-        /// <code>null</code>.</p>
-        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-        /// CloudFormation automatically updates the extention in this account and region when a new
-        /// version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of
-        /// extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p>For public extensions that have been activated for this account and region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_latest_public_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2660,15 +2192,13 @@ pub mod type_summary {
             self
         }
         /// <p>The service used to verify the publisher identity.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i>
-        /// CFN-CLI User Guide for Extension Development</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide for Extension Development</i>.</p>
         pub fn publisher_identity(mut self, input: crate::model::IdentityProvider) -> Self {
             self.publisher_identity = Some(input);
             self
         }
         /// <p>The service used to verify the publisher identity.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i>
-        /// CFN-CLI User Guide for Extension Development</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide for Extension Development</i>.</p>
         pub fn set_publisher_identity(
             mut self,
             input: std::option::Option<crate::model::IdentityProvider>,
@@ -2676,14 +2206,12 @@ pub mod type_summary {
             self.publisher_identity = input;
             self
         }
-        /// <p>The publisher name, as defined in the public profile for that publisher in the service
-        /// used to verify the publisher identity.</p>
+        /// <p>The publisher name, as defined in the public profile for that publisher in the service used to verify the publisher identity.</p>
         pub fn publisher_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.publisher_name = Some(input.into());
             self
         }
-        /// <p>The publisher name, as defined in the public profile for that publisher in the service
-        /// used to verify the publisher identity.</p>
+        /// <p>The publisher name, as defined in the public profile for that publisher in the service used to verify the publisher identity.</p>
         pub fn set_publisher_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2692,15 +2220,13 @@ pub mod type_summary {
             self
         }
         /// <p>Whether or not the extension is activated for this account and region. </p>
-        /// <p>This applies only to third-party public extensions. Extensions published by Amazon are
-        /// activated by default.</p>
+        /// <p>This applies only to third-party public extensions. Extensions published by Amazon are activated by default.</p>
         pub fn is_activated(mut self, input: bool) -> Self {
             self.is_activated = Some(input);
             self
         }
         /// <p>Whether or not the extension is activated for this account and region. </p>
-        /// <p>This applies only to third-party public extensions. Extensions published by Amazon are
-        /// activated by default.</p>
+        /// <p>This applies only to third-party public extensions. Extensions published by Amazon are activated by default.</p>
         pub fn set_is_activated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_activated = input;
             self
@@ -2797,39 +2323,18 @@ impl AsRef<str> for IdentityProvider {
 pub struct TypeFilters {
     /// <p>The category of extensions to return.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REGISTERED</code>: Private extensions that have been registered for this
-    /// account and region.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATED</code>: Public extensions that have been activated for this
-    /// account and region.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>THIRD_PARTY</code>: Extensions available for use from publishers other than
-    /// Amazon. This includes:</p>
+    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and region.</p> </li>
+    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.</p> </li>
+    /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
     /// <ul>
-    /// <li>
-    /// <p>Private extensions registered in the account.</p>
-    /// </li>
-    /// <li>
-    /// <p>Public extensions from publishers other than Amazon, whether activated or
-    /// not.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p>
-    /// </li>
+    /// <li> <p>Private extensions registered in the account.</p> </li>
+    /// <li> <p>Public extensions from publishers other than Amazon, whether activated or not.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
     /// </ul>
     pub category: std::option::Option<crate::model::Category>,
     /// <p>The id of the publisher of the extension. </p>
-    /// <p>Extensions published by Amazon are not assigned a publisher ID. Use the
-    /// <code>AWS_TYPE</code> category to specify a list of types published by Amazon.</p>
+    /// <p>Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category to specify a list of types published by Amazon.</p>
     pub publisher_id: std::option::Option<std::string::String>,
     /// <p>A prefix to use as a filter for results.</p>
     pub type_name_prefix: std::option::Option<std::string::String>,
@@ -2837,41 +2342,20 @@ pub struct TypeFilters {
 impl TypeFilters {
     /// <p>The category of extensions to return.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REGISTERED</code>: Private extensions that have been registered for this
-    /// account and region.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVATED</code>: Public extensions that have been activated for this
-    /// account and region.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>THIRD_PARTY</code>: Extensions available for use from publishers other than
-    /// Amazon. This includes:</p>
+    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and region.</p> </li>
+    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.</p> </li>
+    /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
     /// <ul>
-    /// <li>
-    /// <p>Private extensions registered in the account.</p>
-    /// </li>
-    /// <li>
-    /// <p>Public extensions from publishers other than Amazon, whether activated or
-    /// not.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p>
-    /// </li>
+    /// <li> <p>Private extensions registered in the account.</p> </li>
+    /// <li> <p>Public extensions from publishers other than Amazon, whether activated or not.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
     /// </ul>
     pub fn category(&self) -> std::option::Option<&crate::model::Category> {
         self.category.as_ref()
     }
     /// <p>The id of the publisher of the extension. </p>
-    /// <p>Extensions published by Amazon are not assigned a publisher ID. Use the
-    /// <code>AWS_TYPE</code> category to specify a list of types published by Amazon.</p>
+    /// <p>Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category to specify a list of types published by Amazon.</p>
     pub fn publisher_id(&self) -> std::option::Option<&str> {
         self.publisher_id.as_deref()
     }
@@ -2902,34 +2386,14 @@ pub mod type_filters {
     impl Builder {
         /// <p>The category of extensions to return.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REGISTERED</code>: Private extensions that have been registered for this
-        /// account and region.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATED</code>: Public extensions that have been activated for this
-        /// account and region.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>THIRD_PARTY</code>: Extensions available for use from publishers other than
-        /// Amazon. This includes:</p>
+        /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and region.</p> </li>
+        /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.</p> </li>
+        /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
         /// <ul>
-        /// <li>
-        /// <p>Private extensions registered in the account.</p>
-        /// </li>
-        /// <li>
-        /// <p>Public extensions from publishers other than Amazon, whether activated or
-        /// not.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p>
-        /// </li>
+        /// <li> <p>Private extensions registered in the account.</p> </li>
+        /// <li> <p>Public extensions from publishers other than Amazon, whether activated or not.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
         /// </ul>
         pub fn category(mut self, input: crate::model::Category) -> Self {
             self.category = Some(input);
@@ -2937,49 +2401,27 @@ pub mod type_filters {
         }
         /// <p>The category of extensions to return.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REGISTERED</code>: Private extensions that have been registered for this
-        /// account and region.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVATED</code>: Public extensions that have been activated for this
-        /// account and region.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>THIRD_PARTY</code>: Extensions available for use from publishers other than
-        /// Amazon. This includes:</p>
+        /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and region.</p> </li>
+        /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.</p> </li>
+        /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
         /// <ul>
-        /// <li>
-        /// <p>Private extensions registered in the account.</p>
-        /// </li>
-        /// <li>
-        /// <p>Public extensions from publishers other than Amazon, whether activated or
-        /// not.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p>
-        /// </li>
+        /// <li> <p>Private extensions registered in the account.</p> </li>
+        /// <li> <p>Public extensions from publishers other than Amazon, whether activated or not.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
         /// </ul>
         pub fn set_category(mut self, input: std::option::Option<crate::model::Category>) -> Self {
             self.category = input;
             self
         }
         /// <p>The id of the publisher of the extension. </p>
-        /// <p>Extensions published by Amazon are not assigned a publisher ID. Use the
-        /// <code>AWS_TYPE</code> category to specify a list of types published by Amazon.</p>
+        /// <p>Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category to specify a list of types published by Amazon.</p>
         pub fn publisher_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.publisher_id = Some(input.into());
             self
         }
         /// <p>The id of the publisher of the extension. </p>
-        /// <p>Extensions published by Amazon are not assigned a publisher ID. Use the
-        /// <code>AWS_TYPE</code> category to specify a list of types published by Amazon.</p>
+        /// <p>Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category to specify a list of types published by Amazon.</p>
         pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.publisher_id = input;
             self
@@ -3258,63 +2700,29 @@ pub struct StackSetSummary {
     pub stack_set_name: std::option::Option<std::string::String>,
     /// <p>The ID of the stack set.</p>
     pub stack_set_id: std::option::Option<std::string::String>,
-    /// <p>A description of the stack set that you specify when the stack set is created or
-    /// updated.</p>
+    /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the stack set.</p>
     pub status: std::option::Option<crate::model::StackSetStatus>,
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
-    /// Organizations accounts that are added to a target organizational unit
-    /// (OU).</p>
+    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
     pub auto_deployment: std::option::Option<crate::model::AutoDeployment>,
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
-    /// <li>
-    /// <p>With <code>self-managed</code> permissions, you must create the administrator and
-    /// execution roles required to deploy to target accounts. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-    /// Self-Managed Stack Set Permissions</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
-    /// IAM roles required to deploy to accounts managed by Organizations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
-    /// </li>
+    /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+    /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
     /// </ul>
     pub permission_model: std::option::Option<crate::model::PermissionModels>,
-    /// <p>Status of the stack set's actual configuration compared to its expected template and
-    /// parameter configuration. A stack set is considered to have drifted if one or more of its
-    /// stack instances have drifted from their expected template and parameter
-    /// configuration.</p>
+    /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DRIFTED</code>: One or more of the stack instances belonging to the stack
-    /// set stack differs from the expected template and parameter configuration. A stack
-    /// instance is considered to have drifted if one or more of the resources in the
-    /// associated stack have drifted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack
-    /// match from the expected template and parameter configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-    /// </li>
+    /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub drift_status: std::option::Option<crate::model::StackDriftStatus>,
-    /// <p>Most recent time when CloudFormation performed a drift detection operation on
-    /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
-    /// detection has not yet been performed.</p>
+    /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection has not yet been performed.</p>
     pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
-    /// conflicting operations.</p>
+    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub managed_execution: std::option::Option<crate::model::ManagedExecution>,
 }
 impl StackSetSummary {
@@ -3326,8 +2734,7 @@ impl StackSetSummary {
     pub fn stack_set_id(&self) -> std::option::Option<&str> {
         self.stack_set_id.as_deref()
     }
-    /// <p>A description of the stack set that you specify when the stack set is created or
-    /// updated.</p>
+    /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -3335,66 +2742,33 @@ impl StackSetSummary {
     pub fn status(&self) -> std::option::Option<&crate::model::StackSetStatus> {
         self.status.as_ref()
     }
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
-    /// Organizations accounts that are added to a target organizational unit
-    /// (OU).</p>
+    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
     pub fn auto_deployment(&self) -> std::option::Option<&crate::model::AutoDeployment> {
         self.auto_deployment.as_ref()
     }
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
-    /// <li>
-    /// <p>With <code>self-managed</code> permissions, you must create the administrator and
-    /// execution roles required to deploy to target accounts. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-    /// Self-Managed Stack Set Permissions</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
-    /// IAM roles required to deploy to accounts managed by Organizations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
-    /// </li>
+    /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+    /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
     /// </ul>
     pub fn permission_model(&self) -> std::option::Option<&crate::model::PermissionModels> {
         self.permission_model.as_ref()
     }
-    /// <p>Status of the stack set's actual configuration compared to its expected template and
-    /// parameter configuration. A stack set is considered to have drifted if one or more of its
-    /// stack instances have drifted from their expected template and parameter
-    /// configuration.</p>
+    /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DRIFTED</code>: One or more of the stack instances belonging to the stack
-    /// set stack differs from the expected template and parameter configuration. A stack
-    /// instance is considered to have drifted if one or more of the resources in the
-    /// associated stack have drifted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack
-    /// match from the expected template and parameter configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-    /// </li>
+    /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn drift_status(&self) -> std::option::Option<&crate::model::StackDriftStatus> {
         self.drift_status.as_ref()
     }
-    /// <p>Most recent time when CloudFormation performed a drift detection operation on
-    /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
-    /// detection has not yet been performed.</p>
+    /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection has not yet been performed.</p>
     pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
-    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
-    /// conflicting operations.</p>
+    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn managed_execution(&self) -> std::option::Option<&crate::model::ManagedExecution> {
         self.managed_execution.as_ref()
     }
@@ -3457,14 +2831,12 @@ pub mod stack_set_summary {
             self.stack_set_id = input;
             self
         }
-        /// <p>A description of the stack set that you specify when the stack set is created or
-        /// updated.</p>
+        /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the stack set that you specify when the stack set is created or
-        /// updated.</p>
+        /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3482,16 +2854,12 @@ pub mod stack_set_summary {
             self.status = input;
             self
         }
-        /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
-        /// Organizations accounts that are added to a target organizational unit
-        /// (OU).</p>
+        /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
         pub fn auto_deployment(mut self, input: crate::model::AutoDeployment) -> Self {
             self.auto_deployment = Some(input);
             self
         }
-        /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
-        /// Organizations accounts that are added to a target organizational unit
-        /// (OU).</p>
+        /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
         pub fn set_auto_deployment(
             mut self,
             input: std::option::Option<crate::model::AutoDeployment>,
@@ -3501,17 +2869,8 @@ pub mod stack_set_summary {
         }
         /// <p>Describes how the IAM roles required for stack set operations are created.</p>
         /// <ul>
-        /// <li>
-        /// <p>With <code>self-managed</code> permissions, you must create the administrator and
-        /// execution roles required to deploy to target accounts. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-        /// Self-Managed Stack Set Permissions</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
-        /// IAM roles required to deploy to accounts managed by Organizations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
-        /// </li>
+        /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+        /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
         /// </ul>
         pub fn permission_model(mut self, input: crate::model::PermissionModels) -> Self {
             self.permission_model = Some(input);
@@ -3519,17 +2878,8 @@ pub mod stack_set_summary {
         }
         /// <p>Describes how the IAM roles required for stack set operations are created.</p>
         /// <ul>
-        /// <li>
-        /// <p>With <code>self-managed</code> permissions, you must create the administrator and
-        /// execution roles required to deploy to target accounts. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-        /// Self-Managed Stack Set Permissions</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
-        /// IAM roles required to deploy to accounts managed by Organizations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
-        /// </li>
+        /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+        /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
         /// </ul>
         pub fn set_permission_model(
             mut self,
@@ -3538,61 +2888,23 @@ pub mod stack_set_summary {
             self.permission_model = input;
             self
         }
-        /// <p>Status of the stack set's actual configuration compared to its expected template and
-        /// parameter configuration. A stack set is considered to have drifted if one or more of its
-        /// stack instances have drifted from their expected template and parameter
-        /// configuration.</p>
+        /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DRIFTED</code>: One or more of the stack instances belonging to the stack
-        /// set stack differs from the expected template and parameter configuration. A stack
-        /// instance is considered to have drifted if one or more of the resources in the
-        /// associated stack have drifted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack
-        /// match from the expected template and parameter configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-        /// </li>
+        /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
+        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
         /// </ul>
         pub fn drift_status(mut self, input: crate::model::StackDriftStatus) -> Self {
             self.drift_status = Some(input);
             self
         }
-        /// <p>Status of the stack set's actual configuration compared to its expected template and
-        /// parameter configuration. A stack set is considered to have drifted if one or more of its
-        /// stack instances have drifted from their expected template and parameter
-        /// configuration.</p>
+        /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DRIFTED</code>: One or more of the stack instances belonging to the stack
-        /// set stack differs from the expected template and parameter configuration. A stack
-        /// instance is considered to have drifted if one or more of the resources in the
-        /// associated stack have drifted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack
-        /// match from the expected template and parameter configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-        /// </li>
+        /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
+        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
         /// </ul>
         pub fn set_drift_status(
             mut self,
@@ -3601,16 +2913,12 @@ pub mod stack_set_summary {
             self.drift_status = input;
             self
         }
-        /// <p>Most recent time when CloudFormation performed a drift detection operation on
-        /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
-        /// detection has not yet been performed.</p>
+        /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection has not yet been performed.</p>
         pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_drift_check_timestamp = Some(input);
             self
         }
-        /// <p>Most recent time when CloudFormation performed a drift detection operation on
-        /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
-        /// detection has not yet been performed.</p>
+        /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection has not yet been performed.</p>
         pub fn set_last_drift_check_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3618,14 +2926,12 @@ pub mod stack_set_summary {
             self.last_drift_check_timestamp = input;
             self
         }
-        /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
-        /// conflicting operations.</p>
+        /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
         pub fn managed_execution(mut self, input: crate::model::ManagedExecution) -> Self {
             self.managed_execution = Some(input);
             self
         }
-        /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
-        /// conflicting operations.</p>
+        /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
         pub fn set_managed_execution(
             mut self,
             input: std::option::Option<crate::model::ManagedExecution>,
@@ -3780,59 +3086,21 @@ impl AsRef<str> for StackSetStatus {
 pub struct StackSetOperationSummary {
     /// <p>The unique ID of the stack set operation.</p>
     pub operation_id: std::option::Option<std::string::String>,
-    /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>.
-    /// Create and delete operations affect only the specified stack instances that are associated
-    /// with the specified stack set. Update operations affect both the stack set itself as well as
-    /// <i>all</i> associated stack set instances.</p>
+    /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack instances that are associated with the specified stack set. Update operations affect both the stack set itself as well as <i>all</i> associated stack set instances.</p>
     pub action: std::option::Option<crate::model::StackSetOperationAction>,
     /// <p>The overall status of the operation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The operation exceeded the specified failure tolerance. The
-    /// failure tolerance value that you've set for an operation is applied for each Region
-    /// during stack create and update operations. If the number of failed stacks within a
-    /// Region exceeds the failure tolerance, the status of the operation in the Region is
-    /// set to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-    /// to <code>FAILED</code>, and CloudFormation cancels the operation in any
-    /// remaining Regions.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
-    /// require a sequence of operations, the operation is queued to be performed. For more
-    /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User
-    /// Guide.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code>: The operation is currently being performed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPED</code>: The user has cancelled the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPING</code>: The operation is in the process of stopping, at user
-    /// request. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code>: The operation completed creating or updating all the
-    /// specified stacks without exceeding the failure tolerance for the operation.</p>
-    /// </li>
+    /// <li> <p> <code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p> </li>
+    /// <li> <p> <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+    /// <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at user request. </p> </li>
+    /// <li> <p> <code>SUCCEEDED</code>: The operation completed creating or updating all the specified stacks without exceeding the failure tolerance for the operation.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::StackSetOperationStatus>,
-    /// <p>The time at which the operation was initiated. Note that the creation times for the
-    /// stack set operation might differ from the creation time of the individual stacks
-    /// themselves. This is because CloudFormation needs to perform preparatory work for
-    /// the operation, such as dispatching the work to the requested Regions, before actually
-    /// creating the first stacks.</p>
+    /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time at which the stack set operation ended, across all accounts and Regions
-    /// specified. Note that this doesn't necessarily mean that the stack set operation was
-    /// successful, or even attempted, in each account or Region.</p>
+    /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
     pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackSetOperationSummary {
@@ -3840,65 +3108,27 @@ impl StackSetOperationSummary {
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
-    /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>.
-    /// Create and delete operations affect only the specified stack instances that are associated
-    /// with the specified stack set. Update operations affect both the stack set itself as well as
-    /// <i>all</i> associated stack set instances.</p>
+    /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack instances that are associated with the specified stack set. Update operations affect both the stack set itself as well as <i>all</i> associated stack set instances.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::StackSetOperationAction> {
         self.action.as_ref()
     }
     /// <p>The overall status of the operation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The operation exceeded the specified failure tolerance. The
-    /// failure tolerance value that you've set for an operation is applied for each Region
-    /// during stack create and update operations. If the number of failed stacks within a
-    /// Region exceeds the failure tolerance, the status of the operation in the Region is
-    /// set to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-    /// to <code>FAILED</code>, and CloudFormation cancels the operation in any
-    /// remaining Regions.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
-    /// require a sequence of operations, the operation is queued to be performed. For more
-    /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User
-    /// Guide.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code>: The operation is currently being performed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPED</code>: The user has cancelled the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPING</code>: The operation is in the process of stopping, at user
-    /// request. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code>: The operation completed creating or updating all the
-    /// specified stacks without exceeding the failure tolerance for the operation.</p>
-    /// </li>
+    /// <li> <p> <code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p> </li>
+    /// <li> <p> <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+    /// <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at user request. </p> </li>
+    /// <li> <p> <code>SUCCEEDED</code>: The operation completed creating or updating all the specified stacks without exceeding the failure tolerance for the operation.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::StackSetOperationStatus> {
         self.status.as_ref()
     }
-    /// <p>The time at which the operation was initiated. Note that the creation times for the
-    /// stack set operation might differ from the creation time of the individual stacks
-    /// themselves. This is because CloudFormation needs to perform preparatory work for
-    /// the operation, such as dispatching the work to the requested Regions, before actually
-    /// creating the first stacks.</p>
+    /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
     pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
-    /// <p>The time at which the stack set operation ended, across all accounts and Regions
-    /// specified. Note that this doesn't necessarily mean that the stack set operation was
-    /// successful, or even attempted, in each account or Region.</p>
+    /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
     pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
@@ -3937,18 +3167,12 @@ pub mod stack_set_operation_summary {
             self.operation_id = input;
             self
         }
-        /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>.
-        /// Create and delete operations affect only the specified stack instances that are associated
-        /// with the specified stack set. Update operations affect both the stack set itself as well as
-        /// <i>all</i> associated stack set instances.</p>
+        /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack instances that are associated with the specified stack set. Update operations affect both the stack set itself as well as <i>all</i> associated stack set instances.</p>
         pub fn action(mut self, input: crate::model::StackSetOperationAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>.
-        /// Create and delete operations affect only the specified stack instances that are associated
-        /// with the specified stack set. Update operations affect both the stack set itself as well as
-        /// <i>all</i> associated stack set instances.</p>
+        /// <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack instances that are associated with the specified stack set. Update operations affect both the stack set itself as well as <i>all</i> associated stack set instances.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::StackSetOperationAction>,
@@ -3958,41 +3182,12 @@ pub mod stack_set_operation_summary {
         }
         /// <p>The overall status of the operation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The operation exceeded the specified failure tolerance. The
-        /// failure tolerance value that you've set for an operation is applied for each Region
-        /// during stack create and update operations. If the number of failed stacks within a
-        /// Region exceeds the failure tolerance, the status of the operation in the Region is
-        /// set to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-        /// to <code>FAILED</code>, and CloudFormation cancels the operation in any
-        /// remaining Regions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
-        /// require a sequence of operations, the operation is queued to be performed. For more
-        /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User
-        /// Guide.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code>: The operation is currently being performed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPED</code>: The user has cancelled the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPING</code>: The operation is in the process of stopping, at user
-        /// request. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code>: The operation completed creating or updating all the
-        /// specified stacks without exceeding the failure tolerance for the operation.</p>
-        /// </li>
+        /// <li> <p> <code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p> </li>
+        /// <li> <p> <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p> </li>
+        /// <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+        /// <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+        /// <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at user request. </p> </li>
+        /// <li> <p> <code>SUCCEEDED</code>: The operation completed creating or updating all the specified stacks without exceeding the failure tolerance for the operation.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::StackSetOperationStatus) -> Self {
             self.status = Some(input);
@@ -4000,41 +3195,12 @@ pub mod stack_set_operation_summary {
         }
         /// <p>The overall status of the operation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The operation exceeded the specified failure tolerance. The
-        /// failure tolerance value that you've set for an operation is applied for each Region
-        /// during stack create and update operations. If the number of failed stacks within a
-        /// Region exceeds the failure tolerance, the status of the operation in the Region is
-        /// set to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-        /// to <code>FAILED</code>, and CloudFormation cancels the operation in any
-        /// remaining Regions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
-        /// require a sequence of operations, the operation is queued to be performed. For more
-        /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User
-        /// Guide.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code>: The operation is currently being performed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPED</code>: The user has cancelled the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPING</code>: The operation is in the process of stopping, at user
-        /// request. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code>: The operation completed creating or updating all the
-        /// specified stacks without exceeding the failure tolerance for the operation.</p>
-        /// </li>
+        /// <li> <p> <code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p> </li>
+        /// <li> <p> <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p> </li>
+        /// <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+        /// <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+        /// <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at user request. </p> </li>
+        /// <li> <p> <code>SUCCEEDED</code>: The operation completed creating or updating all the specified stacks without exceeding the failure tolerance for the operation.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -4043,20 +3209,12 @@ pub mod stack_set_operation_summary {
             self.status = input;
             self
         }
-        /// <p>The time at which the operation was initiated. Note that the creation times for the
-        /// stack set operation might differ from the creation time of the individual stacks
-        /// themselves. This is because CloudFormation needs to perform preparatory work for
-        /// the operation, such as dispatching the work to the requested Regions, before actually
-        /// creating the first stacks.</p>
+        /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
         pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
-        /// <p>The time at which the operation was initiated. Note that the creation times for the
-        /// stack set operation might differ from the creation time of the individual stacks
-        /// themselves. This is because CloudFormation needs to perform preparatory work for
-        /// the operation, such as dispatching the work to the requested Regions, before actually
-        /// creating the first stacks.</p>
+        /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
         pub fn set_creation_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4064,16 +3222,12 @@ pub mod stack_set_operation_summary {
             self.creation_timestamp = input;
             self
         }
-        /// <p>The time at which the stack set operation ended, across all accounts and Regions
-        /// specified. Note that this doesn't necessarily mean that the stack set operation was
-        /// successful, or even attempted, in each account or Region.</p>
+        /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
         pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_timestamp = Some(input);
             self
         }
-        /// <p>The time at which the stack set operation ended, across all accounts and Regions
-        /// specified. Note that this doesn't necessarily mean that the stack set operation was
-        /// successful, or even attempted, in each account or Region.</p>
+        /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
         pub fn set_end_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4241,60 +3395,32 @@ impl AsRef<str> for StackSetOperationAction {
     }
 }
 
-/// <p>The structure that contains information about a specified operation's results for a
-/// given account in a given Region.</p>
+/// <p>The structure that contains information about a specified operation's results for a given account in a given Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackSetOperationResultSummary {
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation
-    /// result.</p>
+    /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation result.</p>
     pub account: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Web Services Region for this operation result.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The result status of the stack set operation for the given account in the given
-    /// Region.</p>
+    /// <p>The result status of the stack set operation for the given account in the given Region.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code>: The operation in the specified account and Region has been
-    /// cancelled. This is either because a user has stopped the stack set operation, or
-    /// because the failure tolerance of the stack set operation has been exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The operation in the specified account and Region failed. </p>
-    /// <p>If the stack set operation fails in enough accounts within a Region, the failure
-    /// tolerance for the stack set operation as a whole might be exceeded. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code>: The operation in the specified account and Region is
-    /// currently in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code>: The operation in the specified account and Region has yet to
-    /// start. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code>: The operation in the specified account and Region
-    /// completed successfully.</p>
-    /// </li>
+    /// <li> <p> <code>CANCELLED</code>: The operation in the specified account and Region has been cancelled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation in the specified account and Region failed. </p> <p>If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded. </p> </li>
+    /// <li> <p> <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p> </li>
+    /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start. </p> </li>
+    /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::StackSetOperationResultStatus>,
     /// <p>The reason for the assigned result status.</p>
     pub status_reason: std::option::Option<std::string::String>,
-    /// <p>The results of the account gate function CloudFormation invokes, if present,
-    /// before proceeding with stack set operations in an account</p>
+    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account</p>
     pub account_gate_result: std::option::Option<crate::model::AccountGateResult>,
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-    /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub organizational_unit_id: std::option::Option<std::string::String>,
 }
 impl StackSetOperationResultSummary {
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation
-    /// result.</p>
+    /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation result.</p>
     pub fn account(&self) -> std::option::Option<&str> {
         self.account.as_deref()
     }
@@ -4302,36 +3428,13 @@ impl StackSetOperationResultSummary {
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The result status of the stack set operation for the given account in the given
-    /// Region.</p>
+    /// <p>The result status of the stack set operation for the given account in the given Region.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code>: The operation in the specified account and Region has been
-    /// cancelled. This is either because a user has stopped the stack set operation, or
-    /// because the failure tolerance of the stack set operation has been exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The operation in the specified account and Region failed. </p>
-    /// <p>If the stack set operation fails in enough accounts within a Region, the failure
-    /// tolerance for the stack set operation as a whole might be exceeded. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code>: The operation in the specified account and Region is
-    /// currently in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code>: The operation in the specified account and Region has yet to
-    /// start. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code>: The operation in the specified account and Region
-    /// completed successfully.</p>
-    /// </li>
+    /// <li> <p> <code>CANCELLED</code>: The operation in the specified account and Region has been cancelled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation in the specified account and Region failed. </p> <p>If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded. </p> </li>
+    /// <li> <p> <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p> </li>
+    /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start. </p> </li>
+    /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::StackSetOperationResultStatus> {
         self.status.as_ref()
@@ -4340,13 +3443,11 @@ impl StackSetOperationResultSummary {
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>The results of the account gate function CloudFormation invokes, if present,
-    /// before proceeding with stack set operations in an account</p>
+    /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account</p>
     pub fn account_gate_result(&self) -> std::option::Option<&crate::model::AccountGateResult> {
         self.account_gate_result.as_ref()
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-    /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
     }
@@ -4377,14 +3478,12 @@ pub mod stack_set_operation_result_summary {
         pub(crate) organizational_unit_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation
-        /// result.</p>
+        /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation result.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.account = Some(input.into());
             self
         }
-        /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation
-        /// result.</p>
+        /// <p>[Self-managed permissions] The name of the Amazon Web Services account for this operation result.</p>
         pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account = input;
             self
@@ -4399,71 +3498,25 @@ pub mod stack_set_operation_result_summary {
             self.region = input;
             self
         }
-        /// <p>The result status of the stack set operation for the given account in the given
-        /// Region.</p>
+        /// <p>The result status of the stack set operation for the given account in the given Region.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code>: The operation in the specified account and Region has been
-        /// cancelled. This is either because a user has stopped the stack set operation, or
-        /// because the failure tolerance of the stack set operation has been exceeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The operation in the specified account and Region failed. </p>
-        /// <p>If the stack set operation fails in enough accounts within a Region, the failure
-        /// tolerance for the stack set operation as a whole might be exceeded. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code>: The operation in the specified account and Region is
-        /// currently in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code>: The operation in the specified account and Region has yet to
-        /// start. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code>: The operation in the specified account and Region
-        /// completed successfully.</p>
-        /// </li>
+        /// <li> <p> <code>CANCELLED</code>: The operation in the specified account and Region has been cancelled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p> </li>
+        /// <li> <p> <code>FAILED</code>: The operation in the specified account and Region failed. </p> <p>If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded. </p> </li>
+        /// <li> <p> <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p> </li>
+        /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start. </p> </li>
+        /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::StackSetOperationResultStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The result status of the stack set operation for the given account in the given
-        /// Region.</p>
+        /// <p>The result status of the stack set operation for the given account in the given Region.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code>: The operation in the specified account and Region has been
-        /// cancelled. This is either because a user has stopped the stack set operation, or
-        /// because the failure tolerance of the stack set operation has been exceeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The operation in the specified account and Region failed. </p>
-        /// <p>If the stack set operation fails in enough accounts within a Region, the failure
-        /// tolerance for the stack set operation as a whole might be exceeded. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code>: The operation in the specified account and Region is
-        /// currently in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code>: The operation in the specified account and Region has yet to
-        /// start. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code>: The operation in the specified account and Region
-        /// completed successfully.</p>
-        /// </li>
+        /// <li> <p> <code>CANCELLED</code>: The operation in the specified account and Region has been cancelled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p> </li>
+        /// <li> <p> <code>FAILED</code>: The operation in the specified account and Region failed. </p> <p>If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded. </p> </li>
+        /// <li> <p> <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p> </li>
+        /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start. </p> </li>
+        /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -4485,14 +3538,12 @@ pub mod stack_set_operation_result_summary {
             self.status_reason = input;
             self
         }
-        /// <p>The results of the account gate function CloudFormation invokes, if present,
-        /// before proceeding with stack set operations in an account</p>
+        /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account</p>
         pub fn account_gate_result(mut self, input: crate::model::AccountGateResult) -> Self {
             self.account_gate_result = Some(input);
             self
         }
-        /// <p>The results of the account gate function CloudFormation invokes, if present,
-        /// before proceeding with stack set operations in an account</p>
+        /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account</p>
         pub fn set_account_gate_result(
             mut self,
             input: std::option::Option<crate::model::AccountGateResult>,
@@ -4500,14 +3551,12 @@ pub mod stack_set_operation_result_summary {
             self.account_gate_result = input;
             self
         }
-        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-        /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
         pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organizational_unit_id = Some(input.into());
             self
         }
-        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-        /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
         pub fn set_organizational_unit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4535,107 +3584,43 @@ impl StackSetOperationResultSummary {
     }
 }
 
-/// <p>Structure that contains the results of the account gate function which CloudFormation invokes, if present, before proceeding with a stack set operation in an
-/// account and Region.</p>
-/// <p>For each account and Region, CloudFormation lets you specify a Lambda function
-/// that encapsulates any requirements that must be met before CloudFormation can
-/// proceed with a stack set operation in that account and Region. CloudFormation
-/// invokes the function each time a stack set operation is requested for that account and
-/// Region; if the function returns <code>FAILED</code>, CloudFormation cancels the
-/// operation in that account and Region, and sets the stack set operation result status for
-/// that account and Region to <code>FAILED</code>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a
-/// target account gate</a>.</p>
+/// <p>Structure that contains the results of the account gate function which CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region.</p>
+/// <p>For each account and Region, CloudFormation lets you specify a Lambda function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a target account gate</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountGateResult {
     /// <p>The status of the account gate function.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code>: The account gate function has determined that the account
-    /// and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The account gate function has determined that the account and
-    /// Region does not meet the requirements for a stack set operation to occur. AWS CloudFormation cancels the stack set operation in that account and Region, and
-    /// sets the stack set operation result status for that account and Region to
-    /// <code>FAILED</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SKIPPED</code>: CloudFormation has skipped calling the account gate
-    /// function for this account and Region, for one of the following reasons:</p>
+    /// <li> <p> <code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region. </p> </li>
+    /// <li> <p> <code>FAILED</code>: The account gate function has determined that the account and Region does not meet the requirements for a stack set operation to occur. AWS CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>. </p> </li>
+    /// <li> <p> <code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
     /// <ul>
-    /// <li>
-    /// <p>An account gate function has not been specified for the account and Region.
-    /// CloudFormation proceeds with the stack set operation in this account
-    /// and Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set
-    /// adminstration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and
-    /// Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>Either no action is necessary, or no action is possible, on the stack.
-    /// CloudFormation skips the stack set operation in this account and
-    /// Region.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>An account gate function has not been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
+    /// <li> <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
+    /// <li> <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::AccountGateStatus>,
-    /// <p>The reason for the account gate status assigned to this account and Region for the stack
-    /// set operation.</p>
+    /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
     pub status_reason: std::option::Option<std::string::String>,
 }
 impl AccountGateResult {
     /// <p>The status of the account gate function.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code>: The account gate function has determined that the account
-    /// and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The account gate function has determined that the account and
-    /// Region does not meet the requirements for a stack set operation to occur. AWS CloudFormation cancels the stack set operation in that account and Region, and
-    /// sets the stack set operation result status for that account and Region to
-    /// <code>FAILED</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SKIPPED</code>: CloudFormation has skipped calling the account gate
-    /// function for this account and Region, for one of the following reasons:</p>
+    /// <li> <p> <code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region. </p> </li>
+    /// <li> <p> <code>FAILED</code>: The account gate function has determined that the account and Region does not meet the requirements for a stack set operation to occur. AWS CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>. </p> </li>
+    /// <li> <p> <code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
     /// <ul>
-    /// <li>
-    /// <p>An account gate function has not been specified for the account and Region.
-    /// CloudFormation proceeds with the stack set operation in this account
-    /// and Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set
-    /// adminstration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and
-    /// Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>Either no action is necessary, or no action is possible, on the stack.
-    /// CloudFormation skips the stack set operation in this account and
-    /// Region.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>An account gate function has not been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
+    /// <li> <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
+    /// <li> <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::AccountGateStatus> {
         self.status.as_ref()
     }
-    /// <p>The reason for the account gate status assigned to this account and Region for the stack
-    /// set operation.</p>
+    /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -4660,41 +3645,14 @@ pub mod account_gate_result {
     impl Builder {
         /// <p>The status of the account gate function.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code>: The account gate function has determined that the account
-        /// and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The account gate function has determined that the account and
-        /// Region does not meet the requirements for a stack set operation to occur. AWS CloudFormation cancels the stack set operation in that account and Region, and
-        /// sets the stack set operation result status for that account and Region to
-        /// <code>FAILED</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SKIPPED</code>: CloudFormation has skipped calling the account gate
-        /// function for this account and Region, for one of the following reasons:</p>
+        /// <li> <p> <code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region. </p> </li>
+        /// <li> <p> <code>FAILED</code>: The account gate function has determined that the account and Region does not meet the requirements for a stack set operation to occur. AWS CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>. </p> </li>
+        /// <li> <p> <code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
         /// <ul>
-        /// <li>
-        /// <p>An account gate function has not been specified for the account and Region.
-        /// CloudFormation proceeds with the stack set operation in this account
-        /// and Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set
-        /// adminstration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and
-        /// Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>Either no action is necessary, or no action is possible, on the stack.
-        /// CloudFormation skips the stack set operation in this account and
-        /// Region.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>An account gate function has not been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
+        /// <li> <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
+        /// <li> <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::AccountGateStatus) -> Self {
             self.status = Some(input);
@@ -4702,41 +3660,14 @@ pub mod account_gate_result {
         }
         /// <p>The status of the account gate function.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code>: The account gate function has determined that the account
-        /// and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The account gate function has determined that the account and
-        /// Region does not meet the requirements for a stack set operation to occur. AWS CloudFormation cancels the stack set operation in that account and Region, and
-        /// sets the stack set operation result status for that account and Region to
-        /// <code>FAILED</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SKIPPED</code>: CloudFormation has skipped calling the account gate
-        /// function for this account and Region, for one of the following reasons:</p>
+        /// <li> <p> <code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region. </p> </li>
+        /// <li> <p> <code>FAILED</code>: The account gate function has determined that the account and Region does not meet the requirements for a stack set operation to occur. AWS CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>. </p> </li>
+        /// <li> <p> <code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
         /// <ul>
-        /// <li>
-        /// <p>An account gate function has not been specified for the account and Region.
-        /// CloudFormation proceeds with the stack set operation in this account
-        /// and Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set
-        /// adminstration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and
-        /// Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>Either no action is necessary, or no action is possible, on the stack.
-        /// CloudFormation skips the stack set operation in this account and
-        /// Region.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>An account gate function has not been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
+        /// <li> <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set adminstration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
+        /// <li> <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -4745,14 +3676,12 @@ pub mod account_gate_result {
             self.status = input;
             self
         }
-        /// <p>The reason for the account gate status assigned to this account and Region for the stack
-        /// set operation.</p>
+        /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_reason = Some(input.into());
             self
         }
-        /// <p>The reason for the account gate status assigned to this account and Region for the stack
-        /// set operation.</p>
+        /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4914,8 +3843,7 @@ pub struct StackSummary {
     pub template_description: std::option::Option<std::string::String>,
     /// <p>The time the stack was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time the stack was last updated. This field will only be returned if the stack has
-    /// been updated at least once.</p>
+    /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the stack was deleted.</p>
     pub deletion_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4923,19 +3851,13 @@ pub struct StackSummary {
     pub stack_status: std::option::Option<crate::model::StackStatus>,
     /// <p>Success/Failure message associated with the stack status.</p>
     pub stack_status_reason: std::option::Option<std::string::String>,
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-    /// direct parent of this stack. For the first level of nested stacks, the root stack is also
-    /// the parent stack.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub parent_id: std::option::Option<std::string::String>,
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-    /// top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub root_id: std::option::Option<std::string::String>,
-    /// <p>Summarizes information on whether a stack's actual configuration differs, or has
-    /// <i>drifted</i>, from it's expected configuration, as defined in the stack
-    /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-    /// Changes to Stacks and Resources</a>.</p>
+    /// <p>Summarizes information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub drift_information: std::option::Option<crate::model::StackDriftInformationSummary>,
 }
 impl StackSummary {
@@ -4955,8 +3877,7 @@ impl StackSummary {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The time the stack was last updated. This field will only be returned if the stack has
-    /// been updated at least once.</p>
+    /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
@@ -4972,23 +3893,17 @@ impl StackSummary {
     pub fn stack_status_reason(&self) -> std::option::Option<&str> {
         self.stack_status_reason.as_deref()
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-    /// direct parent of this stack. For the first level of nested stacks, the root stack is also
-    /// the parent stack.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn parent_id(&self) -> std::option::Option<&str> {
         self.parent_id.as_deref()
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-    /// top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn root_id(&self) -> std::option::Option<&str> {
         self.root_id.as_deref()
     }
-    /// <p>Summarizes information on whether a stack's actual configuration differs, or has
-    /// <i>drifted</i>, from it's expected configuration, as defined in the stack
-    /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-    /// Changes to Stacks and Resources</a>.</p>
+    /// <p>Summarizes information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub fn drift_information(
         &self,
     ) -> std::option::Option<&crate::model::StackDriftInformationSummary> {
@@ -5078,14 +3993,12 @@ pub mod stack_summary {
             self.creation_time = input;
             self
         }
-        /// <p>The time the stack was last updated. This field will only be returned if the stack has
-        /// been updated at least once.</p>
+        /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
-        /// <p>The time the stack was last updated. This field will only be returned if the stack has
-        /// been updated at least once.</p>
+        /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5132,40 +4045,31 @@ pub mod stack_summary {
             self.stack_status_reason = input;
             self
         }
-        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-        /// direct parent of this stack. For the first level of nested stacks, the root stack is also
-        /// the parent stack.</p>
+        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_id = Some(input.into());
             self
         }
-        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-        /// direct parent of this stack. For the first level of nested stacks, the root stack is also
-        /// the parent stack.</p>
+        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_id = input;
             self
         }
-        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-        /// top-level stack to which the nested stack ultimately belongs.</p>
+        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn root_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.root_id = Some(input.into());
             self
         }
-        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-        /// top-level stack to which the nested stack ultimately belongs.</p>
+        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_root_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.root_id = input;
             self
         }
-        /// <p>Summarizes information on whether a stack's actual configuration differs, or has
-        /// <i>drifted</i>, from it's expected configuration, as defined in the stack
-        /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-        /// Changes to Stacks and Resources</a>.</p>
+        /// <p>Summarizes information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
         pub fn drift_information(
             mut self,
             input: crate::model::StackDriftInformationSummary,
@@ -5173,10 +4077,7 @@ pub mod stack_summary {
             self.drift_information = Some(input);
             self
         }
-        /// <p>Summarizes information on whether a stack's actual configuration differs, or has
-        /// <i>drifted</i>, from it's expected configuration, as defined in the stack
-        /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-        /// Changes to Stacks and Resources</a>.</p>
+        /// <p>Summarizes information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
         pub fn set_drift_information(
             mut self,
             input: std::option::Option<crate::model::StackDriftInformationSummary>,
@@ -5209,72 +4110,33 @@ impl StackSummary {
     }
 }
 
-/// <p>Contains information about whether the stack's actual configuration differs, or has
-/// <i>drifted</i>, from its expected configuration, as defined in the stack
-/// template and any values specified as template parameters. A stack is considered to have
-/// drifted if one or more of its resources have drifted.</p>
+/// <p>Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackDriftInformationSummary {
-    /// <p>Status of the stack's actual configuration compared to its expected template
-    /// configuration. </p>
+    /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DRIFTED</code>: The stack differs from its expected template configuration.
-    /// A stack is considered to have drifted if one or more of its resources have
-    /// drifted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its
-    /// expected template configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-    /// template configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-    /// </li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its expected template configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub stack_drift_status: std::option::Option<crate::model::StackDriftStatus>,
-    /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of
-    /// its individual resources that support drift detection.</p>
+    /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
     pub last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackDriftInformationSummary {
-    /// <p>Status of the stack's actual configuration compared to its expected template
-    /// configuration. </p>
+    /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DRIFTED</code>: The stack differs from its expected template configuration.
-    /// A stack is considered to have drifted if one or more of its resources have
-    /// drifted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its
-    /// expected template configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-    /// template configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-    /// </li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its expected template configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn stack_drift_status(&self) -> std::option::Option<&crate::model::StackDriftStatus> {
         self.stack_drift_status.as_ref()
     }
-    /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of
-    /// its individual resources that support drift detection.</p>
+    /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
     pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
     }
@@ -5297,57 +4159,23 @@ pub mod stack_drift_information_summary {
         pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Status of the stack's actual configuration compared to its expected template
-        /// configuration. </p>
+        /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DRIFTED</code>: The stack differs from its expected template configuration.
-        /// A stack is considered to have drifted if one or more of its resources have
-        /// drifted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its
-        /// expected template configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-        /// template configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-        /// </li>
+        /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its expected template configuration.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
+        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
         /// </ul>
         pub fn stack_drift_status(mut self, input: crate::model::StackDriftStatus) -> Self {
             self.stack_drift_status = Some(input);
             self
         }
-        /// <p>Status of the stack's actual configuration compared to its expected template
-        /// configuration. </p>
+        /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DRIFTED</code>: The stack differs from its expected template configuration.
-        /// A stack is considered to have drifted if one or more of its resources have
-        /// drifted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its
-        /// expected template configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-        /// template configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-        /// </li>
+        /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its expected template configuration.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
+        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
         /// </ul>
         pub fn set_stack_drift_status(
             mut self,
@@ -5356,14 +4184,12 @@ pub mod stack_drift_information_summary {
             self.stack_drift_status = input;
             self
         }
-        /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of
-        /// its individual resources that support drift detection.</p>
+        /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
         pub fn last_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_check_timestamp = Some(input);
             self
         }
-        /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of
-        /// its individual resources that support drift detection.</p>
+        /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
         pub fn set_last_check_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5560,11 +4386,9 @@ impl AsRef<str> for StackStatus {
 pub struct StackResourceSummary {
     /// <p>The logical name of the resource specified in the template.</p>
     pub logical_resource_id: std::option::Option<std::string::String>,
-    /// <p>The name or unique identifier that corresponds to a physical instance ID of the
-    /// resource.</p>
+    /// <p>The name or unique identifier that corresponds to a physical instance ID of the resource.</p>
     pub physical_resource_id: std::option::Option<std::string::String>,
-    /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-    /// Guide.)</p>
+    /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Time the status was updated.</p>
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -5572,13 +4396,9 @@ pub struct StackResourceSummary {
     pub resource_status: std::option::Option<crate::model::ResourceStatus>,
     /// <p>Success/failure message associated with the resource.</p>
     pub resource_status_reason: std::option::Option<std::string::String>,
-    /// <p>Information about whether the resource's actual configuration differs, or has
-    /// <i>drifted</i>, from its expected configuration, as defined in the stack
-    /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-    /// Changes to Stacks and Resources</a>.</p>
+    /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub drift_information: std::option::Option<crate::model::StackResourceDriftInformationSummary>,
-    /// <p>Contains information about the module from which the resource was created, if the
-    /// resource was created from a module included in the stack template.</p>
+    /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub module_info: std::option::Option<crate::model::ModuleInfo>,
 }
 impl StackResourceSummary {
@@ -5586,13 +4406,11 @@ impl StackResourceSummary {
     pub fn logical_resource_id(&self) -> std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
-    /// <p>The name or unique identifier that corresponds to a physical instance ID of the
-    /// resource.</p>
+    /// <p>The name or unique identifier that corresponds to a physical instance ID of the resource.</p>
     pub fn physical_resource_id(&self) -> std::option::Option<&str> {
         self.physical_resource_id.as_deref()
     }
-    /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-    /// Guide.)</p>
+    /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -5608,17 +4426,13 @@ impl StackResourceSummary {
     pub fn resource_status_reason(&self) -> std::option::Option<&str> {
         self.resource_status_reason.as_deref()
     }
-    /// <p>Information about whether the resource's actual configuration differs, or has
-    /// <i>drifted</i>, from its expected configuration, as defined in the stack
-    /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-    /// Changes to Stacks and Resources</a>.</p>
+    /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub fn drift_information(
         &self,
     ) -> std::option::Option<&crate::model::StackResourceDriftInformationSummary> {
         self.drift_information.as_ref()
     }
-    /// <p>Contains information about the module from which the resource was created, if the
-    /// resource was created from a module included in the stack template.</p>
+    /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(&self) -> std::option::Option<&crate::model::ModuleInfo> {
         self.module_info.as_ref()
     }
@@ -5667,14 +4481,12 @@ pub mod stack_resource_summary {
             self.logical_resource_id = input;
             self
         }
-        /// <p>The name or unique identifier that corresponds to a physical instance ID of the
-        /// resource.</p>
+        /// <p>The name or unique identifier that corresponds to a physical instance ID of the resource.</p>
         pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.physical_resource_id = Some(input.into());
             self
         }
-        /// <p>The name or unique identifier that corresponds to a physical instance ID of the
-        /// resource.</p>
+        /// <p>The name or unique identifier that corresponds to a physical instance ID of the resource.</p>
         pub fn set_physical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5682,14 +4494,12 @@ pub mod stack_resource_summary {
             self.physical_resource_id = input;
             self
         }
-        /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-        /// Guide.)</p>
+        /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-        /// Guide.)</p>
+        /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5736,10 +4546,7 @@ pub mod stack_resource_summary {
             self.resource_status_reason = input;
             self
         }
-        /// <p>Information about whether the resource's actual configuration differs, or has
-        /// <i>drifted</i>, from its expected configuration, as defined in the stack
-        /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-        /// Changes to Stacks and Resources</a>.</p>
+        /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
         pub fn drift_information(
             mut self,
             input: crate::model::StackResourceDriftInformationSummary,
@@ -5747,10 +4554,7 @@ pub mod stack_resource_summary {
             self.drift_information = Some(input);
             self
         }
-        /// <p>Information about whether the resource's actual configuration differs, or has
-        /// <i>drifted</i>, from its expected configuration, as defined in the stack
-        /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-        /// Changes to Stacks and Resources</a>.</p>
+        /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
         pub fn set_drift_information(
             mut self,
             input: std::option::Option<crate::model::StackResourceDriftInformationSummary>,
@@ -5758,14 +4562,12 @@ pub mod stack_resource_summary {
             self.drift_information = input;
             self
         }
-        /// <p>Contains information about the module from which the resource was created, if the
-        /// resource was created from a module included in the stack template.</p>
+        /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
         pub fn module_info(mut self, input: crate::model::ModuleInfo) -> Self {
             self.module_info = Some(input);
             self
         }
-        /// <p>Contains information about the module from which the resource was created, if the
-        /// resource was created from a module included in the stack template.</p>
+        /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
         pub fn set_module_info(
             mut self,
             input: std::option::Option<crate::model::ModuleInfo>,
@@ -5795,61 +4597,32 @@ impl StackResourceSummary {
     }
 }
 
-/// <p>Contains information about the module from which the resource was created, if the
-/// resource was created from a module included in the stack template.</p>
-/// <p>For more information on modules, see <a href="AWSCloudFormation/latest/UserGuide/modules.html">Using modules to encapsulate and
-/// reuse resource configurations</a> in the <i>CloudFormation User
-/// Guide</i>.</p>
+/// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
+/// <p>For more information on modules, see <a href="AWSCloudFormation/latest/UserGuide/modules.html">Using modules to encapsulate and reuse resource configurations</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModuleInfo {
-    /// <p>A concantenated list of the the module type or types containing the resource. Module
-    /// types are listed starting with the inner-most nested module, and separated by
-    /// <code>/</code>.</p>
-    /// <p>In the following example, the resource was created from a module of type
-    /// <code>AWS::First::Example::MODULE</code>, that is nested inside a parent module of type
-    /// <code>AWS::Second::Example::MODULE</code>.</p>
-    /// <p>
-    /// <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code>
-    /// </p>
+    /// <p>A concantenated list of the the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that is nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
+    /// <p> <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
     pub type_hierarchy: std::option::Option<std::string::String>,
-    /// <p>A concantenated list of the logical IDs of the module or modules containing the
-    /// resource. Modules are listed starting with the inner-most nested module, and separated by
-    /// <code>/</code>.</p>
-    /// <p>In the following example, the resource was created from a module, <code>moduleA</code>,
-    /// that is nested inside a parent module, <code>moduleB</code>.</p>
-    /// <p>
-    /// <code>moduleA/moduleB</code>
-    /// </p>
-    /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
-    /// resources in a module</a> in the <i>CloudFormation User
-    /// Guide</i>.</p>
+    /// <p>A concantenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that is nested inside a parent module, <code>moduleB</code>.</p>
+    /// <p> <code>moduleA/moduleB</code> </p>
+    /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.</p>
     pub logical_id_hierarchy: std::option::Option<std::string::String>,
 }
 impl ModuleInfo {
-    /// <p>A concantenated list of the the module type or types containing the resource. Module
-    /// types are listed starting with the inner-most nested module, and separated by
-    /// <code>/</code>.</p>
-    /// <p>In the following example, the resource was created from a module of type
-    /// <code>AWS::First::Example::MODULE</code>, that is nested inside a parent module of type
-    /// <code>AWS::Second::Example::MODULE</code>.</p>
-    /// <p>
-    /// <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code>
-    /// </p>
+    /// <p>A concantenated list of the the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that is nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
+    /// <p> <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
     pub fn type_hierarchy(&self) -> std::option::Option<&str> {
         self.type_hierarchy.as_deref()
     }
-    /// <p>A concantenated list of the logical IDs of the module or modules containing the
-    /// resource. Modules are listed starting with the inner-most nested module, and separated by
-    /// <code>/</code>.</p>
-    /// <p>In the following example, the resource was created from a module, <code>moduleA</code>,
-    /// that is nested inside a parent module, <code>moduleB</code>.</p>
-    /// <p>
-    /// <code>moduleA/moduleB</code>
-    /// </p>
-    /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
-    /// resources in a module</a> in the <i>CloudFormation User
-    /// Guide</i>.</p>
+    /// <p>A concantenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+    /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that is nested inside a parent module, <code>moduleB</code>.</p>
+    /// <p> <code>moduleA/moduleB</code> </p>
+    /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn logical_id_hierarchy(&self) -> std::option::Option<&str> {
         self.logical_id_hierarchy.as_deref()
     }
@@ -5872,28 +4645,16 @@ pub mod module_info {
         pub(crate) logical_id_hierarchy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A concantenated list of the the module type or types containing the resource. Module
-        /// types are listed starting with the inner-most nested module, and separated by
-        /// <code>/</code>.</p>
-        /// <p>In the following example, the resource was created from a module of type
-        /// <code>AWS::First::Example::MODULE</code>, that is nested inside a parent module of type
-        /// <code>AWS::Second::Example::MODULE</code>.</p>
-        /// <p>
-        /// <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code>
-        /// </p>
+        /// <p>A concantenated list of the the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+        /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that is nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
+        /// <p> <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
         pub fn type_hierarchy(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_hierarchy = Some(input.into());
             self
         }
-        /// <p>A concantenated list of the the module type or types containing the resource. Module
-        /// types are listed starting with the inner-most nested module, and separated by
-        /// <code>/</code>.</p>
-        /// <p>In the following example, the resource was created from a module of type
-        /// <code>AWS::First::Example::MODULE</code>, that is nested inside a parent module of type
-        /// <code>AWS::Second::Example::MODULE</code>.</p>
-        /// <p>
-        /// <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code>
-        /// </p>
+        /// <p>A concantenated list of the the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+        /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that is nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
+        /// <p> <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
         pub fn set_type_hierarchy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5901,32 +4662,18 @@ pub mod module_info {
             self.type_hierarchy = input;
             self
         }
-        /// <p>A concantenated list of the logical IDs of the module or modules containing the
-        /// resource. Modules are listed starting with the inner-most nested module, and separated by
-        /// <code>/</code>.</p>
-        /// <p>In the following example, the resource was created from a module, <code>moduleA</code>,
-        /// that is nested inside a parent module, <code>moduleB</code>.</p>
-        /// <p>
-        /// <code>moduleA/moduleB</code>
-        /// </p>
-        /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
-        /// resources in a module</a> in the <i>CloudFormation User
-        /// Guide</i>.</p>
+        /// <p>A concantenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+        /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that is nested inside a parent module, <code>moduleB</code>.</p>
+        /// <p> <code>moduleA/moduleB</code> </p>
+        /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn logical_id_hierarchy(mut self, input: impl Into<std::string::String>) -> Self {
             self.logical_id_hierarchy = Some(input.into());
             self
         }
-        /// <p>A concantenated list of the logical IDs of the module or modules containing the
-        /// resource. Modules are listed starting with the inner-most nested module, and separated by
-        /// <code>/</code>.</p>
-        /// <p>In the following example, the resource was created from a module, <code>moduleA</code>,
-        /// that is nested inside a parent module, <code>moduleB</code>.</p>
-        /// <p>
-        /// <code>moduleA/moduleB</code>
-        /// </p>
-        /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
-        /// resources in a module</a> in the <i>CloudFormation User
-        /// Guide</i>.</p>
+        /// <p>A concantenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
+        /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that is nested inside a parent module, <code>moduleB</code>.</p>
+        /// <p> <code>moduleA/moduleB</code> </p>
+        /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_logical_id_hierarchy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5950,80 +4697,35 @@ impl ModuleInfo {
     }
 }
 
-/// <p>Summarizes information about whether the resource's actual configuration differs, or has
-/// <i>drifted</i>, from its expected configuration.</p>
+/// <p>Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackResourceDriftInformationSummary {
-    /// <p>Status of the resource's actual configuration compared to its expected
-    /// configuration</p>
+    /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code>: The resource differs from its expected configuration in that
-    /// it has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFIED</code>: The resource differs from its expected
-    /// configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its
-    /// expected configuration.</p>
-    /// <p>Any resources that do not currently support drift detection have a status of
-    /// <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
-    /// <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>.
-    /// For more information on skipping resources during rollback operations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue Rolling Back an Update</a> in the CloudFormation User Guide.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-    /// configuration.</p>
-    /// </li>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected configuration in that it has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: The resource differs from its expected configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its expected configuration.</p> <p>Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. If you performed an <code>ContinueUpdateRollback</code> operation on a stack, any resources included in <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>. For more information on skipping resources during rollback operations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resources's actual configuration matches its expected configuration.</p> </li>
     /// </ul>
     pub stack_resource_drift_status: std::option::Option<crate::model::StackResourceDriftStatus>,
-    /// <p>When CloudFormation last checked if the resource had drifted from its expected
-    /// configuration.</p>
+    /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
     pub last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackResourceDriftInformationSummary {
-    /// <p>Status of the resource's actual configuration compared to its expected
-    /// configuration</p>
+    /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code>: The resource differs from its expected configuration in that
-    /// it has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFIED</code>: The resource differs from its expected
-    /// configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its
-    /// expected configuration.</p>
-    /// <p>Any resources that do not currently support drift detection have a status of
-    /// <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
-    /// <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>.
-    /// For more information on skipping resources during rollback operations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue Rolling Back an Update</a> in the CloudFormation User Guide.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-    /// configuration.</p>
-    /// </li>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected configuration in that it has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: The resource differs from its expected configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its expected configuration.</p> <p>Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. If you performed an <code>ContinueUpdateRollback</code> operation on a stack, any resources included in <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>. For more information on skipping resources during rollback operations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resources's actual configuration matches its expected configuration.</p> </li>
     /// </ul>
     pub fn stack_resource_drift_status(
         &self,
     ) -> std::option::Option<&crate::model::StackResourceDriftStatus> {
         self.stack_resource_drift_status.as_ref()
     }
-    /// <p>When CloudFormation last checked if the resource had drifted from its expected
-    /// configuration.</p>
+    /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
     pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
     }
@@ -6050,33 +4752,12 @@ pub mod stack_resource_drift_information_summary {
         pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Status of the resource's actual configuration compared to its expected
-        /// configuration</p>
+        /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code>: The resource differs from its expected configuration in that
-        /// it has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFIED</code>: The resource differs from its expected
-        /// configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its
-        /// expected configuration.</p>
-        /// <p>Any resources that do not currently support drift detection have a status of
-        /// <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
-        /// <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>.
-        /// For more information on skipping resources during rollback operations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue Rolling Back an Update</a> in the CloudFormation User Guide.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-        /// configuration.</p>
-        /// </li>
+        /// <li> <p> <code>DELETED</code>: The resource differs from its expected configuration in that it has been deleted.</p> </li>
+        /// <li> <p> <code>MODIFIED</code>: The resource differs from its expected configuration.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its expected configuration.</p> <p>Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. If you performed an <code>ContinueUpdateRollback</code> operation on a stack, any resources included in <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>. For more information on skipping resources during rollback operations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The resources's actual configuration matches its expected configuration.</p> </li>
         /// </ul>
         pub fn stack_resource_drift_status(
             mut self,
@@ -6085,33 +4766,12 @@ pub mod stack_resource_drift_information_summary {
             self.stack_resource_drift_status = Some(input);
             self
         }
-        /// <p>Status of the resource's actual configuration compared to its expected
-        /// configuration</p>
+        /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code>: The resource differs from its expected configuration in that
-        /// it has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFIED</code>: The resource differs from its expected
-        /// configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its
-        /// expected configuration.</p>
-        /// <p>Any resources that do not currently support drift detection have a status of
-        /// <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
-        /// <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>.
-        /// For more information on skipping resources during rollback operations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue Rolling Back an Update</a> in the CloudFormation User Guide.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-        /// configuration.</p>
-        /// </li>
+        /// <li> <p> <code>DELETED</code>: The resource differs from its expected configuration in that it has been deleted.</p> </li>
+        /// <li> <p> <code>MODIFIED</code>: The resource differs from its expected configuration.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its expected configuration.</p> <p>Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. If you performed an <code>ContinueUpdateRollback</code> operation on a stack, any resources included in <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>. For more information on skipping resources during rollback operations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The resources's actual configuration matches its expected configuration.</p> </li>
         /// </ul>
         pub fn set_stack_resource_drift_status(
             mut self,
@@ -6120,14 +4780,12 @@ pub mod stack_resource_drift_information_summary {
             self.stack_resource_drift_status = input;
             self
         }
-        /// <p>When CloudFormation last checked if the resource had drifted from its expected
-        /// configuration.</p>
+        /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
         pub fn last_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_check_timestamp = Some(input);
             self
         }
-        /// <p>When CloudFormation last checked if the resource had drifted from its expected
-        /// configuration.</p>
+        /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
         pub fn set_last_check_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6376,102 +5034,52 @@ impl AsRef<str> for ResourceStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackInstanceSummary {
-    /// <p>The name or unique ID of the stack set that the stack instance is associated
-    /// with.</p>
+    /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
     pub stack_set_id: std::option::Option<std::string::String>,
-    /// <p>The name of the Amazon Web Services Region that the stack instance is associated
-    /// with.</p>
+    /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack
-    /// instance is associated with.</p>
+    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub account: std::option::Option<std::string::String>,
     /// <p>The ID of the stack instance.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>The status of the stack instance, in terms of its synchronization with its associated
-    /// stack set.</p>
+    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-    /// and left the stack in an unstable state. Stacks in this state are excluded from
-    /// further <code>UpdateStackSet</code> operations. You might need to perform a
-    /// <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-    /// <code>true</code>, to delete the stack instance, and then delete the stack
-    /// manually.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-    /// because:</p>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
-    /// <li>
-    /// <p>The associated stack failed during a <code>CreateStackSet</code> or
-    /// <code>UpdateStackSet</code> operation. </p>
-    /// </li>
-    /// <li>
-    /// <p>The stack was part of a <code>CreateStackSet</code> or
-    /// <code>UpdateStackSet</code> operation that failed or was stopped before the
-    /// stack was created or updated. </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
-    /// </li>
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated. </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::StackInstanceStatus>,
     /// <p>The explanation for the specific status code assigned to this stack instance.</p>
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The detailed status of the stack instance.</p>
     pub stack_instance_status: std::option::Option<crate::model::StackInstanceComprehensiveStatus>,
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-    /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub organizational_unit_id: std::option::Option<std::string::String>,
-    /// <p>Status of the stack instance's actual configuration compared to the expected template
-    /// and parameter configuration of the stack set to which it belongs. </p>
+    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DRIFTED</code>: The stack differs from the expected template and parameter
-    /// configuration of the stack set to which it belongs. A stack instance is considered to
-    /// have drifted if one or more of the resources in the associated stack have
-    /// drifted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from
-    /// its expected stack set configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The stack instance's actual configuration matches its
-    /// expected stack set configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-    /// </li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub drift_status: std::option::Option<crate::model::StackDriftStatus>,
-    /// <p>Most recent time when CloudFormation performed a drift detection operation on
-    /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
-    /// drift detection has not yet been performed.</p>
+    /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection has not yet been performed.</p>
     pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackInstanceSummary {
-    /// <p>The name or unique ID of the stack set that the stack instance is associated
-    /// with.</p>
+    /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
     pub fn stack_set_id(&self) -> std::option::Option<&str> {
         self.stack_set_id.as_deref()
     }
-    /// <p>The name of the Amazon Web Services Region that the stack instance is associated
-    /// with.</p>
+    /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack
-    /// instance is associated with.</p>
+    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn account(&self) -> std::option::Option<&str> {
         self.account.as_deref()
     }
@@ -6479,38 +5087,15 @@ impl StackInstanceSummary {
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>The status of the stack instance, in terms of its synchronization with its associated
-    /// stack set.</p>
+    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-    /// and left the stack in an unstable state. Stacks in this state are excluded from
-    /// further <code>UpdateStackSet</code> operations. You might need to perform a
-    /// <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-    /// <code>true</code>, to delete the stack instance, and then delete the stack
-    /// manually.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-    /// because:</p>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
-    /// <li>
-    /// <p>The associated stack failed during a <code>CreateStackSet</code> or
-    /// <code>UpdateStackSet</code> operation. </p>
-    /// </li>
-    /// <li>
-    /// <p>The stack was part of a <code>CreateStackSet</code> or
-    /// <code>UpdateStackSet</code> operation that failed or was stopped before the
-    /// stack was created or updated. </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
-    /// </li>
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated. </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::StackInstanceStatus> {
         self.status.as_ref()
@@ -6525,42 +5110,21 @@ impl StackInstanceSummary {
     ) -> std::option::Option<&crate::model::StackInstanceComprehensiveStatus> {
         self.stack_instance_status.as_ref()
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-    /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
     }
-    /// <p>Status of the stack instance's actual configuration compared to the expected template
-    /// and parameter configuration of the stack set to which it belongs. </p>
+    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DRIFTED</code>: The stack differs from the expected template and parameter
-    /// configuration of the stack set to which it belongs. A stack instance is considered to
-    /// have drifted if one or more of the resources in the associated stack have
-    /// drifted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from
-    /// its expected stack set configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The stack instance's actual configuration matches its
-    /// expected stack set configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-    /// </li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn drift_status(&self) -> std::option::Option<&crate::model::StackDriftStatus> {
         self.drift_status.as_ref()
     }
-    /// <p>Most recent time when CloudFormation performed a drift detection operation on
-    /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
-    /// drift detection has not yet been performed.</p>
+    /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection has not yet been performed.</p>
     pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
@@ -6603,38 +5167,32 @@ pub mod stack_instance_summary {
         pub(crate) last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The name or unique ID of the stack set that the stack instance is associated
-        /// with.</p>
+        /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
         pub fn stack_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_set_id = Some(input.into());
             self
         }
-        /// <p>The name or unique ID of the stack set that the stack instance is associated
-        /// with.</p>
+        /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
         pub fn set_stack_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_set_id = input;
             self
         }
-        /// <p>The name of the Amazon Web Services Region that the stack instance is associated
-        /// with.</p>
+        /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon Web Services Region that the stack instance is associated
-        /// with.</p>
+        /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
-        /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack
-        /// instance is associated with.</p>
+        /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.account = Some(input.into());
             self
         }
-        /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack
-        /// instance is associated with.</p>
+        /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
         pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account = input;
             self
@@ -6649,75 +5207,29 @@ pub mod stack_instance_summary {
             self.stack_id = input;
             self
         }
-        /// <p>The status of the stack instance, in terms of its synchronization with its associated
-        /// stack set.</p>
+        /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-        /// and left the stack in an unstable state. Stacks in this state are excluded from
-        /// further <code>UpdateStackSet</code> operations. You might need to perform a
-        /// <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-        /// <code>true</code>, to delete the stack instance, and then delete the stack
-        /// manually.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-        /// because:</p>
+        /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+        /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
         /// <ul>
-        /// <li>
-        /// <p>The associated stack failed during a <code>CreateStackSet</code> or
-        /// <code>UpdateStackSet</code> operation. </p>
-        /// </li>
-        /// <li>
-        /// <p>The stack was part of a <code>CreateStackSet</code> or
-        /// <code>UpdateStackSet</code> operation that failed or was stopped before the
-        /// stack was created or updated. </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
-        /// </li>
+        /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
+        /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated. </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::StackInstanceStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the stack instance, in terms of its synchronization with its associated
-        /// stack set.</p>
+        /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-        /// and left the stack in an unstable state. Stacks in this state are excluded from
-        /// further <code>UpdateStackSet</code> operations. You might need to perform a
-        /// <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-        /// <code>true</code>, to delete the stack instance, and then delete the stack
-        /// manually.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-        /// because:</p>
+        /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+        /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
         /// <ul>
-        /// <li>
-        /// <p>The associated stack failed during a <code>CreateStackSet</code> or
-        /// <code>UpdateStackSet</code> operation. </p>
-        /// </li>
-        /// <li>
-        /// <p>The stack was part of a <code>CreateStackSet</code> or
-        /// <code>UpdateStackSet</code> operation that failed or was stopped before the
-        /// stack was created or updated. </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
-        /// </li>
+        /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
+        /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated. </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -6755,14 +5267,12 @@ pub mod stack_instance_summary {
             self.stack_instance_status = input;
             self
         }
-        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-        /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
         pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organizational_unit_id = Some(input.into());
             self
         }
-        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-        /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
         pub fn set_organizational_unit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6770,59 +5280,23 @@ pub mod stack_instance_summary {
             self.organizational_unit_id = input;
             self
         }
-        /// <p>Status of the stack instance's actual configuration compared to the expected template
-        /// and parameter configuration of the stack set to which it belongs. </p>
+        /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DRIFTED</code>: The stack differs from the expected template and parameter
-        /// configuration of the stack set to which it belongs. A stack instance is considered to
-        /// have drifted if one or more of the resources in the associated stack have
-        /// drifted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from
-        /// its expected stack set configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The stack instance's actual configuration matches its
-        /// expected stack set configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-        /// </li>
+        /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from its expected stack set configuration.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
         /// </ul>
         pub fn drift_status(mut self, input: crate::model::StackDriftStatus) -> Self {
             self.drift_status = Some(input);
             self
         }
-        /// <p>Status of the stack instance's actual configuration compared to the expected template
-        /// and parameter configuration of the stack set to which it belongs. </p>
+        /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DRIFTED</code>: The stack differs from the expected template and parameter
-        /// configuration of the stack set to which it belongs. A stack instance is considered to
-        /// have drifted if one or more of the resources in the associated stack have
-        /// drifted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from
-        /// its expected stack set configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The stack instance's actual configuration matches its
-        /// expected stack set configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-        /// </li>
+        /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from its expected stack set configuration.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
         /// </ul>
         pub fn set_drift_status(
             mut self,
@@ -6831,16 +5305,12 @@ pub mod stack_instance_summary {
             self.drift_status = input;
             self
         }
-        /// <p>Most recent time when CloudFormation performed a drift detection operation on
-        /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
-        /// drift detection has not yet been performed.</p>
+        /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection has not yet been performed.</p>
         pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_drift_check_timestamp = Some(input);
             self
         }
-        /// <p>Most recent time when CloudFormation performed a drift detection operation on
-        /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
-        /// drift detection has not yet been performed.</p>
+        /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection has not yet been performed.</p>
         pub fn set_last_drift_check_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6877,83 +5347,23 @@ impl StackInstanceSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackInstanceComprehensiveStatus {
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code>: The operation in the specified account and Region has been
-    /// cancelled. This is either because a user has stopped the stack set operation, or
-    /// because the failure tolerance of the stack set operation has been exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The operation in the specified account and Region failed. If
-    /// the stack set operation fails in enough accounts within a Region, the failure
-    /// tolerance for the stack set operation as a whole might be exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-    /// and left the stack in an unstable state. Stacks in this state are excluded from
-    /// further <code>UpdateStackSet</code> operations. You might need to perform a
-    /// <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-    /// <code>true</code>, to delete the stack instance, and then delete the stack
-    /// manually.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code>: The operation in the specified account and Region has yet to
-    /// start.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code>: The operation in the specified account and Region is
-    /// currently in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code>: The operation in the specified account and Region
-    /// completed successfully.</p>
-    /// </li>
+    /// <li> <p> <code>CANCELLED</code>: The operation in the specified account and Region has been cancelled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation in the specified account and Region failed. If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded.</p> </li>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
     pub detailed_status: std::option::Option<crate::model::StackInstanceDetailedStatus>,
 }
 impl StackInstanceComprehensiveStatus {
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code>: The operation in the specified account and Region has been
-    /// cancelled. This is either because a user has stopped the stack set operation, or
-    /// because the failure tolerance of the stack set operation has been exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The operation in the specified account and Region failed. If
-    /// the stack set operation fails in enough accounts within a Region, the failure
-    /// tolerance for the stack set operation as a whole might be exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-    /// and left the stack in an unstable state. Stacks in this state are excluded from
-    /// further <code>UpdateStackSet</code> operations. You might need to perform a
-    /// <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-    /// <code>true</code>, to delete the stack instance, and then delete the stack
-    /// manually.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code>: The operation in the specified account and Region has yet to
-    /// start.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code>: The operation in the specified account and Region is
-    /// currently in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code>: The operation in the specified account and Region
-    /// completed successfully.</p>
-    /// </li>
+    /// <li> <p> <code>CANCELLED</code>: The operation in the specified account and Region has been cancelled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation in the specified account and Region failed. If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded.</p> </li>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
     pub fn detailed_status(
         &self,
@@ -6978,84 +5388,24 @@ pub mod stack_instance_comprehensive_status {
     }
     impl Builder {
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code>: The operation in the specified account and Region has been
-        /// cancelled. This is either because a user has stopped the stack set operation, or
-        /// because the failure tolerance of the stack set operation has been exceeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The operation in the specified account and Region failed. If
-        /// the stack set operation fails in enough accounts within a Region, the failure
-        /// tolerance for the stack set operation as a whole might be exceeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-        /// and left the stack in an unstable state. Stacks in this state are excluded from
-        /// further <code>UpdateStackSet</code> operations. You might need to perform a
-        /// <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-        /// <code>true</code>, to delete the stack instance, and then delete the stack
-        /// manually.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code>: The operation in the specified account and Region has yet to
-        /// start.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code>: The operation in the specified account and Region is
-        /// currently in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code>: The operation in the specified account and Region
-        /// completed successfully.</p>
-        /// </li>
+        /// <li> <p> <code>CANCELLED</code>: The operation in the specified account and Region has been cancelled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p> </li>
+        /// <li> <p> <code>FAILED</code>: The operation in the specified account and Region failed. If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded.</p> </li>
+        /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+        /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start.</p> </li>
+        /// <li> <p> <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p> </li>
+        /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
         /// </ul>
         pub fn detailed_status(mut self, input: crate::model::StackInstanceDetailedStatus) -> Self {
             self.detailed_status = Some(input);
             self
         }
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code>: The operation in the specified account and Region has been
-        /// cancelled. This is either because a user has stopped the stack set operation, or
-        /// because the failure tolerance of the stack set operation has been exceeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The operation in the specified account and Region failed. If
-        /// the stack set operation fails in enough accounts within a Region, the failure
-        /// tolerance for the stack set operation as a whole might be exceeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-        /// and left the stack in an unstable state. Stacks in this state are excluded from
-        /// further <code>UpdateStackSet</code> operations. You might need to perform a
-        /// <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-        /// <code>true</code>, to delete the stack instance, and then delete the stack
-        /// manually.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code>: The operation in the specified account and Region has yet to
-        /// start.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code>: The operation in the specified account and Region is
-        /// currently in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code>: The operation in the specified account and Region
-        /// completed successfully.</p>
-        /// </li>
+        /// <li> <p> <code>CANCELLED</code>: The operation in the specified account and Region has been cancelled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p> </li>
+        /// <li> <p> <code>FAILED</code>: The operation in the specified account and Region failed. If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded.</p> </li>
+        /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+        /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start.</p> </li>
+        /// <li> <p> <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p> </li>
+        /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
         /// </ul>
         pub fn set_detailed_status(
             mut self,
@@ -7343,20 +5693,15 @@ impl AsRef<str> for StackInstanceFilterName {
     }
 }
 
-/// <p>The <code>Export</code> structure describes the exported output values for a
-/// stack.</p>
+/// <p>The <code>Export</code> structure describes the exported output values for a stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Export {
     /// <p>The stack that contains the exported output name and value.</p>
     pub exporting_stack_id: std::option::Option<std::string::String>,
-    /// <p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code>
-    /// function to import the associated value into other stacks. The name is defined in the
-    /// <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
+    /// <p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code> function to import the associated value into other stacks. The name is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value of the exported output, such as a resource physical ID. This value is defined
-    /// in the <code>Export</code> field in the associated stack's <code>Outputs</code>
-    /// section.</p>
+    /// <p>The value of the exported output, such as a resource physical ID. This value is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Export {
@@ -7364,15 +5709,11 @@ impl Export {
     pub fn exporting_stack_id(&self) -> std::option::Option<&str> {
         self.exporting_stack_id.as_deref()
     }
-    /// <p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code>
-    /// function to import the associated value into other stacks. The name is defined in the
-    /// <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
+    /// <p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code> function to import the associated value into other stacks. The name is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value of the exported output, such as a resource physical ID. This value is defined
-    /// in the <code>Export</code> field in the associated stack's <code>Outputs</code>
-    /// section.</p>
+    /// <p>The value of the exported output, such as a resource physical ID. This value is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -7410,30 +5751,22 @@ pub mod export {
             self.exporting_stack_id = input;
             self
         }
-        /// <p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code>
-        /// function to import the associated value into other stacks. The name is defined in the
-        /// <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
+        /// <p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code> function to import the associated value into other stacks. The name is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code>
-        /// function to import the associated value into other stacks. The name is defined in the
-        /// <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
+        /// <p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code> function to import the associated value into other stacks. The name is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The value of the exported output, such as a resource physical ID. This value is defined
-        /// in the <code>Export</code> field in the associated stack's <code>Outputs</code>
-        /// section.</p>
+        /// <p>The value of the exported output, such as a resource physical ID. This value is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the exported output, such as a resource physical ID. This value is defined
-        /// in the <code>Export</code> field in the associated stack's <code>Outputs</code>
-        /// section.</p>
+        /// <p>The value of the exported output, such as a resource physical ID. This value is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -7455,8 +5788,7 @@ impl Export {
     }
 }
 
-/// <p>The <code>ChangeSetSummary</code> structure describes a change set, its status, and the
-/// stack with which it's associated.</p>
+/// <p>The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeSetSummary {
@@ -7468,24 +5800,17 @@ pub struct ChangeSetSummary {
     pub change_set_id: std::option::Option<std::string::String>,
     /// <p>The name of the change set.</p>
     pub change_set_name: std::option::Option<std::string::String>,
-    /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change
-    /// set. If you can’t execute the change set, the status indicates why. For example, a change
-    /// set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still
-    /// creating it or in an <code>OBSOLETE</code> state because the stack was already
-    /// updated.</p>
+    /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can’t execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
     pub execution_status: std::option::Option<crate::model::ExecutionStatus>,
-    /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
+    /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
     pub status: std::option::Option<crate::model::ChangeSetStatus>,
-    /// <p>A description of the change set's status. For example, if your change set is in the
-    /// <code>FAILED</code> state, CloudFormation shows the error message.</p>
+    /// <p>A description of the change set's status. For example, if your change set is in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The start time when the change set was created, in UTC.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Descriptive information about the change set.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change
-    /// set.</p>
+    /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change set.</p>
     pub include_nested_stacks: std::option::Option<bool>,
     /// <p>The parent change set ID.</p>
     pub parent_change_set_id: std::option::Option<std::string::String>,
@@ -7509,21 +5834,15 @@ impl ChangeSetSummary {
     pub fn change_set_name(&self) -> std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
-    /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change
-    /// set. If you can’t execute the change set, the status indicates why. For example, a change
-    /// set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still
-    /// creating it or in an <code>OBSOLETE</code> state because the stack was already
-    /// updated.</p>
+    /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can’t execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
     pub fn execution_status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
         self.execution_status.as_ref()
     }
-    /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>,
-    /// <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
+    /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ChangeSetStatus> {
         self.status.as_ref()
     }
-    /// <p>A description of the change set's status. For example, if your change set is in the
-    /// <code>FAILED</code> state, CloudFormation shows the error message.</p>
+    /// <p>A description of the change set's status. For example, if your change set is in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -7535,8 +5854,7 @@ impl ChangeSetSummary {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change
-    /// set.</p>
+    /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change set.</p>
     pub fn include_nested_stacks(&self) -> std::option::Option<bool> {
         self.include_nested_stacks
     }
@@ -7633,20 +5951,12 @@ pub mod change_set_summary {
             self.change_set_name = input;
             self
         }
-        /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change
-        /// set. If you can’t execute the change set, the status indicates why. For example, a change
-        /// set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still
-        /// creating it or in an <code>OBSOLETE</code> state because the stack was already
-        /// updated.</p>
+        /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can’t execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
         pub fn execution_status(mut self, input: crate::model::ExecutionStatus) -> Self {
             self.execution_status = Some(input);
             self
         }
-        /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change
-        /// set. If you can’t execute the change set, the status indicates why. For example, a change
-        /// set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still
-        /// creating it or in an <code>OBSOLETE</code> state because the stack was already
-        /// updated.</p>
+        /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can’t execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
         pub fn set_execution_status(
             mut self,
             input: std::option::Option<crate::model::ExecutionStatus>,
@@ -7654,14 +5964,12 @@ pub mod change_set_summary {
             self.execution_status = input;
             self
         }
-        /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
+        /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
         pub fn status(mut self, input: crate::model::ChangeSetStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>,
-        /// <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
+        /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ChangeSetStatus>,
@@ -7669,14 +5977,12 @@ pub mod change_set_summary {
             self.status = input;
             self
         }
-        /// <p>A description of the change set's status. For example, if your change set is in the
-        /// <code>FAILED</code> state, CloudFormation shows the error message.</p>
+        /// <p>A description of the change set's status. For example, if your change set is in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_reason = Some(input.into());
             self
         }
-        /// <p>A description of the change set's status. For example, if your change set is in the
-        /// <code>FAILED</code> state, CloudFormation shows the error message.</p>
+        /// <p>A description of the change set's status. For example, if your change set is in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7707,14 +6013,12 @@ pub mod change_set_summary {
             self.description = input;
             self
         }
-        /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change
-        /// set.</p>
+        /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change set.</p>
         pub fn include_nested_stacks(mut self, input: bool) -> Self {
             self.include_nested_stacks = Some(input);
             self
         }
-        /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change
-        /// set.</p>
+        /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change set.</p>
         pub fn set_include_nested_stacks(mut self, input: std::option::Option<bool>) -> Self {
             self.include_nested_stacks = input;
             self
@@ -7937,37 +6241,27 @@ impl AsRef<str> for ExecutionStatus {
     }
 }
 
-/// <p>Describes the target resources of a specific type in your import template (for example,
-/// all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during the
-/// import to identify resources of that type.</p>
+/// <p>Describes the target resources of a specific type in your import template (for example, all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during the import to identify resources of that type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceIdentifierSummary {
-    /// <p>The template resource type of the target resources, such as
-    /// <code>AWS::S3::Bucket</code>.</p>
+    /// <p>The template resource type of the target resources, such as <code>AWS::S3::Bucket</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as
-    /// defined in the import template.</p>
+    /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as defined in the import template.</p>
     pub logical_resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The resource properties you can provide during the import to identify your target
-    /// resources. For example, <code>BucketName</code> is a possible identifier property for
-    /// <code>AWS::S3::Bucket</code> resources.</p>
+    /// <p>The resource properties you can provide during the import to identify your target resources. For example, <code>BucketName</code> is a possible identifier property for <code>AWS::S3::Bucket</code> resources.</p>
     pub resource_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResourceIdentifierSummary {
-    /// <p>The template resource type of the target resources, such as
-    /// <code>AWS::S3::Bucket</code>.</p>
+    /// <p>The template resource type of the target resources, such as <code>AWS::S3::Bucket</code>.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as
-    /// defined in the import template.</p>
+    /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as defined in the import template.</p>
     pub fn logical_resource_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.logical_resource_ids.as_deref()
     }
-    /// <p>The resource properties you can provide during the import to identify your target
-    /// resources. For example, <code>BucketName</code> is a possible identifier property for
-    /// <code>AWS::S3::Bucket</code> resources.</p>
+    /// <p>The resource properties you can provide during the import to identify your target resources. For example, <code>BucketName</code> is a possible identifier property for <code>AWS::S3::Bucket</code> resources.</p>
     pub fn resource_identifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_identifiers.as_deref()
     }
@@ -7992,14 +6286,12 @@ pub mod resource_identifier_summary {
         pub(crate) resource_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The template resource type of the target resources, such as
-        /// <code>AWS::S3::Bucket</code>.</p>
+        /// <p>The template resource type of the target resources, such as <code>AWS::S3::Bucket</code>.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The template resource type of the target resources, such as
-        /// <code>AWS::S3::Bucket</code>.</p>
+        /// <p>The template resource type of the target resources, such as <code>AWS::S3::Bucket</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8011,16 +6303,14 @@ pub mod resource_identifier_summary {
         ///
         /// To override the contents of this collection use [`set_logical_resource_ids`](Self::set_logical_resource_ids).
         ///
-        /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as
-        /// defined in the import template.</p>
+        /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as defined in the import template.</p>
         pub fn logical_resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logical_resource_ids.unwrap_or_default();
             v.push(input.into());
             self.logical_resource_ids = Some(v);
             self
         }
-        /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as
-        /// defined in the import template.</p>
+        /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as defined in the import template.</p>
         pub fn set_logical_resource_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8032,18 +6322,14 @@ pub mod resource_identifier_summary {
         ///
         /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
         ///
-        /// <p>The resource properties you can provide during the import to identify your target
-        /// resources. For example, <code>BucketName</code> is a possible identifier property for
-        /// <code>AWS::S3::Bucket</code> resources.</p>
+        /// <p>The resource properties you can provide during the import to identify your target resources. For example, <code>BucketName</code> is a possible identifier property for <code>AWS::S3::Bucket</code> resources.</p>
         pub fn resource_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
             v.push(input.into());
             self.resource_identifiers = Some(v);
             self
         }
-        /// <p>The resource properties you can provide during the import to identify your target
-        /// resources. For example, <code>BucketName</code> is a possible identifier property for
-        /// <code>AWS::S3::Bucket</code> resources.</p>
+        /// <p>The resource properties you can provide during the import to identify your target resources. For example, <code>BucketName</code> is a possible identifier property for <code>AWS::S3::Bucket</code> resources.</p>
         pub fn set_resource_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8078,8 +6364,7 @@ pub struct ParameterDeclaration {
     pub default_value: std::option::Option<std::string::String>,
     /// <p>The type of parameter.</p>
     pub parameter_type: std::option::Option<std::string::String>,
-    /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in
-    /// the Amazon Web Services Management Console.</p>
+    /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in the Amazon Web Services Management Console.</p>
     pub no_echo: std::option::Option<bool>,
     /// <p>The description that is associate with the parameter.</p>
     pub description: std::option::Option<std::string::String>,
@@ -8099,8 +6384,7 @@ impl ParameterDeclaration {
     pub fn parameter_type(&self) -> std::option::Option<&str> {
         self.parameter_type.as_deref()
     }
-    /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in
-    /// the Amazon Web Services Management Console.</p>
+    /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in the Amazon Web Services Management Console.</p>
     pub fn no_echo(&self) -> std::option::Option<bool> {
         self.no_echo
     }
@@ -8180,14 +6464,12 @@ pub mod parameter_declaration {
             self.parameter_type = input;
             self
         }
-        /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in
-        /// the Amazon Web Services Management Console.</p>
+        /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in the Amazon Web Services Management Console.</p>
         pub fn no_echo(mut self, input: bool) -> Self {
             self.no_echo = Some(input);
             self
         }
-        /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in
-        /// the Amazon Web Services Management Console.</p>
+        /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in the Amazon Web Services Management Console.</p>
         pub fn set_no_echo(mut self, input: std::option::Option<bool>) -> Self {
             self.no_echo = input;
             self
@@ -8235,9 +6517,7 @@ impl ParameterDeclaration {
     }
 }
 
-/// <p>A set of criteria that CloudFormation uses to validate parameter values.
-/// Although other constraints might be defined in the stack template, CloudFormation
-/// returns only the <code>AllowedValues</code> property.</p>
+/// <p>A set of criteria that CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, CloudFormation returns only the <code>AllowedValues</code> property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterConstraints {
@@ -8355,17 +6635,9 @@ impl AsRef<str> for TemplateStage {
     }
 }
 
-/// <p>Contains the drift information for a resource that has been checked for drift. This
-/// includes actual and expected property values for resources in which CloudFormation has detected
-/// drift. Only resource properties explicitly defined in the stack template are checked for
-/// drift. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-/// Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-/// <p>Resources that do not currently support drift detection cannot be checked. For a list of
-/// resources that support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support
-/// Drift Detection</a>.</p>
-/// <p>Use <a>DetectStackResourceDrift</a> to detect drift on individual resources,
-/// or <a>DetectStackDrift</a> to detect drift on all resources in a given stack
-/// that support drift detection.</p>
+/// <p>Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+/// <p>Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
+/// <p>Use <code>DetectStackResourceDrift</code> to detect drift on individual resources, or <code>DetectStackDrift</code> to detect drift on all resources in a given stack that support drift detection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackResourceDrift {
@@ -8373,60 +6645,32 @@ pub struct StackResourceDrift {
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The logical name of the resource specified in the template.</p>
     pub logical_resource_id: std::option::Option<std::string::String>,
-    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
-    /// supported by CloudFormation. </p>
+    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation. </p>
     pub physical_resource_id: std::option::Option<std::string::String>,
-    /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses
-    /// context key-value pairs in cases where a resource's logical and physical IDs are not enough
-    /// to uniquely identify that resource. Each context key-value pair specifies a unique resource
-    /// that contains the targeted resource.</p>
+    /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
     pub physical_resource_id_context:
         std::option::Option<std::vec::Vec<crate::model::PhysicalResourceIdContextKeyValuePair>>,
     /// <p>The type of the resource.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>A JSON structure containing the expected property values of the stack resource, as
-    /// defined in the stack template and any values specified as template parameters. </p>
-    /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this
-    /// structure will not be present. </p>
+    /// <p>A JSON structure containing the expected property values of the stack resource, as defined in the stack template and any values specified as template parameters. </p>
+    /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present. </p>
     pub expected_properties: std::option::Option<std::string::String>,
     /// <p>A JSON structure containing the actual property values of the stack resource.</p>
-    /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this
-    /// structure will not be present. </p>
+    /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present. </p>
     pub actual_properties: std::option::Option<std::string::String>,
-    /// <p>A collection of the resource properties whose actual values differ from their expected
-    /// values. These will be present only for resources whose
-    /// <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.
-    /// </p>
+    /// <p>A collection of the resource properties whose actual values differ from their expected values. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
     pub property_differences: std::option::Option<std::vec::Vec<crate::model::PropertyDifference>>,
-    /// <p>Status of the resource's actual configuration compared to its expected
-    /// configuration</p>
+    /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code>: The resource differs from its expected template
-    /// configuration because the resource has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFIED</code>: One or more resource properties differ from their expected
-    /// values (as defined in the stack template and any values specified as template
-    /// parameters).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-    /// template configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p>
-    /// </li>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration because the resource has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected values (as defined in the stack template and any values specified as template parameters).</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resources's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p> </li>
     /// </ul>
     pub stack_resource_drift_status: std::option::Option<crate::model::StackResourceDriftStatus>,
     /// <p>Time at which CloudFormation performed drift detection on the stack resource.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Contains information about the module from which the resource was created, if the
-    /// resource was created from a module included in the stack template.</p>
+    /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub module_info: std::option::Option<crate::model::ModuleInfo>,
 }
 impl StackResourceDrift {
@@ -8438,15 +6682,11 @@ impl StackResourceDrift {
     pub fn logical_resource_id(&self) -> std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
-    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
-    /// supported by CloudFormation. </p>
+    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation. </p>
     pub fn physical_resource_id(&self) -> std::option::Option<&str> {
         self.physical_resource_id.as_deref()
     }
-    /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses
-    /// context key-value pairs in cases where a resource's logical and physical IDs are not enough
-    /// to uniquely identify that resource. Each context key-value pair specifies a unique resource
-    /// that contains the targeted resource.</p>
+    /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
     pub fn physical_resource_id_context(
         &self,
     ) -> std::option::Option<&[crate::model::PhysicalResourceIdContextKeyValuePair]> {
@@ -8456,49 +6696,26 @@ impl StackResourceDrift {
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>A JSON structure containing the expected property values of the stack resource, as
-    /// defined in the stack template and any values specified as template parameters. </p>
-    /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this
-    /// structure will not be present. </p>
+    /// <p>A JSON structure containing the expected property values of the stack resource, as defined in the stack template and any values specified as template parameters. </p>
+    /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present. </p>
     pub fn expected_properties(&self) -> std::option::Option<&str> {
         self.expected_properties.as_deref()
     }
     /// <p>A JSON structure containing the actual property values of the stack resource.</p>
-    /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this
-    /// structure will not be present. </p>
+    /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present. </p>
     pub fn actual_properties(&self) -> std::option::Option<&str> {
         self.actual_properties.as_deref()
     }
-    /// <p>A collection of the resource properties whose actual values differ from their expected
-    /// values. These will be present only for resources whose
-    /// <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.
-    /// </p>
+    /// <p>A collection of the resource properties whose actual values differ from their expected values. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
     pub fn property_differences(&self) -> std::option::Option<&[crate::model::PropertyDifference]> {
         self.property_differences.as_deref()
     }
-    /// <p>Status of the resource's actual configuration compared to its expected
-    /// configuration</p>
+    /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code>: The resource differs from its expected template
-    /// configuration because the resource has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFIED</code>: One or more resource properties differ from their expected
-    /// values (as defined in the stack template and any values specified as template
-    /// parameters).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-    /// template configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p>
-    /// </li>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration because the resource has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected values (as defined in the stack template and any values specified as template parameters).</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resources's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p> </li>
     /// </ul>
     pub fn stack_resource_drift_status(
         &self,
@@ -8509,8 +6726,7 @@ impl StackResourceDrift {
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// <p>Contains information about the module from which the resource was created, if the
-    /// resource was created from a module included in the stack template.</p>
+    /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(&self) -> std::option::Option<&crate::model::ModuleInfo> {
         self.module_info.as_ref()
     }
@@ -8583,14 +6799,12 @@ pub mod stack_resource_drift {
             self.logical_resource_id = input;
             self
         }
-        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
-        /// supported by CloudFormation. </p>
+        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation. </p>
         pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.physical_resource_id = Some(input.into());
             self
         }
-        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
-        /// supported by CloudFormation. </p>
+        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation. </p>
         pub fn set_physical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8602,23 +6816,17 @@ pub mod stack_resource_drift {
         ///
         /// To override the contents of this collection use [`set_physical_resource_id_context`](Self::set_physical_resource_id_context).
         ///
-        /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses
-        /// context key-value pairs in cases where a resource's logical and physical IDs are not enough
-        /// to uniquely identify that resource. Each context key-value pair specifies a unique resource
-        /// that contains the targeted resource.</p>
+        /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
         pub fn physical_resource_id_context(
             mut self,
-            input: impl Into<crate::model::PhysicalResourceIdContextKeyValuePair>,
+            input: crate::model::PhysicalResourceIdContextKeyValuePair,
         ) -> Self {
             let mut v = self.physical_resource_id_context.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.physical_resource_id_context = Some(v);
             self
         }
-        /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses
-        /// context key-value pairs in cases where a resource's logical and physical IDs are not enough
-        /// to uniquely identify that resource. Each context key-value pair specifies a unique resource
-        /// that contains the targeted resource.</p>
+        /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
         pub fn set_physical_resource_id_context(
             mut self,
             input: std::option::Option<
@@ -8641,18 +6849,14 @@ pub mod stack_resource_drift {
             self.resource_type = input;
             self
         }
-        /// <p>A JSON structure containing the expected property values of the stack resource, as
-        /// defined in the stack template and any values specified as template parameters. </p>
-        /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this
-        /// structure will not be present. </p>
+        /// <p>A JSON structure containing the expected property values of the stack resource, as defined in the stack template and any values specified as template parameters. </p>
+        /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present. </p>
         pub fn expected_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_properties = Some(input.into());
             self
         }
-        /// <p>A JSON structure containing the expected property values of the stack resource, as
-        /// defined in the stack template and any values specified as template parameters. </p>
-        /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this
-        /// structure will not be present. </p>
+        /// <p>A JSON structure containing the expected property values of the stack resource, as defined in the stack template and any values specified as template parameters. </p>
+        /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present. </p>
         pub fn set_expected_properties(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8661,15 +6865,13 @@ pub mod stack_resource_drift {
             self
         }
         /// <p>A JSON structure containing the actual property values of the stack resource.</p>
-        /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this
-        /// structure will not be present. </p>
+        /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present. </p>
         pub fn actual_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.actual_properties = Some(input.into());
             self
         }
         /// <p>A JSON structure containing the actual property values of the stack resource.</p>
-        /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this
-        /// structure will not be present. </p>
+        /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present. </p>
         pub fn set_actual_properties(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8681,23 +6883,14 @@ pub mod stack_resource_drift {
         ///
         /// To override the contents of this collection use [`set_property_differences`](Self::set_property_differences).
         ///
-        /// <p>A collection of the resource properties whose actual values differ from their expected
-        /// values. These will be present only for resources whose
-        /// <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.
-        /// </p>
-        pub fn property_differences(
-            mut self,
-            input: impl Into<crate::model::PropertyDifference>,
-        ) -> Self {
+        /// <p>A collection of the resource properties whose actual values differ from their expected values. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
+        pub fn property_differences(mut self, input: crate::model::PropertyDifference) -> Self {
             let mut v = self.property_differences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_differences = Some(v);
             self
         }
-        /// <p>A collection of the resource properties whose actual values differ from their expected
-        /// values. These will be present only for resources whose
-        /// <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.
-        /// </p>
+        /// <p>A collection of the resource properties whose actual values differ from their expected values. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
         pub fn set_property_differences(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PropertyDifference>>,
@@ -8705,29 +6898,12 @@ pub mod stack_resource_drift {
             self.property_differences = input;
             self
         }
-        /// <p>Status of the resource's actual configuration compared to its expected
-        /// configuration</p>
+        /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code>: The resource differs from its expected template
-        /// configuration because the resource has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFIED</code>: One or more resource properties differ from their expected
-        /// values (as defined in the stack template and any values specified as template
-        /// parameters).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-        /// template configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p>
-        /// </li>
+        /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration because the resource has been deleted.</p> </li>
+        /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected values (as defined in the stack template and any values specified as template parameters).</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The resources's actual configuration matches its expected template configuration.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p> </li>
         /// </ul>
         pub fn stack_resource_drift_status(
             mut self,
@@ -8736,29 +6912,12 @@ pub mod stack_resource_drift {
             self.stack_resource_drift_status = Some(input);
             self
         }
-        /// <p>Status of the resource's actual configuration compared to its expected
-        /// configuration</p>
+        /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code>: The resource differs from its expected template
-        /// configuration because the resource has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFIED</code>: One or more resource properties differ from their expected
-        /// values (as defined in the stack template and any values specified as template
-        /// parameters).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-        /// template configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p>
-        /// </li>
+        /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration because the resource has been deleted.</p> </li>
+        /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected values (as defined in the stack template and any values specified as template parameters).</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The resources's actual configuration matches its expected template configuration.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p> </li>
         /// </ul>
         pub fn set_stack_resource_drift_status(
             mut self,
@@ -8780,14 +6939,12 @@ pub mod stack_resource_drift {
             self.timestamp = input;
             self
         }
-        /// <p>Contains information about the module from which the resource was created, if the
-        /// resource was created from a module included in the stack template.</p>
+        /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
         pub fn module_info(mut self, input: crate::model::ModuleInfo) -> Self {
             self.module_info = Some(input);
             self
         }
-        /// <p>Contains information about the module from which the resource was created, if the
-        /// resource was created from a module included in the stack template.</p>
+        /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
         pub fn set_module_info(
             mut self,
             input: std::option::Option<crate::model::ModuleInfo>,
@@ -8820,39 +6977,21 @@ impl StackResourceDrift {
     }
 }
 
-/// <p>Information about a resource property whose actual value differs from its expected
-/// value, as defined in the stack template and any values specified as template parameters.
-/// These will be present only for resources whose <code>StackResourceDriftStatus</code> is
-/// <code>MODIFIED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-/// Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+/// <p>Information about a resource property whose actual value differs from its expected value, as defined in the stack template and any values specified as template parameters. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyDifference {
     /// <p>The fully-qualified path to the resource property.</p>
     pub property_path: std::option::Option<std::string::String>,
-    /// <p>The expected property value of the resource property, as defined in the stack template
-    /// and any values specified as template parameters.</p>
+    /// <p>The expected property value of the resource property, as defined in the stack template and any values specified as template parameters.</p>
     pub expected_value: std::option::Option<std::string::String>,
     /// <p>The actual property value of the resource property.</p>
     pub actual_value: std::option::Option<std::string::String>,
     /// <p>The type of property difference.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ADD</code>: A value has been added to a resource property that is an array
-    /// or list data type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REMOVE</code>: The property has been removed from the current resource
-    /// configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_EQUAL</code>: The current property value differs from its expected value
-    /// (as defined in the stack template and any values specified as template
-    /// parameters).</p>
-    /// </li>
+    /// <li> <p> <code>ADD</code>: A value has been added to a resource property that is an array or list data type.</p> </li>
+    /// <li> <p> <code>REMOVE</code>: The property has been removed from the current resource configuration.</p> </li>
+    /// <li> <p> <code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p> </li>
     /// </ul>
     pub difference_type: std::option::Option<crate::model::DifferenceType>,
 }
@@ -8861,8 +7000,7 @@ impl PropertyDifference {
     pub fn property_path(&self) -> std::option::Option<&str> {
         self.property_path.as_deref()
     }
-    /// <p>The expected property value of the resource property, as defined in the stack template
-    /// and any values specified as template parameters.</p>
+    /// <p>The expected property value of the resource property, as defined in the stack template and any values specified as template parameters.</p>
     pub fn expected_value(&self) -> std::option::Option<&str> {
         self.expected_value.as_deref()
     }
@@ -8872,22 +7010,9 @@ impl PropertyDifference {
     }
     /// <p>The type of property difference.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ADD</code>: A value has been added to a resource property that is an array
-    /// or list data type.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>REMOVE</code>: The property has been removed from the current resource
-    /// configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_EQUAL</code>: The current property value differs from its expected value
-    /// (as defined in the stack template and any values specified as template
-    /// parameters).</p>
-    /// </li>
+    /// <li> <p> <code>ADD</code>: A value has been added to a resource property that is an array or list data type.</p> </li>
+    /// <li> <p> <code>REMOVE</code>: The property has been removed from the current resource configuration.</p> </li>
+    /// <li> <p> <code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p> </li>
     /// </ul>
     pub fn difference_type(&self) -> std::option::Option<&crate::model::DifferenceType> {
         self.difference_type.as_ref()
@@ -8928,14 +7053,12 @@ pub mod property_difference {
             self.property_path = input;
             self
         }
-        /// <p>The expected property value of the resource property, as defined in the stack template
-        /// and any values specified as template parameters.</p>
+        /// <p>The expected property value of the resource property, as defined in the stack template and any values specified as template parameters.</p>
         pub fn expected_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_value = Some(input.into());
             self
         }
-        /// <p>The expected property value of the resource property, as defined in the stack template
-        /// and any values specified as template parameters.</p>
+        /// <p>The expected property value of the resource property, as defined in the stack template and any values specified as template parameters.</p>
         pub fn set_expected_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8955,22 +7078,9 @@ pub mod property_difference {
         }
         /// <p>The type of property difference.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ADD</code>: A value has been added to a resource property that is an array
-        /// or list data type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REMOVE</code>: The property has been removed from the current resource
-        /// configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_EQUAL</code>: The current property value differs from its expected value
-        /// (as defined in the stack template and any values specified as template
-        /// parameters).</p>
-        /// </li>
+        /// <li> <p> <code>ADD</code>: A value has been added to a resource property that is an array or list data type.</p> </li>
+        /// <li> <p> <code>REMOVE</code>: The property has been removed from the current resource configuration.</p> </li>
+        /// <li> <p> <code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p> </li>
         /// </ul>
         pub fn difference_type(mut self, input: crate::model::DifferenceType) -> Self {
             self.difference_type = Some(input);
@@ -8978,22 +7088,9 @@ pub mod property_difference {
         }
         /// <p>The type of property difference.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ADD</code>: A value has been added to a resource property that is an array
-        /// or list data type.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>REMOVE</code>: The property has been removed from the current resource
-        /// configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_EQUAL</code>: The current property value differs from its expected value
-        /// (as defined in the stack template and any values specified as template
-        /// parameters).</p>
-        /// </li>
+        /// <li> <p> <code>ADD</code>: A value has been added to a resource property that is an array or list data type.</p> </li>
+        /// <li> <p> <code>REMOVE</code>: The property has been removed from the current resource configuration.</p> </li>
+        /// <li> <p> <code>NOT_EQUAL</code>: The current property value differs from its expected value (as defined in the stack template and any values specified as template parameters).</p> </li>
         /// </ul>
         pub fn set_difference_type(
             mut self,
@@ -9079,10 +7176,7 @@ impl AsRef<str> for DifferenceType {
     }
 }
 
-/// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses
-/// context key-value pairs in cases where a resource's logical and physical IDs are not enough
-/// to uniquely identify that resource. Each context key-value pair specifies a resource that
-/// contains the targeted resource.</p>
+/// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhysicalResourceIdContextKeyValuePair {
@@ -9155,25 +7249,15 @@ impl PhysicalResourceIdContextKeyValuePair {
     }
 }
 
-/// <p>For extensions that are modules, a public third-party extension that must be activated
-/// in your account in order for the module itself to be activated.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-enabling">Activating public
-/// modules for use in your account</a> in the <i>CloudFormation User
-/// Guide</i>.</p>
+/// <p>For extensions that are modules, a public third-party extension that must be activated in your account in order for the module itself to be activated.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-enabling">Activating public modules for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequiredActivatedType {
-    /// <p>An alias assigned to the public extension, in this account and region. If you specify an
-    /// alias for the extension, CloudFormation treats the alias as the extension type name within
-    /// this account and region. You must use the alias to refer to the extension in your
-    /// templates, API calls, and CloudFormation console.</p>
+    /// <p>An alias assigned to the public extension, in this account and region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     pub type_name_alias: std::option::Option<std::string::String>,
     /// <p>The type name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this
-    /// account and region, CloudFormation treats that alias as the extension's type name within
-    /// the account and region, not the type name of the public extension. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the
-    /// <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub original_type_name: std::option::Option<std::string::String>,
     /// <p>The publisher ID of the extension publisher.</p>
     pub publisher_id: std::option::Option<std::string::String>,
@@ -9181,19 +7265,12 @@ pub struct RequiredActivatedType {
     pub supported_major_versions: std::option::Option<std::vec::Vec<i32>>,
 }
 impl RequiredActivatedType {
-    /// <p>An alias assigned to the public extension, in this account and region. If you specify an
-    /// alias for the extension, CloudFormation treats the alias as the extension type name within
-    /// this account and region. You must use the alias to refer to the extension in your
-    /// templates, API calls, and CloudFormation console.</p>
+    /// <p>An alias assigned to the public extension, in this account and region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     pub fn type_name_alias(&self) -> std::option::Option<&str> {
         self.type_name_alias.as_deref()
     }
     /// <p>The type name of the public extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this
-    /// account and region, CloudFormation treats that alias as the extension's type name within
-    /// the account and region, not the type name of the public extension. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the
-    /// <i>CloudFormation User Guide</i>.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn original_type_name(&self) -> std::option::Option<&str> {
         self.original_type_name.as_deref()
     }
@@ -9228,18 +7305,12 @@ pub mod required_activated_type {
         pub(crate) supported_major_versions: std::option::Option<std::vec::Vec<i32>>,
     }
     impl Builder {
-        /// <p>An alias assigned to the public extension, in this account and region. If you specify an
-        /// alias for the extension, CloudFormation treats the alias as the extension type name within
-        /// this account and region. You must use the alias to refer to the extension in your
-        /// templates, API calls, and CloudFormation console.</p>
+        /// <p>An alias assigned to the public extension, in this account and region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
         pub fn type_name_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name_alias = Some(input.into());
             self
         }
-        /// <p>An alias assigned to the public extension, in this account and region. If you specify an
-        /// alias for the extension, CloudFormation treats the alias as the extension type name within
-        /// this account and region. You must use the alias to refer to the extension in your
-        /// templates, API calls, and CloudFormation console.</p>
+        /// <p>An alias assigned to the public extension, in this account and region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
         pub fn set_type_name_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9248,21 +7319,13 @@ pub mod required_activated_type {
             self
         }
         /// <p>The type name of the public extension.</p>
-        /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this
-        /// account and region, CloudFormation treats that alias as the extension's type name within
-        /// the account and region, not the type name of the public extension. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the
-        /// <i>CloudFormation User Guide</i>.</p>
+        /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn original_type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.original_type_name = Some(input.into());
             self
         }
         /// <p>The type name of the public extension.</p>
-        /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this
-        /// account and region, CloudFormation treats that alias as the extension's type name within
-        /// the account and region, not the type name of the public extension. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the
-        /// <i>CloudFormation User Guide</i>.</p>
+        /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_original_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9285,9 +7348,9 @@ pub mod required_activated_type {
         /// To override the contents of this collection use [`set_supported_major_versions`](Self::set_supported_major_versions).
         ///
         /// <p>A list of the major versions of the extension type that the macro supports.</p>
-        pub fn supported_major_versions(mut self, input: impl Into<i32>) -> Self {
+        pub fn supported_major_versions(mut self, input: i32) -> Self {
             let mut v = self.supported_major_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_major_versions = Some(v);
             self
         }
@@ -9388,86 +7451,37 @@ pub struct StackSetOperation {
     pub operation_id: std::option::Option<std::string::String>,
     /// <p>The ID of the stack set.</p>
     pub stack_set_id: std::option::Option<std::string::String>,
-    /// <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
-    /// <code>DELETE</code>. Create and delete operations affect only the specified stack set
-    /// instances that are associated with the specified stack set. Update operations affect both
-    /// the stack set itself, as well as <i>all</i> associated stack set
-    /// instances.</p>
+    /// <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack set instances that are associated with the specified stack set. Update operations affect both the stack set itself, as well as <i>all</i> associated stack set instances.</p>
     pub action: std::option::Option<crate::model::StackSetOperationAction>,
     /// <p>The status of the operation. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The operation exceeded the specified failure tolerance. The
-    /// failure tolerance value that you've set for an operation is applied for each Region
-    /// during stack create and update operations. If the number of failed stacks within a
-    /// Region exceeds the failure tolerance, the status of the operation in the Region is
-    /// set to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-    /// to <code>FAILED</code>, and CloudFormation cancels the operation in any
-    /// remaining Regions.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
-    /// require a sequence of operations, the operation is queued to be performed. For more
-    /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User
-    /// Guide.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code>: The operation is currently being performed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPED</code>: The user has cancelled the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPING</code>: The operation is in the process of stopping, at user
-    /// request. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code>: The operation completed creating or updating all the
-    /// specified stacks without exceeding the failure tolerance for the operation.</p>
-    /// </li>
+    /// <li> <p> <code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p> </li>
+    /// <li> <p> <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+    /// <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at user request. </p> </li>
+    /// <li> <p> <code>SUCCEEDED</code>: The operation completed creating or updating all the specified stacks without exceeding the failure tolerance for the operation.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::StackSetOperationStatus>,
     /// <p>The preferences for how CloudFormation performs this stack set operation.</p>
     pub operation_preferences: std::option::Option<crate::model::StackSetOperationPreferences>,
-    /// <p>For stack set operations of action type <code>DELETE</code>, specifies whether to remove
-    /// the stack instances from the specified stack set, but doesn't delete the stacks. You can't
-    /// reassociate a retained stack, or add an existing, saved stack to a new stack set.</p>
+    /// <p>For stack set operations of action type <code>DELETE</code>, specifies whether to remove the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack, or add an existing, saved stack to a new stack set.</p>
     pub retain_stacks: std::option::Option<bool>,
-    /// <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack set
-    /// operation. </p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific
-    /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple
-    /// Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation. </p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
     pub administration_role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the IAM execution role used to create or update the stack set.</p>
-    /// <p>Use customized execution roles to control which stack resources users and groups can
-    /// include in their stack sets. </p>
+    /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets. </p>
     pub execution_role_name: std::option::Option<std::string::String>,
-    /// <p>The time at which the operation was initiated. Note that the creation times for the
-    /// stack set operation might differ from the creation time of the individual stacks
-    /// themselves. This is because CloudFormation needs to perform preparatory work for
-    /// the operation, such as dispatching the work to the requested Regions, before actually
-    /// creating the first stacks.</p>
+    /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time at which the stack set operation ended, across all accounts and Regions
-    /// specified. Note that this doesn't necessarily mean that the stack set operation was
-    /// successful, or even attempted, in each account or Region.</p>
+    /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
     pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>[Service-managed permissions] The Organizations accounts affected by the stack
-    /// operation.</p>
+    /// <p>[Service-managed permissions] The Organizations accounts affected by the stack operation.</p>
     pub deployment_targets: std::option::Option<crate::model::DeploymentTargets>,
-    /// <p>Detailed information about the drift status of the stack set. This includes information
-    /// about drift operations currently being performed on the stack set.</p>
-    /// <p>this information will only be present for stack set operations whose <code>Action</code>
-    /// type is <code>DETECT_DRIFT</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
-    /// Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
+    /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
+    /// <p>this information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
     pub stack_set_drift_detection_details:
         std::option::Option<crate::model::StackSetDriftDetectionDetails>,
 }
@@ -9480,51 +7494,18 @@ impl StackSetOperation {
     pub fn stack_set_id(&self) -> std::option::Option<&str> {
         self.stack_set_id.as_deref()
     }
-    /// <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
-    /// <code>DELETE</code>. Create and delete operations affect only the specified stack set
-    /// instances that are associated with the specified stack set. Update operations affect both
-    /// the stack set itself, as well as <i>all</i> associated stack set
-    /// instances.</p>
+    /// <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack set instances that are associated with the specified stack set. Update operations affect both the stack set itself, as well as <i>all</i> associated stack set instances.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::StackSetOperationAction> {
         self.action.as_ref()
     }
     /// <p>The status of the operation. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The operation exceeded the specified failure tolerance. The
-    /// failure tolerance value that you've set for an operation is applied for each Region
-    /// during stack create and update operations. If the number of failed stacks within a
-    /// Region exceeds the failure tolerance, the status of the operation in the Region is
-    /// set to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-    /// to <code>FAILED</code>, and CloudFormation cancels the operation in any
-    /// remaining Regions.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
-    /// require a sequence of operations, the operation is queued to be performed. For more
-    /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User
-    /// Guide.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code>: The operation is currently being performed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPED</code>: The user has cancelled the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPING</code>: The operation is in the process of stopping, at user
-    /// request. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code>: The operation completed creating or updating all the
-    /// specified stacks without exceeding the failure tolerance for the operation.</p>
-    /// </li>
+    /// <li> <p> <code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p> </li>
+    /// <li> <p> <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+    /// <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at user request. </p> </li>
+    /// <li> <p> <code>SUCCEEDED</code>: The operation completed creating or updating all the specified stacks without exceeding the failure tolerance for the operation.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::StackSetOperationStatus> {
         self.status.as_ref()
@@ -9535,51 +7516,35 @@ impl StackSetOperation {
     ) -> std::option::Option<&crate::model::StackSetOperationPreferences> {
         self.operation_preferences.as_ref()
     }
-    /// <p>For stack set operations of action type <code>DELETE</code>, specifies whether to remove
-    /// the stack instances from the specified stack set, but doesn't delete the stacks. You can't
-    /// reassociate a retained stack, or add an existing, saved stack to a new stack set.</p>
+    /// <p>For stack set operations of action type <code>DELETE</code>, specifies whether to remove the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack, or add an existing, saved stack to a new stack set.</p>
     pub fn retain_stacks(&self) -> std::option::Option<bool> {
         self.retain_stacks
     }
-    /// <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack set
-    /// operation. </p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific
-    /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple
-    /// Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation. </p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn administration_role_arn(&self) -> std::option::Option<&str> {
         self.administration_role_arn.as_deref()
     }
     /// <p>The name of the IAM execution role used to create or update the stack set.</p>
-    /// <p>Use customized execution roles to control which stack resources users and groups can
-    /// include in their stack sets. </p>
+    /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets. </p>
     pub fn execution_role_name(&self) -> std::option::Option<&str> {
         self.execution_role_name.as_deref()
     }
-    /// <p>The time at which the operation was initiated. Note that the creation times for the
-    /// stack set operation might differ from the creation time of the individual stacks
-    /// themselves. This is because CloudFormation needs to perform preparatory work for
-    /// the operation, such as dispatching the work to the requested Regions, before actually
-    /// creating the first stacks.</p>
+    /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
     pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
-    /// <p>The time at which the stack set operation ended, across all accounts and Regions
-    /// specified. Note that this doesn't necessarily mean that the stack set operation was
-    /// successful, or even attempted, in each account or Region.</p>
+    /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
     pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
-    /// <p>[Service-managed permissions] The Organizations accounts affected by the stack
-    /// operation.</p>
+    /// <p>[Service-managed permissions] The Organizations accounts affected by the stack operation.</p>
     pub fn deployment_targets(&self) -> std::option::Option<&crate::model::DeploymentTargets> {
         self.deployment_targets.as_ref()
     }
-    /// <p>Detailed information about the drift status of the stack set. This includes information
-    /// about drift operations currently being performed on the stack set.</p>
-    /// <p>this information will only be present for stack set operations whose <code>Action</code>
-    /// type is <code>DETECT_DRIFT</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
-    /// Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
+    /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
+    /// <p>this information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
     pub fn stack_set_drift_detection_details(
         &self,
     ) -> std::option::Option<&crate::model::StackSetDriftDetectionDetails> {
@@ -9649,20 +7614,12 @@ pub mod stack_set_operation {
             self.stack_set_id = input;
             self
         }
-        /// <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
-        /// <code>DELETE</code>. Create and delete operations affect only the specified stack set
-        /// instances that are associated with the specified stack set. Update operations affect both
-        /// the stack set itself, as well as <i>all</i> associated stack set
-        /// instances.</p>
+        /// <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack set instances that are associated with the specified stack set. Update operations affect both the stack set itself, as well as <i>all</i> associated stack set instances.</p>
         pub fn action(mut self, input: crate::model::StackSetOperationAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
-        /// <code>DELETE</code>. Create and delete operations affect only the specified stack set
-        /// instances that are associated with the specified stack set. Update operations affect both
-        /// the stack set itself, as well as <i>all</i> associated stack set
-        /// instances.</p>
+        /// <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack set instances that are associated with the specified stack set. Update operations affect both the stack set itself, as well as <i>all</i> associated stack set instances.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::StackSetOperationAction>,
@@ -9672,41 +7629,12 @@ pub mod stack_set_operation {
         }
         /// <p>The status of the operation. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The operation exceeded the specified failure tolerance. The
-        /// failure tolerance value that you've set for an operation is applied for each Region
-        /// during stack create and update operations. If the number of failed stacks within a
-        /// Region exceeds the failure tolerance, the status of the operation in the Region is
-        /// set to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-        /// to <code>FAILED</code>, and CloudFormation cancels the operation in any
-        /// remaining Regions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
-        /// require a sequence of operations, the operation is queued to be performed. For more
-        /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User
-        /// Guide.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code>: The operation is currently being performed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPED</code>: The user has cancelled the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPING</code>: The operation is in the process of stopping, at user
-        /// request. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code>: The operation completed creating or updating all the
-        /// specified stacks without exceeding the failure tolerance for the operation.</p>
-        /// </li>
+        /// <li> <p> <code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p> </li>
+        /// <li> <p> <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p> </li>
+        /// <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+        /// <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+        /// <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at user request. </p> </li>
+        /// <li> <p> <code>SUCCEEDED</code>: The operation completed creating or updating all the specified stacks without exceeding the failure tolerance for the operation.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::StackSetOperationStatus) -> Self {
             self.status = Some(input);
@@ -9714,41 +7642,12 @@ pub mod stack_set_operation {
         }
         /// <p>The status of the operation. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The operation exceeded the specified failure tolerance. The
-        /// failure tolerance value that you've set for an operation is applied for each Region
-        /// during stack create and update operations. If the number of failed stacks within a
-        /// Region exceeds the failure tolerance, the status of the operation in the Region is
-        /// set to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-        /// to <code>FAILED</code>, and CloudFormation cancels the operation in any
-        /// remaining Regions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
-        /// require a sequence of operations, the operation is queued to be performed. For more
-        /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User
-        /// Guide.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code>: The operation is currently being performed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPED</code>: The user has cancelled the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPING</code>: The operation is in the process of stopping, at user
-        /// request. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code>: The operation completed creating or updating all the
-        /// specified stacks without exceeding the failure tolerance for the operation.</p>
-        /// </li>
+        /// <li> <p> <code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p> </li>
+        /// <li> <p> <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p> </li>
+        /// <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+        /// <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+        /// <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at user request. </p> </li>
+        /// <li> <p> <code>SUCCEEDED</code>: The operation completed creating or updating all the specified stacks without exceeding the failure tolerance for the operation.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -9773,34 +7672,24 @@ pub mod stack_set_operation {
             self.operation_preferences = input;
             self
         }
-        /// <p>For stack set operations of action type <code>DELETE</code>, specifies whether to remove
-        /// the stack instances from the specified stack set, but doesn't delete the stacks. You can't
-        /// reassociate a retained stack, or add an existing, saved stack to a new stack set.</p>
+        /// <p>For stack set operations of action type <code>DELETE</code>, specifies whether to remove the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack, or add an existing, saved stack to a new stack set.</p>
         pub fn retain_stacks(mut self, input: bool) -> Self {
             self.retain_stacks = Some(input);
             self
         }
-        /// <p>For stack set operations of action type <code>DELETE</code>, specifies whether to remove
-        /// the stack instances from the specified stack set, but doesn't delete the stacks. You can't
-        /// reassociate a retained stack, or add an existing, saved stack to a new stack set.</p>
+        /// <p>For stack set operations of action type <code>DELETE</code>, specifies whether to remove the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack, or add an existing, saved stack to a new stack set.</p>
         pub fn set_retain_stacks(mut self, input: std::option::Option<bool>) -> Self {
             self.retain_stacks = input;
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack set
-        /// operation. </p>
-        /// <p>Use customized administrator roles to control which users or groups can manage specific
-        /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple
-        /// Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation. </p>
+        /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn administration_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.administration_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack set
-        /// operation. </p>
-        /// <p>Use customized administrator roles to control which users or groups can manage specific
-        /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple
-        /// Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p>The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation. </p>
+        /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_administration_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9809,15 +7698,13 @@ pub mod stack_set_operation {
             self
         }
         /// <p>The name of the IAM execution role used to create or update the stack set.</p>
-        /// <p>Use customized execution roles to control which stack resources users and groups can
-        /// include in their stack sets. </p>
+        /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets. </p>
         pub fn execution_role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_name = Some(input.into());
             self
         }
         /// <p>The name of the IAM execution role used to create or update the stack set.</p>
-        /// <p>Use customized execution roles to control which stack resources users and groups can
-        /// include in their stack sets. </p>
+        /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets. </p>
         pub fn set_execution_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9825,20 +7712,12 @@ pub mod stack_set_operation {
             self.execution_role_name = input;
             self
         }
-        /// <p>The time at which the operation was initiated. Note that the creation times for the
-        /// stack set operation might differ from the creation time of the individual stacks
-        /// themselves. This is because CloudFormation needs to perform preparatory work for
-        /// the operation, such as dispatching the work to the requested Regions, before actually
-        /// creating the first stacks.</p>
+        /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
         pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
-        /// <p>The time at which the operation was initiated. Note that the creation times for the
-        /// stack set operation might differ from the creation time of the individual stacks
-        /// themselves. This is because CloudFormation needs to perform preparatory work for
-        /// the operation, such as dispatching the work to the requested Regions, before actually
-        /// creating the first stacks.</p>
+        /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
         pub fn set_creation_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9846,16 +7725,12 @@ pub mod stack_set_operation {
             self.creation_timestamp = input;
             self
         }
-        /// <p>The time at which the stack set operation ended, across all accounts and Regions
-        /// specified. Note that this doesn't necessarily mean that the stack set operation was
-        /// successful, or even attempted, in each account or Region.</p>
+        /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
         pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_timestamp = Some(input);
             self
         }
-        /// <p>The time at which the stack set operation ended, across all accounts and Regions
-        /// specified. Note that this doesn't necessarily mean that the stack set operation was
-        /// successful, or even attempted, in each account or Region.</p>
+        /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
         pub fn set_end_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9863,14 +7738,12 @@ pub mod stack_set_operation {
             self.end_timestamp = input;
             self
         }
-        /// <p>[Service-managed permissions] The Organizations accounts affected by the stack
-        /// operation.</p>
+        /// <p>[Service-managed permissions] The Organizations accounts affected by the stack operation.</p>
         pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
             self.deployment_targets = Some(input);
             self
         }
-        /// <p>[Service-managed permissions] The Organizations accounts affected by the stack
-        /// operation.</p>
+        /// <p>[Service-managed permissions] The Organizations accounts affected by the stack operation.</p>
         pub fn set_deployment_targets(
             mut self,
             input: std::option::Option<crate::model::DeploymentTargets>,
@@ -9878,12 +7751,9 @@ pub mod stack_set_operation {
             self.deployment_targets = input;
             self
         }
-        /// <p>Detailed information about the drift status of the stack set. This includes information
-        /// about drift operations currently being performed on the stack set.</p>
-        /// <p>this information will only be present for stack set operations whose <code>Action</code>
-        /// type is <code>DETECT_DRIFT</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
-        /// Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
+        /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
+        /// <p>this information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
         pub fn stack_set_drift_detection_details(
             mut self,
             input: crate::model::StackSetDriftDetectionDetails,
@@ -9891,12 +7761,9 @@ pub mod stack_set_operation {
             self.stack_set_drift_detection_details = Some(input);
             self
         }
-        /// <p>Detailed information about the drift status of the stack set. This includes information
-        /// about drift operations currently being performed on the stack set.</p>
-        /// <p>this information will only be present for stack set operations whose <code>Action</code>
-        /// type is <code>DETECT_DRIFT</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
-        /// Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
+        /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
+        /// <p>this information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
         pub fn set_stack_set_drift_detection_details(
             mut self,
             input: std::option::Option<crate::model::StackSetDriftDetectionDetails>,
@@ -9931,95 +7798,42 @@ impl StackSetOperation {
 }
 
 /// <p>Detailed information about the drift status of the stack set.</p>
-/// <p>For stack sets, contains information about the last <i>completed</i> drift
-/// operation performed on the stack set. Information about drift operations in-progress is not
-/// included. </p>
-/// <p>For stack set operations, includes information about drift operations currently being
-/// performed on the stack set.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
-/// Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
+/// <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included. </p>
+/// <p>For stack set operations, includes information about drift operations currently being performed on the stack set.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackSetDriftDetectionDetails {
-    /// <p>Status of the stack set's actual configuration compared to its expected template and
-    /// parameter configuration. A stack set is considered to have drifted if one or more of its
-    /// stack instances have drifted from their expected template and parameter
-    /// configuration.</p>
+    /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DRIFTED</code>: One or more of the stack instances belonging to the stack
-    /// set stack differs from the expected template and parameter configuration. A stack
-    /// instance is considered to have drifted if one or more of the resources in the
-    /// associated stack have drifted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack
-    /// match from the expected template and parameter configuration.</p>
-    /// </li>
+    /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
     /// </ul>
     pub drift_status: std::option::Option<crate::model::StackSetDriftStatus>,
     /// <p>The status of the stack set drift detection operation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETED</code>: The drift detection operation completed without failing on
-    /// any stack instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The drift detection operation exceeded the specified failure
-    /// tolerance. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without
-    /// exceeding the failure tolerance for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code>: The drift detection operation is currently being
-    /// performed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPED</code>: The user has cancelled the drift detection operation.</p>
-    /// </li>
+    /// <li> <p> <code>COMPLETED</code>: The drift detection operation completed without failing on any stack instances.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The drift detection operation exceeded the specified failure tolerance. </p> </li>
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without exceeding the failure tolerance for the operation.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The drift detection operation is currently being performed.</p> </li>
+    /// <li> <p> <code>STOPPED</code>: The user has cancelled the drift detection operation.</p> </li>
     /// </ul>
     pub drift_detection_status: std::option::Option<crate::model::StackSetDriftDetectionStatus>,
-    /// <p>Most recent time when CloudFormation performed a drift detection operation on
-    /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
-    /// detection has not yet been performed.</p>
+    /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection has not yet been performed.</p>
     pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of stack instances belonging to this stack set. </p>
     /// <p>The total number of stack instances is equal to the total of:</p>
     /// <ul>
-    /// <li>
-    /// <p>Stack instances that match the stack set configuration. </p>
-    /// </li>
-    /// <li>
-    /// <p>Stack instances that have drifted from the stack set configuration. </p>
-    /// </li>
-    /// <li>
-    /// <p>Stack instances where the drift detection operation has failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>Stack instances currently being checked for drift.</p>
-    /// </li>
+    /// <li> <p>Stack instances that match the stack set configuration. </p> </li>
+    /// <li> <p>Stack instances that have drifted from the stack set configuration. </p> </li>
+    /// <li> <p>Stack instances where the drift detection operation has failed.</p> </li>
+    /// <li> <p>Stack instances currently being checked for drift.</p> </li>
     /// </ul>
     pub total_stack_instances_count: i32,
-    /// <p>The number of stack instances that have drifted from the expected template and parameter
-    /// configuration of the stack set. A stack instance is considered to have drifted if one or
-    /// more of the resources in the associated stack do not match their expected
-    /// configuration.</p>
+    /// <p>The number of stack instances that have drifted from the expected template and parameter configuration of the stack set. A stack instance is considered to have drifted if one or more of the resources in the associated stack do not match their expected configuration.</p>
     pub drifted_stack_instances_count: i32,
-    /// <p>The number of stack instances which match the expected template and parameter
-    /// configuration of the stack set.</p>
+    /// <p>The number of stack instances which match the expected template and parameter configuration of the stack set.</p>
     pub in_sync_stack_instances_count: i32,
     /// <p>The number of stack instances that are currently being checked for drift.</p>
     pub in_progress_stack_instances_count: i32,
@@ -10027,97 +7841,48 @@ pub struct StackSetDriftDetectionDetails {
     pub failed_stack_instances_count: i32,
 }
 impl StackSetDriftDetectionDetails {
-    /// <p>Status of the stack set's actual configuration compared to its expected template and
-    /// parameter configuration. A stack set is considered to have drifted if one or more of its
-    /// stack instances have drifted from their expected template and parameter
-    /// configuration.</p>
+    /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DRIFTED</code>: One or more of the stack instances belonging to the stack
-    /// set stack differs from the expected template and parameter configuration. A stack
-    /// instance is considered to have drifted if one or more of the resources in the
-    /// associated stack have drifted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack
-    /// match from the expected template and parameter configuration.</p>
-    /// </li>
+    /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
     /// </ul>
     pub fn drift_status(&self) -> std::option::Option<&crate::model::StackSetDriftStatus> {
         self.drift_status.as_ref()
     }
     /// <p>The status of the stack set drift detection operation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETED</code>: The drift detection operation completed without failing on
-    /// any stack instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code>: The drift detection operation exceeded the specified failure
-    /// tolerance. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without
-    /// exceeding the failure tolerance for the operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_PROGRESS</code>: The drift detection operation is currently being
-    /// performed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOPPED</code>: The user has cancelled the drift detection operation.</p>
-    /// </li>
+    /// <li> <p> <code>COMPLETED</code>: The drift detection operation completed without failing on any stack instances.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The drift detection operation exceeded the specified failure tolerance. </p> </li>
+    /// <li> <p> <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without exceeding the failure tolerance for the operation.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The drift detection operation is currently being performed.</p> </li>
+    /// <li> <p> <code>STOPPED</code>: The user has cancelled the drift detection operation.</p> </li>
     /// </ul>
     pub fn drift_detection_status(
         &self,
     ) -> std::option::Option<&crate::model::StackSetDriftDetectionStatus> {
         self.drift_detection_status.as_ref()
     }
-    /// <p>Most recent time when CloudFormation performed a drift detection operation on
-    /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
-    /// detection has not yet been performed.</p>
+    /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection has not yet been performed.</p>
     pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
     /// <p>The total number of stack instances belonging to this stack set. </p>
     /// <p>The total number of stack instances is equal to the total of:</p>
     /// <ul>
-    /// <li>
-    /// <p>Stack instances that match the stack set configuration. </p>
-    /// </li>
-    /// <li>
-    /// <p>Stack instances that have drifted from the stack set configuration. </p>
-    /// </li>
-    /// <li>
-    /// <p>Stack instances where the drift detection operation has failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>Stack instances currently being checked for drift.</p>
-    /// </li>
+    /// <li> <p>Stack instances that match the stack set configuration. </p> </li>
+    /// <li> <p>Stack instances that have drifted from the stack set configuration. </p> </li>
+    /// <li> <p>Stack instances where the drift detection operation has failed.</p> </li>
+    /// <li> <p>Stack instances currently being checked for drift.</p> </li>
     /// </ul>
     pub fn total_stack_instances_count(&self) -> i32 {
         self.total_stack_instances_count
     }
-    /// <p>The number of stack instances that have drifted from the expected template and parameter
-    /// configuration of the stack set. A stack instance is considered to have drifted if one or
-    /// more of the resources in the associated stack do not match their expected
-    /// configuration.</p>
+    /// <p>The number of stack instances that have drifted from the expected template and parameter configuration of the stack set. A stack instance is considered to have drifted if one or more of the resources in the associated stack do not match their expected configuration.</p>
     pub fn drifted_stack_instances_count(&self) -> i32 {
         self.drifted_stack_instances_count
     }
-    /// <p>The number of stack instances which match the expected template and parameter
-    /// configuration of the stack set.</p>
+    /// <p>The number of stack instances which match the expected template and parameter configuration of the stack set.</p>
     pub fn in_sync_stack_instances_count(&self) -> i32 {
         self.in_sync_stack_instances_count
     }
@@ -10179,53 +7944,21 @@ pub mod stack_set_drift_detection_details {
         pub(crate) failed_stack_instances_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Status of the stack set's actual configuration compared to its expected template and
-        /// parameter configuration. A stack set is considered to have drifted if one or more of its
-        /// stack instances have drifted from their expected template and parameter
-        /// configuration.</p>
+        /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DRIFTED</code>: One or more of the stack instances belonging to the stack
-        /// set stack differs from the expected template and parameter configuration. A stack
-        /// instance is considered to have drifted if one or more of the resources in the
-        /// associated stack have drifted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack
-        /// match from the expected template and parameter configuration.</p>
-        /// </li>
+        /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
         /// </ul>
         pub fn drift_status(mut self, input: crate::model::StackSetDriftStatus) -> Self {
             self.drift_status = Some(input);
             self
         }
-        /// <p>Status of the stack set's actual configuration compared to its expected template and
-        /// parameter configuration. A stack set is considered to have drifted if one or more of its
-        /// stack instances have drifted from their expected template and parameter
-        /// configuration.</p>
+        /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DRIFTED</code>: One or more of the stack instances belonging to the stack
-        /// set stack differs from the expected template and parameter configuration. A stack
-        /// instance is considered to have drifted if one or more of the resources in the
-        /// associated stack have drifted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack
-        /// match from the expected template and parameter configuration.</p>
-        /// </li>
+        /// <li> <p> <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set stack differs from the expected template and parameter configuration. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
         /// </ul>
         pub fn set_drift_status(
             mut self,
@@ -10236,30 +7969,11 @@ pub mod stack_set_drift_detection_details {
         }
         /// <p>The status of the stack set drift detection operation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETED</code>: The drift detection operation completed without failing on
-        /// any stack instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The drift detection operation exceeded the specified failure
-        /// tolerance. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without
-        /// exceeding the failure tolerance for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code>: The drift detection operation is currently being
-        /// performed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPED</code>: The user has cancelled the drift detection operation.</p>
-        /// </li>
+        /// <li> <p> <code>COMPLETED</code>: The drift detection operation completed without failing on any stack instances.</p> </li>
+        /// <li> <p> <code>FAILED</code>: The drift detection operation exceeded the specified failure tolerance. </p> </li>
+        /// <li> <p> <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without exceeding the failure tolerance for the operation.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code>: The drift detection operation is currently being performed.</p> </li>
+        /// <li> <p> <code>STOPPED</code>: The user has cancelled the drift detection operation.</p> </li>
         /// </ul>
         pub fn drift_detection_status(
             mut self,
@@ -10270,30 +7984,11 @@ pub mod stack_set_drift_detection_details {
         }
         /// <p>The status of the stack set drift detection operation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETED</code>: The drift detection operation completed without failing on
-        /// any stack instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code>: The drift detection operation exceeded the specified failure
-        /// tolerance. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without
-        /// exceeding the failure tolerance for the operation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_PROGRESS</code>: The drift detection operation is currently being
-        /// performed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOPPED</code>: The user has cancelled the drift detection operation.</p>
-        /// </li>
+        /// <li> <p> <code>COMPLETED</code>: The drift detection operation completed without failing on any stack instances.</p> </li>
+        /// <li> <p> <code>FAILED</code>: The drift detection operation exceeded the specified failure tolerance. </p> </li>
+        /// <li> <p> <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without exceeding the failure tolerance for the operation.</p> </li>
+        /// <li> <p> <code>IN_PROGRESS</code>: The drift detection operation is currently being performed.</p> </li>
+        /// <li> <p> <code>STOPPED</code>: The user has cancelled the drift detection operation.</p> </li>
         /// </ul>
         pub fn set_drift_detection_status(
             mut self,
@@ -10302,16 +7997,12 @@ pub mod stack_set_drift_detection_details {
             self.drift_detection_status = input;
             self
         }
-        /// <p>Most recent time when CloudFormation performed a drift detection operation on
-        /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
-        /// detection has not yet been performed.</p>
+        /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection has not yet been performed.</p>
         pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_drift_check_timestamp = Some(input);
             self
         }
-        /// <p>Most recent time when CloudFormation performed a drift detection operation on
-        /// the stack set. This value will be <code>NULL</code> for any stack set on which drift
-        /// detection has not yet been performed.</p>
+        /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection has not yet been performed.</p>
         pub fn set_last_drift_check_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10322,18 +8013,10 @@ pub mod stack_set_drift_detection_details {
         /// <p>The total number of stack instances belonging to this stack set. </p>
         /// <p>The total number of stack instances is equal to the total of:</p>
         /// <ul>
-        /// <li>
-        /// <p>Stack instances that match the stack set configuration. </p>
-        /// </li>
-        /// <li>
-        /// <p>Stack instances that have drifted from the stack set configuration. </p>
-        /// </li>
-        /// <li>
-        /// <p>Stack instances where the drift detection operation has failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>Stack instances currently being checked for drift.</p>
-        /// </li>
+        /// <li> <p>Stack instances that match the stack set configuration. </p> </li>
+        /// <li> <p>Stack instances that have drifted from the stack set configuration. </p> </li>
+        /// <li> <p>Stack instances where the drift detection operation has failed.</p> </li>
+        /// <li> <p>Stack instances currently being checked for drift.</p> </li>
         /// </ul>
         pub fn total_stack_instances_count(mut self, input: i32) -> Self {
             self.total_stack_instances_count = Some(input);
@@ -10342,35 +8025,21 @@ pub mod stack_set_drift_detection_details {
         /// <p>The total number of stack instances belonging to this stack set. </p>
         /// <p>The total number of stack instances is equal to the total of:</p>
         /// <ul>
-        /// <li>
-        /// <p>Stack instances that match the stack set configuration. </p>
-        /// </li>
-        /// <li>
-        /// <p>Stack instances that have drifted from the stack set configuration. </p>
-        /// </li>
-        /// <li>
-        /// <p>Stack instances where the drift detection operation has failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>Stack instances currently being checked for drift.</p>
-        /// </li>
+        /// <li> <p>Stack instances that match the stack set configuration. </p> </li>
+        /// <li> <p>Stack instances that have drifted from the stack set configuration. </p> </li>
+        /// <li> <p>Stack instances where the drift detection operation has failed.</p> </li>
+        /// <li> <p>Stack instances currently being checked for drift.</p> </li>
         /// </ul>
         pub fn set_total_stack_instances_count(mut self, input: std::option::Option<i32>) -> Self {
             self.total_stack_instances_count = input;
             self
         }
-        /// <p>The number of stack instances that have drifted from the expected template and parameter
-        /// configuration of the stack set. A stack instance is considered to have drifted if one or
-        /// more of the resources in the associated stack do not match their expected
-        /// configuration.</p>
+        /// <p>The number of stack instances that have drifted from the expected template and parameter configuration of the stack set. A stack instance is considered to have drifted if one or more of the resources in the associated stack do not match their expected configuration.</p>
         pub fn drifted_stack_instances_count(mut self, input: i32) -> Self {
             self.drifted_stack_instances_count = Some(input);
             self
         }
-        /// <p>The number of stack instances that have drifted from the expected template and parameter
-        /// configuration of the stack set. A stack instance is considered to have drifted if one or
-        /// more of the resources in the associated stack do not match their expected
-        /// configuration.</p>
+        /// <p>The number of stack instances that have drifted from the expected template and parameter configuration of the stack set. A stack instance is considered to have drifted if one or more of the resources in the associated stack do not match their expected configuration.</p>
         pub fn set_drifted_stack_instances_count(
             mut self,
             input: std::option::Option<i32>,
@@ -10378,14 +8047,12 @@ pub mod stack_set_drift_detection_details {
             self.drifted_stack_instances_count = input;
             self
         }
-        /// <p>The number of stack instances which match the expected template and parameter
-        /// configuration of the stack set.</p>
+        /// <p>The number of stack instances which match the expected template and parameter configuration of the stack set.</p>
         pub fn in_sync_stack_instances_count(mut self, input: i32) -> Self {
             self.in_sync_stack_instances_count = Some(input);
             self
         }
-        /// <p>The number of stack instances which match the expected template and parameter
-        /// configuration of the stack set.</p>
+        /// <p>The number of stack instances which match the expected template and parameter configuration of the stack set.</p>
         pub fn set_in_sync_stack_instances_count(
             mut self,
             input: std::option::Option<i32>,
@@ -10576,10 +8243,7 @@ impl AsRef<str> for StackSetDriftStatus {
     }
 }
 
-/// <p>A structure that contains information about a stack set. A stack set enables you to
-/// provision stacks into Amazon Web Services accounts and across Regions by using a single
-/// CloudFormation template. In the stack set, you specify the template to use, as
-/// well as any parameters and capabilities that the template requires. </p>
+/// <p>A structure that contains information about a stack set. A stack set enables you to provision stacks into Amazon Web Services accounts and across Regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackSet {
@@ -10587,67 +8251,41 @@ pub struct StackSet {
     pub stack_set_name: std::option::Option<std::string::String>,
     /// <p>The ID of the stack set.</p>
     pub stack_set_id: std::option::Option<std::string::String>,
-    /// <p>A description of the stack set that you specify when the stack set is created or
-    /// updated.</p>
+    /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the stack set.</p>
     pub status: std::option::Option<crate::model::StackSetStatus>,
-    /// <p>The structure that contains the body of the template that was used to create or update
-    /// the stack set.</p>
+    /// <p>The structure that contains the body of the template that was used to create or update the stack set.</p>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>A list of input parameters for a stack set.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might
-    /// include resources that can affect permissions in your Amazon Web Services account—for
-    /// example, by creating new Identity and Access Management (IAM) users. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a>
-    /// </p>
+    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a> </p>
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-    /// <p>A list of tags that specify information about the stack set. A maximum number of 50 tags
-    /// can be specified.</p>
+    /// <p>A list of tags that specify information about the stack set. A maximum number of 50 tags can be specified.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Number (ARN) of the stack set.</p>
     pub stack_set_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Number (ARN) of the IAM role used to create or update the stack
-    /// set.</p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific
-    /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack
-    /// Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The Amazon Resource Number (ARN) of the IAM role used to create or update the stack set.</p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
     pub administration_role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the IAM execution role used to create or update the stack set. </p>
-    /// <p>Use customized execution roles to control which stack resources users and groups can
-    /// include in their stack sets. </p>
+    /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets. </p>
     pub execution_role_name: std::option::Option<std::string::String>,
     /// <p>Detailed information about the drift status of the stack set.</p>
-    /// <p>For stack sets, contains information about the last <i>completed</i> drift
-    /// operation performed on the stack set. Information about drift operations currently in
-    /// progress is not included.</p>
+    /// <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations currently in progress is not included.</p>
     pub stack_set_drift_detection_details:
         std::option::Option<crate::model::StackSetDriftDetectionDetails>,
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
-    /// Organizations accounts that are added to a target organization or organizational
-    /// unit (OU).</p>
+    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
     pub auto_deployment: std::option::Option<crate::model::AutoDeployment>,
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
-    /// <li>
-    /// <p>With <code>self-managed</code> permissions, you must create the administrator and
-    /// execution roles required to deploy to target accounts. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-    /// Self-Managed Stack Set Permissions</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
-    /// IAM roles required to deploy to accounts managed by Organizations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
-    /// </li>
+    /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+    /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
     /// </ul>
     pub permission_model: std::option::Option<crate::model::PermissionModels>,
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-    /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
-    /// conflicting operations.</p>
+    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub managed_execution: std::option::Option<crate::model::ManagedExecution>,
 }
 impl StackSet {
@@ -10659,8 +8297,7 @@ impl StackSet {
     pub fn stack_set_id(&self) -> std::option::Option<&str> {
         self.stack_set_id.as_deref()
     }
-    /// <p>A description of the stack set that you specify when the stack set is created or
-    /// updated.</p>
+    /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -10668,8 +8305,7 @@ impl StackSet {
     pub fn status(&self) -> std::option::Option<&crate::model::StackSetStatus> {
         self.status.as_ref()
     }
-    /// <p>The structure that contains the body of the template that was used to create or update
-    /// the stack set.</p>
+    /// <p>The structure that contains the body of the template that was used to create or update the stack set.</p>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
@@ -10677,16 +8313,11 @@ impl StackSet {
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
     }
-    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might
-    /// include resources that can affect permissions in your Amazon Web Services account—for
-    /// example, by creating new Identity and Access Management (IAM) users. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a>
-    /// </p>
+    /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a> </p>
     pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
         self.capabilities.as_deref()
     }
-    /// <p>A list of tags that specify information about the stack set. A maximum number of 50 tags
-    /// can be specified.</p>
+    /// <p>A list of tags that specify information about the stack set. A maximum number of 50 tags can be specified.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -10694,59 +8325,40 @@ impl StackSet {
     pub fn stack_set_arn(&self) -> std::option::Option<&str> {
         self.stack_set_arn.as_deref()
     }
-    /// <p>The Amazon Resource Number (ARN) of the IAM role used to create or update the stack
-    /// set.</p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific
-    /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack
-    /// Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The Amazon Resource Number (ARN) of the IAM role used to create or update the stack set.</p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn administration_role_arn(&self) -> std::option::Option<&str> {
         self.administration_role_arn.as_deref()
     }
     /// <p>The name of the IAM execution role used to create or update the stack set. </p>
-    /// <p>Use customized execution roles to control which stack resources users and groups can
-    /// include in their stack sets. </p>
+    /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets. </p>
     pub fn execution_role_name(&self) -> std::option::Option<&str> {
         self.execution_role_name.as_deref()
     }
     /// <p>Detailed information about the drift status of the stack set.</p>
-    /// <p>For stack sets, contains information about the last <i>completed</i> drift
-    /// operation performed on the stack set. Information about drift operations currently in
-    /// progress is not included.</p>
+    /// <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations currently in progress is not included.</p>
     pub fn stack_set_drift_detection_details(
         &self,
     ) -> std::option::Option<&crate::model::StackSetDriftDetectionDetails> {
         self.stack_set_drift_detection_details.as_ref()
     }
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
-    /// Organizations accounts that are added to a target organization or organizational
-    /// unit (OU).</p>
+    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
     pub fn auto_deployment(&self) -> std::option::Option<&crate::model::AutoDeployment> {
         self.auto_deployment.as_ref()
     }
     /// <p>Describes how the IAM roles required for stack set operations are created.</p>
     /// <ul>
-    /// <li>
-    /// <p>With <code>self-managed</code> permissions, you must create the administrator and
-    /// execution roles required to deploy to target accounts. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-    /// Self-Managed Stack Set Permissions</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
-    /// IAM roles required to deploy to accounts managed by Organizations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
-    /// </li>
+    /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+    /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
     /// </ul>
     pub fn permission_model(&self) -> std::option::Option<&crate::model::PermissionModels> {
         self.permission_model.as_ref()
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-    /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.organizational_unit_ids.as_deref()
     }
-    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
-    /// conflicting operations.</p>
+    /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub fn managed_execution(&self) -> std::option::Option<&crate::model::ManagedExecution> {
         self.managed_execution.as_ref()
     }
@@ -10824,14 +8436,12 @@ pub mod stack_set {
             self.stack_set_id = input;
             self
         }
-        /// <p>A description of the stack set that you specify when the stack set is created or
-        /// updated.</p>
+        /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the stack set that you specify when the stack set is created or
-        /// updated.</p>
+        /// <p>A description of the stack set that you specify when the stack set is created or updated.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -10849,14 +8459,12 @@ pub mod stack_set {
             self.status = input;
             self
         }
-        /// <p>The structure that contains the body of the template that was used to create or update
-        /// the stack set.</p>
+        /// <p>The structure that contains the body of the template that was used to create or update the stack set.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
-        /// <p>The structure that contains the body of the template that was used to create or update
-        /// the stack set.</p>
+        /// <p>The structure that contains the body of the template that was used to create or update the stack set.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10869,9 +8477,9 @@ pub mod stack_set {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A list of input parameters for a stack set.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -10887,22 +8495,14 @@ pub mod stack_set {
         ///
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
-        /// <p>The capabilities that are allowed in the stack set. Some stack set templates might
-        /// include resources that can affect permissions in your Amazon Web Services account—for
-        /// example, by creating new Identity and Access Management (IAM) users. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a>
-        /// </p>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a> </p>
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
-        /// <p>The capabilities that are allowed in the stack set. Some stack set templates might
-        /// include resources that can affect permissions in your Amazon Web Services account—for
-        /// example, by creating new Identity and Access Management (IAM) users. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a>
-        /// </p>
+        /// <p>The capabilities that are allowed in the stack set. Some stack set templates might include resources that can affect permissions in your Amazon Web Services account—for example, by creating new Identity and Access Management (IAM) users. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates.</a> </p>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -10914,16 +8514,14 @@ pub mod stack_set {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that specify information about the stack set. A maximum number of 50 tags
-        /// can be specified.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>A list of tags that specify information about the stack set. A maximum number of 50 tags can be specified.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags that specify information about the stack set. A maximum number of 50 tags
-        /// can be specified.</p>
+        /// <p>A list of tags that specify information about the stack set. A maximum number of 50 tags can be specified.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -10944,20 +8542,14 @@ pub mod stack_set {
             self.stack_set_arn = input;
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the IAM role used to create or update the stack
-        /// set.</p>
-        /// <p>Use customized administrator roles to control which users or groups can manage specific
-        /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack
-        /// Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p>The Amazon Resource Number (ARN) of the IAM role used to create or update the stack set.</p>
+        /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn administration_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.administration_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the IAM role used to create or update the stack
-        /// set.</p>
-        /// <p>Use customized administrator roles to control which users or groups can manage specific
-        /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack
-        /// Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p>The Amazon Resource Number (ARN) of the IAM role used to create or update the stack set.</p>
+        /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_administration_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10966,15 +8558,13 @@ pub mod stack_set {
             self
         }
         /// <p>The name of the IAM execution role used to create or update the stack set. </p>
-        /// <p>Use customized execution roles to control which stack resources users and groups can
-        /// include in their stack sets. </p>
+        /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets. </p>
         pub fn execution_role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_name = Some(input.into());
             self
         }
         /// <p>The name of the IAM execution role used to create or update the stack set. </p>
-        /// <p>Use customized execution roles to control which stack resources users and groups can
-        /// include in their stack sets. </p>
+        /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets. </p>
         pub fn set_execution_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10983,9 +8573,7 @@ pub mod stack_set {
             self
         }
         /// <p>Detailed information about the drift status of the stack set.</p>
-        /// <p>For stack sets, contains information about the last <i>completed</i> drift
-        /// operation performed on the stack set. Information about drift operations currently in
-        /// progress is not included.</p>
+        /// <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations currently in progress is not included.</p>
         pub fn stack_set_drift_detection_details(
             mut self,
             input: crate::model::StackSetDriftDetectionDetails,
@@ -10994,9 +8582,7 @@ pub mod stack_set {
             self
         }
         /// <p>Detailed information about the drift status of the stack set.</p>
-        /// <p>For stack sets, contains information about the last <i>completed</i> drift
-        /// operation performed on the stack set. Information about drift operations currently in
-        /// progress is not included.</p>
+        /// <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations currently in progress is not included.</p>
         pub fn set_stack_set_drift_detection_details(
             mut self,
             input: std::option::Option<crate::model::StackSetDriftDetectionDetails>,
@@ -11004,16 +8590,12 @@ pub mod stack_set {
             self.stack_set_drift_detection_details = input;
             self
         }
-        /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
-        /// Organizations accounts that are added to a target organization or organizational
-        /// unit (OU).</p>
+        /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
         pub fn auto_deployment(mut self, input: crate::model::AutoDeployment) -> Self {
             self.auto_deployment = Some(input);
             self
         }
-        /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
-        /// Organizations accounts that are added to a target organization or organizational
-        /// unit (OU).</p>
+        /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).</p>
         pub fn set_auto_deployment(
             mut self,
             input: std::option::Option<crate::model::AutoDeployment>,
@@ -11023,17 +8605,8 @@ pub mod stack_set {
         }
         /// <p>Describes how the IAM roles required for stack set operations are created.</p>
         /// <ul>
-        /// <li>
-        /// <p>With <code>self-managed</code> permissions, you must create the administrator and
-        /// execution roles required to deploy to target accounts. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-        /// Self-Managed Stack Set Permissions</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
-        /// IAM roles required to deploy to accounts managed by Organizations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
-        /// </li>
+        /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+        /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
         /// </ul>
         pub fn permission_model(mut self, input: crate::model::PermissionModels) -> Self {
             self.permission_model = Some(input);
@@ -11041,17 +8614,8 @@ pub mod stack_set {
         }
         /// <p>Describes how the IAM roles required for stack set operations are created.</p>
         /// <ul>
-        /// <li>
-        /// <p>With <code>self-managed</code> permissions, you must create the administrator and
-        /// execution roles required to deploy to target accounts. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-        /// Self-Managed Stack Set Permissions</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
-        /// IAM roles required to deploy to accounts managed by Organizations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
-        /// </li>
+        /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
+        /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
         /// </ul>
         pub fn set_permission_model(
             mut self,
@@ -11064,16 +8628,14 @@ pub mod stack_set {
         ///
         /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
         ///
-        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-        /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
         pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.organizational_unit_ids.unwrap_or_default();
             v.push(input.into());
             self.organizational_unit_ids = Some(v);
             self
         }
-        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-        /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
         pub fn set_organizational_unit_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11081,14 +8643,12 @@ pub mod stack_set {
             self.organizational_unit_ids = input;
             self
         }
-        /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
-        /// conflicting operations.</p>
+        /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
         pub fn managed_execution(mut self, input: crate::model::ManagedExecution) -> Self {
             self.managed_execution = Some(input);
             self
         }
-        /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues
-        /// conflicting operations.</p>
+        /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
         pub fn set_managed_execution(
             mut self,
             input: std::option::Option<crate::model::ManagedExecution>,
@@ -11144,11 +8704,9 @@ pub struct Stack {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time the stack was deleted.</p>
     pub deletion_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time the stack was last updated. This field will only be returned if the stack has
-    /// been updated at least once.</p>
+    /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
-    /// updating operations, and for the specified monitoring period afterwards.</p>
+    /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub rollback_configuration: std::option::Option<crate::model::RollbackConfiguration>,
     /// <p>Current status of the stack.</p>
     pub stack_status: std::option::Option<crate::model::StackStatus>,
@@ -11156,14 +8714,8 @@ pub struct Stack {
     pub stack_status_reason: std::option::Option<std::string::String>,
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>true</code>: disable rollback</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>false</code>: enable rollback</p>
-    /// </li>
+    /// <li> <p> <code>true</code>: disable rollback</p> </li>
+    /// <li> <p> <code>false</code>: enable rollback</p> </li>
     /// </ul>
     pub disable_rollback: std::option::Option<bool>,
     /// <p>SNS topic ARNs to which stack related events are published.</p>
@@ -11174,31 +8726,20 @@ pub struct Stack {
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>A list of output structures.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that is
-    /// associated with the stack. During a stack operation, CloudFormation uses this
-    /// role's credentials to make calls on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that is associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of <code>Tag</code>s that specify information about the stack.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Whether termination protection is enabled for the stack.</p>
-    /// <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>,
-    /// termination protection is set on the root stack and cannot be changed directly on the
-    /// nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being
-    /// Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
     pub enable_termination_protection: std::option::Option<bool>,
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-    /// direct parent of this stack. For the first level of nested stacks, the root stack is also
-    /// the parent stack.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub parent_id: std::option::Option<std::string::String>,
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-    /// top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub root_id: std::option::Option<std::string::String>,
-    /// <p>Information on whether a stack's actual configuration differs, or has
-    /// <i>drifted</i>, from it's expected configuration, as defined in the stack
-    /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-    /// Changes to Stacks and Resources</a>.</p>
+    /// <p>Information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub drift_information: std::option::Option<crate::model::StackDriftInformation>,
 }
 impl Stack {
@@ -11230,13 +8771,11 @@ impl Stack {
     pub fn deletion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_time.as_ref()
     }
-    /// <p>The time the stack was last updated. This field will only be returned if the stack has
-    /// been updated at least once.</p>
+    /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
-    /// updating operations, and for the specified monitoring period afterwards.</p>
+    /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub fn rollback_configuration(
         &self,
     ) -> std::option::Option<&crate::model::RollbackConfiguration> {
@@ -11252,14 +8791,8 @@ impl Stack {
     }
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>true</code>: disable rollback</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>false</code>: enable rollback</p>
-    /// </li>
+    /// <li> <p> <code>true</code>: disable rollback</p> </li>
+    /// <li> <p> <code>false</code>: enable rollback</p> </li>
     /// </ul>
     pub fn disable_rollback(&self) -> std::option::Option<bool> {
         self.disable_rollback
@@ -11280,9 +8813,7 @@ impl Stack {
     pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
         self.outputs.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that is
-    /// associated with the stack. During a stack operation, CloudFormation uses this
-    /// role's credentials to make calls on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that is associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -11291,30 +8822,21 @@ impl Stack {
         self.tags.as_deref()
     }
     /// <p>Whether termination protection is enabled for the stack.</p>
-    /// <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>,
-    /// termination protection is set on the root stack and cannot be changed directly on the
-    /// nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being
-    /// Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn enable_termination_protection(&self) -> std::option::Option<bool> {
         self.enable_termination_protection
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-    /// direct parent of this stack. For the first level of nested stacks, the root stack is also
-    /// the parent stack.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn parent_id(&self) -> std::option::Option<&str> {
         self.parent_id.as_deref()
     }
-    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-    /// top-level stack to which the nested stack ultimately belongs.</p>
+    /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn root_id(&self) -> std::option::Option<&str> {
         self.root_id.as_deref()
     }
-    /// <p>Information on whether a stack's actual configuration differs, or has
-    /// <i>drifted</i>, from it's expected configuration, as defined in the stack
-    /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-    /// Changes to Stacks and Resources</a>.</p>
+    /// <p>Information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub fn drift_information(&self) -> std::option::Option<&crate::model::StackDriftInformation> {
         self.drift_information.as_ref()
     }
@@ -11428,9 +8950,9 @@ pub mod stack {
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A list of <code>Parameter</code> structures.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
@@ -11468,14 +8990,12 @@ pub mod stack {
             self.deletion_time = input;
             self
         }
-        /// <p>The time the stack was last updated. This field will only be returned if the stack has
-        /// been updated at least once.</p>
+        /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_time = Some(input);
             self
         }
-        /// <p>The time the stack was last updated. This field will only be returned if the stack has
-        /// been updated at least once.</p>
+        /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11483,8 +9003,7 @@ pub mod stack {
             self.last_updated_time = input;
             self
         }
-        /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
-        /// updating operations, and for the specified monitoring period afterwards.</p>
+        /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
         pub fn rollback_configuration(
             mut self,
             input: crate::model::RollbackConfiguration,
@@ -11492,8 +9011,7 @@ pub mod stack {
             self.rollback_configuration = Some(input);
             self
         }
-        /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
-        /// updating operations, and for the specified monitoring period afterwards.</p>
+        /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
         pub fn set_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::RollbackConfiguration>,
@@ -11529,14 +9047,8 @@ pub mod stack {
         }
         /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>true</code>: disable rollback</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>false</code>: enable rollback</p>
-        /// </li>
+        /// <li> <p> <code>true</code>: disable rollback</p> </li>
+        /// <li> <p> <code>false</code>: enable rollback</p> </li>
         /// </ul>
         pub fn disable_rollback(mut self, input: bool) -> Self {
             self.disable_rollback = Some(input);
@@ -11544,14 +9056,8 @@ pub mod stack {
         }
         /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>true</code>: disable rollback</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>false</code>: enable rollback</p>
-        /// </li>
+        /// <li> <p> <code>true</code>: disable rollback</p> </li>
+        /// <li> <p> <code>false</code>: enable rollback</p> </li>
         /// </ul>
         pub fn set_disable_rollback(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_rollback = input;
@@ -11591,9 +9097,9 @@ pub mod stack {
         /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
         ///
         /// <p>The capabilities allowed in the stack.</p>
-        pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
+        pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.capabilities = Some(v);
             self
         }
@@ -11610,9 +9116,9 @@ pub mod stack {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>A list of output structures.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -11624,16 +9130,12 @@ pub mod stack {
             self.outputs = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that is
-        /// associated with the stack. During a stack operation, CloudFormation uses this
-        /// role's credentials to make calls on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that is associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that is
-        /// associated with the stack. During a stack operation, CloudFormation uses this
-        /// role's credentials to make calls on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that is associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -11643,9 +9145,9 @@ pub mod stack {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code>s that specify information about the stack.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11658,19 +9160,13 @@ pub mod stack {
             self
         }
         /// <p>Whether termination protection is enabled for the stack.</p>
-        /// <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>,
-        /// termination protection is set on the root stack and cannot be changed directly on the
-        /// nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being
-        /// Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn enable_termination_protection(mut self, input: bool) -> Self {
             self.enable_termination_protection = Some(input);
             self
         }
         /// <p>Whether termination protection is enabled for the stack.</p>
-        /// <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>,
-        /// termination protection is set on the root stack and cannot be changed directly on the
-        /// nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being
-        /// Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_enable_termination_protection(
             mut self,
             input: std::option::Option<bool>,
@@ -11678,48 +9174,36 @@ pub mod stack {
             self.enable_termination_protection = input;
             self
         }
-        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-        /// direct parent of this stack. For the first level of nested stacks, the root stack is also
-        /// the parent stack.</p>
+        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_id = Some(input.into());
             self
         }
-        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-        /// direct parent of this stack. For the first level of nested stacks, the root stack is also
-        /// the parent stack.</p>
+        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_id = input;
             self
         }
-        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-        /// top-level stack to which the nested stack ultimately belongs.</p>
+        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn root_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.root_id = Some(input.into());
             self
         }
-        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the
-        /// top-level stack to which the nested stack ultimately belongs.</p>
+        /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
         /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_root_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.root_id = input;
             self
         }
-        /// <p>Information on whether a stack's actual configuration differs, or has
-        /// <i>drifted</i>, from it's expected configuration, as defined in the stack
-        /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-        /// Changes to Stacks and Resources</a>.</p>
+        /// <p>Information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
         pub fn drift_information(mut self, input: crate::model::StackDriftInformation) -> Self {
             self.drift_information = Some(input);
             self
         }
-        /// <p>Information on whether a stack's actual configuration differs, or has
-        /// <i>drifted</i>, from it's expected configuration, as defined in the stack
-        /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-        /// Changes to Stacks and Resources</a>.</p>
+        /// <p>Information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
         pub fn set_drift_information(
             mut self,
             input: std::option::Option<crate::model::StackDriftInformation>,
@@ -11763,72 +9247,33 @@ impl Stack {
     }
 }
 
-/// <p>Contains information about whether the stack's actual configuration differs, or has
-/// <i>drifted</i>, from its expected configuration, as defined in the stack
-/// template and any values specified as template parameters. A stack is considered to have
-/// drifted if one or more of its resources have drifted.</p>
+/// <p>Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackDriftInformation {
-    /// <p>Status of the stack's actual configuration compared to its expected template
-    /// configuration. </p>
+    /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DRIFTED</code>: The stack differs from its expected template configuration.
-    /// A stack is considered to have drifted if one or more of its resources have
-    /// drifted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its
-    /// expected template configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-    /// template configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-    /// </li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its expected template configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub stack_drift_status: std::option::Option<crate::model::StackDriftStatus>,
-    /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of
-    /// its individual resources that support drift detection.</p>
+    /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
     pub last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackDriftInformation {
-    /// <p>Status of the stack's actual configuration compared to its expected template
-    /// configuration. </p>
+    /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DRIFTED</code>: The stack differs from its expected template configuration.
-    /// A stack is considered to have drifted if one or more of its resources have
-    /// drifted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its
-    /// expected template configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-    /// template configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-    /// </li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its expected template configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn stack_drift_status(&self) -> std::option::Option<&crate::model::StackDriftStatus> {
         self.stack_drift_status.as_ref()
     }
-    /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of
-    /// its individual resources that support drift detection.</p>
+    /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
     pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
     }
@@ -11851,57 +9296,23 @@ pub mod stack_drift_information {
         pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Status of the stack's actual configuration compared to its expected template
-        /// configuration. </p>
+        /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DRIFTED</code>: The stack differs from its expected template configuration.
-        /// A stack is considered to have drifted if one or more of its resources have
-        /// drifted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its
-        /// expected template configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-        /// template configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-        /// </li>
+        /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its expected template configuration.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
+        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
         /// </ul>
         pub fn stack_drift_status(mut self, input: crate::model::StackDriftStatus) -> Self {
             self.stack_drift_status = Some(input);
             self
         }
-        /// <p>Status of the stack's actual configuration compared to its expected template
-        /// configuration. </p>
+        /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DRIFTED</code>: The stack differs from its expected template configuration.
-        /// A stack is considered to have drifted if one or more of its resources have
-        /// drifted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its
-        /// expected template configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The stack's actual configuration matches its expected
-        /// template configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-        /// </li>
+        /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its expected template configuration.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
+        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
         /// </ul>
         pub fn set_stack_drift_status(
             mut self,
@@ -11910,14 +9321,12 @@ pub mod stack_drift_information {
             self.stack_drift_status = input;
             self
         }
-        /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of
-        /// its individual resources that support drift detection.</p>
+        /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
         pub fn last_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_check_timestamp = Some(input);
             self
         }
-        /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of
-        /// its individual resources that support drift detection.</p>
+        /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
         pub fn set_last_check_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -12062,11 +9471,9 @@ pub struct StackResource {
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The logical name of the resource specified in the template.</p>
     pub logical_resource_id: std::option::Option<std::string::String>,
-    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
-    /// supported by CloudFormation.</p>
+    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
     pub physical_resource_id: std::option::Option<std::string::String>,
-    /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-    /// Guide.)</p>
+    /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Time the status was updated.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -12076,13 +9483,9 @@ pub struct StackResource {
     pub resource_status_reason: std::option::Option<std::string::String>,
     /// <p>User defined description associated with the resource.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Information about whether the resource's actual configuration differs, or has
-    /// <i>drifted</i>, from its expected configuration, as defined in the stack
-    /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-    /// Changes to Stacks and Resources</a>.</p>
+    /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub drift_information: std::option::Option<crate::model::StackResourceDriftInformation>,
-    /// <p>Contains information about the module from which the resource was created, if the
-    /// resource was created from a module included in the stack template.</p>
+    /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub module_info: std::option::Option<crate::model::ModuleInfo>,
 }
 impl StackResource {
@@ -12098,13 +9501,11 @@ impl StackResource {
     pub fn logical_resource_id(&self) -> std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
-    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
-    /// supported by CloudFormation.</p>
+    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
     pub fn physical_resource_id(&self) -> std::option::Option<&str> {
         self.physical_resource_id.as_deref()
     }
-    /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-    /// Guide.)</p>
+    /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -12124,17 +9525,13 @@ impl StackResource {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Information about whether the resource's actual configuration differs, or has
-    /// <i>drifted</i>, from its expected configuration, as defined in the stack
-    /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-    /// Changes to Stacks and Resources</a>.</p>
+    /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub fn drift_information(
         &self,
     ) -> std::option::Option<&crate::model::StackResourceDriftInformation> {
         self.drift_information.as_ref()
     }
-    /// <p>Contains information about the module from which the resource was created, if the
-    /// resource was created from a module included in the stack template.</p>
+    /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(&self) -> std::option::Option<&crate::model::ModuleInfo> {
         self.module_info.as_ref()
     }
@@ -12209,14 +9606,12 @@ pub mod stack_resource {
             self.logical_resource_id = input;
             self
         }
-        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
-        /// supported by CloudFormation.</p>
+        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
         pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.physical_resource_id = Some(input.into());
             self
         }
-        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
-        /// supported by CloudFormation.</p>
+        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
         pub fn set_physical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12224,14 +9619,12 @@ pub mod stack_resource {
             self.physical_resource_id = input;
             self
         }
-        /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-        /// Guide.)</p>
+        /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-        /// Guide.)</p>
+        /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12288,10 +9681,7 @@ pub mod stack_resource {
             self.description = input;
             self
         }
-        /// <p>Information about whether the resource's actual configuration differs, or has
-        /// <i>drifted</i>, from its expected configuration, as defined in the stack
-        /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-        /// Changes to Stacks and Resources</a>.</p>
+        /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
         pub fn drift_information(
             mut self,
             input: crate::model::StackResourceDriftInformation,
@@ -12299,10 +9689,7 @@ pub mod stack_resource {
             self.drift_information = Some(input);
             self
         }
-        /// <p>Information about whether the resource's actual configuration differs, or has
-        /// <i>drifted</i>, from its expected configuration, as defined in the stack
-        /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-        /// Changes to Stacks and Resources</a>.</p>
+        /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
         pub fn set_drift_information(
             mut self,
             input: std::option::Option<crate::model::StackResourceDriftInformation>,
@@ -12310,14 +9697,12 @@ pub mod stack_resource {
             self.drift_information = input;
             self
         }
-        /// <p>Contains information about the module from which the resource was created, if the
-        /// resource was created from a module included in the stack template.</p>
+        /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
         pub fn module_info(mut self, input: crate::model::ModuleInfo) -> Self {
             self.module_info = Some(input);
             self
         }
-        /// <p>Contains information about the module from which the resource was created, if the
-        /// resource was created from a module included in the stack template.</p>
+        /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
         pub fn set_module_info(
             mut self,
             input: std::option::Option<crate::model::ModuleInfo>,
@@ -12350,76 +9735,35 @@ impl StackResource {
     }
 }
 
-/// <p>Contains information about whether the resource's actual configuration differs, or has
-/// <i>drifted</i>, from its expected configuration.</p>
+/// <p>Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackResourceDriftInformation {
-    /// <p>Status of the resource's actual configuration compared to its expected
-    /// configuration</p>
+    /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code>: The resource differs from its expected configuration in that
-    /// it has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFIED</code>: The resource differs from its expected
-    /// configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its
-    /// expected configuration.</p>
-    /// <p>Any resources that do not currently support drift detection have a status of
-    /// <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-    /// configuration.</p>
-    /// </li>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected configuration in that it has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: The resource differs from its expected configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its expected configuration.</p> <p>Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. </p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resources's actual configuration matches its expected configuration.</p> </li>
     /// </ul>
     pub stack_resource_drift_status: std::option::Option<crate::model::StackResourceDriftStatus>,
-    /// <p>When CloudFormation last checked if the resource had drifted from its expected
-    /// configuration.</p>
+    /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
     pub last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackResourceDriftInformation {
-    /// <p>Status of the resource's actual configuration compared to its expected
-    /// configuration</p>
+    /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code>: The resource differs from its expected configuration in that
-    /// it has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFIED</code>: The resource differs from its expected
-    /// configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its
-    /// expected configuration.</p>
-    /// <p>Any resources that do not currently support drift detection have a status of
-    /// <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-    /// configuration.</p>
-    /// </li>
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected configuration in that it has been deleted.</p> </li>
+    /// <li> <p> <code>MODIFIED</code>: The resource differs from its expected configuration.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its expected configuration.</p> <p>Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. </p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The resources's actual configuration matches its expected configuration.</p> </li>
     /// </ul>
     pub fn stack_resource_drift_status(
         &self,
     ) -> std::option::Option<&crate::model::StackResourceDriftStatus> {
         self.stack_resource_drift_status.as_ref()
     }
-    /// <p>When CloudFormation last checked if the resource had drifted from its expected
-    /// configuration.</p>
+    /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
     pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
     }
@@ -12446,31 +9790,12 @@ pub mod stack_resource_drift_information {
         pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Status of the resource's actual configuration compared to its expected
-        /// configuration</p>
+        /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code>: The resource differs from its expected configuration in that
-        /// it has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFIED</code>: The resource differs from its expected
-        /// configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its
-        /// expected configuration.</p>
-        /// <p>Any resources that do not currently support drift detection have a status of
-        /// <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-        /// configuration.</p>
-        /// </li>
+        /// <li> <p> <code>DELETED</code>: The resource differs from its expected configuration in that it has been deleted.</p> </li>
+        /// <li> <p> <code>MODIFIED</code>: The resource differs from its expected configuration.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its expected configuration.</p> <p>Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. </p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The resources's actual configuration matches its expected configuration.</p> </li>
         /// </ul>
         pub fn stack_resource_drift_status(
             mut self,
@@ -12479,31 +9804,12 @@ pub mod stack_resource_drift_information {
             self.stack_resource_drift_status = Some(input);
             self
         }
-        /// <p>Status of the resource's actual configuration compared to its expected
-        /// configuration</p>
+        /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code>: The resource differs from its expected configuration in that
-        /// it has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFIED</code>: The resource differs from its expected
-        /// configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its
-        /// expected configuration.</p>
-        /// <p>Any resources that do not currently support drift detection have a status of
-        /// <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-        /// configuration.</p>
-        /// </li>
+        /// <li> <p> <code>DELETED</code>: The resource differs from its expected configuration in that it has been deleted.</p> </li>
+        /// <li> <p> <code>MODIFIED</code>: The resource differs from its expected configuration.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs from its expected configuration.</p> <p>Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. </p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The resources's actual configuration matches its expected configuration.</p> </li>
         /// </ul>
         pub fn set_stack_resource_drift_status(
             mut self,
@@ -12512,14 +9818,12 @@ pub mod stack_resource_drift_information {
             self.stack_resource_drift_status = input;
             self
         }
-        /// <p>When CloudFormation last checked if the resource had drifted from its expected
-        /// configuration.</p>
+        /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
         pub fn last_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_check_timestamp = Some(input);
             self
         }
-        /// <p>When CloudFormation last checked if the resource had drifted from its expected
-        /// configuration.</p>
+        /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
         pub fn set_last_check_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -12553,11 +9857,9 @@ pub struct StackResourceDetail {
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The logical name of the resource specified in the template.</p>
     pub logical_resource_id: std::option::Option<std::string::String>,
-    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
-    /// supported by CloudFormation.</p>
+    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
     pub physical_resource_id: std::option::Option<std::string::String>,
-    /// <p>Type of resource. ((For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-    /// Guide.)</p>
+    /// <p>Type of resource. ((For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Time the status was updated.</p>
     pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -12567,17 +9869,11 @@ pub struct StackResourceDetail {
     pub resource_status_reason: std::option::Option<std::string::String>,
     /// <p>User defined description associated with the resource.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The content of the <code>Metadata</code> attribute declared for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-    /// Attribute</a> in the CloudFormation User Guide.</p>
+    /// <p>The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata Attribute</a> in the CloudFormation User Guide.</p>
     pub metadata: std::option::Option<std::string::String>,
-    /// <p>Information about whether the resource's actual configuration differs, or has
-    /// <i>drifted</i>, from its expected configuration, as defined in the stack
-    /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-    /// Changes to Stacks and Resources</a>.</p>
+    /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub drift_information: std::option::Option<crate::model::StackResourceDriftInformation>,
-    /// <p>Contains information about the module from which the resource was created, if the
-    /// resource was created from a module included in the stack template.</p>
+    /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub module_info: std::option::Option<crate::model::ModuleInfo>,
 }
 impl StackResourceDetail {
@@ -12593,13 +9889,11 @@ impl StackResourceDetail {
     pub fn logical_resource_id(&self) -> std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
-    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
-    /// supported by CloudFormation.</p>
+    /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
     pub fn physical_resource_id(&self) -> std::option::Option<&str> {
         self.physical_resource_id.as_deref()
     }
-    /// <p>Type of resource. ((For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-    /// Guide.)</p>
+    /// <p>Type of resource. ((For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -12619,23 +9913,17 @@ impl StackResourceDetail {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The content of the <code>Metadata</code> attribute declared for the resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-    /// Attribute</a> in the CloudFormation User Guide.</p>
+    /// <p>The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata Attribute</a> in the CloudFormation User Guide.</p>
     pub fn metadata(&self) -> std::option::Option<&str> {
         self.metadata.as_deref()
     }
-    /// <p>Information about whether the resource's actual configuration differs, or has
-    /// <i>drifted</i>, from its expected configuration, as defined in the stack
-    /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-    /// Changes to Stacks and Resources</a>.</p>
+    /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub fn drift_information(
         &self,
     ) -> std::option::Option<&crate::model::StackResourceDriftInformation> {
         self.drift_information.as_ref()
     }
-    /// <p>Contains information about the module from which the resource was created, if the
-    /// resource was created from a module included in the stack template.</p>
+    /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(&self) -> std::option::Option<&crate::model::ModuleInfo> {
         self.module_info.as_ref()
     }
@@ -12712,14 +10000,12 @@ pub mod stack_resource_detail {
             self.logical_resource_id = input;
             self
         }
-        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
-        /// supported by CloudFormation.</p>
+        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
         pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.physical_resource_id = Some(input.into());
             self
         }
-        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource
-        /// supported by CloudFormation.</p>
+        /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
         pub fn set_physical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12727,14 +10013,12 @@ pub mod stack_resource_detail {
             self.physical_resource_id = input;
             self
         }
-        /// <p>Type of resource. ((For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-        /// Guide.)</p>
+        /// <p>Type of resource. ((For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>Type of resource. ((For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-        /// Guide.)</p>
+        /// <p>Type of resource. ((For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12791,24 +10075,17 @@ pub mod stack_resource_detail {
             self.description = input;
             self
         }
-        /// <p>The content of the <code>Metadata</code> attribute declared for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-        /// Attribute</a> in the CloudFormation User Guide.</p>
+        /// <p>The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata Attribute</a> in the CloudFormation User Guide.</p>
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
             self.metadata = Some(input.into());
             self
         }
-        /// <p>The content of the <code>Metadata</code> attribute declared for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-        /// Attribute</a> in the CloudFormation User Guide.</p>
+        /// <p>The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata Attribute</a> in the CloudFormation User Guide.</p>
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metadata = input;
             self
         }
-        /// <p>Information about whether the resource's actual configuration differs, or has
-        /// <i>drifted</i>, from its expected configuration, as defined in the stack
-        /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-        /// Changes to Stacks and Resources</a>.</p>
+        /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
         pub fn drift_information(
             mut self,
             input: crate::model::StackResourceDriftInformation,
@@ -12816,10 +10093,7 @@ pub mod stack_resource_detail {
             self.drift_information = Some(input);
             self
         }
-        /// <p>Information about whether the resource's actual configuration differs, or has
-        /// <i>drifted</i>, from its expected configuration, as defined in the stack
-        /// template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration
-        /// Changes to Stacks and Resources</a>.</p>
+        /// <p>Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
         pub fn set_drift_information(
             mut self,
             input: std::option::Option<crate::model::StackResourceDriftInformation>,
@@ -12827,14 +10101,12 @@ pub mod stack_resource_detail {
             self.drift_information = input;
             self
         }
-        /// <p>Contains information about the module from which the resource was created, if the
-        /// resource was created from a module included in the stack template.</p>
+        /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
         pub fn module_info(mut self, input: crate::model::ModuleInfo) -> Self {
             self.module_info = Some(input);
             self
         }
-        /// <p>Contains information about the module from which the resource was created, if the
-        /// resource was created from a module included in the stack template.</p>
+        /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
         pub fn set_module_info(
             mut self,
             input: std::option::Option<crate::model::ModuleInfo>,
@@ -12868,115 +10140,58 @@ impl StackResourceDetail {
     }
 }
 
-/// <p>An CloudFormation stack, in a specific account and Region, that's part of a
-/// stack set operation. A stack instance is a reference to an attempted or actual stack in a
-/// given account within a given Region. A stack instance can exist without a stack—for
-/// example, if the stack couldn't be created for some reason. A stack instance is associated
-/// with only one stack set. Each stack instance contains the ID of its associated stack set,
-/// as well as the ID of the actual stack and the stack status.</p>
+/// <p>An CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StackInstance {
-    /// <p>The name or unique ID of the stack set that the stack instance is associated
-    /// with.</p>
+    /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
     pub stack_set_id: std::option::Option<std::string::String>,
-    /// <p>The name of the Amazon Web Services Region that the stack instance is associated
-    /// with.</p>
+    /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack
-    /// instance is associated with.</p>
+    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub account: std::option::Option<std::string::String>,
     /// <p>The ID of the stack instance.</p>
     pub stack_id: std::option::Option<std::string::String>,
-    /// <p>A list of parameters from the stack set template whose values have been overridden in
-    /// this stack instance.</p>
+    /// <p>A list of parameters from the stack set template whose values have been overridden in this stack instance.</p>
     pub parameter_overrides: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-    /// <p>The status of the stack instance, in terms of its synchronization with its associated
-    /// stack set.</p>
+    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-    /// and left the stack in an unstable state. Stacks in this state are excluded from
-    /// further <code>UpdateStackSet</code> operations. You might need to perform a
-    /// <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-    /// <code>true</code>, to delete the stack instance, and then delete the stack
-    /// manually.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-    /// because:</p>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
-    /// <li>
-    /// <p>The associated stack failed during a <code>CreateStackSet</code> or
-    /// <code>UpdateStackSet</code> operation. </p>
-    /// </li>
-    /// <li>
-    /// <p>The stack was part of a <code>CreateStackSet</code> or
-    /// <code>UpdateStackSet</code> operation that failed or was stopped before the
-    /// stack was created or updated. </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
-    /// </li>
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated. </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::StackInstanceStatus>,
     /// <p>The detailed status of the stack instance.</p>
     pub stack_instance_status: std::option::Option<crate::model::StackInstanceComprehensiveStatus>,
-    /// <p>The explanation for the specific status code that is assigned to this stack
-    /// instance.</p>
+    /// <p>The explanation for the specific status code that is assigned to this stack instance.</p>
     pub status_reason: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-    /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub organizational_unit_id: std::option::Option<std::string::String>,
-    /// <p>Status of the stack instance's actual configuration compared to the expected template
-    /// and parameter configuration of the stack set to which it belongs. </p>
+    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DRIFTED</code>: The stack differs from the expected template and parameter
-    /// configuration of the stack set to which it belongs. A stack instance is considered to
-    /// have drifted if one or more of the resources in the associated stack have
-    /// drifted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from
-    /// its expected stack set configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The stack instance's actual configuration matches its
-    /// expected stack set configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-    /// </li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub drift_status: std::option::Option<crate::model::StackDriftStatus>,
-    /// <p>Most recent time when CloudFormation performed a drift detection operation on
-    /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
-    /// drift detection has not yet been performed.</p>
+    /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection has not yet been performed.</p>
     pub last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StackInstance {
-    /// <p>The name or unique ID of the stack set that the stack instance is associated
-    /// with.</p>
+    /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
     pub fn stack_set_id(&self) -> std::option::Option<&str> {
         self.stack_set_id.as_deref()
     }
-    /// <p>The name of the Amazon Web Services Region that the stack instance is associated
-    /// with.</p>
+    /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack
-    /// instance is associated with.</p>
+    /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn account(&self) -> std::option::Option<&str> {
         self.account.as_deref()
     }
@@ -12984,43 +10199,19 @@ impl StackInstance {
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
-    /// <p>A list of parameters from the stack set template whose values have been overridden in
-    /// this stack instance.</p>
+    /// <p>A list of parameters from the stack set template whose values have been overridden in this stack instance.</p>
     pub fn parameter_overrides(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameter_overrides.as_deref()
     }
-    /// <p>The status of the stack instance, in terms of its synchronization with its associated
-    /// stack set.</p>
+    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-    /// and left the stack in an unstable state. Stacks in this state are excluded from
-    /// further <code>UpdateStackSet</code> operations. You might need to perform a
-    /// <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-    /// <code>true</code>, to delete the stack instance, and then delete the stack
-    /// manually.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-    /// because:</p>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
-    /// <li>
-    /// <p>The associated stack failed during a <code>CreateStackSet</code> or
-    /// <code>UpdateStackSet</code> operation. </p>
-    /// </li>
-    /// <li>
-    /// <p>The stack was part of a <code>CreateStackSet</code> or
-    /// <code>UpdateStackSet</code> operation that failed or was stopped before the
-    /// stack was created or updated. </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
-    /// </li>
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated. </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::StackInstanceStatus> {
         self.status.as_ref()
@@ -13031,47 +10222,25 @@ impl StackInstance {
     ) -> std::option::Option<&crate::model::StackInstanceComprehensiveStatus> {
         self.stack_instance_status.as_ref()
     }
-    /// <p>The explanation for the specific status code that is assigned to this stack
-    /// instance.</p>
+    /// <p>The explanation for the specific status code that is assigned to this stack instance.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-    /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
     }
-    /// <p>Status of the stack instance's actual configuration compared to the expected template
-    /// and parameter configuration of the stack set to which it belongs. </p>
+    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DRIFTED</code>: The stack differs from the expected template and parameter
-    /// configuration of the stack set to which it belongs. A stack instance is considered to
-    /// have drifted if one or more of the resources in the associated stack have
-    /// drifted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from
-    /// its expected stack set configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code>: The stack instance's actual configuration matches its
-    /// expected stack set configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-    /// </li>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn drift_status(&self) -> std::option::Option<&crate::model::StackDriftStatus> {
         self.drift_status.as_ref()
     }
-    /// <p>Most recent time when CloudFormation performed a drift detection operation on
-    /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
-    /// drift detection has not yet been performed.</p>
+    /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection has not yet been performed.</p>
     pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
@@ -13116,38 +10285,32 @@ pub mod stack_instance {
         pub(crate) last_drift_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The name or unique ID of the stack set that the stack instance is associated
-        /// with.</p>
+        /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
         pub fn stack_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_set_id = Some(input.into());
             self
         }
-        /// <p>The name or unique ID of the stack set that the stack instance is associated
-        /// with.</p>
+        /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
         pub fn set_stack_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_set_id = input;
             self
         }
-        /// <p>The name of the Amazon Web Services Region that the stack instance is associated
-        /// with.</p>
+        /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon Web Services Region that the stack instance is associated
-        /// with.</p>
+        /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
-        /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack
-        /// instance is associated with.</p>
+        /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.account = Some(input.into());
             self
         }
-        /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack
-        /// instance is associated with.</p>
+        /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
         pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account = input;
             self
@@ -13166,16 +10329,14 @@ pub mod stack_instance {
         ///
         /// To override the contents of this collection use [`set_parameter_overrides`](Self::set_parameter_overrides).
         ///
-        /// <p>A list of parameters from the stack set template whose values have been overridden in
-        /// this stack instance.</p>
-        pub fn parameter_overrides(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        /// <p>A list of parameters from the stack set template whose values have been overridden in this stack instance.</p>
+        pub fn parameter_overrides(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameter_overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameter_overrides = Some(v);
             self
         }
-        /// <p>A list of parameters from the stack set template whose values have been overridden in
-        /// this stack instance.</p>
+        /// <p>A list of parameters from the stack set template whose values have been overridden in this stack instance.</p>
         pub fn set_parameter_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -13183,75 +10344,29 @@ pub mod stack_instance {
             self.parameter_overrides = input;
             self
         }
-        /// <p>The status of the stack instance, in terms of its synchronization with its associated
-        /// stack set.</p>
+        /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-        /// and left the stack in an unstable state. Stacks in this state are excluded from
-        /// further <code>UpdateStackSet</code> operations. You might need to perform a
-        /// <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-        /// <code>true</code>, to delete the stack instance, and then delete the stack
-        /// manually.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-        /// because:</p>
+        /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+        /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
         /// <ul>
-        /// <li>
-        /// <p>The associated stack failed during a <code>CreateStackSet</code> or
-        /// <code>UpdateStackSet</code> operation. </p>
-        /// </li>
-        /// <li>
-        /// <p>The stack was part of a <code>CreateStackSet</code> or
-        /// <code>UpdateStackSet</code> operation that failed or was stopped before the
-        /// stack was created or updated. </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
-        /// </li>
+        /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
+        /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated. </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::StackInstanceStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the stack instance, in terms of its synchronization with its associated
-        /// stack set.</p>
+        /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-        /// and left the stack in an unstable state. Stacks in this state are excluded from
-        /// further <code>UpdateStackSet</code> operations. You might need to perform a
-        /// <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-        /// <code>true</code>, to delete the stack instance, and then delete the stack
-        /// manually.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
-        /// because:</p>
+        /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+        /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
         /// <ul>
-        /// <li>
-        /// <p>The associated stack failed during a <code>CreateStackSet</code> or
-        /// <code>UpdateStackSet</code> operation. </p>
-        /// </li>
-        /// <li>
-        /// <p>The stack was part of a <code>CreateStackSet</code> or
-        /// <code>UpdateStackSet</code> operation that failed or was stopped before the
-        /// stack was created or updated. </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
-        /// </li>
+        /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation. </p> </li>
+        /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated. </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -13276,14 +10391,12 @@ pub mod stack_instance {
             self.stack_instance_status = input;
             self
         }
-        /// <p>The explanation for the specific status code that is assigned to this stack
-        /// instance.</p>
+        /// <p>The explanation for the specific status code that is assigned to this stack instance.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_reason = Some(input.into());
             self
         }
-        /// <p>The explanation for the specific status code that is assigned to this stack
-        /// instance.</p>
+        /// <p>The explanation for the specific status code that is assigned to this stack instance.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13291,14 +10404,12 @@ pub mod stack_instance {
             self.status_reason = input;
             self
         }
-        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-        /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
         pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organizational_unit_id = Some(input.into());
             self
         }
-        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs
-        /// that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+        /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
         pub fn set_organizational_unit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13306,59 +10417,23 @@ pub mod stack_instance {
             self.organizational_unit_id = input;
             self
         }
-        /// <p>Status of the stack instance's actual configuration compared to the expected template
-        /// and parameter configuration of the stack set to which it belongs. </p>
+        /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DRIFTED</code>: The stack differs from the expected template and parameter
-        /// configuration of the stack set to which it belongs. A stack instance is considered to
-        /// have drifted if one or more of the resources in the associated stack have
-        /// drifted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from
-        /// its expected stack set configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The stack instance's actual configuration matches its
-        /// expected stack set configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-        /// </li>
+        /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from its expected stack set configuration.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
         /// </ul>
         pub fn drift_status(mut self, input: crate::model::StackDriftStatus) -> Self {
             self.drift_status = Some(input);
             self
         }
-        /// <p>Status of the stack instance's actual configuration compared to the expected template
-        /// and parameter configuration of the stack set to which it belongs. </p>
+        /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DRIFTED</code>: The stack differs from the expected template and parameter
-        /// configuration of the stack set to which it belongs. A stack instance is considered to
-        /// have drifted if one or more of the resources in the associated stack have
-        /// drifted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from
-        /// its expected stack set configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code>: The stack instance's actual configuration matches its
-        /// expected stack set configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
-        /// </li>
+        /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
+        /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack instance differs from its expected stack set configuration.</p> </li>
+        /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
+        /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
         /// </ul>
         pub fn set_drift_status(
             mut self,
@@ -13367,16 +10442,12 @@ pub mod stack_instance {
             self.drift_status = input;
             self
         }
-        /// <p>Most recent time when CloudFormation performed a drift detection operation on
-        /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
-        /// drift detection has not yet been performed.</p>
+        /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection has not yet been performed.</p>
         pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_drift_check_timestamp = Some(input);
             self
         }
-        /// <p>Most recent time when CloudFormation performed a drift detection operation on
-        /// the stack instance. This value will be <code>NULL</code> for any stack instance on which
-        /// drift detection has not yet been performed.</p>
+        /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection has not yet been performed.</p>
         pub fn set_last_drift_check_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -13421,11 +10492,9 @@ pub struct StackEvent {
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The logical name of the resource specified in the template.</p>
     pub logical_resource_id: std::option::Option<std::string::String>,
-    /// <p>The name or unique identifier associated with the physical instance of the
-    /// resource.</p>
+    /// <p>The name or unique identifier associated with the physical instance of the resource.</p>
     pub physical_resource_id: std::option::Option<std::string::String>,
-    /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-    /// Guide.)</p>
+    /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>Time the status was updated.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -13436,17 +10505,8 @@ pub struct StackEvent {
     /// <p>BLOB of the properties used to create the resource.</p>
     pub resource_properties: std::option::Option<std::string::String>,
     /// <p>The token passed to the operation that generated this event.</p>
-    /// <p>All events triggered by a given stack operation are assigned the same client request
-    /// token, which you can use to track operations. For example, if you execute a
-    /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
-    /// <code>StackEvents</code> generated by that operation will have
-    /// <code>ClientRequestToken</code> set as <code>token1</code>.</p>
-    /// <p>In the console, stack operations display the client request token on the Events tab.
-    /// Stack operations that are initiated from the console use the token format
-    /// <i>Console-StackOperation-ID</i>, which helps you easily identify the
-    /// stack operation . For example, if you create a stack using the console, each stack event
-    /// would be assigned the same token in the following format:
-    /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+    /// <p>All events triggered by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p>
+    /// <p>In the console, stack operations display the client request token on the Events tab. Stack operations that are initiated from the console use the token format <i>Console-StackOperation-ID</i>, which helps you easily identify the stack operation . For example, if you create a stack using the console, each stack event would be assigned the same token in the following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl StackEvent {
@@ -13466,13 +10526,11 @@ impl StackEvent {
     pub fn logical_resource_id(&self) -> std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
-    /// <p>The name or unique identifier associated with the physical instance of the
-    /// resource.</p>
+    /// <p>The name or unique identifier associated with the physical instance of the resource.</p>
     pub fn physical_resource_id(&self) -> std::option::Option<&str> {
         self.physical_resource_id.as_deref()
     }
-    /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-    /// Guide.)</p>
+    /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -13493,17 +10551,8 @@ impl StackEvent {
         self.resource_properties.as_deref()
     }
     /// <p>The token passed to the operation that generated this event.</p>
-    /// <p>All events triggered by a given stack operation are assigned the same client request
-    /// token, which you can use to track operations. For example, if you execute a
-    /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
-    /// <code>StackEvents</code> generated by that operation will have
-    /// <code>ClientRequestToken</code> set as <code>token1</code>.</p>
-    /// <p>In the console, stack operations display the client request token on the Events tab.
-    /// Stack operations that are initiated from the console use the token format
-    /// <i>Console-StackOperation-ID</i>, which helps you easily identify the
-    /// stack operation . For example, if you create a stack using the console, each stack event
-    /// would be assigned the same token in the following format:
-    /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+    /// <p>All events triggered by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p>
+    /// <p>In the console, stack operations display the client request token on the Events tab. Stack operations that are initiated from the console use the token format <i>Console-StackOperation-ID</i>, which helps you easily identify the stack operation . For example, if you create a stack using the console, each stack event would be assigned the same token in the following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -13587,14 +10636,12 @@ pub mod stack_event {
             self.logical_resource_id = input;
             self
         }
-        /// <p>The name or unique identifier associated with the physical instance of the
-        /// resource.</p>
+        /// <p>The name or unique identifier associated with the physical instance of the resource.</p>
         pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.physical_resource_id = Some(input.into());
             self
         }
-        /// <p>The name or unique identifier associated with the physical instance of the
-        /// resource.</p>
+        /// <p>The name or unique identifier associated with the physical instance of the resource.</p>
         pub fn set_physical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13602,14 +10649,12 @@ pub mod stack_event {
             self.physical_resource_id = input;
             self
         }
-        /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-        /// Guide.)</p>
+        /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User
-        /// Guide.)</p>
+        /// <p>Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13670,33 +10715,15 @@ pub mod stack_event {
             self
         }
         /// <p>The token passed to the operation that generated this event.</p>
-        /// <p>All events triggered by a given stack operation are assigned the same client request
-        /// token, which you can use to track operations. For example, if you execute a
-        /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
-        /// <code>StackEvents</code> generated by that operation will have
-        /// <code>ClientRequestToken</code> set as <code>token1</code>.</p>
-        /// <p>In the console, stack operations display the client request token on the Events tab.
-        /// Stack operations that are initiated from the console use the token format
-        /// <i>Console-StackOperation-ID</i>, which helps you easily identify the
-        /// stack operation . For example, if you create a stack using the console, each stack event
-        /// would be assigned the same token in the following format:
-        /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+        /// <p>All events triggered by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p>
+        /// <p>In the console, stack operations display the client request token on the Events tab. Stack operations that are initiated from the console use the token format <i>Console-StackOperation-ID</i>, which helps you easily identify the stack operation . For example, if you create a stack using the console, each stack event would be assigned the same token in the following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
         /// <p>The token passed to the operation that generated this event.</p>
-        /// <p>All events triggered by a given stack operation are assigned the same client request
-        /// token, which you can use to track operations. For example, if you execute a
-        /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
-        /// <code>StackEvents</code> generated by that operation will have
-        /// <code>ClientRequestToken</code> set as <code>token1</code>.</p>
-        /// <p>In the console, stack operations display the client request token on the Events tab.
-        /// Stack operations that are initiated from the console use the token format
-        /// <i>Console-StackOperation-ID</i>, which helps you easily identify the
-        /// stack operation . For example, if you create a stack using the console, each stack event
-        /// would be assigned the same token in the following format:
-        /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+        /// <p>All events triggered by a given stack operation are assigned the same client request token, which you can use to track operations. For example, if you execute a <code>CreateStack</code> operation with the token <code>token1</code>, then all the <code>StackEvents</code> generated by that operation will have <code>ClientRequestToken</code> set as <code>token1</code>.</p>
+        /// <p>In the console, stack operations display the client request token on the Events tab. Stack operations that are initiated from the console use the token format <i>Console-StackOperation-ID</i>, which helps you easily identify the stack operation . For example, if you create a stack using the console, each stack event would be assigned the same token in the following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13847,26 +10874,21 @@ impl AsRef<str> for PublisherStatus {
     }
 }
 
-/// <p>The <code>Change</code> structure describes the changes CloudFormation will
-/// perform if you execute the change set.</p>
+/// <p>The <code>Change</code> structure describes the changes CloudFormation will perform if you execute the change set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Change {
-    /// <p>The type of entity that CloudFormation changes. Currently, the only entity type
-    /// is <code>Resource</code>.</p>
+    /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
     pub r#type: std::option::Option<crate::model::ChangeType>,
-    /// <p>A <code>ResourceChange</code> structure that describes the resource and action that
-    /// CloudFormation will perform.</p>
+    /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
     pub resource_change: std::option::Option<crate::model::ResourceChange>,
 }
 impl Change {
-    /// <p>The type of entity that CloudFormation changes. Currently, the only entity type
-    /// is <code>Resource</code>.</p>
+    /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChangeType> {
         self.r#type.as_ref()
     }
-    /// <p>A <code>ResourceChange</code> structure that describes the resource and action that
-    /// CloudFormation will perform.</p>
+    /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
     pub fn resource_change(&self) -> std::option::Option<&crate::model::ResourceChange> {
         self.resource_change.as_ref()
     }
@@ -13889,26 +10911,22 @@ pub mod change {
         pub(crate) resource_change: std::option::Option<crate::model::ResourceChange>,
     }
     impl Builder {
-        /// <p>The type of entity that CloudFormation changes. Currently, the only entity type
-        /// is <code>Resource</code>.</p>
+        /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
         pub fn r#type(mut self, input: crate::model::ChangeType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of entity that CloudFormation changes. Currently, the only entity type
-        /// is <code>Resource</code>.</p>
+        /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChangeType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>A <code>ResourceChange</code> structure that describes the resource and action that
-        /// CloudFormation will perform.</p>
+        /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
         pub fn resource_change(mut self, input: crate::model::ResourceChange) -> Self {
             self.resource_change = Some(input);
             self
         }
-        /// <p>A <code>ResourceChange</code> structure that describes the resource and action that
-        /// CloudFormation will perform.</p>
+        /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
         pub fn set_resource_change(
             mut self,
             input: std::option::Option<crate::model::ResourceChange>,
@@ -13932,57 +10950,32 @@ impl Change {
     }
 }
 
-/// <p>The <code>ResourceChange</code> structure describes the resource and the action that
-/// CloudFormation will perform on it if you execute this change set.</p>
+/// <p>The <code>ResourceChange</code> structure describes the resource and the action that CloudFormation will perform on it if you execute this change set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceChange {
-    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code>
-    /// (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code>
-    /// (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code>
-    /// (exact action for the resource cannot be determined).</p>
+    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).</p>
     pub action: std::option::Option<crate::model::ChangeAction>,
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
     pub logical_resource_id: std::option::Option<std::string::String>,
-    /// <p>The resource's physical ID (resource name). Resources that you are adding don't have
-    /// physical IDs because they haven't been created.</p>
+    /// <p>The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they haven't been created.</p>
     pub physical_resource_id: std::option::Option<std::string::String>,
-    /// <p>The type of CloudFormation resource, such as
-    /// <code>AWS::S3::Bucket</code>.</p>
+    /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will
-    /// replace the resource by creating a new one and deleting the old one. This value depends on
-    /// the value of the <code>RequiresRecreation</code> property in the
-    /// <code>ResourceTargetDefinition</code> structure. For example, if the
-    /// <code>RequiresRecreation</code> field is <code>Always</code> and the
-    /// <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is
-    /// <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code>
-    /// and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is
-    /// <code>Conditionally</code>.</p>
-    /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the
-    /// <code>Replacement</code> value depends on the change with the most impact. A
-    /// <code>RequiresRecreation</code> value of <code>Always</code> has the most impact,
-    /// followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
+    /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
+    /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code> value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
     pub replacement: std::option::Option<crate::model::Replacement>,
-    /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering
-    /// this update, such as a change in the resource attribute's <code>Metadata</code>,
-    /// <code>Properties</code>, or <code>Tags</code>.</p>
+    /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
     pub scope: std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
-    /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code>
-    /// structures that describes the changes that CloudFormation will make to the
-    /// resource. </p>
+    /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the changes that CloudFormation will make to the resource. </p>
     pub details: std::option::Option<std::vec::Vec<crate::model::ResourceChangeDetail>>,
     /// <p>The change set ID of the nested change set.</p>
     pub change_set_id: std::option::Option<std::string::String>,
-    /// <p>Contains information about the module from which the resource was created, if the
-    /// resource was created from a module included in the stack template.</p>
+    /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub module_info: std::option::Option<crate::model::ModuleInfo>,
 }
 impl ResourceChange {
-    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code>
-    /// (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code>
-    /// (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code>
-    /// (exact action for the resource cannot be determined).</p>
+    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).</p>
     pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
         self.action.as_ref()
     }
@@ -13990,41 +10983,24 @@ impl ResourceChange {
     pub fn logical_resource_id(&self) -> std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
-    /// <p>The resource's physical ID (resource name). Resources that you are adding don't have
-    /// physical IDs because they haven't been created.</p>
+    /// <p>The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they haven't been created.</p>
     pub fn physical_resource_id(&self) -> std::option::Option<&str> {
         self.physical_resource_id.as_deref()
     }
-    /// <p>The type of CloudFormation resource, such as
-    /// <code>AWS::S3::Bucket</code>.</p>
+    /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will
-    /// replace the resource by creating a new one and deleting the old one. This value depends on
-    /// the value of the <code>RequiresRecreation</code> property in the
-    /// <code>ResourceTargetDefinition</code> structure. For example, if the
-    /// <code>RequiresRecreation</code> field is <code>Always</code> and the
-    /// <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is
-    /// <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code>
-    /// and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is
-    /// <code>Conditionally</code>.</p>
-    /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the
-    /// <code>Replacement</code> value depends on the change with the most impact. A
-    /// <code>RequiresRecreation</code> value of <code>Always</code> has the most impact,
-    /// followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
+    /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
+    /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code> value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
     pub fn replacement(&self) -> std::option::Option<&crate::model::Replacement> {
         self.replacement.as_ref()
     }
-    /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering
-    /// this update, such as a change in the resource attribute's <code>Metadata</code>,
-    /// <code>Properties</code>, or <code>Tags</code>.</p>
+    /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
     pub fn scope(&self) -> std::option::Option<&[crate::model::ResourceAttribute]> {
         self.scope.as_deref()
     }
-    /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code>
-    /// structures that describes the changes that CloudFormation will make to the
-    /// resource. </p>
+    /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the changes that CloudFormation will make to the resource. </p>
     pub fn details(&self) -> std::option::Option<&[crate::model::ResourceChangeDetail]> {
         self.details.as_deref()
     }
@@ -14032,8 +11008,7 @@ impl ResourceChange {
     pub fn change_set_id(&self) -> std::option::Option<&str> {
         self.change_set_id.as_deref()
     }
-    /// <p>Contains information about the module from which the resource was created, if the
-    /// resource was created from a module included in the stack template.</p>
+    /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(&self) -> std::option::Option<&crate::model::ModuleInfo> {
         self.module_info.as_ref()
     }
@@ -14070,18 +11045,12 @@ pub mod resource_change {
         pub(crate) module_info: std::option::Option<crate::model::ModuleInfo>,
     }
     impl Builder {
-        /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code>
-        /// (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code>
-        /// (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code>
-        /// (exact action for the resource cannot be determined).</p>
+        /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).</p>
         pub fn action(mut self, input: crate::model::ChangeAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code>
-        /// (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code>
-        /// (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code>
-        /// (exact action for the resource cannot be determined).</p>
+        /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource cannot be determined).</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::ChangeAction>,
@@ -14102,14 +11071,12 @@ pub mod resource_change {
             self.logical_resource_id = input;
             self
         }
-        /// <p>The resource's physical ID (resource name). Resources that you are adding don't have
-        /// physical IDs because they haven't been created.</p>
+        /// <p>The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they haven't been created.</p>
         pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.physical_resource_id = Some(input.into());
             self
         }
-        /// <p>The resource's physical ID (resource name). Resources that you are adding don't have
-        /// physical IDs because they haven't been created.</p>
+        /// <p>The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they haven't been created.</p>
         pub fn set_physical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14117,14 +11084,12 @@ pub mod resource_change {
             self.physical_resource_id = input;
             self
         }
-        /// <p>The type of CloudFormation resource, such as
-        /// <code>AWS::S3::Bucket</code>.</p>
+        /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The type of CloudFormation resource, such as
-        /// <code>AWS::S3::Bucket</code>.</p>
+        /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14132,36 +11097,14 @@ pub mod resource_change {
             self.resource_type = input;
             self
         }
-        /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will
-        /// replace the resource by creating a new one and deleting the old one. This value depends on
-        /// the value of the <code>RequiresRecreation</code> property in the
-        /// <code>ResourceTargetDefinition</code> structure. For example, if the
-        /// <code>RequiresRecreation</code> field is <code>Always</code> and the
-        /// <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is
-        /// <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code>
-        /// and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is
-        /// <code>Conditionally</code>.</p>
-        /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the
-        /// <code>Replacement</code> value depends on the change with the most impact. A
-        /// <code>RequiresRecreation</code> value of <code>Always</code> has the most impact,
-        /// followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
+        /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
+        /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code> value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
         pub fn replacement(mut self, input: crate::model::Replacement) -> Self {
             self.replacement = Some(input);
             self
         }
-        /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will
-        /// replace the resource by creating a new one and deleting the old one. This value depends on
-        /// the value of the <code>RequiresRecreation</code> property in the
-        /// <code>ResourceTargetDefinition</code> structure. For example, if the
-        /// <code>RequiresRecreation</code> field is <code>Always</code> and the
-        /// <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is
-        /// <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code>
-        /// and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is
-        /// <code>Conditionally</code>.</p>
-        /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the
-        /// <code>Replacement</code> value depends on the change with the most impact. A
-        /// <code>RequiresRecreation</code> value of <code>Always</code> has the most impact,
-        /// followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
+        /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
+        /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code> value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
         pub fn set_replacement(
             mut self,
             input: std::option::Option<crate::model::Replacement>,
@@ -14173,18 +11116,14 @@ pub mod resource_change {
         ///
         /// To override the contents of this collection use [`set_scope`](Self::set_scope).
         ///
-        /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering
-        /// this update, such as a change in the resource attribute's <code>Metadata</code>,
-        /// <code>Properties</code>, or <code>Tags</code>.</p>
-        pub fn scope(mut self, input: impl Into<crate::model::ResourceAttribute>) -> Self {
+        /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
+        pub fn scope(mut self, input: crate::model::ResourceAttribute) -> Self {
             let mut v = self.scope.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.scope = Some(v);
             self
         }
-        /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering
-        /// this update, such as a change in the resource attribute's <code>Metadata</code>,
-        /// <code>Properties</code>, or <code>Tags</code>.</p>
+        /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
         pub fn set_scope(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
@@ -14196,18 +11135,14 @@ pub mod resource_change {
         ///
         /// To override the contents of this collection use [`set_details`](Self::set_details).
         ///
-        /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code>
-        /// structures that describes the changes that CloudFormation will make to the
-        /// resource. </p>
-        pub fn details(mut self, input: impl Into<crate::model::ResourceChangeDetail>) -> Self {
+        /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the changes that CloudFormation will make to the resource. </p>
+        pub fn details(mut self, input: crate::model::ResourceChangeDetail) -> Self {
             let mut v = self.details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.details = Some(v);
             self
         }
-        /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code>
-        /// structures that describes the changes that CloudFormation will make to the
-        /// resource. </p>
+        /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the changes that CloudFormation will make to the resource. </p>
         pub fn set_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceChangeDetail>>,
@@ -14228,14 +11163,12 @@ pub mod resource_change {
             self.change_set_id = input;
             self
         }
-        /// <p>Contains information about the module from which the resource was created, if the
-        /// resource was created from a module included in the stack template.</p>
+        /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
         pub fn module_info(mut self, input: crate::model::ModuleInfo) -> Self {
             self.module_info = Some(input);
             self
         }
-        /// <p>Contains information about the module from which the resource was created, if the
-        /// resource was created from a module included in the stack template.</p>
+        /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
         pub fn set_module_info(
             mut self,
             input: std::option::Option<crate::model::ModuleInfo>,
@@ -14266,72 +11199,27 @@ impl ResourceChange {
     }
 }
 
-/// <p>For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code>
-/// structure describes the changes CloudFormation will make to that resource.</p>
+/// <p>For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code> structure describes the changes CloudFormation will make to that resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceChangeDetail {
     /// <p>A <code>ResourceTargetDefinition</code> structure that describes the field that CloudFormation will change and whether the resource will be recreated.</p>
     pub target: std::option::Option<crate::model::ResourceTargetDefinition>,
-    /// <p>Indicates whether CloudFormation can determine the target value, and whether the
-    /// target value will change before you execute a change set.</p>
-    /// <p>For <code>Static</code> evaluations, CloudFormation can determine that the
-    /// target value will change, and its value. For example, if you directly modify the
-    /// <code>InstanceType</code> property of an EC2 instance, CloudFormation knows that
-    /// this property value will change, and its value, so this is a <code>Static</code>
-    /// evaluation.</p>
-    /// <p>For <code>Dynamic</code> evaluations, cannot determine the target value because it
-    /// depends on the result of an intrinsic function, such as a <code>Ref</code> or
-    /// <code>Fn::GetAtt</code> intrinsic function, when the stack is updated. For example, if
-    /// your template includes a reference to a resource that is conditionally recreated, the value
-    /// of the reference (the physical ID of the resource) might change, depending on if the
-    /// resource is recreated. If the resource is recreated, it will have a new physical ID, so all
-    /// references to that resource will also be updated.</p>
+    /// <p>Indicates whether CloudFormation can determine the target value, and whether the target value will change before you execute a change set.</p>
+    /// <p>For <code>Static</code> evaluations, CloudFormation can determine that the target value will change, and its value. For example, if you directly modify the <code>InstanceType</code> property of an EC2 instance, CloudFormation knows that this property value will change, and its value, so this is a <code>Static</code> evaluation.</p>
+    /// <p>For <code>Dynamic</code> evaluations, cannot determine the target value because it depends on the result of an intrinsic function, such as a <code>Ref</code> or <code>Fn::GetAtt</code> intrinsic function, when the stack is updated. For example, if your template includes a reference to a resource that is conditionally recreated, the value of the reference (the physical ID of the resource) might change, depending on if the resource is recreated. If the resource is recreated, it will have a new physical ID, so all references to that resource will also be updated.</p>
     pub evaluation: std::option::Option<crate::model::EvaluationType>,
-    /// <p>The group to which the <code>CausingEntity</code> value belongs. There are five entity
-    /// groups:</p>
+    /// <p>The group to which the <code>CausingEntity</code> value belongs. There are five entity groups:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ResourceReference</code> entities are <code>Ref</code> intrinsic functions that
-    /// refer to resources in the template, such as <code>{ "Ref" : "MyEC2InstanceResource"
-    /// }</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions
-    /// that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter"
-    /// }</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic
-    /// functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [
-    /// "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DirectModification</code> entities are changes that are made directly to the
-    /// template.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource
-    /// types, which are also known as nested stacks. If you made no changes to the
-    /// <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the
-    /// <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's
-    /// template might have changed. Changes to a nested stack's template aren't visible to
-    /// CloudFormation until you run an update on the parent stack.</p>
-    /// </li>
+    /// <li> <p> <code>ResourceReference</code> entities are <code>Ref</code> intrinsic functions that refer to resources in the template, such as <code>{ "Ref" : "MyEC2InstanceResource" }</code>.</p> </li>
+    /// <li> <p> <code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter" }</code>.</p> </li>
+    /// <li> <p> <code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [ "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p> </li>
+    /// <li> <p> <code>DirectModification</code> entities are changes that are made directly to the template.</p> </li>
+    /// <li> <p> <code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource types, which are also known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's template might have changed. Changes to a nested stack's template aren't visible to CloudFormation until you run an update on the parent stack.</p> </li>
     /// </ul>
     pub change_source: std::option::Option<crate::model::ChangeSource>,
-    /// <p>The identity of the entity that triggered this change. This entity is a member of the
-    /// group that is specified by the <code>ChangeSource</code> field. For example, if you
-    /// modified the value of the <code>KeyPairName</code> parameter, the
-    /// <code>CausingEntity</code> is the name of the parameter
-    /// (<code>KeyPairName</code>).</p>
-    /// <p>If the <code>ChangeSource</code> value is <code>DirectModification</code>, no value is
-    /// given for <code>CausingEntity</code>.</p>
+    /// <p>The identity of the entity that triggered this change. This entity is a member of the group that is specified by the <code>ChangeSource</code> field. For example, if you modified the value of the <code>KeyPairName</code> parameter, the <code>CausingEntity</code> is the name of the parameter (<code>KeyPairName</code>).</p>
+    /// <p>If the <code>ChangeSource</code> value is <code>DirectModification</code>, no value is given for <code>CausingEntity</code>.</p>
     pub causing_entity: std::option::Option<std::string::String>,
 }
 impl ResourceChangeDetail {
@@ -14339,69 +11227,25 @@ impl ResourceChangeDetail {
     pub fn target(&self) -> std::option::Option<&crate::model::ResourceTargetDefinition> {
         self.target.as_ref()
     }
-    /// <p>Indicates whether CloudFormation can determine the target value, and whether the
-    /// target value will change before you execute a change set.</p>
-    /// <p>For <code>Static</code> evaluations, CloudFormation can determine that the
-    /// target value will change, and its value. For example, if you directly modify the
-    /// <code>InstanceType</code> property of an EC2 instance, CloudFormation knows that
-    /// this property value will change, and its value, so this is a <code>Static</code>
-    /// evaluation.</p>
-    /// <p>For <code>Dynamic</code> evaluations, cannot determine the target value because it
-    /// depends on the result of an intrinsic function, such as a <code>Ref</code> or
-    /// <code>Fn::GetAtt</code> intrinsic function, when the stack is updated. For example, if
-    /// your template includes a reference to a resource that is conditionally recreated, the value
-    /// of the reference (the physical ID of the resource) might change, depending on if the
-    /// resource is recreated. If the resource is recreated, it will have a new physical ID, so all
-    /// references to that resource will also be updated.</p>
+    /// <p>Indicates whether CloudFormation can determine the target value, and whether the target value will change before you execute a change set.</p>
+    /// <p>For <code>Static</code> evaluations, CloudFormation can determine that the target value will change, and its value. For example, if you directly modify the <code>InstanceType</code> property of an EC2 instance, CloudFormation knows that this property value will change, and its value, so this is a <code>Static</code> evaluation.</p>
+    /// <p>For <code>Dynamic</code> evaluations, cannot determine the target value because it depends on the result of an intrinsic function, such as a <code>Ref</code> or <code>Fn::GetAtt</code> intrinsic function, when the stack is updated. For example, if your template includes a reference to a resource that is conditionally recreated, the value of the reference (the physical ID of the resource) might change, depending on if the resource is recreated. If the resource is recreated, it will have a new physical ID, so all references to that resource will also be updated.</p>
     pub fn evaluation(&self) -> std::option::Option<&crate::model::EvaluationType> {
         self.evaluation.as_ref()
     }
-    /// <p>The group to which the <code>CausingEntity</code> value belongs. There are five entity
-    /// groups:</p>
+    /// <p>The group to which the <code>CausingEntity</code> value belongs. There are five entity groups:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ResourceReference</code> entities are <code>Ref</code> intrinsic functions that
-    /// refer to resources in the template, such as <code>{ "Ref" : "MyEC2InstanceResource"
-    /// }</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions
-    /// that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter"
-    /// }</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic
-    /// functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [
-    /// "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DirectModification</code> entities are changes that are made directly to the
-    /// template.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource
-    /// types, which are also known as nested stacks. If you made no changes to the
-    /// <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the
-    /// <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's
-    /// template might have changed. Changes to a nested stack's template aren't visible to
-    /// CloudFormation until you run an update on the parent stack.</p>
-    /// </li>
+    /// <li> <p> <code>ResourceReference</code> entities are <code>Ref</code> intrinsic functions that refer to resources in the template, such as <code>{ "Ref" : "MyEC2InstanceResource" }</code>.</p> </li>
+    /// <li> <p> <code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter" }</code>.</p> </li>
+    /// <li> <p> <code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [ "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p> </li>
+    /// <li> <p> <code>DirectModification</code> entities are changes that are made directly to the template.</p> </li>
+    /// <li> <p> <code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource types, which are also known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's template might have changed. Changes to a nested stack's template aren't visible to CloudFormation until you run an update on the parent stack.</p> </li>
     /// </ul>
     pub fn change_source(&self) -> std::option::Option<&crate::model::ChangeSource> {
         self.change_source.as_ref()
     }
-    /// <p>The identity of the entity that triggered this change. This entity is a member of the
-    /// group that is specified by the <code>ChangeSource</code> field. For example, if you
-    /// modified the value of the <code>KeyPairName</code> parameter, the
-    /// <code>CausingEntity</code> is the name of the parameter
-    /// (<code>KeyPairName</code>).</p>
-    /// <p>If the <code>ChangeSource</code> value is <code>DirectModification</code>, no value is
-    /// given for <code>CausingEntity</code>.</p>
+    /// <p>The identity of the entity that triggered this change. This entity is a member of the group that is specified by the <code>ChangeSource</code> field. For example, if you modified the value of the <code>KeyPairName</code> parameter, the <code>CausingEntity</code> is the name of the parameter (<code>KeyPairName</code>).</p>
+    /// <p>If the <code>ChangeSource</code> value is <code>DirectModification</code>, no value is given for <code>CausingEntity</code>.</p>
     pub fn causing_entity(&self) -> std::option::Option<&str> {
         self.causing_entity.as_deref()
     }
@@ -14441,38 +11285,16 @@ pub mod resource_change_detail {
             self.target = input;
             self
         }
-        /// <p>Indicates whether CloudFormation can determine the target value, and whether the
-        /// target value will change before you execute a change set.</p>
-        /// <p>For <code>Static</code> evaluations, CloudFormation can determine that the
-        /// target value will change, and its value. For example, if you directly modify the
-        /// <code>InstanceType</code> property of an EC2 instance, CloudFormation knows that
-        /// this property value will change, and its value, so this is a <code>Static</code>
-        /// evaluation.</p>
-        /// <p>For <code>Dynamic</code> evaluations, cannot determine the target value because it
-        /// depends on the result of an intrinsic function, such as a <code>Ref</code> or
-        /// <code>Fn::GetAtt</code> intrinsic function, when the stack is updated. For example, if
-        /// your template includes a reference to a resource that is conditionally recreated, the value
-        /// of the reference (the physical ID of the resource) might change, depending on if the
-        /// resource is recreated. If the resource is recreated, it will have a new physical ID, so all
-        /// references to that resource will also be updated.</p>
+        /// <p>Indicates whether CloudFormation can determine the target value, and whether the target value will change before you execute a change set.</p>
+        /// <p>For <code>Static</code> evaluations, CloudFormation can determine that the target value will change, and its value. For example, if you directly modify the <code>InstanceType</code> property of an EC2 instance, CloudFormation knows that this property value will change, and its value, so this is a <code>Static</code> evaluation.</p>
+        /// <p>For <code>Dynamic</code> evaluations, cannot determine the target value because it depends on the result of an intrinsic function, such as a <code>Ref</code> or <code>Fn::GetAtt</code> intrinsic function, when the stack is updated. For example, if your template includes a reference to a resource that is conditionally recreated, the value of the reference (the physical ID of the resource) might change, depending on if the resource is recreated. If the resource is recreated, it will have a new physical ID, so all references to that resource will also be updated.</p>
         pub fn evaluation(mut self, input: crate::model::EvaluationType) -> Self {
             self.evaluation = Some(input);
             self
         }
-        /// <p>Indicates whether CloudFormation can determine the target value, and whether the
-        /// target value will change before you execute a change set.</p>
-        /// <p>For <code>Static</code> evaluations, CloudFormation can determine that the
-        /// target value will change, and its value. For example, if you directly modify the
-        /// <code>InstanceType</code> property of an EC2 instance, CloudFormation knows that
-        /// this property value will change, and its value, so this is a <code>Static</code>
-        /// evaluation.</p>
-        /// <p>For <code>Dynamic</code> evaluations, cannot determine the target value because it
-        /// depends on the result of an intrinsic function, such as a <code>Ref</code> or
-        /// <code>Fn::GetAtt</code> intrinsic function, when the stack is updated. For example, if
-        /// your template includes a reference to a resource that is conditionally recreated, the value
-        /// of the reference (the physical ID of the resource) might change, depending on if the
-        /// resource is recreated. If the resource is recreated, it will have a new physical ID, so all
-        /// references to that resource will also be updated.</p>
+        /// <p>Indicates whether CloudFormation can determine the target value, and whether the target value will change before you execute a change set.</p>
+        /// <p>For <code>Static</code> evaluations, CloudFormation can determine that the target value will change, and its value. For example, if you directly modify the <code>InstanceType</code> property of an EC2 instance, CloudFormation knows that this property value will change, and its value, so this is a <code>Static</code> evaluation.</p>
+        /// <p>For <code>Dynamic</code> evaluations, cannot determine the target value because it depends on the result of an intrinsic function, such as a <code>Ref</code> or <code>Fn::GetAtt</code> intrinsic function, when the stack is updated. For example, if your template includes a reference to a resource that is conditionally recreated, the value of the reference (the physical ID of the resource) might change, depending on if the resource is recreated. If the resource is recreated, it will have a new physical ID, so all references to that resource will also be updated.</p>
         pub fn set_evaluation(
             mut self,
             input: std::option::Option<crate::model::EvaluationType>,
@@ -14480,81 +11302,25 @@ pub mod resource_change_detail {
             self.evaluation = input;
             self
         }
-        /// <p>The group to which the <code>CausingEntity</code> value belongs. There are five entity
-        /// groups:</p>
+        /// <p>The group to which the <code>CausingEntity</code> value belongs. There are five entity groups:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ResourceReference</code> entities are <code>Ref</code> intrinsic functions that
-        /// refer to resources in the template, such as <code>{ "Ref" : "MyEC2InstanceResource"
-        /// }</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions
-        /// that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter"
-        /// }</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic
-        /// functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [
-        /// "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DirectModification</code> entities are changes that are made directly to the
-        /// template.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource
-        /// types, which are also known as nested stacks. If you made no changes to the
-        /// <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the
-        /// <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's
-        /// template might have changed. Changes to a nested stack's template aren't visible to
-        /// CloudFormation until you run an update on the parent stack.</p>
-        /// </li>
+        /// <li> <p> <code>ResourceReference</code> entities are <code>Ref</code> intrinsic functions that refer to resources in the template, such as <code>{ "Ref" : "MyEC2InstanceResource" }</code>.</p> </li>
+        /// <li> <p> <code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter" }</code>.</p> </li>
+        /// <li> <p> <code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [ "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p> </li>
+        /// <li> <p> <code>DirectModification</code> entities are changes that are made directly to the template.</p> </li>
+        /// <li> <p> <code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource types, which are also known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's template might have changed. Changes to a nested stack's template aren't visible to CloudFormation until you run an update on the parent stack.</p> </li>
         /// </ul>
         pub fn change_source(mut self, input: crate::model::ChangeSource) -> Self {
             self.change_source = Some(input);
             self
         }
-        /// <p>The group to which the <code>CausingEntity</code> value belongs. There are five entity
-        /// groups:</p>
+        /// <p>The group to which the <code>CausingEntity</code> value belongs. There are five entity groups:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ResourceReference</code> entities are <code>Ref</code> intrinsic functions that
-        /// refer to resources in the template, such as <code>{ "Ref" : "MyEC2InstanceResource"
-        /// }</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions
-        /// that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter"
-        /// }</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic
-        /// functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [
-        /// "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DirectModification</code> entities are changes that are made directly to the
-        /// template.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource
-        /// types, which are also known as nested stacks. If you made no changes to the
-        /// <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the
-        /// <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's
-        /// template might have changed. Changes to a nested stack's template aren't visible to
-        /// CloudFormation until you run an update on the parent stack.</p>
-        /// </li>
+        /// <li> <p> <code>ResourceReference</code> entities are <code>Ref</code> intrinsic functions that refer to resources in the template, such as <code>{ "Ref" : "MyEC2InstanceResource" }</code>.</p> </li>
+        /// <li> <p> <code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter" }</code>.</p> </li>
+        /// <li> <p> <code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt" : [ "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</p> </li>
+        /// <li> <p> <code>DirectModification</code> entities are changes that are made directly to the template.</p> </li>
+        /// <li> <p> <code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource types, which are also known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's template might have changed. Changes to a nested stack's template aren't visible to CloudFormation until you run an update on the parent stack.</p> </li>
         /// </ul>
         pub fn set_change_source(
             mut self,
@@ -14563,24 +11329,14 @@ pub mod resource_change_detail {
             self.change_source = input;
             self
         }
-        /// <p>The identity of the entity that triggered this change. This entity is a member of the
-        /// group that is specified by the <code>ChangeSource</code> field. For example, if you
-        /// modified the value of the <code>KeyPairName</code> parameter, the
-        /// <code>CausingEntity</code> is the name of the parameter
-        /// (<code>KeyPairName</code>).</p>
-        /// <p>If the <code>ChangeSource</code> value is <code>DirectModification</code>, no value is
-        /// given for <code>CausingEntity</code>.</p>
+        /// <p>The identity of the entity that triggered this change. This entity is a member of the group that is specified by the <code>ChangeSource</code> field. For example, if you modified the value of the <code>KeyPairName</code> parameter, the <code>CausingEntity</code> is the name of the parameter (<code>KeyPairName</code>).</p>
+        /// <p>If the <code>ChangeSource</code> value is <code>DirectModification</code>, no value is given for <code>CausingEntity</code>.</p>
         pub fn causing_entity(mut self, input: impl Into<std::string::String>) -> Self {
             self.causing_entity = Some(input.into());
             self
         }
-        /// <p>The identity of the entity that triggered this change. This entity is a member of the
-        /// group that is specified by the <code>ChangeSource</code> field. For example, if you
-        /// modified the value of the <code>KeyPairName</code> parameter, the
-        /// <code>CausingEntity</code> is the name of the parameter
-        /// (<code>KeyPairName</code>).</p>
-        /// <p>If the <code>ChangeSource</code> value is <code>DirectModification</code>, no value is
-        /// given for <code>CausingEntity</code>.</p>
+        /// <p>The identity of the entity that triggered this change. This entity is a member of the group that is specified by the <code>ChangeSource</code> field. For example, if you modified the value of the <code>KeyPairName</code> parameter, the <code>CausingEntity</code> is the name of the parameter (<code>KeyPairName</code>).</p>
+        /// <p>If the <code>ChangeSource</code> value is <code>DirectModification</code>, no value is given for <code>CausingEntity</code>.</p>
         pub fn set_causing_entity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14734,42 +11490,27 @@ impl AsRef<str> for EvaluationType {
     }
 }
 
-/// <p>The field that CloudFormation will change, such as the name of a resource's
-/// property, and whether the resource will be recreated.</p>
+/// <p>The field that CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceTargetDefinition {
-    /// <p>Indicates which resource attribute is triggering this update, such as a change in the
-    /// resource attribute's <code>Metadata</code>, <code>Properties</code>, or
-    /// <code>Tags</code>.</p>
+    /// <p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
     pub attribute: std::option::Option<crate::model::ResourceAttribute>,
-    /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the
-    /// property. For all other attributes, the value is null.</p>
+    /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the property. For all other attributes, the value is null.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a
-    /// change to this property causes the resource to be recreated. The value can be
-    /// <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the
-    /// conditions for a <code>Conditionally</code> recreation, see the update behavior for that
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the CloudFormation User Guide.</p>
+    /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the CloudFormation User Guide.</p>
     pub requires_recreation: std::option::Option<crate::model::RequiresRecreation>,
 }
 impl ResourceTargetDefinition {
-    /// <p>Indicates which resource attribute is triggering this update, such as a change in the
-    /// resource attribute's <code>Metadata</code>, <code>Properties</code>, or
-    /// <code>Tags</code>.</p>
+    /// <p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
     pub fn attribute(&self) -> std::option::Option<&crate::model::ResourceAttribute> {
         self.attribute.as_ref()
     }
-    /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the
-    /// property. For all other attributes, the value is null.</p>
+    /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the property. For all other attributes, the value is null.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a
-    /// change to this property causes the resource to be recreated. The value can be
-    /// <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the
-    /// conditions for a <code>Conditionally</code> recreation, see the update behavior for that
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the CloudFormation User Guide.</p>
+    /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the CloudFormation User Guide.</p>
     pub fn requires_recreation(&self) -> std::option::Option<&crate::model::RequiresRecreation> {
         self.requires_recreation.as_ref()
     }
@@ -14794,16 +11535,12 @@ pub mod resource_target_definition {
         pub(crate) requires_recreation: std::option::Option<crate::model::RequiresRecreation>,
     }
     impl Builder {
-        /// <p>Indicates which resource attribute is triggering this update, such as a change in the
-        /// resource attribute's <code>Metadata</code>, <code>Properties</code>, or
-        /// <code>Tags</code>.</p>
+        /// <p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
         pub fn attribute(mut self, input: crate::model::ResourceAttribute) -> Self {
             self.attribute = Some(input);
             self
         }
-        /// <p>Indicates which resource attribute is triggering this update, such as a change in the
-        /// resource attribute's <code>Metadata</code>, <code>Properties</code>, or
-        /// <code>Tags</code>.</p>
+        /// <p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
         pub fn set_attribute(
             mut self,
             input: std::option::Option<crate::model::ResourceAttribute>,
@@ -14811,32 +11548,22 @@ pub mod resource_target_definition {
             self.attribute = input;
             self
         }
-        /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the
-        /// property. For all other attributes, the value is null.</p>
+        /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the property. For all other attributes, the value is null.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the
-        /// property. For all other attributes, the value is null.</p>
+        /// <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of the property. For all other attributes, the value is null.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a
-        /// change to this property causes the resource to be recreated. The value can be
-        /// <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the
-        /// conditions for a <code>Conditionally</code> recreation, see the update behavior for that
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the CloudFormation User Guide.</p>
+        /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the CloudFormation User Guide.</p>
         pub fn requires_recreation(mut self, input: crate::model::RequiresRecreation) -> Self {
             self.requires_recreation = Some(input);
             self
         }
-        /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a
-        /// change to this property causes the resource to be recreated. The value can be
-        /// <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the
-        /// conditions for a <code>Conditionally</code> recreation, see the update behavior for that
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the CloudFormation User Guide.</p>
+        /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the CloudFormation User Guide.</p>
         pub fn set_requires_recreation(
             mut self,
             input: std::option::Option<crate::model::RequiresRecreation>,
@@ -15178,34 +11905,23 @@ impl AsRef<str> for ChangeType {
 /// <p>The AccountLimit data type. </p>
 /// <p>CloudFormation has the following limits per account:</p>
 /// <ul>
-/// <li>
-/// <p>Number of concurrent resources</p>
-/// </li>
-/// <li>
-/// <p>Number of stacks</p>
-/// </li>
-/// <li>
-/// <p>Number of stack outputs</p>
-/// </li>
+/// <li> <p>Number of concurrent resources</p> </li>
+/// <li> <p>Number of stacks</p> </li>
+/// <li> <p>Number of stack outputs</p> </li>
 /// </ul>
-/// <p>For more information about these account limits, and other CloudFormation
-/// limits, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation Limits</a> in the <i>CloudFormation User Guide</i>.</p>
+/// <p>For more information about these account limits, and other CloudFormation limits, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation Limits</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountLimit {
     /// <p>The name of the account limit.</p>
-    /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> |
-    /// <code>StackOutputsLimit</code>
-    /// </p>
+    /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code> </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The value that is associated with the account limit name.</p>
     pub value: std::option::Option<i32>,
 }
 impl AccountLimit {
     /// <p>The name of the account limit.</p>
-    /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> |
-    /// <code>StackOutputsLimit</code>
-    /// </p>
+    /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code> </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -15233,17 +11949,13 @@ pub mod account_limit {
     }
     impl Builder {
         /// <p>The name of the account limit.</p>
-        /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> |
-        /// <code>StackOutputsLimit</code>
-        /// </p>
+        /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the account limit.</p>
-        /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> |
-        /// <code>StackOutputsLimit</code>
-        /// </p>
+        /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -15337,22 +12049,16 @@ impl AsRef<str> for OnFailure {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceToImport {
-    /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>.
-    /// For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User
-    /// Guide.</p>
+    /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User Guide.</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The logical ID of the target resource as specified in the template.</p>
     pub logical_resource_id: std::option::Option<std::string::String>,
-    /// <p>A key-value pair that identifies the target resource. The key is an identifier property
-    /// (for example, <code>BucketName</code> for <code>AWS::S3::Bucket</code> resources) and the
-    /// value is the actual property value (for example, <code>MyS3Bucket</code>).</p>
+    /// <p>A key-value pair that identifies the target resource. The key is an identifier property (for example, <code>BucketName</code> for <code>AWS::S3::Bucket</code> resources) and the value is the actual property value (for example, <code>MyS3Bucket</code>).</p>
     pub resource_identifier:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ResourceToImport {
-    /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>.
-    /// For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User
-    /// Guide.</p>
+    /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User Guide.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -15360,9 +12066,7 @@ impl ResourceToImport {
     pub fn logical_resource_id(&self) -> std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
-    /// <p>A key-value pair that identifies the target resource. The key is an identifier property
-    /// (for example, <code>BucketName</code> for <code>AWS::S3::Bucket</code> resources) and the
-    /// value is the actual property value (for example, <code>MyS3Bucket</code>).</p>
+    /// <p>A key-value pair that identifies the target resource. The key is an identifier property (for example, <code>BucketName</code> for <code>AWS::S3::Bucket</code> resources) and the value is the actual property value (for example, <code>MyS3Bucket</code>).</p>
     pub fn resource_identifier(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -15392,16 +12096,12 @@ pub mod resource_to_import {
         >,
     }
     impl Builder {
-        /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>.
-        /// For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User
-        /// Guide.</p>
+        /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User Guide.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>.
-        /// For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User
-        /// Guide.</p>
+        /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User Guide.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15426,9 +12126,7 @@ pub mod resource_to_import {
         ///
         /// To override the contents of this collection use [`set_resource_identifier`](Self::set_resource_identifier).
         ///
-        /// <p>A key-value pair that identifies the target resource. The key is an identifier property
-        /// (for example, <code>BucketName</code> for <code>AWS::S3::Bucket</code> resources) and the
-        /// value is the actual property value (for example, <code>MyS3Bucket</code>).</p>
+        /// <p>A key-value pair that identifies the target resource. The key is an identifier property (for example, <code>BucketName</code> for <code>AWS::S3::Bucket</code> resources) and the value is the actual property value (for example, <code>MyS3Bucket</code>).</p>
         pub fn resource_identifier(
             mut self,
             k: impl Into<std::string::String>,
@@ -15439,9 +12137,7 @@ pub mod resource_to_import {
             self.resource_identifier = Some(hash_map);
             self
         }
-        /// <p>A key-value pair that identifies the target resource. The key is an identifier property
-        /// (for example, <code>BucketName</code> for <code>AWS::S3::Bucket</code> resources) and the
-        /// value is the actual property value (for example, <code>MyS3Bucket</code>).</p>
+        /// <p>A key-value pair that identifies the target resource. The key is an identifier property (for example, <code>BucketName</code> for <code>AWS::S3::Bucket</code> resources) and the value is the actual property value (for example, <code>MyS3Bucket</code>).</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<
@@ -15527,65 +12223,50 @@ impl AsRef<str> for ChangeSetType {
     }
 }
 
-/// <p>Detailed information concerning the specification of a CloudFormation extension in a
-/// given account and region.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the
-/// <i>CloudFormation User Guide</i>.</p>
+/// <p>Detailed information concerning the specification of a CloudFormation extension in a given account and region.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeConfigurationDetails {
-    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and
-    /// region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The alias specified for this configuration, if one was specified when the configuration
-    /// was set.</p>
+    /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
     pub alias: std::option::Option<std::string::String>,
-    /// <p>A JSON string specifying the configuration data for the extension, in this account and
-    /// region. </p>
-    /// <p>If a configuration has not been set for a specified extension, CloudFormation returns
-    /// <code>{}</code>.</p>
+    /// <p>A JSON string specifying the configuration data for the extension, in this account and region. </p>
+    /// <p>If a configuration has not been set for a specified extension, CloudFormation returns <code>{}</code>.</p>
     pub configuration: std::option::Option<std::string::String>,
     /// <p>When the configuration data was last updated for this extension.</p>
-    /// <p>If a configuration has not been set for a specified extension, CloudFormation returns
-    /// <code>null</code>.</p>
+    /// <p>If a configuration has not been set for a specified extension, CloudFormation returns <code>null</code>.</p>
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
-    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
-    /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
     pub type_arn: std::option::Option<std::string::String>,
     /// <p>The name of the extension.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>Whether or not this configuration data is the default configuration for the
-    /// extension.</p>
+    /// <p>Whether or not this configuration data is the default configuration for the extension.</p>
     pub is_default_configuration: std::option::Option<bool>,
 }
 impl TypeConfigurationDetails {
-    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and
-    /// region.</p>
+    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The alias specified for this configuration, if one was specified when the configuration
-    /// was set.</p>
+    /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>A JSON string specifying the configuration data for the extension, in this account and
-    /// region. </p>
-    /// <p>If a configuration has not been set for a specified extension, CloudFormation returns
-    /// <code>{}</code>.</p>
+    /// <p>A JSON string specifying the configuration data for the extension, in this account and region. </p>
+    /// <p>If a configuration has not been set for a specified extension, CloudFormation returns <code>{}</code>.</p>
     pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
     /// <p>When the configuration data was last updated for this extension.</p>
-    /// <p>If a configuration has not been set for a specified extension, CloudFormation returns
-    /// <code>null</code>.</p>
+    /// <p>If a configuration has not been set for a specified extension, CloudFormation returns <code>null</code>.</p>
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
-    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
-    /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
     pub fn type_arn(&self) -> std::option::Option<&str> {
         self.type_arn.as_deref()
     }
@@ -15593,8 +12274,7 @@ impl TypeConfigurationDetails {
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
-    /// <p>Whether or not this configuration data is the default configuration for the
-    /// extension.</p>
+    /// <p>Whether or not this configuration data is the default configuration for the extension.</p>
     pub fn is_default_configuration(&self) -> std::option::Option<bool> {
         self.is_default_configuration
     }
@@ -15627,42 +12307,34 @@ pub mod type_configuration_details {
         pub(crate) is_default_configuration: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and
-        /// region.</p>
+        /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and
-        /// region.</p>
+        /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The alias specified for this configuration, if one was specified when the configuration
-        /// was set.</p>
+        /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias = Some(input.into());
             self
         }
-        /// <p>The alias specified for this configuration, if one was specified when the configuration
-        /// was set.</p>
+        /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
         }
-        /// <p>A JSON string specifying the configuration data for the extension, in this account and
-        /// region. </p>
-        /// <p>If a configuration has not been set for a specified extension, CloudFormation returns
-        /// <code>{}</code>.</p>
+        /// <p>A JSON string specifying the configuration data for the extension, in this account and region. </p>
+        /// <p>If a configuration has not been set for a specified extension, CloudFormation returns <code>{}</code>.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration = Some(input.into());
             self
         }
-        /// <p>A JSON string specifying the configuration data for the extension, in this account and
-        /// region. </p>
-        /// <p>If a configuration has not been set for a specified extension, CloudFormation returns
-        /// <code>{}</code>.</p>
+        /// <p>A JSON string specifying the configuration data for the extension, in this account and region. </p>
+        /// <p>If a configuration has not been set for a specified extension, CloudFormation returns <code>{}</code>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15671,15 +12343,13 @@ pub mod type_configuration_details {
             self
         }
         /// <p>When the configuration data was last updated for this extension.</p>
-        /// <p>If a configuration has not been set for a specified extension, CloudFormation returns
-        /// <code>null</code>.</p>
+        /// <p>If a configuration has not been set for a specified extension, CloudFormation returns <code>null</code>.</p>
         pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated = Some(input);
             self
         }
         /// <p>When the configuration data was last updated for this extension.</p>
-        /// <p>If a configuration has not been set for a specified extension, CloudFormation returns
-        /// <code>null</code>.</p>
+        /// <p>If a configuration has not been set for a specified extension, CloudFormation returns <code>null</code>.</p>
         pub fn set_last_updated(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -15688,15 +12358,13 @@ pub mod type_configuration_details {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
-        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
-        /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
         pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
-        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
-        /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
         pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_arn = input;
             self
@@ -15711,14 +12379,12 @@ pub mod type_configuration_details {
             self.type_name = input;
             self
         }
-        /// <p>Whether or not this configuration data is the default configuration for the
-        /// extension.</p>
+        /// <p>Whether or not this configuration data is the default configuration for the extension.</p>
         pub fn is_default_configuration(mut self, input: bool) -> Self {
             self.is_default_configuration = Some(input);
             self
         }
-        /// <p>Whether or not this configuration data is the default configuration for the
-        /// extension.</p>
+        /// <p>Whether or not this configuration data is the default configuration for the extension.</p>
         pub fn set_is_default_configuration(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default_configuration = input;
             self
@@ -15749,11 +12415,9 @@ impl TypeConfigurationDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeConfigurationIdentifier {
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
-    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
-    /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
     pub type_arn: std::option::Option<std::string::String>,
-    /// <p>The alias specified for this configuration, if one was specified when the configuration
-    /// was set.</p>
+    /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
     pub type_configuration_alias: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the configuration, in this account and region.</p>
     pub type_configuration_arn: std::option::Option<std::string::String>,
@@ -15764,13 +12428,11 @@ pub struct TypeConfigurationIdentifier {
 }
 impl TypeConfigurationIdentifier {
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
-    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
-    /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
     pub fn type_arn(&self) -> std::option::Option<&str> {
         self.type_arn.as_deref()
     }
-    /// <p>The alias specified for this configuration, if one was specified when the configuration
-    /// was set.</p>
+    /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
     pub fn type_configuration_alias(&self) -> std::option::Option<&str> {
         self.type_configuration_alias.as_deref()
     }
@@ -15812,27 +12474,23 @@ pub mod type_configuration_identifier {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
-        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
-        /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
         pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
-        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
-        /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
         pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_arn = input;
             self
         }
-        /// <p>The alias specified for this configuration, if one was specified when the configuration
-        /// was set.</p>
+        /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
         pub fn type_configuration_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_configuration_alias = Some(input.into());
             self
         }
-        /// <p>The alias specified for this configuration, if one was specified when the configuration
-        /// was set.</p>
+        /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
         pub fn set_type_configuration_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15895,8 +12553,7 @@ impl TypeConfigurationIdentifier {
     }
 }
 
-/// <p>Detailed information concerning an error generated during the setting of configuration
-/// data for a CloudFormation extension.</p>
+/// <p>Detailed information concerning an error generated during the setting of configuration data for a CloudFormation extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDescribeTypeConfigurationsError {

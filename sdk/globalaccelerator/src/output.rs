@@ -646,9 +646,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Root level tag for the Tags parameters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -715,9 +715,9 @@ pub mod list_listeners_output {
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
         /// <p>The list of listeners for an accelerator.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::Listener>) -> Self {
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
@@ -797,9 +797,9 @@ pub mod list_endpoint_groups_output {
         /// To override the contents of this collection use [`set_endpoint_groups`](Self::set_endpoint_groups).
         ///
         /// <p>The list of the endpoint groups associated with a listener.</p>
-        pub fn endpoint_groups(mut self, input: impl Into<crate::model::EndpointGroup>) -> Self {
+        pub fn endpoint_groups(mut self, input: crate::model::EndpointGroup) -> Self {
             let mut v = self.endpoint_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_groups = Some(v);
             self
         }
@@ -885,10 +885,10 @@ pub mod list_custom_routing_port_mappings_by_destination_output {
         /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
         pub fn destination_port_mappings(
             mut self,
-            input: impl Into<crate::model::DestinationPortMapping>,
+            input: crate::model::DestinationPortMapping,
         ) -> Self {
             let mut v = self.destination_port_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destination_port_mappings = Some(v);
             self
         }
@@ -969,9 +969,9 @@ pub mod list_custom_routing_port_mappings_output {
         /// To override the contents of this collection use [`set_port_mappings`](Self::set_port_mappings).
         ///
         /// <p>The port mappings for a custom routing accelerator.</p>
-        pub fn port_mappings(mut self, input: impl Into<crate::model::PortMapping>) -> Self {
+        pub fn port_mappings(mut self, input: crate::model::PortMapping) -> Self {
             let mut v = self.port_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.port_mappings = Some(v);
             self
         }
@@ -1052,9 +1052,9 @@ pub mod list_custom_routing_listeners_output {
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
         /// <p>The list of listeners for a custom routing accelerator.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::CustomRoutingListener>) -> Self {
+        pub fn listeners(mut self, input: crate::model::CustomRoutingListener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
@@ -1138,12 +1138,9 @@ pub mod list_custom_routing_endpoint_groups_output {
         /// To override the contents of this collection use [`set_endpoint_groups`](Self::set_endpoint_groups).
         ///
         /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
-        pub fn endpoint_groups(
-            mut self,
-            input: impl Into<crate::model::CustomRoutingEndpointGroup>,
-        ) -> Self {
+        pub fn endpoint_groups(mut self, input: crate::model::CustomRoutingEndpointGroup) -> Self {
             let mut v = self.endpoint_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_groups = Some(v);
             self
         }
@@ -1224,12 +1221,9 @@ pub mod list_custom_routing_accelerators_output {
         /// To override the contents of this collection use [`set_accelerators`](Self::set_accelerators).
         ///
         /// <p>The list of custom routing accelerators for a customer account.</p>
-        pub fn accelerators(
-            mut self,
-            input: impl Into<crate::model::CustomRoutingAccelerator>,
-        ) -> Self {
+        pub fn accelerators(mut self, input: crate::model::CustomRoutingAccelerator) -> Self {
             let mut v = self.accelerators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accelerators = Some(v);
             self
         }
@@ -1309,9 +1303,9 @@ pub mod list_byoip_cidrs_output {
         /// To override the contents of this collection use [`set_byoip_cidrs`](Self::set_byoip_cidrs).
         ///
         /// <p>Information about your address ranges.</p>
-        pub fn byoip_cidrs(mut self, input: impl Into<crate::model::ByoipCidr>) -> Self {
+        pub fn byoip_cidrs(mut self, input: crate::model::ByoipCidr) -> Self {
             let mut v = self.byoip_cidrs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.byoip_cidrs = Some(v);
             self
         }
@@ -1391,9 +1385,9 @@ pub mod list_accelerators_output {
         /// To override the contents of this collection use [`set_accelerators`](Self::set_accelerators).
         ///
         /// <p>The list of accelerators for a customer account.</p>
-        pub fn accelerators(mut self, input: impl Into<crate::model::Accelerator>) -> Self {
+        pub fn accelerators(mut self, input: crate::model::Accelerator) -> Self {
             let mut v = self.accelerators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accelerators = Some(v);
             self
         }
@@ -2638,10 +2632,10 @@ pub mod add_custom_routing_endpoints_output {
         /// <p>The endpoint objects added to the custom routing accelerator.</p>
         pub fn endpoint_descriptions(
             mut self,
-            input: impl Into<crate::model::CustomRoutingEndpointDescription>,
+            input: crate::model::CustomRoutingEndpointDescription,
         ) -> Self {
             let mut v = self.endpoint_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoint_descriptions = Some(v);
             self
         }

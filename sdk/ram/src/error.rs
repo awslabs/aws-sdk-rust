@@ -12,28 +12,27 @@ pub struct AcceptResourceShareInvitationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptResourceShareInvitationErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>The client token input parameter was matched one used with a previous call to the operation, but at least one of the other input parameters is different from the previous call.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>A client token is not valid.</p>
+    /// <p>The client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
     /// <p>The format of an Amazon Resource Name (ARN) is not valid.</p>
     MalformedArnException(crate::error::MalformedArnException),
     /// <p>The requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>The invitation was already accepted.</p>
+    /// <p>The specified invitation was already accepted.</p>
     ResourceShareInvitationAlreadyAcceptedException(
         crate::error::ResourceShareInvitationAlreadyAcceptedException,
     ),
-    /// <p>The invitation was already rejected.</p>
+    /// <p>The specified invitation was already rejected.</p>
     ResourceShareInvitationAlreadyRejectedException(
         crate::error::ResourceShareInvitationAlreadyRejectedException,
     ),
-    /// <p>The Amazon Resource Name (ARN) for an invitation was not found.</p>
+    /// <p>The specified Amazon Resource Name (ARN) for an invitation was not found.</p>
     ResourceShareInvitationArnNotFoundException(
         crate::error::ResourceShareInvitationArnNotFoundException,
     ),
-    /// <p>The invitation is expired.</p>
+    /// <p>The specified invitation is expired.</p>
     ResourceShareInvitationExpiredException(crate::error::ResourceShareInvitationExpiredException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     ServerInternalException(crate::error::ServerInternalException),
@@ -114,8 +113,6 @@ impl AcceptResourceShareInvitationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -264,10 +261,9 @@ pub struct AssociateResourceShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateResourceShareErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>The client token input parameter was matched one used with a previous call to the operation, but at least one of the other input parameters is different from the previous call.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>A client token is not valid.</p>
+    /// <p>The client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -277,12 +273,14 @@ pub enum AssociateResourceShareErrorKind {
     MalformedArnException(crate::error::MalformedArnException),
     /// <p>The requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>The requested resource share exceeds the limit for your account.</p>
+    /// <p>This request would exceed the limit for resource shares for your account.</p>
     ResourceShareLimitExceededException(crate::error::ResourceShareLimitExceededException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>You exceeded the rate at which you are allowed to perform this operation. Please try again later.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -308,6 +306,7 @@ impl std::fmt::Display for AssociateResourceShareError {
             }
             AssociateResourceShareErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
             AssociateResourceShareErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            AssociateResourceShareErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             AssociateResourceShareErrorKind::UnknownResourceException(_inner) => _inner.fmt(f),
             AssociateResourceShareErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -343,8 +342,6 @@ impl AssociateResourceShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -428,6 +425,13 @@ impl AssociateResourceShareError {
             AssociateResourceShareErrorKind::ServiceUnavailableException(_)
         )
     }
+    /// Returns `true` if the error kind is `AssociateResourceShareErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateResourceShareErrorKind::ThrottlingException(_)
+        )
+    }
     /// Returns `true` if the error kind is `AssociateResourceShareErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
@@ -454,6 +458,7 @@ impl std::error::Error for AssociateResourceShareError {
             }
             AssociateResourceShareErrorKind::ServerInternalException(_inner) => Some(_inner),
             AssociateResourceShareErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            AssociateResourceShareErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociateResourceShareErrorKind::UnknownResourceException(_inner) => Some(_inner),
             AssociateResourceShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -473,7 +478,7 @@ pub struct AssociateResourceSharePermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateResourceSharePermissionErrorKind {
-    /// <p>A client token is not valid.</p>
+    /// <p>The client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -551,8 +556,6 @@ impl AssociateResourceSharePermissionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -665,10 +668,9 @@ pub struct CreateResourceShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateResourceShareErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>The client token input parameter was matched one used with a previous call to the operation, but at least one of the other input parameters is different from the previous call.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>A client token is not valid.</p>
+    /// <p>The client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -678,13 +680,13 @@ pub enum CreateResourceShareErrorKind {
     MalformedArnException(crate::error::MalformedArnException),
     /// <p>The requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>The requested resource share exceeds the limit for your account.</p>
+    /// <p>This request would exceed the limit for resource shares for your account.</p>
     ResourceShareLimitExceededException(crate::error::ResourceShareLimitExceededException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The specified tag is a reserved word and cannot be used.</p>
+    /// <p>The specified tag key is a reserved word and can't be used.</p>
     TagPolicyViolationException(crate::error::TagPolicyViolationException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
@@ -743,8 +745,6 @@ impl CreateResourceShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -879,10 +879,9 @@ pub struct DeleteResourceShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourceShareErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>The client token input parameter was matched one used with a previous call to the operation, but at least one of the other input parameters is different from the previous call.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>A client token is not valid.</p>
+    /// <p>The client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -949,8 +948,6 @@ impl DeleteResourceShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1067,10 +1064,9 @@ pub struct DisassociateResourceShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateResourceShareErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>The client token input parameter was matched one used with a previous call to the operation, but at least one of the other input parameters is different from the previous call.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>A client token is not valid.</p>
+    /// <p>The client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -1080,7 +1076,7 @@ pub enum DisassociateResourceShareErrorKind {
     MalformedArnException(crate::error::MalformedArnException),
     /// <p>The requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>The requested resource share exceeds the limit for your account.</p>
+    /// <p>This request would exceed the limit for resource shares for your account.</p>
     ResourceShareLimitExceededException(crate::error::ResourceShareLimitExceededException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     ServerInternalException(crate::error::ServerInternalException),
@@ -1150,8 +1146,6 @@ impl DisassociateResourceShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1282,7 +1276,7 @@ pub struct DisassociateResourceSharePermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateResourceSharePermissionErrorKind {
-    /// <p>A client token is not valid.</p>
+    /// <p>The client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -1365,8 +1359,6 @@ impl DisassociateResourceSharePermissionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1549,8 +1541,6 @@ impl EnableSharingWithAwsOrganizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1681,8 +1671,6 @@ impl GetPermissionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1770,13 +1758,13 @@ pub struct GetResourcePoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourcePoliciesErrorKind {
-    /// <p>The specified value for NextToken is not valid.</p>
+    /// <p>The specified value for <code>NextToken</code> is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The format of an Amazon Resource Name (ARN) is not valid.</p>
     MalformedArnException(crate::error::MalformedArnException),
-    /// <p>An Amazon Resource Name (ARN) was not found.</p>
+    /// <p>The specified Amazon Resource Name (ARN) was not found.</p>
     ResourceArnNotFoundException(crate::error::ResourceArnNotFoundException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     ServerInternalException(crate::error::ServerInternalException),
@@ -1828,8 +1816,6 @@ impl GetResourcePoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1920,7 +1906,7 @@ pub struct GetResourceShareAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourceShareAssociationsErrorKind {
-    /// <p>The specified value for NextToken is not valid.</p>
+    /// <p>The specified value for <code>NextToken</code> is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -1991,8 +1977,6 @@ impl GetResourceShareAssociationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2099,15 +2083,15 @@ pub struct GetResourceShareInvitationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourceShareInvitationsErrorKind {
-    /// <p>The specified value for MaxResults is not valid.</p>
+    /// <p>The specified value for <code>MaxResults</code> is not valid.</p>
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
-    /// <p>The specified value for NextToken is not valid.</p>
+    /// <p>The specified value for <code>NextToken</code> is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The format of an Amazon Resource Name (ARN) is not valid.</p>
     MalformedArnException(crate::error::MalformedArnException),
-    /// <p>The Amazon Resource Name (ARN) for an invitation was not found.</p>
+    /// <p>The specified Amazon Resource Name (ARN) for an invitation was not found.</p>
     ResourceShareInvitationArnNotFoundException(
         crate::error::ResourceShareInvitationArnNotFoundException,
     ),
@@ -2175,8 +2159,6 @@ impl GetResourceShareInvitationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2289,7 +2271,7 @@ pub struct GetResourceSharesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourceSharesErrorKind {
-    /// <p>The specified value for NextToken is not valid.</p>
+    /// <p>The specified value for <code>NextToken</code> is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -2347,8 +2329,6 @@ impl GetResourceSharesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2439,7 +2419,7 @@ pub struct ListPendingInvitationResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPendingInvitationResourcesErrorKind {
-    /// <p>The specified value for NextToken is not valid.</p>
+    /// <p>The specified value for <code>NextToken</code> is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -2447,15 +2427,15 @@ pub enum ListPendingInvitationResourcesErrorKind {
     MalformedArnException(crate::error::MalformedArnException),
     /// <p>A required input parameter is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// <p>The invitation was already rejected.</p>
+    /// <p>The specified invitation was already rejected.</p>
     ResourceShareInvitationAlreadyRejectedException(
         crate::error::ResourceShareInvitationAlreadyRejectedException,
     ),
-    /// <p>The Amazon Resource Name (ARN) for an invitation was not found.</p>
+    /// <p>The specified Amazon Resource Name (ARN) for an invitation was not found.</p>
     ResourceShareInvitationArnNotFoundException(
         crate::error::ResourceShareInvitationArnNotFoundException,
     ),
-    /// <p>The invitation is expired.</p>
+    /// <p>The specified invitation is expired.</p>
     ResourceShareInvitationExpiredException(crate::error::ResourceShareInvitationExpiredException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     ServerInternalException(crate::error::ServerInternalException),
@@ -2533,8 +2513,6 @@ impl ListPendingInvitationResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2666,7 +2644,7 @@ pub struct ListPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPermissionsErrorKind {
-    /// <p>The specified value for NextToken is not valid.</p>
+    /// <p>The specified value for <code>NextToken</code> is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -2721,8 +2699,6 @@ impl ListPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2805,7 +2781,7 @@ pub struct ListPrincipalsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPrincipalsErrorKind {
-    /// <p>The specified value for NextToken is not valid.</p>
+    /// <p>The specified value for <code>NextToken</code> is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -2863,8 +2839,6 @@ impl ListPrincipalsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2955,7 +2929,7 @@ pub struct ListResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResourcesErrorKind {
-    /// <p>The specified value for NextToken is not valid.</p>
+    /// <p>The specified value for <code>NextToken</code> is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -3016,8 +2990,6 @@ impl ListResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3113,7 +3085,7 @@ pub struct ListResourceSharePermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResourceSharePermissionsErrorKind {
-    /// <p>The specified value for NextToken is not valid.</p>
+    /// <p>The specified value for <code>NextToken</code> is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -3184,8 +3156,6 @@ impl ListResourceSharePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3292,7 +3262,7 @@ pub struct ListResourceTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResourceTypesErrorKind {
-    /// <p>The specified value for NextToken is not valid.</p>
+    /// <p>The specified value for <code>NextToken</code> is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -3344,8 +3314,6 @@ impl ListResourceTypesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3428,7 +3396,7 @@ pub enum PromoteResourceShareCreatedFromPolicyErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>The requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>The requested resource share exceeds the limit for your account.</p>
+    /// <p>This request would exceed the limit for resource shares for your account.</p>
     ResourceShareLimitExceededException(crate::error::ResourceShareLimitExceededException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     ServerInternalException(crate::error::ServerInternalException),
@@ -3503,8 +3471,6 @@ impl PromoteResourceShareCreatedFromPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3629,28 +3595,27 @@ pub struct RejectResourceShareInvitationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RejectResourceShareInvitationErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>The client token input parameter was matched one used with a previous call to the operation, but at least one of the other input parameters is different from the previous call.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>A client token is not valid.</p>
+    /// <p>The client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
     /// <p>The format of an Amazon Resource Name (ARN) is not valid.</p>
     MalformedArnException(crate::error::MalformedArnException),
     /// <p>The requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>The invitation was already accepted.</p>
+    /// <p>The specified invitation was already accepted.</p>
     ResourceShareInvitationAlreadyAcceptedException(
         crate::error::ResourceShareInvitationAlreadyAcceptedException,
     ),
-    /// <p>The invitation was already rejected.</p>
+    /// <p>The specified invitation was already rejected.</p>
     ResourceShareInvitationAlreadyRejectedException(
         crate::error::ResourceShareInvitationAlreadyRejectedException,
     ),
-    /// <p>The Amazon Resource Name (ARN) for an invitation was not found.</p>
+    /// <p>The specified Amazon Resource Name (ARN) for an invitation was not found.</p>
     ResourceShareInvitationArnNotFoundException(
         crate::error::ResourceShareInvitationArnNotFoundException,
     ),
-    /// <p>The invitation is expired.</p>
+    /// <p>The specified invitation is expired.</p>
     ResourceShareInvitationExpiredException(crate::error::ResourceShareInvitationExpiredException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     ServerInternalException(crate::error::ServerInternalException),
@@ -3731,8 +3696,6 @@ impl RejectResourceShareInvitationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3885,15 +3848,15 @@ pub enum TagResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The format of an Amazon Resource Name (ARN) is not valid.</p>
     MalformedArnException(crate::error::MalformedArnException),
-    /// <p>An Amazon Resource Name (ARN) was not found.</p>
+    /// <p>The specified Amazon Resource Name (ARN) was not found.</p>
     ResourceArnNotFoundException(crate::error::ResourceArnNotFoundException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The requested tags exceed the limit for your account.</p>
+    /// <p>This request would exceed the limit for tags for your account.</p>
     TagLimitExceededException(crate::error::TagLimitExceededException),
-    /// <p>The specified tag is a reserved word and cannot be used.</p>
+    /// <p>The specified tag key is a reserved word and can't be used.</p>
     TagPolicyViolationException(crate::error::TagPolicyViolationException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
@@ -3945,8 +3908,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4096,8 +4057,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4164,10 +4123,9 @@ pub struct UpdateResourceShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateResourceShareErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>The client token input parameter was matched one used with a previous call to the operation, but at least one of the other input parameters is different from the previous call.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>A client token is not valid.</p>
+    /// <p>The client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -4236,8 +4194,6 @@ impl UpdateResourceShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4789,7 +4745,7 @@ impl InvalidParameterException {
     }
 }
 
-/// <p>A client token is not valid.</p>
+/// <p>The client token is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidClientTokenException {
@@ -4853,8 +4809,7 @@ impl InvalidClientTokenException {
     }
 }
 
-/// <p>A client token input parameter was reused with an operation, but at least one of the
-/// other input parameters is different from the previous call to the operation.</p>
+/// <p>The client token input parameter was matched one used with a previous call to the operation, but at least one of the other input parameters is different from the previous call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {
@@ -4918,7 +4873,7 @@ impl IdempotentParameterMismatchException {
     }
 }
 
-/// <p>The specified tag is a reserved word and cannot be used.</p>
+/// <p>The specified tag key is a reserved word and can't be used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagPolicyViolationException {
@@ -4982,7 +4937,7 @@ impl TagPolicyViolationException {
     }
 }
 
-/// <p>The requested tags exceed the limit for your account.</p>
+/// <p>This request would exceed the limit for tags for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagLimitExceededException {
@@ -5046,7 +5001,7 @@ impl TagLimitExceededException {
     }
 }
 
-/// <p>An Amazon Resource Name (ARN) was not found.</p>
+/// <p>The specified Amazon Resource Name (ARN) was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceArnNotFoundException {
@@ -5110,7 +5065,7 @@ impl ResourceArnNotFoundException {
     }
 }
 
-/// <p>The invitation is expired.</p>
+/// <p>The specified invitation is expired.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceShareInvitationExpiredException {
@@ -5174,7 +5129,7 @@ impl ResourceShareInvitationExpiredException {
     }
 }
 
-/// <p>The Amazon Resource Name (ARN) for an invitation was not found.</p>
+/// <p>The specified Amazon Resource Name (ARN) for an invitation was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceShareInvitationArnNotFoundException {
@@ -5238,7 +5193,7 @@ impl ResourceShareInvitationArnNotFoundException {
     }
 }
 
-/// <p>The invitation was already rejected.</p>
+/// <p>The specified invitation was already rejected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceShareInvitationAlreadyRejectedException {
@@ -5303,7 +5258,7 @@ impl ResourceShareInvitationAlreadyRejectedException {
     }
 }
 
-/// <p>The invitation was already accepted.</p>
+/// <p>The specified invitation was already accepted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceShareInvitationAlreadyAcceptedException {
@@ -5368,7 +5323,7 @@ impl ResourceShareInvitationAlreadyAcceptedException {
     }
 }
 
-/// <p>The requested resource share exceeds the limit for your account.</p>
+/// <p>This request would exceed the limit for resource shares for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceShareLimitExceededException {
@@ -5432,7 +5387,7 @@ impl ResourceShareLimitExceededException {
     }
 }
 
-/// <p>The specified value for NextToken is not valid.</p>
+/// <p>The specified value for <code>NextToken</code> is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
@@ -5560,7 +5515,7 @@ impl InvalidResourceTypeException {
     }
 }
 
-/// <p>The specified value for MaxResults is not valid.</p>
+/// <p>The specified value for <code>MaxResults</code> is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidMaxResultsException {
@@ -5685,5 +5640,69 @@ impl InvalidStateTransitionException {
     /// Creates a new builder-style object to manufacture [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException)
     pub fn builder() -> crate::error::invalid_state_transition_exception::Builder {
         crate::error::invalid_state_transition_exception::Builder::default()
+    }
+}
+
+/// <p>You exceeded the rate at which you are allowed to perform this operation. Please try again later.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThrottlingException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThrottlingException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ThrottlingException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ThrottlingException")?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ThrottlingException {}
+/// See [`ThrottlingException`](crate::error::ThrottlingException)
+pub mod throttling_exception {
+    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException)
+        pub fn build(self) -> crate::error::ThrottlingException {
+            crate::error::ThrottlingException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ThrottlingException {
+    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException)
+    pub fn builder() -> crate::error::throttling_exception::Builder {
+        crate::error::throttling_exception::Builder::default()
     }
 }

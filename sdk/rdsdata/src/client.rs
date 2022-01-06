@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS RDS DataService
@@ -137,15 +137,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchExecuteStatement`.
     ///
     /// <p>Runs a batch SQL statement over an array of data.</p>
-    /// <p>You can run bulk update and insert operations for multiple records using a DML
-    /// statement with different parameter sets. Bulk operations can provide a significant
-    /// performance improvement over individual insert and update operations.</p>
-    /// <important>    
-    /// <p>If a call isn't part of a transaction because it doesn't include the
-    /// <code>transactionID</code> parameter, changes that result from the call are
-    /// committed automatically.</p>    
+    /// <p>You can run bulk update and insert operations for multiple records using a DML statement with different parameter sets. Bulk operations can provide a significant performance improvement over individual insert and update operations.</p> <important>
+    /// <p>If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter, changes that result from the call are committed automatically.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -190,10 +185,10 @@ pub mod fluent_builders {
                 crate::input::BatchExecuteStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -202,8 +197,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
@@ -212,8 +207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
@@ -222,8 +217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SQL statement to run.</p>
-        pub fn sql(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql(inp);
+        pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sql(input.into());
             self
         }
         /// <p>The SQL statement to run.</p>
@@ -232,8 +227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The name of the database.</p>
@@ -242,8 +237,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database schema.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input.into());
             self
         }
         /// <p>The name of the database schema.</p>
@@ -256,38 +251,23 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_sets`](Self::set_parameter_sets).
         ///
         /// <p>The parameter set for the batch operation.</p>
-        /// <p>The SQL statement is executed as many times as the number of parameter sets provided.
-        /// To execute a SQL statement with no parameters, use one of the following options:</p>
+        /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specify one or more empty parameter sets.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+        /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+        /// </ul> <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
-        pub fn parameter_sets(
-            mut self,
-            inp: impl Into<std::vec::Vec<crate::model::SqlParameter>>,
-        ) -> Self {
-            self.inner = self.inner.parameter_sets(inp);
+        pub fn parameter_sets(mut self, input: std::vec::Vec<crate::model::SqlParameter>) -> Self {
+            self.inner = self.inner.parameter_sets(input);
             self
         }
         /// <p>The parameter set for the batch operation.</p>
-        /// <p>The SQL statement is executed as many times as the number of parameter sets provided.
-        /// To execute a SQL statement with no parameters, use one of the following options:</p>
+        /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specify one or more empty parameter sets.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+        /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+        /// </ul> <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
         pub fn set_parameter_sets(
@@ -297,20 +277,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameter_sets(input);
             self
         }
-        /// <p>The identifier of a transaction that was started by using the
-        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-        /// transaction that you want to include the SQL statement in.</p>
-        /// <p>If the SQL statement is not part of a transaction, don't set this
-        /// parameter.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
+        /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
-        /// <p>The identifier of a transaction that was started by using the
-        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-        /// transaction that you want to include the SQL statement in.</p>
-        /// <p>If the SQL statement is not part of a transaction, don't set this
-        /// parameter.</p>
+        /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
+        /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -321,19 +295,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BeginTransaction`.
     ///
-    /// <p>Starts a SQL transaction.</p>
-    ///
-    /// <important>
-    /// <p>A transaction can run for a maximum of 24 hours. A transaction is terminated and
-    /// rolled back automatically after 24 hours.</p>
-    /// <p>A transaction times out if no calls use its transaction ID in three minutes.
-    /// If a transaction times out before it's committed, it's rolled back
-    /// automatically.</p>
-    /// <p>DDL statements inside a transaction cause an implicit commit. We recommend
-    /// that you run each DDL statement in a separate <code>ExecuteStatement</code> call with
-    /// <code>continueAfterTimeout</code> enabled.</p>
+    /// <p>Starts a SQL transaction.</p> <important>
+    /// <p>A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after 24 hours.</p>
+    /// <p>A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before it's committed, it's rolled back automatically.</p>
+    /// <p>DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a separate <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code> enabled.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BeginTransaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -378,10 +345,10 @@ pub mod fluent_builders {
                 crate::input::BeginTransactionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -390,8 +357,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
@@ -400,8 +367,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
@@ -410,8 +377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The name of the database.</p>
@@ -420,8 +387,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database schema.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input.into());
             self
         }
         /// <p>The name of the database schema.</p>
@@ -432,9 +399,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CommitTransaction`.
     ///
-    /// <p>Ends a SQL transaction started with the <code>BeginTransaction</code> operation and
-    /// commits the changes.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Ends a SQL transaction started with the <code>BeginTransaction</code> operation and commits the changes.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CommitTransaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -479,10 +445,10 @@ pub mod fluent_builders {
                 crate::input::CommitTransactionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -491,8 +457,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
@@ -501,8 +467,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
@@ -511,8 +477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the transaction to end and commit.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The identifier of the transaction to end and commit.</p>
@@ -526,12 +492,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExecuteSql`.
     ///
-    /// <p>Runs one or more SQL statements.</p>
-    /// <important>
-    /// <p>This operation is deprecated. Use the <code>BatchExecuteStatement</code> or
-    /// <code>ExecuteStatement</code> operation.</p>
+    /// <p>Runs one or more SQL statements.</p> <important>
+    /// <p>This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteSql<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -576,10 +540,10 @@ pub mod fluent_builders {
                 crate::input::ExecuteSqlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -588,8 +552,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Aurora Serverless DB cluster.</p>
-        pub fn db_cluster_or_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_or_instance_arn(inp);
+        pub fn db_cluster_or_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_or_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the Aurora Serverless DB cluster.</p>
@@ -601,8 +565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
-        pub fn aws_secret_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_secret_store_arn(inp);
+        pub fn aws_secret_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_secret_store_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
@@ -614,17 +578,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>One or more SQL statements to run on the DB cluster.</p>
-        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
-        /// statement is permitted, including data definition, data manipulation, and commit
-        /// statements. </p>
-        pub fn sql_statements(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql_statements(inp);
+        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
+        pub fn sql_statements(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sql_statements(input.into());
             self
         }
         /// <p>One or more SQL statements to run on the DB cluster.</p>
-        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
-        /// statement is permitted, including data definition, data manipulation, and commit
-        /// statements. </p>
+        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
         pub fn set_sql_statements(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -633,8 +593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The name of the database.</p>
@@ -643,8 +603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database schema.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input.into());
             self
         }
         /// <p>The name of the database schema.</p>
@@ -655,14 +615,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExecuteStatement`.
     ///
-    /// <p>Runs a SQL statement against a database.</p>
-    /// <important>    
-    /// <p>If a call isn't part of a transaction because it doesn't include the
-    /// <code>transactionID</code> parameter, changes that result from the call are
-    /// committed automatically.</p>    
+    /// <p>Runs a SQL statement against a database.</p> <important>
+    /// <p>If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter, changes that result from the call are committed automatically.</p>
     /// </important>
     /// <p>The response size limit is 1 MB. If the call returns more than 1 MB of response data, the call is terminated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -707,10 +664,10 @@ pub mod fluent_builders {
                 crate::input::ExecuteStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -719,8 +676,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
@@ -729,8 +686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
@@ -739,8 +696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SQL statement to run.</p>
-        pub fn sql(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql(inp);
+        pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sql(input.into());
             self
         }
         /// <p>The SQL statement to run.</p>
@@ -749,8 +706,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The name of the database.</p>
@@ -758,16 +715,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database(input);
             self
         }
-        /// <p>The name of the database schema.</p>
-        /// <note>
+        /// <p>The name of the database schema.</p> <note>
         /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
         /// </note>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input.into());
             self
         }
-        /// <p>The name of the database schema.</p>
-        /// <note>
+        /// <p>The name of the database schema.</p> <note>
         /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
         /// </note>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -778,16 +733,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>The parameters for the SQL statement.</p>
-        /// <note>
+        /// <p>The parameters for the SQL statement.</p> <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
-        pub fn parameters(mut self, inp: impl Into<crate::model::SqlParameter>) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, input: crate::model::SqlParameter) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
-        /// <p>The parameters for the SQL statement.</p>
-        /// <note>
+        /// <p>The parameters for the SQL statement.</p> <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
         pub fn set_parameters(
@@ -797,17 +750,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameters(input);
             self
         }
-        /// <p>The identifier of a transaction that was started by using the
-        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-        /// transaction that you want to include the SQL statement in.</p>
+        /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
         /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
-        /// <p>The identifier of a transaction that was started by using the
-        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-        /// transaction that you want to include the SQL statement in.</p>
+        /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
         /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
         pub fn set_transaction_id(
             mut self,
@@ -817,8 +766,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to include metadata in the results.</p>
-        pub fn include_result_metadata(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_result_metadata(inp);
+        pub fn include_result_metadata(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_result_metadata(input);
             self
         }
         /// <p>A value that indicates whether to include metadata in the results.</p>
@@ -826,33 +775,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_include_result_metadata(input);
             self
         }
-        /// <p>A value that indicates whether to continue running the statement after
-        /// the call times out. By default, the statement stops running when the call
-        /// times out.</p>
-        /// <important>
-        /// <p>For DDL statements, we recommend continuing to run the statement after
-        /// the call times out. When a DDL statement terminates before it is finished
-        /// running, it can result in errors and possibly corrupted data structures.</p>
+        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+        /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
         /// </important>
-        pub fn continue_after_timeout(mut self, inp: bool) -> Self {
-            self.inner = self.inner.continue_after_timeout(inp);
+        pub fn continue_after_timeout(mut self, input: bool) -> Self {
+            self.inner = self.inner.continue_after_timeout(input);
             self
         }
-        /// <p>A value that indicates whether to continue running the statement after
-        /// the call times out. By default, the statement stops running when the call
-        /// times out.</p>
-        /// <important>
-        /// <p>For DDL statements, we recommend continuing to run the statement after
-        /// the call times out. When a DDL statement terminates before it is finished
-        /// running, it can result in errors and possibly corrupted data structures.</p>
+        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+        /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
         /// </important>
         pub fn set_continue_after_timeout(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_continue_after_timeout(input);
             self
         }
         /// <p>Options that control how the result set is returned.</p>
-        pub fn result_set_options(mut self, inp: crate::model::ResultSetOptions) -> Self {
-            self.inner = self.inner.result_set_options(inp);
+        pub fn result_set_options(mut self, input: crate::model::ResultSetOptions) -> Self {
+            self.inner = self.inner.result_set_options(input);
             self
         }
         /// <p>Options that control how the result set is returned.</p>
@@ -867,7 +806,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RollbackTransaction`.
     ///
     /// <p>Performs a rollback of a transaction. Rolling back a transaction cancels its changes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RollbackTransaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -912,10 +851,10 @@ pub mod fluent_builders {
                 crate::input::RollbackTransactionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -924,8 +863,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
@@ -934,8 +873,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
@@ -944,8 +883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the transaction to roll back.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The identifier of the transaction to roll back.</p>
@@ -958,6 +897,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -11,7 +11,8 @@ pub struct UpdateRevisionOutput {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this revision.</p>
     pub data_set_id: std::option::Option<std::string::String>,
-    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub finalized: bool,
     /// <p>The unique identifier for the revision.</p>
     pub id: std::option::Option<std::string::String>,
@@ -37,7 +38,8 @@ impl UpdateRevisionOutput {
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
-    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub fn finalized(&self) -> bool {
         self.finalized
     }
@@ -127,12 +129,14 @@ pub mod update_revision_output {
             self.data_set_id = input;
             self
         }
-        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+        /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn finalized(mut self, input: bool) -> Self {
             self.finalized = Some(input);
             self
         }
-        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+        /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn set_finalized(mut self, input: std::option::Option<bool>) -> Self {
             self.finalized = input;
             self
@@ -1120,9 +1124,9 @@ pub mod list_revision_assets_output {
         /// To override the contents of this collection use [`set_assets`](Self::set_assets).
         ///
         /// <p>The asset objects listed by the request.</p>
-        pub fn assets(mut self, input: impl Into<crate::model::AssetEntry>) -> Self {
+        pub fn assets(mut self, input: crate::model::AssetEntry) -> Self {
             let mut v = self.assets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assets = Some(v);
             self
         }
@@ -1202,9 +1206,9 @@ pub mod list_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>The jobs listed by the request.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::JobEntry>) -> Self {
+        pub fn jobs(mut self, input: crate::model::JobEntry) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -1285,9 +1289,9 @@ pub mod list_event_actions_output {
         /// To override the contents of this collection use [`set_event_actions`](Self::set_event_actions).
         ///
         /// <p>The event action objects listed by the request.</p>
-        pub fn event_actions(mut self, input: impl Into<crate::model::EventActionEntry>) -> Self {
+        pub fn event_actions(mut self, input: crate::model::EventActionEntry) -> Self {
             let mut v = self.event_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_actions = Some(v);
             self
         }
@@ -1367,9 +1371,9 @@ pub mod list_data_sets_output {
         /// To override the contents of this collection use [`set_data_sets`](Self::set_data_sets).
         ///
         /// <p>The data set objects listed by the request.</p>
-        pub fn data_sets(mut self, input: impl Into<crate::model::DataSetEntry>) -> Self {
+        pub fn data_sets(mut self, input: crate::model::DataSetEntry) -> Self {
             let mut v = self.data_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sets = Some(v);
             self
         }
@@ -1459,9 +1463,9 @@ pub mod list_data_set_revisions_output {
         /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
         ///
         /// <p>The asset objects listed by the request.</p>
-        pub fn revisions(mut self, input: impl Into<crate::model::RevisionEntry>) -> Self {
+        pub fn revisions(mut self, input: crate::model::RevisionEntry) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revisions = Some(v);
             self
         }
@@ -1501,7 +1505,8 @@ pub struct GetRevisionOutput {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this revision.</p>
     pub data_set_id: std::option::Option<std::string::String>,
-    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub finalized: bool,
     /// <p>The unique identifier for the revision.</p>
     pub id: std::option::Option<std::string::String>,
@@ -1530,7 +1535,8 @@ impl GetRevisionOutput {
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
-    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub fn finalized(&self) -> bool {
         self.finalized
     }
@@ -1631,12 +1637,14 @@ pub mod get_revision_output {
             self.data_set_id = input;
             self
         }
-        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+        /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn finalized(mut self, input: bool) -> Self {
             self.finalized = Some(input);
             self
         }
-        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+        /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn set_finalized(mut self, input: std::option::Option<bool>) -> Self {
             self.finalized = input;
             self
@@ -1848,9 +1856,9 @@ pub mod get_job_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The errors associated with jobs.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::JobError>) -> Self {
+        pub fn errors(mut self, input: crate::model::JobError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -2728,7 +2736,8 @@ pub struct CreateRevisionOutput {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with this revision.</p>
     pub data_set_id: std::option::Option<std::string::String>,
-    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub finalized: bool,
     /// <p>The unique identifier for the revision.</p>
     pub id: std::option::Option<std::string::String>,
@@ -2757,7 +2766,8 @@ impl CreateRevisionOutput {
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
-    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub fn finalized(&self) -> bool {
         self.finalized
     }
@@ -2858,12 +2868,14 @@ pub mod create_revision_output {
             self.data_set_id = input;
             self
         }
-        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+        /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn finalized(mut self, input: bool) -> Self {
             self.finalized = Some(input);
             self
         }
-        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p> <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+        /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+        /// <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn set_finalized(mut self, input: std::option::Option<bool>) -> Self {
             self.finalized = input;
             self
@@ -3075,9 +3087,9 @@ pub mod create_job_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The errors associated with jobs.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::JobError>) -> Self {
+        pub fn errors(mut self, input: crate::model::JobError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }

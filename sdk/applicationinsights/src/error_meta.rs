@@ -3,9 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>
-    /// User does not have permissions to perform this action.
-    /// </p>
+    /// <p> User does not have permissions to perform this action. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request is not understood by the server.</p>
     BadRequestException(crate::error::BadRequestException),
@@ -17,8 +15,7 @@ pub enum Error {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Tags are already registered for the specified application ARN.</p>
     TagsAlreadyExistException(crate::error::TagsAlreadyExistException),
-    /// <p>The number of the provided tags is beyond the limit, or
-    /// the number of total tags you are trying to attach to the specified resource exceeds the limit.</p>
+    /// <p>The number of the provided tags is beyond the limit, or the number of total tags you are trying to attach to the specified resource exceeds the limit.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),

@@ -14,15 +14,13 @@ pub struct AcceptPageError {
 pub enum AcceptPageErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -69,8 +67,6 @@ impl AcceptPageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -143,15 +139,13 @@ pub struct ActivateContactChannelError {
 pub enum ActivateContactChannelErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -198,8 +192,6 @@ impl ActivateContactChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -288,15 +280,13 @@ pub enum CreateContactErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request would cause a service quota to be exceeded.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -345,8 +335,6 @@ impl CreateContactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -439,13 +427,11 @@ pub enum CreateContactChannelErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -493,8 +479,6 @@ impl CreateContactChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -587,15 +571,13 @@ pub struct DeactivateContactChannelError {
 pub enum DeactivateContactChannelErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -642,8 +624,6 @@ impl DeactivateContactChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -728,15 +708,13 @@ pub struct DeleteContactError {
 pub enum DeleteContactErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -783,8 +761,6 @@ impl DeleteContactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -860,15 +836,13 @@ pub struct DeleteContactChannelError {
 pub enum DeleteContactChannelErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -915,8 +889,6 @@ impl DeleteContactChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1003,15 +975,13 @@ pub enum DescribeEngagementErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1059,8 +1029,6 @@ impl DescribeEngagementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1155,15 +1123,13 @@ pub enum DescribePageErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1211,8 +1177,6 @@ impl DescribePageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1298,15 +1262,13 @@ pub enum GetContactErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1354,8 +1316,6 @@ impl GetContactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1435,15 +1395,13 @@ pub enum GetContactChannelErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1491,8 +1449,6 @@ impl GetContactChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1585,15 +1541,13 @@ pub struct GetContactPolicyError {
 pub enum GetContactPolicyErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1640,8 +1594,6 @@ impl GetContactPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1728,15 +1680,13 @@ pub enum ListContactChannelsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1784,8 +1734,6 @@ impl ListContactChannelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1878,13 +1826,11 @@ pub struct ListContactsError {
 pub enum ListContactsErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1930,8 +1876,6 @@ impl ListContactsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1999,13 +1943,11 @@ pub struct ListEngagementsError {
 pub enum ListEngagementsErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2051,8 +1993,6 @@ impl ListEngagementsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2123,15 +2063,13 @@ pub struct ListPageReceiptsError {
 pub enum ListPageReceiptsErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2178,8 +2116,6 @@ impl ListPageReceiptsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2264,15 +2200,13 @@ pub struct ListPagesByContactError {
 pub enum ListPagesByContactErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2319,8 +2253,6 @@ impl ListPagesByContactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2405,15 +2337,13 @@ pub struct ListPagesByEngagementError {
 pub enum ListPagesByEngagementErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2460,8 +2390,6 @@ impl ListPagesByEngagementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2546,15 +2474,13 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2601,8 +2527,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2689,15 +2613,13 @@ pub enum PutContactPolicyErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2745,8 +2667,6 @@ impl PutContactPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2838,8 +2758,7 @@ pub enum SendActivationCodeErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2847,8 +2766,7 @@ pub enum SendActivationCodeErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2897,8 +2815,6 @@ impl SendActivationCodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3001,15 +2917,13 @@ pub enum StartEngagementErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3057,8 +2971,6 @@ impl StartEngagementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3145,15 +3057,13 @@ pub struct StopEngagementError {
 pub enum StopEngagementErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3200,8 +3110,6 @@ impl StopEngagementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3280,8 +3188,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3289,8 +3196,7 @@ pub enum TagResourceErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3338,8 +3244,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3420,15 +3324,13 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3475,8 +3377,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3554,8 +3454,7 @@ pub enum UpdateContactErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3563,8 +3462,7 @@ pub enum UpdateContactErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3613,8 +3511,6 @@ impl UpdateContactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3710,15 +3606,13 @@ pub enum UpdateContactChannelErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3767,8 +3661,6 @@ impl UpdateContactChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3854,8 +3746,7 @@ impl std::error::Error for UpdateContactChannelError {
     }
 }
 
-/// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-/// service.</p>
+/// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -3941,9 +3832,9 @@ pub mod validation_exception {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// The fields that caused the error
-        pub fn fields(mut self, input: impl Into<crate::model::ValidationExceptionField>) -> Self {
+        pub fn fields(mut self, input: crate::model::ValidationExceptionField) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields = Some(v);
             self
         }
@@ -4202,8 +4093,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Unexpected error occurred while
-/// processing the request.</p>
+/// <p>Unexpected error occurred while processing the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {

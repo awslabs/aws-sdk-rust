@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Database Migration Service
@@ -222,6 +222,7 @@ where
     ///
     /// See [`DescribeApplicableIndividualAssessments`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::into_paginator).
     pub fn describe_applicable_individual_assessments(
         &self,
     ) -> fluent_builders::DescribeApplicableIndividualAssessments<C, M, R> {
@@ -231,6 +232,7 @@ where
     ///
     /// See [`DescribeCertificates`](crate::client::fluent_builders::DescribeCertificates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCertificates::into_paginator).
     pub fn describe_certificates(&self) -> fluent_builders::DescribeCertificates<C, M, R> {
         fluent_builders::DescribeCertificates::new(self.handle.clone())
     }
@@ -238,6 +240,7 @@ where
     ///
     /// See [`DescribeConnections`](crate::client::fluent_builders::DescribeConnections) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConnections::into_paginator).
     pub fn describe_connections(&self) -> fluent_builders::DescribeConnections<C, M, R> {
         fluent_builders::DescribeConnections::new(self.handle.clone())
     }
@@ -245,6 +248,7 @@ where
     ///
     /// See [`DescribeEndpoints`](crate::client::fluent_builders::DescribeEndpoints) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEndpoints::into_paginator).
     pub fn describe_endpoints(&self) -> fluent_builders::DescribeEndpoints<C, M, R> {
         fluent_builders::DescribeEndpoints::new(self.handle.clone())
     }
@@ -252,6 +256,7 @@ where
     ///
     /// See [`DescribeEndpointSettings`](crate::client::fluent_builders::DescribeEndpointSettings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEndpointSettings::into_paginator).
     pub fn describe_endpoint_settings(&self) -> fluent_builders::DescribeEndpointSettings<C, M, R> {
         fluent_builders::DescribeEndpointSettings::new(self.handle.clone())
     }
@@ -259,6 +264,7 @@ where
     ///
     /// See [`DescribeEndpointTypes`](crate::client::fluent_builders::DescribeEndpointTypes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEndpointTypes::into_paginator).
     pub fn describe_endpoint_types(&self) -> fluent_builders::DescribeEndpointTypes<C, M, R> {
         fluent_builders::DescribeEndpointTypes::new(self.handle.clone())
     }
@@ -273,6 +279,7 @@ where
     ///
     /// See [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEvents::into_paginator).
     pub fn describe_events(&self) -> fluent_builders::DescribeEvents<C, M, R> {
         fluent_builders::DescribeEvents::new(self.handle.clone())
     }
@@ -280,6 +287,7 @@ where
     ///
     /// See [`DescribeEventSubscriptions`](crate::client::fluent_builders::DescribeEventSubscriptions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEventSubscriptions::into_paginator).
     pub fn describe_event_subscriptions(
         &self,
     ) -> fluent_builders::DescribeEventSubscriptions<C, M, R> {
@@ -289,6 +297,7 @@ where
     ///
     /// See [`DescribeOrderableReplicationInstances`](crate::client::fluent_builders::DescribeOrderableReplicationInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrderableReplicationInstances::into_paginator).
     pub fn describe_orderable_replication_instances(
         &self,
     ) -> fluent_builders::DescribeOrderableReplicationInstances<C, M, R> {
@@ -298,6 +307,7 @@ where
     ///
     /// See [`DescribePendingMaintenanceActions`](crate::client::fluent_builders::DescribePendingMaintenanceActions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePendingMaintenanceActions::into_paginator).
     pub fn describe_pending_maintenance_actions(
         &self,
     ) -> fluent_builders::DescribePendingMaintenanceActions<C, M, R> {
@@ -316,6 +326,7 @@ where
     ///
     /// See [`DescribeReplicationInstances`](crate::client::fluent_builders::DescribeReplicationInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationInstances::into_paginator).
     pub fn describe_replication_instances(
         &self,
     ) -> fluent_builders::DescribeReplicationInstances<C, M, R> {
@@ -325,6 +336,7 @@ where
     ///
     /// See [`DescribeReplicationInstanceTaskLogs`](crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs::into_paginator).
     pub fn describe_replication_instance_task_logs(
         &self,
     ) -> fluent_builders::DescribeReplicationInstanceTaskLogs<C, M, R> {
@@ -334,6 +346,7 @@ where
     ///
     /// See [`DescribeReplicationSubnetGroups`](crate::client::fluent_builders::DescribeReplicationSubnetGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationSubnetGroups::into_paginator).
     pub fn describe_replication_subnet_groups(
         &self,
     ) -> fluent_builders::DescribeReplicationSubnetGroups<C, M, R> {
@@ -343,6 +356,7 @@ where
     ///
     /// See [`DescribeReplicationTaskAssessmentResults`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults::into_paginator).
     pub fn describe_replication_task_assessment_results(
         &self,
     ) -> fluent_builders::DescribeReplicationTaskAssessmentResults<C, M, R> {
@@ -352,6 +366,7 @@ where
     ///
     /// See [`DescribeReplicationTaskAssessmentRuns`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns::into_paginator).
     pub fn describe_replication_task_assessment_runs(
         &self,
     ) -> fluent_builders::DescribeReplicationTaskAssessmentRuns<C, M, R> {
@@ -361,6 +376,7 @@ where
     ///
     /// See [`DescribeReplicationTaskIndividualAssessments`](crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments::into_paginator).
     pub fn describe_replication_task_individual_assessments(
         &self,
     ) -> fluent_builders::DescribeReplicationTaskIndividualAssessments<C, M, R> {
@@ -370,6 +386,7 @@ where
     ///
     /// See [`DescribeReplicationTasks`](crate::client::fluent_builders::DescribeReplicationTasks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationTasks::into_paginator).
     pub fn describe_replication_tasks(&self) -> fluent_builders::DescribeReplicationTasks<C, M, R> {
         fluent_builders::DescribeReplicationTasks::new(self.handle.clone())
     }
@@ -377,6 +394,7 @@ where
     ///
     /// See [`DescribeSchemas`](crate::client::fluent_builders::DescribeSchemas) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSchemas::into_paginator).
     pub fn describe_schemas(&self) -> fluent_builders::DescribeSchemas<C, M, R> {
         fluent_builders::DescribeSchemas::new(self.handle.clone())
     }
@@ -384,6 +402,7 @@ where
     ///
     /// See [`DescribeTableStatistics`](crate::client::fluent_builders::DescribeTableStatistics) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTableStatistics::into_paginator).
     pub fn describe_table_statistics(&self) -> fluent_builders::DescribeTableStatistics<C, M, R> {
         fluent_builders::DescribeTableStatistics::new(self.handle.clone())
     }
@@ -527,13 +546,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddTagsToResource`.
     ///
-    /// <p>Adds metadata tags to an DMS resource, including replication instance, endpoint,
-    /// security group, and migration task. These tags can also be used with cost allocation
-    /// reporting to track cost associated with DMS resources, or used in a Condition statement in
-    /// an IAM policy for DMS. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
-    /// <code>Tag</code>
-    /// </a> data type description.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds metadata tags to an DMS resource, including replication instance, endpoint, security group, and migration task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or used in a Condition statement in an IAM policy for DMS. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type description.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -578,10 +592,10 @@ pub mod fluent_builders {
                 crate::input::AddTagsToResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -591,8 +605,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p>
         /// <p>For DMS, you can tag a replication instance, an endpoint, or a replication task.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p>
@@ -606,8 +620,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags to be assigned to the resource.</p>
@@ -622,7 +636,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ApplyPendingMaintenanceAction`.
     ///
     /// <p>Applies a pending maintenance action to a resource (for example, to a replication instance).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApplyPendingMaintenanceAction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -667,10 +681,10 @@ pub mod fluent_builders {
                 crate::input::ApplyPendingMaintenanceActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -678,14 +692,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance
-        /// action applies to.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
+        pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance
-        /// action applies to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
         pub fn set_replication_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -694,60 +706,34 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pending maintenance action to apply to this resource.</p>
-        /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>
-        /// </p>
-        pub fn apply_action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.apply_action(inp);
+        /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
+        pub fn apply_action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.apply_action(input.into());
             self
         }
         /// <p>The pending maintenance action to apply to this resource.</p>
-        /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>
-        /// </p>
+        /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
         pub fn set_apply_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_apply_action(input);
             self
         }
-        /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an
-        /// opt-in request of type <code>immediate</code>.</p>
+        /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>immediate</code> - Apply the maintenance action immediately.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>next-maintenance</code> - Apply the maintenance action during the next
-        /// maintenance window for the resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in
-        /// requests.</p>
-        /// </li>
+        /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
+        /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
+        /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
         /// </ul>
-        pub fn opt_in_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.opt_in_type(inp);
+        pub fn opt_in_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.opt_in_type(input.into());
             self
         }
-        /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an
-        /// opt-in request of type <code>immediate</code>.</p>
+        /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>immediate</code> - Apply the maintenance action immediately.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>next-maintenance</code> - Apply the maintenance action during the next
-        /// maintenance window for the resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in
-        /// requests.</p>
-        /// </li>
+        /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
+        /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
+        /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
         /// </ul>
         pub fn set_opt_in_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_opt_in_type(input);
@@ -757,10 +743,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelReplicationTaskAssessmentRun`.
     ///
     /// <p>Cancels a single premigration assessment run.</p>
-    /// <p>This operation prevents any individual assessments from running if they haven't started
-    /// running. It also attempts to cancel any individual assessments that are currently
-    /// running.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation prevents any individual assessments from running if they haven't started running. It also attempts to cancel any individual assessments that are currently running.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelReplicationTaskAssessmentRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -807,10 +791,10 @@ pub mod fluent_builders {
                 crate::input::CancelReplicationTaskAssessmentRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -821,9 +805,9 @@ pub mod fluent_builders {
         /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
         pub fn replication_task_assessment_run_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_task_assessment_run_arn(inp);
+            self.inner = self.inner.replication_task_assessment_run_arn(input.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
@@ -837,15 +821,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEndpoint`.
     ///
-    /// <p>Creates an endpoint using the provided settings.</p>
-    /// <note>
-    /// <p>For a MySQL source or target endpoint, don't explicitly specify the database using
-    /// the <code>DatabaseName</code> request parameter on the <code>CreateEndpoint</code> API call.
-    /// Specifying <code>DatabaseName</code> when you create a MySQL endpoint replicates all the
-    /// task tables to this single database. For MySQL endpoints, you specify the database only when
-    /// you specify the schema in the table-mapping rules of the DMS task.</p>
+    /// <p>Creates an endpoint using the provided settings.</p> <note>
+    /// <p>For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on the <code>CreateEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -890,10 +869,10 @@ pub mod fluent_builders {
                 crate::input::CreateEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -901,16 +880,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
-        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two
-        /// consecutive hyphens.</p>
-        pub fn endpoint_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_identifier(inp);
+        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
+        pub fn endpoint_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_identifier(input.into());
             self
         }
-        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
-        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two
-        /// consecutive hyphens.</p>
+        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
         pub fn set_endpoint_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -918,12 +893,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_identifier(input);
             self
         }
-        /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
-        pub fn endpoint_type(mut self, inp: crate::model::ReplicationEndpointTypeValue) -> Self {
-            self.inner = self.inner.endpoint_type(inp);
+        /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
+        pub fn endpoint_type(mut self, input: crate::model::ReplicationEndpointTypeValue) -> Self {
+            self.inner = self.inner.endpoint_type(input);
             self
         }
-        /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
+        /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
@@ -931,31 +906,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_type(input);
             self
         }
-        /// <p>The type of engine for the endpoint. Valid values, depending on the
-        /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
-        /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-        /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-        /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
-        /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_name(inp);
+        /// <p>The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_name(input.into());
             self
         }
-        /// <p>The type of engine for the endpoint. Valid values, depending on the
-        /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
-        /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-        /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-        /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
-        /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+        /// <p>The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
         pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_engine_name(input);
             self
         }
         /// <p>The user name to be used to log in to the endpoint database.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name to be used to log in to the endpoint database.</p>
@@ -964,8 +927,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password to be used to log in to the endpoint database.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password to be used to log in to the endpoint database.</p>
@@ -974,8 +937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the server where the endpoint database resides.</p>
-        pub fn server_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(inp);
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>The name of the server where the endpoint database resides.</p>
@@ -984,8 +947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port used by the endpoint database.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port used by the endpoint database.</p>
@@ -994,8 +957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
@@ -1006,24 +969,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>Additional attributes associated with the connection. Each attribute is specified as a
-        /// name-value pair associated by an equal sign (=). Multiple attributes are separated by a
-        /// semicolon (;) with no additional white space. For information on the attributes available
-        /// for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with
-        /// DMS Endpoints</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
-        pub fn extra_connection_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extra_connection_attributes(inp);
+        /// <p>Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For information on the attributes available for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with DMS Endpoints</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn extra_connection_attributes(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.extra_connection_attributes(input.into());
             self
         }
-        /// <p>Additional attributes associated with the connection. Each attribute is specified as a
-        /// name-value pair associated by an equal sign (=). Multiple attributes are separated by a
-        /// semicolon (;) with no additional white space. For information on the attributes available
-        /// for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with
-        /// DMS Endpoints</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For information on the attributes available for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with DMS Endpoints</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_extra_connection_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1032,19 +986,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
-        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-        /// DMS uses your default encryption key.</p>
-        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
-        /// different default encryption key for each Amazon Web Services Region.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
-        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-        /// DMS uses your default encryption key.</p>
-        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
-        /// different default encryption key for each Amazon Web Services Region.</p>
+        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -1054,8 +1004,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the endpoint.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags to be assigned to the endpoint.</p>
@@ -1067,8 +1017,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
@@ -1079,14 +1029,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_arn(input);
             self
         }
-        /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
-        /// </p>
-        pub fn ssl_mode(mut self, inp: crate::model::DmsSslModeValue) -> Self {
-            self.inner = self.inner.ssl_mode(inp);
+        /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code> </p>
+        pub fn ssl_mode(mut self, input: crate::model::DmsSslModeValue) -> Self {
+            self.inner = self.inner.ssl_mode(input);
             self
         }
-        /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
-        /// </p>
+        /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code> </p>
         pub fn set_ssl_mode(
             mut self,
             input: std::option::Option<crate::model::DmsSslModeValue>,
@@ -1094,14 +1042,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ssl_mode(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to
-        /// create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
-        pub fn service_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_access_role_arn(inp);
+        /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+        pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_access_role_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to
-        /// create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+        /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1110,8 +1056,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external table definition. </p>
-        pub fn external_table_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_table_definition(inp);
+        pub fn external_table_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_table_definition(input.into());
             self
         }
         /// <p>The external table definition. </p>
@@ -1122,20 +1068,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_external_table_definition(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
-        /// Data to DynamoDB</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
-        pub fn dynamo_db_settings(mut self, inp: crate::model::DynamoDbSettings) -> Self {
-            self.inner = self.inner.dynamo_db_settings(inp);
+        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn dynamo_db_settings(mut self, input: crate::model::DynamoDbSettings) -> Self {
+            self.inner = self.inner.dynamo_db_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
-        /// Data to DynamoDB</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_dynamo_db_settings(
             mut self,
             input: std::option::Option<crate::model::DynamoDbSettings>,
@@ -1143,20 +1081,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dynamo_db_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-        /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn s3_settings(mut self, inp: crate::model::S3Settings) -> Self {
-            self.inner = self.inner.s3_settings(inp);
+        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn s3_settings(mut self, input: crate::model::S3Settings) -> Self {
+            self.inner = self.inner.s3_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-        /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_s3_settings(
             mut self,
             input: std::option::Option<crate::model::S3Settings>,
@@ -1167,45 +1097,23 @@ pub mod fluent_builders {
         /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
         /// <p>Possible settings include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role.
-        /// The role must allow the <code>iam:PassRole</code> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
-        /// </li>
+        /// <li> <p> <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>
+        /// <li> <p> <code>BucketName</code> - The name of the S3 bucket to use.</p> </li>
         /// </ul>
-        /// <p>Shorthand syntax for these settings is as follows:
-        /// <code>ServiceAccessRoleArn=string,BucketName=string</code>
-        /// </p>
-        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
-        /// "string", "BucketName": "string", } </code>
-        /// </p>
-        pub fn dms_transfer_settings(mut self, inp: crate::model::DmsTransferSettings) -> Self {
-            self.inner = self.inner.dms_transfer_settings(inp);
+        /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code> </p>
+        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", } </code> </p>
+        pub fn dms_transfer_settings(mut self, input: crate::model::DmsTransferSettings) -> Self {
+            self.inner = self.inner.dms_transfer_settings(input);
             self
         }
         /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
         /// <p>Possible settings include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role.
-        /// The role must allow the <code>iam:PassRole</code> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
-        /// </li>
+        /// <li> <p> <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>
+        /// <li> <p> <code>BucketName</code> - The name of the S3 bucket to use.</p> </li>
         /// </ul>
-        /// <p>Shorthand syntax for these settings is as follows:
-        /// <code>ServiceAccessRoleArn=string,BucketName=string</code>
-        /// </p>
-        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
-        /// "string", "BucketName": "string", } </code>
-        /// </p>
+        /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code> </p>
+        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", } </code> </p>
         pub fn set_dms_transfer_settings(
             mut self,
             input: std::option::Option<crate::model::DmsTransferSettings>,
@@ -1213,20 +1121,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dms_transfer_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
-        /// when using MongoDB as a source for Database Migration Service</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn mongo_db_settings(mut self, inp: crate::model::MongoDbSettings) -> Self {
-            self.inner = self.inner.mongo_db_settings(inp);
+        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn mongo_db_settings(mut self, input: crate::model::MongoDbSettings) -> Self {
+            self.inner = self.inner.mongo_db_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
-        /// when using MongoDB as a source for Database Migration Service</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_mongo_db_settings(
             mut self,
             input: std::option::Option<crate::model::MongoDbSettings>,
@@ -1234,18 +1134,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mongo_db_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
-        /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn kinesis_settings(mut self, inp: crate::model::KinesisSettings) -> Self {
-            self.inner = self.inner.kinesis_settings(inp);
+        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn kinesis_settings(mut self, input: crate::model::KinesisSettings) -> Self {
+            self.inner = self.inner.kinesis_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
-        /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_kinesis_settings(
             mut self,
             input: std::option::Option<crate::model::KinesisSettings>,
@@ -1253,20 +1147,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kinesis_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
-        /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
-        pub fn kafka_settings(mut self, inp: crate::model::KafkaSettings) -> Self {
-            self.inner = self.inner.kafka_settings(inp);
+        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn kafka_settings(mut self, input: crate::model::KafkaSettings) -> Self {
+            self.inner = self.inner.kafka_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
-        /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_kafka_settings(
             mut self,
             input: std::option::Option<crate::model::KafkaSettings>,
@@ -1274,16 +1160,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kafka_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
-        /// the <i>Database Migration Service User Guide</i>.</p>
-        pub fn elasticsearch_settings(mut self, inp: crate::model::ElasticsearchSettings) -> Self {
-            self.inner = self.inner.elasticsearch_settings(inp);
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide</i>.</p>
+        pub fn elasticsearch_settings(
+            mut self,
+            input: crate::model::ElasticsearchSettings,
+        ) -> Self {
+            self.inner = self.inner.elasticsearch_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
-        /// the <i>Database Migration Service User Guide</i>.</p>
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide</i>.</p>
         pub fn set_elasticsearch_settings(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchSettings>,
@@ -1291,20 +1176,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_elasticsearch_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon Neptune endpoint.
-        /// For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
-        /// in the <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn neptune_settings(mut self, inp: crate::model::NeptuneSettings) -> Self {
-            self.inner = self.inner.neptune_settings(inp);
+        /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn neptune_settings(mut self, input: crate::model::NeptuneSettings) -> Self {
+            self.inner = self.inner.neptune_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon Neptune endpoint.
-        /// For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
-        /// in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_neptune_settings(
             mut self,
             input: std::option::Option<crate::model::NeptuneSettings>,
@@ -1313,8 +1190,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
-        pub fn redshift_settings(mut self, inp: crate::model::RedshiftSettings) -> Self {
-            self.inner = self.inner.redshift_settings(inp);
+        pub fn redshift_settings(mut self, input: crate::model::RedshiftSettings) -> Self {
+            self.inner = self.inner.redshift_settings(input);
             self
         }
         /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
@@ -1325,22 +1202,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_redshift_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-        /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
-        /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn postgre_sql_settings(mut self, inp: crate::model::PostgreSqlSettings) -> Self {
-            self.inner = self.inner.postgre_sql_settings(inp);
+        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn postgre_sql_settings(mut self, input: crate::model::PostgreSqlSettings) -> Self {
+            self.inner = self.inner.postgre_sql_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-        /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
-        /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_postgre_sql_settings(
             mut self,
             input: std::option::Option<crate::model::PostgreSqlSettings>,
@@ -1348,20 +1215,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_postgre_sql_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes
-        /// when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in
-        /// the <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn my_sql_settings(mut self, inp: crate::model::MySqlSettings) -> Self {
-            self.inner = self.inner.my_sql_settings(inp);
+        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn my_sql_settings(mut self, input: crate::model::MySqlSettings) -> Self {
+            self.inner = self.inner.my_sql_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes
-        /// when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in
-        /// the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_my_sql_settings(
             mut self,
             input: std::option::Option<crate::model::MySqlSettings>,
@@ -1369,24 +1228,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_my_sql_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes
-        /// when using Oracle as a source for DMS</a> and
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
-        /// Extra connection attributes when using Oracle as a target for DMS</a>
-        /// in the <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn oracle_settings(mut self, inp: crate::model::OracleSettings) -> Self {
-            self.inner = self.inner.oracle_settings(inp);
+        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn oracle_settings(mut self, input: crate::model::OracleSettings) -> Self {
+            self.inner = self.inner.oracle_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes
-        /// when using Oracle as a source for DMS</a> and
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
-        /// Extra connection attributes when using Oracle as a target for DMS</a>
-        /// in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_oracle_settings(
             mut self,
             input: std::option::Option<crate::model::OracleSettings>,
@@ -1394,22 +1241,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_oracle_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
-        pub fn sybase_settings(mut self, inp: crate::model::SybaseSettings) -> Self {
-            self.inner = self.inner.sybase_settings(inp);
+        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn sybase_settings(mut self, input: crate::model::SybaseSettings) -> Self {
+            self.inner = self.inner.sybase_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_sybase_settings(
             mut self,
             input: std::option::Option<crate::model::SybaseSettings>,
@@ -1417,25 +1254,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sybase_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-        /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
-        /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn microsoft_sql_server_settings(
             mut self,
-            inp: crate::model::MicrosoftSqlServerSettings,
+            input: crate::model::MicrosoftSqlServerSettings,
         ) -> Self {
-            self.inner = self.inner.microsoft_sql_server_settings(inp);
+            self.inner = self.inner.microsoft_sql_server_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-        /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
-        /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_microsoft_sql_server_settings(
             mut self,
             input: std::option::Option<crate::model::MicrosoftSqlServerSettings>,
@@ -1443,20 +1270,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_microsoft_sql_server_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-        /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
-        pub fn ibm_db2_settings(mut self, inp: crate::model::IbmDb2Settings) -> Self {
-            self.inner = self.inner.ibm_db2_settings(inp);
+        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn ibm_db2_settings(mut self, input: crate::model::IbmDb2Settings) -> Self {
+            self.inner = self.inner.ibm_db2_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-        /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_ibm_db2_settings(
             mut self,
             input: std::option::Option<crate::model::IbmDb2Settings>,
@@ -1464,28 +1283,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ibm_db2_settings(input);
             self
         }
-        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-        /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-        /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-        /// value might result in the <code>EndpointArn</code> value
-        /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-        /// value for the end of <code>EndpointArn</code>.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
             self
         }
-        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-        /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-        /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-        /// value might result in the <code>EndpointArn</code> value
-        /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-        /// value for the end of <code>EndpointArn</code>.</p>
+        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1494,8 +1297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides information that defines a DocumentDB endpoint.</p>
-        pub fn doc_db_settings(mut self, inp: crate::model::DocDbSettings) -> Self {
-            self.inner = self.inner.doc_db_settings(inp);
+        pub fn doc_db_settings(mut self, input: crate::model::DocDbSettings) -> Self {
+            self.inner = self.inner.doc_db_settings(input);
             self
         }
         /// <p>Provides information that defines a DocumentDB endpoint.</p>
@@ -1507,8 +1310,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the target Redis endpoint.</p>
-        pub fn redis_settings(mut self, inp: crate::model::RedisSettings) -> Self {
-            self.inner = self.inner.redis_settings(inp);
+        pub fn redis_settings(mut self, input: crate::model::RedisSettings) -> Self {
+            self.inner = self.inner.redis_settings(input);
             self
         }
         /// <p>Settings in JSON format for the target Redis endpoint.</p>
@@ -1520,8 +1323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
-        pub fn gcp_my_sql_settings(mut self, inp: crate::model::GcpMySqlSettings) -> Self {
-            self.inner = self.inner.gcp_my_sql_settings(inp);
+        pub fn gcp_my_sql_settings(mut self, input: crate::model::GcpMySqlSettings) -> Self {
+            self.inner = self.inner.gcp_my_sql_settings(input);
             self
         }
         /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
@@ -1536,22 +1339,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateEventSubscription`.
     ///
     /// <p> Creates an DMS event notification subscription. </p>
-    /// <p>You can specify the type of source (<code>SourceType</code>) you want to be notified of,
-    /// provide a list of DMS source IDs (<code>SourceIds</code>) that triggers the events, and
-    /// provide a list of event categories (<code>EventCategories</code>) for events you want to be
-    /// notified of. If you specify both the <code>SourceType</code> and <code>SourceIds</code>,
-    /// such as <code>SourceType = replication-instance</code> and <code>SourceIdentifier =
-    /// my-replinstance</code>, you will be notified of all the replication instance events for
-    /// the specified source. If you specify a <code>SourceType</code> but don't specify a
-    /// <code>SourceIdentifier</code>, you receive notice of the events for that source type for
-    /// all your DMS sources. If you don't specify either <code>SourceType</code> nor
-    /// <code>SourceIdentifier</code>, you will be notified of events generated from all DMS
-    /// sources belonging to your customer account.</p>
-    /// <p>For more information about DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
-    /// Notifications</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can specify the type of source (<code>SourceType</code>) you want to be notified of, provide a list of DMS source IDs (<code>SourceIds</code>) that triggers the events, and provide a list of event categories (<code>EventCategories</code>) for events you want to be notified of. If you specify both the <code>SourceType</code> and <code>SourceIds</code>, such as <code>SourceType = replication-instance</code> and <code>SourceIdentifier = my-replinstance</code>, you will be notified of all the replication instance events for the specified source. If you specify a <code>SourceType</code> but don't specify a <code>SourceIdentifier</code>, you receive notice of the events for that source type for all your DMS sources. If you don't specify either <code>SourceType</code> nor <code>SourceIdentifier</code>, you will be notified of events generated from all DMS sources belonging to your customer account.</p>
+    /// <p>For more information about DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1596,10 +1386,10 @@ pub mod fluent_builders {
                 crate::input::CreateEventSubscriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1608,8 +1398,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DMS event notification subscription. This name must be less than 255 characters.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the DMS event notification subscription. This name must be less than 255 characters.</p>
@@ -1620,14 +1410,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subscription_name(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
-        /// The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
-        /// The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
+        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1635,22 +1423,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sns_topic_arn(input);
             self
         }
-        /// <p> The type of DMS resource that generates the events. For example, if you want to be
-        /// notified of events generated by a replication instance, you set this parameter to
-        /// <code>replication-instance</code>. If this value isn't specified, all events are
-        /// returned. </p>
-        /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code>
-        /// </p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        /// <p> The type of DMS resource that generates the events. For example, if you want to be notified of events generated by a replication instance, you set this parameter to <code>replication-instance</code>. If this value isn't specified, all events are returned. </p>
+        /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code> </p>
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input.into());
             self
         }
-        /// <p> The type of DMS resource that generates the events. For example, if you want to be
-        /// notified of events generated by a replication instance, you set this parameter to
-        /// <code>replication-instance</code>. If this value isn't specified, all events are
-        /// returned. </p>
-        /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code>
-        /// </p>
+        /// <p> The type of DMS resource that generates the events. For example, if you want to be notified of events generated by a replication instance, you set this parameter to <code>replication-instance</code>. If this value isn't specified, all events are returned. </p>
+        /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code> </p>
         pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_source_type(input);
             self
@@ -1659,20 +1439,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
         ///
-        /// <p>A list of event categories for a source type that you want to subscribe to. For more
-        /// information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
-        /// Notifications</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_categories(inp);
+        /// <p>A list of event categories for a source type that you want to subscribe to. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_categories(input.into());
             self
         }
-        /// <p>A list of event categories for a source type that you want to subscribe to. For more
-        /// information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
-        /// Notifications</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>A list of event categories for a source type that you want to subscribe to. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_event_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1686,18 +1458,14 @@ pub mod fluent_builders {
         ///
         /// <p>A list of identifiers for which DMS provides notification events.</p>
         /// <p>If you don't specify a value, notifications are provided for all sources.</p>
-        /// <p>If you specify multiple values, they must be of the same type. For example, if you
-        /// specify a database instance ID, then all of the other values must be database instance
-        /// IDs.</p>
-        pub fn source_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_ids(inp);
+        /// <p>If you specify multiple values, they must be of the same type. For example, if you specify a database instance ID, then all of the other values must be database instance IDs.</p>
+        pub fn source_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_ids(input.into());
             self
         }
         /// <p>A list of identifiers for which DMS provides notification events.</p>
         /// <p>If you don't specify a value, notifications are provided for all sources.</p>
-        /// <p>If you specify multiple values, they must be of the same type. For example, if you
-        /// specify a database instance ID, then all of the other values must be database instance
-        /// IDs.</p>
+        /// <p>If you specify multiple values, they must be of the same type. For example, if you specify a database instance ID, then all of the other values must be database instance IDs.</p>
         pub fn set_source_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1705,14 +1473,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_ids(input);
             self
         }
-        /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to
-        /// <code>false</code> to create the subscription but not activate it. </p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create the subscription but not activate it. </p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
-        /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to
-        /// <code>false</code> to create the subscription but not activate it. </p>
+        /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create the subscription but not activate it. </p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enabled(input);
             self
@@ -1722,8 +1488,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the event subscription.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags to be assigned to the event subscription.</p>
@@ -1738,12 +1504,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateReplicationInstance`.
     ///
     /// <p>Creates the replication instance using the specified parameters.</p>
-    /// <p>DMS requires that your account have certain roles with appropriate permissions
-    /// before you can create a replication instance. For information on the required roles, see
-    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.APIRole">Creating the IAM Roles to Use With the CLI and DMS API</a>. For
-    /// information on the required permissions, see
-    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM Permissions Needed to Use DMS</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>DMS requires that your account have certain roles with appropriate permissions before you can create a replication instance. For information on the required roles, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.APIRole">Creating the IAM Roles to Use With the CLI and DMS API</a>. For information on the required permissions, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM Permissions Needed to Use DMS</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1788,10 +1550,10 @@ pub mod fluent_builders {
                 crate::input::CreateReplicationInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1799,45 +1561,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The replication instance identifier. This parameter is stored as a lowercase
-        /// string.</p>
+        /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
+        /// <li> <p>Must contain 1-63 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
-        /// <p>Example: <code>myrepinstance</code>
-        /// </p>
+        /// <p>Example: <code>myrepinstance</code> </p>
         pub fn replication_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_instance_identifier(inp);
+            self.inner = self.inner.replication_instance_identifier(input.into());
             self
         }
-        /// <p>The replication instance identifier. This parameter is stored as a lowercase
-        /// string.</p>
+        /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
+        /// <li> <p>Must contain 1-63 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
-        /// <p>Example: <code>myrepinstance</code>
-        /// </p>
+        /// <p>Example: <code>myrepinstance</code> </p>
         pub fn set_replication_instance_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1845,34 +1591,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_instance_identifier(input);
             self
         }
-        /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication
-        /// instance.</p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.allocated_storage(inp);
+        /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication instance.</p>
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
             self
         }
-        /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication
-        /// instance.</p>
+        /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication instance.</p>
         pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_allocated_storage(input);
             self
         }
-        /// <p>The compute and memory capacity of the replication instance as defined for the specified
-        /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-        /// <p>For more information on the settings and capacities for the available replication instance classes, see
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right DMS replication instance for your migration</a>.
-        /// </p>
-        pub fn replication_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_class(inp);
+        /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+        /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
+        pub fn replication_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_class(input.into());
             self
         }
-        /// <p>The compute and memory capacity of the replication instance as defined for the specified
-        /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-        /// <p>For more information on the settings and capacities for the available replication instance classes, see
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right DMS replication instance for your migration</a>.
-        /// </p>
+        /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+        /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
         pub fn set_replication_instance_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1884,14 +1620,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
-        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
-        /// security group must work with the VPC containing the replication instance. </p>
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_security_group_ids(inp);
+        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_security_group_ids(input.into());
             self
         }
-        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
-        /// security group must work with the VPC containing the replication instance. </p>
+        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
         pub fn set_vpc_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1899,18 +1633,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
-        /// <p>The Availability Zone where the replication instance will be created. The default
-        /// value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for
-        /// example: <code>us-east-1d</code>
-        /// </p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        /// <p>The Availability Zone where the replication instance will be created. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
-        /// <p>The Availability Zone where the replication instance will be created. The default
-        /// value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for
-        /// example: <code>us-east-1d</code>
-        /// </p>
+        /// <p>The Availability Zone where the replication instance will be created. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1921,9 +1649,9 @@ pub mod fluent_builders {
         /// <p>A subnet group to associate with the replication instance.</p>
         pub fn replication_subnet_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_subnet_group_identifier(inp);
+            self.inner = self.inner.replication_subnet_group_identifier(input.into());
             self
         }
         /// <p>A subnet group to associate with the replication instance.</p>
@@ -1934,24 +1662,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_subnet_group_identifier(input);
             self
         }
-        /// <p>The weekly time range during which system maintenance can occur, in Universal
-        /// Coordinated Time (UTC).</p>
-        /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-        /// </p>
-        /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region,
-        /// occurring on a random day of the week.</p>
+        /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+        /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+        /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region, occurring on a random day of the week.</p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
-        /// <p>The weekly time range during which system maintenance can occur, in Universal
-        /// Coordinated Time (UTC).</p>
-        /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-        /// </p>
-        /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region,
-        /// occurring on a random day of the week.</p>
+        /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+        /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+        /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region, occurring on a random day of the week.</p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn set_preferred_maintenance_window(
@@ -1961,30 +1686,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_preferred_maintenance_window(input);
             self
         }
-        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
-        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
-        /// <code>true</code>. </p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
-        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
-        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
-        /// <code>true</code>. </p>
+        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_multi_az(input);
             self
         }
         /// <p>The engine version number of the replication instance.</p>
-        /// <p>If an engine version number is not specified when a replication
-        /// instance is created, the default is the latest engine version available.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        /// <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The engine version number of the replication instance.</p>
-        /// <p>If an engine version number is not specified when a replication
-        /// instance is created, the default is the latest engine version available.</p>
+        /// <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1992,20 +1711,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine_version(input);
             self
         }
-        /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
-        /// replication instance during the maintenance window. This parameter defaults to
-        /// <code>true</code>.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        /// <p>A value that indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window. This parameter defaults to <code>true</code>.</p>
+        /// <p>Default: <code>true</code> </p>
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
-        /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
-        /// replication instance during the maintenance window. This parameter defaults to
-        /// <code>true</code>.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>A value that indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window. This parameter defaults to <code>true</code>.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
@@ -2015,8 +1728,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the replication instance.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags to be assigned to the replication instance.</p>
@@ -2027,58 +1740,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>An KMS key identifier that is used to encrypt the data on the replication
-        /// instance.</p>
-        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-        /// DMS uses your default encryption key.</p>
-        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
-        /// different default encryption key for each Amazon Web Services Region.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        /// <p>An KMS key identifier that is used to encrypt the data on the replication instance.</p>
+        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>An KMS key identifier that is used to encrypt the data on the replication
-        /// instance.</p>
-        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-        /// DMS uses your default encryption key.</p>
-        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
-        /// different default encryption key for each Amazon Web Services Region.</p>
+        /// <p>An KMS key identifier that is used to encrypt the data on the replication instance.</p>
+        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p> Specifies the accessibility options for the replication instance. A value of
-        /// <code>true</code> represents an instance with a public IP address. A value of
-        /// <code>false</code> represents an instance with a private IP address. The default value
-        /// is <code>true</code>. </p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(inp);
+        /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
-        /// <p> Specifies the accessibility options for the replication instance. A value of
-        /// <code>true</code> represents an instance with a public IP address. A value of
-        /// <code>false</code> represents an instance with a private IP address. The default value
-        /// is <code>true</code>. </p>
+        /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_publicly_accessible(input);
             self
         }
-        /// <p>A list of custom DNS name servers supported for the replication instance to access your
-        /// on-premise source or target database. This list overrides the default name servers
-        /// supported by the replication instance. You can specify a comma-separated list of internet
-        /// addresses for up to four on-premise DNS name servers. For example:
-        /// <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
-        /// </p>
-        pub fn dns_name_servers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dns_name_servers(inp);
+        /// <p>A list of custom DNS name servers supported for the replication instance to access your on-premise source or target database. This list overrides the default name servers supported by the replication instance. You can specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
+        pub fn dns_name_servers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dns_name_servers(input.into());
             self
         }
-        /// <p>A list of custom DNS name servers supported for the replication instance to access your
-        /// on-premise source or target database. This list overrides the default name servers
-        /// supported by the replication instance. You can specify a comma-separated list of internet
-        /// addresses for up to four on-premise DNS name servers. For example:
-        /// <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
-        /// </p>
+        /// <p>A list of custom DNS name servers supported for the replication instance to access your on-premise source or target database. This list overrides the default name servers supported by the replication instance. You can specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
         pub fn set_dns_name_servers(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2086,28 +1777,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dns_name_servers(input);
             self
         }
-        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-        /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-        /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-        /// value might result in the <code>EndpointArn</code> value
-        /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-        /// value for the end of <code>EndpointArn</code>.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
             self
         }
-        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-        /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-        /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-        /// value might result in the <code>EndpointArn</code> value
-        /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-        /// value for the end of <code>EndpointArn</code>.</p>
+        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2119,9 +1794,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateReplicationSubnetGroup`.
     ///
     /// <p>Creates a replication subnet group given a list of the subnet IDs in a VPC.</p>
-    /// <p>The VPC needs to have at least one subnet in at least two availability zones in the Amazon Web Services Region, otherwise the
-    /// service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The VPC needs to have at least one subnet in at least two availability zones in the Amazon Web Services Region, otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2166,10 +1840,10 @@ pub mod fluent_builders {
                 crate::input::CreateReplicationSubnetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2177,25 +1851,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name for the replication subnet group. This value is stored as a lowercase
-        /// string.</p>
-        /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces,
-        /// underscores, or hyphens. Must not be "default".</p>
-        /// <p>Example: <code>mySubnetgroup</code>
-        /// </p>
+        /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
+        /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+        /// <p>Example: <code>mySubnetgroup</code> </p>
         pub fn replication_subnet_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_subnet_group_identifier(inp);
+            self.inner = self.inner.replication_subnet_group_identifier(input.into());
             self
         }
-        /// <p>The name for the replication subnet group. This value is stored as a lowercase
-        /// string.</p>
-        /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces,
-        /// underscores, or hyphens. Must not be "default".</p>
-        /// <p>Example: <code>mySubnetgroup</code>
-        /// </p>
+        /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
+        /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+        /// <p>Example: <code>mySubnetgroup</code> </p>
         pub fn set_replication_subnet_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2206,9 +1874,11 @@ pub mod fluent_builders {
         /// <p>The description for the subnet group.</p>
         pub fn replication_subnet_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_subnet_group_description(inp);
+            self.inner = self
+                .inner
+                .replication_subnet_group_description(input.into());
             self
         }
         /// <p>The description for the subnet group.</p>
@@ -2224,8 +1894,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
@@ -2241,8 +1911,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the subnet group.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags to be assigned to the subnet group.</p>
@@ -2257,7 +1927,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateReplicationTask`.
     ///
     /// <p>Creates a replication task using the specified parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2302,10 +1972,10 @@ pub mod fluent_builders {
                 crate::input::CreateReplicationTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2316,32 +1986,23 @@ pub mod fluent_builders {
         /// <p>An identifier for the replication task.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
+        /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
-        pub fn replication_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_identifier(inp);
+        pub fn replication_task_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_task_identifier(input.into());
             self
         }
         /// <p>An identifier for the replication task.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
+        /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
         pub fn set_replication_task_identifier(
             mut self,
@@ -2351,8 +2012,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
-        pub fn source_endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_endpoint_arn(inp);
+        pub fn source_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_endpoint_arn(input.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
@@ -2364,8 +2025,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.</p>
-        pub fn target_endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_endpoint_arn(inp);
+        pub fn target_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_endpoint_arn(input.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.</p>
@@ -2377,8 +2038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
@@ -2389,14 +2050,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_instance_arn(input);
             self
         }
-        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
-        /// </p>
-        pub fn migration_type(mut self, inp: crate::model::MigrationTypeValue) -> Self {
-            self.inner = self.inner.migration_type(inp);
+        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
+        pub fn migration_type(mut self, input: crate::model::MigrationTypeValue) -> Self {
+            self.inner = self.inner.migration_type(input);
             self
         }
-        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
-        /// </p>
+        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
         pub fn set_migration_type(
             mut self,
             input: std::option::Option<crate::model::MigrationTypeValue>,
@@ -2404,18 +2063,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_migration_type(input);
             self
         }
-        /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-        /// Mapping to Specify Task Settings</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
-        pub fn table_mappings(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_mappings(inp);
+        /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn table_mappings(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_mappings(input.into());
             self
         }
-        /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-        /// Mapping to Specify Task Settings</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_table_mappings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2423,16 +2076,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_table_mappings(input);
             self
         }
-        /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task
-        /// Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn replication_task_settings(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_settings(inp);
+        /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn replication_task_settings(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_settings(input.into());
             self
         }
-        /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task
-        /// Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_replication_task_settings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2440,17 +2089,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_task_settings(input);
             self
         }
-        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-        /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-        pub fn cdc_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.cdc_start_time(inp);
+        pub fn cdc_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.cdc_start_time(input);
             self
         }
-        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-        /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn set_cdc_start_time(
             mut self,
@@ -2459,39 +2104,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cdc_start_time(input);
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
         /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-        /// <p>Checkpoint Example: --cdc-start-position
-        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-        /// <note>
-        /// <p>When you use this task setting with a source PostgreSQL database, a logical
-        /// replication slot should already be created and associated with the source endpoint. You
-        /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-        /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for DMS</a>.</p>
+        /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+        /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
         /// </note>
-        pub fn cdc_start_position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cdc_start_position(inp);
+        pub fn cdc_start_position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cdc_start_position(input.into());
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
         /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-        /// <p>Checkpoint Example: --cdc-start-position
-        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-        /// <note>
-        /// <p>When you use this task setting with a source PostgreSQL database, a logical
-        /// replication slot should already be created and associated with the source endpoint. You
-        /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-        /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for DMS</a>.</p>
+        /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+        /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
         /// </note>
         pub fn set_cdc_start_position(
             mut self,
@@ -2500,16 +2129,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cdc_start_position(input);
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-        /// either server time or commit time.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
-        pub fn cdc_stop_position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cdc_stop_position(inp);
+        pub fn cdc_stop_position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cdc_stop_position(input.into());
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-        /// either server time or commit time.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
         pub fn set_cdc_stop_position(
@@ -2524,8 +2151,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the replication task.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>One or more tags to be assigned to the replication task.</p>
@@ -2536,44 +2163,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
-        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn task_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_data(inp);
+        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn task_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_data(input.into());
             self
         }
-        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
-        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_task_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_data(input);
             self
         }
-        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-        /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-        /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-        /// value might result in the <code>EndpointArn</code> value
-        /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-        /// value for the end of <code>EndpointArn</code>.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(inp);
+        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
             self
         }
-        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-        /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-        /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-        /// value might result in the <code>EndpointArn</code> value
-        /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-        /// value for the end of <code>EndpointArn</code>.</p>
+        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2585,7 +2190,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCertificate`.
     ///
     /// <p>Deletes the specified certificate. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2630,10 +2235,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCertificateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2642,8 +2247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
@@ -2658,7 +2263,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnection`.
     ///
     /// <p>Deletes the connection between a replication instance and an endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2703,10 +2308,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2715,8 +2320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -2725,8 +2330,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -2740,13 +2345,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEndpoint`.
     ///
-    /// <p>Deletes the specified endpoint.</p>
-    /// <note>
-    /// <p>All tasks associated with the endpoint must be deleted before you can delete the
-    /// endpoint.</p>
+    /// <p>Deletes the specified endpoint.</p> <note>
+    /// <p>All tasks associated with the endpoint must be deleted before you can delete the endpoint.</p>
     /// </note>
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2791,10 +2394,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2803,8 +2406,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -2816,7 +2419,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEventSubscription`.
     ///
     /// <p> Deletes an DMS event subscription. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2861,10 +2464,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEventSubscriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2873,8 +2476,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DMS event notification subscription to be deleted.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the DMS event notification subscription to be deleted.</p>
@@ -2888,13 +2491,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteReplicationInstance`.
     ///
-    /// <p>Deletes the specified replication instance.</p>
-    /// <note>
-    /// <p>You must delete any migration tasks that are associated with the replication instance
-    /// before you can delete it.</p>
+    /// <p>Deletes the specified replication instance.</p> <note>
+    /// <p>You must delete any migration tasks that are associated with the replication instance before you can delete it.</p>
     /// </note>
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2939,10 +2540,10 @@ pub mod fluent_builders {
                 crate::input::DeleteReplicationInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2951,8 +2552,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
@@ -2967,7 +2568,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReplicationSubnetGroup`.
     ///
     /// <p>Deletes a subnet group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3012,10 +2613,10 @@ pub mod fluent_builders {
                 crate::input::DeleteReplicationSubnetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3026,9 +2627,9 @@ pub mod fluent_builders {
         /// <p>The subnet group name of the replication instance.</p>
         pub fn replication_subnet_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_subnet_group_identifier(inp);
+            self.inner = self.inner.replication_subnet_group_identifier(input.into());
             self
         }
         /// <p>The subnet group name of the replication instance.</p>
@@ -3043,7 +2644,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReplicationTask`.
     ///
     /// <p>Deletes the specified replication task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3088,10 +2689,10 @@ pub mod fluent_builders {
                 crate::input::DeleteReplicationTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3100,8 +2701,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
@@ -3116,10 +2717,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReplicationTaskAssessmentRun`.
     ///
     /// <p>Deletes the record of a single premigration assessment run.</p>
-    /// <p>This operation removes all metadata that DMS maintains about this assessment run.
-    /// However, the operation leaves untouched all information about this assessment run that is
-    /// stored in your Amazon S3 bucket.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation removes all metadata that DMS maintains about this assessment run. However, the operation leaves untouched all information about this assessment run that is stored in your Amazon S3 bucket.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationTaskAssessmentRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3166,10 +2765,10 @@ pub mod fluent_builders {
                 crate::input::DeleteReplicationTaskAssessmentRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3180,9 +2779,9 @@ pub mod fluent_builders {
         /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
         pub fn replication_task_assessment_run_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_task_assessment_run_arn(inp);
+            self.inner = self.inner.replication_task_assessment_run_arn(input.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
@@ -3196,14 +2795,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccountAttributes`.
     ///
-    /// <p>Lists all of the DMS attributes for a customer account. These attributes include DMS
-    /// quotas for the account and a unique account identifier in a particular DMS region. DMS
-    /// quotas include a list of resource quotas supported by the account, such as the number of
-    /// replication instances allowed. The description for each resource quota, includes the quota
-    /// name, current usage toward that quota, and the quota's maximum value. DMS uses the unique
-    /// account identifier to name each artifact used by DMS in the given region.</p>
+    /// <p>Lists all of the DMS attributes for a customer account. These attributes include DMS quotas for the account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas supported by the account, such as the number of replication instances allowed. The description for each resource quota, includes the quota name, current usage toward that quota, and the quota's maximum value. DMS uses the unique account identifier to name each artifact used by DMS in the given region.</p>
     /// <p>This command does not take any parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3248,10 +2842,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAccountAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3262,22 +2856,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeApplicableIndividualAssessments`.
     ///
-    /// <p>Provides a list of individual assessments that you can specify for a new premigration
-    /// assessment run, given one or more parameters.</p>
-    /// <p>If you specify an existing migration task, this operation provides the default individual
-    /// assessments you can specify for that task. Otherwise, the specified parameters model elements
-    /// of a possible migration task on which to base a premigration assessment run.</p>
-    /// <p>To use these migration task modeling parameters, you must specify an existing replication instance,
-    /// a source database engine, a target database engine, and a migration type. This combination of
-    /// parameters potentially limits the default individual assessments available for an assessment run
-    /// created for a corresponding migration task.</p>
-    /// <p>If you specify no parameters, this operation provides a list of all possible individual assessments
-    /// that you can specify for an assessment run. If you specify any one of the task modeling parameters, you must
-    /// specify all of them or the operation cannot provide a list of individual assessments.
-    /// The only parameter that you can specify alone is for an existing migration task. The specified task
-    /// definition then determines the default list of individual assessments that you can specify in an
-    /// assessment run for the task.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides a list of individual assessments that you can specify for a new premigration assessment run, given one or more parameters.</p>
+    /// <p>If you specify an existing migration task, this operation provides the default individual assessments you can specify for that task. Otherwise, the specified parameters model elements of a possible migration task on which to base a premigration assessment run.</p>
+    /// <p>To use these migration task modeling parameters, you must specify an existing replication instance, a source database engine, a target database engine, and a migration type. This combination of parameters potentially limits the default individual assessments available for an assessment run created for a corresponding migration task.</p>
+    /// <p>If you specify no parameters, this operation provides a list of all possible individual assessments that you can specify for an assessment run. If you specify any one of the task modeling parameters, you must specify all of them or the operation cannot provide a list of individual assessments. The only parameter that you can specify alone is for an existing migration task. The specified task definition then determines the default list of individual assessments that you can specify in an assessment run for the task.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicableIndividualAssessments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3324,10 +2907,10 @@ pub mod fluent_builders {
                 crate::input::DescribeApplicableIndividualAssessmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3335,14 +2918,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base
-        /// the default list of individual assessments.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeApplicableIndividualAssessmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeApplicableIndividualAssessmentsPaginator<C, M, R> {
+            crate::paginator::DescribeApplicableIndividualAssessmentsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
+        pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base
-        /// the default list of individual assessments.</p>
+        /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
         pub fn set_replication_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3350,14 +2942,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_task_arn(input);
             self
         }
-        /// <p>ARN of a replication instance on which you want to base the default list of individual
-        /// assessments.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
+        pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_arn(input.into());
             self
         }
-        /// <p>ARN of a replication instance on which you want to base the default list of individual
-        /// assessments.</p>
+        /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
         pub fn set_replication_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3366,8 +2956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
-        pub fn source_engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_engine_name(inp);
+        pub fn source_engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_engine_name(input.into());
             self
         }
         /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
@@ -3379,8 +2969,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
-        pub fn target_engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_engine_name(inp);
+        pub fn target_engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_engine_name(input.into());
             self
         }
         /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
@@ -3392,8 +2982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the migration type that each provided individual assessment must support.</p>
-        pub fn migration_type(mut self, inp: crate::model::MigrationTypeValue) -> Self {
-            self.inner = self.inner.migration_type(inp);
+        pub fn migration_type(mut self, input: crate::model::MigrationTypeValue) -> Self {
+            self.inner = self.inner.migration_type(input);
             self
         }
         /// <p>Name of the migration type that each provided individual assessment must support.</p>
@@ -3404,30 +2994,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_migration_type(input);
             self
         }
-        /// <p>Maximum number of records to include in the response. If more records exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        /// <p>Maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>Maximum number of records to include in the response. If more records exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved.</p>
+        /// <p>Maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p>Optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>Optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>Optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p>Optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -3436,7 +3018,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCertificates`.
     ///
     /// <p>Provides a description of the certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3481,10 +3063,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCertificatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3492,18 +3074,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeCertificatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeCertificatesPaginator<C, M, R> {
+            crate::paginator::DescribeCertificatesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters applied to the certificates described in the form of key-value pairs.
-        /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Filters applied to the certificates described in the form of key-value pairs. Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters applied to the certificates described in the form of key-value pairs.
-        /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
+        /// <p>Filters applied to the certificates described in the form of key-value pairs. Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -3511,32 +3097,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 10</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 10</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -3544,9 +3122,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeConnections`.
     ///
-    /// <p>Describes the status of the connections that have been made between the replication
-    /// instance and an endpoint. Connections are created when you test an endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the status of the connections that have been made between the replication instance and an endpoint. Connections are created when you test an endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3591,10 +3168,10 @@ pub mod fluent_builders {
                 crate::input::DescribeConnectionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3602,14 +3179,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeConnectionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeConnectionsPaginator<C, M, R> {
+            crate::paginator::DescribeConnectionsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters applied to the connection.</p>
         /// <p>Valid filter names: endpoint-arn | replication-instance-arn</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The filters applied to the connection.</p>
@@ -3621,34 +3204,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -3657,7 +3232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEndpoints`.
     ///
     /// <p>Returns information about the endpoints for your account in the current region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3702,10 +3277,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEndpointsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3713,14 +3288,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEndpointsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeEndpointsPaginator<C, M, R> {
+            crate::paginator::DescribeEndpointsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to the endpoints.</p>
         /// <p>Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to the endpoints.</p>
@@ -3732,34 +3313,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -3767,9 +3340,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEndpointSettings`.
     ///
-    /// <p>Returns information about the possible endpoint settings available
-    /// when you create an endpoint for a specific database engine.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about the possible endpoint settings available when you create an endpoint for a specific database engine.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpointSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3814,10 +3386,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEndpointSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3825,9 +3397,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEndpointSettingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeEndpointSettingsPaginator<C, M, R> {
+            crate::paginator::DescribeEndpointSettingsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The databse engine used for your source or target endpoint.</p>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_name(inp);
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_name(input.into());
             self
         }
         /// <p>The databse engine used for your source or target endpoint.</p>
@@ -3835,28 +3415,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine_name(input);
             self
         }
-        /// <p>The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response
-        /// so that the remaining results can be retrieved.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response
-        /// so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
-        /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
-        /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -3865,7 +3439,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeEndpointTypes`.
     ///
     /// <p>Returns information about the type of endpoints available.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpointTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3910,10 +3484,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEndpointTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3921,14 +3495,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEndpointTypesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeEndpointTypesPaginator<C, M, R> {
+            crate::paginator::DescribeEndpointTypesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to the endpoint types.</p>
         /// <p>Valid filter names: engine-name | endpoint-type</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to the endpoint types.</p>
@@ -3940,34 +3520,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -3975,12 +3547,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventCategories`.
     ///
-    /// <p>Lists categories for all event source types, or, if specified, for a specified source
-    /// type. You can see a list of the event categories and source types in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events
-    /// and Notifications</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of the event categories and source types in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventCategories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4025,10 +3593,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEventCategoriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4038,8 +3606,8 @@ pub mod fluent_builders {
         }
         /// <p> The type of DMS resource that generates events. </p>
         /// <p>Valid values: replication-instance | replication-task</p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input.into());
             self
         }
         /// <p> The type of DMS resource that generates events. </p>
@@ -4053,8 +3621,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to the event categories.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to the event categories.</p>
@@ -4068,12 +3636,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEvents`.
     ///
-    /// <p> Lists events for a given source identifier and source type. You can also specify a
-    /// start and end time. For more information on DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
-    /// Notifications</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Lists events for a given source identifier and source type. You can also specify a start and end time. For more information on DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4118,10 +3682,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEventsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4129,9 +3693,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEventsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeEventsPaginator<C, M, R> {
+            crate::paginator::DescribeEventsPaginator::new(self.handle, self.inner)
+        }
         /// <p> The identifier of an event source.</p>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(inp);
+        pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(input.into());
             self
         }
         /// <p> The identifier of an event source.</p>
@@ -4144,8 +3714,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of DMS resource that generates events.</p>
         /// <p>Valid values: replication-instance | replication-task</p>
-        pub fn source_type(mut self, inp: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
         /// <p>The type of DMS resource that generates events.</p>
@@ -4158,8 +3728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start time for the events to be listed.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start time for the events to be listed.</p>
@@ -4171,8 +3741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end time for the events to be listed.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end time for the events to be listed.</p>
@@ -4184,8 +3754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The duration of the events to be listed.</p>
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration(inp);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration(input);
             self
         }
         /// <p>The duration of the events to be listed.</p>
@@ -4198,8 +3768,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
         ///
         /// <p>A list of event categories for the source type that you've chosen.</p>
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_categories(inp);
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_categories(input.into());
             self
         }
         /// <p>A list of event categories for the source type that you've chosen.</p>
@@ -4215,8 +3785,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
@@ -4227,34 +3797,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -4262,13 +3824,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEventSubscriptions`.
     ///
-    /// <p>Lists all the event subscriptions for a customer account. The description of a
-    /// subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>,
-    /// <code>CustomerID</code>, <code>SourceType</code>, <code>SourceID</code>,
-    /// <code>CreationTime</code>, and <code>Status</code>. </p>
-    /// <p>If you specify <code>SubscriptionName</code>, this action lists the description for that
-    /// subscription.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all the event subscriptions for a customer account. The description of a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>. </p>
+    /// <p>If you specify <code>SubscriptionName</code>, this action lists the description for that subscription.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEventSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4313,10 +3871,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEventSubscriptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4324,9 +3882,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEventSubscriptionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeEventSubscriptionsPaginator<C, M, R> {
+            crate::paginator::DescribeEventSubscriptionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the DMS event subscription to be described.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the DMS event subscription to be described.</p>
@@ -4342,13 +3908,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to event subscriptions.</p>
-        /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Valid filter names: event-subscription-arn | event-subscription-id </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to event subscriptions.</p>
-        /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
+        /// <p>Valid filter names: event-subscription-arn | event-subscription-id </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4356,34 +3922,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -4391,9 +3949,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrderableReplicationInstances`.
     ///
-    /// <p>Returns information about the replication instance types that can be created in the
-    /// specified region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about the replication instance types that can be created in the specified region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrderableReplicationInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4440,10 +3997,10 @@ pub mod fluent_builders {
                 crate::input::DescribeOrderableReplicationInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4451,34 +4008,37 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeOrderableReplicationInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeOrderableReplicationInstancesPaginator<C, M, R> {
+            crate::paginator::DescribeOrderableReplicationInstancesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -4487,7 +4047,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePendingMaintenanceActions`.
     ///
     /// <p>For internal use only</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePendingMaintenanceActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4532,10 +4092,10 @@ pub mod fluent_builders {
                 crate::input::DescribePendingMaintenanceActionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4543,9 +4103,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribePendingMaintenanceActionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribePendingMaintenanceActionsPaginator<C, M, R> {
+            crate::paginator::DescribePendingMaintenanceActionsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -4561,8 +4132,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p></p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p></p>
@@ -4573,32 +4144,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
@@ -4609,7 +4172,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRefreshSchemasStatus`.
     ///
     /// <p>Returns the status of the RefreshSchemas operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRefreshSchemasStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4654,10 +4217,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRefreshSchemasStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4666,8 +4229,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -4678,9 +4241,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeReplicationInstances`.
     ///
-    /// <p>Returns information about replication instances for your account in the current
-    /// region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about replication instances for your account in the current region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4725,10 +4287,10 @@ pub mod fluent_builders {
                 crate::input::DescribeReplicationInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4736,20 +4298,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReplicationInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeReplicationInstancesPaginator<C, M, R> {
+            crate::paginator::DescribeReplicationInstancesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to replication instances.</p>
-        /// <p>Valid filter names: replication-instance-arn | replication-instance-id |
-        /// replication-instance-class | engine-version</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to replication instances.</p>
-        /// <p>Valid filter names: replication-instance-arn | replication-instance-id |
-        /// replication-instance-class | engine-version</p>
+        /// <p>Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4757,34 +4325,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -4793,7 +4353,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReplicationInstanceTaskLogs`.
     ///
     /// <p>Returns information about the task logs for the specified task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationInstanceTaskLogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4840,10 +4400,10 @@ pub mod fluent_builders {
                 crate::input::DescribeReplicationInstanceTaskLogsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4851,9 +4411,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReplicationInstanceTaskLogsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeReplicationInstanceTaskLogsPaginator<C, M, R> {
+            crate::paginator::DescribeReplicationInstanceTaskLogsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -4864,34 +4435,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_instance_arn(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -4900,7 +4463,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReplicationSubnetGroups`.
     ///
     /// <p>Returns information about the replication subnet groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationSubnetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4945,10 +4508,10 @@ pub mod fluent_builders {
                 crate::input::DescribeReplicationSubnetGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4956,14 +4519,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReplicationSubnetGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeReplicationSubnetGroupsPaginator<C, M, R> {
+            crate::paginator::DescribeReplicationSubnetGroupsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to replication subnet groups.</p>
         /// <p>Valid filter names: replication-subnet-group-id</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to replication subnet groups.</p>
@@ -4975,34 +4546,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -5010,13 +4573,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeReplicationTaskAssessmentResults`.
     ///
-    /// <p>Returns the task assessment results from the Amazon S3 bucket that DMS creates in your
-    /// Amazon Web Services account.  This action always returns the
-    /// latest results.</p>
-    /// <p>For more information about DMS task assessments, see  
-    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating a task assessment report</a>
-    /// in the <i>Database Migration Service User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the task assessment results from the Amazon S3 bucket that DMS creates in your Amazon Web Services account. This action always returns the latest results.</p>
+    /// <p>For more information about DMS task assessments, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating a task assessment report</a> in the <i>Database Migration Service User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationTaskAssessmentResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5063,10 +4622,10 @@ pub mod fluent_builders {
                 crate::input::DescribeReplicationTaskAssessmentResultsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5074,16 +4633,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input
-        /// parameter is specified, the API returns only one result and ignore the values of the
-        /// <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReplicationTaskAssessmentResultsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeReplicationTaskAssessmentResultsPaginator<C, M, R> {
+            crate::paginator::DescribeReplicationTaskAssessmentResultsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
+        pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input
-        /// parameter is specified, the API returns only one result and ignore the values of the
-        /// <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
         pub fn set_replication_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5091,34 +4657,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_task_arn(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -5126,16 +4684,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeReplicationTaskAssessmentRuns`.
     ///
-    /// <p>Returns a paginated list of premigration assessment runs based on filter
-    /// settings.</p>
-    /// <p>These filter settings can specify a combination of premigration assessment runs,
-    /// migration tasks, replication instances, and assessment run status values.</p>
-    /// <note>
-    /// <p>This operation doesn't return information about individual assessments. For this
-    /// information, see the <code>DescribeReplicationTaskIndividualAssessments</code>
-    /// operation. </p>
+    /// <p>Returns a paginated list of premigration assessment runs based on filter settings.</p>
+    /// <p>These filter settings can specify a combination of premigration assessment runs, migration tasks, replication instances, and assessment run status values.</p> <note>
+    /// <p>This operation doesn't return information about individual assessments. For this information, see the <code>DescribeReplicationTaskIndividualAssessments</code> operation. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationTaskAssessmentRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5182,10 +4735,10 @@ pub mod fluent_builders {
                 crate::input::DescribeReplicationTaskAssessmentRunsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5193,22 +4746,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReplicationTaskAssessmentRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeReplicationTaskAssessmentRunsPaginator<C, M, R> {
+            crate::paginator::DescribeReplicationTaskAssessmentRunsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to the premigration assessment runs described in the form of key-value pairs.</p>
-        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>,
-        /// <code>replication-instance-arn</code>, <code>status</code>
-        /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>replication-instance-arn</code>, <code>status</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to the premigration assessment runs described in the form of key-value pairs.</p>
-        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>,
-        /// <code>replication-instance-arn</code>, <code>status</code>
-        /// </p>
+        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>replication-instance-arn</code>, <code>status</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5216,30 +4776,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of records to include in the response. If more records exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of records to include in the response. If more records exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -5248,9 +4800,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReplicationTaskIndividualAssessments`.
     ///
     /// <p>Returns a paginated list of individual assessments based on filter settings.</p>
-    /// <p>These filter settings can specify a combination of premigration assessment runs,
-    /// migration tasks, and assessment status values.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>These filter settings can specify a combination of premigration assessment runs, migration tasks, and assessment status values.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationTaskIndividualAssessments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5297,10 +4848,10 @@ pub mod fluent_builders {
                 crate::input::DescribeReplicationTaskIndividualAssessmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5308,24 +4859,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReplicationTaskIndividualAssessmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeReplicationTaskIndividualAssessmentsPaginator<C, M, R>
+        {
+            crate::paginator::DescribeReplicationTaskIndividualAssessmentsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters applied to the individual assessments described in the form of key-value
-        /// pairs.</p>
-        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>,
-        /// <code>replication-task-arn</code>, <code>status</code>
-        /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
+        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters applied to the individual assessments described in the form of key-value
-        /// pairs.</p>
-        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>,
-        /// <code>replication-task-arn</code>, <code>status</code>
-        /// </p>
+        /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
+        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5333,30 +4890,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of records to include in the response. If more records exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of records to include in the response. If more records exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -5364,9 +4913,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeReplicationTasks`.
     ///
-    /// <p>Returns information about replication tasks for your account in the current
-    /// region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about replication tasks for your account in the current region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReplicationTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5411,10 +4959,10 @@ pub mod fluent_builders {
                 crate::input::DescribeReplicationTasksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5422,20 +4970,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReplicationTasksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeReplicationTasksPaginator<C, M, R> {
+            crate::paginator::DescribeReplicationTasksPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to replication tasks.</p>
-        /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type |
-        /// endpoint-arn | replication-instance-arn</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to replication tasks.</p>
-        /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type |
-        /// endpoint-arn | replication-instance-arn</p>
+        /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5443,48 +4997,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>An option to set to avoid returning information about settings. Use this to reduce
-        /// overhead when setting information is too large. To use this option, choose
-        /// <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
-        pub fn without_settings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.without_settings(inp);
+        /// <p>An option to set to avoid returning information about settings. Use this to reduce overhead when setting information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
+        pub fn without_settings(mut self, input: bool) -> Self {
+            self.inner = self.inner.without_settings(input);
             self
         }
-        /// <p>An option to set to avoid returning information about settings. Use this to reduce
-        /// overhead when setting information is too large. To use this option, choose
-        /// <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
+        /// <p>An option to set to avoid returning information about settings. Use this to reduce overhead when setting information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
         pub fn set_without_settings(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_without_settings(input);
             self
@@ -5493,9 +5035,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSchemas`.
     ///
     /// <p>Returns information about the schema for the specified endpoint.</p>
-    ///
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5540,10 +5081,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSchemasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5551,9 +5092,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeSchemasPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeSchemasPaginator<C, M, R> {
+            crate::paginator::DescribeSchemasPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -5561,34 +5108,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_arn(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -5596,12 +5135,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTableStatistics`.
     ///
-    /// <p>Returns table statistics on the database migration task, including table name, rows
-    /// inserted, rows updated, and rows deleted.</p>
-    /// <p>Note that the "last updated" column the DMS console only indicates the time that DMS
-    /// last updated the table statistics record for a table. It does not indicate the time of the
-    /// last update to the table.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted.</p>
+    /// <p>Note that the "last updated" column the DMS console only indicates the time that DMS last updated the table statistics record for a table. It does not indicate the time of the last update to the table.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTableStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5646,10 +5182,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTableStatisticsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5657,9 +5193,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeTableStatisticsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeTableStatisticsPaginator<C, M, R> {
+            crate::paginator::DescribeTableStatisticsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -5670,34 +5212,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_task_arn(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 500.</p>
-        pub fn max_records(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_records(inp);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 500.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -5708,16 +5242,14 @@ pub mod fluent_builders {
         ///
         /// <p>Filters applied to table statistics.</p>
         /// <p>Valid filter names: schema-name | table-name | table-state</p>
-        /// <p>A combination of filters creates an AND condition where each record matches all
-        /// specified filters.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>A combination of filters creates an AND condition where each record matches all specified filters.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters applied to table statistics.</p>
         /// <p>Valid filter names: schema-name | table-name | table-state</p>
-        /// <p>A combination of filters creates an AND condition where each record matches all
-        /// specified filters.</p>
+        /// <p>A combination of filters creates an AND condition where each record matches all specified filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5729,7 +5261,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportCertificate`.
     ///
     /// <p>Uploads the specified certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5774,10 +5306,10 @@ pub mod fluent_builders {
                 crate::input::ImportCertificateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5785,16 +5317,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and
-        /// must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
-        /// contain two consecutive hyphens.</p>
-        pub fn certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_identifier(inp);
+        /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
+        pub fn certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_identifier(input.into());
             self
         }
-        /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and
-        /// must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
-        /// contain two consecutive hyphens.</p>
+        /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
         pub fn set_certificate_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5803,8 +5331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
-        pub fn certificate_pem(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_pem(inp);
+        pub fn certificate_pem(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_pem(input.into());
             self
         }
         /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
@@ -5815,18 +5343,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_pem(input);
             self
         }
-        /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
-        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
-        /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
-        /// </p>
-        pub fn certificate_wallet(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.certificate_wallet(inp);
+        /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+        /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
+        pub fn certificate_wallet(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.certificate_wallet(input);
             self
         }
-        /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
-        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
-        /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
-        /// </p>
+        /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+        /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
         pub fn set_certificate_wallet(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -5839,8 +5363,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the certificate.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags associated with the certificate.</p>
@@ -5854,12 +5378,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists all metadata tags attached to an DMS resource, including
-    /// replication instance, endpoint, security group, and migration task.
-    /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
-    /// <code>Tag</code>
-    /// </a> data type description.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all metadata tags attached to an DMS resource, including replication instance, endpoint, security group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type description.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5904,10 +5424,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5915,16 +5435,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to
-        /// list tags for. This returns a list of keys (names of tags) created for the resource and
-        /// their associated tag values.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to list tags for. This returns a list of keys (names of tags) created for the resource and their associated tag values.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to
-        /// list tags for. This returns a list of keys (names of tags) created for the resource and
-        /// their associated tag values.</p>
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to list tags for. This returns a list of keys (names of tags) created for the resource and their associated tag values.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -5933,18 +5449,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_arn_list`](Self::set_resource_arn_list).
         ///
-        /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This
-        /// returns a list of keys (tag names) and their associated tag values. It also returns each
-        /// tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which
-        /// each listed tag is created. </p>
-        pub fn resource_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn_list(inp);
+        /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This returns a list of keys (tag names) and their associated tag values. It also returns each tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which each listed tag is created. </p>
+        pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn_list(input.into());
             self
         }
-        /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This
-        /// returns a list of keys (tag names) and their associated tag values. It also returns each
-        /// tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which
-        /// each listed tag is created. </p>
+        /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This returns a list of keys (tag names) and their associated tag values. It also returns each tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which each listed tag is created. </p>
         pub fn set_resource_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5955,15 +5465,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyEndpoint`.
     ///
-    /// <p>Modifies the specified endpoint.</p>
-    /// <note>
-    /// <p>For a MySQL source or target endpoint, don't explicitly specify the database using
-    /// the <code>DatabaseName</code> request parameter on the <code>ModifyEndpoint</code> API call.
-    /// Specifying <code>DatabaseName</code> when you modify a MySQL endpoint replicates all the
-    /// task tables to this single database. For MySQL endpoints, you specify the database only when
-    /// you specify the schema in the table-mapping rules of the DMS task.</p>
+    /// <p>Modifies the specified endpoint.</p> <note>
+    /// <p>For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on the <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6008,10 +5513,10 @@ pub mod fluent_builders {
                 crate::input::ModifyEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6020,8 +5525,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -6029,16 +5534,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_arn(input);
             self
         }
-        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
-        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
-        /// consecutive hyphens.</p>
-        pub fn endpoint_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_identifier(inp);
+        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
+        pub fn endpoint_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_identifier(input.into());
             self
         }
-        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
-        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
-        /// consecutive hyphens.</p>
+        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
         pub fn set_endpoint_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6046,12 +5547,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_identifier(input);
             self
         }
-        /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
-        pub fn endpoint_type(mut self, inp: crate::model::ReplicationEndpointTypeValue) -> Self {
-            self.inner = self.inner.endpoint_type(inp);
+        /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
+        pub fn endpoint_type(mut self, input: crate::model::ReplicationEndpointTypeValue) -> Self {
+            self.inner = self.inner.endpoint_type(input);
             self
         }
-        /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
+        /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
@@ -6059,33 +5560,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_type(input);
             self
         }
-        /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
-        /// include
-        /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
-        /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
-        /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-        /// <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_name(inp);
+        /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_name(input.into());
             self
         }
-        /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
-        /// include
-        /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
-        /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
-        /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-        /// <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+        /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
         pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_engine_name(input);
             self
         }
         /// <p>The user name to be used to login to the endpoint database.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name to be used to login to the endpoint database.</p>
@@ -6094,8 +5581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password to be used to login to the endpoint database.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(inp);
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password to be used to login to the endpoint database.</p>
@@ -6104,8 +5591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the server where the endpoint database resides.</p>
-        pub fn server_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(inp);
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>The name of the server where the endpoint database resides.</p>
@@ -6114,8 +5601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port used by the endpoint database.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port used by the endpoint database.</p>
@@ -6124,8 +5611,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
@@ -6136,14 +5623,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>Additional attributes associated with the connection. To reset this parameter, pass the
-        /// empty string ("") as an argument.</p>
-        pub fn extra_connection_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extra_connection_attributes(inp);
+        /// <p>Additional attributes associated with the connection. To reset this parameter, pass the empty string ("") as an argument.</p>
+        pub fn extra_connection_attributes(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.extra_connection_attributes(input.into());
             self
         }
-        /// <p>Additional attributes associated with the connection. To reset this parameter, pass the
-        /// empty string ("") as an argument.</p>
+        /// <p>Additional attributes associated with the connection. To reset this parameter, pass the empty string ("") as an argument.</p>
         pub fn set_extra_connection_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6152,8 +5640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(inp);
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
@@ -6164,12 +5652,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_arn(input);
             self
         }
-        /// <p>The SSL mode used to connect to the endpoint.  The default value is <code>none</code>.</p>
-        pub fn ssl_mode(mut self, inp: crate::model::DmsSslModeValue) -> Self {
-            self.inner = self.inner.ssl_mode(inp);
+        /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
+        pub fn ssl_mode(mut self, input: crate::model::DmsSslModeValue) -> Self {
+            self.inner = self.inner.ssl_mode(input);
             self
         }
-        /// <p>The SSL mode used to connect to the endpoint.  The default value is <code>none</code>.</p>
+        /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
         pub fn set_ssl_mode(
             mut self,
             input: std::option::Option<crate::model::DmsSslModeValue>,
@@ -6177,14 +5665,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ssl_mode(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify
-        /// the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
-        pub fn service_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_access_role_arn(inp);
+        /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+        pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_access_role_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify
-        /// the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+        /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6193,8 +5679,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external table definition.</p>
-        pub fn external_table_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_table_definition(inp);
+        pub fn external_table_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_table_definition(input.into());
             self
         }
         /// <p>The external table definition.</p>
@@ -6205,20 +5691,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_external_table_definition(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
-        /// Data to DynamoDB</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
-        pub fn dynamo_db_settings(mut self, inp: crate::model::DynamoDbSettings) -> Self {
-            self.inner = self.inner.dynamo_db_settings(inp);
+        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn dynamo_db_settings(mut self, input: crate::model::DynamoDbSettings) -> Self {
+            self.inner = self.inner.dynamo_db_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
-        /// Data to DynamoDB</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_dynamo_db_settings(
             mut self,
             input: std::option::Option<crate::model::DynamoDbSettings>,
@@ -6226,20 +5704,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dynamo_db_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-        /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn s3_settings(mut self, inp: crate::model::S3Settings) -> Self {
-            self.inner = self.inner.s3_settings(inp);
+        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn s3_settings(mut self, input: crate::model::S3Settings) -> Self {
+            self.inner = self.inner.s3_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-        /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_s3_settings(
             mut self,
             input: std::option::Option<crate::model::S3Settings>,
@@ -6250,39 +5720,23 @@ pub mod fluent_builders {
         /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
         /// <p>Attributes include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>BucketName - The name of the S3 bucket to use.</p>
-        /// </li>
+        /// <li> <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>
+        /// <li> <p>BucketName - The name of the S3 bucket to use.</p> </li>
         /// </ul>
-        /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string
-        /// ,BucketName=string</code>
-        /// </p>
-        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-        /// "BucketName": "string"} </code>
-        /// </p>
-        pub fn dms_transfer_settings(mut self, inp: crate::model::DmsTransferSettings) -> Self {
-            self.inner = self.inner.dms_transfer_settings(inp);
+        /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p>
+        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
+        pub fn dms_transfer_settings(mut self, input: crate::model::DmsTransferSettings) -> Self {
+            self.inner = self.inner.dms_transfer_settings(input);
             self
         }
         /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
         /// <p>Attributes include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>BucketName - The name of the S3 bucket to use.</p>
-        /// </li>
+        /// <li> <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>
+        /// <li> <p>BucketName - The name of the S3 bucket to use.</p> </li>
         /// </ul>
-        /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string
-        /// ,BucketName=string</code>
-        /// </p>
-        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-        /// "BucketName": "string"} </code>
-        /// </p>
+        /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p>
+        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
         pub fn set_dms_transfer_settings(
             mut self,
             input: std::option::Option<crate::model::DmsTransferSettings>,
@@ -6290,20 +5744,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dms_transfer_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-        /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
-        /// when using MongoDB as a source for Database Migration Service</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn mongo_db_settings(mut self, inp: crate::model::MongoDbSettings) -> Self {
-            self.inner = self.inner.mongo_db_settings(inp);
+        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn mongo_db_settings(mut self, input: crate::model::MongoDbSettings) -> Self {
+            self.inner = self.inner.mongo_db_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-        /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
-        /// when using MongoDB as a source for Database Migration Service</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_mongo_db_settings(
             mut self,
             input: std::option::Option<crate::model::MongoDbSettings>,
@@ -6311,18 +5757,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mongo_db_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
-        /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn kinesis_settings(mut self, inp: crate::model::KinesisSettings) -> Self {
-            self.inner = self.inner.kinesis_settings(inp);
+        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn kinesis_settings(mut self, input: crate::model::KinesisSettings) -> Self {
+            self.inner = self.inner.kinesis_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
-        /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_kinesis_settings(
             mut self,
             input: std::option::Option<crate::model::KinesisSettings>,
@@ -6330,18 +5770,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kinesis_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
-        /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn kafka_settings(mut self, inp: crate::model::KafkaSettings) -> Self {
-            self.inner = self.inner.kafka_settings(inp);
+        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn kafka_settings(mut self, input: crate::model::KafkaSettings) -> Self {
+            self.inner = self.inner.kafka_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
-        /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_kafka_settings(
             mut self,
             input: std::option::Option<crate::model::KafkaSettings>,
@@ -6349,18 +5783,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kafka_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
-        /// the <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn elasticsearch_settings(mut self, inp: crate::model::ElasticsearchSettings) -> Self {
-            self.inner = self.inner.elasticsearch_settings(inp);
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn elasticsearch_settings(
+            mut self,
+            input: crate::model::ElasticsearchSettings,
+        ) -> Self {
+            self.inner = self.inner.elasticsearch_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
-        /// the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_elasticsearch_settings(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchSettings>,
@@ -6368,18 +5799,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_elasticsearch_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
-        /// in the <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn neptune_settings(mut self, inp: crate::model::NeptuneSettings) -> Self {
-            self.inner = self.inner.neptune_settings(inp);
+        /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn neptune_settings(mut self, input: crate::model::NeptuneSettings) -> Self {
+            self.inner = self.inner.neptune_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
-        /// in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_neptune_settings(
             mut self,
             input: std::option::Option<crate::model::NeptuneSettings>,
@@ -6388,8 +5813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
-        pub fn redshift_settings(mut self, inp: crate::model::RedshiftSettings) -> Self {
-            self.inner = self.inner.redshift_settings(inp);
+        pub fn redshift_settings(mut self, input: crate::model::RedshiftSettings) -> Self {
+            self.inner = self.inner.redshift_settings(input);
             self
         }
         /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
@@ -6400,22 +5825,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_redshift_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-        /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
-        /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn postgre_sql_settings(mut self, inp: crate::model::PostgreSqlSettings) -> Self {
-            self.inner = self.inner.postgre_sql_settings(inp);
+        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn postgre_sql_settings(mut self, input: crate::model::PostgreSqlSettings) -> Self {
+            self.inner = self.inner.postgre_sql_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-        /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
-        /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_postgre_sql_settings(
             mut self,
             input: std::option::Option<crate::model::PostgreSqlSettings>,
@@ -6423,22 +5838,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_postgre_sql_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection
-        /// attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra
-        /// connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
-        pub fn my_sql_settings(mut self, inp: crate::model::MySqlSettings) -> Self {
-            self.inner = self.inner.my_sql_settings(inp);
+        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn my_sql_settings(mut self, input: crate::model::MySqlSettings) -> Self {
+            self.inner = self.inner.my_sql_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection
-        /// attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra
-        /// connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_my_sql_settings(
             mut self,
             input: std::option::Option<crate::model::MySqlSettings>,
@@ -6446,22 +5851,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_my_sql_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection
-        /// attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
-        /// Extra connection attributes when using Oracle as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn oracle_settings(mut self, inp: crate::model::OracleSettings) -> Self {
-            self.inner = self.inner.oracle_settings(inp);
+        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn oracle_settings(mut self, input: crate::model::OracleSettings) -> Self {
+            self.inner = self.inner.oracle_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection
-        /// attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
-        /// Extra connection attributes when using Oracle as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_oracle_settings(
             mut self,
             input: std::option::Option<crate::model::OracleSettings>,
@@ -6469,22 +5864,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_oracle_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
-        pub fn sybase_settings(mut self, inp: crate::model::SybaseSettings) -> Self {
-            self.inner = self.inner.sybase_settings(inp);
+        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn sybase_settings(mut self, input: crate::model::SybaseSettings) -> Self {
+            self.inner = self.inner.sybase_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_sybase_settings(
             mut self,
             input: std::option::Option<crate::model::SybaseSettings>,
@@ -6492,25 +5877,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sybase_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-        /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
-        /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn microsoft_sql_server_settings(
             mut self,
-            inp: crate::model::MicrosoftSqlServerSettings,
+            input: crate::model::MicrosoftSqlServerSettings,
         ) -> Self {
-            self.inner = self.inner.microsoft_sql_server_settings(inp);
+            self.inner = self.inner.microsoft_sql_server_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-        /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
-        /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_microsoft_sql_server_settings(
             mut self,
             input: std::option::Option<crate::model::MicrosoftSqlServerSettings>,
@@ -6518,20 +5893,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_microsoft_sql_server_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-        /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
-        pub fn ibm_db2_settings(mut self, inp: crate::model::IbmDb2Settings) -> Self {
-            self.inner = self.inner.ibm_db2_settings(inp);
+        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn ibm_db2_settings(mut self, input: crate::model::IbmDb2Settings) -> Self {
+            self.inner = self.inner.ibm_db2_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-        /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_ibm_db2_settings(
             mut self,
             input: std::option::Option<crate::model::IbmDb2Settings>,
@@ -6539,20 +5906,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ibm_db2_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the
-        /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service
-        /// </a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
-        pub fn doc_db_settings(mut self, inp: crate::model::DocDbSettings) -> Self {
-            self.inner = self.inner.doc_db_settings(inp);
+        /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service </a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn doc_db_settings(mut self, input: crate::model::DocDbSettings) -> Self {
+            self.inner = self.inner.doc_db_settings(input);
             self
         }
-        /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the
-        /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service
-        /// </a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service </a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_doc_db_settings(
             mut self,
             input: std::option::Option<crate::model::DocDbSettings>,
@@ -6561,8 +5920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the Redis target endpoint.</p>
-        pub fn redis_settings(mut self, inp: crate::model::RedisSettings) -> Self {
-            self.inner = self.inner.redis_settings(inp);
+        pub fn redis_settings(mut self, input: crate::model::RedisSettings) -> Self {
+            self.inner = self.inner.redis_settings(input);
             self
         }
         /// <p>Settings in JSON format for the Redis target endpoint.</p>
@@ -6573,59 +5932,31 @@ pub mod fluent_builders {
             self.inner = self.inner.set_redis_settings(input);
             self
         }
-        /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all
-        /// existing endpoint settings with the exact settings that you specify in this call. If this
-        /// attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
+        /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all existing endpoint settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
         /// <ul>
-        /// <li>
-        /// <p>It replaces any endpoint settings that already exist with new values, for settings with the
-        /// same names.</p>
-        /// </li>
-        /// <li>
-        /// <p>It creates new endpoint settings that you specify in the call, for settings with different
-        /// names. </p>
-        /// </li>
+        /// <li> <p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p> </li>
+        /// <li> <p>It creates new endpoint settings that you specify in the call, for settings with different names. </p> </li>
         /// </ul>
-        /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}'
-        /// ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If
-        /// you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the
-        /// same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
-        /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ...
-        /// --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again.
-        /// Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings
-        /// are replaced with the exact settings that you specify. </p>
-        pub fn exact_settings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.exact_settings(inp);
+        /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
+        /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced with the exact settings that you specify. </p>
+        pub fn exact_settings(mut self, input: bool) -> Self {
+            self.inner = self.inner.exact_settings(input);
             self
         }
-        /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all
-        /// existing endpoint settings with the exact settings that you specify in this call. If this
-        /// attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
+        /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all existing endpoint settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
         /// <ul>
-        /// <li>
-        /// <p>It replaces any endpoint settings that already exist with new values, for settings with the
-        /// same names.</p>
-        /// </li>
-        /// <li>
-        /// <p>It creates new endpoint settings that you specify in the call, for settings with different
-        /// names. </p>
-        /// </li>
+        /// <li> <p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p> </li>
+        /// <li> <p>It creates new endpoint settings that you specify in the call, for settings with different names. </p> </li>
         /// </ul>
-        /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}'
-        /// ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If
-        /// you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the
-        /// same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
-        /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ...
-        /// --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again.
-        /// Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings
-        /// are replaced with the exact settings that you specify. </p>
+        /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
+        /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced with the exact settings that you specify. </p>
         pub fn set_exact_settings(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_exact_settings(input);
             self
         }
         /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
-        pub fn gcp_my_sql_settings(mut self, inp: crate::model::GcpMySqlSettings) -> Self {
-            self.inner = self.inner.gcp_my_sql_settings(inp);
+        pub fn gcp_my_sql_settings(mut self, input: crate::model::GcpMySqlSettings) -> Self {
+            self.inner = self.inner.gcp_my_sql_settings(input);
             self
         }
         /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
@@ -6640,7 +5971,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyEventSubscription`.
     ///
     /// <p>Modifies an existing DMS event notification subscription. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyEventSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6685,10 +6016,10 @@ pub mod fluent_builders {
                 crate::input::ModifyEventSubscriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6697,8 +6028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DMS event notification subscription to be modified.</p>
-        pub fn subscription_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(inp);
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the DMS event notification subscription to be modified.</p>
@@ -6709,14 +6040,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subscription_name(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
-        /// The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
-        /// The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6726,8 +6055,8 @@ pub mod fluent_builders {
         }
         /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
         /// <p>Valid values: replication-instance | replication-task</p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(inp);
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input.into());
             self
         }
         /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
@@ -6740,14 +6069,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
         ///
-        /// <p> A list of event categories for a source type that you want to subscribe to. Use the
-        /// <code>DescribeEventCategories</code> action to see a list of event categories. </p>
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_categories(inp);
+        /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_categories(input.into());
             self
         }
-        /// <p> A list of event categories for a source type that you want to subscribe to. Use the
-        /// <code>DescribeEventCategories</code> action to see a list of event categories. </p>
+        /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
         pub fn set_event_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6755,14 +6082,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_categories(input);
             self
         }
-        /// <p> A Boolean value; set to <b>true</b> to activate the
-        /// subscription. </p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enabled(inp);
+        /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
-        /// <p> A Boolean value; set to <b>true</b> to activate the
-        /// subscription. </p>
+        /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enabled(input);
             self
@@ -6770,12 +6095,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyReplicationInstance`.
     ///
-    /// <p>Modifies the replication instance to apply new settings. You can change one or more
-    /// parameters by specifying these parameters and the new values in the request.</p>
+    /// <p>Modifies the replication instance to apply new settings. You can change one or more parameters by specifying these parameters and the new values in the request.</p>
     /// <p>Some settings are applied during the maintenance window.</p>
-    ///
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyReplicationInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6820,10 +6143,10 @@ pub mod fluent_builders {
                 crate::input::ModifyReplicationInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6832,8 +6155,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -6844,46 +6167,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_instance_arn(input);
             self
         }
-        /// <p>The amount of storage (in gigabytes) to be allocated for the replication
-        /// instance.</p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.allocated_storage(inp);
+        /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
             self
         }
-        /// <p>The amount of storage (in gigabytes) to be allocated for the replication
-        /// instance.</p>
+        /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
         pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_allocated_storage(input);
             self
         }
-        /// <p>Indicates whether the changes should be applied immediately or during the next
-        /// maintenance window.</p>
-        pub fn apply_immediately(mut self, inp: bool) -> Self {
-            self.inner = self.inner.apply_immediately(inp);
+        /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_immediately(input);
             self
         }
-        /// <p>Indicates whether the changes should be applied immediately or during the next
-        /// maintenance window.</p>
+        /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_apply_immediately(input);
             self
         }
-        /// <p>The compute and memory capacity of the replication instance as defined for the specified
-        /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-        /// <p>For more information on the settings and capacities for the available replication instance classes, see
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right DMS replication instance for your migration</a>.
-        /// </p>
-        pub fn replication_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_class(inp);
+        /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+        /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
+        pub fn replication_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_class(input.into());
             self
         }
-        /// <p>The compute and memory capacity of the replication instance as defined for the specified
-        /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-        /// <p>For more information on the settings and capacities for the available replication instance classes, see
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right DMS replication instance for your migration</a>.
-        /// </p>
+        /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+        /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
         pub fn set_replication_instance_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6895,14 +6206,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
-        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
-        /// security group must work with the VPC containing the replication instance. </p>
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_security_group_ids(inp);
+        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_security_group_ids(input.into());
             self
         }
-        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
-        /// security group must work with the VPC containing the replication instance. </p>
+        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
         pub fn set_vpc_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6910,24 +6219,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_security_group_ids(input);
             self
         }
-        /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might
-        /// result in an outage. Changing this parameter does not result in an outage, except in the
-        /// following situation, and the change is asynchronously applied as soon as possible. If
-        /// moving this window to the current time, there must be at least 30 minutes between the
-        /// current time and end of the window to ensure pending changes are applied.</p>
+        /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
         /// <p>Default: Uses existing setting</p>
         /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
         /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
         /// <p>Constraints: Must be at least 30 minutes</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(inp);
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
-        /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might
-        /// result in an outage. Changing this parameter does not result in an outage, except in the
-        /// following situation, and the change is asynchronously applied as soon as possible. If
-        /// moving this window to the current time, there must be at least 30 minutes between the
-        /// current time and end of the window to ensure pending changes are applied.</p>
+        /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
         /// <p>Default: Uses existing setting</p>
         /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
         /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
@@ -6939,30 +6243,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_preferred_maintenance_window(input);
             self
         }
-        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
-        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
-        /// <code>true</code>. </p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
-        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
-        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
-        /// <code>true</code>. </p>
+        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_multi_az(input);
             self
         }
         /// <p>The engine version number of the replication instance.</p>
-        /// <p>When modifying a major engine version of an instance, also set
-        /// <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(inp);
+        /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The engine version number of the replication instance.</p>
-        /// <p>When modifying a major engine version of an instance, also set
-        /// <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
+        /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6970,75 +6268,49 @@ pub mod fluent_builders {
             self.inner = self.inner.set_engine_version(input);
             self
         }
-        /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not
-        /// result in an outage, and the change is asynchronously applied as soon as possible.</p>
-        /// <p>This parameter must be set to <code>true</code> when specifying a value for the
-        /// <code>EngineVersion</code> parameter that is a different major version than the
-        /// replication instance's current version.</p>
-        pub fn allow_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_major_version_upgrade(inp);
+        /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
+        /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_major_version_upgrade(input);
             self
         }
-        /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not
-        /// result in an outage, and the change is asynchronously applied as soon as possible.</p>
-        /// <p>This parameter must be set to <code>true</code> when specifying a value for the
-        /// <code>EngineVersion</code> parameter that is a different major version than the
-        /// replication instance's current version.</p>
+        /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
+        /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
         pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_major_version_upgrade(input);
             self
         }
-        /// <p>A value that indicates that minor version upgrades are applied automatically to the
-        /// replication instance during the maintenance window. Changing this parameter doesn't result
-        /// in an outage, except in the case described following. The change is asynchronously applied
-        /// as soon as possible. </p>
+        /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
         /// <p>An outage does result if these factors apply: </p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter is set to <code>true</code> during the maintenance window.</p>
-        /// </li>
-        /// <li>
-        /// <p>A newer minor version is available. </p>
-        /// </li>
-        /// <li>
-        /// <p>DMS has enabled automatic patching for the given engine version. </p>
-        /// </li>
+        /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+        /// <li> <p>A newer minor version is available. </p> </li>
+        /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
         /// </ul>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
-        /// <p>A value that indicates that minor version upgrades are applied automatically to the
-        /// replication instance during the maintenance window. Changing this parameter doesn't result
-        /// in an outage, except in the case described following. The change is asynchronously applied
-        /// as soon as possible. </p>
+        /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
         /// <p>An outage does result if these factors apply: </p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter is set to <code>true</code> during the maintenance window.</p>
-        /// </li>
-        /// <li>
-        /// <p>A newer minor version is available. </p>
-        /// </li>
-        /// <li>
-        /// <p>DMS has enabled automatic patching for the given engine version. </p>
-        /// </li>
+        /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+        /// <li> <p>A newer minor version is available. </p> </li>
+        /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
         /// </ul>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_minor_version_upgrade(input);
             self
         }
-        /// <p>The replication instance identifier. This parameter is stored as a lowercase
-        /// string.</p>
+        /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
         pub fn replication_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_instance_identifier(inp);
+            self.inner = self.inner.replication_instance_identifier(input.into());
             self
         }
-        /// <p>The replication instance identifier. This parameter is stored as a lowercase
-        /// string.</p>
+        /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
         pub fn set_replication_instance_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7050,7 +6322,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyReplicationSubnetGroup`.
     ///
     /// <p>Modifies the settings for the specified replication subnet group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyReplicationSubnetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7095,10 +6367,10 @@ pub mod fluent_builders {
                 crate::input::ModifyReplicationSubnetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7109,9 +6381,9 @@ pub mod fluent_builders {
         /// <p>The name of the replication instance subnet group.</p>
         pub fn replication_subnet_group_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_subnet_group_identifier(inp);
+            self.inner = self.inner.replication_subnet_group_identifier(input.into());
             self
         }
         /// <p>The name of the replication instance subnet group.</p>
@@ -7125,9 +6397,11 @@ pub mod fluent_builders {
         /// <p>A description for the replication instance subnet group.</p>
         pub fn replication_subnet_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_subnet_group_description(inp);
+            self.inner = self
+                .inner
+                .replication_subnet_group_description(input.into());
             self
         }
         /// <p>A description for the replication instance subnet group.</p>
@@ -7143,8 +6417,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>A list of subnet IDs.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>A list of subnet IDs.</p>
@@ -7160,9 +6434,8 @@ pub mod fluent_builders {
     ///
     /// <p>Modifies the specified replication task.</p>
     /// <p>You can't modify the task endpoints. The task must be stopped before you can modify it. </p>
-    /// <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks</a> in the
-    /// <i>Database Migration Service User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks</a> in the <i>Database Migration Service User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyReplicationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7207,10 +6480,10 @@ pub mod fluent_builders {
                 crate::input::ModifyReplicationTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7219,8 +6492,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -7234,32 +6507,23 @@ pub mod fluent_builders {
         /// <p>The replication task identifier.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
+        /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
-        pub fn replication_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_identifier(inp);
+        pub fn replication_task_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.replication_task_identifier(input.into());
             self
         }
         /// <p>The replication task identifier.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
+        /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
         pub fn set_replication_task_identifier(
             mut self,
@@ -7268,14 +6532,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_task_identifier(input);
             self
         }
-        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
-        /// </p>
-        pub fn migration_type(mut self, inp: crate::model::MigrationTypeValue) -> Self {
-            self.inner = self.inner.migration_type(inp);
+        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
+        pub fn migration_type(mut self, input: crate::model::MigrationTypeValue) -> Self {
+            self.inner = self.inner.migration_type(input);
             self
         }
-        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
-        /// </p>
+        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
         pub fn set_migration_type(
             mut self,
             input: std::option::Option<crate::model::MigrationTypeValue>,
@@ -7283,20 +6545,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_migration_type(input);
             self
         }
-        /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the
-        /// table mappings. Precede the path with <code>file://</code>.  For example,
-        /// <code>--table-mappings file://mappingfile.json</code>. When working with the DMS  API,
-        /// provide the JSON as the parameter value.
-        /// </p>
-        pub fn table_mappings(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_mappings(inp);
+        /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value. </p>
+        pub fn table_mappings(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_mappings(input.into());
             self
         }
-        /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the
-        /// table mappings. Precede the path with <code>file://</code>.  For example,
-        /// <code>--table-mappings file://mappingfile.json</code>. When working with the DMS  API,
-        /// provide the JSON as the parameter value.
-        /// </p>
+        /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value. </p>
         pub fn set_table_mappings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7305,8 +6559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
-        pub fn replication_task_settings(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_settings(inp);
+        pub fn replication_task_settings(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_settings(input.into());
             self
         }
         /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
@@ -7317,17 +6571,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_task_settings(input);
             self
         }
-        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-        /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-        pub fn cdc_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.cdc_start_time(inp);
+        pub fn cdc_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.cdc_start_time(input);
             self
         }
-        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-        /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn set_cdc_start_time(
             mut self,
@@ -7336,39 +6586,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cdc_start_time(input);
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
         /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-        /// <p>Checkpoint Example: --cdc-start-position
-        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-        /// <note>
-        /// <p>When you use this task setting with a source PostgreSQL database, a logical
-        /// replication slot should already be created and associated with the source endpoint. You
-        /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-        /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for DMS</a>.</p>
+        /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+        /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
         /// </note>
-        pub fn cdc_start_position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cdc_start_position(inp);
+        pub fn cdc_start_position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cdc_start_position(input.into());
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
         /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-        /// <p>Checkpoint Example: --cdc-start-position
-        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-        /// <note>
-        /// <p>When you use this task setting with a source PostgreSQL database, a logical
-        /// replication slot should already be created and associated with the source endpoint. You
-        /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-        /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for DMS</a>.</p>
+        /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+        /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
         /// </note>
         pub fn set_cdc_start_position(
             mut self,
@@ -7377,16 +6611,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cdc_start_position(input);
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-        /// either server time or commit time.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
-        pub fn cdc_stop_position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cdc_stop_position(inp);
+        pub fn cdc_stop_position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cdc_stop_position(input.into());
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-        /// either server time or commit time.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
         pub fn set_cdc_stop_position(
@@ -7396,18 +6628,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cdc_stop_position(input);
             self
         }
-        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
-        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
-        pub fn task_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_data(inp);
+        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
+        pub fn task_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_data(input.into());
             self
         }
-        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
-        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_task_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_data(input);
             self
@@ -7415,11 +6641,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `MoveReplicationTask`.
     ///
-    /// <p>Moves a replication task from its current replication instance to a different target
-    /// replication instance using the specified parameters. The target replication instance must
-    /// be created with the same or later DMS version as the current replication
-    /// instance.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Moves a replication task from its current replication instance to a different target replication instance using the specified parameters. The target replication instance must be created with the same or later DMS version as the current replication instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MoveReplicationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7464,10 +6687,10 @@ pub mod fluent_builders {
                 crate::input::MoveReplicationTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7476,8 +6699,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
@@ -7491,9 +6714,9 @@ pub mod fluent_builders {
         /// <p>The ARN of the replication instance where you want to move the task to.</p>
         pub fn target_replication_instance_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_replication_instance_arn(inp);
+            self.inner = self.inner.target_replication_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the replication instance where you want to move the task to.</p>
@@ -7507,9 +6730,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RebootReplicationInstance`.
     ///
-    /// <p>Reboots a replication instance. Rebooting results in a momentary outage, until the
-    /// replication instance becomes available again.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance becomes available again.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootReplicationInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7554,10 +6776,10 @@ pub mod fluent_builders {
                 crate::input::RebootReplicationInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7566,8 +6788,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -7578,32 +6800,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_instance_arn(input);
             self
         }
-        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ
-        /// failover. If the instance isn't configured for Multi-AZ, then you can't specify
-        /// <code>true</code>.  ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
-        pub fn force_failover(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_failover(inp);
+        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+        pub fn force_failover(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_failover(input);
             self
         }
-        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ
-        /// failover. If the instance isn't configured for Multi-AZ, then you can't specify
-        /// <code>true</code>.  ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
         pub fn set_force_failover(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_failover(input);
             self
         }
-        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover
-        /// where resources are released and cleaned up prior to conducting the failover.
-        /// If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>.
-        /// ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
-        pub fn force_planned_failover(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_planned_failover(inp);
+        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover where resources are released and cleaned up prior to conducting the failover. If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+        pub fn force_planned_failover(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_planned_failover(input);
             self
         }
-        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover
-        /// where resources are released and cleaned up prior to conducting the failover.
-        /// If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>.
-        /// ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover where resources are released and cleaned up prior to conducting the failover. If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
         pub fn set_force_planned_failover(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_planned_failover(input);
             self
@@ -7611,10 +6823,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RefreshSchemas`.
     ///
-    /// <p>Populates the schema for the specified endpoint. This is an asynchronous operation and
-    /// can take several minutes. You can check the status of this operation by calling the
-    /// DescribeRefreshSchemasStatus operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Populates the schema for the specified endpoint. This is an asynchronous operation and can take several minutes. You can check the status of this operation by calling the DescribeRefreshSchemasStatus operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RefreshSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7659,10 +6869,10 @@ pub mod fluent_builders {
                 crate::input::RefreshSchemasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7671,8 +6881,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -7681,8 +6891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -7697,9 +6907,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReloadTables`.
     ///
     /// <p>Reloads the target database table with the source data. </p>
-    /// <p>You can only use this operation with a task in the <code>RUNNING</code> state, otherwise the service
-    /// will throw an <code>InvalidResourceStateFault</code> exception.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can only use this operation with a task in the <code>RUNNING</code> state, otherwise the service will throw an <code>InvalidResourceStateFault</code> exception.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReloadTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7744,10 +6953,10 @@ pub mod fluent_builders {
                 crate::input::ReloadTablesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7756,8 +6965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
@@ -7773,8 +6982,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tables_to_reload`](Self::set_tables_to_reload).
         ///
         /// <p>The name and schema of the table to be reloaded. </p>
-        pub fn tables_to_reload(mut self, inp: impl Into<crate::model::TableToReload>) -> Self {
-            self.inner = self.inner.tables_to_reload(inp);
+        pub fn tables_to_reload(mut self, input: crate::model::TableToReload) -> Self {
+            self.inner = self.inner.tables_to_reload(input);
             self
         }
         /// <p>The name and schema of the table to be reloaded. </p>
@@ -7785,18 +6994,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tables_to_reload(input);
             self
         }
-        /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate
-        /// it if validation is enabled. Specify <code>validate-only</code> to re-validate the table.
-        /// This option applies only when validation is enabled for the task. </p>
+        /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
         /// <p>Valid values: data-reload, validate-only</p>
         /// <p>Default value is data-reload.</p>
-        pub fn reload_option(mut self, inp: crate::model::ReloadOptionValue) -> Self {
-            self.inner = self.inner.reload_option(inp);
+        pub fn reload_option(mut self, input: crate::model::ReloadOptionValue) -> Self {
+            self.inner = self.inner.reload_option(input);
             self
         }
-        /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate
-        /// it if validation is enabled. Specify <code>validate-only</code> to re-validate the table.
-        /// This option applies only when validation is enabled for the task. </p>
+        /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
         /// <p>Valid values: data-reload, validate-only</p>
         /// <p>Default value is data-reload.</p>
         pub fn set_reload_option(
@@ -7809,13 +7014,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveTagsFromResource`.
     ///
-    /// <p>Removes metadata tags from an DMS resource, including replication instance,
-    /// endpoint, security group, and migration task. For more information, see
-    /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
-    /// <code>Tag</code>
-    /// </a>
-    /// data type description.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes metadata tags from an DMS resource, including replication instance, endpoint, security group, and migration task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type description.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTagsFromResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7860,10 +7060,10 @@ pub mod fluent_builders {
                 crate::input::RemoveTagsFromResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7872,8 +7072,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
@@ -7886,8 +7086,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag key (name) of the tag to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag key (name) of the tag to be removed.</p>
@@ -7902,10 +7102,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartReplicationTask`.
     ///
     /// <p>Starts the replication task.</p>
-    /// <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks </a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks </a> in the <i>Database Migration Service User Guide.</i> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartReplicationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7950,10 +7148,10 @@ pub mod fluent_builders {
                 crate::input::StartReplicationTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7962,8 +7160,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
@@ -7975,26 +7173,18 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of replication task to start.</p>
-        /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-        /// for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart
-        /// the task and <code>resume-processing</code> to resume the task.</p>
-        /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
-        /// the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for
-        /// a task with migration type of <code>cdc</code>.</p>
+        /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task and <code>resume-processing</code> to resume the task.</p>
+        /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task with migration type of <code>cdc</code>.</p>
         pub fn start_replication_task_type(
             mut self,
-            inp: crate::model::StartReplicationTaskTypeValue,
+            input: crate::model::StartReplicationTaskTypeValue,
         ) -> Self {
-            self.inner = self.inner.start_replication_task_type(inp);
+            self.inner = self.inner.start_replication_task_type(input);
             self
         }
         /// <p>The type of replication task to start.</p>
-        /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-        /// for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart
-        /// the task and <code>resume-processing</code> to resume the task.</p>
-        /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
-        /// the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for
-        /// a task with migration type of <code>cdc</code>.</p>
+        /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task and <code>resume-processing</code> to resume the task.</p>
+        /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task with migration type of <code>cdc</code>.</p>
         pub fn set_start_replication_task_type(
             mut self,
             input: std::option::Option<crate::model::StartReplicationTaskTypeValue>,
@@ -8002,17 +7192,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_replication_task_type(input);
             self
         }
-        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-        /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-        pub fn cdc_start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.cdc_start_time(inp);
+        pub fn cdc_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.cdc_start_time(input);
             self
         }
-        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-        /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn set_cdc_start_time(
             mut self,
@@ -8021,39 +7207,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cdc_start_time(input);
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
         /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-        /// <p>Checkpoint Example: --cdc-start-position
-        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-        /// <note>
-        /// <p>When you use this task setting with a source PostgreSQL database, a logical
-        /// replication slot should already be created and associated with the source endpoint. You
-        /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-        /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for DMS</a>.</p>
+        /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+        /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
         /// </note>
-        pub fn cdc_start_position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cdc_start_position(inp);
+        pub fn cdc_start_position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cdc_start_position(input.into());
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
         /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-        /// <p>Checkpoint Example: --cdc-start-position
-        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-        /// <note>
-        /// <p>When you use this task setting with a source PostgreSQL database, a logical
-        /// replication slot should already be created and associated with the source endpoint. You
-        /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-        /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for DMS</a>.</p>
+        /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+        /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
         /// </note>
         pub fn set_cdc_start_position(
             mut self,
@@ -8062,16 +7232,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cdc_start_position(input);
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-        /// either server time or commit time.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
-        pub fn cdc_stop_position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cdc_stop_position(inp);
+        pub fn cdc_stop_position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cdc_stop_position(input.into());
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-        /// either server time or commit time.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
         pub fn set_cdc_stop_position(
@@ -8084,22 +7252,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartReplicationTaskAssessment`.
     ///
-    /// <p> Starts the replication task assessment for unsupported data types in the source
-    /// database. </p>
+    /// <p> Starts the replication task assessment for unsupported data types in the source database. </p>
     /// <p>You can only use this operation for a task if the following conditions are true:</p>
     /// <ul>
-    /// <li>
-    /// <p>The task must be in the <code>stopped</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>The task must have successful connections to the source and target.</p>
-    /// </li>
+    /// <li> <p>The task must be in the <code>stopped</code> state.</p> </li>
+    /// <li> <p>The task must have successful connections to the source and target.</p> </li>
     /// </ul>
     /// <p>If either of these conditions are not met, an <code>InvalidResourceStateFault</code> error will result. </p>
-    /// <p>For information about DMS task assessments, see
-    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating a task assessment report</a>
-    /// in the <i>Database Migration Service User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For information about DMS task assessments, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating a task assessment report</a> in the <i>Database Migration Service User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartReplicationTaskAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8144,10 +7305,10 @@ pub mod fluent_builders {
                 crate::input::StartReplicationTaskAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8156,8 +7317,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
@@ -8171,14 +7332,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartReplicationTaskAssessmentRun`.
     ///
-    /// <p>Starts a new premigration assessment run for one or more individual assessments
-    /// of a migration task.</p>
-    /// <p>The assessments that you can specify depend on the source and target database engine and
-    /// the migration type defined for the given task. To run this operation, your migration task
-    /// must already be created. After you run this operation, you can review the status of each
-    /// individual assessment. You can also run the migration task manually after the assessment
-    /// run and its individual assessments complete.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts a new premigration assessment run for one or more individual assessments of a migration task.</p>
+    /// <p>The assessments that you can specify depend on the source and target database engine and the migration type defined for the given task. To run this operation, your migration task must already be created. After you run this operation, you can review the status of each individual assessment. You can also run the migration task manually after the assessment run and its individual assessments complete.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartReplicationTaskAssessmentRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8223,10 +7379,10 @@ pub mod fluent_builders {
                 crate::input::StartReplicationTaskAssessmentRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8234,14 +7390,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration
-        /// assessment run that you want to start.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
+        pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration
-        /// assessment run that you want to start.</p>
+        /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
         pub fn set_replication_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8250,8 +7404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
-        pub fn service_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_access_role_arn(inp);
+        pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_access_role_arn(input.into());
             self
         }
         /// <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
@@ -8262,14 +7416,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_access_role_arn(input);
             self
         }
-        /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment
-        /// run.</p>
-        pub fn result_location_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.result_location_bucket(inp);
+        /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
+        pub fn result_location_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result_location_bucket(input.into());
             self
         }
-        /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment
-        /// run.</p>
+        /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
         pub fn set_result_location_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8277,14 +7429,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_result_location_bucket(input);
             self
         }
-        /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment
-        /// run.</p>
-        pub fn result_location_folder(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.result_location_folder(inp);
+        /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
+        pub fn result_location_folder(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result_location_folder(input.into());
             self
         }
-        /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment
-        /// run.</p>
+        /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
         pub fn set_result_location_folder(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8292,41 +7442,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_result_location_folder(input);
             self
         }
-        /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If
-        /// you don't specify this request parameter, DMS stores the assessment run results
-        /// without encryption. You can specify one of the options following:</p>
+        /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this request parameter, DMS stores the assessment run results without encryption. You can specify one of the options following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"SSE_S3"</code> – The server-side encryption provided as a default by
-        /// Amazon S3.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption.
-        /// This encryption can use either a custom KMS encryption key that you specify or the
-        /// default KMS encryption key that DMS provides.</p>
-        /// </li>
+        /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
+        /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
         /// </ul>
-        pub fn result_encryption_mode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.result_encryption_mode(inp);
+        pub fn result_encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result_encryption_mode(input.into());
             self
         }
-        /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If
-        /// you don't specify this request parameter, DMS stores the assessment run results
-        /// without encryption. You can specify one of the options following:</p>
+        /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this request parameter, DMS stores the assessment run results without encryption. You can specify one of the options following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"SSE_S3"</code> – The server-side encryption provided as a default by
-        /// Amazon S3.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption.
-        /// This encryption can use either a custom KMS encryption key that you specify or the
-        /// default KMS encryption key that DMS provides.</p>
-        /// </li>
+        /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
+        /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
         /// </ul>
         pub fn set_result_encryption_mode(
             mut self,
@@ -8335,14 +7463,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_result_encryption_mode(input);
             self
         }
-        /// <p>ARN of a custom KMS encryption key that you specify when you set
-        /// <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
-        pub fn result_kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.result_kms_key_arn(inp);
+        /// <p>ARN of a custom KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
+        pub fn result_kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result_kms_key_arn(input.into());
             self
         }
-        /// <p>ARN of a custom KMS encryption key that you specify when you set
-        /// <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
+        /// <p>ARN of a custom KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
         pub fn set_result_kms_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8351,8 +7477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique name to identify the assessment run.</p>
-        pub fn assessment_run_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_name(inp);
+        pub fn assessment_run_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_name(input.into());
             self
         }
         /// <p>Unique name to identify the assessment run.</p>
@@ -8367,33 +7493,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_include_only`](Self::set_include_only).
         ///
-        /// <p>Space-separated list of names for specific individual assessments that you want to
-        /// include. These names come from the default list of individual assessments that DMS
-        /// supports for the associated migration task. This task is specified by
-        /// <code>ReplicationTaskArn</code>.</p>
-        /// <note>
-        /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for
-        /// <code>Exclude</code> in the API operation. </p>
-        /// <p>To identify the names of the default individual assessments that DMS
-        /// supports for the associated migration task, run the
-        /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
-        /// <code>ReplicationTaskArn</code> request parameter.</p>
+        /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+        /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
+        /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
         /// </note>
-        pub fn include_only(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.include_only(inp);
+        pub fn include_only(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.include_only(input.into());
             self
         }
-        /// <p>Space-separated list of names for specific individual assessments that you want to
-        /// include. These names come from the default list of individual assessments that DMS
-        /// supports for the associated migration task. This task is specified by
-        /// <code>ReplicationTaskArn</code>.</p>
-        /// <note>
-        /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for
-        /// <code>Exclude</code> in the API operation. </p>
-        /// <p>To identify the names of the default individual assessments that DMS
-        /// supports for the associated migration task, run the
-        /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
-        /// <code>ReplicationTaskArn</code> request parameter.</p>
+        /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+        /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
+        /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
         /// </note>
         pub fn set_include_only(
             mut self,
@@ -8406,33 +7516,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_exclude`](Self::set_exclude).
         ///
-        /// <p>Space-separated list of names for specific individual assessments that you want to
-        /// exclude. These names come from the default list of individual assessments that DMS
-        /// supports for the associated migration task. This task is specified by
-        /// <code>ReplicationTaskArn</code>.</p>
-        /// <note>
-        /// <p>You can't set a value for <code>Exclude</code> if you also set a value for
-        /// <code>IncludeOnly</code> in the API operation.</p>
-        /// <p>To identify the names of the default individual assessments that DMS
-        /// supports for the associated migration task, run the
-        /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
-        /// <code>ReplicationTaskArn</code> request parameter.</p>
+        /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+        /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
+        /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
         /// </note>
-        pub fn exclude(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclude(inp);
+        pub fn exclude(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclude(input.into());
             self
         }
-        /// <p>Space-separated list of names for specific individual assessments that you want to
-        /// exclude. These names come from the default list of individual assessments that DMS
-        /// supports for the associated migration task. This task is specified by
-        /// <code>ReplicationTaskArn</code>.</p>
-        /// <note>
-        /// <p>You can't set a value for <code>Exclude</code> if you also set a value for
-        /// <code>IncludeOnly</code> in the API operation.</p>
-        /// <p>To identify the names of the default individual assessments that DMS
-        /// supports for the associated migration task, run the
-        /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
-        /// <code>ReplicationTaskArn</code> request parameter.</p>
+        /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+        /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
+        /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
         /// </note>
         pub fn set_exclude(
             mut self,
@@ -8445,7 +7539,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopReplicationTask`.
     ///
     /// <p>Stops the replication task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopReplicationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8490,10 +7584,10 @@ pub mod fluent_builders {
                 crate::input::StopReplicationTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8502,8 +7596,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
-        pub fn replication_task_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_task_arn(inp);
+        pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_task_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
@@ -8518,7 +7612,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TestConnection`.
     ///
     /// <p>Tests the connection between the replication instance and the endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8563,10 +7657,10 @@ pub mod fluent_builders {
                 crate::input::TestConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8575,8 +7669,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-        pub fn replication_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_instance_arn(inp);
+        pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -8588,8 +7682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
@@ -8599,6 +7693,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

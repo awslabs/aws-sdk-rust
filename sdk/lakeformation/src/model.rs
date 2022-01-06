@@ -649,9 +649,9 @@ pub mod tagged_table {
         /// To override the contents of this collection use [`set_lf_tag_on_database`](Self::set_lf_tag_on_database).
         ///
         /// <p>A list of LF-tags attached to the database where the table resides.</p>
-        pub fn lf_tag_on_database(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tag_on_database(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tag_on_database.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tag_on_database = Some(v);
             self
         }
@@ -668,9 +668,9 @@ pub mod tagged_table {
         /// To override the contents of this collection use [`set_lf_tags_on_table`](Self::set_lf_tags_on_table).
         ///
         /// <p>A list of LF-tags attached to the table.</p>
-        pub fn lf_tags_on_table(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tags_on_table(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags_on_table.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags_on_table = Some(v);
             self
         }
@@ -687,9 +687,9 @@ pub mod tagged_table {
         /// To override the contents of this collection use [`set_lf_tags_on_columns`](Self::set_lf_tags_on_columns).
         ///
         /// <p>A list of LF-tags attached to columns in the table.</p>
-        pub fn lf_tags_on_columns(mut self, input: impl Into<crate::model::ColumnLfTag>) -> Self {
+        pub fn lf_tags_on_columns(mut self, input: crate::model::ColumnLfTag) -> Self {
             let mut v = self.lf_tags_on_columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags_on_columns = Some(v);
             self
         }
@@ -771,9 +771,9 @@ pub mod column_lf_tag {
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
         /// <p>The LF-tags attached to a column resource.</p>
-        pub fn lf_tags(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tags(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags = Some(v);
             self
         }
@@ -913,7 +913,6 @@ pub struct TableResource {
     /// <p>The name of the table.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A wildcard object representing every table under a database.</p>
-    ///
     /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
     pub table_wildcard: std::option::Option<crate::model::TableWildcard>,
 }
@@ -931,7 +930,6 @@ impl TableResource {
         self.name.as_deref()
     }
     /// <p>A wildcard object representing every table under a database.</p>
-    ///
     /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
     pub fn table_wildcard(&self) -> std::option::Option<&crate::model::TableWildcard> {
         self.table_wildcard.as_ref()
@@ -993,14 +991,12 @@ pub mod table_resource {
             self
         }
         /// <p>A wildcard object representing every table under a database.</p>
-        ///
         /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
         pub fn table_wildcard(mut self, input: crate::model::TableWildcard) -> Self {
             self.table_wildcard = Some(input);
             self
         }
         /// <p>A wildcard object representing every table under a database.</p>
-        ///
         /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
         pub fn set_table_wildcard(
             mut self,
@@ -1194,9 +1190,9 @@ pub mod tagged_database {
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
         /// <p>A list of LF-tags attached to the database.</p>
-        pub fn lf_tags(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tags(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags = Some(v);
             self
         }
@@ -1706,9 +1702,9 @@ pub mod lf_tag_policy_resource {
         /// To override the contents of this collection use [`set_expression`](Self::set_expression).
         ///
         /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
-        pub fn expression(mut self, input: impl Into<crate::model::LfTag>) -> Self {
+        pub fn expression(mut self, input: crate::model::LfTag) -> Self {
             let mut v = self.expression.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.expression = Some(v);
             self
         }
@@ -2322,7 +2318,7 @@ impl CatalogResource {
     }
 }
 
-/// <p>The AWS Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
+/// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataLakePrincipal {
@@ -2541,27 +2537,30 @@ pub struct DataLakeSettings {
     /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
     pub data_lake_admins: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
     /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions. You can override this default setting when you create a database.</p>
-    ///
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-    ///
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     pub create_database_default_permissions:
         std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
     /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-    ///
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-    ///
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     pub create_table_default_permissions:
         std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-    ///
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
     pub trusted_resource_owners: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
+    /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+    /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+    /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
+    pub allow_external_data_filtering: std::option::Option<bool>,
+    /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
+    pub external_data_filtering_allow_list:
+        std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
+    /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
+    pub authorized_session_tag_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DataLakeSettings {
     /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
@@ -2569,11 +2568,8 @@ impl DataLakeSettings {
         self.data_lake_admins.as_deref()
     }
     /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions. You can override this default setting when you create a database.</p>
-    ///
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-    ///
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     pub fn create_database_default_permissions(
         &self,
@@ -2581,11 +2577,8 @@ impl DataLakeSettings {
         self.create_database_default_permissions.as_deref()
     }
     /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-    ///
     /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-    ///
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     pub fn create_table_default_permissions(
         &self,
@@ -2593,10 +2586,26 @@ impl DataLakeSettings {
         self.create_table_default_permissions.as_deref()
     }
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-    ///
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
     pub fn trusted_resource_owners(&self) -> std::option::Option<&[std::string::String]> {
         self.trusted_resource_owners.as_deref()
+    }
+    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
+    /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+    /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+    /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
+    pub fn allow_external_data_filtering(&self) -> std::option::Option<bool> {
+        self.allow_external_data_filtering
+    }
+    /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
+    pub fn external_data_filtering_allow_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DataLakePrincipal]> {
+        self.external_data_filtering_allow_list.as_deref()
+    }
+    /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
+    pub fn authorized_session_tag_value_list(&self) -> std::option::Option<&[std::string::String]> {
+        self.authorized_session_tag_value_list.as_deref()
     }
 }
 impl std::fmt::Debug for DataLakeSettings {
@@ -2612,6 +2621,18 @@ impl std::fmt::Debug for DataLakeSettings {
             &self.create_table_default_permissions,
         );
         formatter.field("trusted_resource_owners", &self.trusted_resource_owners);
+        formatter.field(
+            "allow_external_data_filtering",
+            &self.allow_external_data_filtering,
+        );
+        formatter.field(
+            "external_data_filtering_allow_list",
+            &self.external_data_filtering_allow_list,
+        );
+        formatter.field(
+            "authorized_session_tag_value_list",
+            &self.authorized_session_tag_value_list,
+        );
         formatter.finish()
     }
 }
@@ -2628,6 +2649,11 @@ pub mod data_lake_settings {
         pub(crate) create_table_default_permissions:
             std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
         pub(crate) trusted_resource_owners: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) allow_external_data_filtering: std::option::Option<bool>,
+        pub(crate) external_data_filtering_allow_list:
+            std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
+        pub(crate) authorized_session_tag_value_list:
+            std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `data_lake_admins`.
@@ -2635,12 +2661,9 @@ pub mod data_lake_settings {
         /// To override the contents of this collection use [`set_data_lake_admins`](Self::set_data_lake_admins).
         ///
         /// <p>A list of Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
-        pub fn data_lake_admins(
-            mut self,
-            input: impl Into<crate::model::DataLakePrincipal>,
-        ) -> Self {
+        pub fn data_lake_admins(mut self, input: crate::model::DataLakePrincipal) -> Self {
             let mut v = self.data_lake_admins.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_lake_admins = Some(v);
             self
         }
@@ -2657,27 +2680,21 @@ pub mod data_lake_settings {
         /// To override the contents of this collection use [`set_create_database_default_permissions`](Self::set_create_database_default_permissions).
         ///
         /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions. You can override this default setting when you create a database.</p>
-        ///
         /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-        ///
         /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
         pub fn create_database_default_permissions(
             mut self,
-            input: impl Into<crate::model::PrincipalPermissions>,
+            input: crate::model::PrincipalPermissions,
         ) -> Self {
             let mut v = self.create_database_default_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.create_database_default_permissions = Some(v);
             self
         }
         /// <p>Specifies whether access control on newly created database is managed by Lake Formation permissions or exclusively by IAM permissions. You can override this default setting when you create a database.</p>
-        ///
         /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-        ///
         /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
         pub fn set_create_database_default_permissions(
             mut self,
@@ -2691,27 +2708,21 @@ pub mod data_lake_settings {
         /// To override the contents of this collection use [`set_create_table_default_permissions`](Self::set_create_table_default_permissions).
         ///
         /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-        ///
         /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-        ///
         /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
         pub fn create_table_default_permissions(
             mut self,
-            input: impl Into<crate::model::PrincipalPermissions>,
+            input: crate::model::PrincipalPermissions,
         ) -> Self {
             let mut v = self.create_table_default_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.create_table_default_permissions = Some(v);
             self
         }
         /// <p>Specifies whether access control on newly created table is managed by Lake Formation permissions or exclusively by IAM permissions.</p>
-        ///
         /// <p>A null value indicates access control by Lake Formation permissions. A value that assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting "Use only IAM access control," and is for backward compatibility with the Glue permission model implemented by IAM permissions.</p>
-        ///
         /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
         pub fn set_create_table_default_permissions(
             mut self,
@@ -2725,7 +2736,6 @@ pub mod data_lake_settings {
         /// To override the contents of this collection use [`set_trusted_resource_owners`](Self::set_trusted_resource_owners).
         ///
         /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-        ///
         /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
         pub fn trusted_resource_owners(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trusted_resource_owners.unwrap_or_default();
@@ -2734,13 +2744,75 @@ pub mod data_lake_settings {
             self
         }
         /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-        ///
         /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
         pub fn set_trusted_resource_owners(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.trusted_resource_owners = input;
+            self
+        }
+        /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
+        /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+        /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+        /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
+        pub fn allow_external_data_filtering(mut self, input: bool) -> Self {
+            self.allow_external_data_filtering = Some(input);
+            self
+        }
+        /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
+        /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+        /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+        /// <p>For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional) Allow Data Filtering on Amazon EMR</a>.</p>
+        pub fn set_allow_external_data_filtering(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_external_data_filtering = input;
+            self
+        }
+        /// Appends an item to `external_data_filtering_allow_list`.
+        ///
+        /// To override the contents of this collection use [`set_external_data_filtering_allow_list`](Self::set_external_data_filtering_allow_list).
+        ///
+        /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
+        pub fn external_data_filtering_allow_list(
+            mut self,
+            input: crate::model::DataLakePrincipal,
+        ) -> Self {
+            let mut v = self.external_data_filtering_allow_list.unwrap_or_default();
+            v.push(input);
+            self.external_data_filtering_allow_list = Some(v);
+            self
+        }
+        /// <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data filtering.&gt;</p>
+        pub fn set_external_data_filtering_allow_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
+        ) -> Self {
+            self.external_data_filtering_allow_list = input;
+            self
+        }
+        /// Appends an item to `authorized_session_tag_value_list`.
+        ///
+        /// To override the contents of this collection use [`set_authorized_session_tag_value_list`](Self::set_authorized_session_tag_value_list).
+        ///
+        /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
+        pub fn authorized_session_tag_value_list(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.authorized_session_tag_value_list.unwrap_or_default();
+            v.push(input.into());
+            self.authorized_session_tag_value_list = Some(v);
+            self
+        }
+        /// <p>Lake Formation relies on a privileged process secured by Amazon EMR or the third party integrator to tag the user's role while assuming it. Lake Formation will publish the acceptable key-value pair, for example key = "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator must properly tag the temporary security credentials that will be used to call Lake Formation's administrative APIs.</p>
+        pub fn set_authorized_session_tag_value_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.authorized_session_tag_value_list = input;
             self
         }
         /// Consumes the builder and constructs a [`DataLakeSettings`](crate::model::DataLakeSettings)
@@ -2750,6 +2822,9 @@ pub mod data_lake_settings {
                 create_database_default_permissions: self.create_database_default_permissions,
                 create_table_default_permissions: self.create_table_default_permissions,
                 trusted_resource_owners: self.trusted_resource_owners,
+                allow_external_data_filtering: self.allow_external_data_filtering,
+                external_data_filtering_allow_list: self.external_data_filtering_allow_list,
+                authorized_session_tag_value_list: self.authorized_session_tag_value_list,
             }
         }
     }
@@ -2816,9 +2891,9 @@ pub mod principal_permissions {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The permissions that are granted to the principal.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -3109,7 +3184,6 @@ pub struct StorageOptimizer {
     pub config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A message that contains information about any error (if present).</p>
-    ///
     /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
     /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
     pub error_message: std::option::Option<std::string::String>,
@@ -3131,7 +3205,6 @@ impl StorageOptimizer {
         self.config.as_ref()
     }
     /// <p>A message that contains information about any error (if present).</p>
-    ///
     /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
     /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
@@ -3211,7 +3284,6 @@ pub mod storage_optimizer {
             self
         }
         /// <p>A message that contains information about any error (if present).</p>
-        ///
         /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
         /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3219,7 +3291,6 @@ pub mod storage_optimizer {
             self
         }
         /// <p>A message that contains information about any error (if present).</p>
-        ///
         /// <p>When an acceleration result has an enabled status, the error message is empty.</p>
         /// <p>When an acceleration result has a disabled status, the message describes an error or simply indicates "disabled by the user".</p>
         pub fn set_error_message(
@@ -3730,9 +3801,9 @@ pub mod principal_resource_permissions {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The permissions to be granted or revoked on the resource.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -3749,12 +3820,9 @@ pub mod principal_resource_permissions {
         /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
         ///
         /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-        pub fn permissions_with_grant_option(
-            mut self,
-            input: impl Into<crate::model::Permission>,
-        ) -> Self {
+        pub fn permissions_with_grant_option(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions_with_grant_option.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions_with_grant_option = Some(v);
             self
         }
@@ -3799,7 +3867,6 @@ impl PrincipalResourcePermissions {
 }
 
 /// <p>A structure containing the additional details to be returned in the <code>AdditionalDetails</code> attribute of <code>PrincipalResourcePermissions</code>.</p>
-///
 /// <p>If a catalog resource is shared through Resource Access Manager (RAM), then there will exist a corresponding RAM resource share ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4023,6 +4090,7 @@ pub struct DataCellsFilter {
     /// <p>A list of column names.</p>
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A wildcard with exclusions.</p>
+    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     pub column_wildcard: std::option::Option<crate::model::ColumnWildcard>,
 }
 impl DataCellsFilter {
@@ -4051,6 +4119,7 @@ impl DataCellsFilter {
         self.column_names.as_deref()
     }
     /// <p>A wildcard with exclusions.</p>
+    /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     pub fn column_wildcard(&self) -> std::option::Option<&crate::model::ColumnWildcard> {
         self.column_wildcard.as_ref()
     }
@@ -4162,11 +4231,13 @@ pub mod data_cells_filter {
             self
         }
         /// <p>A wildcard with exclusions.</p>
+        /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
         pub fn column_wildcard(mut self, input: crate::model::ColumnWildcard) -> Self {
             self.column_wildcard = Some(input);
             self
         }
         /// <p>A wildcard with exclusions.</p>
+        /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
         pub fn set_column_wildcard(
             mut self,
             input: std::option::Option<crate::model::ColumnWildcard>,
@@ -4399,6 +4470,181 @@ impl WorkUnitRange {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PermissionType {
+    #[allow(missing_docs)] // documentation missing in model
+    CellFilterPermission,
+    #[allow(missing_docs)] // documentation missing in model
+    ColumnPermission,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PermissionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CELL_FILTER_PERMISSION" => PermissionType::CellFilterPermission,
+            "COLUMN_PERMISSION" => PermissionType::ColumnPermission,
+            other => PermissionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PermissionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PermissionType::from(s))
+    }
+}
+impl PermissionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PermissionType::CellFilterPermission => "CELL_FILTER_PERMISSION",
+            PermissionType::ColumnPermission => "COLUMN_PERMISSION",
+            PermissionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CELL_FILTER_PERMISSION", "COLUMN_PERMISSION"]
+    }
+}
+impl AsRef<str> for PermissionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A structure used to include auditing information on the privileged API. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AuditContext {
+    /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
+    pub additional_audit_context: std::option::Option<std::string::String>,
+}
+impl AuditContext {
+    /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
+    pub fn additional_audit_context(&self) -> std::option::Option<&str> {
+        self.additional_audit_context.as_deref()
+    }
+}
+impl std::fmt::Debug for AuditContext {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AuditContext");
+        formatter.field("additional_audit_context", &self.additional_audit_context);
+        formatter.finish()
+    }
+}
+/// See [`AuditContext`](crate::model::AuditContext)
+pub mod audit_context {
+    /// A builder for [`AuditContext`](crate::model::AuditContext)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) additional_audit_context: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
+        pub fn additional_audit_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.additional_audit_context = Some(input.into());
+            self
+        }
+        /// <p>The filter engine can populate the 'AdditionalAuditContext' information with the request ID for you to track. This information will be displayed in CloudTrail log in your account.</p>
+        pub fn set_additional_audit_context(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.additional_audit_context = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AuditContext`](crate::model::AuditContext)
+        pub fn build(self) -> crate::model::AuditContext {
+            crate::model::AuditContext {
+                additional_audit_context: self.additional_audit_context,
+            }
+        }
+    }
+}
+impl AuditContext {
+    /// Creates a new builder-style object to manufacture [`AuditContext`](crate::model::AuditContext)
+    pub fn builder() -> crate::model::audit_context::Builder {
+        crate::model::audit_context::Builder::default()
+    }
+}
+
+/// <p>Contains a list of values defining partitions.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PartitionValueList {
+    /// <p>The list of partition values.</p>
+    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl PartitionValueList {
+    /// <p>The list of partition values.</p>
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+        self.values.as_deref()
+    }
+}
+impl std::fmt::Debug for PartitionValueList {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PartitionValueList");
+        formatter.field("values", &self.values);
+        formatter.finish()
+    }
+}
+/// See [`PartitionValueList`](crate::model::PartitionValueList)
+pub mod partition_value_list {
+    /// A builder for [`PartitionValueList`](crate::model::PartitionValueList)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The list of partition values.</p>
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input.into());
+            self.values = Some(v);
+            self
+        }
+        /// <p>The list of partition values.</p>
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PartitionValueList`](crate::model::PartitionValueList)
+        pub fn build(self) -> crate::model::PartitionValueList {
+            crate::model::PartitionValueList {
+                values: self.values,
+            }
+        }
+    }
+}
+impl PartitionValueList {
+    /// Creates a new builder-style object to manufacture [`PartitionValueList`](crate::model::PartitionValueList)
+    pub fn builder() -> crate::model::partition_value_list::Builder {
+        crate::model::partition_value_list::Builder::default()
+    }
+}
+
 /// <p>A structure containing a list of partition values and table objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4460,9 +4706,9 @@ pub mod partition_objects {
         /// To override the contents of this collection use [`set_objects`](Self::set_objects).
         ///
         /// <p>A list of table objects</p>
-        pub fn objects(mut self, input: impl Into<crate::model::TableObject>) -> Self {
+        pub fn objects(mut self, input: crate::model::TableObject) -> Self {
             let mut v = self.objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.objects = Some(v);
             self
         }
@@ -4872,8 +5118,7 @@ impl AsRef<str> for QueryStateString {
     }
 }
 
-/// <p>An object that defines an Amazon S3 object to be deleted if a transaction cancels, provided that
-/// <code>VirtualPut</code> was called before writing the object.</p>
+/// <p>An object that defines an Amazon S3 object to be deleted if a transaction cancels, provided that <code>VirtualPut</code> was called before writing the object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualObject {
@@ -5129,9 +5374,9 @@ pub mod batch_permissions_request_entry {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The permissions to be granted.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -5148,12 +5393,9 @@ pub mod batch_permissions_request_entry {
         /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
         ///
         /// <p>Indicates if the option to pass permissions is granted.</p>
-        pub fn permissions_with_grant_option(
-            mut self,
-            input: impl Into<crate::model::Permission>,
-        ) -> Self {
+        pub fn permissions_with_grant_option(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions_with_grant_option.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions_with_grant_option = Some(v);
             self
         }

@@ -3,11 +3,9 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Indicates that an error occurred while processing the request and that the request was
-    /// not completed.</p>
+    /// <p>Indicates that an error occurred while processing the request and that the request was not completed.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>This exception occurs when there is an internal failure in the Amazon EMR
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the Amazon EMR service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>This exception occurs when there is something wrong with user input.</p>
     InvalidRequestException(crate::error::InvalidRequestException),

@@ -385,9 +385,9 @@ pub mod list_queues_output {
         /// To override the contents of this collection use [`set_queues`](Self::set_queues).
         ///
         /// List of queues.
-        pub fn queues(mut self, input: impl Into<crate::model::Queue>) -> Self {
+        pub fn queues(mut self, input: crate::model::Queue) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queues = Some(v);
             self
         }
@@ -467,9 +467,9 @@ pub mod list_presets_output {
         /// To override the contents of this collection use [`set_presets`](Self::set_presets).
         ///
         /// List of presets
-        pub fn presets(mut self, input: impl Into<crate::model::Preset>) -> Self {
+        pub fn presets(mut self, input: crate::model::Preset) -> Self {
             let mut v = self.presets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.presets = Some(v);
             self
         }
@@ -539,9 +539,9 @@ pub mod list_job_templates_output {
         /// To override the contents of this collection use [`set_job_templates`](Self::set_job_templates).
         ///
         /// List of Job templates.
-        pub fn job_templates(mut self, input: impl Into<crate::model::JobTemplate>) -> Self {
+        pub fn job_templates(mut self, input: crate::model::JobTemplate) -> Self {
             let mut v = self.job_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_templates = Some(v);
             self
         }
@@ -621,9 +621,9 @@ pub mod list_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// List of jobs
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -1002,9 +1002,9 @@ pub mod describe_endpoints_output {
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// List of endpoints
-        pub fn endpoints(mut self, input: impl Into<crate::model::Endpoint>) -> Self {
+        pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }

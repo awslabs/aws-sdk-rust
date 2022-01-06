@@ -5,6 +5,7 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_dynamodb::{Client, Error, Region, PKG_VERSION};
+use tokio_stream::StreamExt;
 
 use structopt::StructOpt;
 
@@ -58,11 +59,17 @@ async fn main() -> Result<(), Error> {
         println!();
     }
 
-    let resp = client.scan().table_name(table).send().await?;
+    let items: Result<Vec<_>, _> = client
+        .scan()
+        .table_name(table)
+        .into_paginator()
+        .items()
+        .send()
+        .collect()
+        .await;
 
     println!("Items in table:");
-
-    if let Some(item) = resp.items {
+    for item in items? {
         println!("   {:?}", item);
     }
 

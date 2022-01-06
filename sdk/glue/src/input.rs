@@ -13,26 +13,22 @@ pub mod batch_create_partition_input {
             std::option::Option<std::vec::Vec<crate::model::PartitionInput>>,
     }
     impl Builder {
-        /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be
-        /// the Amazon Web Services account ID.</p>
+        /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be
-        /// the Amazon Web Services account ID.</p>
+        /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be created.</p>
+        /// <p>The name of the metadata database in which the partition is to be created.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be created.</p>
+        /// <p>The name of the metadata database in which the partition is to be created.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -54,19 +50,14 @@ pub mod batch_create_partition_input {
         ///
         /// To override the contents of this collection use [`set_partition_input_list`](Self::set_partition_input_list).
         ///
-        /// <p>A list of <code>PartitionInput</code> structures that define
-        /// the partitions to be created.</p>
-        pub fn partition_input_list(
-            mut self,
-            input: impl Into<crate::model::PartitionInput>,
-        ) -> Self {
+        /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
+        pub fn partition_input_list(mut self, input: crate::model::PartitionInput) -> Self {
             let mut v = self.partition_input_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partition_input_list = Some(v);
             self
         }
-        /// <p>A list of <code>PartitionInput</code> structures that define
-        /// the partitions to be created.</p>
+        /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
         pub fn set_partition_input_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PartitionInput>>,
@@ -93,7 +84,7 @@ pub mod batch_create_partition_input {
 #[doc(hidden)]
 pub type BatchCreatePartitionInputOperationOutputAlias = crate::operation::BatchCreatePartition;
 #[doc(hidden)]
-pub type BatchCreatePartitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchCreatePartitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCreatePartitionInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreatePartition`](crate::operation::BatchCreatePartition)>
     #[allow(clippy::let_and_return)]
@@ -104,7 +95,7 @@ impl BatchCreatePartitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchCreatePartition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -191,7 +182,7 @@ impl BatchCreatePartitionInput {
             "BatchCreatePartition",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -224,14 +215,12 @@ pub mod batch_delete_connection_input {
         pub(crate) connection_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -272,7 +261,7 @@ pub mod batch_delete_connection_input {
 #[doc(hidden)]
 pub type BatchDeleteConnectionInputOperationOutputAlias = crate::operation::BatchDeleteConnection;
 #[doc(hidden)]
-pub type BatchDeleteConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDeleteConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteConnectionInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteConnection`](crate::operation::BatchDeleteConnection)>
     #[allow(clippy::let_and_return)]
@@ -283,7 +272,7 @@ impl BatchDeleteConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -370,7 +359,7 @@ impl BatchDeleteConnectionInput {
             "BatchDeleteConnection",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -406,26 +395,22 @@ pub mod batch_delete_partition_input {
             std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -447,19 +432,14 @@ pub mod batch_delete_partition_input {
         ///
         /// To override the contents of this collection use [`set_partitions_to_delete`](Self::set_partitions_to_delete).
         ///
-        /// <p>A list of <code>PartitionInput</code> structures that define
-        /// the partitions to be deleted.</p>
-        pub fn partitions_to_delete(
-            mut self,
-            input: impl Into<crate::model::PartitionValueList>,
-        ) -> Self {
+        /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
+        pub fn partitions_to_delete(mut self, input: crate::model::PartitionValueList) -> Self {
             let mut v = self.partitions_to_delete.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partitions_to_delete = Some(v);
             self
         }
-        /// <p>A list of <code>PartitionInput</code> structures that define
-        /// the partitions to be deleted.</p>
+        /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
         pub fn set_partitions_to_delete(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
@@ -486,7 +466,7 @@ pub mod batch_delete_partition_input {
 #[doc(hidden)]
 pub type BatchDeletePartitionInputOperationOutputAlias = crate::operation::BatchDeletePartition;
 #[doc(hidden)]
-pub type BatchDeletePartitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDeletePartitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeletePartitionInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeletePartition`](crate::operation::BatchDeletePartition)>
     #[allow(clippy::let_and_return)]
@@ -497,7 +477,7 @@ impl BatchDeletePartitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDeletePartition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -584,7 +564,7 @@ impl BatchDeletePartitionInput {
             "BatchDeletePartition",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -619,26 +599,22 @@ pub mod batch_delete_table_input {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the catalog database in which the tables to delete reside. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the tables to delete reside. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -697,7 +673,7 @@ pub mod batch_delete_table_input {
 #[doc(hidden)]
 pub type BatchDeleteTableInputOperationOutputAlias = crate::operation::BatchDeleteTable;
 #[doc(hidden)]
-pub type BatchDeleteTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDeleteTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteTableInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteTable`](crate::operation::BatchDeleteTable)>
     #[allow(clippy::let_and_return)]
@@ -708,7 +684,7 @@ impl BatchDeleteTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -793,7 +769,7 @@ impl BatchDeleteTableInput {
             "BatchDeleteTable",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -828,26 +804,22 @@ pub mod batch_delete_table_version_input {
         pub(crate) version_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -855,14 +827,12 @@ pub mod batch_delete_table_version_input {
             self.database_name = input;
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_name = Some(input.into());
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -906,7 +876,7 @@ pub mod batch_delete_table_version_input {
 pub type BatchDeleteTableVersionInputOperationOutputAlias =
     crate::operation::BatchDeleteTableVersion;
 #[doc(hidden)]
-pub type BatchDeleteTableVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDeleteTableVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteTableVersionInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteTableVersion`](crate::operation::BatchDeleteTableVersion)>
     #[allow(clippy::let_and_return)]
@@ -917,7 +887,7 @@ impl BatchDeleteTableVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteTableVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1004,7 +974,7 @@ impl BatchDeleteTableVersionInput {
             "BatchDeleteTableVersion",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1095,7 +1065,7 @@ pub mod batch_get_blueprints_input {
 #[doc(hidden)]
 pub type BatchGetBlueprintsInputOperationOutputAlias = crate::operation::BatchGetBlueprints;
 #[doc(hidden)]
-pub type BatchGetBlueprintsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetBlueprintsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetBlueprintsInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetBlueprints`](crate::operation::BatchGetBlueprints)>
     #[allow(clippy::let_and_return)]
@@ -1106,7 +1076,7 @@ impl BatchGetBlueprintsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetBlueprints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1191,7 +1161,7 @@ impl BatchGetBlueprintsInput {
             "BatchGetBlueprints",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1227,16 +1197,14 @@ pub mod batch_get_crawlers_input {
         ///
         /// To override the contents of this collection use [`set_crawler_names`](Self::set_crawler_names).
         ///
-        /// <p>A list of crawler names, which might be the names returned from the
-        /// <code>ListCrawlers</code> operation.</p>
+        /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
         pub fn crawler_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.crawler_names.unwrap_or_default();
             v.push(input.into());
             self.crawler_names = Some(v);
             self
         }
-        /// <p>A list of crawler names, which might be the names returned from the
-        /// <code>ListCrawlers</code> operation.</p>
+        /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
         pub fn set_crawler_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1260,7 +1228,7 @@ pub mod batch_get_crawlers_input {
 #[doc(hidden)]
 pub type BatchGetCrawlersInputOperationOutputAlias = crate::operation::BatchGetCrawlers;
 #[doc(hidden)]
-pub type BatchGetCrawlersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetCrawlersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetCrawlersInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetCrawlers`](crate::operation::BatchGetCrawlers)>
     #[allow(clippy::let_and_return)]
@@ -1271,7 +1239,7 @@ impl BatchGetCrawlersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetCrawlers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1356,7 +1324,7 @@ impl BatchGetCrawlersInput {
             "BatchGetCrawlers",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1392,16 +1360,14 @@ pub mod batch_get_dev_endpoints_input {
         ///
         /// To override the contents of this collection use [`set_dev_endpoint_names`](Self::set_dev_endpoint_names).
         ///
-        /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the
-        /// <code>ListDevEndpoint</code> operation.</p>
+        /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
         pub fn dev_endpoint_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dev_endpoint_names.unwrap_or_default();
             v.push(input.into());
             self.dev_endpoint_names = Some(v);
             self
         }
-        /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the
-        /// <code>ListDevEndpoint</code> operation.</p>
+        /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
         pub fn set_dev_endpoint_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1425,7 +1391,7 @@ pub mod batch_get_dev_endpoints_input {
 #[doc(hidden)]
 pub type BatchGetDevEndpointsInputOperationOutputAlias = crate::operation::BatchGetDevEndpoints;
 #[doc(hidden)]
-pub type BatchGetDevEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetDevEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetDevEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetDevEndpoints`](crate::operation::BatchGetDevEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -1436,7 +1402,7 @@ impl BatchGetDevEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetDevEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1523,7 +1489,7 @@ impl BatchGetDevEndpointsInput {
             "BatchGetDevEndpoints",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1559,16 +1525,14 @@ pub mod batch_get_jobs_input {
         ///
         /// To override the contents of this collection use [`set_job_names`](Self::set_job_names).
         ///
-        /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code>
-        /// operation.</p>
+        /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
         pub fn job_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_names.unwrap_or_default();
             v.push(input.into());
             self.job_names = Some(v);
             self
         }
-        /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code>
-        /// operation.</p>
+        /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
         pub fn set_job_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1592,7 +1556,7 @@ pub mod batch_get_jobs_input {
 #[doc(hidden)]
 pub type BatchGetJobsInputOperationOutputAlias = crate::operation::BatchGetJobs;
 #[doc(hidden)]
-pub type BatchGetJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetJobsInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetJobs`](crate::operation::BatchGetJobs)>
     #[allow(clippy::let_and_return)]
@@ -1603,7 +1567,7 @@ impl BatchGetJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1687,7 +1651,7 @@ impl BatchGetJobsInput {
             "BatchGetJobs",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1723,14 +1687,12 @@ pub mod batch_get_partition_input {
             std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -1763,12 +1725,9 @@ pub mod batch_get_partition_input {
         /// To override the contents of this collection use [`set_partitions_to_get`](Self::set_partitions_to_get).
         ///
         /// <p>A list of partition values identifying the partitions to retrieve.</p>
-        pub fn partitions_to_get(
-            mut self,
-            input: impl Into<crate::model::PartitionValueList>,
-        ) -> Self {
+        pub fn partitions_to_get(mut self, input: crate::model::PartitionValueList) -> Self {
             let mut v = self.partitions_to_get.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partitions_to_get = Some(v);
             self
         }
@@ -1799,7 +1758,7 @@ pub mod batch_get_partition_input {
 #[doc(hidden)]
 pub type BatchGetPartitionInputOperationOutputAlias = crate::operation::BatchGetPartition;
 #[doc(hidden)]
-pub type BatchGetPartitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetPartitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetPartitionInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetPartition`](crate::operation::BatchGetPartition)>
     #[allow(clippy::let_and_return)]
@@ -1810,7 +1769,7 @@ impl BatchGetPartitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetPartition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1895,7 +1854,7 @@ impl BatchGetPartitionInput {
             "BatchGetPartition",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1962,7 +1921,7 @@ pub mod batch_get_triggers_input {
 #[doc(hidden)]
 pub type BatchGetTriggersInputOperationOutputAlias = crate::operation::BatchGetTriggers;
 #[doc(hidden)]
-pub type BatchGetTriggersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetTriggersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetTriggersInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetTriggers`](crate::operation::BatchGetTriggers)>
     #[allow(clippy::let_and_return)]
@@ -1973,7 +1932,7 @@ impl BatchGetTriggersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetTriggers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2058,7 +2017,7 @@ impl BatchGetTriggersInput {
             "BatchGetTriggers",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2137,7 +2096,7 @@ pub mod batch_get_workflows_input {
 #[doc(hidden)]
 pub type BatchGetWorkflowsInputOperationOutputAlias = crate::operation::BatchGetWorkflows;
 #[doc(hidden)]
-pub type BatchGetWorkflowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetWorkflowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetWorkflowsInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetWorkflows`](crate::operation::BatchGetWorkflows)>
     #[allow(clippy::let_and_return)]
@@ -2148,7 +2107,7 @@ impl BatchGetWorkflowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetWorkflows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2233,7 +2192,7 @@ impl BatchGetWorkflowsInput {
             "BatchGetWorkflows",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2280,16 +2239,14 @@ pub mod batch_stop_job_run_input {
         ///
         /// To override the contents of this collection use [`set_job_run_ids`](Self::set_job_run_ids).
         ///
-        /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job
-        /// definition.</p>
+        /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
         pub fn job_run_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_run_ids.unwrap_or_default();
             v.push(input.into());
             self.job_run_ids = Some(v);
             self
         }
-        /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job
-        /// definition.</p>
+        /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
         pub fn set_job_run_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2314,7 +2271,7 @@ pub mod batch_stop_job_run_input {
 #[doc(hidden)]
 pub type BatchStopJobRunInputOperationOutputAlias = crate::operation::BatchStopJobRun;
 #[doc(hidden)]
-pub type BatchStopJobRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchStopJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchStopJobRunInput {
     /// Consumes the builder and constructs an Operation<[`BatchStopJobRun`](crate::operation::BatchStopJobRun)>
     #[allow(clippy::let_and_return)]
@@ -2325,7 +2282,7 @@ impl BatchStopJobRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchStopJobRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2410,7 +2367,7 @@ impl BatchStopJobRunInput {
             "BatchStopJobRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2446,26 +2403,22 @@ pub mod batch_update_partition_input {
             std::option::Option<std::vec::Vec<crate::model::BatchUpdatePartitionRequestEntry>>,
     }
     impl Builder {
-        /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be
-        /// the Amazon Web Services account ID.</p>
+        /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be
-        /// the Amazon Web Services account ID.</p>
+        /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be updated.</p>
+        /// <p>The name of the metadata database in which the partition is to be updated.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be updated.</p>
+        /// <p>The name of the metadata database in which the partition is to be updated.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2488,12 +2441,9 @@ pub mod batch_update_partition_input {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::BatchUpdatePartitionRequestEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::BatchUpdatePartitionRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -2526,7 +2476,7 @@ pub mod batch_update_partition_input {
 #[doc(hidden)]
 pub type BatchUpdatePartitionInputOperationOutputAlias = crate::operation::BatchUpdatePartition;
 #[doc(hidden)]
-pub type BatchUpdatePartitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchUpdatePartitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchUpdatePartitionInput {
     /// Consumes the builder and constructs an Operation<[`BatchUpdatePartition`](crate::operation::BatchUpdatePartition)>
     #[allow(clippy::let_and_return)]
@@ -2537,7 +2487,7 @@ impl BatchUpdatePartitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchUpdatePartition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2624,7 +2574,7 @@ impl BatchUpdatePartitionInput {
             "BatchUpdatePartition",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2694,7 +2644,7 @@ pub mod cancel_ml_task_run_input {
 #[doc(hidden)]
 pub type CancelMlTaskRunInputOperationOutputAlias = crate::operation::CancelMLTaskRun;
 #[doc(hidden)]
-pub type CancelMlTaskRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelMlTaskRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelMlTaskRunInput {
     /// Consumes the builder and constructs an Operation<[`CancelMLTaskRun`](crate::operation::CancelMLTaskRun)>
     #[allow(clippy::let_and_return)]
@@ -2705,7 +2655,7 @@ impl CancelMlTaskRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelMLTaskRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2790,7 +2740,7 @@ impl CancelMlTaskRunInput {
             "CancelMLTaskRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2867,7 +2817,7 @@ pub mod check_schema_version_validity_input {
 pub type CheckSchemaVersionValidityInputOperationOutputAlias =
     crate::operation::CheckSchemaVersionValidity;
 #[doc(hidden)]
-pub type CheckSchemaVersionValidityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CheckSchemaVersionValidityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckSchemaVersionValidityInput {
     /// Consumes the builder and constructs an Operation<[`CheckSchemaVersionValidity`](crate::operation::CheckSchemaVersionValidity)>
     #[allow(clippy::let_and_return)]
@@ -2878,7 +2828,7 @@ impl CheckSchemaVersionValidityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckSchemaVersionValidity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2964,7 +2914,7 @@ impl CheckSchemaVersionValidityInput {
             "CheckSchemaVersionValidity",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3078,7 +3028,7 @@ pub mod create_blueprint_input {
 #[doc(hidden)]
 pub type CreateBlueprintInputOperationOutputAlias = crate::operation::CreateBlueprint;
 #[doc(hidden)]
-pub type CreateBlueprintInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBlueprintInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBlueprintInput {
     /// Consumes the builder and constructs an Operation<[`CreateBlueprint`](crate::operation::CreateBlueprint)>
     #[allow(clippy::let_and_return)]
@@ -3089,7 +3039,7 @@ impl CreateBlueprintInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBlueprint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3174,7 +3124,7 @@ impl CreateBlueprintInput {
             "CreateBlueprint",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3209,14 +3159,12 @@ pub mod create_classifier_input {
         pub(crate) csv_classifier: std::option::Option<crate::model::CreateCsvClassifierRequest>,
     }
     impl Builder {
-        /// <p>A <code>GrokClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
         pub fn grok_classifier(mut self, input: crate::model::CreateGrokClassifierRequest) -> Self {
             self.grok_classifier = Some(input);
             self
         }
-        /// <p>A <code>GrokClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
         pub fn set_grok_classifier(
             mut self,
             input: std::option::Option<crate::model::CreateGrokClassifierRequest>,
@@ -3224,14 +3172,12 @@ pub mod create_classifier_input {
             self.grok_classifier = input;
             self
         }
-        /// <p>An <code>XMLClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
         pub fn xml_classifier(mut self, input: crate::model::CreateXmlClassifierRequest) -> Self {
             self.xml_classifier = Some(input);
             self
         }
-        /// <p>An <code>XMLClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
         pub fn set_xml_classifier(
             mut self,
             input: std::option::Option<crate::model::CreateXmlClassifierRequest>,
@@ -3239,14 +3185,12 @@ pub mod create_classifier_input {
             self.xml_classifier = input;
             self
         }
-        /// <p>A <code>JsonClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
         pub fn json_classifier(mut self, input: crate::model::CreateJsonClassifierRequest) -> Self {
             self.json_classifier = Some(input);
             self
         }
-        /// <p>A <code>JsonClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
         pub fn set_json_classifier(
             mut self,
             input: std::option::Option<crate::model::CreateJsonClassifierRequest>,
@@ -3254,14 +3198,12 @@ pub mod create_classifier_input {
             self.json_classifier = input;
             self
         }
-        /// <p>A <code>CsvClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
         pub fn csv_classifier(mut self, input: crate::model::CreateCsvClassifierRequest) -> Self {
             self.csv_classifier = Some(input);
             self
         }
-        /// <p>A <code>CsvClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
         pub fn set_csv_classifier(
             mut self,
             input: std::option::Option<crate::model::CreateCsvClassifierRequest>,
@@ -3288,7 +3230,7 @@ pub mod create_classifier_input {
 #[doc(hidden)]
 pub type CreateClassifierInputOperationOutputAlias = crate::operation::CreateClassifier;
 #[doc(hidden)]
-pub type CreateClassifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateClassifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClassifierInput {
     /// Consumes the builder and constructs an Operation<[`CreateClassifier`](crate::operation::CreateClassifier)>
     #[allow(clippy::let_and_return)]
@@ -3299,7 +3241,7 @@ impl CreateClassifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateClassifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3384,7 +3326,7 @@ impl CreateClassifierInput {
             "CreateClassifier",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3420,26 +3362,22 @@ pub mod create_connection_input {
         >,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>A <code>ConnectionInput</code> object defining the connection
-        /// to create.</p>
+        /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
         pub fn connection_input(mut self, input: crate::model::ConnectionInput) -> Self {
             self.connection_input = Some(input);
             self
         }
-        /// <p>A <code>ConnectionInput</code> object defining the connection
-        /// to create.</p>
+        /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
         pub fn set_connection_input(
             mut self,
             input: std::option::Option<crate::model::ConnectionInput>,
@@ -3490,7 +3428,7 @@ pub mod create_connection_input {
 #[doc(hidden)]
 pub type CreateConnectionInputOperationOutputAlias = crate::operation::CreateConnection;
 #[doc(hidden)]
-pub type CreateConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnection`](crate::operation::CreateConnection)>
     #[allow(clippy::let_and_return)]
@@ -3501,7 +3439,7 @@ impl CreateConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3586,7 +3524,7 @@ impl CreateConnectionInput {
             "CreateConnection",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3626,6 +3564,8 @@ pub mod create_crawler_input {
         pub(crate) schema_change_policy: std::option::Option<crate::model::SchemaChangePolicy>,
         pub(crate) recrawl_policy: std::option::Option<crate::model::RecrawlPolicy>,
         pub(crate) lineage_configuration: std::option::Option<crate::model::LineageConfiguration>,
+        pub(crate) lake_formation_configuration:
+            std::option::Option<crate::model::LakeFormationConfiguration>,
         pub(crate) configuration: std::option::Option<std::string::String>,
         pub(crate) crawler_security_configuration: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -3643,26 +3583,22 @@ pub mod create_crawler_input {
             self.name = input;
             self
         }
-        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to
-        /// access customer resources.</p>
+        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to
-        /// access customer resources.</p>
+        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
-        /// <p>The Glue database where results are written, such as:
-        /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+        /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The Glue database where results are written, such as:
-        /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+        /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3693,16 +3629,12 @@ pub mod create_crawler_input {
             self.targets = input;
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
@@ -3711,18 +3643,14 @@ pub mod create_crawler_input {
         ///
         /// To override the contents of this collection use [`set_classifiers`](Self::set_classifiers).
         ///
-        /// <p>A list of custom classifiers that the user has registered. By default, all built-in
-        /// classifiers are included in a crawl, but these custom classifiers always override the default
-        /// classifiers for a given classification.</p>
+        /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
         pub fn classifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.classifiers.unwrap_or_default();
             v.push(input.into());
             self.classifiers = Some(v);
             self
         }
-        /// <p>A list of custom classifiers that the user has registered. By default, all built-in
-        /// classifiers are included in a crawl, but these custom classifiers always override the default
-        /// classifiers for a given classification.</p>
+        /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
         pub fn set_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3779,16 +3707,28 @@ pub mod create_crawler_input {
             self.lineage_configuration = input;
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON
-        /// string allows users to specify aspects of a crawler's behavior.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn lake_formation_configuration(
+            mut self,
+            input: crate::model::LakeFormationConfiguration,
+        ) -> Self {
+            self.lake_formation_configuration = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_lake_formation_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LakeFormationConfiguration>,
+        ) -> Self {
+            self.lake_formation_configuration = input;
+            self
+        }
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration = Some(input.into());
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON
-        /// string allows users to specify aspects of a crawler's behavior.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3796,8 +3736,7 @@ pub mod create_crawler_input {
             self.configuration = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn crawler_security_configuration(
             mut self,
             input: impl Into<std::string::String>,
@@ -3805,8 +3744,7 @@ pub mod create_crawler_input {
             self.crawler_security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn set_crawler_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3818,9 +3756,7 @@ pub mod create_crawler_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to use with this crawler request. You may use tags to limit access to the
-        /// crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer
-        /// guide.</p>
+        /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3831,9 +3767,7 @@ pub mod create_crawler_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags to use with this crawler request. You may use tags to limit access to the
-        /// crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer
-        /// guide.</p>
+        /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3862,6 +3796,7 @@ pub mod create_crawler_input {
                 schema_change_policy: self.schema_change_policy,
                 recrawl_policy: self.recrawl_policy,
                 lineage_configuration: self.lineage_configuration,
+                lake_formation_configuration: self.lake_formation_configuration,
                 configuration: self.configuration,
                 crawler_security_configuration: self.crawler_security_configuration,
                 tags: self.tags,
@@ -3872,7 +3807,7 @@ pub mod create_crawler_input {
 #[doc(hidden)]
 pub type CreateCrawlerInputOperationOutputAlias = crate::operation::CreateCrawler;
 #[doc(hidden)]
-pub type CreateCrawlerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCrawlerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCrawlerInput {
     /// Consumes the builder and constructs an Operation<[`CreateCrawler`](crate::operation::CreateCrawler)>
     #[allow(clippy::let_and_return)]
@@ -3883,7 +3818,7 @@ impl CreateCrawlerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCrawler,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3967,7 +3902,7 @@ impl CreateCrawlerInput {
             "CreateCrawler",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4000,14 +3935,12 @@ pub mod create_database_input {
         pub(crate) database_input: std::option::Option<crate::model::DatabaseInput>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -4042,7 +3975,7 @@ pub mod create_database_input {
 #[doc(hidden)]
 pub type CreateDatabaseInputOperationOutputAlias = crate::operation::CreateDatabase;
 #[doc(hidden)]
-pub type CreateDatabaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatabaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatabaseInput {
     /// Consumes the builder and constructs an Operation<[`CreateDatabase`](crate::operation::CreateDatabase)>
     #[allow(clippy::let_and_return)]
@@ -4053,7 +3986,7 @@ impl CreateDatabaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDatabase,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4138,7 +4071,7 @@ impl CreateDatabaseInput {
             "CreateDatabase",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4215,16 +4148,14 @@ pub mod create_dev_endpoint_input {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>Security group IDs for the security groups to be used by the new
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>Security group IDs for the security groups to be used by the new
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4242,16 +4173,12 @@ pub mod create_dev_endpoint_input {
             self.subnet_id = input;
             self
         }
-        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
-        /// attribute is provided for backward compatibility because the recommended attribute to use is
-        /// public keys.</p>
+        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
         pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_key = Some(input.into());
             self
         }
-        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
-        /// attribute is provided for backward compatibility because the recommended attribute to use is
-        /// public keys.</p>
+        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
         pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.public_key = input;
             self
@@ -4260,15 +4187,8 @@ pub mod create_dev_endpoint_input {
         ///
         /// To override the contents of this collection use [`set_public_keys`](Self::set_public_keys).
         ///
-        /// <p>A list of public keys to be used by the development endpoints for authentication. The use
-        /// of this attribute is preferred over a single public key because the public keys allow you to
-        /// have a different private key per client.</p>
-        ///
-        /// <note>
-        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able
-        /// to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public
-        /// key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the
-        /// <code>addPublicKeys</code> attribute.</p>
+        /// <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
         /// </note>
         pub fn public_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.public_keys.unwrap_or_default();
@@ -4276,15 +4196,8 @@ pub mod create_dev_endpoint_input {
             self.public_keys = Some(v);
             self
         }
-        /// <p>A list of public keys to be used by the development endpoints for authentication. The use
-        /// of this attribute is preferred over a single public key because the public keys allow you to
-        /// have a different private key per client.</p>
-        ///
-        /// <note>
-        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able
-        /// to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public
-        /// key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the
-        /// <code>addPublicKeys</code> attribute.</p>
+        /// <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
         /// </note>
         pub fn set_public_keys(
             mut self,
@@ -4293,50 +4206,34 @@ pub mod create_dev_endpoint_input {
             self.public_keys = input;
             self
         }
-        /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
         pub fn number_of_nodes(mut self, input: i32) -> Self {
             self.number_of_nodes = Some(input);
             self
         }
-        /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
         pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_nodes = input;
             self
         }
         /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
-        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
-        /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
             self
         }
         /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
-        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
-        /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
         pub fn set_worker_type(
             mut self,
             input: std::option::Option<crate::model::WorkerType>,
@@ -4345,60 +4242,42 @@ pub mod create_dev_endpoint_input {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
-        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
-        ///
+        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
-        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
-        ///
+        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
             self
         }
-        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
-        /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
-        /// comma.</p>
-        /// <note>
-        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-        /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-        /// analysis library, are not yet supported.</p>
+        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet supported.</p>
         /// </note>
         pub fn extra_python_libs_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.extra_python_libs_s3_path = Some(input.into());
             self
         }
-        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
-        /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
-        /// comma.</p>
-        /// <note>
-        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-        /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-        /// analysis library, are not yet supported.</p>
+        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet supported.</p>
         /// </note>
         pub fn set_extra_python_libs_s3_path(
             mut self,
@@ -4407,14 +4286,12 @@ pub mod create_dev_endpoint_input {
             self.extra_python_libs_s3_path = input;
             self
         }
-        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-        /// in your <code>DevEndpoint</code>.</p>
+        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p>
         pub fn extra_jars_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.extra_jars_s3_path = Some(input.into());
             self
         }
-        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-        /// in your <code>DevEndpoint</code>.</p>
+        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p>
         pub fn set_extra_jars_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4422,14 +4299,12 @@ pub mod create_dev_endpoint_input {
             self.extra_jars_s3_path = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4517,7 +4392,7 @@ pub mod create_dev_endpoint_input {
 #[doc(hidden)]
 pub type CreateDevEndpointInputOperationOutputAlias = crate::operation::CreateDevEndpoint;
 #[doc(hidden)]
-pub type CreateDevEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDevEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDevEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateDevEndpoint`](crate::operation::CreateDevEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -4528,7 +4403,7 @@ impl CreateDevEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDevEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4613,7 +4488,7 @@ impl CreateDevEndpointInput {
             "CreateDevEndpoint",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4709,14 +4584,12 @@ pub mod create_job_input {
             self.role = input;
             self
         }
-        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-        /// for this job.</p>
+        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
         pub fn execution_property(mut self, input: crate::model::ExecutionProperty) -> Self {
             self.execution_property = Some(input);
             self
         }
-        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-        /// for this job.</p>
+        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
         pub fn set_execution_property(
             mut self,
             input: std::option::Option<crate::model::ExecutionProperty>,
@@ -4739,8 +4612,7 @@ pub mod create_job_input {
         /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
         ///
         /// <p>The default arguments for this job.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn default_arguments(
@@ -4754,8 +4626,7 @@ pub mod create_job_input {
             self
         }
         /// <p>The default arguments for this job.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_default_arguments(
@@ -4816,99 +4687,57 @@ pub mod create_job_input {
             self
         }
         /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can
-        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.allocated_capacity = Some(input);
             self
         }
         /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can
-        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self
         }
-        /// <p>The job timeout in minutes.  This is the maximum time that a job run
-        /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-        /// status. The default is 2,880 minutes (48 hours).</p>
+        /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The job timeout in minutes.  This is the maximum time that a job run
-        /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-        /// status. The default is 2,880 minutes (48 hours).</p>
+        /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
         }
-        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-        /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-        /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-        /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-        /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// job.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// job.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4955,32 +4784,26 @@ pub mod create_job_input {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
@@ -4988,15 +4811,9 @@ pub mod create_job_input {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
@@ -5004,15 +4821,9 @@ pub mod create_job_input {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -5053,7 +4864,7 @@ pub mod create_job_input {
 #[doc(hidden)]
 pub type CreateJobInputOperationOutputAlias = crate::operation::CreateJob;
 #[doc(hidden)]
-pub type CreateJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateJob`](crate::operation::CreateJob)>
     #[allow(clippy::let_and_return)]
@@ -5064,7 +4875,7 @@ impl CreateJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5146,7 +4957,7 @@ impl CreateJobInput {
                     "CreateJob",
                     "glue",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5202,14 +5013,12 @@ pub mod create_ml_transform_input {
             self.name = input;
             self
         }
-        /// <p>A description of the machine learning transform that is being defined. The default is an
-        /// empty string.</p>
+        /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the machine learning transform that is being defined. The default is an
-        /// empty string.</p>
+        /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5219,9 +5028,9 @@ pub mod create_ml_transform_input {
         /// To override the contents of this collection use [`set_input_record_tables`](Self::set_input_record_tables).
         ///
         /// <p>A list of Glue table definitions used by the transform.</p>
-        pub fn input_record_tables(mut self, input: impl Into<crate::model::GlueTable>) -> Self {
+        pub fn input_record_tables(mut self, input: crate::model::GlueTable) -> Self {
             let mut v = self.input_record_tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.input_record_tables = Some(v);
             self
         }
@@ -5233,14 +5042,12 @@ pub mod create_ml_transform_input {
             self.input_record_tables = input;
             self
         }
-        /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally
-        /// dependent on the transform type.</p>
+        /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
         pub fn parameters(mut self, input: crate::model::TransformParameters) -> Self {
             self.parameters = Some(input);
             self
         }
-        /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally
-        /// dependent on the transform type.</p>
+        /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::TransformParameters>,
@@ -5249,100 +5056,56 @@ pub mod create_ml_transform_input {
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
-        /// </li>
+        /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+        /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
         /// </ul>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
-        /// </li>
+        /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+        /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
         /// </ul>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
-        ///
-        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>    
-        ///
-        ///
+        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
-        ///
-        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>    
-        ///
-        ///
+        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
@@ -5350,33 +5113,16 @@ pub mod create_ml_transform_input {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
@@ -5384,33 +5130,16 @@ pub mod create_ml_transform_input {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -5420,14 +5149,12 @@ pub mod create_ml_transform_input {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
-        ///
         /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
-        ///
         /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
@@ -5519,7 +5246,7 @@ pub mod create_ml_transform_input {
 #[doc(hidden)]
 pub type CreateMlTransformInputOperationOutputAlias = crate::operation::CreateMLTransform;
 #[doc(hidden)]
-pub type CreateMlTransformInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMlTransformInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMlTransformInput {
     /// Consumes the builder and constructs an Operation<[`CreateMLTransform`](crate::operation::CreateMLTransform)>
     #[allow(clippy::let_and_return)]
@@ -5530,7 +5257,7 @@ impl CreateMlTransformInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMLTransform,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5615,7 +5342,7 @@ impl CreateMlTransformInput {
             "CreateMLTransform",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5660,14 +5387,12 @@ pub mod create_partition_input {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be created.</p>
+        /// <p>The name of the metadata database in which the partition is to be created.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be created.</p>
+        /// <p>The name of the metadata database in which the partition is to be created.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5685,14 +5410,12 @@ pub mod create_partition_input {
             self.table_name = input;
             self
         }
-        /// <p>A <code>PartitionInput</code> structure defining the partition
-        /// to be created.</p>
+        /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
         pub fn partition_input(mut self, input: crate::model::PartitionInput) -> Self {
             self.partition_input = Some(input);
             self
         }
-        /// <p>A <code>PartitionInput</code> structure defining the partition
-        /// to be created.</p>
+        /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
         pub fn set_partition_input(
             mut self,
             input: std::option::Option<crate::model::PartitionInput>,
@@ -5719,7 +5442,7 @@ pub mod create_partition_input {
 #[doc(hidden)]
 pub type CreatePartitionInputOperationOutputAlias = crate::operation::CreatePartition;
 #[doc(hidden)]
-pub type CreatePartitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePartitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePartitionInput {
     /// Consumes the builder and constructs an Operation<[`CreatePartition`](crate::operation::CreatePartition)>
     #[allow(clippy::let_and_return)]
@@ -5730,7 +5453,7 @@ impl CreatePartitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePartition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5815,7 +5538,7 @@ impl CreatePartitionInput {
             "CreatePartition",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5915,7 +5638,7 @@ pub mod create_partition_index_input {
 #[doc(hidden)]
 pub type CreatePartitionIndexInputOperationOutputAlias = crate::operation::CreatePartitionIndex;
 #[doc(hidden)]
-pub type CreatePartitionIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePartitionIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePartitionIndexInput {
     /// Consumes the builder and constructs an Operation<[`CreatePartitionIndex`](crate::operation::CreatePartitionIndex)>
     #[allow(clippy::let_and_return)]
@@ -5926,7 +5649,7 @@ impl CreatePartitionIndexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePartitionIndex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6013,7 +5736,7 @@ impl CreatePartitionIndexInput {
             "CreatePartitionIndex",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6049,12 +5772,12 @@ pub mod create_registry_input {
         >,
     }
     impl Builder {
-        /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.  No whitespace.</p>
+        /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
         pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_name = Some(input.into());
             self
         }
-        /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.  No whitespace.</p>
+        /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
         pub fn set_registry_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6115,7 +5838,7 @@ pub mod create_registry_input {
 #[doc(hidden)]
 pub type CreateRegistryInputOperationOutputAlias = crate::operation::CreateRegistry;
 #[doc(hidden)]
-pub type CreateRegistryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRegistryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRegistryInput {
     /// Consumes the builder and constructs an Operation<[`CreateRegistry`](crate::operation::CreateRegistry)>
     #[allow(clippy::let_and_return)]
@@ -6126,7 +5849,7 @@ impl CreateRegistryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRegistry,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6211,7 +5934,7 @@ impl CreateRegistryInput {
             "CreateRegistry",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6251,12 +5974,18 @@ pub mod create_schema_input {
         pub(crate) schema_definition: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id</code>.</p>
+        /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:
+        /// <customer id>
+        /// :registry/default-registry:random-5-letter-id
+        /// </customer></code>.</p>
         pub fn registry_id(mut self, input: crate::model::RegistryId) -> Self {
             self.registry_id = Some(input);
             self
         }
-        /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id</code>.</p>
+        /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:
+        /// <customer id>
+        /// :registry/default-registry:random-5-letter-id
+        /// </customer></code>.</p>
         pub fn set_registry_id(
             mut self,
             input: std::option::Option<crate::model::RegistryId>,
@@ -6288,80 +6017,30 @@ pub mod create_schema_input {
             self
         }
         /// <p>The compatibility mode of the schema. The possible values are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p>
-        /// </li>
+        /// <li> <p> <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p> </li>
+        /// <li> <p> <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p> </li>
+        /// <li> <p> <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p> </li>
+        /// <li> <p> <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p> </li>
+        /// <li> <p> <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p> </li>
+        /// <li> <p> <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p> </li>
+        /// <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>
+        /// <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>
         /// </ul>
         pub fn compatibility(mut self, input: crate::model::Compatibility) -> Self {
             self.compatibility = Some(input);
             self
         }
         /// <p>The compatibility mode of the schema. The possible values are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p>
-        /// </li>
+        /// <li> <p> <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p> </li>
+        /// <li> <p> <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p> </li>
+        /// <li> <p> <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p> </li>
+        /// <li> <p> <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p> </li>
+        /// <li> <p> <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p> </li>
+        /// <li> <p> <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p> </li>
+        /// <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>
+        /// <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>
         /// </ul>
         pub fn set_compatibility(
             mut self,
@@ -6440,7 +6119,7 @@ pub mod create_schema_input {
 #[doc(hidden)]
 pub type CreateSchemaInputOperationOutputAlias = crate::operation::CreateSchema;
 #[doc(hidden)]
-pub type CreateSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSchemaInput {
     /// Consumes the builder and constructs an Operation<[`CreateSchema`](crate::operation::CreateSchema)>
     #[allow(clippy::let_and_return)]
@@ -6451,7 +6130,7 @@ impl CreateSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6535,7 +6214,7 @@ impl CreateSchemaInput {
             "CreateSchema",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6574,9 +6253,9 @@ pub mod create_script_input {
         /// To override the contents of this collection use [`set_dag_nodes`](Self::set_dag_nodes).
         ///
         /// <p>A list of the nodes in the DAG.</p>
-        pub fn dag_nodes(mut self, input: impl Into<crate::model::CodeGenNode>) -> Self {
+        pub fn dag_nodes(mut self, input: crate::model::CodeGenNode) -> Self {
             let mut v = self.dag_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dag_nodes = Some(v);
             self
         }
@@ -6593,9 +6272,9 @@ pub mod create_script_input {
         /// To override the contents of this collection use [`set_dag_edges`](Self::set_dag_edges).
         ///
         /// <p>A list of the edges in the DAG.</p>
-        pub fn dag_edges(mut self, input: impl Into<crate::model::CodeGenEdge>) -> Self {
+        pub fn dag_edges(mut self, input: crate::model::CodeGenEdge) -> Self {
             let mut v = self.dag_edges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dag_edges = Some(v);
             self
         }
@@ -6635,7 +6314,7 @@ pub mod create_script_input {
 #[doc(hidden)]
 pub type CreateScriptInputOperationOutputAlias = crate::operation::CreateScript;
 #[doc(hidden)]
-pub type CreateScriptInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateScriptInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateScriptInput {
     /// Consumes the builder and constructs an Operation<[`CreateScript`](crate::operation::CreateScript)>
     #[allow(clippy::let_and_return)]
@@ -6646,7 +6325,7 @@ impl CreateScriptInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateScript,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6730,7 +6409,7 @@ impl CreateScriptInput {
             "CreateScript",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6808,7 +6487,7 @@ pub mod create_security_configuration_input {
 pub type CreateSecurityConfigurationInputOperationOutputAlias =
     crate::operation::CreateSecurityConfiguration;
 #[doc(hidden)]
-pub type CreateSecurityConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSecurityConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSecurityConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateSecurityConfiguration`](crate::operation::CreateSecurityConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -6819,7 +6498,7 @@ impl CreateSecurityConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSecurityConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6905,7 +6584,7 @@ impl CreateSecurityConfigurationInput {
             "CreateSecurityConfiguration",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6942,26 +6621,22 @@ pub mod create_table_input {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The catalog database in which to create the new table. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The catalog database in which to create the new table. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6969,14 +6644,12 @@ pub mod create_table_input {
             self.database_name = input;
             self
         }
-        /// <p>The <code>TableInput</code> object that defines the metadata table
-        /// to create in the catalog.</p>
+        /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
         pub fn table_input(mut self, input: crate::model::TableInput) -> Self {
             self.table_input = Some(input);
             self
         }
-        /// <p>The <code>TableInput</code> object that defines the metadata table
-        /// to create in the catalog.</p>
+        /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
         pub fn set_table_input(
             mut self,
             input: std::option::Option<crate::model::TableInput>,
@@ -6989,9 +6662,9 @@ pub mod create_table_input {
         /// To override the contents of this collection use [`set_partition_indexes`](Self::set_partition_indexes).
         ///
         /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
-        pub fn partition_indexes(mut self, input: impl Into<crate::model::PartitionIndex>) -> Self {
+        pub fn partition_indexes(mut self, input: crate::model::PartitionIndex) -> Self {
             let mut v = self.partition_indexes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partition_indexes = Some(v);
             self
         }
@@ -7036,7 +6709,7 @@ pub mod create_table_input {
 #[doc(hidden)]
 pub type CreateTableInputOperationOutputAlias = crate::operation::CreateTable;
 #[doc(hidden)]
-pub type CreateTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTableInput {
     /// Consumes the builder and constructs an Operation<[`CreateTable`](crate::operation::CreateTable)>
     #[allow(clippy::let_and_return)]
@@ -7047,7 +6720,7 @@ impl CreateTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7131,7 +6804,7 @@ impl CreateTableInput {
             "CreateTable",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7208,17 +6881,13 @@ pub mod create_trigger_input {
             self.r#type = input;
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         /// <p>This field is required when the trigger type is SCHEDULED.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         /// <p>This field is required when the trigger type is SCHEDULED.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
@@ -7244,9 +6913,9 @@ pub mod create_trigger_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions initiated by this trigger when it fires.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -7268,14 +6937,12 @@ pub mod create_trigger_input {
             self.description = input;
             self
         }
-        /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
-        /// triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+        /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
         pub fn start_on_creation(mut self, input: bool) -> Self {
             self.start_on_creation = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
-        /// triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+        /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
         pub fn set_start_on_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.start_on_creation = input;
             self
@@ -7284,9 +6951,7 @@ pub mod create_trigger_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger.
-        /// For more information about tags in Glue, see
-        /// <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+        /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7297,9 +6962,7 @@ pub mod create_trigger_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger.
-        /// For more information about tags in Glue, see
-        /// <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+        /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7309,8 +6972,7 @@ pub mod create_trigger_input {
             self.tags = input;
             self
         }
-        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-        /// before EventBridge event trigger fires.</p>
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
         pub fn event_batching_condition(
             mut self,
             input: crate::model::EventBatchingCondition,
@@ -7318,8 +6980,7 @@ pub mod create_trigger_input {
             self.event_batching_condition = Some(input);
             self
         }
-        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-        /// before EventBridge event trigger fires.</p>
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
         pub fn set_event_batching_condition(
             mut self,
             input: std::option::Option<crate::model::EventBatchingCondition>,
@@ -7352,7 +7013,7 @@ pub mod create_trigger_input {
 #[doc(hidden)]
 pub type CreateTriggerInputOperationOutputAlias = crate::operation::CreateTrigger;
 #[doc(hidden)]
-pub type CreateTriggerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTriggerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTriggerInput {
     /// Consumes the builder and constructs an Operation<[`CreateTrigger`](crate::operation::CreateTrigger)>
     #[allow(clippy::let_and_return)]
@@ -7363,7 +7024,7 @@ impl CreateTriggerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTrigger,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7447,7 +7108,7 @@ impl CreateTriggerInput {
             "CreateTrigger",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7481,14 +7142,12 @@ pub mod create_user_defined_function_input {
         pub(crate) function_input: std::option::Option<crate::model::UserDefinedFunctionInput>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -7506,14 +7165,12 @@ pub mod create_user_defined_function_input {
             self.database_name = input;
             self
         }
-        /// <p>A <code>FunctionInput</code> object that defines the function
-        /// to create in the Data Catalog.</p>
+        /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
         pub fn function_input(mut self, input: crate::model::UserDefinedFunctionInput) -> Self {
             self.function_input = Some(input);
             self
         }
-        /// <p>A <code>FunctionInput</code> object that defines the function
-        /// to create in the Data Catalog.</p>
+        /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
         pub fn set_function_input(
             mut self,
             input: std::option::Option<crate::model::UserDefinedFunctionInput>,
@@ -7540,7 +7197,7 @@ pub mod create_user_defined_function_input {
 pub type CreateUserDefinedFunctionInputOperationOutputAlias =
     crate::operation::CreateUserDefinedFunction;
 #[doc(hidden)]
-pub type CreateUserDefinedFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUserDefinedFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserDefinedFunctionInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserDefinedFunction`](crate::operation::CreateUserDefinedFunction)>
     #[allow(clippy::let_and_return)]
@@ -7551,7 +7208,7 @@ impl CreateUserDefinedFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUserDefinedFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7638,7 +7295,7 @@ impl CreateUserDefinedFunctionInput {
             "CreateUserDefinedFunction",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7778,7 +7435,7 @@ pub mod create_workflow_input {
 #[doc(hidden)]
 pub type CreateWorkflowInputOperationOutputAlias = crate::operation::CreateWorkflow;
 #[doc(hidden)]
-pub type CreateWorkflowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorkflowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkflow`](crate::operation::CreateWorkflow)>
     #[allow(clippy::let_and_return)]
@@ -7789,7 +7446,7 @@ impl CreateWorkflowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkflow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7874,7 +7531,7 @@ impl CreateWorkflowInput {
             "CreateWorkflow",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7930,7 +7587,7 @@ pub mod delete_blueprint_input {
 #[doc(hidden)]
 pub type DeleteBlueprintInputOperationOutputAlias = crate::operation::DeleteBlueprint;
 #[doc(hidden)]
-pub type DeleteBlueprintInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBlueprintInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBlueprintInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBlueprint`](crate::operation::DeleteBlueprint)>
     #[allow(clippy::let_and_return)]
@@ -7941,7 +7598,7 @@ impl DeleteBlueprintInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBlueprint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8026,7 +7683,7 @@ impl DeleteBlueprintInput {
             "DeleteBlueprint",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8082,7 +7739,7 @@ pub mod delete_classifier_input {
 #[doc(hidden)]
 pub type DeleteClassifierInputOperationOutputAlias = crate::operation::DeleteClassifier;
 #[doc(hidden)]
-pub type DeleteClassifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteClassifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClassifierInput {
     /// Consumes the builder and constructs an Operation<[`DeleteClassifier`](crate::operation::DeleteClassifier)>
     #[allow(clippy::let_and_return)]
@@ -8093,7 +7750,7 @@ impl DeleteClassifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteClassifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8178,7 +7835,7 @@ impl DeleteClassifierInput {
             "DeleteClassifier",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8214,14 +7871,12 @@ pub mod delete_column_statistics_for_partition_input {
         pub(crate) column_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -8299,7 +7954,8 @@ pub mod delete_column_statistics_for_partition_input {
 pub type DeleteColumnStatisticsForPartitionInputOperationOutputAlias =
     crate::operation::DeleteColumnStatisticsForPartition;
 #[doc(hidden)]
-pub type DeleteColumnStatisticsForPartitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteColumnStatisticsForPartitionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteColumnStatisticsForPartitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteColumnStatisticsForPartition`](crate::operation::DeleteColumnStatisticsForPartition)>
     #[allow(clippy::let_and_return)]
@@ -8310,7 +7966,7 @@ impl DeleteColumnStatisticsForPartitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteColumnStatisticsForPartition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8396,7 +8052,7 @@ impl DeleteColumnStatisticsForPartitionInput {
             "DeleteColumnStatisticsForPartition",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8431,14 +8087,12 @@ pub mod delete_column_statistics_for_table_input {
         pub(crate) column_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -8496,7 +8150,8 @@ pub mod delete_column_statistics_for_table_input {
 pub type DeleteColumnStatisticsForTableInputOperationOutputAlias =
     crate::operation::DeleteColumnStatisticsForTable;
 #[doc(hidden)]
-pub type DeleteColumnStatisticsForTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteColumnStatisticsForTableInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteColumnStatisticsForTableInput {
     /// Consumes the builder and constructs an Operation<[`DeleteColumnStatisticsForTable`](crate::operation::DeleteColumnStatisticsForTable)>
     #[allow(clippy::let_and_return)]
@@ -8507,7 +8162,7 @@ impl DeleteColumnStatisticsForTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteColumnStatisticsForTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8593,7 +8248,7 @@ impl DeleteColumnStatisticsForTableInput {
             "DeleteColumnStatisticsForTable",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8626,14 +8281,12 @@ pub mod delete_connection_input {
         pub(crate) connection_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -8668,7 +8321,7 @@ pub mod delete_connection_input {
 #[doc(hidden)]
 pub type DeleteConnectionInputOperationOutputAlias = crate::operation::DeleteConnection;
 #[doc(hidden)]
-pub type DeleteConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnection`](crate::operation::DeleteConnection)>
     #[allow(clippy::let_and_return)]
@@ -8679,7 +8332,7 @@ impl DeleteConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8764,7 +8417,7 @@ impl DeleteConnectionInput {
             "DeleteConnection",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8820,7 +8473,7 @@ pub mod delete_crawler_input {
 #[doc(hidden)]
 pub type DeleteCrawlerInputOperationOutputAlias = crate::operation::DeleteCrawler;
 #[doc(hidden)]
-pub type DeleteCrawlerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCrawlerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCrawlerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCrawler`](crate::operation::DeleteCrawler)>
     #[allow(clippy::let_and_return)]
@@ -8831,7 +8484,7 @@ impl DeleteCrawlerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCrawler,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8915,7 +8568,7 @@ impl DeleteCrawlerInput {
             "DeleteCrawler",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8948,26 +8601,22 @@ pub mod delete_database_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the database to delete. For Hive compatibility, this must be all
-        /// lowercase.</p>
+        /// <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the database to delete. For Hive compatibility, this must be all
-        /// lowercase.</p>
+        /// <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8989,7 +8638,7 @@ pub mod delete_database_input {
 #[doc(hidden)]
 pub type DeleteDatabaseInputOperationOutputAlias = crate::operation::DeleteDatabase;
 #[doc(hidden)]
-pub type DeleteDatabaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatabaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatabaseInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDatabase`](crate::operation::DeleteDatabase)>
     #[allow(clippy::let_and_return)]
@@ -9000,7 +8649,7 @@ impl DeleteDatabaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDatabase,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9085,7 +8734,7 @@ impl DeleteDatabaseInput {
             "DeleteDatabase",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9146,7 +8795,7 @@ pub mod delete_dev_endpoint_input {
 #[doc(hidden)]
 pub type DeleteDevEndpointInputOperationOutputAlias = crate::operation::DeleteDevEndpoint;
 #[doc(hidden)]
-pub type DeleteDevEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDevEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDevEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDevEndpoint`](crate::operation::DeleteDevEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -9157,7 +8806,7 @@ impl DeleteDevEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDevEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9242,7 +8891,7 @@ impl DeleteDevEndpointInput {
             "DeleteDevEndpoint",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9298,7 +8947,7 @@ pub mod delete_job_input {
 #[doc(hidden)]
 pub type DeleteJobInputOperationOutputAlias = crate::operation::DeleteJob;
 #[doc(hidden)]
-pub type DeleteJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJob`](crate::operation::DeleteJob)>
     #[allow(clippy::let_and_return)]
@@ -9309,7 +8958,7 @@ impl DeleteJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9391,7 +9040,7 @@ impl DeleteJobInput {
                     "DeleteJob",
                     "glue",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9449,7 +9098,7 @@ pub mod delete_ml_transform_input {
 #[doc(hidden)]
 pub type DeleteMlTransformInputOperationOutputAlias = crate::operation::DeleteMLTransform;
 #[doc(hidden)]
-pub type DeleteMlTransformInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMlTransformInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMlTransformInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMLTransform`](crate::operation::DeleteMLTransform)>
     #[allow(clippy::let_and_return)]
@@ -9460,7 +9109,7 @@ impl DeleteMlTransformInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMLTransform,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9545,7 +9194,7 @@ impl DeleteMlTransformInput {
             "DeleteMLTransform",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9580,26 +9229,22 @@ pub mod delete_partition_input {
         pub(crate) partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9655,7 +9300,7 @@ pub mod delete_partition_input {
 #[doc(hidden)]
 pub type DeletePartitionInputOperationOutputAlias = crate::operation::DeletePartition;
 #[doc(hidden)]
-pub type DeletePartitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePartitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePartitionInput {
     /// Consumes the builder and constructs an Operation<[`DeletePartition`](crate::operation::DeletePartition)>
     #[allow(clippy::let_and_return)]
@@ -9666,7 +9311,7 @@ impl DeletePartitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePartition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9751,7 +9396,7 @@ impl DeletePartitionInput {
             "DeletePartition",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9848,7 +9493,7 @@ pub mod delete_partition_index_input {
 #[doc(hidden)]
 pub type DeletePartitionIndexInputOperationOutputAlias = crate::operation::DeletePartitionIndex;
 #[doc(hidden)]
-pub type DeletePartitionIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePartitionIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePartitionIndexInput {
     /// Consumes the builder and constructs an Operation<[`DeletePartitionIndex`](crate::operation::DeletePartitionIndex)>
     #[allow(clippy::let_and_return)]
@@ -9859,7 +9504,7 @@ impl DeletePartitionIndexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePartitionIndex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9946,7 +9591,7 @@ impl DeletePartitionIndexInput {
             "DeletePartitionIndex",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10007,7 +9652,7 @@ pub mod delete_registry_input {
 #[doc(hidden)]
 pub type DeleteRegistryInputOperationOutputAlias = crate::operation::DeleteRegistry;
 #[doc(hidden)]
-pub type DeleteRegistryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRegistryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRegistryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRegistry`](crate::operation::DeleteRegistry)>
     #[allow(clippy::let_and_return)]
@@ -10018,7 +9663,7 @@ impl DeleteRegistryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRegistry,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10103,7 +9748,7 @@ impl DeleteRegistryInput {
             "DeleteRegistry",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10176,7 +9821,7 @@ pub mod delete_resource_policy_input {
 #[doc(hidden)]
 pub type DeleteResourcePolicyInputOperationOutputAlias = crate::operation::DeleteResourcePolicy;
 #[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -10187,7 +9832,7 @@ impl DeleteResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10274,7 +9919,7 @@ impl DeleteResourcePolicyInput {
             "DeleteResourcePolicy",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10332,7 +9977,7 @@ pub mod delete_schema_input {
 #[doc(hidden)]
 pub type DeleteSchemaInputOperationOutputAlias = crate::operation::DeleteSchema;
 #[doc(hidden)]
-pub type DeleteSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSchemaInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSchema`](crate::operation::DeleteSchema)>
     #[allow(clippy::let_and_return)]
@@ -10343,7 +9988,7 @@ impl DeleteSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10427,7 +10072,7 @@ impl DeleteSchemaInput {
             "DeleteSchema",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10472,12 +10117,8 @@ pub mod delete_schema_versions_input {
         }
         /// <p>A version range may be supplied which may be of the format:</p>
         /// <ul>
-        /// <li>
-        /// <p>a single version number, 5</p>
-        /// </li>
-        /// <li>
-        /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p>
-        /// </li>
+        /// <li> <p>a single version number, 5</p> </li>
+        /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
         /// </ul>
         pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
             self.versions = Some(input.into());
@@ -10485,12 +10126,8 @@ pub mod delete_schema_versions_input {
         }
         /// <p>A version range may be supplied which may be of the format:</p>
         /// <ul>
-        /// <li>
-        /// <p>a single version number, 5</p>
-        /// </li>
-        /// <li>
-        /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p>
-        /// </li>
+        /// <li> <p>a single version number, 5</p> </li>
+        /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
         /// </ul>
         pub fn set_versions(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.versions = input;
@@ -10513,7 +10150,7 @@ pub mod delete_schema_versions_input {
 #[doc(hidden)]
 pub type DeleteSchemaVersionsInputOperationOutputAlias = crate::operation::DeleteSchemaVersions;
 #[doc(hidden)]
-pub type DeleteSchemaVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSchemaVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSchemaVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSchemaVersions`](crate::operation::DeleteSchemaVersions)>
     #[allow(clippy::let_and_return)]
@@ -10524,7 +10161,7 @@ impl DeleteSchemaVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSchemaVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10611,7 +10248,7 @@ impl DeleteSchemaVersionsInput {
             "DeleteSchemaVersions",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10668,7 +10305,7 @@ pub mod delete_security_configuration_input {
 pub type DeleteSecurityConfigurationInputOperationOutputAlias =
     crate::operation::DeleteSecurityConfiguration;
 #[doc(hidden)]
-pub type DeleteSecurityConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSecurityConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSecurityConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSecurityConfiguration`](crate::operation::DeleteSecurityConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -10679,7 +10316,7 @@ impl DeleteSecurityConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSecurityConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10765,7 +10402,7 @@ impl DeleteSecurityConfigurationInput {
             "DeleteSecurityConfiguration",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10800,26 +10437,22 @@ pub mod delete_table_input {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the catalog database in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10827,14 +10460,12 @@ pub mod delete_table_input {
             self.database_name = input;
             self
         }
-        /// <p>The name of the table to be deleted. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the table to be deleted. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10871,7 +10502,7 @@ pub mod delete_table_input {
 #[doc(hidden)]
 pub type DeleteTableInputOperationOutputAlias = crate::operation::DeleteTable;
 #[doc(hidden)]
-pub type DeleteTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTableInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTable`](crate::operation::DeleteTable)>
     #[allow(clippy::let_and_return)]
@@ -10882,7 +10513,7 @@ impl DeleteTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10966,7 +10597,7 @@ impl DeleteTableInput {
             "DeleteTable",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11001,26 +10632,22 @@ pub mod delete_table_version_input {
         pub(crate) version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11028,14 +10655,12 @@ pub mod delete_table_version_input {
             self.database_name = input;
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_name = Some(input.into());
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -11069,7 +10694,7 @@ pub mod delete_table_version_input {
 #[doc(hidden)]
 pub type DeleteTableVersionInputOperationOutputAlias = crate::operation::DeleteTableVersion;
 #[doc(hidden)]
-pub type DeleteTableVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTableVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTableVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTableVersion`](crate::operation::DeleteTableVersion)>
     #[allow(clippy::let_and_return)]
@@ -11080,7 +10705,7 @@ impl DeleteTableVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTableVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11165,7 +10790,7 @@ impl DeleteTableVersionInput {
             "DeleteTableVersion",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11221,7 +10846,7 @@ pub mod delete_trigger_input {
 #[doc(hidden)]
 pub type DeleteTriggerInputOperationOutputAlias = crate::operation::DeleteTrigger;
 #[doc(hidden)]
-pub type DeleteTriggerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTriggerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTriggerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTrigger`](crate::operation::DeleteTrigger)>
     #[allow(clippy::let_and_return)]
@@ -11232,7 +10857,7 @@ impl DeleteTriggerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTrigger,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11316,7 +10941,7 @@ impl DeleteTriggerInput {
             "DeleteTrigger",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11350,14 +10975,12 @@ pub mod delete_user_defined_function_input {
         pub(crate) function_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the function to be deleted is
-        /// located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the function to be deleted is
-        /// located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -11407,7 +11030,7 @@ pub mod delete_user_defined_function_input {
 pub type DeleteUserDefinedFunctionInputOperationOutputAlias =
     crate::operation::DeleteUserDefinedFunction;
 #[doc(hidden)]
-pub type DeleteUserDefinedFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserDefinedFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserDefinedFunctionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserDefinedFunction`](crate::operation::DeleteUserDefinedFunction)>
     #[allow(clippy::let_and_return)]
@@ -11418,7 +11041,7 @@ impl DeleteUserDefinedFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserDefinedFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11505,7 +11128,7 @@ impl DeleteUserDefinedFunctionInput {
             "DeleteUserDefinedFunction",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11561,7 +11184,7 @@ pub mod delete_workflow_input {
 #[doc(hidden)]
 pub type DeleteWorkflowInputOperationOutputAlias = crate::operation::DeleteWorkflow;
 #[doc(hidden)]
-pub type DeleteWorkflowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWorkflowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkflow`](crate::operation::DeleteWorkflow)>
     #[allow(clippy::let_and_return)]
@@ -11572,7 +11195,7 @@ impl DeleteWorkflowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkflow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11657,7 +11280,7 @@ impl DeleteWorkflowInput {
             "DeleteWorkflow",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11739,7 +11362,7 @@ pub mod get_blueprint_input {
 #[doc(hidden)]
 pub type GetBlueprintInputOperationOutputAlias = crate::operation::GetBlueprint;
 #[doc(hidden)]
-pub type GetBlueprintInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBlueprintInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBlueprintInput {
     /// Consumes the builder and constructs an Operation<[`GetBlueprint`](crate::operation::GetBlueprint)>
     #[allow(clippy::let_and_return)]
@@ -11750,7 +11373,7 @@ impl GetBlueprintInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBlueprint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11834,7 +11457,7 @@ impl GetBlueprintInput {
             "GetBlueprint",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11907,7 +11530,7 @@ pub mod get_blueprint_run_input {
 #[doc(hidden)]
 pub type GetBlueprintRunInputOperationOutputAlias = crate::operation::GetBlueprintRun;
 #[doc(hidden)]
-pub type GetBlueprintRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBlueprintRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBlueprintRunInput {
     /// Consumes the builder and constructs an Operation<[`GetBlueprintRun`](crate::operation::GetBlueprintRun)>
     #[allow(clippy::let_and_return)]
@@ -11918,7 +11541,7 @@ impl GetBlueprintRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBlueprintRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12003,7 +11626,7 @@ impl GetBlueprintRunInput {
             "GetBlueprintRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12088,7 +11711,7 @@ pub mod get_blueprint_runs_input {
 #[doc(hidden)]
 pub type GetBlueprintRunsInputOperationOutputAlias = crate::operation::GetBlueprintRuns;
 #[doc(hidden)]
-pub type GetBlueprintRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBlueprintRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBlueprintRunsInput {
     /// Consumes the builder and constructs an Operation<[`GetBlueprintRuns`](crate::operation::GetBlueprintRuns)>
     #[allow(clippy::let_and_return)]
@@ -12099,7 +11722,7 @@ impl GetBlueprintRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBlueprintRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12184,7 +11807,7 @@ impl GetBlueprintRunsInput {
             "GetBlueprintRuns",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12242,7 +11865,7 @@ pub mod get_catalog_import_status_input {
 #[doc(hidden)]
 pub type GetCatalogImportStatusInputOperationOutputAlias = crate::operation::GetCatalogImportStatus;
 #[doc(hidden)]
-pub type GetCatalogImportStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCatalogImportStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCatalogImportStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetCatalogImportStatus`](crate::operation::GetCatalogImportStatus)>
     #[allow(clippy::let_and_return)]
@@ -12253,7 +11876,7 @@ impl GetCatalogImportStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCatalogImportStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12340,7 +11963,7 @@ impl GetCatalogImportStatusInput {
             "GetCatalogImportStatus",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12396,7 +12019,7 @@ pub mod get_classifier_input {
 #[doc(hidden)]
 pub type GetClassifierInputOperationOutputAlias = crate::operation::GetClassifier;
 #[doc(hidden)]
-pub type GetClassifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetClassifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetClassifierInput {
     /// Consumes the builder and constructs an Operation<[`GetClassifier`](crate::operation::GetClassifier)>
     #[allow(clippy::let_and_return)]
@@ -12407,7 +12030,7 @@ impl GetClassifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetClassifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12491,7 +12114,7 @@ impl GetClassifierInput {
             "GetClassifier",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12561,7 +12184,7 @@ pub mod get_classifiers_input {
 #[doc(hidden)]
 pub type GetClassifiersInputOperationOutputAlias = crate::operation::GetClassifiers;
 #[doc(hidden)]
-pub type GetClassifiersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetClassifiersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetClassifiersInput {
     /// Consumes the builder and constructs an Operation<[`GetClassifiers`](crate::operation::GetClassifiers)>
     #[allow(clippy::let_and_return)]
@@ -12572,7 +12195,7 @@ impl GetClassifiersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetClassifiers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12657,7 +12280,7 @@ impl GetClassifiersInput {
             "GetClassifiers",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12693,14 +12316,12 @@ pub mod get_column_statistics_for_partition_input {
         pub(crate) column_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -12787,7 +12408,8 @@ pub mod get_column_statistics_for_partition_input {
 pub type GetColumnStatisticsForPartitionInputOperationOutputAlias =
     crate::operation::GetColumnStatisticsForPartition;
 #[doc(hidden)]
-pub type GetColumnStatisticsForPartitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetColumnStatisticsForPartitionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetColumnStatisticsForPartitionInput {
     /// Consumes the builder and constructs an Operation<[`GetColumnStatisticsForPartition`](crate::operation::GetColumnStatisticsForPartition)>
     #[allow(clippy::let_and_return)]
@@ -12798,7 +12420,7 @@ impl GetColumnStatisticsForPartitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetColumnStatisticsForPartition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12884,7 +12506,7 @@ impl GetColumnStatisticsForPartitionInput {
             "GetColumnStatisticsForPartition",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12919,14 +12541,12 @@ pub mod get_column_statistics_for_table_input {
         pub(crate) column_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -12993,7 +12613,7 @@ pub mod get_column_statistics_for_table_input {
 pub type GetColumnStatisticsForTableInputOperationOutputAlias =
     crate::operation::GetColumnStatisticsForTable;
 #[doc(hidden)]
-pub type GetColumnStatisticsForTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetColumnStatisticsForTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetColumnStatisticsForTableInput {
     /// Consumes the builder and constructs an Operation<[`GetColumnStatisticsForTable`](crate::operation::GetColumnStatisticsForTable)>
     #[allow(clippy::let_and_return)]
@@ -13004,7 +12624,7 @@ impl GetColumnStatisticsForTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetColumnStatisticsForTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13090,7 +12710,7 @@ impl GetColumnStatisticsForTableInput {
             "GetColumnStatisticsForTable",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13124,14 +12744,12 @@ pub mod get_connection_input {
         pub(crate) hide_password: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -13146,20 +12764,12 @@ pub mod get_connection_input {
             self.name = input;
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For
-        /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-        /// the password. Set this parameter when the caller might not have permission to use the KMS
-        /// key to decrypt the password, but it does have permission to access the rest of the connection
-        /// properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn hide_password(mut self, input: bool) -> Self {
             self.hide_password = Some(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For
-        /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-        /// the password. Set this parameter when the caller might not have permission to use the KMS
-        /// key to decrypt the password, but it does have permission to access the rest of the connection
-        /// properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn set_hide_password(mut self, input: std::option::Option<bool>) -> Self {
             self.hide_password = input;
             self
@@ -13182,7 +12792,7 @@ pub mod get_connection_input {
 #[doc(hidden)]
 pub type GetConnectionInputOperationOutputAlias = crate::operation::GetConnection;
 #[doc(hidden)]
-pub type GetConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectionInput {
     /// Consumes the builder and constructs an Operation<[`GetConnection`](crate::operation::GetConnection)>
     #[allow(clippy::let_and_return)]
@@ -13193,7 +12803,7 @@ impl GetConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13277,7 +12887,7 @@ impl GetConnectionInput {
             "GetConnection",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13313,14 +12923,12 @@ pub mod get_connections_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -13338,20 +12946,12 @@ pub mod get_connections_input {
             self.filter = input;
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For
-        /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-        /// the password. Set this parameter when the caller might not have permission to use the KMS
-        /// key to decrypt the password, but it does have permission to access the rest of the connection
-        /// properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn hide_password(mut self, input: bool) -> Self {
             self.hide_password = Some(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For
-        /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-        /// the password. Set this parameter when the caller might not have permission to use the KMS
-        /// key to decrypt the password, but it does have permission to access the rest of the connection
-        /// properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn set_hide_password(mut self, input: std::option::Option<bool>) -> Self {
             self.hide_password = input;
             self
@@ -13396,7 +12996,7 @@ pub mod get_connections_input {
 #[doc(hidden)]
 pub type GetConnectionsInputOperationOutputAlias = crate::operation::GetConnections;
 #[doc(hidden)]
-pub type GetConnectionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetConnectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`GetConnections`](crate::operation::GetConnections)>
     #[allow(clippy::let_and_return)]
@@ -13407,7 +13007,7 @@ impl GetConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConnections,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13492,7 +13092,7 @@ impl GetConnectionsInput {
             "GetConnections",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13548,7 +13148,7 @@ pub mod get_crawler_input {
 #[doc(hidden)]
 pub type GetCrawlerInputOperationOutputAlias = crate::operation::GetCrawler;
 #[doc(hidden)]
-pub type GetCrawlerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCrawlerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCrawlerInput {
     /// Consumes the builder and constructs an Operation<[`GetCrawler`](crate::operation::GetCrawler)>
     #[allow(clippy::let_and_return)]
@@ -13559,7 +13159,7 @@ impl GetCrawlerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCrawler,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13643,7 +13243,7 @@ impl GetCrawlerInput {
             "GetCrawler",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13734,7 +13334,7 @@ pub mod get_crawler_metrics_input {
 #[doc(hidden)]
 pub type GetCrawlerMetricsInputOperationOutputAlias = crate::operation::GetCrawlerMetrics;
 #[doc(hidden)]
-pub type GetCrawlerMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCrawlerMetricsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCrawlerMetricsInput {
     /// Consumes the builder and constructs an Operation<[`GetCrawlerMetrics`](crate::operation::GetCrawlerMetrics)>
     #[allow(clippy::let_and_return)]
@@ -13745,7 +13345,7 @@ impl GetCrawlerMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCrawlerMetrics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13830,7 +13430,7 @@ impl GetCrawlerMetricsInput {
             "GetCrawlerMetrics",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13900,7 +13500,7 @@ pub mod get_crawlers_input {
 #[doc(hidden)]
 pub type GetCrawlersInputOperationOutputAlias = crate::operation::GetCrawlers;
 #[doc(hidden)]
-pub type GetCrawlersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCrawlersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCrawlersInput {
     /// Consumes the builder and constructs an Operation<[`GetCrawlers`](crate::operation::GetCrawlers)>
     #[allow(clippy::let_and_return)]
@@ -13911,7 +13511,7 @@ impl GetCrawlersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCrawlers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13995,7 +13595,7 @@ impl GetCrawlersInput {
             "GetCrawlers",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14028,26 +13628,22 @@ pub mod get_database_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the database to retrieve. For Hive compatibility, this
-        /// should be all lowercase.</p>
+        /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the database to retrieve. For Hive compatibility, this
-        /// should be all lowercase.</p>
+        /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14069,7 +13665,7 @@ pub mod get_database_input {
 #[doc(hidden)]
 pub type GetDatabaseInputOperationOutputAlias = crate::operation::GetDatabase;
 #[doc(hidden)]
-pub type GetDatabaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDatabaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDatabaseInput {
     /// Consumes the builder and constructs an Operation<[`GetDatabase`](crate::operation::GetDatabase)>
     #[allow(clippy::let_and_return)]
@@ -14080,7 +13676,7 @@ impl GetDatabaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDatabase,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14164,7 +13760,7 @@ impl GetDatabaseInput {
             "GetDatabase",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14199,14 +13795,12 @@ pub mod get_databases_input {
         pub(crate) resource_share_type: std::option::Option<crate::model::ResourceShareType>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -14232,28 +13826,18 @@ pub mod get_databases_input {
             self
         }
         /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p>
-        /// </li>
-        /// <li>
-        /// <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p>
-        /// </li>
+        /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+        /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
         /// </ul>
         pub fn resource_share_type(mut self, input: crate::model::ResourceShareType) -> Self {
             self.resource_share_type = Some(input);
             self
         }
         /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p>
-        /// </li>
-        /// <li>
-        /// <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p>
-        /// </li>
+        /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+        /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
         /// </ul>
         pub fn set_resource_share_type(
             mut self,
@@ -14281,7 +13865,7 @@ pub mod get_databases_input {
 #[doc(hidden)]
 pub type GetDatabasesInputOperationOutputAlias = crate::operation::GetDatabases;
 #[doc(hidden)]
-pub type GetDatabasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDatabasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDatabasesInput {
     /// Consumes the builder and constructs an Operation<[`GetDatabases`](crate::operation::GetDatabases)>
     #[allow(clippy::let_and_return)]
@@ -14292,7 +13876,7 @@ impl GetDatabasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDatabases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14376,7 +13960,7 @@ impl GetDatabasesInput {
             "GetDatabases",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14408,14 +13992,12 @@ pub mod get_data_catalog_encryption_settings_input {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -14437,7 +14019,8 @@ pub mod get_data_catalog_encryption_settings_input {
 pub type GetDataCatalogEncryptionSettingsInputOperationOutputAlias =
     crate::operation::GetDataCatalogEncryptionSettings;
 #[doc(hidden)]
-pub type GetDataCatalogEncryptionSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDataCatalogEncryptionSettingsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataCatalogEncryptionSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetDataCatalogEncryptionSettings`](crate::operation::GetDataCatalogEncryptionSettings)>
     #[allow(clippy::let_and_return)]
@@ -14448,7 +14031,7 @@ impl GetDataCatalogEncryptionSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDataCatalogEncryptionSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14534,7 +14117,7 @@ impl GetDataCatalogEncryptionSettingsInput {
             "GetDataCatalogEncryptionSettings",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14595,7 +14178,7 @@ pub mod get_dataflow_graph_input {
 #[doc(hidden)]
 pub type GetDataflowGraphInputOperationOutputAlias = crate::operation::GetDataflowGraph;
 #[doc(hidden)]
-pub type GetDataflowGraphInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDataflowGraphInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataflowGraphInput {
     /// Consumes the builder and constructs an Operation<[`GetDataflowGraph`](crate::operation::GetDataflowGraph)>
     #[allow(clippy::let_and_return)]
@@ -14606,7 +14189,7 @@ impl GetDataflowGraphInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDataflowGraph,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14691,7 +14274,7 @@ impl GetDataflowGraphInput {
             "GetDataflowGraph",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14752,7 +14335,7 @@ pub mod get_dev_endpoint_input {
 #[doc(hidden)]
 pub type GetDevEndpointInputOperationOutputAlias = crate::operation::GetDevEndpoint;
 #[doc(hidden)]
-pub type GetDevEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDevEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDevEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetDevEndpoint`](crate::operation::GetDevEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -14763,7 +14346,7 @@ impl GetDevEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDevEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14848,7 +14431,7 @@ impl GetDevEndpointInput {
             "GetDevEndpoint",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14918,7 +14501,7 @@ pub mod get_dev_endpoints_input {
 #[doc(hidden)]
 pub type GetDevEndpointsInputOperationOutputAlias = crate::operation::GetDevEndpoints;
 #[doc(hidden)]
-pub type GetDevEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDevEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDevEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`GetDevEndpoints`](crate::operation::GetDevEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -14929,7 +14512,7 @@ impl GetDevEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDevEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15014,7 +14597,7 @@ impl GetDevEndpointsInput {
             "GetDevEndpoints",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15070,7 +14653,7 @@ pub mod get_job_input {
 #[doc(hidden)]
 pub type GetJobInputOperationOutputAlias = crate::operation::GetJob;
 #[doc(hidden)]
-pub type GetJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobInput {
     /// Consumes the builder and constructs an Operation<[`GetJob`](crate::operation::GetJob)>
     #[allow(clippy::let_and_return)]
@@ -15081,7 +14664,7 @@ impl GetJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15160,7 +14743,7 @@ impl GetJobInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::GetJob::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("GetJob", "glue"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15230,7 +14813,7 @@ pub mod get_job_bookmark_input {
 #[doc(hidden)]
 pub type GetJobBookmarkInputOperationOutputAlias = crate::operation::GetJobBookmark;
 #[doc(hidden)]
-pub type GetJobBookmarkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobBookmarkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobBookmarkInput {
     /// Consumes the builder and constructs an Operation<[`GetJobBookmark`](crate::operation::GetJobBookmark)>
     #[allow(clippy::let_and_return)]
@@ -15241,7 +14824,7 @@ impl GetJobBookmarkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJobBookmark,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15326,7 +14909,7 @@ impl GetJobBookmarkInput {
             "GetJobBookmark",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15406,7 +14989,7 @@ pub mod get_job_run_input {
 #[doc(hidden)]
 pub type GetJobRunInputOperationOutputAlias = crate::operation::GetJobRun;
 #[doc(hidden)]
-pub type GetJobRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobRunInput {
     /// Consumes the builder and constructs an Operation<[`GetJobRun`](crate::operation::GetJobRun)>
     #[allow(clippy::let_and_return)]
@@ -15417,7 +15000,7 @@ impl GetJobRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJobRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15499,7 +15082,7 @@ impl GetJobRunInput {
                     "GetJobRun",
                     "glue",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15581,7 +15164,7 @@ pub mod get_job_runs_input {
 #[doc(hidden)]
 pub type GetJobRunsInputOperationOutputAlias = crate::operation::GetJobRuns;
 #[doc(hidden)]
-pub type GetJobRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobRunsInput {
     /// Consumes the builder and constructs an Operation<[`GetJobRuns`](crate::operation::GetJobRuns)>
     #[allow(clippy::let_and_return)]
@@ -15592,7 +15175,7 @@ impl GetJobRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJobRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15676,7 +15259,7 @@ impl GetJobRunsInput {
             "GetJobRuns",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15744,7 +15327,7 @@ pub mod get_jobs_input {
 #[doc(hidden)]
 pub type GetJobsInputOperationOutputAlias = crate::operation::GetJobs;
 #[doc(hidden)]
-pub type GetJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobsInput {
     /// Consumes the builder and constructs an Operation<[`GetJobs`](crate::operation::GetJobs)>
     #[allow(clippy::let_and_return)]
@@ -15755,7 +15338,7 @@ impl GetJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15834,7 +15417,7 @@ impl GetJobsInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::GetJobs::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("GetJobs", "glue"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15886,9 +15469,9 @@ pub mod get_mapping_input {
         /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
         ///
         /// <p>A list of target tables.</p>
-        pub fn sinks(mut self, input: impl Into<crate::model::CatalogEntry>) -> Self {
+        pub fn sinks(mut self, input: crate::model::CatalogEntry) -> Self {
             let mut v = self.sinks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sinks = Some(v);
             self
         }
@@ -15928,7 +15511,7 @@ pub mod get_mapping_input {
 #[doc(hidden)]
 pub type GetMappingInputOperationOutputAlias = crate::operation::GetMapping;
 #[doc(hidden)]
-pub type GetMappingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMappingInput {
     /// Consumes the builder and constructs an Operation<[`GetMapping`](crate::operation::GetMapping)>
     #[allow(clippy::let_and_return)]
@@ -15939,7 +15522,7 @@ impl GetMappingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMapping,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16023,7 +15606,7 @@ impl GetMappingInput {
             "GetMapping",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16093,7 +15676,7 @@ pub mod get_ml_task_run_input {
 #[doc(hidden)]
 pub type GetMlTaskRunInputOperationOutputAlias = crate::operation::GetMLTaskRun;
 #[doc(hidden)]
-pub type GetMlTaskRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMlTaskRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMlTaskRunInput {
     /// Consumes the builder and constructs an Operation<[`GetMLTaskRun`](crate::operation::GetMLTaskRun)>
     #[allow(clippy::let_and_return)]
@@ -16104,7 +15687,7 @@ impl GetMlTaskRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMLTaskRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16189,7 +15772,7 @@ impl GetMlTaskRunInput {
             "GetMLTaskRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16301,7 +15884,7 @@ pub mod get_ml_task_runs_input {
 #[doc(hidden)]
 pub type GetMlTaskRunsInputOperationOutputAlias = crate::operation::GetMLTaskRuns;
 #[doc(hidden)]
-pub type GetMlTaskRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMlTaskRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMlTaskRunsInput {
     /// Consumes the builder and constructs an Operation<[`GetMLTaskRuns`](crate::operation::GetMLTaskRuns)>
     #[allow(clippy::let_and_return)]
@@ -16312,7 +15895,7 @@ impl GetMlTaskRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMLTaskRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16397,7 +15980,7 @@ impl GetMlTaskRunsInput {
             "GetMLTaskRuns",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16429,14 +16012,12 @@ pub mod get_ml_transform_input {
         pub(crate) transform_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier of the transform, generated at the time that the transform was
-        /// created.</p>
+        /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
         pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.transform_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the transform, generated at the time that the transform was
-        /// created.</p>
+        /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
         pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.transform_id = input;
             self
@@ -16457,7 +16038,7 @@ pub mod get_ml_transform_input {
 #[doc(hidden)]
 pub type GetMlTransformInputOperationOutputAlias = crate::operation::GetMLTransform;
 #[doc(hidden)]
-pub type GetMlTransformInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMlTransformInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMlTransformInput {
     /// Consumes the builder and constructs an Operation<[`GetMLTransform`](crate::operation::GetMLTransform)>
     #[allow(clippy::let_and_return)]
@@ -16468,7 +16049,7 @@ impl GetMlTransformInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMLTransform,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16553,7 +16134,7 @@ impl GetMlTransformInput {
             "GetMLTransform",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16653,7 +16234,7 @@ pub mod get_ml_transforms_input {
 #[doc(hidden)]
 pub type GetMlTransformsInputOperationOutputAlias = crate::operation::GetMLTransforms;
 #[doc(hidden)]
-pub type GetMlTransformsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMlTransformsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMlTransformsInput {
     /// Consumes the builder and constructs an Operation<[`GetMLTransforms`](crate::operation::GetMLTransforms)>
     #[allow(clippy::let_and_return)]
@@ -16664,7 +16245,7 @@ impl GetMlTransformsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMLTransforms,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16749,7 +16330,7 @@ impl GetMlTransformsInput {
             "GetMLTransforms",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16784,14 +16365,12 @@ pub mod get_partition_input {
         pub(crate) partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -16857,7 +16436,7 @@ pub mod get_partition_input {
 #[doc(hidden)]
 pub type GetPartitionInputOperationOutputAlias = crate::operation::GetPartition;
 #[doc(hidden)]
-pub type GetPartitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPartitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPartitionInput {
     /// Consumes the builder and constructs an Operation<[`GetPartition`](crate::operation::GetPartition)>
     #[allow(clippy::let_and_return)]
@@ -16868,7 +16447,7 @@ impl GetPartitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPartition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16952,7 +16531,7 @@ impl GetPartitionInput {
             "GetPartition",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17049,7 +16628,7 @@ pub mod get_partition_indexes_input {
 #[doc(hidden)]
 pub type GetPartitionIndexesInputOperationOutputAlias = crate::operation::GetPartitionIndexes;
 #[doc(hidden)]
-pub type GetPartitionIndexesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPartitionIndexesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPartitionIndexesInput {
     /// Consumes the builder and constructs an Operation<[`GetPartitionIndexes`](crate::operation::GetPartitionIndexes)>
     #[allow(clippy::let_and_return)]
@@ -17060,7 +16639,7 @@ impl GetPartitionIndexesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPartitionIndexes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17145,7 +16724,7 @@ impl GetPartitionIndexesInput {
             "GetPartitionIndexes",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17186,14 +16765,12 @@ pub mod get_partitions_input {
         pub(crate) query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -17222,233 +16799,157 @@ pub mod get_partitions_input {
             self
         }
         /// <p>An expression that filters the partitions to be returned.</p>
-        /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The
-        /// SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
-        /// <p>
-        /// <i>Operators</i>: The following are the operators that you can use in the
-        /// <code>Expression</code> API call:</p>
+        /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+        /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
         /// <dl>
-        /// <dt>=</dt>
+        /// <dt>
+        /// =
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes
-        /// true.</p>
+        /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
         /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
         /// <p>(a = b) is not true.</p>
         /// </dd>
-        /// <dt>< ></dt>
+        /// <dt>
+        /// &lt; &gt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the values of two operands are equal; if the values are not equal,
-        /// then the condition becomes true.</p>
-        /// <p>Example: (a < > b) is true.</p>
+        /// <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p>
+        /// <p>Example: (a &lt; &gt; b) is true.</p>
         /// </dd>
-        /// <dt>></dt>
+        /// <dt>
+        /// &gt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is greater than the value of the right
-        /// operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a > b) is not true.</p>
+        /// <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &gt; b) is not true.</p>
         /// </dd>
-        /// <dt><</dt>
+        /// <dt>
+        /// &lt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is less than the value of the right
-        /// operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a < b) is true.</p>
+        /// <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &lt; b) is true.</p>
         /// </dd>
-        /// <dt>>=</dt>
+        /// <dt>
+        /// &gt;=
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is greater than or equal to the value
-        /// of the right operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a >= b) is not true.</p>
+        /// <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &gt;= b) is not true.</p>
         /// </dd>
-        /// <dt><=</dt>
+        /// <dt>
+        /// &lt;=
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is less than or equal to the value of
-        /// the right operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a <= b) is true.</p>
+        /// <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &lt;= b) is true.</p>
         /// </dd>
-        /// <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+        /// <dt>
+        /// AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL
+        /// </dt>
         /// <dd>
         /// <p>Logical operators.</p>
         /// </dd>
         /// </dl>
-        /// <p>
-        /// <i>Supported Partition Key Types</i>: The following are the supported
-        /// partition keys.</p>
+        /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>string</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>date</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>timestamp</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>int</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>bigint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>long</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tinyint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>smallint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>decimal</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>string</code> </p> </li>
+        /// <li> <p> <code>date</code> </p> </li>
+        /// <li> <p> <code>timestamp</code> </p> </li>
+        /// <li> <p> <code>int</code> </p> </li>
+        /// <li> <p> <code>bigint</code> </p> </li>
+        /// <li> <p> <code>long</code> </p> </li>
+        /// <li> <p> <code>tinyint</code> </p> </li>
+        /// <li> <p> <code>smallint</code> </p> </li>
+        /// <li> <p> <code>decimal</code> </p> </li>
         /// </ul>
         /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
-        /// <p>The following list shows the valid operators on each type. When you define a crawler, the
-        /// <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog
-        /// partitions. </p>
-        ///
-        /// <p>
-        /// <i>Sample API Call</i>: </p>
+        /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>
+        /// <p> <i>Sample API Call</i>: </p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
         /// <p>An expression that filters the partitions to be returned.</p>
-        /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The
-        /// SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
-        /// <p>
-        /// <i>Operators</i>: The following are the operators that you can use in the
-        /// <code>Expression</code> API call:</p>
+        /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+        /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
         /// <dl>
-        /// <dt>=</dt>
+        /// <dt>
+        /// =
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes
-        /// true.</p>
+        /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
         /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
         /// <p>(a = b) is not true.</p>
         /// </dd>
-        /// <dt>< ></dt>
+        /// <dt>
+        /// &lt; &gt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the values of two operands are equal; if the values are not equal,
-        /// then the condition becomes true.</p>
-        /// <p>Example: (a < > b) is true.</p>
+        /// <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p>
+        /// <p>Example: (a &lt; &gt; b) is true.</p>
         /// </dd>
-        /// <dt>></dt>
+        /// <dt>
+        /// &gt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is greater than the value of the right
-        /// operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a > b) is not true.</p>
+        /// <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &gt; b) is not true.</p>
         /// </dd>
-        /// <dt><</dt>
+        /// <dt>
+        /// &lt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is less than the value of the right
-        /// operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a < b) is true.</p>
+        /// <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &lt; b) is true.</p>
         /// </dd>
-        /// <dt>>=</dt>
+        /// <dt>
+        /// &gt;=
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is greater than or equal to the value
-        /// of the right operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a >= b) is not true.</p>
+        /// <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &gt;= b) is not true.</p>
         /// </dd>
-        /// <dt><=</dt>
+        /// <dt>
+        /// &lt;=
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is less than or equal to the value of
-        /// the right operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a <= b) is true.</p>
+        /// <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &lt;= b) is true.</p>
         /// </dd>
-        /// <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+        /// <dt>
+        /// AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL
+        /// </dt>
         /// <dd>
         /// <p>Logical operators.</p>
         /// </dd>
         /// </dl>
-        /// <p>
-        /// <i>Supported Partition Key Types</i>: The following are the supported
-        /// partition keys.</p>
+        /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>string</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>date</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>timestamp</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>int</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>bigint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>long</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tinyint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>smallint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>decimal</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>string</code> </p> </li>
+        /// <li> <p> <code>date</code> </p> </li>
+        /// <li> <p> <code>timestamp</code> </p> </li>
+        /// <li> <p> <code>int</code> </p> </li>
+        /// <li> <p> <code>bigint</code> </p> </li>
+        /// <li> <p> <code>long</code> </p> </li>
+        /// <li> <p> <code>tinyint</code> </p> </li>
+        /// <li> <p> <code>smallint</code> </p> </li>
+        /// <li> <p> <code>decimal</code> </p> </li>
         /// </ul>
         /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
-        /// <p>The following list shows the valid operators on each type. When you define a crawler, the
-        /// <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog
-        /// partitions. </p>
-        ///
-        /// <p>
-        /// <i>Sample API Call</i>: </p>
+        /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>
+        /// <p> <i>Sample API Call</i>: </p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
         }
-        /// <p>A continuation token, if this is not the first call to retrieve
-        /// these partitions.</p>
+        /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A continuation token, if this is not the first call to retrieve
-        /// these partitions.</p>
+        /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17534,7 +17035,7 @@ pub mod get_partitions_input {
 #[doc(hidden)]
 pub type GetPartitionsInputOperationOutputAlias = crate::operation::GetPartitions;
 #[doc(hidden)]
-pub type GetPartitionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPartitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPartitionsInput {
     /// Consumes the builder and constructs an Operation<[`GetPartitions`](crate::operation::GetPartitions)>
     #[allow(clippy::let_and_return)]
@@ -17545,7 +17046,7 @@ impl GetPartitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPartitions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17629,7 +17130,7 @@ impl GetPartitionsInput {
             "GetPartitions",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17673,9 +17174,9 @@ pub mod get_plan_input {
         /// To override the contents of this collection use [`set_mapping`](Self::set_mapping).
         ///
         /// <p>The list of mappings from a source table to target tables.</p>
-        pub fn mapping(mut self, input: impl Into<crate::model::MappingEntry>) -> Self {
+        pub fn mapping(mut self, input: crate::model::MappingEntry) -> Self {
             let mut v = self.mapping.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mapping = Some(v);
             self
         }
@@ -17705,9 +17206,9 @@ pub mod get_plan_input {
         /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
         ///
         /// <p>The target tables.</p>
-        pub fn sinks(mut self, input: impl Into<crate::model::CatalogEntry>) -> Self {
+        pub fn sinks(mut self, input: crate::model::CatalogEntry) -> Self {
             let mut v = self.sinks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sinks = Some(v);
             self
         }
@@ -17744,17 +17245,9 @@ pub mod get_plan_input {
         /// To override the contents of this collection use [`set_additional_plan_options_map`](Self::set_additional_plan_options_map).
         ///
         /// <p>A map to hold additional optional key-value parameters.</p>
-        ///
         /// <p>Currently, these key-value pairs are supported:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>inferSchema</code>  —  Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p>
-        /// <p>
-        /// <code>--additional-plan-options-map '{"inferSchema":"true"}'</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>inferSchema</code>&nbsp; — &nbsp;Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p> <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p> </li>
         /// </ul>
         pub fn additional_plan_options_map(
             mut self,
@@ -17767,17 +17260,9 @@ pub mod get_plan_input {
             self
         }
         /// <p>A map to hold additional optional key-value parameters.</p>
-        ///
         /// <p>Currently, these key-value pairs are supported:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>inferSchema</code>  —  Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p>
-        /// <p>
-        /// <code>--additional-plan-options-map '{"inferSchema":"true"}'</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>inferSchema</code>&nbsp; — &nbsp;Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p> <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p> </li>
         /// </ul>
         pub fn set_additional_plan_options_map(
             mut self,
@@ -17807,7 +17292,7 @@ pub mod get_plan_input {
 #[doc(hidden)]
 pub type GetPlanInputOperationOutputAlias = crate::operation::GetPlan;
 #[doc(hidden)]
-pub type GetPlanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPlanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPlanInput {
     /// Consumes the builder and constructs an Operation<[`GetPlan`](crate::operation::GetPlan)>
     #[allow(clippy::let_and_return)]
@@ -17818,7 +17303,7 @@ impl GetPlanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPlan,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17897,7 +17382,7 @@ impl GetPlanInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::GetPlan::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("GetPlan", "glue"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17958,7 +17443,7 @@ pub mod get_registry_input {
 #[doc(hidden)]
 pub type GetRegistryInputOperationOutputAlias = crate::operation::GetRegistry;
 #[doc(hidden)]
-pub type GetRegistryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRegistryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRegistryInput {
     /// Consumes the builder and constructs an Operation<[`GetRegistry`](crate::operation::GetRegistry)>
     #[allow(clippy::let_and_return)]
@@ -17969,7 +17454,7 @@ impl GetRegistryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRegistry,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18053,7 +17538,7 @@ impl GetRegistryInput {
             "GetRegistry",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18123,7 +17608,7 @@ pub mod get_resource_policies_input {
 #[doc(hidden)]
 pub type GetResourcePoliciesInputOperationOutputAlias = crate::operation::GetResourcePolicies;
 #[doc(hidden)]
-pub type GetResourcePoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourcePoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourcePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`GetResourcePolicies`](crate::operation::GetResourcePolicies)>
     #[allow(clippy::let_and_return)]
@@ -18134,7 +17619,7 @@ impl GetResourcePoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourcePolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18219,7 +17704,7 @@ impl GetResourcePoliciesInput {
             "GetResourcePolicies",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18251,18 +17736,12 @@ pub mod get_resource_policy_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not
-        /// supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code>
-        /// to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>.
-        /// </p>
+        /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not
-        /// supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code>
-        /// to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>.
-        /// </p>
+        /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -18283,7 +17762,7 @@ pub mod get_resource_policy_input {
 #[doc(hidden)]
 pub type GetResourcePolicyInputOperationOutputAlias = crate::operation::GetResourcePolicy;
 #[doc(hidden)]
-pub type GetResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetResourcePolicy`](crate::operation::GetResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -18294,7 +17773,7 @@ impl GetResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18379,7 +17858,7 @@ impl GetResourcePolicyInput {
             "GetResourcePolicy",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18413,12 +17892,8 @@ pub mod get_schema_input {
     impl Builder {
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.schema_id = Some(input);
@@ -18426,12 +17901,8 @@ pub mod get_schema_input {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.schema_id = input;
@@ -18451,7 +17922,7 @@ pub mod get_schema_input {
 #[doc(hidden)]
 pub type GetSchemaInputOperationOutputAlias = crate::operation::GetSchema;
 #[doc(hidden)]
-pub type GetSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSchemaInput {
     /// Consumes the builder and constructs an Operation<[`GetSchema`](crate::operation::GetSchema)>
     #[allow(clippy::let_and_return)]
@@ -18462,7 +17933,7 @@ impl GetSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18544,7 +18015,7 @@ impl GetSchemaInput {
                     "GetSchema",
                     "glue",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18579,12 +18050,8 @@ pub mod get_schema_by_definition_input {
     impl Builder {
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.schema_id = Some(input);
@@ -18592,12 +18059,8 @@ pub mod get_schema_by_definition_input {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.schema_id = input;
@@ -18633,7 +18096,7 @@ pub mod get_schema_by_definition_input {
 #[doc(hidden)]
 pub type GetSchemaByDefinitionInputOperationOutputAlias = crate::operation::GetSchemaByDefinition;
 #[doc(hidden)]
-pub type GetSchemaByDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSchemaByDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSchemaByDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetSchemaByDefinition`](crate::operation::GetSchemaByDefinition)>
     #[allow(clippy::let_and_return)]
@@ -18644,7 +18107,7 @@ impl GetSchemaByDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSchemaByDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18731,7 +18194,7 @@ impl GetSchemaByDefinitionInput {
             "GetSchemaByDefinition",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18767,12 +18230,8 @@ pub mod get_schema_version_input {
     impl Builder {
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.schema_id = Some(input);
@@ -18780,12 +18239,8 @@ pub mod get_schema_version_input {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.schema_id = input;
@@ -18835,7 +18290,7 @@ pub mod get_schema_version_input {
 #[doc(hidden)]
 pub type GetSchemaVersionInputOperationOutputAlias = crate::operation::GetSchemaVersion;
 #[doc(hidden)]
-pub type GetSchemaVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSchemaVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSchemaVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetSchemaVersion`](crate::operation::GetSchemaVersion)>
     #[allow(clippy::let_and_return)]
@@ -18846,7 +18301,7 @@ impl GetSchemaVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSchemaVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18931,7 +18386,7 @@ impl GetSchemaVersionInput {
             "GetSchemaVersion",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18970,12 +18425,8 @@ pub mod get_schema_versions_diff_input {
     impl Builder {
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.schema_id = Some(input);
@@ -18983,12 +18434,8 @@ pub mod get_schema_versions_diff_input {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.schema_id = input;
@@ -19058,7 +18505,7 @@ pub mod get_schema_versions_diff_input {
 #[doc(hidden)]
 pub type GetSchemaVersionsDiffInputOperationOutputAlias = crate::operation::GetSchemaVersionsDiff;
 #[doc(hidden)]
-pub type GetSchemaVersionsDiffInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSchemaVersionsDiffInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSchemaVersionsDiffInput {
     /// Consumes the builder and constructs an Operation<[`GetSchemaVersionsDiff`](crate::operation::GetSchemaVersionsDiff)>
     #[allow(clippy::let_and_return)]
@@ -19069,7 +18516,7 @@ impl GetSchemaVersionsDiffInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSchemaVersionsDiff,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19156,7 +18603,7 @@ impl GetSchemaVersionsDiffInput {
             "GetSchemaVersionsDiff",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19213,7 +18660,7 @@ pub mod get_security_configuration_input {
 pub type GetSecurityConfigurationInputOperationOutputAlias =
     crate::operation::GetSecurityConfiguration;
 #[doc(hidden)]
-pub type GetSecurityConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSecurityConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSecurityConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetSecurityConfiguration`](crate::operation::GetSecurityConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -19224,7 +18671,7 @@ impl GetSecurityConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSecurityConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19311,7 +18758,7 @@ impl GetSecurityConfigurationInput {
             "GetSecurityConfiguration",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19382,7 +18829,7 @@ pub mod get_security_configurations_input {
 pub type GetSecurityConfigurationsInputOperationOutputAlias =
     crate::operation::GetSecurityConfigurations;
 #[doc(hidden)]
-pub type GetSecurityConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSecurityConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSecurityConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`GetSecurityConfigurations`](crate::operation::GetSecurityConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -19393,7 +18840,7 @@ impl GetSecurityConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSecurityConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19480,7 +18927,7 @@ impl GetSecurityConfigurationsInput {
             "GetSecurityConfigurations",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19516,26 +18963,22 @@ pub mod get_table_input {
         pub(crate) query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the database in the catalog in which the table resides.
-        /// For Hive compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the database in the catalog in which the table resides.
-        /// For Hive compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19543,14 +18986,12 @@ pub mod get_table_input {
             self.database_name = input;
             self
         }
-        /// <p>The name of the table for which to retrieve the definition. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the table for which to retrieve the definition. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -19599,7 +19040,7 @@ pub mod get_table_input {
 #[doc(hidden)]
 pub type GetTableInputOperationOutputAlias = crate::operation::GetTable;
 #[doc(hidden)]
-pub type GetTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTableInput {
     /// Consumes the builder and constructs an Operation<[`GetTable`](crate::operation::GetTable)>
     #[allow(clippy::let_and_return)]
@@ -19610,7 +19051,7 @@ impl GetTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19691,7 +19132,7 @@ impl GetTableInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetTable", "glue",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19729,26 +19170,22 @@ pub mod get_tables_input {
         pub(crate) query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The database in the catalog whose tables to list. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The database in the catalog whose tables to list. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19756,14 +19193,12 @@ pub mod get_tables_input {
             self.database_name = input;
             self
         }
-        /// <p>A regular expression pattern. If present, only those tables
-        /// whose names match the pattern are returned.</p>
+        /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>A regular expression pattern. If present, only those tables
-        /// whose names match the pattern are returned.</p>
+        /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
@@ -19834,7 +19269,7 @@ pub mod get_tables_input {
 #[doc(hidden)]
 pub type GetTablesInputOperationOutputAlias = crate::operation::GetTables;
 #[doc(hidden)]
-pub type GetTablesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTablesInput {
     /// Consumes the builder and constructs an Operation<[`GetTables`](crate::operation::GetTables)>
     #[allow(clippy::let_and_return)]
@@ -19845,7 +19280,7 @@ impl GetTablesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTables,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19927,7 +19362,7 @@ impl GetTablesInput {
                     "GetTables",
                     "glue",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19962,26 +19397,22 @@ pub mod get_table_version_input {
         pub(crate) version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19989,14 +19420,12 @@ pub mod get_table_version_input {
             self.database_name = input;
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_name = Some(input.into());
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -20030,7 +19459,7 @@ pub mod get_table_version_input {
 #[doc(hidden)]
 pub type GetTableVersionInputOperationOutputAlias = crate::operation::GetTableVersion;
 #[doc(hidden)]
-pub type GetTableVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTableVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTableVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetTableVersion`](crate::operation::GetTableVersion)>
     #[allow(clippy::let_and_return)]
@@ -20041,7 +19470,7 @@ impl GetTableVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTableVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20126,7 +19555,7 @@ impl GetTableVersionInput {
             "GetTableVersion",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20162,26 +19591,22 @@ pub mod get_table_versions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20189,14 +19614,12 @@ pub mod get_table_versions_input {
             self.database_name = input;
             self
         }
-        /// <p>The name of the table. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_name = Some(input.into());
             self
         }
-        /// <p>The name of the table. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -20241,7 +19664,7 @@ pub mod get_table_versions_input {
 #[doc(hidden)]
 pub type GetTableVersionsInputOperationOutputAlias = crate::operation::GetTableVersions;
 #[doc(hidden)]
-pub type GetTableVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTableVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTableVersionsInput {
     /// Consumes the builder and constructs an Operation<[`GetTableVersions`](crate::operation::GetTableVersions)>
     #[allow(clippy::let_and_return)]
@@ -20252,7 +19675,7 @@ impl GetTableVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTableVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20337,7 +19760,7 @@ impl GetTableVersionsInput {
             "GetTableVersions",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20393,7 +19816,7 @@ pub mod get_tags_input {
 #[doc(hidden)]
 pub type GetTagsInputOperationOutputAlias = crate::operation::GetTags;
 #[doc(hidden)]
-pub type GetTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTagsInput {
     /// Consumes the builder and constructs an Operation<[`GetTags`](crate::operation::GetTags)>
     #[allow(clippy::let_and_return)]
@@ -20404,7 +19827,7 @@ impl GetTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20483,7 +19906,7 @@ impl GetTagsInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::GetTags::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("GetTags", "glue"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20539,7 +19962,7 @@ pub mod get_trigger_input {
 #[doc(hidden)]
 pub type GetTriggerInputOperationOutputAlias = crate::operation::GetTrigger;
 #[doc(hidden)]
-pub type GetTriggerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTriggerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTriggerInput {
     /// Consumes the builder and constructs an Operation<[`GetTrigger`](crate::operation::GetTrigger)>
     #[allow(clippy::let_and_return)]
@@ -20550,7 +19973,7 @@ impl GetTriggerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTrigger,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20634,7 +20057,7 @@ impl GetTriggerInput {
             "GetTrigger",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20678,14 +20101,12 @@ pub mod get_triggers_input {
             self.next_token = input;
             self
         }
-        /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is
-        /// returned, and if there is no such trigger, all triggers are returned.</p>
+        /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
         pub fn dependent_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dependent_job_name = Some(input.into());
             self
         }
-        /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is
-        /// returned, and if there is no such trigger, all triggers are returned.</p>
+        /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
         pub fn set_dependent_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20721,7 +20142,7 @@ pub mod get_triggers_input {
 #[doc(hidden)]
 pub type GetTriggersInputOperationOutputAlias = crate::operation::GetTriggers;
 #[doc(hidden)]
-pub type GetTriggersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTriggersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTriggersInput {
     /// Consumes the builder and constructs an Operation<[`GetTriggers`](crate::operation::GetTriggers)>
     #[allow(clippy::let_and_return)]
@@ -20732,7 +20153,7 @@ impl GetTriggersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTriggers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20816,7 +20237,7 @@ impl GetTriggersInput {
             "GetTriggers",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20839,6 +20260,733 @@ impl GetTriggersInput {
     }
 }
 
+/// See [`GetUnfilteredPartitionMetadataInput`](crate::input::GetUnfilteredPartitionMetadataInput)
+pub mod get_unfiltered_partition_metadata_input {
+    /// A builder for [`GetUnfilteredPartitionMetadataInput`](crate::input::GetUnfilteredPartitionMetadataInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) audit_context: std::option::Option<crate::model::AuditContext>,
+        pub(crate) supported_permission_types:
+            std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        /// Appends an item to `partition_values`.
+        ///
+        /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
+        ///
+        pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.partition_values.unwrap_or_default();
+            v.push(input.into());
+            self.partition_values = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_partition_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.partition_values = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn audit_context(mut self, input: crate::model::AuditContext) -> Self {
+            self.audit_context = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_audit_context(
+            mut self,
+            input: std::option::Option<crate::model::AuditContext>,
+        ) -> Self {
+            self.audit_context = input;
+            self
+        }
+        /// Appends an item to `supported_permission_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
+        ///
+        pub fn supported_permission_types(mut self, input: crate::model::PermissionType) -> Self {
+            let mut v = self.supported_permission_types.unwrap_or_default();
+            v.push(input);
+            self.supported_permission_types = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_supported_permission_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+        ) -> Self {
+            self.supported_permission_types = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetUnfilteredPartitionMetadataInput`](crate::input::GetUnfilteredPartitionMetadataInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetUnfilteredPartitionMetadataInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetUnfilteredPartitionMetadataInput {
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                partition_values: self.partition_values,
+                audit_context: self.audit_context,
+                supported_permission_types: self.supported_permission_types,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetUnfilteredPartitionMetadataInputOperationOutputAlias =
+    crate::operation::GetUnfilteredPartitionMetadata;
+#[doc(hidden)]
+pub type GetUnfilteredPartitionMetadataInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl GetUnfilteredPartitionMetadataInput {
+    /// Consumes the builder and constructs an Operation<[`GetUnfilteredPartitionMetadata`](crate::operation::GetUnfilteredPartitionMetadata)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetUnfilteredPartitionMetadata,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetUnfilteredPartitionMetadataInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetUnfilteredPartitionMetadataInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetUnfilteredPartitionMetadataInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.GetUnfilteredPartitionMetadata",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_unfiltered_partition_metadata(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetUnfilteredPartitionMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetUnfilteredPartitionMetadata",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionMetadataInput`](crate::input::GetUnfilteredPartitionMetadataInput)
+    pub fn builder() -> crate::input::get_unfiltered_partition_metadata_input::Builder {
+        crate::input::get_unfiltered_partition_metadata_input::Builder::default()
+    }
+}
+
+/// See [`GetUnfilteredPartitionsMetadataInput`](crate::input::GetUnfilteredPartitionsMetadataInput)
+pub mod get_unfiltered_partitions_metadata_input {
+    /// A builder for [`GetUnfilteredPartitionsMetadataInput`](crate::input::GetUnfilteredPartitionsMetadataInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) table_name: std::option::Option<std::string::String>,
+        pub(crate) expression: std::option::Option<std::string::String>,
+        pub(crate) audit_context: std::option::Option<crate::model::AuditContext>,
+        pub(crate) supported_permission_types:
+            std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) segment: std::option::Option<crate::model::Segment>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expression = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expression = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn audit_context(mut self, input: crate::model::AuditContext) -> Self {
+            self.audit_context = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_audit_context(
+            mut self,
+            input: std::option::Option<crate::model::AuditContext>,
+        ) -> Self {
+            self.audit_context = input;
+            self
+        }
+        /// Appends an item to `supported_permission_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
+        ///
+        pub fn supported_permission_types(mut self, input: crate::model::PermissionType) -> Self {
+            let mut v = self.supported_permission_types.unwrap_or_default();
+            v.push(input);
+            self.supported_permission_types = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_supported_permission_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+        ) -> Self {
+            self.supported_permission_types = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
+        pub fn segment(mut self, input: crate::model::Segment) -> Self {
+            self.segment = Some(input);
+            self
+        }
+        /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
+        pub fn set_segment(mut self, input: std::option::Option<crate::model::Segment>) -> Self {
+            self.segment = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetUnfilteredPartitionsMetadataInput`](crate::input::GetUnfilteredPartitionsMetadataInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetUnfilteredPartitionsMetadataInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetUnfilteredPartitionsMetadataInput {
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                expression: self.expression,
+                audit_context: self.audit_context,
+                supported_permission_types: self.supported_permission_types,
+                next_token: self.next_token,
+                segment: self.segment,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetUnfilteredPartitionsMetadataInputOperationOutputAlias =
+    crate::operation::GetUnfilteredPartitionsMetadata;
+#[doc(hidden)]
+pub type GetUnfilteredPartitionsMetadataInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl GetUnfilteredPartitionsMetadataInput {
+    /// Consumes the builder and constructs an Operation<[`GetUnfilteredPartitionsMetadata`](crate::operation::GetUnfilteredPartitionsMetadata)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetUnfilteredPartitionsMetadata,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetUnfilteredPartitionsMetadataInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetUnfilteredPartitionsMetadataInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetUnfilteredPartitionsMetadataInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.GetUnfilteredPartitionsMetadata",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_unfiltered_partitions_metadata(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetUnfilteredPartitionsMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetUnfilteredPartitionsMetadata",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionsMetadataInput`](crate::input::GetUnfilteredPartitionsMetadataInput)
+    pub fn builder() -> crate::input::get_unfiltered_partitions_metadata_input::Builder {
+        crate::input::get_unfiltered_partitions_metadata_input::Builder::default()
+    }
+}
+
+/// See [`GetUnfilteredTableMetadataInput`](crate::input::GetUnfilteredTableMetadataInput)
+pub mod get_unfiltered_table_metadata_input {
+    /// A builder for [`GetUnfilteredTableMetadataInput`](crate::input::GetUnfilteredTableMetadataInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) catalog_id: std::option::Option<std::string::String>,
+        pub(crate) database_name: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) audit_context: std::option::Option<crate::model::AuditContext>,
+        pub(crate) supported_permission_types:
+            std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.catalog_id = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.catalog_id = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn audit_context(mut self, input: crate::model::AuditContext) -> Self {
+            self.audit_context = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_audit_context(
+            mut self,
+            input: std::option::Option<crate::model::AuditContext>,
+        ) -> Self {
+            self.audit_context = input;
+            self
+        }
+        /// Appends an item to `supported_permission_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
+        ///
+        pub fn supported_permission_types(mut self, input: crate::model::PermissionType) -> Self {
+            let mut v = self.supported_permission_types.unwrap_or_default();
+            v.push(input);
+            self.supported_permission_types = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_supported_permission_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+        ) -> Self {
+            self.supported_permission_types = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetUnfilteredTableMetadataInput`](crate::input::GetUnfilteredTableMetadataInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetUnfilteredTableMetadataInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetUnfilteredTableMetadataInput {
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                name: self.name,
+                audit_context: self.audit_context,
+                supported_permission_types: self.supported_permission_types,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetUnfilteredTableMetadataInputOperationOutputAlias =
+    crate::operation::GetUnfilteredTableMetadata;
+#[doc(hidden)]
+pub type GetUnfilteredTableMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetUnfilteredTableMetadataInput {
+    /// Consumes the builder and constructs an Operation<[`GetUnfilteredTableMetadata`](crate::operation::GetUnfilteredTableMetadata)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetUnfilteredTableMetadata,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetUnfilteredTableMetadataInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetUnfilteredTableMetadataInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetUnfilteredTableMetadataInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "AWSGlue.GetUnfilteredTableMetadata",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_unfiltered_table_metadata(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetUnfilteredTableMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetUnfilteredTableMetadata",
+            "glue",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetUnfilteredTableMetadataInput`](crate::input::GetUnfilteredTableMetadataInput)
+    pub fn builder() -> crate::input::get_unfiltered_table_metadata_input::Builder {
+        crate::input::get_unfiltered_table_metadata_input::Builder::default()
+    }
+}
+
 /// See [`GetUserDefinedFunctionInput`](crate::input::GetUserDefinedFunctionInput)
 pub mod get_user_defined_function_input {
     /// A builder for [`GetUserDefinedFunctionInput`](crate::input::GetUserDefinedFunctionInput)
@@ -20850,14 +20998,12 @@ pub mod get_user_defined_function_input {
         pub(crate) function_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -20906,7 +21052,7 @@ pub mod get_user_defined_function_input {
 #[doc(hidden)]
 pub type GetUserDefinedFunctionInputOperationOutputAlias = crate::operation::GetUserDefinedFunction;
 #[doc(hidden)]
-pub type GetUserDefinedFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUserDefinedFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserDefinedFunctionInput {
     /// Consumes the builder and constructs an Operation<[`GetUserDefinedFunction`](crate::operation::GetUserDefinedFunction)>
     #[allow(clippy::let_and_return)]
@@ -20917,7 +21063,7 @@ impl GetUserDefinedFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUserDefinedFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21004,7 +21150,7 @@ impl GetUserDefinedFunctionInput {
             "GetUserDefinedFunction",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21040,26 +21186,22 @@ pub mod get_user_defined_functions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the
-        /// databases across the catalog will be returned.</p>
+        /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the
-        /// databases across the catalog will be returned.</p>
+        /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21067,14 +21209,12 @@ pub mod get_user_defined_functions_input {
             self.database_name = input;
             self
         }
-        /// <p>An optional function-name pattern string that filters the function
-        /// definitions returned.</p>
+        /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
         pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.pattern = Some(input.into());
             self
         }
-        /// <p>An optional function-name pattern string that filters the function
-        /// definitions returned.</p>
+        /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pattern = input;
             self
@@ -21120,7 +21260,7 @@ pub mod get_user_defined_functions_input {
 pub type GetUserDefinedFunctionsInputOperationOutputAlias =
     crate::operation::GetUserDefinedFunctions;
 #[doc(hidden)]
-pub type GetUserDefinedFunctionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUserDefinedFunctionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserDefinedFunctionsInput {
     /// Consumes the builder and constructs an Operation<[`GetUserDefinedFunctions`](crate::operation::GetUserDefinedFunctions)>
     #[allow(clippy::let_and_return)]
@@ -21131,7 +21271,7 @@ impl GetUserDefinedFunctionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUserDefinedFunctions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21218,7 +21358,7 @@ impl GetUserDefinedFunctionsInput {
             "GetUserDefinedFunctions",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21288,7 +21428,7 @@ pub mod get_workflow_input {
 #[doc(hidden)]
 pub type GetWorkflowInputOperationOutputAlias = crate::operation::GetWorkflow;
 #[doc(hidden)]
-pub type GetWorkflowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorkflowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkflow`](crate::operation::GetWorkflow)>
     #[allow(clippy::let_and_return)]
@@ -21299,7 +21439,7 @@ impl GetWorkflowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkflow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21383,7 +21523,7 @@ impl GetWorkflowInput {
             "GetWorkflow",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21465,7 +21605,7 @@ pub mod get_workflow_run_input {
 #[doc(hidden)]
 pub type GetWorkflowRunInputOperationOutputAlias = crate::operation::GetWorkflowRun;
 #[doc(hidden)]
-pub type GetWorkflowRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorkflowRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkflowRunInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkflowRun`](crate::operation::GetWorkflowRun)>
     #[allow(clippy::let_and_return)]
@@ -21476,7 +21616,7 @@ impl GetWorkflowRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkflowRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21561,7 +21701,7 @@ impl GetWorkflowRunInput {
             "GetWorkflowRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21632,7 +21772,7 @@ pub mod get_workflow_run_properties_input {
 pub type GetWorkflowRunPropertiesInputOperationOutputAlias =
     crate::operation::GetWorkflowRunProperties;
 #[doc(hidden)]
-pub type GetWorkflowRunPropertiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorkflowRunPropertiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkflowRunPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkflowRunProperties`](crate::operation::GetWorkflowRunProperties)>
     #[allow(clippy::let_and_return)]
@@ -21643,7 +21783,7 @@ impl GetWorkflowRunPropertiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkflowRunProperties,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21730,7 +21870,7 @@ impl GetWorkflowRunPropertiesInput {
             "GetWorkflowRunProperties",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21824,7 +21964,7 @@ pub mod get_workflow_runs_input {
 #[doc(hidden)]
 pub type GetWorkflowRunsInputOperationOutputAlias = crate::operation::GetWorkflowRuns;
 #[doc(hidden)]
-pub type GetWorkflowRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorkflowRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkflowRunsInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkflowRuns`](crate::operation::GetWorkflowRuns)>
     #[allow(clippy::let_and_return)]
@@ -21835,7 +21975,7 @@ impl GetWorkflowRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkflowRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21920,7 +22060,7 @@ impl GetWorkflowRunsInput {
             "GetWorkflowRuns",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21978,7 +22118,7 @@ pub mod import_catalog_to_glue_input {
 #[doc(hidden)]
 pub type ImportCatalogToGlueInputOperationOutputAlias = crate::operation::ImportCatalogToGlue;
 #[doc(hidden)]
-pub type ImportCatalogToGlueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportCatalogToGlueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportCatalogToGlueInput {
     /// Consumes the builder and constructs an Operation<[`ImportCatalogToGlue`](crate::operation::ImportCatalogToGlue)>
     #[allow(clippy::let_and_return)]
@@ -21989,7 +22129,7 @@ impl ImportCatalogToGlueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportCatalogToGlue,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22076,7 +22216,7 @@ impl ImportCatalogToGlueInput {
             "ImportCatalogToGlue",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22175,7 +22315,7 @@ pub mod list_blueprints_input {
 #[doc(hidden)]
 pub type ListBlueprintsInputOperationOutputAlias = crate::operation::ListBlueprints;
 #[doc(hidden)]
-pub type ListBlueprintsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBlueprintsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBlueprintsInput {
     /// Consumes the builder and constructs an Operation<[`ListBlueprints`](crate::operation::ListBlueprints)>
     #[allow(clippy::let_and_return)]
@@ -22186,7 +22326,7 @@ impl ListBlueprintsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBlueprints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22271,7 +22411,7 @@ impl ListBlueprintsInput {
             "ListBlueprints",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22370,7 +22510,7 @@ pub mod list_crawlers_input {
 #[doc(hidden)]
 pub type ListCrawlersInputOperationOutputAlias = crate::operation::ListCrawlers;
 #[doc(hidden)]
-pub type ListCrawlersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCrawlersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCrawlersInput {
     /// Consumes the builder and constructs an Operation<[`ListCrawlers`](crate::operation::ListCrawlers)>
     #[allow(clippy::let_and_return)]
@@ -22381,7 +22521,7 @@ impl ListCrawlersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCrawlers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22465,7 +22605,7 @@ impl ListCrawlersInput {
             "ListCrawlers",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22564,7 +22704,7 @@ pub mod list_dev_endpoints_input {
 #[doc(hidden)]
 pub type ListDevEndpointsInputOperationOutputAlias = crate::operation::ListDevEndpoints;
 #[doc(hidden)]
-pub type ListDevEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDevEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDevEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListDevEndpoints`](crate::operation::ListDevEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -22575,7 +22715,7 @@ impl ListDevEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDevEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22660,7 +22800,7 @@ impl ListDevEndpointsInput {
             "ListDevEndpoints",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22757,7 +22897,7 @@ pub mod list_jobs_input {
 #[doc(hidden)]
 pub type ListJobsInputOperationOutputAlias = crate::operation::ListJobs;
 #[doc(hidden)]
-pub type ListJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(clippy::let_and_return)]
@@ -22768,7 +22908,7 @@ impl ListJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22849,7 +22989,7 @@ impl ListJobsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListJobs", "glue",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22978,7 +23118,7 @@ pub mod list_ml_transforms_input {
 #[doc(hidden)]
 pub type ListMlTransformsInputOperationOutputAlias = crate::operation::ListMLTransforms;
 #[doc(hidden)]
-pub type ListMlTransformsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMlTransformsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMlTransformsInput {
     /// Consumes the builder and constructs an Operation<[`ListMLTransforms`](crate::operation::ListMLTransforms)>
     #[allow(clippy::let_and_return)]
@@ -22989,7 +23129,7 @@ impl ListMlTransformsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMLTransforms,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23074,7 +23214,7 @@ impl ListMlTransformsInput {
             "ListMLTransforms",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23144,7 +23284,7 @@ pub mod list_registries_input {
 #[doc(hidden)]
 pub type ListRegistriesInputOperationOutputAlias = crate::operation::ListRegistries;
 #[doc(hidden)]
-pub type ListRegistriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRegistriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRegistriesInput {
     /// Consumes the builder and constructs an Operation<[`ListRegistries`](crate::operation::ListRegistries)>
     #[allow(clippy::let_and_return)]
@@ -23155,7 +23295,7 @@ impl ListRegistriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRegistries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23240,7 +23380,7 @@ impl ListRegistriesInput {
             "ListRegistries",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23325,7 +23465,7 @@ pub mod list_schemas_input {
 #[doc(hidden)]
 pub type ListSchemasInputOperationOutputAlias = crate::operation::ListSchemas;
 #[doc(hidden)]
-pub type ListSchemasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSchemasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSchemasInput {
     /// Consumes the builder and constructs an Operation<[`ListSchemas`](crate::operation::ListSchemas)>
     #[allow(clippy::let_and_return)]
@@ -23336,7 +23476,7 @@ impl ListSchemasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSchemas,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23420,7 +23560,7 @@ impl ListSchemasInput {
             "ListSchemas",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23456,12 +23596,8 @@ pub mod list_schema_versions_input {
     impl Builder {
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.schema_id = Some(input);
@@ -23469,12 +23605,8 @@ pub mod list_schema_versions_input {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.schema_id = input;
@@ -23518,7 +23650,7 @@ pub mod list_schema_versions_input {
 #[doc(hidden)]
 pub type ListSchemaVersionsInputOperationOutputAlias = crate::operation::ListSchemaVersions;
 #[doc(hidden)]
-pub type ListSchemaVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSchemaVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSchemaVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListSchemaVersions`](crate::operation::ListSchemaVersions)>
     #[allow(clippy::let_and_return)]
@@ -23529,7 +23661,7 @@ impl ListSchemaVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSchemaVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23614,7 +23746,7 @@ impl ListSchemaVersionsInput {
             "ListSchemaVersions",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23661,14 +23793,12 @@ pub mod list_triggers_input {
             self.next_token = input;
             self
         }
-        /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job
-        /// is returned. If there is no such trigger, all triggers are returned.</p>
+        /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
         pub fn dependent_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dependent_job_name = Some(input.into());
             self
         }
-        /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job
-        /// is returned. If there is no such trigger, all triggers are returned.</p>
+        /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
         pub fn set_dependent_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23730,7 +23860,7 @@ pub mod list_triggers_input {
 #[doc(hidden)]
 pub type ListTriggersInputOperationOutputAlias = crate::operation::ListTriggers;
 #[doc(hidden)]
-pub type ListTriggersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTriggersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTriggersInput {
     /// Consumes the builder and constructs an Operation<[`ListTriggers`](crate::operation::ListTriggers)>
     #[allow(clippy::let_and_return)]
@@ -23741,7 +23871,7 @@ impl ListTriggersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTriggers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23825,7 +23955,7 @@ impl ListTriggersInput {
             "ListTriggers",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23895,7 +24025,7 @@ pub mod list_workflows_input {
 #[doc(hidden)]
 pub type ListWorkflowsInputOperationOutputAlias = crate::operation::ListWorkflows;
 #[doc(hidden)]
-pub type ListWorkflowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorkflowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkflowsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkflows`](crate::operation::ListWorkflows)>
     #[allow(clippy::let_and_return)]
@@ -23906,7 +24036,7 @@ impl ListWorkflowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkflows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23990,7 +24120,7 @@ impl ListWorkflowsInput {
             "ListWorkflows",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -24024,14 +24154,12 @@ pub mod put_data_catalog_encryption_settings_input {
             std::option::Option<crate::model::DataCatalogEncryptionSettings>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the
-        /// Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the
-        /// Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -24070,7 +24198,8 @@ pub mod put_data_catalog_encryption_settings_input {
 pub type PutDataCatalogEncryptionSettingsInputOperationOutputAlias =
     crate::operation::PutDataCatalogEncryptionSettings;
 #[doc(hidden)]
-pub type PutDataCatalogEncryptionSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutDataCatalogEncryptionSettingsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutDataCatalogEncryptionSettingsInput {
     /// Consumes the builder and constructs an Operation<[`PutDataCatalogEncryptionSettings`](crate::operation::PutDataCatalogEncryptionSettings)>
     #[allow(clippy::let_and_return)]
@@ -24081,7 +24210,7 @@ impl PutDataCatalogEncryptionSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutDataCatalogEncryptionSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24167,7 +24296,7 @@ impl PutDataCatalogEncryptionSettingsInput {
             "PutDataCatalogEncryptionSettings",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -24226,16 +24355,12 @@ pub mod put_resource_policy_input {
             self.resource_arn = input;
             self
         }
-        /// <p>The hash value returned when the previous policy was set using
-        /// <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a
-        /// policy. Do not use this parameter if no previous policy has been set.</p>
+        /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
         pub fn policy_hash_condition(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_hash_condition = Some(input.into());
             self
         }
-        /// <p>The hash value returned when the previous policy was set using
-        /// <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a
-        /// policy. Do not use this parameter if no previous policy has been set.</p>
+        /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
         pub fn set_policy_hash_condition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24243,16 +24368,12 @@ pub mod put_resource_policy_input {
             self.policy_hash_condition = input;
             self
         }
-        /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
-        /// <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a
-        /// null value is used, the call does not depend on the existence of a policy.</p>
+        /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
         pub fn policy_exists_condition(mut self, input: crate::model::ExistCondition) -> Self {
             self.policy_exists_condition = Some(input);
             self
         }
-        /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
-        /// <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a
-        /// null value is used, the call does not depend on the existence of a policy.</p>
+        /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
         pub fn set_policy_exists_condition(
             mut self,
             input: std::option::Option<crate::model::ExistCondition>,
@@ -24260,36 +24381,22 @@ pub mod put_resource_policy_input {
             self.policy_exists_condition = input;
             self
         }
-        /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account
-        /// access to Data Catalog resources:</p>
+        /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>By directly updating the resource policy with <code>PutResourePolicy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p>
-        /// </li>
+        /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
+        /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
         /// </ul>
-        /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to
-        /// grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
+        /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
         pub fn enable_hybrid(mut self, input: crate::model::EnableHybridValues) -> Self {
             self.enable_hybrid = Some(input);
             self
         }
-        /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account
-        /// access to Data Catalog resources:</p>
+        /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>By directly updating the resource policy with <code>PutResourePolicy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p>
-        /// </li>
+        /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
+        /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
         /// </ul>
-        /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to
-        /// grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
+        /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
         pub fn set_enable_hybrid(
             mut self,
             input: std::option::Option<crate::model::EnableHybridValues>,
@@ -24317,7 +24424,7 @@ pub mod put_resource_policy_input {
 #[doc(hidden)]
 pub type PutResourcePolicyInputOperationOutputAlias = crate::operation::PutResourcePolicy;
 #[doc(hidden)]
-pub type PutResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -24328,7 +24435,7 @@ impl PutResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24413,7 +24520,7 @@ impl PutResourcePolicyInput {
             "PutResourcePolicy",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -24517,7 +24624,7 @@ pub mod put_schema_version_metadata_input {
 pub type PutSchemaVersionMetadataInputOperationOutputAlias =
     crate::operation::PutSchemaVersionMetadata;
 #[doc(hidden)]
-pub type PutSchemaVersionMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutSchemaVersionMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSchemaVersionMetadataInput {
     /// Consumes the builder and constructs an Operation<[`PutSchemaVersionMetadata`](crate::operation::PutSchemaVersionMetadata)>
     #[allow(clippy::let_and_return)]
@@ -24528,7 +24635,7 @@ impl PutSchemaVersionMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutSchemaVersionMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24615,7 +24722,7 @@ impl PutSchemaVersionMetadataInput {
             "PutSchemaVersionMetadata",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -24715,7 +24822,7 @@ pub mod put_workflow_run_properties_input {
 pub type PutWorkflowRunPropertiesInputOperationOutputAlias =
     crate::operation::PutWorkflowRunProperties;
 #[doc(hidden)]
-pub type PutWorkflowRunPropertiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutWorkflowRunPropertiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutWorkflowRunPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`PutWorkflowRunProperties`](crate::operation::PutWorkflowRunProperties)>
     #[allow(clippy::let_and_return)]
@@ -24726,7 +24833,7 @@ impl PutWorkflowRunPropertiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutWorkflowRunProperties,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24813,7 +24920,7 @@ impl PutWorkflowRunPropertiesInput {
             "PutWorkflowRunProperties",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -24892,12 +24999,9 @@ pub mod query_schema_version_metadata_input {
         /// To override the contents of this collection use [`set_metadata_list`](Self::set_metadata_list).
         ///
         /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
-        pub fn metadata_list(
-            mut self,
-            input: impl Into<crate::model::MetadataKeyValuePair>,
-        ) -> Self {
+        pub fn metadata_list(mut self, input: crate::model::MetadataKeyValuePair) -> Self {
             let mut v = self.metadata_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metadata_list = Some(v);
             self
         }
@@ -24951,7 +25055,7 @@ pub mod query_schema_version_metadata_input {
 pub type QuerySchemaVersionMetadataInputOperationOutputAlias =
     crate::operation::QuerySchemaVersionMetadata;
 #[doc(hidden)]
-pub type QuerySchemaVersionMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type QuerySchemaVersionMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QuerySchemaVersionMetadataInput {
     /// Consumes the builder and constructs an Operation<[`QuerySchemaVersionMetadata`](crate::operation::QuerySchemaVersionMetadata)>
     #[allow(clippy::let_and_return)]
@@ -24962,7 +25066,7 @@ impl QuerySchemaVersionMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::QuerySchemaVersionMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25048,7 +25152,7 @@ impl QuerySchemaVersionMetadataInput {
             "QuerySchemaVersionMetadata",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -25083,12 +25187,8 @@ pub mod register_schema_version_input {
     impl Builder {
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.schema_id = Some(input);
@@ -25096,12 +25196,8 @@ pub mod register_schema_version_input {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.schema_id = input;
@@ -25137,7 +25233,7 @@ pub mod register_schema_version_input {
 #[doc(hidden)]
 pub type RegisterSchemaVersionInputOperationOutputAlias = crate::operation::RegisterSchemaVersion;
 #[doc(hidden)]
-pub type RegisterSchemaVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterSchemaVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterSchemaVersionInput {
     /// Consumes the builder and constructs an Operation<[`RegisterSchemaVersion`](crate::operation::RegisterSchemaVersion)>
     #[allow(clippy::let_and_return)]
@@ -25148,7 +25244,7 @@ impl RegisterSchemaVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterSchemaVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25235,7 +25331,7 @@ impl RegisterSchemaVersionInput {
             "RegisterSchemaVersion",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -25339,7 +25435,7 @@ pub mod remove_schema_version_metadata_input {
 pub type RemoveSchemaVersionMetadataInputOperationOutputAlias =
     crate::operation::RemoveSchemaVersionMetadata;
 #[doc(hidden)]
-pub type RemoveSchemaVersionMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveSchemaVersionMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveSchemaVersionMetadataInput {
     /// Consumes the builder and constructs an Operation<[`RemoveSchemaVersionMetadata`](crate::operation::RemoveSchemaVersionMetadata)>
     #[allow(clippy::let_and_return)]
@@ -25350,7 +25446,7 @@ impl RemoveSchemaVersionMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveSchemaVersionMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25436,7 +25532,7 @@ impl RemoveSchemaVersionMetadataInput {
             "RemoveSchemaVersionMetadata",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -25506,7 +25602,7 @@ pub mod reset_job_bookmark_input {
 #[doc(hidden)]
 pub type ResetJobBookmarkInputOperationOutputAlias = crate::operation::ResetJobBookmark;
 #[doc(hidden)]
-pub type ResetJobBookmarkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResetJobBookmarkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResetJobBookmarkInput {
     /// Consumes the builder and constructs an Operation<[`ResetJobBookmark`](crate::operation::ResetJobBookmark)>
     #[allow(clippy::let_and_return)]
@@ -25517,7 +25613,7 @@ impl ResetJobBookmarkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResetJobBookmark,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25602,7 +25698,7 @@ impl ResetJobBookmarkInput {
             "ResetJobBookmark",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -25693,7 +25789,7 @@ pub mod resume_workflow_run_input {
 #[doc(hidden)]
 pub type ResumeWorkflowRunInputOperationOutputAlias = crate::operation::ResumeWorkflowRun;
 #[doc(hidden)]
-pub type ResumeWorkflowRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResumeWorkflowRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResumeWorkflowRunInput {
     /// Consumes the builder and constructs an Operation<[`ResumeWorkflowRun`](crate::operation::ResumeWorkflowRun)>
     #[allow(clippy::let_and_return)]
@@ -25704,7 +25800,7 @@ impl ResumeWorkflowRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResumeWorkflowRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25789,7 +25885,7 @@ impl ResumeWorkflowRunInput {
             "ResumeWorkflowRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -25827,16 +25923,12 @@ pub mod search_tables_input {
         pub(crate) resource_share_type: std::option::Option<crate::model::ResourceShareType>,
     }
     impl Builder {
-        /// <p>A unique identifier, consisting of <code>
-        /// <i>account_id</i>
-        /// </code>.</p>
+        /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier, consisting of <code>
-        /// <i>account_id</i>
-        /// </code>.</p>
+        /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -25856,16 +25948,14 @@ pub mod search_tables_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
-        ///
         /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::PropertyPredicate>) -> Self {
+        pub fn filters(mut self, input: crate::model::PropertyPredicate) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
-        ///
         /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
         pub fn set_filters(
             mut self,
@@ -25891,9 +25981,9 @@ pub mod search_tables_input {
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
         /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
-        pub fn sort_criteria(mut self, input: impl Into<crate::model::SortCriterion>) -> Self {
+        pub fn sort_criteria(mut self, input: crate::model::SortCriterion) -> Self {
             let mut v = self.sort_criteria.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sort_criteria = Some(v);
             self
         }
@@ -25916,28 +26006,18 @@ pub mod search_tables_input {
             self
         }
         /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p>
-        /// </li>
-        /// <li>
-        /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p>
-        /// </li>
+        /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+        /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
         /// </ul>
         pub fn resource_share_type(mut self, input: crate::model::ResourceShareType) -> Self {
             self.resource_share_type = Some(input);
             self
         }
         /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p>
-        /// </li>
-        /// <li>
-        /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p>
-        /// </li>
+        /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+        /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
         /// </ul>
         pub fn set_resource_share_type(
             mut self,
@@ -25968,7 +26048,7 @@ pub mod search_tables_input {
 #[doc(hidden)]
 pub type SearchTablesInputOperationOutputAlias = crate::operation::SearchTables;
 #[doc(hidden)]
-pub type SearchTablesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchTablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchTablesInput {
     /// Consumes the builder and constructs an Operation<[`SearchTables`](crate::operation::SearchTables)>
     #[allow(clippy::let_and_return)]
@@ -25979,7 +26059,7 @@ impl SearchTablesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchTables,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26063,7 +26143,7 @@ impl SearchTablesInput {
             "SearchTables",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -26148,7 +26228,7 @@ pub mod start_blueprint_run_input {
 #[doc(hidden)]
 pub type StartBlueprintRunInputOperationOutputAlias = crate::operation::StartBlueprintRun;
 #[doc(hidden)]
-pub type StartBlueprintRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartBlueprintRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartBlueprintRunInput {
     /// Consumes the builder and constructs an Operation<[`StartBlueprintRun`](crate::operation::StartBlueprintRun)>
     #[allow(clippy::let_and_return)]
@@ -26159,7 +26239,7 @@ impl StartBlueprintRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartBlueprintRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26244,7 +26324,7 @@ impl StartBlueprintRunInput {
             "StartBlueprintRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -26300,7 +26380,7 @@ pub mod start_crawler_input {
 #[doc(hidden)]
 pub type StartCrawlerInputOperationOutputAlias = crate::operation::StartCrawler;
 #[doc(hidden)]
-pub type StartCrawlerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartCrawlerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartCrawlerInput {
     /// Consumes the builder and constructs an Operation<[`StartCrawler`](crate::operation::StartCrawler)>
     #[allow(clippy::let_and_return)]
@@ -26311,7 +26391,7 @@ impl StartCrawlerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartCrawler,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26395,7 +26475,7 @@ impl StartCrawlerInput {
             "StartCrawler",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -26453,7 +26533,7 @@ pub mod start_crawler_schedule_input {
 #[doc(hidden)]
 pub type StartCrawlerScheduleInputOperationOutputAlias = crate::operation::StartCrawlerSchedule;
 #[doc(hidden)]
-pub type StartCrawlerScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartCrawlerScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartCrawlerScheduleInput {
     /// Consumes the builder and constructs an Operation<[`StartCrawlerSchedule`](crate::operation::StartCrawlerSchedule)>
     #[allow(clippy::let_and_return)]
@@ -26464,7 +26544,7 @@ impl StartCrawlerScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartCrawlerSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26551,7 +26631,7 @@ impl StartCrawlerScheduleInput {
             "StartCrawlerSchedule",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -26625,7 +26705,7 @@ pub mod start_export_labels_task_run_input {
 pub type StartExportLabelsTaskRunInputOperationOutputAlias =
     crate::operation::StartExportLabelsTaskRun;
 #[doc(hidden)]
-pub type StartExportLabelsTaskRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartExportLabelsTaskRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartExportLabelsTaskRunInput {
     /// Consumes the builder and constructs an Operation<[`StartExportLabelsTaskRun`](crate::operation::StartExportLabelsTaskRun)>
     #[allow(clippy::let_and_return)]
@@ -26636,7 +26716,7 @@ impl StartExportLabelsTaskRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartExportLabelsTaskRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26723,7 +26803,7 @@ impl StartExportLabelsTaskRunInput {
             "StartExportLabelsTaskRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -26767,14 +26847,12 @@ pub mod start_import_labels_task_run_input {
             self.transform_id = input;
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the
-        /// labels.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
         pub fn input_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_s3_path = Some(input.into());
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the
-        /// labels.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
         pub fn set_input_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26811,7 +26889,7 @@ pub mod start_import_labels_task_run_input {
 pub type StartImportLabelsTaskRunInputOperationOutputAlias =
     crate::operation::StartImportLabelsTaskRun;
 #[doc(hidden)]
-pub type StartImportLabelsTaskRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartImportLabelsTaskRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartImportLabelsTaskRunInput {
     /// Consumes the builder and constructs an Operation<[`StartImportLabelsTaskRun`](crate::operation::StartImportLabelsTaskRun)>
     #[allow(clippy::let_and_return)]
@@ -26822,7 +26900,7 @@ impl StartImportLabelsTaskRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartImportLabelsTaskRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26909,7 +26987,7 @@ impl StartImportLabelsTaskRunInput {
             "StartImportLabelsTaskRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -26977,8 +27055,7 @@ pub mod start_job_run_input {
         /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
         ///
         /// <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn arguments(
@@ -26992,8 +27069,7 @@ pub mod start_job_run_input {
             self
         }
         /// <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_arguments(
@@ -27006,93 +27082,55 @@ pub mod start_job_run_input {
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun.
-        /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.allocated_capacity = Some(input);
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun.
-        /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self
         }
-        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-        /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-        /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job, or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job, or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
-        /// run.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
-        /// run.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27115,15 +27153,9 @@ pub mod start_job_run_input {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
@@ -27131,15 +27163,9 @@ pub mod start_job_run_input {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -27149,14 +27175,12 @@ pub mod start_job_run_input {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
@@ -27187,7 +27211,7 @@ pub mod start_job_run_input {
 #[doc(hidden)]
 pub type StartJobRunInputOperationOutputAlias = crate::operation::StartJobRun;
 #[doc(hidden)]
-pub type StartJobRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartJobRunInput {
     /// Consumes the builder and constructs an Operation<[`StartJobRun`](crate::operation::StartJobRun)>
     #[allow(clippy::let_and_return)]
@@ -27198,7 +27222,7 @@ impl StartJobRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartJobRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27282,7 +27306,7 @@ impl StartJobRunInput {
             "StartJobRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -27341,7 +27365,7 @@ pub mod start_ml_evaluation_task_run_input {
 pub type StartMlEvaluationTaskRunInputOperationOutputAlias =
     crate::operation::StartMLEvaluationTaskRun;
 #[doc(hidden)]
-pub type StartMlEvaluationTaskRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartMlEvaluationTaskRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMlEvaluationTaskRunInput {
     /// Consumes the builder and constructs an Operation<[`StartMLEvaluationTaskRun`](crate::operation::StartMLEvaluationTaskRun)>
     #[allow(clippy::let_and_return)]
@@ -27352,7 +27376,7 @@ impl StartMlEvaluationTaskRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMLEvaluationTaskRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27439,7 +27463,7 @@ impl StartMlEvaluationTaskRunInput {
             "StartMLEvaluationTaskRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -27482,14 +27506,12 @@ pub mod start_ml_labeling_set_generation_task_run_input {
             self.transform_id = input;
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling
-        /// set.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
         pub fn output_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_s3_path = Some(input.into());
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling
-        /// set.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
         pub fn set_output_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27516,7 +27538,7 @@ pub type StartMlLabelingSetGenerationTaskRunInputOperationOutputAlias =
     crate::operation::StartMLLabelingSetGenerationTaskRun;
 #[doc(hidden)]
 pub type StartMlLabelingSetGenerationTaskRunInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartMlLabelingSetGenerationTaskRunInput {
     /// Consumes the builder and constructs an Operation<[`StartMLLabelingSetGenerationTaskRun`](crate::operation::StartMLLabelingSetGenerationTaskRun)>
     #[allow(clippy::let_and_return)]
@@ -27527,7 +27549,7 @@ impl StartMlLabelingSetGenerationTaskRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMLLabelingSetGenerationTaskRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27613,7 +27635,7 @@ impl StartMlLabelingSetGenerationTaskRunInput {
             "StartMLLabelingSetGenerationTaskRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -27669,7 +27691,7 @@ pub mod start_trigger_input {
 #[doc(hidden)]
 pub type StartTriggerInputOperationOutputAlias = crate::operation::StartTrigger;
 #[doc(hidden)]
-pub type StartTriggerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartTriggerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTriggerInput {
     /// Consumes the builder and constructs an Operation<[`StartTrigger`](crate::operation::StartTrigger)>
     #[allow(clippy::let_and_return)]
@@ -27680,7 +27702,7 @@ impl StartTriggerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartTrigger,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27764,7 +27786,7 @@ impl StartTriggerInput {
             "StartTrigger",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -27820,7 +27842,7 @@ pub mod start_workflow_run_input {
 #[doc(hidden)]
 pub type StartWorkflowRunInputOperationOutputAlias = crate::operation::StartWorkflowRun;
 #[doc(hidden)]
-pub type StartWorkflowRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartWorkflowRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartWorkflowRunInput {
     /// Consumes the builder and constructs an Operation<[`StartWorkflowRun`](crate::operation::StartWorkflowRun)>
     #[allow(clippy::let_and_return)]
@@ -27831,7 +27853,7 @@ impl StartWorkflowRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartWorkflowRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27916,7 +27938,7 @@ impl StartWorkflowRunInput {
             "StartWorkflowRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -27972,7 +27994,7 @@ pub mod stop_crawler_input {
 #[doc(hidden)]
 pub type StopCrawlerInputOperationOutputAlias = crate::operation::StopCrawler;
 #[doc(hidden)]
-pub type StopCrawlerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopCrawlerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopCrawlerInput {
     /// Consumes the builder and constructs an Operation<[`StopCrawler`](crate::operation::StopCrawler)>
     #[allow(clippy::let_and_return)]
@@ -27983,7 +28005,7 @@ impl StopCrawlerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopCrawler,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28067,7 +28089,7 @@ impl StopCrawlerInput {
             "StopCrawler",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -28125,7 +28147,7 @@ pub mod stop_crawler_schedule_input {
 #[doc(hidden)]
 pub type StopCrawlerScheduleInputOperationOutputAlias = crate::operation::StopCrawlerSchedule;
 #[doc(hidden)]
-pub type StopCrawlerScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopCrawlerScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopCrawlerScheduleInput {
     /// Consumes the builder and constructs an Operation<[`StopCrawlerSchedule`](crate::operation::StopCrawlerSchedule)>
     #[allow(clippy::let_and_return)]
@@ -28136,7 +28158,7 @@ impl StopCrawlerScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopCrawlerSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28221,7 +28243,7 @@ impl StopCrawlerScheduleInput {
             "StopCrawlerSchedule",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -28277,7 +28299,7 @@ pub mod stop_trigger_input {
 #[doc(hidden)]
 pub type StopTriggerInputOperationOutputAlias = crate::operation::StopTrigger;
 #[doc(hidden)]
-pub type StopTriggerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopTriggerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopTriggerInput {
     /// Consumes the builder and constructs an Operation<[`StopTrigger`](crate::operation::StopTrigger)>
     #[allow(clippy::let_and_return)]
@@ -28288,7 +28310,7 @@ impl StopTriggerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopTrigger,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28372,7 +28394,7 @@ impl StopTriggerInput {
             "StopTrigger",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -28442,7 +28464,7 @@ pub mod stop_workflow_run_input {
 #[doc(hidden)]
 pub type StopWorkflowRunInputOperationOutputAlias = crate::operation::StopWorkflowRun;
 #[doc(hidden)]
-pub type StopWorkflowRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopWorkflowRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopWorkflowRunInput {
     /// Consumes the builder and constructs an Operation<[`StopWorkflowRun`](crate::operation::StopWorkflowRun)>
     #[allow(clippy::let_and_return)]
@@ -28453,7 +28475,7 @@ impl StopWorkflowRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopWorkflowRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28538,7 +28560,7 @@ impl StopWorkflowRunInput {
             "StopWorkflowRun",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -28573,14 +28595,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>The ARN of the Glue resource to which to add the tags. For more
-        /// information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
+        /// <p>The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Glue resource to which to add the tags. For more
-        /// information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
+        /// <p>The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -28627,7 +28647,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -28638,7 +28658,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28722,7 +28742,7 @@ impl TagResourceInput {
             "TagResource",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -28801,7 +28821,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -28812,7 +28832,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28896,7 +28916,7 @@ impl UntagResourceInput {
             "UntagResource",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -28981,7 +29001,7 @@ pub mod update_blueprint_input {
 #[doc(hidden)]
 pub type UpdateBlueprintInputOperationOutputAlias = crate::operation::UpdateBlueprint;
 #[doc(hidden)]
-pub type UpdateBlueprintInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBlueprintInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBlueprintInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBlueprint`](crate::operation::UpdateBlueprint)>
     #[allow(clippy::let_and_return)]
@@ -28992,7 +29012,7 @@ impl UpdateBlueprintInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBlueprint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29077,7 +29097,7 @@ impl UpdateBlueprintInput {
             "UpdateBlueprint",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -29183,7 +29203,7 @@ pub mod update_classifier_input {
 #[doc(hidden)]
 pub type UpdateClassifierInputOperationOutputAlias = crate::operation::UpdateClassifier;
 #[doc(hidden)]
-pub type UpdateClassifierInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateClassifierInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateClassifierInput {
     /// Consumes the builder and constructs an Operation<[`UpdateClassifier`](crate::operation::UpdateClassifier)>
     #[allow(clippy::let_and_return)]
@@ -29194,7 +29214,7 @@ impl UpdateClassifierInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateClassifier,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29279,7 +29299,7 @@ impl UpdateClassifierInput {
             "UpdateClassifier",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -29316,14 +29336,12 @@ pub mod update_column_statistics_for_partition_input {
             std::option::Option<std::vec::Vec<crate::model::ColumnStatistics>>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -29375,12 +29393,9 @@ pub mod update_column_statistics_for_partition_input {
         /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).
         ///
         /// <p>A list of the column statistics.</p>
-        pub fn column_statistics_list(
-            mut self,
-            input: impl Into<crate::model::ColumnStatistics>,
-        ) -> Self {
+        pub fn column_statistics_list(mut self, input: crate::model::ColumnStatistics) -> Self {
             let mut v = self.column_statistics_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_statistics_list = Some(v);
             self
         }
@@ -29413,7 +29428,8 @@ pub mod update_column_statistics_for_partition_input {
 pub type UpdateColumnStatisticsForPartitionInputOperationOutputAlias =
     crate::operation::UpdateColumnStatisticsForPartition;
 #[doc(hidden)]
-pub type UpdateColumnStatisticsForPartitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateColumnStatisticsForPartitionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateColumnStatisticsForPartitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateColumnStatisticsForPartition`](crate::operation::UpdateColumnStatisticsForPartition)>
     #[allow(clippy::let_and_return)]
@@ -29424,7 +29440,7 @@ impl UpdateColumnStatisticsForPartitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateColumnStatisticsForPartition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29510,7 +29526,7 @@ impl UpdateColumnStatisticsForPartitionInput {
             "UpdateColumnStatisticsForPartition",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -29546,14 +29562,12 @@ pub mod update_column_statistics_for_table_input {
             std::option::Option<std::vec::Vec<crate::model::ColumnStatistics>>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -29586,12 +29600,9 @@ pub mod update_column_statistics_for_table_input {
         /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).
         ///
         /// <p>A list of the column statistics.</p>
-        pub fn column_statistics_list(
-            mut self,
-            input: impl Into<crate::model::ColumnStatistics>,
-        ) -> Self {
+        pub fn column_statistics_list(mut self, input: crate::model::ColumnStatistics) -> Self {
             let mut v = self.column_statistics_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_statistics_list = Some(v);
             self
         }
@@ -29623,7 +29634,8 @@ pub mod update_column_statistics_for_table_input {
 pub type UpdateColumnStatisticsForTableInputOperationOutputAlias =
     crate::operation::UpdateColumnStatisticsForTable;
 #[doc(hidden)]
-pub type UpdateColumnStatisticsForTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateColumnStatisticsForTableInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateColumnStatisticsForTableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateColumnStatisticsForTable`](crate::operation::UpdateColumnStatisticsForTable)>
     #[allow(clippy::let_and_return)]
@@ -29634,7 +29646,7 @@ impl UpdateColumnStatisticsForTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateColumnStatisticsForTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29720,7 +29732,7 @@ impl UpdateColumnStatisticsForTableInput {
             "UpdateColumnStatisticsForTable",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -29754,14 +29766,12 @@ pub mod update_connection_input {
         pub(crate) connection_input: std::option::Option<crate::model::ConnectionInput>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -29776,14 +29786,12 @@ pub mod update_connection_input {
             self.name = input;
             self
         }
-        /// <p>A <code>ConnectionInput</code> object that redefines the connection
-        /// in question.</p>
+        /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
         pub fn connection_input(mut self, input: crate::model::ConnectionInput) -> Self {
             self.connection_input = Some(input);
             self
         }
-        /// <p>A <code>ConnectionInput</code> object that redefines the connection
-        /// in question.</p>
+        /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
         pub fn set_connection_input(
             mut self,
             input: std::option::Option<crate::model::ConnectionInput>,
@@ -29809,7 +29817,7 @@ pub mod update_connection_input {
 #[doc(hidden)]
 pub type UpdateConnectionInputOperationOutputAlias = crate::operation::UpdateConnection;
 #[doc(hidden)]
-pub type UpdateConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnection`](crate::operation::UpdateConnection)>
     #[allow(clippy::let_and_return)]
@@ -29820,7 +29828,7 @@ impl UpdateConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29905,7 +29913,7 @@ impl UpdateConnectionInput {
             "UpdateConnection",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -29945,6 +29953,8 @@ pub mod update_crawler_input {
         pub(crate) schema_change_policy: std::option::Option<crate::model::SchemaChangePolicy>,
         pub(crate) recrawl_policy: std::option::Option<crate::model::RecrawlPolicy>,
         pub(crate) lineage_configuration: std::option::Option<crate::model::LineageConfiguration>,
+        pub(crate) lake_formation_configuration:
+            std::option::Option<crate::model::LakeFormationConfiguration>,
         pub(crate) configuration: std::option::Option<std::string::String>,
         pub(crate) crawler_security_configuration: std::option::Option<std::string::String>,
     }
@@ -29959,26 +29969,22 @@ pub mod update_crawler_input {
             self.name = input;
             self
         }
-        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler
-        /// to access customer resources.</p>
+        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler
-        /// to access customer resources.</p>
+        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
-        /// <p>The Glue database where results are stored, such as:
-        /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+        /// <p>The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The Glue database where results are stored, such as:
-        /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+        /// <p>The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30009,16 +30015,12 @@ pub mod update_crawler_input {
             self.targets = input;
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
@@ -30027,20 +30029,14 @@ pub mod update_crawler_input {
         ///
         /// To override the contents of this collection use [`set_classifiers`](Self::set_classifiers).
         ///
-        /// <p>A list of custom classifiers that the user
-        /// has registered. By default, all built-in classifiers are included in a crawl,
-        /// but these custom classifiers always override the default classifiers
-        /// for a given classification.</p>
+        /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
         pub fn classifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.classifiers.unwrap_or_default();
             v.push(input.into());
             self.classifiers = Some(v);
             self
         }
-        /// <p>A list of custom classifiers that the user
-        /// has registered. By default, all built-in classifiers are included in a crawl,
-        /// but these custom classifiers always override the default classifiers
-        /// for a given classification.</p>
+        /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
         pub fn set_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -30097,16 +30093,28 @@ pub mod update_crawler_input {
             self.lineage_configuration = input;
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users
-        /// to specify aspects of a crawler's behavior.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn lake_formation_configuration(
+            mut self,
+            input: crate::model::LakeFormationConfiguration,
+        ) -> Self {
+            self.lake_formation_configuration = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_lake_formation_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LakeFormationConfiguration>,
+        ) -> Self {
+            self.lake_formation_configuration = input;
+            self
+        }
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration = Some(input.into());
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users
-        /// to specify aspects of a crawler's behavior.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30114,8 +30122,7 @@ pub mod update_crawler_input {
             self.configuration = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn crawler_security_configuration(
             mut self,
             input: impl Into<std::string::String>,
@@ -30123,8 +30130,7 @@ pub mod update_crawler_input {
             self.crawler_security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn set_crawler_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30151,6 +30157,7 @@ pub mod update_crawler_input {
                 schema_change_policy: self.schema_change_policy,
                 recrawl_policy: self.recrawl_policy,
                 lineage_configuration: self.lineage_configuration,
+                lake_formation_configuration: self.lake_formation_configuration,
                 configuration: self.configuration,
                 crawler_security_configuration: self.crawler_security_configuration,
             })
@@ -30160,7 +30167,7 @@ pub mod update_crawler_input {
 #[doc(hidden)]
 pub type UpdateCrawlerInputOperationOutputAlias = crate::operation::UpdateCrawler;
 #[doc(hidden)]
-pub type UpdateCrawlerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCrawlerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCrawlerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCrawler`](crate::operation::UpdateCrawler)>
     #[allow(clippy::let_and_return)]
@@ -30171,7 +30178,7 @@ impl UpdateCrawlerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCrawler,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30255,7 +30262,7 @@ impl UpdateCrawlerInput {
             "UpdateCrawler",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -30298,16 +30305,12 @@ pub mod update_crawler_schedule_input {
             self.crawler_name = input;
             self
         }
-        /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
@@ -30329,7 +30332,7 @@ pub mod update_crawler_schedule_input {
 #[doc(hidden)]
 pub type UpdateCrawlerScheduleInputOperationOutputAlias = crate::operation::UpdateCrawlerSchedule;
 #[doc(hidden)]
-pub type UpdateCrawlerScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCrawlerScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCrawlerScheduleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCrawlerSchedule`](crate::operation::UpdateCrawlerSchedule)>
     #[allow(clippy::let_and_return)]
@@ -30340,7 +30343,7 @@ impl UpdateCrawlerScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCrawlerSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30427,7 +30430,7 @@ impl UpdateCrawlerScheduleInput {
             "UpdateCrawlerSchedule",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -30461,38 +30464,32 @@ pub mod update_database_input {
         pub(crate) database_input: std::option::Option<crate::model::DatabaseInput>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the database to update in the catalog. For Hive
-        /// compatibility, this is folded to lowercase.</p>
+        /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the database to update in the catalog. For Hive
-        /// compatibility, this is folded to lowercase.</p>
+        /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A <code>DatabaseInput</code> object specifying the new definition
-        /// of the metadata database in the catalog.</p>
+        /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
         pub fn database_input(mut self, input: crate::model::DatabaseInput) -> Self {
             self.database_input = Some(input);
             self
         }
-        /// <p>A <code>DatabaseInput</code> object specifying the new definition
-        /// of the metadata database in the catalog.</p>
+        /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
         pub fn set_database_input(
             mut self,
             input: std::option::Option<crate::model::DatabaseInput>,
@@ -30518,7 +30515,7 @@ pub mod update_database_input {
 #[doc(hidden)]
 pub type UpdateDatabaseInputOperationOutputAlias = crate::operation::UpdateDatabase;
 #[doc(hidden)]
-pub type UpdateDatabaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDatabaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatabaseInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDatabase`](crate::operation::UpdateDatabase)>
     #[allow(clippy::let_and_return)]
@@ -30529,7 +30526,7 @@ impl UpdateDatabaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDatabase,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30614,7 +30611,7 @@ impl UpdateDatabaseInput {
             "UpdateDatabase",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -30729,16 +30726,12 @@ pub mod update_dev_endpoint_input {
             self.custom_libraries = input;
             self
         }
-        /// <p>
-        /// <code>True</code> if the list of custom libraries to be loaded in the development endpoint
-        /// needs to be updated, or <code>False</code> if otherwise.</p>
+        /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
         pub fn update_etl_libraries(mut self, input: bool) -> Self {
             self.update_etl_libraries = Some(input);
             self
         }
-        /// <p>
-        /// <code>True</code> if the list of custom libraries to be loaded in the development endpoint
-        /// needs to be updated, or <code>False</code> if otherwise.</p>
+        /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
         pub fn set_update_etl_libraries(mut self, input: std::option::Option<bool>) -> Self {
             self.update_etl_libraries = input;
             self
@@ -30747,16 +30740,14 @@ pub mod update_dev_endpoint_input {
         ///
         /// To override the contents of this collection use [`set_delete_arguments`](Self::set_delete_arguments).
         ///
-        /// <p>The list of argument keys to be deleted from the map of arguments used to configure the
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
         pub fn delete_arguments(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.delete_arguments.unwrap_or_default();
             v.push(input.into());
             self.delete_arguments = Some(v);
             self
         }
-        /// <p>The list of argument keys to be deleted from the map of arguments used to configure the
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
         pub fn set_delete_arguments(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -30768,18 +30759,11 @@ pub mod update_dev_endpoint_input {
         ///
         /// To override the contents of this collection use [`set_add_arguments`](Self::set_add_arguments).
         ///
-        /// <p>The map of arguments to add the map of arguments used to configure the
-        /// <code>DevEndpoint</code>.</p>
-        ///
+        /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
         /// <p>Valid arguments are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"--enable-glue-datacatalog": ""</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
         /// </ul>
-        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn add_arguments(
             mut self,
@@ -30791,18 +30775,11 @@ pub mod update_dev_endpoint_input {
             self.add_arguments = Some(hash_map);
             self
         }
-        /// <p>The map of arguments to add the map of arguments used to configure the
-        /// <code>DevEndpoint</code>.</p>
-        ///
+        /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
         /// <p>Valid arguments are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"--enable-glue-datacatalog": ""</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
         /// </ul>
-        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn set_add_arguments(
             mut self,
@@ -30836,7 +30813,7 @@ pub mod update_dev_endpoint_input {
 #[doc(hidden)]
 pub type UpdateDevEndpointInputOperationOutputAlias = crate::operation::UpdateDevEndpoint;
 #[doc(hidden)]
-pub type UpdateDevEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDevEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDevEndpointInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDevEndpoint`](crate::operation::UpdateDevEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -30847,7 +30824,7 @@ impl UpdateDevEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDevEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30932,7 +30909,7 @@ impl UpdateDevEndpointInput {
             "UpdateDevEndpoint",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -31003,7 +30980,7 @@ pub mod update_job_input {
 #[doc(hidden)]
 pub type UpdateJobInputOperationOutputAlias = crate::operation::UpdateJob;
 #[doc(hidden)]
-pub type UpdateJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJob`](crate::operation::UpdateJob)>
     #[allow(clippy::let_and_return)]
@@ -31014,7 +30991,7 @@ impl UpdateJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31096,7 +31073,7 @@ impl UpdateJobInput {
                     "UpdateJob",
                     "glue",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -31168,14 +31145,12 @@ pub mod update_ml_transform_input {
             self.description = input;
             self
         }
-        /// <p>The configuration parameters that are specific to the transform type (algorithm) used.
-        /// Conditionally dependent on the transform type.</p>
+        /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
         pub fn parameters(mut self, input: crate::model::TransformParameters) -> Self {
             self.parameters = Some(input);
             self
         }
-        /// <p>The configuration parameters that are specific to the transform type (algorithm) used.
-        /// Conditionally dependent on the transform type.</p>
+        /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::TransformParameters>,
@@ -31183,43 +31158,33 @@ pub mod update_ml_transform_input {
             self.parameters = input;
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-        /// permissions.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-        /// permissions.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
@@ -31227,15 +31192,9 @@ pub mod update_ml_transform_input {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
@@ -31243,15 +31202,9 @@ pub mod update_ml_transform_input {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -31316,7 +31269,7 @@ pub mod update_ml_transform_input {
 #[doc(hidden)]
 pub type UpdateMlTransformInputOperationOutputAlias = crate::operation::UpdateMLTransform;
 #[doc(hidden)]
-pub type UpdateMlTransformInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMlTransformInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMlTransformInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMLTransform`](crate::operation::UpdateMLTransform)>
     #[allow(clippy::let_and_return)]
@@ -31327,7 +31280,7 @@ impl UpdateMlTransformInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMLTransform,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31412,7 +31365,7 @@ impl UpdateMlTransformInput {
             "UpdateMLTransform",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -31448,26 +31401,22 @@ pub mod update_partition_input {
         pub(crate) partition_input: std::option::Option<crate::model::PartitionInput>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -31505,14 +31454,12 @@ pub mod update_partition_input {
             self
         }
         /// <p>The new partition object to update the partition to.</p>
-        ///
         /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
         pub fn partition_input(mut self, input: crate::model::PartitionInput) -> Self {
             self.partition_input = Some(input);
             self
         }
         /// <p>The new partition object to update the partition to.</p>
-        ///
         /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
         pub fn set_partition_input(
             mut self,
@@ -31541,7 +31488,7 @@ pub mod update_partition_input {
 #[doc(hidden)]
 pub type UpdatePartitionInputOperationOutputAlias = crate::operation::UpdatePartition;
 #[doc(hidden)]
-pub type UpdatePartitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePartitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePartitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePartition`](crate::operation::UpdatePartition)>
     #[allow(clippy::let_and_return)]
@@ -31552,7 +31499,7 @@ impl UpdatePartitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePartition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31637,7 +31584,7 @@ impl UpdatePartitionInput {
             "UpdatePartition",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -31710,7 +31657,7 @@ pub mod update_registry_input {
 #[doc(hidden)]
 pub type UpdateRegistryInputOperationOutputAlias = crate::operation::UpdateRegistry;
 #[doc(hidden)]
-pub type UpdateRegistryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRegistryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRegistryInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRegistry`](crate::operation::UpdateRegistry)>
     #[allow(clippy::let_and_return)]
@@ -31721,7 +31668,7 @@ impl UpdateRegistryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRegistry,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31806,7 +31753,7 @@ impl UpdateRegistryInput {
             "UpdateRegistry",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -31843,12 +31790,8 @@ pub mod update_schema_input {
     impl Builder {
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.schema_id = Some(input);
@@ -31856,12 +31799,8 @@ pub mod update_schema_input {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.schema_id = input;
@@ -31922,7 +31861,7 @@ pub mod update_schema_input {
 #[doc(hidden)]
 pub type UpdateSchemaInputOperationOutputAlias = crate::operation::UpdateSchema;
 #[doc(hidden)]
-pub type UpdateSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSchemaInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSchema`](crate::operation::UpdateSchema)>
     #[allow(clippy::let_and_return)]
@@ -31933,7 +31872,7 @@ impl UpdateSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32017,7 +31956,7 @@ impl UpdateSchemaInput {
             "UpdateSchema",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -32053,26 +31992,22 @@ pub mod update_table_input {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the catalog database in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32080,14 +32015,12 @@ pub mod update_table_input {
             self.database_name = input;
             self
         }
-        /// <p>An updated <code>TableInput</code> object to define the metadata table
-        /// in the catalog.</p>
+        /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
         pub fn table_input(mut self, input: crate::model::TableInput) -> Self {
             self.table_input = Some(input);
             self
         }
-        /// <p>An updated <code>TableInput</code> object to define the metadata table
-        /// in the catalog.</p>
+        /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
         pub fn set_table_input(
             mut self,
             input: std::option::Option<crate::model::TableInput>,
@@ -32095,16 +32028,12 @@ pub mod update_table_input {
             self.table_input = input;
             self
         }
-        /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table
-        /// before updating it. However, if <code>skipArchive</code> is set to true,
-        /// <code>UpdateTable</code> does not create the archived version.</p>
+        /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
         pub fn skip_archive(mut self, input: bool) -> Self {
             self.skip_archive = Some(input);
             self
         }
-        /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table
-        /// before updating it. However, if <code>skipArchive</code> is set to true,
-        /// <code>UpdateTable</code> does not create the archived version.</p>
+        /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
         pub fn set_skip_archive(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_archive = input;
             self
@@ -32142,7 +32071,7 @@ pub mod update_table_input {
 #[doc(hidden)]
 pub type UpdateTableInputOperationOutputAlias = crate::operation::UpdateTable;
 #[doc(hidden)]
-pub type UpdateTableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTable`](crate::operation::UpdateTable)>
     #[allow(clippy::let_and_return)]
@@ -32153,7 +32082,7 @@ impl UpdateTableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32237,7 +32166,7 @@ impl UpdateTableInput {
             "UpdateTable",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -32310,7 +32239,7 @@ pub mod update_trigger_input {
 #[doc(hidden)]
 pub type UpdateTriggerInputOperationOutputAlias = crate::operation::UpdateTrigger;
 #[doc(hidden)]
-pub type UpdateTriggerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTriggerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTriggerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTrigger`](crate::operation::UpdateTrigger)>
     #[allow(clippy::let_and_return)]
@@ -32321,7 +32250,7 @@ impl UpdateTriggerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTrigger,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32405,7 +32334,7 @@ impl UpdateTriggerInput {
             "UpdateTrigger",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -32440,26 +32369,22 @@ pub mod update_user_defined_function_input {
         pub(crate) function_input: std::option::Option<crate::model::UserDefinedFunctionInput>,
     }
     impl Builder {
-        /// <p>The ID of the Data Catalog where the function to be updated is located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the function to be updated is located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
         }
-        /// <p>The name of the catalog database where the function to be updated is
-        /// located.</p>
+        /// <p>The name of the catalog database where the function to be updated is located.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the catalog database where the function to be updated is
-        /// located.</p>
+        /// <p>The name of the catalog database where the function to be updated is located.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32480,14 +32405,12 @@ pub mod update_user_defined_function_input {
             self.function_name = input;
             self
         }
-        /// <p>A <code>FunctionInput</code> object that redefines the function in the Data
-        /// Catalog.</p>
+        /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
         pub fn function_input(mut self, input: crate::model::UserDefinedFunctionInput) -> Self {
             self.function_input = Some(input);
             self
         }
-        /// <p>A <code>FunctionInput</code> object that redefines the function in the Data
-        /// Catalog.</p>
+        /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
         pub fn set_function_input(
             mut self,
             input: std::option::Option<crate::model::UserDefinedFunctionInput>,
@@ -32515,7 +32438,7 @@ pub mod update_user_defined_function_input {
 pub type UpdateUserDefinedFunctionInputOperationOutputAlias =
     crate::operation::UpdateUserDefinedFunction;
 #[doc(hidden)]
-pub type UpdateUserDefinedFunctionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateUserDefinedFunctionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserDefinedFunctionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserDefinedFunction`](crate::operation::UpdateUserDefinedFunction)>
     #[allow(clippy::let_and_return)]
@@ -32526,7 +32449,7 @@ impl UpdateUserDefinedFunctionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserDefinedFunction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32613,7 +32536,7 @@ impl UpdateUserDefinedFunctionInput {
             "UpdateUserDefinedFunction",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -32724,7 +32647,7 @@ pub mod update_workflow_input {
 #[doc(hidden)]
 pub type UpdateWorkflowInputOperationOutputAlias = crate::operation::UpdateWorkflow;
 #[doc(hidden)]
-pub type UpdateWorkflowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateWorkflowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkflow`](crate::operation::UpdateWorkflow)>
     #[allow(clippy::let_and_return)]
@@ -32735,7 +32658,7 @@ impl UpdateWorkflowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkflow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32820,7 +32743,7 @@ impl UpdateWorkflowInput {
             "UpdateWorkflow",
             "glue",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -32893,26 +32816,21 @@ impl std::fmt::Debug for UpdateWorkflowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserDefinedFunctionInput {
-    /// <p>The ID of the Data Catalog where the function to be updated is located. If none is
-    /// provided, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the catalog database where the function to be updated is
-    /// located.</p>
+    /// <p>The name of the catalog database where the function to be updated is located.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the function.</p>
     pub function_name: std::option::Option<std::string::String>,
-    /// <p>A <code>FunctionInput</code> object that redefines the function in the Data
-    /// Catalog.</p>
+    /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
     pub function_input: std::option::Option<crate::model::UserDefinedFunctionInput>,
 }
 impl UpdateUserDefinedFunctionInput {
-    /// <p>The ID of the Data Catalog where the function to be updated is located. If none is
-    /// provided, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the catalog database where the function to be updated is
-    /// located.</p>
+    /// <p>The name of the catalog database where the function to be updated is located.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -32920,8 +32838,7 @@ impl UpdateUserDefinedFunctionInput {
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
-    /// <p>A <code>FunctionInput</code> object that redefines the function in the Data
-    /// Catalog.</p>
+    /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
     pub fn function_input(&self) -> std::option::Option<&crate::model::UserDefinedFunctionInput> {
         self.function_input.as_ref()
     }
@@ -32969,41 +32886,31 @@ impl std::fmt::Debug for UpdateTriggerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableInput {
-    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the catalog database in which the table resides. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>An updated <code>TableInput</code> object to define the metadata table
-    /// in the catalog.</p>
+    /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
     pub table_input: std::option::Option<crate::model::TableInput>,
-    /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table
-    /// before updating it. However, if <code>skipArchive</code> is set to true,
-    /// <code>UpdateTable</code> does not create the archived version.</p>
+    /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
     pub skip_archive: std::option::Option<bool>,
     /// <p>The transaction ID at which to update the table contents. </p>
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl UpdateTableInput {
-    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the catalog database in which the table resides. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>An updated <code>TableInput</code> object to define the metadata table
-    /// in the catalog.</p>
+    /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
     pub fn table_input(&self) -> std::option::Option<&crate::model::TableInput> {
         self.table_input.as_ref()
     }
-    /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table
-    /// before updating it. However, if <code>skipArchive</code> is set to true,
-    /// <code>UpdateTable</code> does not create the archived version.</p>
+    /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
     pub fn skip_archive(&self) -> std::option::Option<bool> {
         self.skip_archive
     }
@@ -33030,12 +32937,8 @@ impl std::fmt::Debug for UpdateTableInput {
 pub struct UpdateSchemaInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
@@ -33048,12 +32951,8 @@ pub struct UpdateSchemaInput {
 impl UpdateSchemaInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
         self.schema_id.as_ref()
@@ -33114,29 +33013,24 @@ impl std::fmt::Debug for UpdateRegistryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePartitionInput {
-    /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided,
-    /// the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the catalog database in which the table in question
-    /// resides.</p>
+    /// <p>The name of the catalog database in which the table in question resides.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table in which the partition to be updated is located.</p>
     pub table_name: std::option::Option<std::string::String>,
     /// <p>List of partition key values that define the partition to update.</p>
     pub partition_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The new partition object to update the partition to.</p>
-    ///
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
     pub partition_input: std::option::Option<crate::model::PartitionInput>,
 }
 impl UpdatePartitionInput {
-    /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided,
-    /// the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the catalog database in which the table in question
-    /// resides.</p>
+    /// <p>The name of the catalog database in which the table in question resides.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -33149,7 +33043,6 @@ impl UpdatePartitionInput {
         self.partition_value_list.as_deref()
     }
     /// <p>The new partition object to update the partition to.</p>
-    ///
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
     pub fn partition_input(&self) -> std::option::Option<&crate::model::PartitionInput> {
         self.partition_input.as_ref()
@@ -33177,32 +33070,20 @@ pub struct UpdateMlTransformInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the transform. The default is an empty string.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The configuration parameters that are specific to the transform type (algorithm) used.
-    /// Conditionally dependent on the transform type.</p>
+    /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
     pub parameters: std::option::Option<crate::model::TransformParameters>,
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-    /// permissions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-    /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>. </p>
-    ///
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
@@ -33225,40 +33106,28 @@ impl UpdateMlTransformInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The configuration parameters that are specific to the transform type (algorithm) used.
-    /// Conditionally dependent on the transform type.</p>
+    /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
     pub fn parameters(&self) -> std::option::Option<&crate::model::TransformParameters> {
         self.parameters.as_ref()
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-    /// permissions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
     }
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-    /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>. </p>
-    ///
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub fn max_capacity(&self) -> std::option::Option<f64> {
         self.max_capacity
     }
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
@@ -33336,25 +33205,15 @@ pub struct UpdateDevEndpointInput {
     pub delete_public_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
     pub custom_libraries: std::option::Option<crate::model::DevEndpointCustomLibraries>,
-    /// <p>
-    /// <code>True</code> if the list of custom libraries to be loaded in the development endpoint
-    /// needs to be updated, or <code>False</code> if otherwise.</p>
+    /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
     pub update_etl_libraries: bool,
-    /// <p>The list of argument keys to be deleted from the map of arguments used to configure the
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
     pub delete_arguments: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The map of arguments to add the map of arguments used to configure the
-    /// <code>DevEndpoint</code>.</p>
-    ///
+    /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>"--enable-glue-datacatalog": ""</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
-    ///
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub add_arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -33382,29 +33241,19 @@ impl UpdateDevEndpointInput {
     ) -> std::option::Option<&crate::model::DevEndpointCustomLibraries> {
         self.custom_libraries.as_ref()
     }
-    /// <p>
-    /// <code>True</code> if the list of custom libraries to be loaded in the development endpoint
-    /// needs to be updated, or <code>False</code> if otherwise.</p>
+    /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
     pub fn update_etl_libraries(&self) -> bool {
         self.update_etl_libraries
     }
-    /// <p>The list of argument keys to be deleted from the map of arguments used to configure the
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
     pub fn delete_arguments(&self) -> std::option::Option<&[std::string::String]> {
         self.delete_arguments.as_deref()
     }
-    /// <p>The map of arguments to add the map of arguments used to configure the
-    /// <code>DevEndpoint</code>.</p>
-    ///
+    /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>"--enable-glue-datacatalog": ""</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
-    ///
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn add_arguments(
         &self,
@@ -33432,29 +33281,23 @@ impl std::fmt::Debug for UpdateDevEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatabaseInput {
-    /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided,
-    /// the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the database to update in the catalog. For Hive
-    /// compatibility, this is folded to lowercase.</p>
+    /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A <code>DatabaseInput</code> object specifying the new definition
-    /// of the metadata database in the catalog.</p>
+    /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
     pub database_input: std::option::Option<crate::model::DatabaseInput>,
 }
 impl UpdateDatabaseInput {
-    /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided,
-    /// the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the database to update in the catalog. For Hive
-    /// compatibility, this is folded to lowercase.</p>
+    /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A <code>DatabaseInput</code> object specifying the new definition
-    /// of the metadata database in the catalog.</p>
+    /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
     pub fn database_input(&self) -> std::option::Option<&crate::model::DatabaseInput> {
         self.database_input.as_ref()
     }
@@ -33475,9 +33318,7 @@ impl std::fmt::Debug for UpdateDatabaseInput {
 pub struct UpdateCrawlerScheduleInput {
     /// <p>The name of the crawler whose schedule to update.</p>
     pub crawler_name: std::option::Option<std::string::String>,
-    /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub schedule: std::option::Option<std::string::String>,
 }
 impl UpdateCrawlerScheduleInput {
@@ -33485,9 +33326,7 @@ impl UpdateCrawlerScheduleInput {
     pub fn crawler_name(&self) -> std::option::Option<&str> {
         self.crawler_name.as_deref()
     }
-    /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
@@ -33507,24 +33346,17 @@ impl std::fmt::Debug for UpdateCrawlerScheduleInput {
 pub struct UpdateCrawlerInput {
     /// <p>Name of the new crawler.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler
-    /// to access customer resources.</p>
+    /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>The Glue database where results are stored, such as:
-    /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+    /// <p>The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A description of the new crawler.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of targets to crawl.</p>
     pub targets: std::option::Option<crate::model::CrawlerTargets>,
-    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>A list of custom classifiers that the user
-    /// has registered. By default, all built-in classifiers are included in a crawl,
-    /// but these custom classifiers always override the default classifiers
-    /// for a given classification.</p>
+    /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
     pub classifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The table prefix used for catalog tables that are created.</p>
     pub table_prefix: std::option::Option<std::string::String>,
@@ -33534,12 +33366,11 @@ pub struct UpdateCrawlerInput {
     pub recrawl_policy: std::option::Option<crate::model::RecrawlPolicy>,
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
     pub lineage_configuration: std::option::Option<crate::model::LineageConfiguration>,
-    /// <p>Crawler configuration information. This versioned JSON string allows users
-    /// to specify aspects of a crawler's behavior.
-    /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    #[allow(missing_docs)] // documentation missing in model
+    pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
     pub configuration: std::option::Option<std::string::String>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-    /// crawler.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     pub crawler_security_configuration: std::option::Option<std::string::String>,
 }
 impl UpdateCrawlerInput {
@@ -33547,13 +33378,11 @@ impl UpdateCrawlerInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler
-    /// to access customer resources.</p>
+    /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>The Glue database where results are stored, such as:
-    /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+    /// <p>The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -33565,16 +33394,11 @@ impl UpdateCrawlerInput {
     pub fn targets(&self) -> std::option::Option<&crate::model::CrawlerTargets> {
         self.targets.as_ref()
     }
-    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>A list of custom classifiers that the user
-    /// has registered. By default, all built-in classifiers are included in a crawl,
-    /// but these custom classifiers always override the default classifiers
-    /// for a given classification.</p>
+    /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
     pub fn classifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.classifiers.as_deref()
     }
@@ -33596,14 +33420,17 @@ impl UpdateCrawlerInput {
     ) -> std::option::Option<&crate::model::LineageConfiguration> {
         self.lineage_configuration.as_ref()
     }
-    /// <p>Crawler configuration information. This versioned JSON string allows users
-    /// to specify aspects of a crawler's behavior.
-    /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn lake_formation_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LakeFormationConfiguration> {
+        self.lake_formation_configuration.as_ref()
+    }
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
     pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-    /// crawler.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     pub fn crawler_security_configuration(&self) -> std::option::Option<&str> {
         self.crawler_security_configuration.as_deref()
     }
@@ -33622,6 +33449,10 @@ impl std::fmt::Debug for UpdateCrawlerInput {
         formatter.field("schema_change_policy", &self.schema_change_policy);
         formatter.field("recrawl_policy", &self.recrawl_policy);
         formatter.field("lineage_configuration", &self.lineage_configuration);
+        formatter.field(
+            "lake_formation_configuration",
+            &self.lake_formation_configuration,
+        );
         formatter.field("configuration", &self.configuration);
         formatter.field(
             "crawler_security_configuration",
@@ -33635,18 +33466,15 @@ impl std::fmt::Debug for UpdateCrawlerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionInput {
-    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the connection definition to update.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A <code>ConnectionInput</code> object that redefines the connection
-    /// in question.</p>
+    /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
     pub connection_input: std::option::Option<crate::model::ConnectionInput>,
 }
 impl UpdateConnectionInput {
-    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -33654,8 +33482,7 @@ impl UpdateConnectionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A <code>ConnectionInput</code> object that redefines the connection
-    /// in question.</p>
+    /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
     pub fn connection_input(&self) -> std::option::Option<&crate::model::ConnectionInput> {
         self.connection_input.as_ref()
     }
@@ -33674,8 +33501,7 @@ impl std::fmt::Debug for UpdateConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateColumnStatisticsForTableInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -33685,8 +33511,7 @@ pub struct UpdateColumnStatisticsForTableInput {
     pub column_statistics_list: std::option::Option<std::vec::Vec<crate::model::ColumnStatistics>>,
 }
 impl UpdateColumnStatisticsForTableInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -33718,8 +33543,7 @@ impl std::fmt::Debug for UpdateColumnStatisticsForTableInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateColumnStatisticsForPartitionInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -33731,8 +33555,7 @@ pub struct UpdateColumnStatisticsForPartitionInput {
     pub column_statistics_list: std::option::Option<std::vec::Vec<crate::model::ColumnStatistics>>,
 }
 impl UpdateColumnStatisticsForPartitionInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -33878,16 +33701,14 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The ARN of the Glue resource to which to add the tags. For more
-    /// information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
+    /// <p>The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tags to add to this resource.</p>
     pub tags_to_add:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>The ARN of the Glue resource to which to add the tags. For more
-    /// information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
+    /// <p>The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -34047,8 +33868,7 @@ impl std::fmt::Debug for StartTriggerInput {
 pub struct StartMlLabelingSetGenerationTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
     pub transform_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling
-    /// set.</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
     pub output_s3_path: std::option::Option<std::string::String>,
 }
 impl StartMlLabelingSetGenerationTaskRunInput {
@@ -34056,8 +33876,7 @@ impl StartMlLabelingSetGenerationTaskRunInput {
     pub fn transform_id(&self) -> std::option::Option<&str> {
         self.transform_id.as_deref()
     }
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling
-    /// set.</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
     pub fn output_s3_path(&self) -> std::option::Option<&str> {
         self.output_s3_path.as_deref()
     }
@@ -34101,63 +33920,36 @@ pub struct StartJobRunInput {
     /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
     pub job_run_id: std::option::Option<std::string::String>,
     /// <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>
-    /// <p>You can specify arguments here that your own job-execution script
-    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-    ///
-    /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun.
-    /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-    /// pricing page</a>.</p>
+    /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     pub allocated_capacity: i32,
-    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-    /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-    /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
     pub timeout: std::option::Option<i32>,
-    /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-    /// pricing page</a>.</p>
-    ///
+    /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-    ///
-    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-    /// running a Python shell job, or an Apache Spark ETL job:</p>
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>
     /// <ul>
-    /// <li>
-    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-    /// </li>
+    /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+    /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     pub max_capacity: std::option::Option<f64>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
-    /// run.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>Specifies configuration properties of a job run notification.</p>
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub number_of_workers: std::option::Option<i32>,
 }
@@ -34171,8 +33963,7 @@ impl StartJobRunInput {
         self.job_run_id.as_deref()
     }
     /// <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>
-    /// <p>You can specify arguments here that your own job-execution script
-    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn arguments(
@@ -34182,44 +33973,25 @@ impl StartJobRunInput {
         self.arguments.as_ref()
     }
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-    ///
-    /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun.
-    /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-    /// pricing page</a>.</p>
+    /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     pub fn allocated_capacity(&self) -> i32 {
         self.allocated_capacity
     }
-    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-    /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-    /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
     pub fn timeout(&self) -> std::option::Option<i32> {
         self.timeout
     }
-    /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-    /// pricing page</a>.</p>
-    ///
+    /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-    ///
-    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-    /// running a Python shell job, or an Apache Spark ETL job:</p>
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>
     /// <ul>
-    /// <li>
-    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-    /// </li>
+    /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+    /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     pub fn max_capacity(&self) -> std::option::Option<f64> {
         self.max_capacity
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
-    /// run.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
     pub fn security_configuration(&self) -> std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
@@ -34231,21 +34003,14 @@ impl StartJobRunInput {
     }
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub fn number_of_workers(&self) -> std::option::Option<i32> {
         self.number_of_workers
@@ -34274,8 +34039,7 @@ impl std::fmt::Debug for StartJobRunInput {
 pub struct StartImportLabelsTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
     pub transform_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the
-    /// labels.</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
     pub input_s3_path: std::option::Option<std::string::String>,
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub replace_all_labels: bool,
@@ -34285,8 +34049,7 @@ impl StartImportLabelsTaskRunInput {
     pub fn transform_id(&self) -> std::option::Option<&str> {
         self.transform_id.as_deref()
     }
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the
-    /// labels.</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
     pub fn input_s3_path(&self) -> std::option::Option<&str> {
         self.input_s3_path.as_deref()
     }
@@ -34414,14 +34177,11 @@ impl std::fmt::Debug for StartBlueprintRunInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchTablesInput {
-    /// <p>A unique identifier, consisting of <code>
-    /// <i>account_id</i>
-    /// </code>.</p>
+    /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A continuation token, included if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
-    ///
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::PropertyPredicate>>,
     /// <p>A string used for a text search.</p>
@@ -34432,21 +34192,14 @@ pub struct SearchTablesInput {
     /// <p>The maximum number of tables to return in a single response.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p>
-    /// </li>
-    /// <li>
-    /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p>
-    /// </li>
+    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
     pub resource_share_type: std::option::Option<crate::model::ResourceShareType>,
 }
 impl SearchTablesInput {
-    /// <p>A unique identifier, consisting of <code>
-    /// <i>account_id</i>
-    /// </code>.</p>
+    /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -34455,7 +34208,6 @@ impl SearchTablesInput {
         self.next_token.as_deref()
     }
     /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
-    ///
     /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::PropertyPredicate]> {
         self.filters.as_deref()
@@ -34474,14 +34226,9 @@ impl SearchTablesInput {
         self.max_results
     }
     /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p>
-    /// </li>
-    /// <li>
-    /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p>
-    /// </li>
+    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
     /// </ul>
     pub fn resource_share_type(&self) -> std::option::Option<&crate::model::ResourceShareType> {
         self.resource_share_type.as_ref()
@@ -34612,12 +34359,8 @@ impl std::fmt::Debug for RemoveSchemaVersionMetadataInput {
 pub struct RegisterSchemaVersionInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
@@ -34626,12 +34369,8 @@ pub struct RegisterSchemaVersionInput {
 impl RegisterSchemaVersionInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
     pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
         self.schema_id.as_ref()
@@ -34795,27 +34534,16 @@ pub struct PutResourcePolicyInput {
     pub policy_in_json: std::option::Option<std::string::String>,
     /// <p>Do not use. For internal use only.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The hash value returned when the previous policy was set using
-    /// <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a
-    /// policy. Do not use this parameter if no previous policy has been set.</p>
+    /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
     pub policy_hash_condition: std::option::Option<std::string::String>,
-    /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
-    /// <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a
-    /// null value is used, the call does not depend on the existence of a policy.</p>
+    /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
     pub policy_exists_condition: std::option::Option<crate::model::ExistCondition>,
-    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account
-    /// access to Data Catalog resources:</p>
+    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
     /// <ul>
-    /// <li>
-    /// <p>By directly updating the resource policy with <code>PutResourePolicy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p>
-    /// </li>
+    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
+    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
     /// </ul>
-    /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to
-    /// grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
+    /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
     pub enable_hybrid: std::option::Option<crate::model::EnableHybridValues>,
 }
 impl PutResourcePolicyInput {
@@ -34827,31 +34555,20 @@ impl PutResourcePolicyInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The hash value returned when the previous policy was set using
-    /// <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a
-    /// policy. Do not use this parameter if no previous policy has been set.</p>
+    /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
     pub fn policy_hash_condition(&self) -> std::option::Option<&str> {
         self.policy_hash_condition.as_deref()
     }
-    /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
-    /// <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a
-    /// null value is used, the call does not depend on the existence of a policy.</p>
+    /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
     pub fn policy_exists_condition(&self) -> std::option::Option<&crate::model::ExistCondition> {
         self.policy_exists_condition.as_ref()
     }
-    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account
-    /// access to Data Catalog resources:</p>
+    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
     /// <ul>
-    /// <li>
-    /// <p>By directly updating the resource policy with <code>PutResourePolicy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p>
-    /// </li>
+    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
+    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
     /// </ul>
-    /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to
-    /// grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
+    /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
     pub fn enable_hybrid(&self) -> std::option::Option<&crate::model::EnableHybridValues> {
         self.enable_hybrid.as_ref()
     }
@@ -34872,16 +34589,14 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDataCatalogEncryptionSettingsInput {
-    /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the
-    /// Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The security configuration to set.</p>
     pub data_catalog_encryption_settings:
         std::option::Option<crate::model::DataCatalogEncryptionSettings>,
 }
 impl PutDataCatalogEncryptionSettingsInput {
-    /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the
-    /// Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -34938,8 +34653,7 @@ impl std::fmt::Debug for ListWorkflowsInput {
 pub struct ListTriggersInput {
     /// <p>A continuation token, if this is a continuation request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job
-    /// is returned. If there is no such trigger, all triggers are returned.</p>
+    /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
     pub dependent_job_name: std::option::Option<std::string::String>,
     /// <p>The maximum size of a list to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -34952,8 +34666,7 @@ impl ListTriggersInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job
-    /// is returned. If there is no such trigger, all triggers are returned.</p>
+    /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
     pub fn dependent_job_name(&self) -> std::option::Option<&str> {
         self.dependent_job_name.as_deref()
     }
@@ -34986,12 +34699,8 @@ impl std::fmt::Debug for ListTriggersInput {
 pub struct ListSchemaVersionsInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
@@ -35002,12 +34711,8 @@ pub struct ListSchemaVersionsInput {
 impl ListSchemaVersionsInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
     pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
         self.schema_id.as_ref()
@@ -35461,14 +35166,11 @@ impl std::fmt::Debug for GetWorkflowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserDefinedFunctionsInput {
-    /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is
-    /// provided, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the
-    /// databases across the catalog will be returned.</p>
+    /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>An optional function-name pattern string that filters the function
-    /// definitions returned.</p>
+    /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
     pub pattern: std::option::Option<std::string::String>,
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -35476,18 +35178,15 @@ pub struct GetUserDefinedFunctionsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl GetUserDefinedFunctionsInput {
-    /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is
-    /// provided, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the
-    /// databases across the catalog will be returned.</p>
+    /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>An optional function-name pattern string that filters the function
-    /// definitions returned.</p>
+    /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
     pub fn pattern(&self) -> std::option::Option<&str> {
         self.pattern.as_deref()
     }
@@ -35516,8 +35215,7 @@ impl std::fmt::Debug for GetUserDefinedFunctionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserDefinedFunctionInput {
-    /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is
-    /// provided, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the function is located.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -35525,8 +35223,7 @@ pub struct GetUserDefinedFunctionInput {
     pub function_name: std::option::Option<std::string::String>,
 }
 impl GetUserDefinedFunctionInput {
-    /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is
-    /// provided, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -35552,11 +35249,210 @@ impl std::fmt::Debug for GetUserDefinedFunctionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetUnfilteredTableMetadataInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub catalog_id: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub database_name: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub name: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub audit_context: std::option::Option<crate::model::AuditContext>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub supported_permission_types:
+        std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+}
+impl GetUnfilteredTableMetadataInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn audit_context(&self) -> std::option::Option<&crate::model::AuditContext> {
+        self.audit_context.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn supported_permission_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::PermissionType]> {
+        self.supported_permission_types.as_deref()
+    }
+}
+impl std::fmt::Debug for GetUnfilteredTableMetadataInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetUnfilteredTableMetadataInput");
+        formatter.field("catalog_id", &self.catalog_id);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("name", &self.name);
+        formatter.field("audit_context", &self.audit_context);
+        formatter.field(
+            "supported_permission_types",
+            &self.supported_permission_types,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetUnfilteredPartitionsMetadataInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub catalog_id: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub database_name: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub table_name: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub expression: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub audit_context: std::option::Option<crate::model::AuditContext>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub supported_permission_types:
+        std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
+    pub segment: std::option::Option<crate::model::Segment>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub max_results: std::option::Option<i32>,
+}
+impl GetUnfilteredPartitionsMetadataInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn expression(&self) -> std::option::Option<&str> {
+        self.expression.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn audit_context(&self) -> std::option::Option<&crate::model::AuditContext> {
+        self.audit_context.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn supported_permission_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::PermissionType]> {
+        self.supported_permission_types.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
+    pub fn segment(&self) -> std::option::Option<&crate::model::Segment> {
+        self.segment.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for GetUnfilteredPartitionsMetadataInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetUnfilteredPartitionsMetadataInput");
+        formatter.field("catalog_id", &self.catalog_id);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("table_name", &self.table_name);
+        formatter.field("expression", &self.expression);
+        formatter.field("audit_context", &self.audit_context);
+        formatter.field(
+            "supported_permission_types",
+            &self.supported_permission_types,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.field("segment", &self.segment);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetUnfilteredPartitionMetadataInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub catalog_id: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub database_name: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub table_name: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub audit_context: std::option::Option<crate::model::AuditContext>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub supported_permission_types:
+        std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+}
+impl GetUnfilteredPartitionMetadataInput {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn database_name(&self) -> std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn table_name(&self) -> std::option::Option<&str> {
+        self.table_name.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
+        self.partition_values.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn audit_context(&self) -> std::option::Option<&crate::model::AuditContext> {
+        self.audit_context.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn supported_permission_types(
+        &self,
+    ) -> std::option::Option<&[crate::model::PermissionType]> {
+        self.supported_permission_types.as_deref()
+    }
+}
+impl std::fmt::Debug for GetUnfilteredPartitionMetadataInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetUnfilteredPartitionMetadataInput");
+        formatter.field("catalog_id", &self.catalog_id);
+        formatter.field("database_name", &self.database_name);
+        formatter.field("table_name", &self.table_name);
+        formatter.field("partition_values", &self.partition_values);
+        formatter.field("audit_context", &self.audit_context);
+        formatter.field(
+            "supported_permission_types",
+            &self.supported_permission_types,
+        );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTriggersInput {
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is
-    /// returned, and if there is no such trigger, all triggers are returned.</p>
+    /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
     pub dependent_job_name: std::option::Option<std::string::String>,
     /// <p>The maximum size of the response.</p>
     pub max_results: std::option::Option<i32>,
@@ -35566,8 +35462,7 @@ impl GetTriggersInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is
-    /// returned, and if there is no such trigger, all triggers are returned.</p>
+    /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
     pub fn dependent_job_name(&self) -> std::option::Option<&str> {
         self.dependent_job_name.as_deref()
     }
@@ -35632,14 +35527,11 @@ impl std::fmt::Debug for GetTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableVersionsInput {
-    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The database in the catalog in which the table resides. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>The name of the table. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A continuation token, if this is not the first call.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -35647,18 +35539,15 @@ pub struct GetTableVersionsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl GetTableVersionsInput {
-    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The database in the catalog in which the table resides. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The name of the table. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -35687,31 +35576,25 @@ impl std::fmt::Debug for GetTableVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableVersionInput {
-    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The database in the catalog in which the table resides. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>The name of the table. For Hive compatibility,
-    /// this name is entirely lowercase.</p>
+    /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ID value of the table version to be retrieved. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1. </p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl GetTableVersionInput {
-    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The database in the catalog in which the table resides. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The name of the table. For Hive compatibility,
-    /// this name is entirely lowercase.</p>
+    /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -35735,14 +35618,11 @@ impl std::fmt::Debug for GetTableVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTablesInput {
-    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The database in the catalog whose tables to list. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>A regular expression pattern. If present, only those tables
-    /// whose names match the pattern are returned.</p>
+    /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
     pub expression: std::option::Option<std::string::String>,
     /// <p>A continuation token, included if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -35754,18 +35634,15 @@ pub struct GetTablesInput {
     pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetTablesInput {
-    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The database in the catalog whose tables to list. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>A regular expression pattern. If present, only those tables
-    /// whose names match the pattern are returned.</p>
+    /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
@@ -35804,14 +35681,11 @@ impl std::fmt::Debug for GetTablesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableInput {
-    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the database in the catalog in which the table resides.
-    /// For Hive compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>The name of the table for which to retrieve the definition. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The transaction ID at which to read the table contents. </p>
     pub transaction_id: std::option::Option<std::string::String>,
@@ -35819,18 +35693,15 @@ pub struct GetTableInput {
     pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetTableInput {
-    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the database in the catalog in which the table resides.
-    /// For Hive compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The name of the table for which to retrieve the definition. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -35910,12 +35781,8 @@ impl std::fmt::Debug for GetSecurityConfigurationInput {
 pub struct GetSchemaVersionsDiffInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>The first of the two schema versions to be compared.</p>
@@ -35928,12 +35795,8 @@ pub struct GetSchemaVersionsDiffInput {
 impl GetSchemaVersionsDiffInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
         self.schema_id.as_ref()
@@ -35978,12 +35841,8 @@ impl std::fmt::Debug for GetSchemaVersionsDiffInput {
 pub struct GetSchemaVersionInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
@@ -35994,12 +35853,8 @@ pub struct GetSchemaVersionInput {
 impl GetSchemaVersionInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
     pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
         self.schema_id.as_ref()
@@ -36029,12 +35884,8 @@ impl std::fmt::Debug for GetSchemaVersionInput {
 pub struct GetSchemaByDefinitionInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>The definition of the schema for which schema details are required.</p>
@@ -36043,12 +35894,8 @@ pub struct GetSchemaByDefinitionInput {
 impl GetSchemaByDefinitionInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
         self.schema_id.as_ref()
@@ -36073,24 +35920,16 @@ impl std::fmt::Debug for GetSchemaByDefinitionInput {
 pub struct GetSchemaInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
     pub schema_id: std::option::Option<crate::model::SchemaId>,
 }
 impl GetSchemaInput {
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
-    /// <li>
-    /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-    /// </li>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
     pub fn schema_id(&self) -> std::option::Option<&crate::model::SchemaId> {
         self.schema_id.as_ref()
@@ -36108,17 +35947,11 @@ impl std::fmt::Debug for GetSchemaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyInput {
-    /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not
-    /// supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code>
-    /// to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>.
-    /// </p>
+    /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
-    /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not
-    /// supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code>
-    /// to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>.
-    /// </p>
+    /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -36195,17 +36028,9 @@ pub struct GetPlanInput {
     /// <p>The programming language of the code to perform the mapping.</p>
     pub language: std::option::Option<crate::model::Language>,
     /// <p>A map to hold additional optional key-value parameters.</p>
-    ///
     /// <p>Currently, these key-value pairs are supported:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>inferSchema</code>  —  Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p>
-    /// <p>
-    /// <code>--additional-plan-options-map '{"inferSchema":"true"}'</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>inferSchema</code>&nbsp; — &nbsp;Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p> <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p> </li>
     /// </ul>
     pub additional_plan_options_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -36232,17 +36057,9 @@ impl GetPlanInput {
         self.language.as_ref()
     }
     /// <p>A map to hold additional optional key-value parameters.</p>
-    ///
     /// <p>Currently, these key-value pairs are supported:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>inferSchema</code>  —  Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p>
-    /// <p>
-    /// <code>--additional-plan-options-map '{"inferSchema":"true"}'</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>inferSchema</code>&nbsp; — &nbsp;Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p> <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p> </li>
     /// </ul>
     pub fn additional_plan_options_map(
         &self,
@@ -36271,122 +36088,83 @@ impl std::fmt::Debug for GetPlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartitionsInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
-    /// the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the partitions' table.</p>
     pub table_name: std::option::Option<std::string::String>,
     /// <p>An expression that filters the partitions to be returned.</p>
-    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The
-    /// SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
-    /// <p>
-    /// <i>Operators</i>: The following are the operators that you can use in the
-    /// <code>Expression</code> API call:</p>
+    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+    /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
     /// <dl>
-    /// <dt>=</dt>
+    /// <dt>
+    /// =
+    /// </dt>
     /// <dd>
-    /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes
-    /// true.</p>
+    /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
     /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
     /// <p>(a = b) is not true.</p>
     /// </dd>
-    /// <dt>< ></dt>
+    /// <dt>
+    /// &lt; &gt;
+    /// </dt>
     /// <dd>
-    /// <p>Checks whether the values of two operands are equal; if the values are not equal,
-    /// then the condition becomes true.</p>
-    /// <p>Example: (a < > b) is true.</p>
+    /// <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p>
+    /// <p>Example: (a &lt; &gt; b) is true.</p>
     /// </dd>
-    /// <dt>></dt>
+    /// <dt>
+    /// &gt;
+    /// </dt>
     /// <dd>
-    /// <p>Checks whether the value of the left operand is greater than the value of the right
-    /// operand; if yes, then the condition becomes true.</p>
-    /// <p>Example: (a > b) is not true.</p>
+    /// <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &gt; b) is not true.</p>
     /// </dd>
-    /// <dt><</dt>
+    /// <dt>
+    /// &lt;
+    /// </dt>
     /// <dd>
-    /// <p>Checks whether the value of the left operand is less than the value of the right
-    /// operand; if yes, then the condition becomes true.</p>
-    /// <p>Example: (a < b) is true.</p>
+    /// <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &lt; b) is true.</p>
     /// </dd>
-    /// <dt>>=</dt>
+    /// <dt>
+    /// &gt;=
+    /// </dt>
     /// <dd>
-    /// <p>Checks whether the value of the left operand is greater than or equal to the value
-    /// of the right operand; if yes, then the condition becomes true.</p>
-    /// <p>Example: (a >= b) is not true.</p>
+    /// <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &gt;= b) is not true.</p>
     /// </dd>
-    /// <dt><=</dt>
+    /// <dt>
+    /// &lt;=
+    /// </dt>
     /// <dd>
-    /// <p>Checks whether the value of the left operand is less than or equal to the value of
-    /// the right operand; if yes, then the condition becomes true.</p>
-    /// <p>Example: (a <= b) is true.</p>
+    /// <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &lt;= b) is true.</p>
     /// </dd>
-    /// <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+    /// <dt>
+    /// AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL
+    /// </dt>
     /// <dd>
     /// <p>Logical operators.</p>
     /// </dd>
     /// </dl>
-    /// <p>
-    /// <i>Supported Partition Key Types</i>: The following are the supported
-    /// partition keys.</p>
+    /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>string</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>date</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>timestamp</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>int</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>bigint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>long</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>tinyint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>smallint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>decimal</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>string</code> </p> </li>
+    /// <li> <p> <code>date</code> </p> </li>
+    /// <li> <p> <code>timestamp</code> </p> </li>
+    /// <li> <p> <code>int</code> </p> </li>
+    /// <li> <p> <code>bigint</code> </p> </li>
+    /// <li> <p> <code>long</code> </p> </li>
+    /// <li> <p> <code>tinyint</code> </p> </li>
+    /// <li> <p> <code>smallint</code> </p> </li>
+    /// <li> <p> <code>decimal</code> </p> </li>
     /// </ul>
     /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
-    /// <p>The following list shows the valid operators on each type. When you define a crawler, the
-    /// <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog
-    /// partitions. </p>
-    ///
-    /// <p>
-    /// <i>Sample API Call</i>: </p>
+    /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>
+    /// <p> <i>Sample API Call</i>: </p>
     pub expression: std::option::Option<std::string::String>,
-    /// <p>A continuation token, if this is not the first call to retrieve
-    /// these partitions.</p>
+    /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The segment of the table's partitions to scan in this request.</p>
     pub segment: std::option::Option<crate::model::Segment>,
@@ -36400,8 +36178,7 @@ pub struct GetPartitionsInput {
     pub query_as_of_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetPartitionsInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
-    /// the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -36414,116 +36191,78 @@ impl GetPartitionsInput {
         self.table_name.as_deref()
     }
     /// <p>An expression that filters the partitions to be returned.</p>
-    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The
-    /// SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
-    /// <p>
-    /// <i>Operators</i>: The following are the operators that you can use in the
-    /// <code>Expression</code> API call:</p>
+    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+    /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
     /// <dl>
-    /// <dt>=</dt>
+    /// <dt>
+    /// =
+    /// </dt>
     /// <dd>
-    /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes
-    /// true.</p>
+    /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
     /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
     /// <p>(a = b) is not true.</p>
     /// </dd>
-    /// <dt>< ></dt>
+    /// <dt>
+    /// &lt; &gt;
+    /// </dt>
     /// <dd>
-    /// <p>Checks whether the values of two operands are equal; if the values are not equal,
-    /// then the condition becomes true.</p>
-    /// <p>Example: (a < > b) is true.</p>
+    /// <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p>
+    /// <p>Example: (a &lt; &gt; b) is true.</p>
     /// </dd>
-    /// <dt>></dt>
+    /// <dt>
+    /// &gt;
+    /// </dt>
     /// <dd>
-    /// <p>Checks whether the value of the left operand is greater than the value of the right
-    /// operand; if yes, then the condition becomes true.</p>
-    /// <p>Example: (a > b) is not true.</p>
+    /// <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &gt; b) is not true.</p>
     /// </dd>
-    /// <dt><</dt>
+    /// <dt>
+    /// &lt;
+    /// </dt>
     /// <dd>
-    /// <p>Checks whether the value of the left operand is less than the value of the right
-    /// operand; if yes, then the condition becomes true.</p>
-    /// <p>Example: (a < b) is true.</p>
+    /// <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &lt; b) is true.</p>
     /// </dd>
-    /// <dt>>=</dt>
+    /// <dt>
+    /// &gt;=
+    /// </dt>
     /// <dd>
-    /// <p>Checks whether the value of the left operand is greater than or equal to the value
-    /// of the right operand; if yes, then the condition becomes true.</p>
-    /// <p>Example: (a >= b) is not true.</p>
+    /// <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &gt;= b) is not true.</p>
     /// </dd>
-    /// <dt><=</dt>
+    /// <dt>
+    /// &lt;=
+    /// </dt>
     /// <dd>
-    /// <p>Checks whether the value of the left operand is less than or equal to the value of
-    /// the right operand; if yes, then the condition becomes true.</p>
-    /// <p>Example: (a <= b) is true.</p>
+    /// <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &lt;= b) is true.</p>
     /// </dd>
-    /// <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+    /// <dt>
+    /// AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL
+    /// </dt>
     /// <dd>
     /// <p>Logical operators.</p>
     /// </dd>
     /// </dl>
-    /// <p>
-    /// <i>Supported Partition Key Types</i>: The following are the supported
-    /// partition keys.</p>
+    /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>string</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>date</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>timestamp</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>int</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>bigint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>long</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>tinyint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>smallint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>decimal</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>string</code> </p> </li>
+    /// <li> <p> <code>date</code> </p> </li>
+    /// <li> <p> <code>timestamp</code> </p> </li>
+    /// <li> <p> <code>int</code> </p> </li>
+    /// <li> <p> <code>bigint</code> </p> </li>
+    /// <li> <p> <code>long</code> </p> </li>
+    /// <li> <p> <code>tinyint</code> </p> </li>
+    /// <li> <p> <code>smallint</code> </p> </li>
+    /// <li> <p> <code>decimal</code> </p> </li>
     /// </ul>
     /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
-    /// <p>The following list shows the valid operators on each type. When you define a crawler, the
-    /// <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog
-    /// partitions. </p>
-    ///
-    /// <p>
-    /// <i>Sample API Call</i>: </p>
+    /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>
+    /// <p> <i>Sample API Call</i>: </p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
-    /// <p>A continuation token, if this is not the first call to retrieve
-    /// these partitions.</p>
+    /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -36611,8 +36350,7 @@ impl std::fmt::Debug for GetPartitionIndexesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPartitionInput {
-    /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided,
-    /// the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partition resides.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -36622,8 +36360,7 @@ pub struct GetPartitionInput {
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetPartitionInput {
-    /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided,
-    /// the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -36697,13 +36434,11 @@ impl std::fmt::Debug for GetMlTransformsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMlTransformInput {
-    /// <p>The unique identifier of the transform, generated at the time that the transform was
-    /// created.</p>
+    /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     pub transform_id: std::option::Option<std::string::String>,
 }
 impl GetMlTransformInput {
-    /// <p>The unique identifier of the transform, generated at the time that the transform was
-    /// created.</p>
+    /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     pub fn transform_id(&self) -> std::option::Option<&str> {
         self.transform_id.as_deref()
     }
@@ -37049,13 +36784,11 @@ impl std::fmt::Debug for GetDataflowGraphInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataCatalogEncryptionSettingsInput {
-    /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is
-    /// provided, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl GetDataCatalogEncryptionSettingsInput {
-    /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is
-    /// provided, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -37072,28 +36805,21 @@ impl std::fmt::Debug for GetDataCatalogEncryptionSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDatabasesInput {
-    /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is
-    /// provided, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of databases to return in one response.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p>
-    /// </li>
-    /// <li>
-    /// <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p>
-    /// </li>
+    /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
     pub resource_share_type: std::option::Option<crate::model::ResourceShareType>,
 }
 impl GetDatabasesInput {
-    /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is
-    /// provided, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -37106,14 +36832,9 @@ impl GetDatabasesInput {
         self.max_results
     }
     /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p>
-    /// </li>
-    /// <li>
-    /// <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p>
-    /// </li>
+    /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+    /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
     pub fn resource_share_type(&self) -> std::option::Option<&crate::model::ResourceShareType> {
         self.resource_share_type.as_ref()
@@ -37134,21 +36855,17 @@ impl std::fmt::Debug for GetDatabasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDatabaseInput {
-    /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the database to retrieve. For Hive compatibility, this
-    /// should be all lowercase.</p>
+    /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetDatabaseInput {
-    /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the database to retrieve. For Hive compatibility, this
-    /// should be all lowercase.</p>
+    /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -37250,16 +36967,11 @@ impl std::fmt::Debug for GetCrawlerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionsInput {
-    /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A filter that controls which connections are returned.</p>
     pub filter: std::option::Option<crate::model::GetConnectionsFilter>,
-    /// <p>Allows you to retrieve the connection metadata without returning the password. For
-    /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-    /// the password. Set this parameter when the caller might not have permission to use the KMS
-    /// key to decrypt the password, but it does have permission to access the rest of the connection
-    /// properties.</p>
+    /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     pub hide_password: bool,
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -37267,8 +36979,7 @@ pub struct GetConnectionsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl GetConnectionsInput {
-    /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -37276,11 +36987,7 @@ impl GetConnectionsInput {
     pub fn filter(&self) -> std::option::Option<&crate::model::GetConnectionsFilter> {
         self.filter.as_ref()
     }
-    /// <p>Allows you to retrieve the connection metadata without returning the password. For
-    /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-    /// the password. Set this parameter when the caller might not have permission to use the KMS
-    /// key to decrypt the password, but it does have permission to access the rest of the connection
-    /// properties.</p>
+    /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     pub fn hide_password(&self) -> bool {
         self.hide_password
     }
@@ -37309,21 +37016,15 @@ impl std::fmt::Debug for GetConnectionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionInput {
-    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the connection definition to retrieve.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Allows you to retrieve the connection metadata without returning the password. For
-    /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-    /// the password. Set this parameter when the caller might not have permission to use the KMS
-    /// key to decrypt the password, but it does have permission to access the rest of the connection
-    /// properties.</p>
+    /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     pub hide_password: bool,
 }
 impl GetConnectionInput {
-    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -37331,11 +37032,7 @@ impl GetConnectionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Allows you to retrieve the connection metadata without returning the password. For
-    /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-    /// the password. Set this parameter when the caller might not have permission to use the KMS
-    /// key to decrypt the password, but it does have permission to access the rest of the connection
-    /// properties.</p>
+    /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     pub fn hide_password(&self) -> bool {
         self.hide_password
     }
@@ -37354,8 +37051,7 @@ impl std::fmt::Debug for GetConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetColumnStatisticsForTableInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -37365,8 +37061,7 @@ pub struct GetColumnStatisticsForTableInput {
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetColumnStatisticsForTableInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -37398,8 +37093,7 @@ impl std::fmt::Debug for GetColumnStatisticsForTableInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetColumnStatisticsForPartitionInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -37411,8 +37105,7 @@ pub struct GetColumnStatisticsForPartitionInput {
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetColumnStatisticsForPartitionInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -37638,8 +37331,7 @@ impl std::fmt::Debug for DeleteWorkflowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserDefinedFunctionInput {
-    /// <p>The ID of the Data Catalog where the function to be deleted is
-    /// located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the function is located.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -37647,8 +37339,7 @@ pub struct DeleteUserDefinedFunctionInput {
     pub function_name: std::option::Option<std::string::String>,
 }
 impl DeleteUserDefinedFunctionInput {
-    /// <p>The ID of the Data Catalog where the function to be deleted is
-    /// located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -37696,31 +37387,25 @@ impl std::fmt::Debug for DeleteTriggerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTableVersionInput {
-    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The database in the catalog in which the table resides. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>The name of the table. For Hive compatibility,
-    /// this name is entirely lowercase.</p>
+    /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl DeleteTableVersionInput {
-    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The database in the catalog in which the table resides. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The name of the table. For Hive compatibility,
-    /// this name is entirely lowercase.</p>
+    /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -37744,31 +37429,25 @@ impl std::fmt::Debug for DeleteTableVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTableInput {
-    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the catalog database in which the table resides. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>The name of the table to be deleted. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The transaction ID at which to delete the table contents.</p>
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl DeleteTableInput {
-    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the catalog database in which the table resides. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The name of the table to be deleted. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -37817,12 +37496,8 @@ pub struct DeleteSchemaVersionsInput {
     pub schema_id: std::option::Option<crate::model::SchemaId>,
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
-    /// <li>
-    /// <p>a single version number, 5</p>
-    /// </li>
-    /// <li>
-    /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p>
-    /// </li>
+    /// <li> <p>a single version number, 5</p> </li>
+    /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
     /// </ul>
     pub versions: std::option::Option<std::string::String>,
 }
@@ -37833,12 +37508,8 @@ impl DeleteSchemaVersionsInput {
     }
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
-    /// <li>
-    /// <p>a single version number, 5</p>
-    /// </li>
-    /// <li>
-    /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p>
-    /// </li>
+    /// <li> <p>a single version number, 5</p> </li>
+    /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
     /// </ul>
     pub fn versions(&self) -> std::option::Option<&str> {
         self.versions.as_deref()
@@ -37969,11 +37640,9 @@ impl std::fmt::Debug for DeletePartitionIndexInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePartitionInput {
-    /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-    /// the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the catalog database in which the table in question
-    /// resides.</p>
+    /// <p>The name of the catalog database in which the table in question resides.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table that contains the partition to be deleted.</p>
     pub table_name: std::option::Option<std::string::String>,
@@ -37981,13 +37650,11 @@ pub struct DeletePartitionInput {
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeletePartitionInput {
-    /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-    /// the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the catalog database in which the table in question
-    /// resides.</p>
+    /// <p>The name of the catalog database in which the table in question resides.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -38078,21 +37745,17 @@ impl std::fmt::Debug for DeleteDevEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatabaseInput {
-    /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the database to delete. For Hive compatibility, this must be all
-    /// lowercase.</p>
+    /// <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteDatabaseInput {
-    /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the database to delete. For Hive compatibility, this must be all
-    /// lowercase.</p>
+    /// <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -38131,15 +37794,13 @@ impl std::fmt::Debug for DeleteCrawlerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionInput {
-    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the connection to delete.</p>
     pub connection_name: std::option::Option<std::string::String>,
 }
 impl DeleteConnectionInput {
-    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -38161,8 +37822,7 @@ impl std::fmt::Debug for DeleteConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteColumnStatisticsForTableInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -38172,8 +37832,7 @@ pub struct DeleteColumnStatisticsForTableInput {
     pub column_name: std::option::Option<std::string::String>,
 }
 impl DeleteColumnStatisticsForTableInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -38205,8 +37864,7 @@ impl std::fmt::Debug for DeleteColumnStatisticsForTableInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteColumnStatisticsForPartitionInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -38218,8 +37876,7 @@ pub struct DeleteColumnStatisticsForPartitionInput {
     pub column_name: std::option::Option<std::string::String>,
 }
 impl DeleteColumnStatisticsForPartitionInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -38355,18 +38012,15 @@ impl std::fmt::Debug for CreateWorkflowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserDefinedFunctionInput {
-    /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database in which to create the function.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>A <code>FunctionInput</code> object that defines the function
-    /// to create in the Data Catalog.</p>
+    /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
     pub function_input: std::option::Option<crate::model::UserDefinedFunctionInput>,
 }
 impl CreateUserDefinedFunctionInput {
-    /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -38374,8 +38028,7 @@ impl CreateUserDefinedFunctionInput {
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>A <code>FunctionInput</code> object that defines the function
-    /// to create in the Data Catalog.</p>
+    /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
     pub fn function_input(&self) -> std::option::Option<&crate::model::UserDefinedFunctionInput> {
         self.function_input.as_ref()
     }
@@ -38400,9 +38053,7 @@ pub struct CreateTriggerInput {
     pub workflow_name: std::option::Option<std::string::String>,
     /// <p>The type of the new trigger.</p>
     pub r#type: std::option::Option<crate::model::TriggerType>,
-    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     /// <p>This field is required when the trigger type is SCHEDULED.</p>
     pub schedule: std::option::Option<std::string::String>,
     /// <p>A predicate to specify when the new trigger should fire.</p>
@@ -38412,16 +38063,12 @@ pub struct CreateTriggerInput {
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>A description of the new trigger.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
-    /// triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+    /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
     pub start_on_creation: bool,
-    /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger.
-    /// For more information about tags in Glue, see
-    /// <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+    /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-    /// before EventBridge event trigger fires.</p>
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub event_batching_condition: std::option::Option<crate::model::EventBatchingCondition>,
 }
 impl CreateTriggerInput {
@@ -38437,9 +38084,7 @@ impl CreateTriggerInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::TriggerType> {
         self.r#type.as_ref()
     }
-    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     /// <p>This field is required when the trigger type is SCHEDULED.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
@@ -38457,22 +38102,18 @@ impl CreateTriggerInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
-    /// triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+    /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
     pub fn start_on_creation(&self) -> bool {
         self.start_on_creation
     }
-    /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger.
-    /// For more information about tags in Glue, see
-    /// <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+    /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-    /// before EventBridge event trigger fires.</p>
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub fn event_batching_condition(
         &self,
     ) -> std::option::Option<&crate::model::EventBatchingCondition> {
@@ -38500,14 +38141,11 @@ impl std::fmt::Debug for CreateTriggerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTableInput {
-    /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The catalog database in which to create the new table. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>The <code>TableInput</code> object that defines the metadata table
-    /// to create in the catalog.</p>
+    /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
     pub table_input: std::option::Option<crate::model::TableInput>,
     /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
     pub partition_indexes: std::option::Option<std::vec::Vec<crate::model::PartitionIndex>>,
@@ -38515,18 +38153,15 @@ pub struct CreateTableInput {
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl CreateTableInput {
-    /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The catalog database in which to create the new table. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The <code>TableInput</code> object that defines the metadata table
-    /// to create in the catalog.</p>
+    /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
     pub fn table_input(&self) -> std::option::Option<&crate::model::TableInput> {
         self.table_input.as_ref()
     }
@@ -38620,47 +38255,25 @@ impl std::fmt::Debug for CreateScriptInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchemaInput {
-    /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id</code>.</p>
+    /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:
+    /// <customer id>
+    /// :registry/default-registry:random-5-letter-id
+    /// </customer></code>.</p>
     pub registry_id: std::option::Option<crate::model::RegistryId>,
     /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
     pub data_format: std::option::Option<crate::model::DataFormat>,
     /// <p>The compatibility mode of the schema. The possible values are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p>
-    /// </li>
+    /// <li> <p> <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p> </li>
+    /// <li> <p> <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p> </li>
+    /// <li> <p> <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p> </li>
+    /// <li> <p> <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p> </li>
+    /// <li> <p> <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p> </li>
+    /// <li> <p> <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p> </li>
+    /// <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>
+    /// <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>
     /// </ul>
     pub compatibility: std::option::Option<crate::model::Compatibility>,
     /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
@@ -38672,7 +38285,10 @@ pub struct CreateSchemaInput {
     pub schema_definition: std::option::Option<std::string::String>,
 }
 impl CreateSchemaInput {
-    /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id</code>.</p>
+    /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:
+    /// <customer id>
+    /// :registry/default-registry:random-5-letter-id
+    /// </customer></code>.</p>
     pub fn registry_id(&self) -> std::option::Option<&crate::model::RegistryId> {
         self.registry_id.as_ref()
     }
@@ -38685,40 +38301,15 @@ impl CreateSchemaInput {
         self.data_format.as_ref()
     }
     /// <p>The compatibility mode of the schema. The possible values are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p>
-    /// </li>
+    /// <li> <p> <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p> </li>
+    /// <li> <p> <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p> </li>
+    /// <li> <p> <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p> </li>
+    /// <li> <p> <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p> </li>
+    /// <li> <p> <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p> </li>
+    /// <li> <p> <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p> </li>
+    /// <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>
+    /// <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>
     /// </ul>
     pub fn compatibility(&self) -> std::option::Option<&crate::model::Compatibility> {
         self.compatibility.as_ref()
@@ -38757,7 +38348,7 @@ impl std::fmt::Debug for CreateSchemaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegistryInput {
-    /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.  No whitespace.</p>
+    /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
     pub registry_name: std::option::Option<std::string::String>,
     /// <p>A description of the registry. If description is not provided, there will not be any default value for this.</p>
     pub description: std::option::Option<std::string::String>,
@@ -38766,7 +38357,7 @@ pub struct CreateRegistryInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateRegistryInput {
-    /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.  No whitespace.</p>
+    /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
     pub fn registry_name(&self) -> std::option::Option<&str> {
         self.registry_name.as_deref()
     }
@@ -38840,13 +38431,11 @@ impl std::fmt::Debug for CreatePartitionIndexInput {
 pub struct CreatePartitionInput {
     /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the metadata database in which the partition is
-    /// to be created.</p>
+    /// <p>The name of the metadata database in which the partition is to be created.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the metadata table in which the partition is to be created.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>A <code>PartitionInput</code> structure defining the partition
-    /// to be created.</p>
+    /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
     pub partition_input: std::option::Option<crate::model::PartitionInput>,
 }
 impl CreatePartitionInput {
@@ -38854,8 +38443,7 @@ impl CreatePartitionInput {
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the metadata database in which the partition is
-    /// to be created.</p>
+    /// <p>The name of the metadata database in which the partition is to be created.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -38863,8 +38451,7 @@ impl CreatePartitionInput {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A <code>PartitionInput</code> structure defining the partition
-    /// to be created.</p>
+    /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
     pub fn partition_input(&self) -> std::option::Option<&crate::model::PartitionInput> {
         self.partition_input.as_ref()
     }
@@ -38886,88 +38473,46 @@ impl std::fmt::Debug for CreatePartitionInput {
 pub struct CreateMlTransformInput {
     /// <p>The unique name that you give the transform when you create it.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A description of the machine learning transform that is being defined. The default is an
-    /// empty string.</p>
+    /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of Glue table definitions used by the transform.</p>
     pub input_record_tables: std::option::Option<std::vec::Vec<crate::model::GlueTable>>,
-    /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally
-    /// dependent on the transform type.</p>
+    /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
     pub parameters: std::option::Option<crate::model::TransformParameters>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
-    /// </li>
+    /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+    /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
     /// </ul>
     pub role: std::option::Option<std::string::String>,
-    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-    /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>. </p>
-    ///
-    /// <p>
-    /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+    /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-    /// </li>
+    /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+    /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+    /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+    /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
-    ///
-    /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>    
-    ///
-    ///
+    /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
-    ///
-    /// <p>
-    /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-    /// </li>
+    /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+    /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+    /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+    /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
-    ///
     /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The timeout of the task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
@@ -38985,8 +38530,7 @@ impl CreateMlTransformInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A description of the machine learning transform that is being defined. The default is an
-    /// empty string.</p>
+    /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -38994,93 +38538,52 @@ impl CreateMlTransformInput {
     pub fn input_record_tables(&self) -> std::option::Option<&[crate::model::GlueTable]> {
         self.input_record_tables.as_deref()
     }
-    /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally
-    /// dependent on the transform type.</p>
+    /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
     pub fn parameters(&self) -> std::option::Option<&crate::model::TransformParameters> {
         self.parameters.as_ref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
-    /// </li>
+    /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+    /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
     /// </ul>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
     }
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-    /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>. </p>
-    ///
-    /// <p>
-    /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+    /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-    /// </li>
+    /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+    /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+    /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+    /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
-    ///
-    /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>    
-    ///
-    ///
+    /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub fn max_capacity(&self) -> std::option::Option<f64> {
         self.max_capacity
     }
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
-    ///
-    /// <p>
-    /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-    /// </li>
+    /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+    /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+    /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+    /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
-    ///
     /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
     pub fn number_of_workers(&self) -> std::option::Option<i32> {
         self.number_of_workers
@@ -39137,14 +38640,12 @@ pub struct CreateJobInput {
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-    /// for this job.</p>
+    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
     pub execution_property: std::option::Option<crate::model::ExecutionProperty>,
     /// <p>The <code>JobCommand</code> that runs this job.</p>
     pub command: std::option::Option<crate::model::JobCommand>,
     /// <p>The default arguments for this job.</p>
-    /// <p>You can specify arguments here that your own job-execution script
-    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub default_arguments:
@@ -39157,41 +38658,20 @@ pub struct CreateJobInput {
     /// <p>The maximum number of times to retry this job if it fails.</p>
     pub max_retries: i32,
     /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
-    ///
-    /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can
-    /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-    /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-    /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>.</p>
+    /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     pub allocated_capacity: i32,
-    /// <p>The job timeout in minutes.  This is the maximum time that a job run
-    /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-    /// status. The default is 2,880 minutes (48 hours).</p>
+    /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub timeout: std::option::Option<i32>,
-    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-    /// pricing page</a>.</p>
-    ///
+    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-    ///
-    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-    /// running a Python shell job or an Apache Spark ETL job:</p>
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
     /// <ul>
-    /// <li>
-    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-    /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-    /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-    /// </li>
+    /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+    /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
     pub max_capacity: std::option::Option<f64>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-    /// job.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The tags to use with this job. You may use tags to limit access to the job. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     pub tags:
@@ -39199,26 +38679,17 @@ pub struct CreateJobInput {
     /// <p>Specifies configuration properties of a job notification.</p>
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    ///
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
 }
@@ -39239,8 +38710,7 @@ impl CreateJobInput {
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-    /// for this job.</p>
+    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
     pub fn execution_property(&self) -> std::option::Option<&crate::model::ExecutionProperty> {
         self.execution_property.as_ref()
     }
@@ -39249,8 +38719,7 @@ impl CreateJobInput {
         self.command.as_ref()
     }
     /// <p>The default arguments for this job.</p>
-    /// <p>You can specify arguments here that your own job-execution script
-    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn default_arguments(
@@ -39275,47 +38744,26 @@ impl CreateJobInput {
         self.max_retries
     }
     /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
-    ///
-    /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can
-    /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-    /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-    /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>.</p>
+    /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     pub fn allocated_capacity(&self) -> i32 {
         self.allocated_capacity
     }
-    /// <p>The job timeout in minutes.  This is the maximum time that a job run
-    /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-    /// status. The default is 2,880 minutes (48 hours).</p>
+    /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn timeout(&self) -> std::option::Option<i32> {
         self.timeout
     }
-    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-    /// pricing page</a>.</p>
-    ///
+    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-    ///
-    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-    /// running a Python shell job or an Apache Spark ETL job:</p>
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
     /// <ul>
-    /// <li>
-    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-    /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-    /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-    /// </li>
+    /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+    /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
     pub fn max_capacity(&self) -> std::option::Option<f64> {
         self.max_capacity
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-    /// job.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
     pub fn security_configuration(&self) -> std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
@@ -39333,30 +38781,21 @@ impl CreateJobInput {
         self.notification_property.as_ref()
     }
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    ///
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub fn number_of_workers(&self) -> std::option::Option<i32> {
         self.number_of_workers
     }
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
@@ -39396,70 +38835,41 @@ pub struct CreateDevEndpointInput {
     pub endpoint_name: std::option::Option<std::string::String>,
     /// <p>The IAM role for the <code>DevEndpoint</code>.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Security group IDs for the security groups to be used by the new
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The subnet ID for the new <code>DevEndpoint</code> to use.</p>
     pub subnet_id: std::option::Option<std::string::String>,
-    /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
-    /// attribute is provided for backward compatibility because the recommended attribute to use is
-    /// public keys.</p>
+    /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
     pub public_key: std::option::Option<std::string::String>,
-    /// <p>A list of public keys to be used by the development endpoints for authentication. The use
-    /// of this attribute is preferred over a single public key because the public keys allow you to
-    /// have a different private key per client.</p>
-    ///
-    /// <note>
-    /// <p>If you previously created an endpoint with a public key, you must remove that key to be able
-    /// to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public
-    /// key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the
-    /// <code>addPublicKeys</code> attribute.</p>
+    /// <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+    /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
     pub public_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
     pub number_of_nodes: i32,
     /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
-    /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
-    /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+    /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    ///
-    /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
-    ///
+    /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub number_of_workers: std::option::Option<i32>,
-    /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
-    /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
-    /// comma.</p>
-    /// <note>
-    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-    /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-    /// analysis library, are not yet supported.</p>
+    /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet supported.</p>
     /// </note>
     pub extra_python_libs_s3_path: std::option::Option<std::string::String>,
-    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-    /// in your <code>DevEndpoint</code>.</p>
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p>
     pub extra_jars_s3_path: std::option::Option<std::string::String>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     pub tags:
@@ -39477,8 +38887,7 @@ impl CreateDevEndpointInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Security group IDs for the security groups to be used by the new
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
@@ -39486,81 +38895,53 @@ impl CreateDevEndpointInput {
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
-    /// attribute is provided for backward compatibility because the recommended attribute to use is
-    /// public keys.</p>
+    /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
     pub fn public_key(&self) -> std::option::Option<&str> {
         self.public_key.as_deref()
     }
-    /// <p>A list of public keys to be used by the development endpoints for authentication. The use
-    /// of this attribute is preferred over a single public key because the public keys allow you to
-    /// have a different private key per client.</p>
-    ///
-    /// <note>
-    /// <p>If you previously created an endpoint with a public key, you must remove that key to be able
-    /// to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public
-    /// key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the
-    /// <code>addPublicKeys</code> attribute.</p>
+    /// <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+    /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
     pub fn public_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.public_keys.as_deref()
     }
-    /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
     pub fn number_of_nodes(&self) -> i32 {
         self.number_of_nodes
     }
     /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
-    /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
-    /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+    /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
     }
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    ///
-    /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
-    ///
+    /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub fn number_of_workers(&self) -> std::option::Option<i32> {
         self.number_of_workers
     }
-    /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
-    /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
-    /// comma.</p>
-    /// <note>
-    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-    /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-    /// analysis library, are not yet supported.</p>
+    /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet supported.</p>
     /// </note>
     pub fn extra_python_libs_s3_path(&self) -> std::option::Option<&str> {
         self.extra_python_libs_s3_path.as_deref()
     }
-    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-    /// in your <code>DevEndpoint</code>.</p>
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p>
     pub fn extra_jars_s3_path(&self) -> std::option::Option<&str> {
         self.extra_jars_s3_path.as_deref()
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
     pub fn security_configuration(&self) -> std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
@@ -39605,15 +38986,13 @@ impl std::fmt::Debug for CreateDevEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatabaseInput {
-    /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The metadata for the database.</p>
     pub database_input: std::option::Option<crate::model::DatabaseInput>,
 }
 impl CreateDatabaseInput {
-    /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -39637,23 +39016,17 @@ impl std::fmt::Debug for CreateDatabaseInput {
 pub struct CreateCrawlerInput {
     /// <p>Name of the new crawler.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to
-    /// access customer resources.</p>
+    /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>The Glue database where results are written, such as:
-    /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+    /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A description of the new crawler.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>A list of collection of targets to crawl.</p>
     pub targets: std::option::Option<crate::model::CrawlerTargets>,
-    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub schedule: std::option::Option<std::string::String>,
-    /// <p>A list of custom classifiers that the user has registered. By default, all built-in
-    /// classifiers are included in a crawl, but these custom classifiers always override the default
-    /// classifiers for a given classification.</p>
+    /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
     pub classifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The table prefix used for catalog tables that are created.</p>
     pub table_prefix: std::option::Option<std::string::String>,
@@ -39663,16 +39036,13 @@ pub struct CreateCrawlerInput {
     pub recrawl_policy: std::option::Option<crate::model::RecrawlPolicy>,
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
     pub lineage_configuration: std::option::Option<crate::model::LineageConfiguration>,
-    /// <p>Crawler configuration information. This versioned JSON
-    /// string allows users to specify aspects of a crawler's behavior.
-    /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    #[allow(missing_docs)] // documentation missing in model
+    pub lake_formation_configuration: std::option::Option<crate::model::LakeFormationConfiguration>,
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
     pub configuration: std::option::Option<std::string::String>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-    /// crawler.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     pub crawler_security_configuration: std::option::Option<std::string::String>,
-    /// <p>The tags to use with this crawler request. You may use tags to limit access to the
-    /// crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer
-    /// guide.</p>
+    /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -39681,13 +39051,11 @@ impl CreateCrawlerInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to
-    /// access customer resources.</p>
+    /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>The Glue database where results are written, such as:
-    /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+    /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -39699,15 +39067,11 @@ impl CreateCrawlerInput {
     pub fn targets(&self) -> std::option::Option<&crate::model::CrawlerTargets> {
         self.targets.as_ref()
     }
-    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
-    /// <p>A list of custom classifiers that the user has registered. By default, all built-in
-    /// classifiers are included in a crawl, but these custom classifiers always override the default
-    /// classifiers for a given classification.</p>
+    /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
     pub fn classifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.classifiers.as_deref()
     }
@@ -39729,20 +39093,21 @@ impl CreateCrawlerInput {
     ) -> std::option::Option<&crate::model::LineageConfiguration> {
         self.lineage_configuration.as_ref()
     }
-    /// <p>Crawler configuration information. This versioned JSON
-    /// string allows users to specify aspects of a crawler's behavior.
-    /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn lake_formation_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::LakeFormationConfiguration> {
+        self.lake_formation_configuration.as_ref()
+    }
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
     pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-    /// crawler.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     pub fn crawler_security_configuration(&self) -> std::option::Option<&str> {
         self.crawler_security_configuration.as_deref()
     }
-    /// <p>The tags to use with this crawler request. You may use tags to limit access to the
-    /// crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer
-    /// guide.</p>
+    /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -39764,6 +39129,10 @@ impl std::fmt::Debug for CreateCrawlerInput {
         formatter.field("schema_change_policy", &self.schema_change_policy);
         formatter.field("recrawl_policy", &self.recrawl_policy);
         formatter.field("lineage_configuration", &self.lineage_configuration);
+        formatter.field(
+            "lake_formation_configuration",
+            &self.lake_formation_configuration,
+        );
         formatter.field("configuration", &self.configuration);
         formatter.field(
             "crawler_security_configuration",
@@ -39778,24 +39147,20 @@ impl std::fmt::Debug for CreateCrawlerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionInput {
-    /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>A <code>ConnectionInput</code> object defining the connection
-    /// to create.</p>
+    /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
     pub connection_input: std::option::Option<crate::model::ConnectionInput>,
     /// <p>The tags you assign to the connection.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateConnectionInput {
-    /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>A <code>ConnectionInput</code> object defining the connection
-    /// to create.</p>
+    /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
     pub fn connection_input(&self) -> std::option::Option<&crate::model::ConnectionInput> {
         self.connection_input.as_ref()
     }
@@ -39821,41 +39186,33 @@ impl std::fmt::Debug for CreateConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClassifierInput {
-    /// <p>A <code>GrokClassifier</code> object specifying the classifier
-    /// to create.</p>
+    /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
     pub grok_classifier: std::option::Option<crate::model::CreateGrokClassifierRequest>,
-    /// <p>An <code>XMLClassifier</code> object specifying the classifier
-    /// to create.</p>
+    /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
     pub xml_classifier: std::option::Option<crate::model::CreateXmlClassifierRequest>,
-    /// <p>A <code>JsonClassifier</code> object specifying the classifier
-    /// to create.</p>
+    /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
     pub json_classifier: std::option::Option<crate::model::CreateJsonClassifierRequest>,
-    /// <p>A <code>CsvClassifier</code> object specifying the classifier
-    /// to create.</p>
+    /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
     pub csv_classifier: std::option::Option<crate::model::CreateCsvClassifierRequest>,
 }
 impl CreateClassifierInput {
-    /// <p>A <code>GrokClassifier</code> object specifying the classifier
-    /// to create.</p>
+    /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
     pub fn grok_classifier(
         &self,
     ) -> std::option::Option<&crate::model::CreateGrokClassifierRequest> {
         self.grok_classifier.as_ref()
     }
-    /// <p>An <code>XMLClassifier</code> object specifying the classifier
-    /// to create.</p>
+    /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
     pub fn xml_classifier(&self) -> std::option::Option<&crate::model::CreateXmlClassifierRequest> {
         self.xml_classifier.as_ref()
     }
-    /// <p>A <code>JsonClassifier</code> object specifying the classifier
-    /// to create.</p>
+    /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
     pub fn json_classifier(
         &self,
     ) -> std::option::Option<&crate::model::CreateJsonClassifierRequest> {
         self.json_classifier.as_ref()
     }
-    /// <p>A <code>CsvClassifier</code> object specifying the classifier
-    /// to create.</p>
+    /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
     pub fn csv_classifier(&self) -> std::option::Option<&crate::model::CreateCsvClassifierRequest> {
         self.csv_classifier.as_ref()
     }
@@ -39977,11 +39334,9 @@ impl std::fmt::Debug for CancelMlTaskRunInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdatePartitionInput {
-    /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be
-    /// the Amazon Web Services account ID.</p>
+    /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the metadata database in which the partition is
-    /// to be updated.</p>
+    /// <p>The name of the metadata database in which the partition is to be updated.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the metadata table in which the partition is to be updated.</p>
     pub table_name: std::option::Option<std::string::String>,
@@ -39989,13 +39344,11 @@ pub struct BatchUpdatePartitionInput {
     pub entries: std::option::Option<std::vec::Vec<crate::model::BatchUpdatePartitionRequestEntry>>,
 }
 impl BatchUpdatePartitionInput {
-    /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be
-    /// the Amazon Web Services account ID.</p>
+    /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the metadata database in which the partition is
-    /// to be updated.</p>
+    /// <p>The name of the metadata database in which the partition is to be updated.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -40027,8 +39380,7 @@ impl std::fmt::Debug for BatchUpdatePartitionInput {
 pub struct BatchStopJobRunInput {
     /// <p>The name of the job definition for which to stop job runs.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job
-    /// definition.</p>
+    /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
     pub job_run_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchStopJobRunInput {
@@ -40036,8 +39388,7 @@ impl BatchStopJobRunInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job
-    /// definition.</p>
+    /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
     pub fn job_run_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.job_run_ids.as_deref()
     }
@@ -40104,8 +39455,7 @@ impl std::fmt::Debug for BatchGetTriggersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetPartitionInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -40115,8 +39465,7 @@ pub struct BatchGetPartitionInput {
     pub partitions_to_get: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
 }
 impl BatchGetPartitionInput {
-    /// <p>The ID of the Data Catalog where the partitions in question reside.
-    /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -40148,13 +39497,11 @@ impl std::fmt::Debug for BatchGetPartitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetJobsInput {
-    /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code>
-    /// operation.</p>
+    /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
     pub job_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetJobsInput {
-    /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code>
-    /// operation.</p>
+    /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
     pub fn job_names(&self) -> std::option::Option<&[std::string::String]> {
         self.job_names.as_deref()
     }
@@ -40171,13 +39518,11 @@ impl std::fmt::Debug for BatchGetJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDevEndpointsInput {
-    /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the
-    /// <code>ListDevEndpoint</code> operation.</p>
+    /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
     pub dev_endpoint_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDevEndpointsInput {
-    /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the
-    /// <code>ListDevEndpoint</code> operation.</p>
+    /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
     pub fn dev_endpoint_names(&self) -> std::option::Option<&[std::string::String]> {
         self.dev_endpoint_names.as_deref()
     }
@@ -40194,13 +39539,11 @@ impl std::fmt::Debug for BatchGetDevEndpointsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetCrawlersInput {
-    /// <p>A list of crawler names, which might be the names returned from the
-    /// <code>ListCrawlers</code> operation.</p>
+    /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
     pub crawler_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetCrawlersInput {
-    /// <p>A list of crawler names, which might be the names returned from the
-    /// <code>ListCrawlers</code> operation.</p>
+    /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
     pub fn crawler_names(&self) -> std::option::Option<&[std::string::String]> {
         self.crawler_names.as_deref()
     }
@@ -40252,31 +39595,25 @@ impl std::fmt::Debug for BatchGetBlueprintsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteTableVersionInput {
-    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The database in the catalog in which the table resides. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>The name of the table. For Hive compatibility,
-    /// this name is entirely lowercase.</p>
+    /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
     pub table_name: std::option::Option<std::string::String>,
     /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub version_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteTableVersionInput {
-    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The database in the catalog in which the table resides. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The name of the table. For Hive compatibility,
-    /// this name is entirely lowercase.</p>
+    /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -40300,11 +39637,9 @@ impl std::fmt::Debug for BatchDeleteTableVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteTableInput {
-    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the catalog database in which the tables to delete reside. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A list of the table to delete.</p>
     pub tables_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -40312,13 +39647,11 @@ pub struct BatchDeleteTableInput {
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl BatchDeleteTableInput {
-    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-    /// ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the catalog database in which the tables to delete reside. For Hive
-    /// compatibility, this name is entirely lowercase.</p>
+    /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -40346,26 +39679,21 @@ impl std::fmt::Debug for BatchDeleteTableInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeletePartitionInput {
-    /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-    /// the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the catalog database in which the table in question
-    /// resides.</p>
+    /// <p>The name of the catalog database in which the table in question resides.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table that contains the partitions to be deleted.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>A list of <code>PartitionInput</code> structures that define
-    /// the partitions to be deleted.</p>
+    /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
     pub partitions_to_delete: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
 }
 impl BatchDeletePartitionInput {
-    /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-    /// the Amazon Web Services account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the catalog database in which the table in question
-    /// resides.</p>
+    /// <p>The name of the catalog database in which the table in question resides.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -40373,8 +39701,7 @@ impl BatchDeletePartitionInput {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A list of <code>PartitionInput</code> structures that define
-    /// the partitions to be deleted.</p>
+    /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
     pub fn partitions_to_delete(&self) -> std::option::Option<&[crate::model::PartitionValueList]> {
         self.partitions_to_delete.as_deref()
     }
@@ -40394,15 +39721,13 @@ impl std::fmt::Debug for BatchDeletePartitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteConnectionInput {
-    /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: std::option::Option<std::string::String>,
     /// <p>A list of names of the connections to delete.</p>
     pub connection_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteConnectionInput {
-    /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-    /// account ID is used by default.</p>
+    /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
@@ -40424,26 +39749,21 @@ impl std::fmt::Debug for BatchDeleteConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreatePartitionInput {
-    /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be
-    /// the Amazon Web Services account ID.</p>
+    /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
     pub catalog_id: std::option::Option<std::string::String>,
-    /// <p>The name of the metadata database in which the partition is
-    /// to be created.</p>
+    /// <p>The name of the metadata database in which the partition is to be created.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the metadata table in which the partition is to be created.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>A list of <code>PartitionInput</code> structures that define
-    /// the partitions to be created.</p>
+    /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
     pub partition_input_list: std::option::Option<std::vec::Vec<crate::model::PartitionInput>>,
 }
 impl BatchCreatePartitionInput {
-    /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be
-    /// the Amazon Web Services account ID.</p>
+    /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
     pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p>The name of the metadata database in which the partition is
-    /// to be created.</p>
+    /// <p>The name of the metadata database in which the partition is to be created.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -40451,8 +39771,7 @@ impl BatchCreatePartitionInput {
     pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>A list of <code>PartitionInput</code> structures that define
-    /// the partitions to be created.</p>
+    /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
     pub fn partition_input_list(&self) -> std::option::Option<&[crate::model::PartitionInput]> {
         self.partition_input_list.as_deref()
     }

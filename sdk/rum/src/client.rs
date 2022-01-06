@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for CloudWatch RUM
@@ -108,6 +108,7 @@ where
     ///
     /// See [`GetAppMonitorData`](crate::client::fluent_builders::GetAppMonitorData) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAppMonitorData::into_paginator).
     pub fn get_app_monitor_data(&self) -> fluent_builders::GetAppMonitorData<C, M, R> {
         fluent_builders::GetAppMonitorData::new(self.handle.clone())
     }
@@ -115,6 +116,7 @@ where
     ///
     /// See [`ListAppMonitors`](crate::client::fluent_builders::ListAppMonitors) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppMonitors::into_paginator).
     pub fn list_app_monitors(&self) -> fluent_builders::ListAppMonitors<C, M, R> {
         fluent_builders::ListAppMonitors::new(self.handle.clone())
     }
@@ -164,16 +166,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateAppMonitor`.
     ///
-    /// <p>Creates a Amazon CloudWatch RUM app monitor, which collects telemetry data from your application and sends that
-    /// data to RUM. The data includes performance and reliability information such as page load time, client-side errors,
-    /// and user behavior.</p>
+    /// <p>Creates a Amazon CloudWatch RUM app monitor, which collects telemetry data from your application and sends that data to RUM. The data includes performance and reliability information such as page load time, client-side errors, and user behavior.</p>
     /// <p>You use this operation only to create a new app monitor. To update an existing app monitor, use <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_UpdateAppMonitor.html">UpdateAppMonitor</a> instead.</p>
-    /// <p>After you create an app monitor, sign in to the CloudWatch RUM console to get
-    /// the JavaScript code snippet to add to your web application. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html">How do I find a code snippet
-    /// that I've already generated?</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After you create an app monitor, sign in to the CloudWatch RUM console to get the JavaScript code snippet to add to your web application. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html">How do I find a code snippet that I've already generated?</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -218,10 +214,10 @@ pub mod fluent_builders {
                 crate::input::CreateAppMonitorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -230,8 +226,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the app monitor.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name for the app monitor.</p>
@@ -240,8 +236,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The top-level internet domain name for which your application has administrative authority.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The top-level internet domain name for which your application has administrative authority.</p>
@@ -254,11 +250,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with an app monitor.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn tags(
@@ -266,15 +259,12 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with an app monitor.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
@@ -286,26 +276,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
-        /// Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the
-        /// Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own
-        /// authorization method. For more information, see
-        /// <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application
-        /// to send data to Amazon Web Services</a>.</p>
+        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
         /// <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
         pub fn app_monitor_configuration(
             mut self,
-            inp: crate::model::AppMonitorConfiguration,
+            input: crate::model::AppMonitorConfiguration,
         ) -> Self {
-            self.inner = self.inner.app_monitor_configuration(inp);
+            self.inner = self.inner.app_monitor_configuration(input);
             self
         }
-        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
-        /// Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the
-        /// Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own
-        /// authorization method. For more information, see
-        /// <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application
-        /// to send data to Amazon Web Services</a>.</p>
+        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
         /// <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
         pub fn set_app_monitor_configuration(
             mut self,
@@ -314,19 +294,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_monitor_configuration(input);
             self
         }
-        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
-        /// sends a copy of this telemetry data to Amazon CloudWatch Logs
-        /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
-        /// Amazon CloudWatch Logs charges.</p>
+        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
         /// <p>If you omit this parameter, the default is <code>false</code>.</p>
-        pub fn cw_log_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.cw_log_enabled(inp);
+        pub fn cw_log_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.cw_log_enabled(input);
             self
         }
-        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
-        /// sends a copy of this telemetry data to Amazon CloudWatch Logs
-        /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
-        /// Amazon CloudWatch Logs charges.</p>
+        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
         /// <p>If you omit this parameter, the default is <code>false</code>.</p>
         pub fn set_cw_log_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_cw_log_enabled(input);
@@ -336,7 +310,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppMonitor`.
     ///
     /// <p>Deletes an existing app monitor. This immediately stops the collection of data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -381,10 +355,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppMonitorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -393,8 +367,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the app monitor to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the app monitor to delete.</p>
@@ -406,7 +380,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppMonitor`.
     ///
     /// <p>Retrieves the complete configuration information for one app monitor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -451,10 +425,10 @@ pub mod fluent_builders {
                 crate::input::GetAppMonitorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -463,8 +437,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app monitor to retrieve information for.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The app monitor to retrieve information for.</p>
@@ -475,9 +449,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAppMonitorData`.
     ///
-    /// <p>Retrieves the raw performance events that RUM has collected from your web application,
-    /// so that you can do your own processing or analysis of this data.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the raw performance events that RUM has collected from your web application, so that you can do your own processing or analysis of this data.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppMonitorData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -522,10 +495,10 @@ pub mod fluent_builders {
                 crate::input::GetAppMonitorDataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -533,9 +506,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetAppMonitorDataPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetAppMonitorDataPaginator<C, M, R> {
+            crate::paginator::GetAppMonitorDataPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
@@ -544,8 +523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure that defines the time range that you want to retrieve results from.</p>
-        pub fn time_range(mut self, inp: crate::model::TimeRange) -> Self {
-            self.inner = self.inner.time_range(inp);
+        pub fn time_range(mut self, input: crate::model::TimeRange) -> Self {
+            self.inner = self.inner.time_range(input);
             self
         }
         /// <p>A structure that defines the time range that you want to retrieve results from.</p>
@@ -560,14 +539,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of structures that you can use to filter the results to those that match one or
-        /// more sets of key-value pairs that you specify.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::QueryFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+        pub fn filters(mut self, input: crate::model::QueryFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An array of structures that you can use to filter the results to those that match one or
-        /// more sets of key-value pairs that you specify.</p>
+        /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueryFilter>>,
@@ -576,8 +553,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in one operation. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in one operation. </p>
@@ -586,8 +563,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -599,7 +576,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppMonitors`.
     ///
     /// <p>Returns a list of the Amazon CloudWatch RUM app monitors in the account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppMonitors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -644,10 +621,10 @@ pub mod fluent_builders {
                 crate::input::ListAppMonitorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -655,9 +632,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppMonitorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAppMonitorsPaginator<C, M, R> {
+            crate::paginator::ListAppMonitorsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return in one operation. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in one operation. </p>
@@ -666,8 +649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -679,7 +662,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Displays the tags associated with a CloudWatch RUM resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -724,10 +707,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -736,8 +719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource that you want to see the tags of.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource that you want to see the tags of.</p>
@@ -748,11 +731,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutRumEvents`.
     ///
-    /// <p>Sends telemetry events about your application performance and user behavior to CloudWatch RUM. The code
-    /// snippet that RUM generates for you to add to your application includes <code>PutRumEvents</code> operations to
-    /// send this data to RUM.</p>
+    /// <p>Sends telemetry events about your application performance and user behavior to CloudWatch RUM. The code snippet that RUM generates for you to add to your application includes <code>PutRumEvents</code> operations to send this data to RUM.</p>
     /// <p>Each <code>PutRumEvents</code> operation can send a batch of events from one user session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRumEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -797,10 +778,10 @@ pub mod fluent_builders {
                 crate::input::PutRumEventsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -809,8 +790,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the app monitor that is sending this data.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the app monitor that is sending this data.</p>
@@ -819,8 +800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for this batch of RUM event data.</p>
-        pub fn batch_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_id(inp);
+        pub fn batch_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_id(input.into());
             self
         }
         /// <p>A unique identifier for this batch of RUM event data.</p>
@@ -829,8 +810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
-        pub fn app_monitor_details(mut self, inp: crate::model::AppMonitorDetails) -> Self {
-            self.inner = self.inner.app_monitor_details(inp);
+        pub fn app_monitor_details(mut self, input: crate::model::AppMonitorDetails) -> Self {
+            self.inner = self.inner.app_monitor_details(input);
             self
         }
         /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
@@ -842,8 +823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
-        pub fn user_details(mut self, inp: crate::model::UserDetails) -> Self {
-            self.inner = self.inner.user_details(inp);
+        pub fn user_details(mut self, input: crate::model::UserDetails) -> Self {
+            self.inner = self.inner.user_details(input);
             self
         }
         /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
@@ -859,8 +840,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rum_events`](Self::set_rum_events).
         ///
         /// <p>An array of structures that contain the telemetry event data.</p>
-        pub fn rum_events(mut self, inp: impl Into<crate::model::RumEvent>) -> Self {
-            self.inner = self.inner.rum_events(inp);
+        pub fn rum_events(mut self, input: crate::model::RumEvent) -> Self {
+            self.inner = self.inner.rum_events(input);
             self
         }
         /// <p>An array of structures that contain the telemetry event data.</p>
@@ -874,21 +855,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch RUM resource. Currently,
-    /// the only resources that
-    /// can be tagged app monitors.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch RUM resource. Currently, the only resources that can be tagged app monitors.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    /// <p>You can use the <code>TagResource</code> action with a resource that already has tags.
-    /// If you specify a new tag key for the resource,
-    /// this tag is appended to the list of tags associated
-    /// with the alarm. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces
-    /// the previous value for that tag.</p>
+    /// <p>You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -933,10 +906,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -945,8 +918,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch RUM resource that you're adding tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the CloudWatch RUM resource that you're adding tags to.</p>
@@ -964,7 +937,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The list of key-value pairs to associate with the resource.</p>
@@ -981,7 +954,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1026,10 +999,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1038,8 +1011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch RUM resource that you're removing tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the CloudWatch RUM resource that you're removing tags from.</p>
@@ -1052,8 +1025,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys to remove from the resource.</p>
@@ -1067,18 +1040,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAppMonitor`.
     ///
-    /// <p>Updates the configuration of an existing app monitor. When you use this operation, only the parts of the app monitor
-    /// configuration that you specify in this operation are changed. For any parameters that you omit, the existing
-    /// values are kept.</p>
-    /// <p>You can't use this operation to change the tags of an existing app monitor. To change the tags of an existing app monitor, use
-    /// <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+    /// <p>Updates the configuration of an existing app monitor. When you use this operation, only the parts of the app monitor configuration that you specify in this operation are changed. For any parameters that you omit, the existing values are kept.</p>
+    /// <p>You can't use this operation to change the tags of an existing app monitor. To change the tags of an existing app monitor, use <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
     /// <p>To create a new app monitor, use <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_CreateAppMonitor.html">CreateAppMonitor</a>.</p>
-    /// <p>After you update an app monitor, sign in to the CloudWatch RUM console to get
-    /// the updated JavaScript code snippet to add to your web application. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html">How do I find a code snippet
-    /// that I've already generated?</a>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After you update an app monitor, sign in to the CloudWatch RUM console to get the updated JavaScript code snippet to add to your web application. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html">How do I find a code snippet that I've already generated?</a> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAppMonitor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1123,10 +1089,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAppMonitorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1135,8 +1101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the app monitor to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the app monitor to update.</p>
@@ -1145,8 +1111,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The top-level internet domain name for which your application has administrative authority.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(inp);
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The top-level internet domain name for which your application has administrative authority.</p>
@@ -1154,25 +1120,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
-        /// Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the
-        /// Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own
-        /// authorization method. For more information, see
-        /// <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application
-        /// to send data to Amazon Web Services</a>.</p>
+        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
         pub fn app_monitor_configuration(
             mut self,
-            inp: crate::model::AppMonitorConfiguration,
+            input: crate::model::AppMonitorConfiguration,
         ) -> Self {
-            self.inner = self.inner.app_monitor_configuration(inp);
+            self.inner = self.inner.app_monitor_configuration(input);
             self
         }
-        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
-        /// Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the
-        /// Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own
-        /// authorization method. For more information, see
-        /// <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application
-        /// to send data to Amazon Web Services</a>.</p>
+        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
         pub fn set_app_monitor_configuration(
             mut self,
             input: std::option::Option<crate::model::AppMonitorConfiguration>,
@@ -1180,24 +1136,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_monitor_configuration(input);
             self
         }
-        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
-        /// sends a copy of this telemetry data to Amazon CloudWatch Logs
-        /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
-        /// Amazon CloudWatch Logs charges.</p>
-        pub fn cw_log_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.cw_log_enabled(inp);
+        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
+        pub fn cw_log_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.cw_log_enabled(input);
             self
         }
-        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
-        /// sends a copy of this telemetry data to Amazon CloudWatch Logs
-        /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
-        /// Amazon CloudWatch Logs charges.</p>
+        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
         pub fn set_cw_log_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_cw_log_enabled(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

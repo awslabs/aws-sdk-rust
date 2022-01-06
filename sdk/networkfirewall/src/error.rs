@@ -12,25 +12,15 @@ pub struct AssociateFirewallPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateFirewallPolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -85,8 +75,6 @@ impl AssociateFirewallPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -177,28 +165,17 @@ pub struct AssociateSubnetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateSubnetsErrorKind {
-    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your
-    /// request later. </p>
+    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
     InsufficientCapacityException(crate::error::InsufficientCapacityException),
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -254,8 +231,6 @@ impl AssociateSubnetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -354,28 +329,17 @@ pub struct CreateFirewallError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFirewallErrorKind {
-    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your
-    /// request later. </p>
+    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
     InsufficientCapacityException(crate::error::InsufficientCapacityException),
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to perform the operation because doing so would violate a limit setting. </p>
@@ -428,8 +392,6 @@ impl CreateFirewallError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -514,25 +476,15 @@ pub struct CreateFirewallPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFirewallPolicyErrorKind {
-    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your
-    /// request later. </p>
+    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
     InsufficientCapacityException(crate::error::InsufficientCapacityException),
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to perform the operation because doing so would violate a limit setting. </p>
@@ -584,8 +536,6 @@ impl CreateFirewallPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -668,25 +618,15 @@ pub struct CreateRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRuleGroupErrorKind {
-    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your
-    /// request later. </p>
+    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
     InsufficientCapacityException(crate::error::InsufficientCapacityException),
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to perform the operation because doing so would violate a limit setting. </p>
@@ -738,8 +678,6 @@ impl CreateRuleGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -816,25 +754,15 @@ pub struct DeleteFirewallError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFirewallErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -889,8 +817,6 @@ impl DeleteFirewallError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -975,25 +901,15 @@ pub struct DeleteFirewallPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFirewallPolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -1048,8 +964,6 @@ impl DeleteFirewallPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1140,22 +1054,13 @@ pub struct DeleteResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourcePolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The policy statement failed validation.</p>
@@ -1209,8 +1114,6 @@ impl DeleteResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1293,25 +1196,15 @@ pub struct DeleteRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRuleGroupErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -1366,8 +1259,6 @@ impl DeleteRuleGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1452,22 +1343,13 @@ pub struct DescribeFirewallError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFirewallErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -1518,8 +1400,6 @@ impl DescribeFirewallError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1594,22 +1474,13 @@ pub struct DescribeFirewallPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFirewallPolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -1660,8 +1531,6 @@ impl DescribeFirewallPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1736,22 +1605,13 @@ pub struct DescribeLoggingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLoggingConfigurationErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -1804,8 +1664,6 @@ impl DescribeLoggingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1882,22 +1740,13 @@ pub struct DescribeResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeResourcePolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -1948,8 +1797,6 @@ impl DescribeResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2024,22 +1871,13 @@ pub struct DescribeRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRuleGroupErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -2090,8 +1928,6 @@ impl DescribeRuleGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2153,6 +1989,137 @@ impl std::error::Error for DescribeRuleGroupError {
     }
 }
 
+/// Error type for the `DescribeRuleGroupMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeRuleGroupMetadataError {
+    /// Kind of error that occurred.
+    pub kind: DescribeRuleGroupMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeRuleGroupMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeRuleGroupMetadataErrorKind {
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>The operation failed because of a problem with your request. Examples include: </p>
+    /// <ul>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
+    /// </ul>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>Unable to locate a resource using the parameters that you provided.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Unable to process the request due to throttling limitations.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeRuleGroupMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeRuleGroupMetadataErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DescribeRuleGroupMetadataErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeRuleGroupMetadataErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeRuleGroupMetadataErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeRuleGroupMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeRuleGroupMetadataError {
+    fn code(&self) -> Option<&str> {
+        DescribeRuleGroupMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeRuleGroupMetadataError {
+    /// Creates a new `DescribeRuleGroupMetadataError`.
+    pub fn new(kind: DescribeRuleGroupMetadataErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeRuleGroupMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeRuleGroupMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeRuleGroupMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeRuleGroupMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeRuleGroupMetadataErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeRuleGroupMetadataErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeRuleGroupMetadataErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeRuleGroupMetadataErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeRuleGroupMetadataErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeRuleGroupMetadataErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeRuleGroupMetadataErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeRuleGroupMetadataErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeRuleGroupMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeRuleGroupMetadataErrorKind::InternalServerError(_inner) => Some(_inner),
+            DescribeRuleGroupMetadataErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeRuleGroupMetadataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeRuleGroupMetadataErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeRuleGroupMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DisassociateSubnets` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2166,25 +2133,15 @@ pub struct DisassociateSubnetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateSubnetsErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -2239,8 +2196,6 @@ impl DisassociateSubnetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2331,22 +2286,13 @@ pub struct ListFirewallPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFirewallPoliciesErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to process the request due to throttling limitations.</p>
@@ -2394,8 +2340,6 @@ impl ListFirewallPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2462,22 +2406,13 @@ pub struct ListFirewallsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFirewallsErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to process the request due to throttling limitations.</p>
@@ -2525,8 +2460,6 @@ impl ListFirewallsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2587,22 +2520,13 @@ pub struct ListRuleGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRuleGroupsErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to process the request due to throttling limitations.</p>
@@ -2650,8 +2574,6 @@ impl ListRuleGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2712,31 +2634,29 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
+    InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Unable to process the request due to throttling limitations.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListTagsForResourceErrorKind::InternalServerError(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2771,8 +2691,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2793,6 +2711,13 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InternalServerError(_)
+        )
+    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
@@ -2807,12 +2732,21 @@ impl ListTagsForResourceError {
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ThrottlingException(_)
+        )
+    }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListTagsForResourceErrorKind::InternalServerError(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2831,22 +2765,13 @@ pub struct PutResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutResourcePolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The policy statement failed validation.</p>
@@ -2900,8 +2825,6 @@ impl PutResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2984,31 +2907,29 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
+    InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Unable to process the request due to throttling limitations.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            TagResourceErrorKind::InternalServerError(_inner) => _inner.fmt(f),
             TagResourceErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3043,8 +2964,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3065,6 +2984,10 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InternalServerError(_))
+    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
@@ -3076,12 +2999,18 @@ impl TagResourceError {
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            TagResourceErrorKind::InternalServerError(_inner) => Some(_inner),
             TagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3100,31 +3029,29 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
+    InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Unable to process the request due to throttling limitations.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UntagResourceErrorKind::InternalServerError(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3159,8 +3086,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3181,6 +3106,10 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::InternalServerError(_))
+    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
@@ -3195,12 +3124,18 @@ impl UntagResourceError {
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
+    }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UntagResourceErrorKind::InternalServerError(_inner) => Some(_inner),
             UntagResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3219,22 +3154,13 @@ pub struct UpdateFirewallDeleteProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFirewallDeleteProtectionErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -3300,8 +3226,6 @@ impl UpdateFirewallDeleteProtectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3398,22 +3322,13 @@ pub struct UpdateFirewallDescriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFirewallDescriptionErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -3467,8 +3382,6 @@ impl UpdateFirewallDescriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3551,22 +3464,13 @@ pub struct UpdateFirewallPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFirewallPolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -3620,8 +3524,6 @@ impl UpdateFirewallPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3704,22 +3606,13 @@ pub struct UpdateFirewallPolicyChangeProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFirewallPolicyChangeProtectionErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -3791,8 +3684,6 @@ impl UpdateFirewallPolicyChangeProtectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3897,22 +3788,13 @@ pub struct UpdateLoggingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLoggingConfigurationErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -3971,8 +3853,6 @@ impl UpdateLoggingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4065,22 +3945,13 @@ pub struct UpdateRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRuleGroupErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -4134,8 +4005,6 @@ impl UpdateRuleGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4212,22 +4081,13 @@ pub struct UpdateSubnetChangeProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSubnetChangeProtectionErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -4288,8 +4148,6 @@ impl UpdateSubnetChangeProtectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4629,17 +4487,9 @@ impl InvalidTokenException {
 
 /// <p>The operation failed because of a problem with your request. Examples include: </p>
 /// <ul>
-/// <li>
-/// <p>You specified an unsupported parameter name or value.</p>
-/// </li>
-/// <li>
-/// <p>You tried to update a property with a value that isn't among the available
-/// types.</p>
-/// </li>
-/// <li>
-/// <p>Your request references an ARN that is malformed, or corresponds to a resource
-/// that isn't valid in the context of the request.</p>
-/// </li>
+/// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+/// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+/// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4704,8 +4554,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-/// system problem. Retry your request. </p>
+/// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
@@ -4897,8 +4746,7 @@ impl InvalidResourcePolicyException {
     }
 }
 
-/// <p>The operation failed because it's not valid. For example, you might have tried to delete
-/// a rule group or firewall policy that's in use.</p>
+/// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationException {
@@ -5090,8 +4938,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your
-/// request later. </p>
+/// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientCapacityException {

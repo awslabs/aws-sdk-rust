@@ -39,9 +39,9 @@ pub mod copy_backup_to_region_input {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -71,7 +71,7 @@ pub mod copy_backup_to_region_input {
 #[doc(hidden)]
 pub type CopyBackupToRegionInputOperationOutputAlias = crate::operation::CopyBackupToRegion;
 #[doc(hidden)]
-pub type CopyBackupToRegionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CopyBackupToRegionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CopyBackupToRegionInput {
     /// Consumes the builder and constructs an Operation<[`CopyBackupToRegion`](crate::operation::CopyBackupToRegion)>
     #[allow(clippy::let_and_return)]
@@ -82,7 +82,7 @@ impl CopyBackupToRegionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CopyBackupToRegion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -167,7 +167,7 @@ impl CopyBackupToRegionInput {
             "CopyBackupToRegion",
             "cloudhsmv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -220,26 +220,22 @@ pub mod create_cluster_input {
             self.backup_retention_policy = input;
             self
         }
-        /// <p>The type of HSM to use in the cluster. Currently the only allowed value is
-        /// <code>hsm1.medium</code>.</p>
+        /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
         pub fn hsm_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.hsm_type = Some(input.into());
             self
         }
-        /// <p>The type of HSM to use in the cluster. Currently the only allowed value is
-        /// <code>hsm1.medium</code>.</p>
+        /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
         pub fn set_hsm_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hsm_type = input;
             self
         }
-        /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the
-        /// cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>
+        /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
         pub fn source_backup_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_backup_id = Some(input.into());
             self
         }
-        /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the
-        /// cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>
+        /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
         pub fn set_source_backup_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -251,16 +247,10 @@ pub mod create_cluster_input {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must
-        /// specify at least one subnet. If you specify multiple subnets, they must meet the following
-        /// criteria:</p>
+        /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
         /// <ul>
-        /// <li>
-        /// <p>All subnets must be in the same virtual private cloud (VPC).</p>
-        /// </li>
-        /// <li>
-        /// <p>You can specify only one subnet per Availability Zone.</p>
-        /// </li>
+        /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
+        /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
         /// </ul>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
@@ -268,16 +258,10 @@ pub mod create_cluster_input {
             self.subnet_ids = Some(v);
             self
         }
-        /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must
-        /// specify at least one subnet. If you specify multiple subnets, they must meet the following
-        /// criteria:</p>
+        /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
         /// <ul>
-        /// <li>
-        /// <p>All subnets must be in the same virtual private cloud (VPC).</p>
-        /// </li>
-        /// <li>
-        /// <p>You can specify only one subnet per Availability Zone.</p>
-        /// </li>
+        /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
+        /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
         /// </ul>
         pub fn set_subnet_ids(
             mut self,
@@ -291,9 +275,9 @@ pub mod create_cluster_input {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -325,7 +309,7 @@ pub mod create_cluster_input {
 #[doc(hidden)]
 pub type CreateClusterInputOperationOutputAlias = crate::operation::CreateCluster;
 #[doc(hidden)]
-pub type CreateClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateCluster`](crate::operation::CreateCluster)>
     #[allow(clippy::let_and_return)]
@@ -336,7 +320,7 @@ impl CreateClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -420,7 +404,7 @@ impl CreateClusterInput {
             "CreateCluster",
             "cloudhsmv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -454,24 +438,22 @@ pub mod create_hsm_input {
         pub(crate) ip_address: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>
+        /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>
+        /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
         }
-        /// <p>The Availability Zone where you are creating the HSM. To find the cluster's
-        /// Availability Zones, use <a>DescribeClusters</a>.</p>
+        /// <p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <code>DescribeClusters</code>.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
             self
         }
-        /// <p>The Availability Zone where you are creating the HSM. To find the cluster's
-        /// Availability Zones, use <a>DescribeClusters</a>.</p>
+        /// <p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <code>DescribeClusters</code>.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -479,16 +461,12 @@ pub mod create_hsm_input {
             self.availability_zone = input;
             self
         }
-        /// <p>The HSM's IP address. If you specify an IP address, use an available address from the
-        /// subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify
-        /// an IP address, one is chosen for you from that subnet.</p>
+        /// <p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip_address = Some(input.into());
             self
         }
-        /// <p>The HSM's IP address. If you specify an IP address, use an available address from the
-        /// subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify
-        /// an IP address, one is chosen for you from that subnet.</p>
+        /// <p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
@@ -509,7 +487,7 @@ pub mod create_hsm_input {
 #[doc(hidden)]
 pub type CreateHsmInputOperationOutputAlias = crate::operation::CreateHsm;
 #[doc(hidden)]
-pub type CreateHsmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateHsmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHsmInput {
     /// Consumes the builder and constructs an Operation<[`CreateHsm`](crate::operation::CreateHsm)>
     #[allow(clippy::let_and_return)]
@@ -520,7 +498,7 @@ impl CreateHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHsm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -602,7 +580,7 @@ impl CreateHsmInput {
                     "CreateHsm",
                     "cloudhsmv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -634,12 +612,12 @@ pub mod delete_backup_input {
         pub(crate) backup_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+        /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
         pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_id = Some(input.into());
             self
         }
-        /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+        /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_id = input;
             self
@@ -660,7 +638,7 @@ pub mod delete_backup_input {
 #[doc(hidden)]
 pub type DeleteBackupInputOperationOutputAlias = crate::operation::DeleteBackup;
 #[doc(hidden)]
-pub type DeleteBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackup`](crate::operation::DeleteBackup)>
     #[allow(clippy::let_and_return)]
@@ -671,7 +649,7 @@ impl DeleteBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -755,7 +733,7 @@ impl DeleteBackupInput {
             "DeleteBackup",
             "cloudhsmv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -787,14 +765,12 @@ pub mod delete_cluster_input {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use
-        /// <a>DescribeClusters</a>.</p>
+        /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use
-        /// <a>DescribeClusters</a>.</p>
+        /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -815,7 +791,7 @@ pub mod delete_cluster_input {
 #[doc(hidden)]
 pub type DeleteClusterInputOperationOutputAlias = crate::operation::DeleteCluster;
 #[doc(hidden)]
-pub type DeleteClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCluster`](crate::operation::DeleteCluster)>
     #[allow(clippy::let_and_return)]
@@ -826,7 +802,7 @@ impl DeleteClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -910,7 +886,7 @@ impl DeleteClusterInput {
             "DeleteCluster",
             "cloudhsmv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -945,14 +921,12 @@ pub mod delete_hsm_input {
         pub(crate) eni_ip: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier (ID) of the cluster that contains the HSM that you are
-        /// deleting.</p>
+        /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>The identifier (ID) of the cluster that contains the HSM that you are
-        /// deleting.</p>
+        /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -967,26 +941,22 @@ pub mod delete_hsm_input {
             self.hsm_id = input;
             self
         }
-        /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are
-        /// deleting.</p>
+        /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
         pub fn eni_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.eni_id = Some(input.into());
             self
         }
-        /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are
-        /// deleting.</p>
+        /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
         pub fn set_eni_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eni_id = input;
             self
         }
-        /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-        /// deleting.</p>
+        /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
         pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.eni_ip = Some(input.into());
             self
         }
-        /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-        /// deleting.</p>
+        /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
         pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eni_ip = input;
             self
@@ -1008,7 +978,7 @@ pub mod delete_hsm_input {
 #[doc(hidden)]
 pub type DeleteHsmInputOperationOutputAlias = crate::operation::DeleteHsm;
 #[doc(hidden)]
-pub type DeleteHsmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteHsmInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHsmInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHsm`](crate::operation::DeleteHsm)>
     #[allow(clippy::let_and_return)]
@@ -1019,7 +989,7 @@ impl DeleteHsmInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHsm,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1101,7 +1071,7 @@ impl DeleteHsmInput {
                     "DeleteHsm",
                     "cloudhsmv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1138,26 +1108,22 @@ pub mod describe_backups_input {
         pub(crate) sort_ascending: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more backups.</p>
+        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more backups.</p>
+        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of backups to return in the response. When there are more backups
-        /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
+        /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of backups to return in the response. When there are more backups
-        /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
+        /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1167,41 +1133,27 @@ pub mod describe_backups_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>One or more filters to limit the items returned in the response.</p>
-        /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify
-        /// backups by their backup identifier (ID).</p>
-        /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a
-        /// source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p>
-        /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified
-        /// clusters. Specify clusters by their cluster identifier (ID).</p>
-        /// <p>Use the <code>states</code> filter to return only backups that match the specified
-        /// state.</p>
-        /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the
-        /// <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the
-        /// backup retention policy. <code>False</code> returns all backups with a backup retention policy
-        /// defined at the cluster.</p>
+        /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p>
+        /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <code>CopyBackupToRegion</code> operation.</p>
+        /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+        /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
+        /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
         pub fn filters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.filters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.filters = Some(hash_map);
             self
         }
         /// <p>One or more filters to limit the items returned in the response.</p>
-        /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify
-        /// backups by their backup identifier (ID).</p>
-        /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a
-        /// source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p>
-        /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified
-        /// clusters. Specify clusters by their cluster identifier (ID).</p>
-        /// <p>Use the <code>states</code> filter to return only backups that match the specified
-        /// state.</p>
-        /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the
-        /// <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the
-        /// backup retention policy. <code>False</code> returns all backups with a backup retention policy
-        /// defined at the cluster.</p>
+        /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p>
+        /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <code>CopyBackupToRegion</code> operation.</p>
+        /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+        /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
+        /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -1211,14 +1163,12 @@ pub mod describe_backups_input {
             self.filters = input;
             self
         }
-        /// <p>Designates whether or not to sort the return backups by ascending chronological order
-        /// of generation.</p>
+        /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
         pub fn sort_ascending(mut self, input: bool) -> Self {
             self.sort_ascending = Some(input);
             self
         }
-        /// <p>Designates whether or not to sort the return backups by ascending chronological order
-        /// of generation.</p>
+        /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
         pub fn set_sort_ascending(mut self, input: std::option::Option<bool>) -> Self {
             self.sort_ascending = input;
             self
@@ -1242,7 +1192,7 @@ pub mod describe_backups_input {
 #[doc(hidden)]
 pub type DescribeBackupsInputOperationOutputAlias = crate::operation::DescribeBackups;
 #[doc(hidden)]
-pub type DescribeBackupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBackupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBackupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBackups`](crate::operation::DescribeBackups)>
     #[allow(clippy::let_and_return)]
@@ -1253,7 +1203,7 @@ impl DescribeBackupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBackups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1338,7 +1288,7 @@ impl DescribeBackupsInput {
             "DescribeBackups",
             "cloudhsmv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1379,29 +1329,23 @@ pub mod describe_clusters_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>One or more filters to limit the items returned in the response.</p>
-        /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify
-        /// clusters by their cluster identifier (ID).</p>
-        /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual
-        /// private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
-        /// <p>Use the <code>states</code> filter to return only clusters that match the specified
-        /// state.</p>
+        /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+        /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+        /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
         pub fn filters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.filters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.filters = Some(hash_map);
             self
         }
         /// <p>One or more filters to limit the items returned in the response.</p>
-        /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify
-        /// clusters by their cluster identifier (ID).</p>
-        /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual
-        /// private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
-        /// <p>Use the <code>states</code> filter to return only clusters that match the specified
-        /// state.</p>
+        /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+        /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+        /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -1411,26 +1355,22 @@ pub mod describe_clusters_input {
             self.filters = input;
             self
         }
-        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more clusters.</p>
+        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more clusters.</p>
+        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of clusters to return in the response. When there are more clusters
-        /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
+        /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of clusters to return in the response. When there are more clusters
-        /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
+        /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1453,7 +1393,7 @@ pub mod describe_clusters_input {
 #[doc(hidden)]
 pub type DescribeClustersInputOperationOutputAlias = crate::operation::DescribeClusters;
 #[doc(hidden)]
-pub type DescribeClustersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClustersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeClusters`](crate::operation::DescribeClusters)>
     #[allow(clippy::let_and_return)]
@@ -1464,7 +1404,7 @@ impl DescribeClustersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeClusters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1549,7 +1489,7 @@ impl DescribeClustersInput {
             "DescribeClusters",
             "cloudhsmv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1583,42 +1523,32 @@ pub mod initialize_cluster_input {
         pub(crate) trust_anchor: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use
-        /// <a>DescribeClusters</a>.</p>
+        /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use
-        /// <a>DescribeClusters</a>.</p>
+        /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
         }
-        /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The
-        /// certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+        /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
         pub fn signed_cert(mut self, input: impl Into<std::string::String>) -> Self {
             self.signed_cert = Some(input.into());
             self
         }
-        /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The
-        /// certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+        /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
         pub fn set_signed_cert(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signed_cert = input;
             self
         }
-        /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed)
-        /// the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the
-        /// root certificate. The certificate must be in PEM format and can contain a
-        /// maximum of 5000 characters.</p>
+        /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
         pub fn trust_anchor(mut self, input: impl Into<std::string::String>) -> Self {
             self.trust_anchor = Some(input.into());
             self
         }
-        /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed)
-        /// the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the
-        /// root certificate. The certificate must be in PEM format and can contain a
-        /// maximum of 5000 characters.</p>
+        /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
         pub fn set_trust_anchor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trust_anchor = input;
             self
@@ -1641,7 +1571,7 @@ pub mod initialize_cluster_input {
 #[doc(hidden)]
 pub type InitializeClusterInputOperationOutputAlias = crate::operation::InitializeCluster;
 #[doc(hidden)]
-pub type InitializeClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InitializeClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InitializeClusterInput {
     /// Consumes the builder and constructs an Operation<[`InitializeCluster`](crate::operation::InitializeCluster)>
     #[allow(clippy::let_and_return)]
@@ -1652,7 +1582,7 @@ impl InitializeClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InitializeCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1737,7 +1667,7 @@ impl InitializeClusterInput {
             "InitializeCluster",
             "cloudhsmv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1771,38 +1701,32 @@ pub mod list_tags_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the
-        /// cluster ID, use <a>DescribeClusters</a>.</p>
+        /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the
-        /// cluster ID, use <a>DescribeClusters</a>.</p>
+        /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more tags.</p>
+        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more tags.</p>
+        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of tags to return in the response. When there are more tags than the
-        /// number you specify, the response contains a <code>NextToken</code> value.</p>
+        /// <p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of tags to return in the response. When there are more tags than the
-        /// number you specify, the response contains a <code>NextToken</code> value.</p>
+        /// <p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1823,7 +1747,7 @@ pub mod list_tags_input {
 #[doc(hidden)]
 pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
 #[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(clippy::let_and_return)]
@@ -1834,7 +1758,7 @@ impl ListTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1916,7 +1840,7 @@ impl ListTagsInput {
                     "ListTags",
                     "cloudhsmv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1949,24 +1873,22 @@ pub mod modify_backup_attributes_input {
         pub(crate) never_expires: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+        /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
         pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_id = Some(input.into());
             self
         }
-        /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+        /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_id = input;
             self
         }
-        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
-        /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
         pub fn never_expires(mut self, input: bool) -> Self {
             self.never_expires = Some(input);
             self
         }
-        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
-        /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
         pub fn set_never_expires(mut self, input: std::option::Option<bool>) -> Self {
             self.never_expires = input;
             self
@@ -1988,7 +1910,7 @@ pub mod modify_backup_attributes_input {
 #[doc(hidden)]
 pub type ModifyBackupAttributesInputOperationOutputAlias = crate::operation::ModifyBackupAttributes;
 #[doc(hidden)]
-pub type ModifyBackupAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyBackupAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyBackupAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ModifyBackupAttributes`](crate::operation::ModifyBackupAttributes)>
     #[allow(clippy::let_and_return)]
@@ -1999,7 +1921,7 @@ impl ModifyBackupAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyBackupAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2086,7 +2008,7 @@ impl ModifyBackupAttributesInput {
             "ModifyBackupAttributes",
             "cloudhsmv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2136,14 +2058,12 @@ pub mod modify_cluster_input {
             self.backup_retention_policy = input;
             self
         }
-        /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use
-        /// <a>DescribeClusters</a>.</p>
+        /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use
-        /// <a>DescribeClusters</a>.</p>
+        /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -2165,7 +2085,7 @@ pub mod modify_cluster_input {
 #[doc(hidden)]
 pub type ModifyClusterInputOperationOutputAlias = crate::operation::ModifyCluster;
 #[doc(hidden)]
-pub type ModifyClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyClusterInput {
     /// Consumes the builder and constructs an Operation<[`ModifyCluster`](crate::operation::ModifyCluster)>
     #[allow(clippy::let_and_return)]
@@ -2176,7 +2096,7 @@ impl ModifyClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2260,7 +2180,7 @@ impl ModifyClusterInput {
             "ModifyCluster",
             "cloudhsmv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2292,12 +2212,12 @@ pub mod restore_backup_input {
         pub(crate) backup_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+        /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
         pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_id = Some(input.into());
             self
         }
-        /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+        /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_id = input;
             self
@@ -2318,7 +2238,7 @@ pub mod restore_backup_input {
 #[doc(hidden)]
 pub type RestoreBackupInputOperationOutputAlias = crate::operation::RestoreBackup;
 #[doc(hidden)]
-pub type RestoreBackupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RestoreBackupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreBackupInput {
     /// Consumes the builder and constructs an Operation<[`RestoreBackup`](crate::operation::RestoreBackup)>
     #[allow(clippy::let_and_return)]
@@ -2329,7 +2249,7 @@ impl RestoreBackupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestoreBackup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2413,7 +2333,7 @@ impl RestoreBackupInput {
             "RestoreBackup",
             "cloudhsmv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2446,14 +2366,12 @@ pub mod tag_resource_input {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster
-        /// ID, use <a>DescribeClusters</a>.</p>
+        /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster
-        /// ID, use <a>DescribeClusters</a>.</p>
+        /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -2463,9 +2381,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>A list of one or more tags.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -2494,7 +2412,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2505,7 +2423,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2589,7 +2507,7 @@ impl TagResourceInput {
             "TagResource",
             "cloudhsmv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2622,14 +2540,12 @@ pub mod untag_resource_input {
         pub(crate) tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the
-        /// cluster ID, use <a>DescribeClusters</a>.</p>
+        /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the
-        /// cluster ID, use <a>DescribeClusters</a>.</p>
+        /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -2638,16 +2554,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
         ///
-        /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag
-        /// keys, not the tag values.</p>
+        /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>
         pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_key_list.unwrap_or_default();
             v.push(input.into());
             self.tag_key_list = Some(v);
             self
         }
-        /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag
-        /// keys, not the tag values.</p>
+        /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>
         pub fn set_tag_key_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2672,7 +2586,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2683,7 +2597,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2767,7 +2681,7 @@ impl UntagResourceInput {
             "UntagResource",
             "cloudhsmv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2794,21 +2708,17 @@ impl UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the
-    /// cluster ID, use <a>DescribeClusters</a>.</p>
+    /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag
-    /// keys, not the tag values.</p>
+    /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>
     pub tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the
-    /// cluster ID, use <a>DescribeClusters</a>.</p>
+    /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag
-    /// keys, not the tag values.</p>
+    /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>
     pub fn tag_key_list(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_key_list.as_deref()
     }
@@ -2826,15 +2736,13 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster
-    /// ID, use <a>DescribeClusters</a>.</p>
+    /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>A list of one or more tags.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster
-    /// ID, use <a>DescribeClusters</a>.</p>
+    /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -2856,11 +2764,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreBackupInput {
-    /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+    /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     pub backup_id: std::option::Option<std::string::String>,
 }
 impl RestoreBackupInput {
-    /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+    /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
     }
@@ -2879,8 +2787,7 @@ impl std::fmt::Debug for RestoreBackupInput {
 pub struct ModifyClusterInput {
     /// <p>A policy that defines how the service retains backups.</p>
     pub backup_retention_policy: std::option::Option<crate::model::BackupRetentionPolicy>,
-    /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use
-    /// <a>DescribeClusters</a>.</p>
+    /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl ModifyClusterInput {
@@ -2890,8 +2797,7 @@ impl ModifyClusterInput {
     ) -> std::option::Option<&crate::model::BackupRetentionPolicy> {
         self.backup_retention_policy.as_ref()
     }
-    /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use
-    /// <a>DescribeClusters</a>.</p>
+    /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
@@ -2909,19 +2815,17 @@ impl std::fmt::Debug for ModifyClusterInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyBackupAttributesInput {
-    /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+    /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     pub backup_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
-    /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub never_expires: std::option::Option<bool>,
 }
 impl ModifyBackupAttributesInput {
-    /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+    /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
     }
-    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
-    /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub fn never_expires(&self) -> std::option::Option<bool> {
         self.never_expires
     }
@@ -2939,29 +2843,23 @@ impl std::fmt::Debug for ModifyBackupAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
-    /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the
-    /// cluster ID, use <a>DescribeClusters</a>.</p>
+    /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-    /// value to get more tags.</p>
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of tags to return in the response. When there are more tags than the
-    /// number you specify, the response contains a <code>NextToken</code> value.</p>
+    /// <p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsInput {
-    /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the
-    /// cluster ID, use <a>DescribeClusters</a>.</p>
+    /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-    /// value to get more tags.</p>
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of tags to return in the response. When there are more tags than the
-    /// number you specify, the response contains a <code>NextToken</code> value.</p>
+    /// <p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -2980,33 +2878,23 @@ impl std::fmt::Debug for ListTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitializeClusterInput {
-    /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use
-    /// <a>DescribeClusters</a>.</p>
+    /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub cluster_id: std::option::Option<std::string::String>,
-    /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The
-    /// certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+    /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
     pub signed_cert: std::option::Option<std::string::String>,
-    /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed)
-    /// the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the
-    /// root certificate. The certificate must be in PEM format and can contain a
-    /// maximum of 5000 characters.</p>
+    /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
     pub trust_anchor: std::option::Option<std::string::String>,
 }
 impl InitializeClusterInput {
-    /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use
-    /// <a>DescribeClusters</a>.</p>
+    /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The
-    /// certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+    /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
     pub fn signed_cert(&self) -> std::option::Option<&str> {
         self.signed_cert.as_deref()
     }
-    /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed)
-    /// the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the
-    /// root certificate. The certificate must be in PEM format and can contain a
-    /// maximum of 5000 characters.</p>
+    /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
     pub fn trust_anchor(&self) -> std::option::Option<&str> {
         self.trust_anchor.as_deref()
     }
@@ -3026,30 +2914,22 @@ impl std::fmt::Debug for InitializeClusterInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClustersInput {
     /// <p>One or more filters to limit the items returned in the response.</p>
-    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify
-    /// clusters by their cluster identifier (ID).</p>
-    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual
-    /// private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
-    /// <p>Use the <code>states</code> filter to return only clusters that match the specified
-    /// state.</p>
+    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+    /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
     pub filters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
-    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-    /// value to get more clusters.</p>
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of clusters to return in the response. When there are more clusters
-    /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeClustersInput {
     /// <p>One or more filters to limit the items returned in the response.</p>
-    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify
-    /// clusters by their cluster identifier (ID).</p>
-    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual
-    /// private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
-    /// <p>Use the <code>states</code> filter to return only clusters that match the specified
-    /// state.</p>
+    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+    /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
     pub fn filters(
         &self,
     ) -> std::option::Option<
@@ -3057,13 +2937,11 @@ impl DescribeClustersInput {
     > {
         self.filters.as_ref()
     }
-    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-    /// value to get more clusters.</p>
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of clusters to return in the response. When there are more clusters
-    /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -3082,56 +2960,37 @@ impl std::fmt::Debug for DescribeClustersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupsInput {
-    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-    /// value to get more backups.</p>
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of backups to return in the response. When there are more backups
-    /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>One or more filters to limit the items returned in the response.</p>
-    /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify
-    /// backups by their backup identifier (ID).</p>
-    /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a
-    /// source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p>
-    /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified
-    /// clusters. Specify clusters by their cluster identifier (ID).</p>
-    /// <p>Use the <code>states</code> filter to return only backups that match the specified
-    /// state.</p>
-    /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the
-    /// <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the
-    /// backup retention policy. <code>False</code> returns all backups with a backup retention policy
-    /// defined at the cluster.</p>
+    /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p>
+    /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <code>CopyBackupToRegion</code> operation.</p>
+    /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+    /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
+    /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
     pub filters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
-    /// <p>Designates whether or not to sort the return backups by ascending chronological order
-    /// of generation.</p>
+    /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
     pub sort_ascending: std::option::Option<bool>,
 }
 impl DescribeBackupsInput {
-    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-    /// value to get more backups.</p>
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of backups to return in the response. When there are more backups
-    /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>One or more filters to limit the items returned in the response.</p>
-    /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify
-    /// backups by their backup identifier (ID).</p>
-    /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a
-    /// source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p>
-    /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified
-    /// clusters. Specify clusters by their cluster identifier (ID).</p>
-    /// <p>Use the <code>states</code> filter to return only backups that match the specified
-    /// state.</p>
-    /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the
-    /// <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the
-    /// backup retention policy. <code>False</code> returns all backups with a backup retention policy
-    /// defined at the cluster.</p>
+    /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p>
+    /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <code>CopyBackupToRegion</code> operation.</p>
+    /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+    /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
+    /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
     pub fn filters(
         &self,
     ) -> std::option::Option<
@@ -3139,8 +2998,7 @@ impl DescribeBackupsInput {
     > {
         self.filters.as_ref()
     }
-    /// <p>Designates whether or not to sort the return backups by ascending chronological order
-    /// of generation.</p>
+    /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
     pub fn sort_ascending(&self) -> std::option::Option<bool> {
         self.sort_ascending
     }
@@ -3160,21 +3018,17 @@ impl std::fmt::Debug for DescribeBackupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHsmInput {
-    /// <p>The identifier (ID) of the cluster that contains the HSM that you are
-    /// deleting.</p>
+    /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the HSM that you are deleting.</p>
     pub hsm_id: std::option::Option<std::string::String>,
-    /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are
-    /// deleting.</p>
+    /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
     pub eni_id: std::option::Option<std::string::String>,
-    /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-    /// deleting.</p>
+    /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
     pub eni_ip: std::option::Option<std::string::String>,
 }
 impl DeleteHsmInput {
-    /// <p>The identifier (ID) of the cluster that contains the HSM that you are
-    /// deleting.</p>
+    /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
@@ -3182,13 +3036,11 @@ impl DeleteHsmInput {
     pub fn hsm_id(&self) -> std::option::Option<&str> {
         self.hsm_id.as_deref()
     }
-    /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are
-    /// deleting.</p>
+    /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
     pub fn eni_id(&self) -> std::option::Option<&str> {
         self.eni_id.as_deref()
     }
-    /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-    /// deleting.</p>
+    /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
     pub fn eni_ip(&self) -> std::option::Option<&str> {
         self.eni_ip.as_deref()
     }
@@ -3208,13 +3060,11 @@ impl std::fmt::Debug for DeleteHsmInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterInput {
-    /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use
-    /// <a>DescribeClusters</a>.</p>
+    /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl DeleteClusterInput {
-    /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use
-    /// <a>DescribeClusters</a>.</p>
+    /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
@@ -3231,11 +3081,11 @@ impl std::fmt::Debug for DeleteClusterInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupInput {
-    /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+    /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     pub backup_id: std::option::Option<std::string::String>,
 }
 impl DeleteBackupInput {
-    /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+    /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
     }
@@ -3252,29 +3102,23 @@ impl std::fmt::Debug for DeleteBackupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHsmInput {
-    /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>
+    /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub cluster_id: std::option::Option<std::string::String>,
-    /// <p>The Availability Zone where you are creating the HSM. To find the cluster's
-    /// Availability Zones, use <a>DescribeClusters</a>.</p>
+    /// <p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <code>DescribeClusters</code>.</p>
     pub availability_zone: std::option::Option<std::string::String>,
-    /// <p>The HSM's IP address. If you specify an IP address, use an available address from the
-    /// subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify
-    /// an IP address, one is chosen for you from that subnet.</p>
+    /// <p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>
     pub ip_address: std::option::Option<std::string::String>,
 }
 impl CreateHsmInput {
-    /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>
+    /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>The Availability Zone where you are creating the HSM. To find the cluster's
-    /// Availability Zones, use <a>DescribeClusters</a>.</p>
+    /// <p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <code>DescribeClusters</code>.</p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>The HSM's IP address. If you specify an IP address, use an available address from the
-    /// subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify
-    /// an IP address, one is chosen for you from that subnet.</p>
+    /// <p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
@@ -3295,22 +3139,14 @@ impl std::fmt::Debug for CreateHsmInput {
 pub struct CreateClusterInput {
     /// <p>A policy that defines how the service retains backups.</p>
     pub backup_retention_policy: std::option::Option<crate::model::BackupRetentionPolicy>,
-    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is
-    /// <code>hsm1.medium</code>.</p>
+    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
     pub hsm_type: std::option::Option<std::string::String>,
-    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the
-    /// cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>
+    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
     pub source_backup_id: std::option::Option<std::string::String>,
-    /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must
-    /// specify at least one subnet. If you specify multiple subnets, they must meet the following
-    /// criteria:</p>
+    /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p>All subnets must be in the same virtual private cloud (VPC).</p>
-    /// </li>
-    /// <li>
-    /// <p>You can specify only one subnet per Availability Zone.</p>
-    /// </li>
+    /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
+    /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
     /// </ul>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
@@ -3323,26 +3159,18 @@ impl CreateClusterInput {
     ) -> std::option::Option<&crate::model::BackupRetentionPolicy> {
         self.backup_retention_policy.as_ref()
     }
-    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is
-    /// <code>hsm1.medium</code>.</p>
+    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
     pub fn hsm_type(&self) -> std::option::Option<&str> {
         self.hsm_type.as_deref()
     }
-    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the
-    /// cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>
+    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
     pub fn source_backup_id(&self) -> std::option::Option<&str> {
         self.source_backup_id.as_deref()
     }
-    /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must
-    /// specify at least one subnet. If you specify multiple subnets, they must meet the following
-    /// criteria:</p>
+    /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p>All subnets must be in the same virtual private cloud (VPC).</p>
-    /// </li>
-    /// <li>
-    /// <p>You can specify only one subnet per Availability Zone.</p>
-    /// </li>
+    /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
+    /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
     /// </ul>
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()

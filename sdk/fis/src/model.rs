@@ -146,10 +146,10 @@ pub mod experiment_template {
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExperimentTemplateTarget>,
+            v: crate::model::ExperimentTemplateTarget,
         ) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.targets = Some(hash_map);
             self
         }
@@ -174,10 +174,10 @@ pub mod experiment_template {
         pub fn actions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExperimentTemplateAction>,
+            v: crate::model::ExperimentTemplateAction,
         ) -> Self {
             let mut hash_map = self.actions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.actions = Some(hash_map);
             self
         }
@@ -201,10 +201,10 @@ pub mod experiment_template {
         /// <p>The stop conditions for the experiment.</p>
         pub fn stop_conditions(
             mut self,
-            input: impl Into<crate::model::ExperimentTemplateStopCondition>,
+            input: crate::model::ExperimentTemplateStopCondition,
         ) -> Self {
             let mut v = self.stop_conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stop_conditions = Some(v);
             self
         }
@@ -686,12 +686,9 @@ pub mod experiment_template_target {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::ExperimentTemplateTargetFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::ExperimentTemplateTargetFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1131,12 +1128,9 @@ pub mod update_experiment_template_target_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::ExperimentTemplateTargetInputFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::ExperimentTemplateTargetInputFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -1268,17 +1262,13 @@ impl ExperimentTemplateTargetInputFilter {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentTemplateStopConditionInput {
-    /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop
-    /// condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop
-    /// condition.</p>
+    /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     pub source: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl UpdateExperimentTemplateStopConditionInput {
-    /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop
-    /// condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop
-    /// condition.</p>
+    /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
@@ -1305,16 +1295,12 @@ pub mod update_experiment_template_stop_condition_input {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop
-        /// condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop
-        /// condition.</p>
+        /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
-        /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop
-        /// condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop
-        /// condition.</p>
+        /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -1531,10 +1517,10 @@ pub mod experiment {
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExperimentTarget>,
+            v: crate::model::ExperimentTarget,
         ) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.targets = Some(hash_map);
             self
         }
@@ -1556,10 +1542,10 @@ pub mod experiment {
         pub fn actions(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ExperimentAction>,
+            v: crate::model::ExperimentAction,
         ) -> Self {
             let mut hash_map = self.actions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.actions = Some(hash_map);
             self
         }
@@ -1578,12 +1564,9 @@ pub mod experiment {
         /// To override the contents of this collection use [`set_stop_conditions`](Self::set_stop_conditions).
         ///
         /// <p>The stop conditions for the experiment.</p>
-        pub fn stop_conditions(
-            mut self,
-            input: impl Into<crate::model::ExperimentStopCondition>,
-        ) -> Self {
+        pub fn stop_conditions(mut self, input: crate::model::ExperimentStopCondition) -> Self {
             let mut v = self.stop_conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stop_conditions = Some(v);
             self
         }
@@ -2254,9 +2237,9 @@ pub mod experiment_target {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ExperimentTargetFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ExperimentTargetFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -2953,10 +2936,10 @@ pub mod action_summary {
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ActionTarget>,
+            v: crate::model::ActionTarget,
         ) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.targets = Some(hash_map);
             self
         }
@@ -3070,8 +3053,7 @@ impl ActionTarget {
     }
 }
 
-/// <p>Describes an action. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">AWS FIS actions</a>
-/// in the <i>AWS Fault Injection Simulator User Guide</i>.</p>
+/// <p>Describes an action. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">AWS FIS actions</a> in the <i>AWS Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
@@ -3182,10 +3164,10 @@ pub mod action {
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ActionParameter>,
+            v: crate::model::ActionParameter,
         ) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.parameters = Some(hash_map);
             self
         }
@@ -3207,10 +3189,10 @@ pub mod action {
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ActionTarget>,
+            v: crate::model::ActionTarget,
         ) -> Self {
             let mut hash_map = self.targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.targets = Some(hash_map);
             self
         }
@@ -3522,8 +3504,7 @@ impl CreateExperimentTemplateActionInput {
     }
 }
 
-/// <p>Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or
-/// at least one resource tag. You cannot specify both ARNs and tags.</p>
+/// <p>Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or at least one resource tag. You cannot specify both ARNs and tags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentTemplateTargetInput {
@@ -3539,17 +3520,9 @@ pub struct CreateExperimentTemplateTargetInput {
         std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetInputFilter>>,
     /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
     /// <ul>
-    /// <li>
-    /// <p>ALL - Run the action on all identified targets. This is the default.</p>
-    /// </li>
-    /// <li>
-    /// <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random.
-    /// For example, COUNT(1) selects one of the targets.</p>
-    /// </li>
-    /// <li>
-    /// <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets
-    /// at random. For example, PERCENT(25) selects 25% of the targets.</p>
-    /// </li>
+    /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
+    /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
+    /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
     /// </ul>
     pub selection_mode: std::option::Option<std::string::String>,
 }
@@ -3577,17 +3550,9 @@ impl CreateExperimentTemplateTargetInput {
     }
     /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
     /// <ul>
-    /// <li>
-    /// <p>ALL - Run the action on all identified targets. This is the default.</p>
-    /// </li>
-    /// <li>
-    /// <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random.
-    /// For example, COUNT(1) selects one of the targets.</p>
-    /// </li>
-    /// <li>
-    /// <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets
-    /// at random. For example, PERCENT(25) selects 25% of the targets.</p>
-    /// </li>
+    /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
+    /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
+    /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
     /// </ul>
     pub fn selection_mode(&self) -> std::option::Option<&str> {
         self.selection_mode.as_deref()
@@ -3682,12 +3647,9 @@ pub mod create_experiment_template_target_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>The filters to apply to identify target resources using specific attributes.</p>
-        pub fn filters(
-            mut self,
-            input: impl Into<crate::model::ExperimentTemplateTargetInputFilter>,
-        ) -> Self {
+        pub fn filters(mut self, input: crate::model::ExperimentTemplateTargetInputFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -3703,17 +3665,9 @@ pub mod create_experiment_template_target_input {
         }
         /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
         /// <ul>
-        /// <li>
-        /// <p>ALL - Run the action on all identified targets. This is the default.</p>
-        /// </li>
-        /// <li>
-        /// <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random.
-        /// For example, COUNT(1) selects one of the targets.</p>
-        /// </li>
-        /// <li>
-        /// <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets
-        /// at random. For example, PERCENT(25) selects 25% of the targets.</p>
-        /// </li>
+        /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
+        /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
+        /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
         /// </ul>
         pub fn selection_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.selection_mode = Some(input.into());
@@ -3721,17 +3675,9 @@ pub mod create_experiment_template_target_input {
         }
         /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
         /// <ul>
-        /// <li>
-        /// <p>ALL - Run the action on all identified targets. This is the default.</p>
-        /// </li>
-        /// <li>
-        /// <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random.
-        /// For example, COUNT(1) selects one of the targets.</p>
-        /// </li>
-        /// <li>
-        /// <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets
-        /// at random. For example, PERCENT(25) selects 25% of the targets.</p>
-        /// </li>
+        /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
+        /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
+        /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
         /// </ul>
         pub fn set_selection_mode(
             mut self,
@@ -3763,23 +3709,17 @@ impl CreateExperimentTemplateTargetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentTemplateStopConditionInput {
-    /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop
-    /// condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop
-    /// condition.</p>
+    /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     pub source: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is
-    /// a CloudWatch alarm.</p>
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is a CloudWatch alarm.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl CreateExperimentTemplateStopConditionInput {
-    /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop
-    /// condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop
-    /// condition.</p>
+    /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is
-    /// a CloudWatch alarm.</p>
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is a CloudWatch alarm.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -3802,28 +3742,22 @@ pub mod create_experiment_template_stop_condition_input {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop
-        /// condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop
-        /// condition.</p>
+        /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
-        /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop
-        /// condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop
-        /// condition.</p>
+        /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is
-        /// a CloudWatch alarm.</p>
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is a CloudWatch alarm.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is
-        /// a CloudWatch alarm.</p>
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is a CloudWatch alarm.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self

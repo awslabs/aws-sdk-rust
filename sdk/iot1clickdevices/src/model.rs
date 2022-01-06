@@ -5,16 +5,14 @@
 pub struct DeviceDescription {
     /// <p>The ARN of the device.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An array of zero or more elements of DeviceAttribute objects providing
-    /// user specified device attributes.</p>
+    /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unique identifier of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value indicating whether or not the device is enabled.</p>
     pub enabled: bool,
-    /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the
-    /// device.</p>
+    /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
     pub remaining_life: f64,
     /// <p>The type of the device, such as "button".</p>
     pub r#type: std::option::Option<std::string::String>,
@@ -27,8 +25,7 @@ impl DeviceDescription {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An array of zero or more elements of DeviceAttribute objects providing
-    /// user specified device attributes.</p>
+    /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -43,8 +40,7 @@ impl DeviceDescription {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the
-    /// device.</p>
+    /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
     pub fn remaining_life(&self) -> f64 {
         self.remaining_life
     }
@@ -106,8 +102,7 @@ pub mod device_description {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>An array of zero or more elements of DeviceAttribute objects providing
-        /// user specified device attributes.</p>
+        /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -118,8 +113,7 @@ pub mod device_description {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>An array of zero or more elements of DeviceAttribute objects providing
-        /// user specified device attributes.</p>
+        /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -149,14 +143,12 @@ pub mod device_description {
             self.enabled = input;
             self
         }
-        /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the
-        /// device.</p>
+        /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
         pub fn remaining_life(mut self, input: f64) -> Self {
             self.remaining_life = Some(input);
             self
         }
-        /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the
-        /// device.</p>
+        /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
         pub fn set_remaining_life(mut self, input: std::option::Option<f64>) -> Self {
             self.remaining_life = input;
             self

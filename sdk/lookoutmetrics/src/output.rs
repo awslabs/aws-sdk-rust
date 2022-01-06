@@ -282,8 +282,7 @@ impl ListTagsForResourceOutput {
 pub struct ListMetricSetsOutput {
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
     pub metric_set_summary_list: std::option::Option<std::vec::Vec<crate::model::MetricSetSummary>>,
-    /// <p>If the response is truncated, the list call returns this token. To retrieve the next set
-    /// of results, use the token in the next list request. </p>
+    /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMetricSetsOutput {
@@ -293,8 +292,7 @@ impl ListMetricSetsOutput {
     ) -> std::option::Option<&[crate::model::MetricSetSummary]> {
         self.metric_set_summary_list.as_deref()
     }
-    /// <p>If the response is truncated, the list call returns this token. To retrieve the next set
-    /// of results, use the token in the next list request. </p>
+    /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -323,12 +321,9 @@ pub mod list_metric_sets_output {
         /// To override the contents of this collection use [`set_metric_set_summary_list`](Self::set_metric_set_summary_list).
         ///
         /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
-        pub fn metric_set_summary_list(
-            mut self,
-            input: impl Into<crate::model::MetricSetSummary>,
-        ) -> Self {
+        pub fn metric_set_summary_list(mut self, input: crate::model::MetricSetSummary) -> Self {
             let mut v = self.metric_set_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_set_summary_list = Some(v);
             self
         }
@@ -340,14 +335,12 @@ pub mod list_metric_sets_output {
             self.metric_set_summary_list = input;
             self
         }
-        /// <p>If the response is truncated, the list call returns this token. To retrieve the next set
-        /// of results, use the token in the next list request. </p>
+        /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, the list call returns this token. To retrieve the next set
-        /// of results, use the token in the next list request. </p>
+        /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -486,9 +479,9 @@ pub mod list_anomaly_group_time_series_output {
         /// To override the contents of this collection use [`set_time_series_list`](Self::set_time_series_list).
         ///
         /// <p>A list of anomalous metrics.</p>
-        pub fn time_series_list(mut self, input: impl Into<crate::model::TimeSeries>) -> Self {
+        pub fn time_series_list(mut self, input: crate::model::TimeSeries) -> Self {
             let mut v = self.time_series_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.time_series_list = Some(v);
             self
         }
@@ -581,10 +574,10 @@ pub mod list_anomaly_group_summaries_output {
         /// <p>A list of anomaly group summaries.</p>
         pub fn anomaly_group_summary_list(
             mut self,
-            input: impl Into<crate::model::AnomalyGroupSummary>,
+            input: crate::model::AnomalyGroupSummary,
         ) -> Self {
             let mut v = self.anomaly_group_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.anomaly_group_summary_list = Some(v);
             self
         }
@@ -642,12 +635,100 @@ impl ListAnomalyGroupSummariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAnomalyGroupRelatedMetricsOutput {
+    /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
+    pub inter_metric_impact_list:
+        std::option::Option<std::vec::Vec<crate::model::InterMetricImpactDetails>>,
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListAnomalyGroupRelatedMetricsOutput {
+    /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
+    pub fn inter_metric_impact_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::InterMetricImpactDetails]> {
+        self.inter_metric_impact_list.as_deref()
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAnomalyGroupRelatedMetricsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAnomalyGroupRelatedMetricsOutput");
+        formatter.field("inter_metric_impact_list", &self.inter_metric_impact_list);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput)
+pub mod list_anomaly_group_related_metrics_output {
+    /// A builder for [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) inter_metric_impact_list:
+            std::option::Option<std::vec::Vec<crate::model::InterMetricImpactDetails>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `inter_metric_impact_list`.
+        ///
+        /// To override the contents of this collection use [`set_inter_metric_impact_list`](Self::set_inter_metric_impact_list).
+        ///
+        /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
+        pub fn inter_metric_impact_list(
+            mut self,
+            input: crate::model::InterMetricImpactDetails,
+        ) -> Self {
+            let mut v = self.inter_metric_impact_list.unwrap_or_default();
+            v.push(input);
+            self.inter_metric_impact_list = Some(v);
+            self
+        }
+        /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
+        pub fn set_inter_metric_impact_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InterMetricImpactDetails>>,
+        ) -> Self {
+            self.inter_metric_impact_list = input;
+            self
+        }
+        /// <p>The pagination token that's included if more results are available.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token that's included if more results are available.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput)
+        pub fn build(self) -> crate::output::ListAnomalyGroupRelatedMetricsOutput {
+            crate::output::ListAnomalyGroupRelatedMetricsOutput {
+                inter_metric_impact_list: self.inter_metric_impact_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAnomalyGroupRelatedMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput)
+    pub fn builder() -> crate::output::list_anomaly_group_related_metrics_output::Builder {
+        crate::output::list_anomaly_group_related_metrics_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAnomalyDetectorsOutput {
     /// <p>A list of anomaly detectors in the account in the current region.</p>
     pub anomaly_detector_summary_list:
         std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorSummary>>,
-    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the
-    /// token in the next request.</p>
+    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnomalyDetectorsOutput {
@@ -657,8 +738,7 @@ impl ListAnomalyDetectorsOutput {
     ) -> std::option::Option<&[crate::model::AnomalyDetectorSummary]> {
         self.anomaly_detector_summary_list.as_deref()
     }
-    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the
-    /// token in the next request.</p>
+    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -692,10 +772,10 @@ pub mod list_anomaly_detectors_output {
         /// <p>A list of anomaly detectors in the account in the current region.</p>
         pub fn anomaly_detector_summary_list(
             mut self,
-            input: impl Into<crate::model::AnomalyDetectorSummary>,
+            input: crate::model::AnomalyDetectorSummary,
         ) -> Self {
             let mut v = self.anomaly_detector_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.anomaly_detector_summary_list = Some(v);
             self
         }
@@ -707,14 +787,12 @@ pub mod list_anomaly_detectors_output {
             self.anomaly_detector_summary_list = input;
             self
         }
-        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the
-        /// token in the next request.</p>
+        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the
-        /// token in the next request.</p>
+        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -741,8 +819,7 @@ impl ListAnomalyDetectorsOutput {
 pub struct ListAlertsOutput {
     /// <p>Contains information about an alert.</p>
     pub alert_summary_list: std::option::Option<std::vec::Vec<crate::model::AlertSummary>>,
-    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this
-    /// token in the next request.</p>
+    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAlertsOutput {
@@ -750,8 +827,7 @@ impl ListAlertsOutput {
     pub fn alert_summary_list(&self) -> std::option::Option<&[crate::model::AlertSummary]> {
         self.alert_summary_list.as_deref()
     }
-    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this
-    /// token in the next request.</p>
+    /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -780,9 +856,9 @@ pub mod list_alerts_output {
         /// To override the contents of this collection use [`set_alert_summary_list`](Self::set_alert_summary_list).
         ///
         /// <p>Contains information about an alert.</p>
-        pub fn alert_summary_list(mut self, input: impl Into<crate::model::AlertSummary>) -> Self {
+        pub fn alert_summary_list(mut self, input: crate::model::AlertSummary) -> Self {
             let mut v = self.alert_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.alert_summary_list = Some(v);
             self
         }
@@ -794,14 +870,12 @@ pub mod list_alerts_output {
             self.alert_summary_list = input;
             self
         }
-        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this
-        /// token in the next request.</p>
+        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this
-        /// token in the next request.</p>
+        /// <p>If the response is truncated, the service returns this token. To retrieve the next set of results, use this token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -884,9 +958,9 @@ pub mod get_sample_data_output {
         /// To override the contents of this collection use [`set_sample_rows`](Self::set_sample_rows).
         ///
         /// <p>A list of records.</p>
-        pub fn sample_rows(mut self, input: impl Into<std::vec::Vec<std::string::String>>) -> Self {
+        pub fn sample_rows(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.sample_rows.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sample_rows = Some(v);
             self
         }
@@ -965,10 +1039,10 @@ pub mod get_feedback_output {
         /// <p>Feedback for an anomalous metric.</p>
         pub fn anomaly_group_time_series_feedback(
             mut self,
-            input: impl Into<crate::model::TimeSeriesFeedback>,
+            input: crate::model::TimeSeriesFeedback,
         ) -> Self {
             let mut v = self.anomaly_group_time_series_feedback.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.anomaly_group_time_series_feedback = Some(v);
             self
         }
@@ -1281,9 +1355,9 @@ pub mod describe_metric_set_output {
         /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
         ///
         /// <p>A list of the metrics defined by the dataset.</p>
-        pub fn metric_list(mut self, input: impl Into<crate::model::Metric>) -> Self {
+        pub fn metric_list(mut self, input: crate::model::Metric) -> Self {
             let mut v = self.metric_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_list = Some(v);
             self
         }
@@ -1675,9 +1749,9 @@ pub mod describe_anomaly_detection_executions_output {
         /// To override the contents of this collection use [`set_execution_list`](Self::set_execution_list).
         ///
         /// <p>A list of detection jobs.</p>
-        pub fn execution_list(mut self, input: impl Into<crate::model::ExecutionStatus>) -> Self {
+        pub fn execution_list(mut self, input: crate::model::ExecutionStatus) -> Self {
             let mut v = self.execution_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.execution_list = Some(v);
             self
         }

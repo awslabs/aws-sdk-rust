@@ -13,14 +13,12 @@ pub mod add_facet_to_object_input {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28,12 +26,12 @@ pub mod add_facet_to_object_input {
             self.directory_arn = input;
             self
         }
-        /// <p>Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.</p>
+        /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
         pub fn schema_facet(mut self, input: crate::model::SchemaFacet) -> Self {
             self.schema_facet = Some(input);
             self
         }
-        /// <p>Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.</p>
+        /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
         pub fn set_schema_facet(
             mut self,
             input: std::option::Option<crate::model::SchemaFacet>,
@@ -46,12 +44,9 @@ pub mod add_facet_to_object_input {
         /// To override the contents of this collection use [`set_object_attribute_list`](Self::set_object_attribute_list).
         ///
         /// <p>Attributes on the facet that you are adding to the object.</p>
-        pub fn object_attribute_list(
-            mut self,
-            input: impl Into<crate::model::AttributeKeyAndValue>,
-        ) -> Self {
+        pub fn object_attribute_list(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.object_attribute_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.object_attribute_list = Some(v);
             self
         }
@@ -95,7 +90,7 @@ pub mod add_facet_to_object_input {
 #[doc(hidden)]
 pub type AddFacetToObjectInputOperationOutputAlias = crate::operation::AddFacetToObject;
 #[doc(hidden)]
-pub type AddFacetToObjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddFacetToObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddFacetToObjectInput {
     /// Consumes the builder and constructs an Operation<[`AddFacetToObject`](crate::operation::AddFacetToObject)>
     #[allow(clippy::let_and_return)]
@@ -106,7 +101,7 @@ impl AddFacetToObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddFacetToObject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -211,7 +206,7 @@ impl AddFacetToObjectInput {
             "AddFacetToObject",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -244,14 +239,12 @@ pub mod apply_schema_input {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
         pub fn published_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.published_schema_arn = Some(input.into());
             self
         }
-        /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
         pub fn set_published_schema_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -259,14 +252,12 @@ pub mod apply_schema_input {
             self.published_schema_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// into which the schema is copied. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// into which the schema is copied. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -291,7 +282,7 @@ pub mod apply_schema_input {
 #[doc(hidden)]
 pub type ApplySchemaInputOperationOutputAlias = crate::operation::ApplySchema;
 #[doc(hidden)]
-pub type ApplySchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ApplySchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ApplySchemaInput {
     /// Consumes the builder and constructs an Operation<[`ApplySchema`](crate::operation::ApplySchema)>
     #[allow(clippy::let_and_return)]
@@ -302,7 +293,7 @@ impl ApplySchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ApplySchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -406,7 +397,7 @@ impl ApplySchemaInput {
             "ApplySchema",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -441,14 +432,12 @@ pub mod attach_object_input {
         pub(crate) link_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -511,7 +500,7 @@ pub mod attach_object_input {
 #[doc(hidden)]
 pub type AttachObjectInputOperationOutputAlias = crate::operation::AttachObject;
 #[doc(hidden)]
-pub type AttachObjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AttachObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachObjectInput {
     /// Consumes the builder and constructs an Operation<[`AttachObject`](crate::operation::AttachObject)>
     #[allow(clippy::let_and_return)]
@@ -522,7 +511,7 @@ impl AttachObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachObject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -626,7 +615,7 @@ impl AttachObjectInput {
             "AttachObject",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -660,14 +649,12 @@ pub mod attach_policy_input {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -688,14 +675,12 @@ pub mod attach_policy_input {
             self.policy_reference = input;
             self
         }
-        /// <p>The reference that identifies the object to which the policy will be
-        /// attached.</p>
+        /// <p>The reference that identifies the object to which the policy will be attached.</p>
         pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
             self.object_reference = Some(input);
             self
         }
-        /// <p>The reference that identifies the object to which the policy will be
-        /// attached.</p>
+        /// <p>The reference that identifies the object to which the policy will be attached.</p>
         pub fn set_object_reference(
             mut self,
             input: std::option::Option<crate::model::ObjectReference>,
@@ -721,7 +706,7 @@ pub mod attach_policy_input {
 #[doc(hidden)]
 pub type AttachPolicyInputOperationOutputAlias = crate::operation::AttachPolicy;
 #[doc(hidden)]
-pub type AttachPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AttachPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachPolicyInput {
     /// Consumes the builder and constructs an Operation<[`AttachPolicy`](crate::operation::AttachPolicy)>
     #[allow(clippy::let_and_return)]
@@ -732,7 +717,7 @@ impl AttachPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -836,7 +821,7 @@ impl AttachPolicyInput {
             "AttachPolicy",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -870,14 +855,12 @@ pub mod attach_to_index_input {
         pub(crate) target_reference: std::option::Option<crate::model::ObjectReference>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the directory where the object and index
-        /// exist.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where the object and index
-        /// exist.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -929,7 +912,7 @@ pub mod attach_to_index_input {
 #[doc(hidden)]
 pub type AttachToIndexInputOperationOutputAlias = crate::operation::AttachToIndex;
 #[doc(hidden)]
-pub type AttachToIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AttachToIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachToIndexInput {
     /// Consumes the builder and constructs an Operation<[`AttachToIndex`](crate::operation::AttachToIndex)>
     #[allow(clippy::let_and_return)]
@@ -940,7 +923,7 @@ impl AttachToIndexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachToIndex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1045,7 +1028,7 @@ impl AttachToIndexInput {
             "AttachToIndex",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1082,14 +1065,12 @@ pub mod attach_typed_link_input {
             std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed
-        /// link.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed
-        /// link.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1144,9 +1125,9 @@ pub mod attach_typed_link_input {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A set of attributes that are associated with the typed link.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::AttributeNameAndValue>) -> Self {
+        pub fn attributes(mut self, input: crate::model::AttributeNameAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -1178,7 +1159,7 @@ pub mod attach_typed_link_input {
 #[doc(hidden)]
 pub type AttachTypedLinkInputOperationOutputAlias = crate::operation::AttachTypedLink;
 #[doc(hidden)]
-pub type AttachTypedLinkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AttachTypedLinkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachTypedLinkInput {
     /// Consumes the builder and constructs an Operation<[`AttachTypedLink`](crate::operation::AttachTypedLink)>
     #[allow(clippy::let_and_return)]
@@ -1189,7 +1170,7 @@ impl AttachTypedLinkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachTypedLink,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1294,7 +1275,7 @@ impl AttachTypedLinkInput {
             "AttachTypedLink",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1328,14 +1309,12 @@ pub mod batch_read_input {
         pub(crate) consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1348,9 +1327,9 @@ pub mod batch_read_input {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>A list of operations that are part of the batch.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::BatchReadOperation>) -> Self {
+        pub fn operations(mut self, input: crate::model::BatchReadOperation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1362,14 +1341,12 @@ pub mod batch_read_input {
             self.operations = input;
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
             self.consistency_level = Some(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -1393,7 +1370,7 @@ pub mod batch_read_input {
 #[doc(hidden)]
 pub type BatchReadInputOperationOutputAlias = crate::operation::BatchRead;
 #[doc(hidden)]
-pub type BatchReadInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchReadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchReadInput {
     /// Consumes the builder and constructs an Operation<[`BatchRead`](crate::operation::BatchRead)>
     #[allow(clippy::let_and_return)]
@@ -1404,7 +1381,7 @@ impl BatchReadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchRead,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1522,7 +1499,7 @@ impl BatchReadInput {
                     "BatchRead",
                     "clouddirectory",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1556,14 +1533,12 @@ pub mod batch_write_input {
             std::option::Option<std::vec::Vec<crate::model::BatchWriteOperation>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1576,9 +1551,9 @@ pub mod batch_write_input {
         /// To override the contents of this collection use [`set_operations`](Self::set_operations).
         ///
         /// <p>A list of operations that are part of the batch.</p>
-        pub fn operations(mut self, input: impl Into<crate::model::BatchWriteOperation>) -> Self {
+        pub fn operations(mut self, input: crate::model::BatchWriteOperation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operations = Some(v);
             self
         }
@@ -1607,7 +1582,7 @@ pub mod batch_write_input {
 #[doc(hidden)]
 pub type BatchWriteInputOperationOutputAlias = crate::operation::BatchWrite;
 #[doc(hidden)]
-pub type BatchWriteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchWriteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchWriteInput {
     /// Consumes the builder and constructs an Operation<[`BatchWrite`](crate::operation::BatchWrite)>
     #[allow(clippy::let_and_return)]
@@ -1618,7 +1593,7 @@ impl BatchWriteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchWrite,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1722,7 +1697,7 @@ impl BatchWriteInput {
             "BatchWrite",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1755,26 +1730,22 @@ pub mod create_directory_input {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the <a>Directory</a>. Should be unique per account, per
-        /// region.</p>
+        /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the <a>Directory</a>. Should be unique per account, per
-        /// region.</p>
+        /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the
-        /// data <a>Directory</a>. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the
-        /// data <a>Directory</a>. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -1796,7 +1767,7 @@ pub mod create_directory_input {
 #[doc(hidden)]
 pub type CreateDirectoryInputOperationOutputAlias = crate::operation::CreateDirectory;
 #[doc(hidden)]
-pub type CreateDirectoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDirectoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDirectoryInput {
     /// Consumes the builder and constructs an Operation<[`CreateDirectory`](crate::operation::CreateDirectory)>
     #[allow(clippy::let_and_return)]
@@ -1807,7 +1778,7 @@ impl CreateDirectoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDirectory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1912,7 +1883,7 @@ impl CreateDirectoryInput {
             "CreateDirectory",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1948,24 +1919,22 @@ pub mod create_facet_input {
         pub(crate) facet_style: std::option::Option<crate::model::FacetStyle>,
     }
     impl Builder {
-        /// <p>The schema ARN in which the new <a>Facet</a> will be created. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The schema ARN in which the new <a>Facet</a> will be created. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
         }
-        /// <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
+        /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
+        /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1974,14 +1943,14 @@ pub mod create_facet_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The attributes that are associated with the <a>Facet</a>.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::FacetAttribute>) -> Self {
+        /// <p>The attributes that are associated with the <code>Facet</code>.</p>
+        pub fn attributes(mut self, input: crate::model::FacetAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
-        /// <p>The attributes that are associated with the <a>Facet</a>.</p>
+        /// <p>The attributes that are associated with the <code>Facet</code>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FacetAttribute>>,
@@ -1989,55 +1958,35 @@ pub mod create_facet_input {
             self.attributes = input;
             self
         }
-        /// <p>Specifies whether a given object created from this facet is of type node, leaf node,
-        /// policy or index.</p>
+        /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
         /// <ul>
-        /// <li>
-        /// <p>Node: Can have multiple children but one parent.</p>
-        /// </li>
+        /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Leaf node: Cannot have children but can have multiple parents.</p>
-        /// </li>
+        /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Policy: Allows you to store a policy document and policy type. For more
-        /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-        /// </li>
+        /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Index: Can be created with the Index API.</p>
-        /// </li>
+        /// <li> <p>Index: Can be created with the Index API.</p> </li>
         /// </ul>
         pub fn object_type(mut self, input: crate::model::ObjectType) -> Self {
             self.object_type = Some(input);
             self
         }
-        /// <p>Specifies whether a given object created from this facet is of type node, leaf node,
-        /// policy or index.</p>
+        /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
         /// <ul>
-        /// <li>
-        /// <p>Node: Can have multiple children but one parent.</p>
-        /// </li>
+        /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Leaf node: Cannot have children but can have multiple parents.</p>
-        /// </li>
+        /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Policy: Allows you to store a policy document and policy type. For more
-        /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-        /// </li>
+        /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Index: Can be created with the Index API.</p>
-        /// </li>
+        /// <li> <p>Index: Can be created with the Index API.</p> </li>
         /// </ul>
         pub fn set_object_type(
             mut self,
@@ -2079,7 +2028,7 @@ pub mod create_facet_input {
 #[doc(hidden)]
 pub type CreateFacetInputOperationOutputAlias = crate::operation::CreateFacet;
 #[doc(hidden)]
-pub type CreateFacetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFacetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFacetInput {
     /// Consumes the builder and constructs an Operation<[`CreateFacet`](crate::operation::CreateFacet)>
     #[allow(clippy::let_and_return)]
@@ -2090,7 +2039,7 @@ impl CreateFacetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFacet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2194,7 +2143,7 @@ impl CreateFacetInput {
             "CreateFacet",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2248,19 +2197,14 @@ pub mod create_index_input {
         ///
         /// To override the contents of this collection use [`set_ordered_indexed_attribute_list`](Self::set_ordered_indexed_attribute_list).
         ///
-        /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
-        /// is supported.</p>
-        pub fn ordered_indexed_attribute_list(
-            mut self,
-            input: impl Into<crate::model::AttributeKey>,
-        ) -> Self {
+        /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
+        pub fn ordered_indexed_attribute_list(mut self, input: crate::model::AttributeKey) -> Self {
             let mut v = self.ordered_indexed_attribute_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ordered_indexed_attribute_list = Some(v);
             self
         }
-        /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
-        /// is supported.</p>
+        /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
         pub fn set_ordered_indexed_attribute_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
@@ -2268,14 +2212,12 @@ pub mod create_index_input {
             self.ordered_indexed_attribute_list = input;
             self
         }
-        /// <p>Indicates whether the attribute that is being indexed has unique values or
-        /// not.</p>
+        /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
         pub fn is_unique(mut self, input: bool) -> Self {
             self.is_unique = Some(input);
             self
         }
-        /// <p>Indicates whether the attribute that is being indexed has unique values or
-        /// not.</p>
+        /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
         pub fn set_is_unique(mut self, input: std::option::Option<bool>) -> Self {
             self.is_unique = input;
             self
@@ -2323,7 +2265,7 @@ pub mod create_index_input {
 #[doc(hidden)]
 pub type CreateIndexInputOperationOutputAlias = crate::operation::CreateIndex;
 #[doc(hidden)]
-pub type CreateIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIndexInput {
     /// Consumes the builder and constructs an Operation<[`CreateIndex`](crate::operation::CreateIndex)>
     #[allow(clippy::let_and_return)]
@@ -2334,7 +2276,7 @@ impl CreateIndexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateIndex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2438,7 +2380,7 @@ impl CreateIndexInput {
             "CreateIndex",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2475,14 +2417,12 @@ pub mod create_object_input {
         pub(crate) link_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// in which the object will be created. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// in which the object will be created. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2494,14 +2434,14 @@ pub mod create_object_input {
         ///
         /// To override the contents of this collection use [`set_schema_facets`](Self::set_schema_facets).
         ///
-        /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.</p>
-        pub fn schema_facets(mut self, input: impl Into<crate::model::SchemaFacet>) -> Self {
+        /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
+        pub fn schema_facets(mut self, input: crate::model::SchemaFacet) -> Self {
             let mut v = self.schema_facets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema_facets = Some(v);
             self
         }
-        /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.</p>
+        /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
         pub fn set_schema_facets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
@@ -2513,19 +2453,14 @@ pub mod create_object_input {
         ///
         /// To override the contents of this collection use [`set_object_attribute_list`](Self::set_object_attribute_list).
         ///
-        /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map
-        /// value.</p>
-        pub fn object_attribute_list(
-            mut self,
-            input: impl Into<crate::model::AttributeKeyAndValue>,
-        ) -> Self {
+        /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
+        pub fn object_attribute_list(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.object_attribute_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.object_attribute_list = Some(v);
             self
         }
-        /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map
-        /// value.</p>
+        /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
         pub fn set_object_attribute_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -2576,7 +2511,7 @@ pub mod create_object_input {
 #[doc(hidden)]
 pub type CreateObjectInputOperationOutputAlias = crate::operation::CreateObject;
 #[doc(hidden)]
-pub type CreateObjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateObjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateObject`](crate::operation::CreateObject)>
     #[allow(clippy::let_and_return)]
@@ -2587,7 +2522,7 @@ impl CreateObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateObject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2691,7 +2626,7 @@ impl CreateObjectInput {
             "CreateObject",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2723,14 +2658,12 @@ pub mod create_schema_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name that is associated with the schema. This is unique to each account and in each
-        /// region.</p>
+        /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name that is associated with the schema. This is unique to each account and in each
-        /// region.</p>
+        /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2749,7 +2682,7 @@ pub mod create_schema_input {
 #[doc(hidden)]
 pub type CreateSchemaInputOperationOutputAlias = crate::operation::CreateSchema;
 #[doc(hidden)]
-pub type CreateSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSchemaInput {
     /// Consumes the builder and constructs an Operation<[`CreateSchema`](crate::operation::CreateSchema)>
     #[allow(clippy::let_and_return)]
@@ -2760,7 +2693,7 @@ impl CreateSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2840,7 +2773,7 @@ impl CreateSchemaInput {
             "CreateSchema",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2873,28 +2806,22 @@ pub mod create_typed_link_facet_input {
         pub(crate) facet: std::option::Option<crate::model::TypedLinkFacet>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
         }
-        /// <p>
-        /// <a>Facet</a> structure that is associated with the typed link
-        /// facet.</p>
+        /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
         pub fn facet(mut self, input: crate::model::TypedLinkFacet) -> Self {
             self.facet = Some(input);
             self
         }
-        /// <p>
-        /// <a>Facet</a> structure that is associated with the typed link
-        /// facet.</p>
+        /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
         pub fn set_facet(
             mut self,
             input: std::option::Option<crate::model::TypedLinkFacet>,
@@ -2919,7 +2846,7 @@ pub mod create_typed_link_facet_input {
 #[doc(hidden)]
 pub type CreateTypedLinkFacetInputOperationOutputAlias = crate::operation::CreateTypedLinkFacet;
 #[doc(hidden)]
-pub type CreateTypedLinkFacetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTypedLinkFacetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTypedLinkFacetInput {
     /// Consumes the builder and constructs an Operation<[`CreateTypedLinkFacet`](crate::operation::CreateTypedLinkFacet)>
     #[allow(clippy::let_and_return)]
@@ -2930,7 +2857,7 @@ impl CreateTypedLinkFacetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTypedLinkFacet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3040,7 +2967,7 @@ impl CreateTypedLinkFacetInput {
             "CreateTypedLinkFacet",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3101,7 +3028,7 @@ pub mod delete_directory_input {
 #[doc(hidden)]
 pub type DeleteDirectoryInputOperationOutputAlias = crate::operation::DeleteDirectory;
 #[doc(hidden)]
-pub type DeleteDirectoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDirectoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDirectoryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDirectory`](crate::operation::DeleteDirectory)>
     #[allow(clippy::let_and_return)]
@@ -3112,7 +3039,7 @@ impl DeleteDirectoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDirectory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3211,7 +3138,7 @@ impl DeleteDirectoryInput {
             "DeleteDirectory",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3236,14 +3163,12 @@ pub mod delete_facet_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -3275,7 +3200,7 @@ pub mod delete_facet_input {
 #[doc(hidden)]
 pub type DeleteFacetInputOperationOutputAlias = crate::operation::DeleteFacet;
 #[doc(hidden)]
-pub type DeleteFacetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFacetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFacetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFacet`](crate::operation::DeleteFacet)>
     #[allow(clippy::let_and_return)]
@@ -3286,7 +3211,7 @@ impl DeleteFacetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFacet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3390,7 +3315,7 @@ impl DeleteFacetInput {
             "DeleteFacet",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3423,14 +3348,12 @@ pub mod delete_object_input {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3468,7 +3391,7 @@ pub mod delete_object_input {
 #[doc(hidden)]
 pub type DeleteObjectInputOperationOutputAlias = crate::operation::DeleteObject;
 #[doc(hidden)]
-pub type DeleteObjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteObjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteObject`](crate::operation::DeleteObject)>
     #[allow(clippy::let_and_return)]
@@ -3479,7 +3402,7 @@ impl DeleteObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteObject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3583,7 +3506,7 @@ impl DeleteObjectInput {
             "DeleteObject",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3615,14 +3538,12 @@ pub mod delete_schema_input {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-        /// <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-        /// <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -3643,7 +3564,7 @@ pub mod delete_schema_input {
 #[doc(hidden)]
 pub type DeleteSchemaInputOperationOutputAlias = crate::operation::DeleteSchema;
 #[doc(hidden)]
-pub type DeleteSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSchemaInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSchema`](crate::operation::DeleteSchema)>
     #[allow(clippy::let_and_return)]
@@ -3654,7 +3575,7 @@ impl DeleteSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3753,7 +3674,7 @@ impl DeleteSchemaInput {
             "DeleteSchema",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3778,14 +3699,12 @@ pub mod delete_typed_link_facet_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -3817,7 +3736,7 @@ pub mod delete_typed_link_facet_input {
 #[doc(hidden)]
 pub type DeleteTypedLinkFacetInputOperationOutputAlias = crate::operation::DeleteTypedLinkFacet;
 #[doc(hidden)]
-pub type DeleteTypedLinkFacetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTypedLinkFacetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTypedLinkFacetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTypedLinkFacet`](crate::operation::DeleteTypedLinkFacet)>
     #[allow(clippy::let_and_return)]
@@ -3828,7 +3747,7 @@ impl DeleteTypedLinkFacetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTypedLinkFacet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3938,7 +3857,7 @@ impl DeleteTypedLinkFacetInput {
             "DeleteTypedLinkFacet",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3972,14 +3891,12 @@ pub mod detach_from_index_input {
         pub(crate) target_reference: std::option::Option<crate::model::ObjectReference>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist
-        /// in.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist
-        /// in.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4031,7 +3948,7 @@ pub mod detach_from_index_input {
 #[doc(hidden)]
 pub type DetachFromIndexInputOperationOutputAlias = crate::operation::DetachFromIndex;
 #[doc(hidden)]
-pub type DetachFromIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetachFromIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachFromIndexInput {
     /// Consumes the builder and constructs an Operation<[`DetachFromIndex`](crate::operation::DetachFromIndex)>
     #[allow(clippy::let_and_return)]
@@ -4042,7 +3959,7 @@ impl DetachFromIndexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachFromIndex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4147,7 +4064,7 @@ impl DetachFromIndexInput {
             "DetachFromIndex",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4181,14 +4098,12 @@ pub mod detach_object_input {
         pub(crate) link_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4196,14 +4111,12 @@ pub mod detach_object_input {
             self.directory_arn = input;
             self
         }
-        /// <p>The parent reference from which the object with the specified link name is
-        /// detached.</p>
+        /// <p>The parent reference from which the object with the specified link name is detached.</p>
         pub fn parent_reference(mut self, input: crate::model::ObjectReference) -> Self {
             self.parent_reference = Some(input);
             self
         }
-        /// <p>The parent reference from which the object with the specified link name is
-        /// detached.</p>
+        /// <p>The parent reference from which the object with the specified link name is detached.</p>
         pub fn set_parent_reference(
             mut self,
             input: std::option::Option<crate::model::ObjectReference>,
@@ -4239,7 +4152,7 @@ pub mod detach_object_input {
 #[doc(hidden)]
 pub type DetachObjectInputOperationOutputAlias = crate::operation::DetachObject;
 #[doc(hidden)]
-pub type DetachObjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetachObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachObjectInput {
     /// Consumes the builder and constructs an Operation<[`DetachObject`](crate::operation::DetachObject)>
     #[allow(clippy::let_and_return)]
@@ -4250,7 +4163,7 @@ impl DetachObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachObject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4354,7 +4267,7 @@ impl DetachObjectInput {
             "DetachObject",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4388,14 +4301,12 @@ pub mod detach_policy_input {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4447,7 +4358,7 @@ pub mod detach_policy_input {
 #[doc(hidden)]
 pub type DetachPolicyInputOperationOutputAlias = crate::operation::DetachPolicy;
 #[doc(hidden)]
-pub type DetachPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetachPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DetachPolicy`](crate::operation::DetachPolicy)>
     #[allow(clippy::let_and_return)]
@@ -4458,7 +4369,7 @@ impl DetachPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4562,7 +4473,7 @@ impl DetachPolicyInput {
             "DetachPolicy",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4595,14 +4506,12 @@ pub mod detach_typed_link_input {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed
-        /// link.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed
-        /// link.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4640,7 +4549,7 @@ pub mod detach_typed_link_input {
 #[doc(hidden)]
 pub type DetachTypedLinkInputOperationOutputAlias = crate::operation::DetachTypedLink;
 #[doc(hidden)]
-pub type DetachTypedLinkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetachTypedLinkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachTypedLinkInput {
     /// Consumes the builder and constructs an Operation<[`DetachTypedLink`](crate::operation::DetachTypedLink)>
     #[allow(clippy::let_and_return)]
@@ -4651,7 +4560,7 @@ impl DetachTypedLinkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachTypedLink,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4756,7 +4665,7 @@ impl DetachTypedLinkInput {
             "DetachTypedLink",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4817,7 +4726,7 @@ pub mod disable_directory_input {
 #[doc(hidden)]
 pub type DisableDirectoryInputOperationOutputAlias = crate::operation::DisableDirectory;
 #[doc(hidden)]
-pub type DisableDirectoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableDirectoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableDirectoryInput {
     /// Consumes the builder and constructs an Operation<[`DisableDirectory`](crate::operation::DisableDirectory)>
     #[allow(clippy::let_and_return)]
@@ -4828,7 +4737,7 @@ impl DisableDirectoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableDirectory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4927,7 +4836,7 @@ impl DisableDirectoryInput {
             "DisableDirectory",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4980,7 +4889,7 @@ pub mod enable_directory_input {
 #[doc(hidden)]
 pub type EnableDirectoryInputOperationOutputAlias = crate::operation::EnableDirectory;
 #[doc(hidden)]
-pub type EnableDirectoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableDirectoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableDirectoryInput {
     /// Consumes the builder and constructs an Operation<[`EnableDirectory`](crate::operation::EnableDirectory)>
     #[allow(clippy::let_and_return)]
@@ -4991,7 +4900,7 @@ impl EnableDirectoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableDirectory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5090,7 +4999,7 @@ impl EnableDirectoryInput {
             "EnableDirectory",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5141,7 +5050,7 @@ pub mod get_applied_schema_version_input {
 pub type GetAppliedSchemaVersionInputOperationOutputAlias =
     crate::operation::GetAppliedSchemaVersion;
 #[doc(hidden)]
-pub type GetAppliedSchemaVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppliedSchemaVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppliedSchemaVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetAppliedSchemaVersion`](crate::operation::GetAppliedSchemaVersion)>
     #[allow(clippy::let_and_return)]
@@ -5152,7 +5061,7 @@ impl GetAppliedSchemaVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAppliedSchemaVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5238,7 +5147,7 @@ impl GetAppliedSchemaVersionInput {
             "GetAppliedSchemaVersion",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5299,7 +5208,7 @@ pub mod get_directory_input {
 #[doc(hidden)]
 pub type GetDirectoryInputOperationOutputAlias = crate::operation::GetDirectory;
 #[doc(hidden)]
-pub type GetDirectoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDirectoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDirectoryInput {
     /// Consumes the builder and constructs an Operation<[`GetDirectory`](crate::operation::GetDirectory)>
     #[allow(clippy::let_and_return)]
@@ -5310,7 +5219,7 @@ impl GetDirectoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDirectory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5409,7 +5318,7 @@ impl GetDirectoryInput {
             "GetDirectory",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5434,14 +5343,12 @@ pub mod get_facet_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -5471,7 +5378,7 @@ pub mod get_facet_input {
 #[doc(hidden)]
 pub type GetFacetInputOperationOutputAlias = crate::operation::GetFacet;
 #[doc(hidden)]
-pub type GetFacetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFacetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFacetInput {
     /// Consumes the builder and constructs an Operation<[`GetFacet`](crate::operation::GetFacet)>
     #[allow(clippy::let_and_return)]
@@ -5482,7 +5389,7 @@ impl GetFacetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFacet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5584,7 +5491,7 @@ impl GetFacetInput {
                     "GetFacet",
                     "clouddirectory",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5619,12 +5526,12 @@ pub mod get_link_attributes_input {
         pub(crate) consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5696,7 +5603,7 @@ pub mod get_link_attributes_input {
 #[doc(hidden)]
 pub type GetLinkAttributesInputOperationOutputAlias = crate::operation::GetLinkAttributes;
 #[doc(hidden)]
-pub type GetLinkAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLinkAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLinkAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetLinkAttributes`](crate::operation::GetLinkAttributes)>
     #[allow(clippy::let_and_return)]
@@ -5707,7 +5614,7 @@ impl GetLinkAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLinkAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5815,7 +5722,7 @@ impl GetLinkAttributesInput {
             "GetLinkAttributes",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5851,12 +5758,12 @@ pub mod get_object_attributes_input {
         pub(crate) attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5890,12 +5797,12 @@ pub mod get_object_attributes_input {
             self.consistency_level = input;
             self
         }
-        /// <p>Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a> for details.</p>
+        /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
         pub fn schema_facet(mut self, input: crate::model::SchemaFacet) -> Self {
             self.schema_facet = Some(input);
             self
         }
-        /// <p>Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a> for details.</p>
+        /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
         pub fn set_schema_facet(
             mut self,
             input: std::option::Option<crate::model::SchemaFacet>,
@@ -5942,7 +5849,7 @@ pub mod get_object_attributes_input {
 #[doc(hidden)]
 pub type GetObjectAttributesInputOperationOutputAlias = crate::operation::GetObjectAttributes;
 #[doc(hidden)]
-pub type GetObjectAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetObjectAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetObjectAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetObjectAttributes`](crate::operation::GetObjectAttributes)>
     #[allow(clippy::let_and_return)]
@@ -5953,7 +5860,7 @@ impl GetObjectAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetObjectAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6077,7 +5984,7 @@ impl GetObjectAttributesInput {
             "GetObjectAttributes",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6168,7 +6075,7 @@ pub mod get_object_information_input {
 #[doc(hidden)]
 pub type GetObjectInformationInputOperationOutputAlias = crate::operation::GetObjectInformation;
 #[doc(hidden)]
-pub type GetObjectInformationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetObjectInformationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetObjectInformationInput {
     /// Consumes the builder and constructs an Operation<[`GetObjectInformation`](crate::operation::GetObjectInformation)>
     #[allow(clippy::let_and_return)]
@@ -6179,7 +6086,7 @@ impl GetObjectInformationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetObjectInformation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6305,7 +6212,7 @@ impl GetObjectInformationInput {
             "GetObjectInformation",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6363,7 +6270,7 @@ pub mod get_schema_as_json_input {
 #[doc(hidden)]
 pub type GetSchemaAsJsonInputOperationOutputAlias = crate::operation::GetSchemaAsJson;
 #[doc(hidden)]
-pub type GetSchemaAsJsonInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSchemaAsJsonInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSchemaAsJsonInput {
     /// Consumes the builder and constructs an Operation<[`GetSchemaAsJson`](crate::operation::GetSchemaAsJson)>
     #[allow(clippy::let_and_return)]
@@ -6374,7 +6281,7 @@ impl GetSchemaAsJsonInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSchemaAsJson,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6473,7 +6380,7 @@ impl GetSchemaAsJsonInput {
             "GetSchemaAsJson",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6498,14 +6405,12 @@ pub mod get_typed_link_facet_information_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -6538,7 +6443,8 @@ pub mod get_typed_link_facet_information_input {
 pub type GetTypedLinkFacetInformationInputOperationOutputAlias =
     crate::operation::GetTypedLinkFacetInformation;
 #[doc(hidden)]
-pub type GetTypedLinkFacetInformationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTypedLinkFacetInformationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetTypedLinkFacetInformationInput {
     /// Consumes the builder and constructs an Operation<[`GetTypedLinkFacetInformation`](crate::operation::GetTypedLinkFacetInformation)>
     #[allow(clippy::let_and_return)]
@@ -6549,7 +6455,7 @@ impl GetTypedLinkFacetInformationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTypedLinkFacetInformation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6658,7 +6564,7 @@ impl GetTypedLinkFacetInformationInput {
             "GetTypedLinkFacetInformation",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6755,7 +6661,7 @@ pub mod list_applied_schema_arns_input {
 #[doc(hidden)]
 pub type ListAppliedSchemaArnsInputOperationOutputAlias = crate::operation::ListAppliedSchemaArns;
 #[doc(hidden)]
-pub type ListAppliedSchemaArnsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAppliedSchemaArnsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppliedSchemaArnsInput {
     /// Consumes the builder and constructs an Operation<[`ListAppliedSchemaArns`](crate::operation::ListAppliedSchemaArns)>
     #[allow(clippy::let_and_return)]
@@ -6766,7 +6672,7 @@ impl ListAppliedSchemaArnsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAppliedSchemaArns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6849,7 +6755,7 @@ impl ListAppliedSchemaArnsInput {
             "ListAppliedSchemaArns",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6964,7 +6870,7 @@ pub mod list_attached_indices_input {
 #[doc(hidden)]
 pub type ListAttachedIndicesInputOperationOutputAlias = crate::operation::ListAttachedIndices;
 #[doc(hidden)]
-pub type ListAttachedIndicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAttachedIndicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAttachedIndicesInput {
     /// Consumes the builder and constructs an Operation<[`ListAttachedIndices`](crate::operation::ListAttachedIndices)>
     #[allow(clippy::let_and_return)]
@@ -6975,7 +6881,7 @@ impl ListAttachedIndicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAttachedIndices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7096,7 +7002,7 @@ impl ListAttachedIndicesInput {
             "ListAttachedIndices",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7167,7 +7073,7 @@ pub mod list_development_schema_arns_input {
 pub type ListDevelopmentSchemaArnsInputOperationOutputAlias =
     crate::operation::ListDevelopmentSchemaArns;
 #[doc(hidden)]
-pub type ListDevelopmentSchemaArnsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDevelopmentSchemaArnsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDevelopmentSchemaArnsInput {
     /// Consumes the builder and constructs an Operation<[`ListDevelopmentSchemaArns`](crate::operation::ListDevelopmentSchemaArns)>
     #[allow(clippy::let_and_return)]
@@ -7178,7 +7084,7 @@ impl ListDevelopmentSchemaArnsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDevelopmentSchemaArns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7264,7 +7170,7 @@ impl ListDevelopmentSchemaArnsInput {
             "ListDevelopmentSchemaArns",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7318,14 +7224,12 @@ pub mod list_directories_input {
             self.max_results = input;
             self
         }
-        /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or
-        /// Deleted.</p>
+        /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
         pub fn state(mut self, input: crate::model::DirectoryState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or
-        /// Deleted.</p>
+        /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::DirectoryState>,
@@ -7351,7 +7255,7 @@ pub mod list_directories_input {
 #[doc(hidden)]
 pub type ListDirectoriesInputOperationOutputAlias = crate::operation::ListDirectories;
 #[doc(hidden)]
-pub type ListDirectoriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDirectoriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDirectoriesInput {
     /// Consumes the builder and constructs an Operation<[`ListDirectories`](crate::operation::ListDirectories)>
     #[allow(clippy::let_and_return)]
@@ -7362,7 +7266,7 @@ impl ListDirectoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDirectories,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7443,7 +7347,7 @@ impl ListDirectoriesInput {
             "ListDirectories",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7537,7 +7441,7 @@ pub mod list_facet_attributes_input {
 #[doc(hidden)]
 pub type ListFacetAttributesInputOperationOutputAlias = crate::operation::ListFacetAttributes;
 #[doc(hidden)]
-pub type ListFacetAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFacetAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFacetAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ListFacetAttributes`](crate::operation::ListFacetAttributes)>
     #[allow(clippy::let_and_return)]
@@ -7548,7 +7452,7 @@ impl ListFacetAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFacetAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7653,7 +7557,7 @@ impl ListFacetAttributesInput {
             "ListFacetAttributes",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7735,7 +7639,7 @@ pub mod list_facet_names_input {
 #[doc(hidden)]
 pub type ListFacetNamesInputOperationOutputAlias = crate::operation::ListFacetNames;
 #[doc(hidden)]
-pub type ListFacetNamesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFacetNamesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFacetNamesInput {
     /// Consumes the builder and constructs an Operation<[`ListFacetNames`](crate::operation::ListFacetNames)>
     #[allow(clippy::let_and_return)]
@@ -7746,7 +7650,7 @@ impl ListFacetNamesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFacetNames,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7851,7 +7755,7 @@ impl ListFacetNamesInput {
             "ListFacetNames",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7891,14 +7795,12 @@ pub mod list_incoming_typed_links_input {
         pub(crate) consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-        /// links.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-        /// links.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7923,21 +7825,17 @@ pub mod list_incoming_typed_links_input {
         ///
         /// To override the contents of this collection use [`set_filter_attribute_ranges`](Self::set_filter_attribute_ranges).
         ///
-        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-        /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-        /// range specified are presumed to match the entire range.</p>
+        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
         pub fn filter_attribute_ranges(
             mut self,
-            input: impl Into<crate::model::TypedLinkAttributeRange>,
+            input: crate::model::TypedLinkAttributeRange,
         ) -> Self {
             let mut v = self.filter_attribute_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_attribute_ranges = Some(v);
             self
         }
-        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-        /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-        /// range specified are presumed to match the entire range.</p>
+        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
         pub fn set_filter_attribute_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
@@ -7945,8 +7843,7 @@ pub mod list_incoming_typed_links_input {
             self.filter_attribute_ranges = input;
             self
         }
-        /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the
-        /// order in which they are supplied to any API calls.</p>
+        /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
         pub fn filter_typed_link(
             mut self,
             input: crate::model::TypedLinkSchemaAndFacetName,
@@ -7954,8 +7851,7 @@ pub mod list_incoming_typed_links_input {
             self.filter_typed_link = Some(input);
             self
         }
-        /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the
-        /// order in which they are supplied to any API calls.</p>
+        /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
         pub fn set_filter_typed_link(
             mut self,
             input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
@@ -8018,7 +7914,7 @@ pub mod list_incoming_typed_links_input {
 #[doc(hidden)]
 pub type ListIncomingTypedLinksInputOperationOutputAlias = crate::operation::ListIncomingTypedLinks;
 #[doc(hidden)]
-pub type ListIncomingTypedLinksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIncomingTypedLinksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIncomingTypedLinksInput {
     /// Consumes the builder and constructs an Operation<[`ListIncomingTypedLinks`](crate::operation::ListIncomingTypedLinks)>
     #[allow(clippy::let_and_return)]
@@ -8029,7 +7925,7 @@ impl ListIncomingTypedLinksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIncomingTypedLinks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8139,7 +8035,7 @@ impl ListIncomingTypedLinksInput {
             "ListIncomingTypedLinks",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8197,10 +8093,10 @@ pub mod list_index_input {
         /// <p>Specifies the ranges of indexed values that you want to query.</p>
         pub fn ranges_on_indexed_values(
             mut self,
-            input: impl Into<crate::model::ObjectAttributeRange>,
+            input: crate::model::ObjectAttributeRange,
         ) -> Self {
             let mut v = self.ranges_on_indexed_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ranges_on_indexed_values = Some(v);
             self
         }
@@ -8277,7 +8173,7 @@ pub mod list_index_input {
 #[doc(hidden)]
 pub type ListIndexInputOperationOutputAlias = crate::operation::ListIndex;
 #[doc(hidden)]
-pub type ListIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIndexInput {
     /// Consumes the builder and constructs an Operation<[`ListIndex`](crate::operation::ListIndex)>
     #[allow(clippy::let_and_return)]
@@ -8288,7 +8184,7 @@ impl ListIndexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIndex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8406,7 +8302,7 @@ impl ListIndexInput {
                     "ListIndex",
                     "clouddirectory",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8488,7 +8384,7 @@ pub mod list_managed_schema_arns_input {
 #[doc(hidden)]
 pub type ListManagedSchemaArnsInputOperationOutputAlias = crate::operation::ListManagedSchemaArns;
 #[doc(hidden)]
-pub type ListManagedSchemaArnsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListManagedSchemaArnsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListManagedSchemaArnsInput {
     /// Consumes the builder and constructs an Operation<[`ListManagedSchemaArns`](crate::operation::ListManagedSchemaArns)>
     #[allow(clippy::let_and_return)]
@@ -8499,7 +8395,7 @@ impl ListManagedSchemaArnsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListManagedSchemaArns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8582,7 +8478,7 @@ impl ListManagedSchemaArnsInput {
             "ListManagedSchemaArns",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8619,14 +8515,12 @@ pub mod list_object_attributes_input {
         pub(crate) facet_filter: std::option::Option<crate::model::SchemaFacet>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8657,26 +8551,22 @@ pub mod list_object_attributes_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
             self.consistency_level = Some(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -8684,14 +8574,12 @@ pub mod list_object_attributes_input {
             self.consistency_level = input;
             self
         }
-        /// <p>Used to filter the list of object attributes that are associated with a certain
-        /// facet.</p>
+        /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
         pub fn facet_filter(mut self, input: crate::model::SchemaFacet) -> Self {
             self.facet_filter = Some(input);
             self
         }
-        /// <p>Used to filter the list of object attributes that are associated with a certain
-        /// facet.</p>
+        /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
         pub fn set_facet_filter(
             mut self,
             input: std::option::Option<crate::model::SchemaFacet>,
@@ -8720,7 +8608,7 @@ pub mod list_object_attributes_input {
 #[doc(hidden)]
 pub type ListObjectAttributesInputOperationOutputAlias = crate::operation::ListObjectAttributes;
 #[doc(hidden)]
-pub type ListObjectAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListObjectAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListObjectAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ListObjectAttributes`](crate::operation::ListObjectAttributes)>
     #[allow(clippy::let_and_return)]
@@ -8731,7 +8619,7 @@ impl ListObjectAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListObjectAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8854,7 +8742,7 @@ impl ListObjectAttributesInput {
             "ListObjectAttributes",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8890,14 +8778,12 @@ pub mod list_object_children_input {
         pub(crate) consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8905,14 +8791,12 @@ pub mod list_object_children_input {
             self.directory_arn = input;
             self
         }
-        /// <p>The reference that identifies the object for which child objects are being
-        /// listed.</p>
+        /// <p>The reference that identifies the object for which child objects are being listed.</p>
         pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
             self.object_reference = Some(input);
             self
         }
-        /// <p>The reference that identifies the object for which child objects are being
-        /// listed.</p>
+        /// <p>The reference that identifies the object for which child objects are being listed.</p>
         pub fn set_object_reference(
             mut self,
             input: std::option::Option<crate::model::ObjectReference>,
@@ -8930,26 +8814,22 @@ pub mod list_object_children_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
             self.consistency_level = Some(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -8977,7 +8857,7 @@ pub mod list_object_children_input {
 #[doc(hidden)]
 pub type ListObjectChildrenInputOperationOutputAlias = crate::operation::ListObjectChildren;
 #[doc(hidden)]
-pub type ListObjectChildrenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListObjectChildrenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListObjectChildrenInput {
     /// Consumes the builder and constructs an Operation<[`ListObjectChildren`](crate::operation::ListObjectChildren)>
     #[allow(clippy::let_and_return)]
@@ -8988,7 +8868,7 @@ impl ListObjectChildrenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListObjectChildren,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9109,7 +8989,7 @@ impl ListObjectChildrenInput {
             "ListObjectChildren",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9180,14 +9060,12 @@ pub mod list_object_parent_paths_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9211,7 +9089,7 @@ pub mod list_object_parent_paths_input {
 #[doc(hidden)]
 pub type ListObjectParentPathsInputOperationOutputAlias = crate::operation::ListObjectParentPaths;
 #[doc(hidden)]
-pub type ListObjectParentPathsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListObjectParentPathsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListObjectParentPathsInput {
     /// Consumes the builder and constructs an Operation<[`ListObjectParentPaths`](crate::operation::ListObjectParentPaths)>
     #[allow(clippy::let_and_return)]
@@ -9222,7 +9100,7 @@ impl ListObjectParentPathsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListObjectParentPaths,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9332,7 +9210,7 @@ impl ListObjectParentPathsInput {
             "ListObjectParentPaths",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9369,14 +9247,12 @@ pub mod list_object_parents_input {
         pub(crate) include_all_links_to_each_parent: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9384,14 +9260,12 @@ pub mod list_object_parents_input {
             self.directory_arn = input;
             self
         }
-        /// <p>The reference that identifies the object for which parent objects are being
-        /// listed.</p>
+        /// <p>The reference that identifies the object for which parent objects are being listed.</p>
         pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
             self.object_reference = Some(input);
             self
         }
-        /// <p>The reference that identifies the object for which parent objects are being
-        /// listed.</p>
+        /// <p>The reference that identifies the object for which parent objects are being listed.</p>
         pub fn set_object_reference(
             mut self,
             input: std::option::Option<crate::model::ObjectReference>,
@@ -9409,26 +9283,22 @@ pub mod list_object_parents_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
             self.consistency_level = Some(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -9436,12 +9306,12 @@ pub mod list_object_parents_input {
             self.consistency_level = input;
             self
         }
-        /// <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair.</p>
+        /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
         pub fn include_all_links_to_each_parent(mut self, input: bool) -> Self {
             self.include_all_links_to_each_parent = Some(input);
             self
         }
-        /// <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair.</p>
+        /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
         pub fn set_include_all_links_to_each_parent(
             mut self,
             input: std::option::Option<bool>,
@@ -9472,7 +9342,7 @@ pub mod list_object_parents_input {
 #[doc(hidden)]
 pub type ListObjectParentsInputOperationOutputAlias = crate::operation::ListObjectParents;
 #[doc(hidden)]
-pub type ListObjectParentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListObjectParentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListObjectParentsInput {
     /// Consumes the builder and constructs an Operation<[`ListObjectParents`](crate::operation::ListObjectParents)>
     #[allow(clippy::let_and_return)]
@@ -9483,7 +9353,7 @@ impl ListObjectParentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListObjectParents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9604,7 +9474,7 @@ impl ListObjectParentsInput {
             "ListObjectParents",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9640,14 +9510,12 @@ pub mod list_object_policies_input {
         pub(crate) consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9678,26 +9546,22 @@ pub mod list_object_policies_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
             self.consistency_level = Some(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -9725,7 +9589,7 @@ pub mod list_object_policies_input {
 #[doc(hidden)]
 pub type ListObjectPoliciesInputOperationOutputAlias = crate::operation::ListObjectPolicies;
 #[doc(hidden)]
-pub type ListObjectPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListObjectPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListObjectPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListObjectPolicies`](crate::operation::ListObjectPolicies)>
     #[allow(clippy::let_and_return)]
@@ -9736,7 +9600,7 @@ impl ListObjectPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListObjectPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9857,7 +9721,7 @@ impl ListObjectPoliciesInput {
             "ListObjectPolicies",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9897,14 +9761,12 @@ pub mod list_outgoing_typed_links_input {
         pub(crate) consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-        /// links.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-        /// links.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9929,21 +9791,17 @@ pub mod list_outgoing_typed_links_input {
         ///
         /// To override the contents of this collection use [`set_filter_attribute_ranges`](Self::set_filter_attribute_ranges).
         ///
-        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-        /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-        /// range specified are presumed to match the entire range.</p>
+        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
         pub fn filter_attribute_ranges(
             mut self,
-            input: impl Into<crate::model::TypedLinkAttributeRange>,
+            input: crate::model::TypedLinkAttributeRange,
         ) -> Self {
             let mut v = self.filter_attribute_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_attribute_ranges = Some(v);
             self
         }
-        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-        /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-        /// range specified are presumed to match the entire range.</p>
+        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
         pub fn set_filter_attribute_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
@@ -9951,8 +9809,7 @@ pub mod list_outgoing_typed_links_input {
             self.filter_attribute_ranges = input;
             self
         }
-        /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet,
-        /// not the order they are supplied to any API calls.</p>
+        /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
         pub fn filter_typed_link(
             mut self,
             input: crate::model::TypedLinkSchemaAndFacetName,
@@ -9960,8 +9817,7 @@ pub mod list_outgoing_typed_links_input {
             self.filter_typed_link = Some(input);
             self
         }
-        /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet,
-        /// not the order they are supplied to any API calls.</p>
+        /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
         pub fn set_filter_typed_link(
             mut self,
             input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
@@ -10024,7 +9880,7 @@ pub mod list_outgoing_typed_links_input {
 #[doc(hidden)]
 pub type ListOutgoingTypedLinksInputOperationOutputAlias = crate::operation::ListOutgoingTypedLinks;
 #[doc(hidden)]
-pub type ListOutgoingTypedLinksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOutgoingTypedLinksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOutgoingTypedLinksInput {
     /// Consumes the builder and constructs an Operation<[`ListOutgoingTypedLinks`](crate::operation::ListOutgoingTypedLinks)>
     #[allow(clippy::let_and_return)]
@@ -10035,7 +9891,7 @@ impl ListOutgoingTypedLinksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOutgoingTypedLinks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10145,7 +10001,7 @@ impl ListOutgoingTypedLinksInput {
             "ListOutgoingTypedLinks",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10181,14 +10037,12 @@ pub mod list_policy_attachments_input {
         pub(crate) consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10219,26 +10073,22 @@ pub mod list_policy_attachments_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
             self.consistency_level = Some(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -10266,7 +10116,7 @@ pub mod list_policy_attachments_input {
 #[doc(hidden)]
 pub type ListPolicyAttachmentsInputOperationOutputAlias = crate::operation::ListPolicyAttachments;
 #[doc(hidden)]
-pub type ListPolicyAttachmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPolicyAttachmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPolicyAttachmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListPolicyAttachments`](crate::operation::ListPolicyAttachments)>
     #[allow(clippy::let_and_return)]
@@ -10277,7 +10127,7 @@ impl ListPolicyAttachmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPolicyAttachments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10400,7 +10250,7 @@ impl ListPolicyAttachmentsInput {
             "ListPolicyAttachments",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10483,7 +10333,7 @@ pub mod list_published_schema_arns_input {
 pub type ListPublishedSchemaArnsInputOperationOutputAlias =
     crate::operation::ListPublishedSchemaArns;
 #[doc(hidden)]
-pub type ListPublishedSchemaArnsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPublishedSchemaArnsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPublishedSchemaArnsInput {
     /// Consumes the builder and constructs an Operation<[`ListPublishedSchemaArns`](crate::operation::ListPublishedSchemaArns)>
     #[allow(clippy::let_and_return)]
@@ -10494,7 +10344,7 @@ impl ListPublishedSchemaArnsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPublishedSchemaArns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10577,7 +10427,7 @@ impl ListPublishedSchemaArnsInput {
             "ListPublishedSchemaArns",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10611,38 +10461,32 @@ pub mod list_tags_for_resource_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>The pagination token. This is for future use. Currently pagination is not supported for
-        /// tagging.</p>
+        /// <p>The pagination token. This is for future use. Currently pagination is not supported for tagging.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token. This is for future use. Currently pagination is not supported for
-        /// tagging.</p>
+        /// <p>The pagination token. This is for future use. Currently pagination is not supported for tagging.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a
-        /// single page. This is for future use and is not supported currently.</p>
+        /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a
-        /// single page. This is for future use and is not supported currently.</p>
+        /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -10665,7 +10509,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -10676,7 +10520,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10759,7 +10603,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10794,14 +10638,12 @@ pub mod list_typed_link_facet_attributes_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -10856,7 +10698,8 @@ pub mod list_typed_link_facet_attributes_input {
 pub type ListTypedLinkFacetAttributesInputOperationOutputAlias =
     crate::operation::ListTypedLinkFacetAttributes;
 #[doc(hidden)]
-pub type ListTypedLinkFacetAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTypedLinkFacetAttributesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListTypedLinkFacetAttributesInput {
     /// Consumes the builder and constructs an Operation<[`ListTypedLinkFacetAttributes`](crate::operation::ListTypedLinkFacetAttributes)>
     #[allow(clippy::let_and_return)]
@@ -10867,7 +10710,7 @@ impl ListTypedLinkFacetAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTypedLinkFacetAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10976,7 +10819,7 @@ impl ListTypedLinkFacetAttributesInput {
             "ListTypedLinkFacetAttributes",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11010,14 +10853,12 @@ pub mod list_typed_link_facet_names_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -11061,7 +10902,7 @@ pub mod list_typed_link_facet_names_input {
 pub type ListTypedLinkFacetNamesInputOperationOutputAlias =
     crate::operation::ListTypedLinkFacetNames;
 #[doc(hidden)]
-pub type ListTypedLinkFacetNamesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTypedLinkFacetNamesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTypedLinkFacetNamesInput {
     /// Consumes the builder and constructs an Operation<[`ListTypedLinkFacetNames`](crate::operation::ListTypedLinkFacetNames)>
     #[allow(clippy::let_and_return)]
@@ -11072,7 +10913,7 @@ impl ListTypedLinkFacetNamesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTypedLinkFacetNames,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11182,7 +11023,7 @@ impl ListTypedLinkFacetNamesInput {
             "ListTypedLinkFacetNames",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11217,14 +11058,12 @@ pub mod lookup_policy_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11255,14 +11094,12 @@ pub mod lookup_policy_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -11286,7 +11123,7 @@ pub mod lookup_policy_input {
 #[doc(hidden)]
 pub type LookupPolicyInputOperationOutputAlias = crate::operation::LookupPolicy;
 #[doc(hidden)]
-pub type LookupPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type LookupPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl LookupPolicyInput {
     /// Consumes the builder and constructs an Operation<[`LookupPolicy`](crate::operation::LookupPolicy)>
     #[allow(clippy::let_and_return)]
@@ -11297,7 +11134,7 @@ impl LookupPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::LookupPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11401,7 +11238,7 @@ impl LookupPolicyInput {
             "LookupPolicy",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11436,14 +11273,12 @@ pub mod publish_schema_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For
-        /// more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
         pub fn development_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.development_schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For
-        /// more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
         pub fn set_development_schema_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11474,14 +11309,12 @@ pub mod publish_schema_input {
             self.minor_version = input;
             self
         }
-        /// <p>The new name under which the schema will be published. If this is not provided, the
-        /// development schema is considered.</p>
+        /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The new name under which the schema will be published. If this is not provided, the
-        /// development schema is considered.</p>
+        /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -11505,7 +11338,7 @@ pub mod publish_schema_input {
 #[doc(hidden)]
 pub type PublishSchemaInputOperationOutputAlias = crate::operation::PublishSchema;
 #[doc(hidden)]
-pub type PublishSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PublishSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PublishSchemaInput {
     /// Consumes the builder and constructs an Operation<[`PublishSchema`](crate::operation::PublishSchema)>
     #[allow(clippy::let_and_return)]
@@ -11516,7 +11349,7 @@ impl PublishSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PublishSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11620,7 +11453,7 @@ impl PublishSchemaInput {
             "PublishSchema",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11690,7 +11523,7 @@ pub mod put_schema_from_json_input {
 #[doc(hidden)]
 pub type PutSchemaFromJsonInputOperationOutputAlias = crate::operation::PutSchemaFromJson;
 #[doc(hidden)]
-pub type PutSchemaFromJsonInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutSchemaFromJsonInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSchemaFromJsonInput {
     /// Consumes the builder and constructs an Operation<[`PutSchemaFromJson`](crate::operation::PutSchemaFromJson)>
     #[allow(clippy::let_and_return)]
@@ -11701,7 +11534,7 @@ impl PutSchemaFromJsonInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutSchemaFromJson,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11806,7 +11639,7 @@ impl PutSchemaFromJsonInput {
             "PutSchemaFromJson",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11853,12 +11686,12 @@ pub mod remove_facet_from_object_input {
             self.directory_arn = input;
             self
         }
-        /// <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
+        /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
         pub fn schema_facet(mut self, input: crate::model::SchemaFacet) -> Self {
             self.schema_facet = Some(input);
             self
         }
-        /// <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
+        /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
         pub fn set_schema_facet(
             mut self,
             input: std::option::Option<crate::model::SchemaFacet>,
@@ -11897,7 +11730,7 @@ pub mod remove_facet_from_object_input {
 #[doc(hidden)]
 pub type RemoveFacetFromObjectInputOperationOutputAlias = crate::operation::RemoveFacetFromObject;
 #[doc(hidden)]
-pub type RemoveFacetFromObjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveFacetFromObjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveFacetFromObjectInput {
     /// Consumes the builder and constructs an Operation<[`RemoveFacetFromObject`](crate::operation::RemoveFacetFromObject)>
     #[allow(clippy::let_and_return)]
@@ -11908,7 +11741,7 @@ impl RemoveFacetFromObjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveFacetFromObject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12018,7 +11851,7 @@ impl RemoveFacetFromObjectInput {
             "RemoveFacetFromObject",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12051,14 +11884,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -12068,9 +11899,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12099,7 +11930,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -12110,7 +11941,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12190,7 +12021,7 @@ impl TagResourceInput {
             "TagResource",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12223,14 +12054,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -12271,7 +12100,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -12282,7 +12111,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12362,7 +12191,7 @@ impl UntagResourceInput {
             "UntagResource",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12398,14 +12227,12 @@ pub mod update_facet_input {
         pub(crate) object_type: std::option::Option<crate::model::ObjectType>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -12424,21 +12251,14 @@ pub mod update_facet_input {
         ///
         /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
         ///
-        /// <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
-        /// Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update
-        /// operation to perform. </p>
-        pub fn attribute_updates(
-            mut self,
-            input: impl Into<crate::model::FacetAttributeUpdate>,
-        ) -> Self {
+        /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+        pub fn attribute_updates(mut self, input: crate::model::FacetAttributeUpdate) -> Self {
             let mut v = self.attribute_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_updates = Some(v);
             self
         }
-        /// <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
-        /// Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update
-        /// operation to perform. </p>
+        /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
         pub fn set_attribute_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FacetAttributeUpdate>>,
@@ -12446,12 +12266,12 @@ pub mod update_facet_input {
             self.attribute_updates = input;
             self
         }
-        /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
+        /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
         pub fn object_type(mut self, input: crate::model::ObjectType) -> Self {
             self.object_type = Some(input);
             self
         }
-        /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
+        /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
         pub fn set_object_type(
             mut self,
             input: std::option::Option<crate::model::ObjectType>,
@@ -12478,7 +12298,7 @@ pub mod update_facet_input {
 #[doc(hidden)]
 pub type UpdateFacetInputOperationOutputAlias = crate::operation::UpdateFacet;
 #[doc(hidden)]
-pub type UpdateFacetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFacetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFacetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFacet`](crate::operation::UpdateFacet)>
     #[allow(clippy::let_and_return)]
@@ -12489,7 +12309,7 @@ impl UpdateFacetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFacet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12593,7 +12413,7 @@ impl UpdateFacetInput {
             "UpdateFacet",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12628,12 +12448,12 @@ pub mod update_link_attributes_input {
             std::option::Option<std::vec::Vec<crate::model::LinkAttributeUpdate>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12659,12 +12479,9 @@ pub mod update_link_attributes_input {
         /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
         ///
         /// <p>The attributes update structure.</p>
-        pub fn attribute_updates(
-            mut self,
-            input: impl Into<crate::model::LinkAttributeUpdate>,
-        ) -> Self {
+        pub fn attribute_updates(mut self, input: crate::model::LinkAttributeUpdate) -> Self {
             let mut v = self.attribute_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_updates = Some(v);
             self
         }
@@ -12694,7 +12511,7 @@ pub mod update_link_attributes_input {
 #[doc(hidden)]
 pub type UpdateLinkAttributesInputOperationOutputAlias = crate::operation::UpdateLinkAttributes;
 #[doc(hidden)]
-pub type UpdateLinkAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLinkAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLinkAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLinkAttributes`](crate::operation::UpdateLinkAttributes)>
     #[allow(clippy::let_and_return)]
@@ -12705,7 +12522,7 @@ impl UpdateLinkAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLinkAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12815,7 +12632,7 @@ impl UpdateLinkAttributesInput {
             "UpdateLinkAttributes",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12850,14 +12667,12 @@ pub mod update_object_attributes_input {
             std::option::Option<std::vec::Vec<crate::model::ObjectAttributeUpdate>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12883,12 +12698,9 @@ pub mod update_object_attributes_input {
         /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
         ///
         /// <p>The attributes update structure.</p>
-        pub fn attribute_updates(
-            mut self,
-            input: impl Into<crate::model::ObjectAttributeUpdate>,
-        ) -> Self {
+        pub fn attribute_updates(mut self, input: crate::model::ObjectAttributeUpdate) -> Self {
             let mut v = self.attribute_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_updates = Some(v);
             self
         }
@@ -12918,7 +12730,7 @@ pub mod update_object_attributes_input {
 #[doc(hidden)]
 pub type UpdateObjectAttributesInputOperationOutputAlias = crate::operation::UpdateObjectAttributes;
 #[doc(hidden)]
-pub type UpdateObjectAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateObjectAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateObjectAttributesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateObjectAttributes`](crate::operation::UpdateObjectAttributes)>
     #[allow(clippy::let_and_return)]
@@ -12929,7 +12741,7 @@ impl UpdateObjectAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateObjectAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13036,7 +12848,7 @@ impl UpdateObjectAttributesInput {
             "UpdateObjectAttributes",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13069,14 +12881,12 @@ pub mod update_schema_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-        /// <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-        /// <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -13108,7 +12918,7 @@ pub mod update_schema_input {
 #[doc(hidden)]
 pub type UpdateSchemaInputOperationOutputAlias = crate::operation::UpdateSchema;
 #[doc(hidden)]
-pub type UpdateSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSchemaInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSchema`](crate::operation::UpdateSchema)>
     #[allow(clippy::let_and_return)]
@@ -13119,7 +12929,7 @@ impl UpdateSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13223,7 +13033,7 @@ impl UpdateSchemaInput {
             "UpdateSchema",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13260,14 +13070,12 @@ pub mod update_typed_link_facet_input {
             std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -13289,10 +13097,10 @@ pub mod update_typed_link_facet_input {
         /// <p>Attributes update structure.</p>
         pub fn attribute_updates(
             mut self,
-            input: impl Into<crate::model::TypedLinkFacetAttributeUpdate>,
+            input: crate::model::TypedLinkFacetAttributeUpdate,
         ) -> Self {
             let mut v = self.attribute_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attribute_updates = Some(v);
             self
         }
@@ -13308,24 +13116,14 @@ pub mod update_typed_link_facet_input {
         ///
         /// To override the contents of this collection use [`set_identity_attribute_order`](Self::set_identity_attribute_order).
         ///
-        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
-        /// links considers the order that the attributes are defined on the typed link facet.  When
-        /// providing ranges to a typed link selection, any inexact ranges must be specified at the end.
-        /// Any attributes that do not have a range specified are presumed to match the entire range.
-        /// Filters are interpreted in the order of the attributes on the typed link facet, not the order
-        /// in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn identity_attribute_order(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identity_attribute_order.unwrap_or_default();
             v.push(input.into());
             self.identity_attribute_order = Some(v);
             self
         }
-        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
-        /// links considers the order that the attributes are defined on the typed link facet.  When
-        /// providing ranges to a typed link selection, any inexact ranges must be specified at the end.
-        /// Any attributes that do not have a range specified are presumed to match the entire range.
-        /// Filters are interpreted in the order of the attributes on the typed link facet, not the order
-        /// in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn set_identity_attribute_order(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13352,7 +13150,7 @@ pub mod update_typed_link_facet_input {
 #[doc(hidden)]
 pub type UpdateTypedLinkFacetInputOperationOutputAlias = crate::operation::UpdateTypedLinkFacet;
 #[doc(hidden)]
-pub type UpdateTypedLinkFacetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTypedLinkFacetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTypedLinkFacetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTypedLinkFacet`](crate::operation::UpdateTypedLinkFacet)>
     #[allow(clippy::let_and_return)]
@@ -13363,7 +13161,7 @@ impl UpdateTypedLinkFacetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTypedLinkFacet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13470,7 +13268,7 @@ impl UpdateTypedLinkFacetInput {
             "UpdateTypedLinkFacet",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13558,7 +13356,7 @@ pub mod upgrade_applied_schema_input {
 #[doc(hidden)]
 pub type UpgradeAppliedSchemaInputOperationOutputAlias = crate::operation::UpgradeAppliedSchema;
 #[doc(hidden)]
-pub type UpgradeAppliedSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpgradeAppliedSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpgradeAppliedSchemaInput {
     /// Consumes the builder and constructs an Operation<[`UpgradeAppliedSchema`](crate::operation::UpgradeAppliedSchema)>
     #[allow(clippy::let_and_return)]
@@ -13569,7 +13367,7 @@ impl UpgradeAppliedSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpgradeAppliedSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13655,7 +13453,7 @@ impl UpgradeAppliedSchemaInput {
             "UpgradeAppliedSchema",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13758,7 +13556,7 @@ pub mod upgrade_published_schema_input {
 #[doc(hidden)]
 pub type UpgradePublishedSchemaInputOperationOutputAlias = crate::operation::UpgradePublishedSchema;
 #[doc(hidden)]
-pub type UpgradePublishedSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpgradePublishedSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpgradePublishedSchemaInput {
     /// Consumes the builder and constructs an Operation<[`UpgradePublishedSchema`](crate::operation::UpgradePublishedSchema)>
     #[allow(clippy::let_and_return)]
@@ -13769,7 +13567,7 @@ impl UpgradePublishedSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpgradePublishedSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13855,7 +13653,7 @@ impl UpgradePublishedSchemaInput {
             "UpgradePublishedSchema",
             "clouddirectory",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13959,25 +13757,18 @@ impl std::fmt::Debug for UpgradeAppliedSchemaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTypedLinkFacetInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The unique name of the typed link facet.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Attributes update structure.</p>
     pub attribute_updates:
         std::option::Option<std::vec::Vec<crate::model::TypedLinkFacetAttributeUpdate>>,
-    /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
-    /// links considers the order that the attributes are defined on the typed link facet.  When
-    /// providing ranges to a typed link selection, any inexact ranges must be specified at the end.
-    /// Any attributes that do not have a range specified are presumed to match the entire range.
-    /// Filters are interpreted in the order of the attributes on the typed link facet, not the order
-    /// in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub identity_attribute_order: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateTypedLinkFacetInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -13991,12 +13782,7 @@ impl UpdateTypedLinkFacetInput {
     ) -> std::option::Option<&[crate::model::TypedLinkFacetAttributeUpdate]> {
         self.attribute_updates.as_deref()
     }
-    /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
-    /// links considers the order that the attributes are defined on the typed link facet.  When
-    /// providing ranges to a typed link selection, any inexact ranges must be specified at the end.
-    /// Any attributes that do not have a range specified are presumed to match the entire range.
-    /// Filters are interpreted in the order of the attributes on the typed link facet, not the order
-    /// in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn identity_attribute_order(&self) -> std::option::Option<&[std::string::String]> {
         self.identity_attribute_order.as_deref()
     }
@@ -14016,15 +13802,13 @@ impl std::fmt::Debug for UpdateTypedLinkFacetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSchemaInput {
-    /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-    /// <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the schema.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateSchemaInput {
-    /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-    /// <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -14046,8 +13830,7 @@ impl std::fmt::Debug for UpdateSchemaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateObjectAttributesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where the object resides. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The reference that identifies the object.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -14055,8 +13838,7 @@ pub struct UpdateObjectAttributesInput {
     pub attribute_updates: std::option::Option<std::vec::Vec<crate::model::ObjectAttributeUpdate>>,
 }
 impl UpdateObjectAttributesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where the object resides. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -14083,7 +13865,7 @@ impl std::fmt::Debug for UpdateObjectAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLinkAttributesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
@@ -14091,7 +13873,7 @@ pub struct UpdateLinkAttributesInput {
     pub attribute_updates: std::option::Option<std::vec::Vec<crate::model::LinkAttributeUpdate>>,
 }
 impl UpdateLinkAttributesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -14118,21 +13900,17 @@ impl std::fmt::Debug for UpdateLinkAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFacetInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-    /// For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the facet.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
-    /// Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update
-    /// operation to perform. </p>
+    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
     pub attribute_updates: std::option::Option<std::vec::Vec<crate::model::FacetAttributeUpdate>>,
-    /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
+    /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     pub object_type: std::option::Option<crate::model::ObjectType>,
 }
 impl UpdateFacetInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-    /// For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -14140,13 +13918,11 @@ impl UpdateFacetInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
-    /// Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update
-    /// operation to perform. </p>
+    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
     pub fn attribute_updates(&self) -> std::option::Option<&[crate::model::FacetAttributeUpdate]> {
         self.attribute_updates.as_deref()
     }
-    /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
+    /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     pub fn object_type(&self) -> std::option::Option<&crate::model::ObjectType> {
         self.object_type.as_ref()
     }
@@ -14166,15 +13942,13 @@ impl std::fmt::Debug for UpdateFacetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-    /// directories.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Keys of the tag that need to be removed from the resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-    /// directories.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -14196,15 +13970,13 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-    /// directories.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of tag key-value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-    /// directories.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -14228,7 +14000,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct RemoveFacetFromObjectInput {
     /// <p>The ARN of the directory in which the object resides.</p>
     pub directory_arn: std::option::Option<std::string::String>,
-    /// <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
+    /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
     pub schema_facet: std::option::Option<crate::model::SchemaFacet>,
     /// <p>A reference to the object to remove the facet from.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -14238,7 +14010,7 @@ impl RemoveFacetFromObjectInput {
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
-    /// <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
+    /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facet(&self) -> std::option::Option<&crate::model::SchemaFacet> {
         self.schema_facet.as_ref()
     }
@@ -14289,20 +14061,17 @@ impl std::fmt::Debug for PutSchemaFromJsonInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishSchemaInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For
-    /// more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
     pub development_schema_arn: std::option::Option<std::string::String>,
     /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
     pub minor_version: std::option::Option<std::string::String>,
-    /// <p>The new name under which the schema will be published. If this is not provided, the
-    /// development schema is considered.</p>
+    /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl PublishSchemaInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For
-    /// more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
     pub fn development_schema_arn(&self) -> std::option::Option<&str> {
         self.development_schema_arn.as_deref()
     }
@@ -14314,8 +14083,7 @@ impl PublishSchemaInput {
     pub fn minor_version(&self) -> std::option::Option<&str> {
         self.minor_version.as_deref()
     }
-    /// <p>The new name under which the schema will be published. If this is not provided, the
-    /// development schema is considered.</p>
+    /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -14335,20 +14103,17 @@ impl std::fmt::Debug for PublishSchemaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LookupPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-    /// For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl LookupPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-    /// For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -14360,8 +14125,7 @@ impl LookupPolicyInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -14381,8 +14145,7 @@ impl std::fmt::Debug for LookupPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypedLinkFacetNamesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -14390,8 +14153,7 @@ pub struct ListTypedLinkFacetNamesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListTypedLinkFacetNamesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -14418,8 +14180,7 @@ impl std::fmt::Debug for ListTypedLinkFacetNamesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypedLinkFacetAttributesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The unique name of the typed link facet.</p>
     pub name: std::option::Option<std::string::String>,
@@ -14429,8 +14190,7 @@ pub struct ListTypedLinkFacetAttributesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListTypedLinkFacetAttributesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -14462,29 +14222,23 @@ impl std::fmt::Debug for ListTypedLinkFacetAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-    /// directories.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The pagination token. This is for future use. Currently pagination is not supported for
-    /// tagging.</p>
+    /// <p>The pagination token. This is for future use. Currently pagination is not supported for tagging.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a
-    /// single page. This is for future use and is not supported currently.</p>
+    /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-    /// directories.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The pagination token. This is for future use. Currently pagination is not supported for
-    /// tagging.</p>
+    /// <p>The pagination token. This is for future use. Currently pagination is not supported for tagging.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a
-    /// single page. This is for future use and is not supported currently.</p>
+    /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -14538,23 +14292,19 @@ impl std::fmt::Debug for ListPublishedSchemaArnsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPolicyAttachmentsInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where objects reside. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The reference that identifies the policy object.</p>
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Represents the manner and timing in which the successful write or update of an object
-    /// is reflected in a subsequent read operation of that same object.</p>
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl ListPolicyAttachmentsInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where objects reside. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -14566,13 +14316,11 @@ impl ListPolicyAttachmentsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Represents the manner and timing in which the successful write or update of an object
-    /// is reflected in a subsequent read operation of that same object.</p>
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
@@ -14593,18 +14341,14 @@ impl std::fmt::Debug for ListPolicyAttachmentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOutgoingTypedLinksInput {
-    /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-    /// links.</p>
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A reference that identifies the object whose attributes will be listed.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
-    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-    /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-    /// range specified are presumed to match the entire range.</p>
+    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
     pub filter_attribute_ranges:
         std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
-    /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet,
-    /// not the order they are supplied to any API calls.</p>
+    /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
     pub filter_typed_link: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -14614,8 +14358,7 @@ pub struct ListOutgoingTypedLinksInput {
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl ListOutgoingTypedLinksInput {
-    /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-    /// links.</p>
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -14623,16 +14366,13 @@ impl ListOutgoingTypedLinksInput {
     pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
-    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-    /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-    /// range specified are presumed to match the entire range.</p>
+    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
     pub fn filter_attribute_ranges(
         &self,
     ) -> std::option::Option<&[crate::model::TypedLinkAttributeRange]> {
         self.filter_attribute_ranges.as_deref()
     }
-    /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet,
-    /// not the order they are supplied to any API calls.</p>
+    /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
     pub fn filter_typed_link(
         &self,
     ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
@@ -14669,23 +14409,19 @@ impl std::fmt::Debug for ListOutgoingTypedLinksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectPoliciesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where objects reside. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Reference that identifies the object for which policies will be listed.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Represents the manner and timing in which the successful write or update of an object
-    /// is reflected in a subsequent read operation of that same object.</p>
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl ListObjectPoliciesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where objects reside. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -14697,13 +14433,11 @@ impl ListObjectPoliciesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Represents the manner and timing in which the successful write or update of an object
-    /// is reflected in a subsequent read operation of that same object.</p>
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
@@ -14724,31 +14458,25 @@ impl std::fmt::Debug for ListObjectPoliciesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectParentsInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where the object resides. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
-    /// <p>The reference that identifies the object for which parent objects are being
-    /// listed.</p>
+    /// <p>The reference that identifies the object for which parent objects are being listed.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Represents the manner and timing in which the successful write or update of an object
-    /// is reflected in a subsequent read operation of that same object.</p>
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
-    /// <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair.</p>
+    /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
     pub include_all_links_to_each_parent: bool,
 }
 impl ListObjectParentsInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where the object resides. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
-    /// <p>The reference that identifies the object for which parent objects are being
-    /// listed.</p>
+    /// <p>The reference that identifies the object for which parent objects are being listed.</p>
     pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
@@ -14756,17 +14484,15 @@ impl ListObjectParentsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Represents the manner and timing in which the successful write or update of an object
-    /// is reflected in a subsequent read operation of that same object.</p>
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
-    /// <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair.</p>
+    /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
     pub fn include_all_links_to_each_parent(&self) -> bool {
         self.include_all_links_to_each_parent
     }
@@ -14797,8 +14523,7 @@ pub struct ListObjectParentPathsInput {
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListObjectParentPathsInput {
@@ -14814,8 +14539,7 @@ impl ListObjectParentPathsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -14835,29 +14559,23 @@ impl std::fmt::Debug for ListObjectParentPathsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectChildrenInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where the object resides. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
-    /// <p>The reference that identifies the object for which child objects are being
-    /// listed.</p>
+    /// <p>The reference that identifies the object for which child objects are being listed.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Represents the manner and timing in which the successful write or update of an object
-    /// is reflected in a subsequent read operation of that same object.</p>
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl ListObjectChildrenInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where the object resides. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
-    /// <p>The reference that identifies the object for which child objects are being
-    /// listed.</p>
+    /// <p>The reference that identifies the object for which child objects are being listed.</p>
     pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
@@ -14865,13 +14583,11 @@ impl ListObjectChildrenInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Represents the manner and timing in which the successful write or update of an object
-    /// is reflected in a subsequent read operation of that same object.</p>
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
@@ -14892,26 +14608,21 @@ impl std::fmt::Debug for ListObjectChildrenInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectAttributesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where the object resides. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Represents the manner and timing in which the successful write or update of an object
-    /// is reflected in a subsequent read operation of that same object.</p>
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
-    /// <p>Used to filter the list of object attributes that are associated with a certain
-    /// facet.</p>
+    /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
     pub facet_filter: std::option::Option<crate::model::SchemaFacet>,
 }
 impl ListObjectAttributesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where the object resides. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -14923,18 +14634,15 @@ impl ListObjectAttributesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-    /// number.</p>
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Represents the manner and timing in which the successful write or update of an object
-    /// is reflected in a subsequent read operation of that same object.</p>
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
-    /// <p>Used to filter the list of object attributes that are associated with a certain
-    /// facet.</p>
+    /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
     pub fn facet_filter(&self) -> std::option::Option<&crate::model::SchemaFacet> {
         self.facet_filter.as_ref()
     }
@@ -15050,18 +14758,14 @@ impl std::fmt::Debug for ListIndexInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIncomingTypedLinksInput {
-    /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-    /// links.</p>
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Reference that identifies the object whose attributes will be listed.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
-    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-    /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-    /// range specified are presumed to match the entire range.</p>
+    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
     pub filter_attribute_ranges:
         std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
-    /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the
-    /// order in which they are supplied to any API calls.</p>
+    /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
     pub filter_typed_link: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -15071,8 +14775,7 @@ pub struct ListIncomingTypedLinksInput {
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl ListIncomingTypedLinksInput {
-    /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-    /// links.</p>
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -15080,16 +14783,13 @@ impl ListIncomingTypedLinksInput {
     pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
-    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-    /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-    /// range specified are presumed to match the entire range.</p>
+    /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
     pub fn filter_attribute_ranges(
         &self,
     ) -> std::option::Option<&[crate::model::TypedLinkAttributeRange]> {
         self.filter_attribute_ranges.as_deref()
     }
-    /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the
-    /// order in which they are supplied to any API calls.</p>
+    /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
     pub fn filter_typed_link(
         &self,
     ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
@@ -15207,8 +14907,7 @@ pub struct ListDirectoriesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or
-    /// Deleted.</p>
+    /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
     pub state: std::option::Option<crate::model::DirectoryState>,
 }
 impl ListDirectoriesInput {
@@ -15220,8 +14919,7 @@ impl ListDirectoriesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or
-    /// Deleted.</p>
+    /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::DirectoryState> {
         self.state.as_ref()
     }
@@ -15359,15 +15057,13 @@ impl std::fmt::Debug for ListAppliedSchemaArnsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTypedLinkFacetInformationInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The unique name of the typed link facet.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetTypedLinkFacetInformationInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -15445,19 +15141,19 @@ impl std::fmt::Debug for GetObjectInformationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetObjectAttributesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The consistency level at which to retrieve the attributes on an object.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
-    /// <p>Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a> for details.</p>
+    /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
     pub schema_facet: std::option::Option<crate::model::SchemaFacet>,
     /// <p>List of attribute names whose values will be retrieved.</p>
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetObjectAttributesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -15469,7 +15165,7 @@ impl GetObjectAttributesInput {
     pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
-    /// <p>Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a> for details.</p>
+    /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facet(&self) -> std::option::Option<&crate::model::SchemaFacet> {
         self.schema_facet.as_ref()
     }
@@ -15494,7 +15190,7 @@ impl std::fmt::Debug for GetObjectAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLinkAttributesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
@@ -15504,7 +15200,7 @@ pub struct GetLinkAttributesInput {
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl GetLinkAttributesInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -15536,15 +15232,13 @@ impl std::fmt::Debug for GetLinkAttributesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFacetInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-    /// For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the facet to retrieve.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetFacetInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-    /// For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -15650,15 +15344,13 @@ impl std::fmt::Debug for DisableDirectoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachTypedLinkInput {
-    /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed
-    /// link.</p>
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Used to accept a typed link specifier as input.</p>
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
 }
 impl DetachTypedLinkInput {
-    /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed
-    /// link.</p>
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -15680,8 +15372,7 @@ impl std::fmt::Debug for DetachTypedLinkInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where both objects reside. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Reference that identifies the policy object.</p>
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
@@ -15689,8 +15380,7 @@ pub struct DetachPolicyInput {
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl DetachPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where both objects reside. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -15717,23 +15407,19 @@ impl std::fmt::Debug for DetachPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachObjectInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where objects reside. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
-    /// <p>The parent reference from which the object with the specified link name is
-    /// detached.</p>
+    /// <p>The parent reference from which the object with the specified link name is detached.</p>
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>The link name associated with the object that needs to be detached.</p>
     pub link_name: std::option::Option<std::string::String>,
 }
 impl DetachObjectInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where objects reside. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
-    /// <p>The parent reference from which the object with the specified link name is
-    /// detached.</p>
+    /// <p>The parent reference from which the object with the specified link name is detached.</p>
     pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.parent_reference.as_ref()
     }
@@ -15756,8 +15442,7 @@ impl std::fmt::Debug for DetachObjectInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachFromIndexInput {
-    /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist
-    /// in.</p>
+    /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A reference to the index object.</p>
     pub index_reference: std::option::Option<crate::model::ObjectReference>,
@@ -15765,8 +15450,7 @@ pub struct DetachFromIndexInput {
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl DetachFromIndexInput {
-    /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist
-    /// in.</p>
+    /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -15793,15 +15477,13 @@ impl std::fmt::Debug for DetachFromIndexInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTypedLinkFacetInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The unique name of the typed link facet.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteTypedLinkFacetInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -15823,13 +15505,11 @@ impl std::fmt::Debug for DeleteTypedLinkFacetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSchemaInput {
-    /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-    /// <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSchemaInput {
-    /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-    /// <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -15846,15 +15526,13 @@ impl std::fmt::Debug for DeleteSchemaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteObjectInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where the object resides. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A reference that identifies the object.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl DeleteObjectInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where the object resides. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -15876,15 +15554,13 @@ impl std::fmt::Debug for DeleteObjectInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFacetInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-    /// For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The name of the facet to delete.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteFacetInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-    /// For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -15927,23 +15603,17 @@ impl std::fmt::Debug for DeleteDirectoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTypedLinkFacetInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// <a>Facet</a> structure that is associated with the typed link
-    /// facet.</p>
+    /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
     pub facet: std::option::Option<crate::model::TypedLinkFacet>,
 }
 impl CreateTypedLinkFacetInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
-    /// <p>
-    /// <a>Facet</a> structure that is associated with the typed link
-    /// facet.</p>
+    /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
     pub fn facet(&self) -> std::option::Option<&crate::model::TypedLinkFacet> {
         self.facet.as_ref()
     }
@@ -15961,13 +15631,11 @@ impl std::fmt::Debug for CreateTypedLinkFacetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchemaInput {
-    /// <p>The name that is associated with the schema. This is unique to each account and in each
-    /// region.</p>
+    /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateSchemaInput {
-    /// <p>The name that is associated with the schema. This is unique to each account and in each
-    /// region.</p>
+    /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -15984,13 +15652,11 @@ impl std::fmt::Debug for CreateSchemaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateObjectInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// in which the object will be created. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
-    /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.</p>
+    /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
     pub schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
-    /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map
-    /// value.</p>
+    /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
     pub object_attribute_list:
         std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>If specified, the parent reference to which this object will be attached.</p>
@@ -15999,17 +15665,15 @@ pub struct CreateObjectInput {
     pub link_name: std::option::Option<std::string::String>,
 }
 impl CreateObjectInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// in which the object will be created. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
-    /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.</p>
+    /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facets(&self) -> std::option::Option<&[crate::model::SchemaFacet]> {
         self.schema_facets.as_deref()
     }
-    /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map
-    /// value.</p>
+    /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
     pub fn object_attribute_list(
         &self,
     ) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
@@ -16042,12 +15706,10 @@ impl std::fmt::Debug for CreateObjectInput {
 pub struct CreateIndexInput {
     /// <p>The ARN of the directory where the index should be created.</p>
     pub directory_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
-    /// is supported.</p>
+    /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
     pub ordered_indexed_attribute_list:
         std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
-    /// <p>Indicates whether the attribute that is being indexed has unique values or
-    /// not.</p>
+    /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
     pub is_unique: bool,
     /// <p>A reference to the parent object that contains the index object.</p>
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
@@ -16059,15 +15721,13 @@ impl CreateIndexInput {
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
-    /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
-    /// is supported.</p>
+    /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
     pub fn ordered_indexed_attribute_list(
         &self,
     ) -> std::option::Option<&[crate::model::AttributeKey]> {
         self.ordered_indexed_attribute_list.as_deref()
     }
-    /// <p>Indicates whether the attribute that is being indexed has unique values or
-    /// not.</p>
+    /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
     pub fn is_unique(&self) -> bool {
         self.is_unique
     }
@@ -16099,76 +15759,54 @@ impl std::fmt::Debug for CreateIndexInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFacetInput {
-    /// <p>The schema ARN in which the new <a>Facet</a> will be created. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
+    /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The attributes that are associated with the <a>Facet</a>.</p>
+    /// <p>The attributes that are associated with the <code>Facet</code>.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::FacetAttribute>>,
-    /// <p>Specifies whether a given object created from this facet is of type node, leaf node,
-    /// policy or index.</p>
+    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
-    /// <li>
-    /// <p>Node: Can have multiple children but one parent.</p>
-    /// </li>
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Leaf node: Cannot have children but can have multiple parents.</p>
-    /// </li>
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Policy: Allows you to store a policy document and policy type. For more
-    /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    /// </li>
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Index: Can be created with the Index API.</p>
-    /// </li>
+    /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
     pub object_type: std::option::Option<crate::model::ObjectType>,
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub facet_style: std::option::Option<crate::model::FacetStyle>,
 }
 impl CreateFacetInput {
-    /// <p>The schema ARN in which the new <a>Facet</a> will be created. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
-    /// <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
+    /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The attributes that are associated with the <a>Facet</a>.</p>
+    /// <p>The attributes that are associated with the <code>Facet</code>.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::FacetAttribute]> {
         self.attributes.as_deref()
     }
-    /// <p>Specifies whether a given object created from this facet is of type node, leaf node,
-    /// policy or index.</p>
+    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
-    /// <li>
-    /// <p>Node: Can have multiple children but one parent.</p>
-    /// </li>
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Leaf node: Cannot have children but can have multiple parents.</p>
-    /// </li>
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Policy: Allows you to store a policy document and policy type. For more
-    /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    /// </li>
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>Index: Can be created with the Index API.</p>
-    /// </li>
+    /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
     pub fn object_type(&self) -> std::option::Option<&crate::model::ObjectType> {
         self.object_type.as_ref()
@@ -16194,21 +15832,17 @@ impl std::fmt::Debug for CreateFacetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectoryInput {
-    /// <p>The name of the <a>Directory</a>. Should be unique per account, per
-    /// region.</p>
+    /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the
-    /// data <a>Directory</a>. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl CreateDirectoryInput {
-    /// <p>The name of the <a>Directory</a>. Should be unique per account, per
-    /// region.</p>
+    /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the
-    /// data <a>Directory</a>. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -16226,15 +15860,13 @@ impl std::fmt::Debug for CreateDirectoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchWriteInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-    /// For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A list of operations that are part of the batch.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::BatchWriteOperation>>,
 }
 impl BatchWriteInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-    /// For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -16256,18 +15888,15 @@ impl std::fmt::Debug for BatchWriteInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchReadInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-    /// For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A list of operations that are part of the batch.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::BatchReadOperation>>,
-    /// <p>Represents the manner and timing in which the successful write or update of an object
-    /// is reflected in a subsequent read operation of that same object.</p>
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub consistency_level: std::option::Option<crate::model::ConsistencyLevel>,
 }
 impl BatchReadInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-    /// For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -16275,8 +15904,7 @@ impl BatchReadInput {
     pub fn operations(&self) -> std::option::Option<&[crate::model::BatchReadOperation]> {
         self.operations.as_deref()
     }
-    /// <p>Represents the manner and timing in which the successful write or update of an object
-    /// is reflected in a subsequent read operation of that same object.</p>
+    /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn consistency_level(&self) -> std::option::Option<&crate::model::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
@@ -16295,8 +15923,7 @@ impl std::fmt::Debug for BatchReadInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachTypedLinkInput {
-    /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed
-    /// link.</p>
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Identifies the source object that the typed link will attach to.</p>
     pub source_object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -16308,8 +15935,7 @@ pub struct AttachTypedLinkInput {
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
 }
 impl AttachTypedLinkInput {
-    /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed
-    /// link.</p>
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -16348,8 +15974,7 @@ impl std::fmt::Debug for AttachTypedLinkInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachToIndexInput {
-    /// <p>The Amazon Resource Name (ARN) of the directory where the object and index
-    /// exist.</p>
+    /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>A reference to the index that you are attaching the object to.</p>
     pub index_reference: std::option::Option<crate::model::ObjectReference>,
@@ -16357,8 +15982,7 @@ pub struct AttachToIndexInput {
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl AttachToIndexInput {
-    /// <p>The Amazon Resource Name (ARN) of the directory where the object and index
-    /// exist.</p>
+    /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -16385,18 +16009,15 @@ impl std::fmt::Debug for AttachToIndexInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where both objects reside. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The reference that is associated with the policy object.</p>
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
-    /// <p>The reference that identifies the object to which the policy will be
-    /// attached.</p>
+    /// <p>The reference that identifies the object to which the policy will be attached.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl AttachPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where both objects reside. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -16404,8 +16025,7 @@ impl AttachPolicyInput {
     pub fn policy_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.policy_reference.as_ref()
     }
-    /// <p>The reference that identifies the object to which the policy will be
-    /// attached.</p>
+    /// <p>The reference that identifies the object to which the policy will be attached.</p>
     pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
@@ -16424,8 +16044,7 @@ impl std::fmt::Debug for AttachPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachObjectInput {
-    /// <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where both objects reside. For more information, see <a>arns</a>.</p>
+    /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>The parent object reference.</p>
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
@@ -16435,8 +16054,7 @@ pub struct AttachObjectInput {
     pub link_name: std::option::Option<std::string::String>,
 }
 impl AttachObjectInput {
-    /// <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where both objects reside. For more information, see <a>arns</a>.</p>
+    /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -16468,21 +16086,17 @@ impl std::fmt::Debug for AttachObjectInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplySchemaInput {
-    /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
     pub published_schema_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// into which the schema is copied. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl ApplySchemaInput {
-    /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
     pub fn published_schema_arn(&self) -> std::option::Option<&str> {
         self.published_schema_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// into which the schema is copied. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -16500,10 +16114,9 @@ impl std::fmt::Debug for ApplySchemaInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddFacetToObjectInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where the object resides. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
-    /// <p>Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.</p>
+    /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
     pub schema_facet: std::option::Option<crate::model::SchemaFacet>,
     /// <p>Attributes on the facet that you are adding to the object.</p>
     pub object_attribute_list:
@@ -16512,12 +16125,11 @@ pub struct AddFacetToObjectInput {
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl AddFacetToObjectInput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-    /// where the object resides. For more information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
-    /// <p>Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.</p>
+    /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facet(&self) -> std::option::Option<&crate::model::SchemaFacet> {
         self.schema_facet.as_ref()
     }

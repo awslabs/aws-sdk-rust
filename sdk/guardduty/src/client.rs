@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon GuardDuty
@@ -332,6 +332,7 @@ where
     ///
     /// See [`GetUsageStatistics`](crate::client::fluent_builders::GetUsageStatistics) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetUsageStatistics::into_paginator).
     pub fn get_usage_statistics(&self) -> fluent_builders::GetUsageStatistics<C, M, R> {
         fluent_builders::GetUsageStatistics::new(self.handle.clone())
     }
@@ -346,6 +347,7 @@ where
     ///
     /// See [`ListDetectors`](crate::client::fluent_builders::ListDetectors) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDetectors::into_paginator).
     pub fn list_detectors(&self) -> fluent_builders::ListDetectors<C, M, R> {
         fluent_builders::ListDetectors::new(self.handle.clone())
     }
@@ -353,6 +355,7 @@ where
     ///
     /// See [`ListFilters`](crate::client::fluent_builders::ListFilters) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFilters::into_paginator).
     pub fn list_filters(&self) -> fluent_builders::ListFilters<C, M, R> {
         fluent_builders::ListFilters::new(self.handle.clone())
     }
@@ -360,6 +363,7 @@ where
     ///
     /// See [`ListFindings`](crate::client::fluent_builders::ListFindings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
     pub fn list_findings(&self) -> fluent_builders::ListFindings<C, M, R> {
         fluent_builders::ListFindings::new(self.handle.clone())
     }
@@ -367,6 +371,7 @@ where
     ///
     /// See [`ListInvitations`](crate::client::fluent_builders::ListInvitations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
     pub fn list_invitations(&self) -> fluent_builders::ListInvitations<C, M, R> {
         fluent_builders::ListInvitations::new(self.handle.clone())
     }
@@ -374,6 +379,7 @@ where
     ///
     /// See [`ListIPSets`](crate::client::fluent_builders::ListIPSets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIPSets::into_paginator).
     pub fn list_ip_sets(&self) -> fluent_builders::ListIPSets<C, M, R> {
         fluent_builders::ListIPSets::new(self.handle.clone())
     }
@@ -381,6 +387,7 @@ where
     ///
     /// See [`ListMembers`](crate::client::fluent_builders::ListMembers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
     pub fn list_members(&self) -> fluent_builders::ListMembers<C, M, R> {
         fluent_builders::ListMembers::new(self.handle.clone())
     }
@@ -388,6 +395,7 @@ where
     ///
     /// See [`ListOrganizationAdminAccounts`](crate::client::fluent_builders::ListOrganizationAdminAccounts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
     pub fn list_organization_admin_accounts(
         &self,
     ) -> fluent_builders::ListOrganizationAdminAccounts<C, M, R> {
@@ -397,6 +405,7 @@ where
     ///
     /// See [`ListPublishingDestinations`](crate::client::fluent_builders::ListPublishingDestinations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPublishingDestinations::into_paginator).
     pub fn list_publishing_destinations(
         &self,
     ) -> fluent_builders::ListPublishingDestinations<C, M, R> {
@@ -413,6 +422,7 @@ where
     ///
     /// See [`ListThreatIntelSets`](crate::client::fluent_builders::ListThreatIntelSets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThreatIntelSets::into_paginator).
     pub fn list_threat_intel_sets(&self) -> fluent_builders::ListThreatIntelSets<C, M, R> {
         fluent_builders::ListThreatIntelSets::new(self.handle.clone())
     }
@@ -523,7 +533,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptInvitation`.
     ///
     /// <p>Accepts the invitation to be monitored by a GuardDuty administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -568,10 +578,10 @@ pub mod fluent_builders {
                 crate::input::AcceptInvitationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -580,8 +590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty member account.</p>
@@ -590,8 +600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
-        pub fn master_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_id(inp);
+        pub fn master_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_id(input.into());
             self
         }
         /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
@@ -600,8 +610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value that is used to validate the administrator account to the member account.</p>
-        pub fn invitation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invitation_id(inp);
+        pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(input.into());
             self
         }
         /// <p>The value that is used to validate the administrator account to the member account.</p>
@@ -615,12 +625,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ArchiveFindings`.
     ///
-    /// <p>Archives GuardDuty findings that are specified by the list of finding IDs.</p>
-    /// <note>
-    /// <p>Only the administrator account can archive findings. Member accounts don't have permission to
-    /// archive findings from their accounts.</p>
+    /// <p>Archives GuardDuty findings that are specified by the list of finding IDs.</p> <note>
+    /// <p>Only the administrator account can archive findings. Member accounts don't have permission to archive findings from their accounts.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ArchiveFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -665,10 +673,10 @@ pub mod fluent_builders {
                 crate::input::ArchiveFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -676,14 +684,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// archive.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// archive.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -693,8 +699,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
         /// <p>The IDs of the findings that you want to archive.</p>
-        pub fn finding_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_ids(inp);
+        pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_ids(input.into());
             self
         }
         /// <p>The IDs of the findings that you want to archive.</p>
@@ -708,11 +714,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDetector`.
     ///
-    /// <p>Creates a single Amazon GuardDuty detector. A detector is a resource that represents the
-    /// GuardDuty service. To start using GuardDuty, you must create a detector in each Region where
-    /// you enable the service. You can have only one detector per account per Region. All data
-    /// sources are enabled in a new detector by default.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only one detector per account per Region. All data sources are enabled in a new detector by default.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -757,10 +760,10 @@ pub mod fluent_builders {
                 crate::input::CreateDetectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -769,8 +772,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
-        pub fn enable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable(inp);
+        pub fn enable(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable(input);
             self
         }
         /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
@@ -779,8 +782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the create request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token for the create request.</p>
@@ -791,9 +794,9 @@ pub mod fluent_builders {
         /// <p>A value that specifies how frequently updated findings are exported.</p>
         pub fn finding_publishing_frequency(
             mut self,
-            inp: crate::model::FindingPublishingFrequency,
+            input: crate::model::FindingPublishingFrequency,
         ) -> Self {
-            self.inner = self.inner.finding_publishing_frequency(inp);
+            self.inner = self.inner.finding_publishing_frequency(input);
             self
         }
         /// <p>A value that specifies how frequently updated findings are exported.</p>
@@ -805,8 +808,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes which data sources will be enabled for the detector.</p>
-        pub fn data_sources(mut self, inp: crate::model::DataSourceConfigurations) -> Self {
-            self.inner = self.inner.data_sources(inp);
+        pub fn data_sources(mut self, input: crate::model::DataSourceConfigurations) -> Self {
+            self.inner = self.inner.data_sources(input);
             self
         }
         /// <p>Describes which data sources will be enabled for the detector.</p>
@@ -827,7 +830,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be added to a new detector resource.</p>
@@ -844,7 +847,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFilter`.
     ///
     /// <p>Creates a filter using the specified finding criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -889,10 +892,10 @@ pub mod fluent_builders {
                 crate::input::CreateFilterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -900,21 +903,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter
-        /// for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter
-        /// for.</p>
+        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
         }
         /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
@@ -923,8 +924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the filter.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the filter.</p>
@@ -933,8 +934,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-        pub fn action(mut self, inp: crate::model::FilterAction) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: crate::model::FilterAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
@@ -945,14 +946,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
-        pub fn rank(mut self, inp: i32) -> Self {
-            self.inner = self.inner.rank(inp);
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
+        pub fn rank(mut self, input: i32) -> Self {
+            self.inner = self.inner.rank(input);
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_rank(input);
             self
@@ -960,330 +959,116 @@ pub mod fluent_builders {
         /// <p>Represents the criteria to be used in the filter for querying findings.</p>
         /// <p>You can only use the following attributes to query findings:</p>
         /// <ul>
-        /// <li>
-        /// <p>accountId</p>
-        /// </li>
-        /// <li>
-        /// <p>region</p>
-        /// </li>
-        /// <li>
-        /// <p>confidence</p>
-        /// </li>
-        /// <li>
-        /// <p>id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.accessKeyId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.principalId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userType</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.imageId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.instanceId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.outpostArn</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.key</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.value</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.resourceType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.actionType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.api</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.callerType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.errorCode</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.serviceName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.dnsRequestAction.domain</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.blocked</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.connectionDirection</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.protocol</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.additionalInfo.threatListName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.archived</p>
-        /// <p>When this attribute is set to TRUE, only archived findings are listed. When it's set
-        /// to FALSE, only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.</p>
-        /// </li>
-        /// <li>
-        /// <p>service.resourceRole</p>
-        /// </li>
-        /// <li>
-        /// <p>severity</p>
-        /// </li>
-        /// <li>
-        /// <p>type</p>
-        /// </li>
-        /// <li>
-        /// <p>updatedAt</p>
-        /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ
-        /// depending on whether the value contains milliseconds.</p>
-        /// </li>
+        /// <li> <p>accountId</p> </li>
+        /// <li> <p>region</p> </li>
+        /// <li> <p>confidence</p> </li>
+        /// <li> <p>id</p> </li>
+        /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+        /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+        /// <li> <p>resource.instanceDetails.imageId</p> </li>
+        /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+        /// <li> <p>resource.instanceDetails.outpostArn</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+        /// <li> <p>resource.resourceType</p> </li>
+        /// <li> <p>service.action.actionType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+        /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+        /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+        /// <li> <p>service.resourceRole</p> </li>
+        /// <li> <p>severity</p> </li>
+        /// <li> <p>type</p> </li>
+        /// <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>
         /// </ul>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(input);
             self
         }
         /// <p>Represents the criteria to be used in the filter for querying findings.</p>
         /// <p>You can only use the following attributes to query findings:</p>
         /// <ul>
-        /// <li>
-        /// <p>accountId</p>
-        /// </li>
-        /// <li>
-        /// <p>region</p>
-        /// </li>
-        /// <li>
-        /// <p>confidence</p>
-        /// </li>
-        /// <li>
-        /// <p>id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.accessKeyId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.principalId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userType</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.imageId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.instanceId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.outpostArn</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.key</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.value</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.resourceType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.actionType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.api</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.callerType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.errorCode</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.serviceName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.dnsRequestAction.domain</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.blocked</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.connectionDirection</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.protocol</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.additionalInfo.threatListName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.archived</p>
-        /// <p>When this attribute is set to TRUE, only archived findings are listed. When it's set
-        /// to FALSE, only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.</p>
-        /// </li>
-        /// <li>
-        /// <p>service.resourceRole</p>
-        /// </li>
-        /// <li>
-        /// <p>severity</p>
-        /// </li>
-        /// <li>
-        /// <p>type</p>
-        /// </li>
-        /// <li>
-        /// <p>updatedAt</p>
-        /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ
-        /// depending on whether the value contains milliseconds.</p>
-        /// </li>
+        /// <li> <p>accountId</p> </li>
+        /// <li> <p>region</p> </li>
+        /// <li> <p>confidence</p> </li>
+        /// <li> <p>id</p> </li>
+        /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+        /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+        /// <li> <p>resource.instanceDetails.imageId</p> </li>
+        /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+        /// <li> <p>resource.instanceDetails.outpostArn</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+        /// <li> <p>resource.resourceType</p> </li>
+        /// <li> <p>service.action.actionType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+        /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+        /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+        /// <li> <p>service.resourceRole</p> </li>
+        /// <li> <p>severity</p> </li>
+        /// <li> <p>type</p> </li>
+        /// <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>
         /// </ul>
         pub fn set_finding_criteria(
             mut self,
@@ -1293,8 +1078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the create request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token for the create request.</p>
@@ -1312,7 +1097,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be added to a new filter resource.</p>
@@ -1328,11 +1113,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateIPSet`.
     ///
-    /// <p>Creates a new IPSet, which is called a trusted IP list in the console user interface. An
-    /// IPSet is a list of IP addresses that are trusted for secure communication with AWS
-    /// infrastructure and applications. GuardDuty doesn't generate findings for IP addresses that are
-    /// included in IPSets. Only users from the administrator account can use this operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new IPSet, which is called a trusted IP list in the console user interface. An IPSet is a list of IP addresses that are trusted for secure communication with AWS infrastructure and applications. GuardDuty doesn't generate findings for IP addresses that are included in IPSets. Only users from the administrator account can use this operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1377,10 +1159,10 @@ pub mod fluent_builders {
                 crate::input::CreateIpSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1388,22 +1170,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet
-        /// for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet
-        /// for.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
         }
         /// <p>The user-friendly name to identify the IPSet.</p>
         /// <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The user-friendly name to identify the IPSet.</p>
@@ -1413,8 +1193,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format of the file that contains the IPSet.</p>
-        pub fn format(mut self, inp: crate::model::IpSetFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::IpSetFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The format of the file that contains the IPSet.</p>
@@ -1422,33 +1202,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
         }
-        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-        /// IPSet.</p>
-        pub fn activate(mut self, inp: bool) -> Self {
-            self.inner = self.inner.activate(inp);
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
+        pub fn activate(mut self, input: bool) -> Self {
+            self.inner = self.inner.activate(input);
             self
         }
-        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-        /// IPSet.</p>
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_activate(input);
             self
         }
         /// <p>The idempotency token for the create request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token for the create request.</p>
@@ -1466,7 +1242,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be added to a new IP set resource.</p>
@@ -1482,19 +1258,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMembers`.
     ///
-    /// <p>Creates member accounts of the current AWS account by specifying a list of AWS account
-    /// IDs. This step is a prerequisite for managing the associated member accounts either by
-    /// invitation or through an organization.</p>
-    /// <p>When using <code>Create Members</code> as an organizations delegated administrator this
-    /// action will enable GuardDuty in the added member accounts, with the exception of the
-    /// organization delegated administrator account, which must enable GuardDuty prior to being added as a
-    /// member.</p>
-    /// <p>If you are adding accounts by invitation use this action after GuardDuty has been enabled
-    /// in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
-    /// <code>Invite
-    /// Members</code>
-    /// </a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates member accounts of the current AWS account by specifying a list of AWS account IDs. This step is a prerequisite for managing the associated member accounts either by invitation or through an organization.</p>
+    /// <p>When using <code>Create Members</code> as an organizations delegated administrator this action will enable GuardDuty in the added member accounts, with the exception of the organization delegated administrator account, which must enable GuardDuty prior to being added as a member.</p>
+    /// <p>If you are adding accounts by invitation use this action after GuardDuty has been enabled in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html"> <code>Invite Members</code> </a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1539,10 +1306,10 @@ pub mod fluent_builders {
                 crate::input::CreateMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1550,14 +1317,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member
-        /// accounts with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member
-        /// accounts with.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -1566,14 +1331,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_details`](Self::set_account_details).
         ///
-        /// <p>A list of account ID and email address pairs of the accounts that you want to associate
-        /// with the GuardDuty administrator account.</p>
-        pub fn account_details(mut self, inp: impl Into<crate::model::AccountDetail>) -> Self {
-            self.inner = self.inner.account_details(inp);
+        /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
+        pub fn account_details(mut self, input: crate::model::AccountDetail) -> Self {
+            self.inner = self.inner.account_details(input);
             self
         }
-        /// <p>A list of account ID and email address pairs of the accounts that you want to associate
-        /// with the GuardDuty administrator account.</p>
+        /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
         pub fn set_account_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountDetail>>,
@@ -1584,9 +1347,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePublishingDestination`.
     ///
-    /// <p>Creates a publishing destination to export findings to. The resource to export findings to
-    /// must exist before you use this operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a publishing destination to export findings to. The resource to export findings to must exist before you use this operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePublishingDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1631,10 +1393,10 @@ pub mod fluent_builders {
                 crate::input::CreatePublishingDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1643,8 +1405,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
@@ -1652,14 +1414,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are
-        /// supported.</p>
-        pub fn destination_type(mut self, inp: crate::model::DestinationType) -> Self {
-            self.inner = self.inner.destination_type(inp);
+        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
+        pub fn destination_type(mut self, input: crate::model::DestinationType) -> Self {
+            self.inner = self.inner.destination_type(input);
             self
         }
-        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are
-        /// supported.</p>
+        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
         pub fn set_destination_type(
             mut self,
             input: std::option::Option<crate::model::DestinationType>,
@@ -1667,14 +1427,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_type(input);
             self
         }
-        /// <p>The properties of the publishing destination, including the ARNs for the destination and
-        /// the KMS key used for encryption.</p>
-        pub fn destination_properties(mut self, inp: crate::model::DestinationProperties) -> Self {
-            self.inner = self.inner.destination_properties(inp);
+        /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
+        pub fn destination_properties(
+            mut self,
+            input: crate::model::DestinationProperties,
+        ) -> Self {
+            self.inner = self.inner.destination_properties(input);
             self
         }
-        /// <p>The properties of the publishing destination, including the ARNs for the destination and
-        /// the KMS key used for encryption.</p>
+        /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
         pub fn set_destination_properties(
             mut self,
             input: std::option::Option<crate::model::DestinationProperties>,
@@ -1683,8 +1444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token for the request.</p>
@@ -1695,10 +1456,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSampleFindings`.
     ///
-    /// <p>Generates example findings of types specified by the list of finding types. If 'NULL' is
-    /// specified for <code>findingTypes</code>, the API generates example findings of all supported
-    /// finding types.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Generates example findings of types specified by the list of finding types. If 'NULL' is specified for <code>findingTypes</code>, the API generates example findings of all supported finding types.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSampleFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1743,10 +1502,10 @@ pub mod fluent_builders {
                 crate::input::CreateSampleFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1755,8 +1514,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector to create sample findings for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The ID of the detector to create sample findings for.</p>
@@ -1769,8 +1528,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_types`](Self::set_finding_types).
         ///
         /// <p>The types of sample findings to generate.</p>
-        pub fn finding_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_types(inp);
+        pub fn finding_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_types(input.into());
             self
         }
         /// <p>The types of sample findings to generate.</p>
@@ -1784,10 +1543,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateThreatIntelSet`.
     ///
-    /// <p>Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses.
-    /// GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator account can
-    /// use this operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator account can use this operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateThreatIntelSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1832,10 +1589,10 @@ pub mod fluent_builders {
                 crate::input::CreateThreatIntelSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1843,33 +1600,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a
-        /// threatIntelSet for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a
-        /// threatIntelSet for.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-        /// activity that involves IP addresses included in this ThreatIntelSet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-        /// activity that involves IP addresses included in this ThreatIntelSet.</p>
+        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The format of the file that contains the ThreatIntelSet.</p>
-        pub fn format(mut self, inp: crate::model::ThreatIntelSetFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::ThreatIntelSetFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The format of the file that contains the ThreatIntelSet.</p>
@@ -1880,33 +1633,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
         }
-        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-        /// ThreatIntelSet.</p>
-        pub fn activate(mut self, inp: bool) -> Self {
-            self.inner = self.inner.activate(inp);
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
+        pub fn activate(mut self, input: bool) -> Self {
+            self.inner = self.inner.activate(input);
             self
         }
-        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
-        /// ThreatIntelSet.</p>
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_activate(input);
             self
         }
         /// <p>The idempotency token for the create request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token for the create request.</p>
@@ -1924,7 +1673,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be added to a new threat list resource.</p>
@@ -1940,9 +1689,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeclineInvitations`.
     ///
-    /// <p>Declines invitations sent to the current member account by AWS accounts specified by their
-    /// account IDs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Declines invitations sent to the current member account by AWS accounts specified by their account IDs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeclineInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1987,10 +1735,10 @@ pub mod fluent_builders {
                 crate::input::DeclineInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2002,14 +1750,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to decline invitations from.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to decline invitations from.</p>
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2021,7 +1767,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDetector`.
     ///
     /// <p>Deletes an Amazon GuardDuty detector that is specified by the detector ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2066,10 +1812,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDetectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2078,8 +1824,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that you want to delete.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector that you want to delete.</p>
@@ -2091,7 +1837,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFilter`.
     ///
     /// <p>Deletes the filter specified by the filter name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2136,10 +1882,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFilterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2148,8 +1894,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the filter is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector that the filter is associated with.</p>
@@ -2158,8 +1904,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the filter that you want to delete.</p>
-        pub fn filter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name(inp);
+        pub fn filter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name(input.into());
             self
         }
         /// <p>The name of the filter that you want to delete.</p>
@@ -2170,9 +1916,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteInvitations`.
     ///
-    /// <p>Deletes invitations sent to the current member account by AWS accounts specified by their
-    /// account IDs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes invitations sent to the current member account by AWS accounts specified by their account IDs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2217,10 +1962,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2232,14 +1977,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to delete invitations from.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to delete invitations from.</p>
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2250,9 +1993,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteIPSet`.
     ///
-    /// <p>Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted IP
-    /// lists in the console user interface.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted IP lists in the console user interface.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2297,10 +2039,10 @@ pub mod fluent_builders {
                 crate::input::DeleteIpSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2309,8 +2051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector associated with the IPSet.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector associated with the IPSet.</p>
@@ -2319,8 +2061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the IPSet to delete.</p>
-        pub fn ip_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_set_id(inp);
+        pub fn ip_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_set_id(input.into());
             self
         }
         /// <p>The unique ID of the IPSet to delete.</p>
@@ -2331,9 +2073,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMembers`.
     ///
-    /// <p>Deletes GuardDuty member accounts (to the current GuardDuty administrator account) specified by
-    /// the account IDs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2378,10 +2119,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2389,14 +2130,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// delete.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// delete.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -2406,8 +2145,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
@@ -2422,7 +2161,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePublishingDestination`.
     ///
     /// <p>Deletes the publishing definition with the specified <code>destinationId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePublishingDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2467,10 +2206,10 @@ pub mod fluent_builders {
                 crate::input::DeletePublishingDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2479,8 +2218,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
@@ -2489,8 +2228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the publishing destination to delete.</p>
-        pub fn destination_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_id(inp);
+        pub fn destination_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_id(input.into());
             self
         }
         /// <p>The ID of the publishing destination to delete.</p>
@@ -2505,7 +2244,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteThreatIntelSet`.
     ///
     /// <p>Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteThreatIntelSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2550,10 +2289,10 @@ pub mod fluent_builders {
                 crate::input::DeleteThreatIntelSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2562,8 +2301,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
@@ -2572,8 +2311,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
-        pub fn threat_intel_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.threat_intel_set_id(inp);
+        pub fn threat_intel_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.threat_intel_set_id(input.into());
             self
         }
         /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
@@ -2587,9 +2326,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
     ///
-    /// <p>Returns information about the account selected as the delegated administrator for
-    /// GuardDuty.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about the account selected as the delegated administrator for GuardDuty.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2634,10 +2372,10 @@ pub mod fluent_builders {
                 crate::input::DescribeOrganizationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2645,14 +2383,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector to retrieve information about the delegated administrator
-        /// from.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector to retrieve information about the delegated administrator
-        /// from.</p>
+        /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -2660,9 +2396,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePublishingDestination`.
     ///
-    /// <p>Returns information about the publishing destination specified by the provided
-    /// <code>destinationId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about the publishing destination specified by the provided <code>destinationId</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePublishingDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2707,10 +2442,10 @@ pub mod fluent_builders {
                 crate::input::DescribePublishingDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2718,21 +2453,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector associated with the publishing destination to
-        /// retrieve.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector associated with the publishing destination to
-        /// retrieve.</p>
+        /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
         }
         /// <p>The ID of the publishing destination to retrieve.</p>
-        pub fn destination_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_id(inp);
+        pub fn destination_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_id(input.into());
             self
         }
         /// <p>The ID of the publishing destination to retrieve.</p>
@@ -2746,9 +2479,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableOrganizationAdminAccount`.
     ///
-    /// <p>Disables an AWS account within the Organization as the GuardDuty delegated
-    /// administrator.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables an AWS account within the Organization as the GuardDuty delegated administrator.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2793,10 +2525,10 @@ pub mod fluent_builders {
                 crate::input::DisableOrganizationAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2804,14 +2536,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
-        /// administrator.</p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
+        pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(input.into());
             self
         }
-        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
-        /// administrator.</p>
+        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2823,7 +2553,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateFromMasterAccount`.
     ///
     /// <p>Disassociates the current GuardDuty member account from its administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFromMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2868,10 +2598,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateFromMasterAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2880,8 +2610,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty member account.</p>
@@ -2892,9 +2622,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateMembers`.
     ///
-    /// <p>Disassociates GuardDuty member accounts (to the current GuardDuty administrator account)
-    /// specified by the account IDs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2939,10 +2668,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2950,14 +2679,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// disassociate from the administrator account.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// disassociate from the administrator account.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -2966,14 +2693,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
-        /// the administrator account.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
-        /// the administrator account.</p>
+        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2984,9 +2709,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableOrganizationAdminAccount`.
     ///
-    /// <p>Enables an AWS account within the organization as the GuardDuty delegated
-    /// administrator.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Enables an AWS account within the organization as the GuardDuty delegated administrator.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3031,10 +2755,10 @@ pub mod fluent_builders {
                 crate::input::EnableOrganizationAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3042,14 +2766,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
-        /// administrator.</p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+        pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(input.into());
             self
         }
-        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
-        /// administrator.</p>
+        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3061,7 +2783,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDetector`.
     ///
     /// <p>Retrieves an Amazon GuardDuty detector specified by the detectorId.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3106,10 +2828,10 @@ pub mod fluent_builders {
                 crate::input::GetDetectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3118,8 +2840,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that you want to get.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector that you want to get.</p>
@@ -3131,7 +2853,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFilter`.
     ///
     /// <p>Returns the details of the filter specified by the filter name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3176,10 +2898,10 @@ pub mod fluent_builders {
                 crate::input::GetFilterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3188,8 +2910,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the filter is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector that the filter is associated with.</p>
@@ -3198,8 +2920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the filter you want to get.</p>
-        pub fn filter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name(inp);
+        pub fn filter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name(input.into());
             self
         }
         /// <p>The name of the filter you want to get.</p>
@@ -3211,7 +2933,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindings`.
     ///
     /// <p>Describes Amazon GuardDuty findings specified by finding IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3256,10 +2978,10 @@ pub mod fluent_builders {
                 crate::input::GetFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3267,14 +2989,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// retrieve.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -3284,8 +3004,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
         /// <p>The IDs of the findings that you want to retrieve.</p>
-        pub fn finding_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_ids(inp);
+        pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_ids(input.into());
             self
         }
         /// <p>The IDs of the findings that you want to retrieve.</p>
@@ -3297,8 +3017,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the criteria used for sorting findings.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::SortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, input: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>Represents the criteria used for sorting findings.</p>
@@ -3313,7 +3033,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindingsStatistics`.
     ///
     /// <p>Lists Amazon GuardDuty findings statistics for the specified detector ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingsStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3358,10 +3078,10 @@ pub mod fluent_builders {
                 crate::input::GetFindingsStatisticsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3369,14 +3089,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you
-        /// want to retrieve.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you
-        /// want to retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -3388,9 +3106,9 @@ pub mod fluent_builders {
         /// <p>The types of finding statistics to retrieve.</p>
         pub fn finding_statistic_types(
             mut self,
-            inp: impl Into<crate::model::FindingStatisticType>,
+            input: crate::model::FindingStatisticType,
         ) -> Self {
-            self.inner = self.inner.finding_statistic_types(inp);
+            self.inner = self.inner.finding_statistic_types(input);
             self
         }
         /// <p>The types of finding statistics to retrieve.</p>
@@ -3402,8 +3120,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the criteria that is used for querying findings.</p>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(input);
             self
         }
         /// <p>Represents the criteria that is used for querying findings.</p>
@@ -3417,9 +3135,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInvitationsCount`.
     ///
-    /// <p>Returns the count of all GuardDuty membership invitations that were sent to the current
-    /// member account except the currently accepted invitation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the count of all GuardDuty membership invitations that were sent to the current member account except the currently accepted invitation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInvitationsCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3464,10 +3181,10 @@ pub mod fluent_builders {
                 crate::input::GetInvitationsCountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3479,7 +3196,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIPSet`.
     ///
     /// <p>Retrieves the IPSet specified by the <code>ipSetId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3524,10 +3241,10 @@ pub mod fluent_builders {
                 crate::input::GetIpSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3536,8 +3253,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the IPSet is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector that the IPSet is associated with.</p>
@@ -3546,8 +3263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the IPSet to retrieve.</p>
-        pub fn ip_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_set_id(inp);
+        pub fn ip_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_set_id(input.into());
             self
         }
         /// <p>The unique ID of the IPSet to retrieve.</p>
@@ -3558,9 +3275,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMasterAccount`.
     ///
-    /// <p>Provides the details for the GuardDuty administrator account associated with the current
-    /// GuardDuty member account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides the details for the GuardDuty administrator account associated with the current GuardDuty member account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3605,10 +3321,10 @@ pub mod fluent_builders {
                 crate::input::GetMasterAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3617,8 +3333,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector of the GuardDuty member account.</p>
@@ -3630,7 +3346,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMemberDetectors`.
     ///
     /// <p>Describes which data sources are enabled for the member account's detector.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMemberDetectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3675,10 +3391,10 @@ pub mod fluent_builders {
                 crate::input::GetMemberDetectorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3687,8 +3403,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detector ID for the administrator account.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The detector ID for the administrator account.</p>
@@ -3701,8 +3417,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>The account ID of the member account.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>The account ID of the member account.</p>
@@ -3716,9 +3432,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMembers`.
     ///
-    /// <p>Retrieves GuardDuty member accounts (of the current GuardDuty administrator account) specified by
-    /// the account IDs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves GuardDuty member accounts (of the current GuardDuty administrator account) specified by the account IDs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3763,10 +3478,10 @@ pub mod fluent_builders {
                 crate::input::GetMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3774,14 +3489,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// retrieve.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
-        /// retrieve.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -3791,8 +3504,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>A list of account IDs of the GuardDuty member accounts that you want to describe.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs of the GuardDuty member accounts that you want to describe.</p>
@@ -3807,7 +3520,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetThreatIntelSet`.
     ///
     /// <p>Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetThreatIntelSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3852,10 +3565,10 @@ pub mod fluent_builders {
                 crate::input::GetThreatIntelSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3864,8 +3577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
@@ -3874,8 +3587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the threatIntelSet that you want to get.</p>
-        pub fn threat_intel_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.threat_intel_set_id(inp);
+        pub fn threat_intel_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.threat_intel_set_id(input.into());
             self
         }
         /// <p>The unique ID of the threatIntelSet that you want to get.</p>
@@ -3889,11 +3602,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetUsageStatistics`.
     ///
-    /// <p>Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector
-    /// ID. For newly enabled detectors or data sources the cost returned will include only the usage
-    /// so far under 30 days, this may differ from the cost metrics in the console, which projects
-    /// usage over 30 days to provide a monthly cost estimate. For more information see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How Usage Costs are Calculated</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled detectors or data sources the cost returned will include only the usage so far under 30 days, this may differ from the cost metrics in the console, which projects usage over 30 days to provide a monthly cost estimate. For more information see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How Usage Costs are Calculated</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUsageStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3938,10 +3648,10 @@ pub mod fluent_builders {
                 crate::input::GetUsageStatisticsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3949,21 +3659,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you
-        /// want to retrieve.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetUsageStatisticsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetUsageStatisticsPaginator<C, M, R> {
+            crate::paginator::GetUsageStatisticsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you
-        /// want to retrieve.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
         }
         /// <p>The type of usage statistics to retrieve.</p>
-        pub fn usage_statistic_type(mut self, inp: crate::model::UsageStatisticType) -> Self {
-            self.inner = self.inner.usage_statistic_type(inp);
+        pub fn usage_statistic_type(mut self, input: crate::model::UsageStatisticType) -> Self {
+            self.inner = self.inner.usage_statistic_type(input);
             self
         }
         /// <p>The type of usage statistics to retrieve.</p>
@@ -3975,8 +3689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the criteria used for querying usage.</p>
-        pub fn usage_criteria(mut self, inp: crate::model::UsageCriteria) -> Self {
-            self.inner = self.inner.usage_criteria(inp);
+        pub fn usage_criteria(mut self, input: crate::model::UsageCriteria) -> Self {
+            self.inner = self.inner.usage_criteria(input);
             self
         }
         /// <p>Represents the criteria used for querying usage.</p>
@@ -3987,21 +3701,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_usage_criteria(input);
             self
         }
-        /// <p>The currency unit you would like to view your usage statistics in. Current valid values
-        /// are USD.</p>
-        pub fn unit(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unit(inp);
+        /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
+        pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unit(input.into());
             self
         }
-        /// <p>The currency unit you would like to view your usage statistics in. Current valid values
-        /// are USD.</p>
+        /// <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_unit(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -4009,18 +3721,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// NextToken value returned from the previous request to continue listing results after the first
-        /// page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// NextToken value returned from the previous request to continue listing results after the first
-        /// page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4028,10 +3734,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InviteMembers`.
     ///
-    /// <p>Invites other AWS accounts (created as members of the current AWS account by
-    /// CreateMembers) to enable GuardDuty, and allow the current AWS account to view and manage these
-    /// accounts' findings on their behalf as the GuardDuty administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty, and allow the current AWS account to view and manage these accounts' findings on their behalf as the GuardDuty administrator account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InviteMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4076,10 +3780,10 @@ pub mod fluent_builders {
                 crate::input::InviteMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4087,14 +3791,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members
-        /// with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members
-        /// with.</p>
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -4103,14 +3805,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
-        /// members.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
-        /// members.</p>
+        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4119,8 +3819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
-        pub fn disable_email_notification(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_email_notification(inp);
+        pub fn disable_email_notification(mut self, input: bool) -> Self {
+            self.inner = self.inner.disable_email_notification(input);
             self
         }
         /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
@@ -4128,14 +3828,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_disable_email_notification(input);
             self
         }
-        /// <p>The invitation message that you want to send to the accounts that you're inviting to
-        /// GuardDuty as members.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message(inp);
+        /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message(input.into());
             self
         }
-        /// <p>The invitation message that you want to send to the accounts that you're inviting to
-        /// GuardDuty as members.</p>
+        /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_message(input);
             self
@@ -4144,7 +3842,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDetectors`.
     ///
     /// <p>Lists detectorIds of all the existing Amazon GuardDuty detector resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDetectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4189,10 +3887,10 @@ pub mod fluent_builders {
                 crate::input::ListDetectorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4200,30 +3898,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDetectorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDetectorsPaginator<C, M, R> {
+            crate::paginator::ListDetectorsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4232,7 +3928,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFilters`.
     ///
     /// <p>Returns a paginated list of the current filters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFilters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4277,10 +3973,10 @@ pub mod fluent_builders {
                 crate::input::ListFiltersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4288,9 +3984,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFiltersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFiltersPaginator<C, M, R> {
+            crate::paginator::ListFiltersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique ID of the detector that the filter is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector that the filter is associated with.</p>
@@ -4298,30 +4000,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4330,7 +4024,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindings`.
     ///
     /// <p>Lists Amazon GuardDuty findings for the specified detector ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4375,10 +4069,10 @@ pub mod fluent_builders {
                 crate::input::ListFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4386,329 +4080,129 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// list.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFindingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFindingsPaginator<C, M, R> {
+            crate::paginator::ListFindingsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
-        /// list.</p>
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
         }
         /// <p>Represents the criteria used for querying findings. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>JSON field name</p>
-        /// </li>
-        /// <li>
-        /// <p>accountId</p>
-        /// </li>
-        /// <li>
-        /// <p>region</p>
-        /// </li>
-        /// <li>
-        /// <p>confidence</p>
-        /// </li>
-        /// <li>
-        /// <p>id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.accessKeyId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.principalId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userType</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.imageId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.instanceId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.key</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.value</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.resourceType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.actionType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.api</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.callerType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.serviceName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.dnsRequestAction.domain</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.blocked</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.connectionDirection</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.protocol</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.additionalInfo.threatListName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.archived</p>
-        /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set
-        /// to 'false', only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.</p>
-        /// </li>
-        /// <li>
-        /// <p>service.resourceRole</p>
-        /// </li>
-        /// <li>
-        /// <p>severity</p>
-        /// </li>
-        /// <li>
-        /// <p>type</p>
-        /// </li>
-        /// <li>
-        /// <p>updatedAt</p>
-        /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p>
-        /// </li>
+        /// <li> <p>JSON field name</p> </li>
+        /// <li> <p>accountId</p> </li>
+        /// <li> <p>region</p> </li>
+        /// <li> <p>confidence</p> </li>
+        /// <li> <p>id</p> </li>
+        /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+        /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+        /// <li> <p>resource.instanceDetails.imageId</p> </li>
+        /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+        /// <li> <p>resource.resourceType</p> </li>
+        /// <li> <p>service.action.actionType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+        /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+        /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+        /// <li> <p>service.resourceRole</p> </li>
+        /// <li> <p>severity</p> </li>
+        /// <li> <p>type</p> </li>
+        /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
         /// </ul>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(input);
             self
         }
         /// <p>Represents the criteria used for querying findings. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>JSON field name</p>
-        /// </li>
-        /// <li>
-        /// <p>accountId</p>
-        /// </li>
-        /// <li>
-        /// <p>region</p>
-        /// </li>
-        /// <li>
-        /// <p>confidence</p>
-        /// </li>
-        /// <li>
-        /// <p>id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.accessKeyId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.principalId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.accessKeyDetails.userType</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.imageId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.instanceId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.key</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.instanceDetails.tags.value</p>
-        /// </li>
-        /// <li>
-        /// <p>resource.resourceType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.actionType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.api</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.callerType</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.awsApiCallAction.serviceName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.dnsRequestAction.domain</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.blocked</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.connectionDirection</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.protocol</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
-        /// </li>
-        /// <li>
-        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
-        /// </li>
-        /// <li>
-        /// <p>service.additionalInfo.threatListName</p>
-        /// </li>
-        /// <li>
-        /// <p>service.archived</p>
-        /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set
-        /// to 'false', only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.</p>
-        /// </li>
-        /// <li>
-        /// <p>service.resourceRole</p>
-        /// </li>
-        /// <li>
-        /// <p>severity</p>
-        /// </li>
-        /// <li>
-        /// <p>type</p>
-        /// </li>
-        /// <li>
-        /// <p>updatedAt</p>
-        /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p>
-        /// </li>
+        /// <li> <p>JSON field name</p> </li>
+        /// <li> <p>accountId</p> </li>
+        /// <li> <p>region</p> </li>
+        /// <li> <p>confidence</p> </li>
+        /// <li> <p>id</p> </li>
+        /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+        /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+        /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+        /// <li> <p>resource.instanceDetails.imageId</p> </li>
+        /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+        /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+        /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+        /// <li> <p>resource.resourceType</p> </li>
+        /// <li> <p>service.action.actionType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+        /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+        /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+        /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+        /// <li> <p>service.resourceRole</p> </li>
+        /// <li> <p>severity</p> </li>
+        /// <li> <p>type</p> </li>
+        /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
         /// </ul>
         pub fn set_finding_criteria(
             mut self,
@@ -4718,8 +4212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the criteria used for sorting findings.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::SortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, input: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>Represents the criteria used for sorting findings.</p>
@@ -4730,30 +4224,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_criteria(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4761,9 +4247,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInvitations`.
     ///
-    /// <p>Lists all GuardDuty membership invitations that were sent to the current AWS
-    /// account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all GuardDuty membership invitations that were sent to the current AWS account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4808,10 +4293,10 @@ pub mod fluent_builders {
                 crate::input::ListInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4819,30 +4304,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInvitationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInvitationsPaginator<C, M, R> {
+            crate::paginator::ListInvitationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4850,10 +4333,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIPSets`.
     ///
-    /// <p>Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this
-    /// operation from a member account, the IPSets returned are the IPSets from the associated administrator
-    /// account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the IPSets returned are the IPSets from the associated administrator account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIPSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4898,10 +4379,10 @@ pub mod fluent_builders {
                 crate::input::ListIpSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4909,9 +4390,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListIpSetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListIpSetsPaginator<C, M, R> {
+            crate::paginator::ListIpSetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique ID of the detector that the IPSet is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector that the IPSet is associated with.</p>
@@ -4919,30 +4406,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4951,7 +4430,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMembers`.
     ///
     /// <p>Lists details about all member accounts for the current GuardDuty administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4996,10 +4475,10 @@ pub mod fluent_builders {
                 crate::input::ListMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5007,9 +4486,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMembersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMembersPaginator<C, M, R> {
+            crate::paginator::ListMembersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique ID of the detector the member is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector the member is associated with.</p>
@@ -5017,42 +4502,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
-        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
-        /// in the request with the value of NextToken from the previous response to continue listing
-        /// data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies whether to only return associated members or to return all members (including
-        /// members who haven't been invited yet or have been disassociated).</p>
-        pub fn only_associated(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.only_associated(inp);
+        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
+        pub fn only_associated(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.only_associated(input.into());
             self
         }
-        /// <p>Specifies whether to only return associated members or to return all members (including
-        /// members who haven't been invited yet or have been disassociated).</p>
+        /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
         pub fn set_only_associated(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5064,7 +4539,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOrganizationAdminAccounts`.
     ///
     /// <p>Lists the accounts configured as GuardDuty delegated administrators.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationAdminAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5109,10 +4584,10 @@ pub mod fluent_builders {
                 crate::input::ListOrganizationAdminAccountsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5120,9 +4595,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOrganizationAdminAccountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListOrganizationAdminAccountsPaginator<C, M, R> {
+            crate::paginator::ListOrganizationAdminAccountsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -5130,18 +4613,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5149,9 +4626,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPublishingDestinations`.
     ///
-    /// <p>Returns a list of publishing destinations associated with the specified
-    /// <code>dectectorId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of publishing destinations associated with the specified <code>dectectorId</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPublishingDestinations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5196,10 +4672,10 @@ pub mod fluent_builders {
                 crate::input::ListPublishingDestinationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5207,9 +4683,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPublishingDestinationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPublishingDestinationsPaginator<C, M, R> {
+            crate::paginator::ListPublishingDestinationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the detector to retrieve publishing destinations for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The ID of the detector to retrieve publishing destinations for.</p>
@@ -5218,8 +4702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -5227,18 +4711,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value of
-        /// this parameter to null for the first request to a list action. For subsequent calls, use the
-        /// <code>NextToken</code> value returned from the previous request to continue listing results
-        /// after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5246,10 +4724,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists tags for a resource. Tagging is currently supported for detectors, finding filters,
-    /// IP sets, and threat intel sets, with a limit of 50 tags per resource. When invoked, this
-    /// operation returns all assigned tags for a given resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and threat intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a given resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5294,10 +4770,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5306,8 +4782,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the given GuardDuty resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the given GuardDuty resource. </p>
@@ -5318,10 +4794,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListThreatIntelSets`.
     ///
-    /// <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you
-    /// use this operation from a member account, the ThreatIntelSets associated with the administrator
-    /// account are returned.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the ThreatIntelSets associated with the administrator account are returned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListThreatIntelSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5366,10 +4840,10 @@ pub mod fluent_builders {
                 crate::input::ListThreatIntelSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5377,9 +4851,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListThreatIntelSetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListThreatIntelSetsPaginator<C, M, R> {
+            crate::paginator::ListThreatIntelSetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
@@ -5387,30 +4867,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_detector_id(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 50. The maximum value is 50.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>You can use this parameter to paginate results in the response. Set the value of this
-        /// parameter to null on your first call to the list action. For subsequent calls to the action,
-        /// fill nextToken in the request with the value of NextToken from the previous response to
-        /// continue listing data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter to paginate results in the response. Set the value of this
-        /// parameter to null on your first call to the list action. For subsequent calls to the action,
-        /// fill nextToken in the request with the value of NextToken from the previous response to
-        /// continue listing data.</p>
+        /// <p>You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5418,10 +4890,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMonitoringMembers`.
     ///
-    /// <p>Turns on GuardDuty monitoring of the specified member accounts. Use this operation to
-    /// restart monitoring of accounts that you stopped monitoring with the
-    /// <code>StopMonitoringMembers</code> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of accounts that you stopped monitoring with the <code>StopMonitoringMembers</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMonitoringMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5466,10 +4936,10 @@ pub mod fluent_builders {
                 crate::input::StartMonitoringMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5477,14 +4947,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member
-        /// accounts to monitor.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member
-        /// accounts to monitor.</p>
+        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -5494,8 +4962,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
@@ -5509,10 +4977,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopMonitoringMembers`.
     ///
-    /// <p>Stops GuardDuty monitoring for the specified member accounts. Use the
-    /// <code>StartMonitoringMembers</code> operation to restart monitoring for those
-    /// accounts.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code> operation to restart monitoring for those accounts.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopMonitoringMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5557,10 +5023,10 @@ pub mod fluent_builders {
                 crate::input::StopMonitoringMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5568,14 +5034,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is
-        /// monitoring member accounts.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is
-        /// monitoring member accounts.</p>
+        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
@@ -5585,8 +5049,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
@@ -5601,7 +5065,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5646,10 +5110,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5658,8 +5122,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag to.</p>
@@ -5677,7 +5141,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be added to a resource.</p>
@@ -5694,7 +5158,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UnarchiveFindings`.
     ///
     /// <p>Unarchives GuardDuty findings specified by the <code>findingIds</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnarchiveFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5739,10 +5203,10 @@ pub mod fluent_builders {
                 crate::input::UnarchiveFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5751,8 +5215,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector associated with the findings to unarchive.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The ID of the detector associated with the findings to unarchive.</p>
@@ -5765,8 +5229,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
         /// <p>The IDs of the findings to unarchive.</p>
-        pub fn finding_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_ids(inp);
+        pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_ids(input.into());
             self
         }
         /// <p>The IDs of the findings to unarchive.</p>
@@ -5781,7 +5245,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5826,10 +5290,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5838,8 +5302,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
@@ -5852,8 +5316,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys to remove from the resource.</p>
@@ -5868,7 +5332,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDetector`.
     ///
     /// <p>Updates the Amazon GuardDuty detector specified by the detectorId.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDetector<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5913,10 +5377,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDetectorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5925,8 +5389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the detector to update.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The unique ID of the detector to update.</p>
@@ -5935,8 +5399,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the detector is enabled or not enabled.</p>
-        pub fn enable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable(inp);
+        pub fn enable(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable(input);
             self
         }
         /// <p>Specifies whether the detector is enabled or not enabled.</p>
@@ -5944,17 +5408,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable(input);
             self
         }
-        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch
-        /// Events.</p>
+        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
         pub fn finding_publishing_frequency(
             mut self,
-            inp: crate::model::FindingPublishingFrequency,
+            input: crate::model::FindingPublishingFrequency,
         ) -> Self {
-            self.inner = self.inner.finding_publishing_frequency(inp);
+            self.inner = self.inner.finding_publishing_frequency(input);
             self
         }
-        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch
-        /// Events.</p>
+        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
         pub fn set_finding_publishing_frequency(
             mut self,
             input: std::option::Option<crate::model::FindingPublishingFrequency>,
@@ -5963,8 +5425,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes which data sources will be updated.</p>
-        pub fn data_sources(mut self, inp: crate::model::DataSourceConfigurations) -> Self {
-            self.inner = self.inner.data_sources(inp);
+        pub fn data_sources(mut self, input: crate::model::DataSourceConfigurations) -> Self {
+            self.inner = self.inner.data_sources(input);
             self
         }
         /// <p>Describes which data sources will be updated.</p>
@@ -5979,7 +5441,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFilter`.
     ///
     /// <p>Updates the filter specified by the filter name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6024,10 +5486,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFilterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6035,21 +5497,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to
-        /// update a filter.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to
-        /// update a filter.</p>
+        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
         }
         /// <p>The name of the filter.</p>
-        pub fn filter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_name(inp);
+        pub fn filter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_name(input.into());
             self
         }
         /// <p>The name of the filter.</p>
@@ -6058,8 +5518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the filter.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the filter.</p>
@@ -6068,8 +5528,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-        pub fn action(mut self, inp: crate::model::FilterAction) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: crate::model::FilterAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
@@ -6080,21 +5540,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
-        pub fn rank(mut self, inp: i32) -> Self {
-            self.inner = self.inner.rank(inp);
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
+        pub fn rank(mut self, input: i32) -> Self {
+            self.inner = self.inner.rank(input);
             self
         }
-        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
-        /// order in which this filter is applied to the findings.</p>
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_rank(input);
             self
         }
         /// <p>Represents the criteria to be used in the filter for querying findings.</p>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(input);
             self
         }
         /// <p>Represents the criteria to be used in the filter for querying findings.</p>
@@ -6109,7 +5567,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFindingsFeedback`.
     ///
     /// <p>Marks the specified GuardDuty findings as useful or not useful.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFindingsFeedback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6154,10 +5612,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFindingsFeedbackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6166,8 +5624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector associated with the findings to update feedback for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The ID of the detector associated with the findings to update feedback for.</p>
@@ -6180,8 +5638,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
         /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
-        pub fn finding_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_ids(inp);
+        pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_ids(input.into());
             self
         }
         /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
@@ -6193,8 +5651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The feedback for the finding.</p>
-        pub fn feedback(mut self, inp: crate::model::Feedback) -> Self {
-            self.inner = self.inner.feedback(inp);
+        pub fn feedback(mut self, input: crate::model::Feedback) -> Self {
+            self.inner = self.inner.feedback(input);
             self
         }
         /// <p>The feedback for the finding.</p>
@@ -6203,8 +5661,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Additional feedback about the GuardDuty findings.</p>
-        pub fn comments(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comments(inp);
+        pub fn comments(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comments(input.into());
             self
         }
         /// <p>Additional feedback about the GuardDuty findings.</p>
@@ -6216,7 +5674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIPSet`.
     ///
     /// <p>Updates the IPSet specified by the IPSet ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIPSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6261,10 +5719,10 @@ pub mod fluent_builders {
                 crate::input::UpdateIpSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6273,8 +5731,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
@@ -6283,8 +5741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID that specifies the IPSet that you want to update.</p>
-        pub fn ip_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_set_id(inp);
+        pub fn ip_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_set_id(input.into());
             self
         }
         /// <p>The unique ID that specifies the IPSet that you want to update.</p>
@@ -6293,8 +5751,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID that specifies the IPSet that you want to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The unique ID that specifies the IPSet that you want to update.</p>
@@ -6302,21 +5760,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The updated URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The updated URI of the file that contains the IPSet. For example:
-        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
         }
         /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
-        pub fn activate(mut self, inp: bool) -> Self {
-            self.inner = self.inner.activate(inp);
+        pub fn activate(mut self, input: bool) -> Self {
+            self.inner = self.inner.activate(input);
             self
         }
         /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
@@ -6328,7 +5784,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMemberDetectors`.
     ///
     /// <p>Contains information on member accounts to be updated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMemberDetectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6373,10 +5829,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMemberDetectorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6385,8 +5841,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The detector ID of the administrator account.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The detector ID of the administrator account.</p>
@@ -6399,8 +5855,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>A list of member account IDs to be updated.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>A list of member account IDs to be updated.</p>
@@ -6412,8 +5868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes which data sources will be updated.</p>
-        pub fn data_sources(mut self, inp: crate::model::DataSourceConfigurations) -> Self {
-            self.inner = self.inner.data_sources(inp);
+        pub fn data_sources(mut self, input: crate::model::DataSourceConfigurations) -> Self {
+            self.inner = self.inner.data_sources(input);
             self
         }
         /// <p>Describes which data sources will be updated.</p>
@@ -6428,7 +5884,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateOrganizationConfiguration`.
     ///
     /// <p>Updates the delegated administrator account with the values provided.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6473,10 +5929,10 @@ pub mod fluent_builders {
                 crate::input::UpdateOrganizationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6485,8 +5941,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector to update the delegated administrator for.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The ID of the detector to update the delegated administrator for.</p>
@@ -6495,8 +5951,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
-        pub fn auto_enable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_enable(inp);
+        pub fn auto_enable(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_enable(input);
             self
         }
         /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
@@ -6507,9 +5963,9 @@ pub mod fluent_builders {
         /// <p>Describes which data sources will be updated.</p>
         pub fn data_sources(
             mut self,
-            inp: crate::model::OrganizationDataSourceConfigurations,
+            input: crate::model::OrganizationDataSourceConfigurations,
         ) -> Self {
-            self.inner = self.inner.data_sources(inp);
+            self.inner = self.inner.data_sources(input);
             self
         }
         /// <p>Describes which data sources will be updated.</p>
@@ -6523,9 +5979,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePublishingDestination`.
     ///
-    /// <p>Updates information about the publishing destination specified by the
-    /// <code>destinationId</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates information about the publishing destination specified by the <code>destinationId</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePublishingDestination<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6570,10 +6025,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePublishingDestinationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6582,8 +6037,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the detector associated with the publishing destinations to update.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
         /// <p>The ID of the detector associated with the publishing destinations to update.</p>
@@ -6592,8 +6047,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the publishing destination to update.</p>
-        pub fn destination_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_id(inp);
+        pub fn destination_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_id(input.into());
             self
         }
         /// <p>The ID of the publishing destination to update.</p>
@@ -6604,14 +6059,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_id(input);
             self
         }
-        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-        /// and <code>KmsKeyArn</code> of the publishing destination.</p>
-        pub fn destination_properties(mut self, inp: crate::model::DestinationProperties) -> Self {
-            self.inner = self.inner.destination_properties(inp);
+        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
+        pub fn destination_properties(
+            mut self,
+            input: crate::model::DestinationProperties,
+        ) -> Self {
+            self.inner = self.inner.destination_properties(input);
             self
         }
-        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-        /// and <code>KmsKeyArn</code> of the publishing destination.</p>
+        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
         pub fn set_destination_properties(
             mut self,
             input: std::option::Option<crate::model::DestinationProperties>,
@@ -6623,7 +6079,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateThreatIntelSet`.
     ///
     /// <p>Updates the ThreatIntelSet specified by the ThreatIntelSet ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateThreatIntelSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6668,10 +6124,10 @@ pub mod fluent_builders {
                 crate::input::UpdateThreatIntelSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6679,21 +6135,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to
-        /// update.</p>
-        pub fn detector_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.detector_id(inp);
+        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
             self
         }
-        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to
-        /// update.</p>
+        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_detector_id(input);
             self
         }
         /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
-        pub fn threat_intel_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.threat_intel_set_id(inp);
+        pub fn threat_intel_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.threat_intel_set_id(input.into());
             self
         }
         /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
@@ -6705,8 +6159,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
@@ -6715,8 +6169,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
         /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
@@ -6724,20 +6178,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_location(input);
             self
         }
-        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or
-        /// not.</p>
-        pub fn activate(mut self, inp: bool) -> Self {
-            self.inner = self.inner.activate(inp);
+        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
+        pub fn activate(mut self, input: bool) -> Self {
+            self.inner = self.inner.activate(input);
             self
         }
-        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or
-        /// not.</p>
+        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_activate(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

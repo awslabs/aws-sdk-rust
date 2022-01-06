@@ -20,7 +20,7 @@ use crate::credentials::SharedCredentialsProvider;
 use crate::region::Region;
 
 /// AWS Shared Configuration
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Config {
     app_name: Option<AppName>,
     credentials_provider: Option<SharedCredentialsProvider>,

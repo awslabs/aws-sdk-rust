@@ -5,10 +5,7 @@
 pub struct ListMeshesOutput {
     /// <p>The list of existing service meshes.</p>
     pub meshes: std::option::Option<std::vec::Vec<crate::model::MeshRef>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request.
-    /// When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can
-    /// use this value to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMeshesOutput {
@@ -16,10 +13,7 @@ impl ListMeshesOutput {
     pub fn meshes(&self) -> std::option::Option<&[crate::model::MeshRef]> {
         self.meshes.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request.
-    /// When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can
-    /// use this value to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,9 +41,9 @@ pub mod list_meshes_output {
         /// To override the contents of this collection use [`set_meshes`](Self::set_meshes).
         ///
         /// <p>The list of existing service meshes.</p>
-        pub fn meshes(mut self, input: impl Into<crate::model::MeshRef>) -> Self {
+        pub fn meshes(mut self, input: crate::model::MeshRef) -> Self {
             let mut v = self.meshes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.meshes = Some(v);
             self
         }
@@ -61,18 +55,12 @@ pub mod list_meshes_output {
             self.meshes = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request.
-        /// When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can
-        /// use this value to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request.
-        /// When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can
-        /// use this value to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -307,10 +295,7 @@ impl DescribeMeshOutput {
 pub struct ListVirtualServicesOutput {
     /// <p>The list of existing virtual services for the specified service mesh.</p>
     pub virtual_services: std::option::Option<std::vec::Vec<crate::model::VirtualServiceRef>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code>
-    /// request. When the results of a <code>ListVirtualServices</code> request exceed
-    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualServicesOutput {
@@ -318,10 +303,7 @@ impl ListVirtualServicesOutput {
     pub fn virtual_services(&self) -> std::option::Option<&[crate::model::VirtualServiceRef]> {
         self.virtual_services.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code>
-    /// request. When the results of a <code>ListVirtualServices</code> request exceed
-    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -350,12 +332,9 @@ pub mod list_virtual_services_output {
         /// To override the contents of this collection use [`set_virtual_services`](Self::set_virtual_services).
         ///
         /// <p>The list of existing virtual services for the specified service mesh.</p>
-        pub fn virtual_services(
-            mut self,
-            input: impl Into<crate::model::VirtualServiceRef>,
-        ) -> Self {
+        pub fn virtual_services(mut self, input: crate::model::VirtualServiceRef) -> Self {
             let mut v = self.virtual_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_services = Some(v);
             self
         }
@@ -367,18 +346,12 @@ pub mod list_virtual_services_output {
             self.virtual_services = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code>
-        /// request. When the results of a <code>ListVirtualServices</code> request exceed
-        /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code>
-        /// request. When the results of a <code>ListVirtualServices</code> request exceed
-        /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -633,10 +606,7 @@ impl DescribeVirtualServiceOutput {
 pub struct ListVirtualRoutersOutput {
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
     pub virtual_routers: std::option::Option<std::vec::Vec<crate::model::VirtualRouterRef>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code>
-    /// request. When the results of a <code>ListVirtualRouters</code> request exceed
-    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualRoutersOutput {
@@ -644,10 +614,7 @@ impl ListVirtualRoutersOutput {
     pub fn virtual_routers(&self) -> std::option::Option<&[crate::model::VirtualRouterRef]> {
         self.virtual_routers.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code>
-    /// request. When the results of a <code>ListVirtualRouters</code> request exceed
-    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -676,9 +643,9 @@ pub mod list_virtual_routers_output {
         /// To override the contents of this collection use [`set_virtual_routers`](Self::set_virtual_routers).
         ///
         /// <p>The list of existing virtual routers for the specified service mesh.</p>
-        pub fn virtual_routers(mut self, input: impl Into<crate::model::VirtualRouterRef>) -> Self {
+        pub fn virtual_routers(mut self, input: crate::model::VirtualRouterRef) -> Self {
             let mut v = self.virtual_routers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_routers = Some(v);
             self
         }
@@ -690,18 +657,12 @@ pub mod list_virtual_routers_output {
             self.virtual_routers = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code>
-        /// request. When the results of a <code>ListVirtualRouters</code> request exceed
-        /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code>
-        /// request. When the results of a <code>ListVirtualRouters</code> request exceed
-        /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -956,10 +917,7 @@ impl DescribeVirtualRouterOutput {
 pub struct ListRoutesOutput {
     /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
     pub routes: std::option::Option<std::vec::Vec<crate::model::RouteRef>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request.
-    /// When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can
-    /// use this value to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRoutesOutput {
@@ -967,10 +925,7 @@ impl ListRoutesOutput {
     pub fn routes(&self) -> std::option::Option<&[crate::model::RouteRef]> {
         self.routes.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request.
-    /// When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can
-    /// use this value to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -998,9 +953,9 @@ pub mod list_routes_output {
         /// To override the contents of this collection use [`set_routes`](Self::set_routes).
         ///
         /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
-        pub fn routes(mut self, input: impl Into<crate::model::RouteRef>) -> Self {
+        pub fn routes(mut self, input: crate::model::RouteRef) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routes = Some(v);
             self
         }
@@ -1012,18 +967,12 @@ pub mod list_routes_output {
             self.routes = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request.
-        /// When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can
-        /// use this value to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request.
-        /// When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can
-        /// use this value to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1258,10 +1207,7 @@ impl DescribeRouteOutput {
 pub struct ListVirtualNodesOutput {
     /// <p>The list of existing virtual nodes for the specified service mesh.</p>
     pub virtual_nodes: std::option::Option<std::vec::Vec<crate::model::VirtualNodeRef>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code>
-    /// request. When the results of a <code>ListVirtualNodes</code> request exceed
-    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualNodesOutput {
@@ -1269,10 +1215,7 @@ impl ListVirtualNodesOutput {
     pub fn virtual_nodes(&self) -> std::option::Option<&[crate::model::VirtualNodeRef]> {
         self.virtual_nodes.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code>
-    /// request. When the results of a <code>ListVirtualNodes</code> request exceed
-    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1300,9 +1243,9 @@ pub mod list_virtual_nodes_output {
         /// To override the contents of this collection use [`set_virtual_nodes`](Self::set_virtual_nodes).
         ///
         /// <p>The list of existing virtual nodes for the specified service mesh.</p>
-        pub fn virtual_nodes(mut self, input: impl Into<crate::model::VirtualNodeRef>) -> Self {
+        pub fn virtual_nodes(mut self, input: crate::model::VirtualNodeRef) -> Self {
             let mut v = self.virtual_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_nodes = Some(v);
             self
         }
@@ -1314,18 +1257,12 @@ pub mod list_virtual_nodes_output {
             self.virtual_nodes = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code>
-        /// request. When the results of a <code>ListVirtualNodes</code> request exceed
-        /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code>
-        /// request. When the results of a <code>ListVirtualNodes</code> request exceed
-        /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1580,10 +1517,7 @@ impl DescribeVirtualNodeOutput {
 pub struct ListVirtualGatewaysOutput {
     /// <p>The list of existing virtual gateways for the specified service mesh.</p>
     pub virtual_gateways: std::option::Option<std::vec::Vec<crate::model::VirtualGatewayRef>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code>
-    /// request. When the results of a <code>ListVirtualGateways</code> request exceed
-    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualGatewaysOutput {
@@ -1591,10 +1525,7 @@ impl ListVirtualGatewaysOutput {
     pub fn virtual_gateways(&self) -> std::option::Option<&[crate::model::VirtualGatewayRef]> {
         self.virtual_gateways.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code>
-    /// request. When the results of a <code>ListVirtualGateways</code> request exceed
-    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1623,12 +1554,9 @@ pub mod list_virtual_gateways_output {
         /// To override the contents of this collection use [`set_virtual_gateways`](Self::set_virtual_gateways).
         ///
         /// <p>The list of existing virtual gateways for the specified service mesh.</p>
-        pub fn virtual_gateways(
-            mut self,
-            input: impl Into<crate::model::VirtualGatewayRef>,
-        ) -> Self {
+        pub fn virtual_gateways(mut self, input: crate::model::VirtualGatewayRef) -> Self {
             let mut v = self.virtual_gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_gateways = Some(v);
             self
         }
@@ -1640,18 +1568,12 @@ pub mod list_virtual_gateways_output {
             self.virtual_gateways = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code>
-        /// request. When the results of a <code>ListVirtualGateways</code> request exceed
-        /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code>
-        /// request. When the results of a <code>ListVirtualGateways</code> request exceed
-        /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1904,25 +1826,17 @@ impl DescribeVirtualGatewayOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewayRoutesOutput {
-    /// <p>The list of existing gateway routes for the specified service mesh and virtual
-    /// gateway.</p>
+    /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
     pub gateway_routes: std::option::Option<std::vec::Vec<crate::model::GatewayRouteRef>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code>
-    /// request. When the results of a <code>ListGatewayRoutes</code> request exceed
-    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGatewayRoutesOutput {
-    /// <p>The list of existing gateway routes for the specified service mesh and virtual
-    /// gateway.</p>
+    /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
     pub fn gateway_routes(&self) -> std::option::Option<&[crate::model::GatewayRouteRef]> {
         self.gateway_routes.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code>
-    /// request. When the results of a <code>ListGatewayRoutes</code> request exceed
-    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1950,16 +1864,14 @@ pub mod list_gateway_routes_output {
         ///
         /// To override the contents of this collection use [`set_gateway_routes`](Self::set_gateway_routes).
         ///
-        /// <p>The list of existing gateway routes for the specified service mesh and virtual
-        /// gateway.</p>
-        pub fn gateway_routes(mut self, input: impl Into<crate::model::GatewayRouteRef>) -> Self {
+        /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
+        pub fn gateway_routes(mut self, input: crate::model::GatewayRouteRef) -> Self {
             let mut v = self.gateway_routes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.gateway_routes = Some(v);
             self
         }
-        /// <p>The list of existing gateway routes for the specified service mesh and virtual
-        /// gateway.</p>
+        /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
         pub fn set_gateway_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GatewayRouteRef>>,
@@ -1967,18 +1879,12 @@ pub mod list_gateway_routes_output {
             self.gateway_routes = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code>
-        /// request. When the results of a <code>ListGatewayRoutes</code> request exceed
-        /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code>
-        /// request. When the results of a <code>ListGatewayRoutes</code> request exceed
-        /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2293,10 +2199,7 @@ impl TagResourceOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code>
-    /// request. When the results of a <code>ListTagsForResource</code> request exceed
-    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code> request. When the results of a <code>ListTagsForResource</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -2304,10 +2207,7 @@ impl ListTagsForResourceOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
         self.tags.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code>
-    /// request. When the results of a <code>ListTagsForResource</code> request exceed
-    /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code> request. When the results of a <code>ListTagsForResource</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2335,9 +2235,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2349,18 +2249,12 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code>
-        /// request. When the results of a <code>ListTagsForResource</code> request exceed
-        /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code> request. When the results of a <code>ListTagsForResource</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code>
-        /// request. When the results of a <code>ListTagsForResource</code> request exceed
-        /// <code>limit</code>, you can use this value to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code> request. When the results of a <code>ListTagsForResource</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

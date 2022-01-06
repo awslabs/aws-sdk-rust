@@ -6,8 +6,7 @@ pub struct StartStreamTranscriptionOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The language code of the input audio stream.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality
-    /// audio and 16,000 Hz or higher for high quality audio.</p>
+    /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The encoding used for the input audio stream.</p>
     pub media_encoding: std::option::Option<crate::model::MediaEncoding>,
@@ -32,8 +31,7 @@ pub struct StartStreamTranscriptionOutput {
     pub number_of_channels: std::option::Option<i32>,
     /// <p>Shows whether partial results stabilization has been enabled in the stream.</p>
     pub enable_partial_results_stabilization: bool,
-    /// <p>If partial results stabilization has been enabled in the stream, shows the stability
-    /// level.</p>
+    /// <p>If partial results stabilization has been enabled in the stream, shows the stability level.</p>
     pub partial_results_stability: std::option::Option<crate::model::PartialResultsStability>,
     /// <p>Shows whether content identification was enabled in this stream.</p>
     pub content_identification_type: std::option::Option<crate::model::ContentIdentificationType>,
@@ -45,8 +43,7 @@ pub struct StartStreamTranscriptionOutput {
     pub language_model_name: std::option::Option<std::string::String>,
     /// <p>The language code of the language identified in your media stream.</p>
     pub identify_language: bool,
-    /// <p>The language codes used in the identification of your media stream's predominant
-    /// language.</p>
+    /// <p>The language codes used in the identification of your media stream's predominant language.</p>
     pub language_options: std::option::Option<std::string::String>,
     /// <p>The preferred language you specified in your request.</p>
     pub preferred_language: std::option::Option<crate::model::LanguageCode>,
@@ -60,8 +57,7 @@ impl StartStreamTranscriptionOutput {
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality
-    /// audio and 16,000 Hz or higher for high quality audio.</p>
+    /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
     pub fn media_sample_rate_hertz(&self) -> std::option::Option<i32> {
         self.media_sample_rate_hertz
     }
@@ -112,8 +108,7 @@ impl StartStreamTranscriptionOutput {
     pub fn enable_partial_results_stabilization(&self) -> bool {
         self.enable_partial_results_stabilization
     }
-    /// <p>If partial results stabilization has been enabled in the stream, shows the stability
-    /// level.</p>
+    /// <p>If partial results stabilization has been enabled in the stream, shows the stability level.</p>
     pub fn partial_results_stability(
         &self,
     ) -> std::option::Option<&crate::model::PartialResultsStability> {
@@ -143,8 +138,7 @@ impl StartStreamTranscriptionOutput {
     pub fn identify_language(&self) -> bool {
         self.identify_language
     }
-    /// <p>The language codes used in the identification of your media stream's predominant
-    /// language.</p>
+    /// <p>The language codes used in the identification of your media stream's predominant language.</p>
     pub fn language_options(&self) -> std::option::Option<&str> {
         self.language_options.as_deref()
     }
@@ -249,14 +243,12 @@ pub mod start_stream_transcription_output {
             self.language_code = input;
             self
         }
-        /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality
-        /// audio and 16,000 Hz or higher for high quality audio.</p>
+        /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
             self
         }
-        /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality
-        /// audio and 16,000 Hz or higher for high quality audio.</p>
+        /// <p>The sample rate, in Hertz (Hz), for the input audio stream. Use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self
@@ -396,8 +388,7 @@ pub mod start_stream_transcription_output {
             self.enable_partial_results_stabilization = input;
             self
         }
-        /// <p>If partial results stabilization has been enabled in the stream, shows the stability
-        /// level.</p>
+        /// <p>If partial results stabilization has been enabled in the stream, shows the stability level.</p>
         pub fn partial_results_stability(
             mut self,
             input: crate::model::PartialResultsStability,
@@ -405,8 +396,7 @@ pub mod start_stream_transcription_output {
             self.partial_results_stability = Some(input);
             self
         }
-        /// <p>If partial results stabilization has been enabled in the stream, shows the stability
-        /// level.</p>
+        /// <p>If partial results stabilization has been enabled in the stream, shows the stability level.</p>
         pub fn set_partial_results_stability(
             mut self,
             input: std::option::Option<crate::model::PartialResultsStability>,
@@ -479,14 +469,12 @@ pub mod start_stream_transcription_output {
             self.identify_language = input;
             self
         }
-        /// <p>The language codes used in the identification of your media stream's predominant
-        /// language.</p>
+        /// <p>The language codes used in the identification of your media stream's predominant language.</p>
         pub fn language_options(mut self, input: impl Into<std::string::String>) -> Self {
             self.language_options = Some(input.into());
             self
         }
-        /// <p>The language codes used in the identification of your media stream's predominant
-        /// language.</p>
+        /// <p>The language codes used in the identification of your media stream's predominant language.</p>
         pub fn set_language_options(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -582,8 +570,7 @@ impl StartStreamTranscriptionOutput {
 pub struct StartMedicalStreamTranscriptionOutput {
     /// <p>An identifier for the streaming transcription.</p>
     pub request_id: std::option::Option<std::string::String>,
-    /// <p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English
-    /// (en-US).</p>
+    /// <p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English (en-US).</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The sample rate of the input audio in Hertz.</p>
     pub media_sample_rate_hertz: std::option::Option<i32>,
@@ -597,8 +584,7 @@ pub struct StartMedicalStreamTranscriptionOutput {
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>Shows whether speaker identification was enabled in the stream.</p>
     pub show_speaker_label: bool,
-    /// <p>Optional. An identifier for the transcription session. If you don't provide a session
-    /// ID, Amazon Transcribe generates one for you and returns it in the response.</p>
+    /// <p>Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response.</p>
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Represents the stream of transcription events from Amazon Transcribe Medical to your application. </p>
     pub transcript_result_stream: aws_smithy_http::event_stream::Receiver<
@@ -609,8 +595,7 @@ pub struct StartMedicalStreamTranscriptionOutput {
     pub enable_channel_identification: bool,
     /// <p>The number of channels identified in the stream.</p>
     pub number_of_channels: std::option::Option<i32>,
-    /// <p>If the value is <code>PHI</code>, indicates that you've configured your stream to
-    /// identify personal health information.</p>
+    /// <p>If the value is <code>PHI</code>, indicates that you've configured your stream to identify personal health information.</p>
     pub content_identification_type:
         std::option::Option<crate::model::MedicalContentIdentificationType>,
 }
@@ -619,8 +604,7 @@ impl StartMedicalStreamTranscriptionOutput {
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English
-    /// (en-US).</p>
+    /// <p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English (en-US).</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -648,8 +632,7 @@ impl StartMedicalStreamTranscriptionOutput {
     pub fn show_speaker_label(&self) -> bool {
         self.show_speaker_label
     }
-    /// <p>Optional. An identifier for the transcription session. If you don't provide a session
-    /// ID, Amazon Transcribe generates one for you and returns it in the response.</p>
+    /// <p>Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response.</p>
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
@@ -670,8 +653,7 @@ impl StartMedicalStreamTranscriptionOutput {
     pub fn number_of_channels(&self) -> std::option::Option<i32> {
         self.number_of_channels
     }
-    /// <p>If the value is <code>PHI</code>, indicates that you've configured your stream to
-    /// identify personal health information.</p>
+    /// <p>If the value is <code>PHI</code>, indicates that you've configured your stream to identify personal health information.</p>
     pub fn content_identification_type(
         &self,
     ) -> std::option::Option<&crate::model::MedicalContentIdentificationType> {
@@ -740,14 +722,12 @@ pub mod start_medical_stream_transcription_output {
             self.request_id = input;
             self
         }
-        /// <p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English
-        /// (en-US).</p>
+        /// <p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English (en-US).</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English
-        /// (en-US).</p>
+        /// <p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English (en-US).</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -824,14 +804,12 @@ pub mod start_medical_stream_transcription_output {
             self.show_speaker_label = input;
             self
         }
-        /// <p>Optional. An identifier for the transcription session. If you don't provide a session
-        /// ID, Amazon Transcribe generates one for you and returns it in the response.</p>
+        /// <p>Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_id = Some(input.into());
             self
         }
-        /// <p>Optional. An identifier for the transcription session. If you don't provide a session
-        /// ID, Amazon Transcribe generates one for you and returns it in the response.</p>
+        /// <p>Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
@@ -883,8 +861,7 @@ pub mod start_medical_stream_transcription_output {
             self.number_of_channels = input;
             self
         }
-        /// <p>If the value is <code>PHI</code>, indicates that you've configured your stream to
-        /// identify personal health information.</p>
+        /// <p>If the value is <code>PHI</code>, indicates that you've configured your stream to identify personal health information.</p>
         pub fn content_identification_type(
             mut self,
             input: crate::model::MedicalContentIdentificationType,
@@ -892,8 +869,7 @@ pub mod start_medical_stream_transcription_output {
             self.content_identification_type = Some(input);
             self
         }
-        /// <p>If the value is <code>PHI</code>, indicates that you've configured your stream to
-        /// identify personal health information.</p>
+        /// <p>If the value is <code>PHI</code>, indicates that you've configured your stream to identify personal health information.</p>
         pub fn set_content_identification_type(
             mut self,
             input: std::option::Option<crate::model::MedicalContentIdentificationType>,

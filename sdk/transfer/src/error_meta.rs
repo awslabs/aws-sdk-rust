@@ -5,9 +5,7 @@
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception is thrown when the <code>UpdateServer</code> is called for a file transfer
-    /// protocol-enabled server that has VPC as the endpoint type and the server's
-    /// <code>VpcEndpointID</code> is not in the available state.</p>
+    /// <p>This exception is thrown when the <code>UpdateServer</code> is called for a file transfer protocol-enabled server that has VPC as the endpoint type and the server's <code>VpcEndpointID</code> is not in the available state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
     InternalServiceError(crate::error::InternalServiceError),
@@ -17,13 +15,11 @@ pub enum Error {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource does not exist.</p>
     ResourceExistsException(crate::error::ResourceExistsException),
-    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family
-    /// service.</p>
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    ///
     /// <p> HTTP Status Code: 400</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unhandled error occurred.

@@ -10,18 +10,12 @@ pub mod create_container_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name for the container. The name must be from 1 to 255 characters. Container
-        /// names must be unique to your AWS account within a specific region. As an example, you could
-        /// create a container named <code>movies</code> in every region, as long as you don’t have an
-        /// existing container with that name.</p>
+        /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
         pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.container_name = Some(input.into());
             self
         }
-        /// <p>The name for the container. The name must be from 1 to 255 characters. Container
-        /// names must be unique to your AWS account within a specific region. As an example, you could
-        /// create a container named <code>movies</code> in every region, as long as you don’t have an
-        /// existing container with that name.</p>
+        /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -33,18 +27,14 @@ pub mod create_container_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
-        /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
-        /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
-        /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
-        /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -69,7 +59,7 @@ pub mod create_container_input {
 #[doc(hidden)]
 pub type CreateContainerInputOperationOutputAlias = crate::operation::CreateContainer;
 #[doc(hidden)]
-pub type CreateContainerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateContainerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContainerInput {
     /// Consumes the builder and constructs an Operation<[`CreateContainer`](crate::operation::CreateContainer)>
     #[allow(clippy::let_and_return)]
@@ -80,7 +70,7 @@ impl CreateContainerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateContainer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -165,7 +155,7 @@ impl CreateContainerInput {
             "CreateContainer",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -226,7 +216,7 @@ pub mod delete_container_input {
 #[doc(hidden)]
 pub type DeleteContainerInputOperationOutputAlias = crate::operation::DeleteContainer;
 #[doc(hidden)]
-pub type DeleteContainerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteContainerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContainerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContainer`](crate::operation::DeleteContainer)>
     #[allow(clippy::let_and_return)]
@@ -237,7 +227,7 @@ impl DeleteContainerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteContainer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -322,7 +312,7 @@ impl DeleteContainerInput {
             "DeleteContainer",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -383,7 +373,7 @@ pub mod delete_container_policy_input {
 #[doc(hidden)]
 pub type DeleteContainerPolicyInputOperationOutputAlias = crate::operation::DeleteContainerPolicy;
 #[doc(hidden)]
-pub type DeleteContainerPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteContainerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContainerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContainerPolicy`](crate::operation::DeleteContainerPolicy)>
     #[allow(clippy::let_and_return)]
@@ -394,7 +384,7 @@ impl DeleteContainerPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteContainerPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -481,7 +471,7 @@ impl DeleteContainerPolicyInput {
             "DeleteContainerPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -542,7 +532,7 @@ pub mod delete_cors_policy_input {
 #[doc(hidden)]
 pub type DeleteCorsPolicyInputOperationOutputAlias = crate::operation::DeleteCorsPolicy;
 #[doc(hidden)]
-pub type DeleteCorsPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCorsPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCorsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCorsPolicy`](crate::operation::DeleteCorsPolicy)>
     #[allow(clippy::let_and_return)]
@@ -553,7 +543,7 @@ impl DeleteCorsPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCorsPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -638,7 +628,7 @@ impl DeleteCorsPolicyInput {
             "DeleteCorsPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -699,7 +689,7 @@ pub mod delete_lifecycle_policy_input {
 #[doc(hidden)]
 pub type DeleteLifecyclePolicyInputOperationOutputAlias = crate::operation::DeleteLifecyclePolicy;
 #[doc(hidden)]
-pub type DeleteLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLifecyclePolicy`](crate::operation::DeleteLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -710,7 +700,7 @@ impl DeleteLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -797,7 +787,7 @@ impl DeleteLifecyclePolicyInput {
             "DeleteLifecyclePolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -858,7 +848,7 @@ pub mod delete_metric_policy_input {
 #[doc(hidden)]
 pub type DeleteMetricPolicyInputOperationOutputAlias = crate::operation::DeleteMetricPolicy;
 #[doc(hidden)]
-pub type DeleteMetricPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMetricPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMetricPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMetricPolicy`](crate::operation::DeleteMetricPolicy)>
     #[allow(clippy::let_and_return)]
@@ -869,7 +859,7 @@ impl DeleteMetricPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMetricPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -954,7 +944,7 @@ impl DeleteMetricPolicyInput {
             "DeleteMetricPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1015,7 +1005,7 @@ pub mod describe_container_input {
 #[doc(hidden)]
 pub type DescribeContainerInputOperationOutputAlias = crate::operation::DescribeContainer;
 #[doc(hidden)]
-pub type DescribeContainerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeContainerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeContainerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContainer`](crate::operation::DescribeContainer)>
     #[allow(clippy::let_and_return)]
@@ -1026,7 +1016,7 @@ impl DescribeContainerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeContainer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1111,7 +1101,7 @@ impl DescribeContainerInput {
             "DescribeContainer",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1172,7 +1162,7 @@ pub mod get_container_policy_input {
 #[doc(hidden)]
 pub type GetContainerPolicyInputOperationOutputAlias = crate::operation::GetContainerPolicy;
 #[doc(hidden)]
-pub type GetContainerPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContainerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContainerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetContainerPolicy`](crate::operation::GetContainerPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1183,7 +1173,7 @@ impl GetContainerPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContainerPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1268,7 +1258,7 @@ impl GetContainerPolicyInput {
             "GetContainerPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1329,7 +1319,7 @@ pub mod get_cors_policy_input {
 #[doc(hidden)]
 pub type GetCorsPolicyInputOperationOutputAlias = crate::operation::GetCorsPolicy;
 #[doc(hidden)]
-pub type GetCorsPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCorsPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCorsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetCorsPolicy`](crate::operation::GetCorsPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1340,7 +1330,7 @@ impl GetCorsPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCorsPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1425,7 +1415,7 @@ impl GetCorsPolicyInput {
             "GetCorsPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1486,7 +1476,7 @@ pub mod get_lifecycle_policy_input {
 #[doc(hidden)]
 pub type GetLifecyclePolicyInputOperationOutputAlias = crate::operation::GetLifecyclePolicy;
 #[doc(hidden)]
-pub type GetLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetLifecyclePolicy`](crate::operation::GetLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -1497,7 +1487,7 @@ impl GetLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1582,7 +1572,7 @@ impl GetLifecyclePolicyInput {
             "GetLifecyclePolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1643,7 +1633,7 @@ pub mod get_metric_policy_input {
 #[doc(hidden)]
 pub type GetMetricPolicyInputOperationOutputAlias = crate::operation::GetMetricPolicy;
 #[doc(hidden)]
-pub type GetMetricPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMetricPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMetricPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricPolicy`](crate::operation::GetMetricPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1654,7 +1644,7 @@ impl GetMetricPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMetricPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1739,7 +1729,7 @@ impl GetMetricPolicyInput {
             "GetMetricPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1772,28 +1762,22 @@ pub mod list_containers_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
-        /// was included in the previous response) to obtain the next set of containers. This token is
-        /// included in a response only if there actually are more containers to list.</p>
+        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
-        /// was included in the previous response) to obtain the next set of containers. This token is
-        /// included in a response only if there actually are more containers to list.</p>
+        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
-        /// </p>
+        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
-        /// </p>
+        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1815,7 +1799,7 @@ pub mod list_containers_input {
 #[doc(hidden)]
 pub type ListContainersInputOperationOutputAlias = crate::operation::ListContainers;
 #[doc(hidden)]
-pub type ListContainersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListContainersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContainersInput {
     /// Consumes the builder and constructs an Operation<[`ListContainers`](crate::operation::ListContainers)>
     #[allow(clippy::let_and_return)]
@@ -1826,7 +1810,7 @@ impl ListContainersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListContainers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1911,7 +1895,7 @@ impl ListContainersInput {
             "ListContainers",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1969,7 +1953,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1980,7 +1964,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2067,7 +2051,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2115,13 +2099,8 @@ pub mod put_container_policy_input {
         }
         /// <p>The contents of the policy, which includes the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>One <code>Version</code> tag</p>
-        /// </li>
-        /// <li>
-        /// <p>One <code>Statement</code> tag that contains the standard tags for the
-        /// policy.</p>
-        /// </li>
+        /// <li> <p>One <code>Version</code> tag</p> </li>
+        /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
         /// </ul>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
@@ -2129,13 +2108,8 @@ pub mod put_container_policy_input {
         }
         /// <p>The contents of the policy, which includes the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>One <code>Version</code> tag</p>
-        /// </li>
-        /// <li>
-        /// <p>One <code>Statement</code> tag that contains the standard tags for the
-        /// policy.</p>
-        /// </li>
+        /// <li> <p>One <code>Version</code> tag</p> </li>
+        /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
         /// </ul>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
@@ -2158,7 +2132,7 @@ pub mod put_container_policy_input {
 #[doc(hidden)]
 pub type PutContainerPolicyInputOperationOutputAlias = crate::operation::PutContainerPolicy;
 #[doc(hidden)]
-pub type PutContainerPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutContainerPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutContainerPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutContainerPolicy`](crate::operation::PutContainerPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2169,7 +2143,7 @@ impl PutContainerPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutContainerPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2254,7 +2228,7 @@ impl PutContainerPolicyInput {
             "PutContainerPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2304,14 +2278,14 @@ pub mod put_cors_policy_input {
         ///
         /// To override the contents of this collection use [`set_cors_policy`](Self::set_cors_policy).
         ///
-        /// <p>The CORS policy to apply to the container.  </p>
-        pub fn cors_policy(mut self, input: impl Into<crate::model::CorsRule>) -> Self {
+        /// <p>The CORS policy to apply to the container. </p>
+        pub fn cors_policy(mut self, input: crate::model::CorsRule) -> Self {
             let mut v = self.cors_policy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cors_policy = Some(v);
             self
         }
-        /// <p>The CORS policy to apply to the container.  </p>
+        /// <p>The CORS policy to apply to the container. </p>
         pub fn set_cors_policy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
@@ -2336,7 +2310,7 @@ pub mod put_cors_policy_input {
 #[doc(hidden)]
 pub type PutCorsPolicyInputOperationOutputAlias = crate::operation::PutCorsPolicy;
 #[doc(hidden)]
-pub type PutCorsPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutCorsPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutCorsPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutCorsPolicy`](crate::operation::PutCorsPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2347,7 +2321,7 @@ impl PutCorsPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutCorsPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2432,7 +2406,7 @@ impl PutCorsPolicyInput {
             "PutCorsPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2508,7 +2482,7 @@ pub mod put_lifecycle_policy_input {
 #[doc(hidden)]
 pub type PutLifecyclePolicyInputOperationOutputAlias = crate::operation::PutLifecyclePolicy;
 #[doc(hidden)]
-pub type PutLifecyclePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutLifecyclePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLifecyclePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutLifecyclePolicy`](crate::operation::PutLifecyclePolicy)>
     #[allow(clippy::let_and_return)]
@@ -2519,7 +2493,7 @@ impl PutLifecyclePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutLifecyclePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2604,7 +2578,7 @@ impl PutLifecyclePolicyInput {
             "PutLifecyclePolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2650,27 +2624,19 @@ pub mod put_metric_policy_input {
             self.container_name = input;
             self
         }
-        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
-        /// </li>
-        /// <li>
-        /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
-        /// </li>
+        /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
+        /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
         /// </ul>
         pub fn metric_policy(mut self, input: crate::model::MetricPolicy) -> Self {
             self.metric_policy = Some(input);
             self
         }
-        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
-        /// </li>
-        /// <li>
-        /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
-        /// </li>
+        /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
+        /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
         /// </ul>
         pub fn set_metric_policy(
             mut self,
@@ -2696,7 +2662,7 @@ pub mod put_metric_policy_input {
 #[doc(hidden)]
 pub type PutMetricPolicyInputOperationOutputAlias = crate::operation::PutMetricPolicy;
 #[doc(hidden)]
-pub type PutMetricPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutMetricPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutMetricPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutMetricPolicy`](crate::operation::PutMetricPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2707,7 +2673,7 @@ impl PutMetricPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutMetricPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2792,7 +2758,7 @@ impl PutMetricPolicyInput {
             "PutMetricPolicy",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2853,7 +2819,7 @@ pub mod start_access_logging_input {
 #[doc(hidden)]
 pub type StartAccessLoggingInputOperationOutputAlias = crate::operation::StartAccessLogging;
 #[doc(hidden)]
-pub type StartAccessLoggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartAccessLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartAccessLoggingInput {
     /// Consumes the builder and constructs an Operation<[`StartAccessLogging`](crate::operation::StartAccessLogging)>
     #[allow(clippy::let_and_return)]
@@ -2864,7 +2830,7 @@ impl StartAccessLoggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartAccessLogging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2949,7 +2915,7 @@ impl StartAccessLoggingInput {
             "StartAccessLogging",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3010,7 +2976,7 @@ pub mod stop_access_logging_input {
 #[doc(hidden)]
 pub type StopAccessLoggingInputOperationOutputAlias = crate::operation::StopAccessLogging;
 #[doc(hidden)]
-pub type StopAccessLoggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopAccessLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopAccessLoggingInput {
     /// Consumes the builder and constructs an Operation<[`StopAccessLogging`](crate::operation::StopAccessLogging)>
     #[allow(clippy::let_and_return)]
@@ -3021,7 +2987,7 @@ impl StopAccessLoggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopAccessLogging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3106,7 +3072,7 @@ impl StopAccessLoggingInput {
             "StopAccessLogging",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3153,20 +3119,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
-        /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
-        /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
-        /// customer:CompanyA, priority:Medium, and type:Contract.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
-        /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
-        /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
-        /// customer:CompanyA, priority:Medium, and type:Contract.</p>
+        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3191,7 +3151,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3202,7 +3162,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3286,7 +3246,7 @@ impl TagResourceInput {
             "TagResource",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3333,18 +3293,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
-        /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
-        /// (priority).</p>
+        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
-        /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
-        /// (priority).</p>
+        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3369,7 +3325,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -3380,7 +3336,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3464,7 +3420,7 @@ impl UntagResourceInput {
             "UntagResource",
             "mediastore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3493,9 +3449,7 @@ impl UntagResourceInput {
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container.</p>
     pub resource: std::option::Option<std::string::String>,
-    /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
-    /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
-    /// (priority).</p>
+    /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -3503,9 +3457,7 @@ impl UntagResourceInput {
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
-    /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
-    /// (priority).</p>
+    /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -3525,10 +3477,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container. </p>
     pub resource: std::option::Option<std::string::String>,
-    /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
-    /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
-    /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
-    /// customer:CompanyA, priority:Medium, and type:Contract.</p>
+    /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -3536,10 +3485,7 @@ impl TagResourceInput {
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
-    /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
-    /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
-    /// customer:CompanyA, priority:Medium, and type:Contract.</p>
+    /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -3601,14 +3547,10 @@ impl std::fmt::Debug for StartAccessLoggingInput {
 pub struct PutMetricPolicyInput {
     /// <p>The name of the container that you want to add the metric policy to.</p>
     pub container_name: std::option::Option<std::string::String>,
-    /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+    /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
-    /// </li>
-    /// <li>
-    /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
-    /// </li>
+    /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
+    /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
     /// </ul>
     pub metric_policy: std::option::Option<crate::model::MetricPolicy>,
 }
@@ -3617,14 +3559,10 @@ impl PutMetricPolicyInput {
     pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
-    /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+    /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
-    /// </li>
-    /// <li>
-    /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
-    /// </li>
+    /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
+    /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
     /// </ul>
     pub fn metric_policy(&self) -> std::option::Option<&crate::model::MetricPolicy> {
         self.metric_policy.as_ref()
@@ -3673,7 +3611,7 @@ impl std::fmt::Debug for PutLifecyclePolicyInput {
 pub struct PutCorsPolicyInput {
     /// <p>The name of the container that you want to assign the CORS policy to.</p>
     pub container_name: std::option::Option<std::string::String>,
-    /// <p>The CORS policy to apply to the container.  </p>
+    /// <p>The CORS policy to apply to the container. </p>
     pub cors_policy: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
 }
 impl PutCorsPolicyInput {
@@ -3681,7 +3619,7 @@ impl PutCorsPolicyInput {
     pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
-    /// <p>The CORS policy to apply to the container.  </p>
+    /// <p>The CORS policy to apply to the container. </p>
     pub fn cors_policy(&self) -> std::option::Option<&[crate::model::CorsRule]> {
         self.cors_policy.as_deref()
     }
@@ -3703,13 +3641,8 @@ pub struct PutContainerPolicyInput {
     pub container_name: std::option::Option<std::string::String>,
     /// <p>The contents of the policy, which includes the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>One <code>Version</code> tag</p>
-    /// </li>
-    /// <li>
-    /// <p>One <code>Statement</code> tag that contains the standard tags for the
-    /// policy.</p>
-    /// </li>
+    /// <li> <p>One <code>Version</code> tag</p> </li>
+    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
     /// </ul>
     pub policy: std::option::Option<std::string::String>,
 }
@@ -3720,13 +3653,8 @@ impl PutContainerPolicyInput {
     }
     /// <p>The contents of the policy, which includes the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>One <code>Version</code> tag</p>
-    /// </li>
-    /// <li>
-    /// <p>One <code>Statement</code> tag that contains the standard tags for the
-    /// policy.</p>
-    /// </li>
+    /// <li> <p>One <code>Version</code> tag</p> </li>
+    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
     /// </ul>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
@@ -3766,23 +3694,17 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContainersInput {
-    /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
-    /// was included in the previous response) to obtain the next set of containers. This token is
-    /// included in a response only if there actually are more containers to list.</p>
+    /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
-    /// </p>
+    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListContainersInput {
-    /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
-    /// was included in the previous response) to obtain the next set of containers. This token is
-    /// included in a response only if there actually are more containers to list.</p>
+    /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
-    /// </p>
+    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4010,27 +3932,17 @@ impl std::fmt::Debug for DeleteContainerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContainerInput {
-    /// <p>The name for the container. The name must be from 1 to 255 characters. Container
-    /// names must be unique to your AWS account within a specific region. As an example, you could
-    /// create a container named <code>movies</code> in every region, as long as you don’t have an
-    /// existing container with that name.</p>
+    /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
     pub container_name: std::option::Option<std::string::String>,
-    /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
-    /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
-    /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+    /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateContainerInput {
-    /// <p>The name for the container. The name must be from 1 to 255 characters. Container
-    /// names must be unique to your AWS account within a specific region. As an example, you could
-    /// create a container named <code>movies</code> in every region, as long as you don’t have an
-    /// existing container with that name.</p>
+    /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
     pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
-    /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
-    /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
-    /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+    /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }

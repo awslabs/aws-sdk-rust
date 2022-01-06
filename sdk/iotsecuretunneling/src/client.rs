@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS IoT Secure Tunneling
@@ -108,6 +108,7 @@ where
     ///
     /// See [`ListTunnels`](crate::client::fluent_builders::ListTunnels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTunnels::into_paginator).
     pub fn list_tunnels(&self) -> fluent_builders::ListTunnels<C, M, R> {
         fluent_builders::ListTunnels::new(self.handle.clone())
     }
@@ -143,10 +144,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CloseTunnel`.
     ///
-    /// <p>Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code>
-    /// request is received, we close the WebSocket connections between the client and proxy
-    /// server so no data can be transmitted.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code> request is received, we close the WebSocket connections between the client and proxy server so no data can be transmitted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CloseTunnel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -191,10 +190,10 @@ pub mod fluent_builders {
                 crate::input::CloseTunnelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -203,8 +202,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the tunnel to close.</p>
-        pub fn tunnel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tunnel_id(inp);
+        pub fn tunnel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tunnel_id(input.into());
             self
         }
         /// <p>The ID of the tunnel to close.</p>
@@ -212,14 +211,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tunnel_id(input);
             self
         }
-        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
-        /// immediately.</p>
-        pub fn delete(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete(inp);
+        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
+        pub fn delete(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete(input);
             self
         }
-        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
-        /// immediately.</p>
+        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
         pub fn set_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete(input);
             self
@@ -228,7 +225,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTunnel`.
     ///
     /// <p>Gets information about a tunnel identified by the unique tunnel id.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTunnel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -273,10 +270,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTunnelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -285,8 +282,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The tunnel to describe.</p>
-        pub fn tunnel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tunnel_id(inp);
+        pub fn tunnel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tunnel_id(input.into());
             self
         }
         /// <p>The tunnel to describe.</p>
@@ -298,7 +295,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -343,10 +340,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -355,8 +352,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -367,9 +364,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTunnels`.
     ///
-    /// <p>List all tunnels for an AWS account. Tunnels are listed by creation time in
-    /// descending order, newer tunnels will be listed before older tunnels.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>List all tunnels for an AWS account. Tunnels are listed by creation time in descending order, newer tunnels will be listed before older tunnels.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTunnels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -414,10 +410,10 @@ pub mod fluent_builders {
                 crate::input::ListTunnelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -425,9 +421,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTunnelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTunnelsPaginator<C, M, R> {
+            crate::paginator::ListTunnelsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the IoT thing associated with the destination device.</p>
-        pub fn thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(inp);
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// <p>The name of the IoT thing associated with the destination device.</p>
@@ -436,8 +438,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return at once.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return at once.</p>
@@ -446,8 +448,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to retrieve the next set of results.</p>
@@ -458,9 +460,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `OpenTunnel`.
     ///
-    /// <p>Creates a new tunnel, and returns two client access tokens for clients to use to
-    /// connect to the AWS IoT Secure Tunneling proxy server.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new tunnel, and returns two client access tokens for clients to use to connect to the AWS IoT Secure Tunneling proxy server.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct OpenTunnel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -505,10 +506,10 @@ pub mod fluent_builders {
                 crate::input::OpenTunnelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -517,8 +518,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A short text description of the tunnel. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A short text description of the tunnel. </p>
@@ -531,8 +532,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of tag metadata.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of tag metadata.</p>
@@ -544,8 +545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The destination configuration for the OpenTunnel request.</p>
-        pub fn destination_config(mut self, inp: crate::model::DestinationConfig) -> Self {
-            self.inner = self.inner.destination_config(inp);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.inner = self.inner.destination_config(input);
             self
         }
         /// <p>The destination configuration for the OpenTunnel request.</p>
@@ -557,8 +558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Timeout configuration for a tunnel.</p>
-        pub fn timeout_config(mut self, inp: crate::model::TimeoutConfig) -> Self {
-            self.inner = self.inner.timeout_config(inp);
+        pub fn timeout_config(mut self, input: crate::model::TimeoutConfig) -> Self {
+            self.inner = self.inner.timeout_config(input);
             self
         }
         /// <p>Timeout configuration for a tunnel.</p>
@@ -573,7 +574,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>A resource tag.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -618,10 +619,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -630,8 +631,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -644,8 +645,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags for the resource.</p>
@@ -660,7 +661,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -705,10 +706,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -717,8 +718,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -731,8 +732,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to remove.</p>
@@ -745,6 +746,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

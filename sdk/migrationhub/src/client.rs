@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Migration Hub
@@ -160,6 +160,7 @@ where
     ///
     /// See [`ListApplicationStates`](crate::client::fluent_builders::ListApplicationStates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplicationStates::into_paginator).
     pub fn list_application_states(&self) -> fluent_builders::ListApplicationStates<C, M, R> {
         fluent_builders::ListApplicationStates::new(self.handle.clone())
     }
@@ -167,6 +168,7 @@ where
     ///
     /// See [`ListCreatedArtifacts`](crate::client::fluent_builders::ListCreatedArtifacts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCreatedArtifacts::into_paginator).
     pub fn list_created_artifacts(&self) -> fluent_builders::ListCreatedArtifacts<C, M, R> {
         fluent_builders::ListCreatedArtifacts::new(self.handle.clone())
     }
@@ -174,6 +176,7 @@ where
     ///
     /// See [`ListDiscoveredResources`](crate::client::fluent_builders::ListDiscoveredResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDiscoveredResources::into_paginator).
     pub fn list_discovered_resources(&self) -> fluent_builders::ListDiscoveredResources<C, M, R> {
         fluent_builders::ListDiscoveredResources::new(self.handle.clone())
     }
@@ -181,6 +184,7 @@ where
     ///
     /// See [`ListMigrationTasks`](crate::client::fluent_builders::ListMigrationTasks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMigrationTasks::into_paginator).
     pub fn list_migration_tasks(&self) -> fluent_builders::ListMigrationTasks<C, M, R> {
         fluent_builders::ListMigrationTasks::new(self.handle.clone())
     }
@@ -188,6 +192,7 @@ where
     ///
     /// See [`ListProgressUpdateStreams`](crate::client::fluent_builders::ListProgressUpdateStreams) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProgressUpdateStreams::into_paginator).
     pub fn list_progress_update_streams(
         &self,
     ) -> fluent_builders::ListProgressUpdateStreams<C, M, R> {
@@ -227,25 +232,13 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateCreatedArtifact`.
     ///
-    /// <p>Associates a created artifact of an AWS cloud resource, the target receiving the
-    /// migration, with the migration task performed by a migration tool. This API has the
-    /// following traits:</p>
+    /// <p>Associates a created artifact of an AWS cloud resource, the target receiving the migration, with the migration task performed by a migration tool. This API has the following traits:</p>
     /// <ul>
-    /// <li>
-    /// <p>Migration tools can call the <code>AssociateCreatedArtifact</code> operation to
-    /// indicate which AWS artifact is associated with a migration task.</p>
-    /// </li>
-    /// <li>
-    /// <p>The created artifact name must be provided in ARN (Amazon Resource Name) format
-    /// which will contain information about type and region; for example:
-    /// <code>arn:aws:ec2:us-east-1:488216288981:image/ami-6d0ba87b</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Examples of the AWS resource behind the created artifact are, AMI's, EC2 instance,
-    /// or DMS endpoint, etc.</p>
-    /// </li>
+    /// <li> <p>Migration tools can call the <code>AssociateCreatedArtifact</code> operation to indicate which AWS artifact is associated with a migration task.</p> </li>
+    /// <li> <p>The created artifact name must be provided in ARN (Amazon Resource Name) format which will contain information about type and region; for example: <code>arn:aws:ec2:us-east-1:488216288981:image/ami-6d0ba87b</code>.</p> </li>
+    /// <li> <p>Examples of the AWS resource behind the created artifact are, AMI's, EC2 instance, or DMS endpoint, etc.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateCreatedArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -290,10 +283,10 @@ pub mod fluent_builders {
                 crate::input::AssociateCreatedArtifactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -302,8 +295,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream. </p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(input.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. </p>
@@ -314,16 +307,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress_update_stream(input);
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+        pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(input.into());
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -331,14 +320,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_migration_task_name(input);
             self
         }
-        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
-        /// instance, etc.) </p>
-        pub fn created_artifact(mut self, inp: crate::model::CreatedArtifact) -> Self {
-            self.inner = self.inner.created_artifact(inp);
+        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
+        pub fn created_artifact(mut self, input: crate::model::CreatedArtifact) -> Self {
+            self.inner = self.inner.created_artifact(input);
             self
         }
-        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
-        /// instance, etc.) </p>
+        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
         pub fn set_created_artifact(
             mut self,
             input: std::option::Option<crate::model::CreatedArtifact>,
@@ -346,14 +333,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_created_artifact(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -361,9 +346,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateDiscoveredResource`.
     ///
-    /// <p>Associates a discovered resource ID from Application Discovery Service with a migration
-    /// task.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates a discovered resource ID from Application Discovery Service with a migration task.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDiscoveredResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -408,10 +392,10 @@ pub mod fluent_builders {
                 crate::input::AssociateDiscoveredResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -420,8 +404,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream.</p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(input.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream.</p>
@@ -432,16 +416,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress_update_stream(input);
             self
         }
-        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+        pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(input.into());
             self
         }
-        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -450,8 +430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object representing a Resource.</p>
-        pub fn discovered_resource(mut self, inp: crate::model::DiscoveredResource) -> Self {
-            self.inner = self.inner.discovered_resource(inp);
+        pub fn discovered_resource(mut self, input: crate::model::DiscoveredResource) -> Self {
+            self.inner = self.inner.discovered_resource(input);
             self
         }
         /// <p>Object representing a Resource.</p>
@@ -462,14 +442,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_discovered_resource(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -477,12 +455,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProgressUpdateStream`.
     ///
-    /// <p>Creates a progress update stream which is an AWS resource used for access control as
-    /// well as a namespace for migration task names that is implicitly linked to your AWS account.
-    /// It must uniquely identify the migration tool as it is used for all updates made by the
-    /// tool; however, it does not need to be unique for each AWS account because it is scoped to
-    /// the AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a progress update stream which is an AWS resource used for access control as well as a namespace for migration task names that is implicitly linked to your AWS account. It must uniquely identify the migration tool as it is used for all updates made by the tool; however, it does not need to be unique for each AWS account because it is scoped to the AWS account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProgressUpdateStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -527,10 +501,10 @@ pub mod fluent_builders {
                 crate::input::CreateProgressUpdateStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -538,16 +512,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
-        pub fn progress_update_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream_name(inp);
+        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+        pub fn progress_update_stream_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.progress_update_stream_name(input.into());
             self
         }
-        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
         pub fn set_progress_update_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -555,14 +528,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress_update_stream_name(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -570,38 +541,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProgressUpdateStream`.
     ///
-    /// <p>Deletes a progress update stream, including all of its tasks, which was previously
-    /// created as an AWS resource used for access control. This API has the following
-    /// traits:</p>
+    /// <p>Deletes a progress update stream, including all of its tasks, which was previously created as an AWS resource used for access control. This API has the following traits:</p>
     /// <ul>
-    /// <li>
-    /// <p>The only parameter needed for <code>DeleteProgressUpdateStream</code> is the
-    /// stream name (same as a <code>CreateProgressUpdateStream</code> call).</p>
-    /// </li>
-    /// <li>
-    /// <p>The call will return, and a background process will asynchronously delete the
-    /// stream and all of its resources (tasks, associated resources, resource attributes,
-    /// created artifacts).</p>
-    /// </li>
-    /// <li>
-    /// <p>If the stream takes time to be deleted, it might still show up on a
-    /// <code>ListProgressUpdateStreams</code> call.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>,
-    /// <code>NotifyMigrationTaskState</code>, and all Associate[*] APIs related to the
-    /// tasks belonging to the stream will throw "InvalidInputException" if the stream of the
-    /// same name is in the process of being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>Once the stream and all of its resources are deleted,
-    /// <code>CreateProgressUpdateStream</code> for a stream of the same name will
-    /// succeed, and that stream will be an entirely new logical resource (without any
-    /// resources associated with the old stream).</p>
-    /// </li>
+    /// <li> <p>The only parameter needed for <code>DeleteProgressUpdateStream</code> is the stream name (same as a <code>CreateProgressUpdateStream</code> call).</p> </li>
+    /// <li> <p>The call will return, and a background process will asynchronously delete the stream and all of its resources (tasks, associated resources, resource attributes, created artifacts).</p> </li>
+    /// <li> <p>If the stream takes time to be deleted, it might still show up on a <code>ListProgressUpdateStreams</code> call.</p> </li>
+    /// <li> <p> <code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>, <code>NotifyMigrationTaskState</code>, and all Associate[*] APIs related to the tasks belonging to the stream will throw "InvalidInputException" if the stream of the same name is in the process of being deleted.</p> </li>
+    /// <li> <p>Once the stream and all of its resources are deleted, <code>CreateProgressUpdateStream</code> for a stream of the same name will succeed, and that stream will be an entirely new logical resource (without any resources associated with the old stream).</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProgressUpdateStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -646,10 +594,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProgressUpdateStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -657,16 +605,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
-        pub fn progress_update_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream_name(inp);
+        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+        pub fn progress_update_stream_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.progress_update_stream_name(input.into());
             self
         }
-        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
         pub fn set_progress_update_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -674,14 +621,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress_update_stream_name(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -690,7 +635,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplicationState`.
     ///
     /// <p>Gets the migration status of an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicationState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -735,10 +680,10 @@ pub mod fluent_builders {
                 crate::input::DescribeApplicationStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -746,14 +691,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The configurationId in Application Discovery Service that uniquely identifies the
-        /// grouped application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
-        /// <p>The configurationId in Application Discovery Service that uniquely identifies the
-        /// grouped application.</p>
+        /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -765,7 +708,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMigrationTask`.
     ///
     /// <p>Retrieves a list of all attributes associated with a specific migration task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMigrationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -810,10 +753,10 @@ pub mod fluent_builders {
                 crate::input::DescribeMigrationTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -822,8 +765,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream. </p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(input.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. </p>
@@ -834,16 +777,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress_update_stream(input);
             self
         }
-        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+        pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(input.into());
             self
         }
-        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -854,24 +793,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateCreatedArtifact`.
     ///
-    /// <p>Disassociates a created artifact of an AWS resource with a migration task performed by a
-    /// migration tool that was previously associated. This API has the following traits:</p>
+    /// <p>Disassociates a created artifact of an AWS resource with a migration task performed by a migration tool that was previously associated. This API has the following traits:</p>
     /// <ul>
-    /// <li>
-    /// <p>A migration user can call the <code>DisassociateCreatedArtifacts</code> operation
-    /// to disassociate a created AWS Artifact from a migration task.</p>
-    /// </li>
-    /// <li>
-    /// <p>The created artifact name must be provided in ARN (Amazon Resource Name) format
-    /// which will contain information about type and region; for example:
-    /// <code>arn:aws:ec2:us-east-1:488216288981:image/ami-6d0ba87b</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Examples of the AWS resource behind the created artifact are, AMI's, EC2 instance,
-    /// or RDS instance, etc.</p>
-    /// </li>
+    /// <li> <p>A migration user can call the <code>DisassociateCreatedArtifacts</code> operation to disassociate a created AWS Artifact from a migration task.</p> </li>
+    /// <li> <p>The created artifact name must be provided in ARN (Amazon Resource Name) format which will contain information about type and region; for example: <code>arn:aws:ec2:us-east-1:488216288981:image/ami-6d0ba87b</code>.</p> </li>
+    /// <li> <p>Examples of the AWS resource behind the created artifact are, AMI's, EC2 instance, or RDS instance, etc.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateCreatedArtifact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -916,10 +844,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateCreatedArtifactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -928,8 +856,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream. </p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(input.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. </p>
@@ -940,16 +868,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress_update_stream(input);
             self
         }
-        /// <p>Unique identifier that references the migration task to be disassociated with the
-        /// artifact. <i>Do not store personal data in this field.</i>
-        /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
+        pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(input.into());
             self
         }
-        /// <p>Unique identifier that references the migration task to be disassociated with the
-        /// artifact. <i>Do not store personal data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -957,14 +881,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_migration_task_name(input);
             self
         }
-        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
-        /// instance, etc.)</p>
-        pub fn created_artifact_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.created_artifact_name(inp);
+        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+        pub fn created_artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.created_artifact_name(input.into());
             self
         }
-        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
-        /// instance, etc.)</p>
+        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
         pub fn set_created_artifact_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -972,14 +894,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_created_artifact_name(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -987,9 +907,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateDiscoveredResource`.
     ///
-    /// <p>Disassociate an Application Discovery Service discovered resource from a migration
-    /// task.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociate an Application Discovery Service discovered resource from a migration task.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDiscoveredResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1034,10 +953,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateDiscoveredResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1046,8 +965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream.</p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(input.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream.</p>
@@ -1058,16 +977,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress_update_stream(input);
             self
         }
-        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+        pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(input.into());
             self
         }
-        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1075,14 +990,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_migration_task_name(input);
             self
         }
-        /// <p>ConfigurationId of the Application Discovery Service resource to be
-        /// disassociated.</p>
-        pub fn configuration_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(inp);
+        /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
+        pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(input.into());
             self
         }
-        /// <p>ConfigurationId of the Application Discovery Service resource to be
-        /// disassociated.</p>
+        /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
         pub fn set_configuration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1090,14 +1003,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_id(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -1105,11 +1016,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportMigrationTask`.
     ///
-    /// <p>Registers a new migration task which represents a server, database, etc., being migrated
-    /// to AWS by a migration tool.</p>
-    /// <p>This API is a prerequisite to calling the <code>NotifyMigrationTaskState</code> API as
-    /// the migration tool must first register the migration task with Migration Hub.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registers a new migration task which represents a server, database, etc., being migrated to AWS by a migration tool.</p>
+    /// <p>This API is a prerequisite to calling the <code>NotifyMigrationTaskState</code> API as the migration tool must first register the migration task with Migration Hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportMigrationTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1154,10 +1063,10 @@ pub mod fluent_builders {
                 crate::input::ImportMigrationTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1165,12 +1074,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the ProgressUpdateStream. ></p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        /// <p>The name of the ProgressUpdateStream. &gt;</p>
+        pub fn progress_update_stream(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(input.into());
             self
         }
-        /// <p>The name of the ProgressUpdateStream. ></p>
+        /// <p>The name of the ProgressUpdateStream. &gt;</p>
         pub fn set_progress_update_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1178,16 +1087,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress_update_stream(input);
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+        pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(input.into());
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1195,14 +1100,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_migration_task_name(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -1210,10 +1113,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListApplicationStates`.
     ///
-    /// <p>Lists all the migration statuses for your applications. If you use the optional
-    /// <code>ApplicationIds</code> parameter, only the migration statuses for those
-    /// applications will be returned.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all the migration statuses for your applications. If you use the optional <code>ApplicationIds</code> parameter, only the migration statuses for those applications will be returned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplicationStates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1258,10 +1159,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationStatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1269,18 +1170,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationStatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListApplicationStatesPaginator<C, M, R> {
+            crate::paginator::ListApplicationStatesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `ApplicationIds`.
         ///
         /// To override the contents of this collection use [`set_application_ids`](Self::set_application_ids).
         ///
-        /// <p>The configurationIds from the Application Discovery Service that uniquely identifies
-        /// your applications.</p>
-        pub fn application_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_ids(inp);
+        /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
+        pub fn application_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_ids(input.into());
             self
         }
-        /// <p>The configurationIds from the Application Discovery Service that uniquely identifies
-        /// your applications.</p>
+        /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
         pub fn set_application_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1288,23 +1193,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_ids(input);
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Maximum number of results to be returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results to be returned per page.</p>
@@ -1315,22 +1216,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCreatedArtifacts`.
     ///
-    /// <p>Lists the created artifacts attached to a given migration task in an update stream. This
-    /// API has the following traits:</p>
+    /// <p>Lists the created artifacts attached to a given migration task in an update stream. This API has the following traits:</p>
     /// <ul>
-    /// <li>
-    /// <p>Gets the list of the created artifacts while
-    /// migration is taking place.</p>
-    /// </li>
-    /// <li>
-    /// <p>Shows the artifacts created by the migration tool that was associated by the
-    /// <code>AssociateCreatedArtifact</code> API. </p>
-    /// </li>
-    /// <li>
-    /// <p>Lists created artifacts in a paginated interface. </p>
-    /// </li>
+    /// <li> <p>Gets the list of the created artifacts while migration is taking place.</p> </li>
+    /// <li> <p>Shows the artifacts created by the migration tool that was associated by the <code>AssociateCreatedArtifact</code> API. </p> </li>
+    /// <li> <p>Lists created artifacts in a paginated interface. </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCreatedArtifacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1375,10 +1267,10 @@ pub mod fluent_builders {
                 crate::input::ListCreatedArtifactsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1386,9 +1278,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCreatedArtifactsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCreatedArtifactsPaginator<C, M, R> {
+            crate::paginator::ListCreatedArtifactsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the ProgressUpdateStream. </p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(input.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. </p>
@@ -1399,16 +1297,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress_update_stream(input);
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+        pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(input.into());
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1416,23 +1310,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_migration_task_name(input);
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Maximum number of results to be returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results to be returned per page.</p>
@@ -1444,7 +1334,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDiscoveredResources`.
     ///
     /// <p>Lists discovered resources associated with the given <code>MigrationTask</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDiscoveredResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1489,10 +1379,10 @@ pub mod fluent_builders {
                 crate::input::ListDiscoveredResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1500,9 +1390,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDiscoveredResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDiscoveredResourcesPaginator<C, M, R> {
+            crate::paginator::ListDiscoveredResourcesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the ProgressUpdateStream.</p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(input.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream.</p>
@@ -1513,16 +1409,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress_update_stream(input);
             self
         }
-        /// <p>The name of the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+        pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(input.into());
             self
         }
-        /// <p>The name of the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1530,23 +1422,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_migration_task_name(input);
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned per page.</p>
@@ -1557,21 +1445,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMigrationTasks`.
     ///
-    /// <p>Lists all, or filtered by resource name, migration tasks associated with the user
-    /// account making this call. This API has the following traits:</p>
+    /// <p>Lists all, or filtered by resource name, migration tasks associated with the user account making this call. This API has the following traits:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can show a summary list of the most recent migration tasks.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can show a summary list of migration tasks associated with a given discovered
-    /// resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>Lists migration tasks in a paginated interface.</p>
-    /// </li>
+    /// <li> <p>Can show a summary list of the most recent migration tasks.</p> </li>
+    /// <li> <p>Can show a summary list of migration tasks associated with a given discovered resource.</p> </li>
+    /// <li> <p>Lists migration tasks in a paginated interface.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMigrationTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1616,10 +1496,10 @@ pub mod fluent_builders {
                 crate::input::ListMigrationTasksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1627,23 +1507,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMigrationTasksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMigrationTasksPaginator<C, M, R> {
+            crate::paginator::ListMigrationTasksPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Value to specify how many results are returned per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Value to specify how many results are returned per page.</p>
@@ -1652,8 +1534,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter migration tasks by discovered resource name.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>Filter migration tasks by discovered resource name.</p>
@@ -1668,7 +1550,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProgressUpdateStreams`.
     ///
     /// <p>Lists progress update streams associated with the user account making this call.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProgressUpdateStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1713,10 +1595,10 @@ pub mod fluent_builders {
                 crate::input::ListProgressUpdateStreamsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1724,23 +1606,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProgressUpdateStreamsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListProgressUpdateStreamsPaginator<C, M, R> {
+            crate::paginator::ListProgressUpdateStreamsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Filter to limit the maximum number of results to list per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Filter to limit the maximum number of results to list per page.</p>
@@ -1751,11 +1637,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `NotifyApplicationState`.
     ///
-    /// <p>Sets the migration state of an application. For a given application identified by the
-    /// value passed to <code>ApplicationId</code>, its status is set or updated by passing one of
-    /// three values to <code>Status</code>: <code>NOT_STARTED | IN_PROGRESS |
-    /// COMPLETED</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets the migration state of an application. For a given application identified by the value passed to <code>ApplicationId</code>, its status is set or updated by passing one of three values to <code>Status</code>: <code>NOT_STARTED | IN_PROGRESS | COMPLETED</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyApplicationState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1800,10 +1683,10 @@ pub mod fluent_builders {
                 crate::input::NotifyApplicationStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1811,14 +1694,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The configurationId in Application Discovery Service that uniquely identifies the
-        /// grouped application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
-        /// <p>The configurationId in Application Discovery Service that uniquely identifies the
-        /// grouped application.</p>
+        /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1827,8 +1708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
-        pub fn status(mut self, inp: crate::model::ApplicationStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::ApplicationStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
@@ -1840,8 +1721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp when the application state changed.</p>
-        pub fn update_date_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.update_date_time(inp);
+        pub fn update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.update_date_time(input);
             self
         }
         /// <p>The timestamp when the application state changed.</p>
@@ -1852,14 +1733,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_update_date_time(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -1867,25 +1746,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `NotifyMigrationTaskState`.
     ///
-    /// <p>Notifies Migration Hub of the current status, progress, or other detail regarding a
-    /// migration task. This API has the following traits:</p>
+    /// <p>Notifies Migration Hub of the current status, progress, or other detail regarding a migration task. This API has the following traits:</p>
     /// <ul>
-    /// <li>
-    /// <p>Migration tools will call the <code>NotifyMigrationTaskState</code> API to share
-    /// the latest progress and status.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MigrationTaskName</code> is used for addressing updates to the correct
-    /// target.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ProgressUpdateStream</code> is used for access control and to provide a
-    /// namespace for each migration tool.</p>
-    /// </li>
+    /// <li> <p>Migration tools will call the <code>NotifyMigrationTaskState</code> API to share the latest progress and status.</p> </li>
+    /// <li> <p> <code>MigrationTaskName</code> is used for addressing updates to the correct target.</p> </li>
+    /// <li> <p> <code>ProgressUpdateStream</code> is used for access control and to provide a namespace for each migration tool.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyMigrationTaskState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1930,10 +1797,10 @@ pub mod fluent_builders {
                 crate::input::NotifyMigrationTaskStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1942,8 +1809,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream. </p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(input.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. </p>
@@ -1954,16 +1821,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress_update_stream(input);
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+        pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(input.into());
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1972,8 +1835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the task's progress and status.</p>
-        pub fn task(mut self, inp: crate::model::Task) -> Self {
-            self.inner = self.inner.task(inp);
+        pub fn task(mut self, input: crate::model::Task) -> Self {
+            self.inner = self.inner.task(input);
             self
         }
         /// <p>Information about the task's progress and status.</p>
@@ -1982,8 +1845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp when the task was gathered.</p>
-        pub fn update_date_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.update_date_time(inp);
+        pub fn update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.update_date_time(input);
             self
         }
         /// <p>The timestamp when the task was gathered.</p>
@@ -1994,28 +1857,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_update_date_time(input);
             self
         }
-        /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an
-        /// update. If Migration Hub does not receive an update within the specified interval, then the
-        /// migration task will be considered stale.</p>
-        pub fn next_update_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.next_update_seconds(inp);
+        /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
+        pub fn next_update_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.next_update_seconds(input);
             self
         }
-        /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an
-        /// update. If Migration Hub does not receive an update within the specified interval, then the
-        /// migration task will be considered stale.</p>
+        /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
         pub fn set_next_update_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_next_update_seconds(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -2023,33 +1880,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResourceAttributes`.
     ///
-    /// <p>Provides identifying details of the resource being migrated so that it can be associated
-    /// in the Application Discovery Service repository. This association occurs asynchronously
-    /// after <code>PutResourceAttributes</code> returns.</p>
-    /// <important>
+    /// <p>Provides identifying details of the resource being migrated so that it can be associated in the Application Discovery Service repository. This association occurs asynchronously after <code>PutResourceAttributes</code> returns.</p> <important>
     /// <ul>
-    /// <li>
-    /// <p>Keep in mind that subsequent calls to PutResourceAttributes will override
-    /// previously stored attributes. For example, if it is first called with a MAC
-    /// address, but later, it is desired to <i>add</i> an IP address, it
-    /// will then be required to call it with <i>both</i> the IP and MAC
-    /// addresses to prevent overriding the MAC address.</p>
-    /// </li>
-    /// <li>
-    /// <p>Note the instructions regarding the special use case of the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList">
-    /// <code>ResourceAttributeList</code>
-    /// </a> parameter when specifying any
-    /// "VM" related value.</p>
-    /// </li>
+    /// <li> <p>Keep in mind that subsequent calls to PutResourceAttributes will override previously stored attributes. For example, if it is first called with a MAC address, but later, it is desired to <i>add</i> an IP address, it will then be required to call it with <i>both</i> the IP and MAC addresses to prevent overriding the MAC address.</p> </li>
+    /// <li> <p>Note the instructions regarding the special use case of the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList"> <code>ResourceAttributeList</code> </a> parameter when specifying any "VM" related value.</p> </li>
     /// </ul>
-    /// </important>
-    ///
-    /// <note>
-    /// <p>Because this is an asynchronous call, it will always return 200, whether an
-    /// association occurs or not. To confirm if an association was found based on the provided
-    /// details, call <code>ListDiscoveredResources</code>.</p>
+    /// </important> <note>
+    /// <p>Because this is an asynchronous call, it will always return 200, whether an association occurs or not. To confirm if an association was found based on the provided details, call <code>ListDiscoveredResources</code>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourceAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2094,10 +1933,10 @@ pub mod fluent_builders {
                 crate::input::PutResourceAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2106,8 +1945,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ProgressUpdateStream. </p>
-        pub fn progress_update_stream(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.progress_update_stream(inp);
+        pub fn progress_update_stream(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.progress_update_stream(input.into());
             self
         }
         /// <p>The name of the ProgressUpdateStream. </p>
@@ -2118,16 +1957,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_progress_update_stream(input);
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
-        pub fn migration_task_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_task_name(inp);
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+        pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_task_name(input.into());
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2139,67 +1974,24 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_attribute_list`](Self::set_resource_attribute_list).
         ///
-        /// <p>Information about the resource that is being migrated. This data will be used to map the
-        /// task to a resource in the Application Discovery Service repository.</p>
-        /// <note>
-        /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code>
-        /// field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS |
-        /// MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH
-        /// | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a
-        /// string up to 256 characters.</p>
-        /// </note>
-        /// <important>
+        /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note>
+        /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p>
+        /// </note> <important>
         /// <ul>
-        /// <li>
-        ///
-        /// <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object,
-        /// it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
-        /// <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
-        /// and "VM" fields will not be used for matching the migration task to a server in
-        /// Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related
-        /// values.</p>
-        /// </li>
-        /// <li>
-        /// <p> If a server you are trying to match has multiple IP or MAC addresses, you
-        /// should provide as many as you know in separate type/value pairs passed to the
-        /// <code>ResourceAttributeList</code> parameter to maximize the chances of
-        /// matching.</p>
-        /// </li>
+        /// <li> <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related values.</p> </li>
+        /// <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li>
         /// </ul>
         /// </important>
-        pub fn resource_attribute_list(
-            mut self,
-            inp: impl Into<crate::model::ResourceAttribute>,
-        ) -> Self {
-            self.inner = self.inner.resource_attribute_list(inp);
+        pub fn resource_attribute_list(mut self, input: crate::model::ResourceAttribute) -> Self {
+            self.inner = self.inner.resource_attribute_list(input);
             self
         }
-        /// <p>Information about the resource that is being migrated. This data will be used to map the
-        /// task to a resource in the Application Discovery Service repository.</p>
-        /// <note>
-        /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code>
-        /// field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS |
-        /// MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH
-        /// | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a
-        /// string up to 256 characters.</p>
-        /// </note>
-        /// <important>
+        /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note>
+        /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p>
+        /// </note> <important>
         /// <ul>
-        /// <li>
-        ///
-        /// <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object,
-        /// it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
-        /// <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
-        /// and "VM" fields will not be used for matching the migration task to a server in
-        /// Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related
-        /// values.</p>
-        /// </li>
-        /// <li>
-        /// <p> If a server you are trying to match has multiple IP or MAC addresses, you
-        /// should provide as many as you know in separate type/value pairs passed to the
-        /// <code>ResourceAttributeList</code> parameter to maximize the chances of
-        /// matching.</p>
-        /// </li>
+        /// <li> <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related values.</p> </li>
+        /// <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li>
         /// </ul>
         /// </important>
         pub fn set_resource_attribute_list(
@@ -2209,20 +2001,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_attribute_list(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

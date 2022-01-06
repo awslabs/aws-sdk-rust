@@ -5,23 +5,19 @@
 pub enum Error {
     /// <p>An attachment with the specified ID could not be found.</p>
     AttachmentIdNotFound(crate::error::AttachmentIdNotFound),
-    /// <p>The limit for the number of attachment sets created in a short period of time has been
-    /// exceeded.</p>
+    /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
     AttachmentLimitExceeded(crate::error::AttachmentLimitExceeded),
-    /// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it
-    /// is created.</p>
+    /// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>
     AttachmentSetExpired(crate::error::AttachmentSetExpired),
     /// <p>An attachment set with the specified ID could not be found.</p>
     AttachmentSetIdNotFound(crate::error::AttachmentSetIdNotFound),
-    /// <p>A limit for the size of an attachment set has been exceeded. The limits are three
-    /// attachments and 5 MB per attachment.</p>
+    /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
     AttachmentSetSizeLimitExceeded(crate::error::AttachmentSetSizeLimitExceeded),
     /// <p>The case creation limit for the account has been exceeded.</p>
     CaseCreationLimitExceeded(crate::error::CaseCreationLimitExceeded),
     /// <p>The requested <code>caseId</code> couldn't be located.</p>
     CaseIdNotFound(crate::error::CaseIdNotFound),
-    /// <p>The limit for the number of <a>DescribeAttachment</a> requests in a short
-    /// period of time has been exceeded.</p>
+    /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
     DescribeAttachmentLimitExceeded(crate::error::DescribeAttachmentLimitExceeded),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),

@@ -70,8 +70,6 @@ impl DescribeJobExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -219,8 +217,6 @@ impl GetPendingJobExecutionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -366,8 +362,6 @@ impl StartNextPendingJobExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -460,9 +454,7 @@ pub enum UpdateJobExecutionErrorKind {
     CertificateValidationException(crate::error::CertificateValidationException),
     /// <p>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>An update attempted to change the job execution to a state that is invalid because of the job execution's
-    /// current state (for example, an attempt to change a request in state SUCCESS to state IN_PROGRESS). In this
-    /// case, the body of the error message also contains the executionState field.</p>
+    /// <p>An update attempted to change the job execution to a state that is invalid because of the job execution's current state (for example, an attempt to change a request in state SUCCESS to state IN_PROGRESS). In this case, the body of the error message also contains the executionState field.</p>
     InvalidStateTransitionException(crate::error::InvalidStateTransitionException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -516,8 +508,6 @@ impl UpdateJobExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -808,9 +798,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>An update attempted to change the job execution to a state that is invalid because of the job execution's
-/// current state (for example, an attempt to change a request in state SUCCESS to state IN_PROGRESS). In this
-/// case, the body of the error message also contains the executionState field.</p>
+/// <p>An update attempted to change the job execution to a state that is invalid because of the job execution's current state (for example, an attempt to change a request in state SUCCESS to state IN_PROGRESS). In this case, the body of the error message also contains the executionState field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStateTransitionException {

@@ -14,8 +14,7 @@ pub struct BuildSuggestersError {
 pub enum BuildSuggestersErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -65,8 +64,6 @@ impl BuildSuggestersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -134,8 +131,7 @@ pub struct CreateDomainError {
 pub enum CreateDomainErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because a resource limit has already been met.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -188,8 +184,6 @@ impl CreateDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -262,8 +256,7 @@ pub struct DefineAnalysisSchemeError {
 pub enum DefineAnalysisSchemeErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -319,8 +312,6 @@ impl DefineAnalysisSchemeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -410,8 +401,7 @@ pub struct DefineExpressionError {
 pub enum DefineExpressionErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -467,8 +457,6 @@ impl DefineExpressionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -555,8 +543,7 @@ pub struct DefineIndexFieldError {
 pub enum DefineIndexFieldErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -612,8 +599,6 @@ impl DefineIndexFieldError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -700,8 +685,7 @@ pub struct DefineSuggesterError {
 pub enum DefineSuggesterErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -757,8 +741,6 @@ impl DefineSuggesterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -842,8 +824,7 @@ pub struct DeleteAnalysisSchemeError {
 pub enum DeleteAnalysisSchemeErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -896,8 +877,6 @@ impl DeleteAnalysisSchemeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -979,8 +958,7 @@ pub struct DeleteDomainError {
 pub enum DeleteDomainErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1024,8 +1002,6 @@ impl DeleteDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1080,8 +1056,7 @@ pub struct DeleteExpressionError {
 pub enum DeleteExpressionErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -1134,8 +1109,6 @@ impl DeleteExpressionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1214,8 +1187,7 @@ pub struct DeleteIndexFieldError {
 pub enum DeleteIndexFieldErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -1268,8 +1240,6 @@ impl DeleteIndexFieldError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1348,8 +1318,7 @@ pub struct DeleteSuggesterError {
 pub enum DeleteSuggesterErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -1402,8 +1371,6 @@ impl DeleteSuggesterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1479,8 +1446,7 @@ pub struct DescribeAnalysisSchemesError {
 pub enum DescribeAnalysisSchemesErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1527,8 +1493,6 @@ impl DescribeAnalysisSchemesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1599,8 +1563,7 @@ pub enum DescribeAvailabilityOptionsErrorKind {
     BaseException(crate::error::BaseException),
     /// <p>The request was rejected because it attempted an operation which is not enabled.</p>
     DisabledOperationException(crate::error::DisabledOperationException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -1658,8 +1621,6 @@ impl DescribeAvailabilityOptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1756,8 +1717,7 @@ pub enum DescribeDomainEndpointOptionsErrorKind {
     BaseException(crate::error::BaseException),
     /// <p>The request was rejected because it attempted an operation which is not enabled.</p>
     DisabledOperationException(crate::error::DisabledOperationException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because a resource limit has already been met.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -1815,8 +1775,6 @@ impl DescribeDomainEndpointOptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1905,8 +1863,7 @@ pub struct DescribeDomainsError {
 pub enum DescribeDomainsErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1950,8 +1907,6 @@ impl DescribeDomainsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2006,8 +1961,7 @@ pub struct DescribeExpressionsError {
 pub enum DescribeExpressionsErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2054,8 +2008,6 @@ impl DescribeExpressionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2121,8 +2073,7 @@ pub struct DescribeIndexFieldsError {
 pub enum DescribeIndexFieldsErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2169,8 +2120,6 @@ impl DescribeIndexFieldsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2236,8 +2185,7 @@ pub struct DescribeScalingParametersError {
 pub enum DescribeScalingParametersErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2284,8 +2232,6 @@ impl DescribeScalingParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2354,8 +2300,7 @@ pub struct DescribeServiceAccessPoliciesError {
 pub enum DescribeServiceAccessPoliciesErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2407,8 +2352,6 @@ impl DescribeServiceAccessPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2479,8 +2422,7 @@ pub struct DescribeSuggestersError {
 pub enum DescribeSuggestersErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2527,8 +2469,6 @@ impl DescribeSuggestersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2594,8 +2534,7 @@ pub struct IndexDocumentsError {
 pub enum IndexDocumentsErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2645,8 +2584,6 @@ impl IndexDocumentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2755,8 +2692,6 @@ impl ListDomainNamesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2808,8 +2743,7 @@ pub enum UpdateAvailabilityOptionsErrorKind {
     BaseException(crate::error::BaseException),
     /// <p>The request was rejected because it attempted an operation which is not enabled.</p>
     DisabledOperationException(crate::error::DisabledOperationException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -2866,8 +2800,6 @@ impl UpdateAvailabilityOptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2970,8 +2902,7 @@ pub enum UpdateDomainEndpointOptionsErrorKind {
     BaseException(crate::error::BaseException),
     /// <p>The request was rejected because it attempted an operation which is not enabled.</p>
     DisabledOperationException(crate::error::DisabledOperationException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -3032,8 +2963,6 @@ impl UpdateDomainEndpointOptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3136,8 +3065,7 @@ pub struct UpdateScalingParametersError {
 pub enum UpdateScalingParametersErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -3193,8 +3121,6 @@ impl UpdateScalingParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3287,8 +3213,7 @@ pub struct UpdateServiceAccessPoliciesError {
 pub enum UpdateServiceAccessPoliciesErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -3346,8 +3271,6 @@ impl UpdateServiceAccessPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3765,8 +3688,7 @@ impl InvalidTypeException {
     }
 }
 
-/// <p>An internal error occurred while processing the request. If this problem persists,
-/// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+/// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalException {

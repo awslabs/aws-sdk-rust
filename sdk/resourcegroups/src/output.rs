@@ -194,37 +194,23 @@ impl UntagOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UngroupResourcesOutput {
-    /// <p>A list of resources that were successfully removed from the group by this
-    /// operation.</p>
+    /// <p>A list of resources that were successfully removed from the group by this operation.</p>
     pub succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of any resources that failed to be removed from the group by this
-    /// operation.</p>
+    /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
     pub failed: std::option::Option<std::vec::Vec<crate::model::FailedResource>>,
-    /// <p>A list of any resources that are still in the process of being removed from the group
-    /// by this operation. These pending removals continue asynchronously. You can check the
-    /// status of pending removals by using the <code>
-    /// <a>ListGroupResources</a>
-    /// </code> operation. After the resource is successfully removed, it no longer
-    /// appears in the response.</p>
+    /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
     pub pending: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
 }
 impl UngroupResourcesOutput {
-    /// <p>A list of resources that were successfully removed from the group by this
-    /// operation.</p>
+    /// <p>A list of resources that were successfully removed from the group by this operation.</p>
     pub fn succeeded(&self) -> std::option::Option<&[std::string::String]> {
         self.succeeded.as_deref()
     }
-    /// <p>A list of any resources that failed to be removed from the group by this
-    /// operation.</p>
+    /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
     pub fn failed(&self) -> std::option::Option<&[crate::model::FailedResource]> {
         self.failed.as_deref()
     }
-    /// <p>A list of any resources that are still in the process of being removed from the group
-    /// by this operation. These pending removals continue asynchronously. You can check the
-    /// status of pending removals by using the <code>
-    /// <a>ListGroupResources</a>
-    /// </code> operation. After the resource is successfully removed, it no longer
-    /// appears in the response.</p>
+    /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
     pub fn pending(&self) -> std::option::Option<&[crate::model::PendingResource]> {
         self.pending.as_deref()
     }
@@ -253,16 +239,14 @@ pub mod ungroup_resources_output {
         ///
         /// To override the contents of this collection use [`set_succeeded`](Self::set_succeeded).
         ///
-        /// <p>A list of resources that were successfully removed from the group by this
-        /// operation.</p>
+        /// <p>A list of resources that were successfully removed from the group by this operation.</p>
         pub fn succeeded(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.succeeded.unwrap_or_default();
             v.push(input.into());
             self.succeeded = Some(v);
             self
         }
-        /// <p>A list of resources that were successfully removed from the group by this
-        /// operation.</p>
+        /// <p>A list of resources that were successfully removed from the group by this operation.</p>
         pub fn set_succeeded(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -274,16 +258,14 @@ pub mod ungroup_resources_output {
         ///
         /// To override the contents of this collection use [`set_failed`](Self::set_failed).
         ///
-        /// <p>A list of any resources that failed to be removed from the group by this
-        /// operation.</p>
-        pub fn failed(mut self, input: impl Into<crate::model::FailedResource>) -> Self {
+        /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
+        pub fn failed(mut self, input: crate::model::FailedResource) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
-        /// <p>A list of any resources that failed to be removed from the group by this
-        /// operation.</p>
+        /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
         pub fn set_failed(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailedResource>>,
@@ -295,24 +277,14 @@ pub mod ungroup_resources_output {
         ///
         /// To override the contents of this collection use [`set_pending`](Self::set_pending).
         ///
-        /// <p>A list of any resources that are still in the process of being removed from the group
-        /// by this operation. These pending removals continue asynchronously. You can check the
-        /// status of pending removals by using the <code>
-        /// <a>ListGroupResources</a>
-        /// </code> operation. After the resource is successfully removed, it no longer
-        /// appears in the response.</p>
-        pub fn pending(mut self, input: impl Into<crate::model::PendingResource>) -> Self {
+        /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
+        pub fn pending(mut self, input: crate::model::PendingResource) -> Self {
             let mut v = self.pending.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending = Some(v);
             self
         }
-        /// <p>A list of any resources that are still in the process of being removed from the group
-        /// by this operation. These pending removals continue asynchronously. You can check the
-        /// status of pending removals by using the <code>
-        /// <a>ListGroupResources</a>
-        /// </code> operation. After the resource is successfully removed, it no longer
-        /// appears in the response.</p>
+        /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
         pub fn set_pending(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
@@ -435,37 +407,23 @@ impl TagOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesOutput {
-    /// <p>The ARNs and resource types of resources that are members of the group that you
-    /// specified.</p>
+    /// <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
     pub resource_identifiers: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains
-    /// <code>ErrorCode</code> and <code>Message</code> structures. Possible values for
-    /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
-    /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
     pub query_errors: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
 }
 impl SearchResourcesOutput {
-    /// <p>The ARNs and resource types of resources that are members of the group that you
-    /// specified.</p>
+    /// <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
     pub fn resource_identifiers(&self) -> std::option::Option<&[crate::model::ResourceIdentifier]> {
         self.resource_identifiers.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains
-    /// <code>ErrorCode</code> and <code>Message</code> structures. Possible values for
-    /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
-    /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
     pub fn query_errors(&self) -> std::option::Option<&[crate::model::QueryError]> {
         self.query_errors.as_deref()
     }
@@ -495,19 +453,14 @@ pub mod search_resources_output {
         ///
         /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
         ///
-        /// <p>The ARNs and resource types of resources that are members of the group that you
-        /// specified.</p>
-        pub fn resource_identifiers(
-            mut self,
-            input: impl Into<crate::model::ResourceIdentifier>,
-        ) -> Self {
+        /// <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
+        pub fn resource_identifiers(mut self, input: crate::model::ResourceIdentifier) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_identifiers = Some(v);
             self
         }
-        /// <p>The ARNs and resource types of resources that are members of the group that you
-        /// specified.</p>
+        /// <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
         pub fn set_resource_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
@@ -515,18 +468,12 @@ pub mod search_resources_output {
             self.resource_identifiers = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -535,20 +482,14 @@ pub mod search_resources_output {
         ///
         /// To override the contents of this collection use [`set_query_errors`](Self::set_query_errors).
         ///
-        /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains
-        /// <code>ErrorCode</code> and <code>Message</code> structures. Possible values for
-        /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
-        /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
-        pub fn query_errors(mut self, input: impl Into<crate::model::QueryError>) -> Self {
+        /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+        pub fn query_errors(mut self, input: crate::model::QueryError) -> Self {
             let mut v = self.query_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_errors = Some(v);
             self
         }
-        /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains
-        /// <code>ErrorCode</code> and <code>Message</code> structures. Possible values for
-        /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
-        /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+        /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
         pub fn set_query_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
@@ -607,47 +548,27 @@ impl PutGroupConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOutput {
-    /// <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
-    /// contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
+    /// <p>A list of <code>GroupIdentifier</code> objects. Each identifier is an object that contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
     pub group_identifiers: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
     /// <important>
-    /// <p>
-    /// <i>
-    /// <b>Deprecated - don't use this field. Use the
-    /// <code>GroupIdentifiers</code> response field
-    /// instead.</b>
-    /// </i>
-    /// </p>
+    /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
     /// </important>
     pub groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupsOutput {
-    /// <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
-    /// contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
+    /// <p>A list of <code>GroupIdentifier</code> objects. Each identifier is an object that contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
     pub fn group_identifiers(&self) -> std::option::Option<&[crate::model::GroupIdentifier]> {
         self.group_identifiers.as_deref()
     }
     /// <important>
-    /// <p>
-    /// <i>
-    /// <b>Deprecated - don't use this field. Use the
-    /// <code>GroupIdentifiers</code> response field
-    /// instead.</b>
-    /// </i>
-    /// </p>
+    /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
     /// </important>
     pub fn groups(&self) -> std::option::Option<&[crate::model::Group]> {
         self.groups.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -677,19 +598,14 @@ pub mod list_groups_output {
         ///
         /// To override the contents of this collection use [`set_group_identifiers`](Self::set_group_identifiers).
         ///
-        /// <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
-        /// contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
-        pub fn group_identifiers(
-            mut self,
-            input: impl Into<crate::model::GroupIdentifier>,
-        ) -> Self {
+        /// <p>A list of <code>GroupIdentifier</code> objects. Each identifier is an object that contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
+        pub fn group_identifiers(mut self, input: crate::model::GroupIdentifier) -> Self {
             let mut v = self.group_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_identifiers = Some(v);
             self
         }
-        /// <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
-        /// contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
+        /// <p>A list of <code>GroupIdentifier</code> objects. Each identifier is an object that contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
         pub fn set_group_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
@@ -702,28 +618,16 @@ pub mod list_groups_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <important>
-        /// <p>
-        /// <i>
-        /// <b>Deprecated - don't use this field. Use the
-        /// <code>GroupIdentifiers</code> response field
-        /// instead.</b>
-        /// </i>
-        /// </p>
+        /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
         /// </important>
-        pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn groups(mut self, input: crate::model::Group) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
         /// <important>
-        /// <p>
-        /// <i>
-        /// <b>Deprecated - don't use this field. Use the
-        /// <code>GroupIdentifiers</code> response field
-        /// instead.</b>
-        /// </i>
-        /// </p>
+        /// <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>
         /// </important>
         pub fn set_groups(
             mut self,
@@ -732,18 +636,12 @@ pub mod list_groups_output {
             self.groups = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -769,59 +667,33 @@ impl ListGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupResourcesOutput {
-    /// <p>An array of resources from which you can determine each resource's identity, type, and
-    /// group membership status.</p>
+    /// <p>An array of resources from which you can determine each resource's identity, type, and group membership status.</p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::ListGroupResourcesItem>>,
     /// <important>
-    /// <p>
-    /// <b>
-    /// <i>Deprecated - don't use this parameter. Use the
-    /// <code>Resources</code> response field
-    /// instead.</i>
-    /// </b>
-    /// </p>
+    /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
     pub resource_identifiers: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains
-    /// <code>ErrorCode</code> and <code>Message</code> structures. Possible values for
-    /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
-    /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
     pub query_errors: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
 }
 impl ListGroupResourcesOutput {
-    /// <p>An array of resources from which you can determine each resource's identity, type, and
-    /// group membership status.</p>
+    /// <p>An array of resources from which you can determine each resource's identity, type, and group membership status.</p>
     pub fn resources(&self) -> std::option::Option<&[crate::model::ListGroupResourcesItem]> {
         self.resources.as_deref()
     }
     /// <important>
-    /// <p>
-    /// <b>
-    /// <i>Deprecated - don't use this parameter. Use the
-    /// <code>Resources</code> response field
-    /// instead.</i>
-    /// </b>
-    /// </p>
+    /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
     /// </important>
     pub fn resource_identifiers(&self) -> std::option::Option<&[crate::model::ResourceIdentifier]> {
         self.resource_identifiers.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains
-    /// <code>ErrorCode</code> and <code>Message</code> structures. Possible values for
-    /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
-    /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
     pub fn query_errors(&self) -> std::option::Option<&[crate::model::QueryError]> {
         self.query_errors.as_deref()
     }
@@ -854,16 +726,14 @@ pub mod list_group_resources_output {
         ///
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
-        /// <p>An array of resources from which you can determine each resource's identity, type, and
-        /// group membership status.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::ListGroupResourcesItem>) -> Self {
+        /// <p>An array of resources from which you can determine each resource's identity, type, and group membership status.</p>
+        pub fn resources(mut self, input: crate::model::ListGroupResourcesItem) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
-        /// <p>An array of resources from which you can determine each resource's identity, type, and
-        /// group membership status.</p>
+        /// <p>An array of resources from which you can determine each resource's identity, type, and group membership status.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListGroupResourcesItem>>,
@@ -876,31 +746,16 @@ pub mod list_group_resources_output {
         /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
         ///
         /// <important>
-        /// <p>
-        /// <b>
-        /// <i>Deprecated - don't use this parameter. Use the
-        /// <code>Resources</code> response field
-        /// instead.</i>
-        /// </b>
-        /// </p>
+        /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
         /// </important>
-        pub fn resource_identifiers(
-            mut self,
-            input: impl Into<crate::model::ResourceIdentifier>,
-        ) -> Self {
+        pub fn resource_identifiers(mut self, input: crate::model::ResourceIdentifier) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_identifiers = Some(v);
             self
         }
         /// <important>
-        /// <p>
-        /// <b>
-        /// <i>Deprecated - don't use this parameter. Use the
-        /// <code>Resources</code> response field
-        /// instead.</i>
-        /// </b>
-        /// </p>
+        /// <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>
         /// </important>
         pub fn set_resource_identifiers(
             mut self,
@@ -909,18 +764,12 @@ pub mod list_group_resources_output {
             self.resource_identifiers = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -929,20 +778,14 @@ pub mod list_group_resources_output {
         ///
         /// To override the contents of this collection use [`set_query_errors`](Self::set_query_errors).
         ///
-        /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains
-        /// <code>ErrorCode</code> and <code>Message</code> structures. Possible values for
-        /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
-        /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
-        pub fn query_errors(mut self, input: impl Into<crate::model::QueryError>) -> Self {
+        /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+        pub fn query_errors(mut self, input: crate::model::QueryError) -> Self {
             let mut v = self.query_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_errors = Some(v);
             self
         }
-        /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains
-        /// <code>ErrorCode</code> and <code>Message</code> structures. Possible values for
-        /// <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
-        /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+        /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
         pub fn set_query_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
@@ -972,37 +815,23 @@ impl ListGroupResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupResourcesOutput {
-    /// <p>A list of ARNs of resources that were successfully added to the group by this
-    /// operation.</p>
+    /// <p>A list of ARNs of resources that were successfully added to the group by this operation.</p>
     pub succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of ARNs of any resources that failed to be added to the group by this
-    /// operation.</p>
+    /// <p>A list of ARNs of any resources that failed to be added to the group by this operation.</p>
     pub failed: std::option::Option<std::vec::Vec<crate::model::FailedResource>>,
-    /// <p>A list of ARNs of any resources that are still in the process of being added to the
-    /// group by this operation. These pending additions continue asynchronously. You can check
-    /// the status of pending additions by using the <code>
-    /// <a>ListGroupResources</a>
-    /// </code> operation, and checking the <code>Resources</code> array in the response
-    /// and the <code>Status</code> field of each object in that array. </p>
+    /// <p>A list of ARNs of any resources that are still in the process of being added to the group by this operation. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
     pub pending: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
 }
 impl GroupResourcesOutput {
-    /// <p>A list of ARNs of resources that were successfully added to the group by this
-    /// operation.</p>
+    /// <p>A list of ARNs of resources that were successfully added to the group by this operation.</p>
     pub fn succeeded(&self) -> std::option::Option<&[std::string::String]> {
         self.succeeded.as_deref()
     }
-    /// <p>A list of ARNs of any resources that failed to be added to the group by this
-    /// operation.</p>
+    /// <p>A list of ARNs of any resources that failed to be added to the group by this operation.</p>
     pub fn failed(&self) -> std::option::Option<&[crate::model::FailedResource]> {
         self.failed.as_deref()
     }
-    /// <p>A list of ARNs of any resources that are still in the process of being added to the
-    /// group by this operation. These pending additions continue asynchronously. You can check
-    /// the status of pending additions by using the <code>
-    /// <a>ListGroupResources</a>
-    /// </code> operation, and checking the <code>Resources</code> array in the response
-    /// and the <code>Status</code> field of each object in that array. </p>
+    /// <p>A list of ARNs of any resources that are still in the process of being added to the group by this operation. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
     pub fn pending(&self) -> std::option::Option<&[crate::model::PendingResource]> {
         self.pending.as_deref()
     }
@@ -1031,16 +860,14 @@ pub mod group_resources_output {
         ///
         /// To override the contents of this collection use [`set_succeeded`](Self::set_succeeded).
         ///
-        /// <p>A list of ARNs of resources that were successfully added to the group by this
-        /// operation.</p>
+        /// <p>A list of ARNs of resources that were successfully added to the group by this operation.</p>
         pub fn succeeded(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.succeeded.unwrap_or_default();
             v.push(input.into());
             self.succeeded = Some(v);
             self
         }
-        /// <p>A list of ARNs of resources that were successfully added to the group by this
-        /// operation.</p>
+        /// <p>A list of ARNs of resources that were successfully added to the group by this operation.</p>
         pub fn set_succeeded(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1052,16 +879,14 @@ pub mod group_resources_output {
         ///
         /// To override the contents of this collection use [`set_failed`](Self::set_failed).
         ///
-        /// <p>A list of ARNs of any resources that failed to be added to the group by this
-        /// operation.</p>
-        pub fn failed(mut self, input: impl Into<crate::model::FailedResource>) -> Self {
+        /// <p>A list of ARNs of any resources that failed to be added to the group by this operation.</p>
+        pub fn failed(mut self, input: crate::model::FailedResource) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
-        /// <p>A list of ARNs of any resources that failed to be added to the group by this
-        /// operation.</p>
+        /// <p>A list of ARNs of any resources that failed to be added to the group by this operation.</p>
         pub fn set_failed(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailedResource>>,
@@ -1073,24 +898,14 @@ pub mod group_resources_output {
         ///
         /// To override the contents of this collection use [`set_pending`](Self::set_pending).
         ///
-        /// <p>A list of ARNs of any resources that are still in the process of being added to the
-        /// group by this operation. These pending additions continue asynchronously. You can check
-        /// the status of pending additions by using the <code>
-        /// <a>ListGroupResources</a>
-        /// </code> operation, and checking the <code>Resources</code> array in the response
-        /// and the <code>Status</code> field of each object in that array. </p>
-        pub fn pending(mut self, input: impl Into<crate::model::PendingResource>) -> Self {
+        /// <p>A list of ARNs of any resources that are still in the process of being added to the group by this operation. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+        pub fn pending(mut self, input: crate::model::PendingResource) -> Self {
             let mut v = self.pending.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending = Some(v);
             self
         }
-        /// <p>A list of ARNs of any resources that are still in the process of being added to the
-        /// group by this operation. These pending additions continue asynchronously. You can check
-        /// the status of pending additions by using the <code>
-        /// <a>ListGroupResources</a>
-        /// </code> operation, and checking the <code>Resources</code> array in the response
-        /// and the <code>Status</code> field of each object in that array. </p>
+        /// <p>A list of ARNs of any resources that are still in the process of being added to the group by this operation. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
         pub fn set_pending(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
@@ -1213,15 +1028,11 @@ impl GetTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupQueryOutput {
-    /// <p>The resource query associated with the specified group. For more information about
-    /// resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-    /// a tag-based group in Resource Groups</a>.</p>
+    /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
     pub group_query: std::option::Option<crate::model::GroupQuery>,
 }
 impl GetGroupQueryOutput {
-    /// <p>The resource query associated with the specified group. For more information about
-    /// resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-    /// a tag-based group in Resource Groups</a>.</p>
+    /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
     pub fn group_query(&self) -> std::option::Option<&crate::model::GroupQuery> {
         self.group_query.as_ref()
     }
@@ -1242,16 +1053,12 @@ pub mod get_group_query_output {
         pub(crate) group_query: std::option::Option<crate::model::GroupQuery>,
     }
     impl Builder {
-        /// <p>The resource query associated with the specified group. For more information about
-        /// resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-        /// a tag-based group in Resource Groups</a>.</p>
+        /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
         pub fn group_query(mut self, input: crate::model::GroupQuery) -> Self {
             self.group_query = Some(input);
             self
         }
-        /// <p>The resource query associated with the specified group. For more information about
-        /// resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-        /// a tag-based group in Resource Groups</a>.</p>
+        /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
         pub fn set_group_query(
             mut self,
             input: std::option::Option<crate::model::GroupQuery>,
@@ -1278,15 +1085,11 @@ impl GetGroupQueryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupConfigurationOutput {
-    /// <p>The service configuration associated with the specified group. For details about the
-    /// service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-    /// groups</a>.</p>
+    /// <p>The service configuration associated with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
     pub group_configuration: std::option::Option<crate::model::GroupConfiguration>,
 }
 impl GetGroupConfigurationOutput {
-    /// <p>The service configuration associated with the specified group. For details about the
-    /// service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-    /// groups</a>.</p>
+    /// <p>The service configuration associated with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
     pub fn group_configuration(&self) -> std::option::Option<&crate::model::GroupConfiguration> {
         self.group_configuration.as_ref()
     }
@@ -1307,16 +1110,12 @@ pub mod get_group_configuration_output {
         pub(crate) group_configuration: std::option::Option<crate::model::GroupConfiguration>,
     }
     impl Builder {
-        /// <p>The service configuration associated with the specified group. For details about the
-        /// service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-        /// groups</a>.</p>
+        /// <p>The service configuration associated with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
         pub fn group_configuration(mut self, input: crate::model::GroupConfiguration) -> Self {
             self.group_configuration = Some(input);
             self
         }
-        /// <p>The service configuration associated with the specified group. For details about the
-        /// service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-        /// groups</a>.</p>
+        /// <p>The service configuration associated with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
         pub fn set_group_configuration(
             mut self,
             input: std::option::Option<crate::model::GroupConfiguration>,
@@ -1449,16 +1248,12 @@ impl DeleteGroupOutput {
 pub struct CreateGroupOutput {
     /// <p>The description of the resource group.</p>
     pub group: std::option::Option<crate::model::Group>,
-    /// <p>The resource query associated with the group. For more information about resource
-    /// queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-    /// a tag-based group in Resource Groups</a>. </p>
+    /// <p>The resource query associated with the group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p>
     pub resource_query: std::option::Option<crate::model::ResourceQuery>,
     /// <p>The tags associated with the group.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The service configuration associated with the resource group. For details about the
-    /// syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-    /// groups</a>.</p>
+    /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
     pub group_configuration: std::option::Option<crate::model::GroupConfiguration>,
 }
 impl CreateGroupOutput {
@@ -1466,9 +1261,7 @@ impl CreateGroupOutput {
     pub fn group(&self) -> std::option::Option<&crate::model::Group> {
         self.group.as_ref()
     }
-    /// <p>The resource query associated with the group. For more information about resource
-    /// queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-    /// a tag-based group in Resource Groups</a>. </p>
+    /// <p>The resource query associated with the group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p>
     pub fn resource_query(&self) -> std::option::Option<&crate::model::ResourceQuery> {
         self.resource_query.as_ref()
     }
@@ -1479,9 +1272,7 @@ impl CreateGroupOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>The service configuration associated with the resource group. For details about the
-    /// syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-    /// groups</a>.</p>
+    /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
     pub fn group_configuration(&self) -> std::option::Option<&crate::model::GroupConfiguration> {
         self.group_configuration.as_ref()
     }
@@ -1520,16 +1311,12 @@ pub mod create_group_output {
             self.group = input;
             self
         }
-        /// <p>The resource query associated with the group. For more information about resource
-        /// queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-        /// a tag-based group in Resource Groups</a>. </p>
+        /// <p>The resource query associated with the group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p>
         pub fn resource_query(mut self, input: crate::model::ResourceQuery) -> Self {
             self.resource_query = Some(input);
             self
         }
-        /// <p>The resource query associated with the group. For more information about resource
-        /// queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-        /// a tag-based group in Resource Groups</a>. </p>
+        /// <p>The resource query associated with the group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p>
         pub fn set_resource_query(
             mut self,
             input: std::option::Option<crate::model::ResourceQuery>,
@@ -1562,16 +1349,12 @@ pub mod create_group_output {
             self.tags = input;
             self
         }
-        /// <p>The service configuration associated with the resource group. For details about the
-        /// syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-        /// groups</a>.</p>
+        /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
         pub fn group_configuration(mut self, input: crate::model::GroupConfiguration) -> Self {
             self.group_configuration = Some(input);
             self
         }
-        /// <p>The service configuration associated with the resource group. For details about the
-        /// syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-        /// groups</a>.</p>
+        /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
         pub fn set_group_configuration(
             mut self,
             input: std::option::Option<crate::model::GroupConfiguration>,

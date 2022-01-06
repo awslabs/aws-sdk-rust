@@ -33,7 +33,7 @@ pub mod activate_event_source_input {
 #[doc(hidden)]
 pub type ActivateEventSourceInputOperationOutputAlias = crate::operation::ActivateEventSource;
 #[doc(hidden)]
-pub type ActivateEventSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ActivateEventSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ActivateEventSourceInput {
     /// Consumes the builder and constructs an Operation<[`ActivateEventSource`](crate::operation::ActivateEventSource)>
     #[allow(clippy::let_and_return)]
@@ -44,7 +44,7 @@ impl ActivateEventSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ActivateEventSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -129,7 +129,7 @@ impl ActivateEventSourceInput {
             "ActivateEventSource",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -187,7 +187,7 @@ pub mod cancel_replay_input {
 #[doc(hidden)]
 pub type CancelReplayInputOperationOutputAlias = crate::operation::CancelReplay;
 #[doc(hidden)]
-pub type CancelReplayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelReplayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelReplayInput {
     /// Consumes the builder and constructs an Operation<[`CancelReplay`](crate::operation::CancelReplay)>
     #[allow(clippy::let_and_return)]
@@ -198,7 +198,7 @@ impl CancelReplayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelReplay,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -282,7 +282,7 @@ impl CancelReplayInput {
             "CancelReplay",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -339,14 +339,12 @@ pub mod create_api_destination_input {
             self.description = input;
             self
         }
-        /// <p>The ARN of the connection to use for the API destination. The destination endpoint must
-        /// support the authorization type specified for the connection.</p>
+        /// <p>The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.</p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the connection to use for the API destination. The destination endpoint must
-        /// support the authorization type specified for the connection.</p>
+        /// <p>The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.</p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -414,7 +412,7 @@ pub mod create_api_destination_input {
 #[doc(hidden)]
 pub type CreateApiDestinationInputOperationOutputAlias = crate::operation::CreateApiDestination;
 #[doc(hidden)]
-pub type CreateApiDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApiDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApiDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApiDestination`](crate::operation::CreateApiDestination)>
     #[allow(clippy::let_and_return)]
@@ -425,7 +423,7 @@ impl CreateApiDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApiDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -512,7 +510,7 @@ impl CreateApiDestinationInput {
             "CreateApiDestination",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -594,14 +592,12 @@ pub mod create_archive_input {
             self.event_pattern = input;
             self
         }
-        /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are
-        /// retained indefinitely</p>
+        /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
         pub fn retention_days(mut self, input: i32) -> Self {
             self.retention_days = Some(input);
             self
         }
-        /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are
-        /// retained indefinitely</p>
+        /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
         pub fn set_retention_days(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_days = input;
             self
@@ -626,7 +622,7 @@ pub mod create_archive_input {
 #[doc(hidden)]
 pub type CreateArchiveInputOperationOutputAlias = crate::operation::CreateArchive;
 #[doc(hidden)]
-pub type CreateArchiveInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateArchiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateArchiveInput {
     /// Consumes the builder and constructs an Operation<[`CreateArchive`](crate::operation::CreateArchive)>
     #[allow(clippy::let_and_return)]
@@ -637,7 +633,7 @@ impl CreateArchiveInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateArchive,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -721,7 +717,7 @@ impl CreateArchiveInput {
             "CreateArchive",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -794,8 +790,7 @@ pub mod create_connection_input {
             self.authorization_type = input;
             self
         }
-        /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the
-        /// authorization parameters to use to authorize with the endpoint. </p>
+        /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
         pub fn auth_parameters(
             mut self,
             input: crate::model::CreateConnectionAuthRequestParameters,
@@ -803,8 +798,7 @@ pub mod create_connection_input {
             self.auth_parameters = Some(input);
             self
         }
-        /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the
-        /// authorization parameters to use to authorize with the endpoint. </p>
+        /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
         pub fn set_auth_parameters(
             mut self,
             input: std::option::Option<crate::model::CreateConnectionAuthRequestParameters>,
@@ -831,7 +825,7 @@ pub mod create_connection_input {
 #[doc(hidden)]
 pub type CreateConnectionInputOperationOutputAlias = crate::operation::CreateConnection;
 #[doc(hidden)]
-pub type CreateConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnection`](crate::operation::CreateConnection)>
     #[allow(clippy::let_and_return)]
@@ -842,7 +836,7 @@ impl CreateConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -927,7 +921,7 @@ impl CreateConnectionInput {
             "CreateConnection",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -962,33 +956,25 @@ pub mod create_event_bus_input {
     }
     impl Builder {
         /// <p>The name of the new event bus. </p>
-        /// <p>Event bus names cannot contain the / character. You can't use the name
-        /// <code>default</code> for a custom event bus, as this name is already used for your account's
-        /// default event bus.</p>
-        /// <p>If this is a partner event bus, the name must exactly match the name of the partner event
-        /// source that this event bus is matched to.</p>
+        /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
+        /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The name of the new event bus. </p>
-        /// <p>Event bus names cannot contain the / character. You can't use the name
-        /// <code>default</code> for a custom event bus, as this name is already used for your account's
-        /// default event bus.</p>
-        /// <p>If this is a partner event bus, the name must exactly match the name of the partner event
-        /// source that this event bus is matched to.</p>
+        /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
+        /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>If you are creating a partner event bus, this specifies the partner event source that the
-        /// new event bus will be matched with.</p>
+        /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
         pub fn event_source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_source_name = Some(input.into());
             self
         }
-        /// <p>If you are creating a partner event bus, this specifies the partner event source that the
-        /// new event bus will be matched with.</p>
+        /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
         pub fn set_event_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1001,9 +987,9 @@ pub mod create_event_bus_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to associate with the event bus.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1033,7 +1019,7 @@ pub mod create_event_bus_input {
 #[doc(hidden)]
 pub type CreateEventBusInputOperationOutputAlias = crate::operation::CreateEventBus;
 #[doc(hidden)]
-pub type CreateEventBusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEventBusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEventBusInput {
     /// Consumes the builder and constructs an Operation<[`CreateEventBus`](crate::operation::CreateEventBus)>
     #[allow(clippy::let_and_return)]
@@ -1044,7 +1030,7 @@ impl CreateEventBusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEventBus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1129,7 +1115,7 @@ impl CreateEventBusInput {
             "CreateEventBus",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1162,34 +1148,22 @@ pub mod create_partner_event_source_input {
         pub(crate) account: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the partner event source. This name must be unique and must be in the format
-        /// <code>
-        /// <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i>
-        /// </code>.
-        /// The Amazon Web Services account that wants to use this partner event source must create a partner event bus
-        /// with a name that matches the name of the partner event source.</p>
+        /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the partner event source. This name must be unique and must be in the format
-        /// <code>
-        /// <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i>
-        /// </code>.
-        /// The Amazon Web Services account that wants to use this partner event source must create a partner event bus
-        /// with a name that matches the name of the partner event source.</p>
+        /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
-        /// partner event source.</p>
+        /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.account = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
-        /// partner event source.</p>
+        /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
         pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account = input;
             self
@@ -1212,7 +1186,7 @@ pub mod create_partner_event_source_input {
 pub type CreatePartnerEventSourceInputOperationOutputAlias =
     crate::operation::CreatePartnerEventSource;
 #[doc(hidden)]
-pub type CreatePartnerEventSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePartnerEventSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePartnerEventSourceInput {
     /// Consumes the builder and constructs an Operation<[`CreatePartnerEventSource`](crate::operation::CreatePartnerEventSource)>
     #[allow(clippy::let_and_return)]
@@ -1223,7 +1197,7 @@ impl CreatePartnerEventSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePartnerEventSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1310,7 +1284,7 @@ impl CreatePartnerEventSourceInput {
             "CreatePartnerEventSource",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1366,7 +1340,7 @@ pub mod deactivate_event_source_input {
 #[doc(hidden)]
 pub type DeactivateEventSourceInputOperationOutputAlias = crate::operation::DeactivateEventSource;
 #[doc(hidden)]
-pub type DeactivateEventSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeactivateEventSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeactivateEventSourceInput {
     /// Consumes the builder and constructs an Operation<[`DeactivateEventSource`](crate::operation::DeactivateEventSource)>
     #[allow(clippy::let_and_return)]
@@ -1377,7 +1351,7 @@ impl DeactivateEventSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeactivateEventSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1464,7 +1438,7 @@ impl DeactivateEventSourceInput {
             "DeactivateEventSource",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1520,7 +1494,7 @@ pub mod deauthorize_connection_input {
 #[doc(hidden)]
 pub type DeauthorizeConnectionInputOperationOutputAlias = crate::operation::DeauthorizeConnection;
 #[doc(hidden)]
-pub type DeauthorizeConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeauthorizeConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeauthorizeConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeauthorizeConnection`](crate::operation::DeauthorizeConnection)>
     #[allow(clippy::let_and_return)]
@@ -1531,7 +1505,7 @@ impl DeauthorizeConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeauthorizeConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1618,7 +1592,7 @@ impl DeauthorizeConnectionInput {
             "DeauthorizeConnection",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1674,7 +1648,7 @@ pub mod delete_api_destination_input {
 #[doc(hidden)]
 pub type DeleteApiDestinationInputOperationOutputAlias = crate::operation::DeleteApiDestination;
 #[doc(hidden)]
-pub type DeleteApiDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApiDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApiDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApiDestination`](crate::operation::DeleteApiDestination)>
     #[allow(clippy::let_and_return)]
@@ -1685,7 +1659,7 @@ impl DeleteApiDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApiDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1772,7 +1746,7 @@ impl DeleteApiDestinationInput {
             "DeleteApiDestination",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1830,7 +1804,7 @@ pub mod delete_archive_input {
 #[doc(hidden)]
 pub type DeleteArchiveInputOperationOutputAlias = crate::operation::DeleteArchive;
 #[doc(hidden)]
-pub type DeleteArchiveInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteArchiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteArchiveInput {
     /// Consumes the builder and constructs an Operation<[`DeleteArchive`](crate::operation::DeleteArchive)>
     #[allow(clippy::let_and_return)]
@@ -1841,7 +1815,7 @@ impl DeleteArchiveInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteArchive,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1925,7 +1899,7 @@ impl DeleteArchiveInput {
             "DeleteArchive",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1981,7 +1955,7 @@ pub mod delete_connection_input {
 #[doc(hidden)]
 pub type DeleteConnectionInputOperationOutputAlias = crate::operation::DeleteConnection;
 #[doc(hidden)]
-pub type DeleteConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnection`](crate::operation::DeleteConnection)>
     #[allow(clippy::let_and_return)]
@@ -1992,7 +1966,7 @@ impl DeleteConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2077,7 +2051,7 @@ impl DeleteConnectionInput {
             "DeleteConnection",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2133,7 +2107,7 @@ pub mod delete_event_bus_input {
 #[doc(hidden)]
 pub type DeleteEventBusInputOperationOutputAlias = crate::operation::DeleteEventBus;
 #[doc(hidden)]
-pub type DeleteEventBusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEventBusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventBusInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventBus`](crate::operation::DeleteEventBus)>
     #[allow(clippy::let_and_return)]
@@ -2144,7 +2118,7 @@ impl DeleteEventBusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEventBus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2229,7 +2203,7 @@ impl DeleteEventBusInput {
             "DeleteEventBus",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2300,7 +2274,7 @@ pub mod delete_partner_event_source_input {
 pub type DeletePartnerEventSourceInputOperationOutputAlias =
     crate::operation::DeletePartnerEventSource;
 #[doc(hidden)]
-pub type DeletePartnerEventSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePartnerEventSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePartnerEventSourceInput {
     /// Consumes the builder and constructs an Operation<[`DeletePartnerEventSource`](crate::operation::DeletePartnerEventSource)>
     #[allow(clippy::let_and_return)]
@@ -2311,7 +2285,7 @@ impl DeletePartnerEventSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePartnerEventSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2398,7 +2372,7 @@ impl DeletePartnerEventSourceInput {
             "DeletePartnerEventSource",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2442,14 +2416,12 @@ pub mod delete_rule_input {
             self.name = input;
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2457,20 +2429,12 @@ pub mod delete_rule_input {
             self.event_bus_name = input;
             self
         }
-        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
-        /// <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for
-        /// rules that are not managed rules. You can check whether a rule is a managed rule by using
-        /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-        /// field of the response.</p>
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
-        /// <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for
-        /// rules that are not managed rules. You can check whether a rule is a managed rule by using
-        /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-        /// field of the response.</p>
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -2493,7 +2457,7 @@ pub mod delete_rule_input {
 #[doc(hidden)]
 pub type DeleteRuleInputOperationOutputAlias = crate::operation::DeleteRule;
 #[doc(hidden)]
-pub type DeleteRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRule`](crate::operation::DeleteRule)>
     #[allow(clippy::let_and_return)]
@@ -2504,7 +2468,7 @@ impl DeleteRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2588,7 +2552,7 @@ impl DeleteRuleInput {
             "DeleteRule",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2644,7 +2608,7 @@ pub mod describe_api_destination_input {
 #[doc(hidden)]
 pub type DescribeApiDestinationInputOperationOutputAlias = crate::operation::DescribeApiDestination;
 #[doc(hidden)]
-pub type DescribeApiDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeApiDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApiDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApiDestination`](crate::operation::DescribeApiDestination)>
     #[allow(clippy::let_and_return)]
@@ -2655,7 +2619,7 @@ impl DescribeApiDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApiDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2742,7 +2706,7 @@ impl DescribeApiDestinationInput {
             "DescribeApiDestination",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2800,7 +2764,7 @@ pub mod describe_archive_input {
 #[doc(hidden)]
 pub type DescribeArchiveInputOperationOutputAlias = crate::operation::DescribeArchive;
 #[doc(hidden)]
-pub type DescribeArchiveInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeArchiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeArchiveInput {
     /// Consumes the builder and constructs an Operation<[`DescribeArchive`](crate::operation::DescribeArchive)>
     #[allow(clippy::let_and_return)]
@@ -2811,7 +2775,7 @@ impl DescribeArchiveInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeArchive,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2896,7 +2860,7 @@ impl DescribeArchiveInput {
             "DescribeArchive",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2952,7 +2916,7 @@ pub mod describe_connection_input {
 #[doc(hidden)]
 pub type DescribeConnectionInputOperationOutputAlias = crate::operation::DescribeConnection;
 #[doc(hidden)]
-pub type DescribeConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnection`](crate::operation::DescribeConnection)>
     #[allow(clippy::let_and_return)]
@@ -2963,7 +2927,7 @@ impl DescribeConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3048,7 +3012,7 @@ impl DescribeConnectionInput {
             "DescribeConnection",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3080,14 +3044,12 @@ pub mod describe_event_bus_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event
-        /// bus is displayed.</p>
+        /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event
-        /// bus is displayed.</p>
+        /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3106,7 +3068,7 @@ pub mod describe_event_bus_input {
 #[doc(hidden)]
 pub type DescribeEventBusInputOperationOutputAlias = crate::operation::DescribeEventBus;
 #[doc(hidden)]
-pub type DescribeEventBusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEventBusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventBusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventBus`](crate::operation::DescribeEventBus)>
     #[allow(clippy::let_and_return)]
@@ -3117,7 +3079,7 @@ impl DescribeEventBusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEventBus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3202,7 +3164,7 @@ impl DescribeEventBusInput {
             "DescribeEventBus",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3258,7 +3220,7 @@ pub mod describe_event_source_input {
 #[doc(hidden)]
 pub type DescribeEventSourceInputOperationOutputAlias = crate::operation::DescribeEventSource;
 #[doc(hidden)]
-pub type DescribeEventSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEventSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventSourceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventSource`](crate::operation::DescribeEventSource)>
     #[allow(clippy::let_and_return)]
@@ -3269,7 +3231,7 @@ impl DescribeEventSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEventSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3354,7 +3316,7 @@ impl DescribeEventSourceInput {
             "DescribeEventSource",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3411,7 +3373,7 @@ pub mod describe_partner_event_source_input {
 pub type DescribePartnerEventSourceInputOperationOutputAlias =
     crate::operation::DescribePartnerEventSource;
 #[doc(hidden)]
-pub type DescribePartnerEventSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePartnerEventSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePartnerEventSourceInput {
     /// Consumes the builder and constructs an Operation<[`DescribePartnerEventSource`](crate::operation::DescribePartnerEventSource)>
     #[allow(clippy::let_and_return)]
@@ -3422,7 +3384,7 @@ impl DescribePartnerEventSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePartnerEventSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3508,7 +3470,7 @@ impl DescribePartnerEventSourceInput {
             "DescribePartnerEventSource",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3566,7 +3528,7 @@ pub mod describe_replay_input {
 #[doc(hidden)]
 pub type DescribeReplayInputOperationOutputAlias = crate::operation::DescribeReplay;
 #[doc(hidden)]
-pub type DescribeReplayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReplayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReplayInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplay`](crate::operation::DescribeReplay)>
     #[allow(clippy::let_and_return)]
@@ -3577,7 +3539,7 @@ impl DescribeReplayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReplay,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3662,7 +3624,7 @@ impl DescribeReplayInput {
             "DescribeReplay",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3705,14 +3667,12 @@ pub mod describe_rule_input {
             self.name = input;
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3737,7 +3697,7 @@ pub mod describe_rule_input {
 #[doc(hidden)]
 pub type DescribeRuleInputOperationOutputAlias = crate::operation::DescribeRule;
 #[doc(hidden)]
-pub type DescribeRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRuleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRule`](crate::operation::DescribeRule)>
     #[allow(clippy::let_and_return)]
@@ -3748,7 +3708,7 @@ impl DescribeRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3832,7 +3792,7 @@ impl DescribeRuleInput {
             "DescribeRule",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3875,14 +3835,12 @@ pub mod disable_rule_input {
             self.name = input;
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3907,7 +3865,7 @@ pub mod disable_rule_input {
 #[doc(hidden)]
 pub type DisableRuleInputOperationOutputAlias = crate::operation::DisableRule;
 #[doc(hidden)]
-pub type DisableRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableRuleInput {
     /// Consumes the builder and constructs an Operation<[`DisableRule`](crate::operation::DisableRule)>
     #[allow(clippy::let_and_return)]
@@ -3918,7 +3876,7 @@ impl DisableRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4002,7 +3960,7 @@ impl DisableRuleInput {
             "DisableRule",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4045,14 +4003,12 @@ pub mod enable_rule_input {
             self.name = input;
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4077,7 +4033,7 @@ pub mod enable_rule_input {
 #[doc(hidden)]
 pub type EnableRuleInputOperationOutputAlias = crate::operation::EnableRule;
 #[doc(hidden)]
-pub type EnableRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableRuleInput {
     /// Consumes the builder and constructs an Operation<[`EnableRule`](crate::operation::EnableRule)>
     #[allow(clippy::let_and_return)]
@@ -4088,7 +4044,7 @@ impl EnableRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4172,7 +4128,7 @@ impl EnableRuleInput {
             "EnableRule",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4207,14 +4163,12 @@ pub mod list_api_destinations_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A name prefix to filter results returned. Only API destinations with a name that starts
-        /// with the prefix are returned.</p>
+        /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.name_prefix = Some(input.into());
             self
         }
-        /// <p>A name prefix to filter results returned. Only API destinations with a name that starts
-        /// with the prefix are returned.</p>
+        /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name_prefix = input;
             self
@@ -4271,7 +4225,7 @@ pub mod list_api_destinations_input {
 #[doc(hidden)]
 pub type ListApiDestinationsInputOperationOutputAlias = crate::operation::ListApiDestinations;
 #[doc(hidden)]
-pub type ListApiDestinationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApiDestinationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApiDestinationsInput {
     /// Consumes the builder and constructs an Operation<[`ListApiDestinations`](crate::operation::ListApiDestinations)>
     #[allow(clippy::let_and_return)]
@@ -4282,7 +4236,7 @@ impl ListApiDestinationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApiDestinations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4367,7 +4321,7 @@ impl ListApiDestinationsInput {
             "ListApiDestinations",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4403,14 +4357,12 @@ pub mod list_archives_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A name prefix to filter the archives returned. Only archives with name that match the
-        /// prefix are returned.</p>
+        /// <p>A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.name_prefix = Some(input.into());
             self
         }
-        /// <p>A name prefix to filter the archives returned. Only archives with name that match the
-        /// prefix are returned.</p>
+        /// <p>A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name_prefix = input;
             self
@@ -4478,7 +4430,7 @@ pub mod list_archives_input {
 #[doc(hidden)]
 pub type ListArchivesInputOperationOutputAlias = crate::operation::ListArchives;
 #[doc(hidden)]
-pub type ListArchivesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListArchivesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListArchivesInput {
     /// Consumes the builder and constructs an Operation<[`ListArchives`](crate::operation::ListArchives)>
     #[allow(clippy::let_and_return)]
@@ -4489,7 +4441,7 @@ impl ListArchivesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListArchives,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4573,7 +4525,7 @@ impl ListArchivesInput {
             "ListArchives",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4608,14 +4560,12 @@ pub mod list_connections_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A name prefix to filter results returned. Only connections with a name that starts with
-        /// the prefix are returned.</p>
+        /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.name_prefix = Some(input.into());
             self
         }
-        /// <p>A name prefix to filter results returned. Only connections with a name that starts with
-        /// the prefix are returned.</p>
+        /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name_prefix = input;
             self
@@ -4672,7 +4622,7 @@ pub mod list_connections_input {
 #[doc(hidden)]
 pub type ListConnectionsInputOperationOutputAlias = crate::operation::ListConnections;
 #[doc(hidden)]
-pub type ListConnectionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListConnectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`ListConnections`](crate::operation::ListConnections)>
     #[allow(clippy::let_and_return)]
@@ -4683,7 +4633,7 @@ impl ListConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConnections,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4768,7 +4718,7 @@ impl ListConnectionsInput {
             "ListConnections",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4802,14 +4752,12 @@ pub mod list_event_buses_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifying this limits the results to only those event buses with names that start with
-        /// the specified prefix.</p>
+        /// <p>Specifying this limits the results to only those event buses with names that start with the specified prefix.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.name_prefix = Some(input.into());
             self
         }
-        /// <p>Specifying this limits the results to only those event buses with names that start with
-        /// the specified prefix.</p>
+        /// <p>Specifying this limits the results to only those event buses with names that start with the specified prefix.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name_prefix = input;
             self
@@ -4824,16 +4772,12 @@ pub mod list_event_buses_input {
             self.next_token = input;
             self
         }
-        /// <p>Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-        /// of results.</p>
+        /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-        /// of results.</p>
+        /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -4856,7 +4800,7 @@ pub mod list_event_buses_input {
 #[doc(hidden)]
 pub type ListEventBusesInputOperationOutputAlias = crate::operation::ListEventBuses;
 #[doc(hidden)]
-pub type ListEventBusesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEventBusesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventBusesInput {
     /// Consumes the builder and constructs an Operation<[`ListEventBuses`](crate::operation::ListEventBuses)>
     #[allow(clippy::let_and_return)]
@@ -4867,7 +4811,7 @@ impl ListEventBusesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEventBuses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4952,7 +4896,7 @@ impl ListEventBusesInput {
             "ListEventBuses",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4986,14 +4930,12 @@ pub mod list_event_sources_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifying this limits the results to only those partner event sources with names that
-        /// start with the specified prefix.</p>
+        /// <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.name_prefix = Some(input.into());
             self
         }
-        /// <p>Specifying this limits the results to only those partner event sources with names that
-        /// start with the specified prefix.</p>
+        /// <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name_prefix = input;
             self
@@ -5008,16 +4950,12 @@ pub mod list_event_sources_input {
             self.next_token = input;
             self
         }
-        /// <p>Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-        /// of results.</p>
+        /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-        /// of results.</p>
+        /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5040,7 +4978,7 @@ pub mod list_event_sources_input {
 #[doc(hidden)]
 pub type ListEventSourcesInputOperationOutputAlias = crate::operation::ListEventSources;
 #[doc(hidden)]
-pub type ListEventSourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEventSourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventSourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListEventSources`](crate::operation::ListEventSources)>
     #[allow(clippy::let_and_return)]
@@ -5051,7 +4989,7 @@ impl ListEventSourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEventSources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5136,7 +5074,7 @@ impl ListEventSourcesInput {
             "ListEventSources",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5183,28 +5121,22 @@ pub mod list_partner_event_source_accounts_input {
             self.event_source_name = input;
             self
         }
-        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
-        /// next set of results.</p>
+        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
-        /// next set of results.</p>
+        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-        /// of results.</p>
+        /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifying this limits the number of results returned by this operation. The operation
-        /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-        /// of results.</p>
+        /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5228,7 +5160,8 @@ pub mod list_partner_event_source_accounts_input {
 pub type ListPartnerEventSourceAccountsInputOperationOutputAlias =
     crate::operation::ListPartnerEventSourceAccounts;
 #[doc(hidden)]
-pub type ListPartnerEventSourceAccountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPartnerEventSourceAccountsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListPartnerEventSourceAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListPartnerEventSourceAccounts`](crate::operation::ListPartnerEventSourceAccounts)>
     #[allow(clippy::let_and_return)]
@@ -5239,7 +5172,7 @@ impl ListPartnerEventSourceAccountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPartnerEventSourceAccounts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5325,7 +5258,7 @@ impl ListPartnerEventSourceAccountsInput {
             "ListPartnerEventSourceAccounts",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5359,40 +5292,32 @@ pub mod list_partner_event_sources_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify this, the results are limited to only those partner event sources that
-        /// start with the string you specify.</p>
+        /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.name_prefix = Some(input.into());
             self
         }
-        /// <p>If you specify this, the results are limited to only those partner event sources that
-        /// start with the string you specify.</p>
+        /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name_prefix = input;
             self
         }
-        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
-        /// next set of results.</p>
+        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
-        /// next set of results.</p>
+        /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>pecifying this limits the number of results returned by this operation. The operation also
-        /// returns a NextToken which you can use in a subsequent operation to retrieve the next set of
-        /// results.</p>
+        /// <p>pecifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>pecifying this limits the number of results returned by this operation. The operation also
-        /// returns a NextToken which you can use in a subsequent operation to retrieve the next set of
-        /// results.</p>
+        /// <p>pecifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5416,7 +5341,7 @@ pub mod list_partner_event_sources_input {
 pub type ListPartnerEventSourcesInputOperationOutputAlias =
     crate::operation::ListPartnerEventSources;
 #[doc(hidden)]
-pub type ListPartnerEventSourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPartnerEventSourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPartnerEventSourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListPartnerEventSources`](crate::operation::ListPartnerEventSources)>
     #[allow(clippy::let_and_return)]
@@ -5427,7 +5352,7 @@ impl ListPartnerEventSourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPartnerEventSources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5514,7 +5439,7 @@ impl ListPartnerEventSourcesInput {
             "ListPartnerEventSources",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5550,14 +5475,12 @@ pub mod list_replays_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix
-        /// are returned.</p>
+        /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
         pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.name_prefix = Some(input.into());
             self
         }
-        /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix
-        /// are returned.</p>
+        /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name_prefix = input;
             self
@@ -5625,7 +5548,7 @@ pub mod list_replays_input {
 #[doc(hidden)]
 pub type ListReplaysInputOperationOutputAlias = crate::operation::ListReplays;
 #[doc(hidden)]
-pub type ListReplaysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListReplaysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReplaysInput {
     /// Consumes the builder and constructs an Operation<[`ListReplays`](crate::operation::ListReplays)>
     #[allow(clippy::let_and_return)]
@@ -5636,7 +5559,7 @@ impl ListReplaysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReplays,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5720,7 +5643,7 @@ impl ListReplaysInput {
             "ListReplays",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5765,14 +5688,12 @@ pub mod list_rule_names_by_target_input {
             self.target_arn = input;
             self
         }
-        /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event
-        /// bus is used.</p>
+        /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event
-        /// bus is used.</p>
+        /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5819,7 +5740,7 @@ pub mod list_rule_names_by_target_input {
 #[doc(hidden)]
 pub type ListRuleNamesByTargetInputOperationOutputAlias = crate::operation::ListRuleNamesByTarget;
 #[doc(hidden)]
-pub type ListRuleNamesByTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRuleNamesByTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRuleNamesByTargetInput {
     /// Consumes the builder and constructs an Operation<[`ListRuleNamesByTarget`](crate::operation::ListRuleNamesByTarget)>
     #[allow(clippy::let_and_return)]
@@ -5830,7 +5751,7 @@ impl ListRuleNamesByTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRuleNamesByTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5917,7 +5838,7 @@ impl ListRuleNamesByTargetInput {
             "ListRuleNamesByTarget",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5962,14 +5883,12 @@ pub mod list_rules_input {
             self.name_prefix = input;
             self
         }
-        /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6014,7 +5933,7 @@ pub mod list_rules_input {
 #[doc(hidden)]
 pub type ListRulesInputOperationOutputAlias = crate::operation::ListRules;
 #[doc(hidden)]
-pub type ListRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListRules`](crate::operation::ListRules)>
     #[allow(clippy::let_and_return)]
@@ -6025,7 +5944,7 @@ impl ListRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6107,7 +6026,7 @@ impl ListRulesInput {
                     "ListRules",
                     "cloudwatchevents",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6165,7 +6084,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -6176,7 +6095,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6263,7 +6182,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6308,14 +6227,12 @@ pub mod list_targets_by_rule_input {
             self.rule = input;
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6362,7 +6279,7 @@ pub mod list_targets_by_rule_input {
 #[doc(hidden)]
 pub type ListTargetsByRuleInputOperationOutputAlias = crate::operation::ListTargetsByRule;
 #[doc(hidden)]
-pub type ListTargetsByRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTargetsByRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTargetsByRuleInput {
     /// Consumes the builder and constructs an Operation<[`ListTargetsByRule`](crate::operation::ListTargetsByRule)>
     #[allow(clippy::let_and_return)]
@@ -6373,7 +6290,7 @@ impl ListTargetsByRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTargetsByRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6458,7 +6375,7 @@ impl ListTargetsByRuleInput {
             "ListTargetsByRule",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6494,18 +6411,14 @@ pub mod put_events_input {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>The entry that defines an event in your system. You can specify several parameters for the
-        /// entry such as the source and type of the event, resources associated with the event, and so
-        /// on.</p>
-        pub fn entries(mut self, input: impl Into<crate::model::PutEventsRequestEntry>) -> Self {
+        /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
+        pub fn entries(mut self, input: crate::model::PutEventsRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
-        /// <p>The entry that defines an event in your system. You can specify several parameters for the
-        /// entry such as the source and type of the event, resources associated with the event, and so
-        /// on.</p>
+        /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PutEventsRequestEntry>>,
@@ -6527,7 +6440,7 @@ pub mod put_events_input {
 #[doc(hidden)]
 pub type PutEventsInputOperationOutputAlias = crate::operation::PutEvents;
 #[doc(hidden)]
-pub type PutEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEventsInput {
     /// Consumes the builder and constructs an Operation<[`PutEvents`](crate::operation::PutEvents)>
     #[allow(clippy::let_and_return)]
@@ -6538,7 +6451,7 @@ impl PutEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6620,7 +6533,7 @@ impl PutEventsInput {
                     "PutEvents",
                     "cloudwatchevents",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6658,12 +6571,9 @@ pub mod put_partner_events_input {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>The list of events to write to the event bus.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::PutPartnerEventsRequestEntry>,
-        ) -> Self {
+        pub fn entries(mut self, input: crate::model::PutPartnerEventsRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -6691,7 +6601,7 @@ pub mod put_partner_events_input {
 #[doc(hidden)]
 pub type PutPartnerEventsInputOperationOutputAlias = crate::operation::PutPartnerEvents;
 #[doc(hidden)]
-pub type PutPartnerEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutPartnerEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPartnerEventsInput {
     /// Consumes the builder and constructs an Operation<[`PutPartnerEvents`](crate::operation::PutPartnerEvents)>
     #[allow(clippy::let_and_return)]
@@ -6702,7 +6612,7 @@ impl PutPartnerEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPartnerEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6787,7 +6697,7 @@ impl PutPartnerEventsInput {
             "PutPartnerEvents",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6824,14 +6734,12 @@ pub mod put_permission_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the event bus associated with the rule. If you omit this, the default event
-        /// bus is used.</p>
+        /// <p>The name of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name of the event bus associated with the rule. If you omit this, the default event
-        /// bus is used.</p>
+        /// <p>The name of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6849,68 +6757,38 @@ pub mod put_permission_input {
             self.action = input;
             self
         }
-        /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event
-        /// bus. Specify "*" to permit any account to put events to your default event bus.</p>
-        ///
-        /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that
-        /// may match undesirable events. To create more secure rules, make sure that the event pattern
-        /// for each rule contains an <code>account</code> field with a specific account ID from which to
-        /// receive events. Rules with an account field do not match any events sent from other
-        /// accounts.</p>
+        /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event bus. Specify "*" to permit any account to put events to your default event bus.</p>
+        /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event
-        /// bus. Specify "*" to permit any account to put events to your default event bus.</p>
-        ///
-        /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that
-        /// may match undesirable events. To create more secure rules, make sure that the event pattern
-        /// for each rule contains an <code>account</code> field with a specific account ID from which to
-        /// receive events. Rules with an account field do not match any events sent from other
-        /// accounts.</p>
+        /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event bus. Specify "*" to permit any account to put events to your default event bus.</p>
+        /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
         }
-        /// <p>An identifier string for the external account that you are granting permissions to. If you
-        /// later want to revoke the permission for this external account, specify this
-        /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+        /// <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
         pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.statement_id = Some(input.into());
             self
         }
-        /// <p>An identifier string for the external account that you are granting permissions to. If you
-        /// later want to revoke the permission for this external account, specify this
-        /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+        /// <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
         pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.statement_id = input;
             self
         }
-        /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain
-        /// condition, such as being a member of a certain Amazon Web Services organization. For more information about
-        /// Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services
-        /// Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
-        /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the
-        /// value for <code>Principal</code>, you grant permission to all the accounts in the named
-        /// organization.</p>
-        ///
-        /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
-        /// <code>Key</code>, and <code>Value</code> fields.</p>
+        /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain Amazon Web Services organization. For more information about Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
+        /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p>
+        /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</p>
         pub fn condition(mut self, input: crate::model::Condition) -> Self {
             self.condition = Some(input);
             self
         }
-        /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain
-        /// condition, such as being a member of a certain Amazon Web Services organization. For more information about
-        /// Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services
-        /// Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
-        /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the
-        /// value for <code>Principal</code>, you grant permission to all the accounts in the named
-        /// organization.</p>
-        ///
-        /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
-        /// <code>Key</code>, and <code>Value</code> fields.</p>
+        /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain Amazon Web Services organization. For more information about Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
+        /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p>
+        /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</p>
         pub fn set_condition(
             mut self,
             input: std::option::Option<crate::model::Condition>,
@@ -6918,16 +6796,12 @@ pub mod put_permission_input {
             self.condition = input;
             self
         }
-        /// <p>A JSON string that describes the permission policy statement. You can include a
-        /// <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>,
-        /// <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
+        /// <p>A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A JSON string that describes the permission policy statement. You can include a
-        /// <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>,
-        /// <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
+        /// <p>A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -6953,7 +6827,7 @@ pub mod put_permission_input {
 #[doc(hidden)]
 pub type PutPermissionInputOperationOutputAlias = crate::operation::PutPermission;
 #[doc(hidden)]
-pub type PutPermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutPermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPermissionInput {
     /// Consumes the builder and constructs an Operation<[`PutPermission`](crate::operation::PutPermission)>
     #[allow(clippy::let_and_return)]
@@ -6964,7 +6838,7 @@ impl PutPermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7048,7 +6922,7 @@ impl PutPermissionInput {
             "PutPermission",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7110,14 +6984,12 @@ pub mod put_rule_input {
             self.schedule_expression = input;
             self
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_pattern = Some(input.into());
             self
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn set_event_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7146,19 +7018,13 @@ pub mod put_rule_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
-        /// <p>If you're setting an event bus in another account as the target and that account granted
-        /// permission to your account through an organization instead of directly by the account ID, you
-        /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
-        /// structure, instead of here in this parameter.</p>
+        /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
-        /// <p>If you're setting an event bus in another account as the target and that account granted
-        /// permission to your account through an organization instead of directly by the account ID, you
-        /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
-        /// structure, instead of here in this parameter.</p>
+        /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -7168,9 +7034,9 @@ pub mod put_rule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of key-value pairs to associate with the rule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -7182,14 +7048,12 @@ pub mod put_rule_input {
             self.tags = input;
             self
         }
-        /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the
-        /// default event bus is used.</p>
+        /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the
-        /// default event bus is used.</p>
+        /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7218,7 +7082,7 @@ pub mod put_rule_input {
 #[doc(hidden)]
 pub type PutRuleInputOperationOutputAlias = crate::operation::PutRule;
 #[doc(hidden)]
-pub type PutRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRuleInput {
     /// Consumes the builder and constructs an Operation<[`PutRule`](crate::operation::PutRule)>
     #[allow(clippy::let_and_return)]
@@ -7229,7 +7093,7 @@ impl PutRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7311,7 +7175,7 @@ impl PutRuleInput {
                     "PutRule",
                     "cloudwatchevents",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7355,14 +7219,12 @@ pub mod put_targets_input {
             self.rule = input;
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7375,9 +7237,9 @@ pub mod put_targets_input {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets to update or add to the rule.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -7407,7 +7269,7 @@ pub mod put_targets_input {
 #[doc(hidden)]
 pub type PutTargetsInputOperationOutputAlias = crate::operation::PutTargets;
 #[doc(hidden)]
-pub type PutTargetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutTargetsInput {
     /// Consumes the builder and constructs an Operation<[`PutTargets`](crate::operation::PutTargets)>
     #[allow(clippy::let_and_return)]
@@ -7418,7 +7280,7 @@ impl PutTargetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutTargets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7502,7 +7364,7 @@ impl PutTargetsInput {
             "PutTargets",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7536,14 +7398,12 @@ pub mod remove_permission_input {
         pub(crate) event_bus_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The statement ID corresponding to the account that is no longer allowed to put events to
-        /// the default event bus.</p>
+        /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
         pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.statement_id = Some(input.into());
             self
         }
-        /// <p>The statement ID corresponding to the account that is no longer allowed to put events to
-        /// the default event bus.</p>
+        /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
         pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.statement_id = input;
             self
@@ -7558,14 +7418,12 @@ pub mod remove_permission_input {
             self.remove_all_permissions = input;
             self
         }
-        /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event
-        /// bus is used.</p>
+        /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event
-        /// bus is used.</p>
+        /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7591,7 +7449,7 @@ pub mod remove_permission_input {
 #[doc(hidden)]
 pub type RemovePermissionInputOperationOutputAlias = crate::operation::RemovePermission;
 #[doc(hidden)]
-pub type RemovePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemovePermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemovePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemovePermission`](crate::operation::RemovePermission)>
     #[allow(clippy::let_and_return)]
@@ -7602,7 +7460,7 @@ impl RemovePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemovePermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7687,7 +7545,7 @@ impl RemovePermissionInput {
             "RemovePermission",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7732,14 +7590,12 @@ pub mod remove_targets_input {
             self.rule = input;
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7766,20 +7622,12 @@ pub mod remove_targets_input {
             self.ids = input;
             self
         }
-        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
-        /// <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for
-        /// rules that are not managed rules. You can check whether a rule is a managed rule by using
-        /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-        /// field of the response.</p>
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
-        /// <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for
-        /// rules that are not managed rules. You can check whether a rule is a managed rule by using
-        /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-        /// field of the response.</p>
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -7803,7 +7651,7 @@ pub mod remove_targets_input {
 #[doc(hidden)]
 pub type RemoveTargetsInputOperationOutputAlias = crate::operation::RemoveTargets;
 #[doc(hidden)]
-pub type RemoveTargetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTargetsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTargets`](crate::operation::RemoveTargets)>
     #[allow(clippy::let_and_return)]
@@ -7814,7 +7662,7 @@ impl RemoveTargetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTargets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7898,7 +7746,7 @@ impl RemoveTargetsInput {
             "RemoveTargets",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7968,14 +7816,12 @@ pub mod start_replay_input {
             self.event_source_arn = input;
             self
         }
-        /// <p>A time stamp for the time to start replaying events. Only events that occurred between the
-        /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+        /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
         pub fn event_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_start_time = Some(input);
             self
         }
-        /// <p>A time stamp for the time to start replaying events. Only events that occurred between the
-        /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+        /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
         pub fn set_event_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7983,14 +7829,12 @@ pub mod start_replay_input {
             self.event_start_time = input;
             self
         }
-        /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the
-        /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+        /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
         pub fn event_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_end_time = Some(input);
             self
         }
-        /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the
-        /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+        /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
         pub fn set_event_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7998,14 +7842,12 @@ pub mod start_replay_input {
             self.event_end_time = input;
             self
         }
-        /// <p>A <code>ReplayDestination</code> object that includes details about the destination for
-        /// the replay.</p>
+        /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
         pub fn destination(mut self, input: crate::model::ReplayDestination) -> Self {
             self.destination = Some(input);
             self
         }
-        /// <p>A <code>ReplayDestination</code> object that includes details about the destination for
-        /// the replay.</p>
+        /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::ReplayDestination>,
@@ -8034,7 +7876,7 @@ pub mod start_replay_input {
 #[doc(hidden)]
 pub type StartReplayInputOperationOutputAlias = crate::operation::StartReplay;
 #[doc(hidden)]
-pub type StartReplayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartReplayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartReplayInput {
     /// Consumes the builder and constructs an Operation<[`StartReplay`](crate::operation::StartReplay)>
     #[allow(clippy::let_and_return)]
@@ -8045,7 +7887,7 @@ impl StartReplayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartReplay,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8129,7 +7971,7 @@ impl StartReplayInput {
             "StartReplay",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8177,9 +8019,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of key-value pairs to associate with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8208,7 +8050,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -8219,7 +8061,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8303,7 +8145,7 @@ impl TagResourceInput {
             "TagResource",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8336,14 +8178,12 @@ pub mod test_event_pattern_input {
         pub(crate) event: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_pattern = Some(input.into());
             self
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn set_event_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8351,89 +8191,29 @@ pub mod test_event_pattern_input {
             self.event_pattern = input;
             self
         }
-        /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the
-        /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following
-        /// fields are mandatory:</p>
+        /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>account</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>source</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>time</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>region</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>detail-type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>id</code> </p> </li>
+        /// <li> <p> <code>account</code> </p> </li>
+        /// <li> <p> <code>source</code> </p> </li>
+        /// <li> <p> <code>time</code> </p> </li>
+        /// <li> <p> <code>region</code> </p> </li>
+        /// <li> <p> <code>resources</code> </p> </li>
+        /// <li> <p> <code>detail-type</code> </p> </li>
         /// </ul>
         pub fn event(mut self, input: impl Into<std::string::String>) -> Self {
             self.event = Some(input.into());
             self
         }
-        /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the
-        /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following
-        /// fields are mandatory:</p>
+        /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>account</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>source</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>time</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>region</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>detail-type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>id</code> </p> </li>
+        /// <li> <p> <code>account</code> </p> </li>
+        /// <li> <p> <code>source</code> </p> </li>
+        /// <li> <p> <code>time</code> </p> </li>
+        /// <li> <p> <code>region</code> </p> </li>
+        /// <li> <p> <code>resources</code> </p> </li>
+        /// <li> <p> <code>detail-type</code> </p> </li>
         /// </ul>
         pub fn set_event(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event = input;
@@ -8456,7 +8236,7 @@ pub mod test_event_pattern_input {
 #[doc(hidden)]
 pub type TestEventPatternInputOperationOutputAlias = crate::operation::TestEventPattern;
 #[doc(hidden)]
-pub type TestEventPatternInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TestEventPatternInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestEventPatternInput {
     /// Consumes the builder and constructs an Operation<[`TestEventPattern`](crate::operation::TestEventPattern)>
     #[allow(clippy::let_and_return)]
@@ -8467,7 +8247,7 @@ impl TestEventPatternInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestEventPattern,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8552,7 +8332,7 @@ impl TestEventPatternInput {
             "TestEventPattern",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8631,7 +8411,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -8642,7 +8422,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8726,7 +8506,7 @@ impl UntagResourceInput {
             "UntagResource",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8856,7 +8636,7 @@ pub mod update_api_destination_input {
 #[doc(hidden)]
 pub type UpdateApiDestinationInputOperationOutputAlias = crate::operation::UpdateApiDestination;
 #[doc(hidden)]
-pub type UpdateApiDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApiDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApiDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApiDestination`](crate::operation::UpdateApiDestination)>
     #[allow(clippy::let_and_return)]
@@ -8867,7 +8647,7 @@ impl UpdateApiDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApiDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8954,7 +8734,7 @@ impl UpdateApiDestinationInput {
             "UpdateApiDestination",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9051,7 +8831,7 @@ pub mod update_archive_input {
 #[doc(hidden)]
 pub type UpdateArchiveInputOperationOutputAlias = crate::operation::UpdateArchive;
 #[doc(hidden)]
-pub type UpdateArchiveInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateArchiveInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateArchiveInput {
     /// Consumes the builder and constructs an Operation<[`UpdateArchive`](crate::operation::UpdateArchive)>
     #[allow(clippy::let_and_return)]
@@ -9062,7 +8842,7 @@ impl UpdateArchiveInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateArchive,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9146,7 +8926,7 @@ impl UpdateArchiveInput {
             "UpdateArchive",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9254,7 +9034,7 @@ pub mod update_connection_input {
 #[doc(hidden)]
 pub type UpdateConnectionInputOperationOutputAlias = crate::operation::UpdateConnection;
 #[doc(hidden)]
-pub type UpdateConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnection`](crate::operation::UpdateConnection)>
     #[allow(clippy::let_and_return)]
@@ -9265,7 +9045,7 @@ impl UpdateConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9350,7 +9130,7 @@ impl UpdateConnectionInput {
             "UpdateConnection",
             "cloudwatchevents",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9552,96 +9332,34 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestEventPatternInput {
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-    /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub event_pattern: std::option::Option<std::string::String>,
-    /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the
-    /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following
-    /// fields are mandatory:</p>
+    /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>account</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>source</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>time</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>region</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>resources</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>detail-type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>id</code> </p> </li>
+    /// <li> <p> <code>account</code> </p> </li>
+    /// <li> <p> <code>source</code> </p> </li>
+    /// <li> <p> <code>time</code> </p> </li>
+    /// <li> <p> <code>region</code> </p> </li>
+    /// <li> <p> <code>resources</code> </p> </li>
+    /// <li> <p> <code>detail-type</code> </p> </li>
     /// </ul>
     pub event: std::option::Option<std::string::String>,
 }
 impl TestEventPatternInput {
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-    /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_pattern(&self) -> std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
-    /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the
-    /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following
-    /// fields are mandatory:</p>
+    /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>account</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>source</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>time</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>region</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>resources</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>detail-type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>id</code> </p> </li>
+    /// <li> <p> <code>account</code> </p> </li>
+    /// <li> <p> <code>source</code> </p> </li>
+    /// <li> <p> <code>time</code> </p> </li>
+    /// <li> <p> <code>region</code> </p> </li>
+    /// <li> <p> <code>resources</code> </p> </li>
+    /// <li> <p> <code>detail-type</code> </p> </li>
     /// </ul>
     pub fn event(&self) -> std::option::Option<&str> {
         self.event.as_deref()
@@ -9694,14 +9412,11 @@ pub struct StartReplayInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the archive to replay events from.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
-    /// <p>A time stamp for the time to start replaying events. Only events that occurred between the
-    /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
     pub event_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the
-    /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
     pub event_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A <code>ReplayDestination</code> object that includes details about the destination for
-    /// the replay.</p>
+    /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
     pub destination: std::option::Option<crate::model::ReplayDestination>,
 }
 impl StartReplayInput {
@@ -9717,18 +9432,15 @@ impl StartReplayInput {
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
-    /// <p>A time stamp for the time to start replaying events. Only events that occurred between the
-    /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
     pub fn event_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_start_time.as_ref()
     }
-    /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the
-    /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
     pub fn event_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_end_time.as_ref()
     }
-    /// <p>A <code>ReplayDestination</code> object that includes details about the destination for
-    /// the replay.</p>
+    /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
     pub fn destination(&self) -> std::option::Option<&crate::model::ReplayDestination> {
         self.destination.as_ref()
     }
@@ -9752,16 +9464,11 @@ impl std::fmt::Debug for StartReplayInput {
 pub struct RemoveTargetsInput {
     /// <p>The name of the rule.</p>
     pub rule: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the targets to remove from the rule.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
-    /// <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for
-    /// rules that are not managed rules. You can check whether a rule is a managed rule by using
-    /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-    /// field of the response.</p>
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
     pub force: bool,
 }
 impl RemoveTargetsInput {
@@ -9769,8 +9476,7 @@ impl RemoveTargetsInput {
     pub fn rule(&self) -> std::option::Option<&str> {
         self.rule.as_deref()
     }
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -9778,11 +9484,7 @@ impl RemoveTargetsInput {
     pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ids.as_deref()
     }
-    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
-    /// <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for
-    /// rules that are not managed rules. You can check whether a rule is a managed rule by using
-    /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-    /// field of the response.</p>
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
     pub fn force(&self) -> bool {
         self.force
     }
@@ -9802,18 +9504,15 @@ impl std::fmt::Debug for RemoveTargetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemovePermissionInput {
-    /// <p>The statement ID corresponding to the account that is no longer allowed to put events to
-    /// the default event bus.</p>
+    /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
     pub statement_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether to remove all permissions.</p>
     pub remove_all_permissions: bool,
-    /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event
-    /// bus is used.</p>
+    /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
 }
 impl RemovePermissionInput {
-    /// <p>The statement ID corresponding to the account that is no longer allowed to put events to
-    /// the default event bus.</p>
+    /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
     pub fn statement_id(&self) -> std::option::Option<&str> {
         self.statement_id.as_deref()
     }
@@ -9821,8 +9520,7 @@ impl RemovePermissionInput {
     pub fn remove_all_permissions(&self) -> bool {
         self.remove_all_permissions
     }
-    /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event
-    /// bus is used.</p>
+    /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -9843,8 +9541,7 @@ impl std::fmt::Debug for RemovePermissionInput {
 pub struct PutTargetsInput {
     /// <p>The name of the rule.</p>
     pub rule: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The targets to update or add to the rule.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -9854,8 +9551,7 @@ impl PutTargetsInput {
     pub fn rule(&self) -> std::option::Option<&str> {
         self.rule.as_deref()
     }
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -9882,23 +9578,18 @@ pub struct PutRuleInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
     pub schedule_expression: std::option::Option<std::string::String>,
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-    /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>Indicates whether the rule is enabled or disabled.</p>
     pub state: std::option::Option<crate::model::RuleState>,
     /// <p>A description of the rule.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
-    /// <p>If you're setting an event bus in another account as the target and that account granted
-    /// permission to your account through an organization instead of directly by the account ID, you
-    /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
-    /// structure, instead of here in this parameter.</p>
+    /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value pairs to associate with the rule.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the
-    /// default event bus is used.</p>
+    /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
 }
 impl PutRuleInput {
@@ -9910,8 +9601,7 @@ impl PutRuleInput {
     pub fn schedule_expression(&self) -> std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-    /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_pattern(&self) -> std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
@@ -9924,10 +9614,7 @@ impl PutRuleInput {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
-    /// <p>If you're setting an event bus in another account as the target and that account granted
-    /// permission to your account through an organization instead of directly by the account ID, you
-    /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
-    /// structure, instead of here in this parameter.</p>
+    /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -9935,8 +9622,7 @@ impl PutRuleInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the
-    /// default event bus is used.</p>
+    /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -9960,43 +9646,24 @@ impl std::fmt::Debug for PutRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPermissionInput {
-    /// <p>The name of the event bus associated with the rule. If you omit this, the default event
-    /// bus is used.</p>
+    /// <p>The name of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The action that you are enabling the other account to perform.</p>
     pub action: std::option::Option<std::string::String>,
-    /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event
-    /// bus. Specify "*" to permit any account to put events to your default event bus.</p>
-    ///
-    /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that
-    /// may match undesirable events. To create more secure rules, make sure that the event pattern
-    /// for each rule contains an <code>account</code> field with a specific account ID from which to
-    /// receive events. Rules with an account field do not match any events sent from other
-    /// accounts.</p>
+    /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event bus. Specify "*" to permit any account to put events to your default event bus.</p>
+    /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>
     pub principal: std::option::Option<std::string::String>,
-    /// <p>An identifier string for the external account that you are granting permissions to. If you
-    /// later want to revoke the permission for this external account, specify this
-    /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+    /// <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
     pub statement_id: std::option::Option<std::string::String>,
-    /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain
-    /// condition, such as being a member of a certain Amazon Web Services organization. For more information about
-    /// Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services
-    /// Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
-    /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the
-    /// value for <code>Principal</code>, you grant permission to all the accounts in the named
-    /// organization.</p>
-    ///
-    /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
-    /// <code>Key</code>, and <code>Value</code> fields.</p>
+    /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain Amazon Web Services organization. For more information about Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
+    /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p>
+    /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</p>
     pub condition: std::option::Option<crate::model::Condition>,
-    /// <p>A JSON string that describes the permission policy statement. You can include a
-    /// <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>,
-    /// <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
+    /// <p>A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutPermissionInput {
-    /// <p>The name of the event bus associated with the rule. If you omit this, the default event
-    /// bus is used.</p>
+    /// <p>The name of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -10004,39 +9671,22 @@ impl PutPermissionInput {
     pub fn action(&self) -> std::option::Option<&str> {
         self.action.as_deref()
     }
-    /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event
-    /// bus. Specify "*" to permit any account to put events to your default event bus.</p>
-    ///
-    /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that
-    /// may match undesirable events. To create more secure rules, make sure that the event pattern
-    /// for each rule contains an <code>account</code> field with a specific account ID from which to
-    /// receive events. Rules with an account field do not match any events sent from other
-    /// accounts.</p>
+    /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event bus. Specify "*" to permit any account to put events to your default event bus.</p>
+    /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
-    /// <p>An identifier string for the external account that you are granting permissions to. If you
-    /// later want to revoke the permission for this external account, specify this
-    /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+    /// <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
     pub fn statement_id(&self) -> std::option::Option<&str> {
         self.statement_id.as_deref()
     }
-    /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain
-    /// condition, such as being a member of a certain Amazon Web Services organization. For more information about
-    /// Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services
-    /// Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
-    /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the
-    /// value for <code>Principal</code>, you grant permission to all the accounts in the named
-    /// organization.</p>
-    ///
-    /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
-    /// <code>Key</code>, and <code>Value</code> fields.</p>
+    /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain Amazon Web Services organization. For more information about Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
+    /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p>
+    /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</p>
     pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
         self.condition.as_ref()
     }
-    /// <p>A JSON string that describes the permission policy statement. You can include a
-    /// <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>,
-    /// <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
+    /// <p>A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -10079,15 +9729,11 @@ impl std::fmt::Debug for PutPartnerEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventsInput {
-    /// <p>The entry that defines an event in your system. You can specify several parameters for the
-    /// entry such as the source and type of the event, resources associated with the event, and so
-    /// on.</p>
+    /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutEventsRequestEntry>>,
 }
 impl PutEventsInput {
-    /// <p>The entry that defines an event in your system. You can specify several parameters for the
-    /// entry such as the source and type of the event, resources associated with the event, and so
-    /// on.</p>
+    /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
     pub fn entries(&self) -> std::option::Option<&[crate::model::PutEventsRequestEntry]> {
         self.entries.as_deref()
     }
@@ -10106,8 +9752,7 @@ impl std::fmt::Debug for PutEventsInput {
 pub struct ListTargetsByRuleInput {
     /// <p>The name of the rule.</p>
     pub rule: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -10119,8 +9764,7 @@ impl ListTargetsByRuleInput {
     pub fn rule(&self) -> std::option::Option<&str> {
         self.rule.as_deref()
     }
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -10171,8 +9815,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListRulesInput {
     /// <p>The prefix matching the rule name.</p>
     pub name_prefix: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -10184,8 +9827,7 @@ impl ListRulesInput {
     pub fn name_prefix(&self) -> std::option::Option<&str> {
         self.name_prefix.as_deref()
     }
-    /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -10215,8 +9857,7 @@ impl std::fmt::Debug for ListRulesInput {
 pub struct ListRuleNamesByTargetInput {
     /// <p>The Amazon Resource Name (ARN) of the target resource.</p>
     pub target_arn: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event
-    /// bus is used.</p>
+    /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -10228,8 +9869,7 @@ impl ListRuleNamesByTargetInput {
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
-    /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event
-    /// bus is used.</p>
+    /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -10257,8 +9897,7 @@ impl std::fmt::Debug for ListRuleNamesByTargetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReplaysInput {
-    /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix
-    /// are returned.</p>
+    /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The state of the replay.</p>
     pub state: std::option::Option<crate::model::ReplayState>,
@@ -10270,8 +9909,7 @@ pub struct ListReplaysInput {
     pub limit: std::option::Option<i32>,
 }
 impl ListReplaysInput {
-    /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix
-    /// are returned.</p>
+    /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
     pub fn name_prefix(&self) -> std::option::Option<&str> {
         self.name_prefix.as_deref()
     }
@@ -10308,31 +9946,23 @@ impl std::fmt::Debug for ListReplaysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPartnerEventSourcesInput {
-    /// <p>If you specify this, the results are limited to only those partner event sources that
-    /// start with the string you specify.</p>
+    /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
     pub name_prefix: std::option::Option<std::string::String>,
-    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
-    /// next set of results.</p>
+    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>pecifying this limits the number of results returned by this operation. The operation also
-    /// returns a NextToken which you can use in a subsequent operation to retrieve the next set of
-    /// results.</p>
+    /// <p>pecifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub limit: std::option::Option<i32>,
 }
 impl ListPartnerEventSourcesInput {
-    /// <p>If you specify this, the results are limited to only those partner event sources that
-    /// start with the string you specify.</p>
+    /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
     pub fn name_prefix(&self) -> std::option::Option<&str> {
         self.name_prefix.as_deref()
     }
-    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
-    /// next set of results.</p>
+    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>pecifying this limits the number of results returned by this operation. The operation also
-    /// returns a NextToken which you can use in a subsequent operation to retrieve the next set of
-    /// results.</p>
+    /// <p>pecifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -10353,12 +9983,9 @@ impl std::fmt::Debug for ListPartnerEventSourcesInput {
 pub struct ListPartnerEventSourceAccountsInput {
     /// <p>The name of the partner event source to display account information about.</p>
     pub event_source_name: std::option::Option<std::string::String>,
-    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
-    /// next set of results.</p>
+    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifying this limits the number of results returned by this operation. The operation
-    /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-    /// of results.</p>
+    /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub limit: std::option::Option<i32>,
 }
 impl ListPartnerEventSourceAccountsInput {
@@ -10366,14 +9993,11 @@ impl ListPartnerEventSourceAccountsInput {
     pub fn event_source_name(&self) -> std::option::Option<&str> {
         self.event_source_name.as_deref()
     }
-    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
-    /// next set of results.</p>
+    /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifying this limits the number of results returned by this operation. The operation
-    /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-    /// of results.</p>
+    /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -10392,19 +10016,15 @@ impl std::fmt::Debug for ListPartnerEventSourceAccountsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventSourcesInput {
-    /// <p>Specifying this limits the results to only those partner event sources with names that
-    /// start with the specified prefix.</p>
+    /// <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifying this limits the number of results returned by this operation. The operation
-    /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-    /// of results.</p>
+    /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub limit: std::option::Option<i32>,
 }
 impl ListEventSourcesInput {
-    /// <p>Specifying this limits the results to only those partner event sources with names that
-    /// start with the specified prefix.</p>
+    /// <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
     pub fn name_prefix(&self) -> std::option::Option<&str> {
         self.name_prefix.as_deref()
     }
@@ -10412,9 +10032,7 @@ impl ListEventSourcesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifying this limits the number of results returned by this operation. The operation
-    /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-    /// of results.</p>
+    /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -10433,19 +10051,15 @@ impl std::fmt::Debug for ListEventSourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventBusesInput {
-    /// <p>Specifying this limits the results to only those event buses with names that start with
-    /// the specified prefix.</p>
+    /// <p>Specifying this limits the results to only those event buses with names that start with the specified prefix.</p>
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifying this limits the number of results returned by this operation. The operation
-    /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-    /// of results.</p>
+    /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub limit: std::option::Option<i32>,
 }
 impl ListEventBusesInput {
-    /// <p>Specifying this limits the results to only those event buses with names that start with
-    /// the specified prefix.</p>
+    /// <p>Specifying this limits the results to only those event buses with names that start with the specified prefix.</p>
     pub fn name_prefix(&self) -> std::option::Option<&str> {
         self.name_prefix.as_deref()
     }
@@ -10453,9 +10067,7 @@ impl ListEventBusesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifying this limits the number of results returned by this operation. The operation
-    /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
-    /// of results.</p>
+    /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -10474,8 +10086,7 @@ impl std::fmt::Debug for ListEventBusesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsInput {
-    /// <p>A name prefix to filter results returned. Only connections with a name that starts with
-    /// the prefix are returned.</p>
+    /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The state of the connection.</p>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
@@ -10485,8 +10096,7 @@ pub struct ListConnectionsInput {
     pub limit: std::option::Option<i32>,
 }
 impl ListConnectionsInput {
-    /// <p>A name prefix to filter results returned. Only connections with a name that starts with
-    /// the prefix are returned.</p>
+    /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
     pub fn name_prefix(&self) -> std::option::Option<&str> {
         self.name_prefix.as_deref()
     }
@@ -10518,8 +10128,7 @@ impl std::fmt::Debug for ListConnectionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListArchivesInput {
-    /// <p>A name prefix to filter the archives returned. Only archives with name that match the
-    /// prefix are returned.</p>
+    /// <p>A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.</p>
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the event source associated with the archive.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
@@ -10531,8 +10140,7 @@ pub struct ListArchivesInput {
     pub limit: std::option::Option<i32>,
 }
 impl ListArchivesInput {
-    /// <p>A name prefix to filter the archives returned. Only archives with name that match the
-    /// prefix are returned.</p>
+    /// <p>A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.</p>
     pub fn name_prefix(&self) -> std::option::Option<&str> {
         self.name_prefix.as_deref()
     }
@@ -10569,8 +10177,7 @@ impl std::fmt::Debug for ListArchivesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApiDestinationsInput {
-    /// <p>A name prefix to filter results returned. Only API destinations with a name that starts
-    /// with the prefix are returned.</p>
+    /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the connection specified for the API destination.</p>
     pub connection_arn: std::option::Option<std::string::String>,
@@ -10580,8 +10187,7 @@ pub struct ListApiDestinationsInput {
     pub limit: std::option::Option<i32>,
 }
 impl ListApiDestinationsInput {
-    /// <p>A name prefix to filter results returned. Only API destinations with a name that starts
-    /// with the prefix are returned.</p>
+    /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
     pub fn name_prefix(&self) -> std::option::Option<&str> {
         self.name_prefix.as_deref()
     }
@@ -10615,8 +10221,7 @@ impl std::fmt::Debug for ListApiDestinationsInput {
 pub struct EnableRuleInput {
     /// <p>The name of the rule.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
 }
 impl EnableRuleInput {
@@ -10624,8 +10229,7 @@ impl EnableRuleInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -10645,8 +10249,7 @@ impl std::fmt::Debug for EnableRuleInput {
 pub struct DisableRuleInput {
     /// <p>The name of the rule.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
 }
 impl DisableRuleInput {
@@ -10654,8 +10257,7 @@ impl DisableRuleInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -10675,8 +10277,7 @@ impl std::fmt::Debug for DisableRuleInput {
 pub struct DescribeRuleInput {
     /// <p>The name of the rule.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
 }
 impl DescribeRuleInput {
@@ -10684,8 +10285,7 @@ impl DescribeRuleInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -10766,13 +10366,11 @@ impl std::fmt::Debug for DescribeEventSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventBusInput {
-    /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event
-    /// bus is displayed.</p>
+    /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeEventBusInput {
-    /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event
-    /// bus is displayed.</p>
+    /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -10854,14 +10452,9 @@ impl std::fmt::Debug for DescribeApiDestinationInput {
 pub struct DeleteRuleInput {
     /// <p>The name of the rule.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
-    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
-    /// <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for
-    /// rules that are not managed rules. You can check whether a rule is a managed rule by using
-    /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-    /// field of the response.</p>
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
     pub force: bool,
 }
 impl DeleteRuleInput {
@@ -10869,16 +10462,11 @@ impl DeleteRuleInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
-    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
-    /// <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for
-    /// rules that are not managed rules. You can check whether a rule is a managed rule by using
-    /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
-    /// field of the response.</p>
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
     pub fn force(&self) -> bool {
         self.force
     }
@@ -11051,29 +10639,17 @@ impl std::fmt::Debug for DeactivateEventSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePartnerEventSourceInput {
-    /// <p>The name of the partner event source. This name must be unique and must be in the format
-    /// <code>
-    /// <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i>
-    /// </code>.
-    /// The Amazon Web Services account that wants to use this partner event source must create a partner event bus
-    /// with a name that matches the name of the partner event source.</p>
+    /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
-    /// partner event source.</p>
+    /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
     pub account: std::option::Option<std::string::String>,
 }
 impl CreatePartnerEventSourceInput {
-    /// <p>The name of the partner event source. This name must be unique and must be in the format
-    /// <code>
-    /// <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i>
-    /// </code>.
-    /// The Amazon Web Services account that wants to use this partner event source must create a partner event bus
-    /// with a name that matches the name of the partner event source.</p>
+    /// <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
-    /// partner event source.</p>
+    /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
     pub fn account(&self) -> std::option::Option<&str> {
         self.account.as_deref()
     }
@@ -11092,30 +10668,22 @@ impl std::fmt::Debug for CreatePartnerEventSourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventBusInput {
     /// <p>The name of the new event bus. </p>
-    /// <p>Event bus names cannot contain the / character. You can't use the name
-    /// <code>default</code> for a custom event bus, as this name is already used for your account's
-    /// default event bus.</p>
-    /// <p>If this is a partner event bus, the name must exactly match the name of the partner event
-    /// source that this event bus is matched to.</p>
+    /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
+    /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>If you are creating a partner event bus, this specifies the partner event source that the
-    /// new event bus will be matched with.</p>
+    /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
     pub event_source_name: std::option::Option<std::string::String>,
     /// <p>Tags to associate with the event bus.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEventBusInput {
     /// <p>The name of the new event bus. </p>
-    /// <p>Event bus names cannot contain the / character. You can't use the name
-    /// <code>default</code> for a custom event bus, as this name is already used for your account's
-    /// default event bus.</p>
-    /// <p>If this is a partner event bus, the name must exactly match the name of the partner event
-    /// source that this event bus is matched to.</p>
+    /// <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>
+    /// <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>If you are creating a partner event bus, this specifies the partner event source that the
-    /// new event bus will be matched with.</p>
+    /// <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
     pub fn event_source_name(&self) -> std::option::Option<&str> {
         self.event_source_name.as_deref()
     }
@@ -11144,8 +10712,7 @@ pub struct CreateConnectionInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of authorization to use for the connection.</p>
     pub authorization_type: std::option::Option<crate::model::ConnectionAuthorizationType>,
-    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the
-    /// authorization parameters to use to authorize with the endpoint. </p>
+    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
     pub auth_parameters: std::option::Option<crate::model::CreateConnectionAuthRequestParameters>,
 }
 impl CreateConnectionInput {
@@ -11163,8 +10730,7 @@ impl CreateConnectionInput {
     ) -> std::option::Option<&crate::model::ConnectionAuthorizationType> {
         self.authorization_type.as_ref()
     }
-    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the
-    /// authorization parameters to use to authorize with the endpoint. </p>
+    /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
     pub fn auth_parameters(
         &self,
     ) -> std::option::Option<&crate::model::CreateConnectionAuthRequestParameters> {
@@ -11194,8 +10760,7 @@ pub struct CreateArchiveInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>An event pattern to use to filter events sent to the archive.</p>
     pub event_pattern: std::option::Option<std::string::String>,
-    /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are
-    /// retained indefinitely</p>
+    /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
     pub retention_days: std::option::Option<i32>,
 }
 impl CreateArchiveInput {
@@ -11215,8 +10780,7 @@ impl CreateArchiveInput {
     pub fn event_pattern(&self) -> std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
-    /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are
-    /// retained indefinitely</p>
+    /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
     pub fn retention_days(&self) -> std::option::Option<i32> {
         self.retention_days
     }
@@ -11241,8 +10805,7 @@ pub struct CreateApiDestinationInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A description for the API destination to create.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ARN of the connection to use for the API destination. The destination endpoint must
-    /// support the authorization type specified for the connection.</p>
+    /// <p>The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.</p>
     pub connection_arn: std::option::Option<std::string::String>,
     /// <p>The URL to the HTTP invocation endpoint for the API destination.</p>
     pub invocation_endpoint: std::option::Option<std::string::String>,
@@ -11260,8 +10823,7 @@ impl CreateApiDestinationInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN of the connection to use for the API destination. The destination endpoint must
-    /// support the authorization type specified for the connection.</p>
+    /// <p>The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.</p>
     pub fn connection_arn(&self) -> std::option::Option<&str> {
         self.connection_arn.as_deref()
     }

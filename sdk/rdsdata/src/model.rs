@@ -530,26 +530,14 @@ impl ColumnMetadata {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultSetOptions {
-    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented
-    /// in the response. The value of <code>STRING</code>, the default, specifies that
-    /// it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code>
-    /// specifies that it is converted to a Long value if its scale is 0, or to a Double
-    /// value otherwise.</p>
-    /// <important>
-    /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss.
-    /// We recommend converting to String, especially when working with currency values.</p>
+    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <important>
+    /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
     /// </important>
     pub decimal_return_type: std::option::Option<crate::model::DecimalReturnType>,
 }
 impl ResultSetOptions {
-    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented
-    /// in the response. The value of <code>STRING</code>, the default, specifies that
-    /// it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code>
-    /// specifies that it is converted to a Long value if its scale is 0, or to a Double
-    /// value otherwise.</p>
-    /// <important>
-    /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss.
-    /// We recommend converting to String, especially when working with currency values.</p>
+    /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <important>
+    /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
     /// </important>
     pub fn decimal_return_type(&self) -> std::option::Option<&crate::model::DecimalReturnType> {
         self.decimal_return_type.as_ref()
@@ -571,27 +559,15 @@ pub mod result_set_options {
         pub(crate) decimal_return_type: std::option::Option<crate::model::DecimalReturnType>,
     }
     impl Builder {
-        /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented
-        /// in the response. The value of <code>STRING</code>, the default, specifies that
-        /// it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code>
-        /// specifies that it is converted to a Long value if its scale is 0, or to a Double
-        /// value otherwise.</p>
-        /// <important>
-        /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss.
-        /// We recommend converting to String, especially when working with currency values.</p>
+        /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <important>
+        /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
         /// </important>
         pub fn decimal_return_type(mut self, input: crate::model::DecimalReturnType) -> Self {
             self.decimal_return_type = Some(input);
             self
         }
-        /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented
-        /// in the response. The value of <code>STRING</code>, the default, specifies that
-        /// it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code>
-        /// specifies that it is converted to a Long value if its scale is 0, or to a Double
-        /// value otherwise.</p>
-        /// <important>
-        /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss.
-        /// We recommend converting to String, especially when working with currency values.</p>
+        /// <p>A value that indicates how a field of <code>DECIMAL</code> type is represented in the response. The value of <code>STRING</code>, the default, specifies that it is converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if its scale is 0, or to a Double value otherwise.</p> <important>
+        /// <p>Conversion to Double or Long can result in roundoff errors due to precision loss. We recommend converting to String, especially when working with currency values.</p>
         /// </important>
         pub fn set_decimal_return_type(
             mut self,
@@ -678,40 +654,14 @@ pub struct SqlParameter {
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the parameter.</p>
     pub value: std::option::Option<crate::model::Field>,
-    /// <p>A hint that specifies the correct object type for data type mapping. Possible values
-    /// are as follows:</p>
+    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object
-    /// of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object
-    /// of <code>DECIMAL</code> type to the database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an
-    /// object of <code>JSON</code> type to the database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object
-    /// of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object
-    /// of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of
-    /// <code>UUID</code> type to the database.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li>
+    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li>
+    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li>
+    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
+    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
     /// </ul>
     pub type_hint: std::option::Option<crate::model::TypeHint>,
 }
@@ -724,40 +674,14 @@ impl SqlParameter {
     pub fn value(&self) -> std::option::Option<&crate::model::Field> {
         self.value.as_ref()
     }
-    /// <p>A hint that specifies the correct object type for data type mapping. Possible values
-    /// are as follows:</p>
+    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object
-    /// of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object
-    /// of <code>DECIMAL</code> type to the database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an
-    /// object of <code>JSON</code> type to the database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object
-    /// of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object
-    /// of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of
-    /// <code>UUID</code> type to the database.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li>
+    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li>
+    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li>
+    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
+    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
     /// </ul>
     pub fn type_hint(&self) -> std::option::Option<&crate::model::TypeHint> {
         self.type_hint.as_ref()
@@ -803,79 +727,27 @@ pub mod sql_parameter {
             self.value = input;
             self
         }
-        /// <p>A hint that specifies the correct object type for data type mapping. Possible values
-        /// are as follows:</p>
+        /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object
-        /// of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object
-        /// of <code>DECIMAL</code> type to the database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an
-        /// object of <code>JSON</code> type to the database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object
-        /// of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object
-        /// of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of
-        /// <code>UUID</code> type to the database.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+        /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li>
+        /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li>
+        /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li>
+        /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
+        /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
         /// </ul>
         pub fn type_hint(mut self, input: crate::model::TypeHint) -> Self {
             self.type_hint = Some(input);
             self
         }
-        /// <p>A hint that specifies the correct object type for data type mapping. Possible values
-        /// are as follows:</p>
+        /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object
-        /// of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object
-        /// of <code>DECIMAL</code> type to the database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an
-        /// object of <code>JSON</code> type to the database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object
-        /// of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object
-        /// of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of
-        /// <code>UUID</code> type to the database.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+        /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li>
+        /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li>
+        /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li>
+        /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
+        /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
         /// </ul>
         pub fn set_type_hint(mut self, input: std::option::Option<crate::model::TypeHint>) -> Self {
             self.type_hint = input;
@@ -969,9 +841,7 @@ impl AsRef<str> for TypeHint {
     }
 }
 
-/// <p>The result of a SQL statement.</p>
-///
-/// <important>
+/// <p>The result of a SQL statement.</p> <important>
 /// <p>This data type is deprecated.</p>
 /// </important>
 #[non_exhaustive]
@@ -1104,9 +974,9 @@ pub mod result_frame {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>The records in the result set.</p>
-        pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
+        pub fn records(mut self, input: crate::model::Record) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -1168,9 +1038,9 @@ pub mod record {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The values returned in the record.</p>
-        pub fn values(mut self, input: impl Into<crate::model::Value>) -> Self {
+        pub fn values(mut self, input: crate::model::Value) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -1197,9 +1067,7 @@ impl Record {
     }
 }
 
-/// <p>Contains the value of a column.</p>
-///
-/// <important>
+/// <p>Contains the value of a column.</p> <important>
 /// <p>This data type is deprecated.</p>
 /// </important>
 #[non_exhaustive]
@@ -1408,9 +1276,9 @@ pub mod struct_value {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes returned in the record.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Value>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Value) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -1490,9 +1358,9 @@ pub mod result_set_metadata {
         /// To override the contents of this collection use [`set_column_metadata`](Self::set_column_metadata).
         ///
         /// <p>The metadata of the columns in the result set.</p>
-        pub fn column_metadata(mut self, input: impl Into<crate::model::ColumnMetadata>) -> Self {
+        pub fn column_metadata(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.column_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_metadata = Some(v);
             self
         }
@@ -1554,9 +1422,9 @@ pub mod update_result {
         /// To override the contents of this collection use [`set_generated_fields`](Self::set_generated_fields).
         ///
         /// <p>Values for fields generated during the request.</p>
-        pub fn generated_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
+        pub fn generated_fields(mut self, input: crate::model::Field) -> Self {
             let mut v = self.generated_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.generated_fields = Some(v);
             self
         }

@@ -24,18 +24,14 @@ pub mod batch_delete_recipe_version_input {
         ///
         /// To override the contents of this collection use [`set_recipe_versions`](Self::set_recipe_versions).
         ///
-        /// <p>An array of version identifiers, for the recipe versions to be deleted. You can
-        /// specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>.
-        /// <code>LATEST_PUBLISHED</code> is not supported.</p>
+        /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
         pub fn recipe_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.recipe_versions.unwrap_or_default();
             v.push(input.into());
             self.recipe_versions = Some(v);
             self
         }
-        /// <p>An array of version identifiers, for the recipe versions to be deleted. You can
-        /// specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>.
-        /// <code>LATEST_PUBLISHED</code> is not supported.</p>
+        /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
         pub fn set_recipe_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -61,7 +57,7 @@ pub mod batch_delete_recipe_version_input {
 pub type BatchDeleteRecipeVersionInputOperationOutputAlias =
     crate::operation::BatchDeleteRecipeVersion;
 #[doc(hidden)]
-pub type BatchDeleteRecipeVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDeleteRecipeVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteRecipeVersionInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteRecipeVersion`](crate::operation::BatchDeleteRecipeVersion)>
     #[allow(clippy::let_and_return)]
@@ -72,7 +68,7 @@ impl BatchDeleteRecipeVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteRecipeVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -174,7 +170,7 @@ impl BatchDeleteRecipeVersionInput {
             "BatchDeleteRecipeVersion",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -213,14 +209,12 @@ pub mod create_dataset_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z,
-        /// 0-9), hyphen (-), period (.), and space.</p>
+        /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z,
-        /// 0-9), hyphen (-), period (.), and space.</p>
+        /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -235,14 +229,12 @@ pub mod create_dataset_input {
             self.format = input;
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
         pub fn format_options(mut self, input: crate::model::FormatOptions) -> Self {
             self.format_options = Some(input);
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
         pub fn set_format_options(
             mut self,
             input: std::option::Option<crate::model::FormatOptions>,
@@ -250,14 +242,12 @@ pub mod create_dataset_input {
             self.format_options = input;
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn input(mut self, input: crate::model::Input) -> Self {
             self.input = Some(input);
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
             self.input = input;
             self
@@ -321,7 +311,7 @@ pub mod create_dataset_input {
 #[doc(hidden)]
 pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
 #[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(clippy::let_and_return)]
@@ -332,7 +322,7 @@ impl CreateDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -411,7 +401,7 @@ impl CreateDatasetInput {
             "CreateDataset",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -469,14 +459,12 @@ pub mod create_profile_job_input {
             self.dataset_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -486,15 +474,8 @@ pub mod create_profile_job_input {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with
-        /// KMS-managed keys.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
             self.encryption_mode = Some(input);
@@ -502,15 +483,8 @@ pub mod create_profile_job_input {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with
-        /// KMS-managed keys.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -519,26 +493,22 @@ pub mod create_profile_job_input {
             self.encryption_mode = input;
             self
         }
-        /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
             self.log_subscription = Some(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn set_log_subscription(
             mut self,
             input: std::option::Option<crate::model::LogSubscription>,
@@ -566,14 +536,12 @@ pub mod create_profile_job_input {
             self.max_retries = input;
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-        /// input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn output_location(mut self, input: crate::model::S3Location) -> Self {
             self.output_location = Some(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-        /// input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -581,16 +549,12 @@ pub mod create_profile_job_input {
             self.output_location = input;
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn configuration(mut self, input: crate::model::ProfileConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ProfileConfiguration>,
@@ -605,10 +569,10 @@ pub mod create_profile_job_input {
         /// <p>List of validation configurations that are applied to the profile job.</p>
         pub fn validation_configurations(
             mut self,
-            input: impl Into<crate::model::ValidationConfiguration>,
+            input: crate::model::ValidationConfiguration,
         ) -> Self {
             let mut v = self.validation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_configurations = Some(v);
             self
         }
@@ -620,14 +584,12 @@ pub mod create_profile_job_input {
             self.validation_configurations = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -657,30 +619,22 @@ pub mod create_profile_job_input {
             self.tags = input;
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
         }
-        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-        /// profile job will be executed. If a JobSample value is not provided, the default value
-        /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-        /// size parameter.</p>
+        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
         pub fn job_sample(mut self, input: crate::model::JobSample) -> Self {
             self.job_sample = Some(input);
             self
         }
-        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-        /// profile job will be executed. If a JobSample value is not provided, the default value
-        /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-        /// size parameter.</p>
+        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
         pub fn set_job_sample(
             mut self,
             input: std::option::Option<crate::model::JobSample>,
@@ -717,7 +671,7 @@ pub mod create_profile_job_input {
 #[doc(hidden)]
 pub type CreateProfileJobInputOperationOutputAlias = crate::operation::CreateProfileJob;
 #[doc(hidden)]
-pub type CreateProfileJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProfileJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProfileJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateProfileJob`](crate::operation::CreateProfileJob)>
     #[allow(clippy::let_and_return)]
@@ -728,7 +682,7 @@ impl CreateProfileJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProfileJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -808,7 +762,7 @@ impl CreateProfileJobInput {
             "CreateProfileJob",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -857,14 +811,12 @@ pub mod create_project_input {
             self.dataset_name = input;
             self
         }
-        /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -879,26 +831,22 @@ pub mod create_project_input {
             self.recipe_name = input;
             self
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
         pub fn sample(mut self, input: crate::model::Sample) -> Self {
             self.sample = Some(input);
             self
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
         pub fn set_sample(mut self, input: std::option::Option<crate::model::Sample>) -> Self {
             self.sample = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed for this request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed for this request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -949,7 +897,7 @@ pub mod create_project_input {
 #[doc(hidden)]
 pub type CreateProjectInputOperationOutputAlias = crate::operation::CreateProject;
 #[doc(hidden)]
-pub type CreateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(clippy::let_and_return)]
@@ -960,7 +908,7 @@ impl CreateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1039,7 +987,7 @@ impl CreateProjectInput {
             "CreateProject",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1086,14 +1034,12 @@ pub mod create_recipe_input {
             self.description = input;
             self
         }
-        /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1102,16 +1048,14 @@ pub mod create_recipe_input {
         ///
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
-        /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists
-        /// of one recipe action and (optionally) an array of condition expressions.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::RecipeStep>) -> Self {
+        /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
+        pub fn steps(mut self, input: crate::model::RecipeStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
-        /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists
-        /// of one recipe action and (optionally) an array of condition expressions.</p>
+        /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
@@ -1163,7 +1107,7 @@ pub mod create_recipe_input {
 #[doc(hidden)]
 pub type CreateRecipeInputOperationOutputAlias = crate::operation::CreateRecipe;
 #[doc(hidden)]
-pub type CreateRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRecipeInput {
     /// Consumes the builder and constructs an Operation<[`CreateRecipe`](crate::operation::CreateRecipe)>
     #[allow(clippy::let_and_return)]
@@ -1174,7 +1118,7 @@ impl CreateRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1253,7 +1197,7 @@ impl CreateRecipeInput {
             "CreateRecipe",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1313,14 +1257,12 @@ pub mod create_recipe_job_input {
             self.dataset_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1330,14 +1272,8 @@ pub mod create_recipe_job_input {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
             self.encryption_mode = Some(input);
@@ -1345,14 +1281,8 @@ pub mod create_recipe_job_input {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -1361,26 +1291,22 @@ pub mod create_recipe_job_input {
             self.encryption_mode = input;
             self
         }
-        /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen
-        /// (-), period (.), and space.</p>
+        /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen
-        /// (-), period (.), and space.</p>
+        /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
             self.log_subscription = Some(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn set_log_subscription(
             mut self,
             input: std::option::Option<crate::model::LogSubscription>,
@@ -1388,14 +1314,12 @@ pub mod create_recipe_job_input {
             self.log_subscription = input;
             self
         }
-        /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-        /// data.</p>
+        /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
         pub fn max_capacity(mut self, input: i32) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-        /// data.</p>
+        /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.max_capacity = input;
             self
@@ -1415,9 +1339,9 @@ pub mod create_recipe_job_input {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>One or more artifacts that represent the output from running the job.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -1434,12 +1358,9 @@ pub mod create_recipe_job_input {
         /// To override the contents of this collection use [`set_data_catalog_outputs`](Self::set_data_catalog_outputs).
         ///
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-        pub fn data_catalog_outputs(
-            mut self,
-            input: impl Into<crate::model::DataCatalogOutput>,
-        ) -> Self {
+        pub fn data_catalog_outputs(mut self, input: crate::model::DataCatalogOutput) -> Self {
             let mut v = self.data_catalog_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_catalog_outputs = Some(v);
             self
         }
@@ -1455,16 +1376,14 @@ pub mod create_recipe_job_input {
         ///
         /// To override the contents of this collection use [`set_database_outputs`](Self::set_database_outputs).
         ///
-        /// <p>Represents a list of JDBC database output objects which defines the output destination for
-        /// a DataBrew recipe job to write to. </p>
-        pub fn database_outputs(mut self, input: impl Into<crate::model::DatabaseOutput>) -> Self {
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
+        pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
             let mut v = self.database_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_outputs = Some(v);
             self
         }
-        /// <p>Represents a list of JDBC database output objects which defines the output destination for
-        /// a DataBrew recipe job to write to. </p>
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
         pub fn set_database_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
@@ -1472,14 +1391,12 @@ pub mod create_recipe_job_input {
             self.database_outputs = input;
             self
         }
-        /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to
-        /// associate with the recipe.</p>
+        /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_name = Some(input.into());
             self
         }
-        /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to
-        /// associate with the recipe.</p>
+        /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_name = input;
             self
@@ -1497,14 +1414,12 @@ pub mod create_recipe_job_input {
             self.recipe_reference = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1534,14 +1449,12 @@ pub mod create_recipe_job_input {
             self.tags = input;
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
@@ -1576,7 +1489,7 @@ pub mod create_recipe_job_input {
 #[doc(hidden)]
 pub type CreateRecipeJobInputOperationOutputAlias = crate::operation::CreateRecipeJob;
 #[doc(hidden)]
-pub type CreateRecipeJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRecipeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRecipeJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateRecipeJob`](crate::operation::CreateRecipeJob)>
     #[allow(clippy::let_and_return)]
@@ -1587,7 +1500,7 @@ impl CreateRecipeJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRecipeJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1667,7 +1580,7 @@ impl CreateRecipeJobInput {
             "CreateRecipeJob",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1705,14 +1618,12 @@ pub mod create_ruleset_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
-        /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
-        /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1727,14 +1638,12 @@ pub mod create_ruleset_input {
             self.description = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
-        /// ruleset is associated with.</p>
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
-        /// ruleset is associated with.</p>
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -1743,16 +1652,14 @@ pub mod create_ruleset_input {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>A list of rules that are defined with the ruleset. A rule includes
-        /// one or more checks to be validated on a DataBrew dataset.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
-        /// <p>A list of rules that are defined with the ruleset. A rule includes
-        /// one or more checks to be validated on a DataBrew dataset.</p>
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -1805,7 +1712,7 @@ pub mod create_ruleset_input {
 #[doc(hidden)]
 pub type CreateRulesetInputOperationOutputAlias = crate::operation::CreateRuleset;
 #[doc(hidden)]
-pub type CreateRulesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRulesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRulesetInput {
     /// Consumes the builder and constructs an Operation<[`CreateRuleset`](crate::operation::CreateRuleset)>
     #[allow(clippy::let_and_return)]
@@ -1816,7 +1723,7 @@ impl CreateRulesetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRuleset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1895,7 +1802,7 @@ impl CreateRulesetInput {
             "CreateRuleset",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1951,18 +1858,12 @@ pub mod create_schedule_input {
             self.job_names = input;
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-        /// expressions</a> in the <i>Glue DataBrew Developer
-        /// Guide</i>.</p>
+        /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.cron_expression = Some(input.into());
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-        /// expressions</a> in the <i>Glue DataBrew Developer
-        /// Guide</i>.</p>
+        /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn set_cron_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1995,14 +1896,12 @@ pub mod create_schedule_input {
             self.tags = input;
             self
         }
-        /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2026,7 +1925,7 @@ pub mod create_schedule_input {
 #[doc(hidden)]
 pub type CreateScheduleInputOperationOutputAlias = crate::operation::CreateSchedule;
 #[doc(hidden)]
-pub type CreateScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateScheduleInput {
     /// Consumes the builder and constructs an Operation<[`CreateSchedule`](crate::operation::CreateSchedule)>
     #[allow(clippy::let_and_return)]
@@ -2037,7 +1936,7 @@ impl CreateScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2117,7 +2016,7 @@ impl CreateScheduleInput {
             "CreateSchedule",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2173,7 +2072,7 @@ pub mod delete_dataset_input {
 #[doc(hidden)]
 pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
 #[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(clippy::let_and_return)]
@@ -2184,7 +2083,7 @@ impl DeleteDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2273,7 +2172,7 @@ impl DeleteDatasetInput {
             "DeleteDataset",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2319,7 +2218,7 @@ pub mod delete_job_input {
 #[doc(hidden)]
 pub type DeleteJobInputOperationOutputAlias = crate::operation::DeleteJob;
 #[doc(hidden)]
-pub type DeleteJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJob`](crate::operation::DeleteJob)>
     #[allow(clippy::let_and_return)]
@@ -2330,7 +2229,7 @@ impl DeleteJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2417,7 +2316,7 @@ impl DeleteJobInput {
                     "DeleteJob",
                     "databrew",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2465,7 +2364,7 @@ pub mod delete_project_input {
 #[doc(hidden)]
 pub type DeleteProjectInputOperationOutputAlias = crate::operation::DeleteProject;
 #[doc(hidden)]
-pub type DeleteProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(clippy::let_and_return)]
@@ -2476,7 +2375,7 @@ impl DeleteProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2565,7 +2464,7 @@ impl DeleteProjectInput {
             "DeleteProject",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2600,16 +2499,12 @@ pub mod delete_recipe_version_input {
             self.name = input;
             self
         }
-        /// <p>The version of the recipe to be deleted. You can specify a numeric versions
-        /// (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is
-        /// not supported.</p>
+        /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
         pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.recipe_version = Some(input.into());
             self
         }
-        /// <p>The version of the recipe to be deleted. You can specify a numeric versions
-        /// (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is
-        /// not supported.</p>
+        /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
         pub fn set_recipe_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2634,7 +2529,7 @@ pub mod delete_recipe_version_input {
 #[doc(hidden)]
 pub type DeleteRecipeVersionInputOperationOutputAlias = crate::operation::DeleteRecipeVersion;
 #[doc(hidden)]
-pub type DeleteRecipeVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRecipeVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecipeVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecipeVersion`](crate::operation::DeleteRecipeVersion)>
     #[allow(clippy::let_and_return)]
@@ -2645,7 +2540,7 @@ impl DeleteRecipeVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRecipeVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2755,7 +2650,7 @@ impl DeleteRecipeVersionInput {
             "DeleteRecipeVersion",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2803,7 +2698,7 @@ pub mod delete_ruleset_input {
 #[doc(hidden)]
 pub type DeleteRulesetInputOperationOutputAlias = crate::operation::DeleteRuleset;
 #[doc(hidden)]
-pub type DeleteRulesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRulesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRulesetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRuleset`](crate::operation::DeleteRuleset)>
     #[allow(clippy::let_and_return)]
@@ -2814,7 +2709,7 @@ impl DeleteRulesetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRuleset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2903,7 +2798,7 @@ impl DeleteRulesetInput {
             "DeleteRuleset",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2951,7 +2846,7 @@ pub mod delete_schedule_input {
 #[doc(hidden)]
 pub type DeleteScheduleInputOperationOutputAlias = crate::operation::DeleteSchedule;
 #[doc(hidden)]
-pub type DeleteScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSchedule`](crate::operation::DeleteSchedule)>
     #[allow(clippy::let_and_return)]
@@ -2962,7 +2857,7 @@ impl DeleteScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3051,7 +2946,7 @@ impl DeleteScheduleInput {
             "DeleteSchedule",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3099,7 +2994,7 @@ pub mod describe_dataset_input {
 #[doc(hidden)]
 pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
 #[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(clippy::let_and_return)]
@@ -3110,7 +3005,7 @@ impl DescribeDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3199,7 +3094,7 @@ impl DescribeDatasetInput {
             "DescribeDataset",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3247,7 +3142,7 @@ pub mod describe_job_input {
 #[doc(hidden)]
 pub type DescribeJobInputOperationOutputAlias = crate::operation::DescribeJob;
 #[doc(hidden)]
-pub type DescribeJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJob`](crate::operation::DescribeJob)>
     #[allow(clippy::let_and_return)]
@@ -3258,7 +3153,7 @@ impl DescribeJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3347,7 +3242,7 @@ impl DescribeJobInput {
             "DescribeJob",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3409,7 +3304,7 @@ pub mod describe_job_run_input {
 #[doc(hidden)]
 pub type DescribeJobRunInputOperationOutputAlias = crate::operation::DescribeJobRun;
 #[doc(hidden)]
-pub type DescribeJobRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobRunInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobRun`](crate::operation::DescribeJobRun)>
     #[allow(clippy::let_and_return)]
@@ -3420,7 +3315,7 @@ impl DescribeJobRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJobRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3530,7 +3425,7 @@ impl DescribeJobRunInput {
             "DescribeJobRun",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3578,7 +3473,7 @@ pub mod describe_project_input {
 #[doc(hidden)]
 pub type DescribeProjectInputOperationOutputAlias = crate::operation::DescribeProject;
 #[doc(hidden)]
-pub type DescribeProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProject`](crate::operation::DescribeProject)>
     #[allow(clippy::let_and_return)]
@@ -3589,7 +3484,7 @@ impl DescribeProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3678,7 +3573,7 @@ impl DescribeProjectInput {
             "DescribeProject",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3713,14 +3608,12 @@ pub mod describe_recipe_input {
             self.name = input;
             self
         }
-        /// <p>The recipe version identifier. If this parameter isn't specified, then the latest
-        /// published version is returned.</p>
+        /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
         pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.recipe_version = Some(input.into());
             self
         }
-        /// <p>The recipe version identifier. If this parameter isn't specified, then the latest
-        /// published version is returned.</p>
+        /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
         pub fn set_recipe_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3745,7 +3638,7 @@ pub mod describe_recipe_input {
 #[doc(hidden)]
 pub type DescribeRecipeInputOperationOutputAlias = crate::operation::DescribeRecipe;
 #[doc(hidden)]
-pub type DescribeRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRecipeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRecipe`](crate::operation::DescribeRecipe)>
     #[allow(clippy::let_and_return)]
@@ -3756,7 +3649,7 @@ impl DescribeRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3859,7 +3752,7 @@ impl DescribeRecipeInput {
             "DescribeRecipe",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3907,7 +3800,7 @@ pub mod describe_ruleset_input {
 #[doc(hidden)]
 pub type DescribeRulesetInputOperationOutputAlias = crate::operation::DescribeRuleset;
 #[doc(hidden)]
-pub type DescribeRulesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRulesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRulesetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRuleset`](crate::operation::DescribeRuleset)>
     #[allow(clippy::let_and_return)]
@@ -3918,7 +3811,7 @@ impl DescribeRulesetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRuleset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4007,7 +3900,7 @@ impl DescribeRulesetInput {
             "DescribeRuleset",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4055,7 +3948,7 @@ pub mod describe_schedule_input {
 #[doc(hidden)]
 pub type DescribeScheduleInputOperationOutputAlias = crate::operation::DescribeSchedule;
 #[doc(hidden)]
-pub type DescribeScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSchedule`](crate::operation::DescribeSchedule)>
     #[allow(clippy::let_and_return)]
@@ -4066,7 +3959,7 @@ impl DescribeScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4155,7 +4048,7 @@ impl DescribeScheduleInput {
             "DescribeSchedule",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4217,7 +4110,7 @@ pub mod list_datasets_input {
 #[doc(hidden)]
 pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
 #[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(clippy::let_and_return)]
@@ -4228,7 +4121,7 @@ impl ListDatasetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4319,7 +4212,7 @@ impl ListDatasetsInput {
             "ListDatasets",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4393,7 +4286,7 @@ pub mod list_job_runs_input {
 #[doc(hidden)]
 pub type ListJobRunsInputOperationOutputAlias = crate::operation::ListJobRuns;
 #[doc(hidden)]
-pub type ListJobRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobRunsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobRuns`](crate::operation::ListJobRuns)>
     #[allow(clippy::let_and_return)]
@@ -4404,7 +4297,7 @@ impl ListJobRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4510,7 +4403,7 @@ impl ListJobRunsInput {
             "ListJobRuns",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4537,14 +4430,12 @@ pub mod list_jobs_input {
         pub(crate) project_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that
-        /// act on the specified dataset.</p>
+        /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
         }
-        /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that
-        /// act on the specified dataset.</p>
+        /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -4559,28 +4450,22 @@ pub mod list_jobs_input {
             self.max_results = input;
             self
         }
-        /// <p>A token generated by DataBrew that specifies where to continue pagination if a
-        /// previous request was truncated. To get the next set of pages, pass in the NextToken
-        /// value from the response object of the previous page call. </p>
+        /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by DataBrew that specifies where to continue pagination if a
-        /// previous request was truncated. To get the next set of pages, pass in the NextToken
-        /// value from the response object of the previous page call. </p>
+        /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The name of a project. Using this parameter indicates to return only those jobs that
-        /// are associated with the specified project.</p>
+        /// <p>The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_name = Some(input.into());
             self
         }
-        /// <p>The name of a project. Using this parameter indicates to return only those jobs that
-        /// are associated with the specified project.</p>
+        /// <p>The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_name = input;
             self
@@ -4602,7 +4487,7 @@ pub mod list_jobs_input {
 #[doc(hidden)]
 pub type ListJobsInputOperationOutputAlias = crate::operation::ListJobs;
 #[doc(hidden)]
-pub type ListJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(clippy::let_and_return)]
@@ -4613,7 +4498,7 @@ impl ListJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4713,7 +4598,7 @@ impl ListJobsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListJobs", "databrew",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4775,7 +4660,7 @@ pub mod list_projects_input {
 #[doc(hidden)]
 pub type ListProjectsInputOperationOutputAlias = crate::operation::ListProjects;
 #[doc(hidden)]
-pub type ListProjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProjectsInput {
     /// Consumes the builder and constructs an Operation<[`ListProjects`](crate::operation::ListProjects)>
     #[allow(clippy::let_and_return)]
@@ -4786,7 +4671,7 @@ impl ListProjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProjects,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4877,7 +4762,7 @@ impl ListProjectsInput {
             "ListProjects",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4923,22 +4808,14 @@ pub mod list_recipes_input {
             self.next_token = input;
             self
         }
-        /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or
-        /// <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted,
-        /// <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe
-        /// versions.</p>
-        /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code>
-        /// </p>
+        /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
+        /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
         pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.recipe_version = Some(input.into());
             self
         }
-        /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or
-        /// <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted,
-        /// <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe
-        /// versions.</p>
-        /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code>
-        /// </p>
+        /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
+        /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
         pub fn set_recipe_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4964,7 +4841,7 @@ pub mod list_recipes_input {
 #[doc(hidden)]
 pub type ListRecipesInputOperationOutputAlias = crate::operation::ListRecipes;
 #[doc(hidden)]
-pub type ListRecipesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRecipesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecipesInput {
     /// Consumes the builder and constructs an Operation<[`ListRecipes`](crate::operation::ListRecipes)>
     #[allow(clippy::let_and_return)]
@@ -4975,7 +4852,7 @@ impl ListRecipesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecipes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5072,7 +4949,7 @@ impl ListRecipesInput {
             "ListRecipes",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5146,7 +5023,7 @@ pub mod list_recipe_versions_input {
 #[doc(hidden)]
 pub type ListRecipeVersionsInputOperationOutputAlias = crate::operation::ListRecipeVersions;
 #[doc(hidden)]
-pub type ListRecipeVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRecipeVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecipeVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecipeVersions`](crate::operation::ListRecipeVersions)>
     #[allow(clippy::let_and_return)]
@@ -5157,7 +5034,7 @@ impl ListRecipeVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecipeVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5251,7 +5128,7 @@ impl ListRecipeVersionsInput {
             "ListRecipeVersions",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5277,14 +5154,12 @@ pub mod list_rulesets_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
-        /// indicates to return only those rulesets that are associated with the specified resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
-        /// indicates to return only those rulesets that are associated with the specified resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -5299,16 +5174,12 @@ pub mod list_rulesets_input {
             self.max_results = input;
             self
         }
-        /// <p>A token generated by DataBrew that specifies where to continue pagination
-        /// if a previous request was truncated. To get the next set of pages, pass in
-        /// the NextToken value from the response object of the previous page call.</p>
+        /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by DataBrew that specifies where to continue pagination
-        /// if a previous request was truncated. To get the next set of pages, pass in
-        /// the NextToken value from the response object of the previous page call.</p>
+        /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5331,7 +5202,7 @@ pub mod list_rulesets_input {
 #[doc(hidden)]
 pub type ListRulesetsInputOperationOutputAlias = crate::operation::ListRulesets;
 #[doc(hidden)]
-pub type ListRulesetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRulesetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRulesetsInput {
     /// Consumes the builder and constructs an Operation<[`ListRulesets`](crate::operation::ListRulesets)>
     #[allow(clippy::let_and_return)]
@@ -5342,7 +5213,7 @@ impl ListRulesetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRulesets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5436,7 +5307,7 @@ impl ListRulesetsInput {
             "ListRulesets",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5510,7 +5381,7 @@ pub mod list_schedules_input {
 #[doc(hidden)]
 pub type ListSchedulesInputOperationOutputAlias = crate::operation::ListSchedules;
 #[doc(hidden)]
-pub type ListSchedulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSchedulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSchedulesInput {
     /// Consumes the builder and constructs an Operation<[`ListSchedules`](crate::operation::ListSchedules)>
     #[allow(clippy::let_and_return)]
@@ -5521,7 +5392,7 @@ impl ListSchedulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSchedules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5615,7 +5486,7 @@ impl ListSchedulesInput {
             "ListSchedules",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5639,14 +5510,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5667,7 +5536,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -5678,7 +5547,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5768,7 +5637,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5830,7 +5699,7 @@ pub mod publish_recipe_input {
 #[doc(hidden)]
 pub type PublishRecipeInputOperationOutputAlias = crate::operation::PublishRecipe;
 #[doc(hidden)]
-pub type PublishRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PublishRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PublishRecipeInput {
     /// Consumes the builder and constructs an Operation<[`PublishRecipe`](crate::operation::PublishRecipe)>
     #[allow(clippy::let_and_return)]
@@ -5841,7 +5710,7 @@ impl PublishRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PublishRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5936,7 +5805,7 @@ impl PublishRecipeInput {
             "PublishRecipe",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6006,28 +5875,22 @@ pub mod send_project_session_action_input {
             self.recipe_step = input;
             self
         }
-        /// <p>The index from which to preview a step. This index is used to preview the result of
-        /// steps that have already been applied, so that the resulting view frame is from earlier
-        /// in the view frame stack.</p>
+        /// <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
         pub fn step_index(mut self, input: i32) -> Self {
             self.step_index = Some(input);
             self
         }
-        /// <p>The index from which to preview a step. This index is used to preview the result of
-        /// steps that have already been applied, so that the resulting view frame is from earlier
-        /// in the view frame stack.</p>
+        /// <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
         pub fn set_step_index(mut self, input: std::option::Option<i32>) -> Self {
             self.step_index = input;
             self
         }
-        /// <p>A unique identifier for an interactive session that's currently open and ready for
-        /// work. The action will be performed on this session.</p>
+        /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
         pub fn client_session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_session_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for an interactive session that's currently open and ready for
-        /// work. The action will be performed on this session.</p>
+        /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
         pub fn set_client_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6070,7 +5933,7 @@ pub mod send_project_session_action_input {
 pub type SendProjectSessionActionInputOperationOutputAlias =
     crate::operation::SendProjectSessionAction;
 #[doc(hidden)]
-pub type SendProjectSessionActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendProjectSessionActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendProjectSessionActionInput {
     /// Consumes the builder and constructs an Operation<[`SendProjectSessionAction`](crate::operation::SendProjectSessionAction)>
     #[allow(clippy::let_and_return)]
@@ -6081,7 +5944,7 @@ impl SendProjectSessionActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendProjectSessionAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6183,7 +6046,7 @@ impl SendProjectSessionActionInput {
             "SendProjectSessionAction",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6239,7 +6102,7 @@ pub mod start_job_run_input {
 #[doc(hidden)]
 pub type StartJobRunInputOperationOutputAlias = crate::operation::StartJobRun;
 #[doc(hidden)]
-pub type StartJobRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartJobRunInput {
     /// Consumes the builder and constructs an Operation<[`StartJobRun`](crate::operation::StartJobRun)>
     #[allow(clippy::let_and_return)]
@@ -6250,7 +6113,7 @@ impl StartJobRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartJobRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6340,7 +6203,7 @@ impl StartJobRunInput {
             "StartJobRun",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6375,14 +6238,12 @@ pub mod start_project_session_input {
             self.name = input;
             self
         }
-        /// <p>A value that, if true, enables you to take control of a session, even if a different
-        /// client is currently accessing the project.</p>
+        /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
         pub fn assume_control(mut self, input: bool) -> Self {
             self.assume_control = Some(input);
             self
         }
-        /// <p>A value that, if true, enables you to take control of a session, even if a different
-        /// client is currently accessing the project.</p>
+        /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
         pub fn set_assume_control(mut self, input: std::option::Option<bool>) -> Self {
             self.assume_control = input;
             self
@@ -6404,7 +6265,7 @@ pub mod start_project_session_input {
 #[doc(hidden)]
 pub type StartProjectSessionInputOperationOutputAlias = crate::operation::StartProjectSession;
 #[doc(hidden)]
-pub type StartProjectSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartProjectSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartProjectSessionInput {
     /// Consumes the builder and constructs an Operation<[`StartProjectSession`](crate::operation::StartProjectSession)>
     #[allow(clippy::let_and_return)]
@@ -6415,7 +6276,7 @@ impl StartProjectSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartProjectSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6511,7 +6372,7 @@ impl StartProjectSessionInput {
             "StartProjectSession",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6581,7 +6442,7 @@ pub mod stop_job_run_input {
 #[doc(hidden)]
 pub type StopJobRunInputOperationOutputAlias = crate::operation::StopJobRun;
 #[doc(hidden)]
-pub type StopJobRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopJobRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopJobRunInput {
     /// Consumes the builder and constructs an Operation<[`StopJobRun`](crate::operation::StopJobRun)>
     #[allow(clippy::let_and_return)]
@@ -6592,7 +6453,7 @@ impl StopJobRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopJobRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6702,7 +6563,7 @@ impl StopJobRunInput {
             "StopJobRun",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6729,16 +6590,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>The DataBrew resource to which tags should be added. The value for this parameter is
-        /// an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or
-        /// a recipe.</p>
+        /// <p>The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The DataBrew resource to which tags should be added. The value for this parameter is
-        /// an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or
-        /// a recipe.</p>
+        /// <p>The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6785,7 +6642,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -6796,7 +6653,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6891,7 +6748,7 @@ impl TagResourceInput {
             "TagResource",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6924,14 +6781,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this
-        /// parameter is an Amazon Resource Name (ARN). </p>
+        /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this
-        /// parameter is an Amazon Resource Name (ARN). </p>
+        /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6972,7 +6827,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -6983,7 +6838,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7086,7 +6941,7 @@ impl UntagResourceInput {
             "UntagResource",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7134,14 +6989,12 @@ pub mod update_dataset_input {
             self.format = input;
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
         pub fn format_options(mut self, input: crate::model::FormatOptions) -> Self {
             self.format_options = Some(input);
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
         pub fn set_format_options(
             mut self,
             input: std::option::Option<crate::model::FormatOptions>,
@@ -7149,14 +7002,12 @@ pub mod update_dataset_input {
             self.format_options = input;
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn input(mut self, input: crate::model::Input) -> Self {
             self.input = Some(input);
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
             self.input = input;
             self
@@ -7194,7 +7045,7 @@ pub mod update_dataset_input {
 #[doc(hidden)]
 pub type UpdateDatasetInputOperationOutputAlias = crate::operation::UpdateDataset;
 #[doc(hidden)]
-pub type UpdateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataset`](crate::operation::UpdateDataset)>
     #[allow(clippy::let_and_return)]
@@ -7205,7 +7056,7 @@ impl UpdateDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7299,7 +7150,7 @@ impl UpdateDatasetInput {
             "UpdateDataset",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7343,16 +7194,12 @@ pub mod update_profile_job_input {
         pub(crate) job_sample: std::option::Option<crate::model::JobSample>,
     }
     impl Builder {
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn configuration(mut self, input: crate::model::ProfileConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ProfileConfiguration>,
@@ -7360,14 +7207,12 @@ pub mod update_profile_job_input {
             self.configuration = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7377,15 +7222,8 @@ pub mod update_profile_job_input {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
-        /// S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
             self.encryption_mode = Some(input);
@@ -7393,15 +7231,8 @@ pub mod update_profile_job_input {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
-        /// S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -7420,14 +7251,12 @@ pub mod update_profile_job_input {
             self.name = input;
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
             self.log_subscription = Some(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn set_log_subscription(
             mut self,
             input: std::option::Option<crate::model::LogSubscription>,
@@ -7435,14 +7264,12 @@ pub mod update_profile_job_input {
             self.log_subscription = input;
             self
         }
-        /// <p>The maximum number of compute nodes that DataBrew can use when the job processes
-        /// data.</p>
+        /// <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
         pub fn max_capacity(mut self, input: i32) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>The maximum number of compute nodes that DataBrew can use when the job processes
-        /// data.</p>
+        /// <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.max_capacity = input;
             self
@@ -7457,14 +7284,12 @@ pub mod update_profile_job_input {
             self.max_retries = input;
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-        /// input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn output_location(mut self, input: crate::model::S3Location) -> Self {
             self.output_location = Some(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-        /// input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -7479,10 +7304,10 @@ pub mod update_profile_job_input {
         /// <p>List of validation configurations that are applied to the profile job.</p>
         pub fn validation_configurations(
             mut self,
-            input: impl Into<crate::model::ValidationConfiguration>,
+            input: crate::model::ValidationConfiguration,
         ) -> Self {
             let mut v = self.validation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validation_configurations = Some(v);
             self
         }
@@ -7494,42 +7319,32 @@ pub mod update_profile_job_input {
             self.validation_configurations = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
         }
-        /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the
-        /// Profile job will be executed. If a JobSample value is not provided for profile jobs, the
-        /// default value will be used. The default value is CUSTOM_ROWS for the mode parameter and
-        /// 20000 for the size parameter.</p>
+        /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
         pub fn job_sample(mut self, input: crate::model::JobSample) -> Self {
             self.job_sample = Some(input);
             self
         }
-        /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the
-        /// Profile job will be executed. If a JobSample value is not provided for profile jobs, the
-        /// default value will be used. The default value is CUSTOM_ROWS for the mode parameter and
-        /// 20000 for the size parameter.</p>
+        /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
         pub fn set_job_sample(
             mut self,
             input: std::option::Option<crate::model::JobSample>,
@@ -7564,7 +7379,7 @@ pub mod update_profile_job_input {
 #[doc(hidden)]
 pub type UpdateProfileJobInputOperationOutputAlias = crate::operation::UpdateProfileJob;
 #[doc(hidden)]
-pub type UpdateProfileJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProfileJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProfileJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProfileJob`](crate::operation::UpdateProfileJob)>
     #[allow(clippy::let_and_return)]
@@ -7575,7 +7390,7 @@ impl UpdateProfileJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProfileJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7670,7 +7485,7 @@ impl UpdateProfileJobInput {
             "UpdateProfileJob",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7704,14 +7519,12 @@ pub mod update_project_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
         pub fn sample(mut self, input: crate::model::Sample) -> Self {
             self.sample = Some(input);
             self
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
         pub fn set_sample(mut self, input: std::option::Option<crate::model::Sample>) -> Self {
             self.sample = input;
             self
@@ -7754,7 +7567,7 @@ pub mod update_project_input {
 #[doc(hidden)]
 pub type UpdateProjectInputOperationOutputAlias = crate::operation::UpdateProject;
 #[doc(hidden)]
-pub type UpdateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProjectInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProject`](crate::operation::UpdateProject)>
     #[allow(clippy::let_and_return)]
@@ -7765,7 +7578,7 @@ impl UpdateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7859,7 +7672,7 @@ impl UpdateProjectInput {
             "UpdateProject",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7917,16 +7730,14 @@ pub mod update_recipe_input {
         ///
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
-        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
-        /// the conditions under which the action should succeed.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::RecipeStep>) -> Self {
+        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
+        pub fn steps(mut self, input: crate::model::RecipeStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
-        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
-        /// the conditions under which the action should succeed.</p>
+        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
@@ -7952,7 +7763,7 @@ pub mod update_recipe_input {
 #[doc(hidden)]
 pub type UpdateRecipeInputOperationOutputAlias = crate::operation::UpdateRecipe;
 #[doc(hidden)]
-pub type UpdateRecipeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRecipeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRecipeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecipe`](crate::operation::UpdateRecipe)>
     #[allow(clippy::let_and_return)]
@@ -7963,7 +7774,7 @@ impl UpdateRecipeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRecipe,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8057,7 +7868,7 @@ impl UpdateRecipeInput {
             "UpdateRecipe",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8101,14 +7912,12 @@ pub mod update_recipe_job_input {
         pub(crate) timeout: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8118,14 +7927,8 @@ pub mod update_recipe_job_input {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
             self.encryption_mode = Some(input);
@@ -8133,14 +7936,8 @@ pub mod update_recipe_job_input {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -8159,14 +7956,12 @@ pub mod update_recipe_job_input {
             self.name = input;
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
             self.log_subscription = Some(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn set_log_subscription(
             mut self,
             input: std::option::Option<crate::model::LogSubscription>,
@@ -8174,14 +7969,12 @@ pub mod update_recipe_job_input {
             self.log_subscription = input;
             self
         }
-        /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-        /// data.</p>
+        /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
         pub fn max_capacity(mut self, input: i32) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-        /// data.</p>
+        /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.max_capacity = input;
             self
@@ -8201,9 +7994,9 @@ pub mod update_recipe_job_input {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>One or more artifacts that represent the output from running the job. </p>
-        pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -8220,12 +8013,9 @@ pub mod update_recipe_job_input {
         /// To override the contents of this collection use [`set_data_catalog_outputs`](Self::set_data_catalog_outputs).
         ///
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-        pub fn data_catalog_outputs(
-            mut self,
-            input: impl Into<crate::model::DataCatalogOutput>,
-        ) -> Self {
+        pub fn data_catalog_outputs(mut self, input: crate::model::DataCatalogOutput) -> Self {
             let mut v = self.data_catalog_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_catalog_outputs = Some(v);
             self
         }
@@ -8241,16 +8031,14 @@ pub mod update_recipe_job_input {
         ///
         /// To override the contents of this collection use [`set_database_outputs`](Self::set_database_outputs).
         ///
-        /// <p>Represents a list of JDBC database output objects which defines the output destination for a
-        /// DataBrew recipe job to write into.</p>
-        pub fn database_outputs(mut self, input: impl Into<crate::model::DatabaseOutput>) -> Self {
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
+        pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
             let mut v = self.database_outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_outputs = Some(v);
             self
         }
-        /// <p>Represents a list of JDBC database output objects which defines the output destination for a
-        /// DataBrew recipe job to write into.</p>
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
         pub fn set_database_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
@@ -8258,26 +8046,22 @@ pub mod update_recipe_job_input {
             self.database_outputs = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
@@ -8308,7 +8092,7 @@ pub mod update_recipe_job_input {
 #[doc(hidden)]
 pub type UpdateRecipeJobInputOperationOutputAlias = crate::operation::UpdateRecipeJob;
 #[doc(hidden)]
-pub type UpdateRecipeJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRecipeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRecipeJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRecipeJob`](crate::operation::UpdateRecipeJob)>
     #[allow(clippy::let_and_return)]
@@ -8319,7 +8103,7 @@ impl UpdateRecipeJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRecipeJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8414,7 +8198,7 @@ impl UpdateRecipeJobInput {
             "UpdateRecipeJob",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8472,16 +8256,14 @@ pub mod update_ruleset_input {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
-        /// checks to be validated on a DataBrew dataset.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
-        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
-        /// checks to be validated on a DataBrew dataset.</p>
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -8507,7 +8289,7 @@ pub mod update_ruleset_input {
 #[doc(hidden)]
 pub type UpdateRulesetInputOperationOutputAlias = crate::operation::UpdateRuleset;
 #[doc(hidden)]
-pub type UpdateRulesetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRulesetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRulesetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRuleset`](crate::operation::UpdateRuleset)>
     #[allow(clippy::let_and_return)]
@@ -8518,7 +8300,7 @@ impl UpdateRulesetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRuleset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8612,7 +8394,7 @@ impl UpdateRulesetInput {
             "UpdateRuleset",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8665,18 +8447,12 @@ pub mod update_schedule_input {
             self.job_names = input;
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-        /// expressions</a> in the <i>Glue DataBrew Developer
-        /// Guide</i>.</p>
+        /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.cron_expression = Some(input.into());
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-        /// expressions</a> in the <i>Glue DataBrew Developer
-        /// Guide</i>.</p>
+        /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn set_cron_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8712,7 +8488,7 @@ pub mod update_schedule_input {
 #[doc(hidden)]
 pub type UpdateScheduleInputOperationOutputAlias = crate::operation::UpdateSchedule;
 #[doc(hidden)]
-pub type UpdateScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateScheduleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSchedule`](crate::operation::UpdateSchedule)>
     #[allow(clippy::let_and_return)]
@@ -8723,7 +8499,7 @@ impl UpdateScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8818,7 +8594,7 @@ impl UpdateScheduleInput {
             "UpdateSchedule",
             "databrew",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8847,10 +8623,7 @@ impl UpdateScheduleInput {
 pub struct UpdateScheduleInput {
     /// <p>The name or names of one or more jobs to be run for this schedule.</p>
     pub job_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-    /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-    /// expressions</a> in the <i>Glue DataBrew Developer
-    /// Guide</i>.</p>
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub cron_expression: std::option::Option<std::string::String>,
     /// <p>The name of the schedule to update.</p>
     pub name: std::option::Option<std::string::String>,
@@ -8860,10 +8633,7 @@ impl UpdateScheduleInput {
     pub fn job_names(&self) -> std::option::Option<&[std::string::String]> {
         self.job_names.as_deref()
     }
-    /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-    /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-    /// expressions</a> in the <i>Glue DataBrew Developer
-    /// Guide</i>.</p>
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn cron_expression(&self) -> std::option::Option<&str> {
         self.cron_expression.as_deref()
     }
@@ -8890,8 +8660,7 @@ pub struct UpdateRulesetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the ruleset.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
-    /// checks to be validated on a DataBrew dataset.</p>
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
 impl UpdateRulesetInput {
@@ -8903,8 +8672,7 @@ impl UpdateRulesetInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
-    /// checks to be validated on a DataBrew dataset.</p>
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
         self.rules.as_deref()
     }
@@ -8923,28 +8691,19 @@ impl std::fmt::Debug for UpdateRulesetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecipeJobInput {
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-    /// job.</p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-    /// </li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub encryption_mode: std::option::Option<crate::model::EncryptionMode>,
     /// <p>The name of the job to update.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-    /// CloudWatch writes one log stream for each job run.</p>
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
-    /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-    /// data.</p>
+    /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub max_retries: i32,
@@ -8952,32 +8711,22 @@ pub struct UpdateRecipeJobInput {
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     pub data_catalog_outputs: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
-    /// <p>Represents a list of JDBC database output objects which defines the output destination for a
-    /// DataBrew recipe job to write into.</p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
     pub database_outputs: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-    /// be assumed when DataBrew runs the job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub timeout: i32,
 }
 impl UpdateRecipeJobInput {
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-    /// job.</p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-    /// </li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
         self.encryption_mode.as_ref()
@@ -8986,13 +8735,11 @@ impl UpdateRecipeJobInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-    /// CloudWatch writes one log stream for each job run.</p>
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
         self.log_subscription.as_ref()
     }
-    /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-    /// data.</p>
+    /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
     pub fn max_capacity(&self) -> i32 {
         self.max_capacity
     }
@@ -9008,18 +8755,15 @@ impl UpdateRecipeJobInput {
     pub fn data_catalog_outputs(&self) -> std::option::Option<&[crate::model::DataCatalogOutput]> {
         self.data_catalog_outputs.as_deref()
     }
-    /// <p>Represents a list of JDBC database output objects which defines the output destination for a
-    /// DataBrew recipe job to write into.</p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
     pub fn database_outputs(&self) -> std::option::Option<&[crate::model::DatabaseOutput]> {
         self.database_outputs.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-    /// be assumed when DataBrew runs the job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub fn timeout(&self) -> i32 {
         self.timeout
     }
@@ -9050,8 +8794,7 @@ pub struct UpdateRecipeInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the recipe to be updated.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
-    /// the conditions under which the action should succeed.</p>
+    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
 }
 impl UpdateRecipeInput {
@@ -9063,8 +8806,7 @@ impl UpdateRecipeInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
-    /// the conditions under which the action should succeed.</p>
+    /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::RecipeStep]> {
         self.steps.as_deref()
     }
@@ -9083,8 +8825,7 @@ impl std::fmt::Debug for UpdateRecipeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProjectInput {
-    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-    /// analysis.</p>
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
     pub sample: std::option::Option<crate::model::Sample>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -9092,8 +8833,7 @@ pub struct UpdateProjectInput {
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateProjectInput {
-    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-    /// analysis.</p>
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
     pub fn sample(&self) -> std::option::Option<&crate::model::Sample> {
         self.sample.as_ref()
     }
@@ -9120,77 +8860,49 @@ impl std::fmt::Debug for UpdateProjectInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProfileJobInput {
-    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-    /// and override default parameters of evaluations. When configuration is null, the
-    /// profile job will run with default settings.</p>
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub configuration: std::option::Option<crate::model::ProfileConfiguration>,
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-    /// job.</p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
-    /// S3.</p>
-    /// </li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub encryption_mode: std::option::Option<crate::model::EncryptionMode>,
     /// <p>The name of the job to be updated.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-    /// CloudWatch writes one log stream for each job run.</p>
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
-    /// <p>The maximum number of compute nodes that DataBrew can use when the job processes
-    /// data.</p>
+    /// <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub max_retries: i32,
-    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-    /// input data, or write output from a job.</p>
+    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
     pub output_location: std::option::Option<crate::model::S3Location>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
     pub validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-    /// be assumed when DataBrew runs the job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub timeout: i32,
-    /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the
-    /// Profile job will be executed. If a JobSample value is not provided for profile jobs, the
-    /// default value will be used. The default value is CUSTOM_ROWS for the mode parameter and
-    /// 20000 for the size parameter.</p>
+    /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
     pub job_sample: std::option::Option<crate::model::JobSample>,
 }
 impl UpdateProfileJobInput {
-    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-    /// and override default parameters of evaluations. When configuration is null, the
-    /// profile job will run with default settings.</p>
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::ProfileConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-    /// job.</p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
-    /// S3.</p>
-    /// </li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
         self.encryption_mode.as_ref()
@@ -9199,13 +8911,11 @@ impl UpdateProfileJobInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-    /// CloudWatch writes one log stream for each job run.</p>
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
         self.log_subscription.as_ref()
     }
-    /// <p>The maximum number of compute nodes that DataBrew can use when the job processes
-    /// data.</p>
+    /// <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
     pub fn max_capacity(&self) -> i32 {
         self.max_capacity
     }
@@ -9213,8 +8923,7 @@ impl UpdateProfileJobInput {
     pub fn max_retries(&self) -> i32 {
         self.max_retries
     }
-    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-    /// input data, or write output from a job.</p>
+    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
     pub fn output_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.output_location.as_ref()
     }
@@ -9224,20 +8933,15 @@ impl UpdateProfileJobInput {
     ) -> std::option::Option<&[crate::model::ValidationConfiguration]> {
         self.validation_configurations.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-    /// be assumed when DataBrew runs the job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub fn timeout(&self) -> i32 {
         self.timeout
     }
-    /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the
-    /// Profile job will be executed. If a JobSample value is not provided for profile jobs, the
-    /// default value will be used. The default value is CUSTOM_ROWS for the mode parameter and
-    /// 20000 for the size parameter.</p>
+    /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
     pub fn job_sample(&self) -> std::option::Option<&crate::model::JobSample> {
         self.job_sample.as_ref()
     }
@@ -9269,11 +8973,9 @@ pub struct UpdateDatasetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub format: std::option::Option<crate::model::InputFormat>,
-    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-    /// Excel, or JSON input.</p>
+    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub format_options: std::option::Option<crate::model::FormatOptions>,
-    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-    /// Amazon S3.</p>
+    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub input: std::option::Option<crate::model::Input>,
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub path_options: std::option::Option<crate::model::PathOptions>,
@@ -9287,13 +8989,11 @@ impl UpdateDatasetInput {
     pub fn format(&self) -> std::option::Option<&crate::model::InputFormat> {
         self.format.as_ref()
     }
-    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-    /// Excel, or JSON input.</p>
+    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub fn format_options(&self) -> std::option::Option<&crate::model::FormatOptions> {
         self.format_options.as_ref()
     }
-    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-    /// Amazon S3.</p>
+    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub fn input(&self) -> std::option::Option<&crate::model::Input> {
         self.input.as_ref()
     }
@@ -9318,15 +9018,13 @@ impl std::fmt::Debug for UpdateDatasetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this
-    /// parameter is an Amazon Resource Name (ARN). </p>
+    /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tag keys (names) of one or more tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this
-    /// parameter is an Amazon Resource Name (ARN). </p>
+    /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -9348,18 +9046,14 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The DataBrew resource to which tags should be added. The value for this parameter is
-    /// an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or
-    /// a recipe.</p>
+    /// <p>The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>One or more tags to be assigned to the resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>The DataBrew resource to which tags should be added. The value for this parameter is
-    /// an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or
-    /// a recipe.</p>
+    /// <p>The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -9414,8 +9108,7 @@ impl std::fmt::Debug for StopJobRunInput {
 pub struct StartProjectSessionInput {
     /// <p>The name of the project to act upon.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A value that, if true, enables you to take control of a session, even if a different
-    /// client is currently accessing the project.</p>
+    /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
     pub assume_control: bool,
 }
 impl StartProjectSessionInput {
@@ -9423,8 +9116,7 @@ impl StartProjectSessionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A value that, if true, enables you to take control of a session, even if a different
-    /// client is currently accessing the project.</p>
+    /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
     pub fn assume_control(&self) -> bool {
         self.assume_control
     }
@@ -9469,12 +9161,9 @@ pub struct SendProjectSessionActionInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
     pub recipe_step: std::option::Option<crate::model::RecipeStep>,
-    /// <p>The index from which to preview a step. This index is used to preview the result of
-    /// steps that have already been applied, so that the resulting view frame is from earlier
-    /// in the view frame stack.</p>
+    /// <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
     pub step_index: std::option::Option<i32>,
-    /// <p>A unique identifier for an interactive session that's currently open and ready for
-    /// work. The action will be performed on this session.</p>
+    /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
     pub client_session_id: std::option::Option<std::string::String>,
     /// <p>Represents the data being transformed during an action.</p>
     pub view_frame: std::option::Option<crate::model::ViewFrame>,
@@ -9492,14 +9181,11 @@ impl SendProjectSessionActionInput {
     pub fn recipe_step(&self) -> std::option::Option<&crate::model::RecipeStep> {
         self.recipe_step.as_ref()
     }
-    /// <p>The index from which to preview a step. This index is used to preview the result of
-    /// steps that have already been applied, so that the resulting view frame is from earlier
-    /// in the view frame stack.</p>
+    /// <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
     pub fn step_index(&self) -> std::option::Option<i32> {
         self.step_index
     }
-    /// <p>A unique identifier for an interactive session that's currently open and ready for
-    /// work. The action will be performed on this session.</p>
+    /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
     pub fn client_session_id(&self) -> std::option::Option<&str> {
         self.client_session_id.as_deref()
     }
@@ -9553,13 +9239,11 @@ impl std::fmt::Debug for PublishRecipeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -9611,19 +9295,15 @@ impl std::fmt::Debug for ListSchedulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesetsInput {
-    /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
-    /// indicates to return only those rulesets that are associated with the specified resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.</p>
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token generated by DataBrew that specifies where to continue pagination
-    /// if a previous request was truncated. To get the next set of pages, pass in
-    /// the NextToken value from the response object of the previous page call.</p>
+    /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRulesetsInput {
-    /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
-    /// indicates to return only those rulesets that are associated with the specified resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.</p>
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
@@ -9631,9 +9311,7 @@ impl ListRulesetsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token generated by DataBrew that specifies where to continue pagination
-    /// if a previous request was truncated. To get the next set of pages, pass in
-    /// the NextToken value from the response object of the previous page call.</p>
+    /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9691,12 +9369,8 @@ pub struct ListRecipesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or
-    /// <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted,
-    /// <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe
-    /// versions.</p>
-    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code>
-    /// </p>
+    /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
+    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
     pub recipe_version: std::option::Option<std::string::String>,
 }
 impl ListRecipesInput {
@@ -9708,12 +9382,8 @@ impl ListRecipesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or
-    /// <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted,
-    /// <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe
-    /// versions.</p>
-    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code>
-    /// </p>
+    /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
+    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
     pub fn recipe_version(&self) -> std::option::Option<&str> {
         self.recipe_version.as_deref()
     }
@@ -9760,22 +9430,17 @@ impl std::fmt::Debug for ListProjectsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsInput {
-    /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that
-    /// act on the specified dataset.</p>
+    /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.</p>
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token generated by DataBrew that specifies where to continue pagination if a
-    /// previous request was truncated. To get the next set of pages, pass in the NextToken
-    /// value from the response object of the previous page call. </p>
+    /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The name of a project. Using this parameter indicates to return only those jobs that
-    /// are associated with the specified project.</p>
+    /// <p>The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.</p>
     pub project_name: std::option::Option<std::string::String>,
 }
 impl ListJobsInput {
-    /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that
-    /// act on the specified dataset.</p>
+    /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.</p>
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
@@ -9783,14 +9448,11 @@ impl ListJobsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token generated by DataBrew that specifies where to continue pagination if a
-    /// previous request was truncated. To get the next set of pages, pass in the NextToken
-    /// value from the response object of the previous page call. </p>
+    /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The name of a project. Using this parameter indicates to return only those jobs that
-    /// are associated with the specified project.</p>
+    /// <p>The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.</p>
     pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
@@ -9917,8 +9579,7 @@ impl std::fmt::Debug for DescribeRulesetInput {
 pub struct DescribeRecipeInput {
     /// <p>The name of the recipe to be described.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The recipe version identifier. If this parameter isn't specified, then the latest
-    /// published version is returned.</p>
+    /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
     pub recipe_version: std::option::Option<std::string::String>,
 }
 impl DescribeRecipeInput {
@@ -9926,8 +9587,7 @@ impl DescribeRecipeInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The recipe version identifier. If this parameter isn't specified, then the latest
-    /// published version is returned.</p>
+    /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
     pub fn recipe_version(&self) -> std::option::Option<&str> {
         self.recipe_version.as_deref()
     }
@@ -10080,9 +9740,7 @@ impl std::fmt::Debug for DeleteRulesetInput {
 pub struct DeleteRecipeVersionInput {
     /// <p>The name of the recipe.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The version of the recipe to be deleted. You can specify a numeric versions
-    /// (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is
-    /// not supported.</p>
+    /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
     pub recipe_version: std::option::Option<std::string::String>,
 }
 impl DeleteRecipeVersionInput {
@@ -10090,9 +9748,7 @@ impl DeleteRecipeVersionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The version of the recipe to be deleted. You can specify a numeric versions
-    /// (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is
-    /// not supported.</p>
+    /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
     pub fn recipe_version(&self) -> std::option::Option<&str> {
         self.recipe_version.as_deref()
     }
@@ -10175,16 +9831,12 @@ impl std::fmt::Debug for DeleteDatasetInput {
 pub struct CreateScheduleInput {
     /// <p>The name or names of one or more jobs to be run.</p>
     pub job_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-    /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-    /// expressions</a> in the <i>Glue DataBrew Developer
-    /// Guide</i>.</p>
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub cron_expression: std::option::Option<std::string::String>,
     /// <p>Metadata tags to apply to this schedule.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-    /// hyphen (-), period (.), and space.</p>
+    /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateScheduleInput {
@@ -10192,10 +9844,7 @@ impl CreateScheduleInput {
     pub fn job_names(&self) -> std::option::Option<&[std::string::String]> {
         self.job_names.as_deref()
     }
-    /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-    /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-    /// expressions</a> in the <i>Glue DataBrew Developer
-    /// Guide</i>.</p>
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn cron_expression(&self) -> std::option::Option<&str> {
         self.cron_expression.as_deref()
     }
@@ -10206,8 +9855,7 @@ impl CreateScheduleInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-    /// hyphen (-), period (.), and space.</p>
+    /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -10227,24 +9875,20 @@ impl std::fmt::Debug for CreateScheduleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRulesetInput {
-    /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
-    /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the ruleset.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
-    /// ruleset is associated with.</p>
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
     pub target_arn: std::option::Option<std::string::String>,
-    /// <p>A list of rules that are defined with the ruleset. A rule includes
-    /// one or more checks to be validated on a DataBrew dataset.</p>
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>Metadata tags to apply to the ruleset.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateRulesetInput {
-    /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
-    /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -10252,13 +9896,11 @@ impl CreateRulesetInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
-    /// ruleset is associated with.</p>
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
-    /// <p>A list of rules that are defined with the ruleset. A rule includes
-    /// one or more checks to be validated on a DataBrew dataset.</p>
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
         self.rules.as_deref()
     }
@@ -10288,29 +9930,19 @@ impl std::fmt::Debug for CreateRulesetInput {
 pub struct CreateRecipeJobInput {
     /// <p>The name of the dataset that this job processes.</p>
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-    /// job.</p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-    /// </li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub encryption_mode: std::option::Option<crate::model::EncryptionMode>,
-    /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen
-    /// (-), period (.), and space.</p>
+    /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-    /// CloudWatch writes one log stream for each job run.</p>
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
-    /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-    /// data.</p>
+    /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub max_retries: i32,
@@ -10318,22 +9950,18 @@ pub struct CreateRecipeJobInput {
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     pub data_catalog_outputs: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
-    /// <p>Represents a list of JDBC database output objects which defines the output destination for
-    /// a DataBrew recipe job to write to. </p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
     pub database_outputs: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
-    /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to
-    /// associate with the recipe.</p>
+    /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
     pub project_name: std::option::Option<std::string::String>,
     /// <p>Represents the name and version of a DataBrew recipe.</p>
     pub recipe_reference: std::option::Option<crate::model::RecipeReference>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-    /// be assumed when DataBrew runs the job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata tags to apply to this job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub timeout: i32,
 }
 impl CreateRecipeJobInput {
@@ -10341,37 +9969,27 @@ impl CreateRecipeJobInput {
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-    /// job.</p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-    /// </li>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
         self.encryption_mode.as_ref()
     }
-    /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen
-    /// (-), period (.), and space.</p>
+    /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-    /// CloudWatch writes one log stream for each job run.</p>
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
         self.log_subscription.as_ref()
     }
-    /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-    /// data.</p>
+    /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
     pub fn max_capacity(&self) -> i32 {
         self.max_capacity
     }
@@ -10387,13 +10005,11 @@ impl CreateRecipeJobInput {
     pub fn data_catalog_outputs(&self) -> std::option::Option<&[crate::model::DataCatalogOutput]> {
         self.data_catalog_outputs.as_deref()
     }
-    /// <p>Represents a list of JDBC database output objects which defines the output destination for
-    /// a DataBrew recipe job to write to. </p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
     pub fn database_outputs(&self) -> std::option::Option<&[crate::model::DatabaseOutput]> {
         self.database_outputs.as_deref()
     }
-    /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to
-    /// associate with the recipe.</p>
+    /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
     pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
@@ -10401,8 +10017,7 @@ impl CreateRecipeJobInput {
     pub fn recipe_reference(&self) -> std::option::Option<&crate::model::RecipeReference> {
         self.recipe_reference.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-    /// be assumed when DataBrew runs the job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -10413,8 +10028,7 @@ impl CreateRecipeJobInput {
     {
         self.tags.as_ref()
     }
-    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub fn timeout(&self) -> i32 {
         self.timeout
     }
@@ -10447,11 +10061,9 @@ impl std::fmt::Debug for CreateRecipeJobInput {
 pub struct CreateRecipeInput {
     /// <p>A description for the recipe.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-    /// hyphen (-), period (.), and space.</p>
+    /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists
-    /// of one recipe action and (optionally) an array of condition expressions.</p>
+    /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
     /// <p>Metadata tags to apply to this recipe.</p>
     pub tags:
@@ -10462,13 +10074,11 @@ impl CreateRecipeInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-    /// hyphen (-), period (.), and space.</p>
+    /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists
-    /// of one recipe action and (optionally) an array of condition expressions.</p>
+    /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::RecipeStep]> {
         self.steps.as_deref()
     }
@@ -10497,16 +10107,13 @@ impl std::fmt::Debug for CreateRecipeInput {
 pub struct CreateProjectInput {
     /// <p>The name of an existing dataset to associate this project with.</p>
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-    /// hyphen (-), period (.), and space.</p>
+    /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of an existing recipe to associate with the project.</p>
     pub recipe_name: std::option::Option<std::string::String>,
-    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-    /// analysis.</p>
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
     pub sample: std::option::Option<crate::model::Sample>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-    /// be assumed for this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata tags to apply to this project.</p>
     pub tags:
@@ -10517,8 +10124,7 @@ impl CreateProjectInput {
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-    /// hyphen (-), period (.), and space.</p>
+    /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -10526,13 +10132,11 @@ impl CreateProjectInput {
     pub fn recipe_name(&self) -> std::option::Option<&str> {
         self.recipe_name.as_deref()
     }
-    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-    /// analysis.</p>
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
     pub fn sample(&self) -> std::option::Option<&crate::model::Sample> {
         self.sample.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-    /// be assumed for this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -10563,55 +10167,37 @@ impl std::fmt::Debug for CreateProjectInput {
 pub struct CreateProfileJobInput {
     /// <p>The name of the dataset that this job is to act upon.</p>
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-    /// job.</p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub encryption_key_arn: std::option::Option<std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with
-    /// KMS-managed keys.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-    /// </li>
+    /// <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub encryption_mode: std::option::Option<crate::model::EncryptionMode>,
-    /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-    /// hyphen (-), period (.), and space.</p>
+    /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-    /// CloudWatch writes one log stream for each job run.</p>
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub log_subscription: std::option::Option<crate::model::LogSubscription>,
     /// <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub max_retries: i32,
-    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-    /// input data, or write output from a job.</p>
+    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
     pub output_location: std::option::Option<crate::model::S3Location>,
-    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-    /// and override default parameters of evaluations. When configuration is null, the
-    /// profile job will run with default settings.</p>
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub configuration: std::option::Option<crate::model::ProfileConfiguration>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
     pub validation_configurations:
         std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-    /// be assumed when DataBrew runs the job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata tags to apply to this job.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub timeout: i32,
-    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-    /// profile job will be executed. If a JobSample value is not provided, the default value
-    /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-    /// size parameter.</p>
+    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
     pub job_sample: std::option::Option<crate::model::JobSample>,
 }
 impl CreateProfileJobInput {
@@ -10619,33 +10205,23 @@ impl CreateProfileJobInput {
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-    /// job.</p>
+    /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with
-    /// KMS-managed keys.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-    /// </li>
+    /// <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
         self.encryption_mode.as_ref()
     }
-    /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-    /// hyphen (-), period (.), and space.</p>
+    /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-    /// CloudWatch writes one log stream for each job run.</p>
+    /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
         self.log_subscription.as_ref()
     }
@@ -10657,14 +10233,11 @@ impl CreateProfileJobInput {
     pub fn max_retries(&self) -> i32 {
         self.max_retries
     }
-    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-    /// input data, or write output from a job.</p>
+    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
     pub fn output_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.output_location.as_ref()
     }
-    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-    /// and override default parameters of evaluations. When configuration is null, the
-    /// profile job will run with default settings.</p>
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::ProfileConfiguration> {
         self.configuration.as_ref()
     }
@@ -10674,8 +10247,7 @@ impl CreateProfileJobInput {
     ) -> std::option::Option<&[crate::model::ValidationConfiguration]> {
         self.validation_configurations.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-    /// be assumed when DataBrew runs the job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -10686,15 +10258,11 @@ impl CreateProfileJobInput {
     {
         self.tags.as_ref()
     }
-    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-    /// period ends with a status of <code>TIMEOUT</code>.</p>
+    /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub fn timeout(&self) -> i32 {
         self.timeout
     }
-    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-    /// profile job will be executed. If a JobSample value is not provided, the default value
-    /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-    /// size parameter.</p>
+    /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
     pub fn job_sample(&self) -> std::option::Option<&crate::model::JobSample> {
         self.job_sample.as_ref()
     }
@@ -10724,16 +10292,13 @@ impl std::fmt::Debug for CreateProfileJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetInput {
-    /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z,
-    /// 0-9), hyphen (-), period (.), and space.</p>
+    /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub format: std::option::Option<crate::model::InputFormat>,
-    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-    /// Excel, or JSON input.</p>
+    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub format_options: std::option::Option<crate::model::FormatOptions>,
-    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-    /// Amazon S3.</p>
+    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub input: std::option::Option<crate::model::Input>,
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub path_options: std::option::Option<crate::model::PathOptions>,
@@ -10742,8 +10307,7 @@ pub struct CreateDatasetInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateDatasetInput {
-    /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z,
-    /// 0-9), hyphen (-), period (.), and space.</p>
+    /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -10751,13 +10315,11 @@ impl CreateDatasetInput {
     pub fn format(&self) -> std::option::Option<&crate::model::InputFormat> {
         self.format.as_ref()
     }
-    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-    /// Excel, or JSON input.</p>
+    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub fn format_options(&self) -> std::option::Option<&crate::model::FormatOptions> {
         self.format_options.as_ref()
     }
-    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-    /// Amazon S3.</p>
+    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub fn input(&self) -> std::option::Option<&crate::model::Input> {
         self.input.as_ref()
     }
@@ -10792,9 +10354,7 @@ impl std::fmt::Debug for CreateDatasetInput {
 pub struct BatchDeleteRecipeVersionInput {
     /// <p>The name of the recipe whose versions are to be deleted.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>An array of version identifiers, for the recipe versions to be deleted. You can
-    /// specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>.
-    /// <code>LATEST_PUBLISHED</code> is not supported.</p>
+    /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
     pub recipe_versions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeleteRecipeVersionInput {
@@ -10802,9 +10362,7 @@ impl BatchDeleteRecipeVersionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An array of version identifiers, for the recipe versions to be deleted. You can
-    /// specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>.
-    /// <code>LATEST_PUBLISHED</code> is not supported.</p>
+    /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
     pub fn recipe_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.recipe_versions.as_deref()
     }

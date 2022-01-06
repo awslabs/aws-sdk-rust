@@ -3848,9 +3848,9 @@ pub mod node_interface {
         /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
         ///
         /// <p>The node interface's inputs.</p>
-        pub fn inputs(mut self, input: impl Into<crate::model::NodeInputPort>) -> Self {
+        pub fn inputs(mut self, input: crate::model::NodeInputPort) -> Self {
             let mut v = self.inputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inputs = Some(v);
             self
         }
@@ -3867,9 +3867,9 @@ pub mod node_interface {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The node interface's outputs.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::NodeOutputPort>) -> Self {
+        pub fn outputs(mut self, input: crate::model::NodeOutputPort) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -4629,9 +4629,7 @@ impl AsRef<str> for DeviceConnectionStatus {
     }
 }
 
-/// <p>Parameter overrides for an application instance. This is a JSON document that has a
-/// single key (<code>PayloadData</code>) where the value is an escaped string
-/// representation of the overrides document.</p>
+/// <p>Parameter overrides for an application instance. This is a JSON document that has a single key (<code>PayloadData</code>) where the value is an escaped string representation of the overrides document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ManifestOverridesPayload {
@@ -4668,10 +4666,7 @@ impl ManifestOverridesPayload {
     }
 }
 
-/// <p>A application verion's manifest file. This is a JSON document that has a
-/// single key (<code>PayloadData</code>) where the value is an escaped string
-/// representation of the application manifest (<code>graph.json</code>). This
-/// file is located in the <code>graphs</code> folder in your application source.</p>
+/// <p>A application verion's manifest file. This is a JSON document that has a single key (<code>PayloadData</code>) where the value is an escaped string representation of the application manifest (<code>graph.json</code>). This file is located in the <code>graphs</code> folder in your application source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ManifestPayload {

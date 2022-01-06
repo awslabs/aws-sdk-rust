@@ -213,18 +213,14 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForStreamOutput {
-    /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is
-    /// truncated, the response includes a token that you can use in the next request to fetch
-    /// the next set of tags.</p>
+    /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A map of tag keys and values associated with the specified stream.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForStreamOutput {
-    /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is
-    /// truncated, the response includes a token that you can use in the next request to fetch
-    /// the next set of tags.</p>
+    /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -256,16 +252,12 @@ pub mod list_tags_for_stream_output {
         >,
     }
     impl Builder {
-        /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is
-        /// truncated, the response includes a token that you can use in the next request to fetch
-        /// the next set of tags.</p>
+        /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is
-        /// truncated, the response includes a token that you can use in the next request to fetch
-        /// the next set of tags.</p>
+        /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -315,18 +307,14 @@ impl ListTagsForStreamOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
-    /// call is truncated, the response includes a token that you can use in the next request to
-    /// fetch the next set of tags. </p>
+    /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A map of tag keys and values associated with the specified signaling channel.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
-    /// call is truncated, the response includes a token that you can use in the next request to
-    /// fetch the next set of tags. </p>
+    /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -358,16 +346,12 @@ pub mod list_tags_for_resource_output {
         >,
     }
     impl Builder {
-        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
-        /// call is truncated, the response includes a token that you can use in the next request to
-        /// fetch the next set of tags. </p>
+        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
-        /// call is truncated, the response includes a token that you can use in the next request to
-        /// fetch the next set of tags. </p>
+        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -419,8 +403,7 @@ impl ListTagsForResourceOutput {
 pub struct ListStreamsOutput {
     /// <p>An array of <code>StreamInfo</code> objects.</p>
     pub stream_info_list: std::option::Option<std::vec::Vec<crate::model::StreamInfo>>,
-    /// <p>If the response is truncated, the call returns this element with a token. To get
-    /// the next batch of streams, use this token in your next request. </p>
+    /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStreamsOutput {
@@ -428,8 +411,7 @@ impl ListStreamsOutput {
     pub fn stream_info_list(&self) -> std::option::Option<&[crate::model::StreamInfo]> {
         self.stream_info_list.as_deref()
     }
-    /// <p>If the response is truncated, the call returns this element with a token. To get
-    /// the next batch of streams, use this token in your next request. </p>
+    /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -457,9 +439,9 @@ pub mod list_streams_output {
         /// To override the contents of this collection use [`set_stream_info_list`](Self::set_stream_info_list).
         ///
         /// <p>An array of <code>StreamInfo</code> objects.</p>
-        pub fn stream_info_list(mut self, input: impl Into<crate::model::StreamInfo>) -> Self {
+        pub fn stream_info_list(mut self, input: crate::model::StreamInfo) -> Self {
             let mut v = self.stream_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stream_info_list = Some(v);
             self
         }
@@ -471,14 +453,12 @@ pub mod list_streams_output {
             self.stream_info_list = input;
             self
         }
-        /// <p>If the response is truncated, the call returns this element with a token. To get
-        /// the next batch of streams, use this token in your next request. </p>
+        /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, the call returns this element with a token. To get
-        /// the next batch of streams, use this token in your next request. </p>
+        /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -505,8 +485,7 @@ impl ListStreamsOutput {
 pub struct ListSignalingChannelsOutput {
     /// <p>An array of <code>ChannelInfo</code> objects.</p>
     pub channel_info_list: std::option::Option<std::vec::Vec<crate::model::ChannelInfo>>,
-    /// <p>If the response is truncated, the call returns this element with a token. To get the
-    /// next batch of streams, use this token in your next request.</p>
+    /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSignalingChannelsOutput {
@@ -514,8 +493,7 @@ impl ListSignalingChannelsOutput {
     pub fn channel_info_list(&self) -> std::option::Option<&[crate::model::ChannelInfo]> {
         self.channel_info_list.as_deref()
     }
-    /// <p>If the response is truncated, the call returns this element with a token. To get the
-    /// next batch of streams, use this token in your next request.</p>
+    /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -543,9 +521,9 @@ pub mod list_signaling_channels_output {
         /// To override the contents of this collection use [`set_channel_info_list`](Self::set_channel_info_list).
         ///
         /// <p>An array of <code>ChannelInfo</code> objects.</p>
-        pub fn channel_info_list(mut self, input: impl Into<crate::model::ChannelInfo>) -> Self {
+        pub fn channel_info_list(mut self, input: crate::model::ChannelInfo) -> Self {
             let mut v = self.channel_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channel_info_list = Some(v);
             self
         }
@@ -557,14 +535,12 @@ pub mod list_signaling_channels_output {
             self.channel_info_list = input;
             self
         }
-        /// <p>If the response is truncated, the call returns this element with a token. To get the
-        /// next batch of streams, use this token in your next request.</p>
+        /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, the call returns this element with a token. To get the
-        /// next batch of streams, use this token in your next request.</p>
+        /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -625,10 +601,10 @@ pub mod get_signaling_channel_endpoint_output {
         /// <p>A list of endpoints for the specified signaling channel.</p>
         pub fn resource_endpoint_list(
             mut self,
-            input: impl Into<crate::model::ResourceEndpointListItem>,
+            input: crate::model::ResourceEndpointListItem,
         ) -> Self {
             let mut v = self.resource_endpoint_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_endpoint_list = Some(v);
             self
         }
@@ -659,13 +635,11 @@ impl GetSignalingChannelEndpointOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataEndpointOutput {
-    /// <p>The endpoint value. To read data from the stream or to write data to it, specify
-    /// this endpoint in your application.</p>
+    /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
     pub data_endpoint: std::option::Option<std::string::String>,
 }
 impl GetDataEndpointOutput {
-    /// <p>The endpoint value. To read data from the stream or to write data to it, specify
-    /// this endpoint in your application.</p>
+    /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
     pub fn data_endpoint(&self) -> std::option::Option<&str> {
         self.data_endpoint.as_deref()
     }
@@ -686,14 +660,12 @@ pub mod get_data_endpoint_output {
         pub(crate) data_endpoint: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The endpoint value. To read data from the stream or to write data to it, specify
-        /// this endpoint in your application.</p>
+        /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
         pub fn data_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_endpoint = Some(input.into());
             self
         }
-        /// <p>The endpoint value. To read data from the stream or to write data to it, specify
-        /// this endpoint in your application.</p>
+        /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
         pub fn set_data_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -777,13 +749,11 @@ impl DescribeStreamOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSignalingChannelOutput {
-    /// <p>A structure that encapsulates the specified signaling channel's metadata and
-    /// properties.</p>
+    /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
     pub channel_info: std::option::Option<crate::model::ChannelInfo>,
 }
 impl DescribeSignalingChannelOutput {
-    /// <p>A structure that encapsulates the specified signaling channel's metadata and
-    /// properties.</p>
+    /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
     pub fn channel_info(&self) -> std::option::Option<&crate::model::ChannelInfo> {
         self.channel_info.as_ref()
     }
@@ -804,14 +774,12 @@ pub mod describe_signaling_channel_output {
         pub(crate) channel_info: std::option::Option<crate::model::ChannelInfo>,
     }
     impl Builder {
-        /// <p>A structure that encapsulates the specified signaling channel's metadata and
-        /// properties.</p>
+        /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
         pub fn channel_info(mut self, input: crate::model::ChannelInfo) -> Self {
             self.channel_info = Some(input);
             self
         }
-        /// <p>A structure that encapsulates the specified signaling channel's metadata and
-        /// properties.</p>
+        /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
         pub fn set_channel_info(
             mut self,
             input: std::option::Option<crate::model::ChannelInfo>,

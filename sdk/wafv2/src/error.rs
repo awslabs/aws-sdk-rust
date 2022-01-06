@@ -12,28 +12,16 @@ pub struct AssociateWebACLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateWebACLErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -85,8 +73,6 @@ impl AssociateWebACLError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -169,46 +155,27 @@ pub struct CheckCapacityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CheckCapacityErrorKind {
-    /// <p>The operation failed because the specified version for the managed rule group has
-    /// expired. You can retrieve the available versions for the managed rule group by calling
-    /// <a>ListAvailableManagedRuleGroupVersions</a>.</p>
+    /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
     WafExpiredManagedRuleGroupVersionException(
         crate::error::WafExpiredManagedRuleGroupVersionException,
     ),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t
-    /// valid. Check the resource, and try again.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
     WafInvalidResourceException(crate::error::WafInvalidResourceException),
-    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <i>WAF Developer Guide</i>.</p>
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>You tried to use a managed rule group that's available by subscription, but you aren't
-    /// subscribed to it yet. </p>
+    /// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
@@ -262,8 +229,6 @@ impl CheckCapacityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -372,46 +337,27 @@ pub struct CreateIPSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateIPSetErrorKind {
-    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is
-    /// a duplicate of an existing one.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <i>WAF Developer Guide</i>.</p>
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -461,8 +407,6 @@ impl CreateIPSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -569,46 +513,27 @@ pub struct CreateRegexPatternSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRegexPatternSetErrorKind {
-    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is
-    /// a duplicate of an existing one.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <i>WAF Developer Guide</i>.</p>
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -660,8 +585,6 @@ impl CreateRegexPatternSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -770,51 +693,31 @@ pub struct CreateRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRuleGroupErrorKind {
-    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is
-    /// a duplicate of an existing one.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <i>WAF Developer Guide</i>.</p>
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
-    /// <p>You tried to use a managed rule group that's available by subscription, but you aren't
-    /// subscribed to it yet. </p>
+    /// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
@@ -871,8 +774,6 @@ impl CreateRuleGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1003,54 +904,33 @@ pub struct CreateWebACLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateWebACLErrorKind {
-    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is
-    /// a duplicate of an existing one.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t
-    /// valid. Check the resource, and try again.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
     WafInvalidResourceException(crate::error::WafInvalidResourceException),
-    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <i>WAF Developer Guide</i>.</p>
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
-    /// <p>You tried to use a managed rule group that's available by subscription, but you aren't
-    /// subscribed to it yet. </p>
+    /// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
@@ -1106,8 +986,6 @@ impl CreateWebACLError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1246,35 +1124,21 @@ pub struct DeleteFirewallManagerRuleGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFirewallManagerRuleGroupsErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1334,8 +1198,6 @@ impl DeleteFirewallManagerRuleGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1428,43 +1290,27 @@ pub struct DeleteIPSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIPSetErrorKind {
-    /// <p>WAF couldn’t perform the operation because your resource is being used by another
-    /// resource or it’s associated with another resource. </p>
+    /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1514,8 +1360,6 @@ impl DeleteIPSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1622,35 +1466,21 @@ pub struct DeleteLoggingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLoggingConfigurationErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1705,8 +1535,6 @@ impl DeleteLoggingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1795,26 +1623,14 @@ pub struct DeletePermissionPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePermissionPolicyErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -1862,8 +1678,6 @@ impl DeletePermissionPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1930,43 +1744,27 @@ pub struct DeleteRegexPatternSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRegexPatternSetErrorKind {
-    /// <p>WAF couldn’t perform the operation because your resource is being used by another
-    /// resource or it’s associated with another resource. </p>
+    /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2018,8 +1816,6 @@ impl DeleteRegexPatternSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2128,43 +1924,27 @@ pub struct DeleteRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRuleGroupErrorKind {
-    /// <p>WAF couldn’t perform the operation because your resource is being used by another
-    /// resource or it’s associated with another resource. </p>
+    /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2216,8 +1996,6 @@ impl DeleteRuleGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2324,43 +2102,27 @@ pub struct DeleteWebACLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteWebACLErrorKind {
-    /// <p>WAF couldn’t perform the operation because your resource is being used by another
-    /// resource or it’s associated with another resource. </p>
+    /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2410,8 +2172,6 @@ impl DeleteWebACLError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2518,38 +2278,23 @@ pub struct DescribeManagedRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeManagedRuleGroupErrorKind {
-    /// <p>The operation failed because the specified version for the managed rule group has
-    /// expired. You can retrieve the available versions for the managed rule group by calling
-    /// <a>ListAvailableManagedRuleGroupVersions</a>.</p>
+    /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
     WafExpiredManagedRuleGroupVersionException(
         crate::error::WafExpiredManagedRuleGroupVersionException,
     ),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t
-    /// valid. Check the resource, and try again.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
     WafInvalidResourceException(crate::error::WafInvalidResourceException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
@@ -2605,8 +2350,6 @@ impl DescribeManagedRuleGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2699,28 +2442,16 @@ pub struct DisassociateWebACLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateWebACLErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -2769,8 +2500,6 @@ impl DisassociateWebACLError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2845,28 +2574,16 @@ pub struct GetIPSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIPSetErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -2915,8 +2632,6 @@ impl GetIPSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2988,28 +2703,16 @@ pub struct GetLoggingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLoggingConfigurationErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -3058,8 +2761,6 @@ impl GetLoggingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3134,28 +2835,16 @@ pub struct GetManagedRuleSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetManagedRuleSetErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -3204,8 +2893,6 @@ impl GetManagedRuleSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3280,26 +2967,14 @@ pub struct GetPermissionPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPermissionPolicyErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -3347,8 +3022,6 @@ impl GetPermissionPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3415,28 +3088,16 @@ pub struct GetRateBasedStatementManagedKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRateBasedStatementManagedKeysErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -3496,8 +3157,6 @@ impl GetRateBasedStatementManagedKeysError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3580,28 +3239,16 @@ pub struct GetRegexPatternSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRegexPatternSetErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -3650,8 +3297,6 @@ impl GetRegexPatternSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3726,28 +3371,16 @@ pub struct GetRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRuleGroupErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -3796,8 +3429,6 @@ impl GetRuleGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3872,26 +3503,14 @@ pub struct GetSampledRequestsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSampledRequestsErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -3939,8 +3558,6 @@ impl GetSampledRequestsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4007,28 +3624,16 @@ pub struct GetWebACLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetWebACLErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -4077,8 +3682,6 @@ impl GetWebACLError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4150,28 +3753,16 @@ pub struct GetWebACLForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetWebACLForResourceErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -4223,8 +3814,6 @@ impl GetWebACLForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4307,28 +3896,16 @@ pub struct ListAvailableManagedRuleGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAvailableManagedRuleGroupsErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4383,8 +3960,6 @@ impl ListAvailableManagedRuleGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4457,28 +4032,16 @@ pub struct ListAvailableManagedRuleGroupVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAvailableManagedRuleGroupVersionsErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4533,8 +4096,6 @@ impl ListAvailableManagedRuleGroupVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4609,28 +4170,16 @@ pub struct ListIPSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIPSetsErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4676,8 +4225,6 @@ impl ListIPSetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4744,28 +4291,16 @@ pub struct ListLoggingConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLoggingConfigurationsErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4815,8 +4350,6 @@ impl ListLoggingConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4887,28 +4420,16 @@ pub struct ListManagedRuleSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListManagedRuleSetsErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4954,8 +4475,6 @@ impl ListManagedRuleSetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5022,28 +4541,16 @@ pub struct ListRegexPatternSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRegexPatternSetsErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -5089,8 +4596,6 @@ impl ListRegexPatternSetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5157,28 +4662,16 @@ pub struct ListResourcesForWebACLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResourcesForWebACLErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
@@ -5227,8 +4720,6 @@ impl ListResourcesForWebACLError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5303,28 +4794,16 @@ pub struct ListRuleGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRuleGroupsErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -5370,8 +4849,6 @@ impl ListRuleGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5438,36 +4915,23 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5517,8 +4981,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5611,28 +5073,16 @@ pub struct ListWebACLsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListWebACLsErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -5678,8 +5128,6 @@ impl ListWebACLsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5746,55 +5194,29 @@ pub struct PutLoggingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutLoggingConfigurationErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <i>WAF Developer Guide</i>.</p>
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
-    /// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a>
-    /// in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
     WafLogDestinationPermissionIssueException(
         crate::error::WafLogDestinationPermissionIssueException,
     ),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
-    /// <p>WAF is not able to access the service linked role. This can be caused by a
-    /// previous <code>PutLoggingConfiguration</code> request, which can lock the service linked
-    /// role for about 20 seconds. Please try your request again. The service linked role can also
-    /// be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the
-    /// role for 15 minutes or more. If you recently made a call to
-    /// <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request
-    /// again. If you receive this same exception again, you will have to wait additional time
-    /// until the role is unlocked.</p>
+    /// <p>WAF is not able to access the service linked role. This can be caused by a previous <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you recently made a call to <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again. If you receive this same exception again, you will have to wait additional time until the role is unlocked.</p>
     WafServiceLinkedRoleErrorException(crate::error::WafServiceLinkedRoleErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5848,8 +5270,6 @@ impl PutLoggingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5960,35 +5380,21 @@ pub struct PutManagedRuleSetVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutManagedRuleSetVersionsErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6041,8 +5447,6 @@ impl PutManagedRuleSetVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6129,51 +5533,26 @@ pub struct PutPermissionPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutPermissionPolicyErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>The operation failed because the specified policy isn't in the proper format. </p>
-    ///
     /// <p>The policy specifications must conform to the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p>
-    /// </li>
-    /// <li>
-    /// <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Effect</code> must specify <code>Allow</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p>
-    /// </li>
-    /// <li>
-    /// <p>The policy must not include a <code>Resource</code> parameter.</p>
-    /// </li>
-    /// </ul>     
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.  </p>
+    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
+    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
+    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
+    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
+    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
     WafInvalidPermissionPolicyException(crate::error::WafInvalidPermissionPolicyException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
@@ -6223,8 +5602,6 @@ impl PutPermissionPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6301,41 +5678,25 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <i>WAF Developer Guide</i>.</p>
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6384,8 +5745,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6484,36 +5843,23 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
     /// <p>An error occurred during the tagging operation. Retry your request.</p>
     WafTagOperationException(crate::error::WafTagOperationException),
-    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-    /// your request.</p>
+    /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::error::WafTagOperationInternalErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6561,8 +5907,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6653,43 +5997,25 @@ pub struct UpdateIPSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateIPSetErrorKind {
-    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is
-    /// a duplicate of an existing one.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <i>WAF Developer Guide</i>.</p>
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6738,8 +6064,6 @@ impl UpdateIPSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6838,35 +6162,21 @@ pub struct UpdateManagedRuleSetVersionExpiryDateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateManagedRuleSetVersionExpiryDateErrorKind {
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6926,8 +6236,6 @@ impl UpdateManagedRuleSetVersionExpiryDateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7022,43 +6330,25 @@ pub struct UpdateRegexPatternSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRegexPatternSetErrorKind {
-    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is
-    /// a duplicate of an existing one.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <i>WAF Developer Guide</i>.</p>
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7107,8 +6397,6 @@ impl UpdateRegexPatternSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7207,46 +6495,27 @@ pub struct UpdateRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRuleGroupErrorKind {
-    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is
-    /// a duplicate of an existing one.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <i>WAF Developer Guide</i>.</p>
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
-    /// <p>You tried to use a managed rule group that's available by subscription, but you aren't
-    /// subscribed to it yet. </p>
+    /// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
@@ -7299,8 +6568,6 @@ impl UpdateRuleGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7415,55 +6682,33 @@ pub struct UpdateWebACLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateWebACLErrorKind {
-    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is
-    /// a duplicate of an existing one.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
-    /// <p>The operation failed because the specified version for the managed rule group has
-    /// expired. You can retrieve the available versions for the managed rule group by calling
-    /// <a>ListAvailableManagedRuleGroupVersions</a>.</p>
+    /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
     WafExpiredManagedRuleGroupVersionException(
         crate::error::WafExpiredManagedRuleGroupVersionException,
     ),
-    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-    /// problem. Retry your request. </p>
+    /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
     /// <p>The operation isn't valid. </p>
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
-    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-    /// example: </p>
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified a parameter name or value that isn't valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-    /// can’t be nested. </p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-    /// isn't among the types available at <a>DefaultAction</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-    /// </li>
+    /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+    /// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+    /// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
     /// </ul>
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
-    /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t
-    /// valid. Check the resource, and try again.</p>
+    /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
     WafInvalidResourceException(crate::error::WafInvalidResourceException),
-    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-    /// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-    /// <i>WAF Developer Guide</i>.</p>
+    /// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     WafLimitsExceededException(crate::error::WafLimitsExceededException),
     /// <p>WAF couldn’t perform the operation because your resource doesn’t exist. </p>
     WafNonexistentItemException(crate::error::WafNonexistentItemException),
-    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-    /// that has changed since you last retrieved it. Get the resource again, make any changes you
-    /// need to make to the new copy, and retry your operation. </p>
+    /// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
     WafOptimisticLockException(crate::error::WafOptimisticLockException),
-    /// <p>You tried to use a managed rule group that's available by subscription, but you aren't
-    /// subscribed to it yet. </p>
+    /// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
     WafSubscriptionNotFoundException(crate::error::WafSubscriptionNotFoundException),
     /// <p>WAF couldn’t retrieve the resource that you requested. Retry your request.</p>
     WafUnavailableEntityException(crate::error::WafUnavailableEntityException),
@@ -7520,8 +6765,6 @@ impl UpdateWebACLError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7708,8 +6951,7 @@ impl WafUnavailableEntityException {
     }
 }
 
-/// <p>You tried to use a managed rule group that's available by subscription, but you aren't
-/// subscribed to it yet. </p>
+/// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafSubscriptionNotFoundException {
@@ -7776,9 +7018,7 @@ impl WafSubscriptionNotFoundException {
     }
 }
 
-/// <p>WAF couldn’t save your changes because you tried to update or delete a resource
-/// that has changed since you last retrieved it. Get the resource again, make any changes you
-/// need to make to the new copy, and retry your operation. </p>
+/// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafOptimisticLockException {
@@ -7909,10 +7149,7 @@ impl WafNonexistentItemException {
     }
 }
 
-/// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
-/// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
-/// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
-/// <i>WAF Developer Guide</i>.</p>
+/// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafLimitsExceededException {
@@ -7976,8 +7213,7 @@ impl WafLimitsExceededException {
     }
 }
 
-/// <p>WAF couldn’t perform the operation because the resource that you requested isn’t
-/// valid. Check the resource, and try again.</p>
+/// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafInvalidResourceException {
@@ -8044,23 +7280,12 @@ impl WafInvalidResourceException {
     }
 }
 
-/// <p>The operation failed because WAF didn't recognize a parameter in the request. For
-/// example: </p>
+/// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
 /// <ul>
-/// <li>
-/// <p>You specified a parameter name or value that isn't valid.</p>
-/// </li>
-/// <li>
-/// <p>Your nested statement isn't valid. You might have tried to nest a statement that
-/// can’t be nested. </p>
-/// </li>
-/// <li>
-/// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
-/// isn't among the types available at <a>DefaultAction</a>.</p>
-/// </li>
-/// <li>
-/// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
-/// </li>
+/// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
+/// <li> <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p> </li>
+/// <li> <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p> </li>
+/// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8257,8 +7482,7 @@ impl WafInvalidOperationException {
     }
 }
 
-/// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
-/// problem. Retry your request. </p>
+/// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafInternalErrorException {
@@ -8322,9 +7546,7 @@ impl WafInternalErrorException {
     }
 }
 
-/// <p>The operation failed because the specified version for the managed rule group has
-/// expired. You can retrieve the available versions for the managed rule group by calling
-/// <a>ListAvailableManagedRuleGroupVersions</a>.</p>
+/// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafExpiredManagedRuleGroupVersionException {
@@ -8388,8 +7610,7 @@ impl WafExpiredManagedRuleGroupVersionException {
     }
 }
 
-/// <p>WAF couldn’t perform the operation because the resource that you tried to save is
-/// a duplicate of an existing one.</p>
+/// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafDuplicateItemException {
@@ -8453,8 +7674,7 @@ impl WafDuplicateItemException {
     }
 }
 
-/// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
-/// your request.</p>
+/// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafTagOperationInternalErrorException {
@@ -8586,28 +7806,15 @@ impl WafTagOperationException {
 }
 
 /// <p>The operation failed because the specified policy isn't in the proper format. </p>
-///
 /// <p>The policy specifications must conform to the following:</p>
 /// <ul>
-/// <li>
-/// <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p>
-/// </li>
-/// <li>
-/// <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>Effect</code> must specify <code>Allow</code>.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p>
-/// </li>
-/// <li>
-/// <p>The policy must not include a <code>Resource</code> parameter.</p>
-/// </li>
-/// </ul>     
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.  </p>
+/// <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
+/// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
+/// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
+/// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
+/// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
+/// </ul>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafInvalidPermissionPolicyException {
@@ -8674,14 +7881,7 @@ impl WafInvalidPermissionPolicyException {
     }
 }
 
-/// <p>WAF is not able to access the service linked role. This can be caused by a
-/// previous <code>PutLoggingConfiguration</code> request, which can lock the service linked
-/// role for about 20 seconds. Please try your request again. The service linked role can also
-/// be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the
-/// role for 15 minutes or more. If you recently made a call to
-/// <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request
-/// again. If you receive this same exception again, you will have to wait additional time
-/// until the role is unlocked.</p>
+/// <p>WAF is not able to access the service linked role. This can be caused by a previous <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you recently made a call to <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again. If you receive this same exception again, you will have to wait additional time until the role is unlocked.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafServiceLinkedRoleErrorException {
@@ -8748,9 +7948,7 @@ impl WafServiceLinkedRoleErrorException {
     }
 }
 
-/// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see
-/// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a>
-/// in the <i>WAF Developer Guide</i>.</p>
+/// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafLogDestinationPermissionIssueException {
@@ -8817,8 +8015,7 @@ impl WafLogDestinationPermissionIssueException {
     }
 }
 
-/// <p>WAF couldn’t perform the operation because your resource is being used by another
-/// resource or it’s associated with another resource. </p>
+/// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafAssociatedItemException {

@@ -3,24 +3,19 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> The request could not be completed due to a conflict with the current state of the
-    /// target resource. </p>
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> Resource limitations have been exceeded. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

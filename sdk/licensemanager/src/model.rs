@@ -136,15 +136,13 @@ impl LicenseSpecification {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportFrequency {
-    /// <p>Number of times within the frequency period that a report is generated.  
-    /// The only supported value is <code>1</code>.</p>
+    /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
     pub value: std::option::Option<i32>,
     /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
     pub period: std::option::Option<crate::model::ReportFrequencyType>,
 }
 impl ReportFrequency {
-    /// <p>Number of times within the frequency period that a report is generated.  
-    /// The only supported value is <code>1</code>.</p>
+    /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
     pub fn value(&self) -> std::option::Option<i32> {
         self.value
     }
@@ -171,14 +169,12 @@ pub mod report_frequency {
         pub(crate) period: std::option::Option<crate::model::ReportFrequencyType>,
     }
     impl Builder {
-        /// <p>Number of times within the frequency period that a report is generated.  
-        /// The only supported value is <code>1</code>.</p>
+        /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
         pub fn value(mut self, input: i32) -> Self {
             self.value = Some(input);
             self
         }
-        /// <p>Number of times within the frequency period that a report is generated.  
-        /// The only supported value is <code>1</code>.</p>
+        /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
             self.value = input;
             self
@@ -404,73 +400,21 @@ pub struct ProductInformation {
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
     /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
-    /// <p>The following filters and are supported when the resource type
-    /// is <code>SSM_MANAGED</code>:</p>
+    /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Application Name</code> - The name of the application.
-    /// Logical operator is <code>EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Application Publisher</code> - The publisher of the application.
-    /// Logical operator is <code>EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Application Version</code> - The version of the application.
-    /// Logical operator is <code>EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Platform Name</code> - The name of the platform.
-    /// Logical operator is <code>EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Platform Type</code> - The platform type.
-    /// Logical operator is <code>EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.  The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery.
-    /// Logical operator is <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>License Included</code> - The type of license included.
-    /// Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>.
-    /// Possible values are: <code>sql-server-enterprise</code> |
-    /// <code>sql-server-standard</code> |
-    /// <code>sql-server-web</code> |  
-    /// <code>windows-server-datacenter</code>.</p>
-    /// </li>
+    /// <li> <p> <code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p> </li>
+    /// <li> <p> <code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p> </li>
+    /// <li> <p> <code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p> </li>
+    /// <li> <p> <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p> </li>
+    /// <li> <p> <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p> </li>
+    /// <li> <p> <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key. </p> </li>
+    /// <li> <p> <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
     /// </ul>
-    /// <p>The following filters and logical operators are supported when the resource type
-    /// is <code>RDS</code>:</p>
+    /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Engine Edition</code> - The edition of the database engine.
-    /// Logical operator is <code>EQUALS</code>.
-    /// Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>License Pack</code> - The license pack.
-    /// Logical operator is <code>EQUALS</code>.
-    /// Possible values are: <code>data guard</code> |
-    /// <code>diagnostic pack sqlt</code> |
-    /// <code>tuning pack sqlt</code> |
-    /// <code>ols</code> |
-    /// <code>olap</code>.</p>
-    /// </li>
+    /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li>
+    /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
     /// </ul>
     pub product_information_filter_list:
         std::option::Option<std::vec::Vec<crate::model::ProductInformationFilter>>,
@@ -482,73 +426,21 @@ impl ProductInformation {
     }
     /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
     /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
-    /// <p>The following filters and are supported when the resource type
-    /// is <code>SSM_MANAGED</code>:</p>
+    /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Application Name</code> - The name of the application.
-    /// Logical operator is <code>EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Application Publisher</code> - The publisher of the application.
-    /// Logical operator is <code>EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Application Version</code> - The version of the application.
-    /// Logical operator is <code>EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Platform Name</code> - The name of the platform.
-    /// Logical operator is <code>EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Platform Type</code> - The platform type.
-    /// Logical operator is <code>EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.  The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery.
-    /// Logical operator is <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>License Included</code> - The type of license included.
-    /// Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>.
-    /// Possible values are: <code>sql-server-enterprise</code> |
-    /// <code>sql-server-standard</code> |
-    /// <code>sql-server-web</code> |  
-    /// <code>windows-server-datacenter</code>.</p>
-    /// </li>
+    /// <li> <p> <code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p> </li>
+    /// <li> <p> <code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p> </li>
+    /// <li> <p> <code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p> </li>
+    /// <li> <p> <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p> </li>
+    /// <li> <p> <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p> </li>
+    /// <li> <p> <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key. </p> </li>
+    /// <li> <p> <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
     /// </ul>
-    /// <p>The following filters and logical operators are supported when the resource type
-    /// is <code>RDS</code>:</p>
+    /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Engine Edition</code> - The edition of the database engine.
-    /// Logical operator is <code>EQUALS</code>.
-    /// Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>License Pack</code> - The license pack.
-    /// Logical operator is <code>EQUALS</code>.
-    /// Possible values are: <code>data guard</code> |
-    /// <code>diagnostic pack sqlt</code> |
-    /// <code>tuning pack sqlt</code> |
-    /// <code>ols</code> |
-    /// <code>olap</code>.</p>
-    /// </li>
+    /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li>
+    /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
     /// </ul>
     pub fn product_information_filter_list(
         &self,
@@ -597,152 +489,48 @@ pub mod product_information {
         ///
         /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
         /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
-        /// <p>The following filters and are supported when the resource type
-        /// is <code>SSM_MANAGED</code>:</p>
+        /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Application Name</code> - The name of the application.
-        /// Logical operator is <code>EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Application Publisher</code> - The publisher of the application.
-        /// Logical operator is <code>EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Application Version</code> - The version of the application.
-        /// Logical operator is <code>EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Platform Name</code> - The name of the platform.
-        /// Logical operator is <code>EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Platform Type</code> - The platform type.
-        /// Logical operator is <code>EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.  The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery.
-        /// Logical operator is <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>License Included</code> - The type of license included.
-        /// Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>.
-        /// Possible values are: <code>sql-server-enterprise</code> |
-        /// <code>sql-server-standard</code> |
-        /// <code>sql-server-web</code> |  
-        /// <code>windows-server-datacenter</code>.</p>
-        /// </li>
+        /// <li> <p> <code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p> </li>
+        /// <li> <p> <code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p> </li>
+        /// <li> <p> <code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p> </li>
+        /// <li> <p> <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p> </li>
+        /// <li> <p> <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p> </li>
+        /// <li> <p> <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key. </p> </li>
+        /// <li> <p> <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
         /// </ul>
-        /// <p>The following filters and logical operators are supported when the resource type
-        /// is <code>RDS</code>:</p>
+        /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Engine Edition</code> - The edition of the database engine.
-        /// Logical operator is <code>EQUALS</code>.
-        /// Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>License Pack</code> - The license pack.
-        /// Logical operator is <code>EQUALS</code>.
-        /// Possible values are: <code>data guard</code> |
-        /// <code>diagnostic pack sqlt</code> |
-        /// <code>tuning pack sqlt</code> |
-        /// <code>ols</code> |
-        /// <code>olap</code>.</p>
-        /// </li>
+        /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li>
+        /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
         /// </ul>
         pub fn product_information_filter_list(
             mut self,
-            input: impl Into<crate::model::ProductInformationFilter>,
+            input: crate::model::ProductInformationFilter,
         ) -> Self {
             let mut v = self.product_information_filter_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_information_filter_list = Some(v);
             self
         }
         /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
         /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
-        /// <p>The following filters and are supported when the resource type
-        /// is <code>SSM_MANAGED</code>:</p>
+        /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Application Name</code> - The name of the application.
-        /// Logical operator is <code>EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Application Publisher</code> - The publisher of the application.
-        /// Logical operator is <code>EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Application Version</code> - The version of the application.
-        /// Logical operator is <code>EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Platform Name</code> - The name of the platform.
-        /// Logical operator is <code>EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Platform Type</code> - The platform type.
-        /// Logical operator is <code>EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.  The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery.
-        /// Logical operator is <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>License Included</code> - The type of license included.
-        /// Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>.
-        /// Possible values are: <code>sql-server-enterprise</code> |
-        /// <code>sql-server-standard</code> |
-        /// <code>sql-server-web</code> |  
-        /// <code>windows-server-datacenter</code>.</p>
-        /// </li>
+        /// <li> <p> <code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p> </li>
+        /// <li> <p> <code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p> </li>
+        /// <li> <p> <code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p> </li>
+        /// <li> <p> <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p> </li>
+        /// <li> <p> <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p> </li>
+        /// <li> <p> <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key. </p> </li>
+        /// <li> <p> <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
         /// </ul>
-        /// <p>The following filters and logical operators are supported when the resource type
-        /// is <code>RDS</code>:</p>
+        /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Engine Edition</code> - The edition of the database engine.
-        /// Logical operator is <code>EQUALS</code>.
-        /// Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>License Pack</code> - The license pack.
-        /// Logical operator is <code>EQUALS</code>.
-        /// Possible values are: <code>data guard</code> |
-        /// <code>diagnostic pack sqlt</code> |
-        /// <code>tuning pack sqlt</code> |
-        /// <code>ols</code> |
-        /// <code>olap</code>.</p>
-        /// </li>
+        /// <li> <p> <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p> </li>
+        /// <li> <p> <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p> </li>
         /// </ul>
         pub fn set_product_information_filter_list(
             mut self,
@@ -1348,9 +1136,7 @@ impl AsRef<str> for ResourceType {
     }
 }
 
-/// <p>A filter name and value pair that is used to return more specific results from a
-/// describe operation. Filters can be used to match a set of resources by specific criteria,
-/// such as tags, attributes, or IDs.</p>
+/// <p>A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
@@ -2188,9 +1974,9 @@ pub mod granted_license {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements.</p>
-        pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -2223,9 +2009,9 @@ pub mod granted_license {
         /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
         ///
         /// <p>Granted license metadata.</p>
-        pub fn license_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
+        pub fn license_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_metadata = Some(v);
             self
         }
@@ -2376,12 +2162,9 @@ pub mod received_metadata {
         /// To override the contents of this collection use [`set_allowed_operations`](Self::set_allowed_operations).
         ///
         /// <p>Allowed operations.</p>
-        pub fn allowed_operations(
-            mut self,
-            input: impl Into<crate::model::AllowedOperation>,
-        ) -> Self {
+        pub fn allowed_operations(mut self, input: crate::model::AllowedOperation) -> Self {
             let mut v = self.allowed_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_operations = Some(v);
             self
         }
@@ -3450,8 +3233,7 @@ impl AsRef<str> for LicenseStatus {
 pub struct IssuerDetails {
     /// <p>Issuer name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify,
-    /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+    /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub sign_key: std::option::Option<std::string::String>,
     /// <p>Issuer key fingerprint.</p>
     pub key_fingerprint: std::option::Option<std::string::String>,
@@ -3461,8 +3243,7 @@ impl IssuerDetails {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify,
-    /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+    /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub fn sign_key(&self) -> std::option::Option<&str> {
         self.sign_key.as_deref()
     }
@@ -3501,14 +3282,12 @@ pub mod issuer_details {
             self.name = input;
             self
         }
-        /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify,
-        /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+        /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
         pub fn sign_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.sign_key = Some(input.into());
             self
         }
-        /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify,
-        /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+        /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
         pub fn set_sign_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sign_key = input;
             self
@@ -3749,12 +3528,9 @@ pub mod grant {
         /// To override the contents of this collection use [`set_granted_operations`](Self::set_granted_operations).
         ///
         /// <p>Granted operations.</p>
-        pub fn granted_operations(
-            mut self,
-            input: impl Into<crate::model::AllowedOperation>,
-        ) -> Self {
+        pub fn granted_operations(mut self, input: crate::model::AllowedOperation) -> Self {
             let mut v = self.granted_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.granted_operations = Some(v);
             self
         }
@@ -4030,9 +3806,9 @@ pub mod license {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements.</p>
-        pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -4065,9 +3841,9 @@ pub mod license {
         /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
         ///
         /// <p>License metadata.</p>
-        pub fn license_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
+        pub fn license_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_metadata = Some(v);
             self
         }
@@ -4276,9 +4052,9 @@ pub mod report_generator {
         /// To override the contents of this collection use [`set_report_type`](Self::set_report_type).
         ///
         /// <p>Type of reports that are generated.</p>
-        pub fn report_type(mut self, input: impl Into<crate::model::ReportType>) -> Self {
+        pub fn report_type(mut self, input: crate::model::ReportType) -> Self {
             let mut v = self.report_type.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.report_type = Some(v);
             self
         }
@@ -4425,9 +4201,9 @@ pub mod report_generator {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags associated with the report generator.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4545,8 +4321,7 @@ impl S3Location {
 pub struct LicenseConversionTask {
     /// <p>The ID of the license type conversion task.</p>
     pub license_conversion_task_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type
-    /// conversion task.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type conversion task.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Information about the license type this conversion task converted from.</p>
     pub source_license_context: std::option::Option<crate::model::LicenseConversionContext>,
@@ -4568,8 +4343,7 @@ impl LicenseConversionTask {
     pub fn license_conversion_task_id(&self) -> std::option::Option<&str> {
         self.license_conversion_task_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type
-    /// conversion task.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type conversion task.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -4659,14 +4433,12 @@ pub mod license_conversion_task {
             self.license_conversion_task_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type
-        /// conversion task.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type conversion task.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type
-        /// conversion task.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type conversion task.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4854,15 +4626,11 @@ impl AsRef<str> for LicenseConversionTaskStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LicenseConversionContext {
-    /// <p>The Usage operation value that corresponds to the license type you are converting your resource from.  For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform
-    /// </a>
-    /// </p>
+    /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a> </p>
     pub usage_operation: std::option::Option<std::string::String>,
 }
 impl LicenseConversionContext {
-    /// <p>The Usage operation value that corresponds to the license type you are converting your resource from.  For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform
-    /// </a>
-    /// </p>
+    /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a> </p>
     pub fn usage_operation(&self) -> std::option::Option<&str> {
         self.usage_operation.as_deref()
     }
@@ -4883,16 +4651,12 @@ pub mod license_conversion_context {
         pub(crate) usage_operation: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Usage operation value that corresponds to the license type you are converting your resource from.  For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform
-        /// </a>
-        /// </p>
+        /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a> </p>
         pub fn usage_operation(mut self, input: impl Into<std::string::String>) -> Self {
             self.usage_operation = Some(input.into());
             self
         }
-        /// <p>The Usage operation value that corresponds to the license type you are converting your resource from.  For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform
-        /// </a>
-        /// </p>
+        /// <p>The Usage operation value that corresponds to the license type you are converting your resource from. For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform </a> </p>
         pub fn set_usage_operation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4915,11 +4679,7 @@ impl LicenseConversionContext {
     }
 }
 
-/// <p>A license configuration is an abstraction of a customer license agreement that can be
-/// consumed and enforced by License Manager. Components include specifications for the license
-/// type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy,
-/// Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a VM
-/// must be associated with a host), and the number of licenses purchased and used.</p>
+/// <p>A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a VM must be associated with a host), and the number of licenses purchased and used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LicenseConfiguration {
@@ -5244,10 +5004,10 @@ pub mod license_configuration {
         /// <p>Summaries for licenses consumed by various resources.</p>
         pub fn consumed_license_summary_list(
             mut self,
-            input: impl Into<crate::model::ConsumedLicenseSummary>,
+            input: crate::model::ConsumedLicenseSummary,
         ) -> Self {
             let mut v = self.consumed_license_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.consumed_license_summary_list = Some(v);
             self
         }
@@ -5266,10 +5026,10 @@ pub mod license_configuration {
         /// <p>Summaries for managed resources.</p>
         pub fn managed_resource_summary_list(
             mut self,
-            input: impl Into<crate::model::ManagedResourceSummary>,
+            input: crate::model::ManagedResourceSummary,
         ) -> Self {
             let mut v = self.managed_resource_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.managed_resource_summary_list = Some(v);
             self
         }
@@ -5286,12 +5046,9 @@ pub mod license_configuration {
         /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).
         ///
         /// <p>Product information.</p>
-        pub fn product_information_list(
-            mut self,
-            input: impl Into<crate::model::ProductInformation>,
-        ) -> Self {
+        pub fn product_information_list(mut self, input: crate::model::ProductInformation) -> Self {
             let mut v = self.product_information_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_information_list = Some(v);
             self
         }
@@ -5799,9 +5556,9 @@ pub mod license_operation_failure {
         /// To override the contents of this collection use [`set_metadata_list`](Self::set_metadata_list).
         ///
         /// <p>Reserved.</p>
-        pub fn metadata_list(mut self, input: impl Into<crate::model::Metadata>) -> Self {
+        pub fn metadata_list(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.metadata_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metadata_list = Some(v);
             self
         }
@@ -6012,12 +5769,9 @@ pub mod license_usage {
         /// To override the contents of this collection use [`set_entitlement_usages`](Self::set_entitlement_usages).
         ///
         /// <p>License entitlement usages.</p>
-        pub fn entitlement_usages(
-            mut self,
-            input: impl Into<crate::model::EntitlementUsage>,
-        ) -> Self {
+        pub fn entitlement_usages(mut self, input: crate::model::EntitlementUsage) -> Self {
             let mut v = self.entitlement_usages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlement_usages = Some(v);
             self
         }
@@ -6456,8 +6210,7 @@ impl AsRef<str> for TokenType {
 pub struct Issuer {
     /// <p>Issuer name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify,
-    /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+    /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub sign_key: std::option::Option<std::string::String>,
 }
 impl Issuer {
@@ -6465,8 +6218,7 @@ impl Issuer {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify,
-    /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+    /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub fn sign_key(&self) -> std::option::Option<&str> {
         self.sign_key.as_deref()
     }
@@ -6499,14 +6251,12 @@ pub mod issuer {
             self.name = input;
             self
         }
-        /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify,
-        /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+        /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
         pub fn sign_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.sign_key = Some(input.into());
             self
         }
-        /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify,
-        /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+        /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
         pub fn set_sign_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sign_key = input;
             self

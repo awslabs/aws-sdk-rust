@@ -25,16 +25,12 @@ pub mod associate_created_artifact_input {
             self.progress_update_stream = input;
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.migration_task_name = Some(input.into());
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -42,14 +38,12 @@ pub mod associate_created_artifact_input {
             self.migration_task_name = input;
             self
         }
-        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
-        /// instance, etc.) </p>
+        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
         pub fn created_artifact(mut self, input: crate::model::CreatedArtifact) -> Self {
             self.created_artifact = Some(input);
             self
         }
-        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
-        /// instance, etc.) </p>
+        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
         pub fn set_created_artifact(
             mut self,
             input: std::option::Option<crate::model::CreatedArtifact>,
@@ -57,14 +51,12 @@ pub mod associate_created_artifact_input {
             self.created_artifact = input;
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -89,7 +81,7 @@ pub mod associate_created_artifact_input {
 pub type AssociateCreatedArtifactInputOperationOutputAlias =
     crate::operation::AssociateCreatedArtifact;
 #[doc(hidden)]
-pub type AssociateCreatedArtifactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateCreatedArtifactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateCreatedArtifactInput {
     /// Consumes the builder and constructs an Operation<[`AssociateCreatedArtifact`](crate::operation::AssociateCreatedArtifact)>
     #[allow(clippy::let_and_return)]
@@ -100,7 +92,7 @@ impl AssociateCreatedArtifactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateCreatedArtifact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -187,7 +179,7 @@ impl AssociateCreatedArtifactInput {
             "AssociateCreatedArtifact",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -235,16 +227,12 @@ pub mod associate_discovered_resource_input {
             self.progress_update_stream = input;
             self
         }
-        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
         pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.migration_task_name = Some(input.into());
             self
         }
-        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -265,14 +253,12 @@ pub mod associate_discovered_resource_input {
             self.discovered_resource = input;
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -297,7 +283,7 @@ pub mod associate_discovered_resource_input {
 pub type AssociateDiscoveredResourceInputOperationOutputAlias =
     crate::operation::AssociateDiscoveredResource;
 #[doc(hidden)]
-pub type AssociateDiscoveredResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateDiscoveredResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateDiscoveredResourceInput {
     /// Consumes the builder and constructs an Operation<[`AssociateDiscoveredResource`](crate::operation::AssociateDiscoveredResource)>
     #[allow(clippy::let_and_return)]
@@ -308,7 +294,7 @@ impl AssociateDiscoveredResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateDiscoveredResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -394,7 +380,7 @@ impl AssociateDiscoveredResourceInput {
             "AssociateDiscoveredResource",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -427,9 +413,7 @@ pub mod create_progress_update_stream_input {
         pub(crate) dry_run: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
         pub fn progress_update_stream_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -437,9 +421,7 @@ pub mod create_progress_update_stream_input {
             self.progress_update_stream_name = Some(input.into());
             self
         }
-        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
         pub fn set_progress_update_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -447,14 +429,12 @@ pub mod create_progress_update_stream_input {
             self.progress_update_stream_name = input;
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -477,7 +457,7 @@ pub mod create_progress_update_stream_input {
 pub type CreateProgressUpdateStreamInputOperationOutputAlias =
     crate::operation::CreateProgressUpdateStream;
 #[doc(hidden)]
-pub type CreateProgressUpdateStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProgressUpdateStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProgressUpdateStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateProgressUpdateStream`](crate::operation::CreateProgressUpdateStream)>
     #[allow(clippy::let_and_return)]
@@ -488,7 +468,7 @@ impl CreateProgressUpdateStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProgressUpdateStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -574,7 +554,7 @@ impl CreateProgressUpdateStreamInput {
             "CreateProgressUpdateStream",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -607,9 +587,7 @@ pub mod delete_progress_update_stream_input {
         pub(crate) dry_run: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
         pub fn progress_update_stream_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -617,9 +595,7 @@ pub mod delete_progress_update_stream_input {
             self.progress_update_stream_name = Some(input.into());
             self
         }
-        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
         pub fn set_progress_update_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -627,14 +603,12 @@ pub mod delete_progress_update_stream_input {
             self.progress_update_stream_name = input;
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -657,7 +631,7 @@ pub mod delete_progress_update_stream_input {
 pub type DeleteProgressUpdateStreamInputOperationOutputAlias =
     crate::operation::DeleteProgressUpdateStream;
 #[doc(hidden)]
-pub type DeleteProgressUpdateStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProgressUpdateStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProgressUpdateStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProgressUpdateStream`](crate::operation::DeleteProgressUpdateStream)>
     #[allow(clippy::let_and_return)]
@@ -668,7 +642,7 @@ impl DeleteProgressUpdateStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProgressUpdateStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -754,7 +728,7 @@ impl DeleteProgressUpdateStreamInput {
             "DeleteProgressUpdateStream",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -786,14 +760,12 @@ pub mod describe_application_state_input {
         pub(crate) application_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The configurationId in Application Discovery Service that uniquely identifies the
-        /// grouped application.</p>
+        /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p>The configurationId in Application Discovery Service that uniquely identifies the
-        /// grouped application.</p>
+        /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -818,7 +790,7 @@ pub mod describe_application_state_input {
 pub type DescribeApplicationStateInputOperationOutputAlias =
     crate::operation::DescribeApplicationState;
 #[doc(hidden)]
-pub type DescribeApplicationStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeApplicationStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationStateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicationState`](crate::operation::DescribeApplicationState)>
     #[allow(clippy::let_and_return)]
@@ -829,7 +801,7 @@ impl DescribeApplicationStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplicationState,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -916,7 +888,7 @@ impl DescribeApplicationStateInput {
             "DescribeApplicationState",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -962,16 +934,12 @@ pub mod describe_migration_task_input {
             self.progress_update_stream = input;
             self
         }
-        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
         pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.migration_task_name = Some(input.into());
             self
         }
-        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -996,7 +964,7 @@ pub mod describe_migration_task_input {
 #[doc(hidden)]
 pub type DescribeMigrationTaskInputOperationOutputAlias = crate::operation::DescribeMigrationTask;
 #[doc(hidden)]
-pub type DescribeMigrationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMigrationTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMigrationTaskInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMigrationTask`](crate::operation::DescribeMigrationTask)>
     #[allow(clippy::let_and_return)]
@@ -1007,7 +975,7 @@ impl DescribeMigrationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMigrationTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1094,7 +1062,7 @@ impl DescribeMigrationTaskInput {
             "DescribeMigrationTask",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1142,16 +1110,12 @@ pub mod disassociate_created_artifact_input {
             self.progress_update_stream = input;
             self
         }
-        /// <p>Unique identifier that references the migration task to be disassociated with the
-        /// artifact. <i>Do not store personal data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
         pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.migration_task_name = Some(input.into());
             self
         }
-        /// <p>Unique identifier that references the migration task to be disassociated with the
-        /// artifact. <i>Do not store personal data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1159,14 +1123,12 @@ pub mod disassociate_created_artifact_input {
             self.migration_task_name = input;
             self
         }
-        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
-        /// instance, etc.)</p>
+        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
         pub fn created_artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.created_artifact_name = Some(input.into());
             self
         }
-        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
-        /// instance, etc.)</p>
+        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
         pub fn set_created_artifact_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1174,14 +1136,12 @@ pub mod disassociate_created_artifact_input {
             self.created_artifact_name = input;
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -1206,7 +1166,7 @@ pub mod disassociate_created_artifact_input {
 pub type DisassociateCreatedArtifactInputOperationOutputAlias =
     crate::operation::DisassociateCreatedArtifact;
 #[doc(hidden)]
-pub type DisassociateCreatedArtifactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateCreatedArtifactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateCreatedArtifactInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateCreatedArtifact`](crate::operation::DisassociateCreatedArtifact)>
     #[allow(clippy::let_and_return)]
@@ -1217,7 +1177,7 @@ impl DisassociateCreatedArtifactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateCreatedArtifact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1303,7 +1263,7 @@ impl DisassociateCreatedArtifactInput {
             "DisassociateCreatedArtifact",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1351,16 +1311,12 @@ pub mod disassociate_discovered_resource_input {
             self.progress_update_stream = input;
             self
         }
-        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
         pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.migration_task_name = Some(input.into());
             self
         }
-        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1368,14 +1324,12 @@ pub mod disassociate_discovered_resource_input {
             self.migration_task_name = input;
             self
         }
-        /// <p>ConfigurationId of the Application Discovery Service resource to be
-        /// disassociated.</p>
+        /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
         pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_id = Some(input.into());
             self
         }
-        /// <p>ConfigurationId of the Application Discovery Service resource to be
-        /// disassociated.</p>
+        /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
         pub fn set_configuration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1383,14 +1337,12 @@ pub mod disassociate_discovered_resource_input {
             self.configuration_id = input;
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -1415,7 +1367,8 @@ pub mod disassociate_discovered_resource_input {
 pub type DisassociateDiscoveredResourceInputOperationOutputAlias =
     crate::operation::DisassociateDiscoveredResource;
 #[doc(hidden)]
-pub type DisassociateDiscoveredResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateDiscoveredResourceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateDiscoveredResourceInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateDiscoveredResource`](crate::operation::DisassociateDiscoveredResource)>
     #[allow(clippy::let_and_return)]
@@ -1426,7 +1379,7 @@ impl DisassociateDiscoveredResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateDiscoveredResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1512,7 +1465,7 @@ impl DisassociateDiscoveredResourceInput {
             "DisassociateDiscoveredResource",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1546,12 +1499,12 @@ pub mod import_migration_task_input {
         pub(crate) dry_run: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the ProgressUpdateStream. ></p>
+        /// <p>The name of the ProgressUpdateStream. &gt;</p>
         pub fn progress_update_stream(mut self, input: impl Into<std::string::String>) -> Self {
             self.progress_update_stream = Some(input.into());
             self
         }
-        /// <p>The name of the ProgressUpdateStream. ></p>
+        /// <p>The name of the ProgressUpdateStream. &gt;</p>
         pub fn set_progress_update_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1559,16 +1512,12 @@ pub mod import_migration_task_input {
             self.progress_update_stream = input;
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.migration_task_name = Some(input.into());
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1576,14 +1525,12 @@ pub mod import_migration_task_input {
             self.migration_task_name = input;
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -1606,7 +1553,7 @@ pub mod import_migration_task_input {
 #[doc(hidden)]
 pub type ImportMigrationTaskInputOperationOutputAlias = crate::operation::ImportMigrationTask;
 #[doc(hidden)]
-pub type ImportMigrationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportMigrationTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportMigrationTaskInput {
     /// Consumes the builder and constructs an Operation<[`ImportMigrationTask`](crate::operation::ImportMigrationTask)>
     #[allow(clippy::let_and_return)]
@@ -1617,7 +1564,7 @@ impl ImportMigrationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportMigrationTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1702,7 +1649,7 @@ impl ImportMigrationTaskInput {
             "ImportMigrationTask",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1740,16 +1687,14 @@ pub mod list_application_states_input {
         ///
         /// To override the contents of this collection use [`set_application_ids`](Self::set_application_ids).
         ///
-        /// <p>The configurationIds from the Application Discovery Service that uniquely identifies
-        /// your applications.</p>
+        /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
         pub fn application_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.application_ids.unwrap_or_default();
             v.push(input.into());
             self.application_ids = Some(v);
             self
         }
-        /// <p>The configurationIds from the Application Discovery Service that uniquely identifies
-        /// your applications.</p>
+        /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
         pub fn set_application_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1757,16 +1702,12 @@ pub mod list_application_states_input {
             self.application_ids = input;
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1799,7 +1740,7 @@ pub mod list_application_states_input {
 #[doc(hidden)]
 pub type ListApplicationStatesInputOperationOutputAlias = crate::operation::ListApplicationStates;
 #[doc(hidden)]
-pub type ListApplicationStatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApplicationStatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationStatesInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationStates`](crate::operation::ListApplicationStates)>
     #[allow(clippy::let_and_return)]
@@ -1810,7 +1751,7 @@ impl ListApplicationStatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplicationStates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1897,7 +1838,7 @@ impl ListApplicationStatesInput {
             "ListApplicationStates",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1945,16 +1886,12 @@ pub mod list_created_artifacts_input {
             self.progress_update_stream = input;
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.migration_task_name = Some(input.into());
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1962,16 +1899,12 @@ pub mod list_created_artifacts_input {
             self.migration_task_name = input;
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2005,7 +1938,7 @@ pub mod list_created_artifacts_input {
 #[doc(hidden)]
 pub type ListCreatedArtifactsInputOperationOutputAlias = crate::operation::ListCreatedArtifacts;
 #[doc(hidden)]
-pub type ListCreatedArtifactsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCreatedArtifactsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCreatedArtifactsInput {
     /// Consumes the builder and constructs an Operation<[`ListCreatedArtifacts`](crate::operation::ListCreatedArtifacts)>
     #[allow(clippy::let_and_return)]
@@ -2016,7 +1949,7 @@ impl ListCreatedArtifactsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCreatedArtifacts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2103,7 +2036,7 @@ impl ListCreatedArtifactsInput {
             "ListCreatedArtifacts",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2151,16 +2084,12 @@ pub mod list_discovered_resources_input {
             self.progress_update_stream = input;
             self
         }
-        /// <p>The name of the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
         pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.migration_task_name = Some(input.into());
             self
         }
-        /// <p>The name of the MigrationTask. <i>Do not store personal data in this
-        /// field.</i>
-        /// </p>
+        /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2168,16 +2097,12 @@ pub mod list_discovered_resources_input {
             self.migration_task_name = input;
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2212,7 +2137,7 @@ pub mod list_discovered_resources_input {
 pub type ListDiscoveredResourcesInputOperationOutputAlias =
     crate::operation::ListDiscoveredResources;
 #[doc(hidden)]
-pub type ListDiscoveredResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDiscoveredResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDiscoveredResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListDiscoveredResources`](crate::operation::ListDiscoveredResources)>
     #[allow(clippy::let_and_return)]
@@ -2223,7 +2148,7 @@ impl ListDiscoveredResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDiscoveredResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2310,7 +2235,7 @@ impl ListDiscoveredResourcesInput {
             "ListDiscoveredResources",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2344,16 +2269,12 @@ pub mod list_migration_tasks_input {
         pub(crate) resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2399,7 +2320,7 @@ pub mod list_migration_tasks_input {
 #[doc(hidden)]
 pub type ListMigrationTasksInputOperationOutputAlias = crate::operation::ListMigrationTasks;
 #[doc(hidden)]
-pub type ListMigrationTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMigrationTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMigrationTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListMigrationTasks`](crate::operation::ListMigrationTasks)>
     #[allow(clippy::let_and_return)]
@@ -2410,7 +2331,7 @@ impl ListMigrationTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMigrationTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2495,7 +2416,7 @@ impl ListMigrationTasksInput {
             "ListMigrationTasks",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2528,16 +2449,12 @@ pub mod list_progress_update_streams_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2570,7 +2487,7 @@ pub mod list_progress_update_streams_input {
 pub type ListProgressUpdateStreamsInputOperationOutputAlias =
     crate::operation::ListProgressUpdateStreams;
 #[doc(hidden)]
-pub type ListProgressUpdateStreamsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProgressUpdateStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProgressUpdateStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListProgressUpdateStreams`](crate::operation::ListProgressUpdateStreams)>
     #[allow(clippy::let_and_return)]
@@ -2581,7 +2498,7 @@ impl ListProgressUpdateStreamsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProgressUpdateStreams,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2668,7 +2585,7 @@ impl ListProgressUpdateStreamsInput {
             "ListProgressUpdateStreams",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2703,14 +2620,12 @@ pub mod notify_application_state_input {
         pub(crate) dry_run: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The configurationId in Application Discovery Service that uniquely identifies the
-        /// grouped application.</p>
+        /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p>The configurationId in Application Discovery Service that uniquely identifies the
-        /// grouped application.</p>
+        /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2744,14 +2659,12 @@ pub mod notify_application_state_input {
             self.update_date_time = input;
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -2775,7 +2688,7 @@ pub mod notify_application_state_input {
 #[doc(hidden)]
 pub type NotifyApplicationStateInputOperationOutputAlias = crate::operation::NotifyApplicationState;
 #[doc(hidden)]
-pub type NotifyApplicationStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type NotifyApplicationStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyApplicationStateInput {
     /// Consumes the builder and constructs an Operation<[`NotifyApplicationState`](crate::operation::NotifyApplicationState)>
     #[allow(clippy::let_and_return)]
@@ -2786,7 +2699,7 @@ impl NotifyApplicationStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::NotifyApplicationState,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2873,7 +2786,7 @@ impl NotifyApplicationStateInput {
             "NotifyApplicationState",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2923,16 +2836,12 @@ pub mod notify_migration_task_state_input {
             self.progress_update_stream = input;
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.migration_task_name = Some(input.into());
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2963,28 +2872,22 @@ pub mod notify_migration_task_state_input {
             self.update_date_time = input;
             self
         }
-        /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an
-        /// update. If Migration Hub does not receive an update within the specified interval, then the
-        /// migration task will be considered stale.</p>
+        /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
         pub fn next_update_seconds(mut self, input: i32) -> Self {
             self.next_update_seconds = Some(input);
             self
         }
-        /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an
-        /// update. If Migration Hub does not receive an update within the specified interval, then the
-        /// migration task will be considered stale.</p>
+        /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
         pub fn set_next_update_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.next_update_seconds = input;
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -3011,7 +2914,7 @@ pub mod notify_migration_task_state_input {
 pub type NotifyMigrationTaskStateInputOperationOutputAlias =
     crate::operation::NotifyMigrationTaskState;
 #[doc(hidden)]
-pub type NotifyMigrationTaskStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type NotifyMigrationTaskStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyMigrationTaskStateInput {
     /// Consumes the builder and constructs an Operation<[`NotifyMigrationTaskState`](crate::operation::NotifyMigrationTaskState)>
     #[allow(clippy::let_and_return)]
@@ -3022,7 +2925,7 @@ impl NotifyMigrationTaskStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::NotifyMigrationTaskState,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3109,7 +3012,7 @@ impl NotifyMigrationTaskStateInput {
             "NotifyMigrationTaskState",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3158,16 +3061,12 @@ pub mod put_resource_attributes_input {
             self.progress_update_stream = input;
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.migration_task_name = Some(input.into());
             self
         }
-        /// <p>Unique identifier that references the migration task. <i>Do not store personal
-        /// data in this field.</i>
-        /// </p>
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3179,69 +3078,26 @@ pub mod put_resource_attributes_input {
         ///
         /// To override the contents of this collection use [`set_resource_attribute_list`](Self::set_resource_attribute_list).
         ///
-        /// <p>Information about the resource that is being migrated. This data will be used to map the
-        /// task to a resource in the Application Discovery Service repository.</p>
-        /// <note>
-        /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code>
-        /// field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS |
-        /// MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH
-        /// | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a
-        /// string up to 256 characters.</p>
-        /// </note>
-        /// <important>
+        /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note>
+        /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p>
+        /// </note> <important>
         /// <ul>
-        /// <li>
-        ///
-        /// <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object,
-        /// it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
-        /// <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
-        /// and "VM" fields will not be used for matching the migration task to a server in
-        /// Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related
-        /// values.</p>
-        /// </li>
-        /// <li>
-        /// <p> If a server you are trying to match has multiple IP or MAC addresses, you
-        /// should provide as many as you know in separate type/value pairs passed to the
-        /// <code>ResourceAttributeList</code> parameter to maximize the chances of
-        /// matching.</p>
-        /// </li>
+        /// <li> <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related values.</p> </li>
+        /// <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li>
         /// </ul>
         /// </important>
-        pub fn resource_attribute_list(
-            mut self,
-            input: impl Into<crate::model::ResourceAttribute>,
-        ) -> Self {
+        pub fn resource_attribute_list(mut self, input: crate::model::ResourceAttribute) -> Self {
             let mut v = self.resource_attribute_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_attribute_list = Some(v);
             self
         }
-        /// <p>Information about the resource that is being migrated. This data will be used to map the
-        /// task to a resource in the Application Discovery Service repository.</p>
-        /// <note>
-        /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code>
-        /// field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS |
-        /// MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH
-        /// | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a
-        /// string up to 256 characters.</p>
-        /// </note>
-        /// <important>
+        /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note>
+        /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p>
+        /// </note> <important>
         /// <ul>
-        /// <li>
-        ///
-        /// <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object,
-        /// it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
-        /// <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
-        /// and "VM" fields will not be used for matching the migration task to a server in
-        /// Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related
-        /// values.</p>
-        /// </li>
-        /// <li>
-        /// <p> If a server you are trying to match has multiple IP or MAC addresses, you
-        /// should provide as many as you know in separate type/value pairs passed to the
-        /// <code>ResourceAttributeList</code> parameter to maximize the chances of
-        /// matching.</p>
-        /// </li>
+        /// <li> <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related values.</p> </li>
+        /// <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li>
         /// </ul>
         /// </important>
         pub fn set_resource_attribute_list(
@@ -3251,14 +3107,12 @@ pub mod put_resource_attributes_input {
             self.resource_attribute_list = input;
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -3282,7 +3136,7 @@ pub mod put_resource_attributes_input {
 #[doc(hidden)]
 pub type PutResourceAttributesInputOperationOutputAlias = crate::operation::PutResourceAttributes;
 #[doc(hidden)]
-pub type PutResourceAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutResourceAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourceAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutResourceAttributes`](crate::operation::PutResourceAttributes)>
     #[allow(clippy::let_and_return)]
@@ -3293,7 +3147,7 @@ impl PutResourceAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutResourceAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3380,7 +3234,7 @@ impl PutResourceAttributesInput {
             "PutResourceAttributes",
             "migrationhub",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3409,42 +3263,19 @@ impl PutResourceAttributesInput {
 pub struct PutResourceAttributesInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     pub progress_update_stream: std::option::Option<std::string::String>,
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal
-    /// data in this field.</i>
-    /// </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub migration_task_name: std::option::Option<std::string::String>,
-    /// <p>Information about the resource that is being migrated. This data will be used to map the
-    /// task to a resource in the Application Discovery Service repository.</p>
-    /// <note>
-    /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code>
-    /// field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS |
-    /// MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH
-    /// | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a
-    /// string up to 256 characters.</p>
-    /// </note>
-    /// <important>
+    /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note>
+    /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p>
+    /// </note> <important>
     /// <ul>
-    /// <li>
-    ///
-    /// <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object,
-    /// it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
-    /// <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
-    /// and "VM" fields will not be used for matching the migration task to a server in
-    /// Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related
-    /// values.</p>
-    /// </li>
-    /// <li>
-    /// <p> If a server you are trying to match has multiple IP or MAC addresses, you
-    /// should provide as many as you know in separate type/value pairs passed to the
-    /// <code>ResourceAttributeList</code> parameter to maximize the chances of
-    /// matching.</p>
-    /// </li>
+    /// <li> <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related values.</p> </li>
+    /// <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li>
     /// </ul>
     /// </important>
     pub resource_attribute_list:
         std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
 impl PutResourceAttributesInput {
@@ -3452,38 +3283,16 @@ impl PutResourceAttributesInput {
     pub fn progress_update_stream(&self) -> std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal
-    /// data in this field.</i>
-    /// </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(&self) -> std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
-    /// <p>Information about the resource that is being migrated. This data will be used to map the
-    /// task to a resource in the Application Discovery Service repository.</p>
-    /// <note>
-    /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code>
-    /// field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS |
-    /// MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH
-    /// | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a
-    /// string up to 256 characters.</p>
-    /// </note>
-    /// <important>
+    /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note>
+    /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p>
+    /// </note> <important>
     /// <ul>
-    /// <li>
-    ///
-    /// <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object,
-    /// it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
-    /// <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
-    /// and "VM" fields will not be used for matching the migration task to a server in
-    /// Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related
-    /// values.</p>
-    /// </li>
-    /// <li>
-    /// <p> If a server you are trying to match has multiple IP or MAC addresses, you
-    /// should provide as many as you know in separate type/value pairs passed to the
-    /// <code>ResourceAttributeList</code> parameter to maximize the chances of
-    /// matching.</p>
-    /// </li>
+    /// <li> <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related values.</p> </li>
+    /// <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li>
     /// </ul>
     /// </important>
     pub fn resource_attribute_list(
@@ -3491,8 +3300,7 @@ impl PutResourceAttributesInput {
     ) -> std::option::Option<&[crate::model::ResourceAttribute]> {
         self.resource_attribute_list.as_deref()
     }
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
@@ -3514,20 +3322,15 @@ impl std::fmt::Debug for PutResourceAttributesInput {
 pub struct NotifyMigrationTaskStateInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     pub progress_update_stream: std::option::Option<std::string::String>,
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal
-    /// data in this field.</i>
-    /// </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>Information about the task's progress and status.</p>
     pub task: std::option::Option<crate::model::Task>,
     /// <p>The timestamp when the task was gathered.</p>
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an
-    /// update. If Migration Hub does not receive an update within the specified interval, then the
-    /// migration task will be considered stale.</p>
+    /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
     pub next_update_seconds: i32,
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
 impl NotifyMigrationTaskStateInput {
@@ -3535,9 +3338,7 @@ impl NotifyMigrationTaskStateInput {
     pub fn progress_update_stream(&self) -> std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal
-    /// data in this field.</i>
-    /// </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(&self) -> std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
@@ -3549,14 +3350,11 @@ impl NotifyMigrationTaskStateInput {
     pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
-    /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an
-    /// update. If Migration Hub does not receive an update within the specified interval, then the
-    /// migration task will be considered stale.</p>
+    /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
     pub fn next_update_seconds(&self) -> i32 {
         self.next_update_seconds
     }
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
@@ -3578,20 +3376,17 @@ impl std::fmt::Debug for NotifyMigrationTaskStateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyApplicationStateInput {
-    /// <p>The configurationId in Application Discovery Service that uniquely identifies the
-    /// grouped application.</p>
+    /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
     pub status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>The timestamp when the application state changed.</p>
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
 impl NotifyApplicationStateInput {
-    /// <p>The configurationId in Application Discovery Service that uniquely identifies the
-    /// grouped application.</p>
+    /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -3603,8 +3398,7 @@ impl NotifyApplicationStateInput {
     pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
@@ -3624,17 +3418,13 @@ impl std::fmt::Debug for NotifyApplicationStateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProgressUpdateStreamsInput {
-    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filter to limit the maximum number of results to list per page.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListProgressUpdateStreamsInput {
-    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3656,9 +3446,7 @@ impl std::fmt::Debug for ListProgressUpdateStreamsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMigrationTasksInput {
-    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Value to specify how many results are returned per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -3666,9 +3454,7 @@ pub struct ListMigrationTasksInput {
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl ListMigrationTasksInput {
-    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3697,13 +3483,9 @@ impl std::fmt::Debug for ListMigrationTasksInput {
 pub struct ListDiscoveredResourcesInput {
     /// <p>The name of the ProgressUpdateStream.</p>
     pub progress_update_stream: std::option::Option<std::string::String>,
-    /// <p>The name of the MigrationTask. <i>Do not store personal data in this
-    /// field.</i>
-    /// </p>
+    /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub migration_task_name: std::option::Option<std::string::String>,
-    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results returned per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -3713,15 +3495,11 @@ impl ListDiscoveredResourcesInput {
     pub fn progress_update_stream(&self) -> std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>The name of the MigrationTask. <i>Do not store personal data in this
-    /// field.</i>
-    /// </p>
+    /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(&self) -> std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
-    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3747,13 +3525,9 @@ impl std::fmt::Debug for ListDiscoveredResourcesInput {
 pub struct ListCreatedArtifactsInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     pub progress_update_stream: std::option::Option<std::string::String>,
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal
-    /// data in this field.</i>
-    /// </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub migration_task_name: std::option::Option<std::string::String>,
-    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to be returned per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -3763,15 +3537,11 @@ impl ListCreatedArtifactsInput {
     pub fn progress_update_stream(&self) -> std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal
-    /// data in this field.</i>
-    /// </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(&self) -> std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
-    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3795,25 +3565,19 @@ impl std::fmt::Debug for ListCreatedArtifactsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationStatesInput {
-    /// <p>The configurationIds from the Application Discovery Service that uniquely identifies
-    /// your applications.</p>
+    /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
     pub application_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to be returned per page.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListApplicationStatesInput {
-    /// <p>The configurationIds from the Application Discovery Service that uniquely identifies
-    /// your applications.</p>
+    /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
     pub fn application_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.application_ids.as_deref()
     }
-    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3836,29 +3600,23 @@ impl std::fmt::Debug for ListApplicationStatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportMigrationTaskInput {
-    /// <p>The name of the ProgressUpdateStream. ></p>
+    /// <p>The name of the ProgressUpdateStream. &gt;</p>
     pub progress_update_stream: std::option::Option<std::string::String>,
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal
-    /// data in this field.</i>
-    /// </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub migration_task_name: std::option::Option<std::string::String>,
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
 impl ImportMigrationTaskInput {
-    /// <p>The name of the ProgressUpdateStream. ></p>
+    /// <p>The name of the ProgressUpdateStream. &gt;</p>
     pub fn progress_update_stream(&self) -> std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal
-    /// data in this field.</i>
-    /// </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(&self) -> std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
@@ -3879,15 +3637,11 @@ impl std::fmt::Debug for ImportMigrationTaskInput {
 pub struct DisassociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
     pub progress_update_stream: std::option::Option<std::string::String>,
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-    /// field.</i>
-    /// </p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub migration_task_name: std::option::Option<std::string::String>,
-    /// <p>ConfigurationId of the Application Discovery Service resource to be
-    /// disassociated.</p>
+    /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
     pub configuration_id: std::option::Option<std::string::String>,
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
 impl DisassociateDiscoveredResourceInput {
@@ -3895,19 +3649,15 @@ impl DisassociateDiscoveredResourceInput {
     pub fn progress_update_stream(&self) -> std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-    /// field.</i>
-    /// </p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(&self) -> std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
-    /// <p>ConfigurationId of the Application Discovery Service resource to be
-    /// disassociated.</p>
+    /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
     pub fn configuration_id(&self) -> std::option::Option<&str> {
         self.configuration_id.as_deref()
     }
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
@@ -3929,15 +3679,11 @@ impl std::fmt::Debug for DisassociateDiscoveredResourceInput {
 pub struct DisassociateCreatedArtifactInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     pub progress_update_stream: std::option::Option<std::string::String>,
-    /// <p>Unique identifier that references the migration task to be disassociated with the
-    /// artifact. <i>Do not store personal data in this field.</i>
-    /// </p>
+    /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
     pub migration_task_name: std::option::Option<std::string::String>,
-    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
-    /// instance, etc.)</p>
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
     pub created_artifact_name: std::option::Option<std::string::String>,
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
 impl DisassociateCreatedArtifactInput {
@@ -3945,19 +3691,15 @@ impl DisassociateCreatedArtifactInput {
     pub fn progress_update_stream(&self) -> std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>Unique identifier that references the migration task to be disassociated with the
-    /// artifact. <i>Do not store personal data in this field.</i>
-    /// </p>
+    /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(&self) -> std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
-    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
-    /// instance, etc.)</p>
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
     pub fn created_artifact_name(&self) -> std::option::Option<&str> {
         self.created_artifact_name.as_deref()
     }
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
@@ -3979,9 +3721,7 @@ impl std::fmt::Debug for DisassociateCreatedArtifactInput {
 pub struct DescribeMigrationTaskInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     pub progress_update_stream: std::option::Option<std::string::String>,
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-    /// field.</i>
-    /// </p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub migration_task_name: std::option::Option<std::string::String>,
 }
 impl DescribeMigrationTaskInput {
@@ -3989,9 +3729,7 @@ impl DescribeMigrationTaskInput {
     pub fn progress_update_stream(&self) -> std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-    /// field.</i>
-    /// </p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(&self) -> std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
@@ -4009,13 +3747,11 @@ impl std::fmt::Debug for DescribeMigrationTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationStateInput {
-    /// <p>The configurationId in Application Discovery Service that uniquely identifies the
-    /// grouped application.</p>
+    /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationStateInput {
-    /// <p>The configurationId in Application Discovery Service that uniquely identifies the
-    /// grouped application.</p>
+    /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -4032,23 +3768,17 @@ impl std::fmt::Debug for DescribeApplicationStateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProgressUpdateStreamInput {
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
-    /// field.</i>
-    /// </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     pub progress_update_stream_name: std::option::Option<std::string::String>,
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
 impl DeleteProgressUpdateStreamInput {
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
-    /// field.</i>
-    /// </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     pub fn progress_update_stream_name(&self) -> std::option::Option<&str> {
         self.progress_update_stream_name.as_deref()
     }
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
@@ -4069,23 +3799,17 @@ impl std::fmt::Debug for DeleteProgressUpdateStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProgressUpdateStreamInput {
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
-    /// field.</i>
-    /// </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     pub progress_update_stream_name: std::option::Option<std::string::String>,
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
 impl CreateProgressUpdateStreamInput {
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
-    /// field.</i>
-    /// </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     pub fn progress_update_stream_name(&self) -> std::option::Option<&str> {
         self.progress_update_stream_name.as_deref()
     }
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
@@ -4108,14 +3832,11 @@ impl std::fmt::Debug for CreateProgressUpdateStreamInput {
 pub struct AssociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
     pub progress_update_stream: std::option::Option<std::string::String>,
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-    /// field.</i>
-    /// </p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub migration_task_name: std::option::Option<std::string::String>,
     /// <p>Object representing a Resource.</p>
     pub discovered_resource: std::option::Option<crate::model::DiscoveredResource>,
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
 impl AssociateDiscoveredResourceInput {
@@ -4123,9 +3844,7 @@ impl AssociateDiscoveredResourceInput {
     pub fn progress_update_stream(&self) -> std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
-    /// field.</i>
-    /// </p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(&self) -> std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
@@ -4133,8 +3852,7 @@ impl AssociateDiscoveredResourceInput {
     pub fn discovered_resource(&self) -> std::option::Option<&crate::model::DiscoveredResource> {
         self.discovered_resource.as_ref()
     }
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
@@ -4156,15 +3874,11 @@ impl std::fmt::Debug for AssociateDiscoveredResourceInput {
 pub struct AssociateCreatedArtifactInput {
     /// <p>The name of the ProgressUpdateStream. </p>
     pub progress_update_stream: std::option::Option<std::string::String>,
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal
-    /// data in this field.</i>
-    /// </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub migration_task_name: std::option::Option<std::string::String>,
-    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
-    /// instance, etc.) </p>
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
     pub created_artifact: std::option::Option<crate::model::CreatedArtifact>,
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub dry_run: bool,
 }
 impl AssociateCreatedArtifactInput {
@@ -4172,19 +3886,15 @@ impl AssociateCreatedArtifactInput {
     pub fn progress_update_stream(&self) -> std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>Unique identifier that references the migration task. <i>Do not store personal
-    /// data in this field.</i>
-    /// </p>
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(&self) -> std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
-    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
-    /// instance, etc.) </p>
+    /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
     pub fn created_artifact(&self) -> std::option::Option<&crate::model::CreatedArtifact> {
         self.created_artifact.as_ref()
     }
-    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
-    /// the caller has permission to make the call.</p>
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }

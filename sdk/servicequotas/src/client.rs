@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Service Quotas
@@ -157,6 +157,7 @@ where
     ///
     /// See [`ListAWSDefaultServiceQuotas`](crate::client::fluent_builders::ListAWSDefaultServiceQuotas) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAWSDefaultServiceQuotas::into_paginator).
     pub fn list_aws_default_service_quotas(
         &self,
     ) -> fluent_builders::ListAWSDefaultServiceQuotas<C, M, R> {
@@ -166,6 +167,7 @@ where
     ///
     /// See [`ListRequestedServiceQuotaChangeHistory`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistory) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistory::into_paginator).
     pub fn list_requested_service_quota_change_history(
         &self,
     ) -> fluent_builders::ListRequestedServiceQuotaChangeHistory<C, M, R> {
@@ -175,6 +177,7 @@ where
     ///
     /// See [`ListRequestedServiceQuotaChangeHistoryByQuota`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota::into_paginator).
     pub fn list_requested_service_quota_change_history_by_quota(
         &self,
     ) -> fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota<C, M, R> {
@@ -184,6 +187,7 @@ where
     ///
     /// See [`ListServiceQuotaIncreaseRequestsInTemplate`](crate::client::fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate::into_paginator).
     pub fn list_service_quota_increase_requests_in_template(
         &self,
     ) -> fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate<C, M, R> {
@@ -193,6 +197,7 @@ where
     ///
     /// See [`ListServiceQuotas`](crate::client::fluent_builders::ListServiceQuotas) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceQuotas::into_paginator).
     pub fn list_service_quotas(&self) -> fluent_builders::ListServiceQuotas<C, M, R> {
         fluent_builders::ListServiceQuotas::new(self.handle.clone())
     }
@@ -200,6 +205,7 @@ where
     ///
     /// See [`ListServices`](crate::client::fluent_builders::ListServices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
     pub fn list_services(&self) -> fluent_builders::ListServices<C, M, R> {
         fluent_builders::ListServices::new(self.handle.clone())
     }
@@ -253,11 +259,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateServiceQuotaTemplate`.
     ///
-    /// <p>Associates your quota request template with your organization. When a new account is
-    /// created in your organization, the quota increase requests in the template are automatically
-    /// applied to the account. You can add a quota increase request for any adjustable quota to your
-    /// template.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates your quota request template with your organization. When a new account is created in your organization, the quota increase requests in the template are automatically applied to the account. You can add a quota increase request for any adjustable quota to your template.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateServiceQuotaTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -302,10 +305,10 @@ pub mod fluent_builders {
                 crate::input::AssociateServiceQuotaTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -316,9 +319,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteServiceQuotaIncreaseRequestFromTemplate`.
     ///
-    /// <p>Deletes the quota increase request for the specified quota from your quota request
-    /// template.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the quota increase request for the specified quota from your quota request template.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServiceQuotaIncreaseRequestFromTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -356,10 +358,10 @@ pub mod fluent_builders {
                                     crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError,
                                     crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -368,8 +370,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -378,8 +380,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(input.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -388,8 +390,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Region.</p>
-        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(inp);
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The AWS Region.</p>
@@ -400,10 +402,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateServiceQuotaTemplate`.
     ///
-    /// <p>Disables your quota request template. After a template is disabled, the quota increase
-    /// requests in the template are not applied to new accounts in your organization. Disabling a
-    /// quota request template does not apply its quota increase requests.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables your quota request template. After a template is disabled, the quota increase requests in the template are not applied to new accounts in your organization. Disabling a quota request template does not apply its quota increase requests.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateServiceQuotaTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -448,10 +448,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateServiceQuotaTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -463,7 +463,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssociationForServiceQuotaTemplate`.
     ///
     /// <p>Retrieves the status of the association for the quota request template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssociationForServiceQuotaTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -510,10 +510,10 @@ pub mod fluent_builders {
                 crate::input::GetAssociationForServiceQuotaTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -524,9 +524,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAWSDefaultServiceQuota`.
     ///
-    /// <p>Retrieves the default value for the specified quota. The default value does not reflect
-    /// any quota increases.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the default value for the specified quota. The default value does not reflect any quota increases.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAWSDefaultServiceQuota<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -571,10 +570,10 @@ pub mod fluent_builders {
                 crate::input::GetAwsDefaultServiceQuotaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -583,8 +582,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -593,8 +592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(input.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -606,7 +605,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRequestedServiceQuotaChange`.
     ///
     /// <p>Retrieves information about the specified quota increase request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRequestedServiceQuotaChange<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -651,10 +650,10 @@ pub mod fluent_builders {
                 crate::input::GetRequestedServiceQuotaChangeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -663,8 +662,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the quota increase request.</p>
-        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(inp);
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(input.into());
             self
         }
         /// <p>The ID of the quota increase request.</p>
@@ -675,10 +674,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServiceQuota`.
     ///
-    /// <p>Retrieves the applied quota value for the specified quota. For some quotas, only the
-    /// default values are available. If the applied quota value is not available for a quota, the
-    /// quota is not retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the applied quota value for the specified quota. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceQuota<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -723,10 +720,10 @@ pub mod fluent_builders {
                 crate::input::GetServiceQuotaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -735,8 +732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -745,8 +742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(input.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -757,9 +754,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServiceQuotaIncreaseRequestFromTemplate`.
     ///
-    /// <p>Retrieves information about the specified quota increase request in your quota request
-    /// template.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves information about the specified quota increase request in your quota request template.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceQuotaIncreaseRequestFromTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -806,10 +802,10 @@ pub mod fluent_builders {
                 crate::input::GetServiceQuotaIncreaseRequestFromTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -818,8 +814,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -828,8 +824,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(input.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -838,8 +834,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Region.</p>
-        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(inp);
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The AWS Region.</p>
@@ -850,9 +846,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAWSDefaultServiceQuotas`.
     ///
-    /// <p>Lists the default values for the quotas for the specified AWS service. A default value
-    /// does not reflect any quota increases.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the default values for the quotas for the specified AWS service. A default value does not reflect any quota increases.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAWSDefaultServiceQuotas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -897,10 +892,10 @@ pub mod fluent_builders {
                 crate::input::ListAwsDefaultServiceQuotasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -908,9 +903,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAwsDefaultServiceQuotasPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAwsDefaultServiceQuotasPaginator<C, M, R> {
+            crate::paginator::ListAwsDefaultServiceQuotasPaginator::new(self.handle, self.inner)
+        }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -919,8 +922,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -928,14 +931,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -944,7 +945,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRequestedServiceQuotaChangeHistory`.
     ///
     /// <p>Retrieves the quota increase requests for the specified service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRequestedServiceQuotaChangeHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -991,10 +992,10 @@ pub mod fluent_builders {
                 crate::input::ListRequestedServiceQuotaChangeHistoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1002,9 +1003,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRequestedServiceQuotaChangeHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListRequestedServiceQuotaChangeHistoryPaginator<C, M, R> {
+            crate::paginator::ListRequestedServiceQuotaChangeHistoryPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -1013,8 +1025,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the quota increase request.</p>
-        pub fn status(mut self, inp: crate::model::RequestStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::RequestStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the quota increase request.</p>
@@ -1026,8 +1038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1035,14 +1047,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1051,7 +1061,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRequestedServiceQuotaChangeHistoryByQuota`.
     ///
     /// <p>Retrieves the quota increase requests for the specified quota.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRequestedServiceQuotaChangeHistoryByQuota<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1089,10 +1099,10 @@ pub mod fluent_builders {
                                     crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError,
                                     crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1100,9 +1110,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRequestedServiceQuotaChangeHistoryByQuotaPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListRequestedServiceQuotaChangeHistoryByQuotaPaginator<C, M, R>
+        {
+            crate::paginator::ListRequestedServiceQuotaChangeHistoryByQuotaPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -1111,8 +1133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(input.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -1121,8 +1143,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status value of the quota increase request.</p>
-        pub fn status(mut self, inp: crate::model::RequestStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::RequestStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status value of the quota increase request.</p>
@@ -1134,8 +1156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1143,14 +1165,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1159,7 +1179,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceQuotaIncreaseRequestsInTemplate`.
     ///
     /// <p>Lists the quota increase requests in the specified quota request template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceQuotaIncreaseRequestsInTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1206,10 +1226,10 @@ pub mod fluent_builders {
                 crate::input::ListServiceQuotaIncreaseRequestsInTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1217,9 +1237,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServiceQuotaIncreaseRequestsInTemplatePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListServiceQuotaIncreaseRequestsInTemplatePaginator<C, M, R>
+        {
+            crate::paginator::ListServiceQuotaIncreaseRequestsInTemplatePaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -1228,8 +1260,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Region.</p>
-        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(inp);
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The AWS Region.</p>
@@ -1238,8 +1270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1247,14 +1279,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1262,10 +1292,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListServiceQuotas`.
     ///
-    /// <p>Lists the applied quota values for the specified AWS service. For some quotas, only the
-    /// default values are available. If the applied quota value is not available for a quota, the
-    /// quota is not retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the applied quota values for the specified AWS service. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceQuotas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1310,10 +1338,10 @@ pub mod fluent_builders {
                 crate::input::ListServiceQuotasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1321,9 +1349,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServiceQuotasPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListServiceQuotasPaginator<C, M, R> {
+            crate::paginator::ListServiceQuotasPaginator::new(self.handle, self.inner)
+        }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -1332,8 +1366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1341,14 +1375,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1357,7 +1389,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServices`.
     ///
     /// <p>Lists the names and codes for the services integrated with Service Quotas.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1402,10 +1434,10 @@ pub mod fluent_builders {
                 crate::input::ListServicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1413,9 +1445,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListServicesPaginator<C, M, R> {
+            crate::paginator::ListServicesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1423,14 +1461,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1439,7 +1475,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of the tags assigned to the specified applied quota.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1484,10 +1520,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1495,16 +1531,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You
-        /// can get this information by using the Service Quotas console, or by listing the quotas using the
-        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You
-        /// can get this information by using the Service Quotas console, or by listing the quotas using the
-        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+        /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1513,7 +1545,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutServiceQuotaIncreaseRequestIntoTemplate`.
     ///
     /// <p>Adds a quota increase request to your quota request template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutServiceQuotaIncreaseRequestIntoTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1560,10 +1592,10 @@ pub mod fluent_builders {
                 crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1572,8 +1604,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(input.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -1582,8 +1614,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -1592,8 +1624,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Region.</p>
-        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(inp);
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The AWS Region.</p>
@@ -1602,8 +1634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new, increased value for the quota.</p>
-        pub fn desired_value(mut self, inp: f64) -> Self {
-            self.inner = self.inner.desired_value(inp);
+        pub fn desired_value(mut self, input: f64) -> Self {
+            self.inner = self.inner.desired_value(input);
             self
         }
         /// <p>The new, increased value for the quota.</p>
@@ -1615,7 +1647,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RequestServiceQuotaIncrease`.
     ///
     /// <p>Submits a quota increase request for the specified quota.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RequestServiceQuotaIncrease<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1660,10 +1692,10 @@ pub mod fluent_builders {
                 crate::input::RequestServiceQuotaIncreaseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1672,8 +1704,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service identifier.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The service identifier.</p>
@@ -1682,8 +1714,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(inp);
+        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quota_code(input.into());
             self
         }
         /// <p>The quota identifier.</p>
@@ -1692,8 +1724,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new, increased value for the quota.</p>
-        pub fn desired_value(mut self, inp: f64) -> Self {
-            self.inner = self.inner.desired_value(inp);
+        pub fn desired_value(mut self, input: f64) -> Self {
+            self.inner = self.inner.desired_value(input);
             self
         }
         /// <p>The new, increased value for the quota.</p>
@@ -1704,9 +1736,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds tags to the specified applied quota. You can include one or more tags to add to the
-    /// quota.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds tags to the specified applied quota. You can include one or more tags to add to the quota.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1751,10 +1782,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1762,14 +1793,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by
-        /// using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by
-        /// using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+        /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1779,8 +1808,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that you want to add to the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags that you want to add to the resource.</p>
@@ -1794,9 +1823,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes tags from the specified applied quota. You can specify one or more tags to
-    /// remove.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes tags from the specified applied quota. You can specify one or more tags to remove.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1841,10 +1869,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1852,14 +1880,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get
-        /// this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get
-        /// this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+        /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1869,8 +1895,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags that you want to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags that you want to remove from the resource.</p>
@@ -1883,6 +1909,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

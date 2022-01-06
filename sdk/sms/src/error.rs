@@ -20,8 +20,7 @@ pub enum CreateAppErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -68,8 +67,6 @@ impl CreateAppError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -162,8 +159,7 @@ pub enum CreateReplicationJobErrorKind {
     ServerCannotBeReplicatedException(crate::error::ServerCannotBeReplicatedException),
     /// <p>The service is temporarily unavailable.</p>
     TemporarilyUnavailableException(crate::error::TemporarilyUnavailableException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -220,8 +216,6 @@ impl CreateReplicationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -347,8 +341,7 @@ pub enum DeleteAppErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -395,8 +388,6 @@ impl DeleteAppError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -481,8 +472,7 @@ pub enum DeleteAppLaunchConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -537,8 +527,6 @@ impl DeleteAppLaunchConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -637,8 +625,7 @@ pub enum DeleteAppReplicationConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -696,8 +683,6 @@ impl DeleteAppReplicationConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -796,8 +781,7 @@ pub enum DeleteAppValidationConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -855,8 +839,6 @@ impl DeleteAppValidationConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -955,8 +937,7 @@ pub enum DeleteReplicationJobErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The specified replication job does not exist.</p>
     ReplicationJobNotFoundException(crate::error::ReplicationJobNotFoundException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1005,8 +986,6 @@ impl DeleteReplicationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1097,8 +1076,7 @@ pub enum DeleteServerCatalogErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1146,8 +1124,6 @@ impl DeleteServerCatalogError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1228,8 +1204,7 @@ pub enum DisassociateConnectorErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1277,8 +1252,6 @@ impl DisassociateConnectorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1363,8 +1336,7 @@ pub enum GenerateChangeSetErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1411,8 +1383,6 @@ impl GenerateChangeSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1500,8 +1470,7 @@ pub enum GenerateTemplateErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1548,8 +1517,6 @@ impl GenerateTemplateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1637,8 +1604,7 @@ pub enum GetAppErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1685,8 +1651,6 @@ impl GetAppError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1771,8 +1735,7 @@ pub enum GetAppLaunchConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1825,8 +1788,6 @@ impl GetAppLaunchConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1923,8 +1884,7 @@ pub enum GetAppReplicationConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1982,8 +1942,6 @@ impl GetAppReplicationConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2082,8 +2040,7 @@ pub enum GetAppValidationConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2141,8 +2098,6 @@ impl GetAppValidationConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2241,8 +2196,7 @@ pub enum GetAppValidationOutputErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2295,8 +2249,6 @@ impl GetAppValidationOutputError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2381,8 +2333,7 @@ pub struct GetConnectorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetConnectorsErrorKind {
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2425,8 +2376,6 @@ impl GetConnectorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2481,8 +2430,7 @@ pub enum GetReplicationJobsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A required parameter is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2527,8 +2475,6 @@ impl GetReplicationJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2599,8 +2545,7 @@ pub enum GetReplicationRunsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A required parameter is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2645,8 +2590,6 @@ impl GetReplicationRunsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2719,8 +2662,7 @@ pub enum GetServersErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>A required parameter is missing.</p>
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2766,8 +2708,6 @@ impl GetServersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2847,8 +2787,7 @@ pub enum ImportAppCatalogErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2895,8 +2834,6 @@ impl ImportAppCatalogError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2984,8 +2921,7 @@ pub enum ImportServerCatalogErrorKind {
     NoConnectorsAvailableException(crate::error::NoConnectorsAvailableException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3034,8 +2970,6 @@ impl ImportServerCatalogError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3126,8 +3060,7 @@ pub enum LaunchAppErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3174,8 +3107,6 @@ impl LaunchAppError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3260,8 +3191,7 @@ pub enum ListAppsErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3308,8 +3238,6 @@ impl ListAppsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3394,8 +3322,7 @@ pub enum NotifyAppValidationOutputErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3448,8 +3375,6 @@ impl NotifyAppValidationOutputError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3546,8 +3471,7 @@ pub enum PutAppLaunchConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3600,8 +3524,6 @@ impl PutAppLaunchConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3698,8 +3620,7 @@ pub enum PutAppReplicationConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3757,8 +3678,6 @@ impl PutAppReplicationConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3857,8 +3776,7 @@ pub enum PutAppValidationConfigurationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3916,8 +3834,6 @@ impl PutAppValidationConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4016,8 +3932,7 @@ pub enum StartAppReplicationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4066,8 +3981,6 @@ impl StartAppReplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4155,8 +4068,7 @@ pub enum StartOnDemandAppReplicationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4211,8 +4123,6 @@ impl StartOnDemandAppReplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4301,8 +4211,7 @@ pub struct StartOnDemandReplicationRunError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartOnDemandReplicationRunErrorKind {
-    /// <p>The user has the required permissions, so the request would have succeeded,
-    /// but a dry run was performed.</p>
+    /// <p>The user has the required permissions, so the request would have succeeded, but a dry run was performed.</p>
     DryRunOperationException(crate::error::DryRunOperationException),
     /// <p>A specified parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -4310,11 +4219,9 @@ pub enum StartOnDemandReplicationRunErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You have exceeded the number of on-demand replication runs you can request in a
-    /// 24-hour period.</p>
+    /// <p>You have exceeded the number of on-demand replication runs you can request in a 24-hour period.</p>
     ReplicationRunLimitExceededException(crate::error::ReplicationRunLimitExceededException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4372,8 +4279,6 @@ impl StartOnDemandReplicationRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4480,8 +4385,7 @@ pub enum StopAppReplicationErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4528,8 +4432,6 @@ impl StopAppReplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4617,8 +4519,7 @@ pub enum TerminateAppErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4665,8 +4566,6 @@ impl TerminateAppError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4754,8 +4653,7 @@ pub enum UpdateAppErrorKind {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4802,8 +4700,6 @@ impl UpdateAppError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4894,8 +4790,7 @@ pub enum UpdateReplicationJobErrorKind {
     ServerCannotBeReplicatedException(crate::error::ServerCannotBeReplicatedException),
     /// <p>The service is temporarily unavailable.</p>
     TemporarilyUnavailableException(crate::error::TemporarilyUnavailableException),
-    /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-    /// and ensure that you are using the correct access keys.</p>
+    /// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4949,8 +4844,6 @@ impl UpdateReplicationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5045,8 +4938,7 @@ impl std::error::Error for UpdateReplicationJobError {
     }
 }
 
-/// <p>You lack permissions needed to perform this operation. Check your IAM policies,
-/// and ensure that you are using the correct access keys.</p>
+/// <p>You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are using the correct access keys.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedOperationException {
@@ -5558,8 +5450,7 @@ impl InternalError {
     }
 }
 
-/// <p>You have exceeded the number of on-demand replication runs you can request in a
-/// 24-hour period.</p>
+/// <p>You have exceeded the number of on-demand replication runs you can request in a 24-hour period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationRunLimitExceededException {
@@ -5623,8 +5514,7 @@ impl ReplicationRunLimitExceededException {
     }
 }
 
-/// <p>The user has the required permissions, so the request would have succeeded,
-/// but a dry run was performed.</p>
+/// <p>The user has the required permissions, so the request would have succeeded, but a dry run was performed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DryRunOperationException {

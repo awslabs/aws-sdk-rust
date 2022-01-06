@@ -3,17 +3,11 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>
-    /// Raised when a malformed input has been provided to the API.
-    /// </p>
+    /// <p> Raised when a malformed input has been provided to the API. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// Raised when an unexpected error occurred during request processing.
-    /// </p>
+    /// <p> Raised when an unexpected error occurred during request processing. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// Raised when the requested resource cannot be found.
-    /// </p>
+    /// <p> Raised when the requested resource cannot be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

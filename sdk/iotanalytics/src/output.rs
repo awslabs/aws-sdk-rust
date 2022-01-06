@@ -240,13 +240,11 @@ impl StartPipelineReprocessingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SampleChannelDataOutput {
-    /// <p>The list of message samples. Each sample message is returned as a base64-encoded
-    /// string.</p>
+    /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
     pub payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
 }
 impl SampleChannelDataOutput {
-    /// <p>The list of message samples. Each sample message is returned as a base64-encoded
-    /// string.</p>
+    /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
     pub fn payloads(&self) -> std::option::Option<&[aws_smithy_types::Blob]> {
         self.payloads.as_deref()
     }
@@ -271,16 +269,14 @@ pub mod sample_channel_data_output {
         ///
         /// To override the contents of this collection use [`set_payloads`](Self::set_payloads).
         ///
-        /// <p>The list of message samples. Each sample message is returned as a base64-encoded
-        /// string.</p>
-        pub fn payloads(mut self, input: impl Into<aws_smithy_types::Blob>) -> Self {
+        /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
+        pub fn payloads(mut self, input: aws_smithy_types::Blob) -> Self {
             let mut v = self.payloads.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.payloads = Some(v);
             self
         }
-        /// <p>The list of message samples. Each sample message is returned as a base64-encoded
-        /// string.</p>
+        /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
         pub fn set_payloads(
             mut self,
             input: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
@@ -307,17 +303,13 @@ impl SampleChannelDataOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunPipelineActivityOutput {
-    /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The
-    /// results of running the pipeline activity on each input sample message payload, encoded in
-    /// base64.)</p>
+    /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
     pub payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
     /// <p>In case the pipeline activity fails, the log message that is generated.</p>
     pub log_result: std::option::Option<std::string::String>,
 }
 impl RunPipelineActivityOutput {
-    /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The
-    /// results of running the pipeline activity on each input sample message payload, encoded in
-    /// base64.)</p>
+    /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
     pub fn payloads(&self) -> std::option::Option<&[aws_smithy_types::Blob]> {
         self.payloads.as_deref()
     }
@@ -348,18 +340,14 @@ pub mod run_pipeline_activity_output {
         ///
         /// To override the contents of this collection use [`set_payloads`](Self::set_payloads).
         ///
-        /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The
-        /// results of running the pipeline activity on each input sample message payload, encoded in
-        /// base64.)</p>
-        pub fn payloads(mut self, input: impl Into<aws_smithy_types::Blob>) -> Self {
+        /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
+        pub fn payloads(mut self, input: aws_smithy_types::Blob) -> Self {
             let mut v = self.payloads.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.payloads = Some(v);
             self
         }
-        /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The
-        /// results of running the pipeline activity on each input sample message payload, encoded in
-        /// base64.)</p>
+        /// <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
         pub fn set_payloads(
             mut self,
             input: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
@@ -457,9 +445,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags (metadata) that you have assigned to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -490,8 +478,7 @@ impl ListTagsForResourceOutput {
 pub struct ListPipelinesOutput {
     /// <p>A list of <code>PipelineSummary</code> objects.</p>
     pub pipeline_summaries: std::option::Option<std::vec::Vec<crate::model::PipelineSummary>>,
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-    /// results.</p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPipelinesOutput {
@@ -499,8 +486,7 @@ impl ListPipelinesOutput {
     pub fn pipeline_summaries(&self) -> std::option::Option<&[crate::model::PipelineSummary]> {
         self.pipeline_summaries.as_deref()
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-    /// results.</p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -529,12 +515,9 @@ pub mod list_pipelines_output {
         /// To override the contents of this collection use [`set_pipeline_summaries`](Self::set_pipeline_summaries).
         ///
         /// <p>A list of <code>PipelineSummary</code> objects.</p>
-        pub fn pipeline_summaries(
-            mut self,
-            input: impl Into<crate::model::PipelineSummary>,
-        ) -> Self {
+        pub fn pipeline_summaries(mut self, input: crate::model::PipelineSummary) -> Self {
             let mut v = self.pipeline_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_summaries = Some(v);
             self
         }
@@ -546,14 +529,12 @@ pub mod list_pipelines_output {
             self.pipeline_summaries = input;
             self
         }
-        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-        /// results.</p>
+        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-        /// results.</p>
+        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -580,8 +561,7 @@ impl ListPipelinesOutput {
 pub struct ListDatastoresOutput {
     /// <p>A list of <code>DatastoreSummary</code> objects.</p>
     pub datastore_summaries: std::option::Option<std::vec::Vec<crate::model::DatastoreSummary>>,
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-    /// results.</p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatastoresOutput {
@@ -589,8 +569,7 @@ impl ListDatastoresOutput {
     pub fn datastore_summaries(&self) -> std::option::Option<&[crate::model::DatastoreSummary]> {
         self.datastore_summaries.as_deref()
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-    /// results.</p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -619,12 +598,9 @@ pub mod list_datastores_output {
         /// To override the contents of this collection use [`set_datastore_summaries`](Self::set_datastore_summaries).
         ///
         /// <p>A list of <code>DatastoreSummary</code> objects.</p>
-        pub fn datastore_summaries(
-            mut self,
-            input: impl Into<crate::model::DatastoreSummary>,
-        ) -> Self {
+        pub fn datastore_summaries(mut self, input: crate::model::DatastoreSummary) -> Self {
             let mut v = self.datastore_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datastore_summaries = Some(v);
             self
         }
@@ -636,14 +612,12 @@ pub mod list_datastores_output {
             self.datastore_summaries = input;
             self
         }
-        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-        /// results.</p>
+        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-        /// results.</p>
+        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -670,8 +644,7 @@ impl ListDatastoresOutput {
 pub struct ListDatasetsOutput {
     /// <p>A list of <code>DatasetSummary</code> objects.</p>
     pub dataset_summaries: std::option::Option<std::vec::Vec<crate::model::DatasetSummary>>,
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-    /// results.</p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetsOutput {
@@ -679,8 +652,7 @@ impl ListDatasetsOutput {
     pub fn dataset_summaries(&self) -> std::option::Option<&[crate::model::DatasetSummary]> {
         self.dataset_summaries.as_deref()
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-    /// results.</p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -709,9 +681,9 @@ pub mod list_datasets_output {
         /// To override the contents of this collection use [`set_dataset_summaries`](Self::set_dataset_summaries).
         ///
         /// <p>A list of <code>DatasetSummary</code> objects.</p>
-        pub fn dataset_summaries(mut self, input: impl Into<crate::model::DatasetSummary>) -> Self {
+        pub fn dataset_summaries(mut self, input: crate::model::DatasetSummary) -> Self {
             let mut v = self.dataset_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataset_summaries = Some(v);
             self
         }
@@ -723,14 +695,12 @@ pub mod list_datasets_output {
             self.dataset_summaries = input;
             self
         }
-        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-        /// results.</p>
+        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-        /// results.</p>
+        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -758,8 +728,7 @@ pub struct ListDatasetContentsOutput {
     /// <p>Summary information about dataset contents that have been created.</p>
     pub dataset_content_summaries:
         std::option::Option<std::vec::Vec<crate::model::DatasetContentSummary>>,
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-    /// results.</p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetContentsOutput {
@@ -769,8 +738,7 @@ impl ListDatasetContentsOutput {
     ) -> std::option::Option<&[crate::model::DatasetContentSummary]> {
         self.dataset_content_summaries.as_deref()
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-    /// results.</p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -801,10 +769,10 @@ pub mod list_dataset_contents_output {
         /// <p>Summary information about dataset contents that have been created.</p>
         pub fn dataset_content_summaries(
             mut self,
-            input: impl Into<crate::model::DatasetContentSummary>,
+            input: crate::model::DatasetContentSummary,
         ) -> Self {
             let mut v = self.dataset_content_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataset_content_summaries = Some(v);
             self
         }
@@ -816,14 +784,12 @@ pub mod list_dataset_contents_output {
             self.dataset_content_summaries = input;
             self
         }
-        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-        /// results.</p>
+        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-        /// results.</p>
+        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -850,8 +816,7 @@ impl ListDatasetContentsOutput {
 pub struct ListChannelsOutput {
     /// <p>A list of <code>ChannelSummary</code> objects.</p>
     pub channel_summaries: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-    /// results.</p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
@@ -859,8 +824,7 @@ impl ListChannelsOutput {
     pub fn channel_summaries(&self) -> std::option::Option<&[crate::model::ChannelSummary]> {
         self.channel_summaries.as_deref()
     }
-    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-    /// results.</p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -889,9 +853,9 @@ pub mod list_channels_output {
         /// To override the contents of this collection use [`set_channel_summaries`](Self::set_channel_summaries).
         ///
         /// <p>A list of <code>ChannelSummary</code> objects.</p>
-        pub fn channel_summaries(mut self, input: impl Into<crate::model::ChannelSummary>) -> Self {
+        pub fn channel_summaries(mut self, input: crate::model::ChannelSummary) -> Self {
             let mut v = self.channel_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channel_summaries = Some(v);
             self
         }
@@ -903,14 +867,12 @@ pub mod list_channels_output {
             self.channel_summaries = input;
             self
         }
-        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-        /// results.</p>
+        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more
-        /// results.</p>
+        /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -981,9 +943,9 @@ pub mod get_dataset_content_output {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>A list of <code>DatasetEntry</code> objects.</p>
-        pub fn entries(mut self, input: impl Into<crate::model::DatasetEntry>) -> Self {
+        pub fn entries(mut self, input: crate::model::DatasetEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
@@ -1155,8 +1117,7 @@ impl DescribeLoggingOptionsOutput {
 pub struct DescribeDatastoreOutput {
     /// <p>Information about the data store.</p>
     pub datastore: std::option::Option<crate::model::Datastore>,
-    /// <p>Additional statistical information about the data store. Included if the
-    /// <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
+    /// <p>Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     pub statistics: std::option::Option<crate::model::DatastoreStatistics>,
 }
 impl DescribeDatastoreOutput {
@@ -1164,8 +1125,7 @@ impl DescribeDatastoreOutput {
     pub fn datastore(&self) -> std::option::Option<&crate::model::Datastore> {
         self.datastore.as_ref()
     }
-    /// <p>Additional statistical information about the data store. Included if the
-    /// <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
+    /// <p>Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     pub fn statistics(&self) -> std::option::Option<&crate::model::DatastoreStatistics> {
         self.statistics.as_ref()
     }
@@ -1201,14 +1161,12 @@ pub mod describe_datastore_output {
             self.datastore = input;
             self
         }
-        /// <p>Additional statistical information about the data store. Included if the
-        /// <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
+        /// <p>Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
         pub fn statistics(mut self, input: crate::model::DatastoreStatistics) -> Self {
             self.statistics = Some(input);
             self
         }
-        /// <p>Additional statistical information about the data store. Included if the
-        /// <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
+        /// <p>Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
         pub fn set_statistics(
             mut self,
             input: std::option::Option<crate::model::DatastoreStatistics>,
@@ -1292,8 +1250,7 @@ impl DescribeDatasetOutput {
 pub struct DescribeChannelOutput {
     /// <p>An object that contains information about the channel.</p>
     pub channel: std::option::Option<crate::model::Channel>,
-    /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is
-    /// set to <code>true</code> in the request.</p>
+    /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     pub statistics: std::option::Option<crate::model::ChannelStatistics>,
 }
 impl DescribeChannelOutput {
@@ -1301,8 +1258,7 @@ impl DescribeChannelOutput {
     pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
         self.channel.as_ref()
     }
-    /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is
-    /// set to <code>true</code> in the request.</p>
+    /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     pub fn statistics(&self) -> std::option::Option<&crate::model::ChannelStatistics> {
         self.statistics.as_ref()
     }
@@ -1335,14 +1291,12 @@ pub mod describe_channel_output {
             self.channel = input;
             self
         }
-        /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is
-        /// set to <code>true</code> in the request.</p>
+        /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
         pub fn statistics(mut self, input: crate::model::ChannelStatistics) -> Self {
             self.statistics = Some(input);
             self
         }
-        /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is
-        /// set to <code>true</code> in the request.</p>
+        /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
         pub fn set_statistics(
             mut self,
             input: std::option::Option<crate::model::ChannelStatistics>,
@@ -2010,10 +1964,10 @@ pub mod batch_put_message_output {
         /// <p>A list of any errors encountered when sending the messages to the channel.</p>
         pub fn batch_put_message_error_entries(
             mut self,
-            input: impl Into<crate::model::BatchPutMessageErrorEntry>,
+            input: crate::model::BatchPutMessageErrorEntry,
         ) -> Self {
             let mut v = self.batch_put_message_error_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.batch_put_message_error_entries = Some(v);
             self
         }

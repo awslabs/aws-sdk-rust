@@ -34,34 +34,24 @@ pub mod complete_snapshot_input {
             self.changed_blocks_count = input;
             self
         }
-        /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written
-        /// block.</p>
-        /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the
-        /// checksums for each written block in ascending order of their block index, concatenate
-        /// them to form a single string, and then generate the checksum on the entire string using
-        /// the SHA256 algorithm.</p>
+        /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
+        /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
             self.checksum = Some(input.into());
             self
         }
-        /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written
-        /// block.</p>
-        /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the
-        /// checksums for each written block in ascending order of their block index, concatenate
-        /// them to form a single string, and then generate the checksum on the entire string using
-        /// the SHA256 algorithm.</p>
+        /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
+        /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.checksum = input;
             self
         }
-        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
-        /// is <code>SHA256</code>.</p>
+        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
         pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
             self.checksum_algorithm = Some(input);
             self
         }
-        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
-        /// is <code>SHA256</code>.</p>
+        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
         pub fn set_checksum_algorithm(
             mut self,
             input: std::option::Option<crate::model::ChecksumAlgorithm>,
@@ -69,8 +59,7 @@ pub mod complete_snapshot_input {
             self.checksum_algorithm = input;
             self
         }
-        /// <p>The aggregation method used to generate the checksum. Currently, the only supported
-        /// aggregation method is <code>LINEAR</code>.</p>
+        /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
         pub fn checksum_aggregation_method(
             mut self,
             input: crate::model::ChecksumAggregationMethod,
@@ -78,8 +67,7 @@ pub mod complete_snapshot_input {
             self.checksum_aggregation_method = Some(input);
             self
         }
-        /// <p>The aggregation method used to generate the checksum. Currently, the only supported
-        /// aggregation method is <code>LINEAR</code>.</p>
+        /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
         pub fn set_checksum_aggregation_method(
             mut self,
             input: std::option::Option<crate::model::ChecksumAggregationMethod>,
@@ -107,7 +95,7 @@ pub mod complete_snapshot_input {
 #[doc(hidden)]
 pub type CompleteSnapshotInputOperationOutputAlias = crate::operation::CompleteSnapshot;
 #[doc(hidden)]
-pub type CompleteSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CompleteSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CompleteSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CompleteSnapshot`](crate::operation::CompleteSnapshot)>
     #[allow(clippy::let_and_return)]
@@ -118,7 +106,7 @@ impl CompleteSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CompleteSnapshot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -285,7 +273,7 @@ impl CompleteSnapshotInput {
             "CompleteSnapshot",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -322,37 +310,25 @@ pub mod get_snapshot_block_input {
             self
         }
         /// <p>The block index of the block from which to get data.</p>
-        ///
-        ///
-        /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
-        /// <code>ListSnapshotBlocks</code> operations.</p>
+        /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
         pub fn block_index(mut self, input: i32) -> Self {
             self.block_index = Some(input);
             self
         }
         /// <p>The block index of the block from which to get data.</p>
-        ///
-        ///
-        /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
-        /// <code>ListSnapshotBlocks</code> operations.</p>
+        /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
         pub fn set_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.block_index = input;
             self
         }
         /// <p>The block token of the block from which to get data.</p>
-        ///
-        ///
-        /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
-        /// <code>ListSnapshotBlocks</code> operations.</p>
+        /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
         pub fn block_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.block_token = Some(input.into());
             self
         }
         /// <p>The block token of the block from which to get data.</p>
-        ///
-        ///
-        /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
-        /// <code>ListSnapshotBlocks</code> operations.</p>
+        /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
         pub fn set_block_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.block_token = input;
             self
@@ -375,7 +351,7 @@ pub mod get_snapshot_block_input {
 #[doc(hidden)]
 pub type GetSnapshotBlockInputOperationOutputAlias = crate::operation::GetSnapshotBlock;
 #[doc(hidden)]
-pub type GetSnapshotBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSnapshotBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSnapshotBlockInput {
     /// Consumes the builder and constructs an Operation<[`GetSnapshotBlock`](crate::operation::GetSnapshotBlock)>
     #[allow(clippy::let_and_return)]
@@ -386,7 +362,7 @@ impl GetSnapshotBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSnapshotBlock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -508,7 +484,7 @@ impl GetSnapshotBlockInput {
             "GetSnapshotBlock",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -536,19 +512,15 @@ pub mod list_changed_blocks_input {
         pub(crate) starting_block_index: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the first snapshot to use for the comparison.</p>
-        /// <important>
-        /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a
-        /// <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
+        /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
+        /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
         /// </important>
         pub fn first_snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.first_snapshot_id = Some(input.into());
             self
         }
-        /// <p>The ID of the first snapshot to use for the comparison.</p>
-        /// <important>
-        /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a
-        /// <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
+        /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
+        /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
         /// </important>
         pub fn set_first_snapshot_id(
             mut self,
@@ -557,19 +529,15 @@ pub mod list_changed_blocks_input {
             self.first_snapshot_id = input;
             self
         }
-        /// <p>The ID of the second snapshot to use for the comparison.</p>
-        /// <important>
-        /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a
-        /// <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
+        /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
+        /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
         /// </important>
         pub fn second_snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.second_snapshot_id = Some(input.into());
             self
         }
-        /// <p>The ID of the second snapshot to use for the comparison.</p>
-        /// <important>
-        /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a
-        /// <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
+        /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
+        /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
         /// </important>
         pub fn set_second_snapshot_id(
             mut self,
@@ -599,15 +567,13 @@ pub mod list_changed_blocks_input {
             self
         }
         /// <p>The block index from which the comparison should start.</p>
-        /// <p>The list in the response will start from this block index or the next valid block
-        /// index in the snapshots.</p>
+        /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
         pub fn starting_block_index(mut self, input: i32) -> Self {
             self.starting_block_index = Some(input);
             self
         }
         /// <p>The block index from which the comparison should start.</p>
-        /// <p>The list in the response will start from this block index or the next valid block
-        /// index in the snapshots.</p>
+        /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
         pub fn set_starting_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.starting_block_index = input;
             self
@@ -632,7 +598,7 @@ pub mod list_changed_blocks_input {
 #[doc(hidden)]
 pub type ListChangedBlocksInputOperationOutputAlias = crate::operation::ListChangedBlocks;
 #[doc(hidden)]
-pub type ListChangedBlocksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChangedBlocksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChangedBlocksInput {
     /// Consumes the builder and constructs an Operation<[`ListChangedBlocks`](crate::operation::ListChangedBlocks)>
     #[allow(clippy::let_and_return)]
@@ -643,7 +609,7 @@ impl ListChangedBlocksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChangedBlocks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -766,7 +732,7 @@ impl ListChangedBlocksInput {
             "ListChangedBlocks",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -823,14 +789,12 @@ pub mod list_snapshot_blocks_input {
             self.max_results = input;
             self
         }
-        /// <p>The block index from which the list should start. The list in the response will start
-        /// from this block index or the next valid block index in the snapshot.</p>
+        /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
         pub fn starting_block_index(mut self, input: i32) -> Self {
             self.starting_block_index = Some(input);
             self
         }
-        /// <p>The block index from which the list should start. The list in the response will start
-        /// from this block index or the next valid block index in the snapshot.</p>
+        /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
         pub fn set_starting_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.starting_block_index = input;
             self
@@ -854,7 +818,7 @@ pub mod list_snapshot_blocks_input {
 #[doc(hidden)]
 pub type ListSnapshotBlocksInputOperationOutputAlias = crate::operation::ListSnapshotBlocks;
 #[doc(hidden)]
-pub type ListSnapshotBlocksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSnapshotBlocksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSnapshotBlocksInput {
     /// Consumes the builder and constructs an Operation<[`ListSnapshotBlocks`](crate::operation::ListSnapshotBlocks)>
     #[allow(clippy::let_and_return)]
@@ -865,7 +829,7 @@ impl ListSnapshotBlocksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSnapshotBlocks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -982,7 +946,7 @@ impl ListSnapshotBlocksInput {
             "ListSnapshotBlocks",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1022,50 +986,24 @@ pub mod put_snapshot_block_input {
             self.snapshot_id = input;
             self
         }
-        /// <p>The block index of the block in which to write the data. A block index is a logical
-        /// index in units of <code>512</code> KiB blocks. To identify the block index, divide
-        /// the logical offset of the data in the logical volume by the block size (logical offset of
-        /// data/<code>524288</code>). The logical offset of the data must be <code>512</code>
-        /// KiB aligned.</p>
+        /// <p>The block index of the block in which to write the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
         pub fn block_index(mut self, input: i32) -> Self {
             self.block_index = Some(input);
             self
         }
-        /// <p>The block index of the block in which to write the data. A block index is a logical
-        /// index in units of <code>512</code> KiB blocks. To identify the block index, divide
-        /// the logical offset of the data in the logical volume by the block size (logical offset of
-        /// data/<code>524288</code>). The logical offset of the data must be <code>512</code>
-        /// KiB aligned.</p>
+        /// <p>The block index of the block in which to write the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
         pub fn set_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.block_index = input;
             self
         }
         /// <p>The data to write to the block.</p>
-        /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a
-        /// result, you must generate and provide a Base64-encoded SHA256 checksum for the block
-        /// data using the <b>x-amz-Checksum</b> header. Also, you
-        /// must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b>
-        /// header. The checksum that you provide is part of the Signature Version 4 signing process.
-        /// It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity
-        /// of the data. If the checksums do not correspond, the request fails. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums">
-        /// Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.</p>
+        /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a result, you must generate and provide a Base64-encoded SHA256 checksum for the block data using the <b>x-amz-Checksum</b> header. Also, you must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b> header. The checksum that you provide is part of the Signature Version 4 signing process. It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity of the data. If the checksums do not correspond, the request fails. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums"> Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn block_data(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
             self.block_data = Some(input);
             self
         }
         /// <p>The data to write to the block.</p>
-        /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a
-        /// result, you must generate and provide a Base64-encoded SHA256 checksum for the block
-        /// data using the <b>x-amz-Checksum</b> header. Also, you
-        /// must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b>
-        /// header. The checksum that you provide is part of the Signature Version 4 signing process.
-        /// It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity
-        /// of the data. If the checksums do not correspond, the request fails. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums">
-        /// Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.</p>
+        /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a result, you must generate and provide a Base64-encoded SHA256 checksum for the block data using the <b>x-amz-Checksum</b> header. Also, you must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b> header. The checksum that you provide is part of the Signature Version 4 signing process. It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity of the data. If the checksums do not correspond, the request fails. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums"> Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_block_data(
             mut self,
             input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -1073,18 +1011,14 @@ pub mod put_snapshot_block_input {
             self.block_data = input;
             self
         }
-        /// <p>The size of the data to write to the block, in bytes. Currently, the only supported
-        /// size is <code>524288</code> bytes.</p>
-        /// <p>Valid values: <code>524288</code>
-        /// </p>
+        /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>
+        /// <p>Valid values: <code>524288</code> </p>
         pub fn data_length(mut self, input: i32) -> Self {
             self.data_length = Some(input);
             self
         }
-        /// <p>The size of the data to write to the block, in bytes. Currently, the only supported
-        /// size is <code>524288</code> bytes.</p>
-        /// <p>Valid values: <code>524288</code>
-        /// </p>
+        /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>
+        /// <p>Valid values: <code>524288</code> </p>
         pub fn set_data_length(mut self, input: std::option::Option<i32>) -> Self {
             self.data_length = input;
             self
@@ -1099,26 +1033,22 @@ pub mod put_snapshot_block_input {
             self.progress = input;
             self
         }
-        /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are
-        /// supported.</p>
+        /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are supported.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
             self.checksum = Some(input.into());
             self
         }
-        /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are
-        /// supported.</p>
+        /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are supported.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.checksum = input;
             self
         }
-        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
-        /// is <code>SHA256</code>.</p>
+        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
         pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
             self.checksum_algorithm = Some(input);
             self
         }
-        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
-        /// is <code>SHA256</code>.</p>
+        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
         pub fn set_checksum_algorithm(
             mut self,
             input: std::option::Option<crate::model::ChecksumAlgorithm>,
@@ -1148,7 +1078,7 @@ pub mod put_snapshot_block_input {
 #[doc(hidden)]
 pub type PutSnapshotBlockInputOperationOutputAlias = crate::operation::PutSnapshotBlock;
 #[doc(hidden)]
-pub type PutSnapshotBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutSnapshotBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSnapshotBlockInput {
     /// Consumes the builder and constructs an Operation<[`PutSnapshotBlock`](crate::operation::PutSnapshotBlock)>
     #[allow(clippy::let_and_return)]
@@ -1159,7 +1089,7 @@ impl PutSnapshotBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutSnapshotBlock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1353,7 +1283,7 @@ impl PutSnapshotBlockInput {
             "PutSnapshotBlock",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1392,32 +1322,24 @@ pub mod start_snapshot_input {
         pub(crate) timeout: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64
-        /// TiB).</p>
+        /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64 TiB).</p>
         pub fn volume_size(mut self, input: i64) -> Self {
             self.volume_size = Some(input);
             self
         }
-        /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64
-        /// TiB).</p>
+        /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64 TiB).</p>
         pub fn set_volume_size(mut self, input: std::option::Option<i64>) -> Self {
             self.volume_size = input;
             self
         }
-        /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating
-        /// the first snapshot for an on-premises volume, omit this parameter.</p>
-        /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted
-        /// snapshot as a parent snapshot. You must first create an encrypted copy of the parent
-        /// snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+        /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating the first snapshot for an on-premises volume, omit this parameter.</p>
+        /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted snapshot as a parent snapshot. You must first create an encrypted copy of the parent snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
         pub fn parent_snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_snapshot_id = Some(input.into());
             self
         }
-        /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating
-        /// the first snapshot for an on-premises volume, omit this parameter.</p>
-        /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted
-        /// snapshot as a parent snapshot. You must first create an encrypted copy of the parent
-        /// snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+        /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating the first snapshot for an on-premises volume, omit this parameter.</p>
+        /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted snapshot as a parent snapshot. You must first create an encrypted copy of the parent snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
         pub fn set_parent_snapshot_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1430,9 +1352,9 @@ pub mod start_snapshot_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to apply to the snapshot.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1454,116 +1376,66 @@ pub mod start_snapshot_input {
             self.description = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully. The subsequent retries with the same
-        /// client token return the result from the original successful request and they have no additional
-        /// effect.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
         /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
-        /// Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html"> Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully. The subsequent retries with the same
-        /// client token return the result from the original successful request and they have no additional
-        /// effect.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
         /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
-        /// Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html"> Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify
-        /// <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
-        /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit
-        /// this parameter.</p>
-        /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified
-        /// using the <b>KmsKeyArn</b> parameter. If no value is specified
-        /// for <b>KmsKeyArn</b>, the default KMS key for your account is
-        /// used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used.
-        /// To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html">
-        /// ModifyEbsDefaultKmsKeyId</a>.</p>
-        /// <p>If your account is enabled for encryption by default, you cannot set this parameter to
-        /// <code>false</code>. In this case, you can omit this parameter.</p>
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
-        /// Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
+        /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit this parameter.</p>
+        /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified using the <b>KmsKeyArn</b> parameter. If no value is specified for <b>KmsKeyArn</b>, the default KMS key for your account is used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used. To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html"> ModifyEbsDefaultKmsKeyId</a>.</p>
+        /// <p>If your account is enabled for encryption by default, you cannot set this parameter to <code>false</code>. In this case, you can omit this parameter.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.encrypted = Some(input);
             self
         }
-        /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify
-        /// <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
-        /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit
-        /// this parameter.</p>
-        /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified
-        /// using the <b>KmsKeyArn</b> parameter. If no value is specified
-        /// for <b>KmsKeyArn</b>, the default KMS key for your account is
-        /// used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used.
-        /// To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html">
-        /// ModifyEbsDefaultKmsKeyId</a>.</p>
-        /// <p>If your account is enabled for encryption by default, you cannot set this parameter to
-        /// <code>false</code>. In this case, you can omit this parameter.</p>
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
-        /// Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
+        /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit this parameter.</p>
+        /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified using the <b>KmsKeyArn</b> parameter. If no value is specified for <b>KmsKeyArn</b>, the default KMS key for your account is used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used. To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html"> ModifyEbsDefaultKmsKeyId</a>.</p>
+        /// <p>If your account is enabled for encryption by default, you cannot set this parameter to <code>false</code>. In this case, you can omit this parameter.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS)
-        /// key to be used to encrypt the snapshot. If you do not specify a
-        /// KMS key, the default Amazon Web Services managed KMS key is used.</p>
-        /// <p>If you specify a <b>ParentSnapshotId</b>, omit this
-        /// parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt
-        /// the parent snapshot.</p>
-        /// <p>If <b>Encrypted</b> is set to <code>true</code>,
-        /// you must specify a KMS key ARN. </p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot. If you do not specify a KMS key, the default Amazon Web Services managed KMS key is used.</p>
+        /// <p>If you specify a <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt the parent snapshot.</p>
+        /// <p>If <b>Encrypted</b> is set to <code>true</code>, you must specify a KMS key ARN. </p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS)
-        /// key to be used to encrypt the snapshot. If you do not specify a
-        /// KMS key, the default Amazon Web Services managed KMS key is used.</p>
-        /// <p>If you specify a <b>ParentSnapshotId</b>, omit this
-        /// parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt
-        /// the parent snapshot.</p>
-        /// <p>If <b>Encrypted</b> is set to <code>true</code>,
-        /// you must specify a KMS key ARN. </p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot. If you do not specify a KMS key, the default Amazon Web Services managed KMS key is used.</p>
+        /// <p>If you specify a <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt the parent snapshot.</p>
+        /// <p>If <b>Encrypted</b> is set to <code>true</code>, you must specify a KMS key ARN. </p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled
-        /// if:</p>
+        /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
         /// <ul>
-        /// <li>
-        /// <p>No blocks are written to the snapshot.</p>
-        /// </li>
-        /// <li>
-        /// <p>The snapshot is not completed after writing the last block of data.</p>
-        /// </li>
+        /// <li> <p>No blocks are written to the snapshot.</p> </li>
+        /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
         /// </ul>
         /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled
-        /// if:</p>
+        /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
         /// <ul>
-        /// <li>
-        /// <p>No blocks are written to the snapshot.</p>
-        /// </li>
-        /// <li>
-        /// <p>The snapshot is not completed after writing the last block of data.</p>
-        /// </li>
+        /// <li> <p>No blocks are written to the snapshot.</p> </li>
+        /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
         /// </ul>
         /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
@@ -1593,7 +1465,7 @@ pub mod start_snapshot_input {
 #[doc(hidden)]
 pub type StartSnapshotInputOperationOutputAlias = crate::operation::StartSnapshot;
 #[doc(hidden)]
-pub type StartSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`StartSnapshot`](crate::operation::StartSnapshot)>
     #[allow(clippy::let_and_return)]
@@ -1604,7 +1476,7 @@ impl StartSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSnapshot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1686,7 +1558,7 @@ impl StartSnapshotInput {
             "StartSnapshot",
             "ebs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1713,77 +1585,44 @@ impl StartSnapshotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSnapshotInput {
-    /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64
-    /// TiB).</p>
+    /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64 TiB).</p>
     pub volume_size: std::option::Option<i64>,
-    /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating
-    /// the first snapshot for an on-premises volume, omit this parameter.</p>
-    /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted
-    /// snapshot as a parent snapshot. You must first create an encrypted copy of the parent
-    /// snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+    /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating the first snapshot for an on-premises volume, omit this parameter.</p>
+    /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted snapshot as a parent snapshot. You must first create an encrypted copy of the parent snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
     pub parent_snapshot_id: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the snapshot.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A description for the snapshot.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully. The subsequent retries with the same
-    /// client token return the result from the original successful request and they have no additional
-    /// effect.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
     /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
-    /// Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html"> Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify
-    /// <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
-    /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit
-    /// this parameter.</p>
-    /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified
-    /// using the <b>KmsKeyArn</b> parameter. If no value is specified
-    /// for <b>KmsKeyArn</b>, the default KMS key for your account is
-    /// used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used.
-    /// To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html">
-    /// ModifyEbsDefaultKmsKeyId</a>.</p>
-    /// <p>If your account is enabled for encryption by default, you cannot set this parameter to
-    /// <code>false</code>. In this case, you can omit this parameter.</p>
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
-    /// Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
+    /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit this parameter.</p>
+    /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified using the <b>KmsKeyArn</b> parameter. If no value is specified for <b>KmsKeyArn</b>, the default KMS key for your account is used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used. To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html"> ModifyEbsDefaultKmsKeyId</a>.</p>
+    /// <p>If your account is enabled for encryption by default, you cannot set this parameter to <code>false</code>. In this case, you can omit this parameter.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS)
-    /// key to be used to encrypt the snapshot. If you do not specify a
-    /// KMS key, the default Amazon Web Services managed KMS key is used.</p>
-    /// <p>If you specify a <b>ParentSnapshotId</b>, omit this
-    /// parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt
-    /// the parent snapshot.</p>
-    /// <p>If <b>Encrypted</b> is set to <code>true</code>,
-    /// you must specify a KMS key ARN. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot. If you do not specify a KMS key, the default Amazon Web Services managed KMS key is used.</p>
+    /// <p>If you specify a <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt the parent snapshot.</p>
+    /// <p>If <b>Encrypted</b> is set to <code>true</code>, you must specify a KMS key ARN. </p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled
-    /// if:</p>
+    /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
     /// <ul>
-    /// <li>
-    /// <p>No blocks are written to the snapshot.</p>
-    /// </li>
-    /// <li>
-    /// <p>The snapshot is not completed after writing the last block of data.</p>
-    /// </li>
+    /// <li> <p>No blocks are written to the snapshot.</p> </li>
+    /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
     /// </ul>
     /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
     pub timeout: std::option::Option<i32>,
 }
 impl StartSnapshotInput {
-    /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64
-    /// TiB).</p>
+    /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64 TiB).</p>
     pub fn volume_size(&self) -> std::option::Option<i64> {
         self.volume_size
     }
-    /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating
-    /// the first snapshot for an on-premises volume, omit this parameter.</p>
-    /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted
-    /// snapshot as a parent snapshot. You must first create an encrypted copy of the parent
-    /// snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+    /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating the first snapshot for an on-premises volume, omit this parameter.</p>
+    /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted snapshot as a parent snapshot. You must first create an encrypted copy of the parent snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
     pub fn parent_snapshot_id(&self) -> std::option::Option<&str> {
         self.parent_snapshot_id.as_deref()
     }
@@ -1795,55 +1634,30 @@ impl StartSnapshotInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully. The subsequent retries with the same
-    /// client token return the result from the original successful request and they have no additional
-    /// effect.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
     /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
-    /// Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html"> Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify
-    /// <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
-    /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit
-    /// this parameter.</p>
-    /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified
-    /// using the <b>KmsKeyArn</b> parameter. If no value is specified
-    /// for <b>KmsKeyArn</b>, the default KMS key for your account is
-    /// used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used.
-    /// To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html">
-    /// ModifyEbsDefaultKmsKeyId</a>.</p>
-    /// <p>If your account is enabled for encryption by default, you cannot set this parameter to
-    /// <code>false</code>. In this case, you can omit this parameter.</p>
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
-    /// Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
+    /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit this parameter.</p>
+    /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified using the <b>KmsKeyArn</b> parameter. If no value is specified for <b>KmsKeyArn</b>, the default KMS key for your account is used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used. To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html"> ModifyEbsDefaultKmsKeyId</a>.</p>
+    /// <p>If your account is enabled for encryption by default, you cannot set this parameter to <code>false</code>. In this case, you can omit this parameter.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS)
-    /// key to be used to encrypt the snapshot. If you do not specify a
-    /// KMS key, the default Amazon Web Services managed KMS key is used.</p>
-    /// <p>If you specify a <b>ParentSnapshotId</b>, omit this
-    /// parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt
-    /// the parent snapshot.</p>
-    /// <p>If <b>Encrypted</b> is set to <code>true</code>,
-    /// you must specify a KMS key ARN. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot. If you do not specify a KMS key, the default Amazon Web Services managed KMS key is used.</p>
+    /// <p>If you specify a <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt the parent snapshot.</p>
+    /// <p>If <b>Encrypted</b> is set to <code>true</code>, you must specify a KMS key ARN. </p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled
-    /// if:</p>
+    /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>
     /// <ul>
-    /// <li>
-    /// <p>No blocks are written to the snapshot.</p>
-    /// </li>
-    /// <li>
-    /// <p>The snapshot is not completed after writing the last block of data.</p>
-    /// </li>
+    /// <li> <p>No blocks are written to the snapshot.</p> </li>
+    /// <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>
     /// </ul>
     /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
     pub fn timeout(&self) -> std::option::Option<i32> {
@@ -1870,36 +1684,19 @@ impl std::fmt::Debug for StartSnapshotInput {
 pub struct PutSnapshotBlockInput {
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
-    /// <p>The block index of the block in which to write the data. A block index is a logical
-    /// index in units of <code>512</code> KiB blocks. To identify the block index, divide
-    /// the logical offset of the data in the logical volume by the block size (logical offset of
-    /// data/<code>524288</code>). The logical offset of the data must be <code>512</code>
-    /// KiB aligned.</p>
+    /// <p>The block index of the block in which to write the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
     pub block_index: std::option::Option<i32>,
     /// <p>The data to write to the block.</p>
-    /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a
-    /// result, you must generate and provide a Base64-encoded SHA256 checksum for the block
-    /// data using the <b>x-amz-Checksum</b> header. Also, you
-    /// must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b>
-    /// header. The checksum that you provide is part of the Signature Version 4 signing process.
-    /// It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity
-    /// of the data. If the checksums do not correspond, the request fails. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums">
-    /// Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User
-    /// Guide</i>.</p>
+    /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a result, you must generate and provide a Base64-encoded SHA256 checksum for the block data using the <b>x-amz-Checksum</b> header. Also, you must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b> header. The checksum that you provide is part of the Signature Version 4 signing process. It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity of the data. If the checksums do not correspond, the request fails. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums"> Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub block_data: aws_smithy_http::byte_stream::ByteStream,
-    /// <p>The size of the data to write to the block, in bytes. Currently, the only supported
-    /// size is <code>524288</code> bytes.</p>
-    /// <p>Valid values: <code>524288</code>
-    /// </p>
+    /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>
+    /// <p>Valid values: <code>524288</code> </p>
     pub data_length: std::option::Option<i32>,
     /// <p>The progress of the write process, as a percentage.</p>
     pub progress: std::option::Option<i32>,
-    /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are
-    /// supported.</p>
+    /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are supported.</p>
     pub checksum: std::option::Option<std::string::String>,
-    /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
-    /// is <code>SHA256</code>.</p>
+    /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
     pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
 }
 impl PutSnapshotBlockInput {
@@ -1907,32 +1704,17 @@ impl PutSnapshotBlockInput {
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>The block index of the block in which to write the data. A block index is a logical
-    /// index in units of <code>512</code> KiB blocks. To identify the block index, divide
-    /// the logical offset of the data in the logical volume by the block size (logical offset of
-    /// data/<code>524288</code>). The logical offset of the data must be <code>512</code>
-    /// KiB aligned.</p>
+    /// <p>The block index of the block in which to write the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
     pub fn block_index(&self) -> std::option::Option<i32> {
         self.block_index
     }
     /// <p>The data to write to the block.</p>
-    /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a
-    /// result, you must generate and provide a Base64-encoded SHA256 checksum for the block
-    /// data using the <b>x-amz-Checksum</b> header. Also, you
-    /// must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b>
-    /// header. The checksum that you provide is part of the Signature Version 4 signing process.
-    /// It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity
-    /// of the data. If the checksums do not correspond, the request fails. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums">
-    /// Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User
-    /// Guide</i>.</p>
+    /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a result, you must generate and provide a Base64-encoded SHA256 checksum for the block data using the <b>x-amz-Checksum</b> header. Also, you must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b> header. The checksum that you provide is part of the Signature Version 4 signing process. It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity of the data. If the checksums do not correspond, the request fails. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums"> Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn block_data(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.block_data
     }
-    /// <p>The size of the data to write to the block, in bytes. Currently, the only supported
-    /// size is <code>524288</code> bytes.</p>
-    /// <p>Valid values: <code>524288</code>
-    /// </p>
+    /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>
+    /// <p>Valid values: <code>524288</code> </p>
     pub fn data_length(&self) -> std::option::Option<i32> {
         self.data_length
     }
@@ -1940,13 +1722,11 @@ impl PutSnapshotBlockInput {
     pub fn progress(&self) -> std::option::Option<i32> {
         self.progress
     }
-    /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are
-    /// supported.</p>
+    /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are supported.</p>
     pub fn checksum(&self) -> std::option::Option<&str> {
         self.checksum.as_deref()
     }
-    /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
-    /// is <code>SHA256</code>.</p>
+    /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
     pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
@@ -1975,8 +1755,7 @@ pub struct ListSnapshotBlocksInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of results to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The block index from which the list should start. The list in the response will start
-    /// from this block index or the next valid block index in the snapshot.</p>
+    /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
     pub starting_block_index: std::option::Option<i32>,
 }
 impl ListSnapshotBlocksInput {
@@ -1992,8 +1771,7 @@ impl ListSnapshotBlocksInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The block index from which the list should start. The list in the response will start
-    /// from this block index or the next valid block index in the snapshot.</p>
+    /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
     pub fn starting_block_index(&self) -> std::option::Option<i32> {
         self.starting_block_index
     }
@@ -2013,16 +1791,12 @@ impl std::fmt::Debug for ListSnapshotBlocksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChangedBlocksInput {
-    /// <p>The ID of the first snapshot to use for the comparison.</p>
-    /// <important>
-    /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a
-    /// <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
+    /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
+    /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub first_snapshot_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the second snapshot to use for the comparison.</p>
-    /// <important>
-    /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a
-    /// <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
+    /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
+    /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub second_snapshot_id: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
@@ -2030,23 +1804,18 @@ pub struct ListChangedBlocksInput {
     /// <p>The number of results to return.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The block index from which the comparison should start.</p>
-    /// <p>The list in the response will start from this block index or the next valid block
-    /// index in the snapshots.</p>
+    /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
     pub starting_block_index: std::option::Option<i32>,
 }
 impl ListChangedBlocksInput {
-    /// <p>The ID of the first snapshot to use for the comparison.</p>
-    /// <important>
-    /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a
-    /// <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
+    /// <p>The ID of the first snapshot to use for the comparison.</p> <important>
+    /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn first_snapshot_id(&self) -> std::option::Option<&str> {
         self.first_snapshot_id.as_deref()
     }
-    /// <p>The ID of the second snapshot to use for the comparison.</p>
-    /// <important>
-    /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a
-    /// <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
+    /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
+    /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn second_snapshot_id(&self) -> std::option::Option<&str> {
         self.second_snapshot_id.as_deref()
@@ -2060,8 +1829,7 @@ impl ListChangedBlocksInput {
         self.max_results
     }
     /// <p>The block index from which the comparison should start.</p>
-    /// <p>The list in the response will start from this block index or the next valid block
-    /// index in the snapshots.</p>
+    /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
     pub fn starting_block_index(&self) -> std::option::Option<i32> {
         self.starting_block_index
     }
@@ -2085,16 +1853,10 @@ pub struct GetSnapshotBlockInput {
     /// <p>The ID of the snapshot containing the block from which to get data.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The block index of the block from which to get data.</p>
-    ///
-    ///
-    /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
-    /// <code>ListSnapshotBlocks</code> operations.</p>
+    /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
     pub block_index: std::option::Option<i32>,
     /// <p>The block token of the block from which to get data.</p>
-    ///
-    ///
-    /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
-    /// <code>ListSnapshotBlocks</code> operations.</p>
+    /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
     pub block_token: std::option::Option<std::string::String>,
 }
 impl GetSnapshotBlockInput {
@@ -2103,18 +1865,12 @@ impl GetSnapshotBlockInput {
         self.snapshot_id.as_deref()
     }
     /// <p>The block index of the block from which to get data.</p>
-    ///
-    ///
-    /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
-    /// <code>ListSnapshotBlocks</code> operations.</p>
+    /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
     pub fn block_index(&self) -> std::option::Option<i32> {
         self.block_index
     }
     /// <p>The block token of the block from which to get data.</p>
-    ///
-    ///
-    /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
-    /// <code>ListSnapshotBlocks</code> operations.</p>
+    /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
     pub fn block_token(&self) -> std::option::Option<&str> {
         self.block_token.as_deref()
     }
@@ -2137,18 +1893,12 @@ pub struct CompleteSnapshotInput {
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The number of blocks that were written to the snapshot.</p>
     pub changed_blocks_count: std::option::Option<i32>,
-    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written
-    /// block.</p>
-    /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the
-    /// checksums for each written block in ascending order of their block index, concatenate
-    /// them to form a single string, and then generate the checksum on the entire string using
-    /// the SHA256 algorithm.</p>
+    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
+    /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
     pub checksum: std::option::Option<std::string::String>,
-    /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
-    /// is <code>SHA256</code>.</p>
+    /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
     pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
-    /// <p>The aggregation method used to generate the checksum. Currently, the only supported
-    /// aggregation method is <code>LINEAR</code>.</p>
+    /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
     pub checksum_aggregation_method: std::option::Option<crate::model::ChecksumAggregationMethod>,
 }
 impl CompleteSnapshotInput {
@@ -2160,22 +1910,16 @@ impl CompleteSnapshotInput {
     pub fn changed_blocks_count(&self) -> std::option::Option<i32> {
         self.changed_blocks_count
     }
-    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written
-    /// block.</p>
-    /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the
-    /// checksums for each written block in ascending order of their block index, concatenate
-    /// them to form a single string, and then generate the checksum on the entire string using
-    /// the SHA256 algorithm.</p>
+    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
+    /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
     pub fn checksum(&self) -> std::option::Option<&str> {
         self.checksum.as_deref()
     }
-    /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
-    /// is <code>SHA256</code>.</p>
+    /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
     pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
-    /// <p>The aggregation method used to generate the checksum. Currently, the only supported
-    /// aggregation method is <code>LINEAR</code>.</p>
+    /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
     pub fn checksum_aggregation_method(
         &self,
     ) -> std::option::Option<&crate::model::ChecksumAggregationMethod> {

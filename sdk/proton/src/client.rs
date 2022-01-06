@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Proton
@@ -366,6 +366,7 @@ where
     ///
     /// See [`ListEnvironmentAccountConnections`](crate::client::fluent_builders::ListEnvironmentAccountConnections) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentAccountConnections::into_paginator).
     pub fn list_environment_account_connections(
         &self,
     ) -> fluent_builders::ListEnvironmentAccountConnections<C, M, R> {
@@ -375,6 +376,7 @@ where
     ///
     /// See [`ListEnvironmentOutputs`](crate::client::fluent_builders::ListEnvironmentOutputs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentOutputs::into_paginator).
     pub fn list_environment_outputs(&self) -> fluent_builders::ListEnvironmentOutputs<C, M, R> {
         fluent_builders::ListEnvironmentOutputs::new(self.handle.clone())
     }
@@ -382,6 +384,7 @@ where
     ///
     /// See [`ListEnvironmentProvisionedResources`](crate::client::fluent_builders::ListEnvironmentProvisionedResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentProvisionedResources::into_paginator).
     pub fn list_environment_provisioned_resources(
         &self,
     ) -> fluent_builders::ListEnvironmentProvisionedResources<C, M, R> {
@@ -391,6 +394,7 @@ where
     ///
     /// See [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironments::into_paginator).
     pub fn list_environments(&self) -> fluent_builders::ListEnvironments<C, M, R> {
         fluent_builders::ListEnvironments::new(self.handle.clone())
     }
@@ -398,6 +402,7 @@ where
     ///
     /// See [`ListEnvironmentTemplates`](crate::client::fluent_builders::ListEnvironmentTemplates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentTemplates::into_paginator).
     pub fn list_environment_templates(&self) -> fluent_builders::ListEnvironmentTemplates<C, M, R> {
         fluent_builders::ListEnvironmentTemplates::new(self.handle.clone())
     }
@@ -405,6 +410,7 @@ where
     ///
     /// See [`ListEnvironmentTemplateVersions`](crate::client::fluent_builders::ListEnvironmentTemplateVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentTemplateVersions::into_paginator).
     pub fn list_environment_template_versions(
         &self,
     ) -> fluent_builders::ListEnvironmentTemplateVersions<C, M, R> {
@@ -414,6 +420,7 @@ where
     ///
     /// See [`ListRepositories`](crate::client::fluent_builders::ListRepositories) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositories::into_paginator).
     pub fn list_repositories(&self) -> fluent_builders::ListRepositories<C, M, R> {
         fluent_builders::ListRepositories::new(self.handle.clone())
     }
@@ -421,6 +428,7 @@ where
     ///
     /// See [`ListRepositorySyncDefinitions`](crate::client::fluent_builders::ListRepositorySyncDefinitions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositorySyncDefinitions::into_paginator).
     pub fn list_repository_sync_definitions(
         &self,
     ) -> fluent_builders::ListRepositorySyncDefinitions<C, M, R> {
@@ -430,6 +438,7 @@ where
     ///
     /// See [`ListServiceInstanceOutputs`](crate::client::fluent_builders::ListServiceInstanceOutputs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceInstanceOutputs::into_paginator).
     pub fn list_service_instance_outputs(
         &self,
     ) -> fluent_builders::ListServiceInstanceOutputs<C, M, R> {
@@ -439,6 +448,7 @@ where
     ///
     /// See [`ListServiceInstanceProvisionedResources`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::into_paginator).
     pub fn list_service_instance_provisioned_resources(
         &self,
     ) -> fluent_builders::ListServiceInstanceProvisionedResources<C, M, R> {
@@ -448,6 +458,7 @@ where
     ///
     /// See [`ListServiceInstances`](crate::client::fluent_builders::ListServiceInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceInstances::into_paginator).
     pub fn list_service_instances(&self) -> fluent_builders::ListServiceInstances<C, M, R> {
         fluent_builders::ListServiceInstances::new(self.handle.clone())
     }
@@ -455,6 +466,7 @@ where
     ///
     /// See [`ListServicePipelineOutputs`](crate::client::fluent_builders::ListServicePipelineOutputs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServicePipelineOutputs::into_paginator).
     pub fn list_service_pipeline_outputs(
         &self,
     ) -> fluent_builders::ListServicePipelineOutputs<C, M, R> {
@@ -464,6 +476,7 @@ where
     ///
     /// See [`ListServicePipelineProvisionedResources`](crate::client::fluent_builders::ListServicePipelineProvisionedResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServicePipelineProvisionedResources::into_paginator).
     pub fn list_service_pipeline_provisioned_resources(
         &self,
     ) -> fluent_builders::ListServicePipelineProvisionedResources<C, M, R> {
@@ -473,6 +486,7 @@ where
     ///
     /// See [`ListServices`](crate::client::fluent_builders::ListServices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
     pub fn list_services(&self) -> fluent_builders::ListServices<C, M, R> {
         fluent_builders::ListServices::new(self.handle.clone())
     }
@@ -480,6 +494,7 @@ where
     ///
     /// See [`ListServiceTemplates`](crate::client::fluent_builders::ListServiceTemplates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceTemplates::into_paginator).
     pub fn list_service_templates(&self) -> fluent_builders::ListServiceTemplates<C, M, R> {
         fluent_builders::ListServiceTemplates::new(self.handle.clone())
     }
@@ -487,6 +502,7 @@ where
     ///
     /// See [`ListServiceTemplateVersions`](crate::client::fluent_builders::ListServiceTemplateVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceTemplateVersions::into_paginator).
     pub fn list_service_template_versions(
         &self,
     ) -> fluent_builders::ListServiceTemplateVersions<C, M, R> {
@@ -496,6 +512,7 @@ where
     ///
     /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
@@ -629,11 +646,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AcceptEnvironmentAccountConnection`.
     ///
-    /// <p>In a management account, an environment account connection request is accepted. When the environment account connection request is accepted,
-    /// Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
-    /// connections</a> in the <i>Proton Administrator guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>In a management account, an environment account connection request is accepted. When the environment account connection request is accepted, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptEnvironmentAccountConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -680,10 +695,10 @@ pub mod fluent_builders {
                 crate::input::AcceptEnvironmentAccountConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -692,8 +707,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment account connection.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the environment account connection.</p>
@@ -704,23 +719,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelEnvironmentDeployment`.
     ///
-    /// <p>Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a> action, if the deployment is <code>IN_PROGRESS</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update an environment</a> in the
-    /// <i>Proton Administrator guide</i>.</p>
+    /// <p>Attempts to cancel an environment deployment on an <code>UpdateEnvironment</code> action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update an environment</a> in the <i>Proton Administrator guide</i>.</p>
     /// <p>The following list includes potential cancellation scenarios.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the current <a>UpdateEnvironment</a> action succeeds before the cancellation attempt starts, the resulting deployment state is
-    /// <code>SUCCEEDED</code> and the cancellation attempt has no effect.</p>
-    /// </li>
+    /// <li> <p>If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.</p> </li>
+    /// <li> <p>If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.</p> </li>
+    /// <li> <p>If the current <code>UpdateEnvironment</code> action succeeds before the cancellation attempt starts, the resulting deployment state is <code>SUCCEEDED</code> and the cancellation attempt has no effect.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelEnvironmentDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -765,10 +771,10 @@ pub mod fluent_builders {
                 crate::input::CancelEnvironmentDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -777,8 +783,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment with the deployment to cancel.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p>The name of the environment with the deployment to cancel.</p>
@@ -792,22 +798,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelServiceInstanceDeployment`.
     ///
-    /// <p>Attempts to cancel a service instance deployment on an <a>UpdateServiceInstance</a> action, if the deployment is
-    /// <code>IN_PROGRESS</code>. For more information, see <i>Update a service instance</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">Proton Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">Proton User guide</a>.</p>
+    /// <p>Attempts to cancel a service instance deployment on an <code>UpdateServiceInstance</code> action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update a service instance</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">Proton Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">Proton User guide</a>.</p>
     /// <p>The following list includes potential cancellation scenarios.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the current <a>UpdateServiceInstance</a> action succeeds before the cancellation attempt starts, the resulting deployment
-    /// state is <code>SUCCEEDED</code> and the cancellation attempt has no effect.</p>
-    /// </li>
+    /// <li> <p>If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.</p> </li>
+    /// <li> <p>If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.</p> </li>
+    /// <li> <p>If the current <code>UpdateServiceInstance</code> action succeeds before the cancellation attempt starts, the resulting deployment state is <code>SUCCEEDED</code> and the cancellation attempt has no effect.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelServiceInstanceDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -852,10 +850,10 @@ pub mod fluent_builders {
                 crate::input::CancelServiceInstanceDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -864,8 +862,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service instance with the deployment to cancel.</p>
-        pub fn service_instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_instance_name(inp);
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_instance_name(input.into());
             self
         }
         /// <p>The name of the service instance with the deployment to cancel.</p>
@@ -877,8 +875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service with the service instance deployment to cancel.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service with the service instance deployment to cancel.</p>
@@ -889,22 +887,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelServicePipelineDeployment`.
     ///
-    /// <p>Attempts to cancel a service pipeline deployment on an <a>UpdateServicePipeline</a> action, if the deployment is
-    /// <code>IN_PROGRESS</code>. For more information, see <i>Update a service pipeline</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">Proton Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">Proton User guide</a>.</p>
+    /// <p>Attempts to cancel a service pipeline deployment on an <code>UpdateServicePipeline</code> action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update a service pipeline</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">Proton Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">Proton User guide</a>.</p>
     /// <p>The following list includes potential cancellation scenarios.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the current <a>UpdateServicePipeline</a> action succeeds before the cancellation attempt starts, the resulting deployment
-    /// state is <code>SUCCEEDED</code> and the cancellation attempt has no effect.</p>
-    /// </li>
+    /// <li> <p>If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.</p> </li>
+    /// <li> <p>If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.</p> </li>
+    /// <li> <p>If the current <code>UpdateServicePipeline</code> action succeeds before the cancellation attempt starts, the resulting deployment state is <code>SUCCEEDED</code> and the cancellation attempt has no effect.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelServicePipelineDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -949,10 +939,10 @@ pub mod fluent_builders {
                 crate::input::CancelServicePipelineDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -961,8 +951,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service with the service pipeline deployment to cancel.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service with the service pipeline deployment to cancel.</p>
@@ -973,24 +963,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEnvironment`.
     ///
-    /// <p>Deploy a new environment. An Proton environment is created from an environment template that defines infrastructure and resources that can
-    /// be shared across services.</p>
-    /// <p class="title">
-    /// <b>You can provision environments using the following methods:</b>
-    /// </p>
+    /// <p>Deploy a new environment. An Proton environment is created from an environment template that defines infrastructure and resources that can be shared across services.</p>
+    /// <p class="title"> <b>You can provision environments using the following methods:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Standard provisioning: Proton makes direct calls to provision your resources.</p>
-    /// </li>
-    /// <li>
-    /// <p>Pull request provisioning: Proton makes pull requests on your repository to provide compiled infrastructure as code (IaC) files that your
-    /// IaC engine uses to provision resources.</p>
-    /// </li>
+    /// <li> <p>Standard provisioning: Proton makes direct calls to provision your resources.</p> </li>
+    /// <li> <p>Pull request provisioning: Proton makes pull requests on your repository to provide compiled infrastructure as code (IaC) files that your IaC engine uses to provision resources.</p> </li>
     /// </ul>
-    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the
-    /// <i>Proton Administrator Guide.</i>
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide.</i> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1035,10 +1015,10 @@ pub mod fluent_builders {
                 crate::input::CreateEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1047,8 +1027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment.</p>
@@ -1057,8 +1037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
@@ -1070,8 +1050,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version of the environment template.</p>
-        pub fn template_major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_major_version(inp);
+        pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_major_version(input.into());
             self
         }
         /// <p>The major version of the environment template.</p>
@@ -1083,8 +1063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minor version of the environment template.</p>
-        pub fn template_minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_minor_version(inp);
+        pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_minor_version(input.into());
             self
         }
         /// <p>The minor version of the environment template.</p>
@@ -1096,8 +1076,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the environment that's being created and deployed.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the environment that's being created and deployed.</p>
@@ -1105,30 +1085,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator
-        /// Guide</i>.</p>
-        pub fn spec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spec(inp);
+        /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spec(input.into());
             self
         }
-        /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator
-        /// Guide</i>.</p>
+        /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_spec(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must
-        /// include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the
-        /// <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
-        pub fn proton_service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proton_service_role_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
+        pub fn proton_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proton_service_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must
-        /// include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the
-        /// <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
         pub fn set_proton_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1136,21 +1108,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_proton_service_role_arn(input);
             self
         }
-        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
-        /// environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and
-        /// value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator
-        /// guide</i>.</p>
+        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
         pub fn environment_account_connection_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.environment_account_connection_id(inp);
+            self.inner = self.inner.environment_account_connection_id(input.into());
             self
         }
-        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
-        /// environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and
-        /// value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator
-        /// guide</i>.</p>
+        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
         pub fn set_environment_account_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1163,8 +1129,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for your environment. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Create tags for your environment. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
@@ -1175,25 +1141,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the
-        /// <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
-        pub fn provisioning_repository(mut self, inp: crate::model::RepositoryBranchInput) -> Self {
-            self.inner = self.inner.provisioning_repository(inp);
+        pub fn provisioning_repository(
+            mut self,
+            input: crate::model::RepositoryBranchInput,
+        ) -> Self {
+            self.inner = self.inner.provisioning_repository(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the
-        /// <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_provisioning_repository(
             mut self,
@@ -1205,12 +1164,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEnvironmentAccountConnection`.
     ///
-    /// <p>Create an environment account connection in an environment account so that environment infrastructure resources can be provisioned in the
-    /// environment account from a management account.</p>
-    /// <p>An environment account connection is a secure bi-directional connection between a <i>management account</i> and an
-    /// <i>environment account</i> that maintains authorization and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator
-    /// guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create an environment account connection in an environment account so that environment infrastructure resources can be provisioned in the environment account from a management account.</p>
+    /// <p>An environment account connection is a secure bi-directional connection between a <i>management account</i> and an <i>environment account</i> that maintains authorization and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironmentAccountConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1257,10 +1213,10 @@ pub mod fluent_builders {
                 crate::input::CreateEnvironmentAccountConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1268,28 +1224,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the
-        /// first request created.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the
-        /// first request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in
-        /// this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision
-        /// environment infrastructure resources in the associated environment account.</p>
-        pub fn management_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.management_account_id(inp);
+        /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
+        pub fn management_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.management_account_id(input.into());
             self
         }
-        /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in
-        /// this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision
-        /// environment infrastructure resources in the associated environment account.</p>
+        /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
         pub fn set_management_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1297,21 +1247,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_management_account_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision
-        /// infrastructure resources in the associated environment account.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision
-        /// infrastructure resources in the associated environment account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The name of the Proton environment that's created in the associated management account.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p>The name of the Proton environment that's created in the associated management account.</p>
@@ -1326,14 +1274,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator
-        /// Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator
-        /// Guide</i>.</p>
+        /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1347,18 +1293,10 @@ pub mod fluent_builders {
     /// <p>Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
     /// <p>You can create an environment template in one of the two following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>Register and publish a <i>standard</i> environment template that instructs Proton to deploy and manage environment
-    /// infrastructure.</p>
-    /// </li>
-    /// <li>
-    /// <p>Register and publish a <i>customer managed</i> environment template that connects Proton to your existing provisioned
-    /// infrastructure that you manage. Proton <i>doesn't</i> manage your existing provisioned infrastructure. To create an environment
-    /// template for customer provisioned and managed infrastructure, include the <code>provisioning</code> parameter and set the value to
-    /// <code>CUSTOMER_MANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register and publish an environment template</a> in the <i>Proton Administrator Guide</i>.</p>
-    /// </li>
+    /// <li> <p>Register and publish a <i>standard</i> environment template that instructs Proton to deploy and manage environment infrastructure.</p> </li>
+    /// <li> <p>Register and publish a <i>customer managed</i> environment template that connects Proton to your existing provisioned infrastructure that you manage. Proton <i>doesn't</i> manage your existing provisioned infrastructure. To create an environment template for customer provisioned and managed infrastructure, include the <code>provisioning</code> parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register and publish an environment template</a> in the <i>Proton Administrator Guide</i>.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironmentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1403,10 +1341,10 @@ pub mod fluent_builders {
                 crate::input::CreateEnvironmentTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1415,8 +1353,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment template.</p>
@@ -1425,8 +1363,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment template name as displayed in the developer interface.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The environment template name as displayed in the developer interface.</p>
@@ -1435,8 +1373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the environment template.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the environment template.</p>
@@ -1445,8 +1383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
-        pub fn encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key(inp);
+        pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key(input.into());
             self
         }
         /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
@@ -1458,8 +1396,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-        pub fn provisioning(mut self, inp: crate::model::Provisioning) -> Self {
-            self.inner = self.inner.provisioning(inp);
+        pub fn provisioning(mut self, input: crate::model::Provisioning) -> Self {
+            self.inner = self.inner.provisioning(input);
             self
         }
         /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
@@ -1475,8 +1413,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for your environment template. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Create tags for your environment template. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
@@ -1490,10 +1428,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEnvironmentTemplateVersion`.
     ///
-    /// <p>Create a new major or minor version of an environment template. A major version of an environment template is a version that
-    /// <i>isn't</i> backwards compatible. A minor version of an environment template is a version that's backwards compatible within its
-    /// major version.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create a new major or minor version of an environment template. A major version of an environment template is a version that <i>isn't</i> backwards compatible. A minor version of an environment template is a version that's backwards compatible within its major version.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironmentTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1538,10 +1474,10 @@ pub mod fluent_builders {
                 crate::input::CreateEnvironmentTemplateVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1549,21 +1485,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the
-        /// first request created.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the
-        /// first request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The name of the environment template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the environment template.</p>
@@ -1575,8 +1509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the new version of an environment template.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the new version of an environment template.</p>
@@ -1585,15 +1519,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>
-        /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
-        pub fn major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(inp);
+        /// <p>To create a new major and minor version of the environment template, <i>exclude</i> <code>major Version</code>.</p>
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>
-        /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To create a new major and minor version of the environment template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1602,8 +1534,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
-        pub fn source(mut self, inp: crate::model::TemplateVersionSourceInput) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: crate::model::TemplateVersionSourceInput) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
@@ -1619,8 +1551,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for a new version of an environment template.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Create tags for a new version of an environment template.</p>
@@ -1634,10 +1566,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRepository`.
     ///
-    /// <p>Create and register a link to a repository that can be used with pull request provisioning or template sync configurations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template bundles</a> and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template sync configurations</a> in the <i>Proton
-    /// Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create and register a link to a repository that can be used with pull request provisioning or template sync configurations. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template bundles</a> and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template sync configurations</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1682,10 +1612,10 @@ pub mod fluent_builders {
                 crate::input::CreateRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1694,8 +1624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The repository provider.</p>
-        pub fn provider(mut self, inp: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.provider(inp);
+        pub fn provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.provider(input);
             self
         }
         /// <p>The repository provider.</p>
@@ -1707,8 +1637,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
@@ -1717,8 +1647,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/setting-up-for-service">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
-        pub fn connection_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_arn(inp);
+        pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/setting-up-for-service">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
@@ -1730,8 +1660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
-        pub fn encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key(inp);
+        pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key(input.into());
             self
         }
         /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
@@ -1745,11 +1675,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateService`.
     ///
-    /// <p>Create an Proton service. An Proton service is an instantiation of a service template and often includes several service instances and
-    /// pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a> in the
-    /// <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a>
-    /// in the <i>Proton User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create an Proton service. An Proton service is an instantiation of a service template and often includes several service instances and pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a> in the <i>Proton User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1794,10 +1721,10 @@ pub mod fluent_builders {
                 crate::input::CreateServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1806,8 +1733,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The service name.</p>
@@ -1816,8 +1743,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the Proton service.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the Proton service.</p>
@@ -1826,8 +1753,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service template that's used to create the service.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the service template that's used to create the service.</p>
@@ -1839,8 +1766,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version of the service template that was used to create the service.</p>
-        pub fn template_major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_major_version(inp);
+        pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_major_version(input.into());
             self
         }
         /// <p>The major version of the service template that was used to create the service.</p>
@@ -1852,8 +1779,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minor version of the service template that was used to create the service.</p>
-        pub fn template_minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_minor_version(inp);
+        pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_minor_version(input.into());
             self
         }
         /// <p>The minor version of the service template that was used to create the service.</p>
@@ -1864,36 +1791,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_minor_version(input);
             self
         }
-        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
-        /// include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
-        /// <i>Proton User Guide</i>.</p>
-        pub fn spec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spec(inp);
+        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+        pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spec(input.into());
             self
         }
-        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
-        /// include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
-        /// <i>Proton User Guide</i>.</p>
+        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_spec(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-        /// with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
-        /// template <i>doesn't</i> include a service pipeline.</p>
-        pub fn repository_connection_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_connection_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+        pub fn repository_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_connection_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-        /// with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
-        /// template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn set_repository_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1901,14 +1814,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_connection_arn(input);
             self
         }
-        /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
-        /// a service pipeline.</p>
-        pub fn repository_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_id(inp);
+        /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+        pub fn repository_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_id(input.into());
             self
         }
-        /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
-        /// a service pipeline.</p>
+        /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn set_repository_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1916,14 +1827,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_id(input);
             self
         }
-        /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if
-        /// your service template <i>doesn't</i> include a service pipeline.</p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
-        /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if
-        /// your service template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_branch_name(input);
             self
@@ -1933,8 +1842,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for your service. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Create tags for your service. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
@@ -1948,12 +1857,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateServiceTemplate`.
     ///
-    /// <p>Create a service template. The administrator creates a service template to define standardized infrastructure and an optional CICD service
-    /// pipeline. Developers, in turn, select the service template from Proton. If the selected service template includes a service pipeline definition,
-    /// they provide a link to their source code repository. Proton then deploys and manages the infrastructure defined by the selected service
-    /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service
-    /// Templates</a> in the <i>Proton Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create a service template. The administrator creates a service template to define standardized infrastructure and an optional CICD service pipeline. Developers, in turn, select the service template from Proton. If the selected service template includes a service pipeline definition, they provide a link to their source code repository. Proton then deploys and manages the infrastructure defined by the selected service template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service Templates</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateServiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1998,10 +1903,10 @@ pub mod fluent_builders {
                 crate::input::CreateServiceTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2010,8 +1915,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service template.</p>
@@ -2020,8 +1925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service template as displayed in the developer interface.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the service template as displayed in the developer interface.</p>
@@ -2030,8 +1935,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the service template.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the service template.</p>
@@ -2040,8 +1945,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A customer provided encryption key that's used to encrypt data.</p>
-        pub fn encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key(inp);
+        pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key(input.into());
             self
         }
         /// <p>A customer provided encryption key that's used to encrypt data.</p>
@@ -2052,18 +1957,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_key(input);
             self
         }
-        /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline
-        /// <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more
-        /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the
-        /// <i>Proton Administrator Guide</i>.</p>
-        pub fn pipeline_provisioning(mut self, inp: crate::model::Provisioning) -> Self {
-            self.inner = self.inner.pipeline_provisioning(inp);
+        /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+        pub fn pipeline_provisioning(mut self, input: crate::model::Provisioning) -> Self {
+            self.inner = self.inner.pipeline_provisioning(input);
             self
         }
-        /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline
-        /// <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more
-        /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the
-        /// <i>Proton Administrator Guide</i>.</p>
+        /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn set_pipeline_provisioning(
             mut self,
             input: std::option::Option<crate::model::Provisioning>,
@@ -2076,8 +1975,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for your service template. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Create tags for your service template. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
@@ -2091,9 +1990,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateServiceTemplateVersion`.
     ///
-    /// <p>Create a new major or minor version of a service template. A major version of a service template is a version that <i>isn't</i>
-    /// backward compatible. A minor version of a service template is a version that's backward compatible within its major version.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create a new major or minor version of a service template. A major version of a service template is a version that <i>isn't</i> backward compatible. A minor version of a service template is a version that's backward compatible within its major version.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateServiceTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2138,10 +2036,10 @@ pub mod fluent_builders {
                 crate::input::CreateServiceTemplateVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2149,21 +2047,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first
-        /// request created.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first
-        /// request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The name of the service template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the service template.</p>
@@ -2175,8 +2071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the new version of a service template.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the new version of a service template.</p>
@@ -2185,15 +2081,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-        /// <p>To create a new major and minor version of the service template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
-        pub fn major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(inp);
+        /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-        /// <p>To create a new major and minor version of the service template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2202,8 +2096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
-        pub fn source(mut self, inp: crate::model::TemplateVersionSourceInput) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: crate::model::TemplateVersionSourceInput) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
@@ -2221,9 +2115,9 @@ pub mod fluent_builders {
         /// <p>An array of compatible environment template objects for the new version of a service template.</p>
         pub fn compatible_environment_templates(
             mut self,
-            inp: impl Into<crate::model::CompatibleEnvironmentTemplateInput>,
+            input: crate::model::CompatibleEnvironmentTemplateInput,
         ) -> Self {
-            self.inner = self.inner.compatible_environment_templates(inp);
+            self.inner = self.inner.compatible_environment_templates(input);
             self
         }
         /// <p>An array of compatible environment template objects for the new version of a service template.</p>
@@ -2241,8 +2135,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for a new version of a service template.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Create tags for a new version of a service template.</p>
@@ -2256,11 +2150,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTemplateSyncConfig`.
     ///
-    /// <p>Set up a template for automated template version creation. When a commit is pushed to your registered <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>, Proton checks for changes to your repository template bundles. If it
-    /// detects a template bundle change, a new minor or major version of its template is created, if the version doesn’t already exist. For more
-    /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template sync configurations</a> in
-    /// the <i>Proton Administrator Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Set up a template for automated template version creation. When a commit is pushed to your registered <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>, Proton checks for changes to your repository template bundles. If it detects a template bundle change, a new minor or major version of its template is created, if the version doesn’t already exist. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template sync configurations</a> in the <i>Proton Administrator Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTemplateSyncConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2305,10 +2196,10 @@ pub mod fluent_builders {
                 crate::input::CreateTemplateSyncConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2317,8 +2208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your registered template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of your registered template.</p>
@@ -2330,8 +2221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the registered template.</p>
-        pub fn template_type(mut self, inp: crate::model::TemplateType) -> Self {
-            self.inner = self.inner.template_type(inp);
+        pub fn template_type(mut self, input: crate::model::TemplateType) -> Self {
+            self.inner = self.inner.template_type(input);
             self
         }
         /// <p>The type of the registered template.</p>
@@ -2343,8 +2234,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The provider type for your repository.</p>
-        pub fn repository_provider(mut self, inp: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.repository_provider(inp);
+        pub fn repository_provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.repository_provider(input);
             self
         }
         /// <p>The provider type for your repository.</p>
@@ -2356,8 +2247,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of your repository, for example <code>myrepos/myrepo</code>.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of your repository, for example <code>myrepos/myrepo</code>.</p>
@@ -2369,8 +2260,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The branch of the registered repository for your template.</p>
-        pub fn branch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch(inp);
+        pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch(input.into());
             self
         }
         /// <p>The branch of the registered repository for your template.</p>
@@ -2378,14 +2269,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_branch(input);
             self
         }
-        /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this
-        /// repository directory.</p>
-        pub fn subdirectory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(inp);
+        /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this
-        /// repository directory.</p>
+        /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
@@ -2394,7 +2283,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEnvironment`.
     ///
     /// <p>Delete an environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2439,10 +2328,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2451,8 +2340,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment to delete.</p>
@@ -2464,12 +2353,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEnvironmentAccountConnection`.
     ///
     /// <p>In an environment account, delete an environment account connection.</p>
-    /// <p>After you delete an environment account connection that’s in use by an Proton environment, Proton <i>can’t</i> manage the
-    /// environment infrastructure resources until a new environment account connection is accepted for the environment account and associated environment.
-    /// You're responsible for cleaning up provisioned resources that remain without an environment connection.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
-    /// connections</a> in the <i>Proton Administrator guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After you delete an environment account connection that’s in use by an Proton environment, Proton <i>can’t</i> manage the environment infrastructure resources until a new environment account connection is accepted for the environment account and associated environment. You're responsible for cleaning up provisioned resources that remain without an environment connection.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironmentAccountConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2516,10 +2402,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEnvironmentAccountConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2528,8 +2414,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment account connection to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the environment account connection to delete.</p>
@@ -2541,7 +2427,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEnvironmentTemplate`.
     ///
     /// <p>If no other major or minor versions of an environment template exist, delete the environment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironmentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2586,10 +2472,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEnvironmentTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2598,8 +2484,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment template to delete.</p>
@@ -2610,13 +2496,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEnvironmentTemplateVersion`.
     ///
-    /// <p>If no other minor versions of an environment template exist, delete a major version of the environment template if it's not the
-    /// <code>Recommended</code> version. Delete the <code>Recommended</code> version of the environment template if no other major versions or minor
-    /// versions of the environment template exist. A major version of an environment template is a version that's not backward compatible.</p>
-    /// <p>Delete a minor version of an environment template if it <i>isn't</i> the <code>Recommended</code> version. Delete a
-    /// <code>Recommended</code> minor version of the environment template if no other minor versions of the environment template exist. A minor version
-    /// of an environment template is a version that's backward compatible.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If no other minor versions of an environment template exist, delete a major version of the environment template if it's not the <code>Recommended</code> version. Delete the <code>Recommended</code> version of the environment template if no other major versions or minor versions of the environment template exist. A major version of an environment template is a version that's not backward compatible.</p>
+    /// <p>Delete a minor version of an environment template if it <i>isn't</i> the <code>Recommended</code> version. Delete a <code>Recommended</code> minor version of the environment template if no other minor versions of the environment template exist. A minor version of an environment template is a version that's backward compatible.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironmentTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2661,10 +2543,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEnvironmentTemplateVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2673,8 +2555,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the environment template.</p>
@@ -2686,8 +2568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment template major version to delete.</p>
-        pub fn major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(inp);
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>The environment template major version to delete.</p>
@@ -2699,8 +2581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment template minor version to delete.</p>
-        pub fn minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(inp);
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>The environment template minor version to delete.</p>
@@ -2715,7 +2597,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRepository`.
     ///
     /// <p>De-register and unlink your repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2760,10 +2642,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2772,8 +2654,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The repository provider.</p>
-        pub fn provider(mut self, inp: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.provider(inp);
+        pub fn provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.provider(input);
             self
         }
         /// <p>The repository provider.</p>
@@ -2785,8 +2667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the repository.</p>
@@ -2798,7 +2680,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteService`.
     ///
     /// <p>Delete a service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2843,10 +2725,10 @@ pub mod fluent_builders {
                 crate::input::DeleteServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2855,8 +2737,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service to delete.</p>
@@ -2868,7 +2750,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteServiceTemplate`.
     ///
     /// <p>If no other major or minor versions of the service template exist, delete the service template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2913,10 +2795,10 @@ pub mod fluent_builders {
                 crate::input::DeleteServiceTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2925,8 +2807,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service template to delete.</p>
@@ -2937,13 +2819,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteServiceTemplateVersion`.
     ///
-    /// <p>If no other minor versions of a service template exist, delete a major version of the service template if it's not the
-    /// <code>Recommended</code> version. Delete the <code>Recommended</code> version of the service template if no other major versions or minor versions
-    /// of the service template exist. A major version of a service template is a version that <i>isn't</i> backwards compatible.</p>
-    /// <p>Delete a minor version of a service template if it's not the <code>Recommended</code> version. Delete a <code>Recommended</code> minor version
-    /// of the service template if no other minor versions of the service template exist. A minor version of a service template is a version that's
-    /// backwards compatible.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If no other minor versions of a service template exist, delete a major version of the service template if it's not the <code>Recommended</code> version. Delete the <code>Recommended</code> version of the service template if no other major versions or minor versions of the service template exist. A major version of a service template is a version that <i>isn't</i> backwards compatible.</p>
+    /// <p>Delete a minor version of a service template if it's not the <code>Recommended</code> version. Delete a <code>Recommended</code> minor version of the service template if no other minor versions of the service template exist. A minor version of a service template is a version that's backwards compatible.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServiceTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2988,10 +2866,10 @@ pub mod fluent_builders {
                 crate::input::DeleteServiceTemplateVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3000,8 +2878,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the service template.</p>
@@ -3013,8 +2891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service template major version to delete.</p>
-        pub fn major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(inp);
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>The service template major version to delete.</p>
@@ -3026,8 +2904,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service template minor version to delete.</p>
-        pub fn minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(inp);
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>The service template minor version to delete.</p>
@@ -3042,7 +2920,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTemplateSyncConfig`.
     ///
     /// <p>Delete a template sync configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTemplateSyncConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3087,10 +2965,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTemplateSyncConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3099,8 +2977,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The template name.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The template name.</p>
@@ -3112,8 +2990,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The template type.</p>
-        pub fn template_type(mut self, inp: crate::model::TemplateType) -> Self {
-            self.inner = self.inner.template_type(inp);
+        pub fn template_type(mut self, input: crate::model::TemplateType) -> Self {
+            self.inner = self.inner.template_type(input);
             self
         }
         /// <p>The template type.</p>
@@ -3128,7 +3006,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAccountSettings`.
     ///
     /// <p>Get detail data for the Proton pipeline service role.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3173,10 +3051,10 @@ pub mod fluent_builders {
                 crate::input::GetAccountSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3188,7 +3066,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnvironment`.
     ///
     /// <p>Get detail data for an environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3233,10 +3111,10 @@ pub mod fluent_builders {
                 crate::input::GetEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3245,8 +3123,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment that you want to get the detail data for.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment that you want to get the detail data for.</p>
@@ -3258,9 +3136,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnvironmentAccountConnection`.
     ///
     /// <p>In an environment account, view the detail data for an environment account connection.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
-    /// connections</a> in the <i>Proton Administrator guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironmentAccountConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3305,10 +3182,10 @@ pub mod fluent_builders {
                 crate::input::GetEnvironmentAccountConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3317,8 +3194,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment account connection.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the environment account connection.</p>
@@ -3330,7 +3207,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnvironmentTemplate`.
     ///
     /// <p>Get detail data for an environment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironmentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3375,10 +3252,10 @@ pub mod fluent_builders {
                 crate::input::GetEnvironmentTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3387,8 +3264,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template that you want to get the detail data for.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment template that you want to get the detail data for.</p>
@@ -3400,7 +3277,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnvironmentTemplateVersion`.
     ///
     /// <p>View detail data for a major or minor version of an environment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironmentTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3445,10 +3322,10 @@ pub mod fluent_builders {
                 crate::input::GetEnvironmentTemplateVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3457,8 +3334,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the environment template.</p>
@@ -3470,8 +3347,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To view environment template major version detail data, include <code>major Version</code>.</p>
-        pub fn major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(inp);
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To view environment template major version detail data, include <code>major Version</code>.</p>
@@ -3483,8 +3360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
-        pub fn minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(inp);
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
@@ -3499,7 +3376,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRepository`.
     ///
     /// <p>Get detail data for a repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3544,10 +3421,10 @@ pub mod fluent_builders {
                 crate::input::GetRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3556,8 +3433,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The repository provider.</p>
-        pub fn provider(mut self, inp: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.provider(inp);
+        pub fn provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.provider(input);
             self
         }
         /// <p>The repository provider.</p>
@@ -3569,8 +3446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
@@ -3582,7 +3459,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRepositorySyncStatus`.
     ///
     /// <p>Get the repository sync status.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepositorySyncStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3627,10 +3504,10 @@ pub mod fluent_builders {
                 crate::input::GetRepositorySyncStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3639,8 +3516,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The repository name.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The repository name.</p>
@@ -3652,8 +3529,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository provider.</p>
-        pub fn repository_provider(mut self, inp: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.repository_provider(inp);
+        pub fn repository_provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.repository_provider(input);
             self
         }
         /// <p>The repository provider.</p>
@@ -3665,8 +3542,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository branch.</p>
-        pub fn branch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch(inp);
+        pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch(input.into());
             self
         }
         /// <p>The repository branch.</p>
@@ -3675,8 +3552,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository sync type.</p>
-        pub fn sync_type(mut self, inp: crate::model::SyncType) -> Self {
-            self.inner = self.inner.sync_type(inp);
+        pub fn sync_type(mut self, input: crate::model::SyncType) -> Self {
+            self.inner = self.inner.sync_type(input);
             self
         }
         /// <p>The repository sync type.</p>
@@ -3688,7 +3565,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetService`.
     ///
     /// <p>Get detail data for a service.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3733,10 +3610,10 @@ pub mod fluent_builders {
                 crate::input::GetServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3745,8 +3622,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service that you want to get the detail data for.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service that you want to get the detail data for.</p>
@@ -3757,9 +3634,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServiceInstance`.
     ///
-    /// <p>Get detail data for a service instance. A service instance is an instantiation of service template, which is running in a specific
-    /// environment.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Get detail data for a service instance. A service instance is an instantiation of service template, which is running in a specific environment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3804,10 +3680,10 @@ pub mod fluent_builders {
                 crate::input::GetServiceInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3816,8 +3692,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a service instance that you want to get the detail data for.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of a service instance that you want to get the detail data for.</p>
@@ -3826,8 +3702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service that the service instance belongs to.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service that the service instance belongs to.</p>
@@ -3839,7 +3715,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServiceTemplate`.
     ///
     /// <p>Get detail data for a service template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3884,10 +3760,10 @@ pub mod fluent_builders {
                 crate::input::GetServiceTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3896,8 +3772,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template that you want to get detail data for.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service template that you want to get detail data for.</p>
@@ -3909,7 +3785,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServiceTemplateVersion`.
     ///
     /// <p>View detail data for a major or minor version of a service template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3954,10 +3830,10 @@ pub mod fluent_builders {
                 crate::input::GetServiceTemplateVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3966,8 +3842,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the service template.</p>
@@ -3979,8 +3855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To view service template major version detail data, include <code>major Version</code>.</p>
-        pub fn major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(inp);
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To view service template major version detail data, include <code>major Version</code>.</p>
@@ -3992,8 +3868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
-        pub fn minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(inp);
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
@@ -4008,7 +3884,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTemplateSyncConfig`.
     ///
     /// <p>Get detail data for a template sync configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTemplateSyncConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4053,10 +3929,10 @@ pub mod fluent_builders {
                 crate::input::GetTemplateSyncConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4065,8 +3941,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The template name.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The template name.</p>
@@ -4078,8 +3954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The template type.</p>
-        pub fn template_type(mut self, inp: crate::model::TemplateType) -> Self {
-            self.inner = self.inner.template_type(inp);
+        pub fn template_type(mut self, input: crate::model::TemplateType) -> Self {
+            self.inner = self.inner.template_type(input);
             self
         }
         /// <p>The template type.</p>
@@ -4094,7 +3970,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTemplateSyncStatus`.
     ///
     /// <p>Get the status of a template sync.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTemplateSyncStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4139,10 +4015,10 @@ pub mod fluent_builders {
                 crate::input::GetTemplateSyncStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4151,8 +4027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The template name.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The template name.</p>
@@ -4164,8 +4040,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The template type.</p>
-        pub fn template_type(mut self, inp: crate::model::TemplateType) -> Self {
-            self.inner = self.inner.template_type(inp);
+        pub fn template_type(mut self, input: crate::model::TemplateType) -> Self {
+            self.inner = self.inner.template_type(input);
             self
         }
         /// <p>The template type.</p>
@@ -4177,8 +4053,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The template version.</p>
-        pub fn template_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_version(inp);
+        pub fn template_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_version(input.into());
             self
         }
         /// <p>The template version.</p>
@@ -4193,9 +4069,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironmentAccountConnections`.
     ///
     /// <p>View a list of environment account connections.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
-    /// connections</a> in the <i>Proton Administrator guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentAccountConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4240,10 +4115,10 @@ pub mod fluent_builders {
                 crate::input::ListEnvironmentAccountConnectionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4251,12 +4126,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentAccountConnectionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListEnvironmentAccountConnectionsPaginator<C, M, R> {
+            crate::paginator::ListEnvironmentAccountConnectionsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
         pub fn requested_by(
             mut self,
-            inp: crate::model::EnvironmentAccountConnectionRequesterAccountType,
+            input: crate::model::EnvironmentAccountConnectionRequesterAccountType,
         ) -> Self {
-            self.inner = self.inner.requested_by(inp);
+            self.inner = self.inner.requested_by(input);
             self
         }
         /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
@@ -4270,8 +4156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment name that's associated with each listed environment account connection.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p>The environment name that's associated with each listed environment account connection.</p>
@@ -4287,11 +4173,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
         /// <p>The status details for each listed environment account connection.</p>
-        pub fn statuses(
-            mut self,
-            inp: impl Into<crate::model::EnvironmentAccountConnectionStatus>,
-        ) -> Self {
-            self.inner = self.inner.statuses(inp);
+        pub fn statuses(mut self, input: crate::model::EnvironmentAccountConnectionStatus) -> Self {
+            self.inner = self.inner.statuses(input);
             self
         }
         /// <p>The status details for each listed environment account connection.</p>
@@ -4304,21 +4187,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_statuses(input);
             self
         }
-        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of
-        /// environment account connections that was previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of
-        /// environment account connections that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of environment account connections to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of environment account connections to list.</p>
@@ -4330,7 +4211,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironmentOutputs`.
     ///
     /// <p>List the infrastructure as code outputs for your environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentOutputs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4375,10 +4256,10 @@ pub mod fluent_builders {
                 crate::input::ListEnvironmentOutputsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4386,9 +4267,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentOutputsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEnvironmentOutputsPaginator<C, M, R> {
+            crate::paginator::ListEnvironmentOutputsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The environment name.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p>The environment name.</p>
@@ -4399,14 +4286,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_name(input);
             self
         }
-        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs
-        /// that was previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs
-        /// that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4415,7 +4300,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironmentProvisionedResources`.
     ///
     /// <p>List the provisioned resources for your environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentProvisionedResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4462,10 +4347,10 @@ pub mod fluent_builders {
                 crate::input::ListEnvironmentProvisionedResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4473,9 +4358,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentProvisionedResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListEnvironmentProvisionedResourcesPaginator<C, M, R> {
+            crate::paginator::ListEnvironmentProvisionedResourcesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The environment name.</p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p>The environment name.</p>
@@ -4486,14 +4382,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_name(input);
             self
         }
-        /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the
-        /// list of environment provisioned resources that was previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the
-        /// list of environment provisioned resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4502,7 +4396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironments`.
     ///
     /// <p>List environments with detail data summaries.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4547,10 +4441,10 @@ pub mod fluent_builders {
                 crate::input::ListEnvironmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4558,21 +4452,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously
-        /// requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEnvironmentsPaginator<C, M, R> {
+            crate::paginator::ListEnvironmentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of environments to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of environments to list.</p>
@@ -4587,9 +4485,9 @@ pub mod fluent_builders {
         /// <p>An array of the versions of the environment template.</p>
         pub fn environment_templates(
             mut self,
-            inp: impl Into<crate::model::EnvironmentTemplateFilter>,
+            input: crate::model::EnvironmentTemplateFilter,
         ) -> Self {
-            self.inner = self.inner.environment_templates(inp);
+            self.inner = self.inner.environment_templates(input);
             self
         }
         /// <p>An array of the versions of the environment template.</p>
@@ -4604,7 +4502,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironmentTemplates`.
     ///
     /// <p>List environment templates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4649,10 +4547,10 @@ pub mod fluent_builders {
                 crate::input::ListEnvironmentTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4660,21 +4558,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
-        /// templates that was previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListEnvironmentTemplatesPaginator<C, M, R> {
+            crate::paginator::ListEnvironmentTemplatesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
-        /// templates that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of environment templates to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of environment templates to list.</p>
@@ -4686,7 +4590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironmentTemplateVersions`.
     ///
     /// <p>List major or minor versions of an environment template with detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentTemplateVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4731,10 +4635,10 @@ pub mod fluent_builders {
                 crate::input::ListEnvironmentTemplateVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4742,21 +4646,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-        /// the list of major or minor versions that was previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentTemplateVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListEnvironmentTemplateVersionsPaginator<C, M, R> {
+            crate::paginator::ListEnvironmentTemplateVersionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-        /// the list of major or minor versions that was previously requested.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of major or minor versions of an environment template to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of major or minor versions of an environment template to list.</p>
@@ -4765,8 +4675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the environment template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the environment template.</p>
@@ -4778,15 +4688,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
-        /// <p>To view a list of major versions of an environment template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
-        pub fn major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(inp);
+        /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
-        /// <p>To view a list of major versions of an environment template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4798,7 +4706,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRepositories`.
     ///
     /// <p>List repositories with detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRepositories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4843,10 +4751,10 @@ pub mod fluent_builders {
                 crate::input::ListRepositoriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4854,21 +4762,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously
-        /// requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRepositoriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRepositoriesPaginator<C, M, R> {
+            crate::paginator::ListRepositoriesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of repositories to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of repositories to list.</p>
@@ -4880,7 +4792,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRepositorySyncDefinitions`.
     ///
     /// <p>List repository sync definitions with detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRepositorySyncDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4925,10 +4837,10 @@ pub mod fluent_builders {
                 crate::input::ListRepositorySyncDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4936,9 +4848,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRepositorySyncDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListRepositorySyncDefinitionsPaginator<C, M, R> {
+            crate::paginator::ListRepositorySyncDefinitionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The repository name.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The repository name.</p>
@@ -4950,8 +4870,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository provider.</p>
-        pub fn repository_provider(mut self, inp: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.repository_provider(inp);
+        pub fn repository_provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.repository_provider(input);
             self
         }
         /// <p>The repository provider.</p>
@@ -4963,8 +4883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
-        pub fn sync_type(mut self, inp: crate::model::SyncType) -> Self {
-            self.inner = self.inner.sync_type(inp);
+        pub fn sync_type(mut self, input: crate::model::SyncType) -> Self {
+            self.inner = self.inner.sync_type(input);
             self
         }
         /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
@@ -4972,14 +4892,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sync_type(input);
             self
         }
-        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of
-        /// repository sync definitions previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of
-        /// repository sync definitions previously requested.</p>
+        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4988,7 +4906,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceInstanceOutputs`.
     ///
     /// <p>View a list service instance infrastructure as code outputs with detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceInstanceOutputs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5033,10 +4951,10 @@ pub mod fluent_builders {
                 crate::input::ListServiceInstanceOutputsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5044,9 +4962,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServiceInstanceOutputsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListServiceInstanceOutputsPaginator<C, M, R> {
+            crate::paginator::ListServiceInstanceOutputsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The service instance name.</p>
-        pub fn service_instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_instance_name(inp);
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_instance_name(input.into());
             self
         }
         /// <p>The service instance name.</p>
@@ -5058,8 +4984,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service name.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The service name.</p>
@@ -5068,8 +4994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to indicate the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
@@ -5081,7 +5007,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceInstanceProvisionedResources`.
     ///
     /// <p>List provisioned resources for a service instance with details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceInstanceProvisionedResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5128,10 +5054,10 @@ pub mod fluent_builders {
                 crate::input::ListServiceInstanceProvisionedResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5139,9 +5065,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServiceInstanceProvisionedResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListServiceInstanceProvisionedResourcesPaginator<C, M, R> {
+            crate::paginator::ListServiceInstanceProvisionedResourcesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The service name.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The service name.</p>
@@ -5150,8 +5087,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service instance name.</p>
-        pub fn service_instance_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_instance_name(inp);
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_instance_name(input.into());
             self
         }
         /// <p>The service instance name.</p>
@@ -5162,14 +5099,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_instance_name(input);
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-        /// resources that was previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-        /// resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5178,7 +5113,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceInstances`.
     ///
     /// <p>List service instances with summaries of detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5223,10 +5158,10 @@ pub mod fluent_builders {
                 crate::input::ListServiceInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5234,9 +5169,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServiceInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListServiceInstancesPaginator<C, M, R> {
+            crate::paginator::ListServiceInstancesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the service that the service instance belongs to.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service that the service instance belongs to.</p>
@@ -5244,21 +5185,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_name(input);
             self
         }
-        /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
-        /// previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
-        /// previously requested.</p>
+        /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of service instances to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of service instances to list.</p>
@@ -5270,7 +5209,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServicePipelineOutputs`.
     ///
     /// <p>View a list service pipeline infrastructure as code outputs with detail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServicePipelineOutputs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5315,10 +5254,10 @@ pub mod fluent_builders {
                 crate::input::ListServicePipelineOutputsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5326,9 +5265,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServicePipelineOutputsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListServicePipelineOutputsPaginator<C, M, R> {
+            crate::paginator::ListServicePipelineOutputsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The service name.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The service name.</p>
@@ -5337,8 +5284,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to indicate the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
@@ -5350,7 +5297,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServicePipelineProvisionedResources`.
     ///
     /// <p>List provisioned resources for a service and pipeline with details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServicePipelineProvisionedResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5397,10 +5344,10 @@ pub mod fluent_builders {
                 crate::input::ListServicePipelineProvisionedResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5408,9 +5355,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServicePipelineProvisionedResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListServicePipelineProvisionedResourcesPaginator<C, M, R> {
+            crate::paginator::ListServicePipelineProvisionedResourcesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The service name.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The service name.</p>
@@ -5418,14 +5376,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_name(input);
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-        /// resources that was previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-        /// resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5434,7 +5390,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServices`.
     ///
     /// <p>List services with summaries of detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5479,10 +5435,10 @@ pub mod fluent_builders {
                 crate::input::ListServicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5490,21 +5446,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
-        /// requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListServicesPaginator<C, M, R> {
+            crate::paginator::ListServicesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of services to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of services to list.</p>
@@ -5516,7 +5476,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceTemplates`.
     ///
     /// <p>List service templates with detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5561,10 +5521,10 @@ pub mod fluent_builders {
                 crate::input::ListServiceTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5572,21 +5532,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
-        /// previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServiceTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListServiceTemplatesPaginator<C, M, R> {
+            crate::paginator::ListServiceTemplatesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
-        /// previously requested.</p>
+        /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of service templates to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of service templates to list.</p>
@@ -5598,7 +5562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServiceTemplateVersions`.
     ///
     /// <p>List major or minor versions of a service template with detail data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceTemplateVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5643,10 +5607,10 @@ pub mod fluent_builders {
                 crate::input::ListServiceTemplateVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5654,21 +5618,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-        /// list of major or minor versions that was previously requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServiceTemplateVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListServiceTemplateVersionsPaginator<C, M, R> {
+            crate::paginator::ListServiceTemplateVersionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-        /// list of major or minor versions that was previously requested.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of major or minor versions of a service template to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of major or minor versions of a service template to list.</p>
@@ -5677,8 +5647,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the service template.</p>
@@ -5690,15 +5660,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
-        /// <p>To view a list of major versions of a service template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
-        pub fn major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(inp);
+        /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
-        /// <p>To view a list of major versions of a service template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5710,7 +5678,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List tags for a resource. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5755,10 +5723,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5766,9 +5734,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsForResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator<C, M, R> {
+            crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the resource for the listed tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for the listed tags.</p>
@@ -5776,21 +5750,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously
-        /// requested.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously requested.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of tags to list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of tags to list.</p>
@@ -5801,14 +5773,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `NotifyResourceDeploymentStatusChange`.
     ///
-    /// <p>Notify Proton of status changes to a provisioned resource when you use pull request provisioning. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template bundles</a>.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>Notify Proton of status changes to a provisioned resource when you use pull request provisioning. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template bundles</a>.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyResourceDeploymentStatusChange<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5855,10 +5823,10 @@ pub mod fluent_builders {
                 crate::input::NotifyResourceDeploymentStatusChangeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5867,8 +5835,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
@@ -5877,8 +5845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of your provisioned resource.</p>
-        pub fn status(mut self, inp: crate::model::ResourceDeploymentStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::ResourceDeploymentStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of your provisioned resource.</p>
@@ -5894,8 +5862,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
-        pub fn outputs(mut self, inp: impl Into<crate::model::Output>) -> Self {
-            self.inner = self.inner.outputs(inp);
+        pub fn outputs(mut self, input: crate::model::Output) -> Self {
+            self.inner = self.inner.outputs(input);
             self
         }
         /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
@@ -5907,8 +5875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment ID for your provisioned resource.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>The deployment ID for your provisioned resource.</p>
@@ -5920,8 +5888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment status message for your provisioned resource.</p>
-        pub fn status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_message(inp);
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_message(input.into());
             self
         }
         /// <p>The deployment status message for your provisioned resource.</p>
@@ -5936,12 +5904,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RejectEnvironmentAccountConnection`.
     ///
     /// <p>In a management account, reject an environment account connection from another environment account.</p>
-    /// <p>After you reject an environment account connection request, you <i>won’t</i> be able to accept or use the rejected environment
-    /// account connection.</p>
+    /// <p>After you reject an environment account connection request, you <i>won’t</i> be able to accept or use the rejected environment account connection.</p>
     /// <p>You <i>can’t</i> reject an environment account connection that is connected to an environment.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
-    /// connections</a> in the <i>Proton Administrator guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectEnvironmentAccountConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5988,10 +5954,10 @@ pub mod fluent_builders {
                 crate::input::RejectEnvironmentAccountConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6000,8 +5966,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment account connection to reject.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the environment account connection to reject.</p>
@@ -6013,7 +5979,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tag a resource. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6058,10 +6024,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6070,8 +6036,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that the resource tag is applied to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that the resource tag is applied to.</p>
@@ -6084,8 +6050,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of resource tags to apply to a resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of resource tags to apply to a resource.</p>
@@ -6100,7 +6066,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove a tag from a resource. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6145,10 +6111,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6157,8 +6123,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that the tag is to be removed from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that the tag is to be removed from.</p>
@@ -6171,8 +6137,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>An array of tag keys indicating the resource tags to be removed from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>An array of tag keys indicating the resource tags to be removed from the resource.</p>
@@ -6187,7 +6153,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAccountSettings`.
     ///
     /// <p>Update the Proton service pipeline role or repository settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6232,10 +6198,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAccountSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6243,23 +6209,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
-        pub fn pipeline_service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_service_role_arn(inp);
+        pub fn pipeline_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_service_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_pipeline_service_role_arn(
             mut self,
@@ -6268,26 +6226,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_service_role_arn(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn pipeline_provisioning_repository(
             mut self,
-            inp: crate::model::RepositoryBranchInput,
+            input: crate::model::RepositoryBranchInput,
         ) -> Self {
-            self.inner = self.inner.pipeline_provisioning_repository(inp);
+            self.inner = self.inner.pipeline_provisioning_repository(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_pipeline_provisioning_repository(
             mut self,
@@ -6300,54 +6250,36 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEnvironment`.
     ///
     /// <p>Update an environment.</p>
-    /// <p>If the environment is associated with an environment account connection, <i>don't</i> update or include the
-    /// <code>protonServiceRoleArn</code> and <code>provisioningRepository</code> parameter to update or connect to an environment account
-    /// connection.</p>
-    /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment
-    /// account connection was created in and is associated with the current environment.</p>
-    /// <p>If the environment <i>isn't</i> associated with an environment account connection, <i>don't</i> update or include
-    /// the <code>environmentAccountConnectionId</code> parameter to update or connect to an environment account connection.</p>
-    /// <p>You can update either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value. You can’t
-    /// update both.</p>
-    /// <p>If the environment was provisioned with pull request provisioning, include the <code>provisioningRepository</code> parameter and omit the
-    /// <code>protonServiceRoleArn</code> and <code>environmentAccountConnectionId</code> parameters.</p>
+    /// <p>If the environment is associated with an environment account connection, <i>don't</i> update or include the <code>protonServiceRoleArn</code> and <code>provisioningRepository</code> parameter to update or connect to an environment account connection.</p>
+    /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
+    /// <p>If the environment <i>isn't</i> associated with an environment account connection, <i>don't</i> update or include the <code>environmentAccountConnectionId</code> parameter to update or connect to an environment account connection.</p>
+    /// <p>You can update either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value. You can’t update both.</p>
+    /// <p>If the environment was provisioned with pull request provisioning, include the <code>provisioningRepository</code> parameter and omit the <code>protonServiceRoleArn</code> and <code>environmentAccountConnectionId</code> parameters.</p>
     /// <p>If the environment wasn't provisioned with pull request provisioning, omit the <code>provisioningRepository</code> parameter.</p>
     /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version
-    /// in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that's higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that's higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6392,10 +6324,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6404,8 +6336,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment to update.</p>
@@ -6414,8 +6346,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the environment update.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the environment update.</p>
@@ -6424,8 +6356,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The formatted specification that defines the update.</p>
-        pub fn spec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spec(inp);
+        pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spec(input.into());
             self
         }
         /// <p>The formatted specification that defines the update.</p>
@@ -6434,8 +6366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version of the environment to update.</p>
-        pub fn template_major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_major_version(inp);
+        pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_major_version(input.into());
             self
         }
         /// <p>The major version of the environment to update.</p>
@@ -6447,8 +6379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minor version of the environment to update.</p>
-        pub fn template_minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_minor_version(inp);
+        pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_minor_version(input.into());
             self
         }
         /// <p>The minor version of the environment to update.</p>
@@ -6460,8 +6392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make API calls to other services your behalf.</p>
-        pub fn proton_service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proton_service_role_arn(inp);
+        pub fn proton_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proton_service_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make API calls to other services your behalf.</p>
@@ -6474,76 +6406,52 @@ pub mod fluent_builders {
         }
         /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version
-        /// in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
-        pub fn deployment_type(mut self, inp: crate::model::DeploymentUpdateType) -> Self {
-            self.inner = self.inner.deployment_type(inp);
+        pub fn deployment_type(mut self, input: crate::model::DeploymentUpdateType) -> Self {
+            self.inner = self.inner.deployment_type(input);
             self
         }
         /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version
-        /// in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn set_deployment_type(
@@ -6554,18 +6462,16 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the environment account connection.</p>
-        /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment
-        /// account connection was created in and is associated with the current environment.</p>
+        /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
         pub fn environment_account_connection_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.environment_account_connection_id(inp);
+            self.inner = self.inner.environment_account_connection_id(input.into());
             self
         }
         /// <p>The ID of the environment account connection.</p>
-        /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment
-        /// account connection was created in and is associated with the current environment.</p>
+        /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
         pub fn set_environment_account_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6573,23 +6479,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_account_connection_id(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
-        pub fn provisioning_repository(mut self, inp: crate::model::RepositoryBranchInput) -> Self {
-            self.inner = self.inner.provisioning_repository(inp);
+        pub fn provisioning_repository(
+            mut self,
+            input: crate::model::RepositoryBranchInput,
+        ) -> Self {
+            self.inner = self.inner.provisioning_repository(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_provisioning_repository(
             mut self,
@@ -6602,9 +6503,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEnvironmentAccountConnection`.
     ///
     /// <p>In an environment account, update an environment account connection to use a new IAM role.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
-    /// connections</a> in the <i>Proton Administrator guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironmentAccountConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6651,10 +6551,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEnvironmentAccountConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6663,8 +6563,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment account connection to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the environment account connection to update.</p>
@@ -6673,8 +6573,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that is associated with the environment account connection to update.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that is associated with the environment account connection to update.</p>
@@ -6686,7 +6586,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEnvironmentTemplate`.
     ///
     /// <p>Update an environment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironmentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6731,10 +6631,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEnvironmentTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6743,8 +6643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment template to update.</p>
@@ -6753,8 +6653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the environment template to update as displayed in the developer interface.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the environment template to update as displayed in the developer interface.</p>
@@ -6763,8 +6663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the environment template update.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the environment template update.</p>
@@ -6776,7 +6676,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEnvironmentTemplateVersion`.
     ///
     /// <p>Update a major or minor version of an environment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEnvironmentTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6821,10 +6721,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEnvironmentTemplateVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6833,8 +6733,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the environment template.</p>
@@ -6846,8 +6746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
-        pub fn major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(inp);
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
@@ -6859,8 +6759,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
-        pub fn minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(inp);
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
@@ -6872,8 +6772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of environment template version to update.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of environment template version to update.</p>
@@ -6882,8 +6782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the environment template minor version to update.</p>
-        pub fn status(mut self, inp: crate::model::TemplateVersionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::TemplateVersionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the environment template minor version to update.</p>
@@ -6897,13 +6797,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateService`.
     ///
-    /// <p>Edit a service description or use a spec to add and delete service instances.</p>
-    /// <note>
+    /// <p>Edit a service description or use a spec to add and delete service instances.</p> <note>
     /// <p>Existing service instances and the service pipeline <i>can't</i> be edited using this API. They can only be deleted.</p>
     /// </note>
     /// <p>Use the <code>description</code> parameter to modify the description.</p>
     /// <p>Edit the <code>spec</code> parameter to add or delete instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6948,10 +6847,10 @@ pub mod fluent_builders {
                 crate::input::UpdateServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6960,8 +6859,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service to edit.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service to edit.</p>
@@ -6970,8 +6869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The edited service description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The edited service description.</p>
@@ -6979,18 +6878,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list.
-        /// <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
-        /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-        /// the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
-        pub fn spec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spec(inp);
+        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+        pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spec(input.into());
             self
         }
-        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list.
-        /// <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
-        /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-        /// the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_spec(input);
             self
@@ -6999,43 +6892,30 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateServiceInstance`.
     ///
     /// <p>Update a service instance.</p>
-    /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the
-    /// mode.</p>
+    /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major
-    /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7080,10 +6960,10 @@ pub mod fluent_builders {
                 crate::input::UpdateServiceInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7092,8 +6972,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service instance to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service instance to update.</p>
@@ -7102,8 +6982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service that the service instance belongs to.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service that the service instance belongs to.</p>
@@ -7112,81 +6992,55 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the
-        /// mode.</p>
+        /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major
-        /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
-        pub fn deployment_type(mut self, inp: crate::model::DeploymentUpdateType) -> Self {
-            self.inner = self.inner.deployment_type(inp);
+        pub fn deployment_type(mut self, input: crate::model::DeploymentUpdateType) -> Self {
+            self.inner = self.inner.deployment_type(input);
             self
         }
         /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the
-        /// mode.</p>
+        /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major
-        /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn set_deployment_type(
@@ -7197,8 +7051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The formatted specification that defines the service instance update.</p>
-        pub fn spec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spec(inp);
+        pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spec(input.into());
             self
         }
         /// <p>The formatted specification that defines the service instance update.</p>
@@ -7207,8 +7061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version of the service template to update.</p>
-        pub fn template_major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_major_version(inp);
+        pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_major_version(input.into());
             self
         }
         /// <p>The major version of the service template to update.</p>
@@ -7220,8 +7074,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minor version of the service template to update.</p>
-        pub fn template_minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_minor_version(inp);
+        pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_minor_version(input.into());
             self
         }
         /// <p>The minor version of the service template to update.</p>
@@ -7236,43 +7090,30 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateServicePipeline`.
     ///
     /// <p>Update the service pipeline.</p>
-    /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the
-    /// mode.</p>
+    /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major
-    /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServicePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7317,10 +7158,10 @@ pub mod fluent_builders {
                 crate::input::UpdateServicePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7329,8 +7170,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service to that the pipeline is associated with.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service to that the pipeline is associated with.</p>
@@ -7339,8 +7180,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The spec for the service pipeline to update.</p>
-        pub fn spec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spec(inp);
+        pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spec(input.into());
             self
         }
         /// <p>The spec for the service pipeline to update.</p>
@@ -7349,81 +7190,55 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the
-        /// mode.</p>
+        /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major
-        /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
-        pub fn deployment_type(mut self, inp: crate::model::DeploymentUpdateType) -> Self {
-            self.inner = self.inner.deployment_type(inp);
+        pub fn deployment_type(mut self, input: crate::model::DeploymentUpdateType) -> Self {
+            self.inner = self.inner.deployment_type(input);
             self
         }
         /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the
-        /// mode.</p>
+        /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major
-        /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn set_deployment_type(
@@ -7434,8 +7249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version of the service template that was used to create the service that the pipeline is associated with.</p>
-        pub fn template_major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_major_version(inp);
+        pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_major_version(input.into());
             self
         }
         /// <p>The major version of the service template that was used to create the service that the pipeline is associated with.</p>
@@ -7447,8 +7262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minor version of the service template that was used to create the service that the pipeline is associated with.</p>
-        pub fn template_minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_minor_version(inp);
+        pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_minor_version(input.into());
             self
         }
         /// <p>The minor version of the service template that was used to create the service that the pipeline is associated with.</p>
@@ -7463,7 +7278,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateServiceTemplate`.
     ///
     /// <p>Update a service template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7508,10 +7323,10 @@ pub mod fluent_builders {
                 crate::input::UpdateServiceTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7520,8 +7335,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service template to update.</p>
@@ -7530,8 +7345,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service template to update as displayed in the developer interface.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the service template to update as displayed in the developer interface.</p>
@@ -7540,8 +7355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the service template update.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the service template update.</p>
@@ -7553,7 +7368,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateServiceTemplateVersion`.
     ///
     /// <p>Update a major or minor version of a service template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceTemplateVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7598,10 +7413,10 @@ pub mod fluent_builders {
                 crate::input::UpdateServiceTemplateVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7610,8 +7425,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the service template.</p>
@@ -7623,8 +7438,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
-        pub fn major_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(inp);
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
@@ -7636,8 +7451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
-        pub fn minor_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(inp);
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
@@ -7649,8 +7464,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of a service template version to update.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of a service template version to update.</p>
@@ -7659,8 +7474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the service template minor version to update.</p>
-        pub fn status(mut self, inp: crate::model::TemplateVersionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::TemplateVersionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the service template minor version to update.</p>
@@ -7678,9 +7493,9 @@ pub mod fluent_builders {
         /// <p>An array of compatible environment names for a service template major or minor version to update.</p>
         pub fn compatible_environment_templates(
             mut self,
-            inp: impl Into<crate::model::CompatibleEnvironmentTemplateInput>,
+            input: crate::model::CompatibleEnvironmentTemplateInput,
         ) -> Self {
-            self.inner = self.inner.compatible_environment_templates(inp);
+            self.inner = self.inner.compatible_environment_templates(input);
             self
         }
         /// <p>An array of compatible environment names for a service template major or minor version to update.</p>
@@ -7697,7 +7512,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTemplateSyncConfig`.
     ///
     /// <p>Update template sync configuration parameters, except for the <code>templateName</code> and <code>templateType</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTemplateSyncConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7742,10 +7557,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTemplateSyncConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7754,8 +7569,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The synced template name.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The synced template name.</p>
@@ -7767,8 +7582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The synced template type.</p>
-        pub fn template_type(mut self, inp: crate::model::TemplateType) -> Self {
-            self.inner = self.inner.template_type(inp);
+        pub fn template_type(mut self, input: crate::model::TemplateType) -> Self {
+            self.inner = self.inner.template_type(input);
             self
         }
         /// <p>The synced template type.</p>
@@ -7780,8 +7595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository provider.</p>
-        pub fn repository_provider(mut self, inp: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.repository_provider(inp);
+        pub fn repository_provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.repository_provider(input);
             self
         }
         /// <p>The repository provider.</p>
@@ -7793,8 +7608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
@@ -7806,8 +7621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository branch.</p>
-        pub fn branch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch(inp);
+        pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch(input.into());
             self
         }
         /// <p>The repository branch.</p>
@@ -7816,8 +7631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
-        pub fn subdirectory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(inp);
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
@@ -7827,6 +7642,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

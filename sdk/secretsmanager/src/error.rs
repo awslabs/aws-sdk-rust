@@ -14,22 +14,16 @@ pub struct CancelRotateSecretError {
 pub enum CancelRotateSecretErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -75,8 +69,6 @@ impl CancelRotateSecretError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -151,37 +143,28 @@ pub struct CreateSecretError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSecretErrorKind {
-    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the
-    /// customer master key (CMK) is available, enabled, and not in an invalid state. For more
-    /// information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a>.</p>
+    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the KMS key is available, enabled, and not in an invalid state. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>.</p>
     EncryptionFailure(crate::error::EncryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The request failed because it would exceed one of the Secrets Manager internal limits.</p>
+    /// <p>The request failed because it would exceed one of the Secrets Manager quotas.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>You provided a resource-based policy with syntax errors.</p>
+    /// <p>The resource policy has syntax errors.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
     /// <p>The request failed because you did not complete all the prerequisite steps.</p>
     PreconditionNotMetException(crate::error::PreconditionNotMetException),
     /// <p>A resource with the ID you requested already exists.</p>
     ResourceExistsException(crate::error::ResourceExistsException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -232,8 +215,6 @@ impl CreateSecretError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -341,22 +322,16 @@ pub struct DeleteResourcePolicyError {
 pub enum DeleteResourcePolicyErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -402,8 +377,6 @@ impl DeleteResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -480,22 +453,16 @@ pub struct DeleteSecretError {
 pub enum DeleteSecretErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -541,8 +508,6 @@ impl DeleteSecretError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -616,9 +581,9 @@ pub struct DescribeSecretError {
 pub enum DescribeSecretErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -663,8 +628,6 @@ impl DescribeSecretError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -730,19 +693,13 @@ pub struct GetRandomPasswordError {
 pub enum GetRandomPasswordErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -788,8 +745,6 @@ impl GetRandomPasswordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -858,22 +813,16 @@ pub struct GetResourcePolicyError {
 pub enum GetResourcePolicyErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -919,8 +868,6 @@ impl GetResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -999,22 +946,16 @@ pub enum GetSecretValueErrorKind {
     DecryptionFailure(crate::error::DecryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1061,8 +1002,6 @@ impl GetSecretValueError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1141,9 +1080,9 @@ pub struct ListSecretsError {
 pub enum ListSecretsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid <code>NextToken</code> value.</p>
+    /// <p>The <code>NextToken</code> value is invalid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1188,8 +1127,6 @@ impl ListSecretsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1255,11 +1192,11 @@ pub struct ListSecretVersionIdsError {
 pub enum ListSecretVersionIdsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid <code>NextToken</code> value.</p>
+    /// <p>The <code>NextToken</code> value is invalid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1305,8 +1242,6 @@ impl ListSecretVersionIdsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1383,26 +1318,20 @@ pub struct PutResourcePolicyError {
 pub enum PutResourcePolicyErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You provided a resource-based policy with syntax errors.</p>
+    /// <p>The resource policy has syntax errors.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The BlockPublicPolicy parameter is set to true and the resource policy did not prevent broad access to the secret.</p>
+    /// <p>The <code>BlockPublicPolicy</code> parameter is set to true, and the resource policy did not prevent broad access to the secret.</p>
     PublicPolicyException(crate::error::PublicPolicyException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1450,8 +1379,6 @@ impl PutResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1542,33 +1469,24 @@ pub struct PutSecretValueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutSecretValueErrorKind {
-    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the
-    /// customer master key (CMK) is available, enabled, and not in an invalid state. For more
-    /// information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a>.</p>
+    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the KMS key is available, enabled, and not in an invalid state. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>.</p>
     EncryptionFailure(crate::error::EncryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The request failed because it would exceed one of the Secrets Manager internal limits.</p>
+    /// <p>The request failed because it would exceed one of the Secrets Manager quotas.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A resource with the ID you requested already exists.</p>
     ResourceExistsException(crate::error::ResourceExistsException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1617,8 +1535,6 @@ impl PutSecretValueError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1713,22 +1629,16 @@ pub struct RemoveRegionsFromReplicationError {
 pub enum RemoveRegionsFromReplicationErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1778,8 +1688,6 @@ impl RemoveRegionsFromReplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1860,22 +1768,16 @@ pub struct ReplicateSecretToRegionsError {
 pub enum ReplicateSecretToRegionsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1921,8 +1823,6 @@ impl ReplicateSecretToRegionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1999,22 +1899,16 @@ pub struct RestoreSecretError {
 pub enum RestoreSecretErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2060,8 +1954,6 @@ impl RestoreSecretError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2135,22 +2027,16 @@ pub struct RotateSecretError {
 pub enum RotateSecretErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2196,8 +2082,6 @@ impl RotateSecretError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2271,22 +2155,16 @@ pub struct StopReplicationToReplicaError {
 pub enum StopReplicationToReplicaErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2332,8 +2210,6 @@ impl StopReplicationToReplicaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2410,22 +2286,16 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2471,8 +2341,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2543,22 +2411,16 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2604,8 +2466,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2677,37 +2537,28 @@ pub struct UpdateSecretError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSecretErrorKind {
-    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the
-    /// customer master key (CMK) is available, enabled, and not in an invalid state. For more
-    /// information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a>.</p>
+    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the KMS key is available, enabled, and not in an invalid state. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>.</p>
     EncryptionFailure(crate::error::EncryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The request failed because it would exceed one of the Secrets Manager internal limits.</p>
+    /// <p>The request failed because it would exceed one of the Secrets Manager quotas.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>You provided a resource-based policy with syntax errors.</p>
+    /// <p>The resource policy has syntax errors.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
     /// <p>The request failed because you did not complete all the prerequisite steps.</p>
     PreconditionNotMetException(crate::error::PreconditionNotMetException),
     /// <p>A resource with the ID you requested already exists.</p>
     ResourceExistsException(crate::error::ResourceExistsException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2758,8 +2609,6 @@ impl UpdateSecretError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2867,24 +2716,18 @@ pub struct UpdateSecretVersionStageError {
 pub enum UpdateSecretVersionStageErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The request failed because it would exceed one of the Secrets Manager internal limits.</p>
+    /// <p>The request failed because it would exceed one of the Secrets Manager quotas.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2931,8 +2774,6 @@ impl UpdateSecretVersionStageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3017,24 +2858,18 @@ pub struct ValidateResourcePolicyError {
 pub enum ValidateResourcePolicyErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
-    /// <p>You provided an invalid value for a parameter.</p>
+    /// <p>The parameter name is invalid value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You provided a resource-based policy with syntax errors.</p>
+    /// <p>The resource policy has syntax errors.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>We can't find the resource that you asked for.</p>
+    /// <p>Secrets Manager can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3083,8 +2918,6 @@ impl ValidateResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3156,7 +2989,7 @@ impl std::error::Error for ValidateResourcePolicyError {
     }
 }
 
-/// <p>We can't find the resource that you asked for.</p>
+/// <p>Secrets Manager can't find the resource that you asked for.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -3220,7 +3053,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>You provided a resource-based policy with syntax errors.</p>
+/// <p>The resource policy has syntax errors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedPolicyDocumentException {
@@ -3284,17 +3117,11 @@ impl MalformedPolicyDocumentException {
     }
 }
 
-/// <p>You provided a parameter value that is not valid for the current state of the
-/// resource.</p>
+/// <p>A parameter value is not valid for the current state of the resource.</p>
 /// <p>Possible causes:</p>
 /// <ul>
-/// <li>
-/// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-/// </li>
-/// <li>
-/// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-/// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-/// </li>
+/// <li> <p>The secret is scheduled for deletion.</p> </li>
+/// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3359,7 +3186,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>You provided an invalid value for a parameter.</p>
+/// <p>The parameter name is invalid value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
@@ -3487,7 +3314,7 @@ impl InternalServiceError {
     }
 }
 
-/// <p>The request failed because it would exceed one of the Secrets Manager internal limits.</p>
+/// <p>The request failed because it would exceed one of the Secrets Manager quotas.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -3679,10 +3506,7 @@ impl PreconditionNotMetException {
     }
 }
 
-/// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the
-/// customer master key (CMK) is available, enabled, and not in an invalid state. For more
-/// information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-/// Customer Master Key</a>.</p>
+/// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the KMS key is available, enabled, and not in an invalid state. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionFailure {
@@ -3746,7 +3570,7 @@ impl EncryptionFailure {
     }
 }
 
-/// <p>The BlockPublicPolicy parameter is set to true and the resource policy did not prevent broad access to the secret.</p>
+/// <p>The <code>BlockPublicPolicy</code> parameter is set to true, and the resource policy did not prevent broad access to the secret.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicPolicyException {
@@ -3810,7 +3634,7 @@ impl PublicPolicyException {
     }
 }
 
-/// <p>You provided an invalid <code>NextToken</code> value.</p>
+/// <p>The <code>NextToken</code> value is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {

@@ -3,31 +3,25 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfiguration {
-    /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is
-    /// installed.</p>
+    /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the
-    /// infrastructure where your provider type is installed.</p>
+    /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The ID of the security group or security groups associated with the Amazon VPC connected
-    /// to the infrastructure where your provider type is installed.</p>
+    /// <p>The ID of the security group or security groups associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.</p>
     pub tls_certificate: std::option::Option<std::string::String>,
 }
 impl VpcConfiguration {
-    /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is
-    /// installed.</p>
+    /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the
-    /// infrastructure where your provider type is installed.</p>
+    /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>The ID of the security group or security groups associated with the Amazon VPC connected
-    /// to the infrastructure where your provider type is installed.</p>
+    /// <p>The ID of the security group or security groups associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
@@ -58,14 +52,12 @@ pub mod vpc_configuration {
         pub(crate) tls_certificate: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is
-        /// installed.</p>
+        /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is
-        /// installed.</p>
+        /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -74,16 +66,14 @@ pub mod vpc_configuration {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the
-        /// infrastructure where your provider type is installed.</p>
+        /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
-        /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the
-        /// infrastructure where your provider type is installed.</p>
+        /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -95,16 +85,14 @@ pub mod vpc_configuration {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>The ID of the security group or security groups associated with the Amazon VPC connected
-        /// to the infrastructure where your provider type is installed.</p>
+        /// <p>The ID of the security group or security groups associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
-        /// <p>The ID of the security group or security groups associated with the Amazon VPC connected
-        /// to the infrastructure where your provider type is installed.</p>
+        /// <p>The ID of the security group or security groups associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -217,12 +205,8 @@ impl Tag {
     }
 }
 
-/// <p>A resource that represents the infrastructure where a third-party provider is installed.
-/// The host is used when you create connections to an installed third-party provider type, such
-/// as GitHub Enterprise Server. You create one host for all connections to that provider.</p>
-/// <note>
-/// <p>A host created through the CLI or the SDK is in `PENDING` status by
-/// default. You can make its status `AVAILABLE` by setting up the host in the console.</p>
+/// <p>A resource that represents the infrastructure where a third-party provider is installed. The host is used when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You create one host for all connections to that provider.</p> <note>
+/// <p>A host created through the CLI or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by setting up the host in the console.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -231,9 +215,7 @@ pub struct Host {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the host.</p>
     pub host_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the installed provider to be associated with your connection. The host
-    /// resource represents the infrastructure where your provider type is installed. The valid
-    /// provider type is GitHub Enterprise Server.</p>
+    /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     pub provider_type: std::option::Option<crate::model::ProviderType>,
     /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
     pub provider_endpoint: std::option::Option<std::string::String>,
@@ -253,9 +235,7 @@ impl Host {
     pub fn host_arn(&self) -> std::option::Option<&str> {
         self.host_arn.as_deref()
     }
-    /// <p>The name of the installed provider to be associated with your connection. The host
-    /// resource represents the infrastructure where your provider type is installed. The valid
-    /// provider type is GitHub Enterprise Server.</p>
+    /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
         self.provider_type.as_ref()
     }
@@ -324,16 +304,12 @@ pub mod host {
             self.host_arn = input;
             self
         }
-        /// <p>The name of the installed provider to be associated with your connection. The host
-        /// resource represents the infrastructure where your provider type is installed. The valid
-        /// provider type is GitHub Enterprise Server.</p>
+        /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
             self.provider_type = Some(input);
             self
         }
-        /// <p>The name of the installed provider to be associated with your connection. The host
-        /// resource represents the infrastructure where your provider type is installed. The valid
-        /// provider type is GitHub Enterprise Server.</p>
+        /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -471,24 +447,19 @@ impl AsRef<str> for ProviderType {
 }
 
 /// <p>A resource that is used to connect third-party source providers with services like AWS CodePipeline.</p>
-/// <p>Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the
-/// connection in the console.</p>
+/// <p>Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the connection in the console.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Connection {
     /// <p>The name of the connection. Connection names must be unique in an AWS user account.</p>
     pub connection_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection
-    /// reference when the connection is shared between AWS services.</p>
-    /// <note>
+    /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub connection_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the external provider where your third-party code repository is
-    /// configured.</p>
+    /// <p>The name of the external provider where your third-party code repository is configured.</p>
     pub provider_type: std::option::Option<crate::model::ProviderType>,
-    /// <p>The identifier of the external provider where your third-party code repository is configured.
-    /// For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
+    /// <p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The current status of the connection. </p>
     pub connection_status: std::option::Option<crate::model::ConnectionStatus>,
@@ -500,21 +471,17 @@ impl Connection {
     pub fn connection_name(&self) -> std::option::Option<&str> {
         self.connection_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection
-    /// reference when the connection is shared between AWS services.</p>
-    /// <note>
+    /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub fn connection_arn(&self) -> std::option::Option<&str> {
         self.connection_arn.as_deref()
     }
-    /// <p>The name of the external provider where your third-party code repository is
-    /// configured.</p>
+    /// <p>The name of the external provider where your third-party code repository is configured.</p>
     pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
         self.provider_type.as_ref()
     }
-    /// <p>The identifier of the external provider where your third-party code repository is configured.
-    /// For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
+    /// <p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
     pub fn owner_account_id(&self) -> std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
@@ -566,18 +533,14 @@ pub mod connection {
             self.connection_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection
-        /// reference when the connection is shared between AWS services.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
         /// <p>The ARN is never reused if the connection is deleted.</p>
         /// </note>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection
-        /// reference when the connection is shared between AWS services.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
         /// <p>The ARN is never reused if the connection is deleted.</p>
         /// </note>
         pub fn set_connection_arn(
@@ -587,14 +550,12 @@ pub mod connection {
             self.connection_arn = input;
             self
         }
-        /// <p>The name of the external provider where your third-party code repository is
-        /// configured.</p>
+        /// <p>The name of the external provider where your third-party code repository is configured.</p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
             self.provider_type = Some(input);
             self
         }
-        /// <p>The name of the external provider where your third-party code repository is
-        /// configured.</p>
+        /// <p>The name of the external provider where your third-party code repository is configured.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -602,14 +563,12 @@ pub mod connection {
             self.provider_type = input;
             self
         }
-        /// <p>The identifier of the external provider where your third-party code repository is configured.
-        /// For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
+        /// <p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the external provider where your third-party code repository is configured.
-        /// For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
+        /// <p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
         pub fn set_owner_account_id(
             mut self,
             input: std::option::Option<std::string::String>,

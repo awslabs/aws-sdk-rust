@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for EC2 Image Builder
@@ -286,10 +286,18 @@ where
     pub fn import_component(&self) -> fluent_builders::ImportComponent<C, M, R> {
         fluent_builders::ImportComponent::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ImportVmImage` operation.
+    ///
+    /// See [`ImportVmImage`](crate::client::fluent_builders::ImportVmImage) for more information about the
+    /// operation and its arguments.
+    pub fn import_vm_image(&self) -> fluent_builders::ImportVmImage<C, M, R> {
+        fluent_builders::ImportVmImage::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListComponentBuildVersions` operation.
     ///
     /// See [`ListComponentBuildVersions`](crate::client::fluent_builders::ListComponentBuildVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComponentBuildVersions::into_paginator).
     pub fn list_component_build_versions(
         &self,
     ) -> fluent_builders::ListComponentBuildVersions<C, M, R> {
@@ -299,6 +307,7 @@ where
     ///
     /// See [`ListComponents`](crate::client::fluent_builders::ListComponents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComponents::into_paginator).
     pub fn list_components(&self) -> fluent_builders::ListComponents<C, M, R> {
         fluent_builders::ListComponents::new(self.handle.clone())
     }
@@ -306,6 +315,7 @@ where
     ///
     /// See [`ListContainerRecipes`](crate::client::fluent_builders::ListContainerRecipes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContainerRecipes::into_paginator).
     pub fn list_container_recipes(&self) -> fluent_builders::ListContainerRecipes<C, M, R> {
         fluent_builders::ListContainerRecipes::new(self.handle.clone())
     }
@@ -313,6 +323,7 @@ where
     ///
     /// See [`ListDistributionConfigurations`](crate::client::fluent_builders::ListDistributionConfigurations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDistributionConfigurations::into_paginator).
     pub fn list_distribution_configurations(
         &self,
     ) -> fluent_builders::ListDistributionConfigurations<C, M, R> {
@@ -322,6 +333,7 @@ where
     ///
     /// See [`ListImageBuildVersions`](crate::client::fluent_builders::ListImageBuildVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImageBuildVersions::into_paginator).
     pub fn list_image_build_versions(&self) -> fluent_builders::ListImageBuildVersions<C, M, R> {
         fluent_builders::ListImageBuildVersions::new(self.handle.clone())
     }
@@ -329,6 +341,7 @@ where
     ///
     /// See [`ListImagePackages`](crate::client::fluent_builders::ListImagePackages) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImagePackages::into_paginator).
     pub fn list_image_packages(&self) -> fluent_builders::ListImagePackages<C, M, R> {
         fluent_builders::ListImagePackages::new(self.handle.clone())
     }
@@ -336,6 +349,7 @@ where
     ///
     /// See [`ListImagePipelineImages`](crate::client::fluent_builders::ListImagePipelineImages) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImagePipelineImages::into_paginator).
     pub fn list_image_pipeline_images(&self) -> fluent_builders::ListImagePipelineImages<C, M, R> {
         fluent_builders::ListImagePipelineImages::new(self.handle.clone())
     }
@@ -343,6 +357,7 @@ where
     ///
     /// See [`ListImagePipelines`](crate::client::fluent_builders::ListImagePipelines) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImagePipelines::into_paginator).
     pub fn list_image_pipelines(&self) -> fluent_builders::ListImagePipelines<C, M, R> {
         fluent_builders::ListImagePipelines::new(self.handle.clone())
     }
@@ -350,6 +365,7 @@ where
     ///
     /// See [`ListImageRecipes`](crate::client::fluent_builders::ListImageRecipes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImageRecipes::into_paginator).
     pub fn list_image_recipes(&self) -> fluent_builders::ListImageRecipes<C, M, R> {
         fluent_builders::ListImageRecipes::new(self.handle.clone())
     }
@@ -357,6 +373,7 @@ where
     ///
     /// See [`ListImages`](crate::client::fluent_builders::ListImages) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImages::into_paginator).
     pub fn list_images(&self) -> fluent_builders::ListImages<C, M, R> {
         fluent_builders::ListImages::new(self.handle.clone())
     }
@@ -364,6 +381,7 @@ where
     ///
     /// See [`ListInfrastructureConfigurations`](crate::client::fluent_builders::ListInfrastructureConfigurations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInfrastructureConfigurations::into_paginator).
     pub fn list_infrastructure_configurations(
         &self,
     ) -> fluent_builders::ListInfrastructureConfigurations<C, M, R> {
@@ -465,9 +483,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CancelImageCreation`.
     ///
-    /// <p>CancelImageCreation cancels the creation of Image. This operation can only be used on
-    /// images in a non-terminal state.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>CancelImageCreation cancels the creation of Image. This operation can only be used on images in a non-terminal state.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelImageCreation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -512,10 +529,10 @@ pub mod fluent_builders {
                 crate::input::CancelImageCreationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -524,8 +541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
-        pub fn image_build_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_build_version_arn(inp);
+        pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_build_version_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
@@ -536,12 +553,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_build_version_arn(input);
             self
         }
-        /// <p>The idempotency token used to make this request idempotent.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>The idempotency token used to make this request idempotent.</p>
+        /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -549,9 +566,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateComponent`.
     ///
-    /// <p>Creates a new component that can be used to build, validate, test, and assess your
-    /// image.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new component that can be used to build, validate, test, and assess your image.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -596,10 +612,10 @@ pub mod fluent_builders {
                 crate::input::CreateComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -608,8 +624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the component.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -617,35 +633,41 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
-        pub fn semantic_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(inp);
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn set_semantic_version(
             mut self,
@@ -655,8 +677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the component. Describes the contents of the component.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the component. Describes the contents of the component.</p>
@@ -664,14 +686,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.</p>
-        pub fn change_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_description(inp);
+        /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+        pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_description(input.into());
             self
         }
-        /// <p>The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.</p>
+        /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
         pub fn set_change_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -680,8 +700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The platform of the component.</p>
-        pub fn platform(mut self, inp: crate::model::Platform) -> Self {
-            self.inner = self.inner.platform(inp);
+        pub fn platform(mut self, input: crate::model::Platform) -> Self {
+            self.inner = self.inner.platform(input);
             self
         }
         /// <p>The platform of the component.</p>
@@ -693,16 +713,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
         ///
-        /// <p> The operating system (OS) version supported by the component. If the OS information is
-        /// available, a prefix match is performed against the base image OS version during image recipe
-        /// creation.</p>
-        pub fn supported_os_versions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.supported_os_versions(inp);
+        /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+        pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.supported_os_versions(input.into());
             self
         }
-        /// <p> The operating system (OS) version supported by the component. If the OS information is
-        /// available, a prefix match is performed against the base image OS version during image recipe
-        /// creation.</p>
+        /// <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
         pub fn set_supported_os_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -710,37 +726,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_supported_os_versions(input);
             self
         }
-        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-        /// <code>uri</code> can be used to specify the data within the component.</p>
-        pub fn data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data(inp);
+        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+        pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data(input.into());
             self
         }
-        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-        /// <code>uri</code> can be used to specify the data within the component.</p>
+        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_data(input);
             self
         }
-        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-        /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-        /// component.</p>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uri(inp);
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uri(input.into());
             self
         }
-        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-        /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-        /// component.</p>
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_uri(input);
             self
         }
         /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
@@ -758,7 +766,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags of the component.</p>
@@ -772,8 +780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token of the component.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token of the component.</p>
@@ -785,7 +793,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContainerRecipe`.
     ///
     /// <p>Creates a new container recipe. Container recipes define how images are configured, tested, and assessed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContainerRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -830,10 +838,10 @@ pub mod fluent_builders {
                 crate::input::CreateContainerRecipeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -842,8 +850,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of container to create.</p>
-        pub fn container_type(mut self, inp: crate::model::ContainerType) -> Self {
-            self.inner = self.inner.container_type(inp);
+        pub fn container_type(mut self, input: crate::model::ContainerType) -> Self {
+            self.inner = self.inner.container_type(input);
             self
         }
         /// <p>The type of container to create.</p>
@@ -855,8 +863,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the container recipe.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the container recipe.</p>
@@ -865,8 +873,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the container recipe.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the container recipe.</p>
@@ -874,35 +882,41 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
-        pub fn semantic_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(inp);
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn set_semantic_version(
             mut self,
@@ -916,8 +930,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
         /// <p>Components for build and test that are included in the container recipe.</p>
-        pub fn components(mut self, inp: impl Into<crate::model::ComponentConfiguration>) -> Self {
-            self.inner = self.inner.components(inp);
+        pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
+            self.inner = self.inner.components(input);
             self
         }
         /// <p>Components for build and test that are included in the container recipe.</p>
@@ -929,8 +943,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-        pub fn instance_configuration(mut self, inp: crate::model::InstanceConfiguration) -> Self {
-            self.inner = self.inner.instance_configuration(inp);
+        pub fn instance_configuration(
+            mut self,
+            input: crate::model::InstanceConfiguration,
+        ) -> Self {
+            self.inner = self.inner.instance_configuration(input);
             self
         }
         /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
@@ -942,8 +959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
-        pub fn dockerfile_template_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dockerfile_template_data(inp);
+        pub fn dockerfile_template_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dockerfile_template_data(input.into());
             self
         }
         /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
@@ -955,8 +972,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
-        pub fn dockerfile_template_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dockerfile_template_uri(inp);
+        pub fn dockerfile_template_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dockerfile_template_uri(input.into());
             self
         }
         /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
@@ -968,8 +985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the operating system platform when you use a custom base image.</p>
-        pub fn platform_override(mut self, inp: crate::model::Platform) -> Self {
-            self.inner = self.inner.platform_override(inp);
+        pub fn platform_override(mut self, input: crate::model::Platform) -> Self {
+            self.inner = self.inner.platform_override(input);
             self
         }
         /// <p>Specifies the operating system platform when you use a custom base image.</p>
@@ -981,8 +998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the operating system version for the base image.</p>
-        pub fn image_os_version_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_os_version_override(inp);
+        pub fn image_os_version_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_os_version_override(input.into());
             self
         }
         /// <p>Specifies the operating system version for the base image.</p>
@@ -994,8 +1011,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The base image for the container recipe.</p>
-        pub fn parent_image(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_image(inp);
+        pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_image(input.into());
             self
         }
         /// <p>The base image for the container recipe.</p>
@@ -1013,7 +1030,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags that are attached to the container recipe.</p>
@@ -1027,8 +1044,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The working directory for use during build and test workflows.</p>
-        pub fn working_directory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.working_directory(inp);
+        pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.working_directory(input.into());
             self
         }
         /// <p>The working directory for use during build and test workflows.</p>
@@ -1040,8 +1057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The destination repository for the container image.</p>
-        pub fn target_repository(mut self, inp: crate::model::TargetContainerRepository) -> Self {
-            self.inner = self.inner.target_repository(inp);
+        pub fn target_repository(mut self, input: crate::model::TargetContainerRepository) -> Self {
+            self.inner = self.inner.target_repository(input);
             self
         }
         /// <p>The destination repository for the container image.</p>
@@ -1053,8 +1070,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies which KMS key is used to encrypt the container image.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>Identifies which KMS key is used to encrypt the container image.</p>
@@ -1063,8 +1080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client token used to make this request idempotent.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The client token used to make this request idempotent.</p>
@@ -1075,9 +1092,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDistributionConfiguration`.
     ///
-    /// <p>Creates a new distribution configuration. Distribution configurations define and configure
-    /// the outputs of your pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDistributionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1122,10 +1138,10 @@ pub mod fluent_builders {
                 crate::input::CreateDistributionConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1134,8 +1150,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the distribution configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the distribution configuration.</p>
@@ -1144,8 +1160,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description of the distribution configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description of the distribution configuration.</p>
@@ -1158,8 +1174,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_distributions`](Self::set_distributions).
         ///
         /// <p> The distributions of the distribution configuration.</p>
-        pub fn distributions(mut self, inp: impl Into<crate::model::Distribution>) -> Self {
-            self.inner = self.inner.distributions(inp);
+        pub fn distributions(mut self, input: crate::model::Distribution) -> Self {
+            self.inner = self.inner.distributions(input);
             self
         }
         /// <p> The distributions of the distribution configuration.</p>
@@ -1180,7 +1196,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tags of the distribution configuration.</p>
@@ -1194,8 +1210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The idempotency token of the distribution configuration.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p> The idempotency token of the distribution configuration.</p>
@@ -1206,10 +1222,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateImage`.
     ///
-    /// <p> Creates a new image. This request will create a new image along with all of the
-    /// configured output resources defined in the distribution configuration. You must specify
-    /// exactly one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Creates a new image. This request will create a new image along with all of the configured output resources defined in the distribution configuration. You must specify exactly one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1254,10 +1268,10 @@ pub mod fluent_builders {
                 crate::input::CreateImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1265,14 +1279,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are
-        /// configured, tested, and assessed.</p>
-        pub fn image_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_recipe_arn(inp);
+        /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
+        pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_recipe_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are
-        /// configured, tested, and assessed.</p>
+        /// <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
         pub fn set_image_recipe_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1281,8 +1293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
-        pub fn container_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_recipe_arn(inp);
+        pub fn container_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_recipe_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
@@ -1293,17 +1305,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_recipe_arn(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and
-        /// configures the outputs of your pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
         pub fn distribution_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.distribution_configuration_arn(inp);
+            self.inner = self.inner.distribution_configuration_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and
-        /// configures the outputs of your pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1311,17 +1321,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_distribution_configuration_arn(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the
-        /// environment in which your image will be built and tested.</p>
+        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.infrastructure_configuration_arn(inp);
+            self.inner = self.inner.infrastructure_configuration_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the
-        /// environment in which your image will be built and tested.</p>
+        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1332,9 +1340,9 @@ pub mod fluent_builders {
         /// <p> The image tests configuration of the image.</p>
         pub fn image_tests_configuration(
             mut self,
-            inp: crate::model::ImageTestsConfiguration,
+            input: crate::model::ImageTestsConfiguration,
         ) -> Self {
-            self.inner = self.inner.image_tests_configuration(inp);
+            self.inner = self.inner.image_tests_configuration(input);
             self
         }
         /// <p> The image tests configuration of the image.</p>
@@ -1345,16 +1353,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_tests_configuration(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
-        pub fn enhanced_image_metadata_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enhanced_image_metadata_enabled(inp);
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+        pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enhanced_image_metadata_enabled(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn set_enhanced_image_metadata_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -1372,7 +1376,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tags of the image.</p>
@@ -1386,8 +1390,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The idempotency token used to make this request idempotent.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p> The idempotency token used to make this request idempotent.</p>
@@ -1398,9 +1402,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateImagePipeline`.
     ///
-    /// <p> Creates a new image pipeline. Image pipelines enable you to automate the creation and
-    /// distribution of images.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Creates a new image pipeline. Image pipelines enable you to automate the creation and distribution of images.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImagePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1445,10 +1448,10 @@ pub mod fluent_builders {
                 crate::input::CreateImagePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1457,8 +1460,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the image pipeline.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the image pipeline.</p>
@@ -1467,8 +1470,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description of the image pipeline.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description of the image pipeline.</p>
@@ -1476,14 +1479,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-        /// created by this image pipeline.</p>
-        pub fn image_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_recipe_arn(inp);
+        /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
+        pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_recipe_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-        /// created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
         pub fn set_image_recipe_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1492,8 +1493,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
-        pub fn container_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_recipe_arn(inp);
+        pub fn container_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_recipe_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
@@ -1504,17 +1505,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_recipe_arn(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-        /// build images created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.infrastructure_configuration_arn(inp);
+            self.inner = self.inner.infrastructure_configuration_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-        /// build images created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1522,17 +1521,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_infrastructure_configuration_arn(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-        /// configure and distribute images created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
         pub fn distribution_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.distribution_configuration_arn(inp);
+            self.inner = self.inner.distribution_configuration_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-        /// configure and distribute images created by this image pipeline.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1543,9 +1540,9 @@ pub mod fluent_builders {
         /// <p> The image test configuration of the image pipeline.</p>
         pub fn image_tests_configuration(
             mut self,
-            inp: crate::model::ImageTestsConfiguration,
+            input: crate::model::ImageTestsConfiguration,
         ) -> Self {
-            self.inner = self.inner.image_tests_configuration(inp);
+            self.inner = self.inner.image_tests_configuration(input);
             self
         }
         /// <p> The image test configuration of the image pipeline.</p>
@@ -1556,16 +1553,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_tests_configuration(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
-        pub fn enhanced_image_metadata_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enhanced_image_metadata_enabled(inp);
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+        pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enhanced_image_metadata_enabled(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn set_enhanced_image_metadata_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -1574,8 +1567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The schedule of the image pipeline.</p>
-        pub fn schedule(mut self, inp: crate::model::Schedule) -> Self {
-            self.inner = self.inner.schedule(inp);
+        pub fn schedule(mut self, input: crate::model::Schedule) -> Self {
+            self.inner = self.inner.schedule(input);
             self
         }
         /// <p> The schedule of the image pipeline.</p>
@@ -1584,8 +1577,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The status of the image pipeline.</p>
-        pub fn status(mut self, inp: crate::model::PipelineStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::PipelineStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p> The status of the image pipeline.</p>
@@ -1606,7 +1599,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tags of the image pipeline.</p>
@@ -1620,8 +1613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The idempotency token used to make this request idempotent.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p> The idempotency token used to make this request idempotent.</p>
@@ -1632,9 +1625,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateImageRecipe`.
     ///
-    /// <p> Creates a new image recipe. Image recipes define how images are configured, tested, and
-    /// assessed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Creates a new image recipe. Image recipes define how images are configured, tested, and assessed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImageRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1679,10 +1671,10 @@ pub mod fluent_builders {
                 crate::input::CreateImageRecipeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1691,8 +1683,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the image recipe.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the image recipe.</p>
@@ -1701,8 +1693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description of the image recipe.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description of the image recipe.</p>
@@ -1710,35 +1702,41 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
-        pub fn semantic_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(inp);
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
-        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
-        /// build number to the fourth node.</p>
-        /// <p>
-        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
-        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
-        /// a date, such as 2021.01.01.</p>
+        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
         /// </note>
         pub fn set_semantic_version(
             mut self,
@@ -1752,8 +1750,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
         /// <p>The components of the image recipe.</p>
-        pub fn components(mut self, inp: impl Into<crate::model::ComponentConfiguration>) -> Self {
-            self.inner = self.inner.components(inp);
+        pub fn components(mut self, input: crate::model::ComponentConfiguration) -> Self {
+            self.inner = self.inner.components(input);
             self
         }
         /// <p>The components of the image recipe.</p>
@@ -1764,22 +1762,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_components(input);
             self
         }
-        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base
-        /// image or an AMI ID. The format for the ARN follows this example:
-        /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
-        /// You can provide the specific version that you want to use, or you can use a wildcard in
-        /// all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI,
-        /// and the AMI must be in the same Region in which you are using Image Builder.</p>
-        pub fn parent_image(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_image(inp);
+        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
+        pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_image(input.into());
             self
         }
-        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base
-        /// image or an AMI ID. The format for the ARN follows this example:
-        /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
-        /// You can provide the specific version that you want to use, or you can use a wildcard in
-        /// all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI,
-        /// and the AMI must be in the same Region in which you are using Image Builder.</p>
+        /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_parent_image(input);
             self
@@ -1791,9 +1779,9 @@ pub mod fluent_builders {
         /// <p>The block device mappings of the image recipe.</p>
         pub fn block_device_mappings(
             mut self,
-            inp: impl Into<crate::model::InstanceBlockDeviceMapping>,
+            input: crate::model::InstanceBlockDeviceMapping,
         ) -> Self {
-            self.inner = self.inner.block_device_mappings(inp);
+            self.inner = self.inner.block_device_mappings(input);
             self
         }
         /// <p>The block device mappings of the image recipe.</p>
@@ -1814,7 +1802,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tags of the image recipe.</p>
@@ -1828,8 +1816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The working directory used during build and test workflows.</p>
-        pub fn working_directory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.working_directory(inp);
+        pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.working_directory(input.into());
             self
         }
         /// <p>The working directory used during build and test workflows.</p>
@@ -1843,9 +1831,9 @@ pub mod fluent_builders {
         /// <p>Specify additional settings and launch scripts for your build instances.</p>
         pub fn additional_instance_configuration(
             mut self,
-            inp: crate::model::AdditionalInstanceConfiguration,
+            input: crate::model::AdditionalInstanceConfiguration,
         ) -> Self {
-            self.inner = self.inner.additional_instance_configuration(inp);
+            self.inner = self.inner.additional_instance_configuration(input);
             self
         }
         /// <p>Specify additional settings and launch scripts for your build instances.</p>
@@ -1857,8 +1845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
@@ -1869,9 +1857,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInfrastructureConfiguration`.
     ///
-    /// <p> Creates a new infrastructure configuration. An infrastructure configuration defines the
-    /// environment in which your image will be built and tested.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Creates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInfrastructureConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1916,10 +1903,10 @@ pub mod fluent_builders {
                 crate::input::CreateInfrastructureConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1928,8 +1915,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the infrastructure configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the infrastructure configuration.</p>
@@ -1938,8 +1925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the infrastructure configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the infrastructure configuration.</p>
@@ -1951,16 +1938,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
-        /// <p>The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance types based
-        /// on availability.</p>
-        pub fn instance_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_types(inp);
+        /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
+        pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_types(input.into());
             self
         }
-        /// <p>The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance types based
-        /// on availability.</p>
+        /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
         pub fn set_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1969,8 +1952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(inp);
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input.into());
             self
         }
         /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
@@ -1986,8 +1969,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
         /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
@@ -1999,8 +1982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
-        pub fn subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(inp);
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input.into());
             self
         }
         /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
@@ -2009,8 +1992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The logging configuration of the infrastructure configuration.</p>
-        pub fn logging(mut self, inp: crate::model::Logging) -> Self {
-            self.inner = self.inner.logging(inp);
+        pub fn logging(mut self, input: crate::model::Logging) -> Self {
+            self.inner = self.inner.logging(input);
             self
         }
         /// <p>The logging configuration of the infrastructure configuration.</p>
@@ -2018,28 +2001,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logging(input);
             self
         }
-        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-        /// the instance used to create your image.</p>
-        pub fn key_pair(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_pair(inp);
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
+        pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_pair(input.into());
             self
         }
-        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-        /// the instance used to create your image.</p>
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_pair(input);
             self
         }
-        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-        /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-        /// or test phase of your workflow fails.</p>
-        pub fn terminate_instance_on_failure(mut self, inp: bool) -> Self {
-            self.inner = self.inner.terminate_instance_on_failure(inp);
+        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
+        pub fn terminate_instance_on_failure(mut self, input: bool) -> Self {
+            self.inner = self.inner.terminate_instance_on_failure(input);
             self
         }
-        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-        /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-        /// or test phase of your workflow fails.</p>
+        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
         pub fn set_terminate_instance_on_failure(
             mut self,
             input: std::option::Option<bool>,
@@ -2047,12 +2024,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_terminate_instance_on_failure(input);
             self
         }
-        /// <p>The SNS topic on which to send image build events.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// </note>
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
-        /// <p>The SNS topic on which to send image build events.</p>
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// </note>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2070,7 +2051,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_tags(k, v);
+            self.inner = self.inner.resource_tags(k.into(), v.into());
             self
         }
         /// <p>The tags attached to the resource created by Image Builder.</p>
@@ -2083,17 +2064,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_tags(input);
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that
-        /// pipeline builds use to launch EC2 build and test instances.</p>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
         pub fn instance_metadata_options(
             mut self,
-            inp: crate::model::InstanceMetadataOptions,
+            input: crate::model::InstanceMetadataOptions,
         ) -> Self {
-            self.inner = self.inner.instance_metadata_options(inp);
+            self.inner = self.inner.instance_metadata_options(input);
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that
-        /// pipeline builds use to launch EC2 build and test instances.</p>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
         pub fn set_instance_metadata_options(
             mut self,
             input: std::option::Option<crate::model::InstanceMetadataOptions>,
@@ -2111,7 +2090,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags of the infrastructure configuration.</p>
@@ -2125,8 +2104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
@@ -2138,7 +2117,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteComponent`.
     ///
     /// <p> Deletes a component build version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2183,10 +2162,10 @@ pub mod fluent_builders {
                 crate::input::DeleteComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2195,8 +2174,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
-        pub fn component_build_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_build_version_arn(inp);
+        pub fn component_build_version_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.component_build_version_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
@@ -2211,7 +2193,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContainerRecipe`.
     ///
     /// <p>Deletes a container recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContainerRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2256,10 +2238,10 @@ pub mod fluent_builders {
                 crate::input::DeleteContainerRecipeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2268,8 +2250,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-        pub fn container_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_recipe_arn(inp);
+        pub fn container_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_recipe_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
@@ -2284,7 +2266,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDistributionConfiguration`.
     ///
     /// <p> Deletes a distribution configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDistributionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2329,10 +2311,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDistributionConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2343,9 +2325,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
         pub fn distribution_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.distribution_configuration_arn(inp);
+            self.inner = self.inner.distribution_configuration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
@@ -2359,28 +2341,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteImage`.
     ///
-    /// <p>Deletes an Image Builder image resource. This does not delete any EC2 AMIs or ECR container images
-    /// that are created during the image build process. You must clean those up separately,
-    /// using the appropriate Amazon EC2 or Amazon ECR console actions, or API or CLI commands.</p>
+    /// <p>Deletes an Image Builder image resource. This does not delete any EC2 AMIs or ECR container images that are created during the image build process. You must clean those up separately, using the appropriate Amazon EC2 or Amazon ECR console actions, or API or CLI commands.</p>
     /// <ul>
-    /// <li>
-    /// <p>To deregister an EC2 Linux AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister
-    /// your Linux AMI</a> in the <i>
-    /// <i>Amazon EC2 User Guide</i>
-    /// </i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>To deregister an EC2 Windows AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html">Deregister
-    /// your Windows AMI</a> in the <i>
-    /// <i>Amazon EC2 Windows Guide</i>
-    /// </i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>To delete a container image from Amazon ECR, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/delete_image.html">Deleting
-    /// an image</a> in the <i>Amazon ECR User Guide</i>.</p>
-    /// </li>
+    /// <li> <p>To deregister an EC2 Linux AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister your Linux AMI</a> in the <i> <i>Amazon EC2 User Guide</i> </i>.</p> </li>
+    /// <li> <p>To deregister an EC2 Windows AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html">Deregister your Windows AMI</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i>.</p> </li>
+    /// <li> <p>To delete a container image from Amazon ECR, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/delete_image.html">Deleting an image</a> in the <i>Amazon ECR User Guide</i>.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2425,10 +2392,10 @@ pub mod fluent_builders {
                 crate::input::DeleteImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2437,8 +2404,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
-        pub fn image_build_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_build_version_arn(inp);
+        pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_build_version_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
@@ -2453,7 +2420,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteImagePipeline`.
     ///
     /// <p> Deletes an image pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImagePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2498,10 +2465,10 @@ pub mod fluent_builders {
                 crate::input::DeleteImagePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2510,8 +2477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
-        pub fn image_pipeline_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_pipeline_arn(inp);
+        pub fn image_pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_pipeline_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
@@ -2526,7 +2493,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteImageRecipe`.
     ///
     /// <p> Deletes an image recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImageRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2571,10 +2538,10 @@ pub mod fluent_builders {
                 crate::input::DeleteImageRecipeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2583,8 +2550,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
-        pub fn image_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_recipe_arn(inp);
+        pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_recipe_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
@@ -2599,7 +2566,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInfrastructureConfiguration`.
     ///
     /// <p> Deletes an infrastructure configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInfrastructureConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2644,10 +2611,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInfrastructureConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2658,9 +2625,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.infrastructure_configuration_arn(inp);
+            self.inner = self.inner.infrastructure_configuration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
@@ -2675,7 +2642,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetComponent`.
     ///
     /// <p> Gets a component object.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2720,10 +2687,10 @@ pub mod fluent_builders {
                 crate::input::GetComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2731,14 +2698,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires
-        /// "/\d+$" suffix.</p>
-        pub fn component_build_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_build_version_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
+        pub fn component_build_version_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.component_build_version_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires
-        /// "/\d+$" suffix.</p>
+        /// <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
         pub fn set_component_build_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2750,7 +2718,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetComponentPolicy`.
     ///
     /// <p> Gets a component policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponentPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2795,10 +2763,10 @@ pub mod fluent_builders {
                 crate::input::GetComponentPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2807,8 +2775,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
-        pub fn component_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_arn(inp);
+        pub fn component_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
@@ -2823,7 +2791,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContainerRecipe`.
     ///
     /// <p>Retrieves a container recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2868,10 +2836,10 @@ pub mod fluent_builders {
                 crate::input::GetContainerRecipeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2880,8 +2848,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
-        pub fn container_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_recipe_arn(inp);
+        pub fn container_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_recipe_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
@@ -2896,7 +2864,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContainerRecipePolicy`.
     ///
     /// <p>Retrieves the policy for a container recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerRecipePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2941,10 +2909,10 @@ pub mod fluent_builders {
                 crate::input::GetContainerRecipePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2953,8 +2921,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
-        pub fn container_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_recipe_arn(inp);
+        pub fn container_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_recipe_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
@@ -2969,7 +2937,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDistributionConfiguration`.
     ///
     /// <p> Gets a distribution configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDistributionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3014,10 +2982,10 @@ pub mod fluent_builders {
                 crate::input::GetDistributionConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3025,17 +2993,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
         pub fn distribution_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.distribution_configuration_arn(inp);
+            self.inner = self.inner.distribution_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3047,7 +3013,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImage`.
     ///
     /// <p> Gets an image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3092,10 +3058,10 @@ pub mod fluent_builders {
                 crate::input::GetImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3104,8 +3070,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
-        pub fn image_build_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_build_version_arn(inp);
+        pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_build_version_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
@@ -3120,7 +3086,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImagePipeline`.
     ///
     /// <p> Gets an image pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImagePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3165,10 +3131,10 @@ pub mod fluent_builders {
                 crate::input::GetImagePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3177,8 +3143,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
-        pub fn image_pipeline_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_pipeline_arn(inp);
+        pub fn image_pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_pipeline_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
@@ -3193,7 +3159,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImagePolicy`.
     ///
     /// <p> Gets an image policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImagePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3238,10 +3204,10 @@ pub mod fluent_builders {
                 crate::input::GetImagePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3250,8 +3216,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
-        pub fn image_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_arn(inp);
+        pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
@@ -3263,7 +3229,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImageRecipe`.
     ///
     /// <p> Gets an image recipe.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImageRecipe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3308,10 +3274,10 @@ pub mod fluent_builders {
                 crate::input::GetImageRecipeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3320,8 +3286,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
-        pub fn image_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_recipe_arn(inp);
+        pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_recipe_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
@@ -3336,7 +3302,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImageRecipePolicy`.
     ///
     /// <p> Gets an image recipe policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImageRecipePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3381,10 +3347,10 @@ pub mod fluent_builders {
                 crate::input::GetImageRecipePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3393,8 +3359,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
-        pub fn image_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_recipe_arn(inp);
+        pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_recipe_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
@@ -3409,7 +3375,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInfrastructureConfiguration`.
     ///
     /// <p> Gets an infrastructure configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInfrastructureConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3454,10 +3420,10 @@ pub mod fluent_builders {
                 crate::input::GetInfrastructureConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3465,17 +3431,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.infrastructure_configuration_arn(inp);
+            self.inner = self.inner.infrastructure_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3487,7 +3451,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportComponent`.
     ///
     /// <p>Imports a component and transforms its data into a component document.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3532,10 +3496,10 @@ pub mod fluent_builders {
                 crate::input::ImportComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3544,8 +3508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the component.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the component.</p>
@@ -3553,29 +3517,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-        /// to specify the most recent versions or nodes when selecting the base image or components for your
-        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-        /// wildcards.</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
         /// </note>
-        pub fn semantic_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(inp);
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-        /// to specify the most recent versions or nodes when selecting the base image or components for your
-        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-        /// wildcards.</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
         /// </note>
         pub fn set_semantic_version(
             mut self,
@@ -3585,8 +3559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the component. Describes the contents of the component.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the component. Describes the contents of the component.</p>
@@ -3594,14 +3568,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.</p>
-        pub fn change_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_description(inp);
+        /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+        pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_description(input.into());
             self
         }
-        /// <p>The change description of the component. Describes what change has been made in this
-        /// version, or what makes this version different from other versions of this component.</p>
+        /// <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
         pub fn set_change_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3609,21 +3581,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_change_description(input);
             self
         }
-        /// <p>The type of the component denotes whether the component is used to build the image, or only
-        /// to test it.</p>
-        pub fn r#type(mut self, inp: crate::model::ComponentType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
+        pub fn r#type(mut self, input: crate::model::ComponentType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of the component denotes whether the component is used to build the image, or only
-        /// to test it.</p>
+        /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The format of the resource that you want to import as a component.</p>
-        pub fn format(mut self, inp: crate::model::ComponentFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::ComponentFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The format of the resource that you want to import as a component.</p>
@@ -3635,8 +3605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The platform of the component.</p>
-        pub fn platform(mut self, inp: crate::model::Platform) -> Self {
-            self.inner = self.inner.platform(inp);
+        pub fn platform(mut self, input: crate::model::Platform) -> Self {
+            self.inner = self.inner.platform(input);
             self
         }
         /// <p>The platform of the component.</p>
@@ -3644,37 +3614,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_platform(input);
             self
         }
-        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-        /// <code>uri</code> can be used to specify the data within the component.</p>
-        pub fn data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data(inp);
+        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+        pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data(input.into());
             self
         }
-        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
-        /// <code>uri</code> can be used to specify the data within the component.</p>
+        /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_data(input);
             self
         }
-        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-        /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-        /// component.</p>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uri(inp);
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uri(input.into());
             self
         }
-        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
-        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
-        /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
-        /// component.</p>
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_uri(input);
             self
         }
         /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
@@ -3692,7 +3654,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags of the component.</p>
@@ -3706,8 +3668,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token of the component.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token of the component.</p>
@@ -3716,19 +3678,214 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ImportVmImage`.
+    ///
+    /// <p>When you export your virtual machine (VM) from its virtualization environment, that process creates a set of one or more disk container files that act as snapshots of your VM’s environment, settings, and data. The Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a> action uses those files to import your VM and create an AMI. To import using the CLI command, see <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a> </p>
+    /// <p>You can reference the task ID from the VM import to pull in the AMI that the import created as the base image for your Image Builder recipe.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ImportVmImage<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::import_vm_image_input::Builder,
+    }
+    impl<C, M, R> ImportVmImage<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ImportVmImage`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ImportVmImageOutput,
+            aws_smithy_http::result::SdkError<crate::error::ImportVmImageError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ImportVmImageInputOperationOutputAlias,
+                crate::output::ImportVmImageOutput,
+                crate::error::ImportVmImageError,
+                crate::input::ImportVmImageInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the base image that is created by the import process.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the base image that is created by the import process.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+        /// </note>
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
+            self
+        }
+        /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+        /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+        /// </note>
+        pub fn set_semantic_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_semantic_version(input);
+            self
+        }
+        /// <p>The description for the base image that is created by the import process.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The description for the base image that is created by the import process.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The operating system platform for the imported VM.</p>
+        pub fn platform(mut self, input: crate::model::Platform) -> Self {
+            self.inner = self.inner.platform(input);
+            self
+        }
+        /// <p>The operating system platform for the imported VM.</p>
+        pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
+            self.inner = self.inner.set_platform(input);
+            self
+        }
+        /// <p>The operating system version for the imported VM.</p>
+        pub fn os_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.os_version(input.into());
+            self
+        }
+        /// <p>The operating system version for the imported VM.</p>
+        pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_os_version(input);
+            self
+        }
+        /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+        pub fn vm_import_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vm_import_task_id(input.into());
+            self
+        }
+        /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+        pub fn set_vm_import_task_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vm_import_task_id(input);
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags that are attached to the import resources.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>Tags that are attached to the import resources.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListComponentBuildVersions`.
     ///
-    /// <p> Returns the list of component build versions for the specified semantic version.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-    /// to specify the most recent versions or nodes when selecting the base image or components for your
-    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-    /// wildcards.</p>
+    /// <p> Returns the list of component build versions for the specified semantic version.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponentBuildVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3773,10 +3930,10 @@ pub mod fluent_builders {
                 crate::input::ListComponentBuildVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3784,9 +3941,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListComponentBuildVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListComponentBuildVersionsPaginator<C, M, R> {
+            crate::paginator::ListComponentBuildVersionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
-        pub fn component_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_version_arn(inp);
+        pub fn component_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_version_arn(input.into());
             self
         }
         /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
@@ -3798,8 +3963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum items to return in a request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum items to return in a request.</p>
@@ -3807,14 +3972,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3822,17 +3985,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListComponents`.
     ///
-    /// <p>Returns the list of component build versions for the specified semantic version.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-    /// to specify the most recent versions or nodes when selecting the base image or components for your
-    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-    /// wildcards.</p>
+    /// <p>Returns the list of component build versions for the specified semantic version.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3877,10 +4045,10 @@ pub mod fluent_builders {
                 crate::input::ListComponentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3888,18 +4056,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The owner defines which components you want to list. By default, this request will only
-        /// show components owned by your account. You can use this field to specify if you want to view
-        /// components owned by yourself, by Amazon, or those components that have been shared with you by
-        /// other customers.</p>
-        pub fn owner(mut self, inp: crate::model::Ownership) -> Self {
-            self.inner = self.inner.owner(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListComponentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListComponentsPaginator<C, M, R> {
+            crate::paginator::ListComponentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
+        pub fn owner(mut self, input: crate::model::Ownership) -> Self {
+            self.inner = self.inner.owner(input);
             self
         }
-        /// <p>The owner defines which components you want to list. By default, this request will only
-        /// show components owned by your account. You can use this field to specify if you want to view
-        /// components owned by yourself, by Amazon, or those components that have been shared with you by
-        /// other customers.</p>
+        /// <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
             self.inner = self.inner.set_owner(input);
             self
@@ -3910,73 +4078,25 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>description</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>supportedOsVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>description</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>supportedOsVersion</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>description</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>supportedOsVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>description</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>supportedOsVersion</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -3986,8 +4106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns the list of component build versions for the specified name.</p>
-        pub fn by_name(mut self, inp: bool) -> Self {
-            self.inner = self.inner.by_name(inp);
+        pub fn by_name(mut self, input: bool) -> Self {
+            self.inner = self.inner.by_name(input);
             self
         }
         /// <p>Returns the list of component build versions for the specified name.</p>
@@ -3996,8 +4116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum items to return in a request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum items to return in a request.</p>
@@ -4005,14 +4125,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4021,7 +4139,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContainerRecipes`.
     ///
     /// <p>Returns a list of container recipes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContainerRecipes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4066,10 +4184,10 @@ pub mod fluent_builders {
                 crate::input::ListContainerRecipesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4077,9 +4195,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContainerRecipesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContainerRecipesPaginator<C, M, R> {
+            crate::paginator::ListContainerRecipesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
-        pub fn owner(mut self, inp: crate::model::Ownership) -> Self {
-            self.inner = self.inner.owner(inp);
+        pub fn owner(mut self, input: crate::model::Ownership) -> Self {
+            self.inner = self.inner.owner(input);
             self
         }
         /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
@@ -4093,53 +4217,21 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>containerType</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>parentImage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>containerType</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>parentImage</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>containerType</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>parentImage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>containerType</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>parentImage</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4149,8 +4241,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the list.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the list.</p>
@@ -4159,8 +4251,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
@@ -4172,7 +4264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDistributionConfigurations`.
     ///
     /// <p>Returns a list of distribution configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDistributionConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4217,10 +4309,10 @@ pub mod fluent_builders {
                 crate::input::ListDistributionConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4228,13 +4320,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDistributionConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListDistributionConfigurationsPaginator<C, M, R> {
+            crate::paginator::ListDistributionConfigurationsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>You can filter on <code>name</code> to streamline results.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>You can filter on <code>name</code> to streamline results.</p>
@@ -4246,8 +4346,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum items to return in a request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum items to return in a request.</p>
@@ -4255,14 +4355,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4271,7 +4369,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImageBuildVersions`.
     ///
     /// <p> Returns a list of image build versions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImageBuildVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4316,10 +4414,10 @@ pub mod fluent_builders {
                 crate::input::ListImageBuildVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4327,9 +4425,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListImageBuildVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListImageBuildVersionsPaginator<C, M, R> {
+            crate::paginator::ListImageBuildVersionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
-        pub fn image_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_version_arn(inp);
+        pub fn image_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_version_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
@@ -4346,63 +4450,23 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>osVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>osVersion</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>osVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>osVersion</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4412,8 +4476,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum items to return in a request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum items to return in a request.</p>
@@ -4421,14 +4485,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4437,7 +4499,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImagePackages`.
     ///
     /// <p>List the Packages that are associated with an Image Build Version, as determined by Amazon Web Services Systems Manager Inventory at build time.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImagePackages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4482,10 +4544,10 @@ pub mod fluent_builders {
                 crate::input::ListImagePackagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4493,9 +4555,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListImagePackagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListImagePackagesPaginator<C, M, R> {
+            crate::paginator::ListImagePackagesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
-        pub fn image_build_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_build_version_arn(inp);
+        pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_build_version_arn(input.into());
             self
         }
         /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
@@ -4507,8 +4575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maxiumum number of results to return from the ListImagePackages request.</p>
@@ -4517,8 +4585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
@@ -4530,7 +4598,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImagePipelineImages`.
     ///
     /// <p> Returns a list of images created by the specified pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImagePipelineImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4575,10 +4643,10 @@ pub mod fluent_builders {
                 crate::input::ListImagePipelineImagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4586,9 +4654,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListImagePipelineImagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListImagePipelineImagesPaginator<C, M, R> {
+            crate::paginator::ListImagePipelineImagesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
-        pub fn image_pipeline_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_pipeline_arn(inp);
+        pub fn image_pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_pipeline_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
@@ -4605,33 +4679,17 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4641,8 +4699,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum items to return in a request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum items to return in a request.</p>
@@ -4650,14 +4708,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4666,7 +4722,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImagePipelines`.
     ///
     /// <p>Returns a list of image pipelines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImagePipelines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4711,10 +4767,10 @@ pub mod fluent_builders {
                 crate::input::ListImagePipelinesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4722,79 +4778,37 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListImagePipelinesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListImagePipelinesPaginator<C, M, R> {
+            crate::paginator::ListImagePipelinesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>description</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>distributionConfigurationArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>imageRecipeArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>infrastructureConfigurationArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>status</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>description</code> </p> </li>
+        /// <li> <p> <code>distributionConfigurationArn</code> </p> </li>
+        /// <li> <p> <code>imageRecipeArn</code> </p> </li>
+        /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>status</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>description</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>distributionConfigurationArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>imageRecipeArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>infrastructureConfigurationArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>status</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>description</code> </p> </li>
+        /// <li> <p> <code>distributionConfigurationArn</code> </p> </li>
+        /// <li> <p> <code>imageRecipeArn</code> </p> </li>
+        /// <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>status</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4804,8 +4818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum items to return in a request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum items to return in a request.</p>
@@ -4813,14 +4827,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4829,7 +4841,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImageRecipes`.
     ///
     /// <p> Returns a list of image recipes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImageRecipes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4874,10 +4886,10 @@ pub mod fluent_builders {
                 crate::input::ListImageRecipesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4885,18 +4897,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The owner defines which image recipes you want to list. By default, this request will only
-        /// show image recipes owned by your account. You can use this field to specify if you want to
-        /// view image recipes owned by yourself, by Amazon, or those image recipes that have been shared
-        /// with you by other customers.</p>
-        pub fn owner(mut self, inp: crate::model::Ownership) -> Self {
-            self.inner = self.inner.owner(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListImageRecipesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListImageRecipesPaginator<C, M, R> {
+            crate::paginator::ListImageRecipesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
+        pub fn owner(mut self, input: crate::model::Ownership) -> Self {
+            self.inner = self.inner.owner(input);
             self
         }
-        /// <p>The owner defines which image recipes you want to list. By default, this request will only
-        /// show image recipes owned by your account. You can use this field to specify if you want to
-        /// view image recipes owned by yourself, by Amazon, or those image recipes that have been shared
-        /// with you by other customers.</p>
+        /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
             self.inner = self.inner.set_owner(input);
             self
@@ -4907,43 +4919,19 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>parentImage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>parentImage</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>parentImage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>parentImage</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4953,8 +4941,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum items to return in a request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum items to return in a request.</p>
@@ -4962,14 +4950,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4978,7 +4964,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImages`.
     ///
     /// <p> Returns the list of images that you have access to.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5023,10 +5009,10 @@ pub mod fluent_builders {
                 crate::input::ListImagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5034,18 +5020,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The owner defines which images you want to list. By default, this request will only show
-        /// images owned by your account. You can use this field to specify if you want to view images
-        /// owned by yourself, by Amazon, or those images that have been shared with you by other
-        /// customers.</p>
-        pub fn owner(mut self, inp: crate::model::Ownership) -> Self {
-            self.inner = self.inner.owner(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListImagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListImagesPaginator<C, M, R> {
+            crate::paginator::ListImagesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
+        pub fn owner(mut self, input: crate::model::Ownership) -> Self {
+            self.inner = self.inner.owner(input);
             self
         }
-        /// <p>The owner defines which images you want to list. By default, this request will only show
-        /// images owned by your account. You can use this field to specify if you want to view images
-        /// owned by yourself, by Amazon, or those images that have been shared with you by other
-        /// customers.</p>
+        /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Ownership>) -> Self {
             self.inner = self.inner.set_owner(input);
             self
@@ -5056,63 +5042,23 @@ pub mod fluent_builders {
         ///
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>osVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>osVersion</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Use the following filters to streamline results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>osVersion</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>version</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>name</code> </p> </li>
+        /// <li> <p> <code>osVersion</code> </p> </li>
+        /// <li> <p> <code>platform</code> </p> </li>
+        /// <li> <p> <code>type</code> </p> </li>
+        /// <li> <p> <code>version</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -5122,8 +5068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Requests a list of images with a specific recipe name.</p>
-        pub fn by_name(mut self, inp: bool) -> Self {
-            self.inner = self.inner.by_name(inp);
+        pub fn by_name(mut self, input: bool) -> Self {
+            self.inner = self.inner.by_name(input);
             self
         }
         /// <p>Requests a list of images with a specific recipe name.</p>
@@ -5132,8 +5078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum items to return in a request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum items to return in a request.</p>
@@ -5141,21 +5087,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Includes deprecated images in the response list.</p>
-        pub fn include_deprecated(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_deprecated(inp);
+        pub fn include_deprecated(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_deprecated(input);
             self
         }
         /// <p>Includes deprecated images in the response list.</p>
@@ -5167,7 +5111,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInfrastructureConfigurations`.
     ///
     /// <p> Returns a list of infrastructure configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInfrastructureConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5212,10 +5156,10 @@ pub mod fluent_builders {
                 crate::input::ListInfrastructureConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5223,13 +5167,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInfrastructureConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListInfrastructureConfigurationsPaginator<C, M, R> {
+            crate::paginator::ListInfrastructureConfigurationsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>You can filter on <code>name</code> to streamline results.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>You can filter on <code>name</code> to streamline results.</p>
@@ -5241,8 +5196,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum items to return in a request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum items to return in a request.</p>
@@ -5250,14 +5205,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the NextToken from a previously
-        /// truncated response.</p>
+        /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5266,7 +5219,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p> Returns the list of tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5311,10 +5264,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5323,8 +5276,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
@@ -5335,10 +5288,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutComponentPolicy`.
     ///
-    /// <p> Applies a policy to a component. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API
-    /// <code>PutComponentPolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to
-    /// all principals with whom the resource is shared.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Applies a policy to a component. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutComponentPolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutComponentPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5383,10 +5334,10 @@ pub mod fluent_builders {
                 crate::input::PutComponentPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5395,8 +5346,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
-        pub fn component_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_arn(inp);
+        pub fn component_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
@@ -5408,8 +5359,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy to apply.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>The policy to apply.</p>
@@ -5421,7 +5372,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutContainerRecipePolicy`.
     ///
     /// <p>Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html) to share resources. If you call the Image Builder API <code>PutContainerImagePolicy</code>, you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html) in order for the resource to be visible to all principals with whom the resource is shared.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutContainerRecipePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5466,10 +5417,10 @@ pub mod fluent_builders {
                 crate::input::PutContainerRecipePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5478,8 +5429,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
-        pub fn container_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_recipe_arn(inp);
+        pub fn container_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_recipe_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
@@ -5491,8 +5442,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy to apply to the container recipe.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>The policy to apply to the container recipe.</p>
@@ -5503,10 +5454,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutImagePolicy`.
     ///
-    /// <p>Applies a policy to an image. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API
-    /// <code>PutImagePolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to
-    /// all principals with whom the resource is shared.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Applies a policy to an image. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutImagePolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutImagePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5551,10 +5500,10 @@ pub mod fluent_builders {
                 crate::input::PutImagePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5563,8 +5512,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
-        pub fn image_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_arn(inp);
+        pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
@@ -5573,8 +5522,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy to apply.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>The policy to apply.</p>
@@ -5585,10 +5534,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutImageRecipePolicy`.
     ///
-    /// <p> Applies a policy to an image recipe. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API
-    /// <code>PutImageRecipePolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to
-    /// all principals with whom the resource is shared.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Applies a policy to an image recipe. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutImageRecipePolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutImageRecipePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5633,10 +5580,10 @@ pub mod fluent_builders {
                 crate::input::PutImageRecipePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5645,8 +5592,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
-        pub fn image_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_recipe_arn(inp);
+        pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_recipe_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
@@ -5658,8 +5605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy to apply.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>The policy to apply.</p>
@@ -5671,7 +5618,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartImagePipelineExecution`.
     ///
     /// <p> Manually triggers a pipeline to create an image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImagePipelineExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5716,10 +5663,10 @@ pub mod fluent_builders {
                 crate::input::StartImagePipelineExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5728,8 +5675,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
-        pub fn image_pipeline_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_pipeline_arn(inp);
+        pub fn image_pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_pipeline_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
@@ -5741,8 +5688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
@@ -5754,7 +5701,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p> Adds a tag to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5799,10 +5746,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5811,8 +5758,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
@@ -5830,7 +5777,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to apply to the resource.</p>
@@ -5847,7 +5794,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p> Removes a tag from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5892,10 +5839,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5904,8 +5851,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
@@ -5918,8 +5865,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys to remove from the resource.</p>
@@ -5933,9 +5880,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDistributionConfiguration`.
     ///
-    /// <p> Updates a new distribution configuration. Distribution configurations define and
-    /// configure the outputs of your pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Updates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDistributionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5980,10 +5926,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDistributionConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5994,9 +5940,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
         pub fn distribution_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.distribution_configuration_arn(inp);
+            self.inner = self.inner.distribution_configuration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
@@ -6008,8 +5954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the distribution configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the distribution configuration.</p>
@@ -6022,8 +5968,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_distributions`](Self::set_distributions).
         ///
         /// <p>The distributions of the distribution configuration.</p>
-        pub fn distributions(mut self, inp: impl Into<crate::model::Distribution>) -> Self {
-            self.inner = self.inner.distributions(inp);
+        pub fn distributions(mut self, input: crate::model::Distribution) -> Self {
+            self.inner = self.inner.distributions(input);
             self
         }
         /// <p>The distributions of the distribution configuration.</p>
@@ -6035,8 +5981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token of the distribution configuration.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token of the distribution configuration.</p>
@@ -6047,14 +5993,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateImagePipeline`.
     ///
-    /// <p> Updates an image pipeline. Image pipelines enable you to automate the creation and
-    /// distribution of images.</p>
-    /// <note>
-    /// <p>UpdateImagePipeline does not support selective updates for the pipeline.
-    /// You must specify all of the required properties in the update request, not just
-    /// the properties that have changed.</p>
+    /// <p> Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images.</p> <note>
+    /// <p>UpdateImagePipeline does not support selective updates for the pipeline. You must specify all of the required properties in the update request, not just the properties that have changed.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateImagePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6099,10 +6041,10 @@ pub mod fluent_builders {
                 crate::input::UpdateImagePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6111,8 +6053,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
-        pub fn image_pipeline_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_pipeline_arn(inp);
+        pub fn image_pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_pipeline_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
@@ -6124,8 +6066,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the image pipeline.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the image pipeline.</p>
@@ -6133,14 +6075,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-        /// updated by this image pipeline.</p>
-        pub fn image_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_recipe_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
+        pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_recipe_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images
-        /// updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
         pub fn set_image_recipe_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6149,8 +6089,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
-        pub fn container_recipe_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_recipe_arn(inp);
+        pub fn container_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_recipe_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
@@ -6161,17 +6101,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_recipe_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-        /// build images updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.infrastructure_configuration_arn(inp);
+            self.inner = self.inner.infrastructure_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to
-        /// build images updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6179,17 +6117,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_infrastructure_configuration_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-        /// configure and distribute images updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
         pub fn distribution_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.distribution_configuration_arn(inp);
+            self.inner = self.inner.distribution_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to
-        /// configure and distribute images updated by this image pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6200,9 +6136,9 @@ pub mod fluent_builders {
         /// <p>The image test configuration of the image pipeline.</p>
         pub fn image_tests_configuration(
             mut self,
-            inp: crate::model::ImageTestsConfiguration,
+            input: crate::model::ImageTestsConfiguration,
         ) -> Self {
-            self.inner = self.inner.image_tests_configuration(inp);
+            self.inner = self.inner.image_tests_configuration(input);
             self
         }
         /// <p>The image test configuration of the image pipeline.</p>
@@ -6213,16 +6149,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_tests_configuration(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
-        pub fn enhanced_image_metadata_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enhanced_image_metadata_enabled(inp);
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+        pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enhanced_image_metadata_enabled(input);
             self
         }
-        /// <p> Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.</p>
+        /// <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn set_enhanced_image_metadata_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -6231,8 +6163,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schedule of the image pipeline.</p>
-        pub fn schedule(mut self, inp: crate::model::Schedule) -> Self {
-            self.inner = self.inner.schedule(inp);
+        pub fn schedule(mut self, input: crate::model::Schedule) -> Self {
+            self.inner = self.inner.schedule(input);
             self
         }
         /// <p>The schedule of the image pipeline.</p>
@@ -6241,8 +6173,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the image pipeline.</p>
-        pub fn status(mut self, inp: crate::model::PipelineStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::PipelineStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the image pipeline.</p>
@@ -6254,8 +6186,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
@@ -6266,9 +6198,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateInfrastructureConfiguration`.
     ///
-    /// <p> Updates a new infrastructure configuration. An infrastructure configuration defines the
-    /// environment in which your image will be built and tested.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Updates a new infrastructure configuration. An infrastructure configuration defines the environment in which your image will be built and tested.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInfrastructureConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6313,10 +6244,10 @@ pub mod fluent_builders {
                 crate::input::UpdateInfrastructureConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6324,17 +6255,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.infrastructure_configuration_arn(inp);
+            self.inner = self.inner.infrastructure_configuration_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6343,8 +6272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the infrastructure configuration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the infrastructure configuration.</p>
@@ -6356,16 +6285,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
-        /// <p>The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance types based
-        /// on availability.</p>
-        pub fn instance_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_types(inp);
+        /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
+        pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_types(input.into());
             self
         }
-        /// <p>The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance types based
-        /// on availability.</p>
+        /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
         pub fn set_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6374,8 +6299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(inp);
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input.into());
             self
         }
         /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
@@ -6391,8 +6316,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
         /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
@@ -6404,8 +6329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
-        pub fn subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(inp);
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input.into());
             self
         }
         /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
@@ -6414,8 +6339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The logging configuration of the infrastructure configuration.</p>
-        pub fn logging(mut self, inp: crate::model::Logging) -> Self {
-            self.inner = self.inner.logging(inp);
+        pub fn logging(mut self, input: crate::model::Logging) -> Self {
+            self.inner = self.inner.logging(input);
             self
         }
         /// <p>The logging configuration of the infrastructure configuration.</p>
@@ -6423,28 +6348,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logging(input);
             self
         }
-        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-        /// the instance used to create your image.</p>
-        pub fn key_pair(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_pair(inp);
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
+        pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_pair(input.into());
             self
         }
-        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug
-        /// the instance used to create your image.</p>
+        /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_pair(input);
             self
         }
-        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-        /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-        /// or test phase of your workflow fails.</p>
-        pub fn terminate_instance_on_failure(mut self, inp: bool) -> Self {
-            self.inner = self.inner.terminate_instance_on_failure(inp);
+        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
+        pub fn terminate_instance_on_failure(mut self, input: bool) -> Self {
+            self.inner = self.inner.terminate_instance_on_failure(input);
             self
         }
-        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to
-        /// false if you want Image Builder to retain the instance used to configure your AMI if the build
-        /// or test phase of your workflow fails.</p>
+        /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
         pub fn set_terminate_instance_on_failure(
             mut self,
             input: std::option::Option<bool>,
@@ -6452,12 +6371,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_terminate_instance_on_failure(input);
             self
         }
-        /// <p>The SNS topic on which to send image build events.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// </note>
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
-        /// <p>The SNS topic on which to send image build events.</p>
+        /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>
+        /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+        /// </note>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6466,8 +6389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
@@ -6485,7 +6408,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_tags(k, v);
+            self.inner = self.inner.resource_tags(k.into(), v.into());
             self
         }
         /// <p>The tags attached to the resource created by Image Builder.</p>
@@ -6498,54 +6421,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_tags(input);
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds
-        /// use to launch EC2 build and test instances. For more information about instance metadata
-        /// options, see one of the following links:</p>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i>
-        /// <i>Amazon EC2 User Guide</i>
-        /// </i>
-        /// for Linux instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i>
-        /// <i>Amazon EC2 Windows Guide</i>
-        /// </i>
-        /// for Windows instances.</p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
         /// </ul>
         pub fn instance_metadata_options(
             mut self,
-            inp: crate::model::InstanceMetadataOptions,
+            input: crate::model::InstanceMetadataOptions,
         ) -> Self {
-            self.inner = self.inner.instance_metadata_options(inp);
+            self.inner = self.inner.instance_metadata_options(input);
             self
         }
-        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds
-        /// use to launch EC2 build and test instances. For more information about instance metadata
-        /// options, see one of the following links:</p>
+        /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i>
-        /// <i>Amazon EC2 User Guide</i>
-        /// </i>
-        /// for Linux instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i>
-        /// <i>Amazon EC2 Windows Guide</i>
-        /// </i>
-        /// for Windows instances.</p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>
         /// </ul>
         pub fn set_instance_metadata_options(
             mut self,
@@ -6556,6 +6447,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

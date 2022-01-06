@@ -1018,12 +1018,9 @@ pub mod source_properties {
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
         /// <p>An array of network interfaces.</p>
-        pub fn network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interfaces = Some(v);
             self
         }
@@ -1040,9 +1037,9 @@ pub mod source_properties {
         /// To override the contents of this collection use [`set_disks`](Self::set_disks).
         ///
         /// <p>An array of disks.</p>
-        pub fn disks(mut self, input: impl Into<crate::model::Disk>) -> Self {
+        pub fn disks(mut self, input: crate::model::Disk) -> Self {
             let mut v = self.disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.disks = Some(v);
             self
         }
@@ -1059,9 +1056,9 @@ pub mod source_properties {
         /// To override the contents of this collection use [`set_cpus`](Self::set_cpus).
         ///
         /// <p>An array of CPUs.</p>
-        pub fn cpus(mut self, input: impl Into<crate::model::Cpu>) -> Self {
+        pub fn cpus(mut self, input: crate::model::Cpu) -> Self {
             let mut v = self.cpus.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cpus = Some(v);
             self
         }
@@ -2013,10 +2010,10 @@ pub mod data_replication_info {
         /// <p>The disks that should be replicated.</p>
         pub fn replicated_disks(
             mut self,
-            input: impl Into<crate::model::DataReplicationInfoReplicatedDisk>,
+            input: crate::model::DataReplicationInfoReplicatedDisk,
         ) -> Self {
             let mut v = self.replicated_disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replicated_disks = Some(v);
             self
         }
@@ -2403,12 +2400,9 @@ pub mod data_replication_initiation {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p>The steps of the current attempt to initiate data replication.</p>
-        pub fn steps(
-            mut self,
-            input: impl Into<crate::model::DataReplicationInitiationStep>,
-        ) -> Self {
+        pub fn steps(mut self, input: crate::model::DataReplicationInitiationStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
@@ -3468,12 +3462,9 @@ pub mod job {
         /// To override the contents of this collection use [`set_participating_servers`](Self::set_participating_servers).
         ///
         /// <p>A list of servers that the Job is acting upon.</p>
-        pub fn participating_servers(
-            mut self,
-            input: impl Into<crate::model::ParticipatingServer>,
-        ) -> Self {
+        pub fn participating_servers(mut self, input: crate::model::ParticipatingServer) -> Self {
             let mut v = self.participating_servers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.participating_servers = Some(v);
             self
         }
@@ -4713,9 +4704,9 @@ pub mod replication_configuration_template {
         /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
         ///
         /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-        pub fn pit_policy(mut self, input: impl Into<crate::model::PitPolicyRule>) -> Self {
+        pub fn pit_policy(mut self, input: crate::model::PitPolicyRule) -> Self {
             let mut v = self.pit_policy.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pit_policy = Some(v);
             self
         }
@@ -5197,12 +5188,9 @@ pub mod recovery_instance_properties {
         /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
         ///
         /// <p>An array of network interfaces.</p>
-        pub fn network_interfaces(
-            mut self,
-            input: impl Into<crate::model::NetworkInterface>,
-        ) -> Self {
+        pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_interfaces = Some(v);
             self
         }
@@ -5219,9 +5207,9 @@ pub mod recovery_instance_properties {
         /// To override the contents of this collection use [`set_disks`](Self::set_disks).
         ///
         /// <p>An array of disks.</p>
-        pub fn disks(mut self, input: impl Into<crate::model::RecoveryInstanceDisk>) -> Self {
+        pub fn disks(mut self, input: crate::model::RecoveryInstanceDisk) -> Self {
             let mut v = self.disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.disks = Some(v);
             self
         }
@@ -5238,9 +5226,9 @@ pub mod recovery_instance_properties {
         /// To override the contents of this collection use [`set_cpus`](Self::set_cpus).
         ///
         /// <p>An array of CPUs.</p>
-        pub fn cpus(mut self, input: impl Into<crate::model::Cpu>) -> Self {
+        pub fn cpus(mut self, input: crate::model::Cpu) -> Self {
             let mut v = self.cpus.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cpus = Some(v);
             self
         }
@@ -5512,10 +5500,10 @@ pub mod recovery_instance_data_replication_info {
         /// <p>The disks that should be replicated.</p>
         pub fn replicated_disks(
             mut self,
-            input: impl Into<crate::model::RecoveryInstanceDataReplicationInfoReplicatedDisk>,
+            input: crate::model::RecoveryInstanceDataReplicationInfoReplicatedDisk,
         ) -> Self {
             let mut v = self.replicated_disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replicated_disks = Some(v);
             self
         }
@@ -5849,10 +5837,10 @@ pub mod recovery_instance_data_replication_initiation {
         /// <p>The steps of the current attempt to initiate data replication.</p>
         pub fn steps(
             mut self,
-            input: impl Into<crate::model::RecoveryInstanceDataReplicationInitiationStep>,
+            input: crate::model::RecoveryInstanceDataReplicationInitiationStep,
         ) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }

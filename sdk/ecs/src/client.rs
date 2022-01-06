@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon EC2 Container Service
@@ -240,6 +240,7 @@ where
     ///
     /// See [`ListAccountSettings`](crate::client::fluent_builders::ListAccountSettings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountSettings::into_paginator).
     pub fn list_account_settings(&self) -> fluent_builders::ListAccountSettings<C, M, R> {
         fluent_builders::ListAccountSettings::new(self.handle.clone())
     }
@@ -247,6 +248,7 @@ where
     ///
     /// See [`ListAttributes`](crate::client::fluent_builders::ListAttributes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttributes::into_paginator).
     pub fn list_attributes(&self) -> fluent_builders::ListAttributes<C, M, R> {
         fluent_builders::ListAttributes::new(self.handle.clone())
     }
@@ -254,6 +256,7 @@ where
     ///
     /// See [`ListClusters`](crate::client::fluent_builders::ListClusters) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClusters::into_paginator).
     pub fn list_clusters(&self) -> fluent_builders::ListClusters<C, M, R> {
         fluent_builders::ListClusters::new(self.handle.clone())
     }
@@ -261,6 +264,7 @@ where
     ///
     /// See [`ListContainerInstances`](crate::client::fluent_builders::ListContainerInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContainerInstances::into_paginator).
     pub fn list_container_instances(&self) -> fluent_builders::ListContainerInstances<C, M, R> {
         fluent_builders::ListContainerInstances::new(self.handle.clone())
     }
@@ -268,6 +272,7 @@ where
     ///
     /// See [`ListServices`](crate::client::fluent_builders::ListServices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
     pub fn list_services(&self) -> fluent_builders::ListServices<C, M, R> {
         fluent_builders::ListServices::new(self.handle.clone())
     }
@@ -282,6 +287,7 @@ where
     ///
     /// See [`ListTaskDefinitionFamilies`](crate::client::fluent_builders::ListTaskDefinitionFamilies) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTaskDefinitionFamilies::into_paginator).
     pub fn list_task_definition_families(
         &self,
     ) -> fluent_builders::ListTaskDefinitionFamilies<C, M, R> {
@@ -291,6 +297,7 @@ where
     ///
     /// See [`ListTaskDefinitions`](crate::client::fluent_builders::ListTaskDefinitions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTaskDefinitions::into_paginator).
     pub fn list_task_definitions(&self) -> fluent_builders::ListTaskDefinitions<C, M, R> {
         fluent_builders::ListTaskDefinitions::new(self.handle.clone())
     }
@@ -298,6 +305,7 @@ where
     ///
     /// See [`ListTasks`](crate::client::fluent_builders::ListTasks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTasks::into_paginator).
     pub fn list_tasks(&self) -> fluent_builders::ListTasks<C, M, R> {
         fluent_builders::ListTasks::new(self.handle.clone())
     }
@@ -480,14 +488,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateCapacityProvider`.
     ///
-    /// <p>Creates a new capacity provider. Capacity providers are associated with an Amazon ECS
-    /// cluster and are used in capacity provider strategies to facilitate cluster auto
-    /// scaling.</p>
-    /// <p>Only capacity providers that use an Auto Scaling group can be created. Amazon ECS tasks on
-    /// Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers.
-    /// These providers are available to all accounts in the Amazon Web Services Regions that Fargate
-    /// supports.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in capacity provider strategies to facilitate cluster auto scaling.</p>
+    /// <p>Only capacity providers that use an Auto Scaling group can be created. Amazon ECS tasks on Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers. These providers are available to all accounts in the Amazon Web Services Regions that Fargate supports.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCapacityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -532,10 +535,10 @@ pub mod fluent_builders {
                 crate::input::CreateCapacityProviderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -543,18 +546,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the capacity provider. Up to 255 characters are allowed. They include
-        /// letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-).
-        /// The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or
-        /// "<code>fargate</code>".</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the capacity provider. Up to 255 characters are allowed. They include
-        /// letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-).
-        /// The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or
-        /// "<code>fargate</code>".</p>
+        /// <p>The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -562,9 +559,9 @@ pub mod fluent_builders {
         /// <p>The details of the Auto Scaling group for the capacity provider.</p>
         pub fn auto_scaling_group_provider(
             mut self,
-            inp: crate::model::AutoScalingGroupProvider,
+            input: crate::model::AutoScalingGroupProvider,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_group_provider(inp);
+            self.inner = self.inner.auto_scaling_group_provider(input);
             self
         }
         /// <p>The details of the Auto Scaling group for the capacity provider.</p>
@@ -579,77 +576,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the capacity provider to categorize and organize them
-        /// more conveniently. Each tag consists of a key and an optional value. You define both of
-        /// them.</p>
+        /// <p>The metadata that you apply to the capacity provider to categorize and organize them more conveniently. Each tag consists of a key and an optional value. You define both of them.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The metadata that you apply to the capacity provider to categorize and organize them
-        /// more conveniently. Each tag consists of a key and an optional value. You define both of
-        /// them.</p>
+        /// <p>The metadata that you apply to the capacity provider to categorize and organize them more conveniently. Each tag consists of a key and an optional value. You define both of them.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -661,19 +612,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCluster`.
     ///
-    /// <p>Creates a new Amazon ECS cluster. By default, your account receives a <code>default</code>
-    /// cluster when you launch your first container instance. However, you can create your own
-    /// cluster with a unique name with the <code>CreateCluster</code> action.</p>
-    /// <note>
-    /// <p>When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to
-    /// create the Amazon ECS service-linked role for your account. This is so that it can manage
-    /// required resources in other Amazon Web Services services on your behalf. However, if the IAM user
-    /// that makes the call doesn't have permissions to create the service-linked role, it
-    /// isn't created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-    /// Service-Linked Roles for Amazon ECS</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Creates a new Amazon ECS cluster. By default, your account receives a <code>default</code> cluster when you launch your first container instance. However, you can create your own cluster with a unique name with the <code>CreateCluster</code> action.</p> <note>
+    /// <p>When you call the <code>CreateCluster</code> API operation, Amazon ECS attempts to create the Amazon ECS service-linked role for your account. This is so that it can manage required resources in other Amazon Web Services services on your behalf. However, if the IAM user that makes the call doesn't have permissions to create the service-linked role, it isn't created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -718,10 +660,10 @@ pub mod fluent_builders {
                 crate::input::CreateClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -729,14 +671,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of your cluster. If you don't specify a name for your cluster, you create a
-        /// cluster that's named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        /// <p>The name of your cluster. If you don't specify a name for your cluster, you create a cluster that's named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
-        /// <p>The name of your cluster. If you don't specify a name for your cluster, you create a
-        /// cluster that's named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
+        /// <p>The name of your cluster. If you don't specify a name for your cluster, you create a cluster that's named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_name(input);
             self
@@ -745,75 +685,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value. You define both.</p>
+        /// <p>The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value. You define both.</p>
+        /// <p>The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -826,18 +722,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_settings`](Self::set_settings).
         ///
-        /// <p>The setting to use when creating a cluster. This parameter is used to enable CloudWatch
-        /// Container Insights for a cluster. If this value is specified, it overrides the
-        /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-        /// <a>PutAccountSettingDefault</a>.</p>
-        pub fn settings(mut self, inp: impl Into<crate::model::ClusterSetting>) -> Self {
-            self.inner = self.inner.settings(inp);
+        /// <p>The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p>
+        pub fn settings(mut self, input: crate::model::ClusterSetting) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
-        /// <p>The setting to use when creating a cluster. This parameter is used to enable CloudWatch
-        /// Container Insights for a cluster. If this value is specified, it overrides the
-        /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-        /// <a>PutAccountSettingDefault</a>.</p>
+        /// <p>The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterSetting>>,
@@ -845,14 +735,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_settings(input);
             self
         }
-        /// <p>The
-        /// execute command configuration for the cluster.</p>
-        pub fn configuration(mut self, inp: crate::model::ClusterConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        /// <p>The execute command configuration for the cluster.</p>
+        pub fn configuration(mut self, input: crate::model::ClusterConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>The
-        /// execute command configuration for the cluster.</p>
+        /// <p>The execute command configuration for the cluster.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ClusterConfiguration>,
@@ -864,40 +752,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
         ///
-        /// <p>The short name of one or more capacity providers to associate with the cluster. A
-        /// capacity provider must be associated with a cluster before it can be included as part of
-        /// the default capacity provider strategy of the cluster or used in a capacity provider
-        /// strategy when calling the <a>CreateService</a> or <a>RunTask</a>
-        /// actions.</p>
-        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-        /// provider must be created but not associated with another cluster. New Auto Scaling group
-        /// capacity providers can be created with the <a>CreateCapacityProvider</a> API
-        /// operation.</p>
-        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be
-        /// used.</p>
-        /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
-        /// list of available capacity providers for a cluster after the cluster is created.</p>
-        pub fn capacity_providers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capacity_providers(inp);
+        /// <p>The short name of one or more capacity providers to associate with the cluster. A capacity provider must be associated with a cluster before it can be included as part of the default capacity provider strategy of the cluster or used in a capacity provider strategy when calling the <code>CreateService</code> or <code>RunTask</code> actions.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not associated with another cluster. New Auto Scaling group capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
+        /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
+        pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capacity_providers(input.into());
             self
         }
-        /// <p>The short name of one or more capacity providers to associate with the cluster. A
-        /// capacity provider must be associated with a cluster before it can be included as part of
-        /// the default capacity provider strategy of the cluster or used in a capacity provider
-        /// strategy when calling the <a>CreateService</a> or <a>RunTask</a>
-        /// actions.</p>
-        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-        /// provider must be created but not associated with another cluster. New Auto Scaling group
-        /// capacity providers can be created with the <a>CreateCapacityProvider</a> API
-        /// operation.</p>
-        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be
-        /// used.</p>
-        /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
-        /// list of available capacity providers for a cluster after the cluster is created.</p>
+        /// <p>The short name of one or more capacity providers to associate with the cluster. A capacity provider must be associated with a cluster before it can be included as part of the default capacity provider strategy of the cluster or used in a capacity provider strategy when calling the <code>CreateService</code> or <code>RunTask</code> actions.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not associated with another cluster. New Auto Scaling group capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
+        /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
         pub fn set_capacity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -909,27 +775,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_default_capacity_provider_strategy`](Self::set_default_capacity_provider_strategy).
         ///
-        /// <p>The capacity provider strategy to set as the default for the cluster. After a default
-        /// capacity provider strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
-        /// provider strategy or launch type specified, the default capacity provider strategy for
-        /// the cluster is used.</p>
-        /// <p>If a default capacity provider strategy isn't defined for a cluster when it was
-        /// created, it can be defined later with the <a>PutClusterCapacityProviders</a>
-        /// API operation.</p>
+        /// <p>The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy is set for a cluster, when you call the <code>RunTask</code> or <code>CreateService</code> APIs with no capacity provider strategy or launch type specified, the default capacity provider strategy for the cluster is used.</p>
+        /// <p>If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later with the <code>PutClusterCapacityProviders</code> API operation.</p>
         pub fn default_capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
-            self.inner = self.inner.default_capacity_provider_strategy(inp);
+            self.inner = self.inner.default_capacity_provider_strategy(input);
             self
         }
-        /// <p>The capacity provider strategy to set as the default for the cluster. After a default
-        /// capacity provider strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
-        /// provider strategy or launch type specified, the default capacity provider strategy for
-        /// the cluster is used.</p>
-        /// <p>If a default capacity provider strategy isn't defined for a cluster when it was
-        /// created, it can be defined later with the <a>PutClusterCapacityProviders</a>
-        /// API operation.</p>
+        /// <p>The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy is set for a cluster, when you call the <code>RunTask</code> or <code>CreateService</code> APIs with no capacity provider strategy or launch type specified, the default capacity provider strategy for the cluster is used.</p>
+        /// <p>If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later with the <code>PutClusterCapacityProviders</code> API operation.</p>
         pub fn set_default_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -940,114 +796,29 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateService`.
     ///
-    /// <p>Runs and maintains your desired number of tasks from a specified task definition. If
-    /// the number of tasks running in a service drops below the <code>desiredCount</code>,
-    /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
-    /// service, see the UpdateService action.</p>
-    /// <p>In addition to maintaining the desired count of tasks in your service, you can
-    /// optionally run your service behind one or more load balancers. The load balancers
-    /// distribute traffic across the tasks that are associated with the service. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>Tasks for services that don't use a load balancer are considered healthy if they're in
-    /// the <code>RUNNING</code> state. Tasks for services that use a load balancer are
-    /// considered healthy if they're in the <code>RUNNING</code> state and the container
-    /// instance that they're hosted on is reported as healthy by the load balancer.</p>
+    /// <p>Runs and maintains your desired number of tasks from a specified task definition. If the number of tasks running in a service drops below the <code>desiredCount</code>, Amazon ECS runs another copy of the task in the specified cluster. To update an existing service, see the UpdateService action.</p>
+    /// <p>In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind one or more load balancers. The load balancers distribute traffic across the tasks that are associated with the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Tasks for services that don't use a load balancer are considered healthy if they're in the <code>RUNNING</code> state. Tasks for services that use a load balancer are considered healthy if they're in the <code>RUNNING</code> state and the container instance that they're hosted on is reported as healthy by the load balancer.</p>
     /// <p>There are two service scheduler strategies available:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REPLICA</code> - The replica scheduling strategy places and
-    /// maintains your desired number of tasks across your cluster. By default, the
-    /// service scheduler spreads tasks across Availability Zones. You can use task
-    /// placement strategies and constraints to customize task placement decisions. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler Concepts</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DAEMON</code> - The daemon scheduling strategy deploys exactly one
-    /// task on each active container instance that meets all of the task placement
-    /// constraints that you specify in your cluster. The service scheduler also
-    /// evaluates the task placement constraints for running tasks. It also stops tasks
-    /// that don't meet the placement constraints. When using this strategy, you don't
-    /// need to specify a desired number of tasks, a task placement strategy, or use
-    /// Service Auto Scaling policies. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler Concepts</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// </li>
+    /// <li> <p> <code>REPLICA</code> - The replica scheduling strategy places and maintains your desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>DAEMON</code> - The daemon scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It also stops tasks that don't meet the placement constraints. When using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li>
     /// </ul>
-    /// <p>You can optionally specify a deployment configuration for your service. The deployment
-    /// is initiated by changing properties. For example, the deployment might be initiated by
-    /// the task definition or by your desired count of a service. This is done with an <a>UpdateService</a> operation. The default value for a replica service for
-    /// <code>minimumHealthyPercent</code> is 100%. The default value for a daemon service
-    /// for <code>minimumHealthyPercent</code> is 0%.</p>
-    /// <p>If a service uses the <code>ECS</code> deployment controller, the minimum healthy
-    /// percent represents a lower limit on the number of tasks in a service that must remain in
-    /// the <code>RUNNING</code> state during a deployment. Specifically, it represents it as a
-    /// percentage of your desired number of tasks (rounded up to the nearest integer). This
-    /// happens when any of your container instances are in the <code>DRAINING</code> state if
-    /// the service contains tasks using the EC2 launch type. Using this
-    /// parameter, you can deploy without using additional cluster capacity. For example, if you
-    /// set your service to have desired number of four tasks and a minimum healthy percent of
-    /// 50%, the scheduler might stop two existing tasks to free up cluster capacity before
-    /// starting two new tasks. If they're in the <code>RUNNING</code> state, tasks for services
-    /// that don't use a load balancer are considered healthy . If they're in the
-    /// <code>RUNNING</code> state and reported as healthy by the load balancer, tasks for
-    /// services that <i>do</i> use a load balancer are considered healthy . The
-    /// default value for minimum healthy percent is 100%.</p>
-    /// <p>If a service uses the <code>ECS</code> deployment controller, the <b>maximum percent</b> parameter represents an upper limit on the
-    /// number of tasks in a service that are allowed in the <code>RUNNING</code> or
-    /// <code>PENDING</code> state during a deployment. Specifically, it represents it as a
-    /// percentage of the desired number of tasks (rounded down to the nearest integer). This
-    /// happens when any of your container instances are in the <code>DRAINING</code> state if
-    /// the service contains tasks using the EC2 launch type. Using this
-    /// parameter, you can define the deployment batch size. For example, if your service has a
-    /// desired number of four tasks and a maximum percent value of 200%, the scheduler may
-    /// start four new tasks before stopping the four older tasks (provided that the cluster
-    /// resources required to do this are available). The default value for maximum percent is
-    /// 200%.</p>
-    /// <p>If a service uses either the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code>
-    /// deployment controller types and tasks that use the EC2 launch type, the
-    /// <b>minimum healthy percent</b> and <b>maximum percent</b> values are used only to define the lower and upper limit
-    /// on the number of the tasks in the service that remain in the <code>RUNNING</code> state.
-    /// This is while the container instances are in the <code>DRAINING</code> state. If the
-    /// tasks in the service use the Fargate launch type, the minimum healthy
-    /// percent and maximum percent values aren't used. This is the case even if they're
-    /// currently visible when describing your service.</p>
-    /// <p>When creating a service that uses the <code>EXTERNAL</code> deployment controller, you
-    /// can specify only parameters that aren't controlled at the task set level. The only
-    /// required parameter is the service name. You control your services using the <a>CreateTaskSet</a> operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>When the service scheduler launches new tasks, it determines task placement in your
-    /// cluster using the following logic:</p>
+    /// <p>You can optionally specify a deployment configuration for your service. The deployment is initiated by changing properties. For example, the deployment might be initiated by the task definition or by your desired count of a service. This is done with an <code>UpdateService</code> operation. The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default value for a daemon service for <code>minimumHealthyPercent</code> is 0%.</p>
+    /// <p>If a service uses the <code>ECS</code> deployment controller, the minimum healthy percent represents a lower limit on the number of tasks in a service that must remain in the <code>RUNNING</code> state during a deployment. Specifically, it represents it as a percentage of your desired number of tasks (rounded up to the nearest integer). This happens when any of your container instances are in the <code>DRAINING</code> state if the service contains tasks using the EC2 launch type. Using this parameter, you can deploy without using additional cluster capacity. For example, if you set your service to have desired number of four tasks and a minimum healthy percent of 50%, the scheduler might stop two existing tasks to free up cluster capacity before starting two new tasks. If they're in the <code>RUNNING</code> state, tasks for services that don't use a load balancer are considered healthy . If they're in the <code>RUNNING</code> state and reported as healthy by the load balancer, tasks for services that <i>do</i> use a load balancer are considered healthy . The default value for minimum healthy percent is 100%.</p>
+    /// <p>If a service uses the <code>ECS</code> deployment controller, the <b>maximum percent</b> parameter represents an upper limit on the number of tasks in a service that are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment. Specifically, it represents it as a percentage of the desired number of tasks (rounded down to the nearest integer). This happens when any of your container instances are in the <code>DRAINING</code> state if the service contains tasks using the EC2 launch type. Using this parameter, you can define the deployment batch size. For example, if your service has a desired number of four tasks and a maximum percent value of 200%, the scheduler may start four new tasks before stopping the four older tasks (provided that the cluster resources required to do this are available). The default value for maximum percent is 200%.</p>
+    /// <p>If a service uses either the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types and tasks that use the EC2 launch type, the <b>minimum healthy percent</b> and <b>maximum percent</b> values are used only to define the lower and upper limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state. This is while the container instances are in the <code>DRAINING</code> state. If the tasks in the service use the Fargate launch type, the minimum healthy percent and maximum percent values aren't used. This is the case even if they're currently visible when describing your service.</p>
+    /// <p>When creating a service that uses the <code>EXTERNAL</code> deployment controller, you can specify only parameters that aren't controlled at the task set level. The only required parameter is the service name. You control your services using the <code>CreateTaskSet</code> operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>When the service scheduler launches new tasks, it determines task placement in your cluster using the following logic:</p>
     /// <ul>
-    /// <li>
-    /// <p>Determine which of the container instances in your cluster can support the
-    /// task definition of your service. For example, they have the required CPU,
-    /// memory, ports, and container instance attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>By default, the service scheduler attempts to balance tasks across
-    /// Availability Zones in this manner. This is the case even if you can choose a
-    /// different placement strategy with the <code>placementStrategy</code>
-    /// parameter.</p>
+    /// <li> <p>Determine which of the container instances in your cluster can support the task definition of your service. For example, they have the required CPU, memory, ports, and container instance attributes.</p> </li>
+    /// <li> <p>By default, the service scheduler attempts to balance tasks across Availability Zones in this manner. This is the case even if you can choose a different placement strategy with the <code>placementStrategy</code> parameter.</p>
     /// <ul>
-    /// <li>
-    /// <p>Sort the valid container instances, giving priority to instances that
-    /// have the fewest number of running tasks for this service in their
-    /// respective Availability Zone. For example, if zone A has one running
-    /// service task and zones B and C each have zero, valid container instances
-    /// in either zone B or C are considered optimal for placement.</p>
-    /// </li>
-    /// <li>
-    /// <p>Place the new service task on a valid container instance in an optimal
-    /// Availability Zone based on the previous steps, favoring container
-    /// instances with the fewest number of running tasks for this
-    /// service.</p>
-    /// </li>
+    /// <li> <p>Sort the valid container instances, giving priority to instances that have the fewest number of running tasks for this service in their respective Availability Zone. For example, if zone A has one running service task and zones B and C each have zero, valid container instances in either zone B or C are considered optimal for placement.</p> </li>
+    /// <li> <p>Place the new service task on a valid container instance in an optimal Availability Zone based on the previous steps, favoring container instances with the fewest number of running tasks for this service.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1092,10 +863,10 @@ pub mod fluent_builders {
                 crate::input::CreateServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1103,46 +874,34 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
-        /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within
-        /// a cluster, but you can have similarly named services in multiple clusters within a
-        /// Region or across multiple Regions.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a Region or across multiple Regions.</p>
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
-        /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within
-        /// a cluster, but you can have similarly named services in multiple clusters within a
-        /// Region or across multiple Regions.</p>
+        /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a Region or across multiple Regions.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_name(input);
             self
         }
-        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run in your service. If a <code>revision</code>
-        /// isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
-        /// <p>A task definition must be specified if the service uses either the <code>ECS</code> or
-        /// <code>CODE_DEPLOY</code> deployment controllers.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run in your service. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
+        /// <p>A task definition must be specified if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code> deployment controllers.</p>
+        pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(input.into());
             self
         }
-        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run in your service. If a <code>revision</code>
-        /// isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
-        /// <p>A task definition must be specified if the service uses either the <code>ECS</code> or
-        /// <code>CODE_DEPLOY</code> deployment controllers.</p>
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run in your service. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
+        /// <p>A task definition must be specified if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code> deployment controllers.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1154,86 +913,24 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
         ///
-        /// <p>A load balancer object representing the load balancers to use with your service. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>If the service uses the rolling update (<code>ECS</code>) deployment controller and
-        /// using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach
-        /// to the service. The service-linked role is required for services that use multiple
-        /// target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>If the service uses the <code>CODE_DEPLOY</code> deployment controller, the service is
-        /// required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment group, you
-        /// specify two target groups (referred to as a <code>targetGroupPair</code>). During a
-        /// deployment, CodeDeploy determines which task set in your service has the status
-        /// <code>PRIMARY</code>, and it associates one target group with it. Then, it also
-        /// associates the other target group with the replacement task set. The load balancer can
-        /// also have up to two listeners: a required listener for production traffic and an
-        /// optional listener that you can use to perform validation tests with Lambda functions
-        /// before routing production traffic to it.</p>
-        /// <p>After you create a service using the <code>ECS</code> deployment controller, the load
-        /// balancer name or target group ARN, container name, and container port that's specified
-        /// in the service definition are immutable. If you use the <code>CODE_DEPLOY</code>
-        /// deployment controller, these values can be changed when updating the service.</p>
-        /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN,
-        /// the container name, and the container port to access from the load balancer. The
-        /// container name must be as it appears in a container definition. The load balancer name
-        /// parameter must be omitted. When a task from this service is placed on a container
-        /// instance, the container instance and port combination is registered as a target in the
-        /// target group that's specified here.</p>
-        /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name , and
-        /// the container port to access from the load balancer. The container name must be as it
-        /// appears in a container definition. The target group ARN parameter must be omitted. When
-        /// a task from this service is placed on a container instance, the container instance is
-        /// registered with the load balancer that's specified here.</p>
-        /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those
-        /// with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
-        /// aren't supported. Also, when you create any target groups for these services, you must
-        /// choose <code>ip</code> as the target type, not <code>instance</code>. This is because
-        /// tasks that use the <code>awsvpc</code> network mode are associated with an elastic
-        /// network interface, not an Amazon EC2 instance.</p>
-        pub fn load_balancers(mut self, inp: impl Into<crate::model::LoadBalancer>) -> Self {
-            self.inner = self.inner.load_balancers(inp);
+        /// <p>A load balancer object representing the load balancers to use with your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach to the service. The service-linked role is required for services that use multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If the service uses the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment group, you specify two target groups (referred to as a <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which task set in your service has the status <code>PRIMARY</code>, and it associates one target group with it. Then, it also associates the other target group with the replacement task set. The load balancer can also have up to two listeners: a required listener for production traffic and an optional listener that you can use to perform validation tests with Lambda functions before routing production traffic to it.</p>
+        /// <p>After you create a service using the <code>ECS</code> deployment controller, the load balancer name or target group ARN, container name, and container port that's specified in the service definition are immutable. If you use the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when updating the service.</p>
+        /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN, the container name, and the container port to access from the load balancer. The container name must be as it appears in a container definition. The load balancer name parameter must be omitted. When a task from this service is placed on a container instance, the container instance and port combination is registered as a target in the target group that's specified here.</p>
+        /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name , and the container port to access from the load balancer. The container name must be as it appears in a container definition. The target group ARN parameter must be omitted. When a task from this service is placed on a container instance, the container instance is registered with the load balancer that's specified here.</p>
+        /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers aren't supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the target type, not <code>instance</code>. This is because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.</p>
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
+            self.inner = self.inner.load_balancers(input);
             self
         }
-        /// <p>A load balancer object representing the load balancers to use with your service. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>If the service uses the rolling update (<code>ECS</code>) deployment controller and
-        /// using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach
-        /// to the service. The service-linked role is required for services that use multiple
-        /// target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>If the service uses the <code>CODE_DEPLOY</code> deployment controller, the service is
-        /// required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment group, you
-        /// specify two target groups (referred to as a <code>targetGroupPair</code>). During a
-        /// deployment, CodeDeploy determines which task set in your service has the status
-        /// <code>PRIMARY</code>, and it associates one target group with it. Then, it also
-        /// associates the other target group with the replacement task set. The load balancer can
-        /// also have up to two listeners: a required listener for production traffic and an
-        /// optional listener that you can use to perform validation tests with Lambda functions
-        /// before routing production traffic to it.</p>
-        /// <p>After you create a service using the <code>ECS</code> deployment controller, the load
-        /// balancer name or target group ARN, container name, and container port that's specified
-        /// in the service definition are immutable. If you use the <code>CODE_DEPLOY</code>
-        /// deployment controller, these values can be changed when updating the service.</p>
-        /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN,
-        /// the container name, and the container port to access from the load balancer. The
-        /// container name must be as it appears in a container definition. The load balancer name
-        /// parameter must be omitted. When a task from this service is placed on a container
-        /// instance, the container instance and port combination is registered as a target in the
-        /// target group that's specified here.</p>
-        /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name , and
-        /// the container port to access from the load balancer. The container name must be as it
-        /// appears in a container definition. The target group ARN parameter must be omitted. When
-        /// a task from this service is placed on a container instance, the container instance is
-        /// registered with the load balancer that's specified here.</p>
-        /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those
-        /// with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
-        /// aren't supported. Also, when you create any target groups for these services, you must
-        /// choose <code>ip</code> as the target type, not <code>instance</code>. This is because
-        /// tasks that use the <code>awsvpc</code> network mode are associated with an elastic
-        /// network interface, not an Amazon EC2 instance.</p>
+        /// <p>A load balancer object representing the load balancers to use with your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If the service uses the rolling update (<code>ECS</code>) deployment controller and using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach to the service. The service-linked role is required for services that use multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If the service uses the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment group, you specify two target groups (referred to as a <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which task set in your service has the status <code>PRIMARY</code>, and it associates one target group with it. Then, it also associates the other target group with the replacement task set. The load balancer can also have up to two listeners: a required listener for production traffic and an optional listener that you can use to perform validation tests with Lambda functions before routing production traffic to it.</p>
+        /// <p>After you create a service using the <code>ECS</code> deployment controller, the load balancer name or target group ARN, container name, and container port that's specified in the service definition are immutable. If you use the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when updating the service.</p>
+        /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN, the container name, and the container port to access from the load balancer. The container name must be as it appears in a container definition. The load balancer name parameter must be omitted. When a task from this service is placed on a container instance, the container instance and port combination is registered as a target in the target group that's specified here.</p>
+        /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name , and the container port to access from the load balancer. The container name must be as it appears in a container definition. The target group ARN parameter must be omitted. When a task from this service is placed on a container instance, the container instance is registered with the load balancer that's specified here.</p>
+        /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers aren't supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the target type, not <code>instance</code>. This is because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.</p>
         pub fn set_load_balancers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
@@ -1245,23 +942,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_service_registries`](Self::set_service_registries).
         ///
-        /// <p>The details of the service discovery registry to associate with this service. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-        /// discovery</a>.</p>
-        /// <note>
-        /// <p>Each service may be associated with one service registry. Multiple service
-        /// registries for each service isn't supported.</p>
+        /// <p>The details of the service discovery registry to associate with this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p> <note>
+        /// <p>Each service may be associated with one service registry. Multiple service registries for each service isn't supported.</p>
         /// </note>
-        pub fn service_registries(mut self, inp: impl Into<crate::model::ServiceRegistry>) -> Self {
-            self.inner = self.inner.service_registries(inp);
+        pub fn service_registries(mut self, input: crate::model::ServiceRegistry) -> Self {
+            self.inner = self.inner.service_registries(input);
             self
         }
-        /// <p>The details of the service discovery registry to associate with this service. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-        /// discovery</a>.</p>
-        /// <note>
-        /// <p>Each service may be associated with one service registry. Multiple service
-        /// registries for each service isn't supported.</p>
+        /// <p>The details of the service discovery registry to associate with this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p> <note>
+        /// <p>Each service may be associated with one service registry. Multiple service registries for each service isn't supported.</p>
         /// </note>
         pub fn set_service_registries(
             mut self,
@@ -1270,72 +959,46 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_registries(input);
             self
         }
-        /// <p>The number of instantiations of the specified task definition to place and keep
-        /// running on your cluster.</p>
-        /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't
-        /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
-        /// required.</p>
-        pub fn desired_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.desired_count(inp);
+        /// <p>The number of instantiations of the specified task definition to place and keep running on your cluster.</p>
+        /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't required.</p>
+        pub fn desired_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.desired_count(input);
             self
         }
-        /// <p>The number of instantiations of the specified task definition to place and keep
-        /// running on your cluster.</p>
-        /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't
-        /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
-        /// required.</p>
+        /// <p>The number of instantiations of the specified task definition to place and keep running on your cluster.</p>
+        /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't required.</p>
         pub fn set_desired_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_desired_count(input);
             self
         }
-        /// <p>An identifier that you provide to ensure the idempotency of the request. It must be
-        /// unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>An identifier that you provide to ensure the idempotency of the request. It must be
-        /// unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
+        /// <p>An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive. Up to 32 ASCII characters are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
-        /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
-        /// infrastructure.</p>
-        /// <note>
-        /// <p>Fargate Spot infrastructure is available for use but a capacity provider
-        /// strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the
-        /// <i>Amazon ECS User Guide for Fargate</i>.</p>
+        /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p> <note>
+        /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
         /// </note>
-        /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
-        /// cluster.</p>
-        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
-        /// virtual machine (VM) capacity registered to your cluster.</p>
-        /// <p>A service can use either a launch type or a capacity provider strategy. If a
-        /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-        /// parameter must be omitted.</p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.inner = self.inner.launch_type(inp);
+        /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
+        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
+        /// <p>A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
+        pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
+            self.inner = self.inner.launch_type(input);
             self
         }
-        /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
-        /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
-        /// infrastructure.</p>
-        /// <note>
-        /// <p>Fargate Spot infrastructure is available for use but a capacity provider
-        /// strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the
-        /// <i>Amazon ECS User Guide for Fargate</i>.</p>
+        /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p> <note>
+        /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
         /// </note>
-        /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
-        /// cluster.</p>
-        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
-        /// virtual machine (VM) capacity registered to your cluster.</p>
-        /// <p>A service can use either a launch type or a capacity provider strategy. If a
-        /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-        /// parameter must be omitted.</p>
+        /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
+        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
+        /// <p>A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -1348,23 +1011,17 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
         ///
         /// <p>The capacity provider strategy to use for the service.</p>
-        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
-        /// <code>launchType</code> is specified, the
-        /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
         /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
-            self.inner = self.inner.capacity_provider_strategy(inp);
+            self.inner = self.inner.capacity_provider_strategy(input);
             self
         }
         /// <p>The capacity provider strategy to use for the service.</p>
-        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
-        /// <code>launchType</code> is specified, the
-        /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
         /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn set_capacity_provider_strategy(
             mut self,
@@ -1373,20 +1030,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_capacity_provider_strategy(input);
             self
         }
-        /// <p>The platform version that your tasks in the service are running on. A platform version
-        /// is specified only for tasks using the Fargate launch type. If one isn't
-        /// specified, the <code>LATEST</code> platform version is used. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
-        /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_version(inp);
+        /// <p>The platform version that your tasks in the service are running on. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_version(input.into());
             self
         }
-        /// <p>The platform version that your tasks in the service are running on. A platform version
-        /// is specified only for tasks using the Fargate launch type. If one isn't
-        /// specified, the <code>LATEST</code> platform version is used. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
-        /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The platform version that your tasks in the service are running on. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1394,65 +1043,31 @@ pub mod fluent_builders {
             self.inner = self.inner.set_platform_version(input);
             self
         }
-        /// <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your
-        /// load balancer on your behalf. This parameter is only permitted if you are using a load
-        /// balancer with your service and your task definition doesn't use the <code>awsvpc</code>
-        /// network mode. If you specify the <code>role</code> parameter, you must also specify a
-        /// load balancer object with the <code>loadBalancers</code> parameter.</p>
-        /// <important>
-        /// <p>If your account has already created the Amazon ECS service-linked role, that role is
-        /// used for your service unless you specify a role here. The service-linked role is
-        /// required if your task definition uses the <code>awsvpc</code> network mode or if the
-        /// service is configured to use service discovery, an external deployment controller,
-        /// multiple target groups, or Elastic Inference accelerators in which case you don't
-        /// specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-        /// service-linked roles for Amazon ECS</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your load balancer on your behalf. This parameter is only permitted if you are using a load balancer with your service and your task definition doesn't use the <code>awsvpc</code> network mode. If you specify the <code>role</code> parameter, you must also specify a load balancer object with the <code>loadBalancers</code> parameter.</p> <important>
+        /// <p>If your account has already created the Amazon ECS service-linked role, that role is used for your service unless you specify a role here. The service-linked role is required if your task definition uses the <code>awsvpc</code> network mode or if the service is configured to use service discovery, an external deployment controller, multiple target groups, or Elastic Inference accelerators in which case you don't specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </important>
-        /// <p>If your specified role has a path other than <code>/</code>, then you must either
-        /// specify the full role ARN (this is recommended) or prefix the role name with the path.
-        /// For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>
-        /// then you would specify <code>/foo/bar</code> as the role name. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this is recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
-        /// <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your
-        /// load balancer on your behalf. This parameter is only permitted if you are using a load
-        /// balancer with your service and your task definition doesn't use the <code>awsvpc</code>
-        /// network mode. If you specify the <code>role</code> parameter, you must also specify a
-        /// load balancer object with the <code>loadBalancers</code> parameter.</p>
-        /// <important>
-        /// <p>If your account has already created the Amazon ECS service-linked role, that role is
-        /// used for your service unless you specify a role here. The service-linked role is
-        /// required if your task definition uses the <code>awsvpc</code> network mode or if the
-        /// service is configured to use service discovery, an external deployment controller,
-        /// multiple target groups, or Elastic Inference accelerators in which case you don't
-        /// specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-        /// service-linked roles for Amazon ECS</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your load balancer on your behalf. This parameter is only permitted if you are using a load balancer with your service and your task definition doesn't use the <code>awsvpc</code> network mode. If you specify the <code>role</code> parameter, you must also specify a load balancer object with the <code>loadBalancers</code> parameter.</p> <important>
+        /// <p>If your account has already created the Amazon ECS service-linked role, that role is used for your service unless you specify a role here. The service-linked role is required if your task definition uses the <code>awsvpc</code> network mode or if the service is configured to use service discovery, an external deployment controller, multiple target groups, or Elastic Inference accelerators in which case you don't specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// </important>
-        /// <p>If your specified role has a path other than <code>/</code>, then you must either
-        /// specify the full role ARN (this is recommended) or prefix the role name with the path.
-        /// For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>
-        /// then you would specify <code>/foo/bar</code> as the role name. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
+        /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this is recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>Optional deployment parameters that control how many tasks run during the deployment
-        /// and the ordering of stopping and starting tasks.</p>
+        /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
         pub fn deployment_configuration(
             mut self,
-            inp: crate::model::DeploymentConfiguration,
+            input: crate::model::DeploymentConfiguration,
         ) -> Self {
-            self.inner = self.inner.deployment_configuration(inp);
+            self.inner = self.inner.deployment_configuration(input);
             self
         }
-        /// <p>Optional deployment parameters that control how many tasks run during the deployment
-        /// and the ordering of stopping and starting tasks.</p>
+        /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
         pub fn set_deployment_configuration(
             mut self,
             input: std::option::Option<crate::model::DeploymentConfiguration>,
@@ -1464,19 +1079,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
         ///
-        /// <p>An array of placement constraint objects to use for tasks in your service. You can
-        /// specify a maximum of 10 constraints for each task. This limit includes constraints in
-        /// the task definition and those specified at runtime.</p>
-        pub fn placement_constraints(
-            mut self,
-            inp: impl Into<crate::model::PlacementConstraint>,
-        ) -> Self {
-            self.inner = self.inner.placement_constraints(inp);
+        /// <p>An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
+        pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
+            self.inner = self.inner.placement_constraints(input);
             self
         }
-        /// <p>An array of placement constraint objects to use for tasks in your service. You can
-        /// specify a maximum of 10 constraints for each task. This limit includes constraints in
-        /// the task definition and those specified at runtime.</p>
+        /// <p>An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
@@ -1488,17 +1096,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
         ///
-        /// <p>The placement strategy objects to use for tasks in your service. You can specify a
-        /// maximum of 5 strategy rules for each service.</p>
-        pub fn placement_strategy(
-            mut self,
-            inp: impl Into<crate::model::PlacementStrategy>,
-        ) -> Self {
-            self.inner = self.inner.placement_strategy(inp);
+        /// <p>The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service.</p>
+        pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
+            self.inner = self.inner.placement_strategy(input);
             self
         }
-        /// <p>The placement strategy objects to use for tasks in your service. You can specify a
-        /// maximum of 5 strategy rules for each service.</p>
+        /// <p>The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service.</p>
         pub fn set_placement_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
@@ -1506,20 +1109,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_placement_strategy(input);
             self
         }
-        /// <p>The network configuration for the service. This parameter is required for task
-        /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
-        /// network interface, and it isn't supported for other network modes. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
-        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.inner = self.inner.network_configuration(inp);
+        /// <p>The network configuration for the service. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.inner = self.inner.network_configuration(input);
             self
         }
-        /// <p>The network configuration for the service. This parameter is required for task
-        /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
-        /// network interface, and it isn't supported for other network modes. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
-        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The network configuration for the service. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -1527,34 +1122,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_network_configuration(input);
             self
         }
-        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
-        /// Elastic Load Balancing target health checks after a task has first started. This is only used when your
-        /// service is configured to use a load balancer. If your service has a load balancer
-        /// defined and you don't specify a health check grace period value, the default value of
-        /// <code>0</code> is used.</p>
-        /// <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you
-        /// can specify a health check grace period of up to
-        /// 2,147,483,647
-        /// seconds (about 69 years). During that time, the Amazon ECS service
-        /// scheduler ignores health check status. This grace period can prevent the service
-        /// scheduler from marking tasks as unhealthy and stopping them before they have time to
-        /// come up.</p>
-        pub fn health_check_grace_period_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_grace_period_seconds(inp);
+        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used when your service is configured to use a load balancer. If your service has a load balancer defined and you don't specify a health check grace period value, the default value of <code>0</code> is used.</p>
+        /// <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
+        pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.health_check_grace_period_seconds(input);
             self
         }
-        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
-        /// Elastic Load Balancing target health checks after a task has first started. This is only used when your
-        /// service is configured to use a load balancer. If your service has a load balancer
-        /// defined and you don't specify a health check grace period value, the default value of
-        /// <code>0</code> is used.</p>
-        /// <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you
-        /// can specify a health check grace period of up to
-        /// 2,147,483,647
-        /// seconds (about 69 years). During that time, the Amazon ECS service
-        /// scheduler ignores health check status. This grace period can prevent the service
-        /// scheduler from marking tasks as unhealthy and stopping them before they have time to
-        /// come up.</p>
+        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used when your service is configured to use a load balancer. If your service has a load balancer defined and you don't specify a health check grace period value, the default value of <code>0</code> is used.</p>
+        /// <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
         pub fn set_health_check_grace_period_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -1565,62 +1140,22 @@ pub mod fluent_builders {
         /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
         /// <p>There are two service scheduler strategies available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REPLICA</code>-The replica scheduling strategy places and
-        /// maintains the desired number of tasks across your cluster. By default, the
-        /// service scheduler spreads tasks across Availability Zones. You can use task
-        /// placement strategies and constraints to customize task placement decisions. This
-        /// scheduler strategy is required if the service uses the <code>CODE_DEPLOY</code>
-        /// or <code>EXTERNAL</code> deployment controller types.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one
-        /// task on each active container instance that meets all of the task placement
-        /// constraints that you specify in your cluster. The service scheduler also
-        /// evaluates the task placement constraints for running tasks and will stop tasks
-        /// that don't meet the placement constraints. When you're using this strategy, you
-        /// don't need to specify a desired number of tasks, a task placement strategy, or
-        /// use Service Auto Scaling policies.</p>
-        /// <note>
-        /// <p>Tasks using the Fargate launch type or the
-        /// <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
-        /// types don't support the <code>DAEMON</code> scheduling strategy.</p>
-        /// </note>
-        /// </li>
+        /// <li> <p> <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions. This scheduler strategy is required if the service uses the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types.</p> </li>
+        /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks and will stop tasks that don't meet the placement constraints. When you're using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies.</p> <note>
+        /// <p>Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types don't support the <code>DAEMON</code> scheduling strategy.</p>
+        /// </note> </li>
         /// </ul>
-        pub fn scheduling_strategy(mut self, inp: crate::model::SchedulingStrategy) -> Self {
-            self.inner = self.inner.scheduling_strategy(inp);
+        pub fn scheduling_strategy(mut self, input: crate::model::SchedulingStrategy) -> Self {
+            self.inner = self.inner.scheduling_strategy(input);
             self
         }
         /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
         /// <p>There are two service scheduler strategies available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REPLICA</code>-The replica scheduling strategy places and
-        /// maintains the desired number of tasks across your cluster. By default, the
-        /// service scheduler spreads tasks across Availability Zones. You can use task
-        /// placement strategies and constraints to customize task placement decisions. This
-        /// scheduler strategy is required if the service uses the <code>CODE_DEPLOY</code>
-        /// or <code>EXTERNAL</code> deployment controller types.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one
-        /// task on each active container instance that meets all of the task placement
-        /// constraints that you specify in your cluster. The service scheduler also
-        /// evaluates the task placement constraints for running tasks and will stop tasks
-        /// that don't meet the placement constraints. When you're using this strategy, you
-        /// don't need to specify a desired number of tasks, a task placement strategy, or
-        /// use Service Auto Scaling policies.</p>
-        /// <note>
-        /// <p>Tasks using the Fargate launch type or the
-        /// <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
-        /// types don't support the <code>DAEMON</code> scheduling strategy.</p>
-        /// </note>
-        /// </li>
+        /// <li> <p> <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions. This scheduler strategy is required if the service uses the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types.</p> </li>
+        /// <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks and will stop tasks that don't meet the placement constraints. When you're using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies.</p> <note>
+        /// <p>Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types don't support the <code>DAEMON</code> scheduling strategy.</p>
+        /// </note> </li>
         /// </ul>
         pub fn set_scheduling_strategy(
             mut self,
@@ -1629,14 +1164,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scheduling_strategy(input);
             self
         }
-        /// <p>The deployment controller to use for the service. If no deployment controller is
-        /// specified, the default value of <code>ECS</code> is used.</p>
-        pub fn deployment_controller(mut self, inp: crate::model::DeploymentController) -> Self {
-            self.inner = self.inner.deployment_controller(inp);
+        /// <p>The deployment controller to use for the service. If no deployment controller is specified, the default value of <code>ECS</code> is used.</p>
+        pub fn deployment_controller(mut self, input: crate::model::DeploymentController) -> Self {
+            self.inner = self.inner.deployment_controller(input);
             self
         }
-        /// <p>The deployment controller to use for the service. If no deployment controller is
-        /// specified, the default value of <code>ECS</code> is used.</p>
+        /// <p>The deployment controller to use for the service. If no deployment controller is specified, the default value of <code>ECS</code> is used.</p>
         pub fn set_deployment_controller(
             mut self,
             input: std::option::Option<crate::model::DeploymentController>,
@@ -1648,77 +1181,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the service to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define. When a
-        /// service is deleted, the tags are deleted as well.</p>
+        /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as well.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The metadata that you apply to the service to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define. When a
-        /// service is deleted, the tags are deleted as well.</p>
+        /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. When a service is deleted, the tags are deleted as well.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -1727,34 +1214,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-        /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn enable_ecs_managed_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_ecs_managed_tags(inp);
+        /// <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_ecs_managed_tags(input);
             self
         }
-        /// <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-        /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_ecs_managed_tags(input);
             self
         }
-        /// <p>Specifies whether to propagate the tags from the task definition or the service to the
-        /// tasks in the service. If no value is specified, the tags aren't propagated. Tags can
-        /// only be propagated to the tasks within the service during service creation. To add tags
-        /// to a task after service creation or task creation, use the <a>TagResource</a>
-        /// API action.</p>
-        pub fn propagate_tags(mut self, inp: crate::model::PropagateTags) -> Self {
-            self.inner = self.inner.propagate_tags(inp);
+        /// <p>Specifies whether to propagate the tags from the task definition or the service to the tasks in the service. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks within the service during service creation. To add tags to a task after service creation or task creation, use the <code>TagResource</code> API action.</p>
+        pub fn propagate_tags(mut self, input: crate::model::PropagateTags) -> Self {
+            self.inner = self.inner.propagate_tags(input);
             self
         }
-        /// <p>Specifies whether to propagate the tags from the task definition or the service to the
-        /// tasks in the service. If no value is specified, the tags aren't propagated. Tags can
-        /// only be propagated to the tasks within the service during service creation. To add tags
-        /// to a task after service creation or task creation, use the <a>TagResource</a>
-        /// API action.</p>
+        /// <p>Specifies whether to propagate the tags from the task definition or the service to the tasks in the service. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks within the service during service creation. To add tags to a task after service creation or task creation, use the <code>TagResource</code> API action.</p>
         pub fn set_propagate_tags(
             mut self,
             input: std::option::Option<crate::model::PropagateTags>,
@@ -1762,16 +1237,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_propagate_tags(input);
             self
         }
-        /// <p>Determines whether the execute command functionality is enabled for the service. If
-        /// <code>true</code>, this enables execute command functionality on all containers in
-        /// the service tasks.</p>
-        pub fn enable_execute_command(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_execute_command(inp);
+        /// <p>Determines whether the execute command functionality is enabled for the service. If <code>true</code>, this enables execute command functionality on all containers in the service tasks.</p>
+        pub fn enable_execute_command(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_execute_command(input);
             self
         }
-        /// <p>Determines whether the execute command functionality is enabled for the service. If
-        /// <code>true</code>, this enables execute command functionality on all containers in
-        /// the service tasks.</p>
+        /// <p>Determines whether the execute command functionality is enabled for the service. If <code>true</code>, this enables execute command functionality on all containers in the service tasks.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_execute_command(input);
             self
@@ -1779,11 +1250,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTaskSet`.
     ///
-    /// <p>Create a task set in the specified cluster and service. This is used when a service
-    /// uses the <code>EXTERNAL</code> deployment controller type. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
-    /// Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create a task set in the specified cluster and service. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTaskSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1828,10 +1296,10 @@ pub mod fluent_builders {
                 crate::input::CreateTaskSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1840,8 +1308,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
@@ -1849,37 +1317,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service(input);
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the
-        /// task set in.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the
-        /// task set in.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
-        /// <p>An optional non-unique tag that identifies this task set in external systems. If the
-        /// task set is associated with a service discovery registry, the tasks in this task set
-        /// will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided
-        /// value.</p>
-        pub fn external_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(inp);
+        /// <p>An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided value.</p>
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(input.into());
             self
         }
-        /// <p>An optional non-unique tag that identifies this task set in external systems. If the
-        /// task set is associated with a service discovery registry, the tasks in this task set
-        /// will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided
-        /// value.</p>
+        /// <p>An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided value.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_external_id(input);
             self
         }
         /// <p>The task definition for the tasks in the task set to use.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(input.into());
             self
         }
         /// <p>The task definition for the tasks in the task set to use.</p>
@@ -1891,8 +1351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object representing the network configuration for a task set.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.inner = self.inner.network_configuration(inp);
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.inner = self.inner.network_configuration(input);
             self
         }
         /// <p>An object representing the network configuration for a task set.</p>
@@ -1907,14 +1367,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
         ///
-        /// <p>A load balancer object representing the load balancer to use with the task set. The
-        /// supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
-        pub fn load_balancers(mut self, inp: impl Into<crate::model::LoadBalancer>) -> Self {
-            self.inner = self.inner.load_balancers(inp);
+        /// <p>A load balancer object representing the load balancer to use with the task set. The supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
+            self.inner = self.inner.load_balancers(input);
             self
         }
-        /// <p>A load balancer object representing the load balancer to use with the task set. The
-        /// supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
+        /// <p>A load balancer object representing the load balancer to use with the task set. The supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
         pub fn set_load_balancers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
@@ -1926,16 +1384,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_service_registries`](Self::set_service_registries).
         ///
-        /// <p>The details of the service discovery registries to assign to this task set. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-        /// Discovery</a>.</p>
-        pub fn service_registries(mut self, inp: impl Into<crate::model::ServiceRegistry>) -> Self {
-            self.inner = self.inner.service_registries(inp);
+        /// <p>The details of the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.</p>
+        pub fn service_registries(mut self, input: crate::model::ServiceRegistry) -> Self {
+            self.inner = self.inner.service_registries(input);
             self
         }
-        /// <p>The details of the service discovery registries to assign to this task set. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-        /// Discovery</a>.</p>
+        /// <p>The details of the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.</p>
         pub fn set_service_registries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
@@ -1943,18 +1397,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_registries(input);
             self
         }
-        /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
-        /// Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-        /// parameter must be omitted.</p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.inner = self.inner.launch_type(inp);
+        /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
+        pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
+            self.inner = self.inner.launch_type(input);
             self
         }
-        /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
-        /// Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-        /// parameter must be omitted.</p>
+        /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -1967,50 +1417,24 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
         ///
         /// <p>The capacity provider strategy to use for the task set.</p>
-        /// <p>A capacity provider strategy consists of one or more capacity providers along with the
-        /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-        /// must be associated with the cluster to be used in a capacity provider strategy. The
-        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-        /// provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-        /// <code>UPDATING</code> status can be used.</p>
-        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
-        /// <code>launchType</code> is specified, the
-        /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be
-        /// used.</p>
-        /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
-        /// list of available capacity providers for a cluster after the cluster is created.</p>
+        /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
+        /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
         pub fn capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
-            self.inner = self.inner.capacity_provider_strategy(inp);
+            self.inner = self.inner.capacity_provider_strategy(input);
             self
         }
         /// <p>The capacity provider strategy to use for the task set.</p>
-        /// <p>A capacity provider strategy consists of one or more capacity providers along with the
-        /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-        /// must be associated with the cluster to be used in a capacity provider strategy. The
-        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-        /// provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-        /// <code>UPDATING</code> status can be used.</p>
-        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
-        /// <code>launchType</code> is specified, the
-        /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be
-        /// used.</p>
-        /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
-        /// list of available capacity providers for a cluster after the cluster is created.</p>
+        /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
+        /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
         pub fn set_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -2018,16 +1442,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_capacity_provider_strategy(input);
             self
         }
-        /// <p>The platform version that the tasks in the task set uses. A platform version is
-        /// specified only for tasks using the Fargate launch type. If one isn't
-        /// specified, the <code>LATEST</code> platform version is used.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_version(inp);
+        /// <p>The platform version that the tasks in the task set uses. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.</p>
+        pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_version(input.into());
             self
         }
-        /// <p>The platform version that the tasks in the task set uses. A platform version is
-        /// specified only for tasks using the Fargate launch type. If one isn't
-        /// specified, the <code>LATEST</code> platform version is used.</p>
+        /// <p>The platform version that the tasks in the task set uses. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2035,26 +1455,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_platform_version(input);
             self
         }
-        /// <p>A floating-point percentage of the desired number of tasks to place and keep running
-        /// in the task set.</p>
-        pub fn scale(mut self, inp: crate::model::Scale) -> Self {
-            self.inner = self.inner.scale(inp);
+        /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
+        pub fn scale(mut self, input: crate::model::Scale) -> Self {
+            self.inner = self.inner.scale(input);
             self
         }
-        /// <p>A floating-point percentage of the desired number of tasks to place and keep running
-        /// in the task set.</p>
+        /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
         pub fn set_scale(mut self, input: std::option::Option<crate::model::Scale>) -> Self {
             self.inner = self.inner.set_scale(input);
             self
         }
-        /// <p>The identifier that you provide to ensure the idempotency of the request. It's case
-        /// sensitive and must be unique. It can be up to 32 ASCII characters are allowed.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique. It can be up to 32 ASCII characters are allowed.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>The identifier that you provide to ensure the idempotency of the request. It's case
-        /// sensitive and must be unique. It can be up to 32 ASCII characters are allowed.</p>
+        /// <p>The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique. It can be up to 32 ASCII characters are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2063,77 +1479,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the task set to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value. You define both. When a service is
-        /// deleted, the tags are deleted.</p>
+        /// <p>The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key and an optional value. You define both. When a service is deleted, the tags are deleted.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The metadata that you apply to the task set to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value. You define both. When a service is
-        /// deleted, the tags are deleted.</p>
+        /// <p>The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key and an optional value. You define both. When a service is deleted, the tags are deleted.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2145,9 +1515,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAccountSetting`.
     ///
-    /// <p>Disables an account setting for a specified IAM user, IAM role, or the root user for
-    /// an account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables an account setting for a specified IAM user, IAM role, or the root user for an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccountSetting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2192,10 +1561,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAccountSettingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2203,42 +1572,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The resource name to disable the account setting for. If
-        /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
-        /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
-        /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
-        /// specified, the ARN and resource ID for your Amazon ECS container instances is affected. If
-        /// <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
-        /// instances is affected.</p>
-        pub fn name(mut self, inp: crate::model::SettingName) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The resource name to disable the account setting for. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container instances is affected.</p>
+        pub fn name(mut self, input: crate::model::SettingName) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        /// <p>The resource name to disable the account setting for. If
-        /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
-        /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
-        /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
-        /// specified, the ARN and resource ID for your Amazon ECS container instances is affected. If
-        /// <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
-        /// instances is affected.</p>
+        /// <p>The resource name to disable the account setting for. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container instances is affected.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::SettingName>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or
-        /// the root user. If you specify the root user, it disables the account setting for all IAM
-        /// users, IAM roles, and the root user of the account unless an IAM user or role explicitly
-        /// overrides these settings. If this field is omitted, the setting is changed only for the
-        /// authenticated user.</p>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or the root user. If you specify the root user, it disables the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+        pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or
-        /// the root user. If you specify the root user, it disables the account setting for all IAM
-        /// users, IAM roles, and the root user of the account unless an IAM user or role explicitly
-        /// overrides these settings. If this field is omitted, the setting is changed only for the
-        /// authenticated user.</p>
+        /// <p>The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role, or the root user. If you specify the root user, it disables the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2250,7 +1599,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAttributes`.
     ///
     /// <p>Deletes one or more custom attributes from an Amazon ECS resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2295,10 +1644,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2306,14 +1655,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete
-        /// attributes. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete attributes. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete
-        /// attributes. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete attributes. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
@@ -2322,18 +1669,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for
-        /// each request. For custom attributes, specify the attribute name and target ID, but don't
-        /// specify the value. If you specify the target ID using the short form, you must also
-        /// specify the target type.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for each request. For custom attributes, specify the attribute name and target ID, but don't specify the value. If you specify the target ID using the short form, you must also specify the target type.</p>
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
-        /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for
-        /// each request. For custom attributes, specify the attribute name and target ID, but don't
-        /// specify the value. If you specify the target ID using the short form, you must also
-        /// specify the target type.</p>
+        /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for each request. For custom attributes, specify the attribute name and target ID, but don't specify the value. If you specify the target ID using the short form, you must also specify the target type.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -2344,22 +1685,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCapacityProvider`.
     ///
-    /// <p>Deletes the specified capacity provider.</p>
-    /// <note>
-    /// <p>The <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are
-    /// reserved and can't be deleted. You can disassociate them from a cluster using either
-    /// the <a>PutClusterCapacityProviders</a> API or by deleting the
-    /// cluster.</p>
+    /// <p>Deletes the specified capacity provider.</p> <note>
+    /// <p>The <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are reserved and can't be deleted. You can disassociate them from a cluster using either the <code>PutClusterCapacityProviders</code> API or by deleting the cluster.</p>
     /// </note>
-    /// <p>Prior to a capacity provider being deleted, the capacity provider must be removed from
-    /// the capacity provider strategy from all services. The <a>UpdateService</a>
-    /// API can be used to remove a capacity provider from a service's capacity provider
-    /// strategy. When updating a service, the <code>forceNewDeployment</code> option can be
-    /// used to ensure that any tasks using the Amazon EC2 instance capacity provided by the capacity
-    /// provider are transitioned to use the capacity from the remaining capacity providers.
-    /// Only capacity providers that aren't associated with a cluster can be deleted. To remove
-    /// a capacity provider from a cluster, you can either use <a>PutClusterCapacityProviders</a> or delete the cluster.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Prior to a capacity provider being deleted, the capacity provider must be removed from the capacity provider strategy from all services. The <code>UpdateService</code> API can be used to remove a capacity provider from a service's capacity provider strategy. When updating a service, the <code>forceNewDeployment</code> option can be used to ensure that any tasks using the Amazon EC2 instance capacity provided by the capacity provider are transitioned to use the capacity from the remaining capacity providers. Only capacity providers that aren't associated with a cluster can be deleted. To remove a capacity provider from a cluster, you can either use <code>PutClusterCapacityProviders</code> or delete the cluster.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCapacityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2404,10 +1734,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCapacityProviderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2416,8 +1746,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
-        pub fn capacity_provider(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capacity_provider(inp);
+        pub fn capacity_provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capacity_provider(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
@@ -2431,13 +1761,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCluster`.
     ///
-    /// <p>Deletes the specified cluster. The cluster transitions to the <code>INACTIVE</code>
-    /// state. Clusters with an <code>INACTIVE</code> status might remain discoverable in your
-    /// account for a period of time. However, this behavior is subject to change in the future.
-    /// We don't recommend that you rely on <code>INACTIVE</code> clusters persisting.</p>
-    /// <p>You must deregister all container instances from this cluster before you may delete
-    /// it. You can list the container instances in a cluster with <a>ListContainerInstances</a> and deregister them with <a>DeregisterContainerInstance</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified cluster. The cluster transitions to the <code>INACTIVE</code> state. Clusters with an <code>INACTIVE</code> status might remain discoverable in your account for a period of time. However, this behavior is subject to change in the future. We don't recommend that you rely on <code>INACTIVE</code> clusters persisting.</p>
+    /// <p>You must deregister all container instances from this cluster before you may delete it. You can list the container instances in a cluster with <code>ListContainerInstances</code> and deregister them with <code>DeregisterContainerInstance</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2482,10 +1808,10 @@ pub mod fluent_builders {
                 crate::input::DeleteClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2494,8 +1820,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to delete.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to delete.</p>
@@ -2506,28 +1832,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteService`.
     ///
-    /// <p>Deletes a specified service within a cluster. You can delete a service if you have no
-    /// running tasks in it and the desired task count is zero. If the service is actively
-    /// maintaining tasks, you can't delete it, and you must update the service to a desired
-    /// task count of zero. For more information, see <a>UpdateService</a>.</p>
-    /// <note>
-    /// <p>When you delete a service, if there are still running tasks that require cleanup,
-    /// the service status moves from <code>ACTIVE</code> to <code>DRAINING</code>, and the
-    /// service is no longer visible in the console or in the <a>ListServices</a>
-    /// API operation. After all tasks have transitioned to either <code>STOPPING</code> or
-    /// <code>STOPPED</code> status, the service status moves from <code>DRAINING</code>
-    /// to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or
-    /// <code>INACTIVE</code> status can still be viewed with the <a>DescribeServices</a> API operation. However, in the future,
-    /// <code>INACTIVE</code> services may be cleaned up and purged from Amazon ECS record
-    /// keeping, and <a>DescribeServices</a> calls on those services return a
-    /// <code>ServiceNotFoundException</code> error.</p>
-    /// </note>
-    /// <important>
-    /// <p>If you attempt to create a new service with the same name as an existing service
-    /// in either <code>ACTIVE</code> or <code>DRAINING</code> status, you receive an
-    /// error.</p>
+    /// <p>Deletes a specified service within a cluster. You can delete a service if you have no running tasks in it and the desired task count is zero. If the service is actively maintaining tasks, you can't delete it, and you must update the service to a desired task count of zero. For more information, see <code>UpdateService</code>.</p> <note>
+    /// <p>When you delete a service, if there are still running tasks that require cleanup, the service status moves from <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in the <code>ListServices</code> API operation. After all tasks have transitioned to either <code>STOPPING</code> or <code>STOPPED</code> status, the service status moves from <code>DRAINING</code> to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code> status can still be viewed with the <code>DescribeServices</code> API operation. However, in the future, <code>INACTIVE</code> services may be cleaned up and purged from Amazon ECS record keeping, and <code>DescribeServices</code> calls on those services return a <code>ServiceNotFoundException</code> error.</p>
+    /// </note> <important>
+    /// <p>If you attempt to create a new service with the same name as an existing service in either <code>ACTIVE</code> or <code>DRAINING</code> status, you receive an error.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2572,10 +1882,10 @@ pub mod fluent_builders {
                 crate::input::DeleteServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2583,21 +1893,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
         /// <p>The name of the service to delete.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(input.into());
             self
         }
         /// <p>The name of the service to delete.</p>
@@ -2605,16 +1913,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service(input);
             self
         }
-        /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to
-        /// zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code>
-        /// scheduling strategy.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code> scheduling strategy.</p>
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
-        /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to
-        /// zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code>
-        /// scheduling strategy.</p>
+        /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code> scheduling strategy.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force(input);
             self
@@ -2622,9 +1926,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTaskSet`.
     ///
-    /// <p>Deletes a specified task set within a service. This is used when a service uses the
-    /// <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a specified task set within a service. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTaskSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2669,10 +1972,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTaskSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2680,33 +1983,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-        /// set found in to delete.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set found in to delete.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-        /// set found in to delete.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set found in to delete.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to
-        /// delete.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to delete.</p>
+        pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to
-        /// delete.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to delete.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service(input);
             self
         }
         /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
-        pub fn task_set(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_set(inp);
+        pub fn task_set(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_set(input.into());
             self
         }
         /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
@@ -2714,14 +2013,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_set(input);
             self
         }
-        /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to
-        /// zero.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to zero.</p>
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
-        /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to
-        /// zero.</p>
+        /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to zero.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force(input);
             self
@@ -2729,21 +2026,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterContainerInstance`.
     ///
-    /// <p>Deregisters an Amazon ECS container instance from the specified cluster. This instance is
-    /// no longer available to run tasks.</p>
-    /// <p>If you intend to use the container instance for some other purpose after
-    /// deregistration, we recommend that you stop all of the tasks running on the container
-    /// instance before deregistration. That prevents any orphaned tasks from consuming
-    /// resources.</p>
-    /// <p>Deregistering a container instance removes the instance from a cluster, but it doesn't
-    /// terminate the EC2 instance. If you are finished using the instance, be sure to terminate
-    /// it in the Amazon EC2 console to stop billing.</p>
-    /// <note>
-    /// <p>If you terminate a running container instance, Amazon ECS automatically deregisters the
-    /// instance from your cluster (stopped container instances or instances with
-    /// disconnected agents aren't automatically deregistered when terminated).</p>
+    /// <p>Deregisters an Amazon ECS container instance from the specified cluster. This instance is no longer available to run tasks.</p>
+    /// <p>If you intend to use the container instance for some other purpose after deregistration, we recommend that you stop all of the tasks running on the container instance before deregistration. That prevents any orphaned tasks from consuming resources.</p>
+    /// <p>Deregistering a container instance removes the instance from a cluster, but it doesn't terminate the EC2 instance. If you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop billing.</p> <note>
+    /// <p>If you terminate a running container instance, Amazon ECS automatically deregisters the instance from your cluster (stopped container instances or instances with disconnected agents aren't automatically deregistered when terminated).</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterContainerInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2788,10 +2076,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterContainerInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2799,26 +2087,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to
-        /// deregister. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to deregister. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to
-        /// deregister. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to deregister. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
-        /// <p>The container instance ID or full ARN of the container instance to deregister.
-        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
-        pub fn container_instance(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instance(inp);
+        /// <p>The container instance ID or full ARN of the container instance to deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+        pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instance(input.into());
             self
         }
-        /// <p>The container instance ID or full ARN of the container instance to deregister.
-        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+        /// <p>The container instance ID or full ARN of the container instance to deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
         pub fn set_container_instance(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2826,30 +2110,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_instance(input);
             self
         }
-        /// <p>Forces the container instance to be deregistered. If you have tasks running on the
-        /// container instance when you deregister it with the <code>force</code> option, these
-        /// tasks remain running until you terminate the instance or the tasks stop through some
-        /// other means, but they're orphaned (no longer monitored or accounted for by Amazon ECS). If an
-        /// orphaned task on your container instance is part of an Amazon ECS service, then the service
-        /// scheduler starts another copy of that task, on a different container instance if
-        /// possible. </p>
-        /// <p>Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load Balancer
-        /// target group are deregistered. They begin connection draining according to the settings
-        /// on the load balancer or target group.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        /// <p>Forces the container instance to be deregistered. If you have tasks running on the container instance when you deregister it with the <code>force</code> option, these tasks remain running until you terminate the instance or the tasks stop through some other means, but they're orphaned (no longer monitored or accounted for by Amazon ECS). If an orphaned task on your container instance is part of an Amazon ECS service, then the service scheduler starts another copy of that task, on a different container instance if possible. </p>
+        /// <p>Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load Balancer target group are deregistered. They begin connection draining according to the settings on the load balancer or target group.</p>
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
-        /// <p>Forces the container instance to be deregistered. If you have tasks running on the
-        /// container instance when you deregister it with the <code>force</code> option, these
-        /// tasks remain running until you terminate the instance or the tasks stop through some
-        /// other means, but they're orphaned (no longer monitored or accounted for by Amazon ECS). If an
-        /// orphaned task on your container instance is part of an Amazon ECS service, then the service
-        /// scheduler starts another copy of that task, on a different container instance if
-        /// possible. </p>
-        /// <p>Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load Balancer
-        /// target group are deregistered. They begin connection draining according to the settings
-        /// on the load balancer or target group.</p>
+        /// <p>Forces the container instance to be deregistered. If you have tasks running on the container instance when you deregister it with the <code>force</code> option, these tasks remain running until you terminate the instance or the tasks stop through some other means, but they're orphaned (no longer monitored or accounted for by Amazon ECS). If an orphaned task on your container instance is part of an Amazon ECS service, then the service scheduler starts another copy of that task, on a different container instance if possible. </p>
+        /// <p>Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load Balancer target group are deregistered. They begin connection draining according to the settings on the load balancer or target group.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force(input);
             self
@@ -2857,22 +2125,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterTaskDefinition`.
     ///
-    /// <p>Deregisters the specified task definition by family and revision. Upon deregistration,
-    /// the task definition is marked as <code>INACTIVE</code>. Existing tasks and services that
-    /// reference an <code>INACTIVE</code> task definition continue to run without disruption.
-    /// Existing services that reference an <code>INACTIVE</code> task definition can still
-    /// scale up or down by modifying the service's desired count.</p>
-    /// <p>You can't use an <code>INACTIVE</code> task definition to run new tasks or create new
-    /// services, and you can't update an existing service to reference an <code>INACTIVE</code>
-    /// task definition. However, there may be up to a 10-minute window following deregistration
-    /// where these restrictions have not yet taken effect.</p>
-    /// <note>
-    /// <p>At this time, <code>INACTIVE</code> task definitions remain discoverable in your
-    /// account indefinitely. However, this behavior is subject to change in the future. We
-    /// don't recommend that you rely on <code>INACTIVE</code> task definitions persisting
-    /// beyond the lifecycle of any associated tasks and services.</p>
+    /// <p>Deregisters the specified task definition by family and revision. Upon deregistration, the task definition is marked as <code>INACTIVE</code>. Existing tasks and services that reference an <code>INACTIVE</code> task definition continue to run without disruption. Existing services that reference an <code>INACTIVE</code> task definition can still scale up or down by modifying the service's desired count.</p>
+    /// <p>You can't use an <code>INACTIVE</code> task definition to run new tasks or create new services, and you can't update an existing service to reference an <code>INACTIVE</code> task definition. However, there may be up to a 10-minute window following deregistration where these restrictions have not yet taken effect.</p> <note>
+    /// <p>At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely. However, this behavior is subject to change in the future. We don't recommend that you rely on <code>INACTIVE</code> task definitions persisting beyond the lifecycle of any associated tasks and services.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterTaskDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2917,10 +2174,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterTaskDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2928,16 +2185,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a
-        /// <code>revision</code>.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
+        pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(input.into());
             self
         }
-        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a
-        /// <code>revision</code>.</p>
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2949,7 +2202,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCapacityProviders`.
     ///
     /// <p>Describes one or more of your capacity providers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCapacityProviders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2994,10 +2247,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCapacityProvidersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3009,14 +2262,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
         ///
-        /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to
-        /// <code>100</code> capacity providers can be described in an action.</p>
-        pub fn capacity_providers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capacity_providers(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
+        pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capacity_providers(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to
-        /// <code>100</code> capacity providers can be described in an action.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
         pub fn set_capacity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3028,16 +2279,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
-        /// <p>Specifies whether or not you want to see the resource tags for the capacity provider.
-        /// If <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags aren't included in the response.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::CapacityProviderField>) -> Self {
-            self.inner = self.inner.include(inp);
+        /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
+        pub fn include(mut self, input: crate::model::CapacityProviderField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
-        /// <p>Specifies whether or not you want to see the resource tags for the capacity provider.
-        /// If <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags aren't included in the response.</p>
+        /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderField>>,
@@ -3045,55 +2292,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_include(input);
             self
         }
-        /// <p>The maximum number of account setting results returned by
-        /// <code>DescribeCapacityProviders</code> in paginated output. When this parameter is
-        /// used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another
-        /// <code>DescribeCapacityProviders</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between
-        /// 1 and 10. If this
-        /// parameter is not used, then <code>DescribeCapacityProviders</code> returns up to
-        /// 10 results and a <code>nextToken</code> value
-        /// if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of account setting results returned by <code>DescribeCapacityProviders</code> in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of account setting results returned by
-        /// <code>DescribeCapacityProviders</code> in paginated output. When this parameter is
-        /// used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another
-        /// <code>DescribeCapacityProviders</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between
-        /// 1 and 10. If this
-        /// parameter is not used, then <code>DescribeCapacityProviders</code> returns up to
-        /// 10 results and a <code>nextToken</code> value
-        /// if applicable.</p>
+        /// <p>The maximum number of account setting results returned by <code>DescribeCapacityProviders</code> in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was
-        /// used and the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was
-        /// used and the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
@@ -3103,7 +2320,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClusters`.
     ///
     /// <p>Describes one or more of your clusters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3148,10 +2365,10 @@ pub mod fluent_builders {
                 crate::input::DescribeClustersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3163,14 +2380,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
         ///
-        /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn clusters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.clusters(inp);
+        /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn clusters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.clusters(input.into());
             self
         }
-        /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_clusters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3182,34 +2397,22 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
-        /// <p>Determines whether to include additional information about the clusters in the
-        /// response. If this field is omitted, this information isn't included.</p>
-        /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances
-        /// or tasks within the cluster are included.</p>
-        /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are
-        /// included.</p>
-        /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is
-        /// included.</p>
-        /// <p>If <code>STATISTICS</code> is specified, the task and service count is included,
-        /// separated by launch type.</p>
-        /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are
-        /// included.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::ClusterField>) -> Self {
-            self.inner = self.inner.include(inp);
+        /// <p>Determines whether to include additional information about the clusters in the response. If this field is omitted, this information isn't included.</p>
+        /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster are included.</p>
+        /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are included.</p>
+        /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is included.</p>
+        /// <p>If <code>STATISTICS</code> is specified, the task and service count is included, separated by launch type.</p>
+        /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.</p>
+        pub fn include(mut self, input: crate::model::ClusterField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
-        /// <p>Determines whether to include additional information about the clusters in the
-        /// response. If this field is omitted, this information isn't included.</p>
-        /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances
-        /// or tasks within the cluster are included.</p>
-        /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are
-        /// included.</p>
-        /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is
-        /// included.</p>
-        /// <p>If <code>STATISTICS</code> is specified, the task and service count is included,
-        /// separated by launch type.</p>
-        /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are
-        /// included.</p>
+        /// <p>Determines whether to include additional information about the clusters in the response. If this field is omitted, this information isn't included.</p>
+        /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster are included.</p>
+        /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are included.</p>
+        /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is included.</p>
+        /// <p>If <code>STATISTICS</code> is specified, the task and service count is included, separated by launch type.</p>
+        /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterField>>,
@@ -3220,9 +2423,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeContainerInstances`.
     ///
-    /// <p>Describes one or more container instances. Returns metadata about each container
-    /// instance requested.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes one or more container instances. Returns metadata about each container instance requested.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContainerInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3267,10 +2469,10 @@ pub mod fluent_builders {
                 crate::input::DescribeContainerInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3278,18 +2480,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to
-        /// describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance
-        /// or container instances you are describing were launched in any cluster other than the
-        /// default cluster.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance or container instances you are describing were launched in any cluster other than the default cluster.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to
-        /// describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance
-        /// or container instances you are describing were launched in any cluster other than the
-        /// default cluster.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance or container instances you are describing were launched in any cluster other than the default cluster.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
@@ -3299,8 +2495,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
         ///
         /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
-        pub fn container_instances(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instances(inp);
+        pub fn container_instances(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instances(input.into());
             self
         }
         /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
@@ -3315,20 +2511,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
-        /// <p>Specifies whether you want to see the resource tags for the container instance. If
-        /// <code>TAGS</code> is specified, the tags are included in the response. If
-        /// <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health
-        /// is included in the response. If this field is omitted, tags and container instance
-        /// health status aren't included in the response.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::ContainerInstanceField>) -> Self {
-            self.inner = self.inner.include(inp);
+        /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
+        pub fn include(mut self, input: crate::model::ContainerInstanceField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
-        /// <p>Specifies whether you want to see the resource tags for the container instance. If
-        /// <code>TAGS</code> is specified, the tags are included in the response. If
-        /// <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health
-        /// is included in the response. If this field is omitted, tags and container instance
-        /// health status aren't included in the response.</p>
+        /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerInstanceField>>,
@@ -3340,7 +2528,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeServices`.
     ///
     /// <p>Describes the specified services running in your cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3385,10 +2573,10 @@ pub mod fluent_builders {
                 crate::input::DescribeServicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3396,16 +2584,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe.
-        /// If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are
-        /// describing were launched in any cluster other than the default cluster.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are describing were launched in any cluster other than the default cluster.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe.
-        /// If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are
-        /// describing were launched in any cluster other than the default cluster.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are describing were launched in any cluster other than the default cluster.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
@@ -3414,14 +2598,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
-        /// <p>A list of services to describe. You may specify up to 10 services to describe in a
-        /// single operation.</p>
-        pub fn services(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.services(inp);
+        /// <p>A list of services to describe. You may specify up to 10 services to describe in a single operation.</p>
+        pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.services(input.into());
             self
         }
-        /// <p>A list of services to describe. You may specify up to 10 services to describe in a
-        /// single operation.</p>
+        /// <p>A list of services to describe. You may specify up to 10 services to describe in a single operation.</p>
         pub fn set_services(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3433,16 +2615,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
-        /// <p>Determines whether you want to see the resource tags for the service. If
-        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags aren't included in the response.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::ServiceField>) -> Self {
-            self.inner = self.inner.include(inp);
+        /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
+        pub fn include(mut self, input: crate::model::ServiceField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
-        /// <p>Determines whether you want to see the resource tags for the service. If
-        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags aren't included in the response.</p>
+        /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceField>>,
@@ -3453,15 +2631,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTaskDefinition`.
     ///
-    /// <p>Describes a task definition. You can specify a <code>family</code> and
-    /// <code>revision</code> to find information about a specific task definition, or you
-    /// can simply specify the family to find the latest <code>ACTIVE</code> revision in that
-    /// family.</p>
-    /// <note>
-    /// <p>You can only describe <code>INACTIVE</code> task definitions while an active task
-    /// or service references them.</p>
+    /// <p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find information about a specific task definition, or you can simply specify the family to find the latest <code>ACTIVE</code> revision in that family.</p> <note>
+    /// <p>You can only describe <code>INACTIVE</code> task definitions while an active task or service references them.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTaskDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3506,10 +2679,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTaskDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3517,18 +2690,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision,
-        /// <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a
-        /// specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to
-        /// describe.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
+        pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(input.into());
             self
         }
-        /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision,
-        /// <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a
-        /// specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to
-        /// describe.</p>
+        /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3540,16 +2707,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
-        /// <p>Determines whether to see the resource tags for the task definition. If
-        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags aren't included in the response.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::TaskDefinitionField>) -> Self {
-            self.inner = self.inner.include(inp);
+        /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
+        pub fn include(mut self, input: crate::model::TaskDefinitionField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
-        /// <p>Determines whether to see the resource tags for the task definition. If
-        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags aren't included in the response.</p>
+        /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TaskDefinitionField>>,
@@ -3561,7 +2724,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTasks`.
     ///
     /// <p>Describes a specified task or tasks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3606,10 +2769,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTasksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3617,16 +2780,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to
-        /// describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you
-        /// are describing were launched in any cluster other than the default cluster.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you are describing were launched in any cluster other than the default cluster.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to
-        /// describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you
-        /// are describing were launched in any cluster other than the default cluster.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you are describing were launched in any cluster other than the default cluster.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
@@ -3636,8 +2795,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
         /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-        pub fn tasks(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tasks(inp);
+        pub fn tasks(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tasks(input.into());
             self
         }
         /// <p>A list of up to 100 task IDs or full ARN entries.</p>
@@ -3652,16 +2811,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
-        /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code>
-        /// is specified, the tags are included in the response. If this field is omitted, tags
-        /// aren't included in the response.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::TaskField>) -> Self {
-            self.inner = self.inner.include(inp);
+        /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
+        pub fn include(mut self, input: crate::model::TaskField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
-        /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code>
-        /// is specified, the tags are included in the response. If this field is omitted, tags
-        /// aren't included in the response.</p>
+        /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TaskField>>,
@@ -3672,11 +2827,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTaskSets`.
     ///
-    /// <p>Describes the task sets in the specified cluster and service. This is used when a
-    /// service uses the <code>EXTERNAL</code> deployment controller type. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
-    /// Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the task sets in the specified cluster and service. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTaskSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3721,10 +2873,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTaskSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3732,21 +2884,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-        /// sets exist in.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-        /// sets exist in.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
@@ -3758,14 +2908,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_task_sets`](Self::set_task_sets).
         ///
-        /// <p>The ID or full Amazon Resource Name (ARN) of task sets to
-        /// describe.</p>
-        pub fn task_sets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_sets(inp);
+        /// <p>The ID or full Amazon Resource Name (ARN) of task sets to describe.</p>
+        pub fn task_sets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_sets(input.into());
             self
         }
-        /// <p>The ID or full Amazon Resource Name (ARN) of task sets to
-        /// describe.</p>
+        /// <p>The ID or full Amazon Resource Name (ARN) of task sets to describe.</p>
         pub fn set_task_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3777,16 +2925,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_include`](Self::set_include).
         ///
-        /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is
-        /// specified, the tags are included in the response. If this field is omitted, tags aren't
-        /// included in the response.</p>
-        pub fn include(mut self, inp: impl Into<crate::model::TaskSetField>) -> Self {
-            self.inner = self.inner.include(inp);
+        /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
+        pub fn include(mut self, input: crate::model::TaskSetField) -> Self {
+            self.inner = self.inner.include(input);
             self
         }
-        /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is
-        /// specified, the tags are included in the response. If this field is omitted, tags aren't
-        /// included in the response.</p>
+        /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TaskSetField>>,
@@ -3801,7 +2945,7 @@ pub mod fluent_builders {
     /// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
     /// </note>
     /// <p>Returns an endpoint for the Amazon ECS agent to poll for updates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DiscoverPollEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3846,10 +2990,10 @@ pub mod fluent_builders {
                 crate::input::DiscoverPollEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3857,14 +3001,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The container instance ID or full ARN of the container instance.
-        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
-        pub fn container_instance(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instance(inp);
+        /// <p>The container instance ID or full ARN of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+        pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instance(input.into());
             self
         }
-        /// <p>The container instance ID or full ARN of the container instance.
-        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+        /// <p>The container instance ID or full ARN of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
         pub fn set_container_instance(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3872,14 +3014,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_instance(input);
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs
-        /// to.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs
-        /// to.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
@@ -3888,7 +3028,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExecuteCommand`.
     ///
     /// <p>Runs a command remotely on a container within a task.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteCommand<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3933,10 +3073,10 @@ pub mod fluent_builders {
                 crate::input::ExecuteCommandInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3944,33 +3084,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
-        /// <p>The name of the container to execute the command on. A container name only needs to be
-        /// specified for tasks containing multiple containers.</p>
-        pub fn container(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container(inp);
+        /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
+        pub fn container(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container(input.into());
             self
         }
-        /// <p>The name of the container to execute the command on. A container name only needs to be
-        /// specified for tasks containing multiple containers.</p>
+        /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
         pub fn set_container(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_container(input);
             self
         }
         /// <p>The command to run on the container.</p>
-        pub fn command(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.command(inp);
+        pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.command(input.into());
             self
         }
         /// <p>The command to run on the container.</p>
@@ -3979,8 +3115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use this flag to run your command in interactive mode.</p>
-        pub fn interactive(mut self, inp: bool) -> Self {
-            self.inner = self.inner.interactive(inp);
+        pub fn interactive(mut self, input: bool) -> Self {
+            self.inner = self.inner.interactive(input);
             self
         }
         /// <p>Use this flag to run your command in interactive mode.</p>
@@ -3989,8 +3125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
-        pub fn task(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task(inp);
+        pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
@@ -4002,7 +3138,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccountSettings`.
     ///
     /// <p>Lists the account settings for a specified principal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4047,10 +3183,10 @@ pub mod fluent_builders {
                 crate::input::ListAccountSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4058,9 +3194,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccountSettingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAccountSettingsPaginator<C, M, R> {
+            crate::paginator::ListAccountSettingsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the account setting you want to list the settings for.</p>
-        pub fn name(mut self, inp: crate::model::SettingName) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: crate::model::SettingName) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
         /// <p>The name of the account setting you want to list the settings for.</p>
@@ -4068,35 +3210,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The value of the account settings to filter results with. You must also specify an
-        /// account setting name to use this parameter.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(inp);
+        /// <p>The value of the account settings to filter results with. You must also specify an account setting name to use this parameter.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(input.into());
             self
         }
-        /// <p>The value of the account settings to filter results with. You must also specify an
-        /// account setting name to use this parameter.</p>
+        /// <p>The value of the account settings to filter results with. You must also specify an account setting name to use this parameter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_value(input);
             self
         }
-        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
-        /// this field is omitted, the account settings are listed only for the authenticated
-        /// user.</p>
-        /// <note>
-        /// <p>Federated users assume the account setting of the root user and can't have
-        /// explicit account settings set for them.</p>
+        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
+        /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
         /// </note>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(input.into());
             self
         }
-        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
-        /// this field is omitted, the account settings are listed only for the authenticated
-        /// user.</p>
-        /// <note>
-        /// <p>Federated users assume the account setting of the root user and can't have
-        /// explicit account settings set for them.</p>
+        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
+        /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
         /// </note>
         pub fn set_principal_arn(
             mut self,
@@ -4105,70 +3237,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principal_arn(input);
             self
         }
-        /// <p>Determines whether to return the effective settings. If <code>true</code>, the account
-        /// settings for the root user or the default setting for the <code>principalArn</code> are
-        /// returned. If <code>false</code>, the account settings for the <code>principalArn</code>
-        /// are returned if they're set. Otherwise, no account settings are returned.</p>
-        pub fn effective_settings(mut self, inp: bool) -> Self {
-            self.inner = self.inner.effective_settings(inp);
+        /// <p>Determines whether to return the effective settings. If <code>true</code>, the account settings for the root user or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account settings for the <code>principalArn</code> are returned if they're set. Otherwise, no account settings are returned.</p>
+        pub fn effective_settings(mut self, input: bool) -> Self {
+            self.inner = self.inner.effective_settings(input);
             self
         }
-        /// <p>Determines whether to return the effective settings. If <code>true</code>, the account
-        /// settings for the root user or the default setting for the <code>principalArn</code> are
-        /// returned. If <code>false</code>, the account settings for the <code>principalArn</code>
-        /// are returned if they're set. Otherwise, no account settings are returned.</p>
+        /// <p>Determines whether to return the effective settings. If <code>true</code>, the account settings for the root user or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account settings for the <code>principalArn</code> are returned if they're set. Otherwise, no account settings are returned.</p>
         pub fn set_effective_settings(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_effective_settings(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code>
-        /// request indicating that more results are available to fulfill the request and further
-        /// calls will be needed. If <code>maxResults</code> was provided, it's possible the number
-        /// of results to be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code>
-        /// request indicating that more results are available to fulfill the request and further
-        /// calls will be needed. If <code>maxResults</code> was provided, it's possible the number
-        /// of results to be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of account setting results returned by
-        /// <code>ListAccountSettings</code> in paginated output. When this parameter is used,
-        /// <code>ListAccountSettings</code> only returns <code>maxResults</code> results in a
-        /// single page along with a <code>nextToken</code> response element. The remaining results
-        /// of the initial request can be seen by sending another <code>ListAccountSettings</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 10. If this
-        /// parameter isn't used, then <code>ListAccountSettings</code> returns up to
-        /// 10 results and a <code>nextToken</code> value
-        /// if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of account setting results returned by <code>ListAccountSettings</code> in paginated output. When this parameter is used, <code>ListAccountSettings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListAccountSettings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter isn't used, then <code>ListAccountSettings</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of account setting results returned by
-        /// <code>ListAccountSettings</code> in paginated output. When this parameter is used,
-        /// <code>ListAccountSettings</code> only returns <code>maxResults</code> results in a
-        /// single page along with a <code>nextToken</code> response element. The remaining results
-        /// of the initial request can be seen by sending another <code>ListAccountSettings</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 10. If this
-        /// parameter isn't used, then <code>ListAccountSettings</code> returns up to
-        /// 10 results and a <code>nextToken</code> value
-        /// if applicable.</p>
+        /// <p>The maximum number of account setting results returned by <code>ListAccountSettings</code> in paginated output. When this parameter is used, <code>ListAccountSettings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListAccountSettings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter isn't used, then <code>ListAccountSettings</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4176,14 +3274,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAttributes`.
     ///
-    /// <p>Lists the attributes for Amazon ECS resources within a specified target type and cluster.
-    /// When you specify a target type and cluster, <code>ListAttributes</code> returns a list
-    /// of attribute objects, one for each attribute on each resource. You can filter the list
-    /// of results to a single attribute name to only return results that have that name. You
-    /// can also filter the results by attribute name and value. You can do this, for example,
-    /// to see which container instances in a cluster are running a Linux AMI
-    /// (<code>ecs.os-type=linux</code>). </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the attributes for Amazon ECS resources within a specified target type and cluster. When you specify a target type and cluster, <code>ListAttributes</code> returns a list of attribute objects, one for each attribute on each resource. You can filter the list of results to a single attribute name to only return results that have that name. You can also filter the results by attribute name and value. You can do this, for example, to see which container instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>). </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4228,10 +3320,10 @@ pub mod fluent_builders {
                 crate::input::ListAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4239,21 +3331,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to list attributes.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAttributesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAttributesPaginator<C, M, R> {
+            crate::paginator::ListAttributesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to list attributes. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to list attributes.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to list attributes. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
         /// <p>The type of the target to list attributes with.</p>
-        pub fn target_type(mut self, inp: crate::model::TargetType) -> Self {
-            self.inner = self.inner.target_type(inp);
+        pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
+            self.inner = self.inner.target_type(input);
             self
         }
         /// <p>The type of the target to list attributes with.</p>
@@ -4265,8 +3361,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the attribute to filter the results with. </p>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(inp);
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input.into());
             self
         }
         /// <p>The name of the attribute to filter the results with. </p>
@@ -4277,14 +3373,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attribute_name(input);
             self
         }
-        /// <p>The value of the attribute to filter results with. You must also specify an attribute
-        /// name to use this parameter.</p>
-        pub fn attribute_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_value(inp);
+        /// <p>The value of the attribute to filter results with. You must also specify an attribute name to use this parameter.</p>
+        pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_value(input.into());
             self
         }
-        /// <p>The value of the attribute to filter results with. You must also specify an attribute
-        /// name to use this parameter.</p>
+        /// <p>The value of the attribute to filter results with. You must also specify an attribute name to use this parameter.</p>
         pub fn set_attribute_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4292,50 +3386,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attribute_value(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code> request
-        /// indicating that more results are available to fulfill the request and further calls are
-        /// needed. If <code>maxResults</code> was provided, it's possible the number of results to
-        /// be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code> request indicating that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code> request
-        /// indicating that more results are available to fulfill the request and further calls are
-        /// needed. If <code>maxResults</code> was provided, it's possible the number of results to
-        /// be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code> request indicating that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of cluster results that <code>ListAttributes</code> returned in
-        /// paginated output. When this parameter is used, <code>ListAttributes</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListAttributes</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this
-        /// parameter isn't used, then <code>ListAttributes</code> returns up to
-        /// 100 results and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of cluster results that <code>ListAttributes</code> returned in paginated output. When this parameter is used, <code>ListAttributes</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListAttributes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListAttributes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of cluster results that <code>ListAttributes</code> returned in
-        /// paginated output. When this parameter is used, <code>ListAttributes</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListAttributes</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this
-        /// parameter isn't used, then <code>ListAttributes</code> returns up to
-        /// 100 results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of cluster results that <code>ListAttributes</code> returned in paginated output. When this parameter is used, <code>ListAttributes</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListAttributes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListAttributes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4344,7 +3414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListClusters`.
     ///
     /// <p>Returns a list of existing clusters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4389,10 +3459,10 @@ pub mod fluent_builders {
                 crate::input::ListClustersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4400,50 +3470,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request
-        /// indicating that more results are available to fulfill the request and further calls are
-        /// needed. If <code>maxResults</code> was provided, it's possible the number of results to
-        /// be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListClustersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListClustersPaginator<C, M, R> {
+            crate::paginator::ListClustersPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request
-        /// indicating that more results are available to fulfill the request and further calls are
-        /// needed. If <code>maxResults</code> was provided, it's possible the number of results to
-        /// be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of cluster results that <code>ListClusters</code> returned in
-        /// paginated output. When this parameter is used, <code>ListClusters</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListClusters</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this
-        /// parameter isn't used, then <code>ListClusters</code> returns up to 100
-        /// results and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of cluster results that <code>ListClusters</code> returned in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of cluster results that <code>ListClusters</code> returned in
-        /// paginated output. When this parameter is used, <code>ListClusters</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListClusters</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this
-        /// parameter isn't used, then <code>ListClusters</code> returns up to 100
-        /// results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of cluster results that <code>ListClusters</code> returned in paginated output. When this parameter is used, <code>ListClusters</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4451,11 +3503,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListContainerInstances`.
     ///
-    /// <p>Returns a list of container instances in a specified cluster. You can filter the
-    /// results of a <code>ListContainerInstances</code> operation with cluster query language
-    /// statements inside the <code>filter</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of container instances in a specified cluster. You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language statements inside the <code>filter</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContainerInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4500,10 +3549,10 @@ pub mod fluent_builders {
                 crate::input::ListContainerInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4511,98 +3560,62 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to
-        /// list. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContainerInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContainerInstancesPaginator<C, M, R> {
+            crate::paginator::ListContainerInstancesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to list. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to
-        /// list. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to list. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
-        /// <p>You can filter the results of a <code>ListContainerInstances</code> operation with
-        /// cluster query language statements. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p>You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language statements. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter(input.into());
             self
         }
-        /// <p>You can filter the results of a <code>ListContainerInstances</code> operation with
-        /// cluster query language statements. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language statements. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListContainerInstances</code>
-        /// request indicating that more results are available to fulfill the request and further
-        /// calls are needed. If <code>maxResults</code> was provided, it's possible the number of
-        /// results to be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListContainerInstances</code> request indicating that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListContainerInstances</code>
-        /// request indicating that more results are available to fulfill the request and further
-        /// calls are needed. If <code>maxResults</code> was provided, it's possible the number of
-        /// results to be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListContainerInstances</code> request indicating that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of container instance results that
-        /// <code>ListContainerInstances</code> returned in paginated output. When this
-        /// parameter is used, <code>ListContainerInstances</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListContainerInstances</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and
-        /// 100. If this parameter isn't used, then
-        /// <code>ListContainerInstances</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of container instance results that <code>ListContainerInstances</code> returned in paginated output. When this parameter is used, <code>ListContainerInstances</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListContainerInstances</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListContainerInstances</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of container instance results that
-        /// <code>ListContainerInstances</code> returned in paginated output. When this
-        /// parameter is used, <code>ListContainerInstances</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListContainerInstances</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and
-        /// 100. If this parameter isn't used, then
-        /// <code>ListContainerInstances</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of container instance results that <code>ListContainerInstances</code> returned in paginated output. When this parameter is used, <code>ListContainerInstances</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListContainerInstances</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListContainerInstances</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Filters the container instances by status. For example, if you specify the
-        /// <code>DRAINING</code> status, the results include only container instances that have
-        /// been set to <code>DRAINING</code> using <a>UpdateContainerInstancesState</a>.
-        /// If you don't specify this parameter, the default is to include container instances set
-        /// to all states other than <code>INACTIVE</code>.</p>
-        pub fn status(mut self, inp: crate::model::ContainerInstanceStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <code>UpdateContainerInstancesState</code>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
+        pub fn status(mut self, input: crate::model::ContainerInstanceStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        /// <p>Filters the container instances by status. For example, if you specify the
-        /// <code>DRAINING</code> status, the results include only container instances that have
-        /// been set to <code>DRAINING</code> using <a>UpdateContainerInstancesState</a>.
-        /// If you don't specify this parameter, the default is to include container instances set
-        /// to all states other than <code>INACTIVE</code>.</p>
+        /// <p>Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the results include only container instances that have been set to <code>DRAINING</code> using <code>UpdateContainerInstancesState</code>. If you don't specify this parameter, the default is to include container instances set to all states other than <code>INACTIVE</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ContainerInstanceStatus>,
@@ -4613,9 +3626,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListServices`.
     ///
-    /// <p>Returns a list of services. You can filter the results by cluster, launch type, and
-    /// scheduling strategy.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of services. You can filter the results by cluster, launch type, and scheduling strategy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4660,10 +3672,10 @@ pub mod fluent_builders {
                 crate::input::ListServicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4671,71 +3683,49 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
-        /// <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListServicesPaginator<C, M, R> {
+            crate::paginator::ListServicesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
-        /// <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListServices</code> request
-        /// indicating that more results are available to fulfill the request and further calls will
-        /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
-        /// to be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListServices</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListServices</code> request
-        /// indicating that more results are available to fulfill the request and further calls will
-        /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
-        /// to be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListServices</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of service results that <code>ListServices</code> returned in
-        /// paginated output. When this parameter is used, <code>ListServices</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListServices</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If
-        /// this parameter isn't used, then <code>ListServices</code> returns up to
-        /// 10 results and a <code>nextToken</code> value if
-        /// applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of service results that <code>ListServices</code> returned in paginated output. When this parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListServices</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of service results that <code>ListServices</code> returned in
-        /// paginated output. When this parameter is used, <code>ListServices</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListServices</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If
-        /// this parameter isn't used, then <code>ListServices</code> returns up to
-        /// 10 results and a <code>nextToken</code> value if
-        /// applicable.</p>
+        /// <p>The maximum number of service results that <code>ListServices</code> returned in paginated output. When this parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListServices</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The launch type to use when filtering the <code>ListServices</code> results.</p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.inner = self.inner.launch_type(inp);
+        pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
+            self.inner = self.inner.launch_type(input);
             self
         }
         /// <p>The launch type to use when filtering the <code>ListServices</code> results.</p>
@@ -4746,14 +3736,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_type(input);
             self
         }
-        /// <p>The scheduling strategy to use when filtering the <code>ListServices</code>
-        /// results.</p>
-        pub fn scheduling_strategy(mut self, inp: crate::model::SchedulingStrategy) -> Self {
-            self.inner = self.inner.scheduling_strategy(inp);
+        /// <p>The scheduling strategy to use when filtering the <code>ListServices</code> results.</p>
+        pub fn scheduling_strategy(mut self, input: crate::model::SchedulingStrategy) -> Self {
+            self.inner = self.inner.scheduling_strategy(input);
             self
         }
-        /// <p>The scheduling strategy to use when filtering the <code>ListServices</code>
-        /// results.</p>
+        /// <p>The scheduling strategy to use when filtering the <code>ListServices</code> results.</p>
         pub fn set_scheduling_strategy(
             mut self,
             input: std::option::Option<crate::model::SchedulingStrategy>,
@@ -4765,7 +3753,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List the tags for an Amazon ECS resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4810,10 +3798,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4821,16 +3809,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the
-        /// supported resources are Amazon ECS tasks, services, task definitions, clusters, and container
-        /// instances.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon ECS tasks, services, task definitions, clusters, and container instances.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the
-        /// supported resources are Amazon ECS tasks, services, task definitions, clusters, and container
-        /// instances.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon ECS tasks, services, task definitions, clusters, and container instances.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4838,14 +3822,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTaskDefinitionFamilies`.
     ///
-    /// <p>Returns a list of task definition families that are registered to your account. This
-    /// list includes task definition families that no longer have any <code>ACTIVE</code> task
-    /// definition revisions.</p>
-    /// <p>You can filter out task definition families that don't contain any <code>ACTIVE</code>
-    /// task definition revisions by setting the <code>status</code> parameter to
-    /// <code>ACTIVE</code>. You can also filter the results with the
-    /// <code>familyPrefix</code> parameter.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of task definition families that are registered to your account. This list includes task definition families that no longer have any <code>ACTIVE</code> task definition revisions.</p>
+    /// <p>You can filter out task definition families that don't contain any <code>ACTIVE</code> task definition revisions by setting the <code>status</code> parameter to <code>ACTIVE</code>. You can also filter the results with the <code>familyPrefix</code> parameter.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTaskDefinitionFamilies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4890,10 +3869,10 @@ pub mod fluent_builders {
                 crate::input::ListTaskDefinitionFamiliesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4901,18 +3880,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of
-        /// <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>,
-        /// only task definition family names that begin with the <code>familyPrefix</code> string
-        /// are returned.</p>
-        pub fn family_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.family_prefix(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTaskDefinitionFamiliesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListTaskDefinitionFamiliesPaginator<C, M, R> {
+            crate::paginator::ListTaskDefinitionFamiliesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>, only task definition family names that begin with the <code>familyPrefix</code> string are returned.</p>
+        pub fn family_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.family_prefix(input.into());
             self
         }
-        /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of
-        /// <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>,
-        /// only task definition family names that begin with the <code>familyPrefix</code> string
-        /// are returned.</p>
+        /// <p>The <code>familyPrefix</code> is a string that's used to filter the results of <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>, only task definition family names that begin with the <code>familyPrefix</code> string are returned.</p>
         pub fn set_family_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4920,28 +3901,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_family_prefix(input);
             self
         }
-        /// <p>The task definition family status to filter the
-        /// <code>ListTaskDefinitionFamilies</code> results with. By default, both
-        /// <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are listed.
-        /// If this parameter is set to <code>ACTIVE</code>, only task definition families that have
-        /// an <code>ACTIVE</code> task definition revision are returned. If this parameter is set
-        /// to <code>INACTIVE</code>, only task definition families that do not have any
-        /// <code>ACTIVE</code> task definition revisions are returned. If you paginate the
-        /// resulting output, be sure to keep the <code>status</code> value constant in each
-        /// subsequent request.</p>
-        pub fn status(mut self, inp: crate::model::TaskDefinitionFamilyStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        /// <p>The task definition family status to filter the <code>ListTaskDefinitionFamilies</code> results with. By default, both <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are listed. If this parameter is set to <code>ACTIVE</code>, only task definition families that have an <code>ACTIVE</code> task definition revision are returned. If this parameter is set to <code>INACTIVE</code>, only task definition families that do not have any <code>ACTIVE</code> task definition revisions are returned. If you paginate the resulting output, be sure to keep the <code>status</code> value constant in each subsequent request.</p>
+        pub fn status(mut self, input: crate::model::TaskDefinitionFamilyStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        /// <p>The task definition family status to filter the
-        /// <code>ListTaskDefinitionFamilies</code> results with. By default, both
-        /// <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are listed.
-        /// If this parameter is set to <code>ACTIVE</code>, only task definition families that have
-        /// an <code>ACTIVE</code> task definition revision are returned. If this parameter is set
-        /// to <code>INACTIVE</code>, only task definition families that do not have any
-        /// <code>ACTIVE</code> task definition revisions are returned. If you paginate the
-        /// resulting output, be sure to keep the <code>status</code> value constant in each
-        /// subsequent request.</p>
+        /// <p>The task definition family status to filter the <code>ListTaskDefinitionFamilies</code> results with. By default, both <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are listed. If this parameter is set to <code>ACTIVE</code>, only task definition families that have an <code>ACTIVE</code> task definition revision are returned. If this parameter is set to <code>INACTIVE</code>, only task definition families that do not have any <code>ACTIVE</code> task definition revisions are returned. If you paginate the resulting output, be sure to keep the <code>status</code> value constant in each subsequent request.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TaskDefinitionFamilyStatus>,
@@ -4949,56 +3914,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a
-        /// <code>ListTaskDefinitionFamilies</code> request indicating that more results are
-        /// available to fulfill the request and further calls will be needed. If
-        /// <code>maxResults</code> was provided, it is possible the number of results to be
-        /// fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListTaskDefinitionFamilies</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a
-        /// <code>ListTaskDefinitionFamilies</code> request indicating that more results are
-        /// available to fulfill the request and further calls will be needed. If
-        /// <code>maxResults</code> was provided, it is possible the number of results to be
-        /// fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListTaskDefinitionFamilies</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of task definition family results that
-        /// <code>ListTaskDefinitionFamilies</code> returned in paginated output. When this
-        /// parameter is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another
-        /// <code>ListTaskDefinitionFamilies</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and
-        /// 100. If this parameter isn't used, then
-        /// <code>ListTaskDefinitionFamilies</code> returns up to 100 results
-        /// and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of task definition family results that <code>ListTaskDefinitionFamilies</code> returned in paginated output. When this parameter is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListTaskDefinitionFamilies</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListTaskDefinitionFamilies</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of task definition family results that
-        /// <code>ListTaskDefinitionFamilies</code> returned in paginated output. When this
-        /// parameter is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another
-        /// <code>ListTaskDefinitionFamilies</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and
-        /// 100. If this parameter isn't used, then
-        /// <code>ListTaskDefinitionFamilies</code> returns up to 100 results
-        /// and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of task definition family results that <code>ListTaskDefinitionFamilies</code> returned in paginated output. When this parameter is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListTaskDefinitionFamilies</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListTaskDefinitionFamilies</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5006,10 +3941,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTaskDefinitions`.
     ///
-    /// <p>Returns a list of task definitions that are registered to your account. You can filter
-    /// the results by family name with the <code>familyPrefix</code> parameter or by status
-    /// with the <code>status</code> parameter.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of task definitions that are registered to your account. You can filter the results by family name with the <code>familyPrefix</code> parameter or by status with the <code>status</code> parameter.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTaskDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5054,10 +3987,10 @@ pub mod fluent_builders {
                 crate::input::ListTaskDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5065,16 +3998,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The full family name to filter the <code>ListTaskDefinitions</code> results with.
-        /// Specifying a <code>familyPrefix</code> limits the listed task definitions to task
-        /// definition revisions that belong to that family.</p>
-        pub fn family_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.family_prefix(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTaskDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTaskDefinitionsPaginator<C, M, R> {
+            crate::paginator::ListTaskDefinitionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The full family name to filter the <code>ListTaskDefinitions</code> results with. Specifying a <code>familyPrefix</code> limits the listed task definitions to task definition revisions that belong to that family.</p>
+        pub fn family_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.family_prefix(input.into());
             self
         }
-        /// <p>The full family name to filter the <code>ListTaskDefinitions</code> results with.
-        /// Specifying a <code>familyPrefix</code> limits the listed task definitions to task
-        /// definition revisions that belong to that family.</p>
+        /// <p>The full family name to filter the <code>ListTaskDefinitions</code> results with. Specifying a <code>familyPrefix</code> limits the listed task definitions to task definition revisions that belong to that family.</p>
         pub fn set_family_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5082,22 +4017,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_family_prefix(input);
             self
         }
-        /// <p>The task definition status to filter the <code>ListTaskDefinitions</code> results
-        /// with. By default, only <code>ACTIVE</code> task definitions are listed. By setting this
-        /// parameter to <code>INACTIVE</code>, you can view task definitions that are
-        /// <code>INACTIVE</code> as long as an active task or service still references them. If
-        /// you paginate the resulting output, be sure to keep the <code>status</code> value
-        /// constant in each subsequent request.</p>
-        pub fn status(mut self, inp: crate::model::TaskDefinitionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        /// <p>The task definition status to filter the <code>ListTaskDefinitions</code> results with. By default, only <code>ACTIVE</code> task definitions are listed. By setting this parameter to <code>INACTIVE</code>, you can view task definitions that are <code>INACTIVE</code> as long as an active task or service still references them. If you paginate the resulting output, be sure to keep the <code>status</code> value constant in each subsequent request.</p>
+        pub fn status(mut self, input: crate::model::TaskDefinitionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        /// <p>The task definition status to filter the <code>ListTaskDefinitions</code> results
-        /// with. By default, only <code>ACTIVE</code> task definitions are listed. By setting this
-        /// parameter to <code>INACTIVE</code>, you can view task definitions that are
-        /// <code>INACTIVE</code> as long as an active task or service still references them. If
-        /// you paginate the resulting output, be sure to keep the <code>status</code> value
-        /// constant in each subsequent request.</p>
+        /// <p>The task definition status to filter the <code>ListTaskDefinitions</code> results with. By default, only <code>ACTIVE</code> task definitions are listed. By setting this parameter to <code>INACTIVE</code>, you can view task definitions that are <code>INACTIVE</code> as long as an active task or service still references them. If you paginate the resulting output, be sure to keep the <code>status</code> value constant in each subsequent request.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TaskDefinitionStatus>,
@@ -5105,72 +4030,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>The order to sort the results in. Valid values are <code>ASC</code> and
-        /// <code>DESC</code>. By default, (<code>ASC</code>) task definitions are listed
-        /// lexicographically by family name and in ascending numerical order by revision so that
-        /// the newest task definitions in a family are listed last. Setting this parameter to
-        /// <code>DESC</code> reverses the sort order on family name and revision. This is so
-        /// that the newest task definitions in a family are listed first.</p>
-        pub fn sort(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort(inp);
+        /// <p>The order to sort the results in. Valid values are <code>ASC</code> and <code>DESC</code>. By default, (<code>ASC</code>) task definitions are listed lexicographically by family name and in ascending numerical order by revision so that the newest task definitions in a family are listed last. Setting this parameter to <code>DESC</code> reverses the sort order on family name and revision. This is so that the newest task definitions in a family are listed first.</p>
+        pub fn sort(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort(input);
             self
         }
-        /// <p>The order to sort the results in. Valid values are <code>ASC</code> and
-        /// <code>DESC</code>. By default, (<code>ASC</code>) task definitions are listed
-        /// lexicographically by family name and in ascending numerical order by revision so that
-        /// the newest task definitions in a family are listed last. Setting this parameter to
-        /// <code>DESC</code> reverses the sort order on family name and revision. This is so
-        /// that the newest task definitions in a family are listed first.</p>
+        /// <p>The order to sort the results in. Valid values are <code>ASC</code> and <code>DESC</code>. By default, (<code>ASC</code>) task definitions are listed lexicographically by family name and in ascending numerical order by revision so that the newest task definitions in a family are listed last. Setting this parameter to <code>DESC</code> reverses the sort order on family name and revision. This is so that the newest task definitions in a family are listed first.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
             self.inner = self.inner.set_sort(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListTaskDefinitions</code>
-        /// request indicating that more results are available to fulfill the request and further
-        /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
-        /// of results to be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListTaskDefinitions</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListTaskDefinitions</code>
-        /// request indicating that more results are available to fulfill the request and further
-        /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
-        /// of results to be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListTaskDefinitions</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of task definition results that <code>ListTaskDefinitions</code>
-        /// returned in paginated output. When this parameter is used,
-        /// <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a
-        /// single page along with a <code>nextToken</code> response element. The remaining results
-        /// of the initial request can be seen by sending another <code>ListTaskDefinitions</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter isn't used, then
-        /// <code>ListTaskDefinitions</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of task definition results that <code>ListTaskDefinitions</code> returned in paginated output. When this parameter is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListTaskDefinitions</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListTaskDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of task definition results that <code>ListTaskDefinitions</code>
-        /// returned in paginated output. When this parameter is used,
-        /// <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a
-        /// single page along with a <code>nextToken</code> response element. The remaining results
-        /// of the initial request can be seen by sending another <code>ListTaskDefinitions</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter isn't used, then
-        /// <code>ListTaskDefinitions</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of task definition results that <code>ListTaskDefinitions</code> returned in paginated output. When this parameter is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListTaskDefinitions</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListTaskDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5178,12 +4067,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTasks`.
     ///
-    /// <p>Returns a list of tasks. You can filter the results by cluster, task definition
-    /// family, container instance, launch type, what IAM principal started the task, or by the
-    /// desired status of the task.</p>
-    /// <p>Recently stopped tasks might appear in the returned results. Currently, stopped tasks
-    /// appear in the returned results for at least one hour.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of tasks. You can filter the results by cluster, task definition family, container instance, launch type, what IAM principal started the task, or by the desired status of the task.</p>
+    /// <p>Recently stopped tasks might appear in the returned results. Currently, stopped tasks appear in the returned results for at least one hour.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5228,10 +4114,10 @@ pub mod fluent_builders {
                 crate::input::ListTasksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5239,30 +4125,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
-        /// <code>ListTasks</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTasksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTasksPaginator<C, M, R> {
+            crate::paginator::ListTasksPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListTasks</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
-        /// <code>ListTasks</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListTasks</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
-        /// <p>The container instance ID or full ARN of the container instance to use when
-        /// filtering the <code>ListTasks</code> results. Specifying a
-        /// <code>containerInstance</code> limits the results to tasks that belong to that
-        /// container instance.</p>
-        pub fn container_instance(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instance(inp);
+        /// <p>The container instance ID or full ARN of the container instance to use when filtering the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container instance.</p>
+        pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instance(input.into());
             self
         }
-        /// <p>The container instance ID or full ARN of the container instance to use when
-        /// filtering the <code>ListTasks</code> results. Specifying a
-        /// <code>containerInstance</code> limits the results to tasks that belong to that
-        /// container instance.</p>
+        /// <p>The container instance ID or full ARN of the container instance to use when filtering the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container instance.</p>
         pub fn set_container_instance(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5270,123 +4154,69 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_instance(input);
             self
         }
-        /// <p>The name of the task definition family to use when filtering the
-        /// <code>ListTasks</code> results. Specifying a <code>family</code> limits the results
-        /// to tasks that belong to that family.</p>
-        pub fn family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.family(inp);
+        /// <p>The name of the task definition family to use when filtering the <code>ListTasks</code> results. Specifying a <code>family</code> limits the results to tasks that belong to that family.</p>
+        pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.family(input.into());
             self
         }
-        /// <p>The name of the task definition family to use when filtering the
-        /// <code>ListTasks</code> results. Specifying a <code>family</code> limits the results
-        /// to tasks that belong to that family.</p>
+        /// <p>The name of the task definition family to use when filtering the <code>ListTasks</code> results. Specifying a <code>family</code> limits the results to tasks that belong to that family.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_family(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request
-        /// indicating that more results are available to fulfill the request and further calls will
-        /// be needed. If <code>maxResults</code> was provided, it's possible the number of results
-        /// to be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request
-        /// indicating that more results are available to fulfill the request and further calls will
-        /// be needed. If <code>maxResults</code> was provided, it's possible the number of results
-        /// to be fewer than <code>maxResults</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated
-        /// output. When this parameter is used, <code>ListTasks</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListTasks</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter
-        /// isn't used, then <code>ListTasks</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated output. When this parameter is used, <code>ListTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListTasks</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListTasks</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated
-        /// output. When this parameter is used, <code>ListTasks</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListTasks</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter
-        /// isn't used, then <code>ListTasks</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated output. When this parameter is used, <code>ListTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListTasks</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListTasks</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a
-        /// <code>startedBy</code> value limits the results to tasks that were started with that
-        /// value.</p>
-        pub fn started_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.started_by(inp);
+        /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p>
+        pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.started_by(input.into());
             self
         }
-        /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a
-        /// <code>startedBy</code> value limits the results to tasks that were started with that
-        /// value.</p>
+        /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_started_by(input);
             self
         }
-        /// <p>The name of the service to use when filtering the <code>ListTasks</code> results.
-        /// Specifying a <code>serviceName</code> limits the results to tasks that belong to that
-        /// service.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(inp);
+        /// <p>The name of the service to use when filtering the <code>ListTasks</code> results. Specifying a <code>serviceName</code> limits the results to tasks that belong to that service.</p>
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
-        /// <p>The name of the service to use when filtering the <code>ListTasks</code> results.
-        /// Specifying a <code>serviceName</code> limits the results to tasks that belong to that
-        /// service.</p>
+        /// <p>The name of the service to use when filtering the <code>ListTasks</code> results. Specifying a <code>serviceName</code> limits the results to tasks that belong to that service.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_name(input);
             self
         }
-        /// <p>The task desired status to use when filtering the <code>ListTasks</code> results.
-        /// Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to
-        /// tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful
-        /// for debugging tasks that aren't starting properly or have died or finished. The default
-        /// status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
-        /// status to <code>RUNNING</code>.</p>
-        /// <note>
-        /// <p>Although you can filter results based on a desired status of <code>PENDING</code>,
-        /// this doesn't return any results. Amazon ECS never sets the desired status of a task to
-        /// that value (only a task's <code>lastStatus</code> may have a value of
-        /// <code>PENDING</code>).</p>
+        /// <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
+        /// <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
         /// </note>
-        pub fn desired_status(mut self, inp: crate::model::DesiredStatus) -> Self {
-            self.inner = self.inner.desired_status(inp);
+        pub fn desired_status(mut self, input: crate::model::DesiredStatus) -> Self {
+            self.inner = self.inner.desired_status(input);
             self
         }
-        /// <p>The task desired status to use when filtering the <code>ListTasks</code> results.
-        /// Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to
-        /// tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful
-        /// for debugging tasks that aren't starting properly or have died or finished. The default
-        /// status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
-        /// status to <code>RUNNING</code>.</p>
-        /// <note>
-        /// <p>Although you can filter results based on a desired status of <code>PENDING</code>,
-        /// this doesn't return any results. Amazon ECS never sets the desired status of a task to
-        /// that value (only a task's <code>lastStatus</code> may have a value of
-        /// <code>PENDING</code>).</p>
+        /// <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
+        /// <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
         /// </note>
         pub fn set_desired_status(
             mut self,
@@ -5396,8 +4226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.inner = self.inner.launch_type(inp);
+        pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
+            self.inner = self.inner.launch_type(input);
             self
         }
         /// <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
@@ -5412,30 +4242,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAccountSetting`.
     ///
     /// <p>Modifies an account setting. Account settings are set on a per-Region basis.</p>
-    /// <p>If you change the account setting for the root user, the default settings for all of
-    /// the IAM users and roles that no individual account setting was specified are reset for.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
-    /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
-    /// <code>containerInstanceLongArnFormat</code> are specified, the Amazon Resource Name
-    /// (ARN) and resource ID format of the resource type for a specified IAM user, IAM role, or
-    /// the root user for an account is affected. The opt-in and opt-out account setting must be
-    /// set for each Amazon ECS resource separately. The ARN and resource ID format of a resource is
-    /// defined by the opt-in status of the IAM user or role that created the resource. You must
-    /// enable this setting to use Amazon ECS features such as resource tagging.</p>
-    /// <p>When <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
-    /// limit for any new container instances that support the feature is changed. If
-    /// <code>awsvpcTrunking</code> is enabled, any new container instances that support the
-    /// feature are launched have the increased ENI limits available to them. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic Network
-    /// Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>When <code>containerInsights</code> is specified, the default setting indicating
-    /// whether CloudWatch Container Insights is enabled for your clusters is changed. If
-    /// <code>containerInsights</code> is enabled, any new clusters that are created will
-    /// have Container Insights enabled unless you disable it during cluster creation. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
-    /// Container Insights</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you change the account setting for the root user, the default settings for all of the IAM users and roles that no individual account setting was specified are reset for. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or <code>containerInstanceLongArnFormat</code> are specified, the Amazon Resource Name (ARN) and resource ID format of the resource type for a specified IAM user, IAM role, or the root user for an account is affected. The opt-in and opt-out account setting must be set for each Amazon ECS resource separately. The ARN and resource ID format of a resource is defined by the opt-in status of the IAM user or role that created the resource. You must enable this setting to use Amazon ECS features such as resource tagging.</p>
+    /// <p>When <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for any new container instances that support the feature is changed. If <code>awsvpcTrunking</code> is enabled, any new container instances that support the feature are launched have the increased ENI limits available to them. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic Network Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>When <code>containerInsights</code> is specified, the default setting indicating whether CloudWatch Container Insights is enabled for your clusters is changed. If <code>containerInsights</code> is enabled, any new clusters that are created will have Container Insights enabled unless you disable it during cluster creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch Container Insights</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountSetting<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5480,10 +4291,10 @@ pub mod fluent_builders {
                 crate::input::PutAccountSettingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5491,65 +4302,35 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon ECS resource name for which to modify the account setting. If
-        /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
-        /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
-        /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
-        /// specified, the ARN and resource ID for your Amazon ECS container instances is affected. If
-        /// <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit
-        /// for your Amazon ECS container instances is affected. If <code>containerInsights</code> is
-        /// specified, the default setting for CloudWatch Container Insights for your clusters is
-        /// affected.</p>
-        pub fn name(mut self, inp: crate::model::SettingName) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The Amazon ECS resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for CloudWatch Container Insights for your clusters is affected.</p>
+        pub fn name(mut self, input: crate::model::SettingName) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        /// <p>The Amazon ECS resource name for which to modify the account setting. If
-        /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
-        /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
-        /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
-        /// specified, the ARN and resource ID for your Amazon ECS container instances is affected. If
-        /// <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit
-        /// for your Amazon ECS container instances is affected. If <code>containerInsights</code> is
-        /// specified, the default setting for CloudWatch Container Insights for your clusters is
-        /// affected.</p>
+        /// <p>The Amazon ECS resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for CloudWatch Container Insights for your clusters is affected.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::SettingName>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The account setting value for the specified principal ARN. Accepted values are
-        /// <code>enabled</code> and <code>disabled</code>.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(inp);
+        /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(input.into());
             self
         }
-        /// <p>The account setting value for the specified principal ARN. Accepted values are
-        /// <code>enabled</code> and <code>disabled</code>.</p>
+        /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_value(input);
             self
         }
-        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you
-        /// specify the root user, it modifies the account setting for all IAM users, IAM roles, and
-        /// the root user of the account unless an IAM user or role explicitly overrides these
-        /// settings. If this field is omitted, the setting is changed only for the authenticated
-        /// user.</p>
-        /// <note>
-        /// <p>Federated users assume the account setting of the root user and can't have
-        /// explicit account settings set for them.</p>
+        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it modifies the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
+        /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
         /// </note>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(input.into());
             self
         }
-        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you
-        /// specify the root user, it modifies the account setting for all IAM users, IAM roles, and
-        /// the root user of the account unless an IAM user or role explicitly overrides these
-        /// settings. If this field is omitted, the setting is changed only for the authenticated
-        /// user.</p>
-        /// <note>
-        /// <p>Federated users assume the account setting of the root user and can't have
-        /// explicit account settings set for them.</p>
+        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it modifies the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
+        /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
         /// </note>
         pub fn set_principal_arn(
             mut self,
@@ -5561,10 +4342,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutAccountSettingDefault`.
     ///
-    /// <p>Modifies an account setting for all IAM users on an account for whom no individual
-    /// account setting has been specified. Account settings are set on a per-Region
-    /// basis.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies an account setting for all IAM users on an account for whom no individual account setting has been specified. Account settings are set on a per-Region basis.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccountSettingDefault<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5609,10 +4388,10 @@ pub mod fluent_builders {
                 crate::input::PutAccountSettingDefaultInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5620,38 +4399,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The resource name for which to modify the account setting. If
-        /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
-        /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
-        /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
-        /// specified, the ARN and resource ID for your Amazon ECS container instances is affected. If
-        /// <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
-        /// instances is affected. If <code>containerInsights</code> is specified, the default
-        /// setting for CloudWatch Container Insights for your clusters is affected.</p>
-        pub fn name(mut self, inp: crate::model::SettingName) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for CloudWatch Container Insights for your clusters is affected.</p>
+        pub fn name(mut self, input: crate::model::SettingName) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        /// <p>The resource name for which to modify the account setting. If
-        /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
-        /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
-        /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
-        /// specified, the ARN and resource ID for your Amazon ECS container instances is affected. If
-        /// <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
-        /// instances is affected. If <code>containerInsights</code> is specified, the default
-        /// setting for CloudWatch Container Insights for your clusters is affected.</p>
+        /// <p>The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for CloudWatch Container Insights for your clusters is affected.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::SettingName>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The account setting value for the specified principal ARN. Accepted values are
-        /// <code>enabled</code> and <code>disabled</code>.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(inp);
+        /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(input.into());
             self
         }
-        /// <p>The account setting value for the specified principal ARN. Accepted values are
-        /// <code>enabled</code> and <code>disabled</code>.</p>
+        /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_value(input);
             self
@@ -5659,12 +4422,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutAttributes`.
     ///
-    /// <p>Create or update an attribute on an Amazon ECS resource. If the attribute doesn't exist,
-    /// it's created. If the attribute exists, its value is replaced with the specified value.
-    /// To delete an attribute, use <a>DeleteAttributes</a>. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create or update an attribute on an Amazon ECS resource. If the attribute doesn't exist, it's created. If the attribute exists, its value is replaced with the specified value. To delete an attribute, use <code>DeleteAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5709,10 +4468,10 @@ pub mod fluent_builders {
                 crate::input::PutAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5720,14 +4479,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply
-        /// attributes. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply attributes. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply
-        /// attributes. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply attributes. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
@@ -5736,14 +4493,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes
-        /// for each resource. You can specify up to 10 attributes in a single call.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes for each resource. You can specify up to 10 attributes in a single call.</p>
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
-        /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes
-        /// for each resource. You can specify up to 10 attributes in a single call.</p>
+        /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes for each resource. You can specify up to 10 attributes in a single call.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -5754,21 +4509,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutClusterCapacityProviders`.
     ///
-    /// <p>Modifies the available capacity providers and the default capacity provider strategy
-    /// for a cluster.</p>
-    /// <p>You must specify both the available capacity providers and a default capacity provider
-    /// strategy for the cluster. If the specified cluster has existing capacity providers
-    /// associated with it, you must specify all existing capacity providers in addition to any
-    /// new ones you want to add. Any existing capacity providers that are associated with a
-    /// cluster that are omitted from a <a>PutClusterCapacityProviders</a> API call
-    /// will be disassociated with the cluster. You can only disassociate an existing capacity
-    /// provider from a cluster if it's not being used by any existing tasks.</p>
-    /// <p>When creating a service or running a task on a cluster, if no capacity provider or
-    /// launch type is specified, then the cluster's default capacity provider strategy is used.
-    /// We recommend that you define a default capacity provider strategy for your cluster.
-    /// However, you must specify an empty array (<code>[]</code>) to bypass defining a default
-    /// strategy.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the available capacity providers and the default capacity provider strategy for a cluster.</p>
+    /// <p>You must specify both the available capacity providers and a default capacity provider strategy for the cluster. If the specified cluster has existing capacity providers associated with it, you must specify all existing capacity providers in addition to any new ones you want to add. Any existing capacity providers that are associated with a cluster that are omitted from a <code>PutClusterCapacityProviders</code> API call will be disassociated with the cluster. You can only disassociate an existing capacity provider from a cluster if it's not being used by any existing tasks.</p>
+    /// <p>When creating a service or running a task on a cluster, if no capacity provider or launch type is specified, then the cluster's default capacity provider strategy is used. We recommend that you define a default capacity provider strategy for your cluster. However, you must specify an empty array (<code>[]</code>) to bypass defining a default strategy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutClusterCapacityProviders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5813,10 +4557,10 @@ pub mod fluent_builders {
                 crate::input::PutClusterCapacityProvidersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5824,14 +4568,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider
-        /// settings for. If you don't specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider settings for. If you don't specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider
-        /// settings for. If you don't specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider settings for. If you don't specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
@@ -5841,23 +4583,15 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
         ///
         /// <p>The name of one or more capacity providers to associate with the cluster.</p>
-        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be
-        /// used.</p>
-        pub fn capacity_providers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capacity_providers(inp);
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
+        pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capacity_providers(input.into());
             self
         }
         /// <p>The name of one or more capacity providers to associate with the cluster.</p>
-        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be
-        /// used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
         pub fn set_capacity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5870,44 +4604,22 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_default_capacity_provider_strategy`](Self::set_default_capacity_provider_strategy).
         ///
         /// <p>The capacity provider strategy to use by default for the cluster.</p>
-        /// <p>When creating a service or running a task on a cluster, if no capacity provider or
-        /// launch type is specified then the default capacity provider strategy for the cluster is
-        /// used.</p>
-        /// <p>A capacity provider strategy consists of one or more capacity providers along with the
-        /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-        /// must be associated with the cluster to be used in a capacity provider strategy. The
-        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-        /// provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-        /// <code>UPDATING</code> status can be used.</p>
-        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be
-        /// used.</p>
+        /// <p>When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then the default capacity provider strategy for the cluster is used.</p>
+        /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
         pub fn default_capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
-            self.inner = self.inner.default_capacity_provider_strategy(inp);
+            self.inner = self.inner.default_capacity_provider_strategy(input);
             self
         }
         /// <p>The capacity provider strategy to use by default for the cluster.</p>
-        /// <p>When creating a service or running a task on a cluster, if no capacity provider or
-        /// launch type is specified then the default capacity provider strategy for the cluster is
-        /// used.</p>
-        /// <p>A capacity provider strategy consists of one or more capacity providers along with the
-        /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-        /// must be associated with the cluster to be used in a capacity provider strategy. The
-        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-        /// provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-        /// <code>UPDATING</code> status can be used.</p>
-        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be
-        /// used.</p>
+        /// <p>When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then the default capacity provider strategy for the cluster is used.</p>
+        /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
         pub fn set_default_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -5921,9 +4633,8 @@ pub mod fluent_builders {
     /// <note>
     /// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
     /// </note>
-    /// <p>Registers an EC2 instance into the specified cluster. This instance becomes available
-    /// to place containers on.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registers an EC2 instance into the specified cluster. This instance becomes available to place containers on.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterContainerInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5968,10 +4679,10 @@ pub mod fluent_builders {
                 crate::input::RegisterContainerInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5979,30 +4690,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance
-        /// with. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance
-        /// with. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
-        /// <p>The instance identity document for the EC2 instance to register. This document can be
-        /// found by running the following command from the instance: <code>curl
-        /// http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
-        /// </p>
-        pub fn instance_identity_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_identity_document(inp);
+        /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
+        pub fn instance_identity_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_identity_document(input.into());
             self
         }
-        /// <p>The instance identity document for the EC2 instance to register. This document can be
-        /// found by running the following command from the instance: <code>curl
-        /// http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
-        /// </p>
+        /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
         pub fn set_instance_identity_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6010,21 +4713,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_identity_document(input);
             self
         }
-        /// <p>The instance identity document signature for the EC2 instance to register. This
-        /// signature can be found by running the following command from the instance: <code>curl
-        /// http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
-        /// </p>
+        /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
         pub fn instance_identity_document_signature(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.instance_identity_document_signature(inp);
+            self.inner = self
+                .inner
+                .instance_identity_document_signature(input.into());
             self
         }
-        /// <p>The instance identity document signature for the EC2 instance to register. This
-        /// signature can be found by running the following command from the instance: <code>curl
-        /// http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
-        /// </p>
+        /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
         pub fn set_instance_identity_document_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6037,8 +4736,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_total_resources`](Self::set_total_resources).
         ///
         /// <p>The resources available on the instance.</p>
-        pub fn total_resources(mut self, inp: impl Into<crate::model::Resource>) -> Self {
-            self.inner = self.inner.total_resources(inp);
+        pub fn total_resources(mut self, input: crate::model::Resource) -> Self {
+            self.inner = self.inner.total_resources(input);
             self
         }
         /// <p>The resources available on the instance.</p>
@@ -6049,14 +4748,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_total_resources(input);
             self
         }
-        /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on
-        /// the container instance.</p>
-        pub fn version_info(mut self, inp: crate::model::VersionInfo) -> Self {
-            self.inner = self.inner.version_info(inp);
+        /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
+        pub fn version_info(mut self, input: crate::model::VersionInfo) -> Self {
+            self.inner = self.inner.version_info(input);
             self
         }
-        /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on
-        /// the container instance.</p>
+        /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
         pub fn set_version_info(
             mut self,
             input: std::option::Option<crate::model::VersionInfo>,
@@ -6065,8 +4762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the container instance (if it was previously registered).</p>
-        pub fn container_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instance_arn(inp);
+        pub fn container_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the container instance (if it was previously registered).</p>
@@ -6082,8 +4779,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The container instance attributes that this container instance supports.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
         /// <p>The container instance attributes that this container instance supports.</p>
@@ -6098,14 +4795,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_platform_devices`](Self::set_platform_devices).
         ///
-        /// <p>The devices that are available on the container instance. The only supported device
-        /// type is a GPU.</p>
-        pub fn platform_devices(mut self, inp: impl Into<crate::model::PlatformDevice>) -> Self {
-            self.inner = self.inner.platform_devices(inp);
+        /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
+        pub fn platform_devices(mut self, input: crate::model::PlatformDevice) -> Self {
+            self.inner = self.inner.platform_devices(input);
             self
         }
-        /// <p>The devices that are available on the container instance. The only supported device
-        /// type is a GPU.</p>
+        /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
         pub fn set_platform_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlatformDevice>>,
@@ -6117,75 +4812,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the container instance to help you categorize and
-        /// organize them. Each tag consists of a key and an optional value. You define both.</p>
+        /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The metadata that you apply to the container instance to help you categorize and
-        /// organize them. Each tag consists of a key and an optional value. You define both.</p>
+        /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -6197,25 +4848,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterTaskDefinition`.
     ///
-    /// <p>Registers a new task definition from the supplied <code>family</code> and
-    /// <code>containerDefinitions</code>. Optionally, you can add data volumes to your
-    /// containers with the <code>volumes</code> parameter. For more information about task
-    /// definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-    /// Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
-    /// When you specify an IAM role for a task, its containers can then use the latest versions
-    /// of the CLI or SDKs to make API requests to the Amazon Web Services services that are specified in
-    /// the IAM policy that's associated with the role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-    /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>You can specify a Docker networking mode for the containers in your task definition
-    /// with the <code>networkMode</code> parameter. The available network modes correspond to
-    /// those described in <a href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
-    /// settings</a> in the Docker run reference. If you specify the <code>awsvpc</code>
-    /// network mode, the task is allocated an elastic network interface, and you must specify a
-    /// <a>NetworkConfiguration</a> when you create a service or run a task with
-    /// the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-    /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>. Optionally, you can add data volumes to your containers with the <code>volumes</code> parameter. For more information about task definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its containers can then use the latest versions of the CLI or SDKs to make API requests to the Amazon Web Services services that are specified in the IAM policy that's associated with the role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>You can specify a Docker networking mode for the containers in your task definition with the <code>networkMode</code> parameter. The available network modes correspond to those described in <a href="https://docs.docker.com/engine/reference/run/#/network-settings">Network settings</a> in the Docker run reference. If you specify the <code>awsvpc</code> network mode, the task is allocated an elastic network interface, and you must specify a <code>NetworkConfiguration</code> when you create a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterTaskDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6260,10 +4896,10 @@ pub mod fluent_builders {
                 crate::input::RegisterTaskDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6271,32 +4907,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>You must specify a <code>family</code> for a task definition. You can use it track
-        /// multiple versions of the same task definition. The <code>family</code> is used as a name
-        /// for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
-        pub fn family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.family(inp);
+        /// <p>You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
+        pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.family(input.into());
             self
         }
-        /// <p>You must specify a <code>family</code> for a task definition. You can use it track
-        /// multiple versions of the same task definition. The <code>family</code> is used as a name
-        /// for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
+        /// <p>You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_family(input);
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can
-        /// assume. All containers in this task are granted the permissions that are specified in
-        /// this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
-        /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn task_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_role_arn(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn task_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_role_arn(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can
-        /// assume. All containers in this task are granted the permissions that are specified in
-        /// this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
-        /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_task_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6304,18 +4930,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_role_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
-        /// permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required
-        /// depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
-        /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
-        /// permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required
-        /// depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
-        /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6323,66 +4943,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_role_arn(input);
             self
         }
-        /// <p>The Docker networking mode to use for the containers in the task. The valid values are
-        /// <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
-        /// If no network mode is specified, the default is <code>bridge</code>.</p>
-        /// <p>For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required.
-        /// For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used.  For Amazon ECS tasks on Amazon EC2 Windows instances, <code><default></code> or <code>awsvpc</code> can be used. If the network
-        /// mode is set to <code>none</code>, you cannot specify port mappings in your container
-        /// definitions, and the tasks containers do not have external connectivity. The
-        /// <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
-        /// performance for containers because they use the EC2 network stack instead of the
-        /// virtualized network stack provided by the <code>bridge</code> mode.</p>
-        /// <p>With the <code>host</code> and <code>awsvpc</code> network modes, exposed container
-        /// ports are mapped directly to the corresponding host port (for the <code>host</code>
-        /// network mode) or the attached elastic network interface port (for the
-        /// <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port
-        /// mappings. </p>
-        /// <important>
-        /// <p>When using the <code>host</code> network mode, you should not run
-        /// containers using the root user (UID 0). It is considered best practice
-        /// to use a non-root user.</p>
+        /// <p>The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the default is <code>bridge</code>.</p>
+        /// <p>For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used. For Amazon ECS tasks on Amazon EC2 Windows instances, <code>
+        /// <default></default></code> or <code>awsvpc</code> can be used. If the network mode is set to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for containers because they use the EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code> mode.</p>
+        /// <p>With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings. </p> <important>
+        /// <p>When using the <code>host</code> network mode, you should not run containers using the root user (UID 0). It is considered best practice to use a non-root user.</p>
         /// </important>
-        /// <p>If the network mode is <code>awsvpc</code>, the task is allocated an elastic network
-        /// interface, and you must specify a <a>NetworkConfiguration</a> value when you create
-        /// a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>If the network mode is <code>host</code>, you cannot run multiple instantiations of the
-        /// same task on a single container instance when port mappings are used.</p>
-        /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
-        /// settings</a> in the <i>Docker run reference</i>.</p>
-        pub fn network_mode(mut self, inp: crate::model::NetworkMode) -> Self {
-            self.inner = self.inner.network_mode(inp);
+        /// <p>If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must specify a <code>NetworkConfiguration</code> value when you create a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a single container instance when port mappings are used.</p>
+        /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network settings</a> in the <i>Docker run reference</i>.</p>
+        pub fn network_mode(mut self, input: crate::model::NetworkMode) -> Self {
+            self.inner = self.inner.network_mode(input);
             self
         }
-        /// <p>The Docker networking mode to use for the containers in the task. The valid values are
-        /// <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
-        /// If no network mode is specified, the default is <code>bridge</code>.</p>
-        /// <p>For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required.
-        /// For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used.  For Amazon ECS tasks on Amazon EC2 Windows instances, <code><default></code> or <code>awsvpc</code> can be used. If the network
-        /// mode is set to <code>none</code>, you cannot specify port mappings in your container
-        /// definitions, and the tasks containers do not have external connectivity. The
-        /// <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
-        /// performance for containers because they use the EC2 network stack instead of the
-        /// virtualized network stack provided by the <code>bridge</code> mode.</p>
-        /// <p>With the <code>host</code> and <code>awsvpc</code> network modes, exposed container
-        /// ports are mapped directly to the corresponding host port (for the <code>host</code>
-        /// network mode) or the attached elastic network interface port (for the
-        /// <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port
-        /// mappings. </p>
-        /// <important>
-        /// <p>When using the <code>host</code> network mode, you should not run
-        /// containers using the root user (UID 0). It is considered best practice
-        /// to use a non-root user.</p>
+        /// <p>The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the default is <code>bridge</code>.</p>
+        /// <p>For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used. For Amazon ECS tasks on Amazon EC2 Windows instances, <code>
+        /// <default></default></code> or <code>awsvpc</code> can be used. If the network mode is set to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for containers because they use the EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code> mode.</p>
+        /// <p>With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings. </p> <important>
+        /// <p>When using the <code>host</code> network mode, you should not run containers using the root user (UID 0). It is considered best practice to use a non-root user.</p>
         /// </important>
-        /// <p>If the network mode is <code>awsvpc</code>, the task is allocated an elastic network
-        /// interface, and you must specify a <a>NetworkConfiguration</a> value when you create
-        /// a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>If the network mode is <code>host</code>, you cannot run multiple instantiations of the
-        /// same task on a single container instance when port mappings are used.</p>
-        /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
-        /// settings</a> in the <i>Docker run reference</i>.</p>
+        /// <p>If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must specify a <code>NetworkConfiguration</code> value when you create a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a single container instance when port mappings are used.</p>
+        /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network settings</a> in the <i>Docker run reference</i>.</p>
         pub fn set_network_mode(
             mut self,
             input: std::option::Option<crate::model::NetworkMode>,
@@ -6394,17 +4976,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_container_definitions`](Self::set_container_definitions).
         ///
-        /// <p>A list of container definitions in JSON format that describe the different containers
-        /// that make up your task.</p>
-        pub fn container_definitions(
-            mut self,
-            inp: impl Into<crate::model::ContainerDefinition>,
-        ) -> Self {
-            self.inner = self.inner.container_definitions(inp);
+        /// <p>A list of container definitions in JSON format that describe the different containers that make up your task.</p>
+        pub fn container_definitions(mut self, input: crate::model::ContainerDefinition) -> Self {
+            self.inner = self.inner.container_definitions(input);
             self
         }
-        /// <p>A list of container definitions in JSON format that describe the different containers
-        /// that make up your task.</p>
+        /// <p>A list of container definitions in JSON format that describe the different containers that make up your task.</p>
         pub fn set_container_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerDefinition>>,
@@ -6416,14 +4993,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
         ///
-        /// <p>A list of volume definitions in JSON format that containers in your task might
-        /// use.</p>
-        pub fn volumes(mut self, inp: impl Into<crate::model::Volume>) -> Self {
-            self.inner = self.inner.volumes(inp);
+        /// <p>A list of volume definitions in JSON format that containers in your task might use.</p>
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
+            self.inner = self.inner.volumes(input);
             self
         }
-        /// <p>A list of volume definitions in JSON format that containers in your task might
-        /// use.</p>
+        /// <p>A list of volume definitions in JSON format that containers in your task might use.</p>
         pub fn set_volumes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Volume>>,
@@ -6435,19 +5010,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
         ///
-        /// <p>An array of placement constraint objects to use for the task. You can specify a
-        /// maximum of 10 constraints for each task. This limit includes constraints in the task
-        /// definition and those specified at runtime.</p>
+        /// <p>An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
         pub fn placement_constraints(
             mut self,
-            inp: impl Into<crate::model::TaskDefinitionPlacementConstraint>,
+            input: crate::model::TaskDefinitionPlacementConstraint,
         ) -> Self {
-            self.inner = self.inner.placement_constraints(inp);
+            self.inner = self.inner.placement_constraints(input);
             self
         }
-        /// <p>An array of placement constraint objects to use for the task. You can specify a
-        /// maximum of 10 constraints for each task. This limit includes constraints in the task
-        /// definition and those specified at runtime.</p>
+        /// <p>An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<
@@ -6461,21 +5032,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_requires_compatibilities`](Self::set_requires_compatibilities).
         ///
-        /// <p>The task launch type that Amazon ECS validates the task definition against. A client
-        /// exception is returned if the task definition doesn't validate against the
-        /// compatibilities specified. If no value is specified, the parameter is omitted from the
-        /// response.</p>
-        pub fn requires_compatibilities(
-            mut self,
-            inp: impl Into<crate::model::Compatibility>,
-        ) -> Self {
-            self.inner = self.inner.requires_compatibilities(inp);
+        /// <p>The task launch type that Amazon ECS validates the task definition against. A client exception is returned if the task definition doesn't validate against the compatibilities specified. If no value is specified, the parameter is omitted from the response.</p>
+        pub fn requires_compatibilities(mut self, input: crate::model::Compatibility) -> Self {
+            self.inner = self.inner.requires_compatibilities(input);
             self
         }
-        /// <p>The task launch type that Amazon ECS validates the task definition against. A client
-        /// exception is returned if the task definition doesn't validate against the
-        /// compatibilities specified. If no value is specified, the parameter is omitted from the
-        /// response.</p>
+        /// <p>The task launch type that Amazon ECS validates the task definition against. A client exception is returned if the task definition doesn't validate against the compatibilities specified. If no value is specified, the parameter is omitted from the response.</p>
         pub fn set_requires_compatibilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
@@ -6483,149 +5045,69 @@ pub mod fluent_builders {
             self.inner = self.inner.set_requires_compatibilities(input);
             self
         }
-        /// <p>The number of CPU units used by the task. It can be expressed as an integer using CPU
-        /// units (for example, <code>1024</code>) or as a string using vCPUs (for example, <code>1
-        /// vCPU</code> or <code>1 vcpu</code>) in a task definition. String values are
-        /// converted to an integer indicating the CPU units when the task definition is
-        /// registered.</p>
-        /// <note>
-        /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We
-        /// recommend specifying container-level resources for Windows containers.</p>
+        /// <p>The number of CPU units used by the task. It can be expressed as an integer using CPU units (for example, <code>1024</code>) or as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition. String values are converted to an integer indicating the CPU units when the task definition is registered.</p> <note>
+        /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level resources for Windows containers.</p>
         /// </note>
-        /// <p>If you're using the EC2 launch type, this field is optional. Supported
-        /// values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
-        /// <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
-        /// <p>If you're using the Fargate launch type, this field is required and you
-        /// must use one of the following values, which determines your range of supported values
-        /// for the <code>memory</code> parameter:</p>
-        /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on
-        /// Fargate.</p>
+        /// <p>If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
+        /// <p>If you're using the Fargate launch type, this field is required and you must use one of the following values, which determines your range of supported values for the <code>memory</code> parameter:</p>
+        /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
         /// <ul>
-        /// <li>
-        /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-        /// </li>
-        /// <li>
-        /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p>
-        /// </li>
-        /// <li>
-        /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p>
-        /// </li>
-        /// <li>
-        /// <p>2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
-        /// </li>
-        /// <li>
-        /// <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p>
-        /// </li>
+        /// <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+        /// <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li>
+        /// <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li>
+        /// <li> <p>2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+        /// <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li>
         /// </ul>
-        pub fn cpu(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cpu(inp);
+        pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cpu(input.into());
             self
         }
-        /// <p>The number of CPU units used by the task. It can be expressed as an integer using CPU
-        /// units (for example, <code>1024</code>) or as a string using vCPUs (for example, <code>1
-        /// vCPU</code> or <code>1 vcpu</code>) in a task definition. String values are
-        /// converted to an integer indicating the CPU units when the task definition is
-        /// registered.</p>
-        /// <note>
-        /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We
-        /// recommend specifying container-level resources for Windows containers.</p>
+        /// <p>The number of CPU units used by the task. It can be expressed as an integer using CPU units (for example, <code>1024</code>) or as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition. String values are converted to an integer indicating the CPU units when the task definition is registered.</p> <note>
+        /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level resources for Windows containers.</p>
         /// </note>
-        /// <p>If you're using the EC2 launch type, this field is optional. Supported
-        /// values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
-        /// <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
-        /// <p>If you're using the Fargate launch type, this field is required and you
-        /// must use one of the following values, which determines your range of supported values
-        /// for the <code>memory</code> parameter:</p>
-        /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on
-        /// Fargate.</p>
+        /// <p>If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
+        /// <p>If you're using the Fargate launch type, this field is required and you must use one of the following values, which determines your range of supported values for the <code>memory</code> parameter:</p>
+        /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
         /// <ul>
-        /// <li>
-        /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-        /// </li>
-        /// <li>
-        /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p>
-        /// </li>
-        /// <li>
-        /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p>
-        /// </li>
-        /// <li>
-        /// <p>2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
-        /// </li>
-        /// <li>
-        /// <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p>
-        /// </li>
+        /// <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+        /// <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li>
+        /// <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li>
+        /// <li> <p>2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+        /// <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li>
         /// </ul>
         pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cpu(input);
             self
         }
-        /// <p>The amount of memory (in MiB) used by the task. It can be expressed as an integer
-        /// using MiB (for example ,<code>1024</code>) or as a string using GB (for example,
-        /// <code>1GB</code> or <code>1 GB</code>) in a task definition. String values are
-        /// converted to an integer indicating the MiB when the task definition is
-        /// registered.</p>
-        /// <note>
-        /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We
-        /// recommend specifying container-level resources for Windows containers.</p>
+        /// <p>The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB (for example ,<code>1024</code>) or as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>) in a task definition. String values are converted to an integer indicating the MiB when the task definition is registered.</p> <note>
+        /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level resources for Windows containers.</p>
         /// </note>
         /// <p>If using the EC2 launch type, this field is optional.</p>
-        /// <p>If using the Fargate launch type, this field is required and you must
-        /// use one of the following values. This determines your range of supported values for the
-        /// <code>cpu</code> parameter.</p>
-        /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on
-        /// Fargate.</p>
+        /// <p>If using the Fargate launch type, this field is required and you must use one of the following values. This determines your range of supported values for the <code>cpu</code> parameter.</p>
+        /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
         /// <ul>
-        /// <li>
-        /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p>
-        /// </li>
-        /// <li>
-        /// <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p>
-        /// </li>
-        /// <li>
-        /// <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
-        /// </li>
-        /// <li>
-        /// <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
-        /// </li>
-        /// <li>
-        /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-        /// </li>
+        /// <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li>
+        /// <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li>
+        /// <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li>
+        /// <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li>
+        /// <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
         /// </ul>
-        pub fn memory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.memory(inp);
+        pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.memory(input.into());
             self
         }
-        /// <p>The amount of memory (in MiB) used by the task. It can be expressed as an integer
-        /// using MiB (for example ,<code>1024</code>) or as a string using GB (for example,
-        /// <code>1GB</code> or <code>1 GB</code>) in a task definition. String values are
-        /// converted to an integer indicating the MiB when the task definition is
-        /// registered.</p>
-        /// <note>
-        /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We
-        /// recommend specifying container-level resources for Windows containers.</p>
+        /// <p>The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB (for example ,<code>1024</code>) or as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>) in a task definition. String values are converted to an integer indicating the MiB when the task definition is registered.</p> <note>
+        /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level resources for Windows containers.</p>
         /// </note>
         /// <p>If using the EC2 launch type, this field is optional.</p>
-        /// <p>If using the Fargate launch type, this field is required and you must
-        /// use one of the following values. This determines your range of supported values for the
-        /// <code>cpu</code> parameter.</p>
-        /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on
-        /// Fargate.</p>
+        /// <p>If using the Fargate launch type, this field is required and you must use one of the following values. This determines your range of supported values for the <code>cpu</code> parameter.</p>
+        /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
         /// <ul>
-        /// <li>
-        /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p>
-        /// </li>
-        /// <li>
-        /// <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p>
-        /// </li>
-        /// <li>
-        /// <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
-        /// </li>
-        /// <li>
-        /// <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
-        /// </li>
-        /// <li>
-        /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-        /// </li>
+        /// <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li>
+        /// <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li>
+        /// <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li>
+        /// <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li>
+        /// <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li>
         /// </ul>
         pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_memory(input);
@@ -6635,75 +5117,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the task definition to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value. You define both of them.</p>
+        /// <p>The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of a key and an optional value. You define both of them.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The metadata that you apply to the task definition to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value. You define both of them.</p>
+        /// <p>The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of a key and an optional value. You define both of them.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -6712,112 +5150,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The process namespace to use for the containers in the task. The valid
-        /// values are <code>host</code> or <code>task</code>. If <code>host</code>
-        /// is specified, then all containers within the tasks that specified the
-        /// <code>host</code> PID mode on the same container instance share the
-        /// same process namespace with the host Amazon EC2 instance. If <code>task</code> is
-        /// specified, all containers within the specified task share the same
-        /// process namespace. If no value is specified, the default is a private
-        /// namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
-        /// reference</i>.</p>
-        /// <p>If the <code>host</code> PID mode is used, be aware that there is a
-        /// heightened risk of undesired process namespace expose. For more
-        /// information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-        /// security</a>.</p>
-        /// <note>
+        /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process namespace. If no value is specified, the default is a private namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
+        /// <p>If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
         /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
         /// </note>
-        pub fn pid_mode(mut self, inp: crate::model::PidMode) -> Self {
-            self.inner = self.inner.pid_mode(inp);
+        pub fn pid_mode(mut self, input: crate::model::PidMode) -> Self {
+            self.inner = self.inner.pid_mode(input);
             self
         }
-        /// <p>The process namespace to use for the containers in the task. The valid
-        /// values are <code>host</code> or <code>task</code>. If <code>host</code>
-        /// is specified, then all containers within the tasks that specified the
-        /// <code>host</code> PID mode on the same container instance share the
-        /// same process namespace with the host Amazon EC2 instance. If <code>task</code> is
-        /// specified, all containers within the specified task share the same
-        /// process namespace. If no value is specified, the default is a private
-        /// namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
-        /// reference</i>.</p>
-        /// <p>If the <code>host</code> PID mode is used, be aware that there is a
-        /// heightened risk of undesired process namespace expose. For more
-        /// information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-        /// security</a>.</p>
-        /// <note>
+        /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process namespace. If no value is specified, the default is a private namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
+        /// <p>If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
         /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
         /// </note>
         pub fn set_pid_mode(mut self, input: std::option::Option<crate::model::PidMode>) -> Self {
             self.inner = self.inner.set_pid_mode(input);
             self
         }
-        /// <p>The IPC resource namespace to use for the containers in the task. The valid values are
-        /// <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code> is
-        /// specified, then all containers within the tasks that specified the <code>host</code> IPC
-        /// mode on the same container instance share the same IPC resources with the host Amazon EC2
-        /// instance. If <code>task</code> is specified, all containers within the specified task
-        /// share the same IPC resources. If <code>none</code> is specified, then IPC resources
-        /// within the containers of a task are private and not shared with other containers in a
-        /// task or on the container instance. If no value is specified, then the IPC resource
-        /// namespace sharing depends on the Docker daemon setting on the container instance. For
-        /// more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
-        /// settings</a> in the <i>Docker run reference</i>.</p>
-        /// <p>If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of
-        /// undesired IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-        /// security</a>.</p>
-        /// <p>If you are setting namespaced kernel parameters using <code>systemControls</code> for
-        /// the containers in the task, the following will apply to your IPC resource namespace. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
-        /// Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same IPC resources. If <code>none</code> is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the <i>Docker run reference</i>.</p>
+        /// <p>If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p>
+        /// <p>If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task, the following will apply to your IPC resource namespace. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>For tasks that use the <code>host</code> IPC mode, IPC namespace related
-        /// <code>systemControls</code> are not supported.</p>
-        /// </li>
-        /// <li>
-        /// <p>For tasks that use the <code>task</code> IPC mode, IPC namespace related
-        /// <code>systemControls</code> will apply to all containers within a
-        /// task.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are not supported.</p> </li>
+        /// <li> <p>For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will apply to all containers within a task.</p> </li>
+        /// </ul> <note>
         /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
         /// </note>
-        pub fn ipc_mode(mut self, inp: crate::model::IpcMode) -> Self {
-            self.inner = self.inner.ipc_mode(inp);
+        pub fn ipc_mode(mut self, input: crate::model::IpcMode) -> Self {
+            self.inner = self.inner.ipc_mode(input);
             self
         }
-        /// <p>The IPC resource namespace to use for the containers in the task. The valid values are
-        /// <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code> is
-        /// specified, then all containers within the tasks that specified the <code>host</code> IPC
-        /// mode on the same container instance share the same IPC resources with the host Amazon EC2
-        /// instance. If <code>task</code> is specified, all containers within the specified task
-        /// share the same IPC resources. If <code>none</code> is specified, then IPC resources
-        /// within the containers of a task are private and not shared with other containers in a
-        /// task or on the container instance. If no value is specified, then the IPC resource
-        /// namespace sharing depends on the Docker daemon setting on the container instance. For
-        /// more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
-        /// settings</a> in the <i>Docker run reference</i>.</p>
-        /// <p>If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of
-        /// undesired IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-        /// security</a>.</p>
-        /// <p>If you are setting namespaced kernel parameters using <code>systemControls</code> for
-        /// the containers in the task, the following will apply to your IPC resource namespace. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
-        /// Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same IPC resources. If <code>none</code> is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the <i>Docker run reference</i>.</p>
+        /// <p>If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p>
+        /// <p>If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task, the following will apply to your IPC resource namespace. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>For tasks that use the <code>host</code> IPC mode, IPC namespace related
-        /// <code>systemControls</code> are not supported.</p>
-        /// </li>
-        /// <li>
-        /// <p>For tasks that use the <code>task</code> IPC mode, IPC namespace related
-        /// <code>systemControls</code> will apply to all containers within a
-        /// task.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code> are not supported.</p> </li>
+        /// <li> <p>For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code> will apply to all containers within a task.</p> </li>
+        /// </ul> <note>
         /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
         /// </note>
         pub fn set_ipc_mode(mut self, input: std::option::Option<crate::model::IpcMode>) -> Self {
@@ -6825,25 +5193,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration details for the App Mesh proxy.</p>
-        /// <p>For tasks hosted on Amazon EC2 instances, the container instances require at least version
-        /// <code>1.26.0</code> of the container agent and at least version
-        /// <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
-        /// configuration. If your container instances are launched from the Amazon ECS-optimized
-        /// AMI version <code>20190301</code> or later, then they contain the required versions of
-        /// the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI versions</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn proxy_configuration(mut self, inp: crate::model::ProxyConfiguration) -> Self {
-            self.inner = self.inner.proxy_configuration(inp);
+        /// <p>For tasks hosted on Amazon EC2 instances, the container instances require at least version <code>1.26.0</code> of the container agent and at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn proxy_configuration(mut self, input: crate::model::ProxyConfiguration) -> Self {
+            self.inner = self.inner.proxy_configuration(input);
             self
         }
         /// <p>The configuration details for the App Mesh proxy.</p>
-        /// <p>For tasks hosted on Amazon EC2 instances, the container instances require at least version
-        /// <code>1.26.0</code> of the container agent and at least version
-        /// <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
-        /// configuration. If your container instances are launched from the Amazon ECS-optimized
-        /// AMI version <code>20190301</code> or later, then they contain the required versions of
-        /// the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI versions</a> in the
-        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For tasks hosted on Amazon EC2 instances, the container instances require at least version <code>1.26.0</code> of the container agent and at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_proxy_configuration(
             mut self,
             input: std::option::Option<crate::model::ProxyConfiguration>,
@@ -6856,11 +5212,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_inference_accelerators`](Self::set_inference_accelerators).
         ///
         /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-        pub fn inference_accelerators(
-            mut self,
-            inp: impl Into<crate::model::InferenceAccelerator>,
-        ) -> Self {
-            self.inner = self.inner.inference_accelerators(inp);
+        pub fn inference_accelerators(mut self, input: crate::model::InferenceAccelerator) -> Self {
+            self.inner = self.inner.inference_accelerators(input);
             self
         }
         /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
@@ -6871,40 +5224,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_accelerators(input);
             self
         }
-        /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to
-        /// expand the total amount of ephemeral storage available, beyond the default amount, for
-        /// tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
-        /// storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-        /// <note>
-        /// <p>This parameter is only supported for tasks hosted on Fargate using
-        /// the following platform versions:</p>
+        /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note>
+        /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Linux platform version <code>1.4.0</code> or later.</p>
-        /// </li>
-        /// <li>
-        /// <p>Windows platform version <code>1.0.0</code> or later.</p>
-        /// </li>
+        /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
+        /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
         /// </ul>
         /// </note>
-        pub fn ephemeral_storage(mut self, inp: crate::model::EphemeralStorage) -> Self {
-            self.inner = self.inner.ephemeral_storage(inp);
+        pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
+            self.inner = self.inner.ephemeral_storage(input);
             self
         }
-        /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to
-        /// expand the total amount of ephemeral storage available, beyond the default amount, for
-        /// tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
-        /// storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-        /// <note>
-        /// <p>This parameter is only supported for tasks hosted on Fargate using
-        /// the following platform versions:</p>
+        /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note>
+        /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Linux platform version <code>1.4.0</code> or later.</p>
-        /// </li>
-        /// <li>
-        /// <p>Windows platform version <code>1.0.0</code> or later.</p>
-        /// </li>
+        /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
+        /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
         /// </ul>
         /// </note>
         pub fn set_ephemeral_storage(
@@ -6914,18 +5249,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ephemeral_storage(input);
             self
         }
-        /// <p>The operating system that your tasks definitions run on. A platform family is
-        /// specified only for tasks using the Fargate launch type. </p>
-        /// <p>When you specify a task definition in a service, this value must match the
-        /// <code>runtimePlatform</code> value of the service.</p>
-        pub fn runtime_platform(mut self, inp: crate::model::RuntimePlatform) -> Self {
-            self.inner = self.inner.runtime_platform(inp);
+        /// <p>The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type. </p>
+        /// <p>When you specify a task definition in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
+        pub fn runtime_platform(mut self, input: crate::model::RuntimePlatform) -> Self {
+            self.inner = self.inner.runtime_platform(input);
             self
         }
-        /// <p>The operating system that your tasks definitions run on. A platform family is
-        /// specified only for tasks using the Fargate launch type. </p>
-        /// <p>When you specify a task definition in a service, this value must match the
-        /// <code>runtimePlatform</code> value of the service.</p>
+        /// <p>The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type. </p>
+        /// <p>When you specify a task definition in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
         pub fn set_runtime_platform(
             mut self,
             input: std::option::Option<crate::model::RuntimePlatform>,
@@ -6937,35 +5268,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RunTask`.
     ///
     /// <p>Starts a new task using the specified task definition.</p>
-    /// <p>You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS places
-    /// tasks using placement constraints and placement strategies. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>Alternatively, you can use <a>StartTask</a> to use your own scheduler or
-    /// place tasks manually on specific container instances.</p>
-    /// <p>The Amazon ECS API follows an eventual consistency model. This is because the distributed
-    /// nature of the system supporting the API. This means that the result of an API command
-    /// you run that affects your Amazon ECS resources might not be immediately visible to all
-    /// subsequent commands you run. Keep this in mind when you carry out an API command that
-    /// immediately follows a previous API command.</p>
+    /// <p>You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS places tasks using placement constraints and placement strategies. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Alternatively, you can use <code>StartTask</code> to use your own scheduler or place tasks manually on specific container instances.</p>
+    /// <p>The Amazon ECS API follows an eventual consistency model. This is because of the distributed nature of the system supporting the API. This means that the result of an API command you run that affects your Amazon ECS resources might not be immediately visible to all subsequent commands you run. Keep this in mind when you carry out an API command that immediately follows a previous API command.</p>
     /// <p>To manage eventual consistency, you can do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Confirm the state of the resource before you run a command to modify it. Run
-    /// the DescribeTasks command using an exponential backoff algorithm to ensure that
-    /// you allow enough time for the previous command to propagate through the system.
-    /// To do this, run the DescribeTasks command repeatedly, starting with a couple of
-    /// seconds of wait time and increasing gradually up to five minutes of wait
-    /// time.</p>
-    /// </li>
-    /// <li>
-    /// <p>Add wait time between subsequent commands, even if the DescribeTasks command
-    /// returns an accurate response. Apply an exponential backoff algorithm starting
-    /// with a couple of seconds of wait time, and increase gradually up to about five
-    /// minutes of wait time.</p>
-    /// </li>
+    /// <li> <p>Confirm the state of the resource before you run a command to modify it. Run the DescribeTasks command using an exponential backoff algorithm to ensure that you allow enough time for the previous command to propagate through the system. To do this, run the DescribeTasks command repeatedly, starting with a couple of seconds of wait time and increasing gradually up to five minutes of wait time.</p> </li>
+    /// <li> <p>Add wait time between subsequent commands, even if the DescribeTasks command returns an accurate response. Apply an exponential backoff algorithm starting with a couple of seconds of wait time, and increase gradually up to about five minutes of wait time.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RunTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7010,10 +5321,10 @@ pub mod fluent_builders {
                 crate::input::RunTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7026,27 +5337,19 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
         ///
         /// <p>The capacity provider strategy to use for the task.</p>
-        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
-        /// <code>launchType</code> is specified, the
-        /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-        /// <p>When you use cluster auto scaling, you must specify
-        /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
         /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
-            self.inner = self.inner.capacity_provider_strategy(inp);
+            self.inner = self.inner.capacity_provider_strategy(input);
             self
         }
         /// <p>The capacity provider strategy to use for the task.</p>
-        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
-        /// <code>launchType</code> is specified, the
-        /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
-        /// <p>When you use cluster auto scaling, you must specify
-        /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
         /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn set_capacity_provider_strategy(
             mut self,
@@ -7055,110 +5358,76 @@ pub mod fluent_builders {
             self.inner = self.inner.set_capacity_provider_strategy(input);
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
-        /// <p>The number of instantiations of the specified task to place on your cluster. You can
-        /// specify up to 10 tasks for each call.</p>
-        pub fn count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.count(inp);
+        /// <p>The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for each call.</p>
+        pub fn count(mut self, input: i32) -> Self {
+            self.inner = self.inner.count(input);
             self
         }
-        /// <p>The number of instantiations of the specified task to place on your cluster. You can
-        /// specify up to 10 tasks for each call.</p>
+        /// <p>The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for each call.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_count(input);
             self
         }
-        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-        /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn enable_ecs_managed_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_ecs_managed_tags(inp);
+        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_ecs_managed_tags(input);
             self
         }
-        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-        /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_ecs_managed_tags(input);
             self
         }
-        /// <p>Determines whether to enable the execute command functionality for the containers in
-        /// this task. If <code>true</code>, this enables execute command functionality on all
-        /// containers in the task.</p>
-        pub fn enable_execute_command(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_execute_command(inp);
+        /// <p>Determines whether to enable the execute command functionality for the containers in this task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
+        pub fn enable_execute_command(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_execute_command(input);
             self
         }
-        /// <p>Determines whether to enable the execute command functionality for the containers in
-        /// this task. If <code>true</code>, this enables execute command functionality on all
-        /// containers in the task.</p>
+        /// <p>Determines whether to enable the execute command functionality for the containers in this task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_execute_command(input);
             self
         }
-        /// <p>The name of the task group to associate with the task. The default value is the family
-        /// name of the task definition (for example, <code>family:my-family-name</code>).</p>
-        pub fn group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(inp);
+        /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, <code>family:my-family-name</code>).</p>
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
-        /// <p>The name of the task group to associate with the task. The default value is the family
-        /// name of the task definition (for example, <code>family:my-family-name</code>).</p>
+        /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, <code>family:my-family-name</code>).</p>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group(input);
             self
         }
-        /// <p>The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
-        /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
-        /// infrastructure.</p>
-        /// <note>
-        /// <p>Fargate Spot infrastructure is available for use but a capacity provider
-        /// strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the
-        /// <i>Amazon ECS User Guide for Fargate</i>.</p>
+        /// <p>The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p> <note>
+        /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
         /// </note>
-        /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
-        /// cluster.</p>
-        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
-        /// virtual machine (VM) capacity registered to your cluster.</p>
-        /// <p>A task can use either a launch type or a capacity provider strategy. If a
-        /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-        /// parameter must be omitted.</p>
-        /// <p>When you use cluster auto scaling, you must specify
-        /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
-        pub fn launch_type(mut self, inp: crate::model::LaunchType) -> Self {
-            self.inner = self.inner.launch_type(inp);
+        /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
+        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
+        /// <p>A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
+        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+        pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
+            self.inner = self.inner.launch_type(input);
             self
         }
-        /// <p>The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
-        /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
-        /// infrastructure.</p>
-        /// <note>
-        /// <p>Fargate Spot infrastructure is available for use but a capacity provider
-        /// strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the
-        /// <i>Amazon ECS User Guide for Fargate</i>.</p>
+        /// <p>The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p> <note>
+        /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
         /// </note>
-        /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
-        /// cluster.</p>
-        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
-        /// virtual machine (VM) capacity registered to your cluster.</p>
-        /// <p>A task can use either a launch type or a capacity provider strategy. If a
-        /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-        /// parameter must be omitted.</p>
-        /// <p>When you use cluster auto scaling, you must specify
-        /// <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+        /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
+        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
+        /// <p>A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
+        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -7166,20 +5435,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_type(input);
             self
         }
-        /// <p>The network configuration for the task. This parameter is required for task
-        /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
-        /// network interface, and it isn't supported for other network modes. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
-        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.inner = self.inner.network_configuration(inp);
+        /// <p>The network configuration for the task. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.inner = self.inner.network_configuration(input);
             self
         }
-        /// <p>The network configuration for the task. This parameter is required for task
-        /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
-        /// network interface, and it isn't supported for other network modes. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
-        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The network configuration for the task. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -7187,26 +5448,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_network_configuration(input);
             self
         }
-        /// <p>A list of container overrides in JSON format that specify the name of a container in
-        /// the specified task definition and the overrides it should receive. You can override the
-        /// default command for a container (that's specified in the task definition or Docker
-        /// image) with a <code>command</code> override. You can also override existing environment
-        /// variables (that are specified in the task definition or Docker image) on a container or
-        /// add new environment variables to it with an <code>environment</code> override.</p>
-        /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON
-        /// formatting characters of the override structure.</p>
-        pub fn overrides(mut self, inp: crate::model::TaskOverride) -> Self {
-            self.inner = self.inner.overrides(inp);
+        /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it should receive. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p>
+        /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
+        pub fn overrides(mut self, input: crate::model::TaskOverride) -> Self {
+            self.inner = self.inner.overrides(input);
             self
         }
-        /// <p>A list of container overrides in JSON format that specify the name of a container in
-        /// the specified task definition and the overrides it should receive. You can override the
-        /// default command for a container (that's specified in the task definition or Docker
-        /// image) with a <code>command</code> override. You can also override existing environment
-        /// variables (that are specified in the task definition or Docker image) on a container or
-        /// add new environment variables to it with an <code>environment</code> override.</p>
-        /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON
-        /// formatting characters of the override structure.</p>
+        /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it should receive. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p>
+        /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
         pub fn set_overrides(
             mut self,
             input: std::option::Option<crate::model::TaskOverride>,
@@ -7218,19 +5467,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
         ///
-        /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
-        /// constraints for each task (including constraints in the task definition and those
-        /// specified at runtime).</p>
-        pub fn placement_constraints(
-            mut self,
-            inp: impl Into<crate::model::PlacementConstraint>,
-        ) -> Self {
-            self.inner = self.inner.placement_constraints(inp);
+        /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task (including constraints in the task definition and those specified at runtime).</p>
+        pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
+            self.inner = self.inner.placement_constraints(input);
             self
         }
-        /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
-        /// constraints for each task (including constraints in the task definition and those
-        /// specified at runtime).</p>
+        /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task (including constraints in the task definition and those specified at runtime).</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
@@ -7242,17 +5484,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
         ///
-        /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
-        /// strategy rules for each task.</p>
-        pub fn placement_strategy(
-            mut self,
-            inp: impl Into<crate::model::PlacementStrategy>,
-        ) -> Self {
-            self.inner = self.inner.placement_strategy(inp);
+        /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.</p>
+        pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
+            self.inner = self.inner.placement_strategy(input);
             self
         }
-        /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
-        /// strategy rules for each task.</p>
+        /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.</p>
         pub fn set_placement_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
@@ -7260,18 +5497,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_placement_strategy(input);
             self
         }
-        /// <p>The platform version the task uses. A platform version is only specified for tasks
-        /// hosted on Fargate. If one isn't specified, the <code>LATEST</code>
-        /// platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
-        /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_version(inp);
+        /// <p>The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_version(input.into());
             self
         }
-        /// <p>The platform version the task uses. A platform version is only specified for tasks
-        /// hosted on Fargate. If one isn't specified, the <code>LATEST</code>
-        /// platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
-        /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7279,23 +5510,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_platform_version(input);
             self
         }
-        /// <p>Specifies whether to propagate the tags from the task definition to the task. If no
-        /// value is specified, the tags aren't propagated. Tags can only be propagated to the task
-        /// during task creation. To add tags to a task after task creation, use the <a>TagResource</a> API action.</p>
-        /// <note>
-        /// <p>An error will be received if you specify the <code>SERVICE</code> option when
-        /// running a task.</p>
+        /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <code>TagResource</code> API action.</p> <note>
+        /// <p>An error will be received if you specify the <code>SERVICE</code> option when running a task.</p>
         /// </note>
-        pub fn propagate_tags(mut self, inp: crate::model::PropagateTags) -> Self {
-            self.inner = self.inner.propagate_tags(inp);
+        pub fn propagate_tags(mut self, input: crate::model::PropagateTags) -> Self {
+            self.inner = self.inner.propagate_tags(input);
             self
         }
-        /// <p>Specifies whether to propagate the tags from the task definition to the task. If no
-        /// value is specified, the tags aren't propagated. Tags can only be propagated to the task
-        /// during task creation. To add tags to a task after task creation, use the <a>TagResource</a> API action.</p>
-        /// <note>
-        /// <p>An error will be received if you specify the <code>SERVICE</code> option when
-        /// running a task.</p>
+        /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <code>TagResource</code> API action.</p> <note>
+        /// <p>An error will be received if you specify the <code>SERVICE</code> option when running a task.</p>
         /// </note>
         pub fn set_propagate_tags(
             mut self,
@@ -7304,38 +5527,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_propagate_tags(input);
             self
         }
-        /// <p>The reference ID to use for the task. The reference ID can have a maximum length of
-        /// 1024 characters.</p>
-        pub fn reference_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reference_id(inp);
+        /// <p>The reference ID to use for the task. The reference ID can have a maximum length of 1024 characters.</p>
+        pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reference_id(input.into());
             self
         }
-        /// <p>The reference ID to use for the task. The reference ID can have a maximum length of
-        /// 1024 characters.</p>
+        /// <p>The reference ID to use for the task. The reference ID can have a maximum length of 1024 characters.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_reference_id(input);
             self
         }
-        /// <p>An optional tag specified when a task is started. For example, if you automatically
-        /// trigger a task to run a batch process job, you could apply a unique identifier for that
-        /// job to your task with the <code>startedBy</code> parameter. You can then identify which
-        /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
-        /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-        /// numbers, hyphens (-), and underscores (_) are allowed.</p>
-        /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
-        /// contains the deployment ID of the service that starts it.</p>
-        pub fn started_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.started_by(inp);
+        /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
+        /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
+        pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.started_by(input.into());
             self
         }
-        /// <p>An optional tag specified when a task is started. For example, if you automatically
-        /// trigger a task to run a batch process job, you could apply a unique identifier for that
-        /// job to your task with the <code>startedBy</code> parameter. You can then identify which
-        /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
-        /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-        /// numbers, hyphens (-), and underscores (_) are allowed.</p>
-        /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
-        /// contains the deployment ID of the service that starts it.</p>
+        /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
+        /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_started_by(input);
             self
@@ -7344,75 +5553,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
-        /// tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
-        /// tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -7421,28 +5586,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run. If a <code>revision</code> isn't specified,
-        /// the latest <code>ACTIVE</code> revision is used.</p>
-        /// <p>The full ARN value must match the value that you specified as the
-        /// <code>Resource</code> of the IAM principal's permissions policy. For example, if the
-        /// <code>Resource</code> is
-        /// arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
-        /// <code>taskDefinition</code> ARN value must be
-        /// <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
+        /// <p>The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's permissions policy. For example, if the <code>Resource</code> is arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the <code>taskDefinition</code> ARN value must be <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
+        pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(input.into());
             self
         }
-        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run. If a <code>revision</code> isn't specified,
-        /// the latest <code>ACTIVE</code> revision is used.</p>
-        /// <p>The full ARN value must match the value that you specified as the
-        /// <code>Resource</code> of the IAM principal's permissions policy. For example, if the
-        /// <code>Resource</code> is
-        /// arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
-        /// <code>taskDefinition</code> ARN value must be
-        /// <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
+        /// <p>The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's permissions policy. For example, if the <code>Resource</code> is arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the <code>taskDefinition</code> ARN value must be <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7453,12 +5604,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartTask`.
     ///
-    /// <p>Starts a new task from the specified task definition on the specified container
-    /// instance or instances.</p>
-    /// <p>Alternatively, you can use <a>RunTask</a> to place tasks for you. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts a new task from the specified task definition on the specified container instance or instances.</p>
+    /// <p>Alternatively, you can use <code>RunTask</code> to place tasks for you. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7503,10 +5651,10 @@ pub mod fluent_builders {
                 crate::input::StartTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7514,14 +5662,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
@@ -7530,14 +5676,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
         ///
-        /// <p>The container instance IDs or full ARN entries for the container instances where you
-        /// would like to place your task. You can specify up to 10 container instances.</p>
-        pub fn container_instances(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instances(inp);
+        /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
+        pub fn container_instances(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instances(input.into());
             self
         }
-        /// <p>The container instance IDs or full ARN entries for the container instances where you
-        /// would like to place your task. You can specify up to 10 container instances.</p>
+        /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
         pub fn set_container_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7545,54 +5689,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_instances(input);
             self
         }
-        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-        /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn enable_ecs_managed_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_ecs_managed_tags(inp);
+        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_ecs_managed_tags(input);
             self
         }
-        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-        /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_ecs_managed_tags(input);
             self
         }
-        /// <p>Whether or not the execute command functionality is enabled for the task. If
-        /// <code>true</code>, this enables execute command functionality on all containers in
-        /// the task.</p>
-        pub fn enable_execute_command(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_execute_command(inp);
+        /// <p>Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
+        pub fn enable_execute_command(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_execute_command(input);
             self
         }
-        /// <p>Whether or not the execute command functionality is enabled for the task. If
-        /// <code>true</code>, this enables execute command functionality on all containers in
-        /// the task.</p>
+        /// <p>Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_execute_command(input);
             self
         }
-        /// <p>The name of the task group to associate with the task. The default value is the family
-        /// name of the task definition (for example, family:my-family-name).</p>
-        pub fn group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(inp);
+        /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, family:my-family-name).</p>
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
-        /// <p>The name of the task group to associate with the task. The default value is the family
-        /// name of the task definition (for example, family:my-family-name).</p>
+        /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, family:my-family-name).</p>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group(input);
             self
         }
-        /// <p>The VPC subnet and security group configuration for tasks that receive their own
-        /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.inner = self.inner.network_configuration(inp);
+        /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.inner = self.inner.network_configuration(input);
             self
         }
-        /// <p>The VPC subnet and security group configuration for tasks that receive their own
-        /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
+        /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -7600,29 +5732,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_network_configuration(input);
             self
         }
-        /// <p>A list of container overrides in JSON format that specify the name of a container in
-        /// the specified task definition and the overrides it receives. You can override the
-        /// default command for a container (that's specified in the task definition or Docker
-        /// image) with a <code>command</code> override. You can also override existing environment
-        /// variables (that are specified in the task definition or Docker image) on a container or
-        /// add new environment variables to it with an <code>environment</code> override.</p>
-        /// <note>
-        /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON
-        /// formatting characters of the override structure.</p>
+        /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note>
+        /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
         /// </note>
-        pub fn overrides(mut self, inp: crate::model::TaskOverride) -> Self {
-            self.inner = self.inner.overrides(inp);
+        pub fn overrides(mut self, input: crate::model::TaskOverride) -> Self {
+            self.inner = self.inner.overrides(input);
             self
         }
-        /// <p>A list of container overrides in JSON format that specify the name of a container in
-        /// the specified task definition and the overrides it receives. You can override the
-        /// default command for a container (that's specified in the task definition or Docker
-        /// image) with a <code>command</code> override. You can also override existing environment
-        /// variables (that are specified in the task definition or Docker image) on a container or
-        /// add new environment variables to it with an <code>environment</code> override.</p>
-        /// <note>
-        /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON
-        /// formatting characters of the override structure.</p>
+        /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note>
+        /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
         /// </note>
         pub fn set_overrides(
             mut self,
@@ -7631,14 +5749,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_overrides(input);
             self
         }
-        /// <p>Specifies whether to propagate the tags from the task definition or the service to the
-        /// task. If no value is specified, the tags aren't propagated.</p>
-        pub fn propagate_tags(mut self, inp: crate::model::PropagateTags) -> Self {
-            self.inner = self.inner.propagate_tags(inp);
+        /// <p>Specifies whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
+        pub fn propagate_tags(mut self, input: crate::model::PropagateTags) -> Self {
+            self.inner = self.inner.propagate_tags(input);
             self
         }
-        /// <p>Specifies whether to propagate the tags from the task definition or the service to the
-        /// task. If no value is specified, the tags aren't propagated.</p>
+        /// <p>Specifies whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
         pub fn set_propagate_tags(
             mut self,
             input: std::option::Option<crate::model::PropagateTags>,
@@ -7647,8 +5763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference ID to use for the task.</p>
-        pub fn reference_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reference_id(inp);
+        pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reference_id(input.into());
             self
         }
         /// <p>The reference ID to use for the task.</p>
@@ -7656,26 +5772,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_reference_id(input);
             self
         }
-        /// <p>An optional tag specified when a task is started. For example, if you automatically
-        /// trigger a task to run a batch process job, you could apply a unique identifier for that
-        /// job to your task with the <code>startedBy</code> parameter. You can then identify which
-        /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
-        /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-        /// numbers, hyphens (-), and underscores (_) are allowed.</p>
-        /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter
-        /// contains the deployment ID of the service that starts it.</p>
-        pub fn started_by(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.started_by(inp);
+        /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
+        /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
+        pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.started_by(input.into());
             self
         }
-        /// <p>An optional tag specified when a task is started. For example, if you automatically
-        /// trigger a task to run a batch process job, you could apply a unique identifier for that
-        /// job to your task with the <code>startedBy</code> parameter. You can then identify which
-        /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
-        /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-        /// numbers, hyphens (-), and underscores (_) are allowed.</p>
-        /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter
-        /// contains the deployment ID of the service that starts it.</p>
+        /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
+        /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_started_by(input);
             self
@@ -7684,75 +5788,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
-        /// tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
-        /// tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -7761,16 +5821,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to start. If a <code>revision</code> isn't specified,
-        /// the latest <code>ACTIVE</code> revision is used.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
+        pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(input.into());
             self
         }
-        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to start. If a <code>revision</code> isn't specified,
-        /// the latest <code>ACTIVE</code> revision is used.</p>
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7782,19 +5838,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopTask`.
     ///
     /// <p>Stops a running task. Any tags associated with the task will be deleted.</p>
-    /// <p>When <a>StopTask</a> is called on a task, the equivalent of <code>docker
-    /// stop</code> is issued to the containers running in the task. This results in a
-    /// <code>SIGTERM</code> value and a default 30-second timeout, after which the
-    /// <code>SIGKILL</code> value is sent and the containers are forcibly stopped. If the
-    /// container handles the <code>SIGTERM</code> value gracefully and exits within 30 seconds
-    /// from receiving it, no <code>SIGKILL</code> value is sent.</p>
-    /// <note>
-    /// <p>The default 30-second timeout can be configured on the Amazon ECS container agent with
-    /// the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>When <code>StopTask</code> is called on a task, the equivalent of <code>docker stop</code> is issued to the containers running in the task. This results in a <code>SIGTERM</code> value and a default 30-second timeout, after which the <code>SIGKILL</code> value is sent and the containers are forcibly stopped. If the container handles the <code>SIGTERM</code> value gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code> value is sent.</p> <note>
+    /// <p>The default 30-second timeout can be configured on the Amazon ECS container agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7839,10 +5886,10 @@ pub mod fluent_builders {
                 crate::input::StopTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7850,21 +5897,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
         /// <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
-        pub fn task(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task(inp);
+        pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task(input.into());
             self
         }
         /// <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
@@ -7872,18 +5917,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task(input);
             self
         }
-        /// <p>An optional message specified when a task is stopped. For example, if you're using a
-        /// custom scheduler, you can use this parameter to specify the reason for stopping the task
-        /// here, and the message appears in subsequent <a>DescribeTasks</a> API
-        /// operations on this task. Up to 255 characters are allowed in this message.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <code>DescribeTasks</code> API operations on this task. Up to 255 characters are allowed in this message.</p>
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
-        /// <p>An optional message specified when a task is stopped. For example, if you're using a
-        /// custom scheduler, you can use this parameter to specify the reason for stopping the task
-        /// here, and the message appears in subsequent <a>DescribeTasks</a> API
-        /// operations on this task. Up to 255 characters are allowed in this message.</p>
+        /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <code>DescribeTasks</code> API operations on this task. Up to 255 characters are allowed in this message.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_reason(input);
             self
@@ -7895,7 +5934,7 @@ pub mod fluent_builders {
     /// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
     /// </note>
     /// <p>Sent to acknowledge that an attachment changed states.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SubmitAttachmentStateChanges<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7940,10 +5979,10 @@ pub mod fluent_builders {
                 crate::input::SubmitAttachmentStateChangesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7951,14 +5990,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full ARN of the cluster that hosts the container instance the
-        /// attachment belongs to.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full ARN of the cluster that hosts the container instance the attachment belongs to.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full ARN of the cluster that hosts the container instance the
-        /// attachment belongs to.</p>
+        /// <p>The short name or full ARN of the cluster that hosts the container instance the attachment belongs to.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
@@ -7968,8 +6005,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
         /// <p>Any attachments associated with the state change request.</p>
-        pub fn attachments(mut self, inp: impl Into<crate::model::AttachmentStateChange>) -> Self {
-            self.inner = self.inner.attachments(inp);
+        pub fn attachments(mut self, input: crate::model::AttachmentStateChange) -> Self {
+            self.inner = self.inner.attachments(input);
             self
         }
         /// <p>Any attachments associated with the state change request.</p>
@@ -7987,7 +6024,7 @@ pub mod fluent_builders {
     /// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
     /// </note>
     /// <p>Sent to acknowledge that a container changed states.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SubmitContainerStateChange<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8032,10 +6069,10 @@ pub mod fluent_builders {
                 crate::input::SubmitContainerStateChangeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8044,8 +6081,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The short name or full ARN of the cluster that hosts the container.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
         /// <p>The short name or full ARN of the cluster that hosts the container.</p>
@@ -8054,8 +6091,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
-        pub fn task(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task(inp);
+        pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task(input.into());
             self
         }
         /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
@@ -8064,8 +6101,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the container.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container.</p>
@@ -8077,8 +6114,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Docker container.</p>
-        pub fn runtime_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.runtime_id(inp);
+        pub fn runtime_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.runtime_id(input.into());
             self
         }
         /// <p>The ID of the Docker container.</p>
@@ -8087,8 +6124,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the state change request.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(input.into());
             self
         }
         /// <p>The status of the state change request.</p>
@@ -8097,8 +6134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The exit code that's returned for the state change request.</p>
-        pub fn exit_code(mut self, inp: i32) -> Self {
-            self.inner = self.inner.exit_code(inp);
+        pub fn exit_code(mut self, input: i32) -> Self {
+            self.inner = self.inner.exit_code(input);
             self
         }
         /// <p>The exit code that's returned for the state change request.</p>
@@ -8107,8 +6144,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason for the state change request.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>The reason for the state change request.</p>
@@ -8121,8 +6158,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_network_bindings`](Self::set_network_bindings).
         ///
         /// <p>The network bindings of the container.</p>
-        pub fn network_bindings(mut self, inp: impl Into<crate::model::NetworkBinding>) -> Self {
-            self.inner = self.inner.network_bindings(inp);
+        pub fn network_bindings(mut self, input: crate::model::NetworkBinding) -> Self {
+            self.inner = self.inner.network_bindings(input);
             self
         }
         /// <p>The network bindings of the container.</p>
@@ -8140,7 +6177,7 @@ pub mod fluent_builders {
     /// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
     /// </note>
     /// <p>Sent to acknowledge that a task changed states.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SubmitTaskStateChange<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8185,10 +6222,10 @@ pub mod fluent_builders {
                 crate::input::SubmitTaskStateChangeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8197,8 +6234,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
@@ -8207,8 +6244,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The task ID or full ARN of the task in the state change request.</p>
-        pub fn task(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task(inp);
+        pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task(input.into());
             self
         }
         /// <p>The task ID or full ARN of the task in the state change request.</p>
@@ -8217,8 +6254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the state change request.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(input.into());
             self
         }
         /// <p>The status of the state change request.</p>
@@ -8227,8 +6264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason for the state change request.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>The reason for the state change request.</p>
@@ -8241,8 +6278,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_containers`](Self::set_containers).
         ///
         /// <p>Any containers that's associated with the state change request.</p>
-        pub fn containers(mut self, inp: impl Into<crate::model::ContainerStateChange>) -> Self {
-            self.inner = self.inner.containers(inp);
+        pub fn containers(mut self, input: crate::model::ContainerStateChange) -> Self {
+            self.inner = self.inner.containers(input);
             self
         }
         /// <p>Any containers that's associated with the state change request.</p>
@@ -8258,8 +6295,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
         /// <p>Any attachments associated with the state change request.</p>
-        pub fn attachments(mut self, inp: impl Into<crate::model::AttachmentStateChange>) -> Self {
-            self.inner = self.inner.attachments(inp);
+        pub fn attachments(mut self, input: crate::model::AttachmentStateChange) -> Self {
+            self.inner = self.inner.attachments(input);
             self
         }
         /// <p>Any attachments associated with the state change request.</p>
@@ -8275,11 +6312,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_managed_agents`](Self::set_managed_agents).
         ///
         /// <p>The details for the managed agent that's associated with the task.</p>
-        pub fn managed_agents(
-            mut self,
-            inp: impl Into<crate::model::ManagedAgentStateChange>,
-        ) -> Self {
-            self.inner = self.inner.managed_agents(inp);
+        pub fn managed_agents(mut self, input: crate::model::ManagedAgentStateChange) -> Self {
+            self.inner = self.inner.managed_agents(input);
             self
         }
         /// <p>The details for the managed agent that's associated with the task.</p>
@@ -8291,8 +6325,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Unix timestamp for the time when the container image pull started.</p>
-        pub fn pull_started_at(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.pull_started_at(inp);
+        pub fn pull_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.pull_started_at(input);
             self
         }
         /// <p>The Unix timestamp for the time when the container image pull started.</p>
@@ -8304,8 +6338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Unix timestamp for the time when the container image pull completed.</p>
-        pub fn pull_stopped_at(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.pull_stopped_at(inp);
+        pub fn pull_stopped_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.pull_stopped_at(input);
             self
         }
         /// <p>The Unix timestamp for the time when the container image pull completed.</p>
@@ -8317,8 +6351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Unix timestamp for the time when the task execution stopped.</p>
-        pub fn execution_stopped_at(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.execution_stopped_at(inp);
+        pub fn execution_stopped_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.execution_stopped_at(input);
             self
         }
         /// <p>The Unix timestamp for the time when the task execution stopped.</p>
@@ -8332,11 +6366,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Associates the specified tags to a resource with the specified
-    /// <code>resourceArn</code>. If existing tags on a resource aren't specified in the
-    /// request parameters, they aren't changed. When a resource is deleted, the tags that are
-    /// associated with that resource are deleted as well.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags that are associated with that resource are deleted as well.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8381,10 +6412,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8392,16 +6423,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are
-        /// Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
-        /// instances.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are
-        /// Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
-        /// instances.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -8413,70 +6440,28 @@ pub mod fluent_builders {
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -8489,7 +6474,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes specified tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8534,10 +6519,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8545,16 +6530,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources
-        /// are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
-        /// instances.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources
-        /// are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
-        /// instances.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -8564,8 +6545,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to be removed.</p>
@@ -8580,7 +6561,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCapacityProvider`.
     ///
     /// <p>Modifies the parameters for a capacity provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCapacityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8625,10 +6606,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCapacityProviderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8637,8 +6618,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the capacity provider to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the capacity provider to update.</p>
@@ -8646,17 +6627,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>An object that represent the parameters to update for the Auto Scaling group capacity
-        /// provider.</p>
+        /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
         pub fn auto_scaling_group_provider(
             mut self,
-            inp: crate::model::AutoScalingGroupProviderUpdate,
+            input: crate::model::AutoScalingGroupProviderUpdate,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_group_provider(inp);
+            self.inner = self.inner.auto_scaling_group_provider(input);
             self
         }
-        /// <p>An object that represent the parameters to update for the Auto Scaling group capacity
-        /// provider.</p>
+        /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
         pub fn set_auto_scaling_group_provider(
             mut self,
             input: std::option::Option<crate::model::AutoScalingGroupProviderUpdate>,
@@ -8668,7 +6647,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCluster`.
     ///
     /// <p>Updates the cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8713,10 +6692,10 @@ pub mod fluent_builders {
                 crate::input::UpdateClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8725,8 +6704,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to modify the settings for.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
         /// <p>The name of the cluster to modify the settings for.</p>
@@ -8739,8 +6718,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_settings`](Self::set_settings).
         ///
         /// <p>The cluster settings for your cluster.</p>
-        pub fn settings(mut self, inp: impl Into<crate::model::ClusterSetting>) -> Self {
-            self.inner = self.inner.settings(inp);
+        pub fn settings(mut self, input: crate::model::ClusterSetting) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// <p>The cluster settings for your cluster.</p>
@@ -8752,8 +6731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The execute command configuration for the cluster.</p>
-        pub fn configuration(mut self, inp: crate::model::ClusterConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        pub fn configuration(mut self, input: crate::model::ClusterConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>The execute command configuration for the cluster.</p>
@@ -8768,7 +6747,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateClusterSettings`.
     ///
     /// <p>Modifies the settings to use for a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateClusterSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8813,10 +6792,10 @@ pub mod fluent_builders {
                 crate::input::UpdateClusterSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8825,8 +6804,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to modify the settings for.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
         /// <p>The name of the cluster to modify the settings for.</p>
@@ -8838,18 +6817,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_settings`](Self::set_settings).
         ///
-        /// <p>The setting to use by default for a cluster. This parameter is used to enable CloudWatch
-        /// Container Insights for a cluster. If this value is specified, it overrides the
-        /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-        /// <a>PutAccountSettingDefault</a>.</p>
-        pub fn settings(mut self, inp: impl Into<crate::model::ClusterSetting>) -> Self {
-            self.inner = self.inner.settings(inp);
+        /// <p>The setting to use by default for a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p>
+        pub fn settings(mut self, input: crate::model::ClusterSetting) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
-        /// <p>The setting to use by default for a cluster. This parameter is used to enable CloudWatch
-        /// Container Insights for a cluster. If this value is specified, it overrides the
-        /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-        /// <a>PutAccountSettingDefault</a>.</p>
+        /// <p>The setting to use by default for a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterSetting>>,
@@ -8860,23 +6833,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateContainerAgent`.
     ///
-    /// <p>Updates the Amazon ECS container agent on a specified container instance. Updating the
-    /// Amazon ECS container agent doesn't interrupt running tasks or services on the container
-    /// instance. The process for updating the agent differs depending on whether your container
-    /// instance was launched with the Amazon ECS-optimized AMI or another operating system.</p>
-    /// <note>
-    /// <p>The <code>UpdateContainerAgent</code> API isn't supported for container instances
-    /// using the Amazon ECS-optimized Amazon Linux 2 (arm64) AMI. To update the container agent,
-    /// you can update the <code>ecs-init</code> package. This updates the agent. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating the
-    /// Amazon ECS container agent</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Updates the Amazon ECS container agent on a specified container instance. Updating the Amazon ECS container agent doesn't interrupt running tasks or services on the container instance. The process for updating the agent differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another operating system.</p> <note>
+    /// <p>The <code>UpdateContainerAgent</code> API isn't supported for container instances using the Amazon ECS-optimized Amazon Linux 2 (arm64) AMI. To update the container agent, you can update the <code>ecs-init</code> package. This updates the agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    /// <p>The <code>UpdateContainerAgent</code> API requires an Amazon ECS-optimized AMI or Amazon
-    /// Linux AMI with the <code>ecs-init</code> service installed and running. For help
-    /// updating the Amazon ECS container agent on other operating systems, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually updating the Amazon ECS container agent</a> in the
-    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The <code>UpdateContainerAgent</code> API requires an Amazon ECS-optimized AMI or Amazon Linux AMI with the <code>ecs-init</code> service installed and running. For help updating the Amazon ECS container agent on other operating systems, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually updating the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContainerAgent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8921,10 +6882,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContainerAgentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8932,26 +6893,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is
-        /// running on. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is
-        /// running on. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
-        /// <p>The container instance ID or full ARN entries for the container instance where you
-        /// would like to update the Amazon ECS container agent.</p>
-        pub fn container_instance(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instance(inp);
+        /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
+        pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instance(input.into());
             self
         }
-        /// <p>The container instance ID or full ARN entries for the container instance where you
-        /// would like to update the Amazon ECS container agent.</p>
+        /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
         pub fn set_container_instance(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8963,55 +6920,19 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContainerInstancesState`.
     ///
     /// <p>Modifies the status of an Amazon ECS container instance.</p>
-    /// <p>Once a container instance has reached an <code>ACTIVE</code> state, you can change the
-    /// status of a container instance to <code>DRAINING</code> to manually remove an instance
-    /// from a cluster, for example to perform system updates, update the Docker daemon, or
-    /// scale down the cluster size.</p>
-    /// <important>
-    /// <p>A container instance can't be changed to <code>DRAINING</code> until it has
-    /// reached an <code>ACTIVE</code> status. If the instance is in any other status, an
-    /// error will be received.</p>
+    /// <p>Once a container instance has reached an <code>ACTIVE</code> state, you can change the status of a container instance to <code>DRAINING</code> to manually remove an instance from a cluster, for example to perform system updates, update the Docker daemon, or scale down the cluster size.</p> <important>
+    /// <p>A container instance can't be changed to <code>DRAINING</code> until it has reached an <code>ACTIVE</code> status. If the instance is in any other status, an error will be received.</p>
     /// </important>
-    /// <p>When you set a container instance to <code>DRAINING</code>, Amazon ECS prevents new tasks
-    /// from being scheduled for placement on the container instance and replacement service
-    /// tasks are started on other container instances in the cluster if the resources are
-    /// available. Service tasks on the container instance that are in the <code>PENDING</code>
-    /// state are stopped immediately.</p>
-    /// <p>Service tasks on the container instance that are in the <code>RUNNING</code> state are
-    /// stopped and replaced according to the service's deployment configuration parameters,
-    /// <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. You can change
-    /// the deployment configuration of your service using <a>UpdateService</a>.</p>
+    /// <p>When you set a container instance to <code>DRAINING</code>, Amazon ECS prevents new tasks from being scheduled for placement on the container instance and replacement service tasks are started on other container instances in the cluster if the resources are available. Service tasks on the container instance that are in the <code>PENDING</code> state are stopped immediately.</p>
+    /// <p>Service tasks on the container instance that are in the <code>RUNNING</code> state are stopped and replaced according to the service's deployment configuration parameters, <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. You can change the deployment configuration of your service using <code>UpdateService</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
-    /// <code>desiredCount</code> temporarily during task replacement. For example,
-    /// <code>desiredCount</code> is four tasks, a minimum of 50% allows the
-    /// scheduler to stop two existing tasks before starting two new tasks. If the
-    /// minimum is 100%, the service scheduler can't remove existing tasks until the
-    /// replacement tasks are considered healthy. Tasks for services that do not use a
-    /// load balancer are considered healthy if they're in the <code>RUNNING</code>
-    /// state. Tasks for services that use a load balancer are considered healthy if
-    /// they're in the <code>RUNNING</code> state and the container instance they're
-    /// hosted on is reported as healthy by the load balancer.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>maximumPercent</code> parameter represents an upper limit on the
-    /// number of running tasks during task replacement. You can use this to define the
-    /// replacement batch size. For example, if <code>desiredCount</code> is four tasks,
-    /// a maximum of 200% starts four new tasks before stopping the four tasks to be
-    /// drained, provided that the cluster resources required to do this are available.
-    /// If the maximum is 100%, then replacement tasks can't start until the draining
-    /// tasks have stopped.</p>
-    /// </li>
+    /// <li> <p>If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily during task replacement. For example, <code>desiredCount</code> is four tasks, a minimum of 50% allows the scheduler to stop two existing tasks before starting two new tasks. If the minimum is 100%, the service scheduler can't remove existing tasks until the replacement tasks are considered healthy. Tasks for services that do not use a load balancer are considered healthy if they're in the <code>RUNNING</code> state. Tasks for services that use a load balancer are considered healthy if they're in the <code>RUNNING</code> state and the container instance they're hosted on is reported as healthy by the load balancer.</p> </li>
+    /// <li> <p>The <code>maximumPercent</code> parameter represents an upper limit on the number of running tasks during task replacement. You can use this to define the replacement batch size. For example, if <code>desiredCount</code> is four tasks, a maximum of 200% starts four new tasks before stopping the four tasks to be drained, provided that the cluster resources required to do this are available. If the maximum is 100%, then replacement tasks can't start until the draining tasks have stopped.</p> </li>
     /// </ul>
-    /// <p>Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service
-    /// aren't affected. You must wait for them to finish or stop them manually.</p>
-    /// <p>A container instance has completed draining when it has no more <code>RUNNING</code>
-    /// tasks. You can verify this using <a>ListTasks</a>.</p>
-    /// <p>When a container instance has been drained, you can set a container instance to
-    /// <code>ACTIVE</code> status and once it has reached that status the Amazon ECS scheduler
-    /// can begin scheduling tasks on the instance again.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service aren't affected. You must wait for them to finish or stop them manually.</p>
+    /// <p>A container instance has completed draining when it has no more <code>RUNNING</code> tasks. You can verify this using <code>ListTasks</code>.</p>
+    /// <p>When a container instance has been drained, you can set a container instance to <code>ACTIVE</code> status and once it has reached that status the Amazon ECS scheduler can begin scheduling tasks on the instance again.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContainerInstancesState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9056,10 +6977,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContainerInstancesStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9067,14 +6988,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to
-        /// update. If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to update. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to
-        /// update. If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to update. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
@@ -9083,12 +7002,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
         ///
-        /// <p>A list of container instance IDs or full ARN entries.</p>
-        pub fn container_instances(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_instances(inp);
+        /// <p>A list of up to 10 container instance IDs or full ARN entries.</p>
+        pub fn container_instances(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_instances(input.into());
             self
         }
-        /// <p>A list of container instance IDs or full ARN entries.</p>
+        /// <p>A list of up to 10 container instance IDs or full ARN entries.</p>
         pub fn set_container_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9096,22 +7015,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_instances(input);
             self
         }
-        /// <p>The container instance state to update the container instance with. The only valid
-        /// values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container
-        /// instance can only be updated to <code>DRAINING</code> status once it has reached an
-        /// <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>,
-        /// <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can
-        /// describe the container instance but can't update the container instance state.</p>
-        pub fn status(mut self, inp: crate::model::ContainerInstanceStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
+        pub fn status(mut self, input: crate::model::ContainerInstanceStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        /// <p>The container instance state to update the container instance with. The only valid
-        /// values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container
-        /// instance can only be updated to <code>DRAINING</code> status once it has reached an
-        /// <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>,
-        /// <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can
-        /// describe the container instance but can't update the container instance state.</p>
+        /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ContainerInstanceStatus>,
@@ -9123,115 +7032,37 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateService`.
     ///
     /// <important>
-    /// <p>Updating the task placement strategies and constraints on an Amazon ECS service remains
-    /// in preview and is a Beta Service as defined by and subject to the Beta Service
-    /// Participation Service Terms located at <a href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta Terms
-    /// apply to your participation in this preview.</p>
+    /// <p>Updating the task placement strategies and constraints on an Amazon ECS service remains in preview and is a Beta Service as defined by and subject to the Beta Service Participation Service Terms located at <a href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta Terms apply to your participation in this preview.</p>
     /// </important>
     /// <p>Modifies the parameters of a service.</p>
-    /// <p>For services using the rolling update (<code>ECS</code>) deployment controller, the
-    /// desired count, deployment configuration, network configuration, task placement
-    /// constraints and strategies, or task definition used can be updated.</p>
-    /// <p>For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
-    /// only the desired count, deployment configuration, task placement constraints and
-    /// strategies, and health check grace period can be updated using this API. If the network
-    /// configuration, platform version, or task definition need to be updated, a new CodeDeploy
-    /// deployment is created. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a> in the <i>CodeDeploy API Reference</i>.</p>
-    /// <p>For services using an external deployment controller, you can update only the desired
-    /// count, task placement constraints and strategies, and health check grace period using
-    /// this API. If the launch type, load balancer, network configuration, platform version, or
-    /// task definition need to be updated, create a new task set. For more information, see
-    /// <a>CreateTaskSet</a>.</p>
-    /// <p>You can add to or subtract from the number of instantiations of a task definition in a
-    /// service by specifying the cluster that the service is running in and a new
-    /// <code>desiredCount</code> parameter.</p>
-    /// <p>If you have updated the Docker image of your application, you can create a new task
-    /// definition with that image and deploy it to your service. The service scheduler uses the
-    /// minimum healthy percent and maximum percent parameters (in the service's deployment
-    /// configuration) to determine the deployment strategy.</p>
-    /// <note>
-    /// <p>If your updated Docker image uses the same tag as what is in the existing task
-    /// definition for your service (for example, <code>my_image:latest</code>), you don't
-    /// need to create a new revision of your task definition. You can update the service
-    /// using the <code>forceNewDeployment</code> option. The new tasks launched by the
-    /// deployment pull the current image/tag combination from your repository when they
-    /// start.</p>
+    /// <p>For services using the rolling update (<code>ECS</code>) deployment controller, the desired count, deployment configuration, network configuration, task placement constraints and strategies, or task definition used can be updated.</p>
+    /// <p>For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller, only the desired count, deployment configuration, task placement constraints and strategies, and health check grace period can be updated using this API. If the network configuration, platform version, or task definition need to be updated, a new CodeDeploy deployment is created. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a> in the <i>CodeDeploy API Reference</i>.</p>
+    /// <p>For services using an external deployment controller, you can update only the desired count, task placement constraints and strategies, and health check grace period using this API. If the launch type, load balancer, network configuration, platform version, or task definition need to be updated, create a new task set. For more information, see <code>CreateTaskSet</code>.</p>
+    /// <p>You can add to or subtract from the number of instantiations of a task definition in a service by specifying the cluster that the service is running in and a new <code>desiredCount</code> parameter.</p>
+    /// <p>If you have updated the Docker image of your application, you can create a new task definition with that image and deploy it to your service. The service scheduler uses the minimum healthy percent and maximum percent parameters (in the service's deployment configuration) to determine the deployment strategy.</p> <note>
+    /// <p>If your updated Docker image uses the same tag as what is in the existing task definition for your service (for example, <code>my_image:latest</code>), you don't need to create a new revision of your task definition. You can update the service using the <code>forceNewDeployment</code> option. The new tasks launched by the deployment pull the current image/tag combination from your repository when they start.</p>
     /// </note>
-    /// <p>You can also update the deployment configuration of a service. When a deployment is
-    /// triggered by updating the task definition of a service, the service scheduler uses the
-    /// deployment configuration parameters, <code>minimumHealthyPercent</code> and
-    /// <code>maximumPercent</code>, to determine the deployment strategy.</p>
+    /// <p>You can also update the deployment configuration of a service. When a deployment is triggered by updating the task definition of a service, the service scheduler uses the deployment configuration parameters, <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine the deployment strategy.</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
-    /// <code>desiredCount</code> temporarily during a deployment. For example, if
-    /// <code>desiredCount</code> is four tasks, a minimum of 50% allows the
-    /// scheduler to stop two existing tasks before starting two new tasks. Tasks for
-    /// services that don't use a load balancer are considered healthy if they're in the
-    /// <code>RUNNING</code> state. Tasks for services that use a load balancer are
-    /// considered healthy if they're in the <code>RUNNING</code> state and the
-    /// container instance they're hosted on is reported as healthy by the load
-    /// balancer.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>maximumPercent</code> parameter represents an upper limit on the
-    /// number of running tasks during a deployment. You can use it to define the
-    /// deployment batch size. For example, if <code>desiredCount</code> is four tasks,
-    /// a maximum of 200% starts four new tasks before stopping the four older tasks
-    /// (provided that the cluster resources required to do this are available).</p>
-    /// </li>
+    /// <li> <p>If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily during a deployment. For example, if <code>desiredCount</code> is four tasks, a minimum of 50% allows the scheduler to stop two existing tasks before starting two new tasks. Tasks for services that don't use a load balancer are considered healthy if they're in the <code>RUNNING</code> state. Tasks for services that use a load balancer are considered healthy if they're in the <code>RUNNING</code> state and the container instance they're hosted on is reported as healthy by the load balancer.</p> </li>
+    /// <li> <p>The <code>maximumPercent</code> parameter represents an upper limit on the number of running tasks during a deployment. You can use it to define the deployment batch size. For example, if <code>desiredCount</code> is four tasks, a maximum of 200% starts four new tasks before stopping the four older tasks (provided that the cluster resources required to do this are available).</p> </li>
     /// </ul>
-    /// <p>When <a>UpdateService</a> stops a task during a deployment, the equivalent
-    /// of <code>docker stop</code> is issued to the containers running in the task. This
-    /// results in a <code>SIGTERM</code> and a 30-second timeout. After this,
-    /// <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the
-    /// container handles the <code>SIGTERM</code> gracefully and exits within 30 seconds from
-    /// receiving it, no <code>SIGKILL</code> is sent.</p>
-    /// <p>When the service scheduler launches new tasks, it determines task placement in your
-    /// cluster with the following logic.</p>
+    /// <p>When <code>UpdateService</code> stops a task during a deployment, the equivalent of <code>docker stop</code> is issued to the containers running in the task. This results in a <code>SIGTERM</code> and a 30-second timeout. After this, <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the container handles the <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.</p>
+    /// <p>When the service scheduler launches new tasks, it determines task placement in your cluster with the following logic.</p>
     /// <ul>
-    /// <li>
-    /// <p>Determine which of the container instances in your cluster can support your
-    /// service's task definition. For example, they have the required CPU, memory,
-    /// ports, and container instance attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>By default, the service scheduler attempts to balance tasks across
-    /// Availability Zones in this manner even though you can choose a different
-    /// placement strategy.</p>
+    /// <li> <p>Determine which of the container instances in your cluster can support your service's task definition. For example, they have the required CPU, memory, ports, and container instance attributes.</p> </li>
+    /// <li> <p>By default, the service scheduler attempts to balance tasks across Availability Zones in this manner even though you can choose a different placement strategy.</p>
     /// <ul>
-    /// <li>
-    /// <p>Sort the valid container instances by the fewest number of running
-    /// tasks for this service in the same Availability Zone as the instance.
-    /// For example, if zone A has one running service task and zones B and C
-    /// each have zero, valid container instances in either zone B or C are
-    /// considered optimal for placement.</p>
-    /// </li>
-    /// <li>
-    /// <p>Place the new service task on a valid container instance in an optimal
-    /// Availability Zone (based on the previous steps), favoring container
-    /// instances with the fewest number of running tasks for this
-    /// service.</p>
-    /// </li>
+    /// <li> <p>Sort the valid container instances by the fewest number of running tasks for this service in the same Availability Zone as the instance. For example, if zone A has one running service task and zones B and C each have zero, valid container instances in either zone B or C are considered optimal for placement.</p> </li>
+    /// <li> <p>Place the new service task on a valid container instance in an optimal Availability Zone (based on the previous steps), favoring container instances with the fewest number of running tasks for this service.</p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// </ul>
-    /// <p>When the service scheduler stops running tasks, it attempts to maintain balance across
-    /// the Availability Zones in your cluster using the following logic: </p>
+    /// <p>When the service scheduler stops running tasks, it attempts to maintain balance across the Availability Zones in your cluster using the following logic: </p>
     /// <ul>
-    /// <li>
-    /// <p>Sort the container instances by the largest number of running tasks for this
-    /// service in the same Availability Zone as the instance. For example, if zone A
-    /// has one running service task and zones B and C each have two, container
-    /// instances in either zone B or C are considered optimal for termination.</p>
-    /// </li>
-    /// <li>
-    /// <p>Stop the task on a container instance in an optimal Availability Zone (based
-    /// on the previous steps), favoring container instances with the largest number of
-    /// running tasks for this service.</p>
-    /// </li>
+    /// <li> <p>Sort the container instances by the largest number of running tasks for this service in the same Availability Zone as the instance. For example, if zone A has one running service task and zones B and C each have two, container instances in either zone B or C are considered optimal for termination.</p> </li>
+    /// <li> <p>Stop the task on a container instance in an optimal Availability Zone (based on the previous steps), favoring container instances with the largest number of running tasks for this service.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9276,10 +7107,10 @@ pub mod fluent_builders {
                 crate::input::UpdateServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9287,21 +7118,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify a cluster, the default cluster is assumed.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on.
-        /// If you do not specify a cluster, the default cluster is assumed.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
         /// <p>The name of the service to update.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(input.into());
             self
         }
         /// <p>The name of the service to update.</p>
@@ -9309,32 +7138,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service(input);
             self
         }
-        /// <p>The number of instantiations of the task to place and keep running in your
-        /// service.</p>
-        pub fn desired_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.desired_count(inp);
+        /// <p>The number of instantiations of the task to place and keep running in your service.</p>
+        pub fn desired_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.desired_count(input);
             self
         }
-        /// <p>The number of instantiations of the task to place and keep running in your
-        /// service.</p>
+        /// <p>The number of instantiations of the task to place and keep running in your service.</p>
         pub fn set_desired_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_desired_count(input);
             self
         }
-        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run in your service. If a <code>revision</code> is
-        /// not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task
-        /// definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of
-        /// the task definition and then stops an old task after the new version is running.</p>
-        pub fn task_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_definition(inp);
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</p>
+        pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_definition(input.into());
             self
         }
-        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run in your service. If a <code>revision</code> is
-        /// not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task
-        /// definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of
-        /// the task definition and then stops an old task after the new version is running.</p>
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9347,53 +7166,25 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
         ///
         /// <p>The capacity provider strategy to update the service to use.</p>
-        /// <p>if the service uses the default capacity provider strategy for the cluster, the
-        /// service can be updated to use one or more capacity providers as opposed to the default
-        /// capacity provider strategy. However, when a service is using a capacity provider
-        /// strategy that's not the default capacity provider strategy, the service can't be updated
-        /// to use the cluster's default capacity provider strategy.</p>
-        /// <p>A capacity provider strategy consists of one or more capacity providers along with the
-        /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-        /// must be associated with the cluster to be used in a capacity provider strategy. The
-        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-        /// provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-        /// <code>UPDATING</code> status can be used.</p>
-        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be
-        /// used.</p>
-        /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
-        /// list of available capacity providers for a cluster after the cluster is created.</p>
+        /// <p>if the service uses the default capacity provider strategy for the cluster, the service can be updated to use one or more capacity providers as opposed to the default capacity provider strategy. However, when a service is using a capacity provider strategy that's not the default capacity provider strategy, the service can't be updated to use the cluster's default capacity provider strategy.</p>
+        /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
+        /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
         /// <p></p>
         pub fn capacity_provider_strategy(
             mut self,
-            inp: impl Into<crate::model::CapacityProviderStrategyItem>,
+            input: crate::model::CapacityProviderStrategyItem,
         ) -> Self {
-            self.inner = self.inner.capacity_provider_strategy(inp);
+            self.inner = self.inner.capacity_provider_strategy(input);
             self
         }
         /// <p>The capacity provider strategy to update the service to use.</p>
-        /// <p>if the service uses the default capacity provider strategy for the cluster, the
-        /// service can be updated to use one or more capacity providers as opposed to the default
-        /// capacity provider strategy. However, when a service is using a capacity provider
-        /// strategy that's not the default capacity provider strategy, the service can't be updated
-        /// to use the cluster's default capacity provider strategy.</p>
-        /// <p>A capacity provider strategy consists of one or more capacity providers along with the
-        /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-        /// must be associated with the cluster to be used in a capacity provider strategy. The
-        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-        /// provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-        /// <code>UPDATING</code> status can be used.</p>
-        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
-        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
-        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
-        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
-        /// available to all accounts and only need to be associated with a cluster to be
-        /// used.</p>
-        /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
-        /// list of available capacity providers for a cluster after the cluster is created.</p>
+        /// <p>if the service uses the default capacity provider strategy for the cluster, the service can be updated to use one or more capacity providers as opposed to the default capacity provider strategy. However, when a service is using a capacity provider strategy that's not the default capacity provider strategy, the service can't be updated to use the cluster's default capacity provider strategy.</p>
+        /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
+        /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
         /// <p></p>
         pub fn set_capacity_provider_strategy(
             mut self,
@@ -9402,17 +7193,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_capacity_provider_strategy(input);
             self
         }
-        /// <p>Optional deployment parameters that control how many tasks run during the deployment
-        /// and the ordering of stopping and starting tasks.</p>
+        /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
         pub fn deployment_configuration(
             mut self,
-            inp: crate::model::DeploymentConfiguration,
+            input: crate::model::DeploymentConfiguration,
         ) -> Self {
-            self.inner = self.inner.deployment_configuration(inp);
+            self.inner = self.inner.deployment_configuration(input);
             self
         }
-        /// <p>Optional deployment parameters that control how many tasks run during the deployment
-        /// and the ordering of stopping and starting tasks.</p>
+        /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
         pub fn set_deployment_configuration(
             mut self,
             input: std::option::Option<crate::model::DeploymentConfiguration>,
@@ -9421,8 +7210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object representing the network configuration for the service.</p>
-        pub fn network_configuration(mut self, inp: crate::model::NetworkConfiguration) -> Self {
-            self.inner = self.inner.network_configuration(inp);
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.inner = self.inner.network_configuration(input);
             self
         }
         /// <p>An object representing the network configuration for the service.</p>
@@ -9437,27 +7226,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
         ///
-        /// <p>An array of task placement constraint objects to update the service to use. If no
-        /// value is specified, the existing placement constraints for the service will remain
-        /// unchanged. If this value is specified, it will override any existing placement
-        /// constraints defined for the service. To remove all existing placement constraints,
-        /// specify an empty array.</p>
-        /// <p>You can specify a maximum of 10 constraints for each task. This limit includes
-        /// constraints in the task definition and those specified at runtime.</p>
-        pub fn placement_constraints(
-            mut self,
-            inp: impl Into<crate::model::PlacementConstraint>,
-        ) -> Self {
-            self.inner = self.inner.placement_constraints(inp);
+        /// <p>An array of task placement constraint objects to update the service to use. If no value is specified, the existing placement constraints for the service will remain unchanged. If this value is specified, it will override any existing placement constraints defined for the service. To remove all existing placement constraints, specify an empty array.</p>
+        /// <p>You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
+        pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
+            self.inner = self.inner.placement_constraints(input);
             self
         }
-        /// <p>An array of task placement constraint objects to update the service to use. If no
-        /// value is specified, the existing placement constraints for the service will remain
-        /// unchanged. If this value is specified, it will override any existing placement
-        /// constraints defined for the service. To remove all existing placement constraints,
-        /// specify an empty array.</p>
-        /// <p>You can specify a maximum of 10 constraints for each task. This limit includes
-        /// constraints in the task definition and those specified at runtime.</p>
+        /// <p>An array of task placement constraint objects to update the service to use. If no value is specified, the existing placement constraints for the service will remain unchanged. If this value is specified, it will override any existing placement constraints defined for the service. To remove all existing placement constraints, specify an empty array.</p>
+        /// <p>You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
@@ -9469,22 +7245,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
         ///
-        /// <p>The task placement strategy objects to update the service to use. If no value is
-        /// specified, the existing placement strategy for the service will remain unchanged. If
-        /// this value is specified, it will override the existing placement strategy defined for
-        /// the service. To remove an existing placement strategy, specify an empty object.</p>
+        /// <p>The task placement strategy objects to update the service to use. If no value is specified, the existing placement strategy for the service will remain unchanged. If this value is specified, it will override the existing placement strategy defined for the service. To remove an existing placement strategy, specify an empty object.</p>
         /// <p>You can specify a maximum of five strategy rules for each service.</p>
-        pub fn placement_strategy(
-            mut self,
-            inp: impl Into<crate::model::PlacementStrategy>,
-        ) -> Self {
-            self.inner = self.inner.placement_strategy(inp);
+        pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
+            self.inner = self.inner.placement_strategy(input);
             self
         }
-        /// <p>The task placement strategy objects to update the service to use. If no value is
-        /// specified, the existing placement strategy for the service will remain unchanged. If
-        /// this value is specified, it will override the existing placement strategy defined for
-        /// the service. To remove an existing placement strategy, specify an empty object.</p>
+        /// <p>The task placement strategy objects to update the service to use. If no value is specified, the existing placement strategy for the service will remain unchanged. If this value is specified, it will override the existing placement strategy defined for the service. To remove an existing placement strategy, specify an empty object.</p>
         /// <p>You can specify a maximum of five strategy rules for each service.</p>
         pub fn set_placement_strategy(
             mut self,
@@ -9493,20 +7260,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_placement_strategy(input);
             self
         }
-        /// <p>The platform version that your tasks in the service run on. A platform version is only
-        /// specified for tasks using the Fargate launch type. If a platform version
-        /// is not specified, the <code>LATEST</code> platform version is used. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
-        /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn platform_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_version(inp);
+        /// <p>The platform version that your tasks in the service run on. A platform version is only specified for tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_version(input.into());
             self
         }
-        /// <p>The platform version that your tasks in the service run on. A platform version is only
-        /// specified for tasks using the Fargate launch type. If a platform version
-        /// is not specified, the <code>LATEST</code> platform version is used. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
-        /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The platform version that your tasks in the service run on. A platform version is only specified for tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9514,44 +7273,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_platform_version(input);
             self
         }
-        /// <p>Determines whether to force a new deployment of the service. By default, deployments
-        /// aren't forced. You can use this option to start a new deployment with no service
-        /// definition changes. For example, you can update a service's tasks to use a newer Docker
-        /// image with the same image/tag combination (<code>my_image:latest</code>) or to roll
-        /// Fargate tasks onto a newer platform version.</p>
-        pub fn force_new_deployment(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_new_deployment(inp);
+        /// <p>Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use this option to start a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.</p>
+        pub fn force_new_deployment(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_new_deployment(input);
             self
         }
-        /// <p>Determines whether to force a new deployment of the service. By default, deployments
-        /// aren't forced. You can use this option to start a new deployment with no service
-        /// definition changes. For example, you can update a service's tasks to use a newer Docker
-        /// image with the same image/tag combination (<code>my_image:latest</code>) or to roll
-        /// Fargate tasks onto a newer platform version.</p>
+        /// <p>Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use this option to start a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.</p>
         pub fn set_force_new_deployment(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_new_deployment(input);
             self
         }
-        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
-        /// Elastic Load Balancing target health checks after a task has first started. This is only valid if your
-        /// service is configured to use a load balancer. If your service's tasks take a while to
-        /// start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of
-        /// up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores
-        /// the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler
-        /// from marking tasks as unhealthy and stopping them before they have time to come
-        /// up.</p>
-        pub fn health_check_grace_period_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_grace_period_seconds(inp);
+        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid if your service is configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
+        pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.health_check_grace_period_seconds(input);
             self
         }
-        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
-        /// Elastic Load Balancing target health checks after a task has first started. This is only valid if your
-        /// service is configured to use a load balancer. If your service's tasks take a while to
-        /// start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of
-        /// up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores
-        /// the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler
-        /// from marking tasks as unhealthy and stopping them before they have time to come
-        /// up.</p>
+        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid if your service is configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</p>
         pub fn set_health_check_grace_period_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -9559,18 +7296,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_grace_period_seconds(input);
             self
         }
-        /// <p>If <code>true</code>, this enables execute command functionality on all task
-        /// containers.</p>
-        /// <p>If you do not want to override the value that was set when the service was created,
-        /// you can set this to <code>null</code> when performing this action.</p>
-        pub fn enable_execute_command(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_execute_command(inp);
+        /// <p>If <code>true</code>, this enables execute command functionality on all task containers.</p>
+        /// <p>If you do not want to override the value that was set when the service was created, you can set this to <code>null</code> when performing this action.</p>
+        pub fn enable_execute_command(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_execute_command(input);
             self
         }
-        /// <p>If <code>true</code>, this enables execute command functionality on all task
-        /// containers.</p>
-        /// <p>If you do not want to override the value that was set when the service was created,
-        /// you can set this to <code>null</code> when performing this action.</p>
+        /// <p>If <code>true</code>, this enables execute command functionality on all task containers.</p>
+        /// <p>If you do not want to override the value that was set when the service was created, you can set this to <code>null</code> when performing this action.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_execute_command(input);
             self
@@ -9578,12 +7311,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateServicePrimaryTaskSet`.
     ///
-    /// <p>Modifies which task set in a service is the primary task set. Any parameters that are
-    /// updated on the primary task set in a service will transition to the service. This is
-    /// used when a service uses the <code>EXTERNAL</code> deployment controller type. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
-    /// Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies which task set in a service is the primary task set. Any parameters that are updated on the primary task set in a service will transition to the service. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServicePrimaryTaskSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9628,10 +7357,10 @@ pub mod fluent_builders {
                 crate::input::UpdateServicePrimaryTaskSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9639,21 +7368,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-        /// set exists in.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists in.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-        /// set exists in.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists in.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
@@ -9661,14 +7388,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service(input);
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the
-        /// deployment.</p>
-        pub fn primary_task_set(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.primary_task_set(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
+        pub fn primary_task_set(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.primary_task_set(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the
-        /// deployment.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
         pub fn set_primary_task_set(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9679,10 +7404,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateTaskSet`.
     ///
-    /// <p>Modifies a task set. This is used when a service uses the <code>EXTERNAL</code>
-    /// deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
-    /// Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies a task set. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTaskSet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9727,10 +7450,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTaskSetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9738,21 +7461,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-        /// set is found in.</p>
-        pub fn cluster(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster(inp);
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is found in.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster(input.into());
             self
         }
-        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
-        /// set is found in.</p>
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is found in.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster(input);
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
-        pub fn service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(inp);
+        pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
@@ -9761,8 +7482,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
-        pub fn task_set(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_set(inp);
+        pub fn task_set(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_set(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
@@ -9770,20 +7491,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_set(input);
             self
         }
-        /// <p>A floating-point percentage of the desired number of tasks to place and keep running
-        /// in the task set.</p>
-        pub fn scale(mut self, inp: crate::model::Scale) -> Self {
-            self.inner = self.inner.scale(inp);
+        /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
+        pub fn scale(mut self, input: crate::model::Scale) -> Self {
+            self.inner = self.inner.scale(input);
             self
         }
-        /// <p>A floating-point percentage of the desired number of tasks to place and keep running
-        /// in the task set.</p>
+        /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
         pub fn set_scale(mut self, input: std::option::Option<crate::model::Scale>) -> Self {
             self.inner = self.inner.set_scale(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

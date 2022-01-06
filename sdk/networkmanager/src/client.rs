@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Network Manager
@@ -83,6 +83,20 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
+    /// Constructs a fluent builder for the `AcceptAttachment` operation.
+    ///
+    /// See [`AcceptAttachment`](crate::client::fluent_builders::AcceptAttachment) for more information about the
+    /// operation and its arguments.
+    pub fn accept_attachment(&self) -> fluent_builders::AcceptAttachment<C, M, R> {
+        fluent_builders::AcceptAttachment::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `AssociateConnectPeer` operation.
+    ///
+    /// See [`AssociateConnectPeer`](crate::client::fluent_builders::AssociateConnectPeer) for more information about the
+    /// operation and its arguments.
+    pub fn associate_connect_peer(&self) -> fluent_builders::AssociateConnectPeer<C, M, R> {
+        fluent_builders::AssociateConnectPeer::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `AssociateCustomerGateway` operation.
     ///
     /// See [`AssociateCustomerGateway`](crate::client::fluent_builders::AssociateCustomerGateway) for more information about the
@@ -106,12 +120,33 @@ where
     ) -> fluent_builders::AssociateTransitGatewayConnectPeer<C, M, R> {
         fluent_builders::AssociateTransitGatewayConnectPeer::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateConnectAttachment` operation.
+    ///
+    /// See [`CreateConnectAttachment`](crate::client::fluent_builders::CreateConnectAttachment) for more information about the
+    /// operation and its arguments.
+    pub fn create_connect_attachment(&self) -> fluent_builders::CreateConnectAttachment<C, M, R> {
+        fluent_builders::CreateConnectAttachment::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateConnection` operation.
     ///
     /// See [`CreateConnection`](crate::client::fluent_builders::CreateConnection) for more information about the
     /// operation and its arguments.
     pub fn create_connection(&self) -> fluent_builders::CreateConnection<C, M, R> {
         fluent_builders::CreateConnection::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateConnectPeer` operation.
+    ///
+    /// See [`CreateConnectPeer`](crate::client::fluent_builders::CreateConnectPeer) for more information about the
+    /// operation and its arguments.
+    pub fn create_connect_peer(&self) -> fluent_builders::CreateConnectPeer<C, M, R> {
+        fluent_builders::CreateConnectPeer::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateCoreNetwork` operation.
+    ///
+    /// See [`CreateCoreNetwork`](crate::client::fluent_builders::CreateCoreNetwork) for more information about the
+    /// operation and its arguments.
+    pub fn create_core_network(&self) -> fluent_builders::CreateCoreNetwork<C, M, R> {
+        fluent_builders::CreateCoreNetwork::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `CreateDevice` operation.
     ///
@@ -141,12 +176,58 @@ where
     pub fn create_site(&self) -> fluent_builders::CreateSite<C, M, R> {
         fluent_builders::CreateSite::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateSiteToSiteVpnAttachment` operation.
+    ///
+    /// See [`CreateSiteToSiteVpnAttachment`](crate::client::fluent_builders::CreateSiteToSiteVpnAttachment) for more information about the
+    /// operation and its arguments.
+    pub fn create_site_to_site_vpn_attachment(
+        &self,
+    ) -> fluent_builders::CreateSiteToSiteVpnAttachment<C, M, R> {
+        fluent_builders::CreateSiteToSiteVpnAttachment::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateVpcAttachment` operation.
+    ///
+    /// See [`CreateVpcAttachment`](crate::client::fluent_builders::CreateVpcAttachment) for more information about the
+    /// operation and its arguments.
+    pub fn create_vpc_attachment(&self) -> fluent_builders::CreateVpcAttachment<C, M, R> {
+        fluent_builders::CreateVpcAttachment::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteAttachment` operation.
+    ///
+    /// See [`DeleteAttachment`](crate::client::fluent_builders::DeleteAttachment) for more information about the
+    /// operation and its arguments.
+    pub fn delete_attachment(&self) -> fluent_builders::DeleteAttachment<C, M, R> {
+        fluent_builders::DeleteAttachment::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteConnection` operation.
     ///
     /// See [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) for more information about the
     /// operation and its arguments.
     pub fn delete_connection(&self) -> fluent_builders::DeleteConnection<C, M, R> {
         fluent_builders::DeleteConnection::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteConnectPeer` operation.
+    ///
+    /// See [`DeleteConnectPeer`](crate::client::fluent_builders::DeleteConnectPeer) for more information about the
+    /// operation and its arguments.
+    pub fn delete_connect_peer(&self) -> fluent_builders::DeleteConnectPeer<C, M, R> {
+        fluent_builders::DeleteConnectPeer::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteCoreNetwork` operation.
+    ///
+    /// See [`DeleteCoreNetwork`](crate::client::fluent_builders::DeleteCoreNetwork) for more information about the
+    /// operation and its arguments.
+    pub fn delete_core_network(&self) -> fluent_builders::DeleteCoreNetwork<C, M, R> {
+        fluent_builders::DeleteCoreNetwork::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteCoreNetworkPolicyVersion` operation.
+    ///
+    /// See [`DeleteCoreNetworkPolicyVersion`](crate::client::fluent_builders::DeleteCoreNetworkPolicyVersion) for more information about the
+    /// operation and its arguments.
+    pub fn delete_core_network_policy_version(
+        &self,
+    ) -> fluent_builders::DeleteCoreNetworkPolicyVersion<C, M, R> {
+        fluent_builders::DeleteCoreNetworkPolicyVersion::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteDevice` operation.
     ///
@@ -169,6 +250,13 @@ where
     pub fn delete_link(&self) -> fluent_builders::DeleteLink<C, M, R> {
         fluent_builders::DeleteLink::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteResourcePolicy` operation.
+    ///
+    /// See [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) for more information about the
+    /// operation and its arguments.
+    pub fn delete_resource_policy(&self) -> fluent_builders::DeleteResourcePolicy<C, M, R> {
+        fluent_builders::DeleteResourcePolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteSite` operation.
     ///
     /// See [`DeleteSite`](crate::client::fluent_builders::DeleteSite) for more information about the
@@ -187,8 +275,16 @@ where
     ///
     /// See [`DescribeGlobalNetworks`](crate::client::fluent_builders::DescribeGlobalNetworks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeGlobalNetworks::into_paginator).
     pub fn describe_global_networks(&self) -> fluent_builders::DescribeGlobalNetworks<C, M, R> {
         fluent_builders::DescribeGlobalNetworks::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DisassociateConnectPeer` operation.
+    ///
+    /// See [`DisassociateConnectPeer`](crate::client::fluent_builders::DisassociateConnectPeer) for more information about the
+    /// operation and its arguments.
+    pub fn disassociate_connect_peer(&self) -> fluent_builders::DisassociateConnectPeer<C, M, R> {
+        fluent_builders::DisassociateConnectPeer::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DisassociateCustomerGateway` operation.
     ///
@@ -215,17 +311,74 @@ where
     ) -> fluent_builders::DisassociateTransitGatewayConnectPeer<C, M, R> {
         fluent_builders::DisassociateTransitGatewayConnectPeer::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ExecuteCoreNetworkChangeSet` operation.
+    ///
+    /// See [`ExecuteCoreNetworkChangeSet`](crate::client::fluent_builders::ExecuteCoreNetworkChangeSet) for more information about the
+    /// operation and its arguments.
+    pub fn execute_core_network_change_set(
+        &self,
+    ) -> fluent_builders::ExecuteCoreNetworkChangeSet<C, M, R> {
+        fluent_builders::ExecuteCoreNetworkChangeSet::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetConnectAttachment` operation.
+    ///
+    /// See [`GetConnectAttachment`](crate::client::fluent_builders::GetConnectAttachment) for more information about the
+    /// operation and its arguments.
+    pub fn get_connect_attachment(&self) -> fluent_builders::GetConnectAttachment<C, M, R> {
+        fluent_builders::GetConnectAttachment::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetConnections` operation.
     ///
     /// See [`GetConnections`](crate::client::fluent_builders::GetConnections) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetConnections::into_paginator).
     pub fn get_connections(&self) -> fluent_builders::GetConnections<C, M, R> {
         fluent_builders::GetConnections::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetConnectPeer` operation.
+    ///
+    /// See [`GetConnectPeer`](crate::client::fluent_builders::GetConnectPeer) for more information about the
+    /// operation and its arguments.
+    pub fn get_connect_peer(&self) -> fluent_builders::GetConnectPeer<C, M, R> {
+        fluent_builders::GetConnectPeer::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetConnectPeerAssociations` operation.
+    ///
+    /// See [`GetConnectPeerAssociations`](crate::client::fluent_builders::GetConnectPeerAssociations) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetConnectPeerAssociations::into_paginator).
+    pub fn get_connect_peer_associations(
+        &self,
+    ) -> fluent_builders::GetConnectPeerAssociations<C, M, R> {
+        fluent_builders::GetConnectPeerAssociations::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetCoreNetwork` operation.
+    ///
+    /// See [`GetCoreNetwork`](crate::client::fluent_builders::GetCoreNetwork) for more information about the
+    /// operation and its arguments.
+    pub fn get_core_network(&self) -> fluent_builders::GetCoreNetwork<C, M, R> {
+        fluent_builders::GetCoreNetwork::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetCoreNetworkChangeSet` operation.
+    ///
+    /// See [`GetCoreNetworkChangeSet`](crate::client::fluent_builders::GetCoreNetworkChangeSet) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCoreNetworkChangeSet::into_paginator).
+    pub fn get_core_network_change_set(&self) -> fluent_builders::GetCoreNetworkChangeSet<C, M, R> {
+        fluent_builders::GetCoreNetworkChangeSet::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetCoreNetworkPolicy` operation.
+    ///
+    /// See [`GetCoreNetworkPolicy`](crate::client::fluent_builders::GetCoreNetworkPolicy) for more information about the
+    /// operation and its arguments.
+    pub fn get_core_network_policy(&self) -> fluent_builders::GetCoreNetworkPolicy<C, M, R> {
+        fluent_builders::GetCoreNetworkPolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetCustomerGatewayAssociations` operation.
     ///
     /// See [`GetCustomerGatewayAssociations`](crate::client::fluent_builders::GetCustomerGatewayAssociations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCustomerGatewayAssociations::into_paginator).
     pub fn get_customer_gateway_associations(
         &self,
     ) -> fluent_builders::GetCustomerGatewayAssociations<C, M, R> {
@@ -235,6 +388,7 @@ where
     ///
     /// See [`GetDevices`](crate::client::fluent_builders::GetDevices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDevices::into_paginator).
     pub fn get_devices(&self) -> fluent_builders::GetDevices<C, M, R> {
         fluent_builders::GetDevices::new(self.handle.clone())
     }
@@ -242,6 +396,7 @@ where
     ///
     /// See [`GetLinkAssociations`](crate::client::fluent_builders::GetLinkAssociations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetLinkAssociations::into_paginator).
     pub fn get_link_associations(&self) -> fluent_builders::GetLinkAssociations<C, M, R> {
         fluent_builders::GetLinkAssociations::new(self.handle.clone())
     }
@@ -249,6 +404,7 @@ where
     ///
     /// See [`GetLinks`](crate::client::fluent_builders::GetLinks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetLinks::into_paginator).
     pub fn get_links(&self) -> fluent_builders::GetLinks<C, M, R> {
         fluent_builders::GetLinks::new(self.handle.clone())
     }
@@ -256,6 +412,7 @@ where
     ///
     /// See [`GetNetworkResourceCounts`](crate::client::fluent_builders::GetNetworkResourceCounts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetNetworkResourceCounts::into_paginator).
     pub fn get_network_resource_counts(
         &self,
     ) -> fluent_builders::GetNetworkResourceCounts<C, M, R> {
@@ -265,6 +422,7 @@ where
     ///
     /// See [`GetNetworkResourceRelationships`](crate::client::fluent_builders::GetNetworkResourceRelationships) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetNetworkResourceRelationships::into_paginator).
     pub fn get_network_resource_relationships(
         &self,
     ) -> fluent_builders::GetNetworkResourceRelationships<C, M, R> {
@@ -274,6 +432,7 @@ where
     ///
     /// See [`GetNetworkResources`](crate::client::fluent_builders::GetNetworkResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetNetworkResources::into_paginator).
     pub fn get_network_resources(&self) -> fluent_builders::GetNetworkResources<C, M, R> {
         fluent_builders::GetNetworkResources::new(self.handle.clone())
     }
@@ -288,8 +447,16 @@ where
     ///
     /// See [`GetNetworkTelemetry`](crate::client::fluent_builders::GetNetworkTelemetry) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetNetworkTelemetry::into_paginator).
     pub fn get_network_telemetry(&self) -> fluent_builders::GetNetworkTelemetry<C, M, R> {
         fluent_builders::GetNetworkTelemetry::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetResourcePolicy` operation.
+    ///
+    /// See [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) for more information about the
+    /// operation and its arguments.
+    pub fn get_resource_policy(&self) -> fluent_builders::GetResourcePolicy<C, M, R> {
+        fluent_builders::GetResourcePolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetRouteAnalysis` operation.
     ///
@@ -302,13 +469,24 @@ where
     ///
     /// See [`GetSites`](crate::client::fluent_builders::GetSites) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSites::into_paginator).
     pub fn get_sites(&self) -> fluent_builders::GetSites<C, M, R> {
         fluent_builders::GetSites::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetSiteToSiteVpnAttachment` operation.
+    ///
+    /// See [`GetSiteToSiteVpnAttachment`](crate::client::fluent_builders::GetSiteToSiteVpnAttachment) for more information about the
+    /// operation and its arguments.
+    pub fn get_site_to_site_vpn_attachment(
+        &self,
+    ) -> fluent_builders::GetSiteToSiteVpnAttachment<C, M, R> {
+        fluent_builders::GetSiteToSiteVpnAttachment::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetTransitGatewayConnectPeerAssociations` operation.
     ///
     /// See [`GetTransitGatewayConnectPeerAssociations`](crate::client::fluent_builders::GetTransitGatewayConnectPeerAssociations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTransitGatewayConnectPeerAssociations::into_paginator).
     pub fn get_transit_gateway_connect_peer_associations(
         &self,
     ) -> fluent_builders::GetTransitGatewayConnectPeerAssociations<C, M, R> {
@@ -318,10 +496,52 @@ where
     ///
     /// See [`GetTransitGatewayRegistrations`](crate::client::fluent_builders::GetTransitGatewayRegistrations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTransitGatewayRegistrations::into_paginator).
     pub fn get_transit_gateway_registrations(
         &self,
     ) -> fluent_builders::GetTransitGatewayRegistrations<C, M, R> {
         fluent_builders::GetTransitGatewayRegistrations::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetVpcAttachment` operation.
+    ///
+    /// See [`GetVpcAttachment`](crate::client::fluent_builders::GetVpcAttachment) for more information about the
+    /// operation and its arguments.
+    pub fn get_vpc_attachment(&self) -> fluent_builders::GetVpcAttachment<C, M, R> {
+        fluent_builders::GetVpcAttachment::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListAttachments` operation.
+    ///
+    /// See [`ListAttachments`](crate::client::fluent_builders::ListAttachments) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttachments::into_paginator).
+    pub fn list_attachments(&self) -> fluent_builders::ListAttachments<C, M, R> {
+        fluent_builders::ListAttachments::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListConnectPeers` operation.
+    ///
+    /// See [`ListConnectPeers`](crate::client::fluent_builders::ListConnectPeers) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConnectPeers::into_paginator).
+    pub fn list_connect_peers(&self) -> fluent_builders::ListConnectPeers<C, M, R> {
+        fluent_builders::ListConnectPeers::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListCoreNetworkPolicyVersions` operation.
+    ///
+    /// See [`ListCoreNetworkPolicyVersions`](crate::client::fluent_builders::ListCoreNetworkPolicyVersions) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCoreNetworkPolicyVersions::into_paginator).
+    pub fn list_core_network_policy_versions(
+        &self,
+    ) -> fluent_builders::ListCoreNetworkPolicyVersions<C, M, R> {
+        fluent_builders::ListCoreNetworkPolicyVersions::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListCoreNetworks` operation.
+    ///
+    /// See [`ListCoreNetworks`](crate::client::fluent_builders::ListCoreNetworks) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCoreNetworks::into_paginator).
+    pub fn list_core_networks(&self) -> fluent_builders::ListCoreNetworks<C, M, R> {
+        fluent_builders::ListCoreNetworks::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListTagsForResource` operation.
     ///
@@ -330,12 +550,42 @@ where
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `PutCoreNetworkPolicy` operation.
+    ///
+    /// See [`PutCoreNetworkPolicy`](crate::client::fluent_builders::PutCoreNetworkPolicy) for more information about the
+    /// operation and its arguments.
+    pub fn put_core_network_policy(&self) -> fluent_builders::PutCoreNetworkPolicy<C, M, R> {
+        fluent_builders::PutCoreNetworkPolicy::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `PutResourcePolicy` operation.
+    ///
+    /// See [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) for more information about the
+    /// operation and its arguments.
+    pub fn put_resource_policy(&self) -> fluent_builders::PutResourcePolicy<C, M, R> {
+        fluent_builders::PutResourcePolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `RegisterTransitGateway` operation.
     ///
     /// See [`RegisterTransitGateway`](crate::client::fluent_builders::RegisterTransitGateway) for more information about the
     /// operation and its arguments.
     pub fn register_transit_gateway(&self) -> fluent_builders::RegisterTransitGateway<C, M, R> {
         fluent_builders::RegisterTransitGateway::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `RejectAttachment` operation.
+    ///
+    /// See [`RejectAttachment`](crate::client::fluent_builders::RejectAttachment) for more information about the
+    /// operation and its arguments.
+    pub fn reject_attachment(&self) -> fluent_builders::RejectAttachment<C, M, R> {
+        fluent_builders::RejectAttachment::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `RestoreCoreNetworkPolicyVersion` operation.
+    ///
+    /// See [`RestoreCoreNetworkPolicyVersion`](crate::client::fluent_builders::RestoreCoreNetworkPolicyVersion) for more information about the
+    /// operation and its arguments.
+    pub fn restore_core_network_policy_version(
+        &self,
+    ) -> fluent_builders::RestoreCoreNetworkPolicyVersion<C, M, R> {
+        fluent_builders::RestoreCoreNetworkPolicyVersion::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `StartRouteAnalysis` operation.
     ///
@@ -364,6 +614,13 @@ where
     /// operation and its arguments.
     pub fn update_connection(&self) -> fluent_builders::UpdateConnection<C, M, R> {
         fluent_builders::UpdateConnection::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateCoreNetwork` operation.
+    ///
+    /// See [`UpdateCoreNetwork`](crate::client::fluent_builders::UpdateCoreNetwork) for more information about the
+    /// operation and its arguments.
+    pub fn update_core_network(&self) -> fluent_builders::UpdateCoreNetwork<C, M, R> {
+        fluent_builders::UpdateCoreNetwork::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `UpdateDevice` operation.
     ///
@@ -402,6 +659,13 @@ where
     pub fn update_site(&self) -> fluent_builders::UpdateSite<C, M, R> {
         fluent_builders::UpdateSite::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateVpcAttachment` operation.
+    ///
+    /// See [`UpdateVpcAttachment`](crate::client::fluent_builders::UpdateVpcAttachment) for more information about the
+    /// operation and its arguments.
+    pub fn update_vpc_attachment(&self) -> fluent_builders::UpdateVpcAttachment<C, M, R> {
+        fluent_builders::UpdateVpcAttachment::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
     //!
@@ -411,18 +675,193 @@ pub mod fluent_builders {
     //! one if its operation methods. After parameters are set using the builder methods,
     //! the `send` method can be called to initiate the request.
     //!
+    /// Fluent builder constructing a request to `AcceptAttachment`.
+    ///
+    /// <p>Accepts a core network attachment request. </p>
+    /// <p>Once the attachment request is accepted by a core network owner, the attachment is created and connected to a core network.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AcceptAttachment<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::accept_attachment_input::Builder,
+    }
+    impl<C, M, R> AcceptAttachment<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AcceptAttachment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AcceptAttachmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::AcceptAttachmentError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AcceptAttachmentInputOperationOutputAlias,
+                crate::output::AcceptAttachmentOutput,
+                crate::error::AcceptAttachmentError,
+                crate::input::AcceptAttachmentInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the attachment. </p>
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_id(input.into());
+            self
+        }
+        /// <p>The ID of the attachment. </p>
+        pub fn set_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_attachment_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AssociateConnectPeer`.
+    ///
+    /// <p>Associates a core network Connect peer with a device and optionally, with a link. </p>
+    /// <p>If you specify a link, it must be associated with the specified device. You can only associate core network Connect peers that have been created on a core network Connect attachment on a core network. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AssociateConnectPeer<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::associate_connect_peer_input::Builder,
+    }
+    impl<C, M, R> AssociateConnectPeer<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AssociateConnectPeer`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateConnectPeerOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociateConnectPeerError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AssociateConnectPeerInputOperationOutputAlias,
+                crate::output::AssociateConnectPeerOutput,
+                crate::error::AssociateConnectPeerError,
+                crate::input::AssociateConnectPeerInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of your global network.</p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
+            self
+        }
+        /// <p>The ID of your global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_network_id(input);
+            self
+        }
+        /// <p>The ID of the Connect peer.</p>
+        pub fn connect_peer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connect_peer_id(input.into());
+            self
+        }
+        /// <p>The ID of the Connect peer.</p>
+        pub fn set_connect_peer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connect_peer_id(input);
+            self
+        }
+        /// <p>The ID of the device.</p>
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
+            self
+        }
+        /// <p>The ID of the device.</p>
+        pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_device_id(input);
+            self
+        }
+        /// <p>The ID of the link.</p>
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
+            self
+        }
+        /// <p>The ID of the link.</p>
+        pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_link_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `AssociateCustomerGateway`.
     ///
-    /// <p>Associates a customer gateway with a device and optionally, with a link. If you
-    /// specify a link, it must be associated with the specified device. </p>
-    /// <p>You can only associate customer gateways that are connected to a VPN attachment on a
-    /// transit gateway. The transit gateway must be registered in your global network. When
-    /// you register a transit gateway, customer gateways that are connected to the transit
-    /// gateway are automatically included in the global network. To list customer gateways
-    /// that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a> EC2 API and filter by
-    /// <code>transit-gateway-id</code>.</p>
+    /// <p>Associates a customer gateway with a device and optionally, with a link. If you specify a link, it must be associated with the specified device. </p>
+    /// <p>You can only associate customer gateways that are connected to a VPN attachment on a transit gateway. The transit gateway must be registered in your global network. When you register a transit gateway, customer gateways that are connected to the transit gateway are automatically included in the global network. To list customer gateways that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a> EC2 API and filter by <code>transit-gateway-id</code>.</p>
     /// <p>You cannot associate a customer gateway with more than one device and link. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateCustomerGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -467,10 +906,10 @@ pub mod fluent_builders {
                 crate::input::AssociateCustomerGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -479,8 +918,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-        pub fn customer_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_gateway_arn(inp);
+        pub fn customer_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_gateway_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
@@ -492,8 +931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -505,8 +944,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -515,8 +954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(inp);
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -528,7 +967,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateLink`.
     ///
     /// <p>Associates a link to a device. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -573,10 +1012,10 @@ pub mod fluent_builders {
                 crate::input::AssociateLinkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -585,8 +1024,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -598,8 +1037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -608,8 +1047,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(inp);
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -620,12 +1059,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateTransitGatewayConnectPeer`.
     ///
-    /// <p>Associates a transit gateway Connect peer with a device, and optionally, with a link. If you
-    /// specify a link, it must be associated with the specified device. </p>
-    /// <p>You can only associate transit gateway Connect peers that have been created on a
-    /// transit gateway that's registered in your global network.</p>
+    /// <p>Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it must be associated with the specified device. </p>
+    /// <p>You can only associate transit gateway Connect peers that have been created on a transit gateway that's registered in your global network.</p>
     /// <p>You cannot associate a transit gateway Connect peer with more than one device and link. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTransitGatewayConnectPeer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -672,10 +1109,10 @@ pub mod fluent_builders {
                 crate::input::AssociateTransitGatewayConnectPeerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -684,8 +1121,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -699,9 +1136,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
         pub fn transit_gateway_connect_peer_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.transit_gateway_connect_peer_arn(inp);
+            self.inner = self.inner.transit_gateway_connect_peer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
@@ -713,8 +1150,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -723,8 +1160,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(inp);
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -733,10 +1170,150 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateConnectAttachment`.
+    ///
+    /// <p>Creates a core network Connect attachment from a specified core network attachment. </p>
+    /// <p>A core network Connect attachment is a GRE-based tunnel attachment that you can use to establish a connection between a core network and an appliance. A core network Connect attachment uses an existing VPC attachment as the underlying transport mechanism.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateConnectAttachment<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_connect_attachment_input::Builder,
+    }
+    impl<C, M, R> CreateConnectAttachment<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateConnectAttachment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateConnectAttachmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateConnectAttachmentError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateConnectAttachmentInputOperationOutputAlias,
+                crate::output::CreateConnectAttachmentOutput,
+                crate::error::CreateConnectAttachmentError,
+                crate::input::CreateConnectAttachmentInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a core network where you want to create the attachment. </p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network where you want to create the attachment. </p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The Region where the edge is located.</p>
+        pub fn edge_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.edge_location(input.into());
+            self
+        }
+        /// <p>The Region where the edge is located.</p>
+        pub fn set_edge_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_edge_location(input);
+            self
+        }
+        /// <p>The ID of the attachment between the two connections.</p>
+        pub fn transport_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transport_attachment_id(input.into());
+            self
+        }
+        /// <p>The ID of the attachment between the two connections.</p>
+        pub fn set_transport_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transport_attachment_id(input);
+            self
+        }
+        /// <p>Options for creating an attachment.</p>
+        pub fn options(mut self, input: crate::model::ConnectAttachmentOptions) -> Self {
+            self.inner = self.inner.options(input);
+            self
+        }
+        /// <p>Options for creating an attachment.</p>
+        pub fn set_options(
+            mut self,
+            input: std::option::Option<crate::model::ConnectAttachmentOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_options(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of key-value tags associated with the request.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>The list of key-value tags associated with the request.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateConnection`.
     ///
     /// <p>Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an on-premises network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -781,10 +1358,10 @@ pub mod fluent_builders {
                 crate::input::CreateConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -793,8 +1370,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -806,8 +1383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the first device in the connection.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the first device in the connection.</p>
@@ -816,8 +1393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the second device in the connection.</p>
-        pub fn connected_device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connected_device_id(inp);
+        pub fn connected_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connected_device_id(input.into());
             self
         }
         /// <p>The ID of the second device in the connection.</p>
@@ -829,8 +1406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link for the first device.</p>
-        pub fn link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(inp);
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link for the first device.</p>
@@ -839,8 +1416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link for the second device.</p>
-        pub fn connected_link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connected_link_id(inp);
+        pub fn connected_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connected_link_id(input.into());
             self
         }
         /// <p>The ID of the link for the second device.</p>
@@ -853,8 +1430,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the connection.</p>
         /// <p>Length Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the connection.</p>
@@ -868,8 +1445,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to apply to the resource during creation.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to apply to the resource during creation.</p>
@@ -881,11 +1458,286 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateConnectPeer`.
+    ///
+    /// <p>Creates a core network connect peer for a specified core network connect attachment between a core network and an appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateConnectPeer<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_connect_peer_input::Builder,
+    }
+    impl<C, M, R> CreateConnectPeer<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateConnectPeer`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateConnectPeerOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateConnectPeerError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateConnectPeerInputOperationOutputAlias,
+                crate::output::CreateConnectPeerOutput,
+                crate::error::CreateConnectPeerError,
+                crate::input::CreateConnectPeerInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the connection attachment.</p>
+        pub fn connect_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connect_attachment_id(input.into());
+            self
+        }
+        /// <p>The ID of the connection attachment.</p>
+        pub fn set_connect_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connect_attachment_id(input);
+            self
+        }
+        /// <p>A Connect peer core network address.</p>
+        pub fn core_network_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_address(input.into());
+            self
+        }
+        /// <p>A Connect peer core network address.</p>
+        pub fn set_core_network_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_address(input);
+            self
+        }
+        /// <p>The Connect peer address.</p>
+        pub fn peer_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.peer_address(input.into());
+            self
+        }
+        /// <p>The Connect peer address.</p>
+        pub fn set_peer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_peer_address(input);
+            self
+        }
+        /// <p>The Connect peer BGP options.</p>
+        pub fn bgp_options(mut self, input: crate::model::BgpOptions) -> Self {
+            self.inner = self.inner.bgp_options(input);
+            self
+        }
+        /// <p>The Connect peer BGP options.</p>
+        pub fn set_bgp_options(
+            mut self,
+            input: std::option::Option<crate::model::BgpOptions>,
+        ) -> Self {
+            self.inner = self.inner.set_bgp_options(input);
+            self
+        }
+        /// Appends an item to `InsideCidrBlocks`.
+        ///
+        /// To override the contents of this collection use [`set_inside_cidr_blocks`](Self::set_inside_cidr_blocks).
+        ///
+        /// <p>The inside IP addresses used for BGP peering.</p>
+        pub fn inside_cidr_blocks(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inside_cidr_blocks(input.into());
+            self
+        }
+        /// <p>The inside IP addresses used for BGP peering.</p>
+        pub fn set_inside_cidr_blocks(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_inside_cidr_blocks(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the peer request.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>The tags associated with the peer request.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateCoreNetwork`.
+    ///
+    /// <p>Creates a core network as part of your global network, and optionally, with a core network policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateCoreNetwork<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_core_network_input::Builder,
+    }
+    impl<C, M, R> CreateCoreNetwork<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateCoreNetwork`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateCoreNetworkOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateCoreNetworkError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateCoreNetworkInputOperationOutputAlias,
+                crate::output::CreateCoreNetworkOutput,
+                crate::error::CreateCoreNetworkError,
+                crate::input::CreateCoreNetworkInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the global network that a core network will be a part of. </p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
+            self
+        }
+        /// <p>The ID of the global network that a core network will be a part of. </p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_network_id(input);
+            self
+        }
+        /// <p>The description of a core network.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The description of a core network.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value tags associated with a core network request.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Key-value tags associated with a core network request.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The policy document for creating a core network.</p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
+            self
+        }
+        /// <p>The policy document for creating a core network.</p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_policy_document(input);
+            self
+        }
+        /// <p>The client token associated with a core network request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>The client token associated with a core network request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateDevice`.
     ///
-    /// <p>Creates a new device in a global network. If you specify both a site ID and a
-    /// location, the location of the site is used for visualization in the Network Manager console.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new device in a global network. If you specify both a site ID and a location, the location of the site is used for visualization in the Network Manager console.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -930,10 +1782,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -942,8 +1794,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -955,8 +1807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
-        pub fn aws_location(mut self, inp: crate::model::AwsLocation) -> Self {
-            self.inner = self.inner.aws_location(inp);
+        pub fn aws_location(mut self, input: crate::model::AwsLocation) -> Self {
+            self.inner = self.inner.aws_location(input);
             self
         }
         /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
@@ -969,8 +1821,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the device.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the device.</p>
@@ -980,8 +1832,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the device.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The type of the device.</p>
@@ -991,8 +1843,8 @@ pub mod fluent_builders {
         }
         /// <p>The vendor of the device.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn vendor(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vendor(inp);
+        pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vendor(input.into());
             self
         }
         /// <p>The vendor of the device.</p>
@@ -1003,8 +1855,8 @@ pub mod fluent_builders {
         }
         /// <p>The model of the device.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model(inp);
+        pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model(input.into());
             self
         }
         /// <p>The model of the device.</p>
@@ -1015,8 +1867,8 @@ pub mod fluent_builders {
         }
         /// <p>The serial number of the device.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(inp);
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input.into());
             self
         }
         /// <p>The serial number of the device.</p>
@@ -1029,8 +1881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location of the device.</p>
-        pub fn location(mut self, inp: crate::model::Location) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>The location of the device.</p>
@@ -1039,8 +1891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(inp);
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -1053,8 +1905,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to apply to the resource during creation.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to apply to the resource during creation.</p>
@@ -1069,7 +1921,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGlobalNetwork`.
     ///
     /// <p>Creates a new, empty global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGlobalNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1114,10 +1966,10 @@ pub mod fluent_builders {
                 crate::input::CreateGlobalNetworkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1127,8 +1979,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the global network.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the global network.</p>
@@ -1142,8 +1994,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to apply to the resource during creation.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to apply to the resource during creation.</p>
@@ -1158,7 +2010,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLink`.
     ///
     /// <p>Creates a new link for a specified site.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1203,10 +2055,10 @@ pub mod fluent_builders {
                 crate::input::CreateLinkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1215,8 +2067,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1229,8 +2081,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the link.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the link.</p>
@@ -1241,8 +2093,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the link.</p>
         /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The type of the link.</p>
@@ -1252,8 +2104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The upload speed and download speed in Mbps. </p>
-        pub fn bandwidth(mut self, inp: crate::model::Bandwidth) -> Self {
-            self.inner = self.inner.bandwidth(inp);
+        pub fn bandwidth(mut self, input: crate::model::Bandwidth) -> Self {
+            self.inner = self.inner.bandwidth(input);
             self
         }
         /// <p> The upload speed and download speed in Mbps. </p>
@@ -1266,8 +2118,8 @@ pub mod fluent_builders {
         }
         /// <p>The provider of the link.</p>
         /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-        pub fn provider(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider(inp);
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider(input.into());
             self
         }
         /// <p>The provider of the link.</p>
@@ -1277,8 +2129,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(inp);
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -1291,8 +2143,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to apply to the resource during creation.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to apply to the resource during creation.</p>
@@ -1307,7 +2159,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSite`.
     ///
     /// <p>Creates a new site in a global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1352,10 +2204,10 @@ pub mod fluent_builders {
                 crate::input::CreateSiteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1364,8 +2216,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1378,8 +2230,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of your site.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of your site.</p>
@@ -1390,37 +2242,19 @@ pub mod fluent_builders {
         }
         /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Address</code>: The physical address of the site.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Latitude</code>: The latitude of the site. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Longitude</code>: The longitude of the site.</p>
-        /// </li>
+        /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+        /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+        /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
         /// </ul>
-        pub fn location(mut self, inp: crate::model::Location) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Address</code>: The physical address of the site.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Latitude</code>: The latitude of the site. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Longitude</code>: The longitude of the site.</p>
-        /// </li>
+        /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+        /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+        /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
         /// </ul>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.inner = self.inner.set_location(input);
@@ -1431,8 +2265,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to apply to the resource during creation.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to apply to the resource during creation.</p>
@@ -1444,10 +2278,333 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateSiteToSiteVpnAttachment`.
+    ///
+    /// <p>Creates a site-to-site VPN attachment on an edge location of a core network.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateSiteToSiteVpnAttachment<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_site_to_site_vpn_attachment_input::Builder,
+    }
+    impl<C, M, R> CreateSiteToSiteVpnAttachment<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateSiteToSiteVpnAttachment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateSiteToSiteVpnAttachmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateSiteToSiteVpnAttachmentError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateSiteToSiteVpnAttachmentInputOperationOutputAlias,
+                crate::output::CreateSiteToSiteVpnAttachmentOutput,
+                crate::error::CreateSiteToSiteVpnAttachmentError,
+                crate::input::CreateSiteToSiteVpnAttachmentInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The ARN identifying the VPN attachment.</p>
+        pub fn vpn_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpn_connection_arn(input.into());
+            self
+        }
+        /// <p>The ARN identifying the VPN attachment.</p>
+        pub fn set_vpn_connection_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vpn_connection_arn(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the request.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>The tags associated with the request.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateVpcAttachment`.
+    ///
+    /// <p>Creates a VPC attachment on an edge location of a core network.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateVpcAttachment<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_vpc_attachment_input::Builder,
+    }
+    impl<C, M, R> CreateVpcAttachment<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateVpcAttachment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateVpcAttachmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateVpcAttachmentError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateVpcAttachmentInputOperationOutputAlias,
+                crate::output::CreateVpcAttachmentOutput,
+                crate::error::CreateVpcAttachmentError,
+                crate::input::CreateVpcAttachmentInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a core network for the VPC attachment.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network for the VPC attachment.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The ARN of the VPC.</p>
+        pub fn vpc_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the VPC.</p>
+        pub fn set_vpc_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_vpc_arn(input);
+            self
+        }
+        /// Appends an item to `SubnetArns`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_arns`](Self::set_subnet_arns).
+        ///
+        /// <p>The subnet ARN of the VPC attachment.</p>
+        pub fn subnet_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_arns(input.into());
+            self
+        }
+        /// <p>The subnet ARN of the VPC attachment.</p>
+        pub fn set_subnet_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_subnet_arns(input);
+            self
+        }
+        /// <p>Options for the VPC attachment.</p>
+        pub fn options(mut self, input: crate::model::VpcOptions) -> Self {
+            self.inner = self.inner.options(input);
+            self
+        }
+        /// <p>Options for the VPC attachment.</p>
+        pub fn set_options(mut self, input: std::option::Option<crate::model::VpcOptions>) -> Self {
+            self.inner = self.inner.set_options(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value tags associated with the request.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>The key-value tags associated with the request.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteAttachment`.
+    ///
+    /// <p>Deletes an attachment. Supports all attachment types.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteAttachment<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_attachment_input::Builder,
+    }
+    impl<C, M, R> DeleteAttachment<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteAttachment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteAttachmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteAttachmentError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteAttachmentInputOperationOutputAlias,
+                crate::output::DeleteAttachmentOutput,
+                crate::error::DeleteAttachmentError,
+                crate::input::DeleteAttachmentInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the attachment to delete.</p>
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_id(input.into());
+            self
+        }
+        /// <p>The ID of the attachment to delete.</p>
+        pub fn set_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_attachment_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteConnection`.
     ///
     /// <p>Deletes the specified connection in your global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1492,10 +2649,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1504,8 +2661,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1517,8 +2674,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -1530,11 +2687,239 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteConnectPeer`.
+    ///
+    /// <p>Deletes a Connect peer.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteConnectPeer<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_connect_peer_input::Builder,
+    }
+    impl<C, M, R> DeleteConnectPeer<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteConnectPeer`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteConnectPeerOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteConnectPeerError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteConnectPeerInputOperationOutputAlias,
+                crate::output::DeleteConnectPeerOutput,
+                crate::error::DeleteConnectPeerError,
+                crate::input::DeleteConnectPeerInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the deleted Connect peer.</p>
+        pub fn connect_peer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connect_peer_id(input.into());
+            self
+        }
+        /// <p>The ID of the deleted Connect peer.</p>
+        pub fn set_connect_peer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connect_peer_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteCoreNetwork`.
+    ///
+    /// <p>Deletes a core network along with all core network policies. This can only be done if there are no attachments on a core network.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteCoreNetwork<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_core_network_input::Builder,
+    }
+    impl<C, M, R> DeleteCoreNetwork<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteCoreNetwork`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteCoreNetworkOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteCoreNetworkError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteCoreNetworkInputOperationOutputAlias,
+                crate::output::DeleteCoreNetworkOutput,
+                crate::error::DeleteCoreNetworkError,
+                crate::input::DeleteCoreNetworkInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The network ID of the deleted core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The network ID of the deleted core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteCoreNetworkPolicyVersion`.
+    ///
+    /// <p>Deletes a policy version from a core network. You can't delete the current LIVE policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteCoreNetworkPolicyVersion<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_core_network_policy_version_input::Builder,
+    }
+    impl<C, M, R> DeleteCoreNetworkPolicyVersion<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteCoreNetworkPolicyVersion`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteCoreNetworkPolicyVersionOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteCoreNetworkPolicyVersionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteCoreNetworkPolicyVersionInputOperationOutputAlias,
+                crate::output::DeleteCoreNetworkPolicyVersionOutput,
+                crate::error::DeleteCoreNetworkPolicyVersionError,
+                crate::input::DeleteCoreNetworkPolicyVersionInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a core network for the deleted policy.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network for the deleted policy.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The version ID of the deleted policy.</p>
+        pub fn policy_version_id(mut self, input: i32) -> Self {
+            self.inner = self.inner.policy_version_id(input);
+            self
+        }
+        /// <p>The version ID of the deleted policy.</p>
+        pub fn set_policy_version_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_policy_version_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteDevice`.
     ///
-    /// <p>Deletes an existing device. You must first disassociate the device from any links and
-    /// customer gateways.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an existing device. You must first disassociate the device from any links and customer gateways.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1579,10 +2964,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1591,8 +2976,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1604,8 +2989,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -1616,9 +3001,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteGlobalNetwork`.
     ///
-    /// <p>Deletes an existing global network. You must first delete all global network objects
-    /// (devices, links, and sites) and deregister all transit gateways.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an existing global network. You must first delete all global network objects (devices, links, and sites) and deregister all transit gateways.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGlobalNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1663,10 +3047,10 @@ pub mod fluent_builders {
                 crate::input::DeleteGlobalNetworkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1675,8 +3059,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1690,9 +3074,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteLink`.
     ///
-    /// <p>Deletes an existing link. You must first disassociate the link from any devices and
-    /// customer gateways.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an existing link. You must first disassociate the link from any devices and customer gateways.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1737,10 +3120,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLinkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1749,8 +3132,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1762,8 +3145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(inp);
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -1772,10 +3155,80 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteResourcePolicy`.
+    ///
+    /// <p>Deletes a resource policy for the specified resource. This revokes the access of the principals specified in the resource policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteResourcePolicy<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_resource_policy_input::Builder,
+    }
+    impl<C, M, R> DeleteResourcePolicy<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteResourcePolicyInputOperationOutputAlias,
+                crate::output::DeleteResourcePolicyOutput,
+                crate::error::DeleteResourcePolicyError,
+                crate::input::DeleteResourcePolicyInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the policy to delete.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the policy to delete.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteSite`.
     ///
     /// <p>Deletes an existing site. The site cannot be associated with any device or link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1820,10 +3273,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSiteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1832,8 +3285,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1845,8 +3298,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(inp);
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -1857,9 +3310,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterTransitGateway`.
     ///
-    /// <p>Deregisters a transit gateway from your global network. This action does not delete
-    /// your transit gateway, or modify any of its attachments. This action removes any customer gateway associations.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deregisters a transit gateway from your global network. This action does not delete your transit gateway, or modify any of its attachments. This action removes any customer gateway associations.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1904,10 +3356,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterTransitGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1916,8 +3368,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1929,8 +3381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-        pub fn transit_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transit_gateway_arn(inp);
+        pub fn transit_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transit_gateway_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
@@ -1944,11 +3396,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeGlobalNetworks`.
     ///
-    /// <p>Describes one or more global networks. By default, all global networks are
-    /// described. To describe the objects in your global network, you must use the appropriate
-    /// <code>Get*</code> action. For example, to list the transit gateways in your global
-    /// network, use <a>GetTransitGatewayRegistrations</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes one or more global networks. By default, all global networks are described. To describe the objects in your global network, you must use the appropriate <code>Get*</code> action. For example, to list the transit gateways in your global network, use <code>GetTransitGatewayRegistrations</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGlobalNetworks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1993,10 +3442,10 @@ pub mod fluent_builders {
                 crate::input::DescribeGlobalNetworksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2004,13 +3453,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeGlobalNetworksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeGlobalNetworksPaginator<C, M, R> {
+            crate::paginator::DescribeGlobalNetworksPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `GlobalNetworkIds`.
         ///
         /// To override the contents of this collection use [`set_global_network_ids`](Self::set_global_network_ids).
         ///
         /// <p>The IDs of one or more global networks. The maximum is 10.</p>
-        pub fn global_network_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_ids(inp);
+        pub fn global_network_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_ids(input.into());
             self
         }
         /// <p>The IDs of one or more global networks. The maximum is 10.</p>
@@ -2022,8 +3477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2032,8 +3487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2042,10 +3497,96 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DisassociateConnectPeer`.
+    ///
+    /// <p>Disassociates a core network Connect peer from a device and a link. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DisassociateConnectPeer<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::disassociate_connect_peer_input::Builder,
+    }
+    impl<C, M, R> DisassociateConnectPeer<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DisassociateConnectPeer`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateConnectPeerOutput,
+            aws_smithy_http::result::SdkError<crate::error::DisassociateConnectPeerError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DisassociateConnectPeerInputOperationOutputAlias,
+                crate::output::DisassociateConnectPeerOutput,
+                crate::error::DisassociateConnectPeerError,
+                crate::input::DisassociateConnectPeerInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_network_id(input);
+            self
+        }
+        /// <p>The ID of the Connect peer to disassociate from a device.</p>
+        pub fn connect_peer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connect_peer_id(input.into());
+            self
+        }
+        /// <p>The ID of the Connect peer to disassociate from a device.</p>
+        pub fn set_connect_peer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connect_peer_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DisassociateCustomerGateway`.
     ///
     /// <p>Disassociates a customer gateway from a device and a link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateCustomerGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2090,10 +3631,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateCustomerGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2102,8 +3643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2115,8 +3656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-        pub fn customer_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_gateway_arn(inp);
+        pub fn customer_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_gateway_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
@@ -2130,9 +3671,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateLink`.
     ///
-    /// <p>Disassociates an existing device from a link. You must first disassociate any customer
-    /// gateways that are associated with the link.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates an existing device from a link. You must first disassociate any customer gateways that are associated with the link.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2177,10 +3717,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateLinkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2189,8 +3729,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2202,8 +3742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -2212,8 +3752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(inp);
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -2225,7 +3765,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateTransitGatewayConnectPeer`.
     ///
     /// <p>Disassociates a transit gateway Connect peer from a device and link.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTransitGatewayConnectPeer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2272,10 +3812,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateTransitGatewayConnectPeerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2284,8 +3824,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2299,9 +3839,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
         pub fn transit_gateway_connect_peer_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.transit_gateway_connect_peer_arn(inp);
+            self.inner = self.inner.transit_gateway_connect_peer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
@@ -2313,10 +3853,166 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ExecuteCoreNetworkChangeSet`.
+    ///
+    /// <p>Executes a change set on your core network. Deploys changes globally based on the policy submitted..</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ExecuteCoreNetworkChangeSet<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::execute_core_network_change_set_input::Builder,
+    }
+    impl<C, M, R> ExecuteCoreNetworkChangeSet<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ExecuteCoreNetworkChangeSet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ExecuteCoreNetworkChangeSetOutput,
+            aws_smithy_http::result::SdkError<crate::error::ExecuteCoreNetworkChangeSetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ExecuteCoreNetworkChangeSetInputOperationOutputAlias,
+                crate::output::ExecuteCoreNetworkChangeSetOutput,
+                crate::error::ExecuteCoreNetworkChangeSetError,
+                crate::input::ExecuteCoreNetworkChangeSetInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The ID of the policy version.</p>
+        pub fn policy_version_id(mut self, input: i32) -> Self {
+            self.inner = self.inner.policy_version_id(input);
+            self
+        }
+        /// <p>The ID of the policy version.</p>
+        pub fn set_policy_version_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_policy_version_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetConnectAttachment`.
+    ///
+    /// <p>Returns information about a core network Connect attachment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetConnectAttachment<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_connect_attachment_input::Builder,
+    }
+    impl<C, M, R> GetConnectAttachment<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetConnectAttachment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetConnectAttachmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetConnectAttachmentError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetConnectAttachmentInputOperationOutputAlias,
+                crate::output::GetConnectAttachmentOutput,
+                crate::error::GetConnectAttachmentError,
+                crate::input::GetConnectAttachmentInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the attachment.</p>
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_id(input.into());
+            self
+        }
+        /// <p>The ID of the attachment.</p>
+        pub fn set_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_attachment_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetConnections`.
     ///
     /// <p>Gets information about one or more of your connections in a global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2361,10 +4057,10 @@ pub mod fluent_builders {
                 crate::input::GetConnectionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2372,9 +4068,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetConnectionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetConnectionsPaginator<C, M, R> {
+            crate::paginator::GetConnectionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2390,8 +4092,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_connection_ids`](Self::set_connection_ids).
         ///
         /// <p>One or more connection IDs.</p>
-        pub fn connection_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_ids(inp);
+        pub fn connection_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_ids(input.into());
             self
         }
         /// <p>One or more connection IDs.</p>
@@ -2403,8 +4105,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -2413,8 +4115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2423,8 +4125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2433,11 +4135,479 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetConnectPeer`.
+    ///
+    /// <p>Returns information about a core network Connect peer.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetConnectPeer<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_connect_peer_input::Builder,
+    }
+    impl<C, M, R> GetConnectPeer<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetConnectPeer`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetConnectPeerOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetConnectPeerError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetConnectPeerInputOperationOutputAlias,
+                crate::output::GetConnectPeerOutput,
+                crate::error::GetConnectPeerError,
+                crate::input::GetConnectPeerInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the Connect peer.</p>
+        pub fn connect_peer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connect_peer_id(input.into());
+            self
+        }
+        /// <p>The ID of the Connect peer.</p>
+        pub fn set_connect_peer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connect_peer_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetConnectPeerAssociations`.
+    ///
+    /// <p>Returns information about a core network Connect peer associations.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetConnectPeerAssociations<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_connect_peer_associations_input::Builder,
+    }
+    impl<C, M, R> GetConnectPeerAssociations<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetConnectPeerAssociations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetConnectPeerAssociationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetConnectPeerAssociationsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetConnectPeerAssociationsInputOperationOutputAlias,
+                crate::output::GetConnectPeerAssociationsOutput,
+                crate::error::GetConnectPeerAssociationsError,
+                crate::input::GetConnectPeerAssociationsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetConnectPeerAssociationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetConnectPeerAssociationsPaginator<C, M, R> {
+            crate::paginator::GetConnectPeerAssociationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_global_network_id(input);
+            self
+        }
+        /// Appends an item to `ConnectPeerIds`.
+        ///
+        /// To override the contents of this collection use [`set_connect_peer_ids`](Self::set_connect_peer_ids).
+        ///
+        /// <p>The IDs of the Connect peers.</p>
+        pub fn connect_peer_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connect_peer_ids(input.into());
+            self
+        }
+        /// <p>The IDs of the Connect peers.</p>
+        pub fn set_connect_peer_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_connect_peer_ids(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetCoreNetwork`.
+    ///
+    /// <p>Returns information about a core network. By default it returns the LIVE policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetCoreNetwork<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_core_network_input::Builder,
+    }
+    impl<C, M, R> GetCoreNetwork<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetCoreNetwork`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetCoreNetworkOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetCoreNetworkError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetCoreNetworkInputOperationOutputAlias,
+                crate::output::GetCoreNetworkOutput,
+                crate::error::GetCoreNetworkError,
+                crate::input::GetCoreNetworkInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetCoreNetworkChangeSet`.
+    ///
+    /// <p>Returns a change set between the LIVE core network policy and a submitted policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetCoreNetworkChangeSet<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_core_network_change_set_input::Builder,
+    }
+    impl<C, M, R> GetCoreNetworkChangeSet<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetCoreNetworkChangeSet`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetCoreNetworkChangeSetOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetCoreNetworkChangeSetError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetCoreNetworkChangeSetInputOperationOutputAlias,
+                crate::output::GetCoreNetworkChangeSetOutput,
+                crate::error::GetCoreNetworkChangeSetError,
+                crate::input::GetCoreNetworkChangeSetInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetCoreNetworkChangeSetPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetCoreNetworkChangeSetPaginator<C, M, R> {
+            crate::paginator::GetCoreNetworkChangeSetPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The ID of the policy version.</p>
+        pub fn policy_version_id(mut self, input: i32) -> Self {
+            self.inner = self.inner.policy_version_id(input);
+            self
+        }
+        /// <p>The ID of the policy version.</p>
+        pub fn set_policy_version_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_policy_version_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetCoreNetworkPolicy`.
+    ///
+    /// <p>Gets details about a core network policy. You can get details about your current live policy or any previous policy version.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetCoreNetworkPolicy<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_core_network_policy_input::Builder,
+    }
+    impl<C, M, R> GetCoreNetworkPolicy<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetCoreNetworkPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetCoreNetworkPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetCoreNetworkPolicyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetCoreNetworkPolicyInputOperationOutputAlias,
+                crate::output::GetCoreNetworkPolicyOutput,
+                crate::error::GetCoreNetworkPolicyError,
+                crate::input::GetCoreNetworkPolicyInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The ID of a core network policy version.</p>
+        pub fn policy_version_id(mut self, input: i32) -> Self {
+            self.inner = self.inner.policy_version_id(input);
+            self
+        }
+        /// <p>The ID of a core network policy version.</p>
+        pub fn set_policy_version_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_policy_version_id(input);
+            self
+        }
+        /// <p>The alias of a core network policy </p>
+        pub fn alias(mut self, input: crate::model::CoreNetworkPolicyAlias) -> Self {
+            self.inner = self.inner.alias(input);
+            self
+        }
+        /// <p>The alias of a core network policy </p>
+        pub fn set_alias(
+            mut self,
+            input: std::option::Option<crate::model::CoreNetworkPolicyAlias>,
+        ) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetCustomerGatewayAssociations`.
     ///
-    /// <p>Gets the association information for customer gateways that are associated with
-    /// devices and links in your global network.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the association information for customer gateways that are associated with devices and links in your global network.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCustomerGatewayAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2482,10 +4652,10 @@ pub mod fluent_builders {
                 crate::input::GetCustomerGatewayAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2493,9 +4663,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetCustomerGatewayAssociationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetCustomerGatewayAssociationsPaginator<C, M, R> {
+            crate::paginator::GetCustomerGatewayAssociationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2511,8 +4689,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_customer_gateway_arns`](Self::set_customer_gateway_arns).
         ///
         /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
-        pub fn customer_gateway_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_gateway_arns(inp);
+        pub fn customer_gateway_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_gateway_arns(input.into());
             self
         }
         /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
@@ -2524,8 +4702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2534,8 +4712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2547,7 +4725,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevices`.
     ///
     /// <p>Gets information about one or more of your devices in a global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2592,10 +4770,10 @@ pub mod fluent_builders {
                 crate::input::GetDevicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2603,9 +4781,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetDevicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetDevicesPaginator<C, M, R> {
+            crate::paginator::GetDevicesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2621,8 +4805,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
         ///
         /// <p>One or more device IDs. The maximum is 10.</p>
-        pub fn device_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_ids(inp);
+        pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_ids(input.into());
             self
         }
         /// <p>One or more device IDs. The maximum is 10.</p>
@@ -2634,8 +4818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(inp);
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -2644,8 +4828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2654,8 +4838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2666,9 +4850,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetLinkAssociations`.
     ///
-    /// <p>Gets the link associations for a device or a link. Either the device ID or the link ID
-    /// must be specified.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the link associations for a device or a link. Either the device ID or the link ID must be specified.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLinkAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2713,10 +4896,10 @@ pub mod fluent_builders {
                 crate::input::GetLinkAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2724,9 +4907,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetLinkAssociationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetLinkAssociationsPaginator<C, M, R> {
+            crate::paginator::GetLinkAssociationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2738,8 +4927,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -2748,8 +4937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(inp);
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -2758,8 +4947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2768,8 +4957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2782,7 +4971,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets information about one or more links in a specified global network.</p>
     /// <p>If you specify the site ID, you cannot specify the type or provider in the same request. You can specify the type and provider in the same request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLinks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2827,10 +5016,10 @@ pub mod fluent_builders {
                 crate::input::GetLinksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2838,9 +5027,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetLinksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetLinksPaginator<C, M, R> {
+            crate::paginator::GetLinksPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2856,8 +5051,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_link_ids`](Self::set_link_ids).
         ///
         /// <p>One or more link IDs. The maximum is 10.</p>
-        pub fn link_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_ids(inp);
+        pub fn link_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_ids(input.into());
             self
         }
         /// <p>One or more link IDs. The maximum is 10.</p>
@@ -2869,8 +5064,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(inp);
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -2879,8 +5074,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The link type.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The link type.</p>
@@ -2889,8 +5084,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The link provider.</p>
-        pub fn provider(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider(inp);
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider(input.into());
             self
         }
         /// <p>The link provider.</p>
@@ -2899,8 +5094,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2909,8 +5104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2922,7 +5117,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkResourceCounts`.
     ///
     /// <p>Gets the count of network resources, by resource type, for the specified global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkResourceCounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2967,10 +5162,10 @@ pub mod fluent_builders {
                 crate::input::GetNetworkResourceCountsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2978,9 +5173,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetNetworkResourceCountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetNetworkResourceCountsPaginator<C, M, R> {
+            crate::paginator::GetNetworkResourceCountsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2994,160 +5197,52 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -3157,8 +5252,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -3167,8 +5262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -3180,7 +5275,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkResourceRelationships`.
     ///
     /// <p>Gets the network resource relationships for the specified global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkResourceRelationships<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3225,10 +5320,10 @@ pub mod fluent_builders {
                 crate::input::GetNetworkResourceRelationshipsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3236,9 +5331,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetNetworkResourceRelationshipsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetNetworkResourceRelationshipsPaginator<C, M, R> {
+            crate::paginator::GetNetworkResourceRelationshipsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -3249,9 +5352,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_global_network_id(input);
             self
         }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
         /// <p>The ARN of the registered gateway.</p>
-        pub fn registered_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registered_gateway_arn(inp);
+        pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registered_gateway_arn(input.into());
             self
         }
         /// <p>The ARN of the registered gateway.</p>
@@ -3263,8 +5379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services Region.</p>
-        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(inp);
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The Amazon Web Services Region.</p>
@@ -3273,8 +5389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -3285,160 +5401,52 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -3448,8 +5456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the gateway.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the gateway.</p>
@@ -3458,8 +5466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -3468,8 +5476,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -3482,7 +5490,7 @@ pub mod fluent_builders {
     ///
     /// <p>Describes the network resources for the specified global network.</p>
     /// <p>The results include information from the corresponding Describe call for the resource, minus any sensitive information such as pre-shared keys.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3527,10 +5535,10 @@ pub mod fluent_builders {
                 crate::input::GetNetworkResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3538,9 +5546,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetNetworkResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetNetworkResourcesPaginator<C, M, R> {
+            crate::paginator::GetNetworkResourcesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -3551,9 +5565,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_global_network_id(input);
             self
         }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
         /// <p>The ARN of the gateway.</p>
-        pub fn registered_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registered_gateway_arn(inp);
+        pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registered_gateway_arn(input.into());
             self
         }
         /// <p>The ARN of the gateway.</p>
@@ -3565,8 +5592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services Region.</p>
-        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(inp);
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The Amazon Web Services Region.</p>
@@ -3575,8 +5602,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -3587,160 +5614,52 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+        /// <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li>
+        /// <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-        /// </li>
+        /// <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+        /// <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li>
+        /// <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li>
+        /// <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
+        /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+        /// <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li>
+        /// <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-        /// </li>
+        /// <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+        /// <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li>
+        /// <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li>
+        /// <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code> - The definition model is
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
+        /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -3750,8 +5669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -3760,8 +5679,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -3770,8 +5689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -3783,7 +5702,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkRoutes`.
     ///
     /// <p>Gets the network routes of the specified global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3828,10 +5747,10 @@ pub mod fluent_builders {
                 crate::input::GetNetworkRoutesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3840,8 +5759,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -3853,8 +5772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the route table.</p>
-        pub fn route_table_identifier(mut self, inp: crate::model::RouteTableIdentifier) -> Self {
-            self.inner = self.inner.route_table_identifier(inp);
+        pub fn route_table_identifier(mut self, input: crate::model::RouteTableIdentifier) -> Self {
+            self.inner = self.inner.route_table_identifier(input);
             self
         }
         /// <p>The ID of the route table.</p>
@@ -3870,8 +5789,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_exact_cidr_matches`](Self::set_exact_cidr_matches).
         ///
         /// <p>An exact CIDR block.</p>
-        pub fn exact_cidr_matches(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exact_cidr_matches(inp);
+        pub fn exact_cidr_matches(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exact_cidr_matches(input.into());
             self
         }
         /// <p>An exact CIDR block.</p>
@@ -3887,8 +5806,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_longest_prefix_matches`](Self::set_longest_prefix_matches).
         ///
         /// <p>The most specific route that matches the traffic (longest prefix match).</p>
-        pub fn longest_prefix_matches(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.longest_prefix_matches(inp);
+        pub fn longest_prefix_matches(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.longest_prefix_matches(input.into());
             self
         }
         /// <p>The most specific route that matches the traffic (longest prefix match).</p>
@@ -3904,8 +5823,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_of_matches`](Self::set_subnet_of_matches).
         ///
         /// <p>The routes with a subnet that match the specified CIDR filter.</p>
-        pub fn subnet_of_matches(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_of_matches(inp);
+        pub fn subnet_of_matches(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_of_matches(input.into());
             self
         }
         /// <p>The routes with a subnet that match the specified CIDR filter.</p>
@@ -3921,8 +5840,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_supernet_of_matches`](Self::set_supernet_of_matches).
         ///
         /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
-        pub fn supernet_of_matches(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.supernet_of_matches(inp);
+        pub fn supernet_of_matches(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.supernet_of_matches(input.into());
             self
         }
         /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
@@ -3938,8 +5857,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_prefix_list_ids`](Self::set_prefix_list_ids).
         ///
         /// <p>The IDs of the prefix lists.</p>
-        pub fn prefix_list_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix_list_ids(inp);
+        pub fn prefix_list_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix_list_ids(input.into());
             self
         }
         /// <p>The IDs of the prefix lists.</p>
@@ -3955,8 +5874,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The route states.</p>
-        pub fn states(mut self, inp: impl Into<crate::model::RouteState>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: crate::model::RouteState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>The route states.</p>
@@ -3972,8 +5891,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
         /// <p>The route types.</p>
-        pub fn types(mut self, inp: impl Into<crate::model::RouteType>) -> Self {
-            self.inner = self.inner.types(inp);
+        pub fn types(mut self, input: crate::model::RouteType) -> Self {
+            self.inner = self.inner.types(input);
             self
         }
         /// <p>The route types.</p>
@@ -3992,9 +5911,9 @@ pub mod fluent_builders {
         pub fn destination_filters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.destination_filters(k, v);
+            self.inner = self.inner.destination_filters(k.into(), v);
             self
         }
         /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
@@ -4011,7 +5930,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkTelemetry`.
     ///
     /// <p>Gets the network telemetry of the specified global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkTelemetry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4056,10 +5975,10 @@ pub mod fluent_builders {
                 crate::input::GetNetworkTelemetryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4067,9 +5986,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetNetworkTelemetryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetNetworkTelemetryPaginator<C, M, R> {
+            crate::paginator::GetNetworkTelemetryPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4080,9 +6005,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_global_network_id(input);
             self
         }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
         /// <p>The ARN of the gateway.</p>
-        pub fn registered_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registered_gateway_arn(inp);
+        pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registered_gateway_arn(input.into());
             self
         }
         /// <p>The ARN of the gateway.</p>
@@ -4094,8 +6032,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services Region.</p>
-        pub fn aws_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(inp);
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The Amazon Web Services Region.</p>
@@ -4104,8 +6042,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -4116,160 +6054,52 @@ pub mod fluent_builders {
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The resource type.</p>
         /// <p>The following are the supported resource types for Direct Connect:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>dxcon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>dx-vif</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>dxcon</code> </p> </li>
+        /// <li> <p> <code>dx-gateway</code> </p> </li>
+        /// <li> <p> <code>dx-vif</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Network Manager:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>device</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>link</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>site</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>connection</code> </p> </li>
+        /// <li> <p> <code>device</code> </p> </li>
+        /// <li> <p> <code>link</code> </p> </li>
+        /// <li> <p> <code>site</code> </p> </li>
         /// </ul>
-        ///
         /// <p>The following are the supported resource types for Amazon VPC:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>customer-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-attachment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-connect-peer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>transit-gateway-route-table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vpn-connection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>customer-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+        /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+        /// <li> <p> <code>vpn-connection</code> </p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -4279,8 +6109,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -4289,8 +6119,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -4299,8 +6129,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -4309,10 +6139,80 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetResourcePolicy`.
+    ///
+    /// <p>Returns information about a resource policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetResourcePolicy<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_resource_policy_input::Builder,
+    }
+    impl<C, M, R> GetResourcePolicy<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetResourcePolicyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetResourcePolicyInputOperationOutputAlias,
+                crate::output::GetResourcePolicyOutput,
+                crate::error::GetResourcePolicyError,
+                crate::input::GetResourcePolicyInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetRouteAnalysis`.
     ///
     /// <p>Gets information about the specified route analysis.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRouteAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4357,10 +6257,10 @@ pub mod fluent_builders {
                 crate::input::GetRouteAnalysisInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4369,8 +6269,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4382,8 +6282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the route analysis.</p>
-        pub fn route_analysis_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_analysis_id(inp);
+        pub fn route_analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_analysis_id(input.into());
             self
         }
         /// <p>The ID of the route analysis.</p>
@@ -4398,7 +6298,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSites`.
     ///
     /// <p>Gets information about one or more of your sites in a global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSites<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4443,10 +6343,10 @@ pub mod fluent_builders {
                 crate::input::GetSitesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4454,9 +6354,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetSitesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetSitesPaginator<C, M, R> {
+            crate::paginator::GetSitesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4472,8 +6378,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_site_ids`](Self::set_site_ids).
         ///
         /// <p>One or more site IDs. The maximum is 10.</p>
-        pub fn site_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_ids(inp);
+        pub fn site_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_ids(input.into());
             self
         }
         /// <p>One or more site IDs. The maximum is 10.</p>
@@ -4485,8 +6391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -4495,8 +6401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -4505,10 +6411,83 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetSiteToSiteVpnAttachment`.
+    ///
+    /// <p>Returns information about a site-to-site VPN attachment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetSiteToSiteVpnAttachment<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_site_to_site_vpn_attachment_input::Builder,
+    }
+    impl<C, M, R> GetSiteToSiteVpnAttachment<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetSiteToSiteVpnAttachment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSiteToSiteVpnAttachmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetSiteToSiteVpnAttachmentError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetSiteToSiteVpnAttachmentInputOperationOutputAlias,
+                crate::output::GetSiteToSiteVpnAttachmentOutput,
+                crate::error::GetSiteToSiteVpnAttachmentError,
+                crate::input::GetSiteToSiteVpnAttachmentInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the attachment.</p>
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_id(input.into());
+            self
+        }
+        /// <p>The ID of the attachment.</p>
+        pub fn set_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_attachment_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetTransitGatewayConnectPeerAssociations`.
     ///
     /// <p>Gets information about one or more of your transit gateway Connect peer associations in a global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTransitGatewayConnectPeerAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4555,10 +6534,10 @@ pub mod fluent_builders {
                 crate::input::GetTransitGatewayConnectPeerAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4566,9 +6545,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTransitGatewayConnectPeerAssociationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetTransitGatewayConnectPeerAssociationsPaginator<C, M, R> {
+            crate::paginator::GetTransitGatewayConnectPeerAssociationsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4586,9 +6576,9 @@ pub mod fluent_builders {
         /// <p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p>
         pub fn transit_gateway_connect_peer_arns(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.transit_gateway_connect_peer_arns(inp);
+            self.inner = self.inner.transit_gateway_connect_peer_arns(input.into());
             self
         }
         /// <p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p>
@@ -4600,8 +6590,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -4610,8 +6600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -4622,9 +6612,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTransitGatewayRegistrations`.
     ///
-    /// <p>Gets information about the transit gateway registrations in a specified
-    /// global network.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets information about the transit gateway registrations in a specified global network.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTransitGatewayRegistrations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4669,10 +6658,10 @@ pub mod fluent_builders {
                 crate::input::GetTransitGatewayRegistrationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4680,9 +6669,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTransitGatewayRegistrationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetTransitGatewayRegistrationsPaginator<C, M, R> {
+            crate::paginator::GetTransitGatewayRegistrationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4697,14 +6694,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_transit_gateway_arns`](Self::set_transit_gateway_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is
-        /// 10.</p>
-        pub fn transit_gateway_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transit_gateway_arns(inp);
+        /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</p>
+        pub fn transit_gateway_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transit_gateway_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is
-        /// 10.</p>
+        /// <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</p>
         pub fn set_transit_gateway_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4713,8 +6708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -4723,8 +6718,518 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetVpcAttachment`.
+    ///
+    /// <p>Returns information about a VPC attachment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetVpcAttachment<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_vpc_attachment_input::Builder,
+    }
+    impl<C, M, R> GetVpcAttachment<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetVpcAttachment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetVpcAttachmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetVpcAttachmentError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetVpcAttachmentInputOperationOutputAlias,
+                crate::output::GetVpcAttachmentOutput,
+                crate::error::GetVpcAttachmentError,
+                crate::input::GetVpcAttachmentInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the attachment.</p>
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_id(input.into());
+            self
+        }
+        /// <p>The ID of the attachment.</p>
+        pub fn set_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_attachment_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListAttachments`.
+    ///
+    /// <p>Returns a list of core network attachments.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListAttachments<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_attachments_input::Builder,
+    }
+    impl<C, M, R> ListAttachments<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListAttachments`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAttachmentsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAttachmentsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListAttachmentsInputOperationOutputAlias,
+                crate::output::ListAttachmentsOutput,
+                crate::error::ListAttachmentsError,
+                crate::input::ListAttachmentsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAttachmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAttachmentsPaginator<C, M, R> {
+            crate::paginator::ListAttachmentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The type of attachment.</p>
+        pub fn attachment_type(mut self, input: crate::model::AttachmentType) -> Self {
+            self.inner = self.inner.attachment_type(input);
+            self
+        }
+        /// <p>The type of attachment.</p>
+        pub fn set_attachment_type(
+            mut self,
+            input: std::option::Option<crate::model::AttachmentType>,
+        ) -> Self {
+            self.inner = self.inner.set_attachment_type(input);
+            self
+        }
+        /// <p>The Region where the edge is located.</p>
+        pub fn edge_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.edge_location(input.into());
+            self
+        }
+        /// <p>The Region where the edge is located.</p>
+        pub fn set_edge_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_edge_location(input);
+            self
+        }
+        /// <p>The state of the attachment.</p>
+        pub fn state(mut self, input: crate::model::AttachmentState) -> Self {
+            self.inner = self.inner.state(input);
+            self
+        }
+        /// <p>The state of the attachment.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::AttachmentState>,
+        ) -> Self {
+            self.inner = self.inner.set_state(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListConnectPeers`.
+    ///
+    /// <p>Returns a list of core network Connect peers.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListConnectPeers<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_connect_peers_input::Builder,
+    }
+    impl<C, M, R> ListConnectPeers<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListConnectPeers`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListConnectPeersOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListConnectPeersError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListConnectPeersInputOperationOutputAlias,
+                crate::output::ListConnectPeersOutput,
+                crate::error::ListConnectPeersError,
+                crate::input::ListConnectPeersInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListConnectPeersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListConnectPeersPaginator<C, M, R> {
+            crate::paginator::ListConnectPeersPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The ID of the attachment.</p>
+        pub fn connect_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connect_attachment_id(input.into());
+            self
+        }
+        /// <p>The ID of the attachment.</p>
+        pub fn set_connect_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connect_attachment_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListCoreNetworkPolicyVersions`.
+    ///
+    /// <p>Returns a list of core network policy versions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCoreNetworkPolicyVersions<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_core_network_policy_versions_input::Builder,
+    }
+    impl<C, M, R> ListCoreNetworkPolicyVersions<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListCoreNetworkPolicyVersions`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCoreNetworkPolicyVersionsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCoreNetworkPolicyVersionsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListCoreNetworkPolicyVersionsInputOperationOutputAlias,
+                crate::output::ListCoreNetworkPolicyVersionsOutput,
+                crate::error::ListCoreNetworkPolicyVersionsError,
+                crate::input::ListCoreNetworkPolicyVersionsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCoreNetworkPolicyVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListCoreNetworkPolicyVersionsPaginator<C, M, R> {
+            crate::paginator::ListCoreNetworkPolicyVersionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListCoreNetworks`.
+    ///
+    /// <p>Returns a list of owned and shared core networks.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListCoreNetworks<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_core_networks_input::Builder,
+    }
+    impl<C, M, R> ListCoreNetworks<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListCoreNetworks`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCoreNetworksOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListCoreNetworksError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListCoreNetworksInputOperationOutputAlias,
+                crate::output::ListCoreNetworksOutput,
+                crate::error::ListCoreNetworksError,
+                crate::input::ListCoreNetworksInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCoreNetworksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCoreNetworksPaginator<C, M, R> {
+            crate::paginator::ListCoreNetworksPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -4736,7 +7241,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4781,10 +7286,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4793,8 +7298,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -4803,12 +7308,209 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `PutCoreNetworkPolicy`.
+    ///
+    /// <p>Creates a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and the submitted policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutCoreNetworkPolicy<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_core_network_policy_input::Builder,
+    }
+    impl<C, M, R> PutCoreNetworkPolicy<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `PutCoreNetworkPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutCoreNetworkPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutCoreNetworkPolicyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutCoreNetworkPolicyInputOperationOutputAlias,
+                crate::output::PutCoreNetworkPolicyOutput,
+                crate::error::PutCoreNetworkPolicyError,
+                crate::input::PutCoreNetworkPolicyInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The policy document.</p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
+            self
+        }
+        /// <p>The policy document.</p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_policy_document(input);
+            self
+        }
+        /// <p>a core network policy description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>a core network policy description.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The ID of a core network policy. </p>
+        pub fn latest_version_id(mut self, input: i32) -> Self {
+            self.inner = self.inner.latest_version_id(input);
+            self
+        }
+        /// <p>The ID of a core network policy. </p>
+        pub fn set_latest_version_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_latest_version_id(input);
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>The client token associated with the request.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `PutResourcePolicy`.
+    ///
+    /// <p>Creates or updates a resource policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct PutResourcePolicy<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::put_resource_policy_input::Builder,
+    }
+    impl<C, M, R> PutResourcePolicy<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `PutResourcePolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutResourcePolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::PutResourcePolicyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::PutResourcePolicyInputOperationOutputAlias,
+                crate::output::PutResourcePolicyOutput,
+                crate::error::PutResourcePolicyError,
+                crate::input::PutResourcePolicyInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The JSON resource policy document.</p>
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
+            self
+        }
+        /// <p>The JSON resource policy document.</p>
+        pub fn set_policy_document(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_policy_document(input);
+            self
+        }
+        /// <p>The ARN of the resource policy. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the resource policy. </p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `RegisterTransitGateway`.
     ///
-    /// <p>Registers a transit gateway in your global network. The transit gateway can be in any
-    /// Amazon Web Services Region, but it must be owned by the same Amazon Web Services account that owns
-    /// the global network. You cannot register a transit gateway in more than one global network.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registers a transit gateway in your global network. The transit gateway can be in any Amazon Web Services Region, but it must be owned by the same Amazon Web Services account that owns the global network. You cannot register a transit gateway in more than one global network.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterTransitGateway<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4853,10 +7555,10 @@ pub mod fluent_builders {
                 crate::input::RegisterTransitGatewayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4865,8 +7567,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4878,8 +7580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-        pub fn transit_gateway_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transit_gateway_arn(inp);
+        pub fn transit_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transit_gateway_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
@@ -4891,11 +7593,166 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `RejectAttachment`.
+    ///
+    /// <p>Rejects a core network attachment request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RejectAttachment<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::reject_attachment_input::Builder,
+    }
+    impl<C, M, R> RejectAttachment<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `RejectAttachment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RejectAttachmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::RejectAttachmentError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::RejectAttachmentInputOperationOutputAlias,
+                crate::output::RejectAttachmentOutput,
+                crate::error::RejectAttachmentError,
+                crate::input::RejectAttachmentInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the attachment.</p>
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_id(input.into());
+            self
+        }
+        /// <p>The ID of the attachment.</p>
+        pub fn set_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_attachment_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RestoreCoreNetworkPolicyVersion`.
+    ///
+    /// <p>Restores a previous policy version as a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and restored policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RestoreCoreNetworkPolicyVersion<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::restore_core_network_policy_version_input::Builder,
+    }
+    impl<C, M, R> RestoreCoreNetworkPolicyVersion<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `RestoreCoreNetworkPolicyVersion`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RestoreCoreNetworkPolicyVersionOutput,
+            aws_smithy_http::result::SdkError<crate::error::RestoreCoreNetworkPolicyVersionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::RestoreCoreNetworkPolicyVersionInputOperationOutputAlias,
+                crate::output::RestoreCoreNetworkPolicyVersionOutput,
+                crate::error::RestoreCoreNetworkPolicyVersionError,
+                crate::input::RestoreCoreNetworkPolicyVersionInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The ID of the policy version to restore.</p>
+        pub fn policy_version_id(mut self, input: i32) -> Self {
+            self.inner = self.inner.policy_version_id(input);
+            self
+        }
+        /// <p>The ID of the policy version to restore.</p>
+        pub fn set_policy_version_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_policy_version_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StartRouteAnalysis`.
     ///
-    /// <p>Starts analyzing the routing path between the specified source and destination. For more information,
-    /// see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route Analyzer</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts analyzing the routing path between the specified source and destination. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route Analyzer</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRouteAnalysis<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4940,10 +7797,10 @@ pub mod fluent_builders {
                 crate::input::StartRouteAnalysisInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4952,8 +7809,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4967,9 +7824,9 @@ pub mod fluent_builders {
         /// <p>The source from which traffic originates.</p>
         pub fn source(
             mut self,
-            inp: crate::model::RouteAnalysisEndpointOptionsSpecification,
+            input: crate::model::RouteAnalysisEndpointOptionsSpecification,
         ) -> Self {
-            self.inner = self.inner.source(inp);
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>The source from which traffic originates.</p>
@@ -4983,9 +7840,9 @@ pub mod fluent_builders {
         /// <p>The destination.</p>
         pub fn destination(
             mut self,
-            inp: crate::model::RouteAnalysisEndpointOptionsSpecification,
+            input: crate::model::RouteAnalysisEndpointOptionsSpecification,
         ) -> Self {
-            self.inner = self.inner.destination(inp);
+            self.inner = self.inner.destination(input);
             self
         }
         /// <p>The destination.</p>
@@ -4997,8 +7854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
-        pub fn include_return_path(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_return_path(inp);
+        pub fn include_return_path(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_return_path(input);
             self
         }
         /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
@@ -5006,14 +7863,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_include_return_path(input);
             self
         }
-        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
-        /// The default is <code>false</code>.</p>
-        pub fn use_middleboxes(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_middleboxes(inp);
+        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
+        pub fn use_middleboxes(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_middleboxes(input);
             self
         }
-        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
-        /// The default is <code>false</code>.</p>
+        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
         pub fn set_use_middleboxes(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_use_middleboxes(input);
             self
@@ -5022,7 +7877,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tags a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5067,10 +7922,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5079,8 +7934,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -5093,8 +7948,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to apply to the specified resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to apply to the specified resource.</p>
@@ -5109,7 +7964,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5154,10 +8009,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5166,8 +8021,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -5180,8 +8035,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys to remove from the specified resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys to remove from the specified resource.</p>
@@ -5195,9 +8050,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateConnection`.
     ///
-    /// <p>Updates the information for an existing connection. To remove information for any of the parameters,
-    /// specify an empty string.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the information for an existing connection. To remove information for any of the parameters, specify an empty string.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5242,10 +8096,10 @@ pub mod fluent_builders {
                 crate::input::UpdateConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5254,8 +8108,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -5267,8 +8121,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(inp);
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -5280,8 +8134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link for the first device in the connection.</p>
-        pub fn link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(inp);
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link for the first device in the connection.</p>
@@ -5290,8 +8144,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link for the second device in the connection.</p>
-        pub fn connected_link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connected_link_id(inp);
+        pub fn connected_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connected_link_id(input.into());
             self
         }
         /// <p>The ID of the link for the second device in the connection.</p>
@@ -5304,8 +8158,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the connection.</p>
         /// <p>Length Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the connection.</p>
@@ -5315,11 +8169,93 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateCoreNetwork`.
+    ///
+    /// <p>Updates the description of a core network.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateCoreNetwork<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_core_network_input::Builder,
+    }
+    impl<C, M, R> UpdateCoreNetwork<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateCoreNetwork`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateCoreNetworkOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateCoreNetworkError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateCoreNetworkInputOperationOutputAlias,
+                crate::output::UpdateCoreNetworkOutput,
+                crate::error::UpdateCoreNetworkError,
+                crate::input::UpdateCoreNetworkInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_network_id(input.into());
+            self
+        }
+        /// <p>The ID of a core network.</p>
+        pub fn set_core_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_core_network_id(input);
+            self
+        }
+        /// <p>The description of the update.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The description of the update.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateDevice`.
     ///
-    /// <p>Updates the details for an existing device. To remove information for any of the
-    /// parameters, specify an empty string.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the details for an existing device. To remove information for any of the parameters, specify an empty string.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5364,10 +8300,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5376,8 +8312,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -5389,8 +8325,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(inp);
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -5399,8 +8335,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
-        pub fn aws_location(mut self, inp: crate::model::AwsLocation) -> Self {
-            self.inner = self.inner.aws_location(inp);
+        pub fn aws_location(mut self, input: crate::model::AwsLocation) -> Self {
+            self.inner = self.inner.aws_location(input);
             self
         }
         /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
@@ -5413,8 +8349,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the device.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the device.</p>
@@ -5424,8 +8360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the device.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The type of the device.</p>
@@ -5435,8 +8371,8 @@ pub mod fluent_builders {
         }
         /// <p>The vendor of the device.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn vendor(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vendor(inp);
+        pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vendor(input.into());
             self
         }
         /// <p>The vendor of the device.</p>
@@ -5447,8 +8383,8 @@ pub mod fluent_builders {
         }
         /// <p>The model of the device.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model(inp);
+        pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model(input.into());
             self
         }
         /// <p>The model of the device.</p>
@@ -5459,8 +8395,8 @@ pub mod fluent_builders {
         }
         /// <p>The serial number of the device.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(inp);
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input.into());
             self
         }
         /// <p>The serial number of the device.</p>
@@ -5473,8 +8409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes a location.</p>
-        pub fn location(mut self, inp: crate::model::Location) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>Describes a location.</p>
@@ -5483,8 +8419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(inp);
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -5495,9 +8431,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGlobalNetwork`.
     ///
-    /// <p>Updates an existing global network. To remove information for any of the parameters,
-    /// specify an empty string.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates an existing global network. To remove information for any of the parameters, specify an empty string.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGlobalNetwork<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5542,10 +8477,10 @@ pub mod fluent_builders {
                 crate::input::UpdateGlobalNetworkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5554,8 +8489,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of your global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of your global network.</p>
@@ -5568,8 +8503,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the global network.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the global network.</p>
@@ -5581,9 +8516,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateLink`.
     ///
-    /// <p>Updates the details for an existing link. To remove information for any of the
-    /// parameters, specify an empty string.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the details for an existing link. To remove information for any of the parameters, specify an empty string.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLink<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5628,10 +8562,10 @@ pub mod fluent_builders {
                 crate::input::UpdateLinkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5640,8 +8574,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -5653,8 +8587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(inp);
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -5664,8 +8598,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the link.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the link.</p>
@@ -5676,8 +8610,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the link.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The type of the link.</p>
@@ -5687,8 +8621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upload and download speed in Mbps. </p>
-        pub fn bandwidth(mut self, inp: crate::model::Bandwidth) -> Self {
-            self.inner = self.inner.bandwidth(inp);
+        pub fn bandwidth(mut self, input: crate::model::Bandwidth) -> Self {
+            self.inner = self.inner.bandwidth(input);
             self
         }
         /// <p>The upload and download speed in Mbps. </p>
@@ -5701,8 +8635,8 @@ pub mod fluent_builders {
         }
         /// <p>The provider of the link.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn provider(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider(inp);
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider(input.into());
             self
         }
         /// <p>The provider of the link.</p>
@@ -5715,7 +8649,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateNetworkResourceMetadata`.
     ///
     /// <p>Updates the resource metadata for the specified global network.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNetworkResourceMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5760,10 +8694,10 @@ pub mod fluent_builders {
                 crate::input::UpdateNetworkResourceMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5772,8 +8706,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -5785,8 +8719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -5804,7 +8738,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.metadata(k, v);
+            self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
         /// <p>The resource metadata.</p>
@@ -5820,9 +8754,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSite`.
     ///
-    /// <p>Updates the information for an existing site. To remove information for any of the
-    /// parameters, specify an empty string.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the information for an existing site. To remove information for any of the parameters, specify an empty string.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5867,10 +8800,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSiteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5879,8 +8812,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(inp);
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -5892,8 +8825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of your site.</p>
-        pub fn site_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(inp);
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of your site.</p>
@@ -5903,8 +8836,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of your site.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of your site.</p>
@@ -5915,44 +8848,144 @@ pub mod fluent_builders {
         }
         /// <p>The site location:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Address</code>: The physical address of the site.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Latitude</code>: The latitude of the site. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Longitude</code>: The longitude of the site.</p>
-        /// </li>
+        /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+        /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+        /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
         /// </ul>
-        pub fn location(mut self, inp: crate::model::Location) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>The site location:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Address</code>: The physical address of the site.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Latitude</code>: The latitude of the site. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Longitude</code>: The longitude of the site.</p>
-        /// </li>
+        /// <li> <p> <code>Address</code>: The physical address of the site.</p> </li>
+        /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
+        /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
         /// </ul>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.inner = self.inner.set_location(input);
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateVpcAttachment`.
+    ///
+    /// <p>Updates a VPC attachment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateVpcAttachment<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_vpc_attachment_input::Builder,
+    }
+    impl<C, M, R> UpdateVpcAttachment<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateVpcAttachment`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateVpcAttachmentOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateVpcAttachmentError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateVpcAttachmentInputOperationOutputAlias,
+                crate::output::UpdateVpcAttachmentOutput,
+                crate::error::UpdateVpcAttachmentError,
+                crate::input::UpdateVpcAttachmentInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the attachment.</p>
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_id(input.into());
+            self
+        }
+        /// <p>The ID of the attachment.</p>
+        pub fn set_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_attachment_id(input);
+            self
+        }
+        /// Appends an item to `AddSubnetArns`.
+        ///
+        /// To override the contents of this collection use [`set_add_subnet_arns`](Self::set_add_subnet_arns).
+        ///
+        /// <p>Adds a subnet ARN to the VPC attachment.</p>
+        pub fn add_subnet_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.add_subnet_arns(input.into());
+            self
+        }
+        /// <p>Adds a subnet ARN to the VPC attachment.</p>
+        pub fn set_add_subnet_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_add_subnet_arns(input);
+            self
+        }
+        /// Appends an item to `RemoveSubnetArns`.
+        ///
+        /// To override the contents of this collection use [`set_remove_subnet_arns`](Self::set_remove_subnet_arns).
+        ///
+        /// <p>Removes a subnet ARN from the attachment.</p>
+        pub fn remove_subnet_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remove_subnet_arns(input.into());
+            self
+        }
+        /// <p>Removes a subnet ARN from the attachment.</p>
+        pub fn set_remove_subnet_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_remove_subnet_arns(input);
+            self
+        }
+        /// <p>Additional options for updating the VPC attachment. </p>
+        pub fn options(mut self, input: crate::model::VpcOptions) -> Self {
+            self.inner = self.inner.options(input);
+            self
+        }
+        /// <p>Additional options for updating the VPC attachment. </p>
+        pub fn set_options(mut self, input: std::option::Option<crate::model::VpcOptions>) -> Self {
+            self.inner = self.inner.set_options(input);
+            self
+        }
+    }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

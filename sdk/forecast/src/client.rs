@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Forecast Service
@@ -320,6 +320,7 @@ where
     ///
     /// See [`ListDatasetGroups`](crate::client::fluent_builders::ListDatasetGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetGroups::into_paginator).
     pub fn list_dataset_groups(&self) -> fluent_builders::ListDatasetGroups<C, M, R> {
         fluent_builders::ListDatasetGroups::new(self.handle.clone())
     }
@@ -327,6 +328,7 @@ where
     ///
     /// See [`ListDatasetImportJobs`](crate::client::fluent_builders::ListDatasetImportJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetImportJobs::into_paginator).
     pub fn list_dataset_import_jobs(&self) -> fluent_builders::ListDatasetImportJobs<C, M, R> {
         fluent_builders::ListDatasetImportJobs::new(self.handle.clone())
     }
@@ -334,6 +336,7 @@ where
     ///
     /// See [`ListDatasets`](crate::client::fluent_builders::ListDatasets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
     pub fn list_datasets(&self) -> fluent_builders::ListDatasets<C, M, R> {
         fluent_builders::ListDatasets::new(self.handle.clone())
     }
@@ -357,6 +360,7 @@ where
     ///
     /// See [`ListForecastExportJobs`](crate::client::fluent_builders::ListForecastExportJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListForecastExportJobs::into_paginator).
     pub fn list_forecast_export_jobs(&self) -> fluent_builders::ListForecastExportJobs<C, M, R> {
         fluent_builders::ListForecastExportJobs::new(self.handle.clone())
     }
@@ -364,6 +368,7 @@ where
     ///
     /// See [`ListForecasts`](crate::client::fluent_builders::ListForecasts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListForecasts::into_paginator).
     pub fn list_forecasts(&self) -> fluent_builders::ListForecasts<C, M, R> {
         fluent_builders::ListForecasts::new(self.handle.clone())
     }
@@ -371,6 +376,7 @@ where
     ///
     /// See [`ListPredictorBacktestExportJobs`](crate::client::fluent_builders::ListPredictorBacktestExportJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPredictorBacktestExportJobs::into_paginator).
     pub fn list_predictor_backtest_export_jobs(
         &self,
     ) -> fluent_builders::ListPredictorBacktestExportJobs<C, M, R> {
@@ -380,6 +386,7 @@ where
     ///
     /// See [`ListPredictors`](crate::client::fluent_builders::ListPredictors) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPredictors::into_paginator).
     pub fn list_predictors(&self) -> fluent_builders::ListPredictors<C, M, R> {
         fluent_builders::ListPredictors::new(self.handle.clone())
     }
@@ -430,55 +437,24 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAutoPredictor`.
     ///
     /// <p>Creates an Amazon Forecast predictor.</p>
-    /// <p>Amazon Forecast creates predictors with AutoPredictor, which involves applying the
-    /// optimal combination of algorithms to each time series in your datasets. You can use
-    /// CreateAutoPredictor to create new predictors or upgrade/retrain existing
-    /// predictors.</p>
-    /// <p>
-    /// <b>Creating new predictors</b>
-    /// </p>
+    /// <p>Amazon Forecast creates predictors with AutoPredictor, which involves applying the optimal combination of algorithms to each time series in your datasets. You can use <code>CreateAutoPredictor</code> to create new predictors or upgrade/retrain existing predictors.</p>
+    /// <p> <b>Creating new predictors</b> </p>
     /// <p>The following parameters are required when creating a new predictor:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PredictorName</code> - A unique name for the predictor.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DatasetGroupArn</code> - The ARN of the dataset group used to train the
-    /// predictor.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ForecastFrequency</code> - The granularity of your forecasts (hourly,
-    /// daily, weekly, etc).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ForecastHorizon</code> - The number of time steps being
-    /// forecasted.</p>
-    /// </li>
+    /// <li> <p> <code>PredictorName</code> - A unique name for the predictor.</p> </li>
+    /// <li> <p> <code>DatasetGroupArn</code> - The ARN of the dataset group used to train the predictor.</p> </li>
+    /// <li> <p> <code>ForecastFrequency</code> - The granularity of your forecasts (hourly, daily, weekly, etc).</p> </li>
+    /// <li> <p> <code>ForecastHorizon</code> - The number of time steps being forecasted.</p> </li>
     /// </ul>
-    /// <p>When creating a new predictor, do not specify a value for
-    /// <code>ReferencePredictorArn</code>.</p>
-    /// <p>
-    /// <b>Upgrading and retraining predictors</b>
-    /// </p>
+    /// <p>When creating a new predictor, do not specify a value for <code>ReferencePredictorArn</code>.</p>
+    /// <p> <b>Upgrading and retraining predictors</b> </p>
     /// <p>The following parameters are required when retraining or upgrading a predictor:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PredictorName</code> - A unique name for the predictor.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReferencePredictorArn</code> - The ARN of the predictor to retrain or
-    /// upgrade.</p>
-    /// </li>
+    /// <li> <p> <code>PredictorName</code> - A unique name for the predictor.</p> </li>
+    /// <li> <p> <code>ReferencePredictorArn</code> - The ARN of the predictor to retrain or upgrade.</p> </li>
     /// </ul>
-    /// <p>When upgrading or retraining a predictor, only specify values for the
-    /// <code>ReferencePredictorArn</code> and <code>PredictorName</code>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code> and <code>PredictorName</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAutoPredictor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -523,10 +499,10 @@ pub mod fluent_builders {
                 crate::input::CreateAutoPredictorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -535,8 +511,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the predictor</p>
-        pub fn predictor_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_name(inp);
+        pub fn predictor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_name(input.into());
             self
         }
         /// <p>A unique name for the predictor</p>
@@ -547,14 +523,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_predictor_name(input);
             self
         }
-        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
-        /// the prediction length.</p>
-        pub fn forecast_horizon(mut self, inp: i32) -> Self {
-            self.inner = self.inner.forecast_horizon(inp);
+        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
+        pub fn forecast_horizon(mut self, input: i32) -> Self {
+            self.inner = self.inner.forecast_horizon(input);
             self
         }
-        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
-        /// the prediction length.</p>
+        /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
         pub fn set_forecast_horizon(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_forecast_horizon(input);
             self
@@ -563,16 +537,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
         ///
-        /// <p>The forecast types used to train a predictor. You can specify up to five forecast
-        /// types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-        /// higher. You can also specify the mean forecast with <code>mean</code>.</p>
-        pub fn forecast_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_types(inp);
+        /// <p>The forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
+        pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_types(input.into());
             self
         }
-        /// <p>The forecast types used to train a predictor. You can specify up to five forecast
-        /// types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-        /// higher. You can also specify the mean forecast with <code>mean</code>.</p>
+        /// <p>The forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
         pub fn set_forecast_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -584,20 +554,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_forecast_dimensions`](Self::set_forecast_dimensions).
         ///
-        /// <p>An array of dimension (field) names that specify how to group the generated
-        /// forecast.</p>
-        /// <p>For example, if you are generating forecasts for item sales across all your stores,
-        /// and your dataset contains a <code>store_id</code> field, you would specify
-        /// <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
-        pub fn forecast_dimensions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_dimensions(inp);
+        /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
+        /// <p>For example, if you are generating forecasts for item sales across all your stores, and your dataset contains a <code>store_id</code> field, you would specify <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
+        pub fn forecast_dimensions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_dimensions(input.into());
             self
         }
-        /// <p>An array of dimension (field) names that specify how to group the generated
-        /// forecast.</p>
-        /// <p>For example, if you are generating forecasts for item sales across all your stores,
-        /// and your dataset contains a <code>store_id</code> field, you would specify
-        /// <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
+        /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
+        /// <p>For example, if you are generating forecasts for item sales across all your stores, and your dataset contains a <code>store_id</code> field, you would specify <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
         pub fn set_forecast_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -606,25 +570,17 @@ pub mod fluent_builders {
             self
         }
         /// <p>The frequency of predictions in a forecast.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30
-        /// minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-        /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-        /// frequency.</p>
-        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
-        /// RELATED_TIME_SERIES dataset frequency.</p>
-        pub fn forecast_frequency(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_frequency(inp);
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
+        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
+        pub fn forecast_frequency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_frequency(input.into());
             self
         }
         /// <p>The frequency of predictions in a forecast.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30
-        /// minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute).
-        /// For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
-        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset
-        /// frequency.</p>
-        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
-        /// RELATED_TIME_SERIES dataset frequency.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+        /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
+        /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
         pub fn set_forecast_frequency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -633,8 +589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data configuration for your dataset group and any additional datasets.</p>
-        pub fn data_config(mut self, inp: crate::model::DataConfig) -> Self {
-            self.inner = self.inner.data_config(inp);
+        pub fn data_config(mut self, input: crate::model::DataConfig) -> Self {
+            self.inner = self.inner.data_config(input);
             self
         }
         /// <p>The data configuration for your dataset group and any additional datasets.</p>
@@ -645,16 +601,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_config(input);
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-        /// access the key. You can specify this optional object in the
-        /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
-        pub fn encryption_config(mut self, inp: crate::model::EncryptionConfig) -> Self {
-            self.inner = self.inner.encryption_config(inp);
+        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
+        pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
+            self.inner = self.inner.encryption_config(input);
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-        /// access the key. You can specify this optional object in the
-        /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
+        /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -662,22 +614,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_config(input);
             self
         }
-        /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when
-        /// retraining or upgrading a predictor. When creating a new predictor, do not specify a
-        /// value for this parameter.</p>
-        /// <p>When upgrading or retraining a predictor, only specify values for the
-        /// <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for
-        /// <code>PredictorName</code> must be a unique predictor name.</p>
-        pub fn reference_predictor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reference_predictor_arn(inp);
+        /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when retraining or upgrading a predictor. When creating a new predictor, do not specify a value for this parameter.</p>
+        /// <p>When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for <code>PredictorName</code> must be a unique predictor name.</p>
+        pub fn reference_predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reference_predictor_arn(input.into());
             self
         }
-        /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when
-        /// retraining or upgrading a predictor. When creating a new predictor, do not specify a
-        /// value for this parameter.</p>
-        /// <p>When upgrading or retraining a predictor, only specify values for the
-        /// <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for
-        /// <code>PredictorName</code> must be a unique predictor name.</p>
+        /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when retraining or upgrading a predictor. When creating a new predictor, do not specify a value for this parameter.</p>
+        /// <p>When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for <code>PredictorName</code> must be a unique predictor name.</p>
         pub fn set_reference_predictor_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -686,8 +630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The accuracy metric used to optimize the predictor.</p>
-        pub fn optimization_metric(mut self, inp: crate::model::OptimizationMetric) -> Self {
-            self.inner = self.inner.optimization_metric(inp);
+        pub fn optimization_metric(mut self, input: crate::model::OptimizationMetric) -> Self {
+            self.inner = self.inner.optimization_metric(input);
             self
         }
         /// <p>The accuracy metric used to optimize the predictor.</p>
@@ -698,12 +642,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_optimization_metric(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn explain_predictor(mut self, inp: bool) -> Self {
-            self.inner = self.inner.explain_predictor(inp);
+        /// <p>Create an Explainability resource for the predictor.</p>
+        pub fn explain_predictor(mut self, input: bool) -> Self {
+            self.inner = self.inner.explain_predictor(input);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Create an Explainability resource for the predictor.</p>
         pub fn set_explain_predictor(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_explain_predictor(input);
             self
@@ -712,73 +656,29 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata to help you categorize and organize your predictors. Each tag
-        /// consists of a key and an optional value, both of which you define. Tag keys and values
-        /// are case sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-        /// and + - = . _ : / @. If your tagging schema is used across other services and
-        /// resources, the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-        /// with only the key prefix of <code>aws</code> do not count against your tags per
-        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata to help you categorize and organize your predictors. Each tag
-        /// consists of a key and an optional value, both of which you define. Tag keys and values
-        /// are case sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-        /// and + - = . _ : / @. If your tagging schema is used across other services and
-        /// resources, the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-        /// with only the key prefix of <code>aws</code> do not count against your tags per
-        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -790,49 +690,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
-    /// <p>Creates an Amazon Forecast dataset. The information about the dataset that you provide helps
-    /// Forecast understand how to consume the data for model training. This includes the
-    /// following:</p>
+    /// <p>Creates an Amazon Forecast dataset. The information about the dataset that you provide helps Forecast understand how to consume the data for model training. This includes the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>
-    /// <code>DataFrequency</code>
-    /// </i> - How frequently your historical
-    /// time-series data is collected.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>
-    /// <code>Domain</code>
-    /// </i> and
-    /// <i>
-    /// <code>DatasetType</code>
-    /// </i> - Each dataset has an associated dataset
-    /// domain and a type within the domain. Amazon Forecast provides a list of predefined domains and
-    /// types within each domain. For each unique dataset domain and type within the domain,
-    /// Amazon Forecast requires your data to include a minimum set of predefined fields.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>
-    /// <code>Schema</code>
-    /// </i> - A schema specifies the fields in the dataset,
-    /// including the field name and data type.</p>
-    /// </li>
+    /// <li> <p> <i> <code>DataFrequency</code> </i> - How frequently your historical time-series data is collected.</p> </li>
+    /// <li> <p> <i> <code>Domain</code> </i> and <i> <code>DatasetType</code> </i> - Each dataset has an associated dataset domain and a type within the domain. Amazon Forecast provides a list of predefined domains and types within each domain. For each unique dataset domain and type within the domain, Amazon Forecast requires your data to include a minimum set of predefined fields.</p> </li>
+    /// <li> <p> <i> <code>Schema</code> </i> - A schema specifies the fields in the dataset, including the field name and data type.</p> </li>
     /// </ul>
-    /// <p>After creating a dataset, you import your training data into it and add the dataset to a
-    /// dataset group. You use the dataset group to create a predictor. For more information, see
-    /// <a>howitworks-datasets-groups</a>.</p>
-    /// <p>To get a list of all your datasets, use the <a>ListDatasets</a>
-    /// operation.</p>
-    /// <p>For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon Forecast Sample GitHub
-    /// repository</a>.</p>
-    /// <note>
-    /// <p>The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import
-    /// training data. Use the <a>DescribeDataset</a> operation to get the status.</p>
+    /// <p>After creating a dataset, you import your training data into it and add the dataset to a dataset group. You use the dataset group to create a predictor. For more information, see <code>howitworks-datasets-groups</code>.</p>
+    /// <p>To get a list of all your datasets, use the <code>ListDatasets</code> operation.</p>
+    /// <p>For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon Forecast Sample GitHub repository</a>.</p> <note>
+    /// <p>The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import training data. Use the <code>DescribeDataset</code> operation to get the status.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -877,10 +746,10 @@ pub mod fluent_builders {
                 crate::input::CreateDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -889,8 +758,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the dataset.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>A name for the dataset.</p>
@@ -898,31 +767,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this
-        /// value and the value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.</p>
-        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
-        /// that must be present in the training data that you import to the dataset. For example, if you
-        /// choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-        /// <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>,
-        /// and <code>demand</code> fields to be present in your data. For more information, see <a>howitworks-datasets-groups</a>.</p>
-        pub fn domain(mut self, inp: crate::model::Domain) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDatasetGroup</code> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
+        pub fn domain(mut self, input: crate::model::Domain) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this
-        /// value and the value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.</p>
-        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
-        /// that must be present in the training data that you import to the dataset. For example, if you
-        /// choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-        /// <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>,
-        /// and <code>demand</code> fields to be present in your data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDatasetGroup</code> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
         /// <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
-        pub fn dataset_type(mut self, inp: crate::model::DatasetType) -> Self {
-            self.inner = self.inner.dataset_type(inp);
+        pub fn dataset_type(mut self, input: crate::model::DatasetType) -> Self {
+            self.inner = self.inner.dataset_type(input);
             self
         }
         /// <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
@@ -933,20 +792,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_type(input);
             self
         }
-        /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES
-        /// datasets.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-        /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
-        /// "D" indicates every day and "15min" indicates every 15 minutes.</p>
-        pub fn data_frequency(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_frequency(inp);
+        /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min" indicates every 15 minutes.</p>
+        pub fn data_frequency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_frequency(input.into());
             self
         }
-        /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES
-        /// datasets.</p>
-        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-        /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
-        /// "D" indicates every day and "15min" indicates every 15 minutes.</p>
+        /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min" indicates every 15 minutes.</p>
         pub fn set_data_frequency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -954,30 +807,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_frequency(input);
             self
         }
-        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in
-        /// your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose
-        /// determine the minimum required fields in your training data. For information about the
-        /// required fields for a specific dataset domain and type, see <a>howitworks-domains-ds-types</a>.</p>
-        pub fn schema(mut self, inp: crate::model::Schema) -> Self {
-            self.inner = self.inner.schema(inp);
+        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <code>howitworks-domains-ds-types</code>.</p>
+        pub fn schema(mut self, input: crate::model::Schema) -> Self {
+            self.inner = self.inner.schema(input);
             self
         }
-        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in
-        /// your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose
-        /// determine the minimum required fields in your training data. For information about the
-        /// required fields for a specific dataset domain and type, see <a>howitworks-domains-ds-types</a>.</p>
+        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <code>howitworks-domains-ds-types</code>.</p>
         pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
             self.inner = self.inner.set_schema(input);
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-        /// the key.</p>
-        pub fn encryption_config(mut self, inp: crate::model::EncryptionConfig) -> Self {
-            self.inner = self.inner.encryption_config(inp);
+        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+        pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
+            self.inner = self.inner.encryption_config(input);
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-        /// the key.</p>
+        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -992,56 +837,28 @@ pub mod fluent_builders {
         /// <p>The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -1053,17 +870,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDatasetGroup`.
     ///
-    /// <p>Creates a dataset group, which holds a collection of related datasets. You can add
-    /// datasets to the dataset group when you create the dataset group, or later by using the <a>UpdateDatasetGroup</a> operation.</p>
-    /// <p>After creating a dataset group and adding datasets, you use the dataset group when you
-    /// create a predictor. For more information, see <a>howitworks-datasets-groups</a>.</p>
-    /// <p>To get a list of all your datasets groups, use the <a>ListDatasetGroups</a>
-    /// operation.</p>
-    /// <note>
-    /// <p>The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you can
-    /// use the dataset group to create a predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
+    /// <p>Creates a dataset group, which holds a collection of related datasets. You can add datasets to the dataset group when you create the dataset group, or later by using the <code>UpdateDatasetGroup</code> operation.</p>
+    /// <p>After creating a dataset group and adding datasets, you use the dataset group when you create a predictor. For more information, see <code>howitworks-datasets-groups</code>.</p>
+    /// <p>To get a list of all your datasets groups, use the <code>ListDatasetGroups</code> operation.</p> <note>
+    /// <p>The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor. To get the status, use the <code>DescribeDatasetGroup</code> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1108,10 +920,10 @@ pub mod fluent_builders {
                 crate::input::CreateDatasetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1120,8 +932,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the dataset group.</p>
-        pub fn dataset_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_name(inp);
+        pub fn dataset_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_name(input.into());
             self
         }
         /// <p>A name for the dataset group.</p>
@@ -1132,26 +944,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_group_name(input);
             self
         }
-        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group,
-        /// this value and the value specified for the <code>Domain</code> parameter of the <a>CreateDataset</a> operation must match.</p>
-        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
-        /// that must be present in training data that you import to a dataset. For example, if you choose
-        /// the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-        /// <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
-        /// <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more
-        /// information, see <a>howitworks-datasets-groups</a>.</p>
-        pub fn domain(mut self, inp: crate::model::Domain) -> Self {
-            self.inner = self.inner.domain(inp);
+        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDataset</code> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
+        pub fn domain(mut self, input: crate::model::Domain) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
-        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group,
-        /// this value and the value specified for the <code>Domain</code> parameter of the <a>CreateDataset</a> operation must match.</p>
-        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
-        /// that must be present in training data that you import to a dataset. For example, if you choose
-        /// the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-        /// <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
-        /// <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more
-        /// information, see <a>howitworks-datasets-groups</a>.</p>
+        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDataset</code> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
@@ -1160,14 +960,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_dataset_arns`](Self::set_dataset_arns).
         ///
-        /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the
-        /// dataset group.</p>
-        pub fn dataset_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arns(inp);
+        /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.</p>
+        pub fn dataset_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arns(input.into());
             self
         }
-        /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the
-        /// dataset group.</p>
+        /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.</p>
         pub fn set_dataset_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1182,56 +980,28 @@ pub mod fluent_builders {
         /// <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -1243,27 +1013,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDatasetImportJob`.
     ///
-    /// <p>Imports your training data to an Amazon Forecast dataset. You provide the location of your
-    /// training data in an Amazon Simple Storage Service (Amazon S3) bucket and the Amazon Resource Name (ARN) of the dataset
-    /// that you want to import the data to.</p>
-    /// <p>You must specify a <a>DataSource</a> object that includes an AWS Identity and Access Management (IAM)
-    /// role that Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your data and
-    /// processes it in an internal AWS system. For more information, see <a>aws-forecast-iam-roles</a>.</p>
+    /// <p>Imports your training data to an Amazon Forecast dataset. You provide the location of your training data in an Amazon Simple Storage Service (Amazon S3) bucket and the Amazon Resource Name (ARN) of the dataset that you want to import the data to.</p>
+    /// <p>You must specify a <code>DataSource</code> object that includes an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your data and processes it in an internal AWS system. For more information, see <code>aws-forecast-iam-roles</code>.</p>
     /// <p>The training data must be in CSV format. The delimiter must be a comma (,).</p>
-    /// <p>You can specify the path to a specific CSV file, the S3 bucket, or to a folder in the S3
-    /// bucket. For the latter two cases, Amazon Forecast imports all files up to the limit of 10,000
-    /// files.</p>
-    ///
-    ///
-    /// <p>Because dataset imports are not aggregated, your most recent dataset import is the one
-    /// that is used when training a predictor or generating a forecast. Make sure that your most
-    /// recent dataset import contains all of the data you want to model off of, and not just the new
-    /// data collected since the previous import.</p>
-    ///
-    ///
-    /// <p>To get a list of all your dataset import jobs, filtered by specified criteria, use the
-    /// <a>ListDatasetImportJobs</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can specify the path to a specific CSV file, the S3 bucket, or to a folder in the S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the limit of 10,000 files.</p>
+    /// <p>Because dataset imports are not aggregated, your most recent dataset import is the one that is used when training a predictor or generating a forecast. Make sure that your most recent dataset import contains all of the data you want to model off of, and not just the new data collected since the previous import.</p>
+    /// <p>To get a list of all your dataset import jobs, filtered by specified criteria, use the <code>ListDatasetImportJobs</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1308,10 +1064,10 @@ pub mod fluent_builders {
                 crate::input::CreateDatasetImportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1319,16 +1075,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name for the dataset import job. We recommend including the current timestamp in the
-        /// name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a
-        /// <code>ResourceAlreadyExistsException</code> exception.</p>
-        pub fn dataset_import_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_import_job_name(inp);
+        /// <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
+        pub fn dataset_import_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_import_job_name(input.into());
             self
         }
-        /// <p>The name for the dataset import job. We recommend including the current timestamp in the
-        /// name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a
-        /// <code>ResourceAlreadyExistsException</code> exception.</p>
+        /// <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
         pub fn set_dataset_import_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1336,32 +1088,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_import_job_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data
-        /// to.</p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.</p>
+        pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.</p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_arn(input);
             self
         }
-        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-        /// can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
-        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the
-        /// IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must
-        /// match those specified in the <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a> operation.</p>
-        pub fn data_source(mut self, inp: crate::model::DataSource) -> Self {
-            self.inner = self.inner.data_source(inp);
+        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <code>CreateDataset</code> operation.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.inner = self.inner.data_source(input);
             self
         }
-        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
-        /// can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
-        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the
-        /// IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must
-        /// match those specified in the <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a> operation.</p>
+        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <code>CreateDataset</code> operation.</p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::DataSource>,
@@ -1369,42 +1113,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_source(input);
             self
         }
-        /// <p>The format of timestamps in the dataset. The format that you specify depends on the
-        /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
-        /// supported</p>
+        /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
         /// <ul>
-        /// <li>
-        /// <p>"yyyy-MM-dd"</p>
-        /// <p>For the following data frequencies: Y, M, W, and D</p>
-        /// </li>
-        /// <li>
-        /// <p>"yyyy-MM-dd HH:mm:ss"</p>
-        /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
-        /// M, W, and D</p>
-        /// </li>
+        /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+        /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
         /// </ul>
-        /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd
-        /// HH:mm:ss".</p>
-        pub fn timestamp_format(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timestamp_format(inp);
+        /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".</p>
+        pub fn timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timestamp_format(input.into());
             self
         }
-        /// <p>The format of timestamps in the dataset. The format that you specify depends on the
-        /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
-        /// supported</p>
+        /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
         /// <ul>
-        /// <li>
-        /// <p>"yyyy-MM-dd"</p>
-        /// <p>For the following data frequencies: Y, M, W, and D</p>
-        /// </li>
-        /// <li>
-        /// <p>"yyyy-MM-dd HH:mm:ss"</p>
-        /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
-        /// M, W, and D</p>
-        /// </li>
+        /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+        /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
         /// </ul>
-        /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd
-        /// HH:mm:ss".</p>
+        /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".</p>
         pub fn set_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1412,34 +1136,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_timestamp_format(input);
             self
         }
-        /// <p>A single time zone for every item in your dataset. This option is ideal for datasets
-        /// with all timestamps within a single time zone, or if all timestamps are normalized to a
-        /// single time zone. </p>
-        /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time
-        /// API</a> for a complete list of valid time zone names.</p>
-        pub fn time_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.time_zone(inp);
+        /// <p>A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+        /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
+        pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_zone(input.into());
             self
         }
-        /// <p>A single time zone for every item in your dataset. This option is ideal for datasets
-        /// with all timestamps within a single time zone, or if all timestamps are normalized to a
-        /// single time zone. </p>
-        /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time
-        /// API</a> for a complete list of valid time zone names.</p>
+        /// <p>A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+        /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
         pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_time_zone(input);
             self
         }
-        /// <p>Automatically derive time zone information from the geolocation attribute. This option
-        /// is ideal for datasets that contain timestamps in multiple time zones and those
-        /// timestamps are expressed in local time.</p>
-        pub fn use_geolocation_for_time_zone(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_geolocation_for_time_zone(inp);
+        /// <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
+        pub fn use_geolocation_for_time_zone(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_geolocation_for_time_zone(input);
             self
         }
-        /// <p>Automatically derive time zone information from the geolocation attribute. This option
-        /// is ideal for datasets that contain timestamps in multiple time zones and those
-        /// timestamps are expressed in local time.</p>
+        /// <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
         pub fn set_use_geolocation_for_time_zone(
             mut self,
             input: std::option::Option<bool>,
@@ -1447,33 +1161,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_use_geolocation_for_time_zone(input);
             self
         }
-        /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in
-        /// one of two ways:</p>
+        /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p>
-        /// </li>
+        /// <li> <p> <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+        /// <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p> </li>
         /// </ul>
-        pub fn geolocation_format(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.geolocation_format(inp);
+        pub fn geolocation_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.geolocation_format(input.into());
             self
         }
-        /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in
-        /// one of two ways:</p>
+        /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p>
-        /// </li>
+        /// <li> <p> <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+        /// <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p> </li>
         /// </ul>
         pub fn set_geolocation_format(
             mut self,
@@ -1489,56 +1189,28 @@ pub mod fluent_builders {
         /// <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -1551,125 +1223,50 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateExplainability`.
     ///
     /// <note>
-    /// <p>Explainability is only available for Forecasts and Predictors generated from an
-    /// AutoPredictor (<a>CreateAutoPredictor</a>)</p>
+    /// <p>Explainability is only available for Forecasts and Predictors generated from an AutoPredictor (<code>CreateAutoPredictor</code>)</p>
     /// </note>
     /// <p>Creates an Amazon Forecast Explainability.</p>
-    /// <p>Explainability helps you better understand how the attributes in your datasets impact
-    /// forecast. Amazon Forecast uses a metric called Impact scores to quantify the relative
-    /// impact of each attribute and determine whether they increase or decrease forecast
-    /// values.</p>
-    /// <p>To enable Forecast Explainability, your predictor must include at least one of the
-    /// following: related time series, item metadata, or additional datasets like Holidays and
-    /// the Weather Index.</p>
-    /// <p>CreateExplainability accepts either a Predictor ARN or Forecast ARN. To receive
-    /// aggregated Impact scores for all time series and time points in your datasets, provide a
-    /// Predictor ARN. To receive Impact scores for specific time series and time points,
-    /// provide a Forecast ARN.</p>
-    /// <p>
-    /// <b>CreateExplainability with a Predictor ARN</b>
-    /// </p>
-    /// <note>
-    /// <p>You can only have one Explainability resource per predictor. If you already
-    /// enabled <code>ExplainPredictor</code> in <a>CreateAutoPredictor</a>, that
-    /// predictor already has an Explainability resource.</p>
+    /// <p>Explainability helps you better understand how the attributes in your datasets impact forecast. Amazon Forecast uses a metric called Impact scores to quantify the relative impact of each attribute and determine whether they increase or decrease forecast values.</p>
+    /// <p>To enable Forecast Explainability, your predictor must include at least one of the following: related time series, item metadata, or additional datasets like Holidays and the Weather Index.</p>
+    /// <p>CreateExplainability accepts either a Predictor ARN or Forecast ARN. To receive aggregated Impact scores for all time series and time points in your datasets, provide a Predictor ARN. To receive Impact scores for specific time series and time points, provide a Forecast ARN.</p>
+    /// <p> <b>CreateExplainability with a Predictor ARN</b> </p> <note>
+    /// <p>You can only have one Explainability resource per predictor. If you already enabled <code>ExplainPredictor</code> in <code>CreateAutoPredictor</code>, that predictor already has an Explainability resource.</p>
     /// </note>
     /// <p>The following parameters are required when providing a Predictor ARN:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ResourceArn</code> - The Arn of the predictor.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TimePointGranularity</code> - Must be set to “ALL”.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TimeSeriesGranularity</code> - Must be set to “ALL”.</p>
-    /// </li>
+    /// <li> <p> <code>ExplainabilityName</code> - A unique name for the Explainability.</p> </li>
+    /// <li> <p> <code>ResourceArn</code> - The Arn of the predictor.</p> </li>
+    /// <li> <p> <code>TimePointGranularity</code> - Must be set to “ALL”.</p> </li>
+    /// <li> <p> <code>TimeSeriesGranularity</code> - Must be set to “ALL”.</p> </li>
     /// </ul>
     /// <p>Do not specify a value for the following parameters:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DataSource</code> - Only valid when TimeSeriesGranularity is
-    /// “SPECIFIC”.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Schema</code> - Only valid when TimeSeriesGranularity is
-    /// “SPECIFIC”.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>StartDateTime</code> - Only valid when TimePointGranularity is
-    /// “SPECIFIC”.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EndDateTime</code> - Only valid when TimePointGranularity is
-    /// “SPECIFIC”.</p>
-    /// </li>
+    /// <li> <p> <code>DataSource</code> - Only valid when TimeSeriesGranularity is “SPECIFIC”.</p> </li>
+    /// <li> <p> <code>Schema</code> - Only valid when TimeSeriesGranularity is “SPECIFIC”.</p> </li>
+    /// <li> <p> <code>StartDateTime</code> - Only valid when TimePointGranularity is “SPECIFIC”.</p> </li>
+    /// <li> <p> <code>EndDateTime</code> - Only valid when TimePointGranularity is “SPECIFIC”.</p> </li>
     /// </ul>
-    /// <p>
-    /// <b>CreateExplainability with a Forecast ARN</b>
-    /// </p>
-    /// <note>
-    /// <p>You can specify a maximum of 50 time series and 1500 time points.</p>
+    /// <p> <b>CreateExplainability with a Forecast ARN</b> </p> <note>
+    /// <p>You can specify a maximum of 50 time series and 500 time points.</p>
     /// </note>
     /// <p>The following parameters are required when providing a Predictor ARN:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ResourceArn</code> - The Arn of the forecast.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TimeSeriesGranularity</code> - Either “ALL” or “SPECIFIC”.</p>
-    /// </li>
+    /// <li> <p> <code>ExplainabilityName</code> - A unique name for the Explainability.</p> </li>
+    /// <li> <p> <code>ResourceArn</code> - The Arn of the forecast.</p> </li>
+    /// <li> <p> <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.</p> </li>
+    /// <li> <p> <code>TimeSeriesGranularity</code> - Either “ALL” or “SPECIFIC”.</p> </li>
     /// </ul>
-    /// <p>If you set TimeSeriesGranularity to “SPECIFIC”, you must also provide the
-    /// following:</p>
+    /// <p>If you set TimeSeriesGranularity to “SPECIFIC”, you must also provide the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DataSource</code> - The S3 location of the CSV file specifying your time
-    /// series.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Schema</code> - The Schema defines the attributes and attribute types
-    /// listed in the Data Source.</p>
-    /// </li>
+    /// <li> <p> <code>DataSource</code> - The S3 location of the CSV file specifying your time series.</p> </li>
+    /// <li> <p> <code>Schema</code> - The Schema defines the attributes and attribute types listed in the Data Source.</p> </li>
     /// </ul>
-    /// <p>If you set TimePointGranularity to “SPECIFIC”, you must also provide the
-    /// following:</p>
+    /// <p>If you set TimePointGranularity to “SPECIFIC”, you must also provide the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>StartDateTime</code> - The first timestamp in the range of time
-    /// points.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EndDateTime</code> - The last timestamp in the range of time
-    /// points.</p>
-    /// </li>
+    /// <li> <p> <code>StartDateTime</code> - The first timestamp in the range of time points.</p> </li>
+    /// <li> <p> <code>EndDateTime</code> - The last timestamp in the range of time points.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExplainability<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1714,10 +1311,10 @@ pub mod fluent_builders {
                 crate::input::CreateExplainabilityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1726,8 +1323,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the Explainability.</p>
-        pub fn explainability_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explainability_name(inp);
+        pub fn explainability_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_name(input.into());
             self
         }
         /// <p>A unique name for the Explainability.</p>
@@ -1738,26 +1335,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_explainability_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-        /// Explainability.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
-        /// Explainability.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The configuration settings that define the granularity of time series and time points
-        /// for the Explainability.</p>
-        pub fn explainability_config(mut self, inp: crate::model::ExplainabilityConfig) -> Self {
-            self.inner = self.inner.explainability_config(inp);
+        /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
+        pub fn explainability_config(mut self, input: crate::model::ExplainabilityConfig) -> Self {
+            self.inner = self.inner.explainability_config(input);
             self
         }
-        /// <p>The configuration settings that define the granularity of time series and time points
-        /// for the Explainability.</p>
+        /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
         pub fn set_explainability_config(
             mut self,
             input: std::option::Option<crate::model::ExplainabilityConfig>,
@@ -1765,16 +1358,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_explainability_config(input);
             self
         }
-        /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
-        /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
-        /// <a>CreateDatasetImportJob</a> request.</p>
-        pub fn data_source(mut self, inp: crate::model::DataSource) -> Self {
-            self.inner = self.inner.data_source(inp);
+        /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.inner = self.inner.data_source(input);
             self
         }
-        /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
-        /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
-        /// <a>CreateDatasetImportJob</a> request.</p>
+        /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::DataSource>,
@@ -1782,19 +1371,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_source(input);
             self
         }
-        /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
-        pub fn schema(mut self, inp: crate::model::Schema) -> Self {
-            self.inner = self.inner.schema(inp);
+        /// <p>Defines the fields of a dataset.</p>
+        pub fn schema(mut self, input: crate::model::Schema) -> Self {
+            self.inner = self.inner.schema(input);
             self
         }
-        /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
+        /// <p>Defines the fields of a dataset.</p>
         pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
             self.inner = self.inner.set_schema(input);
             self
         }
         /// <p>Create an Expainability visualization that is viewable within the AWS console.</p>
-        pub fn enable_visualization(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_visualization(inp);
+        pub fn enable_visualization(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_visualization(input);
             self
         }
         /// <p>Create an Expainability visualization that is viewable within the AWS console.</p>
@@ -1802,14 +1391,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_visualization(input);
             self
         }
-        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first
-        /// point for the Explainability.</p>
-        pub fn start_date_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_date_time(inp);
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
+        /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
+        pub fn start_date_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_date_time(input.into());
             self
         }
-        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first
-        /// point for the Explainability.</p>
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
+        /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
         pub fn set_start_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1817,14 +1406,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_date_time(input);
             self
         }
-        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last
-        /// time point for the Explainability.</p>
-        pub fn end_date_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.end_date_time(inp);
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
+        /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
+        pub fn end_date_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.end_date_time(input.into());
             self
         }
-        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last
-        /// time point for the Explainability.</p>
+        /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
+        /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
         pub fn set_end_date_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1836,73 +1425,29 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value, both of which you define. Tag keys and values
-        /// are case sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-        /// and + - = . _ : / @. If your tagging schema is used across other services and
-        /// resources, the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-        /// with only the key prefix of <code>aws</code> do not count against your tags per
-        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value, both of which you define. Tag keys and values
-        /// are case sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-        /// and + - = . _ : / @. If your tagging schema is used across other services and
-        /// resources, the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-        /// with only the key prefix of <code>aws</code> do not count against your tags per
-        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -1914,16 +1459,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateExplainabilityExport`.
     ///
-    /// <p>Exports an Explainability resource created by the <a>CreateExplainability</a> operation. Exported files are exported to an Amazon Simple Storage Service (Amazon
-    /// S3) bucket.</p>
-    /// <p>You must specify a <a>DataDestination</a> object that includes an Amazon S3
-    /// bucket and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3
-    /// bucket. For more information, see <a>aws-forecast-iam-roles</a>.</p>
-    /// <note>
-    /// <p>The <code>Status</code> of the export job must be <code>ACTIVE</code> before you
-    /// can access the export in your Amazon S3 bucket. To get the status, use the <a>DescribeExplainabilityExport</a> operation.</p>
+    /// <p>Exports an Explainability resource created by the <code>CreateExplainability</code> operation. Exported files are exported to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    /// <p>You must specify a <code>DataDestination</code> object that includes an Amazon S3 bucket and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see <code>aws-forecast-iam-roles</code>.</p> <note>
+    /// <p>The <code>Status</code> of the export job must be <code>ACTIVE</code> before you can access the export in your Amazon S3 bucket. To get the status, use the <code>DescribeExplainabilityExport</code> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExplainabilityExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1968,10 +1508,10 @@ pub mod fluent_builders {
                 crate::input::CreateExplainabilityExportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1980,8 +1520,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the Explainability export.</p>
-        pub fn explainability_export_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explainability_export_name(inp);
+        pub fn explainability_export_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_export_name(input.into());
             self
         }
         /// <p>A unique name for the Explainability export.</p>
@@ -1993,8 +1533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
-        pub fn explainability_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explainability_arn(inp);
+        pub fn explainability_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
@@ -2005,14 +1545,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_explainability_arn(input);
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
-        pub fn destination(mut self, inp: crate::model::DataDestination) -> Self {
-            self.inner = self.inner.destination(inp);
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
+            self.inner = self.inner.destination(input);
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DataDestination>,
@@ -2024,73 +1562,29 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value, both of which you define. Tag keys and values
-        /// are case sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-        /// and + - = . _ : / @. If your tagging schema is used across other services and
-        /// resources, the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-        /// with only the key prefix of <code>aws</code> do not count against your tags per
-        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value, both of which you define. Tag keys and values
-        /// are case sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8,
-        /// and + - = . _ : / @. If your tagging schema is used across other services and
-        /// resources, the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a
-        /// tag value has <code>aws</code> as its prefix but the key does not, Forecast
-        /// considers it to be a user tag and will count against the limit of 50 tags. Tags
-        /// with only the key prefix of <code>aws</code> do not count against your tags per
-        /// resource limit. You cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2102,26 +1596,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateForecast`.
     ///
-    /// <p>Creates a forecast for each item in the <code>TARGET_TIME_SERIES</code> dataset that was
-    /// used to train the predictor. This is known as inference. To retrieve the forecast for a single
-    /// item at low latency, use the  operation. To
-    /// export the complete forecast into your Amazon Simple Storage Service (Amazon S3) bucket, use the <a>CreateForecastExportJob</a> operation.</p>
-    /// <p>The range of the forecast is determined by the <code>ForecastHorizon</code> value, which
-    /// you specify in the <a>CreatePredictor</a> request. When you query a forecast, you
-    /// can request a specific date range within the forecast.</p>
-    /// <p>To get a list of all your forecasts, use the <a>ListForecasts</a>
-    /// operation.</p>
-    /// <note>
-    /// <p>The forecasts generated by Amazon Forecast are in the same time zone as the dataset that was
-    /// used to create the predictor.</p>
+    /// <p>Creates a forecast for each item in the <code>TARGET_TIME_SERIES</code> dataset that was used to train the predictor. This is known as inference. To retrieve the forecast for a single item at low latency, use the operation. To export the complete forecast into your Amazon Simple Storage Service (Amazon S3) bucket, use the <code>CreateForecastExportJob</code> operation.</p>
+    /// <p>The range of the forecast is determined by the <code>ForecastHorizon</code> value, which you specify in the <code>CreatePredictor</code> request. When you query a forecast, you can request a specific date range within the forecast.</p>
+    /// <p>To get a list of all your forecasts, use the <code>ListForecasts</code> operation.</p> <note>
+    /// <p>The forecasts generated by Amazon Forecast are in the same time zone as the dataset that was used to create the predictor.</p>
     /// </note>
-    /// <p>For more information, see <a>howitworks-forecast</a>.</p>
-    /// <note>
-    /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query
-    /// or export the forecast. Use the <a>DescribeForecast</a> operation to get the
-    /// status.</p>
+    /// <p>For more information, see <code>howitworks-forecast</code>.</p> <note>
+    /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast. Use the <code>DescribeForecast</code> operation to get the status.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateForecast<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2166,10 +1649,10 @@ pub mod fluent_builders {
                 crate::input::CreateForecastInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2178,8 +1661,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the forecast.</p>
-        pub fn forecast_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_name(inp);
+        pub fn forecast_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_name(input.into());
             self
         }
         /// <p>A name for the forecast.</p>
@@ -2191,8 +1674,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
-        pub fn predictor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_arn(inp);
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
@@ -2207,20 +1690,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
         ///
-        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You
-        /// can currently specify up to 5 quantiles per forecast</b>. Accepted values include
-        /// <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast
-        /// is different from the median (0.50) when the distribution is not symmetric (for example, Beta
-        /// and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
-        pub fn forecast_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_types(inp);
+        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
+        pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_types(input.into());
             self
         }
-        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You
-        /// can currently specify up to 5 quantiles per forecast</b>. Accepted values include
-        /// <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast
-        /// is different from the median (0.50) when the distribution is not symmetric (for example, Beta
-        /// and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
+        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
         pub fn set_forecast_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2235,56 +1710,28 @@ pub mod fluent_builders {
         /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2296,21 +1743,24 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateForecastExportJob`.
     ///
-    /// <p>Exports a forecast created by the <a>CreateForecast</a> operation to your
-    /// Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name will match the following conventions:</p>
-    /// <p><ForecastExportJobName>_<ExportTimestamp>_<PartNumber></p>
-    /// <p>where the <ExportTimestamp> component is in Java SimpleDateFormat
-    /// (yyyy-MM-ddTHH-mm-ssZ).</p>
-    /// <p>You must specify a <a>DataDestination</a> object that includes an AWS Identity and Access Management
-    /// (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
-    /// <a>aws-forecast-iam-roles</a>.</p>
-    /// <p>For more information, see <a>howitworks-forecast</a>.</p>
-    /// <p>To get a list of all your forecast export jobs, use the <a>ListForecastExportJobs</a> operation.</p>
-    /// <note>
-    /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-    /// you can access the forecast in your Amazon S3 bucket. To get the status, use the <a>DescribeForecastExportJob</a> operation.</p>
+    /// <p>Exports a forecast created by the <code>CreateForecast</code> operation to your Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name will match the following conventions:</p>
+    /// <p>
+    /// <forecastexportjobname>
+    /// _
+    /// <exporttimestamp>
+    /// _
+    /// <partnumber></partnumber>
+    /// </exporttimestamp>
+    /// </forecastexportjobname></p>
+    /// <p>where the <exporttimestamp>
+    /// component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
+    /// </exporttimestamp></p>
+    /// <p>You must specify a <code>DataDestination</code> object that includes an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see <code>aws-forecast-iam-roles</code>.</p>
+    /// <p>For more information, see <code>howitworks-forecast</code>.</p>
+    /// <p>To get a list of all your forecast export jobs, use the <code>ListForecastExportJobs</code> operation.</p> <note>
+    /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your Amazon S3 bucket. To get the status, use the <code>DescribeForecastExportJob</code> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateForecastExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2355,10 +1805,10 @@ pub mod fluent_builders {
                 crate::input::CreateForecastExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2367,8 +1817,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the forecast export job.</p>
-        pub fn forecast_export_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_export_job_name(inp);
+        pub fn forecast_export_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_export_job_name(input.into());
             self
         }
         /// <p>The name for the forecast export job.</p>
@@ -2380,8 +1830,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
-        pub fn forecast_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_arn(inp);
+        pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
@@ -2389,20 +1839,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_forecast_arn(input);
             self
         }
-        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
-        /// Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
-        /// bucket.</p>
-        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
-        /// IAM role must allow Amazon Forecast permission to access the key.</p>
-        pub fn destination(mut self, inp: crate::model::DataDestination) -> Self {
-            self.inner = self.inner.destination(inp);
+        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+        pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
+            self.inner = self.inner.destination(input);
             self
         }
-        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
-        /// Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
-        /// bucket.</p>
-        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
-        /// IAM role must allow Amazon Forecast permission to access the key.</p>
+        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DataDestination>,
@@ -2417,56 +1861,28 @@ pub mod fluent_builders {
         /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2479,69 +1895,28 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePredictor`.
     ///
     /// <note>
-    /// <p> This operation creates a legacy predictor that does not include all the predictor
-    /// functionalities provided by Amazon Forecast. To create a predictor that is compatible with all
-    /// aspects of Forecast, use CreateAutoPredictor.</p>
+    /// <p> This operation creates a legacy predictor that does not include all the predictor functionalities provided by Amazon Forecast. To create a predictor that is compatible with all aspects of Forecast, use <code>CreateAutoPredictor</code>.</p>
     /// </note>
     /// <p>Creates an Amazon Forecast predictor.</p>
-    /// <p>In the request, provide a dataset group and either specify an algorithm or let Amazon Forecast
-    /// choose an algorithm for you using AutoML. If you specify an algorithm, you also can override
-    /// algorithm-specific hyperparameters.</p>
-    /// <p>Amazon Forecast uses the algorithm to train a predictor using the latest version of the datasets
-    /// in the specified dataset group. You can then generate a forecast using the <a>CreateForecast</a> operation.</p>
-    /// <p> To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. </p>
-    /// <p>You can specify a featurization configuration to fill and aggregate the data fields in the
-    /// <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more information, see
-    /// <a>FeaturizationConfig</a>.</p>
-    /// <p>For RELATED_TIME_SERIES datasets, <code>CreatePredictor</code> verifies that the
-    /// <code>DataFrequency</code> specified when the dataset was created matches the
-    /// <code>ForecastFrequency</code>. TARGET_TIME_SERIES datasets don't have this restriction.
-    /// Amazon Forecast also verifies the delimiter and timestamp format. For more information, see <a>howitworks-datasets-groups</a>.</p>
-    /// <p>By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and 0.9
-    /// (P90) quantiles. You can choose custom forecast types to train and evaluate your predictor by
-    /// setting the <code>ForecastTypes</code>. </p>
-    /// <p>
-    /// <b>AutoML</b>
-    /// </p>
-    /// <p>If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes the
-    /// <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>. The
-    /// <code>objective function</code> is defined as the mean of the weighted losses over the
-    /// forecast types. By default, these are the p10, p50, and p90 quantile losses. For more
-    /// information, see <a>EvaluationResult</a>.</p>
+    /// <p>In the request, provide a dataset group and either specify an algorithm or let Amazon Forecast choose an algorithm for you using AutoML. If you specify an algorithm, you also can override algorithm-specific hyperparameters.</p>
+    /// <p>Amazon Forecast uses the algorithm to train a predictor using the latest version of the datasets in the specified dataset group. You can then generate a forecast using the <code>CreateForecast</code> operation.</p>
+    /// <p> To see the evaluation metrics, use the <code>GetAccuracyMetrics</code> operation. </p>
+    /// <p>You can specify a featurization configuration to fill and aggregate the data fields in the <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more information, see <code>FeaturizationConfig</code>.</p>
+    /// <p>For RELATED_TIME_SERIES datasets, <code>CreatePredictor</code> verifies that the <code>DataFrequency</code> specified when the dataset was created matches the <code>ForecastFrequency</code>. TARGET_TIME_SERIES datasets don't have this restriction. Amazon Forecast also verifies the delimiter and timestamp format. For more information, see <code>howitworks-datasets-groups</code>.</p>
+    /// <p>By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and 0.9 (P90) quantiles. You can choose custom forecast types to train and evaluate your predictor by setting the <code>ForecastTypes</code>. </p>
+    /// <p> <b>AutoML</b> </p>
+    /// <p>If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes the <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>. The <code>objective function</code> is defined as the mean of the weighted losses over the forecast types. By default, these are the p10, p50, and p90 quantile losses. For more information, see <code>EvaluationResult</code>.</p>
     /// <p>When AutoML is enabled, the following properties are disallowed:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AlgorithmArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HPOConfig</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PerformHPO</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TrainingParameters</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AlgorithmArn</code> </p> </li>
+    /// <li> <p> <code>HPOConfig</code> </p> </li>
+    /// <li> <p> <code>PerformHPO</code> </p> </li>
+    /// <li> <p> <code>TrainingParameters</code> </p> </li>
     /// </ul>
-    ///
-    ///
-    ///
-    /// <p>To get a list of all of your predictors, use the <a>ListPredictors</a>
-    /// operation.</p>
-    /// <note>
-    /// <p>Before you can use the predictor to create a forecast, the <code>Status</code> of the
-    /// predictor must be <code>ACTIVE</code>, signifying that training has completed. To get the
-    /// status, use the <a>DescribePredictor</a> operation.</p>
+    /// <p>To get a list of all of your predictors, use the <code>ListPredictors</code> operation.</p> <note>
+    /// <p>Before you can use the predictor to create a forecast, the <code>Status</code> of the predictor must be <code>ACTIVE</code>, signifying that training has completed. To get the status, use the <code>DescribePredictor</code> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePredictor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2586,10 +1961,10 @@ pub mod fluent_builders {
                 crate::input::CreatePredictorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2598,8 +1973,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the predictor.</p>
-        pub fn predictor_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_name(inp);
+        pub fn predictor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_name(input.into());
             self
         }
         /// <p>A name for the predictor.</p>
@@ -2610,83 +1985,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_predictor_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if
-        /// <code>PerformAutoML</code> is not set to <code>true</code>.</p>
-        /// <p class="title">
-        /// <b>Supported algorithms:</b>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p>
+        /// <p class="title"> <b>Supported algorithms:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/ARIMA</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/CNN-QR</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/ETS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/NPTS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/Prophet</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
         /// </ul>
-        pub fn algorithm_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.algorithm_arn(inp);
+        pub fn algorithm_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.algorithm_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if
-        /// <code>PerformAutoML</code> is not set to <code>true</code>.</p>
-        /// <p class="title">
-        /// <b>Supported algorithms:</b>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p>
+        /// <p class="title"> <b>Supported algorithms:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/ARIMA</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/CNN-QR</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/ETS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/NPTS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:aws:forecast:::algorithm/Prophet</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
+        /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
         /// </ul>
         pub fn set_algorithm_arn(
             mut self,
@@ -2695,24 +2016,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_algorithm_arn(input);
             self
         }
-        /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast
-        /// horizon is also called the prediction length.</p>
-        /// <p>For example, if you configure a dataset for daily data collection (using the
-        /// <code>DataFrequency</code> parameter of the <a>CreateDataset</a> operation) and
-        /// set the forecast horizon to 10, the model returns predictions for 10 days.</p>
-        /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
-        /// TARGET_TIME_SERIES dataset length.</p>
-        pub fn forecast_horizon(mut self, inp: i32) -> Self {
-            self.inner = self.inner.forecast_horizon(inp);
+        /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also called the prediction length.</p>
+        /// <p>For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code> parameter of the <code>CreateDataset</code> operation) and set the forecast horizon to 10, the model returns predictions for 10 days.</p>
+        /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
+        pub fn forecast_horizon(mut self, input: i32) -> Self {
+            self.inner = self.inner.forecast_horizon(input);
             self
         }
-        /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast
-        /// horizon is also called the prediction length.</p>
-        /// <p>For example, if you configure a dataset for daily data collection (using the
-        /// <code>DataFrequency</code> parameter of the <a>CreateDataset</a> operation) and
-        /// set the forecast horizon to 10, the model returns predictions for 10 days.</p>
-        /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
-        /// TARGET_TIME_SERIES dataset length.</p>
+        /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also called the prediction length.</p>
+        /// <p>For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code> parameter of the <code>CreateDataset</code> operation) and set the forecast horizon to 10, the model returns predictions for 10 days.</p>
+        /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
         pub fn set_forecast_horizon(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_forecast_horizon(input);
             self
@@ -2721,17 +2034,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
         ///
-        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five
-        /// forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-        /// higher. You can also specify the mean forecast with <code>mean</code>. </p>
+        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
         /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
-        pub fn forecast_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_types(inp);
+        pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_types(input.into());
             self
         }
-        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five
-        /// forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-        /// higher. You can also specify the mean forecast with <code>mean</code>. </p>
+        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
         /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
         pub fn set_forecast_types(
             mut self,
@@ -2740,52 +2049,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_forecast_types(input);
             self
         }
-        /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it
-        /// provides and chooses the best algorithm and configuration for your training dataset.</p>
-        /// <p>The default value is <code>false</code>. In this case, you are required to specify an
-        /// algorithm.</p>
-        /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This
-        /// is a good option if you aren't sure which algorithm is suitable for your training data. In
-        /// this case, <code>PerformHPO</code> must be false.</p>
-        pub fn perform_auto_ml(mut self, inp: bool) -> Self {
-            self.inner = self.inner.perform_auto_ml(inp);
+        /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>
+        /// <p>The default value is <code>false</code>. In this case, you are required to specify an algorithm.</p>
+        /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must be false.</p>
+        pub fn perform_auto_ml(mut self, input: bool) -> Self {
+            self.inner = self.inner.perform_auto_ml(input);
             self
         }
-        /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it
-        /// provides and chooses the best algorithm and configuration for your training dataset.</p>
-        /// <p>The default value is <code>false</code>. In this case, you are required to specify an
-        /// algorithm.</p>
-        /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This
-        /// is a good option if you aren't sure which algorithm is suitable for your training data. In
-        /// this case, <code>PerformHPO</code> must be false.</p>
+        /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>
+        /// <p>The default value is <code>false</code>. In this case, you are required to specify an algorithm.</p>
+        /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must be false.</p>
         pub fn set_perform_auto_ml(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_perform_auto_ml(input);
             self
         }
         /// <note>
-        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-        /// Contact AWS Support or your account manager to learn more about access privileges.
-        /// </p>
+        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
         /// </note>
-        /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy.
-        /// To apply an AutoML strategy that minimizes training time, use
-        /// <code>LatencyOptimized</code>.</p>
+        /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
         /// <p>This parameter is only valid for predictors trained using AutoML.</p>
         pub fn auto_ml_override_strategy(
             mut self,
-            inp: crate::model::AutoMlOverrideStrategy,
+            input: crate::model::AutoMlOverrideStrategy,
         ) -> Self {
-            self.inner = self.inner.auto_ml_override_strategy(inp);
+            self.inner = self.inner.auto_ml_override_strategy(input);
             self
         }
         /// <note>
-        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
-        /// Contact AWS Support or your account manager to learn more about access privileges.
-        /// </p>
+        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>
         /// </note>
-        /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy.
-        /// To apply an AutoML strategy that minimizes training time, use
-        /// <code>LatencyOptimized</code>.</p>
+        /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
         /// <p>This parameter is only valid for predictors trained using AutoML.</p>
         pub fn set_auto_ml_override_strategy(
             mut self,
@@ -2794,47 +2087,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_ml_override_strategy(input);
             self
         }
-        /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter
-        /// values for your training data. The process of performing HPO is known as running a
-        /// hyperparameter tuning job.</p>
-        /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default
-        /// hyperparameter values from the chosen algorithm.</p>
-        /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and,
-        /// optionally, supply the <a>HyperParameterTuningJobConfig</a> object. The tuning job
-        /// specifies a metric to optimize, which hyperparameters participate in tuning, and the valid
-        /// range for each tunable hyperparameter. In this case, you are required to specify an algorithm
-        /// and <code>PerformAutoML</code> must be false.</p>
+        /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
+        /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from the chosen algorithm.</p>
+        /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the <code>HyperParameterTuningJobConfig</code> object. The tuning job specifies a metric to optimize, which hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to specify an algorithm and <code>PerformAutoML</code> must be false.</p>
         /// <p>The following algorithms support HPO:</p>
         /// <ul>
-        /// <li>
-        /// <p>DeepAR+</p>
-        /// </li>
-        /// <li>
-        /// <p>CNN-QR</p>
-        /// </li>
+        /// <li> <p>DeepAR+</p> </li>
+        /// <li> <p>CNN-QR</p> </li>
         /// </ul>
-        pub fn perform_hpo(mut self, inp: bool) -> Self {
-            self.inner = self.inner.perform_hpo(inp);
+        pub fn perform_hpo(mut self, input: bool) -> Self {
+            self.inner = self.inner.perform_hpo(input);
             self
         }
-        /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter
-        /// values for your training data. The process of performing HPO is known as running a
-        /// hyperparameter tuning job.</p>
-        /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default
-        /// hyperparameter values from the chosen algorithm.</p>
-        /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and,
-        /// optionally, supply the <a>HyperParameterTuningJobConfig</a> object. The tuning job
-        /// specifies a metric to optimize, which hyperparameters participate in tuning, and the valid
-        /// range for each tunable hyperparameter. In this case, you are required to specify an algorithm
-        /// and <code>PerformAutoML</code> must be false.</p>
+        /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
+        /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from the chosen algorithm.</p>
+        /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the <code>HyperParameterTuningJobConfig</code> object. The tuning job specifies a metric to optimize, which hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to specify an algorithm and <code>PerformAutoML</code> must be false.</p>
         /// <p>The following algorithms support HPO:</p>
         /// <ul>
-        /// <li>
-        /// <p>DeepAR+</p>
-        /// </li>
-        /// <li>
-        /// <p>CNN-QR</p>
-        /// </li>
+        /// <li> <p>DeepAR+</p> </li>
+        /// <li> <p>CNN-QR</p> </li>
         /// </ul>
         pub fn set_perform_hpo(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_perform_hpo(input);
@@ -2844,20 +2115,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_training_parameters`](Self::set_training_parameters).
         ///
-        /// <p>The hyperparameters to override for model training. The hyperparameters that you can
-        /// override are listed in the individual algorithms. For the list of supported algorithms, see
-        /// <a>aws-forecast-choosing-recipes</a>.</p>
+        /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
         pub fn training_parameters(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.training_parameters(k, v);
+            self.inner = self.inner.training_parameters(k.into(), v.into());
             self
         }
-        /// <p>The hyperparameters to override for model training. The hyperparameters that you can
-        /// override are listed in the individual algorithms. For the list of supported algorithms, see
-        /// <a>aws-forecast-choosing-recipes</a>.</p>
+        /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
         pub fn set_training_parameters(
             mut self,
             input: std::option::Option<
@@ -2867,16 +2134,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_training_parameters(input);
             self
         }
-        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
-        /// evaluates a predictor by splitting a dataset into training data and testing data. The
-        /// evaluation parameters define how to perform the split and the number of iterations.</p>
-        pub fn evaluation_parameters(mut self, inp: crate::model::EvaluationParameters) -> Self {
-            self.inner = self.inner.evaluation_parameters(inp);
+        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
+        pub fn evaluation_parameters(mut self, input: crate::model::EvaluationParameters) -> Self {
+            self.inner = self.inner.evaluation_parameters(input);
             self
         }
-        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
-        /// evaluates a predictor by splitting a dataset into training data and testing data. The
-        /// evaluation parameters define how to perform the split and the number of iterations.</p>
+        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
         pub fn set_evaluation_parameters(
             mut self,
             input: std::option::Option<crate::model::EvaluationParameters>,
@@ -2884,20 +2147,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_evaluation_parameters(input);
             self
         }
-        /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this
-        /// parameter, Amazon Forecast uses default values. The individual algorithms specify which
-        /// hyperparameters support hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
-        /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to
-        /// true.</p>
-        pub fn hpo_config(mut self, inp: crate::model::HyperParameterTuningJobConfig) -> Self {
-            self.inner = self.inner.hpo_config(inp);
+        /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
+        /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
+        pub fn hpo_config(mut self, input: crate::model::HyperParameterTuningJobConfig) -> Self {
+            self.inner = self.inner.hpo_config(input);
             self
         }
-        /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this
-        /// parameter, Amazon Forecast uses default values. The individual algorithms specify which
-        /// hyperparameters support hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
-        /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to
-        /// true.</p>
+        /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
+        /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
         pub fn set_hpo_config(
             mut self,
             input: std::option::Option<crate::model::HyperParameterTuningJobConfig>,
@@ -2906,8 +2163,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
-        pub fn input_data_config(mut self, inp: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(inp);
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(input);
             self
         }
         /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
@@ -2919,8 +2176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The featurization configuration.</p>
-        pub fn featurization_config(mut self, inp: crate::model::FeaturizationConfig) -> Self {
-            self.inner = self.inner.featurization_config(inp);
+        pub fn featurization_config(mut self, input: crate::model::FeaturizationConfig) -> Self {
+            self.inner = self.inner.featurization_config(input);
             self
         }
         /// <p>The featurization configuration.</p>
@@ -2931,14 +2188,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_featurization_config(input);
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-        /// the key.</p>
-        pub fn encryption_config(mut self, inp: crate::model::EncryptionConfig) -> Self {
-            self.inner = self.inner.encryption_config(inp);
+        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+        pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
+            self.inner = self.inner.encryption_config(input);
             self
         }
-        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-        /// the key.</p>
+        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -2953,56 +2208,28 @@ pub mod fluent_builders {
         /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -3012,8 +2239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The accuracy metric used to optimize the predictor.</p>
-        pub fn optimization_metric(mut self, inp: crate::model::OptimizationMetric) -> Self {
-            self.inner = self.inner.optimization_metric(inp);
+        pub fn optimization_metric(mut self, input: crate::model::OptimizationMetric) -> Self {
+            self.inner = self.inner.optimization_metric(input);
             self
         }
         /// <p>The accuracy metric used to optimize the predictor.</p>
@@ -3027,22 +2254,25 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePredictorBacktestExportJob`.
     ///
-    /// <p>Exports backtest forecasts and accuracy metrics generated by the <a>CreatePredictor</a> operation. Two folders containing CSV files are exported
-    /// to your specified S3 bucket.</p>
+    /// <p>Exports backtest forecasts and accuracy metrics generated by the <code>CreateAutoPredictor</code> or <code>CreatePredictor</code> operations. Two folders containing CSV files are exported to your specified S3 bucket.</p>
     /// <p> The export file names will match the following conventions:</p>
-    /// <p>
-    /// <code><ExportJobName>_<ExportTimestamp>_<PartNumber>.csv</code>
-    /// </p>
-    /// <p>The <ExportTimestamp> component is in Java SimpleDate format
-    /// (yyyy-MM-ddTHH-mm-ssZ).</p>
-    /// <p>You must specify a <a>DataDestination</a> object that includes an Amazon S3
-    /// bucket and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3
-    /// bucket. For more information, see <a>aws-forecast-iam-roles</a>.</p>
-    /// <note>
-    /// <p>The <code>Status</code> of the export job must be <code>ACTIVE</code> before
-    /// you can access the export in your Amazon S3 bucket. To get the status, use the <a>DescribePredictorBacktestExportJob</a> operation.</p>
+    /// <p> <code>
+    /// <exportjobname>
+    /// _
+    /// <exporttimestamp>
+    /// _
+    /// <partnumber>
+    /// .csv
+    /// </partnumber>
+    /// </exporttimestamp>
+    /// </exportjobname></code> </p>
+    /// <p>The <exporttimestamp>
+    /// component is in Java SimpleDate format (yyyy-MM-ddTHH-mm-ssZ).
+    /// </exporttimestamp></p>
+    /// <p>You must specify a <code>DataDestination</code> object that includes an Amazon S3 bucket and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see <code>aws-forecast-iam-roles</code>.</p> <note>
+    /// <p>The <code>Status</code> of the export job must be <code>ACTIVE</code> before you can access the export in your Amazon S3 bucket. To get the status, use the <code>DescribePredictorBacktestExportJob</code> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePredictorBacktestExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3087,10 +2317,10 @@ pub mod fluent_builders {
                 crate::input::CreatePredictorBacktestExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3101,9 +2331,9 @@ pub mod fluent_builders {
         /// <p>The name for the backtest export job.</p>
         pub fn predictor_backtest_export_job_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.predictor_backtest_export_job_name(inp);
+            self.inner = self.inner.predictor_backtest_export_job_name(input.into());
             self
         }
         /// <p>The name for the backtest export job.</p>
@@ -3115,8 +2345,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
-        pub fn predictor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_arn(inp);
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
@@ -3127,14 +2357,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_predictor_arn(input);
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
-        pub fn destination(mut self, inp: crate::model::DataDestination) -> Self {
-            self.inner = self.inner.destination(inp);
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
+            self.inner = self.inner.destination(input);
             self
         }
-        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
-        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DataDestination>,
@@ -3146,73 +2374,29 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists
-        /// of a key and an optional value, both of which you define. Tag keys and values are case
-        /// sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and +
-        /// - = . _ : / @. If your tagging schema is used across other services and resources,
-        /// the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag
-        /// value has <code>aws</code> as its prefix but the key does not, Forecast considers it
-        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
-        /// prefix of <code>aws</code> do not count against your tags per resource limit. You
-        /// cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists
-        /// of a key and an optional value, both of which you define. Tag keys and values are case
-        /// sensitive.</p>
+        /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique and each tag key must have one
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum number of tags per resource: 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and +
-        /// - = . _ : / @. If your tagging schema is used across other services and resources,
-        /// the character restrictions of those services also apply. </p>
-        /// </li>
-        /// <li>
-        /// <p>Key prefixes cannot include any upper or lowercase combination of
-        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag
-        /// value has <code>aws</code> as its prefix but the key does not, Forecast considers it
-        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
-        /// prefix of <code>aws</code> do not count against your tags per resource limit. You
-        /// cannot edit or delete tag keys with this prefix.</p>
-        /// </li>
+        /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+        /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+        /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -3224,16 +2408,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
-    /// <p>Deletes an Amazon Forecast dataset that was created using the <a>CreateDataset</a>
-    /// operation. You can only delete datasets that have a status of <code>ACTIVE</code> or
-    /// <code>CREATE_FAILED</code>. To get the status use the <a>DescribeDataset</a>
-    /// operation.</p>
-    /// <note>
-    /// <p>Forecast does not automatically update any dataset groups that contain the deleted dataset.
-    /// In order to update the dataset group, use the
-    /// operation, omitting the deleted dataset's ARN.</p>
+    /// <p>Deletes an Amazon Forecast dataset that was created using the <code>CreateDataset</code> operation. You can only delete datasets that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the <code>DescribeDataset</code> operation.</p> <note>
+    /// <p>Forecast does not automatically update any dataset groups that contain the deleted dataset. In order to update the dataset group, use the operation, omitting the deleted dataset's ARN.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3278,10 +2456,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3290,8 +2468,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
@@ -3302,11 +2480,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDatasetGroup`.
     ///
-    /// <p>Deletes a dataset group created using the <a>CreateDatasetGroup</a> operation.
-    /// You can only delete dataset groups that have a status of <code>ACTIVE</code>,
-    /// <code>CREATE_FAILED</code>, or <code>UPDATE_FAILED</code>. To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
+    /// <p>Deletes a dataset group created using the <code>CreateDatasetGroup</code> operation. You can only delete dataset groups that have a status of <code>ACTIVE</code>, <code>CREATE_FAILED</code>, or <code>UPDATE_FAILED</code>. To get the status, use the <code>DescribeDatasetGroup</code> operation.</p>
     /// <p>This operation deletes only the dataset group, not the datasets in the group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3351,10 +2527,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDatasetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3363,8 +2539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
@@ -3378,10 +2554,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDatasetImportJob`.
     ///
-    /// <p>Deletes a dataset import job created using the <a>CreateDatasetImportJob</a>
-    /// operation. You can delete only dataset import jobs that have a status of <code>ACTIVE</code>
-    /// or <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeDatasetImportJob</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a dataset import job created using the <code>CreateDatasetImportJob</code> operation. You can delete only dataset import jobs that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeDatasetImportJob</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatasetImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3426,10 +2600,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDatasetImportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3438,8 +2612,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-        pub fn dataset_import_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_import_job_arn(inp);
+        pub fn dataset_import_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_import_job_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
@@ -3454,9 +2628,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteExplainability`.
     ///
     /// <p>Deletes an Explainability resource.</p>
-    /// <p>You can delete only predictor that have a status of <code>ACTIVE</code> or
-    /// <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeExplainability</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can delete only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeExplainability</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExplainability<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3501,10 +2674,10 @@ pub mod fluent_builders {
                 crate::input::DeleteExplainabilityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3513,8 +2686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
-        pub fn explainability_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explainability_arn(inp);
+        pub fn explainability_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
@@ -3528,8 +2701,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteExplainabilityExport`.
     ///
-    /// <p>Deletes an Explainability export job.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an Explainability export.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExplainabilityExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3574,10 +2747,10 @@ pub mod fluent_builders {
                 crate::input::DeleteExplainabilityExportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3586,8 +2759,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
-        pub fn explainability_export_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explainability_export_arn(inp);
+        pub fn explainability_export_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_export_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
@@ -3601,12 +2774,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteForecast`.
     ///
-    /// <p>Deletes a forecast created using the <a>CreateForecast</a> operation. You can
-    /// delete only forecasts that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
-    /// To get the status, use the <a>DescribeForecast</a> operation.</p>
-    /// <p>You can't delete a forecast while it is being exported. After a forecast is deleted, you
-    /// can no longer query the forecast.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a forecast created using the <code>CreateForecast</code> operation. You can delete only forecasts that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeForecast</code> operation.</p>
+    /// <p>You can't delete a forecast while it is being exported. After a forecast is deleted, you can no longer query the forecast.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteForecast<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3651,10 +2821,10 @@ pub mod fluent_builders {
                 crate::input::DeleteForecastInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3663,8 +2833,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
-        pub fn forecast_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_arn(inp);
+        pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
@@ -3675,10 +2845,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteForecastExportJob`.
     ///
-    /// <p>Deletes a forecast export job created using the <a>CreateForecastExportJob</a>
-    /// operation. You can delete only export jobs that have a status of <code>ACTIVE</code> or
-    /// <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeForecastExportJob</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a forecast export job created using the <code>CreateForecastExportJob</code> operation. You can delete only export jobs that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeForecastExportJob</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteForecastExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3723,10 +2891,10 @@ pub mod fluent_builders {
                 crate::input::DeleteForecastExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3735,8 +2903,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
-        pub fn forecast_export_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_export_job_arn(inp);
+        pub fn forecast_export_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_export_job_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
@@ -3750,10 +2918,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePredictor`.
     ///
-    /// <p>Deletes a predictor created using the <a>CreatePredictor</a> operation. You can
-    /// delete only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
-    /// To get the status, use the <a>DescribePredictor</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a predictor created using the <code>DescribePredictor</code> or <code>CreatePredictor</code> operations. You can delete only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribePredictor</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePredictor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3798,10 +2964,10 @@ pub mod fluent_builders {
                 crate::input::DeletePredictorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3810,8 +2976,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
-        pub fn predictor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_arn(inp);
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
@@ -3826,7 +2992,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePredictorBacktestExportJob`.
     ///
     /// <p>Deletes a predictor backtest export job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePredictorBacktestExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3871,10 +3037,10 @@ pub mod fluent_builders {
                 crate::input::DeletePredictorBacktestExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3885,9 +3051,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
         pub fn predictor_backtest_export_job_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.predictor_backtest_export_job_arn(inp);
+            self.inner = self.inner.predictor_backtest_export_job_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
@@ -3901,39 +3067,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResourceTree`.
     ///
-    /// <p>Deletes an entire resource tree. This operation will delete the parent resource and
-    /// its child resources.</p>
-    /// <p>Child resources are resources that were created from another resource. For example,
-    /// when a forecast is generated from a predictor, the forecast is the child resource and
-    /// the predictor is the parent resource.</p>
+    /// <p>Deletes an entire resource tree. This operation will delete the parent resource and its child resources.</p>
+    /// <p>Child resources are resources that were created from another resource. For example, when a forecast is generated from a predictor, the forecast is the child resource and the predictor is the parent resource.</p>
     /// <p>Amazon Forecast resources possess the following parent-child resource hierarchies:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Dataset</b>: dataset import jobs</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Dataset Group</b>: predictors, predictor backtest
-    /// export jobs, forecasts, forecast export jobs</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Predictor</b>: predictor backtest export jobs,
-    /// forecasts, forecast export jobs</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Forecast</b>: forecast export jobs</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>
-    /// <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and will not
-    /// delete datasets or exported files stored in Amazon S3. </p>
+    /// <li> <p> <b>Dataset</b>: dataset import jobs</p> </li>
+    /// <li> <p> <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs</p> </li>
+    /// <li> <p> <b>Predictor</b>: predictor backtest export jobs, forecasts, forecast export jobs</p> </li>
+    /// <li> <p> <b>Forecast</b>: forecast export jobs</p> </li>
+    /// </ul> <note>
+    /// <p> <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and will not delete datasets or exported files stored in Amazon S3. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceTree<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3978,10 +3123,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourceTreeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3989,14 +3134,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources
-        /// of the parent resource will also be deleted.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources
-        /// of the parent resource will also be deleted.</p>
+        /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4005,7 +3148,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAutoPredictor`.
     ///
     /// <p>Describes a predictor created using the CreateAutoPredictor operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAutoPredictor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4050,10 +3193,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAutoPredictorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4062,8 +3205,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
-        pub fn predictor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_arn(inp);
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
@@ -4077,28 +3220,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
-    /// <p>Describes an Amazon Forecast dataset created using the <a>CreateDataset</a>
-    /// operation.</p>
-    /// <p>In addition to listing the parameters specified in the <code>CreateDataset</code> request,
-    /// this operation includes the following dataset properties:</p>
+    /// <p>Describes an Amazon Forecast dataset created using the <code>CreateDataset</code> operation.</p>
+    /// <p>In addition to listing the parameters specified in the <code>CreateDataset</code> request, this operation includes the following dataset properties:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LastModificationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CreationTime</code> </p> </li>
+    /// <li> <p> <code>LastModificationTime</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4143,10 +3272,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4155,8 +3284,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-        pub fn dataset_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(inp);
+        pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
@@ -4167,32 +3296,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDatasetGroup`.
     ///
-    /// <p>Describes a dataset group created using the <a>CreateDatasetGroup</a>
-    /// operation.</p>
-    /// <p>In addition to listing the parameters provided in the <code>CreateDatasetGroup</code>
-    /// request, this operation includes the following properties:</p>
+    /// <p>Describes a dataset group created using the <code>CreateDatasetGroup</code> operation.</p>
+    /// <p>In addition to listing the parameters provided in the <code>CreateDatasetGroup</code> request, this operation includes the following properties:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DatasetArns</code> - The datasets belonging to the group.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LastModificationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>DatasetArns</code> - The datasets belonging to the group.</p> </li>
+    /// <li> <p> <code>CreationTime</code> </p> </li>
+    /// <li> <p> <code>LastModificationTime</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4237,10 +3349,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDatasetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4249,8 +3361,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
@@ -4264,42 +3376,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDatasetImportJob`.
     ///
-    /// <p>Describes a dataset import job created using the <a>CreateDatasetImportJob</a>
-    /// operation.</p>
-    /// <p>In addition to listing the parameters provided in the <code>CreateDatasetImportJob</code>
-    /// request, this operation includes the following properties:</p>
+    /// <p>Describes a dataset import job created using the <code>CreateDatasetImportJob</code> operation.</p>
+    /// <p>In addition to listing the parameters provided in the <code>CreateDatasetImportJob</code> request, this operation includes the following properties:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LastModificationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DataSize</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FieldStatistics</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Message</code> - If an error occurred, information about the error.</p>
-    /// </li>
+    /// <li> <p> <code>CreationTime</code> </p> </li>
+    /// <li> <p> <code>LastModificationTime</code> </p> </li>
+    /// <li> <p> <code>DataSize</code> </p> </li>
+    /// <li> <p> <code>FieldStatistics</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// <li> <p> <code>Message</code> - If an error occurred, information about the error.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatasetImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4344,10 +3431,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDatasetImportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4356,8 +3443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-        pub fn dataset_import_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_import_job_arn(inp);
+        pub fn dataset_import_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_import_job_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
@@ -4371,8 +3458,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeExplainability`.
     ///
-    /// <p>Describes an Explainability resource created using the <a>CreateExplainability</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes an Explainability resource created using the <code>CreateExplainability</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExplainability<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4417,10 +3504,10 @@ pub mod fluent_builders {
                 crate::input::DescribeExplainabilityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4429,8 +3516,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
-        pub fn explainability_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explainability_arn(inp);
+        pub fn explainability_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
@@ -4444,8 +3531,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeExplainabilityExport`.
     ///
-    /// <p>Describes an Explainability export created using the <a>CreateExplainabilityExport</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes an Explainability export created using the <code>CreateExplainabilityExport</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExplainabilityExport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4490,10 +3577,10 @@ pub mod fluent_builders {
                 crate::input::DescribeExplainabilityExportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4502,8 +3589,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-        pub fn explainability_export_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explainability_export_arn(inp);
+        pub fn explainability_export_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_export_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
@@ -4517,36 +3604,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeForecast`.
     ///
-    /// <p>Describes a forecast created using the <a>CreateForecast</a> operation.</p>
-    /// <p>In addition to listing the properties provided in the <code>CreateForecast</code> request,
-    /// this operation lists the following properties:</p>
+    /// <p>Describes a forecast created using the <code>CreateForecast</code> operation.</p>
+    /// <p>In addition to listing the properties provided in the <code>CreateForecast</code> request, this operation lists the following properties:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DatasetGroupArn</code> - The dataset group that provided the training
-    /// data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LastModificationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Message</code> - If an error occurred, information about the error.</p>
-    /// </li>
+    /// <li> <p> <code>DatasetGroupArn</code> - The dataset group that provided the training data.</p> </li>
+    /// <li> <p> <code>CreationTime</code> </p> </li>
+    /// <li> <p> <code>LastModificationTime</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// <li> <p> <code>Message</code> - If an error occurred, information about the error.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeForecast<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4591,10 +3658,10 @@ pub mod fluent_builders {
                 crate::input::DescribeForecastInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4603,8 +3670,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
-        pub fn forecast_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_arn(inp);
+        pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
@@ -4615,32 +3682,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeForecastExportJob`.
     ///
-    /// <p>Describes a forecast export job created using the <a>CreateForecastExportJob</a> operation.</p>
-    /// <p>In addition to listing the properties provided by the user in the
-    /// <code>CreateForecastExportJob</code> request, this operation lists the following
-    /// properties:</p>
+    /// <p>Describes a forecast export job created using the <code>CreateForecastExportJob</code> operation.</p>
+    /// <p>In addition to listing the properties provided by the user in the <code>CreateForecastExportJob</code> request, this operation lists the following properties:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LastModificationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Message</code> - If an error occurred, information about the error.</p>
-    /// </li>
+    /// <li> <p> <code>CreationTime</code> </p> </li>
+    /// <li> <p> <code>LastModificationTime</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// <li> <p> <code>Message</code> - If an error occurred, information about the error.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeForecastExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4685,10 +3735,10 @@ pub mod fluent_builders {
                 crate::input::DescribeForecastExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4697,8 +3747,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-        pub fn forecast_export_job_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_export_job_arn(inp);
+        pub fn forecast_export_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_export_job_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
@@ -4713,46 +3763,19 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePredictor`.
     ///
     /// <note>
-    /// <p> This operation is only valid for legacy predictors created with CreatePredictor. If you
-    /// are not using a legacy predictor, use DescribeAutoPredictor.</p>
-    /// <p>To upgrade a legacy predictor to AutoPredictor, see Upgrading to AutoPredictor.</p>
+    /// <p> This operation is only valid for legacy predictors created with CreatePredictor. If you are not using a legacy predictor, use <code>DescribeAutoPredictor</code>.</p>
     /// </note>
-    /// <p>Describes a predictor created using the <a>CreatePredictor</a>
-    /// operation.</p>
-    /// <p>In addition to listing the properties provided in the <code>CreatePredictor</code>
-    /// request, this operation lists the following properties:</p>
+    /// <p>Describes a predictor created using the <code>CreatePredictor</code> operation.</p>
+    /// <p>In addition to listing the properties provided in the <code>CreatePredictor</code> request, this operation lists the following properties:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DatasetImportJobArns</code> - The dataset import jobs used to import training
-    /// data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms that were
-    /// evaluated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LastModificationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Message</code> - If an error occurred, information about the error.</p>
-    /// </li>
+    /// <li> <p> <code>DatasetImportJobArns</code> - The dataset import jobs used to import training data.</p> </li>
+    /// <li> <p> <code>AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms that were evaluated.</p> </li>
+    /// <li> <p> <code>CreationTime</code> </p> </li>
+    /// <li> <p> <code>LastModificationTime</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// <li> <p> <code>Message</code> - If an error occurred, information about the error.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePredictor<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4797,10 +3820,10 @@ pub mod fluent_builders {
                 crate::input::DescribePredictorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4809,8 +3832,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
-        pub fn predictor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_arn(inp);
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
@@ -4824,32 +3847,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePredictorBacktestExportJob`.
     ///
-    /// <p>Describes a predictor backtest export job created using the <a>CreatePredictorBacktestExportJob</a> operation.</p>
-    /// <p>In addition to listing the properties provided by the user in the
-    /// <code>CreatePredictorBacktestExportJob</code> request, this operation lists the
-    /// following properties:</p>
+    /// <p>Describes a predictor backtest export job created using the <code>CreatePredictorBacktestExportJob</code> operation.</p>
+    /// <p>In addition to listing the properties provided by the user in the <code>CreatePredictorBacktestExportJob</code> request, this operation lists the following properties:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LastModificationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Message</code> (if an error occurred)</p>
-    /// </li>
+    /// <li> <p> <code>CreationTime</code> </p> </li>
+    /// <li> <p> <code>LastModificationTime</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// <li> <p> <code>Message</code> (if an error occurred)</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePredictorBacktestExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4896,10 +3902,10 @@ pub mod fluent_builders {
                 crate::input::DescribePredictorBacktestExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4910,9 +3916,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
         pub fn predictor_backtest_export_job_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.predictor_backtest_export_job_arn(inp);
+            self.inner = self.inner.predictor_backtest_export_job_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
@@ -4926,25 +3932,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccuracyMetrics`.
     ///
-    /// <p>Provides metrics on the accuracy of the models that were trained by the <a>CreatePredictor</a> operation. Use metrics to see how well the model performed and
-    /// to decide whether to use the predictor to generate a forecast. For more information, see
-    /// <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor
-    /// Metrics</a>.</p>
-    /// <p>This operation generates metrics for each backtest window that was evaluated. The number
-    /// of backtest windows (<code>NumberOfBacktestWindows</code>) is specified using the <a>EvaluationParameters</a> object, which is optionally included in the
-    /// <code>CreatePredictor</code> request. If <code>NumberOfBacktestWindows</code> isn't
-    /// specified, the number defaults to one.</p>
-    /// <p>The parameters of the <code>filling</code> method determine which items contribute to the
-    /// metrics. If you want all items to contribute, specify <code>zero</code>. If you want only
-    /// those items that have complete data in the range being evaluated to contribute, specify
-    /// <code>nan</code>. For more information, see <a>FeaturizationMethod</a>.</p>
-    ///
-    /// <note>
-    /// <p>Before you can get accuracy metrics, the <code>Status</code> of the predictor must be
-    /// <code>ACTIVE</code>, signifying that training has completed. To get the status, use the
-    /// <a>DescribePredictor</a> operation.</p>
+    /// <p>Provides metrics on the accuracy of the models that were trained by the <code>CreatePredictor</code> operation. Use metrics to see how well the model performed and to decide whether to use the predictor to generate a forecast. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor Metrics</a>.</p>
+    /// <p>This operation generates metrics for each backtest window that was evaluated. The number of backtest windows (<code>NumberOfBacktestWindows</code>) is specified using the <code>EvaluationParameters</code> object, which is optionally included in the <code>CreatePredictor</code> request. If <code>NumberOfBacktestWindows</code> isn't specified, the number defaults to one.</p>
+    /// <p>The parameters of the <code>filling</code> method determine which items contribute to the metrics. If you want all items to contribute, specify <code>zero</code>. If you want only those items that have complete data in the range being evaluated to contribute, specify <code>nan</code>. For more information, see <code>FeaturizationMethod</code>.</p> <note>
+    /// <p>Before you can get accuracy metrics, the <code>Status</code> of the predictor must be <code>ACTIVE</code>, signifying that training has completed. To get the status, use the <code>DescribePredictor</code> operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccuracyMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4989,10 +3982,10 @@ pub mod fluent_builders {
                 crate::input::GetAccuracyMetricsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5001,8 +3994,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-        pub fn predictor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_arn(inp);
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
@@ -5016,11 +4009,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasetGroups`.
     ///
-    /// <p>Returns a list of dataset groups created using the <a>CreateDatasetGroup</a>
-    /// operation. For each dataset group, this operation returns a summary of its properties,
-    /// including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by
-    /// using the dataset group ARN with the <a>DescribeDatasetGroup</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of dataset groups created using the <code>CreateDatasetGroup</code> operation. For each dataset group, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the dataset group ARN with the <code>DescribeDatasetGroup</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5065,10 +4055,10 @@ pub mod fluent_builders {
                 crate::input::ListDatasetGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5076,23 +4066,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatasetGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatasetGroupsPaginator<C, M, R> {
+            crate::paginator::ListDatasetGroupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -5103,11 +4095,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasetImportJobs`.
     ///
-    /// <p>Returns a list of dataset import jobs created using the <a>CreateDatasetImportJob</a> operation. For each import job, this operation returns a
-    /// summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the
-    /// complete set of properties by using the ARN with the <a>DescribeDatasetImportJob</a> operation. You can filter the list by providing an array of <a>Filter</a>
-    /// objects.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of dataset import jobs created using the <code>CreateDatasetImportJob</code> operation. For each import job, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the ARN with the <code>DescribeDatasetImportJob</code> operation. You can filter the list by providing an array of <code>Filter</code> objects.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5152,10 +4141,10 @@ pub mod fluent_builders {
                 crate::input::ListDatasetImportJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5163,23 +4152,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatasetImportJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatasetImportJobsPaginator<C, M, R> {
+            crate::paginator::ListDatasetImportJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -5191,70 +4182,28 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the datasets that match the statement from the list, respectively. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the datasets that match the statement, specify
-        /// <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>DatasetArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the
-        /// following filter:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
-        /// ]</code>
-        /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the datasets that match the statement from the list, respectively. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the datasets that match the statement, specify
-        /// <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>DatasetArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the
-        /// following filter:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
-        /// ]</code>
-        /// </p>
+        /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5265,10 +4214,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasets`.
     ///
-    /// <p>Returns a list of datasets created using the <a>CreateDataset</a> operation.
-    /// For each dataset, a summary of its properties, including its Amazon Resource Name (ARN), is
-    /// returned. To retrieve the complete set of properties, use the ARN with the <a>DescribeDataset</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of datasets created using the <code>CreateDataset</code> operation. For each dataset, a summary of its properties, including its Amazon Resource Name (ARN), is returned. To retrieve the complete set of properties, use the ARN with the <code>DescribeDataset</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5313,10 +4260,10 @@ pub mod fluent_builders {
                 crate::input::ListDatasetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5324,23 +4271,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatasetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatasetsPaginator<C, M, R> {
+            crate::paginator::ListDatasetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -5351,12 +4300,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListExplainabilities`.
     ///
-    /// <p>Returns a list of Explainability resources created using the <a>CreateExplainability</a> operation. This operation returns a summary for
-    /// each Explainability. You can filter the list using an array of <a>Filter</a>
-    /// objects.</p>
-    /// <p>To retrieve the complete set of properties for a particular Explainability resource,
-    /// use the ARN with the <a>DescribeExplainability</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of Explainability resources created using the <code>CreateExplainability</code> operation. This operation returns a summary for each Explainability. You can filter the list using an array of <code>Filter</code> objects.</p>
+    /// <p>To retrieve the complete set of properties for a particular Explainability resource, use the ARN with the <code>DescribeExplainability</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExplainabilities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5401,10 +4347,10 @@ pub mod fluent_builders {
                 crate::input::ListExplainabilitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5412,23 +4358,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// NextToken. To retrieve the next set of results, use the token in the next request.
-        /// Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// NextToken. To retrieve the next set of results, use the token in the next request.
-        /// Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of items returned in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items returned in the response.</p>
@@ -5440,55 +4382,23 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-        /// include or exclude the resources that match the statement from the list. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are
-        /// <code>IS</code> and <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>PredictorArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-        /// include or exclude the resources that match the statement from the list. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are
-        /// <code>IS</code> and <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>PredictorArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -5500,11 +4410,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListExplainabilityExports`.
     ///
-    /// <p>Returns a list of Explainability exports created using the <a>CreateExplainabilityExport</a> operation. This operation returns a summary
-    /// for each Explainability export. You can filter the list using an array of <a>Filter</a> objects.</p>
-    /// <p>To retrieve the complete set of properties for a particular Explainability export, use
-    /// the ARN with the <a>DescribeExplainability</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of Explainability exports created using the <code>CreateExplainabilityExport</code> operation. This operation returns a summary for each Explainability export. You can filter the list using an array of <code>Filter</code> objects.</p>
+    /// <p>To retrieve the complete set of properties for a particular Explainability export, use the ARN with the <code>DescribeExplainability</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExplainabilityExports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5549,10 +4457,10 @@ pub mod fluent_builders {
                 crate::input::ListExplainabilityExportsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5560,23 +4468,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// NextToken. To retrieve the next set of results, use the token in the next request.
-        /// Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// NextToken. To retrieve the next set of results, use the token in the next request.
-        /// Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -5588,55 +4492,23 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-        /// include or exclude resources that match the statement from the list. The match statement
-        /// consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude resources that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are
-        /// <code>IS</code> and <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>PredictorArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-        /// include or exclude resources that match the statement from the list. The match statement
-        /// consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude resources that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are
-        /// <code>IS</code> and <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>PredictorArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -5648,11 +4520,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListForecastExportJobs`.
     ///
-    /// <p>Returns a list of forecast export jobs created using the <a>CreateForecastExportJob</a> operation. For each forecast export job, this operation
-    /// returns a summary of its properties, including its Amazon Resource Name (ARN). To retrieve the
-    /// complete set of properties, use the ARN with the <a>DescribeForecastExportJob</a>
-    /// operation. You can filter the list using an array of <a>Filter</a> objects.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of forecast export jobs created using the <code>CreateForecastExportJob</code> operation. For each forecast export job, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). To retrieve the complete set of properties, use the ARN with the <code>DescribeForecastExportJob</code> operation. You can filter the list using an array of <code>Filter</code> objects.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListForecastExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5697,10 +4566,10 @@ pub mod fluent_builders {
                 crate::input::ListForecastExportJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5708,23 +4577,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListForecastExportJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListForecastExportJobsPaginator<C, M, R> {
+            crate::paginator::ListForecastExportJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -5736,72 +4607,34 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the forecast export jobs that match the statement from the list, respectively. The
-        /// match statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the forecast export jobs that match the statement,
-        /// specify <code>IS</code>. To exclude matching forecast export jobs, specify
-        /// <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>ForecastArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ForecastArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        /// <p>For example, to list all jobs that export a forecast named
-        /// <i>electricityforecast</i>, specify the following filter:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value":
-        /// "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityforecast" } ]</code>
-        /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityforecast</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityforecast" } ]
+        /// </acct-id></code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the forecast export jobs that match the statement from the list, respectively. The
-        /// match statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the forecast export jobs that match the statement,
-        /// specify <code>IS</code>. To exclude matching forecast export jobs, specify
-        /// <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>ForecastArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ForecastArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        /// <p>For example, to list all jobs that export a forecast named
-        /// <i>electricityforecast</i>, specify the following filter:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value":
-        /// "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityforecast" } ]</code>
-        /// </p>
+        /// <p>For example, to list all jobs that export a forecast named <i>electricityforecast</i>, specify the following filter:</p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value": "arn:aws:forecast:us-west-2:
+        /// <acct-id>
+        /// :forecast/electricityforecast" } ]
+        /// </acct-id></code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5812,12 +4645,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListForecasts`.
     ///
-    /// <p>Returns a list of forecasts created using the <a>CreateForecast</a> operation.
-    /// For each forecast, this operation returns a summary of its properties, including its Amazon
-    /// Resource Name (ARN). To retrieve the complete set of properties, specify the ARN with the
-    /// <a>DescribeForecast</a> operation. You can filter the list using an array of
-    /// <a>Filter</a> objects.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of forecasts created using the <code>CreateForecast</code> operation. For each forecast, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). To retrieve the complete set of properties, specify the ARN with the <code>DescribeForecast</code> operation. You can filter the list using an array of <code>Filter</code> objects.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListForecasts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5862,10 +4691,10 @@ pub mod fluent_builders {
                 crate::input::ListForecastsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5873,23 +4702,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListForecastsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListForecastsPaginator<C, M, R> {
+            crate::paginator::ListForecastsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -5901,68 +4732,28 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the forecasts that match the statement from the list, respectively. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the forecasts that match the statement, specify
-        /// <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" }
-        /// ]</code>
-        /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p> <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the forecasts that match the statement from the list, respectively. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the forecasts that match the statement, specify
-        /// <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" }
-        /// ]</code>
-        /// </p>
+        /// <p> <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5973,11 +4764,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPredictorBacktestExportJobs`.
     ///
-    /// <p>Returns a list of predictor backtest export jobs created using the <a>CreatePredictorBacktestExportJob</a> operation. This operation returns a summary
-    /// for each backtest export job. You can filter the list using an array of <a>Filter</a> objects.</p>
-    /// <p>To retrieve the complete set of properties for a particular backtest export job, use the
-    /// ARN with the <a>DescribePredictorBacktestExportJob</a> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of predictor backtest export jobs created using the <code>CreatePredictorBacktestExportJob</code> operation. This operation returns a summary for each backtest export job. You can filter the list using an array of <code>Filter</code> objects.</p>
+    /// <p>To retrieve the complete set of properties for a particular backtest export job, use the ARN with the <code>DescribePredictorBacktestExportJob</code> operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPredictorBacktestExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6022,10 +4811,10 @@ pub mod fluent_builders {
                 crate::input::ListPredictorBacktestExportJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6033,23 +4822,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the previous request was truncated, the response includes a NextToken.
-        /// To retrieve the next set of results, use the token in the next request. Tokens expire after
-        /// 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPredictorBacktestExportJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPredictorBacktestExportJobsPaginator<C, M, R> {
+            crate::paginator::ListPredictorBacktestExportJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a NextToken.
-        /// To retrieve the next set of results, use the token in the next request. Tokens expire after
-        /// 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -6061,59 +4854,23 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-        /// include or exclude the predictor backtest export jobs that match the statement from the
-        /// list. The match statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictor backtest export jobs that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are
-        /// <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest
-        /// export jobs that match the statement, specify <code>IS</code>. To exclude matching
-        /// predictor backtest export jobs, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>PredictorArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest export jobs that match the statement, specify <code>IS</code>. To exclude matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
-        /// include or exclude the predictor backtest export jobs that match the statement from the
-        /// list. The match statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictor backtest export jobs that match the statement from the list. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are
-        /// <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest
-        /// export jobs that match the statement, specify <code>IS</code>. To exclude matching
-        /// predictor backtest export jobs, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>PredictorArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest export jobs that match the statement, specify <code>IS</code>. To exclude matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -6125,12 +4882,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPredictors`.
     ///
-    /// <p>Returns a list of predictors created using the <a>CreatePredictor</a>
-    /// operation. For each predictor, this operation returns a summary of its properties, including
-    /// its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the
-    /// ARN with the <a>DescribePredictor</a> operation. You can filter the list using an
-    /// array of <a>Filter</a> objects.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of predictors created using the <code>CreateAutoPredictor</code> or <code>CreatePredictor</code> operations. For each predictor, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). </p>
+    /// <p>You can retrieve the complete set of properties by using the ARN with the <code>DescribeAutoPredictor</code> and <code>DescribePredictor</code> operations. You can filter the list using an array of <code>Filter</code> objects.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPredictors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6175,10 +4929,10 @@ pub mod fluent_builders {
                 crate::input::ListPredictorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6186,23 +4940,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPredictorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPredictorsPaginator<C, M, R> {
+            crate::paginator::ListPredictorsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous request was truncated, the response includes a
-        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
-        /// request. Tokens expire after 24 hours.</p>
+        /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -6214,68 +4970,28 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the predictors that match the statement from the list, respectively. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the predictors that match the statement, specify
-        /// <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>DatasetGroupArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictors that match the statement, specify <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         /// <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
-        /// ]</code>
-        /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
-        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
-        /// or exclude the predictors that match the statement from the list, respectively. The match
-        /// statement consists of a key and a value.</p>
-        /// <p>
-        /// <b>Filter properties</b>
-        /// </p>
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+        /// <p> <b>Filter properties</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
-        /// <code>IS_NOT</code>. To include the predictors that match the statement, specify
-        /// <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
-        /// <code>DatasetGroupArn</code> and <code>Status</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Value</code> - The value to match.</p>
-        /// </li>
+        /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictors that match the statement, specify <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p> </li>
+        /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code> and <code>Status</code>.</p> </li>
+        /// <li> <p> <code>Value</code> - The value to match.</p> </li>
         /// </ul>
         /// <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>
-        /// <p>
-        /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
-        /// ]</code>
-        /// </p>
+        /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6287,7 +5003,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for an Amazon Forecast resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6332,10 +5048,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6343,12 +5059,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6357,29 +5073,18 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopResource`.
     ///
     /// <p>Stops a resource.</p>
-    /// <p>The resource undergoes the following states:
-    /// <code>CREATE_STOPPING</code> and <code>CREATE_STOPPED</code>. You cannot resume
-    /// a resource once it has been stopped.</p>
-    /// <p>This operation can be applied to the following resources (and their corresponding child
-    /// resources):</p>
+    /// <p>The resource undergoes the following states: <code>CREATE_STOPPING</code> and <code>CREATE_STOPPED</code>. You cannot resume a resource once it has been stopped.</p>
+    /// <p>This operation can be applied to the following resources (and their corresponding child resources):</p>
     /// <ul>
-    /// <li>
-    /// <p>Dataset Import Job</p>
-    /// </li>
-    /// <li>
-    /// <p>Predictor Job</p>
-    /// </li>
-    /// <li>
-    /// <p>Forecast Job</p>
-    /// </li>
-    /// <li>
-    /// <p>Forecast Export Job</p>
-    /// </li>
-    /// <li>
-    /// <p>Predictor Backtest Export Job</p>
-    /// </li>
+    /// <li> <p>Dataset Import Job</p> </li>
+    /// <li> <p>Predictor Job</p> </li>
+    /// <li> <p>Forecast Job</p> </li>
+    /// <li> <p>Forecast Export Job</p> </li>
+    /// <li> <p>Predictor Backtest Export Job</p> </li>
+    /// <li> <p>Explainability Job</p> </li>
+    /// <li> <p>Explainability Export Job</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6424,10 +5129,10 @@ pub mod fluent_builders {
                 crate::input::StopResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6435,18 +5140,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs
-        /// are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>,
-        /// <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, and
-        /// <code>ForecastExportJobArn</code>. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs
-        /// are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>,
-        /// <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, and
-        /// <code>ForecastExportJobArn</code>. </p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6455,7 +5154,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are also deleted.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6500,10 +5199,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6511,12 +5210,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6528,56 +5227,28 @@ pub mod fluent_builders {
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50.</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -6590,7 +5261,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes the specified tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6635,10 +5306,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6646,12 +5317,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast exports.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast exports.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6661,8 +5332,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to be removed.</p>
@@ -6676,13 +5347,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDatasetGroup`.
     ///
-    /// <p>Replaces the datasets in a dataset group with the specified datasets.</p>
-    /// <note>
-    /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can
-    /// use the dataset group to create a predictor. Use the <a>DescribeDatasetGroup</a>
-    /// operation to get the status.</p>
+    /// <p>Replaces the datasets in a dataset group with the specified datasets.</p> <note>
+    /// <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor. Use the <code>DescribeDatasetGroup</code> operation to get the status.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDatasetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6727,10 +5395,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDatasetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6739,8 +5407,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the dataset group.</p>
-        pub fn dataset_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(inp);
+        pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(input.into());
             self
         }
         /// <p>The ARN of the dataset group.</p>
@@ -6755,14 +5423,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_dataset_arns`](Self::set_dataset_arns).
         ///
-        /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset
-        /// group.</p>
-        pub fn dataset_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arns(inp);
+        /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
+        pub fn dataset_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arns(input.into());
             self
         }
-        /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset
-        /// group.</p>
+        /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
         pub fn set_dataset_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6772,6 +5438,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -4,7 +4,7 @@
  */
 //! Module with client connectors useful for testing.
 
-// TODO
+// TODO(docs)
 #![allow(missing_docs)]
 
 use http::header::{HeaderName, CONTENT_TYPE};

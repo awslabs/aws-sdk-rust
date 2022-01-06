@@ -482,13 +482,11 @@ impl ImageConfigError {
     }
 }
 
-/// <p>Configuration values that override the container image Dockerfile settings. See
-/// <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container settings</a>. </p>
+/// <p>Configuration values that override the container image Dockerfile settings. See <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container settings</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageConfig {
-    /// <p>Specifies the entry point to their application, which is typically the location of the runtime
-    /// executable.</p>
+    /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
     pub entry_point: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -496,8 +494,7 @@ pub struct ImageConfig {
     pub working_directory: std::option::Option<std::string::String>,
 }
 impl ImageConfig {
-    /// <p>Specifies the entry point to their application, which is typically the location of the runtime
-    /// executable.</p>
+    /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
     pub fn entry_point(&self) -> std::option::Option<&[std::string::String]> {
         self.entry_point.as_deref()
     }
@@ -534,16 +531,14 @@ pub mod image_config {
         ///
         /// To override the contents of this collection use [`set_entry_point`](Self::set_entry_point).
         ///
-        /// <p>Specifies the entry point to their application, which is typically the location of the runtime
-        /// executable.</p>
+        /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
         pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entry_point.unwrap_or_default();
             v.push(input.into());
             self.entry_point = Some(v);
             self
         }
-        /// <p>Specifies the entry point to their application, which is typically the location of the runtime
-        /// executable.</p>
+        /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
         pub fn set_entry_point(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -655,8 +650,7 @@ impl AsRef<str> for PackageType {
     }
 }
 
-/// <p>Details about the connection between a Lambda function and an
-/// <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
+/// <p>Details about the connection between a Lambda function and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSystemConfig {
@@ -1069,8 +1063,7 @@ impl AsRef<str> for State {
     }
 }
 
-/// <p>An <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
-/// layer</a>.</p>
+/// <p>An <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Layer {
@@ -1080,7 +1073,7 @@ pub struct Layer {
     pub code_size: i64,
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN)  of a signing job.</p>
+    /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
 }
 impl Layer {
@@ -1096,7 +1089,7 @@ impl Layer {
     pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
         self.signing_profile_version_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN)  of a signing job.</p>
+    /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
     pub fn signing_job_arn(&self) -> std::option::Option<&str> {
         self.signing_job_arn.as_deref()
     }
@@ -1162,12 +1155,12 @@ pub mod layer {
             self.signing_profile_version_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN)  of a signing job.</p>
+        /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
         pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.signing_job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN)  of a signing job.</p>
+        /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
         pub fn set_signing_job_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1300,8 +1293,7 @@ impl AsRef<str> for TracingMode {
     }
 }
 
-/// <p>The results of an operation to update or read environment variables. If the operation is successful, the
-/// response contains the environment variables. If it failed, the response contains details about the error.</p>
+/// <p>The results of an operation to update or read environment variables. If the operation is successful, the response contains the environment variables. If it failed, the response contains details about the error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentResponse {
@@ -1471,8 +1463,7 @@ impl EnvironmentError {
     }
 }
 
-/// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for
-/// failed asynchronous invocations.</p>
+/// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeadLetterConfig {
@@ -1809,8 +1800,7 @@ impl AsRef<str> for Runtime {
     }
 }
 
-/// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a> tracing configuration.
-/// To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.</p>
+/// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a> tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TracingConfig {
@@ -1862,20 +1852,16 @@ impl TracingConfig {
     }
 }
 
-/// <p>A function's environment variable settings.
-/// You can use environment variables to adjust your function's behavior without updating code.
-/// An environment variable is a pair of strings that are stored in a function's version-specific configuration. </p>
+/// <p>A function's environment variable settings. You can use environment variables to adjust your function's behavior without updating code. An environment variable is a pair of strings that are stored in a function's version-specific configuration. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
-    /// <p>Environment variable key-value pairs. For more information, see
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment variables</a>.</p>
+    /// <p>Environment variable key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment variables</a>.</p>
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Environment {
-    /// <p>Environment variable key-value pairs. For more information, see
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment variables</a>.</p>
+    /// <p>Environment variable key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment variables</a>.</p>
     pub fn variables(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1905,8 +1891,7 @@ pub mod environment {
         ///
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
-        /// <p>Environment variable key-value pairs. For more information, see
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment variables</a>.</p>
+        /// <p>Environment variable key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment variables</a>.</p>
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -1917,8 +1902,7 @@ pub mod environment {
             self.variables = Some(hash_map);
             self
         }
-        /// <p>Environment variable key-value pairs. For more information, see
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment variables</a>.</p>
+        /// <p>Environment variable key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment variables</a>.</p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<
@@ -2089,15 +2073,13 @@ impl AsRef<str> for FunctionResponseType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelfManagedEventSource {
-    /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS":
-    /// ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
+    /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
     pub endpoints: std::option::Option<
         std::collections::HashMap<crate::model::EndPointType, std::vec::Vec<std::string::String>>,
     >,
 }
 impl SelfManagedEventSource {
-    /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS":
-    /// ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
+    /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
     pub fn endpoints(
         &self,
     ) -> std::option::Option<
@@ -2131,20 +2113,18 @@ pub mod self_managed_event_source {
         ///
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
-        /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS":
-        /// ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
+        /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
         pub fn endpoints(
             mut self,
-            k: impl Into<crate::model::EndPointType>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            k: crate::model::EndPointType,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.endpoints.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.endpoints = Some(hash_map);
             self
         }
-        /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS":
-        /// ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
+        /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
         pub fn set_endpoints(
             mut self,
             input: std::option::Option<
@@ -2229,45 +2209,15 @@ impl AsRef<str> for EndPointType {
 pub struct SourceAccessConfiguration {
     /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source.
-    /// This property cannot be specified in an UpdateEventSourceMapping API call.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM),
-    /// private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
+    /// <li> <p> <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
+    /// <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::SourceAccessType>,
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
@@ -2276,45 +2226,15 @@ pub struct SourceAccessConfiguration {
 impl SourceAccessConfiguration {
     /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source.
-    /// This property cannot be specified in an UpdateEventSourceMapping API call.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM),
-    /// private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
+    /// <li> <p> <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
+    /// <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+    /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::SourceAccessType> {
         self.r#type.as_ref()
@@ -2344,45 +2264,15 @@ pub mod source_access_configuration {
     impl Builder {
         /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source.
-        /// This property cannot be specified in an UpdateEventSourceMapping API call.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM),
-        /// private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
+        /// <li> <p> <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
+        /// <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::SourceAccessType) -> Self {
             self.r#type = Some(input);
@@ -2390,45 +2280,15 @@ pub mod source_access_configuration {
         }
         /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source.
-        /// This property cannot be specified in an UpdateEventSourceMapping API call.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM),
-        /// private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BASIC_AUTH</code> - (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
+        /// <li> <p> <code>BASIC_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
+        /// <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
+        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+        /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -2551,21 +2411,15 @@ impl AsRef<str> for SourceAccessType {
     }
 }
 
-/// <p>
-/// An object that contains the filters for an event source.
-/// </p>
+/// <p> An object that contains the filters for an event source. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterCriteria {
-    /// <p>
-    /// A list of filters.
-    /// </p>
+    /// <p> A list of filters. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl FilterCriteria {
-    /// <p>
-    /// A list of filters.
-    /// </p>
+    /// <p> A list of filters. </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -2590,18 +2444,14 @@ pub mod filter_criteria {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>
-        /// A list of filters.
-        /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p> A list of filters. </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>
-        /// A list of filters.
-        /// </p>
+        /// <p> A list of filters. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -2624,25 +2474,15 @@ impl FilterCriteria {
     }
 }
 
-/// <p>
-/// A structure within a <code>FilterCriteria</code> object that defines an event filtering pattern.
-/// </p>
+/// <p> A structure within a <code>FilterCriteria</code> object that defines an event filtering pattern. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
-    /// <p>
-    /// A filter pattern. For more information on the syntax of a filter pattern, see
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-    /// Filter rule syntax</a>.
-    /// </p>
+    /// <p> A filter pattern. For more information on the syntax of a filter pattern, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax"> Filter rule syntax</a>. </p>
     pub pattern: std::option::Option<std::string::String>,
 }
 impl Filter {
-    /// <p>
-    /// A filter pattern. For more information on the syntax of a filter pattern, see
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-    /// Filter rule syntax</a>.
-    /// </p>
+    /// <p> A filter pattern. For more information on the syntax of a filter pattern, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax"> Filter rule syntax</a>. </p>
     pub fn pattern(&self) -> std::option::Option<&str> {
         self.pattern.as_deref()
     }
@@ -2663,20 +2503,12 @@ pub mod filter {
         pub(crate) pattern: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// A filter pattern. For more information on the syntax of a filter pattern, see
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-        /// Filter rule syntax</a>.
-        /// </p>
+        /// <p> A filter pattern. For more information on the syntax of a filter pattern, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax"> Filter rule syntax</a>. </p>
         pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.pattern = Some(input.into());
             self
         }
-        /// <p>
-        /// A filter pattern. For more information on the syntax of a filter pattern, see
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-        /// Filter rule syntax</a>.
-        /// </p>
+        /// <p> A filter pattern. For more information on the syntax of a filter pattern, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax"> Filter rule syntax</a>. </p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pattern = input;
             self
@@ -2919,24 +2751,17 @@ impl CodeSigningConfig {
     }
 }
 
-/// <p>Code signing configuration <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html#config-codesigning-policies">policies</a> specify the validation failure action for signature mismatch or
-/// expiry.</p>
+/// <p>Code signing configuration <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html#config-codesigning-policies">policies</a> specify the validation failure action for signature mismatch or expiry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeSigningPolicies {
-    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to
-    /// <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the
-    /// policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
-    /// <p>Default value: <code>Warn</code>
-    /// </p>
+    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+    /// <p>Default value: <code>Warn</code> </p>
     pub untrusted_artifact_on_deployment: std::option::Option<crate::model::CodeSigningPolicy>,
 }
 impl CodeSigningPolicies {
-    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to
-    /// <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the
-    /// policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
-    /// <p>Default value: <code>Warn</code>
-    /// </p>
+    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+    /// <p>Default value: <code>Warn</code> </p>
     pub fn untrusted_artifact_on_deployment(
         &self,
     ) -> std::option::Option<&crate::model::CodeSigningPolicy> {
@@ -2963,11 +2788,8 @@ pub mod code_signing_policies {
             std::option::Option<crate::model::CodeSigningPolicy>,
     }
     impl Builder {
-        /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to
-        /// <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the
-        /// policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
-        /// <p>Default value: <code>Warn</code>
-        /// </p>
+        /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+        /// <p>Default value: <code>Warn</code> </p>
         pub fn untrusted_artifact_on_deployment(
             mut self,
             input: crate::model::CodeSigningPolicy,
@@ -2975,11 +2797,8 @@ pub mod code_signing_policies {
             self.untrusted_artifact_on_deployment = Some(input);
             self
         }
-        /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to
-        /// <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the
-        /// policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
-        /// <p>Default value: <code>Warn</code>
-        /// </p>
+        /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+        /// <p>Default value: <code>Warn</code> </p>
         pub fn set_untrusted_artifact_on_deployment(
             mut self,
             input: std::option::Option<crate::model::CodeSigningPolicy>,
@@ -3061,13 +2880,11 @@ impl AsRef<str> for CodeSigningPolicy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllowedPublishers {
-    /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user
-    /// who can sign a code package. </p>
+    /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
     pub signing_profile_version_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AllowedPublishers {
-    /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user
-    /// who can sign a code package. </p>
+    /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
     pub fn signing_profile_version_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.signing_profile_version_arns.as_deref()
     }
@@ -3096,8 +2913,7 @@ pub mod allowed_publishers {
         ///
         /// To override the contents of this collection use [`set_signing_profile_version_arns`](Self::set_signing_profile_version_arns).
         ///
-        /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user
-        /// who can sign a code package. </p>
+        /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
         pub fn signing_profile_version_arns(
             mut self,
             input: impl Into<std::string::String>,
@@ -3107,8 +2923,7 @@ pub mod allowed_publishers {
             self.signing_profile_version_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user
-        /// who can sign a code package. </p>
+        /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
         pub fn set_signing_profile_version_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3175,10 +2990,10 @@ pub mod alias_routing_configuration {
         pub fn additional_version_weights(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<f64>,
+            v: f64,
         ) -> Self {
             let mut hash_map = self.additional_version_weights.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.additional_version_weights = Some(hash_map);
             self
         }
@@ -3264,8 +3079,7 @@ impl AsRef<str> for ProvisionedConcurrencyStatusEnum {
     }
 }
 
-/// <p>Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
-/// layer</a>.</p>
+/// <p>Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerVersionContentOutput {
@@ -3277,7 +3091,7 @@ pub struct LayerVersionContentOutput {
     pub code_size: i64,
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN)  of a signing job.</p>
+    /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
 }
 impl LayerVersionContentOutput {
@@ -3297,7 +3111,7 @@ impl LayerVersionContentOutput {
     pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
         self.signing_profile_version_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN)  of a signing job.</p>
+    /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
     pub fn signing_job_arn(&self) -> std::option::Option<&str> {
         self.signing_job_arn.as_deref()
     }
@@ -3375,12 +3189,12 @@ pub mod layer_version_content_output {
             self.signing_profile_version_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN)  of a signing job.</p>
+        /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
         pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.signing_job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN)  of a signing job.</p>
+        /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
         pub fn set_signing_job_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3407,9 +3221,7 @@ impl LayerVersionContentOutput {
     }
 }
 
-/// <p>A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
-/// layer</a>. You can specify either an Amazon S3 location,
-/// or upload a layer archive directly.</p>
+/// <p>A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerVersionContentInput {
@@ -3419,8 +3231,7 @@ pub struct LayerVersionContentInput {
     pub s3_key: std::option::Option<std::string::String>,
     /// <p>For versioned objects, the version of the layer archive object to use.</p>
     pub s3_object_version: std::option::Option<std::string::String>,
-    /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
-    /// you.</p>
+    /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub zip_file: std::option::Option<aws_smithy_types::Blob>,
 }
 impl LayerVersionContentInput {
@@ -3436,8 +3247,7 @@ impl LayerVersionContentInput {
     pub fn s3_object_version(&self) -> std::option::Option<&str> {
         self.s3_object_version.as_deref()
     }
-    /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
-    /// you.</p>
+    /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
@@ -3497,14 +3307,12 @@ pub mod layer_version_content_input {
             self.s3_object_version = input;
             self
         }
-        /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
-        /// you.</p>
+        /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file = Some(input);
             self
         }
-        /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
-        /// you.</p>
+        /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.zip_file = input;
             self
@@ -3561,8 +3369,7 @@ pub struct FunctionConfiguration {
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
@@ -3570,19 +3377,15 @@ pub struct FunctionConfiguration {
     pub master_arn: std::option::Option<std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-    /// layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-    /// invoking it.</p>
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub state: std::option::Option<crate::model::State>,
     /// <p>The reason for the function's current state.</p>
     pub state_reason: std::option::Option<std::string::String>,
-    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-    /// modify the function.</p>
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub state_reason_code: std::option::Option<crate::model::StateReasonCode>,
-    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-    /// after function creation completes.</p>
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
     /// <p>The reason for the last update that was performed on the function.</p>
     pub last_update_status_reason: std::option::Option<std::string::String>,
@@ -3599,8 +3402,7 @@ pub struct FunctionConfiguration {
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing job.</p>
     pub signing_job_arn: std::option::Option<std::string::String>,
-    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl FunctionConfiguration {
@@ -3664,8 +3466,7 @@ impl FunctionConfiguration {
     pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-    /// configured a customer managed key.</p>
+    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -3681,13 +3482,11 @@ impl FunctionConfiguration {
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-    /// layers</a>.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
     pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
         self.layers.as_deref()
     }
-    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-    /// invoking it.</p>
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::State> {
         self.state.as_ref()
     }
@@ -3695,13 +3494,11 @@ impl FunctionConfiguration {
     pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
-    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-    /// modify the function.</p>
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
         self.state_reason_code.as_ref()
     }
-    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-    /// after function creation completes.</p>
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
@@ -3735,8 +3532,7 @@ impl FunctionConfiguration {
     pub fn signing_job_arn(&self) -> std::option::Option<&str> {
         self.signing_job_arn.as_deref()
     }
-    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-    /// valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
@@ -3992,14 +3788,12 @@ pub mod function_configuration {
             self.environment = input;
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-        /// configured a customer managed key.</p>
+        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -4041,16 +3835,14 @@ pub mod function_configuration {
         ///
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.</p>
-        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
+        pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layers = Some(v);
             self
         }
-        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-        /// layers</a>.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
         pub fn set_layers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
@@ -4058,14 +3850,12 @@ pub mod function_configuration {
             self.layers = input;
             self
         }
-        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-        /// invoking it.</p>
+        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
-        /// invoking it.</p>
+        /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
             self
@@ -4080,14 +3870,12 @@ pub mod function_configuration {
             self.state_reason = input;
             self
         }
-        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-        /// modify the function.</p>
+        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
             self.state_reason_code = Some(input);
             self
         }
-        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
-        /// modify the function.</p>
+        /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn set_state_reason_code(
             mut self,
             input: std::option::Option<crate::model::StateReasonCode>,
@@ -4095,14 +3883,12 @@ pub mod function_configuration {
             self.state_reason_code = input;
             self
         }
-        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-        /// after function creation completes.</p>
+        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
             self.last_update_status = Some(input);
             self
         }
-        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
-        /// after function creation completes.</p>
+        /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn set_last_update_status(
             mut self,
             input: std::option::Option<crate::model::LastUpdateStatus>,
@@ -4144,12 +3930,9 @@ pub mod function_configuration {
         /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
         ///
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn file_system_configs(
-            mut self,
-            input: impl Into<crate::model::FileSystemConfig>,
-        ) -> Self {
+        pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.file_system_configs = Some(v);
             self
         }
@@ -4220,16 +4003,14 @@ pub mod function_configuration {
         ///
         /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
         ///
-        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-        /// valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn architectures(mut self, input: impl Into<crate::model::Architecture>) -> Self {
+        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+        pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.architectures = Some(v);
             self
         }
-        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the
-        /// valid values. The default architecture value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn set_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -4481,8 +4262,7 @@ impl ProvisionedConcurrencyConfigListItem {
     }
 }
 
-/// <p>Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
-/// layer</a>.</p>
+/// <p>Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerVersionsListItem {
@@ -4498,8 +4278,7 @@ pub struct LayerVersionsListItem {
     pub compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
     /// <p>The layer's open-source license.</p>
     pub license_info: std::option::Option<std::string::String>,
-    /// <p>A list of compatible  
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl LayerVersionsListItem {
@@ -4527,8 +4306,7 @@ impl LayerVersionsListItem {
     pub fn license_info(&self) -> std::option::Option<&str> {
         self.license_info.as_deref()
     }
-    /// <p>A list of compatible  
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.compatible_architectures.as_deref()
     }
@@ -4610,9 +4388,9 @@ pub mod layer_versions_list_item {
         /// To override the contents of this collection use [`set_compatible_runtimes`](Self::set_compatible_runtimes).
         ///
         /// <p>The layer's compatible runtimes.</p>
-        pub fn compatible_runtimes(mut self, input: impl Into<crate::model::Runtime>) -> Self {
+        pub fn compatible_runtimes(mut self, input: crate::model::Runtime) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_runtimes = Some(v);
             self
         }
@@ -4638,19 +4416,14 @@ pub mod layer_versions_list_item {
         ///
         /// To override the contents of this collection use [`set_compatible_architectures`](Self::set_compatible_architectures).
         ///
-        /// <p>A list of compatible  
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-        pub fn compatible_architectures(
-            mut self,
-            input: impl Into<crate::model::Architecture>,
-        ) -> Self {
+        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+        pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_architectures = Some(v);
             self
         }
-        /// <p>A list of compatible  
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn set_compatible_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -4679,8 +4452,7 @@ impl LayerVersionsListItem {
     }
 }
 
-/// <p>Details about an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
-/// layer</a>.</p>
+/// <p>Details about an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayersListItem {
@@ -4845,26 +4617,12 @@ pub struct FunctionEventInvokeConfig {
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title">
-    /// <b>Destinations</b>
-    /// </p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Queue</b> - The ARN of an SQS queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Topic</b> - The ARN of an SNS topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-    /// </li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
@@ -4886,26 +4644,12 @@ impl FunctionEventInvokeConfig {
         self.maximum_event_age_in_seconds
     }
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title">
-    /// <b>Destinations</b>
-    /// </p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Queue</b> - The ARN of an SQS queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Topic</b> - The ARN of an SNS topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-    /// </li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
         self.destination_config.as_ref()
@@ -4982,52 +4726,24 @@ pub mod function_event_invoke_config {
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title">
-        /// <b>Destinations</b>
-        /// </p>
+        /// <p class="title"> <b>Destinations</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Queue</b> - The ARN of an SQS queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Topic</b> - The ARN of an SNS topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-        /// </li>
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
         /// </ul>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title">
-        /// <b>Destinations</b>
-        /// </p>
+        /// <p class="title"> <b>Destinations</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Queue</b> - The ARN of an SQS queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Topic</b> - The ARN of an SNS topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-        /// </li>
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
         /// </ul>
         pub fn set_destination_config(
             mut self,
@@ -5055,17 +4771,15 @@ impl FunctionEventInvokeConfig {
     }
 }
 
-/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <a>CreateEventSourceMapping</a>.</p>
+/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <code>CreateEventSourceMapping</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSourceMappingConfiguration {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: std::option::Option<std::string::String>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-    /// streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-    /// reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
@@ -5079,8 +4793,7 @@ pub struct EventSourceMappingConfiguration {
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
@@ -5088,9 +4801,7 @@ pub struct EventSourceMappingConfiguration {
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
-    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
     pub state: std::option::Option<std::string::String>,
     /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
     pub state_transition_reason: std::option::Option<std::string::String>,
@@ -5105,13 +4816,11 @@ pub struct EventSourceMappingConfiguration {
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
     pub maximum_record_age_in_seconds: std::option::Option<i32>,
     /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
     pub bisect_batch_on_function_error: std::option::Option<bool>,
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
@@ -5124,13 +4833,11 @@ impl EventSourceMappingConfiguration {
     pub fn uuid(&self) -> std::option::Option<&str> {
         self.uuid.as_deref()
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-    /// streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
     pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
         self.starting_position.as_ref()
     }
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-    /// reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
@@ -5154,8 +4861,7 @@ impl EventSourceMappingConfiguration {
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -5171,9 +4877,7 @@ impl EventSourceMappingConfiguration {
     pub fn last_processing_result(&self) -> std::option::Option<&str> {
         self.last_processing_result.as_deref()
     }
-    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-    /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-    /// <code>Updating</code>, or <code>Deleting</code>.</p>
+    /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
@@ -5205,8 +4909,7 @@ impl EventSourceMappingConfiguration {
     ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
     pub fn maximum_record_age_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_record_age_in_seconds
     }
@@ -5214,8 +4917,7 @@ impl EventSourceMappingConfiguration {
     pub fn bisect_batch_on_function_error(&self) -> std::option::Option<bool> {
         self.bisect_batch_on_function_error
     }
-    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
         self.maximum_retry_attempts
     }
@@ -5321,14 +5023,12 @@ pub mod event_source_mapping_configuration {
             self.uuid = input;
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-        /// streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
             self.starting_position = Some(input);
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
-        /// streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn set_starting_position(
             mut self,
             input: std::option::Option<crate::model::EventSourcePosition>,
@@ -5336,14 +5036,12 @@ pub mod event_source_mapping_configuration {
             self.starting_position = input;
             self
         }
-        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-        /// reading.</p>
+        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.starting_position_timestamp = Some(input);
             self
         }
-        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-        /// reading.</p>
+        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn set_starting_position_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5405,14 +5103,12 @@ pub mod event_source_mapping_configuration {
             self.event_source_arn = input;
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
             self.filter_criteria = Some(input);
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::FilterCriteria>,
@@ -5456,16 +5152,12 @@ pub mod event_source_mapping_configuration {
             self.last_processing_result = input;
             self
         }
-        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-        /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-        /// <code>Updating</code>, or <code>Deleting</code>.</p>
+        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
-        /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
-        /// <code>Updating</code>, or <code>Deleting</code>.</p>
+        /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -5541,10 +5233,10 @@ pub mod event_source_mapping_configuration {
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
         pub fn source_access_configurations(
             mut self,
-            input: impl Into<crate::model::SourceAccessConfiguration>,
+            input: crate::model::SourceAccessConfiguration,
         ) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.source_access_configurations = Some(v);
             self
         }
@@ -5572,14 +5264,12 @@ pub mod event_source_mapping_configuration {
             self.self_managed_event_source = input;
             self
         }
-        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
             self.maximum_record_age_in_seconds = Some(input);
             self
         }
-        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
-        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn set_maximum_record_age_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -5600,14 +5290,12 @@ pub mod event_source_mapping_configuration {
             self.bisect_batch_on_function_error = input;
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.maximum_retry_attempts = Some(input);
             self
         }
-        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
-        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_retry_attempts = input;
             self
@@ -5629,10 +5317,10 @@ pub mod event_source_mapping_configuration {
         /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
-            input: impl Into<crate::model::FunctionResponseType>,
+            input: crate::model::FunctionResponseType,
         ) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.function_response_types = Some(v);
             self
         }
@@ -5693,8 +5381,7 @@ pub struct AliasConfiguration {
     pub function_version: std::option::Option<std::string::String>,
     /// <p>A description of the alias.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-    /// configuration</a> of the alias.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
     pub routing_config: std::option::Option<crate::model::AliasRoutingConfiguration>,
     /// <p>A unique identifier that changes when you update the alias.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -5716,8 +5403,7 @@ impl AliasConfiguration {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-    /// configuration</a> of the alias.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
     pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
@@ -5795,14 +5481,12 @@ pub mod alias_configuration {
             self.description = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-        /// configuration</a> of the alias.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
         pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
             self.routing_config = Some(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
-        /// configuration</a> of the alias.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
         pub fn set_routing_config(
             mut self,
             input: std::option::Option<crate::model::AliasRoutingConfiguration>,
@@ -6212,13 +5896,11 @@ pub struct AccountLimit {
     pub total_code_size: i64,
     /// <p>The maximum size of a function's deployment package and layers when they're extracted.</p>
     pub code_size_unzipped: i64,
-    /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger
-    /// files.</p>
+    /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.</p>
     pub code_size_zipped: i64,
     /// <p>The maximum number of simultaneous function executions.</p>
     pub concurrent_executions: i32,
-    /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
-    /// functions with <a>PutFunctionConcurrency</a>.</p>
+    /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
     pub unreserved_concurrent_executions: std::option::Option<i32>,
 }
 impl AccountLimit {
@@ -6230,8 +5912,7 @@ impl AccountLimit {
     pub fn code_size_unzipped(&self) -> i64 {
         self.code_size_unzipped
     }
-    /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger
-    /// files.</p>
+    /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.</p>
     pub fn code_size_zipped(&self) -> i64 {
         self.code_size_zipped
     }
@@ -6239,8 +5920,7 @@ impl AccountLimit {
     pub fn concurrent_executions(&self) -> i32 {
         self.concurrent_executions
     }
-    /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
-    /// functions with <a>PutFunctionConcurrency</a>.</p>
+    /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
     pub fn unreserved_concurrent_executions(&self) -> std::option::Option<i32> {
         self.unreserved_concurrent_executions
     }
@@ -6292,14 +5972,12 @@ pub mod account_limit {
             self.code_size_unzipped = input;
             self
         }
-        /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger
-        /// files.</p>
+        /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.</p>
         pub fn code_size_zipped(mut self, input: i64) -> Self {
             self.code_size_zipped = Some(input);
             self
         }
-        /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger
-        /// files.</p>
+        /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.</p>
         pub fn set_code_size_zipped(mut self, input: std::option::Option<i64>) -> Self {
             self.code_size_zipped = input;
             self
@@ -6314,14 +5992,12 @@ pub mod account_limit {
             self.concurrent_executions = input;
             self
         }
-        /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
-        /// functions with <a>PutFunctionConcurrency</a>.</p>
+        /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
         pub fn unreserved_concurrent_executions(mut self, input: i32) -> Self {
             self.unreserved_concurrent_executions = Some(input);
             self
         }
-        /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
-        /// functions with <a>PutFunctionConcurrency</a>.</p>
+        /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
         pub fn set_unreserved_concurrent_executions(
             mut self,
             input: std::option::Option<i32>,
@@ -6348,13 +6024,11 @@ impl AccountLimit {
     }
 }
 
-/// <p>The code for the Lambda function. You can specify either an object in Amazon S3, upload a .zip file archive deployment
-/// package directly, or specify the URI of a container image.</p>
+/// <p>The code for the Lambda function. You can specify either an object in Amazon S3, upload a .zip file archive deployment package directly, or specify the URI of a container image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionCode {
-    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
-    /// you.</p>
+    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub zip_file: std::option::Option<aws_smithy_types::Blob>,
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -6366,8 +6040,7 @@ pub struct FunctionCode {
     pub image_uri: std::option::Option<std::string::String>,
 }
 impl FunctionCode {
-    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
-    /// you.</p>
+    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
@@ -6412,14 +6085,12 @@ pub mod function_code {
         pub(crate) image_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
-        /// you.</p>
+        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file = Some(input);
             self
         }
-        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
-        /// you.</p>
+        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.zip_file = input;
             self

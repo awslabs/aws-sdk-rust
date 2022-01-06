@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Inspector
@@ -212,6 +212,7 @@ where
     ///
     /// See [`GetExclusionsPreview`](crate::client::fluent_builders::GetExclusionsPreview) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetExclusionsPreview::into_paginator).
     pub fn get_exclusions_preview(&self) -> fluent_builders::GetExclusionsPreview<C, M, R> {
         fluent_builders::GetExclusionsPreview::new(self.handle.clone())
     }
@@ -226,6 +227,7 @@ where
     ///
     /// See [`ListAssessmentRunAgents`](crate::client::fluent_builders::ListAssessmentRunAgents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentRunAgents::into_paginator).
     pub fn list_assessment_run_agents(&self) -> fluent_builders::ListAssessmentRunAgents<C, M, R> {
         fluent_builders::ListAssessmentRunAgents::new(self.handle.clone())
     }
@@ -233,6 +235,7 @@ where
     ///
     /// See [`ListAssessmentRuns`](crate::client::fluent_builders::ListAssessmentRuns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentRuns::into_paginator).
     pub fn list_assessment_runs(&self) -> fluent_builders::ListAssessmentRuns<C, M, R> {
         fluent_builders::ListAssessmentRuns::new(self.handle.clone())
     }
@@ -240,6 +243,7 @@ where
     ///
     /// See [`ListAssessmentTargets`](crate::client::fluent_builders::ListAssessmentTargets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentTargets::into_paginator).
     pub fn list_assessment_targets(&self) -> fluent_builders::ListAssessmentTargets<C, M, R> {
         fluent_builders::ListAssessmentTargets::new(self.handle.clone())
     }
@@ -247,6 +251,7 @@ where
     ///
     /// See [`ListAssessmentTemplates`](crate::client::fluent_builders::ListAssessmentTemplates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentTemplates::into_paginator).
     pub fn list_assessment_templates(&self) -> fluent_builders::ListAssessmentTemplates<C, M, R> {
         fluent_builders::ListAssessmentTemplates::new(self.handle.clone())
     }
@@ -254,6 +259,7 @@ where
     ///
     /// See [`ListEventSubscriptions`](crate::client::fluent_builders::ListEventSubscriptions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEventSubscriptions::into_paginator).
     pub fn list_event_subscriptions(&self) -> fluent_builders::ListEventSubscriptions<C, M, R> {
         fluent_builders::ListEventSubscriptions::new(self.handle.clone())
     }
@@ -261,6 +267,7 @@ where
     ///
     /// See [`ListExclusions`](crate::client::fluent_builders::ListExclusions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExclusions::into_paginator).
     pub fn list_exclusions(&self) -> fluent_builders::ListExclusions<C, M, R> {
         fluent_builders::ListExclusions::new(self.handle.clone())
     }
@@ -268,6 +275,7 @@ where
     ///
     /// See [`ListFindings`](crate::client::fluent_builders::ListFindings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
     pub fn list_findings(&self) -> fluent_builders::ListFindings<C, M, R> {
         fluent_builders::ListFindings::new(self.handle.clone())
     }
@@ -275,6 +283,7 @@ where
     ///
     /// See [`ListRulesPackages`](crate::client::fluent_builders::ListRulesPackages) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRulesPackages::into_paginator).
     pub fn list_rules_packages(&self) -> fluent_builders::ListRulesPackages<C, M, R> {
         fluent_builders::ListRulesPackages::new(self.handle.clone())
     }
@@ -289,6 +298,7 @@ where
     ///
     /// See [`PreviewAgents`](crate::client::fluent_builders::PreviewAgents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::PreviewAgents::into_paginator).
     pub fn preview_agents(&self) -> fluent_builders::PreviewAgents<C, M, R> {
         fluent_builders::PreviewAgents::new(self.handle.clone())
     }
@@ -363,9 +373,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddAttributesToFindings`.
     ///
-    /// <p>Assigns attributes (key and value pairs) to the findings that are specified by the
-    /// ARNs of the findings.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Assigns attributes (key and value pairs) to the findings that are specified by the ARNs of the findings.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddAttributesToFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -410,10 +419,10 @@ pub mod fluent_builders {
                 crate::input::AddAttributesToFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -426,8 +435,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_arns`](Self::set_finding_arns).
         ///
         /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-        pub fn finding_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_arns(inp);
+        pub fn finding_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_arns(input.into());
             self
         }
         /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
@@ -443,8 +452,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The array of attributes that you want to assign to specified findings.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::Attribute>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
         /// <p>The array of attributes that you want to assign to specified findings.</p>
@@ -458,15 +467,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAssessmentTarget`.
     ///
-    /// <p>Creates a new assessment target using the ARN of the resource group that is generated
-    /// by <a>CreateResourceGroup</a>. If resourceGroupArn is not specified, all EC2
-    /// instances in the current AWS account and region are included in the assessment target. If
-    /// the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked role</a> isn’t already registered, this action also creates and
-    /// registers a service-linked role to grant Amazon Inspector access to AWS Services needed to
-    /// perform security assessments. You can create up to 50 assessment targets per AWS account.
-    /// You can run up to 500 concurrent agents per AWS account. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
-    /// Amazon Inspector Assessment Targets</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new assessment target using the ARN of the resource group that is generated by <code>CreateResourceGroup</code>. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked role</a> isn’t already registered, this action also creates and registers a service-linked role to grant Amazon Inspector access to AWS Services needed to perform security assessments. You can create up to 50 assessment targets per AWS account. You can run up to 500 concurrent agents per AWS account. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html"> Amazon Inspector Assessment Targets</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssessmentTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -511,10 +513,10 @@ pub mod fluent_builders {
                 crate::input::CreateAssessmentTargetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -522,14 +524,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The user-defined name that identifies the assessment target that you want to create.
-        /// The name must be unique within the AWS account.</p>
-        pub fn assessment_target_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_target_name(inp);
+        /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
+        pub fn assessment_target_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_target_name(input.into());
             self
         }
-        /// <p>The user-defined name that identifies the assessment target that you want to create.
-        /// The name must be unique within the AWS account.</p>
+        /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
         pub fn set_assessment_target_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -537,16 +537,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_target_name(input);
             self
         }
-        /// <p>The ARN that specifies the resource group that is used to create the assessment
-        /// target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account
-        /// and region are included in the assessment target.</p>
-        pub fn resource_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_arn(inp);
+        /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
+        pub fn resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_arn(input.into());
             self
         }
-        /// <p>The ARN that specifies the resource group that is used to create the assessment
-        /// target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account
-        /// and region are included in the assessment target.</p>
+        /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
         pub fn set_resource_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -557,11 +553,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAssessmentTemplate`.
     ///
-    /// <p>Creates an assessment template for the assessment target that is specified by the ARN
-    /// of the assessment target. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked role</a> isn’t already registered, this action also creates and
-    /// registers a service-linked role to grant Amazon Inspector access to AWS Services needed to
-    /// perform security assessments.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an assessment template for the assessment target that is specified by the ARN of the assessment target. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked role</a> isn’t already registered, this action also creates and registers a service-linked role to grant Amazon Inspector access to AWS Services needed to perform security assessments.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssessmentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -606,10 +599,10 @@ pub mod fluent_builders {
                 crate::input::CreateAssessmentTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -617,14 +610,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN that specifies the assessment target for which you want to create the
-        /// assessment template.</p>
-        pub fn assessment_target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_target_arn(inp);
+        /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
+        pub fn assessment_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_target_arn(input.into());
             self
         }
-        /// <p>The ARN that specifies the assessment target for which you want to create the
-        /// assessment template.</p>
+        /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
         pub fn set_assessment_target_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -632,18 +623,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_target_arn(input);
             self
         }
-        /// <p>The user-defined name that identifies the assessment template that you want to
-        /// create. You can create several assessment templates for an assessment target. The names of
-        /// the assessment templates that correspond to a particular assessment target must be
-        /// unique.</p>
-        pub fn assessment_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_template_name(inp);
+        /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
+        pub fn assessment_template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_template_name(input.into());
             self
         }
-        /// <p>The user-defined name that identifies the assessment template that you want to
-        /// create. You can create several assessment templates for an assessment target. The names of
-        /// the assessment templates that correspond to a particular assessment target must be
-        /// unique.</p>
+        /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
         pub fn set_assessment_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -652,8 +637,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The duration of the assessment run in seconds.</p>
-        pub fn duration_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.duration_in_seconds(inp);
+        pub fn duration_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration_in_seconds(input);
             self
         }
         /// <p>The duration of the assessment run in seconds.</p>
@@ -665,14 +650,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules_package_arns`](Self::set_rules_package_arns).
         ///
-        /// <p>The ARNs that specify the rules packages that you want to attach to the assessment
-        /// template.</p>
-        pub fn rules_package_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rules_package_arns(inp);
+        /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
+        pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rules_package_arns(input.into());
             self
         }
-        /// <p>The ARNs that specify the rules packages that you want to attach to the assessment
-        /// template.</p>
+        /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
         pub fn set_rules_package_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -684,21 +667,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_user_attributes_for_findings`](Self::set_user_attributes_for_findings).
         ///
-        /// <p>The user-defined attributes that are assigned to every finding that is generated by
-        /// the assessment run that uses this assessment template. An attribute is a key and value pair
-        /// (an <a>Attribute</a> object). Within an assessment template, each key must be
-        /// unique.</p>
-        pub fn user_attributes_for_findings(
-            mut self,
-            inp: impl Into<crate::model::Attribute>,
-        ) -> Self {
-            self.inner = self.inner.user_attributes_for_findings(inp);
+        /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
+        pub fn user_attributes_for_findings(mut self, input: crate::model::Attribute) -> Self {
+            self.inner = self.inner.user_attributes_for_findings(input);
             self
         }
-        /// <p>The user-defined attributes that are assigned to every finding that is generated by
-        /// the assessment run that uses this assessment template. An attribute is a key and value pair
-        /// (an <a>Attribute</a> object). Within an assessment template, each key must be
-        /// unique.</p>
+        /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
         pub fn set_user_attributes_for_findings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -709,10 +683,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateExclusionsPreview`.
     ///
-    /// <p>Starts the generation of an exclusions preview for the specified assessment template.
-    /// The exclusions preview lists the potential exclusions (ExclusionPreview) that Inspector can
-    /// detect before it runs the assessment. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts the generation of an exclusions preview for the specified assessment template. The exclusions preview lists the potential exclusions (ExclusionPreview) that Inspector can detect before it runs the assessment. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExclusionsPreview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -757,10 +729,10 @@ pub mod fluent_builders {
                 crate::input::CreateExclusionsPreviewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -768,14 +740,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN that specifies the assessment template for which you want to create an
-        /// exclusions preview.</p>
-        pub fn assessment_template_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_template_arn(inp);
+        /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
+        pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_template_arn(input.into());
             self
         }
-        /// <p>The ARN that specifies the assessment template for which you want to create an
-        /// exclusions preview.</p>
+        /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
         pub fn set_assessment_template_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -786,11 +756,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateResourceGroup`.
     ///
-    /// <p>Creates a resource group using the specified set of tags (key and value pairs) that
-    /// are used to select the EC2 instances to be included in an Amazon Inspector assessment
-    /// target. The created resource group is then used to create an Amazon Inspector assessment
-    /// target. For more information, see <a>CreateAssessmentTarget</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a resource group using the specified set of tags (key and value pairs) that are used to select the EC2 instances to be included in an Amazon Inspector assessment target. The created resource group is then used to create an Amazon Inspector assessment target. For more information, see <code>CreateAssessmentTarget</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -835,10 +802,10 @@ pub mod fluent_builders {
                 crate::input::CreateResourceGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -850,18 +817,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_group_tags`](Self::set_resource_group_tags).
         ///
-        /// <p>A collection of keys and an array of possible values,
-        /// '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
+        /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
         /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-        pub fn resource_group_tags(
-            mut self,
-            inp: impl Into<crate::model::ResourceGroupTag>,
-        ) -> Self {
-            self.inner = self.inner.resource_group_tags(inp);
+        pub fn resource_group_tags(mut self, input: crate::model::ResourceGroupTag) -> Self {
+            self.inner = self.inner.resource_group_tags(input);
             self
         }
-        /// <p>A collection of keys and an array of possible values,
-        /// '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
+        /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
         /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
         pub fn set_resource_group_tags(
             mut self,
@@ -873,9 +835,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAssessmentRun`.
     ///
-    /// <p>Deletes the assessment run that is specified by the ARN of the assessment
-    /// run.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the assessment run that is specified by the ARN of the assessment run.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -920,10 +881,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssessmentRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -932,8 +893,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN that specifies the assessment run that you want to delete.</p>
-        pub fn assessment_run_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arn(inp);
+        pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment run that you want to delete.</p>
@@ -947,9 +908,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAssessmentTarget`.
     ///
-    /// <p>Deletes the assessment target that is specified by the ARN of the assessment
-    /// target.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the assessment target that is specified by the ARN of the assessment target.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -994,10 +954,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssessmentTargetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1006,8 +966,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN that specifies the assessment target that you want to delete.</p>
-        pub fn assessment_target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_target_arn(inp);
+        pub fn assessment_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_target_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment target that you want to delete.</p>
@@ -1021,9 +981,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAssessmentTemplate`.
     ///
-    /// <p>Deletes the assessment template that is specified by the ARN of the assessment
-    /// template.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the assessment template that is specified by the ARN of the assessment template.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1068,10 +1027,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssessmentTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1080,8 +1039,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN that specifies the assessment template that you want to delete.</p>
-        pub fn assessment_template_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_template_arn(inp);
+        pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_template_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment template that you want to delete.</p>
@@ -1095,9 +1054,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAssessmentRuns`.
     ///
-    /// <p>Describes the assessment runs that are specified by the ARNs of the assessment
-    /// runs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the assessment runs that are specified by the ARNs of the assessment runs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssessmentRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1142,10 +1100,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAssessmentRunsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1158,8 +1116,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).
         ///
         /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-        pub fn assessment_run_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arns(inp);
+        pub fn assessment_run_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arns(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment run that you want to describe.</p>
@@ -1173,9 +1131,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAssessmentTargets`.
     ///
-    /// <p>Describes the assessment targets that are specified by the ARNs of the assessment
-    /// targets.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the assessment targets that are specified by the ARNs of the assessment targets.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssessmentTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1220,10 +1177,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAssessmentTargetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1236,8 +1193,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_assessment_target_arns`](Self::set_assessment_target_arns).
         ///
         /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-        pub fn assessment_target_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_target_arns(inp);
+        pub fn assessment_target_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_target_arns(input.into());
             self
         }
         /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
@@ -1251,9 +1208,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAssessmentTemplates`.
     ///
-    /// <p>Describes the assessment templates that are specified by the ARNs of the assessment
-    /// templates.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the assessment templates that are specified by the ARNs of the assessment templates.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssessmentTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1298,10 +1254,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAssessmentTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1314,8 +1270,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_assessment_template_arns`](Self::set_assessment_template_arns).
         ///
         #[allow(missing_docs)] // documentation missing in model
-        pub fn assessment_template_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_template_arns(inp);
+        pub fn assessment_template_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_template_arns(input.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1329,9 +1285,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeCrossAccountAccessRole`.
     ///
-    /// <p>Describes the IAM role that enables Amazon Inspector to access your AWS
-    /// account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the IAM role that enables Amazon Inspector to access your AWS account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCrossAccountAccessRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1376,10 +1331,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCrossAccountAccessRoleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1391,7 +1346,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeExclusions`.
     ///
     /// <p>Describes the exclusions that are specified by the exclusions' ARNs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExclusions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1436,10 +1391,10 @@ pub mod fluent_builders {
                 crate::input::DescribeExclusionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1452,8 +1407,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_exclusion_arns`](Self::set_exclusion_arns).
         ///
         /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-        pub fn exclusion_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclusion_arns(inp);
+        pub fn exclusion_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusion_arns(input.into());
             self
         }
         /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
@@ -1464,14 +1419,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_exclusion_arns(input);
             self
         }
-        /// <p>The locale into which you want to translate the exclusion's title, description, and
-        /// recommendation.</p>
-        pub fn locale(mut self, inp: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(inp);
+        /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
-        /// <p>The locale into which you want to translate the exclusion's title, description, and
-        /// recommendation.</p>
+        /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
             self.inner = self.inner.set_locale(input);
             self
@@ -1480,7 +1433,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFindings`.
     ///
     /// <p>Describes the findings that are specified by the ARNs of the findings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1525,10 +1478,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1541,8 +1494,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_arns`](Self::set_finding_arns).
         ///
         /// <p>The ARN that specifies the finding that you want to describe.</p>
-        pub fn finding_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_arns(inp);
+        pub fn finding_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_arns(input.into());
             self
         }
         /// <p>The ARN that specifies the finding that you want to describe.</p>
@@ -1553,14 +1506,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_finding_arns(input);
             self
         }
-        /// <p>The locale into which you want to translate a finding description, recommendation,
-        /// and the short description that identifies the finding.</p>
-        pub fn locale(mut self, inp: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(inp);
+        /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
-        /// <p>The locale into which you want to translate a finding description, recommendation,
-        /// and the short description that identifies the finding.</p>
+        /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
             self.inner = self.inner.set_locale(input);
             self
@@ -1568,9 +1519,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeResourceGroups`.
     ///
-    /// <p>Describes the resource groups that are specified by the ARNs of the resource
-    /// groups.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the resource groups that are specified by the ARNs of the resource groups.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResourceGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1615,10 +1565,10 @@ pub mod fluent_builders {
                 crate::input::DescribeResourceGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1631,8 +1581,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_group_arns`](Self::set_resource_group_arns).
         ///
         /// <p>The ARN that specifies the resource group that you want to describe.</p>
-        pub fn resource_group_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_arns(inp);
+        pub fn resource_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_arns(input.into());
             self
         }
         /// <p>The ARN that specifies the resource group that you want to describe.</p>
@@ -1646,9 +1596,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRulesPackages`.
     ///
-    /// <p>Describes the rules packages that are specified by the ARNs of the rules
-    /// packages.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the rules packages that are specified by the ARNs of the rules packages.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRulesPackages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1693,10 +1642,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRulesPackagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1709,8 +1658,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rules_package_arns`](Self::set_rules_package_arns).
         ///
         /// <p>The ARN that specifies the rules package that you want to describe.</p>
-        pub fn rules_package_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rules_package_arns(inp);
+        pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rules_package_arns(input.into());
             self
         }
         /// <p>The ARN that specifies the rules package that you want to describe.</p>
@@ -1722,8 +1671,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale that you want to translate a rules package description into.</p>
-        pub fn locale(mut self, inp: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
         /// <p>The locale that you want to translate a rules package description into.</p>
@@ -1734,9 +1683,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAssessmentReport`.
     ///
-    /// <p>Produces an assessment report that includes detailed and comprehensive results of a
-    /// specified assessment run. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Produces an assessment report that includes detailed and comprehensive results of a specified assessment run. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssessmentReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1781,10 +1729,10 @@ pub mod fluent_builders {
                 crate::input::GetAssessmentReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1792,14 +1740,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN that specifies the assessment run for which you want to generate a
-        /// report.</p>
-        pub fn assessment_run_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arn(inp);
+        /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
+        pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arn(input.into());
             self
         }
-        /// <p>The ARN that specifies the assessment run for which you want to generate a
-        /// report.</p>
+        /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
         pub fn set_assessment_run_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1807,14 +1753,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_run_arn(input);
             self
         }
-        /// <p>Specifies the file format (html or pdf) of the assessment report that you want to
-        /// generate.</p>
-        pub fn report_file_format(mut self, inp: crate::model::ReportFileFormat) -> Self {
-            self.inner = self.inner.report_file_format(inp);
+        /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
+        pub fn report_file_format(mut self, input: crate::model::ReportFileFormat) -> Self {
+            self.inner = self.inner.report_file_format(input);
             self
         }
-        /// <p>Specifies the file format (html or pdf) of the assessment report that you want to
-        /// generate.</p>
+        /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
         pub fn set_report_file_format(
             mut self,
             input: std::option::Option<crate::model::ReportFileFormat>,
@@ -1822,16 +1766,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_file_format(input);
             self
         }
-        /// <p>Specifies the type of the assessment report that you want to generate. There are two
-        /// types of assessment reports: a finding report and a full report. For more information, see
-        /// <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
-        pub fn report_type(mut self, inp: crate::model::ReportType) -> Self {
-            self.inner = self.inner.report_type(inp);
+        /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+        pub fn report_type(mut self, input: crate::model::ReportType) -> Self {
+            self.inner = self.inner.report_type(input);
             self
         }
-        /// <p>Specifies the type of the assessment report that you want to generate. There are two
-        /// types of assessment reports: a finding report and a full report. For more information, see
-        /// <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+        /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
         pub fn set_report_type(
             mut self,
             input: std::option::Option<crate::model::ReportType>,
@@ -1842,10 +1782,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetExclusionsPreview`.
     ///
-    /// <p>Retrieves the exclusions preview (a list of ExclusionPreview objects) specified by
-    /// the preview token. You can obtain the preview token by running the CreateExclusionsPreview
-    /// API.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the exclusions preview (a list of ExclusionPreview objects) specified by the preview token. You can obtain the preview token by running the CreateExclusionsPreview API.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExclusionsPreview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1890,10 +1828,10 @@ pub mod fluent_builders {
                 crate::input::GetExclusionsPreviewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1901,14 +1839,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN that specifies the assessment template for which the exclusions preview was
-        /// requested.</p>
-        pub fn assessment_template_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_template_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetExclusionsPreviewPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetExclusionsPreviewPaginator<C, M, R> {
+            crate::paginator::GetExclusionsPreviewPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
+        pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_template_arn(input.into());
             self
         }
-        /// <p>The ARN that specifies the assessment template for which the exclusions preview was
-        /// requested.</p>
+        /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
         pub fn set_assessment_template_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1917,8 +1859,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier associated of the exclusions preview.</p>
-        pub fn preview_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preview_token(inp);
+        pub fn preview_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preview_token(input.into());
             self
         }
         /// <p>The unique identifier associated of the exclusions preview.</p>
@@ -1929,42 +1871,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_preview_token(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to
-        /// the action fill nextToken in the request with the value of nextToken from the previous
-        /// response to continue listing data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to
-        /// the action fill nextToken in the request with the value of nextToken from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 100. The maximum value is 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 100. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The locale into which you want to translate the exclusion's title, description, and
-        /// recommendation.</p>
-        pub fn locale(mut self, inp: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(inp);
+        /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
-        /// <p>The locale into which you want to translate the exclusion's title, description, and
-        /// recommendation.</p>
+        /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
             self.inner = self.inner.set_locale(input);
             self
@@ -1972,9 +1904,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTelemetryMetadata`.
     ///
-    /// <p>Information about the data that is collected for the specified assessment
-    /// run.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Information about the data that is collected for the specified assessment run.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTelemetryMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2019,10 +1950,10 @@ pub mod fluent_builders {
                 crate::input::GetTelemetryMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2030,14 +1961,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN that specifies the assessment run that has the telemetry data that you want
-        /// to obtain.</p>
-        pub fn assessment_run_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arn(inp);
+        /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
+        pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arn(input.into());
             self
         }
-        /// <p>The ARN that specifies the assessment run that has the telemetry data that you want
-        /// to obtain.</p>
+        /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
         pub fn set_assessment_run_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2048,9 +1977,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssessmentRunAgents`.
     ///
-    /// <p>Lists the agents of the assessment runs that are specified by the ARNs of the
-    /// assessment runs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the agents of the assessment runs that are specified by the ARNs of the assessment runs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentRunAgents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2095,10 +2023,10 @@ pub mod fluent_builders {
                 crate::input::ListAssessmentRunAgentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2106,9 +2034,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssessmentRunAgentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssessmentRunAgentsPaginator<C, M, R> {
+            crate::paginator::ListAssessmentRunAgentsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
-        pub fn assessment_run_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arn(inp);
+        pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
@@ -2119,50 +2053,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_run_arn(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
-        pub fn filter(mut self, inp: crate::model::AgentFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+        pub fn filter(mut self, input: crate::model::AgentFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::AgentFilter>) -> Self {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentRunAgents</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentRunAgents</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in
-        /// the response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in
-        /// the response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2170,9 +2088,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssessmentRuns`.
     ///
-    /// <p>Lists the assessment runs that correspond to the assessment templates that are
-    /// specified by the ARNs of the assessment templates.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the assessment runs that correspond to the assessment templates that are specified by the ARNs of the assessment templates.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2217,10 +2134,10 @@ pub mod fluent_builders {
                 crate::input::ListAssessmentRunsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2228,18 +2145,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssessmentRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssessmentRunsPaginator<C, M, R> {
+            crate::paginator::ListAssessmentRunsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `assessmentTemplateArns`.
         ///
         /// To override the contents of this collection use [`set_assessment_template_arns`](Self::set_assessment_template_arns).
         ///
-        /// <p>The ARNs that specify the assessment templates whose assessment runs you want to
-        /// list.</p>
-        pub fn assessment_template_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_template_arns(inp);
+        /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
+        pub fn assessment_template_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_template_arns(input.into());
             self
         }
-        /// <p>The ARNs that specify the assessment templates whose assessment runs you want to
-        /// list.</p>
+        /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
         pub fn set_assessment_template_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2247,20 +2168,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_template_arns(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
-        pub fn filter(mut self, inp: crate::model::AssessmentRunFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+        pub fn filter(mut self, input: crate::model::AssessmentRunFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::AssessmentRunFilter>,
@@ -2268,32 +2183,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentRuns</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentRuns</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in
-        /// the response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in
-        /// the response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2301,10 +2206,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssessmentTargets`.
     ///
-    /// <p>Lists the ARNs of the assessment targets within this AWS account. For more
-    /// information about assessment targets, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon Inspector Assessment
-    /// Targets</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the ARNs of the assessment targets within this AWS account. For more information about assessment targets, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon Inspector Assessment Targets</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2349,10 +2252,10 @@ pub mod fluent_builders {
                 crate::input::ListAssessmentTargetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2360,20 +2263,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
-        pub fn filter(mut self, inp: crate::model::AssessmentTargetFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssessmentTargetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssessmentTargetsPaginator<C, M, R> {
+            crate::paginator::ListAssessmentTargetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+        pub fn filter(mut self, input: crate::model::AssessmentTargetFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::AssessmentTargetFilter>,
@@ -2381,32 +2284,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentTargets</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentTargets</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2414,9 +2307,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssessmentTemplates`.
     ///
-    /// <p>Lists the assessment templates that correspond to the assessment targets that are
-    /// specified by the ARNs of the assessment targets.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the assessment templates that correspond to the assessment targets that are specified by the ARNs of the assessment targets.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2461,10 +2353,10 @@ pub mod fluent_builders {
                 crate::input::ListAssessmentTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2472,18 +2364,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssessmentTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssessmentTemplatesPaginator<C, M, R> {
+            crate::paginator::ListAssessmentTemplatesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `assessmentTargetArns`.
         ///
         /// To override the contents of this collection use [`set_assessment_target_arns`](Self::set_assessment_target_arns).
         ///
-        /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you
-        /// want to list.</p>
-        pub fn assessment_target_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_target_arns(inp);
+        /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
+        pub fn assessment_target_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_target_arns(input.into());
             self
         }
-        /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you
-        /// want to list.</p>
+        /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
         pub fn set_assessment_target_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2491,20 +2387,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_target_arns(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
-        pub fn filter(mut self, inp: crate::model::AssessmentTemplateFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+        pub fn filter(mut self, input: crate::model::AssessmentTemplateFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::AssessmentTemplateFilter>,
@@ -2512,32 +2402,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentTemplates</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentTemplates</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2545,9 +2425,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEventSubscriptions`.
     ///
-    /// <p>Lists all the event subscriptions for the assessment template that is specified by
-    /// the ARN of the assessment template. For more information, see <a>SubscribeToEvent</a> and <a>UnsubscribeFromEvent</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all the event subscriptions for the assessment template that is specified by the ARN of the assessment template. For more information, see <code>SubscribeToEvent</code> and <code>UnsubscribeFromEvent</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2592,10 +2471,10 @@ pub mod fluent_builders {
                 crate::input::ListEventSubscriptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2603,44 +2482,38 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the assessment template for which you want to list the existing event
-        /// subscriptions.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEventSubscriptionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEventSubscriptionsPaginator<C, M, R> {
+            crate::paginator::ListEventSubscriptionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN of the assessment template for which you want to list the existing event
-        /// subscriptions.</p>
+        /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListEventSubscriptions</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListEventSubscriptions</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2649,7 +2522,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListExclusions`.
     ///
     /// <p>List exclusions that are generated by the assessment run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExclusions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2694,10 +2567,10 @@ pub mod fluent_builders {
                 crate::input::ListExclusionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2705,14 +2578,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the assessment run that generated the exclusions that you want to
-        /// list.</p>
-        pub fn assessment_run_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListExclusionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListExclusionsPaginator<C, M, R> {
+            crate::paginator::ListExclusionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
+        pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arn(input.into());
             self
         }
-        /// <p>The ARN of the assessment run that generated the exclusions that you want to
-        /// list.</p>
+        /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
         pub fn set_assessment_run_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2720,30 +2597,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_run_arn(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the ListExclusionsRequest action. Subsequent calls to the
-        /// action fill nextToken in the request with the value of nextToken from the previous response
-        /// to continue listing data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the ListExclusionsRequest action. Subsequent calls to the
-        /// action fill nextToken in the request with the value of nextToken from the previous response
-        /// to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 100. The maximum value is 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 100. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2751,9 +2620,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFindings`.
     ///
-    /// <p>Lists findings that are generated by the assessment runs that are specified by the
-    /// ARNs of the assessment runs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists findings that are generated by the assessment runs that are specified by the ARNs of the assessment runs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2798,10 +2666,10 @@ pub mod fluent_builders {
                 crate::input::ListFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2809,18 +2677,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFindingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFindingsPaginator<C, M, R> {
+            crate::paginator::ListFindingsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `assessmentRunArns`.
         ///
         /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).
         ///
-        /// <p>The ARNs of the assessment runs that generate the findings that you want to
-        /// list.</p>
-        pub fn assessment_run_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arns(inp);
+        /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
+        pub fn assessment_run_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arns(input.into());
             self
         }
-        /// <p>The ARNs of the assessment runs that generate the findings that you want to
-        /// list.</p>
+        /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
         pub fn set_assessment_run_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2828,20 +2700,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_run_arns(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
-        pub fn filter(mut self, inp: crate::model::FindingFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+        pub fn filter(mut self, input: crate::model::FindingFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::FindingFilter>,
@@ -2849,32 +2715,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListFindings</b> action.
-        /// Subsequent calls to the action fill <b>nextToken</b> in the
-        /// request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListFindings</b> action.
-        /// Subsequent calls to the action fill <b>nextToken</b> in the
-        /// request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2883,7 +2739,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRulesPackages`.
     ///
     /// <p>Lists all available Amazon Inspector rules packages.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRulesPackages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2928,10 +2784,10 @@ pub mod fluent_builders {
                 crate::input::ListRulesPackagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2939,32 +2795,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListRulesPackages</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRulesPackagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRulesPackagesPaginator<C, M, R> {
+            crate::paginator::ListRulesPackagesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListRulesPackages</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2973,7 +2825,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags associated with an assessment template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3018,10 +2870,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3030,8 +2882,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN that specifies the assessment template whose tags you want to list.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment template whose tags you want to list.</p>
@@ -3042,9 +2894,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PreviewAgents`.
     ///
-    /// <p>Previews the agents installed on the EC2 instances that are part of the specified
-    /// assessment target.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Previews the agents installed on the EC2 instances that are part of the specified assessment target.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PreviewAgents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3089,10 +2940,10 @@ pub mod fluent_builders {
                 crate::input::PreviewAgentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3100,9 +2951,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::PreviewAgentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::PreviewAgentsPaginator<C, M, R> {
+            crate::paginator::PreviewAgentsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the assessment target whose agents you want to preview.</p>
-        pub fn preview_agents_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preview_agents_arn(inp);
+        pub fn preview_agents_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preview_agents_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment target whose agents you want to preview.</p>
@@ -3113,32 +2970,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_preview_agents_arn(input);
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>PreviewAgents</b> action.
-        /// Subsequent calls to the action fill <b>nextToken</b> in the
-        /// request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>PreviewAgents</b> action.
-        /// Subsequent calls to the action fill <b>nextToken</b> in the
-        /// request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3146,9 +2993,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterCrossAccountAccessRole`.
     ///
-    /// <p>Registers the IAM role that grants Amazon Inspector access to AWS Services needed to
-    /// perform security assessments.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registers the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterCrossAccountAccessRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3193,10 +3039,10 @@ pub mod fluent_builders {
                 crate::input::RegisterCrossAccountAccessRoleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3204,14 +3050,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to
-        /// perform security assessments. </p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to
-        /// perform security assessments. </p>
+        /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -3219,9 +3063,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveAttributesFromFindings`.
     ///
-    /// <p>Removes entire attributes (key and value pairs) from the findings that are specified
-    /// by the ARNs of the findings where an attribute with the specified key exists.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes entire attributes (key and value pairs) from the findings that are specified by the ARNs of the findings where an attribute with the specified key exists.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveAttributesFromFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3266,10 +3109,10 @@ pub mod fluent_builders {
                 crate::input::RemoveAttributesFromFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3282,8 +3125,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_arns`](Self::set_finding_arns).
         ///
         /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-        pub fn finding_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_arns(inp);
+        pub fn finding_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_arns(input.into());
             self
         }
         /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
@@ -3298,14 +3141,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attribute_keys`](Self::set_attribute_keys).
         ///
-        /// <p>The array of attribute keys that you want to remove from specified
-        /// findings.</p>
-        pub fn attribute_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_keys(inp);
+        /// <p>The array of attribute keys that you want to remove from specified findings.</p>
+        pub fn attribute_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_keys(input.into());
             self
         }
-        /// <p>The array of attribute keys that you want to remove from specified
-        /// findings.</p>
+        /// <p>The array of attribute keys that you want to remove from specified findings.</p>
         pub fn set_attribute_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3316,9 +3157,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetTagsForResource`.
     ///
-    /// <p>Sets tags (key and value pairs) to the assessment template that is specified by the
-    /// ARN of the assessment template.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets tags (key and value pairs) to the assessment template that is specified by the ARN of the assessment template.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3363,10 +3203,10 @@ pub mod fluent_builders {
                 crate::input::SetTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3375,8 +3215,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the assessment template that you want to set tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment template that you want to set tags to.</p>
@@ -3388,14 +3228,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of key and value pairs that you want to set to the assessment
-        /// template.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A collection of key and value pairs that you want to set to the assessment
-        /// template.</p>
+        /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3406,10 +3244,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartAssessmentRun`.
     ///
-    /// <p>Starts the assessment run specified by the ARN of the assessment template. For this
-    /// API to function properly, you must not exceed the limit of running up to 500 concurrent
-    /// agents per AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts the assessment run specified by the ARN of the assessment template. For this API to function properly, you must not exceed the limit of running up to 500 concurrent agents per AWS account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAssessmentRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3454,10 +3290,10 @@ pub mod fluent_builders {
                 crate::input::StartAssessmentRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3465,14 +3301,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the assessment template of the assessment run that you want to
-        /// start.</p>
-        pub fn assessment_template_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_template_arn(inp);
+        /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
+        pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_template_arn(input.into());
             self
         }
-        /// <p>The ARN of the assessment template of the assessment run that you want to
-        /// start.</p>
+        /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
         pub fn set_assessment_template_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3480,14 +3314,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_template_arn(input);
             self
         }
-        /// <p>You can specify the name for the assessment run. The name must be unique for the
-        /// assessment template whose ARN is used to start the assessment run.</p>
-        pub fn assessment_run_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_name(inp);
+        /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
+        pub fn assessment_run_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_name(input.into());
             self
         }
-        /// <p>You can specify the name for the assessment run. The name must be unique for the
-        /// assessment template whose ARN is used to start the assessment run.</p>
+        /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
         pub fn set_assessment_run_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3498,9 +3330,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopAssessmentRun`.
     ///
-    /// <p>Stops the assessment run that is specified by the ARN of the assessment
-    /// run.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Stops the assessment run that is specified by the ARN of the assessment run.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopAssessmentRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3545,10 +3376,10 @@ pub mod fluent_builders {
                 crate::input::StopAssessmentRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3557,8 +3388,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the assessment run that you want to stop.</p>
-        pub fn assessment_run_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arn(inp);
+        pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment run that you want to stop.</p>
@@ -3569,18 +3400,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_run_arn(input);
             self
         }
-        /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION.
-        /// START_EVALUATION (the default value), stops the AWS agent from collecting data and begins
-        /// the results evaluation and the findings generation process. SKIP_EVALUATION cancels the
-        /// assessment run immediately, after which no findings are generated.</p>
-        pub fn stop_action(mut self, inp: crate::model::StopAction) -> Self {
-            self.inner = self.inner.stop_action(inp);
+        /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
+        pub fn stop_action(mut self, input: crate::model::StopAction) -> Self {
+            self.inner = self.inner.stop_action(input);
             self
         }
-        /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION.
-        /// START_EVALUATION (the default value), stops the AWS agent from collecting data and begins
-        /// the results evaluation and the findings generation process. SKIP_EVALUATION cancels the
-        /// assessment run immediately, after which no findings are generated.</p>
+        /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
         pub fn set_stop_action(
             mut self,
             input: std::option::Option<crate::model::StopAction>,
@@ -3591,9 +3416,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SubscribeToEvent`.
     ///
-    /// <p>Enables the process of sending Amazon Simple Notification Service (SNS) notifications
-    /// about a specified event to a specified SNS topic.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Enables the process of sending Amazon Simple Notification Service (SNS) notifications about a specified event to a specified SNS topic.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SubscribeToEvent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3638,10 +3462,10 @@ pub mod fluent_builders {
                 crate::input::SubscribeToEventInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3649,21 +3473,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the assessment template that is used during the event for which you want
-        /// to receive SNS notifications.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN of the assessment template that is used during the event for which you want
-        /// to receive SNS notifications.</p>
+        /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The event for which you want to receive SNS notifications.</p>
-        pub fn event(mut self, inp: crate::model::InspectorEvent) -> Self {
-            self.inner = self.inner.event(inp);
+        pub fn event(mut self, input: crate::model::InspectorEvent) -> Self {
+            self.inner = self.inner.event(input);
             self
         }
         /// <p>The event for which you want to receive SNS notifications.</p>
@@ -3675,8 +3497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
@@ -3687,9 +3509,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UnsubscribeFromEvent`.
     ///
-    /// <p>Disables the process of sending Amazon Simple Notification Service (SNS)
-    /// notifications about a specified event to a specified SNS topic.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disables the process of sending Amazon Simple Notification Service (SNS) notifications about a specified event to a specified SNS topic.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnsubscribeFromEvent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3734,10 +3555,10 @@ pub mod fluent_builders {
                 crate::input::UnsubscribeFromEventInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3745,21 +3566,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the assessment template that is used during the event for which you want
-        /// to stop receiving SNS notifications.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN of the assessment template that is used during the event for which you want
-        /// to stop receiving SNS notifications.</p>
+        /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The event for which you want to stop receiving SNS notifications.</p>
-        pub fn event(mut self, inp: crate::model::InspectorEvent) -> Self {
-            self.inner = self.inner.event(inp);
+        pub fn event(mut self, input: crate::model::InspectorEvent) -> Self {
+            self.inner = self.inner.event(input);
             self
         }
         /// <p>The event for which you want to stop receiving SNS notifications.</p>
@@ -3771,8 +3590,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
@@ -3783,11 +3602,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAssessmentTarget`.
     ///
-    /// <p>Updates the assessment target that is specified by the ARN of the assessment
-    /// target.</p>
-    /// <p>If resourceGroupArn is not specified, all EC2 instances in the current AWS account
-    /// and region are included in the assessment target.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the assessment target that is specified by the ARN of the assessment target.</p>
+    /// <p>If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssessmentTarget<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3832,10 +3649,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAssessmentTargetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3844,8 +3661,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the assessment target that you want to update.</p>
-        pub fn assessment_target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_target_arn(inp);
+        pub fn assessment_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_target_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment target that you want to update.</p>
@@ -3857,8 +3674,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the assessment target that you want to update.</p>
-        pub fn assessment_target_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_target_name(inp);
+        pub fn assessment_target_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_target_name(input.into());
             self
         }
         /// <p>The name of the assessment target that you want to update.</p>
@@ -3869,14 +3686,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_target_name(input);
             self
         }
-        /// <p>The ARN of the resource group that is used to specify the new resource group to
-        /// associate with the assessment target.</p>
-        pub fn resource_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_arn(inp);
+        /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
+        pub fn resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_arn(input.into());
             self
         }
-        /// <p>The ARN of the resource group that is used to specify the new resource group to
-        /// associate with the assessment target.</p>
+        /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
         pub fn set_resource_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3886,6 +3701,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

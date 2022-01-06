@@ -65,7 +65,7 @@ pub mod configure_logs_input {
 #[doc(hidden)]
 pub type ConfigureLogsInputOperationOutputAlias = crate::operation::ConfigureLogs;
 #[doc(hidden)]
-pub type ConfigureLogsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfigureLogsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfigureLogsInput {
     /// Consumes the builder and constructs an Operation<[`ConfigureLogs`](crate::operation::ConfigureLogs)>
     #[allow(clippy::let_and_return)]
@@ -76,7 +76,7 @@ impl ConfigureLogsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfigureLogs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -171,7 +171,7 @@ impl ConfigureLogsInput {
             "ConfigureLogs",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -217,14 +217,12 @@ pub mod create_channel_input {
             self.description = input;
             self
         }
-        /// The ID of the Channel. The ID must be unique within the region and it
-        /// cannot be changed after a Channel is created.
+        /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// The ID of the Channel. The ID must be unique within the region and it
-        /// cannot be changed after a Channel is created.
+        /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -272,7 +270,7 @@ pub mod create_channel_input {
 #[doc(hidden)]
 pub type CreateChannelInputOperationOutputAlias = crate::operation::CreateChannel;
 #[doc(hidden)]
-pub type CreateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannel`](crate::operation::CreateChannel)>
     #[allow(clippy::let_and_return)]
@@ -283,7 +281,7 @@ impl CreateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -362,7 +360,7 @@ impl CreateChannelInput {
             "CreateChannel",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -408,26 +406,22 @@ pub mod create_harvest_job_input {
             self.end_time = input;
             self
         }
-        /// The ID of the HarvestJob. The ID must be unique within the region
-        /// and it cannot be changed after the HarvestJob is submitted
+        /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// The ID of the HarvestJob. The ID must be unique within the region
-        /// and it cannot be changed after the HarvestJob is submitted
+        /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
-        /// This cannot be changed after the HarvestJob is submitted.
+        /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
         pub fn origin_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.origin_endpoint_id = Some(input.into());
             self
         }
-        /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
-        /// This cannot be changed after the HarvestJob is submitted.
+        /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
         pub fn set_origin_endpoint_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -478,7 +472,7 @@ pub mod create_harvest_job_input {
 #[doc(hidden)]
 pub type CreateHarvestJobInputOperationOutputAlias = crate::operation::CreateHarvestJob;
 #[doc(hidden)]
-pub type CreateHarvestJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateHarvestJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHarvestJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateHarvestJob`](crate::operation::CreateHarvestJob)>
     #[allow(clippy::let_and_return)]
@@ -489,7 +483,7 @@ impl CreateHarvestJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHarvestJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -569,7 +563,7 @@ impl CreateHarvestJobInput {
             "CreateHarvestJob",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -630,14 +624,12 @@ pub mod create_origin_endpoint_input {
             self.authorization = input;
             self
         }
-        /// The ID of the Channel that the OriginEndpoint will be associated with.
-        /// This cannot be changed after the OriginEndpoint is created.
+        /// The ID of the Channel that the OriginEndpoint will be associated with. This cannot be changed after the OriginEndpoint is created.
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_id = Some(input.into());
             self
         }
-        /// The ID of the Channel that the OriginEndpoint will be associated with.
-        /// This cannot be changed after the OriginEndpoint is created.
+        /// The ID of the Channel that the OriginEndpoint will be associated with. This cannot be changed after the OriginEndpoint is created.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_id = input;
             self
@@ -694,14 +686,12 @@ pub mod create_origin_endpoint_input {
             self.hls_package = input;
             self
         }
-        /// The ID of the OriginEndpoint.  The ID must be unique within the region
-        /// and it cannot be changed after the OriginEndpoint is created.
+        /// The ID of the OriginEndpoint. The ID must be unique within the region and it cannot be changed after the OriginEndpoint is created.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// The ID of the OriginEndpoint.  The ID must be unique within the region
-        /// and it cannot be changed after the OriginEndpoint is created.
+        /// The ID of the OriginEndpoint. The ID must be unique within the region and it cannot be changed after the OriginEndpoint is created.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -732,16 +722,12 @@ pub mod create_origin_endpoint_input {
             self.mss_package = input;
             self
         }
-        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-        /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-        /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
         pub fn origination(mut self, input: crate::model::Origination) -> Self {
             self.origination = Some(input);
             self
         }
-        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-        /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-        /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
         pub fn set_origination(
             mut self,
             input: std::option::Option<crate::model::Origination>,
@@ -749,14 +735,12 @@ pub mod create_origin_endpoint_input {
             self.origination = input;
             self
         }
-        /// Maximum duration (seconds) of content to retain for startover playback.
-        /// If not specified, startover playback will be disabled for the OriginEndpoint.
+        /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn startover_window_seconds(mut self, input: i32) -> Self {
             self.startover_window_seconds = Some(input);
             self
         }
-        /// Maximum duration (seconds) of content to retain for startover playback.
-        /// If not specified, startover playback will be disabled for the OriginEndpoint.
+        /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn set_startover_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.startover_window_seconds = input;
             self
@@ -786,14 +770,12 @@ pub mod create_origin_endpoint_input {
             self.tags = input;
             self
         }
-        /// Amount of delay (seconds) to enforce on the playback of live content.
-        /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+        /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn time_delay_seconds(mut self, input: i32) -> Self {
             self.time_delay_seconds = Some(input);
             self
         }
-        /// Amount of delay (seconds) to enforce on the playback of live content.
-        /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+        /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn set_time_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.time_delay_seconds = input;
             self
@@ -846,7 +828,7 @@ pub mod create_origin_endpoint_input {
 #[doc(hidden)]
 pub type CreateOriginEndpointInputOperationOutputAlias = crate::operation::CreateOriginEndpoint;
 #[doc(hidden)]
-pub type CreateOriginEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateOriginEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOriginEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateOriginEndpoint`](crate::operation::CreateOriginEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -857,7 +839,7 @@ impl CreateOriginEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOriginEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -939,7 +921,7 @@ impl CreateOriginEndpointInput {
             "CreateOriginEndpoint",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -995,7 +977,7 @@ pub mod delete_channel_input {
 #[doc(hidden)]
 pub type DeleteChannelInputOperationOutputAlias = crate::operation::DeleteChannel;
 #[doc(hidden)]
-pub type DeleteChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannel`](crate::operation::DeleteChannel)>
     #[allow(clippy::let_and_return)]
@@ -1006,7 +988,7 @@ impl DeleteChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1095,7 +1077,7 @@ impl DeleteChannelInput {
             "DeleteChannel",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1143,7 +1125,7 @@ pub mod delete_origin_endpoint_input {
 #[doc(hidden)]
 pub type DeleteOriginEndpointInputOperationOutputAlias = crate::operation::DeleteOriginEndpoint;
 #[doc(hidden)]
-pub type DeleteOriginEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteOriginEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOriginEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOriginEndpoint`](crate::operation::DeleteOriginEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -1154,7 +1136,7 @@ impl DeleteOriginEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOriginEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1243,7 +1225,7 @@ impl DeleteOriginEndpointInput {
             "DeleteOriginEndpoint",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1291,7 +1273,7 @@ pub mod describe_channel_input {
 #[doc(hidden)]
 pub type DescribeChannelInputOperationOutputAlias = crate::operation::DescribeChannel;
 #[doc(hidden)]
-pub type DescribeChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannel`](crate::operation::DescribeChannel)>
     #[allow(clippy::let_and_return)]
@@ -1302,7 +1284,7 @@ impl DescribeChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1391,7 +1373,7 @@ impl DescribeChannelInput {
             "DescribeChannel",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1439,7 +1421,7 @@ pub mod describe_harvest_job_input {
 #[doc(hidden)]
 pub type DescribeHarvestJobInputOperationOutputAlias = crate::operation::DescribeHarvestJob;
 #[doc(hidden)]
-pub type DescribeHarvestJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeHarvestJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHarvestJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHarvestJob`](crate::operation::DescribeHarvestJob)>
     #[allow(clippy::let_and_return)]
@@ -1450,7 +1432,7 @@ impl DescribeHarvestJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHarvestJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1539,7 +1521,7 @@ impl DescribeHarvestJobInput {
             "DescribeHarvestJob",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1587,7 +1569,7 @@ pub mod describe_origin_endpoint_input {
 #[doc(hidden)]
 pub type DescribeOriginEndpointInputOperationOutputAlias = crate::operation::DescribeOriginEndpoint;
 #[doc(hidden)]
-pub type DescribeOriginEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOriginEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOriginEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOriginEndpoint`](crate::operation::DescribeOriginEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -1598,7 +1580,7 @@ impl DescribeOriginEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOriginEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1687,7 +1669,7 @@ impl DescribeOriginEndpointInput {
             "DescribeOriginEndpoint",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1749,7 +1731,7 @@ pub mod list_channels_input {
 #[doc(hidden)]
 pub type ListChannelsInputOperationOutputAlias = crate::operation::ListChannels;
 #[doc(hidden)]
-pub type ListChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
     #[allow(clippy::let_and_return)]
@@ -1760,7 +1742,7 @@ impl ListChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1851,7 +1833,7 @@ impl ListChannelsInput {
             "ListChannels",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1943,7 +1925,7 @@ pub mod list_harvest_jobs_input {
 #[doc(hidden)]
 pub type ListHarvestJobsInputOperationOutputAlias = crate::operation::ListHarvestJobs;
 #[doc(hidden)]
-pub type ListHarvestJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListHarvestJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListHarvestJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListHarvestJobs`](crate::operation::ListHarvestJobs)>
     #[allow(clippy::let_and_return)]
@@ -1954,7 +1936,7 @@ impl ListHarvestJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHarvestJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2057,7 +2039,7 @@ impl ListHarvestJobsInput {
             "ListHarvestJobs",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2131,7 +2113,7 @@ pub mod list_origin_endpoints_input {
 #[doc(hidden)]
 pub type ListOriginEndpointsInputOperationOutputAlias = crate::operation::ListOriginEndpoints;
 #[doc(hidden)]
-pub type ListOriginEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOriginEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOriginEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListOriginEndpoints`](crate::operation::ListOriginEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -2142,7 +2124,7 @@ impl ListOriginEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOriginEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2236,7 +2218,7 @@ impl ListOriginEndpointsInput {
             "ListOriginEndpoints",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2286,7 +2268,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -2297,7 +2279,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2387,7 +2369,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2436,7 +2418,7 @@ pub mod rotate_channel_credentials_input {
 pub type RotateChannelCredentialsInputOperationOutputAlias =
     crate::operation::RotateChannelCredentials;
 #[doc(hidden)]
-pub type RotateChannelCredentialsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RotateChannelCredentialsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RotateChannelCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`RotateChannelCredentials`](crate::operation::RotateChannelCredentials)>
     #[allow(clippy::let_and_return)]
@@ -2447,7 +2429,7 @@ impl RotateChannelCredentialsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RotateChannelCredentials,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2537,7 +2519,7 @@ impl RotateChannelCredentialsInput {
             "RotateChannelCredentials",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2603,7 +2585,8 @@ pub mod rotate_ingest_endpoint_credentials_input {
 pub type RotateIngestEndpointCredentialsInputOperationOutputAlias =
     crate::operation::RotateIngestEndpointCredentials;
 #[doc(hidden)]
-pub type RotateIngestEndpointCredentialsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RotateIngestEndpointCredentialsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RotateIngestEndpointCredentialsInput {
     /// Consumes the builder and constructs an Operation<[`RotateIngestEndpointCredentials`](crate::operation::RotateIngestEndpointCredentials)>
     #[allow(clippy::let_and_return)]
@@ -2614,7 +2597,7 @@ impl RotateIngestEndpointCredentialsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RotateIngestEndpointCredentials,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2724,7 +2707,7 @@ impl RotateIngestEndpointCredentialsInput {
             "RotateIngestEndpointCredentials",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2802,7 +2785,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2813,7 +2796,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2908,7 +2891,7 @@ impl TagResourceInput {
             "TagResource",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2987,7 +2970,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2998,7 +2981,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3101,7 +3084,7 @@ impl UntagResourceInput {
             "UntagResource",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3163,7 +3146,7 @@ pub mod update_channel_input {
 #[doc(hidden)]
 pub type UpdateChannelInputOperationOutputAlias = crate::operation::UpdateChannel;
 #[doc(hidden)]
-pub type UpdateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannel`](crate::operation::UpdateChannel)>
     #[allow(clippy::let_and_return)]
@@ -3174,7 +3157,7 @@ impl UpdateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3268,7 +3251,7 @@ impl UpdateChannelInput {
             "UpdateChannel",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3413,16 +3396,12 @@ pub mod update_origin_endpoint_input {
             self.mss_package = input;
             self
         }
-        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-        /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-        /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
         pub fn origination(mut self, input: crate::model::Origination) -> Self {
             self.origination = Some(input);
             self
         }
-        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-        /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-        /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+        /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
         pub fn set_origination(
             mut self,
             input: std::option::Option<crate::model::Origination>,
@@ -3430,26 +3409,22 @@ pub mod update_origin_endpoint_input {
             self.origination = input;
             self
         }
-        /// Maximum duration (in seconds) of content to retain for startover playback.
-        /// If not specified, startover playback will be disabled for the OriginEndpoint.
+        /// Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn startover_window_seconds(mut self, input: i32) -> Self {
             self.startover_window_seconds = Some(input);
             self
         }
-        /// Maximum duration (in seconds) of content to retain for startover playback.
-        /// If not specified, startover playback will be disabled for the OriginEndpoint.
+        /// Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn set_startover_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.startover_window_seconds = input;
             self
         }
-        /// Amount of delay (in seconds) to enforce on the playback of live content.
-        /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+        /// Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn time_delay_seconds(mut self, input: i32) -> Self {
             self.time_delay_seconds = Some(input);
             self
         }
-        /// Amount of delay (in seconds) to enforce on the playback of live content.
-        /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+        /// Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn set_time_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.time_delay_seconds = input;
             self
@@ -3500,7 +3475,7 @@ pub mod update_origin_endpoint_input {
 #[doc(hidden)]
 pub type UpdateOriginEndpointInputOperationOutputAlias = crate::operation::UpdateOriginEndpoint;
 #[doc(hidden)]
-pub type UpdateOriginEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateOriginEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateOriginEndpointInput {
     /// Consumes the builder and constructs an Operation<[`UpdateOriginEndpoint`](crate::operation::UpdateOriginEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -3511,7 +3486,7 @@ impl UpdateOriginEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateOriginEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3608,7 +3583,7 @@ impl UpdateOriginEndpointInput {
             "UpdateOriginEndpoint",
             "mediapackage",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3651,15 +3626,11 @@ pub struct UpdateOriginEndpointInput {
     pub manifest_name: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
     pub mss_package: std::option::Option<crate::model::MssPackage>,
-    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-    /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-    /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
     pub origination: std::option::Option<crate::model::Origination>,
-    /// Maximum duration (in seconds) of content to retain for startover playback.
-    /// If not specified, startover playback will be disabled for the OriginEndpoint.
+    /// Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
     pub startover_window_seconds: i32,
-    /// Amount of delay (in seconds) to enforce on the playback of live content.
-    /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+    /// Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
     pub time_delay_seconds: i32,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3699,19 +3670,15 @@ impl UpdateOriginEndpointInput {
     pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
         self.mss_package.as_ref()
     }
-    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-    /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-    /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
     pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
         self.origination.as_ref()
     }
-    /// Maximum duration (in seconds) of content to retain for startover playback.
-    /// If not specified, startover playback will be disabled for the OriginEndpoint.
+    /// Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
     pub fn startover_window_seconds(&self) -> i32 {
         self.startover_window_seconds
     }
-    /// Amount of delay (in seconds) to enforce on the playback of live content.
-    /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+    /// Amount of delay (in seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
     pub fn time_delay_seconds(&self) -> i32 {
         self.time_delay_seconds
     }
@@ -4113,8 +4080,7 @@ impl std::fmt::Debug for DeleteChannelInput {
 pub struct CreateOriginEndpointInput {
     /// CDN Authorization credentials
     pub authorization: std::option::Option<crate::model::Authorization>,
-    /// The ID of the Channel that the OriginEndpoint will be associated with.
-    /// This cannot be changed after the OriginEndpoint is created.
+    /// The ID of the Channel that the OriginEndpoint will be associated with. This cannot be changed after the OriginEndpoint is created.
     pub channel_id: std::option::Option<std::string::String>,
     /// A Common Media Application Format (CMAF) packaging configuration.
     pub cmaf_package: std::option::Option<crate::model::CmafPackageCreateOrUpdateParameters>,
@@ -4124,25 +4090,20 @@ pub struct CreateOriginEndpointInput {
     pub description: std::option::Option<std::string::String>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
     pub hls_package: std::option::Option<crate::model::HlsPackage>,
-    /// The ID of the OriginEndpoint.  The ID must be unique within the region
-    /// and it cannot be changed after the OriginEndpoint is created.
+    /// The ID of the OriginEndpoint. The ID must be unique within the region and it cannot be changed after the OriginEndpoint is created.
     pub id: std::option::Option<std::string::String>,
     /// A short string that will be used as the filename of the OriginEndpoint URL (defaults to "index").
     pub manifest_name: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
     pub mss_package: std::option::Option<crate::model::MssPackage>,
-    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-    /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-    /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
     pub origination: std::option::Option<crate::model::Origination>,
-    /// Maximum duration (seconds) of content to retain for startover playback.
-    /// If not specified, startover playback will be disabled for the OriginEndpoint.
+    /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
     pub startover_window_seconds: i32,
     /// A collection of tags associated with a resource
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// Amount of delay (seconds) to enforce on the playback of live content.
-    /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+    /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
     pub time_delay_seconds: i32,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4152,8 +4113,7 @@ impl CreateOriginEndpointInput {
     pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
         self.authorization.as_ref()
     }
-    /// The ID of the Channel that the OriginEndpoint will be associated with.
-    /// This cannot be changed after the OriginEndpoint is created.
+    /// The ID of the Channel that the OriginEndpoint will be associated with. This cannot be changed after the OriginEndpoint is created.
     pub fn channel_id(&self) -> std::option::Option<&str> {
         self.channel_id.as_deref()
     }
@@ -4175,8 +4135,7 @@ impl CreateOriginEndpointInput {
     pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
         self.hls_package.as_ref()
     }
-    /// The ID of the OriginEndpoint.  The ID must be unique within the region
-    /// and it cannot be changed after the OriginEndpoint is created.
+    /// The ID of the OriginEndpoint. The ID must be unique within the region and it cannot be changed after the OriginEndpoint is created.
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -4188,14 +4147,11 @@ impl CreateOriginEndpointInput {
     pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
         self.mss_package.as_ref()
     }
-    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
-    /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
-    /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+    /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
     pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
         self.origination.as_ref()
     }
-    /// Maximum duration (seconds) of content to retain for startover playback.
-    /// If not specified, startover playback will be disabled for the OriginEndpoint.
+    /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
     pub fn startover_window_seconds(&self) -> i32 {
         self.startover_window_seconds
     }
@@ -4206,8 +4162,7 @@ impl CreateOriginEndpointInput {
     {
         self.tags.as_ref()
     }
-    /// Amount of delay (seconds) to enforce on the playback of live content.
-    /// If not specified, there will be no time delay in effect for the OriginEndpoint.
+    /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
     pub fn time_delay_seconds(&self) -> i32 {
         self.time_delay_seconds
     }
@@ -4243,11 +4198,9 @@ impl std::fmt::Debug for CreateOriginEndpointInput {
 pub struct CreateHarvestJobInput {
     /// The end of the time-window which will be harvested
     pub end_time: std::option::Option<std::string::String>,
-    /// The ID of the HarvestJob. The ID must be unique within the region
-    /// and it cannot be changed after the HarvestJob is submitted
+    /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
     pub id: std::option::Option<std::string::String>,
-    /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
-    /// This cannot be changed after the HarvestJob is submitted.
+    /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
     pub origin_endpoint_id: std::option::Option<std::string::String>,
     /// Configuration parameters for where in an S3 bucket to place the harvested content
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
@@ -4259,13 +4212,11 @@ impl CreateHarvestJobInput {
     pub fn end_time(&self) -> std::option::Option<&str> {
         self.end_time.as_deref()
     }
-    /// The ID of the HarvestJob. The ID must be unique within the region
-    /// and it cannot be changed after the HarvestJob is submitted
+    /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
-    /// This cannot be changed after the HarvestJob is submitted.
+    /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
     pub fn origin_endpoint_id(&self) -> std::option::Option<&str> {
         self.origin_endpoint_id.as_deref()
     }
@@ -4296,8 +4247,7 @@ impl std::fmt::Debug for CreateHarvestJobInput {
 pub struct CreateChannelInput {
     /// A short text description of the Channel.
     pub description: std::option::Option<std::string::String>,
-    /// The ID of the Channel. The ID must be unique within the region and it
-    /// cannot be changed after a Channel is created.
+    /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     pub tags:
@@ -4308,8 +4258,7 @@ impl CreateChannelInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// The ID of the Channel. The ID must be unique within the region and it
-    /// cannot be changed after a Channel is created.
+    /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }

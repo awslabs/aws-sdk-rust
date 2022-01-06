@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Firewall Management Service
@@ -187,6 +187,7 @@ where
     ///
     /// See [`ListAppsLists`](crate::client::fluent_builders::ListAppsLists) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppsLists::into_paginator).
     pub fn list_apps_lists(&self) -> fluent_builders::ListAppsLists<C, M, R> {
         fluent_builders::ListAppsLists::new(self.handle.clone())
     }
@@ -194,6 +195,7 @@ where
     ///
     /// See [`ListComplianceStatus`](crate::client::fluent_builders::ListComplianceStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComplianceStatus::into_paginator).
     pub fn list_compliance_status(&self) -> fluent_builders::ListComplianceStatus<C, M, R> {
         fluent_builders::ListComplianceStatus::new(self.handle.clone())
     }
@@ -201,6 +203,7 @@ where
     ///
     /// See [`ListMemberAccounts`](crate::client::fluent_builders::ListMemberAccounts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMemberAccounts::into_paginator).
     pub fn list_member_accounts(&self) -> fluent_builders::ListMemberAccounts<C, M, R> {
         fluent_builders::ListMemberAccounts::new(self.handle.clone())
     }
@@ -208,6 +211,7 @@ where
     ///
     /// See [`ListPolicies`](crate::client::fluent_builders::ListPolicies) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPolicies::into_paginator).
     pub fn list_policies(&self) -> fluent_builders::ListPolicies<C, M, R> {
         fluent_builders::ListPolicies::new(self.handle.clone())
     }
@@ -215,6 +219,7 @@ where
     ///
     /// See [`ListProtocolsLists`](crate::client::fluent_builders::ListProtocolsLists) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProtocolsLists::into_paginator).
     pub fn list_protocols_lists(&self) -> fluent_builders::ListProtocolsLists<C, M, R> {
         fluent_builders::ListProtocolsLists::new(self.handle.clone())
     }
@@ -278,11 +283,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateAdminAccount`.
     ///
-    /// <p>Sets the Firewall Manager administrator account. The account must be
-    /// a member of the organization in Organizations whose resources you want to protect.
-    /// Firewall Manager sets the permissions that allow the account to administer your Firewall Manager policies.</p>
+    /// <p>Sets the Firewall Manager administrator account. The account must be a member of the organization in Organizations whose resources you want to protect. Firewall Manager sets the permissions that allow the account to administer your Firewall Manager policies.</p>
     /// <p>The account that you associate with Firewall Manager is called the Firewall Manager administrator account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -327,10 +330,10 @@ pub mod fluent_builders {
                 crate::input::AssociateAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -338,18 +341,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
-        /// administrator account. This must be an Organizations member account.
-        /// For more information about Organizations, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.  </p>
-        pub fn admin_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account(inp);
+        /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator account. This must be an Organizations member account. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
+        pub fn admin_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
-        /// administrator account. This must be an Organizations member account.
-        /// For more information about Organizations, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.  </p>
+        /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator account. This must be an Organizations member account. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
         pub fn set_admin_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -361,7 +358,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppsList`.
     ///
     /// <p>Permanently deletes an Firewall Manager applications list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppsList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -406,10 +403,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppsListInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -417,14 +414,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from
-        /// <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
-        pub fn list_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.list_id(inp);
+        /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
+        pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.list_id(input.into());
             self
         }
-        /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from
-        /// <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
+        /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
         pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_list_id(input);
             self
@@ -432,9 +427,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteNotificationChannel`.
     ///
-    /// <p>Deletes an Firewall Manager association with the IAM role and the Amazon Simple
-    /// Notification Service (SNS) topic that is used to record Firewall Manager SNS logs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS) topic that is used to record Firewall Manager SNS logs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -479,10 +473,10 @@ pub mod fluent_builders {
                 crate::input::DeleteNotificationChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -494,7 +488,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePolicy`.
     ///
     /// <p>Permanently deletes an Firewall Manager policy. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -539,10 +533,10 @@ pub mod fluent_builders {
                 crate::input::DeletePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -550,14 +544,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the policy that you want to delete. You can retrieve this ID from
-        /// <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
-        pub fn policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(inp);
+        /// <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
-        /// <p>The ID of the policy that you want to delete. You can retrieve this ID from
-        /// <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
+        /// <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_id(input);
             self
@@ -565,67 +557,33 @@ pub mod fluent_builders {
         /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
         /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Deletes rule groups created by Firewall Manager</p>
-        /// </li>
-        /// <li>
-        /// <p>Removes web ACLs from in-scope resources</p>
-        /// </li>
-        /// <li>
-        /// <p>Deletes web ACLs that contain no rules or rule groups</p>
-        /// </li>
+        /// <li> <p>Deletes rule groups created by Firewall Manager</p> </li>
+        /// <li> <p>Removes web ACLs from in-scope resources</p> </li>
+        /// <li> <p>Deletes web ACLs that contain no rules or rule groups</p> </li>
         /// </ul>
-        /// <p>For security group policies, the cleanup does the following for each security group in
-        /// the policy:</p>
+        /// <p>For security group policies, the cleanup does the following for each security group in the policy:</p>
         /// <ul>
-        /// <li>
-        /// <p>Disassociates the security group from in-scope resources </p>
-        /// </li>
-        /// <li>
-        /// <p>Deletes the security group if it was created through Firewall Manager and if it's
-        /// no longer associated with any resources through another policy</p>
-        /// </li>
+        /// <li> <p>Disassociates the security group from in-scope resources </p> </li>
+        /// <li> <p>Deletes the security group if it was created through Firewall Manager and if it's no longer associated with any resources through another policy</p> </li>
         /// </ul>
-        /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy.
-        /// Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you
-        /// create and accounts that you associate with the policy. When creating the policy, if you
-        /// specify that only resources in specific accounts or with specific tags are in scope of the
-        /// policy, those accounts and resources are handled by the policy. All others are out of scope.
-        /// If you don't specify tags or accounts, all resources are in scope. </p>
-        pub fn delete_all_policy_resources(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_all_policy_resources(inp);
+        /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you associate with the policy. When creating the policy, if you specify that only resources in specific accounts or with specific tags are in scope of the policy, those accounts and resources are handled by the policy. All others are out of scope. If you don't specify tags or accounts, all resources are in scope. </p>
+        pub fn delete_all_policy_resources(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_all_policy_resources(input);
             self
         }
         /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
         /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Deletes rule groups created by Firewall Manager</p>
-        /// </li>
-        /// <li>
-        /// <p>Removes web ACLs from in-scope resources</p>
-        /// </li>
-        /// <li>
-        /// <p>Deletes web ACLs that contain no rules or rule groups</p>
-        /// </li>
+        /// <li> <p>Deletes rule groups created by Firewall Manager</p> </li>
+        /// <li> <p>Removes web ACLs from in-scope resources</p> </li>
+        /// <li> <p>Deletes web ACLs that contain no rules or rule groups</p> </li>
         /// </ul>
-        /// <p>For security group policies, the cleanup does the following for each security group in
-        /// the policy:</p>
+        /// <p>For security group policies, the cleanup does the following for each security group in the policy:</p>
         /// <ul>
-        /// <li>
-        /// <p>Disassociates the security group from in-scope resources </p>
-        /// </li>
-        /// <li>
-        /// <p>Deletes the security group if it was created through Firewall Manager and if it's
-        /// no longer associated with any resources through another policy</p>
-        /// </li>
+        /// <li> <p>Disassociates the security group from in-scope resources </p> </li>
+        /// <li> <p>Deletes the security group if it was created through Firewall Manager and if it's no longer associated with any resources through another policy</p> </li>
         /// </ul>
-        /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy.
-        /// Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you
-        /// create and accounts that you associate with the policy. When creating the policy, if you
-        /// specify that only resources in specific accounts or with specific tags are in scope of the
-        /// policy, those accounts and resources are handled by the policy. All others are out of scope.
-        /// If you don't specify tags or accounts, all resources are in scope. </p>
+        /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you associate with the policy. When creating the policy, if you specify that only resources in specific accounts or with specific tags are in scope of the policy, those accounts and resources are handled by the policy. All others are out of scope. If you don't specify tags or accounts, all resources are in scope. </p>
         pub fn set_delete_all_policy_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete_all_policy_resources(input);
             self
@@ -634,7 +592,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteProtocolsList`.
     ///
     /// <p>Permanently deletes an Firewall Manager protocols list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProtocolsList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -679,10 +637,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProtocolsListInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -690,14 +648,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from
-        /// <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
-        pub fn list_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.list_id(inp);
+        /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
+        pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.list_id(input.into());
             self
         }
-        /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from
-        /// <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
+        /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
         pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_list_id(input);
             self
@@ -705,10 +661,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateAdminAccount`.
     ///
-    /// <p>Disassociates the account that has been set as the Firewall Manager administrator
-    /// account. To set a different account as the administrator account, you must submit an
-    /// <code>AssociateAdminAccount</code> request.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates the account that has been set as the Firewall Manager administrator account. To set a different account as the administrator account, you must submit an <code>AssociateAdminAccount</code> request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -753,10 +707,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -767,9 +721,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAdminAccount`.
     ///
-    /// <p>Returns the Organizations account that is associated with Firewall Manager
-    /// as the Firewall Manager administrator.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the Organizations account that is associated with Firewall Manager as the Firewall Manager administrator.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -814,10 +767,10 @@ pub mod fluent_builders {
                 crate::input::GetAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -829,7 +782,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAppsList`.
     ///
     /// <p>Returns information about the specified Firewall Manager applications list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppsList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -874,10 +827,10 @@ pub mod fluent_builders {
                 crate::input::GetAppsListInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -886,8 +839,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
-        pub fn list_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.list_id(inp);
+        pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.list_id(input.into());
             self
         }
         /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
@@ -896,8 +849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
-        pub fn default_list(mut self, inp: bool) -> Self {
-            self.inner = self.inner.default_list(inp);
+        pub fn default_list(mut self, input: bool) -> Self {
+            self.inner = self.inner.default_list(input);
             self
         }
         /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
@@ -908,31 +861,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetComplianceDetail`.
     ///
-    /// <p>Returns detailed compliance information about the specified member account. Details
-    /// include resources that are in and out of compliance with the specified policy. </p>
+    /// <p>Returns detailed compliance information about the specified member account. Details include resources that are in and out of compliance with the specified policy. </p>
     /// <ul>
-    /// <li>
-    /// <p>Resources are
-    /// considered noncompliant for WAF and Shield Advanced policies if the specified policy has
-    /// not been applied to them.</p>
-    /// </li>
-    /// <li>
-    /// <p>Resources are considered noncompliant for security group policies if
-    /// they are in scope of the policy, they violate one or more of the policy rules, and remediation
-    /// is disabled or not possible.</p>
-    /// </li>
-    /// <li>
-    /// <p>Resources are considered noncompliant for Network Firewall policies
-    /// if a firewall is missing in the VPC, if the firewall endpoint isn't set up in an expected Availability Zone and subnet,
-    /// if a subnet created by the Firewall Manager doesn't have the expected route table,
-    /// and for modifications to a firewall policy that violate the Firewall Manager policy's rules.</p>
-    /// </li>
-    /// <li>
-    /// <p>Resources are considered noncompliant for DNS Firewall policies
-    /// if a DNS Firewall rule group is missing from the rule group associations for the VPC. </p>
-    /// </li>
+    /// <li> <p>Resources are considered noncompliant for WAF and Shield Advanced policies if the specified policy has not been applied to them.</p> </li>
+    /// <li> <p>Resources are considered noncompliant for security group policies if they are in scope of the policy, they violate one or more of the policy rules, and remediation is disabled or not possible.</p> </li>
+    /// <li> <p>Resources are considered noncompliant for Network Firewall policies if a firewall is missing in the VPC, if the firewall endpoint isn't set up in an expected Availability Zone and subnet, if a subnet created by the Firewall Manager doesn't have the expected route table, and for modifications to a firewall policy that violate the Firewall Manager policy's rules.</p> </li>
+    /// <li> <p>Resources are considered noncompliant for DNS Firewall policies if a DNS Firewall rule group is missing from the rule group associations for the VPC. </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComplianceDetail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -977,10 +913,10 @@ pub mod fluent_builders {
                 crate::input::GetComplianceDetailInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -988,21 +924,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is
-        /// returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
-        pub fn policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(inp);
+        /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
-        /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is
-        /// returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+        /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_id(input);
             self
         }
         /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
-        pub fn member_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account(inp);
+        pub fn member_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account(input.into());
             self
         }
         /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
@@ -1016,10 +950,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetNotificationChannel`.
     ///
-    /// <p>Information
-    /// about the Amazon Simple Notification Service (SNS) topic that is used to
-    /// record Firewall Manager SNS logs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Information about the Amazon Simple Notification Service (SNS) topic that is used to record Firewall Manager SNS logs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1064,10 +996,10 @@ pub mod fluent_builders {
                 crate::input::GetNotificationChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1079,7 +1011,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPolicy`.
     ///
     /// <p>Returns information about the specified Firewall Manager policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1124,10 +1056,10 @@ pub mod fluent_builders {
                 crate::input::GetPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1136,8 +1068,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
-        pub fn policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(inp);
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
@@ -1148,9 +1080,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetProtectionStatus`.
     ///
-    /// <p>If you created a Shield Advanced policy, returns policy-level attack summary information
-    /// in the event of a potential DDoS attack. Other policy types are currently unsupported.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you created a Shield Advanced policy, returns policy-level attack summary information in the event of a potential DDoS attack. Other policy types are currently unsupported.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProtectionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1195,10 +1126,10 @@ pub mod fluent_builders {
                 crate::input::GetProtectionStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1207,8 +1138,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the policy for which you want to get the attack information.</p>
-        pub fn policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(inp);
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The ID of the policy for which you want to get the attack information.</p>
@@ -1216,14 +1147,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_id(input);
             self
         }
-        /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details
-        /// for.</p>
-        pub fn member_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(inp);
+        /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details for.</p>
+        pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details
-        /// for.</p>
+        /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details for.</p>
         pub fn set_member_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1231,16 +1160,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_member_account_id(input);
             self
         }
-        /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-        /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
-        /// allowed.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-        /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
-        /// allowed.</p>
+        /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1248,16 +1173,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-        /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
-        /// allowed.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-        /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
-        /// allowed.</p>
+        /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1265,32 +1186,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify
-        /// for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
-        /// objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code>
-        /// from the previous response to get information about another batch of objects.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of objects.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify
-        /// for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
-        /// objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code>
-        /// from the previous response to get information about another batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more
-        /// objects than the number that you specify for <code>MaxResults</code>, the response includes a
-        /// <code>NextToken</code> value that you can use to get another batch of objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of objects.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more
-        /// objects than the number that you specify for <code>MaxResults</code>, the response includes a
-        /// <code>NextToken</code> value that you can use to get another batch of objects.</p>
+        /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1299,7 +1210,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProtocolsList`.
     ///
     /// <p>Returns information about the specified Firewall Manager protocols list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProtocolsList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1344,10 +1255,10 @@ pub mod fluent_builders {
                 crate::input::GetProtocolsListInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1356,8 +1267,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
-        pub fn list_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.list_id(inp);
+        pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.list_id(input.into());
             self
         }
         /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
@@ -1366,8 +1277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
-        pub fn default_list(mut self, inp: bool) -> Self {
-            self.inner = self.inner.default_list(inp);
+        pub fn default_list(mut self, input: bool) -> Self {
+            self.inner = self.inner.default_list(input);
             self
         }
         /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
@@ -1379,7 +1290,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetViolationDetails`.
     ///
     /// <p>Retrieves violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetViolationDetails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1424,10 +1335,10 @@ pub mod fluent_builders {
                 crate::input::GetViolationDetailsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1436,8 +1347,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
-        pub fn policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(inp);
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
@@ -1446,8 +1357,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID that you want the details for.</p>
-        pub fn member_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account(inp);
+        pub fn member_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID that you want the details for.</p>
@@ -1459,8 +1370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the resource that has violations.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the resource that has violations.</p>
@@ -1468,26 +1379,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>.
-        /// Supported resource types are:
-        /// <code>AWS::EC2::Instance</code>,
-        /// <code>AWS::EC2::NetworkInterface</code>,
-        /// <code>AWS::EC2::SecurityGroup</code>,
-        /// <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
-        /// <code>AWS::EC2::Subnet</code>.
-        /// </p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
-        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>.
-        /// Supported resource types are:
-        /// <code>AWS::EC2::Instance</code>,
-        /// <code>AWS::EC2::NetworkInterface</code>,
-        /// <code>AWS::EC2::SecurityGroup</code>,
-        /// <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
-        /// <code>AWS::EC2::Subnet</code>.
-        /// </p>
+        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1499,7 +1396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppsLists`.
     ///
     /// <p>Returns an array of <code>AppsListDataSummary</code> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppsLists<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1544,10 +1441,10 @@ pub mod fluent_builders {
                 crate::input::ListAppsListsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1555,9 +1452,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppsListsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAppsListsPaginator<C, M, R> {
+            crate::paginator::ListAppsListsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
-        pub fn default_lists(mut self, inp: bool) -> Self {
-            self.inner = self.inner.default_lists(inp);
+        pub fn default_lists(mut self, input: bool) -> Self {
+            self.inner = self.inner.default_lists(input);
             self
         }
         /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
@@ -1565,31 +1468,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_lists(input);
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
-        /// in the request parameters, to retrieve the next batch of objects.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
-        /// in the request parameters, to retrieve the next batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
-        /// objects are available, in the response, Firewall Manager provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
-        /// objects are available, in the response, Firewall Manager provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
@@ -1598,10 +1493,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListComplianceStatus`.
     ///
-    /// <p>Returns an array of <code>PolicyComplianceStatus</code> objects. Use
-    /// <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected
-    /// by the specified policy. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns an array of <code>PolicyComplianceStatus</code> objects. Use <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified policy. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComplianceStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1646,10 +1539,10 @@ pub mod fluent_builders {
                 crate::input::ListComplianceStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1657,9 +1550,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListComplianceStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListComplianceStatusPaginator<C, M, R> {
+            crate::paginator::ListComplianceStatusPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
-        pub fn policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(inp);
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
@@ -1667,42 +1566,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_id(input);
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more
-        /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
-        /// response that allows you to list another group of <code>PolicyComplianceStatus</code> objects.
-        /// For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of
-        /// <code>NextToken</code> from the previous response to get information about another batch of
-        /// <code>PolicyComplianceStatus</code> objects.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more
-        /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
-        /// response that allows you to list another group of <code>PolicyComplianceStatus</code> objects.
-        /// For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of
-        /// <code>NextToken</code> from the previous response to get information about another batch of
-        /// <code>PolicyComplianceStatus</code> objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want
-        /// Firewall Manager to return for this request. If you have more
-        /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
-        /// use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want
-        /// Firewall Manager to return for this request. If you have more
-        /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
-        /// use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
+        /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1710,11 +1589,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMemberAccounts`.
     ///
-    /// <p>Returns a <code>MemberAccounts</code> object that lists the member accounts in the
-    /// administrator's Amazon Web Services organization.</p>
-    /// <p>The <code>ListMemberAccounts</code> must be submitted by the account that is set as the
-    /// Firewall Manager administrator.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's Amazon Web Services organization.</p>
+    /// <p>The <code>ListMemberAccounts</code> must be submitted by the account that is set as the Firewall Manager administrator.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMemberAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1759,10 +1636,10 @@ pub mod fluent_builders {
                 crate::input::ListMemberAccountsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1770,38 +1647,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the
-        /// number that you specify for <code>MaxResults</code>, Firewall Manager returns a
-        /// <code>NextToken</code> value in the response that allows you to list another group of IDs.
-        /// For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the
-        /// value of <code>NextToken</code> from the previous response to get information about another
-        /// batch of member account IDs.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMemberAccountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMemberAccountsPaginator<C, M, R> {
+            crate::paginator::ListMemberAccountsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the
-        /// number that you specify for <code>MaxResults</code>, Firewall Manager returns a
-        /// <code>NextToken</code> value in the response that allows you to list another group of IDs.
-        /// For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the
-        /// value of <code>NextToken</code> from the previous response to get information about another
-        /// batch of member account IDs.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies the number of member account IDs that you want Firewall Manager to return
-        /// for this request. If you have more IDs than the number that you specify for
-        /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
-        /// use to get another batch of member account IDs.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the number of member account IDs that you want Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Specifies the number of member account IDs that you want Firewall Manager to return
-        /// for this request. If you have more IDs than the number that you specify for
-        /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
-        /// use to get another batch of member account IDs.</p>
+        /// <p>Specifies the number of member account IDs that you want Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1810,7 +1677,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPolicies`.
     ///
     /// <p>Returns an array of <code>PolicySummary</code> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1855,10 +1722,10 @@ pub mod fluent_builders {
                 crate::input::ListPoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1866,40 +1733,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more
-        /// <code>PolicySummary</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
-        /// response that allows you to list another group of <code>PolicySummary</code> objects. For the
-        /// second and subsequent <code>ListPolicies</code> requests, specify the value of
-        /// <code>NextToken</code> from the previous response to get information about another batch of
-        /// <code>PolicySummary</code> objects.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPoliciesPaginator<C, M, R> {
+            crate::paginator::ListPoliciesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> and you have more
-        /// <code>PolicySummary</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
-        /// response that allows you to list another group of <code>PolicySummary</code> objects. For the
-        /// second and subsequent <code>ListPolicies</code> requests, specify the value of
-        /// <code>NextToken</code> from the previous response to get information about another batch of
-        /// <code>PolicySummary</code> objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than
-        /// the number that you specify for <code>MaxResults</code>, the response includes a
-        /// <code>NextToken</code> value that you can use to get another batch of
-        /// <code>PolicySummary</code> objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than
-        /// the number that you specify for <code>MaxResults</code>, the response includes a
-        /// <code>NextToken</code> value that you can use to get another batch of
-        /// <code>PolicySummary</code> objects.</p>
+        /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1908,7 +1763,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProtocolsLists`.
     ///
     /// <p>Returns an array of <code>ProtocolsListDataSummary</code> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProtocolsLists<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1953,10 +1808,10 @@ pub mod fluent_builders {
                 crate::input::ListProtocolsListsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1964,9 +1819,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProtocolsListsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProtocolsListsPaginator<C, M, R> {
+            crate::paginator::ListProtocolsListsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
-        pub fn default_lists(mut self, inp: bool) -> Self {
-            self.inner = self.inner.default_lists(inp);
+        pub fn default_lists(mut self, input: bool) -> Self {
+            self.inner = self.inner.default_lists(input);
             self
         }
         /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
@@ -1974,31 +1835,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_lists(input);
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
-        /// in the request parameters, to retrieve the next batch of objects.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
-        /// in the request parameters, to retrieve the next batch of objects.</p>
+        /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
-        /// objects are available, in the response, Firewall Manager provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
-        /// objects are available, in the response, Firewall Manager provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
@@ -2007,8 +1860,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Retrieves the list of tags for the specified Amazon Web Services resource.   </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the list of tags for the specified Amazon Web Services resource. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2053,10 +1906,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2065,8 +1918,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
@@ -2078,7 +1931,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAppsList`.
     ///
     /// <p>Creates an Firewall Manager applications list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAppsList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2123,10 +1976,10 @@ pub mod fluent_builders {
                 crate::input::PutAppsListInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2135,8 +1988,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The details of the Firewall Manager applications list to be created.</p>
-        pub fn apps_list(mut self, inp: crate::model::AppsListData) -> Self {
-            self.inner = self.inner.apps_list(inp);
+        pub fn apps_list(mut self, input: crate::model::AppsListData) -> Self {
+            self.inner = self.inner.apps_list(input);
             self
         }
         /// <p>The details of the Firewall Manager applications list to be created.</p>
@@ -2152,8 +2005,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The tags associated with the resource.</p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
         /// <p>The tags associated with the resource.</p>
@@ -2167,12 +2020,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutNotificationChannel`.
     ///
-    /// <p>Designates the IAM role and Amazon Simple Notification Service (SNS) topic that
-    /// Firewall Manager uses to record SNS logs.</p>
-    /// <p>To perform this action outside of the console, you must configure the SNS topic to allow the Firewall Manager
-    /// role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more information, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager required permissions for API actions</a> in the <i>Firewall Manager Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Designates the IAM role and Amazon Simple Notification Service (SNS) topic that Firewall Manager uses to record SNS logs.</p>
+    /// <p>To perform this action outside of the console, you must configure the SNS topic to allow the Firewall Manager role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager required permissions for API actions</a> in the <i>Firewall Manager Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutNotificationChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2217,10 +2067,10 @@ pub mod fluent_builders {
                 crate::input::PutNotificationChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2228,14 +2078,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from
-        /// Firewall Manager.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from
-        /// Firewall Manager.</p>
+        /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2243,14 +2091,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sns_topic_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record
-        /// Firewall Manager activity. </p>
-        pub fn sns_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_role_name(inp);
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
+        pub fn sns_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_role_name(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record
-        /// Firewall Manager activity. </p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
         pub fn set_sns_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2264,37 +2110,16 @@ pub mod fluent_builders {
     /// <p>Creates an Firewall Manager policy.</p>
     /// <p>Firewall Manager provides the following types of policies: </p>
     /// <ul>
-    /// <li>
-    /// <p>An WAF policy (type WAFV2), which defines rule groups to run first in the
-    /// corresponding WAF web ACL and rule groups to run last in the web ACL.</p>
-    /// </li>
-    /// <li>
-    /// <p>An WAF Classic policy (type WAF), which defines a rule group. </p>
-    /// </li>
-    /// <li>
-    /// <p>A Shield Advanced policy, which applies Shield Advanced protection to specified
-    /// accounts and resources.</p>
-    /// </li>
-    /// <li>
-    /// <p>A security group policy, which manages VPC security groups across your Amazon Web Services
-    /// organization. </p>
-    /// </li>
-    /// <li>
-    /// <p>An Network Firewall policy, which provides firewall rules to filter network traffic in specified
-    /// Amazon VPCs.</p>
-    /// </li>
-    /// <li>
-    /// <p>A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter DNS queries for     
-    /// specified VPCs.</p>
-    /// </li>
+    /// <li> <p>An WAF policy (type WAFV2), which defines rule groups to run first in the corresponding WAF web ACL and rule groups to run last in the web ACL.</p> </li>
+    /// <li> <p>An WAF Classic policy (type WAF), which defines a rule group. </p> </li>
+    /// <li> <p>A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources.</p> </li>
+    /// <li> <p>A security group policy, which manages VPC security groups across your Amazon Web Services organization. </p> </li>
+    /// <li> <p>An Network Firewall policy, which provides firewall rules to filter network traffic in specified Amazon VPCs.</p> </li>
+    /// <li> <p>A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter DNS queries for specified VPCs.</p> </li>
     /// </ul>
-    /// <p>Each policy is specific to one of the types. If you want to enforce more than one
-    /// policy type across accounts, create multiple policies. You can create multiple
-    /// policies for each type.</p>
-    /// <p>You must be subscribed to Shield Advanced to create a Shield Advanced policy. For more
-    /// information about subscribing to Shield Advanced, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Each policy is specific to one of the types. If you want to enforce more than one policy type across accounts, create multiple policies. You can create multiple policies for each type.</p>
+    /// <p>You must be subscribed to Shield Advanced to create a Shield Advanced policy. For more information about subscribing to Shield Advanced, see <a href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2339,10 +2164,10 @@ pub mod fluent_builders {
                 crate::input::PutPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2351,8 +2176,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The details of the Firewall Manager policy to be created.</p>
-        pub fn policy(mut self, inp: crate::model::Policy) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: crate::model::Policy) -> Self {
+            self.inner = self.inner.policy(input);
             self
         }
         /// <p>The details of the Firewall Manager policy to be created.</p>
@@ -2365,8 +2190,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The tags to add to the Amazon Web Services resource.</p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
         /// <p>The tags to add to the Amazon Web Services resource.</p>
@@ -2381,7 +2206,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutProtocolsList`.
     ///
     /// <p>Creates an Firewall Manager protocols list.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutProtocolsList<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2426,10 +2251,10 @@ pub mod fluent_builders {
                 crate::input::PutProtocolsListInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2438,8 +2263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The details of the Firewall Manager protocols list to be created.</p>
-        pub fn protocols_list(mut self, inp: crate::model::ProtocolsListData) -> Self {
-            self.inner = self.inner.protocols_list(inp);
+        pub fn protocols_list(mut self, input: crate::model::ProtocolsListData) -> Self {
+            self.inner = self.inner.protocols_list(input);
             self
         }
         /// <p>The details of the Firewall Manager protocols list to be created.</p>
@@ -2455,8 +2280,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The tags associated with the resource.</p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
         /// <p>The tags associated with the resource.</p>
@@ -2471,7 +2296,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags to an Amazon Web Services resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2516,10 +2341,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2528,8 +2353,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
@@ -2542,8 +2367,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>The tags to add to the resource.</p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
         /// <p>The tags to add to the resource.</p>
@@ -2558,7 +2383,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from an Amazon Web Services resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2603,10 +2428,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2615,8 +2440,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
@@ -2629,8 +2454,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to remove from the resource. </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to remove from the resource. </p>
@@ -2643,6 +2468,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -12,24 +12,18 @@ pub struct AssociateAssetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateAssetsErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -78,8 +72,6 @@ impl AssociateAssetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -167,19 +159,15 @@ pub struct AssociateTimeSeriesToAssetPropertyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateTimeSeriesToAssetPropertyErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -240,8 +228,6 @@ impl AssociateTimeSeriesToAssetPropertyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -336,19 +322,14 @@ pub struct BatchAssociateProjectAssetsError {
 pub enum BatchAssociateProjectAssetsErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -398,8 +379,6 @@ impl BatchAssociateProjectAssetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -484,14 +463,11 @@ pub struct BatchDisassociateProjectAssetsError {
 pub enum BatchDisassociateProjectAssetsErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -547,8 +523,6 @@ impl BatchDisassociateProjectAssetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -629,26 +603,20 @@ pub struct BatchPutAssetPropertyValueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchPutAssetPropertyValueErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The requested service is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -702,8 +670,6 @@ impl BatchPutAssetPropertyValueError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -808,19 +774,14 @@ pub struct CreateAccessPolicyError {
 pub enum CreateAccessPolicyErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -868,8 +829,6 @@ impl CreateAccessPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -952,26 +911,20 @@ pub struct CreateAssetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAssetErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -1021,8 +974,6 @@ impl CreateAssetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1112,26 +1063,20 @@ pub struct CreateAssetModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAssetModelErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -1181,8 +1126,6 @@ impl CreateAssetModelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1283,19 +1226,14 @@ pub struct CreateDashboardError {
 pub enum CreateDashboardErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -1343,8 +1281,6 @@ impl CreateDashboardError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1426,19 +1362,14 @@ pub struct CreateGatewayError {
 pub enum CreateGatewayErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -1486,8 +1417,6 @@ impl CreateGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1569,19 +1498,14 @@ pub struct CreatePortalError {
 pub enum CreatePortalErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -1629,8 +1553,6 @@ impl CreatePortalError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1709,19 +1631,14 @@ pub struct CreateProjectError {
 pub enum CreateProjectErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -1769,8 +1686,6 @@ impl CreateProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1852,14 +1767,11 @@ pub struct DeleteAccessPolicyError {
 pub enum DeleteAccessPolicyErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -1906,8 +1818,6 @@ impl DeleteAccessPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1982,19 +1892,15 @@ pub struct DeleteAssetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssetErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -2042,8 +1948,6 @@ impl DeleteAssetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2120,19 +2024,15 @@ pub struct DeleteAssetModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssetModelErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -2180,8 +2080,6 @@ impl DeleteAssetModelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2266,14 +2164,11 @@ pub struct DeleteDashboardError {
 pub enum DeleteDashboardErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -2320,8 +2215,6 @@ impl DeleteDashboardError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2395,14 +2288,11 @@ pub struct DeleteGatewayError {
 pub enum DeleteGatewayErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -2449,8 +2339,6 @@ impl DeleteGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2522,19 +2410,15 @@ pub struct DeletePortalError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePortalErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -2582,8 +2466,6 @@ impl DeletePortalError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2665,14 +2547,11 @@ pub struct DeleteProjectError {
 pub enum DeleteProjectErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -2719,8 +2598,6 @@ impl DeleteProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2792,19 +2669,15 @@ pub struct DeleteTimeSeriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTimeSeriesErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -2852,8 +2725,6 @@ impl DeleteTimeSeriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2938,14 +2809,11 @@ pub struct DescribeAccessPolicyError {
 pub enum DescribeAccessPolicyErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -2992,8 +2860,6 @@ impl DescribeAccessPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3070,14 +2936,11 @@ pub struct DescribeAssetError {
 pub enum DescribeAssetErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3124,8 +2987,6 @@ impl DescribeAssetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3199,14 +3060,11 @@ pub struct DescribeAssetModelError {
 pub enum DescribeAssetModelErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3253,8 +3111,6 @@ impl DescribeAssetModelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3331,14 +3187,11 @@ pub struct DescribeAssetPropertyError {
 pub enum DescribeAssetPropertyErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3385,8 +3238,6 @@ impl DescribeAssetPropertyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3463,14 +3314,11 @@ pub struct DescribeDashboardError {
 pub enum DescribeDashboardErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3517,8 +3365,6 @@ impl DescribeDashboardError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3595,12 +3441,9 @@ pub struct DescribeDefaultEncryptionConfigurationError {
 pub enum DescribeDefaultEncryptionConfigurationErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3655,8 +3498,6 @@ impl DescribeDefaultEncryptionConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3733,14 +3574,11 @@ pub struct DescribeGatewayError {
 pub enum DescribeGatewayErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3787,8 +3625,6 @@ impl DescribeGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3862,14 +3698,11 @@ pub struct DescribeGatewayCapabilityConfigurationError {
 pub enum DescribeGatewayCapabilityConfigurationErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -3927,8 +3760,6 @@ impl DescribeGatewayCapabilityConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4015,14 +3846,11 @@ pub struct DescribeLoggingOptionsError {
 pub enum DescribeLoggingOptionsErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4069,8 +3897,6 @@ impl DescribeLoggingOptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4147,14 +3973,11 @@ pub struct DescribePortalError {
 pub enum DescribePortalErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4201,8 +4024,6 @@ impl DescribePortalError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4276,14 +4097,11 @@ pub struct DescribeProjectError {
 pub enum DescribeProjectErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4330,8 +4148,6 @@ impl DescribeProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4403,24 +4219,18 @@ pub struct DescribeStorageConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStorageConfigurationErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4475,8 +4285,6 @@ impl DescribeStorageConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4573,14 +4381,11 @@ pub struct DescribeTimeSeriesError {
 pub enum DescribeTimeSeriesErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4627,8 +4432,6 @@ impl DescribeTimeSeriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4703,19 +4506,15 @@ pub struct DisassociateAssetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateAssetsErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4763,8 +4562,6 @@ impl DisassociateAssetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4847,19 +4644,15 @@ pub struct DisassociateTimeSeriesFromAssetPropertyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateTimeSeriesFromAssetPropertyErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4920,8 +4713,6 @@ impl DisassociateTimeSeriesFromAssetPropertyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5018,16 +4809,13 @@ pub struct GetAssetPropertyAggregatesError {
 pub enum GetAssetPropertyAggregatesErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The requested service is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -5077,8 +4865,6 @@ impl GetAssetPropertyAggregatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5165,16 +4951,13 @@ pub struct GetAssetPropertyValueError {
 pub enum GetAssetPropertyValueErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The requested service is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -5222,8 +5005,6 @@ impl GetAssetPropertyValueError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5308,16 +5089,13 @@ pub struct GetAssetPropertyValueHistoryError {
 pub enum GetAssetPropertyValueHistoryErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The requested service is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -5371,8 +5149,6 @@ impl GetAssetPropertyValueHistoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5461,16 +5237,13 @@ pub struct GetInterpolatedAssetPropertyValuesError {
 pub enum GetInterpolatedAssetPropertyValuesErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The requested service is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -5531,8 +5304,6 @@ impl GetInterpolatedAssetPropertyValuesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5627,12 +5398,9 @@ pub struct ListAccessPoliciesError {
 pub enum ListAccessPoliciesErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -5678,8 +5446,6 @@ impl ListAccessPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5748,12 +5514,9 @@ pub struct ListAssetModelsError {
 pub enum ListAssetModelsErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -5799,8 +5562,6 @@ impl ListAssetModelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5866,14 +5627,11 @@ pub struct ListAssetRelationshipsError {
 pub enum ListAssetRelationshipsErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -5920,8 +5678,6 @@ impl ListAssetRelationshipsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5998,14 +5754,11 @@ pub struct ListAssetsError {
 pub enum ListAssetsErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -6052,8 +5805,6 @@ impl ListAssetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6121,14 +5872,11 @@ pub struct ListAssociatedAssetsError {
 pub enum ListAssociatedAssetsErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -6175,8 +5923,6 @@ impl ListAssociatedAssetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6253,12 +5999,9 @@ pub struct ListDashboardsError {
 pub enum ListDashboardsErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -6304,8 +6047,6 @@ impl ListDashboardsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6371,12 +6112,9 @@ pub struct ListGatewaysError {
 pub enum ListGatewaysErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -6422,8 +6160,6 @@ impl ListGatewaysError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6489,12 +6225,9 @@ pub struct ListPortalsError {
 pub enum ListPortalsErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -6540,8 +6273,6 @@ impl ListPortalsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6604,12 +6335,9 @@ pub struct ListProjectAssetsError {
 pub enum ListProjectAssetsErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -6655,8 +6383,6 @@ impl ListProjectAssetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6725,12 +6451,9 @@ pub struct ListProjectsError {
 pub enum ListProjectsErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -6776,8 +6499,6 @@ impl ListProjectsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6841,24 +6562,18 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized.</p>
@@ -6910,8 +6625,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7012,14 +6725,11 @@ pub struct ListTimeSeriesError {
 pub enum ListTimeSeriesErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -7066,8 +6776,6 @@ impl ListTimeSeriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7139,22 +6847,16 @@ pub struct PutDefaultEncryptionConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutDefaultEncryptionConfigurationErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -7215,8 +6917,6 @@ impl PutDefaultEncryptionConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7307,19 +7007,15 @@ pub struct PutLoggingOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutLoggingOptionsErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -7367,8 +7063,6 @@ impl PutLoggingOptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7451,26 +7145,20 @@ pub struct PutStorageConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutStorageConfigurationErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -7524,8 +7212,6 @@ impl PutStorageConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7626,29 +7312,21 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>You've reached the limit for the number of tags allowed for a resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits and
-    /// requirements</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>You've reached the limit for the number of tags allowed for a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits and requirements</a> in the <i>Amazon Web Services General Reference</i>.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>You are not authorized.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7700,8 +7378,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7793,24 +7469,18 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized.</p>
@@ -7862,8 +7532,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7958,14 +7626,11 @@ pub struct UpdateAccessPolicyError {
 pub enum UpdateAccessPolicyErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -8012,8 +7677,6 @@ impl UpdateAccessPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8088,21 +7751,17 @@ pub struct UpdateAssetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssetErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -8151,8 +7810,6 @@ impl UpdateAssetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8237,26 +7894,20 @@ pub struct UpdateAssetModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssetModelErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -8306,8 +7957,6 @@ impl UpdateAssetModelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8406,19 +8055,15 @@ pub struct UpdateAssetPropertyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssetPropertyErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -8466,8 +8111,6 @@ impl UpdateAssetPropertyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8552,14 +8195,11 @@ pub struct UpdateDashboardError {
 pub enum UpdateDashboardErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -8606,8 +8246,6 @@ impl UpdateDashboardError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8679,19 +8317,15 @@ pub struct UpdateGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGatewayErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -8739,8 +8373,6 @@ impl UpdateGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8820,24 +8452,18 @@ pub struct UpdateGatewayCapabilityConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGatewayCapabilityConfigurationErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -8901,8 +8527,6 @@ impl UpdateGatewayCapabilityConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9007,19 +8631,15 @@ pub struct UpdatePortalError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdatePortalErrorKind {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -9067,8 +8687,6 @@ impl UpdatePortalError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9150,14 +8768,11 @@ pub struct UpdateProjectError {
 pub enum UpdateProjectErrorKind {
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested resource can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -9204,8 +8819,6 @@ impl UpdateProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9264,9 +8877,7 @@ impl std::error::Error for UpdateProjectError {
     }
 }
 
-/// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-/// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-/// on.</p>
+/// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9395,8 +9006,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-/// unsupported characters. Check your request and try again.</p>
+/// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
@@ -9524,8 +9134,7 @@ impl InternalFailureException {
     }
 }
 
-/// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-/// than one operation on the same resource at the same time.</p>
+/// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictingOperationException {
@@ -9629,9 +9238,7 @@ impl ConflictingOperationException {
     }
 }
 
-/// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-/// associate more than the allowed number of child assets or attempting to create more than the
-/// allowed number of properties for an asset model.</p>
+/// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9864,9 +9471,7 @@ impl UnauthorizedException {
     }
 }
 
-/// <p>You've reached the limit for the number of tags allowed for a resource. For more
-/// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits and
-/// requirements</a> in the <i>Amazon Web Services General Reference</i>.</p>
+/// <p>You've reached the limit for the number of tags allowed for a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits and requirements</a> in the <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {

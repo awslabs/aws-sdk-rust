@@ -14,8 +14,7 @@ pub struct AcceptPortfolioShareError {
 pub enum AcceptPortfolioShareErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -62,8 +61,6 @@ impl AcceptPortfolioShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -134,8 +131,7 @@ pub enum AssociateBudgetWithResourceErrorKind {
     DuplicateResourceException(crate::error::DuplicateResourceException),
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -189,8 +185,6 @@ impl AssociateBudgetWithResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -271,8 +265,7 @@ pub struct AssociatePrincipalWithPortfolioError {
 pub enum AssociatePrincipalWithPortfolioErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -328,8 +321,6 @@ impl AssociatePrincipalWithPortfolioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -404,8 +395,7 @@ pub struct AssociateProductWithPortfolioError {
 pub enum AssociateProductWithPortfolioErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -459,8 +449,6 @@ impl AssociateProductWithPortfolioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -533,8 +521,7 @@ pub struct AssociateServiceActionWithProvisioningArtifactError {
 pub enum AssociateServiceActionWithProvisioningArtifactErrorKind {
     /// <p>The specified resource is a duplicate.</p>
     DuplicateResourceException(crate::error::DuplicateResourceException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -594,8 +581,6 @@ impl AssociateServiceActionWithProvisioningArtifactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -674,17 +659,13 @@ pub enum AssociateTagOptionWithResourceErrorKind {
     DuplicateResourceException(crate::error::DuplicateResourceException),
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -745,8 +726,6 @@ impl AssociateTagOptionWithResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -901,8 +880,6 @@ impl BatchAssociateServiceActionWithProvisioningArtifactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1010,8 +987,6 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1109,8 +1084,6 @@ impl CopyProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1173,8 +1146,7 @@ pub enum CreateConstraintErrorKind {
     DuplicateResourceException(crate::error::DuplicateResourceException),
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1222,8 +1194,6 @@ impl CreateConstraintError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1300,12 +1270,9 @@ pub struct CreatePortfolioError {
 pub enum CreatePortfolioErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1350,8 +1317,6 @@ impl CreatePortfolioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1420,11 +1385,9 @@ pub struct CreatePortfolioShareError {
 pub enum CreatePortfolioShareErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
@@ -1475,8 +1438,6 @@ impl CreatePortfolioShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1561,12 +1522,9 @@ pub struct CreateProductError {
 pub enum CreateProductErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1611,8 +1569,6 @@ impl CreateProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1681,8 +1637,7 @@ pub struct CreateProvisionedProductPlanError {
 pub enum CreateProvisionedProductPlanErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1733,8 +1688,6 @@ impl CreateProvisionedProductPlanError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1807,8 +1760,7 @@ pub struct CreateProvisioningArtifactError {
 pub enum CreateProvisioningArtifactErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1857,8 +1809,6 @@ impl CreateProvisioningArtifactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1927,8 +1877,7 @@ pub struct CreateServiceActionError {
 pub enum CreateServiceActionErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1972,8 +1921,6 @@ impl CreateServiceActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2034,12 +1981,9 @@ pub struct CreateTagOptionError {
 pub enum CreateTagOptionErrorKind {
     /// <p>The specified resource is a duplicate.</p>
     DuplicateResourceException(crate::error::DuplicateResourceException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2084,8 +2028,6 @@ impl CreateTagOptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2198,8 +2140,6 @@ impl DeleteConstraintError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2264,9 +2204,7 @@ pub enum DeletePortfolioErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2312,8 +2250,6 @@ impl DeletePortfolioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2390,8 +2326,7 @@ pub struct DeletePortfolioShareError {
 pub enum DeletePortfolioShareErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
@@ -2441,8 +2376,6 @@ impl DeletePortfolioShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2523,9 +2456,7 @@ pub enum DeleteProductErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2571,8 +2502,6 @@ impl DeleteProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2697,8 +2626,6 @@ impl DeleteProvisionedProductPlanError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2812,8 +2739,6 @@ impl DeleteProvisioningArtifactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2926,8 +2851,6 @@ impl DeleteServiceActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2990,9 +2913,7 @@ pub enum DeleteTagOptionErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3037,8 +2958,6 @@ impl DeleteTagOptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3148,8 +3067,6 @@ impl DescribeConstraintError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3243,8 +3160,6 @@ impl DescribeCopyProductStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3338,8 +3253,6 @@ impl DescribePortfolioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3436,8 +3349,6 @@ impl DescribePortfolioSharesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3551,8 +3462,6 @@ impl DescribePortfolioShareStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3671,8 +3580,6 @@ impl DescribeProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3777,8 +3684,6 @@ impl DescribeProductAsAdminError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3883,8 +3788,6 @@ impl DescribeProductViewError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3991,8 +3894,6 @@ impl DescribeProvisionedProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4104,8 +4005,6 @@ impl DescribeProvisionedProductPlanError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4218,8 +4117,6 @@ impl DescribeProvisioningArtifactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4335,8 +4232,6 @@ impl DescribeProvisioningParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4442,8 +4337,6 @@ impl DescribeRecordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4537,8 +4430,6 @@ impl DescribeServiceActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4642,8 +4533,6 @@ impl DescribeServiceActionExecutionParametersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4710,9 +4599,7 @@ pub struct DescribeTagOptionError {
 pub enum DescribeTagOptionErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4756,8 +4643,6 @@ impl DescribeTagOptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4816,8 +4701,7 @@ pub struct DisableAWSOrganizationsAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableAWSOrganizationsAccessErrorKind {
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
@@ -4873,8 +4757,6 @@ impl DisableAWSOrganizationsAccessError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4993,8 +4875,6 @@ impl DisassociateBudgetFromResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5100,8 +4980,6 @@ impl DisassociatePrincipalFromPortfolioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5222,8 +5100,6 @@ impl DisassociateProductFromPortfolioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5348,8 +5224,6 @@ impl DisassociateServiceActionFromProvisioningArtifactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5408,9 +5282,7 @@ pub struct DisassociateTagOptionFromResourceError {
 pub enum DisassociateTagOptionFromResourceErrorKind {
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5461,8 +5333,6 @@ impl DisassociateTagOptionFromResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5525,8 +5395,7 @@ pub struct EnableAWSOrganizationsAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableAWSOrganizationsAccessErrorKind {
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
@@ -5579,8 +5448,6 @@ impl EnableAWSOrganizationsAccessError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5653,8 +5520,7 @@ pub struct ExecuteProvisionedProductPlanError {
 pub enum ExecuteProvisionedProductPlanErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5708,8 +5574,6 @@ impl ExecuteProvisionedProductPlanError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5782,8 +5646,7 @@ pub struct ExecuteProvisionedProductServiceActionError {
 pub enum ExecuteProvisionedProductServiceActionErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5839,8 +5702,6 @@ impl ExecuteProvisionedProductServiceActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5968,8 +5829,6 @@ impl GetAWSOrganizationsAccessStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6082,8 +5941,6 @@ impl GetProvisionedProductOutputsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6150,8 +6007,7 @@ pub enum ImportAsProvisionedProductErrorKind {
     DuplicateResourceException(crate::error::DuplicateResourceException),
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6203,8 +6059,6 @@ impl ImportAsProvisionedProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6329,8 +6183,6 @@ impl ListAcceptedPortfolioSharesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6439,8 +6291,6 @@ impl ListBudgetsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6549,8 +6399,6 @@ impl ListConstraintsForPortfolioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6657,8 +6505,6 @@ impl ListLaunchPathsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6775,8 +6621,6 @@ impl ListOrganizationPortfolioAccessError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6895,8 +6739,6 @@ impl ListPortfolioAccessError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6998,8 +6840,6 @@ impl ListPortfoliosError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7096,8 +6936,6 @@ impl ListPortfoliosForProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7204,8 +7042,6 @@ impl ListPrincipalsForPortfolioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7314,8 +7150,6 @@ impl ListProvisionedProductPlansError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7422,8 +7256,6 @@ impl ListProvisioningArtifactsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7535,8 +7367,6 @@ impl ListProvisioningArtifactsForServiceActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7644,8 +7474,6 @@ impl ListRecordHistoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7700,9 +7528,7 @@ pub enum ListResourcesForTagOptionErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7749,8 +7575,6 @@ impl ListResourcesForTagOptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7862,8 +7686,6 @@ impl ListServiceActionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7967,8 +7789,6 @@ impl ListServiceActionsForProvisioningArtifactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8086,8 +7906,6 @@ impl ListStackInstancesForProvisionedProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8154,9 +7972,7 @@ pub struct ListTagOptionsError {
 pub enum ListTagOptionsErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8200,8 +8016,6 @@ impl ListTagOptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8309,8 +8123,6 @@ impl ProvisionProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8420,8 +8232,6 @@ impl RejectPortfolioShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8515,8 +8325,6 @@ impl ScanProvisionedProductsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8610,8 +8418,6 @@ impl SearchProductsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8708,8 +8514,6 @@ impl SearchProductsAsAdminError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8811,8 +8615,6 @@ impl SearchProvisionedProductsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8908,8 +8710,6 @@ impl TerminateProvisionedProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9006,8 +8806,6 @@ impl UpdateConstraintError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9068,14 +8866,11 @@ pub struct UpdatePortfolioError {
 pub enum UpdatePortfolioErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-    /// resource use or increase your service limits and retry the operation.</p>
+    /// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9121,8 +8916,6 @@ impl UpdatePortfolioError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9199,8 +8992,7 @@ pub struct UpdatePortfolioShareError {
 pub enum UpdatePortfolioShareErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
@@ -9250,8 +9042,6 @@ impl UpdatePortfolioShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9330,9 +9120,7 @@ pub enum UpdateProductErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9377,8 +9165,6 @@ impl UpdateProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9491,8 +9277,6 @@ impl UpdateProvisionedProductError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9553,8 +9337,7 @@ pub struct UpdateProvisionedProductPropertiesError {
 pub enum UpdateProvisionedProductPropertiesErrorKind {
     /// <p>One or more parameters provided to the operation are not valid.</p>
     InvalidParametersException(crate::error::InvalidParametersException),
-    /// <p>An attempt was made to modify a resource that is in a state that is not valid.
-    /// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+    /// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -9610,8 +9393,6 @@ impl UpdateProvisionedProductPropertiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9732,8 +9513,6 @@ impl UpdateProvisioningArtifactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9838,8 +9617,6 @@ impl UpdateServiceActionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9904,9 +9681,7 @@ pub enum UpdateTagOptionErrorKind {
     InvalidParametersException(crate::error::InvalidParametersException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-    /// not been performed for this account. Please use the AWS console to perform the migration
-    /// process before retrying the operation.</p>
+    /// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
     TagOptionNotMigratedException(crate::error::TagOptionNotMigratedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9952,8 +9727,6 @@ impl UpdateTagOptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10015,9 +9788,7 @@ impl std::error::Error for UpdateTagOptionError {
     }
 }
 
-/// <p>An operation requiring TagOptions failed because the TagOptions migration process has
-/// not been performed for this account. Please use the AWS console to perform the migration
-/// process before retrying the operation.</p>
+/// <p>An operation requiring TagOptions failed because the TagOptions migration process has not been performed for this account. Please use the AWS console to perform the migration process before retrying the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagOptionNotMigratedException {
@@ -10273,8 +10044,7 @@ impl DuplicateResourceException {
     }
 }
 
-/// <p>An attempt was made to modify a resource that is in a state that is not valid.
-/// Check your resources to ensure that they are in valid states before retrying the operation.</p>
+/// <p>An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that they are in valid states before retrying the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStateException {
@@ -10402,8 +10172,7 @@ impl OperationNotSupportedException {
     }
 }
 
-/// <p>The current limits of the service would have been exceeded by this operation. Decrease your
-/// resource use or increase your service limits and retry the operation.</p>
+/// <p>The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase your service limits and retry the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

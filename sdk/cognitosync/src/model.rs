@@ -9,14 +9,11 @@ pub struct Record {
     pub value: std::option::Option<std::string::String>,
     /// The server sync count for this record.
     pub sync_count: std::option::Option<i64>,
-    /// The date on which the record was last
-    /// modified.
+    /// The date on which the record was last modified.
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// The user/device that made the last change to this
-    /// record.
+    /// The user/device that made the last change to this record.
     pub last_modified_by: std::option::Option<std::string::String>,
-    /// The last modified date of the client
-    /// device.
+    /// The last modified date of the client device.
     pub device_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Record {
@@ -32,18 +29,15 @@ impl Record {
     pub fn sync_count(&self) -> std::option::Option<i64> {
         self.sync_count
     }
-    /// The date on which the record was last
-    /// modified.
+    /// The date on which the record was last modified.
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
-    /// The user/device that made the last change to this
-    /// record.
+    /// The user/device that made the last change to this record.
     pub fn last_modified_by(&self) -> std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
-    /// The last modified date of the client
-    /// device.
+    /// The last modified date of the client device.
     pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
     }
@@ -104,14 +98,12 @@ pub mod record {
             self.sync_count = input;
             self
         }
-        /// The date on which the record was last
-        /// modified.
+        /// The date on which the record was last modified.
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
-        /// The date on which the record was last
-        /// modified.
+        /// The date on which the record was last modified.
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -119,14 +111,12 @@ pub mod record {
             self.last_modified_date = input;
             self
         }
-        /// The user/device that made the last change to this
-        /// record.
+        /// The user/device that made the last change to this record.
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_modified_by = Some(input.into());
             self
         }
-        /// The user/device that made the last change to this
-        /// record.
+        /// The user/device that made the last change to this record.
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -134,14 +124,12 @@ pub mod record {
             self.last_modified_by = input;
             self
         }
-        /// The last modified date of the client
-        /// device.
+        /// The last modified date of the client device.
         pub fn device_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.device_last_modified_date = Some(input);
             self
         }
-        /// The last modified date of the client
-        /// device.
+        /// The last modified date of the client device.
         pub fn set_device_last_modified_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -177,14 +165,11 @@ pub struct RecordPatch {
     pub op: std::option::Option<crate::model::Operation>,
     /// The key associated with the record patch.
     pub key: std::option::Option<std::string::String>,
-    /// The value associated with the record
-    /// patch.
+    /// The value associated with the record patch.
     pub value: std::option::Option<std::string::String>,
-    /// Last known server sync count for this record. Set
-    /// to 0 if unknown.
+    /// Last known server sync count for this record. Set to 0 if unknown.
     pub sync_count: std::option::Option<i64>,
-    /// The last modified date of the client
-    /// device.
+    /// The last modified date of the client device.
     pub device_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RecordPatch {
@@ -196,18 +181,15 @@ impl RecordPatch {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// The value associated with the record
-    /// patch.
+    /// The value associated with the record patch.
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// Last known server sync count for this record. Set
-    /// to 0 if unknown.
+    /// Last known server sync count for this record. Set to 0 if unknown.
     pub fn sync_count(&self) -> std::option::Option<i64> {
         self.sync_count
     }
-    /// The last modified date of the client
-    /// device.
+    /// The last modified date of the client device.
     pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
     }
@@ -256,38 +238,32 @@ pub mod record_patch {
             self.key = input;
             self
         }
-        /// The value associated with the record
-        /// patch.
+        /// The value associated with the record patch.
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// The value associated with the record
-        /// patch.
+        /// The value associated with the record patch.
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
         }
-        /// Last known server sync count for this record. Set
-        /// to 0 if unknown.
+        /// Last known server sync count for this record. Set to 0 if unknown.
         pub fn sync_count(mut self, input: i64) -> Self {
             self.sync_count = Some(input);
             self
         }
-        /// Last known server sync count for this record. Set
-        /// to 0 if unknown.
+        /// Last known server sync count for this record. Set to 0 if unknown.
         pub fn set_sync_count(mut self, input: std::option::Option<i64>) -> Self {
             self.sync_count = input;
             self
         }
-        /// The last modified date of the client
-        /// device.
+        /// The last modified date of the client device.
         pub fn device_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.device_last_modified_date = Some(input);
             self
         }
-        /// The last modified date of the client
-        /// device.
+        /// The last modified date of the client device.
         pub fn set_device_last_modified_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -672,44 +648,33 @@ impl AsRef<str> for Platform {
     }
 }
 
-/// Usage information for the identity
-/// pool.
+/// Usage information for the identity pool.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityPoolUsage {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
-    /// Number of sync sessions for the
-    /// identity pool.
+    /// Number of sync sessions for the identity pool.
     pub sync_sessions_count: std::option::Option<i64>,
-    /// Data storage information for the identity
-    /// pool.
+    /// Data storage information for the identity pool.
     pub data_storage: std::option::Option<i64>,
-    /// Date on which the identity pool was
-    /// last modified.
+    /// Date on which the identity pool was last modified.
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl IdentityPoolUsage {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
-    /// Number of sync sessions for the
-    /// identity pool.
+    /// Number of sync sessions for the identity pool.
     pub fn sync_sessions_count(&self) -> std::option::Option<i64> {
         self.sync_sessions_count
     }
-    /// Data storage information for the identity
-    /// pool.
+    /// Data storage information for the identity pool.
     pub fn data_storage(&self) -> std::option::Option<i64> {
         self.data_storage
     }
-    /// Date on which the identity pool was
-    /// last modified.
+    /// Date on which the identity pool was last modified.
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
@@ -736,16 +701,12 @@ pub mod identity_pool_usage {
         pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -753,38 +714,32 @@ pub mod identity_pool_usage {
             self.identity_pool_id = input;
             self
         }
-        /// Number of sync sessions for the
-        /// identity pool.
+        /// Number of sync sessions for the identity pool.
         pub fn sync_sessions_count(mut self, input: i64) -> Self {
             self.sync_sessions_count = Some(input);
             self
         }
-        /// Number of sync sessions for the
-        /// identity pool.
+        /// Number of sync sessions for the identity pool.
         pub fn set_sync_sessions_count(mut self, input: std::option::Option<i64>) -> Self {
             self.sync_sessions_count = input;
             self
         }
-        /// Data storage information for the identity
-        /// pool.
+        /// Data storage information for the identity pool.
         pub fn data_storage(mut self, input: i64) -> Self {
             self.data_storage = Some(input);
             self
         }
-        /// Data storage information for the identity
-        /// pool.
+        /// Data storage information for the identity pool.
         pub fn set_data_storage(mut self, input: std::option::Option<i64>) -> Self {
             self.data_storage = input;
             self
         }
-        /// Date on which the identity pool was
-        /// last modified.
+        /// Date on which the identity pool was last modified.
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
-        /// Date on which the identity pool was
-        /// last modified.
+        /// Date on which the identity pool was last modified.
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -810,65 +765,47 @@ impl IdentityPoolUsage {
     }
 }
 
-/// A collection of data for an identity pool. An identity pool can
-/// have multiple datasets. A dataset is per identity and can be general or associated with a
-/// particular entity in an application (like a saved game). Datasets are automatically created if
-/// they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value
-/// pairs.
+/// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dataset {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_id: std::option::Option<std::string::String>,
-    /// A string of up to 128 characters. Allowed characters
-    /// are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub dataset_name: std::option::Option<std::string::String>,
-    /// Date on which the dataset was
-    /// created.
+    /// Date on which the dataset was created.
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// Date when the dataset was last
-    /// modified.
+    /// Date when the dataset was last modified.
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// The device that made the last change to this
-    /// dataset.
+    /// The device that made the last change to this dataset.
     pub last_modified_by: std::option::Option<std::string::String>,
-    /// Total size in bytes of the records in this
-    /// dataset.
+    /// Total size in bytes of the records in this dataset.
     pub data_storage: std::option::Option<i64>,
     /// Number of records in this dataset.
     pub num_records: std::option::Option<i64>,
 }
 impl Dataset {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// A string of up to 128 characters. Allowed characters
-    /// are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// Date on which the dataset was
-    /// created.
+    /// Date on which the dataset was created.
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// Date when the dataset was last
-    /// modified.
+    /// Date when the dataset was last modified.
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
-    /// The device that made the last change to this
-    /// dataset.
+    /// The device that made the last change to this dataset.
     pub fn last_modified_by(&self) -> std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
-    /// Total size in bytes of the records in this
-    /// dataset.
+    /// Total size in bytes of the records in this dataset.
     pub fn data_storage(&self) -> std::option::Option<i64> {
         self.data_storage
     }
@@ -905,40 +842,32 @@ pub mod dataset {
         pub(crate) num_records: std::option::Option<i64>,
     }
     impl Builder {
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
-        /// A string of up to 128 characters. Allowed characters
-        /// are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+        /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
         }
-        /// A string of up to 128 characters. Allowed characters
-        /// are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+        /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
         }
-        /// Date on which the dataset was
-        /// created.
+        /// Date on which the dataset was created.
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
-        /// Date on which the dataset was
-        /// created.
+        /// Date on which the dataset was created.
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -946,14 +875,12 @@ pub mod dataset {
             self.creation_date = input;
             self
         }
-        /// Date when the dataset was last
-        /// modified.
+        /// Date when the dataset was last modified.
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
-        /// Date when the dataset was last
-        /// modified.
+        /// Date when the dataset was last modified.
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -961,14 +888,12 @@ pub mod dataset {
             self.last_modified_date = input;
             self
         }
-        /// The device that made the last change to this
-        /// dataset.
+        /// The device that made the last change to this dataset.
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_modified_by = Some(input.into());
             self
         }
-        /// The device that made the last change to this
-        /// dataset.
+        /// The device that made the last change to this dataset.
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -976,14 +901,12 @@ pub mod dataset {
             self.last_modified_by = input;
             self
         }
-        /// Total size in bytes of the records in this
-        /// dataset.
+        /// Total size in bytes of the records in this dataset.
         pub fn data_storage(mut self, input: i64) -> Self {
             self.data_storage = Some(input);
             self
         }
-        /// Total size in bytes of the records in this
-        /// dataset.
+        /// Total size in bytes of the records in this dataset.
         pub fn set_data_storage(mut self, input: std::option::Option<i64>) -> Self {
             self.data_storage = input;
             self
@@ -1086,49 +1009,35 @@ impl AsRef<str> for BulkPublishStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdentityUsage {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_id: std::option::Option<std::string::String>,
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
-    /// Date on which the identity was last
-    /// modified.
+    /// Date on which the identity was last modified.
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// Number of datasets for the
-    /// identity.
+    /// Number of datasets for the identity.
     pub dataset_count: i32,
-    /// Total data storage for this
-    /// identity.
+    /// Total data storage for this identity.
     pub data_storage: std::option::Option<i64>,
 }
 impl IdentityUsage {
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
-    /// A name-spaced GUID (for example,
-    /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-    /// unique within a region.
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
-    /// Date on which the identity was last
-    /// modified.
+    /// Date on which the identity was last modified.
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
-    /// Number of datasets for the
-    /// identity.
+    /// Number of datasets for the identity.
     pub fn dataset_count(&self) -> i32 {
         self.dataset_count
     }
-    /// Total data storage for this
-    /// identity.
+    /// Total data storage for this identity.
     pub fn data_storage(&self) -> std::option::Option<i64> {
         self.data_storage
     }
@@ -1157,30 +1066,22 @@ pub mod identity_usage {
         pub(crate) data_storage: std::option::Option<i64>,
     }
     impl Builder {
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_pool_id = Some(input.into());
             self
         }
-        /// A name-spaced GUID (for example,
-        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
-        /// unique within a region.
+        /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1188,14 +1089,12 @@ pub mod identity_usage {
             self.identity_pool_id = input;
             self
         }
-        /// Date on which the identity was last
-        /// modified.
+        /// Date on which the identity was last modified.
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
-        /// Date on which the identity was last
-        /// modified.
+        /// Date on which the identity was last modified.
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1203,26 +1102,22 @@ pub mod identity_usage {
             self.last_modified_date = input;
             self
         }
-        /// Number of datasets for the
-        /// identity.
+        /// Number of datasets for the identity.
         pub fn dataset_count(mut self, input: i32) -> Self {
             self.dataset_count = Some(input);
             self
         }
-        /// Number of datasets for the
-        /// identity.
+        /// Number of datasets for the identity.
         pub fn set_dataset_count(mut self, input: std::option::Option<i32>) -> Self {
             self.dataset_count = input;
             self
         }
-        /// Total data storage for this
-        /// identity.
+        /// Total data storage for this identity.
         pub fn data_storage(mut self, input: i64) -> Self {
             self.data_storage = Some(input);
             self
         }
-        /// Total data storage for this
-        /// identity.
+        /// Total data storage for this identity.
         pub fn set_data_storage(mut self, input: std::option::Option<i64>) -> Self {
             self.data_storage = input;
             self

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon WorkMail Message Flow
@@ -109,7 +109,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRawMessageContent`.
     ///
     /// <p>Retrieves the raw content of an in-transit email message, in MIME format.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRawMessageContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -154,10 +154,10 @@ pub mod fluent_builders {
                 crate::input::GetRawMessageContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -166,8 +166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the email message to retrieve.</p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(inp);
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The identifier of the email message to retrieve.</p>
@@ -179,20 +179,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutRawMessageContent`.
     ///
     /// <p>Updates the raw content of an in-transit email message, in MIME format.</p>
-    /// <p>This example describes how to update in-transit email message. For more information and examples for using this API, see
-    /// <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html">
-    /// Updating message content with AWS Lambda</a>.</p>
-    ///
-    ///
-    /// <note>
-    /// <p>Updates to an in-transit message only appear when you call <code>PutRawMessageContent</code> from an AWS Lambda function
-    /// configured with a  synchronous <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules">
-    /// Run Lambda</a> rule. If you call <code>PutRawMessageContent</code> on a delivered or sent message, the message remains unchanged,
-    /// even though <a href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html">GetRawMessageContent</a> returns an updated
-    /// message.
-    /// </p>
+    /// <p>This example describes how to update in-transit email message. For more information and examples for using this API, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html"> Updating message content with AWS Lambda</a>.</p> <note>
+    /// <p>Updates to an in-transit message only appear when you call <code>PutRawMessageContent</code> from an AWS Lambda function configured with a synchronous <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules"> Run Lambda</a> rule. If you call <code>PutRawMessageContent</code> on a delivered or sent message, the message remains unchanged, even though <a href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html">GetRawMessageContent</a> returns an updated message. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRawMessageContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -237,10 +227,10 @@ pub mod fluent_builders {
                 crate::input::PutRawMessageContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -249,8 +239,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the email message being updated.</p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(inp);
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The identifier of the email message being updated.</p>
@@ -259,8 +249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the raw message content of the updated email message.</p>
-        pub fn content(mut self, inp: crate::model::RawMessageContent) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: crate::model::RawMessageContent) -> Self {
+            self.inner = self.inner.content(input);
             self
         }
         /// <p>Describes the raw message content of the updated email message.</p>
@@ -273,6 +263,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

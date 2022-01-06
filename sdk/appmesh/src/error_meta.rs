@@ -5,31 +5,23 @@
 pub enum Error {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request contains a client token that was used for a previous update resource call
-    /// with different specifications. Try the request again with a new client token.</p>
+    /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
     ForbiddenException(crate::error::ForbiddenException),
-    /// <p>The request processing has failed because of an unknown error, exception, or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
     InternalServerErrorException(crate::error::InternalServerErrorException),
-    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-    /// Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
+    /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App Mesh User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You can't delete the specified resource because it's in use or required by another
-    /// resource.</p>
+    /// <p>You can't delete the specified resource because it's in use or required by another resource.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    /// account. For best results, use an increasing or variable sleep interval between
-    /// requests.</p>
+    /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request exceeds the maximum allowed number of tags allowed per resource. The current
-    /// limit is 50 user tags per resource. You must reduce the number of tags in the request. None
-    /// of the tags in this request were applied.</p>
+    /// <p>The request exceeds the maximum allowed number of tags allowed per resource. The current limit is 50 user tags per resource. You must reduce the number of tags in the request. None of the tags in this request were applied.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

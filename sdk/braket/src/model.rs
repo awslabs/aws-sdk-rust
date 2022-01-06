@@ -1088,8 +1088,7 @@ impl DeviceConfig {
     }
 }
 
-/// <p>Configures the resource instances to use while running the Amazon Braket hybrid job on Amazon
-/// Braket.</p>
+/// <p>Configures the resource instances to use while running the Amazon Braket hybrid job on Amazon Braket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceConfig {
@@ -1535,26 +1534,21 @@ impl JobCheckpointConfig {
     }
 }
 
-/// <p>Specifies the path to the S3 location where you want to store job artifacts and the
-/// encryption key used to store them.</p>
+/// <p>Specifies the path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobOutputDataConfig {
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the
-    /// job training artifacts at rest using Amazon S3 server-side encryption.</p>
+    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For
-    /// example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub s3_path: std::option::Option<std::string::String>,
 }
 impl JobOutputDataConfig {
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the
-    /// job training artifacts at rest using Amazon S3 server-side encryption.</p>
+    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For
-    /// example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn s3_path(&self) -> std::option::Option<&str> {
         self.s3_path.as_deref()
     }
@@ -1577,26 +1571,22 @@ pub mod job_output_data_config {
         pub(crate) s3_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the
-        /// job training artifacts at rest using Amazon S3 server-side encryption.</p>
+        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the
-        /// job training artifacts at rest using Amazon S3 server-side encryption.</p>
+        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For
-        /// example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+        /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
         pub fn s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_path = Some(input.into());
             self
         }
-        /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For
-        /// example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+        /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
         pub fn set_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_path = input;
             self
@@ -1617,8 +1607,7 @@ impl JobOutputDataConfig {
     }
 }
 
-/// <p>A list of parameters that specify the input channels, type of input data, and where it
-/// is located.</p>
+/// <p>A list of parameters that specify the input channels, type of input data, and where it is located.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputFileConfig {
@@ -1774,13 +1763,11 @@ impl DataSource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DataSource {
-    /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a
-    /// key name prefix or a manifest that locates the S3 data source.</p>
+    /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
     pub s3_uri: std::option::Option<std::string::String>,
 }
 impl S3DataSource {
-    /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a
-    /// key name prefix or a manifest that locates the S3 data source.</p>
+    /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
@@ -1801,14 +1788,12 @@ pub mod s3_data_source {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a
-        /// key name prefix or a manifest that locates the S3 data source.</p>
+        /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
             self
         }
-        /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a
-        /// key name prefix or a manifest that locates the S3 data source.</p>
+        /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -1828,8 +1813,7 @@ impl S3DataSource {
     }
 }
 
-/// <p>Defines the Amazon Braket job to be created. Specifies the container image the job uses and the paths to
-/// the Python scripts used for entry and training.</p>
+/// <p>Defines the Amazon Braket job to be created. Specifies the container image the job uses and the paths to the Python scripts used for entry and training.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlgorithmSpecification {
@@ -1964,23 +1948,19 @@ impl ContainerImage {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScriptModeConfig {
-    /// <p>The path to the Python script that serves as the entry point for an Amazon Braket
-    /// job.</p>
+    /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
     pub entry_point: std::option::Option<std::string::String>,
-    /// <p>The URI that specifies the S3 path to the Python script module that contains the
-    /// training script used by an Amazon Braket job.</p>
+    /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
     pub compression_type: std::option::Option<crate::model::CompressionType>,
 }
 impl ScriptModeConfig {
-    /// <p>The path to the Python script that serves as the entry point for an Amazon Braket
-    /// job.</p>
+    /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
     pub fn entry_point(&self) -> std::option::Option<&str> {
         self.entry_point.as_deref()
     }
-    /// <p>The URI that specifies the S3 path to the Python script module that contains the
-    /// training script used by an Amazon Braket job.</p>
+    /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
@@ -2009,26 +1989,22 @@ pub mod script_mode_config {
         pub(crate) compression_type: std::option::Option<crate::model::CompressionType>,
     }
     impl Builder {
-        /// <p>The path to the Python script that serves as the entry point for an Amazon Braket
-        /// job.</p>
+        /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
         pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
             self.entry_point = Some(input.into());
             self
         }
-        /// <p>The path to the Python script that serves as the entry point for an Amazon Braket
-        /// job.</p>
+        /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
         pub fn set_entry_point(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entry_point = input;
             self
         }
-        /// <p>The URI that specifies the S3 path to the Python script module that contains the
-        /// training script used by an Amazon Braket job.</p>
+        /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
             self
         }
-        /// <p>The URI that specifies the S3 path to the Python script module that contains the
-        /// training script used by an Amazon Braket job.</p>
+        /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self

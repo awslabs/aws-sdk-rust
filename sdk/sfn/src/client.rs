@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Step Functions
@@ -152,6 +152,7 @@ where
     ///
     /// See [`GetExecutionHistory`](crate::client::fluent_builders::GetExecutionHistory) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetExecutionHistory::into_paginator).
     pub fn get_execution_history(&self) -> fluent_builders::GetExecutionHistory<C, M, R> {
         fluent_builders::GetExecutionHistory::new(self.handle.clone())
     }
@@ -159,6 +160,7 @@ where
     ///
     /// See [`ListActivities`](crate::client::fluent_builders::ListActivities) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListActivities::into_paginator).
     pub fn list_activities(&self) -> fluent_builders::ListActivities<C, M, R> {
         fluent_builders::ListActivities::new(self.handle.clone())
     }
@@ -166,6 +168,7 @@ where
     ///
     /// See [`ListExecutions`](crate::client::fluent_builders::ListExecutions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExecutions::into_paginator).
     pub fn list_executions(&self) -> fluent_builders::ListExecutions<C, M, R> {
         fluent_builders::ListExecutions::new(self.handle.clone())
     }
@@ -173,6 +176,7 @@ where
     ///
     /// See [`ListStateMachines`](crate::client::fluent_builders::ListStateMachines) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStateMachines::into_paginator).
     pub fn list_state_machines(&self) -> fluent_builders::ListStateMachines<C, M, R> {
         fluent_builders::ListStateMachines::new(self.handle.clone())
     }
@@ -257,24 +261,12 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateActivity`.
     ///
-    /// <p>Creates an activity. An activity is a task that you write in any programming language and
-    /// host on any machine that has access to AWS Step Functions. Activities must poll Step Functions using the
-    /// <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API
-    /// actions. This function lets Step Functions know the existence of your activity and returns an
-    /// identifier for use in a state machine and when polling from the activity.</p>
-    /// <note>
+    /// <p>Creates an activity. An activity is a task that you write in any programming language and host on any machine that has access to AWS Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
+    /// </note> <note>
+    /// <p> <code>CreateActivity</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. <code>CreateActivity</code>'s idempotency check is based on the activity <code>name</code>. If a following request has different <code>tags</code> values, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be updated, even if they are different.</p>
     /// </note>
-    /// <note>
-    /// <p>
-    /// <code>CreateActivity</code> is an idempotent API. Subsequent requests won’t create a
-    /// duplicate resource if it was already created. <code>CreateActivity</code>'s idempotency
-    /// check is based on the activity <code>name</code>. If a following request has different
-    /// <code>tags</code> values, Step Functions will ignore these differences and treat it as an
-    /// idempotent request of the previous. In this case, <code>tags</code> will not be updated,
-    /// even if they are different.</p>
-    /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateActivity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -319,10 +311,10 @@ pub mod fluent_builders {
                 crate::input::CreateActivityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -330,60 +322,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information,
-        /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-        /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+        /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information,
-        /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-        /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+        /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -393,20 +355,14 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags to add to a resource.</p>
-        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-        /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-        /// Tags</a>.</p>
+        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The list of tags to add to a resource.</p>
-        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-        /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-        /// Tags</a>.</p>
+        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn set_tags(
             mut self,
@@ -418,26 +374,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStateMachine`.
     ///
-    /// <p>Creates a state machine. A state machine consists of a collection of states that can do
-    /// work (<code>Task</code> states), determine to which states to transition next
-    /// (<code>Choice</code> states), stop an execution with an error (<code>Fail</code> states),
-    /// and so on. State machines are specified using a JSON-based, structured language. For more
-    /// information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
-    /// Language</a> in the AWS Step Functions User Guide.</p>
-    /// <note>
+    /// <p>Creates a state machine. A state machine consists of a collection of states that can do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code> states), stop an execution with an error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured language. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> in the AWS Step Functions User Guide.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
+    /// </note> <note>
+    /// <p> <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code> and <code>TracingConfiguration</code>. If a following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.</p>
     /// </note>
-    /// <note>
-    /// <p>
-    /// <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a
-    /// duplicate resource if it was already created. <code>CreateStateMachine</code>'s idempotency
-    /// check is based on the state machine <code>name</code>, <code>definition</code>,
-    /// <code>type</code>, <code>LoggingConfiguration</code> and <code>TracingConfiguration</code>. If a following request has a
-    /// different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these differences and
-    /// treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and
-    /// <code>tags</code> will not be updated, even if they are different.</p>
-    /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStateMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -482,10 +424,10 @@ pub mod fluent_builders {
                 crate::input::CreateStateMachineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -496,60 +438,34 @@ pub mod fluent_builders {
         /// <p>The name of the state machine. </p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the state machine. </p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-        pub fn definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.definition(inp);
+        pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.definition(input.into());
             self
         }
         /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
@@ -558,8 +474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
@@ -567,16 +483,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>Determines whether a Standard or Express state machine is created. The default is
-        /// <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it
-        /// has been created.</p>
-        pub fn r#type(mut self, inp: crate::model::StateMachineType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
+        pub fn r#type(mut self, input: crate::model::StateMachineType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>Determines whether a Standard or Express state machine is created. The default is
-        /// <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it
-        /// has been created.</p>
+        /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::StateMachineType>,
@@ -584,21 +496,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>Defines what execution history events are logged and where they are logged.</p>
-        /// <note>
-        /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see
-        /// <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-        /// Levels</a> in the AWS Step Functions User Guide.</p>
+        /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+        /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS Step Functions User Guide.</p>
         /// </note>
-        pub fn logging_configuration(mut self, inp: crate::model::LoggingConfiguration) -> Self {
-            self.inner = self.inner.logging_configuration(inp);
+        pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
+            self.inner = self.inner.logging_configuration(input);
             self
         }
-        /// <p>Defines what execution history events are logged and where they are logged.</p>
-        /// <note>
-        /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see
-        /// <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-        /// Levels</a> in the AWS Step Functions User Guide.</p>
+        /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+        /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS Step Functions User Guide.</p>
         /// </note>
         pub fn set_logging_configuration(
             mut self,
@@ -612,20 +518,14 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to be added when creating a state machine.</p>
-        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-        /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-        /// Tags</a>.</p>
+        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Tags to be added when creating a state machine.</p>
-        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-        /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-        /// Tags</a>.</p>
+        /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn set_tags(
             mut self,
@@ -635,8 +535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
-        pub fn tracing_configuration(mut self, inp: crate::model::TracingConfiguration) -> Self {
-            self.inner = self.inner.tracing_configuration(inp);
+        pub fn tracing_configuration(mut self, input: crate::model::TracingConfiguration) -> Self {
+            self.inner = self.inner.tracing_configuration(input);
             self
         }
         /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
@@ -651,7 +551,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteActivity`.
     ///
     /// <p>Deletes an activity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteActivity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -696,10 +596,10 @@ pub mod fluent_builders {
                 crate::input::DeleteActivityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -708,8 +608,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
-        pub fn activity_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activity_arn(inp);
+        pub fn activity_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activity_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
@@ -720,14 +620,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteStateMachine`.
     ///
-    /// <p>Deletes a state machine. This is an asynchronous operation: It sets the state machine's
-    /// status to <code>DELETING</code> and begins the deletion process. </p>
-    /// <note>
-    /// <p>For <code>EXPRESS</code>state machines, the deletion will happen eventually (usually
-    /// less than a minute). Running executions may emit logs after <code>DeleteStateMachine</code>
-    /// API is called.</p>
+    /// <p>Deletes a state machine. This is an asynchronous operation: It sets the state machine's status to <code>DELETING</code> and begins the deletion process. </p> <note>
+    /// <p>For <code>EXPRESS</code>state machines, the deletion will happen eventually (usually less than a minute). Running executions may emit logs after <code>DeleteStateMachine</code> API is called.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStateMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -772,10 +668,10 @@ pub mod fluent_builders {
                 crate::input::DeleteStateMachineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -784,8 +680,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
-        pub fn state_machine_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_machine_arn(inp);
+        pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
@@ -799,11 +695,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeActivity`.
     ///
-    /// <p>Describes an activity.</p>
-    /// <note>
+    /// <p>Describes an activity.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeActivity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -848,10 +743,10 @@ pub mod fluent_builders {
                 crate::input::DescribeActivityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -860,8 +755,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
-        pub fn activity_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activity_arn(inp);
+        pub fn activity_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activity_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
@@ -872,12 +767,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeExecution`.
     ///
-    /// <p>Describes an execution.</p>
-    /// <note>
+    /// <p>Describes an execution.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
     /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -922,10 +816,10 @@ pub mod fluent_builders {
                 crate::input::DescribeExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -934,8 +828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
-        pub fn execution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_arn(inp);
+        pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
@@ -949,11 +843,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeStateMachine`.
     ///
-    /// <p>Describes a state machine.</p>
-    /// <note>
+    /// <p>Describes a state machine.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStateMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -998,10 +891,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStateMachineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1010,8 +903,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
-        pub fn state_machine_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_machine_arn(inp);
+        pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
@@ -1025,12 +918,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeStateMachineForExecution`.
     ///
-    /// <p>Describes the state machine associated with a specific execution.</p>
-    /// <note>
+    /// <p>Describes the state machine associated with a specific execution.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
     /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStateMachineForExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1075,10 +967,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStateMachineForExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1087,8 +979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
-        pub fn execution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_arn(inp);
+        pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
@@ -1102,20 +994,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetActivityTask`.
     ///
-    /// <p>Used by workers to retrieve a task (with the specified activity ARN) which has been
-    /// scheduled for execution by a running state machine. This initiates a long poll, where the
-    /// service holds the HTTP connection open and responds as soon as a task becomes available (i.e.
-    /// an execution of a task of this type is needed.) The maximum time the service holds on to the
-    /// request before responding is 60 seconds. If no task is available within 60 seconds, the poll
-    /// returns a <code>taskToken</code> with a null string.</p>
-    /// <important>
-    /// <p>Workers should set their client side socket timeout to at least 65 seconds (5 seconds
-    /// higher than the maximum time the service may hold the poll request).</p>
-    /// <p>Polling with <code>GetActivityTask</code> can cause latency in some implementations. See
-    /// <a href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
-    /// Latency When Polling for Activity Tasks</a> in the Step Functions Developer Guide.</p>
+    /// <p>Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a running state machine. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll returns a <code>taskToken</code> with a null string.</p> <important>
+    /// <p>Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than the maximum time the service may hold the poll request).</p>
+    /// <p>Polling with <code>GetActivityTask</code> can cause latency in some implementations. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling for Activity Tasks</a> in the Step Functions Developer Guide.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetActivityTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1160,10 +1043,10 @@ pub mod fluent_builders {
                 crate::input::GetActivityTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1171,26 +1054,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task
-        /// using <a>CreateActivity</a>.)</p>
-        pub fn activity_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activity_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
+        pub fn activity_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activity_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task
-        /// using <a>CreateActivity</a>.)</p>
+        /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
         pub fn set_activity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_activity_arn(input);
             self
         }
-        /// <p>You can provide an arbitrary name in order to identify the worker that the task is
-        /// assigned to. This name is used when it is logged in the execution history.</p>
-        pub fn worker_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_name(inp);
+        /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
+        pub fn worker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_name(input.into());
             self
         }
-        /// <p>You can provide an arbitrary name in order to identify the worker that the task is
-        /// assigned to. This name is used when it is logged in the execution history.</p>
+        /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
         pub fn set_worker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_worker_name(input);
             self
@@ -1198,13 +1077,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetExecutionHistory`.
     ///
-    /// <p>Returns the history of the specified execution as a list of events. By default, the
-    /// results are returned in ascending order of the <code>timeStamp</code> of the events. Use the
-    /// <code>reverseOrder</code> parameter to get the latest events first.</p>
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>Returns the history of the specified execution as a list of events. By default, the results are returned in ascending order of the <code>timeStamp</code> of the events. Use the <code>reverseOrder</code> parameter to get the latest events first.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExecutionHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1249,10 +1125,10 @@ pub mod fluent_builders {
                 crate::input::GetExecutionHistoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1260,9 +1136,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetExecutionHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetExecutionHistoryPaginator<C, M, R> {
+            crate::paginator::GetExecutionHistoryPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the execution.</p>
-        pub fn execution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_arn(inp);
+        pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the execution.</p>
@@ -1273,23 +1155,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_arn(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>Lists events in descending order of their <code>timeStamp</code>.</p>
-        pub fn reverse_order(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reverse_order(inp);
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
         /// <p>Lists events in descending order of their <code>timeStamp</code>.</p>
@@ -1297,26 +1177,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_reverse_order(input);
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>You can select whether execution data (input or output of a history event) is returned.
-        /// The default is <code>true</code>.</p>
-        pub fn include_execution_data(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_execution_data(inp);
+        /// <p>You can select whether execution data (input or output of a history event) is returned. The default is <code>true</code>.</p>
+        pub fn include_execution_data(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_execution_data(input);
             self
         }
-        /// <p>You can select whether execution data (input or output of a history event) is returned.
-        /// The default is <code>true</code>.</p>
+        /// <p>You can select whether execution data (input or output of a history event) is returned. The default is <code>true</code>.</p>
         pub fn set_include_execution_data(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_execution_data(input);
             self
@@ -1325,12 +1201,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListActivities`.
     ///
     /// <p>Lists the existing activities.</p>
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    /// <note>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListActivities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1375,10 +1249,10 @@ pub mod fluent_builders {
                 crate::input::ListActivitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1386,28 +1260,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListActivitiesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListActivitiesPaginator<C, M, R> {
+            crate::paginator::ListActivitiesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1415,15 +1291,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListExecutions`.
     ///
-    /// <p>Lists the executions of a state machine that meet the filtering criteria. Results are
-    /// sorted by time, with the most recent execution first.</p>
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    /// <note>
+    /// <p>Lists the executions of a state machine that meet the filtering criteria. Results are sorted by time, with the most recent execution first.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
     /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1468,10 +1341,10 @@ pub mod fluent_builders {
                 crate::input::ListExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1479,9 +1352,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListExecutionsPaginator<C, M, R> {
+            crate::paginator::ListExecutionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
-        pub fn state_machine_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_machine_arn(inp);
+        pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
@@ -1492,14 +1371,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_state_machine_arn(input);
             self
         }
-        /// <p>If specified, only list the executions whose current execution status matches the given
-        /// filter.</p>
-        pub fn status_filter(mut self, inp: crate::model::ExecutionStatus) -> Self {
-            self.inner = self.inner.status_filter(inp);
+        /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
+        pub fn status_filter(mut self, input: crate::model::ExecutionStatus) -> Self {
+            self.inner = self.inner.status_filter(input);
             self
         }
-        /// <p>If specified, only list the executions whose current execution status matches the given
-        /// filter.</p>
+        /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::ExecutionStatus>,
@@ -1507,28 +1384,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status_filter(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1537,12 +1410,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStateMachines`.
     ///
     /// <p>Lists the existing state machines.</p>
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    /// <note>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note>
     /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStateMachines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1587,10 +1458,10 @@ pub mod fluent_builders {
                 crate::input::ListStateMachinesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1598,28 +1469,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStateMachinesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStateMachinesPaginator<C, M, R> {
+            crate::paginator::ListStateMachinesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
-        /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1629,7 +1502,7 @@ pub mod fluent_builders {
     ///
     /// <p>List tags for a given resource.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1674,10 +1547,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1686,8 +1559,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
@@ -1698,9 +1571,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendTaskFailure`.
     ///
-    /// <p>Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
-    /// pattern to report that the task identified by the <code>taskToken</code> failed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern to report that the task identified by the <code>taskToken</code> failed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendTaskFailure<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1745,10 +1617,10 @@ pub mod fluent_builders {
                 crate::input::SendTaskFailureInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1756,23 +1628,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-        /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-        /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
-        pub fn task_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(inp);
+        /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
-        /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-        /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-        /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+        /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_token(input);
             self
         }
         /// <p>The error code of the failure.</p>
-        pub fn error(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.error(inp);
+        pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.error(input.into());
             self
         }
         /// <p>The error code of the failure.</p>
@@ -1781,8 +1649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A more detailed explanation of the cause of the failure.</p>
-        pub fn cause(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cause(inp);
+        pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cause(input.into());
             self
         }
         /// <p>A more detailed explanation of the cause of the failure.</p>
@@ -1793,22 +1661,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendTaskHeartbeat`.
     ///
-    /// <p>Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
-    /// pattern to report to Step Functions that the task represented by the specified
-    /// <code>taskToken</code> is still making progress. This action resets the
-    /// <code>Heartbeat</code> clock. The <code>Heartbeat</code> threshold is specified in the state
-    /// machine's Amazon States Language definition (<code>HeartbeatSeconds</code>). This action does not in itself
-    /// create an event in the execution history. However, if the task times out, the execution
-    /// history contains an <code>ActivityTimedOut</code> entry for activities, or a
-    /// <code>TaskTimedOut</code> entry for for tasks using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job run</a> or
-    /// <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
-    /// pattern.</p>
-    /// <note>
-    /// <p>The <code>Timeout</code> of a task, defined in the state machine's Amazon States Language definition, is
-    /// its maximum allowed duration, regardless of the number of <a>SendTaskHeartbeat</a> requests received. Use <code>HeartbeatSeconds</code> to configure the timeout interval
-    /// for heartbeats.</p>
+    /// <p>Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern to report to Step Functions that the task represented by the specified <code>taskToken</code> is still making progress. This action resets the <code>Heartbeat</code> clock. The <code>Heartbeat</code> threshold is specified in the state machine's Amazon States Language definition (<code>HeartbeatSeconds</code>). This action does not in itself create an event in the execution history. However, if the task times out, the execution history contains an <code>ActivityTimedOut</code> entry for activities, or a <code>TaskTimedOut</code> entry for for tasks using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job run</a> or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern.</p> <note>
+    /// <p>The <code>Timeout</code> of a task, defined in the state machine's Amazon States Language definition, is its maximum allowed duration, regardless of the number of <code>SendTaskHeartbeat</code> requests received. Use <code>HeartbeatSeconds</code> to configure the timeout interval for heartbeats.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendTaskHeartbeat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1853,10 +1709,10 @@ pub mod fluent_builders {
                 crate::input::SendTaskHeartbeatInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1864,16 +1720,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-        /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-        /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
-        pub fn task_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(inp);
+        /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
-        /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-        /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-        /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+        /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_token(input);
             self
@@ -1881,10 +1733,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendTaskSuccess`.
     ///
-    /// <p>Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
-    /// pattern to report that the task identified by the <code>taskToken</code> completed
-    /// successfully.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern to report that the task identified by the <code>taskToken</code> completed successfully.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendTaskSuccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1929,10 +1779,10 @@ pub mod fluent_builders {
                 crate::input::SendTaskSuccessInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1940,23 +1790,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-        /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-        /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
-        pub fn task_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(inp);
+        /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
-        /// <p>The token that represents this task. Task tokens are generated by Step Functions when
-        /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
-        /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
+        /// <p>The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a workflow enters a task state. See <code>GetActivityTaskOutput$taskToken</code>.</p>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_token(input);
             self
         }
         /// <p>The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-        pub fn output(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output(inp);
+        pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output(input.into());
             self
         }
         /// <p>The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
@@ -1967,16 +1813,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartExecution`.
     ///
-    /// <p>Starts a state machine execution.</p>
-    /// <note>
-    /// <p>
-    /// <code>StartExecution</code> is idempotent. If <code>StartExecution</code> is called with
-    /// the same name and input as a running execution, the call will succeed and return the same
-    /// response as the original request. If the execution is closed or if the input is different,
-    /// it will return a 400 <code>ExecutionAlreadyExists</code> error. Names can be reused after 90
-    /// days. </p>
+    /// <p>Starts a state machine execution.</p> <note>
+    /// <p> <code>StartExecution</code> is idempotent. If <code>StartExecution</code> is called with the same name and input as a running execution, the call will succeed and return the same response as the original request. If the execution is closed or if the input is different, it will return a 400 <code>ExecutionAlreadyExists</code> error. Names can be reused after 90 days. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2021,10 +1861,10 @@ pub mod fluent_builders {
                 crate::input::StartExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2033,8 +1873,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-        pub fn state_machine_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_machine_arn(inp);
+        pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
@@ -2045,86 +1885,46 @@ pub mod fluent_builders {
             self.inner = self.inner.set_state_machine_arn(input);
             self
         }
-        /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information,
-        /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-        /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+        /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information,
-        /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-        /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+        /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The string that contains the JSON input data for the execution, for example:</p>
-        /// <p>
-        /// <code>"input": "{\"first_name\" : \"test\"}"</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't include any JSON input data, you still must include the two braces, for
-        /// example: <code>"input": "{}"</code>
-        /// </p>
+        /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+        /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
         /// </note>
         /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-        pub fn input(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input(inp);
+        pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input(input.into());
             self
         }
         /// <p>The string that contains the JSON input data for the execution, for example:</p>
-        /// <p>
-        /// <code>"input": "{\"first_name\" : \"test\"}"</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't include any JSON input data, you still must include the two braces, for
-        /// example: <code>"input": "{}"</code>
-        /// </p>
+        /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+        /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
         /// </note>
         /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2132,8 +1932,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
-        pub fn trace_header(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trace_header(inp);
+        pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trace_header(input.into());
             self
         }
         /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
@@ -2145,7 +1945,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartSyncExecution`.
     ///
     /// <p>Starts a Synchronous Express state machine execution.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSyncExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2190,10 +1990,10 @@ pub mod fluent_builders {
                 crate::input::StartSyncExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2202,8 +2002,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-        pub fn state_machine_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_machine_arn(inp);
+        pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
@@ -2215,8 +2015,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the execution.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the execution.</p>
@@ -2225,27 +2025,17 @@ pub mod fluent_builders {
             self
         }
         /// <p>The string that contains the JSON input data for the execution, for example:</p>
-        /// <p>
-        /// <code>"input": "{\"first_name\" : \"test\"}"</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't include any JSON input data, you still must include the two braces, for
-        /// example: <code>"input": "{}"</code>
-        /// </p>
+        /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+        /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
         /// </note>
         /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-        pub fn input(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input(inp);
+        pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input(input.into());
             self
         }
         /// <p>The string that contains the JSON input data for the execution, for example:</p>
-        /// <p>
-        /// <code>"input": "{\"first_name\" : \"test\"}"</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't include any JSON input data, you still must include the two braces, for
-        /// example: <code>"input": "{}"</code>
-        /// </p>
+        /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+        /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
         /// </note>
         /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2253,8 +2043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
-        pub fn trace_header(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trace_header(inp);
+        pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trace_header(input.into());
             self
         }
         /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
@@ -2267,7 +2057,7 @@ pub mod fluent_builders {
     ///
     /// <p>Stops an execution.</p>
     /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2312,10 +2102,10 @@ pub mod fluent_builders {
                 crate::input::StopExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2324,8 +2114,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
-        pub fn execution_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_arn(inp);
+        pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
@@ -2337,8 +2127,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The error code of the failure.</p>
-        pub fn error(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.error(inp);
+        pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.error(input.into());
             self
         }
         /// <p>The error code of the failure.</p>
@@ -2347,8 +2137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A more detailed explanation of the cause of the failure.</p>
-        pub fn cause(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cause(inp);
+        pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cause(input.into());
             self
         }
         /// <p>A more detailed explanation of the cause of the failure.</p>
@@ -2360,12 +2150,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Add a tag to a Step Functions resource.</p>
-    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-    /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-    /// Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
-    /// Tags</a>.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2410,10 +2197,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2422,8 +2209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
@@ -2437,8 +2224,8 @@ pub mod fluent_builders {
         ///
         /// <p>The list of tags to add to a resource.</p>
         /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The list of tags to add to a resource.</p>
@@ -2454,7 +2241,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove a tag from a Step Functions resource</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2499,10 +2286,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2511,8 +2298,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
@@ -2525,8 +2312,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tags to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tags to remove from the resource.</p>
@@ -2540,18 +2327,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateStateMachine`.
     ///
-    /// <p>Updates an existing state machine by modifying its <code>definition</code>,
-    /// <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions will continue
-    /// to use the previous <code>definition</code> and <code>roleArn</code>. You must include at
-    /// least one of <code>definition</code> or <code>roleArn</code> or you will receive a
-    /// <code>MissingRequiredParameter</code> error.</p>
-    /// <note>
-    /// <p>All <code>StartExecution</code> calls within a few seconds will use the updated
-    /// <code>definition</code> and <code>roleArn</code>. Executions started immediately after
-    /// calling <code>UpdateStateMachine</code> may use the previous state machine
-    /// <code>definition</code> and <code>roleArn</code>. </p>
+    /// <p>Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include at least one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code> error.</p> <note>
+    /// <p>All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the previous state machine <code>definition</code> and <code>roleArn</code>. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStateMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2596,10 +2375,10 @@ pub mod fluent_builders {
                 crate::input::UpdateStateMachineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2608,8 +2387,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-        pub fn state_machine_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_machine_arn(inp);
+        pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
@@ -2621,8 +2400,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-        pub fn definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.definition(inp);
+        pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.definition(input.into());
             self
         }
         /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
@@ -2631,8 +2410,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
@@ -2640,14 +2419,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-        /// options.</p>
-        pub fn logging_configuration(mut self, inp: crate::model::LoggingConfiguration) -> Self {
-            self.inner = self.inner.logging_configuration(inp);
+        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+        pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
+            self.inner = self.inner.logging_configuration(input);
             self
         }
-        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-        /// options.</p>
+        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -2656,8 +2433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
-        pub fn tracing_configuration(mut self, inp: crate::model::TracingConfiguration) -> Self {
-            self.inner = self.inner.tracing_configuration(inp);
+        pub fn tracing_configuration(mut self, input: crate::model::TracingConfiguration) -> Self {
+            self.inner = self.inner.tracing_configuration(input);
             self
         }
         /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
@@ -2670,6 +2447,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

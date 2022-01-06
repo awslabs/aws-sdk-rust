@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Macie 2
@@ -184,6 +184,7 @@ where
     ///
     /// See [`DescribeBuckets`](crate::client::fluent_builders::DescribeBuckets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBuckets::into_paginator).
     pub fn describe_buckets(&self) -> fluent_builders::DescribeBuckets<C, M, R> {
         fluent_builders::DescribeBuckets::new(self.handle.clone())
     }
@@ -354,6 +355,7 @@ where
     ///
     /// See [`GetUsageStatistics`](crate::client::fluent_builders::GetUsageStatistics) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetUsageStatistics::into_paginator).
     pub fn get_usage_statistics(&self) -> fluent_builders::GetUsageStatistics<C, M, R> {
         fluent_builders::GetUsageStatistics::new(self.handle.clone())
     }
@@ -368,6 +370,7 @@ where
     ///
     /// See [`ListClassificationJobs`](crate::client::fluent_builders::ListClassificationJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClassificationJobs::into_paginator).
     pub fn list_classification_jobs(&self) -> fluent_builders::ListClassificationJobs<C, M, R> {
         fluent_builders::ListClassificationJobs::new(self.handle.clone())
     }
@@ -375,6 +378,7 @@ where
     ///
     /// See [`ListCustomDataIdentifiers`](crate::client::fluent_builders::ListCustomDataIdentifiers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomDataIdentifiers::into_paginator).
     pub fn list_custom_data_identifiers(
         &self,
     ) -> fluent_builders::ListCustomDataIdentifiers<C, M, R> {
@@ -384,6 +388,7 @@ where
     ///
     /// See [`ListFindings`](crate::client::fluent_builders::ListFindings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
     pub fn list_findings(&self) -> fluent_builders::ListFindings<C, M, R> {
         fluent_builders::ListFindings::new(self.handle.clone())
     }
@@ -391,6 +396,7 @@ where
     ///
     /// See [`ListFindingsFilters`](crate::client::fluent_builders::ListFindingsFilters) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindingsFilters::into_paginator).
     pub fn list_findings_filters(&self) -> fluent_builders::ListFindingsFilters<C, M, R> {
         fluent_builders::ListFindingsFilters::new(self.handle.clone())
     }
@@ -398,6 +404,7 @@ where
     ///
     /// See [`ListInvitations`](crate::client::fluent_builders::ListInvitations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
     pub fn list_invitations(&self) -> fluent_builders::ListInvitations<C, M, R> {
         fluent_builders::ListInvitations::new(self.handle.clone())
     }
@@ -414,6 +421,7 @@ where
     ///
     /// See [`ListMembers`](crate::client::fluent_builders::ListMembers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
     pub fn list_members(&self) -> fluent_builders::ListMembers<C, M, R> {
         fluent_builders::ListMembers::new(self.handle.clone())
     }
@@ -421,6 +429,7 @@ where
     ///
     /// See [`ListOrganizationAdminAccounts`](crate::client::fluent_builders::ListOrganizationAdminAccounts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
     pub fn list_organization_admin_accounts(
         &self,
     ) -> fluent_builders::ListOrganizationAdminAccounts<C, M, R> {
@@ -455,6 +464,7 @@ where
     ///
     /// See [`SearchResources`](crate::client::fluent_builders::SearchResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchResources::into_paginator).
     pub fn search_resources(&self) -> fluent_builders::SearchResources<C, M, R> {
         fluent_builders::SearchResources::new(self.handle.clone())
     }
@@ -530,7 +540,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptInvitation`.
     ///
     /// <p>Accepts an Amazon Macie membership invitation that was received from a specific account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptInvitation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -575,10 +585,10 @@ pub mod fluent_builders {
                 crate::input::AcceptInvitationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -587,8 +597,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
-        pub fn administrator_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.administrator_account_id(inp);
+        pub fn administrator_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.administrator_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
@@ -600,8 +610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the invitation to accept.</p>
-        pub fn invitation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invitation_id(inp);
+        pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(input.into());
             self
         }
         /// <p>The unique identifier for the invitation to accept.</p>
@@ -613,8 +623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-        pub fn master_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_account(inp);
+        pub fn master_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_account(input.into());
             self
         }
         /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
@@ -629,7 +639,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetCustomDataIdentifiers`.
     ///
     /// <p>Retrieves information about one or more custom data identifiers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetCustomDataIdentifiers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -674,10 +684,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetCustomDataIdentifiersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -690,8 +700,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ids`](Self::set_ids).
         ///
         /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
-        pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ids(inp);
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ids(input.into());
             self
         }
         /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
@@ -706,7 +716,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateClassificationJob`.
     ///
     /// <p>Creates and defines the settings for a classification job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateClassificationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -751,10 +761,10 @@ pub mod fluent_builders {
                 crate::input::CreateClassificationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -763,8 +773,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -777,8 +787,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_custom_data_identifier_ids`](Self::set_custom_data_identifier_ids).
         ///
         /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
-        pub fn custom_data_identifier_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_data_identifier_ids(inp);
+        pub fn custom_data_identifier_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_data_identifier_ids(input.into());
             self
         }
         /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
@@ -790,8 +800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom description of the job. The description can contain as many as 200 characters.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A custom description of the job. The description can contain as many as 200 characters.</p>
@@ -799,22 +809,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p><p>If you configure the job to run only once, don't specify a value for this property.</p>
-        pub fn initial_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.initial_run(inp);
+        /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>
+        /// <p>If you configure the job to run only once, don't specify a value for this property.</p>
+        pub fn initial_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.initial_run(input);
             self
         }
-        /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p><p>If you configure the job to run only once, don't specify a value for this property.</p>
+        /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>
+        /// <p>If you configure the job to run only once, don't specify a value for this property.</p>
         pub fn set_initial_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_initial_run(input);
             self
         }
-        /// <p>The schedule for running the job. Valid values are:</p> <ul><li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li> <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li></ul>
-        pub fn job_type(mut self, inp: crate::model::JobType) -> Self {
-            self.inner = self.inner.job_type(inp);
+        /// <p>The schedule for running the job. Valid values are:</p>
+        /// <ul>
+        /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+        /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
+        /// </ul>
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.inner = self.inner.job_type(input);
             self
         }
-        /// <p>The schedule for running the job. Valid values are:</p> <ul><li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li> <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li></ul>
+        /// <p>The schedule for running the job. Valid values are:</p>
+        /// <ul>
+        /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+        /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
+        /// </ul>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.inner = self.inner.set_job_type(input);
             self
@@ -823,12 +843,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_managed_data_identifier_ids`](Self::set_managed_data_identifier_ids).
         ///
-        /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
-        pub fn managed_data_identifier_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.managed_data_identifier_ids(inp);
+        /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
+        /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
+        pub fn managed_data_identifier_ids(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.managed_data_identifier_ids(input.into());
             self
         }
-        /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p><p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
+        /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
+        /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
         pub fn set_managed_data_identifier_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -836,15 +861,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_managed_data_identifier_ids(input);
             self
         }
-        /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li></ul> <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+        /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
+        /// <ul>
+        /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+        /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li>
+        /// </ul>
+        /// <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
         pub fn managed_data_identifier_selector(
             mut self,
-            inp: crate::model::ManagedDataIdentifierSelector,
+            input: crate::model::ManagedDataIdentifierSelector,
         ) -> Self {
-            self.inner = self.inner.managed_data_identifier_selector(inp);
+            self.inner = self.inner.managed_data_identifier_selector(input);
             self
         }
-        /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p> <ul><li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li> <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li></ul> <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+        /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
+        /// <ul>
+        /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
+        /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+        /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li>
+        /// </ul>
+        /// <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
         pub fn set_managed_data_identifier_selector(
             mut self,
             input: std::option::Option<crate::model::ManagedDataIdentifierSelector>,
@@ -853,8 +892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom name for the job. The name can contain as many as 500 characters.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A custom name for the job. The name can contain as many as 500 characters.</p>
@@ -863,8 +902,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
-        pub fn s3_job_definition(mut self, inp: crate::model::S3JobDefinition) -> Self {
-            self.inner = self.inner.s3_job_definition(inp);
+        pub fn s3_job_definition(mut self, input: crate::model::S3JobDefinition) -> Self {
+            self.inner = self.inner.s3_job_definition(input);
             self
         }
         /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
@@ -876,8 +915,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
-        pub fn sampling_percentage(mut self, inp: i32) -> Self {
-            self.inner = self.inner.sampling_percentage(inp);
+        pub fn sampling_percentage(mut self, input: i32) -> Self {
+            self.inner = self.inner.sampling_percentage(input);
             self
         }
         /// <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
@@ -886,8 +925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
-        pub fn schedule_frequency(mut self, inp: crate::model::JobScheduleFrequency) -> Self {
-            self.inner = self.inner.schedule_frequency(inp);
+        pub fn schedule_frequency(mut self, input: crate::model::JobScheduleFrequency) -> Self {
+            self.inner = self.inner.schedule_frequency(input);
             self
         }
         /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
@@ -902,16 +941,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p> <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
+        /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p> <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
+        /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -925,7 +966,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCustomDataIdentifier`.
     ///
     /// <p>Creates and defines the criteria and other settings for a custom data identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomDataIdentifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -970,10 +1011,10 @@ pub mod fluent_builders {
                 crate::input::CreateCustomDataIdentifierInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -982,8 +1023,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -991,12 +1032,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1006,8 +1049,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ignore_words`](Self::set_ignore_words).
         ///
         /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-        pub fn ignore_words(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ignore_words(inp);
+        pub fn ignore_words(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ignore_words(input.into());
             self
         }
         /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
@@ -1023,8 +1066,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
         ///
         /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-        pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keywords(inp);
+        pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keywords(input.into());
             self
         }
         /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
@@ -1036,8 +1079,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
-        pub fn maximum_match_distance(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_match_distance(inp);
+        pub fn maximum_match_distance(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_match_distance(input);
             self
         }
         /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
@@ -1045,19 +1088,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_maximum_match_distance(input);
             self
         }
-        /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
-        pub fn regex(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regex(inp);
+        pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regex(input.into());
             self
         }
         /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
@@ -1069,12 +1114,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_severity_levels`](Self::set_severity_levels).
         ///
-        /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-        pub fn severity_levels(mut self, inp: impl Into<crate::model::SeverityLevel>) -> Self {
-            self.inner = self.inner.severity_levels(inp);
+        /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
+        /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+        pub fn severity_levels(mut self, input: crate::model::SeverityLevel) -> Self {
+            self.inner = self.inner.severity_levels(input);
             self
         }
-        /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+        /// <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
+        /// <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
         pub fn set_severity_levels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
@@ -1086,16 +1133,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
+        /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p> <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
+        /// <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1109,7 +1158,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFindingsFilter`.
     ///
     /// <p>Creates and defines the criteria and other settings for a findings filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFindingsFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1154,10 +1203,10 @@ pub mod fluent_builders {
                 crate::input::CreateFindingsFilterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1166,8 +1215,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-        pub fn action(mut self, inp: crate::model::FindingsFilterAction) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: crate::model::FindingsFilterAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
@@ -1179,8 +1228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -1188,19 +1237,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The criteria to use to filter findings.</p>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(input);
             self
         }
         /// <p>The criteria to use to filter findings.</p>
@@ -1211,19 +1262,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_finding_criteria(input);
             self
         }
-        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
-        pub fn position(mut self, inp: i32) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: i32) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
         /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
@@ -1235,16 +1288,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p> <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
+        /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p> <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>
+        /// <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1258,7 +1313,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateInvitations`.
     ///
     /// <p>Sends an Amazon Macie membership invitation to one or more accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1303,10 +1358,10 @@ pub mod fluent_builders {
                 crate::input::CreateInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1319,8 +1374,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
@@ -1332,8 +1387,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
-        pub fn disable_email_notification(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_email_notification(inp);
+        pub fn disable_email_notification(mut self, input: bool) -> Self {
+            self.inner = self.inner.disable_email_notification(input);
             self
         }
         /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
@@ -1342,8 +1397,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message(inp);
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message(input.into());
             self
         }
         /// <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
@@ -1355,7 +1410,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMember`.
     ///
     /// <p>Associates an account with an Amazon Macie administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1400,10 +1455,10 @@ pub mod fluent_builders {
                 crate::input::CreateMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1412,8 +1467,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The details of the account to associate with the administrator account.</p>
-        pub fn account(mut self, inp: crate::model::AccountDetail) -> Self {
-            self.inner = self.inner.account(inp);
+        pub fn account(mut self, input: crate::model::AccountDetail) -> Self {
+            self.inner = self.inner.account(input);
             self
         }
         /// <p>The details of the account to associate with the administrator account.</p>
@@ -1428,16 +1483,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p> <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
+        /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p> <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
+        /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1451,7 +1508,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSampleFindings`.
     ///
     /// <p>Creates sample findings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSampleFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1496,10 +1553,10 @@ pub mod fluent_builders {
                 crate::input::CreateSampleFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1512,8 +1569,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_types`](Self::set_finding_types).
         ///
         /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
-        pub fn finding_types(mut self, inp: impl Into<crate::model::FindingType>) -> Self {
-            self.inner = self.inner.finding_types(inp);
+        pub fn finding_types(mut self, input: crate::model::FindingType) -> Self {
+            self.inner = self.inner.finding_types(input);
             self
         }
         /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
@@ -1528,7 +1585,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeclineInvitations`.
     ///
     /// <p>Declines Amazon Macie membership invitations that were received from specific accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeclineInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1573,10 +1630,10 @@ pub mod fluent_builders {
                 crate::input::DeclineInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1589,8 +1646,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
@@ -1605,7 +1662,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCustomDataIdentifier`.
     ///
     /// <p>Soft deletes a custom data identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomDataIdentifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1650,10 +1707,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCustomDataIdentifierInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1662,8 +1719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -1675,7 +1732,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFindingsFilter`.
     ///
     /// <p>Deletes a findings filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFindingsFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1720,10 +1777,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFindingsFilterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1732,8 +1789,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -1745,7 +1802,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInvitations`.
     ///
     /// <p>Deletes Amazon Macie membership invitations that were received from specific accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1790,10 +1847,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1806,8 +1863,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
         /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
-        pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(inp);
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
             self
         }
         /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
@@ -1822,7 +1879,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMember`.
     ///
     /// <p>Deletes the association between an Amazon Macie administrator account and an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1867,10 +1924,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1879,8 +1936,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -1892,7 +1949,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBuckets`.
     ///
     /// <p>Retrieves (queries) statistical data and other information about one or more S3 buckets that Amazon Macie monitors and analyzes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBuckets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1937,16 +1994,22 @@ pub mod fluent_builders {
                 crate::input::DescribeBucketsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeBucketsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeBucketsPaginator<C, M, R> {
+            crate::paginator::DescribeBucketsPaginator::new(self.handle, self.inner)
         }
         /// Adds a key-value pair to `criteria`.
         ///
@@ -1956,9 +2019,9 @@ pub mod fluent_builders {
         pub fn criteria(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BucketCriteriaAdditionalProperties>,
+            v: crate::model::BucketCriteriaAdditionalProperties,
         ) -> Self {
-            self.inner = self.inner.criteria(k, v);
+            self.inner = self.inner.criteria(k.into(), v);
             self
         }
         /// <p>The criteria to use to filter the query results.</p>
@@ -1975,8 +2038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
@@ -1985,8 +2048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -1995,8 +2058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to sort the query results.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::BucketSortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, input: crate::model::BucketSortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>The criteria to use to sort the query results.</p>
@@ -2011,7 +2074,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClassificationJob`.
     ///
     /// <p>Retrieves the status and settings for a classification job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClassificationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2056,10 +2119,10 @@ pub mod fluent_builders {
                 crate::input::DescribeClassificationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2068,8 +2131,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the classification job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier for the classification job.</p>
@@ -2081,7 +2144,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
     ///
     /// <p>Retrieves the Amazon Macie configuration settings for an organization in Organizations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2126,10 +2189,10 @@ pub mod fluent_builders {
                 crate::input::DescribeOrganizationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2141,7 +2204,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableMacie`.
     ///
     /// <p>Disables Amazon Macie and deletes all settings and resources for a Macie account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableMacie<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2186,10 +2249,10 @@ pub mod fluent_builders {
                 crate::input::DisableMacieInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2201,7 +2264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableOrganizationAdminAccount`.
     ///
     /// <p>Disables an account as the delegated Amazon Macie administrator account for an organization in Organizations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2246,10 +2309,10 @@ pub mod fluent_builders {
                 crate::input::DisableOrganizationAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2258,8 +2321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the delegated Amazon Macie administrator account.</p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the delegated Amazon Macie administrator account.</p>
@@ -2274,7 +2337,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateFromAdministratorAccount`.
     ///
     /// <p>Disassociates a member account from its Amazon Macie administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFromAdministratorAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2321,10 +2384,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateFromAdministratorAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2335,8 +2398,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateFromMasterAccount`.
     ///
-    /// <p>(Deprecated) Disassociates a member account from its Amazon Macie administrator account. This operation has been replaced by the <link  linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>(Deprecated) Disassociates a member account from its Amazon Macie administrator account. This operation has been replaced by the
+    /// <link linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFromMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2381,10 +2445,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateFromMasterAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2396,7 +2460,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateMember`.
     ///
     /// <p>Disassociates an Amazon Macie administrator account from a member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2441,10 +2505,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2453,8 +2517,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -2466,7 +2530,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableMacie`.
     ///
     /// <p>Enables Amazon Macie and specifies the configuration settings for a Macie account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableMacie<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2511,10 +2575,10 @@ pub mod fluent_builders {
                 crate::input::EnableMacieInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2523,8 +2587,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -2535,9 +2599,9 @@ pub mod fluent_builders {
         /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
         pub fn finding_publishing_frequency(
             mut self,
-            inp: crate::model::FindingPublishingFrequency,
+            input: crate::model::FindingPublishingFrequency,
         ) -> Self {
-            self.inner = self.inner.finding_publishing_frequency(inp);
+            self.inner = self.inner.finding_publishing_frequency(input);
             self
         }
         /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
@@ -2549,8 +2613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
-        pub fn status(mut self, inp: crate::model::MacieStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::MacieStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
@@ -2562,7 +2626,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableOrganizationAdminAccount`.
     ///
     /// <p>Designates an account as the delegated Amazon Macie administrator account for an organization in Organizations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2607,10 +2671,10 @@ pub mod fluent_builders {
                 crate::input::EnableOrganizationAdminAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2619,8 +2683,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
-        pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(inp);
+        pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
@@ -2632,8 +2696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -2645,7 +2709,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAdministratorAccount`.
     ///
     /// <p>Retrieves information about the Amazon Macie administrator account for an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAdministratorAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2690,10 +2754,10 @@ pub mod fluent_builders {
                 crate::input::GetAdministratorAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2705,7 +2769,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBucketStatistics`.
     ///
     /// <p>Retrieves (queries) aggregated statistical data about S3 buckets that Amazon Macie monitors and analyzes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBucketStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2750,10 +2814,10 @@ pub mod fluent_builders {
                 crate::input::GetBucketStatisticsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2762,8 +2826,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Web Services account.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The unique identifier for the Amazon Web Services account.</p>
@@ -2775,7 +2839,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetClassificationExportConfiguration`.
     ///
     /// <p>Retrieves the configuration settings for storing data classification results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetClassificationExportConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2822,10 +2886,10 @@ pub mod fluent_builders {
                 crate::input::GetClassificationExportConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2837,7 +2901,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCustomDataIdentifier`.
     ///
     /// <p>Retrieves the criteria and other settings for a custom data identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCustomDataIdentifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2882,10 +2946,10 @@ pub mod fluent_builders {
                 crate::input::GetCustomDataIdentifierInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2894,8 +2958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -2907,7 +2971,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindings`.
     ///
     /// <p>Retrieves the details of one or more findings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2952,10 +3016,10 @@ pub mod fluent_builders {
                 crate::input::GetFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2968,8 +3032,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
         ///
         /// <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
-        pub fn finding_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.finding_ids(inp);
+        pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_ids(input.into());
             self
         }
         /// <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
@@ -2981,8 +3045,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria for sorting the results of the request.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::SortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, input: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>The criteria for sorting the results of the request.</p>
@@ -2997,7 +3061,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindingsFilter`.
     ///
     /// <p>Retrieves the criteria and other settings for a findings filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingsFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3042,10 +3106,10 @@ pub mod fluent_builders {
                 crate::input::GetFindingsFilterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3054,8 +3118,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -3067,7 +3131,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindingsPublicationConfiguration`.
     ///
     /// <p>Retrieves the configuration settings for publishing findings to Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingsPublicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3114,10 +3178,10 @@ pub mod fluent_builders {
                 crate::input::GetFindingsPublicationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3129,7 +3193,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFindingStatistics`.
     ///
     /// <p>Retrieves (queries) aggregated statistical data about findings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFindingStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3174,10 +3238,10 @@ pub mod fluent_builders {
                 crate::input::GetFindingStatisticsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3186,8 +3250,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The criteria to use to filter the query results.</p>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(input);
             self
         }
         /// <p>The criteria to use to filter the query results.</p>
@@ -3198,19 +3262,31 @@ pub mod fluent_builders {
             self.inner = self.inner.set_finding_criteria(input);
             self
         }
-        /// <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul>
-        pub fn group_by(mut self, inp: crate::model::GroupBy) -> Self {
-            self.inner = self.inner.group_by(inp);
+        /// <p>The finding property to use to group the query results. Valid values are:</p>
+        /// <ul>
+        /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+        /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+        /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+        /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+        /// </ul>
+        pub fn group_by(mut self, input: crate::model::GroupBy) -> Self {
+            self.inner = self.inner.group_by(input);
             self
         }
-        /// <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul>
+        /// <p>The finding property to use to group the query results. Valid values are:</p>
+        /// <ul>
+        /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+        /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+        /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+        /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+        /// </ul>
         pub fn set_group_by(mut self, input: std::option::Option<crate::model::GroupBy>) -> Self {
             self.inner = self.inner.set_group_by(input);
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
-        pub fn size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.size(inp);
+        pub fn size(mut self, input: i32) -> Self {
+            self.inner = self.inner.size(input);
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
@@ -3219,8 +3295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to sort the query results.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::FindingStatisticsSortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, input: crate::model::FindingStatisticsSortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>The criteria to use to sort the query results.</p>
@@ -3235,7 +3311,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInvitationsCount`.
     ///
     /// <p>Retrieves the count of Amazon Macie membership invitations that were received by an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInvitationsCount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3280,10 +3356,10 @@ pub mod fluent_builders {
                 crate::input::GetInvitationsCountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3295,7 +3371,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMacieSession`.
     ///
     /// <p>Retrieves the current status and configuration settings for an Amazon Macie account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMacieSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3340,10 +3416,10 @@ pub mod fluent_builders {
                 crate::input::GetMacieSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3354,8 +3430,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMasterAccount`.
     ///
-    /// <p>(Deprecated) Retrieves information about the Amazon Macie administrator account for an account. This operation has been replaced by the <link  linkend="GetAdministratorAccount">GetAdministratorAccount</link> operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>(Deprecated) Retrieves information about the Amazon Macie administrator account for an account. This operation has been replaced by the
+    /// <link linkend="GetAdministratorAccount">GetAdministratorAccount operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMasterAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3400,10 +3477,10 @@ pub mod fluent_builders {
                 crate::input::GetMasterAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3415,7 +3492,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMember`.
     ///
     /// <p>Retrieves information about an account that's associated with an Amazon Macie administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3460,10 +3537,10 @@ pub mod fluent_builders {
                 crate::input::GetMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3472,8 +3549,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -3485,7 +3562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUsageStatistics`.
     ///
     /// <p>Retrieves (queries) quotas and aggregated usage data for one or more accounts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUsageStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3530,10 +3607,10 @@ pub mod fluent_builders {
                 crate::input::GetUsageStatisticsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3541,13 +3618,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetUsageStatisticsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetUsageStatisticsPaginator<C, M, R> {
+            crate::paginator::GetUsageStatisticsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `filterBy`.
         ///
         /// To override the contents of this collection use [`set_filter_by`](Self::set_filter_by).
         ///
         /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
-        pub fn filter_by(mut self, inp: impl Into<crate::model::UsageStatisticsFilter>) -> Self {
-            self.inner = self.inner.filter_by(inp);
+        pub fn filter_by(mut self, input: crate::model::UsageStatisticsFilter) -> Self {
+            self.inner = self.inner.filter_by(input);
             self
         }
         /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
@@ -3559,8 +3642,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
@@ -3569,8 +3652,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -3579,8 +3662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to sort the query results.</p>
-        pub fn sort_by(mut self, inp: crate::model::UsageStatisticsSortBy) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::UsageStatisticsSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The criteria to use to sort the query results.</p>
@@ -3592,8 +3675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
-        pub fn time_range(mut self, inp: crate::model::TimeRange) -> Self {
-            self.inner = self.inner.time_range(inp);
+        pub fn time_range(mut self, input: crate::model::TimeRange) -> Self {
+            self.inner = self.inner.time_range(input);
             self
         }
         /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
@@ -3608,7 +3691,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUsageTotals`.
     ///
     /// <p>Retrieves (queries) aggregated usage data for an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUsageTotals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3653,10 +3736,10 @@ pub mod fluent_builders {
                 crate::input::GetUsageTotalsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3665,8 +3748,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
-        pub fn time_range(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.time_range(inp);
+        pub fn time_range(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_range(input.into());
             self
         }
         /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
@@ -3678,7 +3761,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListClassificationJobs`.
     ///
     /// <p>Retrieves a subset of information about one or more classification jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClassificationJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3723,10 +3806,10 @@ pub mod fluent_builders {
                 crate::input::ListClassificationJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3734,9 +3817,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListClassificationJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListClassificationJobsPaginator<C, M, R> {
+            crate::paginator::ListClassificationJobsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The criteria to use to filter the results.</p>
-        pub fn filter_criteria(mut self, inp: crate::model::ListJobsFilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(inp);
+        pub fn filter_criteria(mut self, input: crate::model::ListJobsFilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
         /// <p>The criteria to use to filter the results.</p>
@@ -3748,8 +3837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
@@ -3758,8 +3847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -3768,8 +3857,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to sort the results.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::ListJobsSortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, input: crate::model::ListJobsSortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>The criteria to use to sort the results.</p>
@@ -3784,7 +3873,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCustomDataIdentifiers`.
     ///
     /// <p>Retrieves a subset of information about all the custom data identifiers for an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomDataIdentifiers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3829,10 +3918,10 @@ pub mod fluent_builders {
                 crate::input::ListCustomDataIdentifiersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3840,9 +3929,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCustomDataIdentifiersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListCustomDataIdentifiersPaginator<C, M, R> {
+            crate::paginator::ListCustomDataIdentifiersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of items to include in each page of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
@@ -3851,8 +3948,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -3864,7 +3961,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindings`.
     ///
     /// <p>Retrieves a subset of information about one or more findings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3909,10 +4006,10 @@ pub mod fluent_builders {
                 crate::input::ListFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3920,9 +4017,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFindingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFindingsPaginator<C, M, R> {
+            crate::paginator::ListFindingsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The criteria to use to filter the results.</p>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(input);
             self
         }
         /// <p>The criteria to use to filter the results.</p>
@@ -3934,8 +4037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to include in each page of the response.</p>
@@ -3944,8 +4047,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -3954,8 +4057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to sort the results.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::SortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, input: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>The criteria to use to sort the results.</p>
@@ -3970,7 +4073,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFindingsFilters`.
     ///
     /// <p>Retrieves a subset of information about all the findings filters for an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindingsFilters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4015,10 +4118,10 @@ pub mod fluent_builders {
                 crate::input::ListFindingsFiltersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4026,9 +4129,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFindingsFiltersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFindingsFiltersPaginator<C, M, R> {
+            crate::paginator::ListFindingsFiltersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
@@ -4037,8 +4146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4050,7 +4159,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInvitations`.
     ///
     /// <p>Retrieves information about the Amazon Macie membership invitations that were received by an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4095,10 +4204,10 @@ pub mod fluent_builders {
                 crate::input::ListInvitationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4106,9 +4215,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInvitationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListInvitationsPaginator<C, M, R> {
+            crate::paginator::ListInvitationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
@@ -4117,8 +4232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4130,7 +4245,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListManagedDataIdentifiers`.
     ///
     /// <p>Retrieves information about all the managed data identifiers that Amazon Macie currently provides.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListManagedDataIdentifiers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4175,10 +4290,10 @@ pub mod fluent_builders {
                 crate::input::ListManagedDataIdentifiersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4187,8 +4302,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4200,7 +4315,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMembers`.
     ///
     /// <p>Retrieves information about the accounts that are associated with an Amazon Macie administrator account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4245,10 +4360,10 @@ pub mod fluent_builders {
                 crate::input::ListMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4256,9 +4371,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMembersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMembersPaginator<C, M, R> {
+            crate::paginator::ListMembersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
@@ -4267,8 +4388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4277,8 +4398,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
-        pub fn only_associated(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.only_associated(inp);
+        pub fn only_associated(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.only_associated(input.into());
             self
         }
         /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
@@ -4293,7 +4414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListOrganizationAdminAccounts`.
     ///
     /// <p>Retrieves information about the delegated Amazon Macie administrator account for an organization in Organizations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOrganizationAdminAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4338,10 +4459,10 @@ pub mod fluent_builders {
                 crate::input::ListOrganizationAdminAccountsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4349,9 +4470,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOrganizationAdminAccountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListOrganizationAdminAccountsPaginator<C, M, R> {
+            crate::paginator::ListOrganizationAdminAccountsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response.</p>
@@ -4360,8 +4489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4373,7 +4502,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves the tags (keys and values) that are associated with a classification job, custom data identifier, findings filter, or member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4418,10 +4547,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4430,8 +4559,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
@@ -4443,7 +4572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutClassificationExportConfiguration`.
     ///
     /// <p>Creates or updates the configuration settings for storing data classification results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutClassificationExportConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4490,10 +4619,10 @@ pub mod fluent_builders {
                 crate::input::PutClassificationExportConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4504,9 +4633,9 @@ pub mod fluent_builders {
         /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
         pub fn configuration(
             mut self,
-            inp: crate::model::ClassificationExportConfiguration,
+            input: crate::model::ClassificationExportConfiguration,
         ) -> Self {
-            self.inner = self.inner.configuration(inp);
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
@@ -4521,7 +4650,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutFindingsPublicationConfiguration`.
     ///
     /// <p>Updates the configuration settings for publishing findings to Security Hub.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFindingsPublicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4568,10 +4697,10 @@ pub mod fluent_builders {
                 crate::input::PutFindingsPublicationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4580,8 +4709,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -4592,9 +4721,9 @@ pub mod fluent_builders {
         /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
         pub fn security_hub_configuration(
             mut self,
-            inp: crate::model::SecurityHubConfiguration,
+            input: crate::model::SecurityHubConfiguration,
         ) -> Self {
-            self.inner = self.inner.security_hub_configuration(inp);
+            self.inner = self.inner.security_hub_configuration(input);
             self
         }
         /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
@@ -4609,7 +4738,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchResources`.
     ///
     /// <p>Retrieves (queries) statistical data and other information about Amazon Web Services resources that Amazon Macie monitors and analyzes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4654,10 +4783,10 @@ pub mod fluent_builders {
                 crate::input::SearchResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4665,9 +4794,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchResourcesPaginator<C, M, R> {
+            crate::paginator::SearchResourcesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
-        pub fn bucket_criteria(mut self, inp: crate::model::SearchResourcesBucketCriteria) -> Self {
-            self.inner = self.inner.bucket_criteria(inp);
+        pub fn bucket_criteria(
+            mut self,
+            input: crate::model::SearchResourcesBucketCriteria,
+        ) -> Self {
+            self.inner = self.inner.bucket_criteria(input);
             self
         }
         /// <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
@@ -4679,8 +4817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
@@ -4689,8 +4827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4699,8 +4837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to sort the results.</p>
-        pub fn sort_criteria(mut self, inp: crate::model::SearchResourcesSortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, input: crate::model::SearchResourcesSortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>The criteria to use to sort the results.</p>
@@ -4715,7 +4853,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or updates one or more tags (keys and values) that are associated with a classification job, custom data identifier, findings filter, or member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4760,10 +4898,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4772,8 +4910,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
@@ -4785,16 +4923,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p> <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p>
+        /// <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p> <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        /// <p>A map of key-value pairs that specifies the tags to associate with the resource.</p>
+        /// <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4808,7 +4948,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TestCustomDataIdentifier`.
     ///
     /// <p>Tests a custom data identifier.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestCustomDataIdentifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4853,10 +4993,10 @@ pub mod fluent_builders {
                 crate::input::TestCustomDataIdentifierInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4869,8 +5009,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ignore_words`](Self::set_ignore_words).
         ///
         /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-        pub fn ignore_words(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ignore_words(inp);
+        pub fn ignore_words(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ignore_words(input.into());
             self
         }
         /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
@@ -4886,8 +5026,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
         ///
         /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-        pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keywords(inp);
+        pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keywords(input.into());
             self
         }
         /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
@@ -4899,8 +5039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
-        pub fn maximum_match_distance(mut self, inp: i32) -> Self {
-            self.inner = self.inner.maximum_match_distance(inp);
+        pub fn maximum_match_distance(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_match_distance(input);
             self
         }
         /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
@@ -4909,8 +5049,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
-        pub fn regex(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.regex(inp);
+        pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regex(input.into());
             self
         }
         /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
@@ -4919,8 +5059,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.</p>
-        pub fn sample_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sample_text(inp);
+        pub fn sample_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sample_text(input.into());
             self
         }
         /// <p>The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.</p>
@@ -4932,7 +5072,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags (keys and values) from a classification job, custom data identifier, findings filter, or member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4977,10 +5117,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4989,8 +5129,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
@@ -5003,8 +5143,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
@@ -5019,7 +5159,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateClassificationJob`.
     ///
     /// <p>Changes the status of a classification job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateClassificationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5064,10 +5204,10 @@ pub mod fluent_builders {
                 crate::input::UpdateClassificationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5076,8 +5216,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the classification job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier for the classification job.</p>
@@ -5085,12 +5225,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>The new status for the job. Valid values are:</p> <ul><li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li> <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
-        pub fn job_status(mut self, inp: crate::model::JobStatus) -> Self {
-            self.inner = self.inner.job_status(inp);
+        /// <p>The new status for the job. Valid values are:</p>
+        /// <ul>
+        /// <li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li>
+        /// <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li>
+        /// <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
+        /// </ul>
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.inner = self.inner.job_status(input);
             self
         }
-        /// <p>The new status for the job. Valid values are:</p> <ul><li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li> <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li> <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
+        /// <p>The new status for the job. Valid values are:</p>
+        /// <ul>
+        /// <li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li>
+        /// <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li>
+        /// <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
+        /// </ul>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -5102,7 +5252,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFindingsFilter`.
     ///
     /// <p>Updates the criteria and other settings for a findings filter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFindingsFilter<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5147,10 +5297,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFindingsFilterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5159,8 +5309,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-        pub fn action(mut self, inp: crate::model::FindingsFilterAction) -> Self {
-            self.inner = self.inner.action(inp);
+        pub fn action(mut self, input: crate::model::FindingsFilterAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
@@ -5171,19 +5321,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The criteria to use to filter findings.</p>
-        pub fn finding_criteria(mut self, inp: crate::model::FindingCriteria) -> Self {
-            self.inner = self.inner.finding_criteria(inp);
+        pub fn finding_criteria(mut self, input: crate::model::FindingCriteria) -> Self {
+            self.inner = self.inner.finding_criteria(input);
             self
         }
         /// <p>The criteria to use to filter findings.</p>
@@ -5195,8 +5347,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -5204,19 +5356,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+        /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+        /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
-        pub fn position(mut self, inp: i32) -> Self {
-            self.inner = self.inner.position(inp);
+        pub fn position(mut self, input: i32) -> Self {
+            self.inner = self.inner.position(input);
             self
         }
         /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
@@ -5225,8 +5379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -5238,7 +5392,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMacieSession`.
     ///
     /// <p>Suspends or re-enables Amazon Macie, or updates the configuration settings for a Macie account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMacieSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5283,10 +5437,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMacieSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5297,9 +5451,9 @@ pub mod fluent_builders {
         /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
         pub fn finding_publishing_frequency(
             mut self,
-            inp: crate::model::FindingPublishingFrequency,
+            input: crate::model::FindingPublishingFrequency,
         ) -> Self {
-            self.inner = self.inner.finding_publishing_frequency(inp);
+            self.inner = self.inner.finding_publishing_frequency(input);
             self
         }
         /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
@@ -5311,8 +5465,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
-        pub fn status(mut self, inp: crate::model::MacieStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::MacieStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
@@ -5324,7 +5478,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMemberSession`.
     ///
     /// <p>Enables an Amazon Macie administrator to suspend or re-enable Macie for a member account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMemberSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5369,10 +5523,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMemberSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5381,8 +5535,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
@@ -5391,8 +5545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
-        pub fn status(mut self, inp: crate::model::MacieStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::MacieStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
@@ -5404,7 +5558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateOrganizationConfiguration`.
     ///
     /// <p>Updates the Amazon Macie configuration settings for an organization in Organizations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOrganizationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5449,10 +5603,10 @@ pub mod fluent_builders {
                 crate::input::UpdateOrganizationConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5461,8 +5615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
-        pub fn auto_enable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_enable(inp);
+        pub fn auto_enable(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_enable(input);
             self
         }
         /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
@@ -5472,6 +5626,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

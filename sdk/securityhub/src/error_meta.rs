@@ -7,14 +7,11 @@ pub enum Error {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
-    /// for the account, or the account does not have permission to perform this action.</p>
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or the account does not have permission to perform this action.</p>
     InvalidAccessException(crate::error::InvalidAccessException),
-    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),

@@ -116,7 +116,7 @@ impl FromStr for RetryMode {
         // eq_ignore_ascii_case is OK here because the only strings we need to check for are ASCII
         if string.eq_ignore_ascii_case("standard") {
             Ok(RetryMode::Standard)
-        // TODO we can uncomment this once this issue is addressed: https://github.com/awslabs/aws-sdk-rust/issues/247
+        // TODO(https://github.com/awslabs/aws-sdk-rust/issues/247): adaptive retries
         // } else if string.eq_ignore_ascii_case("adaptive") {
         //     Ok(RetryMode::Adaptive)
         } else {

@@ -64,9 +64,9 @@ pub mod test_metric_filter_output {
         /// To override the contents of this collection use [`set_matches`](Self::set_matches).
         ///
         /// <p>The matched events.</p>
-        pub fn matches(mut self, input: impl Into<crate::model::MetricFilterMatchRecord>) -> Self {
+        pub fn matches(mut self, input: crate::model::MetricFilterMatchRecord) -> Self {
             let mut v = self.matches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matches = Some(v);
             self
         }
@@ -685,40 +685,26 @@ impl ListTagsLogGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryResultsOutput {
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
-    /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the
-    /// top-level array. Each of these log event objects is an array of
-    /// <code>field</code>/<code>value</code> pairs.</p>
+    /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
     pub results: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::ResultField>>>,
-    /// <p>Includes the number of log events scanned by the query, the number of log events that matched the
-    /// query criteria, and the total number of bytes in the log events that were scanned. These values
-    /// reflect the full raw results of the query.</p>
+    /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned. These values reflect the full raw results of the query.</p>
     pub statistics: std::option::Option<crate::model::QueryStatistics>,
-    /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>,
-    /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>,
-    /// <code>Timeout</code>, and <code>Unknown</code>.</p>
-    /// <p>Queries time out after 15 minutes of execution. To avoid having your queries time out,
-    /// reduce the time range being searched or partition your query into a number of queries.</p>
+    /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>
+    /// <p>Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
     pub status: std::option::Option<crate::model::QueryStatus>,
 }
 impl GetQueryResultsOutput {
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
-    /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the
-    /// top-level array. Each of these log event objects is an array of
-    /// <code>field</code>/<code>value</code> pairs.</p>
+    /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
     pub fn results(&self) -> std::option::Option<&[std::vec::Vec<crate::model::ResultField>]> {
         self.results.as_deref()
     }
-    /// <p>Includes the number of log events scanned by the query, the number of log events that matched the
-    /// query criteria, and the total number of bytes in the log events that were scanned. These values
-    /// reflect the full raw results of the query.</p>
+    /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned. These values reflect the full raw results of the query.</p>
     pub fn statistics(&self) -> std::option::Option<&crate::model::QueryStatistics> {
         self.statistics.as_ref()
     }
-    /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>,
-    /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>,
-    /// <code>Timeout</code>, and <code>Unknown</code>.</p>
-    /// <p>Queries time out after 15 minutes of execution. To avoid having your queries time out,
-    /// reduce the time range being searched or partition your query into a number of queries.</p>
+    /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>
+    /// <p>Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::QueryStatus> {
         self.status.as_ref()
     }
@@ -749,22 +735,15 @@ pub mod get_query_results_output {
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
         /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
-        /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the
-        /// top-level array. Each of these log event objects is an array of
-        /// <code>field</code>/<code>value</code> pairs.</p>
-        pub fn results(
-            mut self,
-            input: impl Into<std::vec::Vec<crate::model::ResultField>>,
-        ) -> Self {
+        /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
+        pub fn results(mut self, input: std::vec::Vec<crate::model::ResultField>) -> Self {
             let mut v = self.results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.results = Some(v);
             self
         }
         /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
-        /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the
-        /// top-level array. Each of these log event objects is an array of
-        /// <code>field</code>/<code>value</code> pairs.</p>
+        /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::ResultField>>>,
@@ -772,16 +751,12 @@ pub mod get_query_results_output {
             self.results = input;
             self
         }
-        /// <p>Includes the number of log events scanned by the query, the number of log events that matched the
-        /// query criteria, and the total number of bytes in the log events that were scanned. These values
-        /// reflect the full raw results of the query.</p>
+        /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned. These values reflect the full raw results of the query.</p>
         pub fn statistics(mut self, input: crate::model::QueryStatistics) -> Self {
             self.statistics = Some(input);
             self
         }
-        /// <p>Includes the number of log events scanned by the query, the number of log events that matched the
-        /// query criteria, and the total number of bytes in the log events that were scanned. These values
-        /// reflect the full raw results of the query.</p>
+        /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned. These values reflect the full raw results of the query.</p>
         pub fn set_statistics(
             mut self,
             input: std::option::Option<crate::model::QueryStatistics>,
@@ -789,20 +764,14 @@ pub mod get_query_results_output {
             self.statistics = input;
             self
         }
-        /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>,
-        /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>,
-        /// <code>Timeout</code>, and <code>Unknown</code>.</p>
-        /// <p>Queries time out after 15 minutes of execution. To avoid having your queries time out,
-        /// reduce the time range being searched or partition your query into a number of queries.</p>
+        /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>
+        /// <p>Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
         pub fn status(mut self, input: crate::model::QueryStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>,
-        /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>,
-        /// <code>Timeout</code>, and <code>Unknown</code>.</p>
-        /// <p>Queries time out after 15 minutes of execution. To avoid having your queries time out,
-        /// reduce the time range being searched or partition your query into a number of queries.</p>
+        /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>
+        /// <p>Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::QueryStatus>) -> Self {
             self.status = input;
             self
@@ -903,13 +872,11 @@ impl GetLogRecordOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLogGroupFieldsOutput {
-    /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the
-    /// percentage of time it appeared in the log events that were queried.</p>
+    /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the percentage of time it appeared in the log events that were queried.</p>
     pub log_group_fields: std::option::Option<std::vec::Vec<crate::model::LogGroupField>>,
 }
 impl GetLogGroupFieldsOutput {
-    /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the
-    /// percentage of time it appeared in the log events that were queried.</p>
+    /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the percentage of time it appeared in the log events that were queried.</p>
     pub fn log_group_fields(&self) -> std::option::Option<&[crate::model::LogGroupField]> {
         self.log_group_fields.as_deref()
     }
@@ -935,16 +902,14 @@ pub mod get_log_group_fields_output {
         ///
         /// To override the contents of this collection use [`set_log_group_fields`](Self::set_log_group_fields).
         ///
-        /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the
-        /// percentage of time it appeared in the log events that were queried.</p>
-        pub fn log_group_fields(mut self, input: impl Into<crate::model::LogGroupField>) -> Self {
+        /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the percentage of time it appeared in the log events that were queried.</p>
+        pub fn log_group_fields(mut self, input: crate::model::LogGroupField) -> Self {
             let mut v = self.log_group_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_group_fields = Some(v);
             self
         }
-        /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the
-        /// percentage of time it appeared in the log events that were queried.</p>
+        /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the percentage of time it appeared in the log events that were queried.</p>
         pub fn set_log_group_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogGroupField>>,
@@ -973,13 +938,9 @@ impl GetLogGroupFieldsOutput {
 pub struct GetLogEventsOutput {
     /// <p>The events.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::OutputLogEvent>>,
-    /// <p>The token for the next set of items in the forward direction. The token expires after
-    /// 24 hours. If you have reached the end of the stream, it returns the same token you passed
-    /// in.</p>
+    /// <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
     pub next_forward_token: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of items in the backward direction. The token expires after
-    /// 24 hours. This token is never null. If you have reached the end of the stream, it returns the
-    /// same token you passed in.</p>
+    /// <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is never null. If you have reached the end of the stream, it returns the same token you passed in.</p>
     pub next_backward_token: std::option::Option<std::string::String>,
 }
 impl GetLogEventsOutput {
@@ -987,15 +948,11 @@ impl GetLogEventsOutput {
     pub fn events(&self) -> std::option::Option<&[crate::model::OutputLogEvent]> {
         self.events.as_deref()
     }
-    /// <p>The token for the next set of items in the forward direction. The token expires after
-    /// 24 hours. If you have reached the end of the stream, it returns the same token you passed
-    /// in.</p>
+    /// <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
     pub fn next_forward_token(&self) -> std::option::Option<&str> {
         self.next_forward_token.as_deref()
     }
-    /// <p>The token for the next set of items in the backward direction. The token expires after
-    /// 24 hours. This token is never null. If you have reached the end of the stream, it returns the
-    /// same token you passed in.</p>
+    /// <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is never null. If you have reached the end of the stream, it returns the same token you passed in.</p>
     pub fn next_backward_token(&self) -> std::option::Option<&str> {
         self.next_backward_token.as_deref()
     }
@@ -1025,9 +982,9 @@ pub mod get_log_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The events.</p>
-        pub fn events(mut self, input: impl Into<crate::model::OutputLogEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::OutputLogEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -1039,16 +996,12 @@ pub mod get_log_events_output {
             self.events = input;
             self
         }
-        /// <p>The token for the next set of items in the forward direction. The token expires after
-        /// 24 hours. If you have reached the end of the stream, it returns the same token you passed
-        /// in.</p>
+        /// <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
         pub fn next_forward_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_forward_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items in the forward direction. The token expires after
-        /// 24 hours. If you have reached the end of the stream, it returns the same token you passed
-        /// in.</p>
+        /// <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
         pub fn set_next_forward_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1056,16 +1009,12 @@ pub mod get_log_events_output {
             self.next_forward_token = input;
             self
         }
-        /// <p>The token for the next set of items in the backward direction. The token expires after
-        /// 24 hours. This token is never null. If you have reached the end of the stream, it returns the
-        /// same token you passed in.</p>
+        /// <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is never null. If you have reached the end of the stream, it returns the same token you passed in.</p>
         pub fn next_backward_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_backward_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items in the backward direction. The token expires after
-        /// 24 hours. This token is never null. If you have reached the end of the stream, it returns the
-        /// same token you passed in.</p>
+        /// <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is never null. If you have reached the end of the stream, it returns the same token you passed in.</p>
         pub fn set_next_backward_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1096,10 +1045,7 @@ impl GetLogEventsOutput {
 pub struct FilterLogEventsOutput {
     /// <p>The matched events.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::FilteredLogEvent>>,
-    /// <p>
-    /// <b>IMPORTANT</b> Starting on May 15, 2020,
-    /// this parameter will be deprecated. This parameter will be an empty list
-    /// after the deprecation occurs.</p>
+    /// <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an empty list after the deprecation occurs.</p>
     /// <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
     pub searched_log_streams: std::option::Option<std::vec::Vec<crate::model::SearchedLogStream>>,
     /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
@@ -1110,10 +1056,7 @@ impl FilterLogEventsOutput {
     pub fn events(&self) -> std::option::Option<&[crate::model::FilteredLogEvent]> {
         self.events.as_deref()
     }
-    /// <p>
-    /// <b>IMPORTANT</b> Starting on May 15, 2020,
-    /// this parameter will be deprecated. This parameter will be an empty list
-    /// after the deprecation occurs.</p>
+    /// <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an empty list after the deprecation occurs.</p>
     /// <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
     pub fn searched_log_streams(&self) -> std::option::Option<&[crate::model::SearchedLogStream]> {
         self.searched_log_streams.as_deref()
@@ -1149,9 +1092,9 @@ pub mod filter_log_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The matched events.</p>
-        pub fn events(mut self, input: impl Into<crate::model::FilteredLogEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::FilteredLogEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -1167,24 +1110,15 @@ pub mod filter_log_events_output {
         ///
         /// To override the contents of this collection use [`set_searched_log_streams`](Self::set_searched_log_streams).
         ///
-        /// <p>
-        /// <b>IMPORTANT</b> Starting on May 15, 2020,
-        /// this parameter will be deprecated. This parameter will be an empty list
-        /// after the deprecation occurs.</p>
+        /// <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an empty list after the deprecation occurs.</p>
         /// <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
-        pub fn searched_log_streams(
-            mut self,
-            input: impl Into<crate::model::SearchedLogStream>,
-        ) -> Self {
+        pub fn searched_log_streams(mut self, input: crate::model::SearchedLogStream) -> Self {
             let mut v = self.searched_log_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.searched_log_streams = Some(v);
             self
         }
-        /// <p>
-        /// <b>IMPORTANT</b> Starting on May 15, 2020,
-        /// this parameter will be deprecated. This parameter will be an empty list
-        /// after the deprecation occurs.</p>
+        /// <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an empty list after the deprecation occurs.</p>
         /// <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
         pub fn set_searched_log_streams(
             mut self,
@@ -1293,12 +1227,9 @@ pub mod describe_subscription_filters_output {
         /// To override the contents of this collection use [`set_subscription_filters`](Self::set_subscription_filters).
         ///
         /// <p>The subscription filters.</p>
-        pub fn subscription_filters(
-            mut self,
-            input: impl Into<crate::model::SubscriptionFilter>,
-        ) -> Self {
+        pub fn subscription_filters(mut self, input: crate::model::SubscriptionFilter) -> Self {
             let mut v = self.subscription_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscription_filters = Some(v);
             self
         }
@@ -1379,9 +1310,9 @@ pub mod describe_resource_policies_output {
         /// To override the contents of this collection use [`set_resource_policies`](Self::set_resource_policies).
         ///
         /// <p>The resource policies that exist in this account.</p>
-        pub fn resource_policies(mut self, input: impl Into<crate::model::ResourcePolicy>) -> Self {
+        pub fn resource_policies(mut self, input: crate::model::ResourcePolicy) -> Self {
             let mut v = self.resource_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_policies = Some(v);
             self
         }
@@ -1462,12 +1393,9 @@ pub mod describe_query_definitions_output {
         /// To override the contents of this collection use [`set_query_definitions`](Self::set_query_definitions).
         ///
         /// <p>The list of query definitions that match your request.</p>
-        pub fn query_definitions(
-            mut self,
-            input: impl Into<crate::model::QueryDefinition>,
-        ) -> Self {
+        pub fn query_definitions(mut self, input: crate::model::QueryDefinition) -> Self {
             let mut v = self.query_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_definitions = Some(v);
             self
         }
@@ -1547,9 +1475,9 @@ pub mod describe_queries_output {
         /// To override the contents of this collection use [`set_queries`](Self::set_queries).
         ///
         /// <p>The list of queries that match the request.</p>
-        pub fn queries(mut self, input: impl Into<crate::model::QueryInfo>) -> Self {
+        pub fn queries(mut self, input: crate::model::QueryInfo) -> Self {
             let mut v = self.queries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queries = Some(v);
             self
         }
@@ -1629,9 +1557,9 @@ pub mod describe_metric_filters_output {
         /// To override the contents of this collection use [`set_metric_filters`](Self::set_metric_filters).
         ///
         /// <p>The metric filters.</p>
-        pub fn metric_filters(mut self, input: impl Into<crate::model::MetricFilter>) -> Self {
+        pub fn metric_filters(mut self, input: crate::model::MetricFilter) -> Self {
             let mut v = self.metric_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_filters = Some(v);
             self
         }
@@ -1711,9 +1639,9 @@ pub mod describe_log_streams_output {
         /// To override the contents of this collection use [`set_log_streams`](Self::set_log_streams).
         ///
         /// <p>The log streams.</p>
-        pub fn log_streams(mut self, input: impl Into<crate::model::LogStream>) -> Self {
+        pub fn log_streams(mut self, input: crate::model::LogStream) -> Self {
             let mut v = self.log_streams.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_streams = Some(v);
             self
         }
@@ -1756,16 +1684,14 @@ impl DescribeLogStreamsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLogGroupsOutput {
     /// <p>The log groups.</p>
-    /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group
-    /// is set to have its events never expire.</p>
+    /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its events never expire.</p>
     pub log_groups: std::option::Option<std::vec::Vec<crate::model::LogGroup>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLogGroupsOutput {
     /// <p>The log groups.</p>
-    /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group
-    /// is set to have its events never expire.</p>
+    /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its events never expire.</p>
     pub fn log_groups(&self) -> std::option::Option<&[crate::model::LogGroup]> {
         self.log_groups.as_deref()
     }
@@ -1797,17 +1723,15 @@ pub mod describe_log_groups_output {
         /// To override the contents of this collection use [`set_log_groups`](Self::set_log_groups).
         ///
         /// <p>The log groups.</p>
-        /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group
-        /// is set to have its events never expire.</p>
-        pub fn log_groups(mut self, input: impl Into<crate::model::LogGroup>) -> Self {
+        /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its events never expire.</p>
+        pub fn log_groups(mut self, input: crate::model::LogGroup) -> Self {
             let mut v = self.log_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.log_groups = Some(v);
             self
         }
         /// <p>The log groups.</p>
-        /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group
-        /// is set to have its events never expire.</p>
+        /// <p>If the <code>retentionInDays</code> value if not included for a log group, then that log group is set to have its events never expire.</p>
         pub fn set_log_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogGroup>>,
@@ -1883,9 +1807,9 @@ pub mod describe_export_tasks_output {
         /// To override the contents of this collection use [`set_export_tasks`](Self::set_export_tasks).
         ///
         /// <p>The export tasks.</p>
-        pub fn export_tasks(mut self, input: impl Into<crate::model::ExportTask>) -> Self {
+        pub fn export_tasks(mut self, input: crate::model::ExportTask) -> Self {
             let mut v = self.export_tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_tasks = Some(v);
             self
         }
@@ -1965,9 +1889,9 @@ pub mod describe_destinations_output {
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
         /// <p>The destinations.</p>
-        pub fn destinations(mut self, input: impl Into<crate::model::Destination>) -> Self {
+        pub fn destinations(mut self, input: crate::model::Destination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
@@ -2099,13 +2023,11 @@ impl DeleteResourcePolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQueryDefinitionOutput {
-    /// <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation
-    /// failed.</p>
+    /// <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation failed.</p>
     pub success: bool,
 }
 impl DeleteQueryDefinitionOutput {
-    /// <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation
-    /// failed.</p>
+    /// <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation failed.</p>
     pub fn success(&self) -> bool {
         self.success
     }
@@ -2126,14 +2048,12 @@ pub mod delete_query_definition_output {
         pub(crate) success: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation
-        /// failed.</p>
+        /// <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation failed.</p>
         pub fn success(mut self, input: bool) -> Self {
             self.success = Some(input);
             self
         }
-        /// <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation
-        /// failed.</p>
+        /// <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation failed.</p>
         pub fn set_success(mut self, input: std::option::Option<bool>) -> Self {
             self.success = input;
             self

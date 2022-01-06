@@ -56,7 +56,7 @@ pub mod batch_get_traces_input {
 #[doc(hidden)]
 pub type BatchGetTracesInputOperationOutputAlias = crate::operation::BatchGetTraces;
 #[doc(hidden)]
-pub type BatchGetTracesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetTracesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetTracesInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetTraces`](crate::operation::BatchGetTraces)>
     #[allow(clippy::let_and_return)]
@@ -67,7 +67,7 @@ impl BatchGetTracesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetTraces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -147,7 +147,7 @@ impl BatchGetTracesInput {
             "BatchGetTraces",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -182,14 +182,12 @@ pub mod create_group_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The case-sensitive name of the new group. Default is a reserved name and names must
-        /// be unique.</p>
+        /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_name = Some(input.into());
             self
         }
-        /// <p>The case-sensitive name of the new group. Default is a reserved name and names must
-        /// be unique.</p>
+        /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -209,15 +207,8 @@ pub mod create_group_input {
         }
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
-        /// <li>
-        /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-        /// new group or false to disable insights for the new group.</p>
-        /// </li>
-        /// <li>
-        /// <p>The NotifcationsEnabled boolean can be set to true to enable insights
-        /// notifications for the new group. Notifications may only be enabled on a group
-        /// with InsightsEnabled set to true.</p>
-        /// </li>
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
+        /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
         pub fn insights_configuration(
             mut self,
@@ -228,15 +219,8 @@ pub mod create_group_input {
         }
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
-        /// <li>
-        /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-        /// new group or false to disable insights for the new group.</p>
-        /// </li>
-        /// <li>
-        /// <p>The NotifcationsEnabled boolean can be set to true to enable insights
-        /// notifications for the new group. Notifications may only be enabled on a group
-        /// with InsightsEnabled set to true.</p>
-        /// </li>
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
+        /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
         pub fn set_insights_configuration(
             mut self,
@@ -249,63 +233,31 @@ pub mod create_group_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group.
-        /// For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of user-applied tags per resource: 50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag key length: 128 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag value length: 256 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-        /// / = + - and @</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
-        /// use.</p>
-        /// </li>
+        /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+        /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+        /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+        /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group.
-        /// For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of user-applied tags per resource: 50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag key length: 128 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag value length: 256 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-        /// / = + - and @</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
-        /// use.</p>
-        /// </li>
+        /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+        /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+        /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+        /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -333,7 +285,7 @@ pub mod create_group_input {
 #[doc(hidden)]
 pub type CreateGroupInputOperationOutputAlias = crate::operation::CreateGroup;
 #[doc(hidden)]
-pub type CreateGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateGroup`](crate::operation::CreateGroup)>
     #[allow(clippy::let_and_return)]
@@ -344,7 +296,7 @@ impl CreateGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -423,7 +375,7 @@ impl CreateGroupInput {
             "CreateGroup",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -473,63 +425,31 @@ pub mod create_sampling_rule_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling
-        /// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of user-applied tags per resource: 50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag key length: 128 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag value length: 256 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-        /// / = + - and @</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
-        /// use.</p>
-        /// </li>
+        /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+        /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+        /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+        /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling
-        /// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of user-applied tags per resource: 50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag key length: 128 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag value length: 256 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-        /// / = + - and @</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
-        /// use.</p>
-        /// </li>
+        /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+        /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+        /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+        /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -555,7 +475,7 @@ pub mod create_sampling_rule_input {
 #[doc(hidden)]
 pub type CreateSamplingRuleInputOperationOutputAlias = crate::operation::CreateSamplingRule;
 #[doc(hidden)]
-pub type CreateSamplingRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSamplingRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSamplingRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateSamplingRule`](crate::operation::CreateSamplingRule)>
     #[allow(clippy::let_and_return)]
@@ -566,7 +486,7 @@ impl CreateSamplingRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSamplingRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -646,7 +566,7 @@ impl CreateSamplingRuleInput {
             "CreateSamplingRule",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -716,7 +636,7 @@ pub mod delete_group_input {
 #[doc(hidden)]
 pub type DeleteGroupInputOperationOutputAlias = crate::operation::DeleteGroup;
 #[doc(hidden)]
-pub type DeleteGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGroup`](crate::operation::DeleteGroup)>
     #[allow(clippy::let_and_return)]
@@ -727,7 +647,7 @@ impl DeleteGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -806,7 +726,7 @@ impl DeleteGroupInput {
             "DeleteGroup",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -876,7 +796,7 @@ pub mod delete_sampling_rule_input {
 #[doc(hidden)]
 pub type DeleteSamplingRuleInputOperationOutputAlias = crate::operation::DeleteSamplingRule;
 #[doc(hidden)]
-pub type DeleteSamplingRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSamplingRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSamplingRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSamplingRule`](crate::operation::DeleteSamplingRule)>
     #[allow(clippy::let_and_return)]
@@ -887,7 +807,7 @@ impl DeleteSamplingRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSamplingRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -967,7 +887,7 @@ impl DeleteSamplingRuleInput {
             "DeleteSamplingRule",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1011,7 +931,7 @@ pub mod get_encryption_config_input {
 #[doc(hidden)]
 pub type GetEncryptionConfigInputOperationOutputAlias = crate::operation::GetEncryptionConfig;
 #[doc(hidden)]
-pub type GetEncryptionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEncryptionConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`GetEncryptionConfig`](crate::operation::GetEncryptionConfig)>
     #[allow(clippy::let_and_return)]
@@ -1022,7 +942,7 @@ impl GetEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEncryptionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1096,7 +1016,7 @@ impl GetEncryptionConfigInput {
             "GetEncryptionConfig",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1156,7 +1076,7 @@ pub mod get_group_input {
 #[doc(hidden)]
 pub type GetGroupInputOperationOutputAlias = crate::operation::GetGroup;
 #[doc(hidden)]
-pub type GetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetGroup`](crate::operation::GetGroup)>
     #[allow(clippy::let_and_return)]
@@ -1167,7 +1087,7 @@ impl GetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1243,7 +1163,7 @@ impl GetGroupInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetGroup", "xray",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1299,7 +1219,7 @@ pub mod get_groups_input {
 #[doc(hidden)]
 pub type GetGroupsInputOperationOutputAlias = crate::operation::GetGroups;
 #[doc(hidden)]
-pub type GetGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`GetGroups`](crate::operation::GetGroups)>
     #[allow(clippy::let_and_return)]
@@ -1310,7 +1230,7 @@ impl GetGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1387,7 +1307,7 @@ impl GetGroupsInput {
                     "GetGroups",
                     "xray",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1445,7 +1365,7 @@ pub mod get_insight_input {
 #[doc(hidden)]
 pub type GetInsightInputOperationOutputAlias = crate::operation::GetInsight;
 #[doc(hidden)]
-pub type GetInsightInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInsightInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInsightInput {
     /// Consumes the builder and constructs an Operation<[`GetInsight`](crate::operation::GetInsight)>
     #[allow(clippy::let_and_return)]
@@ -1456,7 +1376,7 @@ impl GetInsightInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInsight,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1535,7 +1455,7 @@ impl GetInsightInput {
             "GetInsight",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1617,7 +1537,7 @@ pub mod get_insight_events_input {
 #[doc(hidden)]
 pub type GetInsightEventsInputOperationOutputAlias = crate::operation::GetInsightEvents;
 #[doc(hidden)]
-pub type GetInsightEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInsightEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInsightEventsInput {
     /// Consumes the builder and constructs an Operation<[`GetInsightEvents`](crate::operation::GetInsightEvents)>
     #[allow(clippy::let_and_return)]
@@ -1628,7 +1548,7 @@ impl GetInsightEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInsightEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1708,7 +1628,7 @@ impl GetInsightEventsInput {
             "GetInsightEvents",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1753,14 +1673,12 @@ pub mod get_insight_impact_graph_input {
             self.insight_id = input;
             self
         }
-        /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value
-        /// provided and can't be more than 30 days old.</p>
+        /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value
-        /// provided and can't be more than 30 days old.</p>
+        /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1768,14 +1686,12 @@ pub mod get_insight_impact_graph_input {
             self.start_time = input;
             self
         }
-        /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided.
-        /// The time range between the start time and end time can't be more than six hours. </p>
+        /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided.
-        /// The time range between the start time and end time can't be more than six hours. </p>
+        /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1812,7 +1728,7 @@ pub mod get_insight_impact_graph_input {
 #[doc(hidden)]
 pub type GetInsightImpactGraphInputOperationOutputAlias = crate::operation::GetInsightImpactGraph;
 #[doc(hidden)]
-pub type GetInsightImpactGraphInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInsightImpactGraphInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInsightImpactGraphInput {
     /// Consumes the builder and constructs an Operation<[`GetInsightImpactGraph`](crate::operation::GetInsightImpactGraph)>
     #[allow(clippy::let_and_return)]
@@ -1823,7 +1739,7 @@ impl GetInsightImpactGraphInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInsightImpactGraph,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1905,7 +1821,7 @@ impl GetInsightImpactGraphInput {
             "GetInsightImpactGraph",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1948,9 +1864,9 @@ pub mod get_insight_summaries_input {
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The list of insight states. </p>
-        pub fn states(mut self, input: impl Into<crate::model::InsightState>) -> Self {
+        pub fn states(mut self, input: crate::model::InsightState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
@@ -1982,14 +1898,12 @@ pub mod get_insight_summaries_input {
             self.group_name = input;
             self
         }
-        /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days
-        /// old.</p>
+        /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days
-        /// old.</p>
+        /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2052,7 +1966,7 @@ pub mod get_insight_summaries_input {
 #[doc(hidden)]
 pub type GetInsightSummariesInputOperationOutputAlias = crate::operation::GetInsightSummaries;
 #[doc(hidden)]
-pub type GetInsightSummariesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInsightSummariesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInsightSummariesInput {
     /// Consumes the builder and constructs an Operation<[`GetInsightSummaries`](crate::operation::GetInsightSummaries)>
     #[allow(clippy::let_and_return)]
@@ -2063,7 +1977,7 @@ impl GetInsightSummariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInsightSummaries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2143,7 +2057,7 @@ impl GetInsightSummariesInput {
             "GetInsightSummaries",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2201,7 +2115,7 @@ pub mod get_sampling_rules_input {
 #[doc(hidden)]
 pub type GetSamplingRulesInputOperationOutputAlias = crate::operation::GetSamplingRules;
 #[doc(hidden)]
-pub type GetSamplingRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSamplingRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSamplingRulesInput {
     /// Consumes the builder and constructs an Operation<[`GetSamplingRules`](crate::operation::GetSamplingRules)>
     #[allow(clippy::let_and_return)]
@@ -2212,7 +2126,7 @@ impl GetSamplingRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSamplingRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2292,7 +2206,7 @@ impl GetSamplingRulesInput {
             "GetSamplingRules",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2351,7 +2265,8 @@ pub mod get_sampling_statistic_summaries_input {
 pub type GetSamplingStatisticSummariesInputOperationOutputAlias =
     crate::operation::GetSamplingStatisticSummaries;
 #[doc(hidden)]
-pub type GetSamplingStatisticSummariesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSamplingStatisticSummariesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetSamplingStatisticSummariesInput {
     /// Consumes the builder and constructs an Operation<[`GetSamplingStatisticSummaries`](crate::operation::GetSamplingStatisticSummaries)>
     #[allow(clippy::let_and_return)]
@@ -2362,7 +2277,7 @@ impl GetSamplingStatisticSummariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSamplingStatisticSummaries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2443,7 +2358,7 @@ impl GetSamplingStatisticSummariesInput {
             "GetSamplingStatisticSummaries",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2483,10 +2398,10 @@ pub mod get_sampling_targets_input {
         /// <p>Information about rules that the service is using to sample requests.</p>
         pub fn sampling_statistics_documents(
             mut self,
-            input: impl Into<crate::model::SamplingStatisticsDocument>,
+            input: crate::model::SamplingStatisticsDocument,
         ) -> Self {
             let mut v = self.sampling_statistics_documents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sampling_statistics_documents = Some(v);
             self
         }
@@ -2514,7 +2429,7 @@ pub mod get_sampling_targets_input {
 #[doc(hidden)]
 pub type GetSamplingTargetsInputOperationOutputAlias = crate::operation::GetSamplingTargets;
 #[doc(hidden)]
-pub type GetSamplingTargetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSamplingTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSamplingTargetsInput {
     /// Consumes the builder and constructs an Operation<[`GetSamplingTargets`](crate::operation::GetSamplingTargets)>
     #[allow(clippy::let_and_return)]
@@ -2525,7 +2440,7 @@ impl GetSamplingTargetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSamplingTargets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2605,7 +2520,7 @@ impl GetSamplingTargetsInput {
             "GetSamplingTargets",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2717,7 +2632,7 @@ pub mod get_service_graph_input {
 #[doc(hidden)]
 pub type GetServiceGraphInputOperationOutputAlias = crate::operation::GetServiceGraph;
 #[doc(hidden)]
-pub type GetServiceGraphInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServiceGraphInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceGraphInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceGraph`](crate::operation::GetServiceGraph)>
     #[allow(clippy::let_and_return)]
@@ -2728,7 +2643,7 @@ impl GetServiceGraphInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceGraph,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2808,7 +2723,7 @@ impl GetServiceGraphInput {
             "GetServiceGraph",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2893,16 +2808,12 @@ pub mod get_time_series_service_statistics_input {
             self.group_arn = input;
             self
         }
-        /// <p>A filter expression defining entities that will be aggregated for statistics.
-        /// Supports ID, service, and edge functions. If no selector expression is specified, edge
-        /// statistics are returned. </p>
+        /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
         pub fn entity_selector_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_selector_expression = Some(input.into());
             self
         }
-        /// <p>A filter expression defining entities that will be aggregated for statistics.
-        /// Supports ID, service, and edge functions. If no selector expression is specified, edge
-        /// statistics are returned. </p>
+        /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
         pub fn set_entity_selector_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2920,14 +2831,12 @@ pub mod get_time_series_service_statistics_input {
             self.period = input;
             self
         }
-        /// <p>The forecasted high and low fault count values. Forecast enabled requests require the
-        /// EntitySelectorExpression ID be provided.</p>
+        /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
         pub fn forecast_statistics(mut self, input: bool) -> Self {
             self.forecast_statistics = Some(input);
             self
         }
-        /// <p>The forecasted high and low fault count values. Forecast enabled requests require the
-        /// EntitySelectorExpression ID be provided.</p>
+        /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
         pub fn set_forecast_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.forecast_statistics = input;
             self
@@ -2966,7 +2875,8 @@ pub mod get_time_series_service_statistics_input {
 pub type GetTimeSeriesServiceStatisticsInputOperationOutputAlias =
     crate::operation::GetTimeSeriesServiceStatistics;
 #[doc(hidden)]
-pub type GetTimeSeriesServiceStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTimeSeriesServiceStatisticsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetTimeSeriesServiceStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetTimeSeriesServiceStatistics`](crate::operation::GetTimeSeriesServiceStatistics)>
     #[allow(clippy::let_and_return)]
@@ -2977,7 +2887,7 @@ impl GetTimeSeriesServiceStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTimeSeriesServiceStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3058,7 +2968,7 @@ impl GetTimeSeriesServiceStatisticsInput {
             "GetTimeSeriesServiceStatistics",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3137,7 +3047,7 @@ pub mod get_trace_graph_input {
 #[doc(hidden)]
 pub type GetTraceGraphInputOperationOutputAlias = crate::operation::GetTraceGraph;
 #[doc(hidden)]
-pub type GetTraceGraphInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTraceGraphInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTraceGraphInput {
     /// Consumes the builder and constructs an Operation<[`GetTraceGraph`](crate::operation::GetTraceGraph)>
     #[allow(clippy::let_and_return)]
@@ -3148,7 +3058,7 @@ impl GetTraceGraphInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTraceGraph,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3228,7 +3138,7 @@ impl GetTraceGraphInput {
             "GetTraceGraph",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3305,26 +3215,22 @@ pub mod get_trace_summaries_input {
             self.time_range_type = input;
             self
         }
-        /// <p>Set to <code>true</code> to get summaries for only a subset of available
-        /// traces.</p>
+        /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
         pub fn sampling(mut self, input: bool) -> Self {
             self.sampling = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to get summaries for only a subset of available
-        /// traces.</p>
+        /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
         pub fn set_sampling(mut self, input: std::option::Option<bool>) -> Self {
             self.sampling = input;
             self
         }
-        /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and
-        /// Value.</p>
+        /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
         pub fn sampling_strategy(mut self, input: crate::model::SamplingStrategy) -> Self {
             self.sampling_strategy = Some(input);
             self
         }
-        /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and
-        /// Value.</p>
+        /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
         pub fn set_sampling_strategy(
             mut self,
             input: std::option::Option<crate::model::SamplingStrategy>,
@@ -3332,14 +3238,12 @@ pub mod get_trace_summaries_input {
             self.sampling_strategy = input;
             self
         }
-        /// <p>Specify a filter expression to retrieve trace summaries for services or requests that
-        /// meet certain requirements.</p>
+        /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
         pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_expression = Some(input.into());
             self
         }
-        /// <p>Specify a filter expression to retrieve trace summaries for services or requests that
-        /// meet certain requirements.</p>
+        /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3347,14 +3251,12 @@ pub mod get_trace_summaries_input {
             self.filter_expression = input;
             self
         }
-        /// <p>Specify the pagination token returned by a previous request to retrieve the next page
-        /// of results.</p>
+        /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Specify the pagination token returned by a previous request to retrieve the next page
-        /// of results.</p>
+        /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3381,7 +3283,7 @@ pub mod get_trace_summaries_input {
 #[doc(hidden)]
 pub type GetTraceSummariesInputOperationOutputAlias = crate::operation::GetTraceSummaries;
 #[doc(hidden)]
-pub type GetTraceSummariesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTraceSummariesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTraceSummariesInput {
     /// Consumes the builder and constructs an Operation<[`GetTraceSummaries`](crate::operation::GetTraceSummaries)>
     #[allow(clippy::let_and_return)]
@@ -3392,7 +3294,7 @@ impl GetTraceSummariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTraceSummaries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3472,7 +3374,7 @@ impl GetTraceSummariesInput {
             "GetTraceSummaries",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3515,14 +3417,12 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
-        /// the current page of results as the value of this parameter to get the next page of results.</p>
+        /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results as the value of this parameter to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
-        /// the current page of results as the value of this parameter to get the next page of results.</p>
+        /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results as the value of this parameter to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3544,7 +3444,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3555,7 +3455,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3637,7 +3537,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3672,23 +3572,9 @@ pub mod put_encryption_config_input {
     impl Builder {
         /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Alias</b> - The name of the key. For example,
-        /// <code>alias/MyKey</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Key ID</b> - The KMS key ID of the key. For example,
-        /// <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ARN</b> - The full Amazon Resource Name of the key ID or alias.
-        /// For example,
-        /// <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
-        /// Use this format to specify a key in a different account.</p>
-        /// </li>
+        /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li>
+        /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li>
+        /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>
         /// </ul>
         /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3697,37 +3583,21 @@ pub mod put_encryption_config_input {
         }
         /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Alias</b> - The name of the key. For example,
-        /// <code>alias/MyKey</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Key ID</b> - The KMS key ID of the key. For example,
-        /// <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ARN</b> - The full Amazon Resource Name of the key ID or alias.
-        /// For example,
-        /// <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
-        /// Use this format to specify a key in a different account.</p>
-        /// </li>
+        /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li>
+        /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li>
+        /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>
         /// </ul>
         /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
         }
-        /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set
-        /// to <code>NONE</code> for default encryption.</p>
+        /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
         pub fn r#type(mut self, input: crate::model::EncryptionType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set
-        /// to <code>NONE</code> for default encryption.</p>
+        /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::EncryptionType>,
@@ -3752,7 +3622,7 @@ pub mod put_encryption_config_input {
 #[doc(hidden)]
 pub type PutEncryptionConfigInputOperationOutputAlias = crate::operation::PutEncryptionConfig;
 #[doc(hidden)]
-pub type PutEncryptionConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutEncryptionConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEncryptionConfigInput {
     /// Consumes the builder and constructs an Operation<[`PutEncryptionConfig`](crate::operation::PutEncryptionConfig)>
     #[allow(clippy::let_and_return)]
@@ -3763,7 +3633,7 @@ impl PutEncryptionConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutEncryptionConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3843,7 +3713,7 @@ impl PutEncryptionConfigInput {
             "PutEncryptionConfig",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3884,12 +3754,9 @@ pub mod put_telemetry_records_input {
         /// To override the contents of this collection use [`set_telemetry_records`](Self::set_telemetry_records).
         ///
         /// <p></p>
-        pub fn telemetry_records(
-            mut self,
-            input: impl Into<crate::model::TelemetryRecord>,
-        ) -> Self {
+        pub fn telemetry_records(mut self, input: crate::model::TelemetryRecord) -> Self {
             let mut v = self.telemetry_records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.telemetry_records = Some(v);
             self
         }
@@ -3953,7 +3820,7 @@ pub mod put_telemetry_records_input {
 #[doc(hidden)]
 pub type PutTelemetryRecordsInputOperationOutputAlias = crate::operation::PutTelemetryRecords;
 #[doc(hidden)]
-pub type PutTelemetryRecordsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutTelemetryRecordsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutTelemetryRecordsInput {
     /// Consumes the builder and constructs an Operation<[`PutTelemetryRecords`](crate::operation::PutTelemetryRecords)>
     #[allow(clippy::let_and_return)]
@@ -3964,7 +3831,7 @@ impl PutTelemetryRecordsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutTelemetryRecords,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4044,7 +3911,7 @@ impl PutTelemetryRecordsInput {
             "PutTelemetryRecords",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4080,16 +3947,14 @@ pub mod put_trace_segments_input {
         ///
         /// To override the contents of this collection use [`set_trace_segment_documents`](Self::set_trace_segment_documents).
         ///
-        /// <p>A string containing a JSON document defining one or more segments or
-        /// subsegments.</p>
+        /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
         pub fn trace_segment_documents(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trace_segment_documents.unwrap_or_default();
             v.push(input.into());
             self.trace_segment_documents = Some(v);
             self
         }
-        /// <p>A string containing a JSON document defining one or more segments or
-        /// subsegments.</p>
+        /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
         pub fn set_trace_segment_documents(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4113,7 +3978,7 @@ pub mod put_trace_segments_input {
 #[doc(hidden)]
 pub type PutTraceSegmentsInputOperationOutputAlias = crate::operation::PutTraceSegments;
 #[doc(hidden)]
-pub type PutTraceSegmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutTraceSegmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutTraceSegmentsInput {
     /// Consumes the builder and constructs an Operation<[`PutTraceSegments`](crate::operation::PutTraceSegments)>
     #[allow(clippy::let_and_return)]
@@ -4124,7 +3989,7 @@ impl PutTraceSegmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutTraceSegments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4204,7 +4069,7 @@ impl PutTraceSegmentsInput {
             "PutTraceSegments",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4251,63 +4116,31 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or
-        /// sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-        /// in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of user-applied tags per resource: 50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag key length: 128 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag value length: 256 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-        /// / = + - and @</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You
-        /// cannot edit or delete system tags.</p>
-        /// </li>
+        /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+        /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+        /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+        /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>
         /// </ul>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or
-        /// sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-        /// in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of user-applied tags per resource: 50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag key length: 128 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag value length: 256 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-        /// / = + - and @</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You
-        /// cannot edit or delete system tags.</p>
-        /// </li>
+        /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+        /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+        /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+        /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -4333,7 +4166,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4344,7 +4177,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4423,7 +4256,7 @@ impl TagResourceInput {
             "TagResource",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4502,7 +4335,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4513,7 +4346,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4592,7 +4425,7 @@ impl UntagResourceInput {
             "UntagResource",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4662,14 +4495,8 @@ pub mod update_group_input {
         }
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
-        /// <li>
-        /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-        /// group or false to disable insights for the group.</p>
-        /// </li>
-        /// <li>
-        /// <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group.
-        /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
-        /// </li>
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+        /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
         pub fn insights_configuration(
             mut self,
@@ -4680,14 +4507,8 @@ pub mod update_group_input {
         }
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
-        /// <li>
-        /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-        /// group or false to disable insights for the group.</p>
-        /// </li>
-        /// <li>
-        /// <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group.
-        /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
-        /// </li>
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+        /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
         pub fn set_insights_configuration(
             mut self,
@@ -4715,7 +4536,7 @@ pub mod update_group_input {
 #[doc(hidden)]
 pub type UpdateGroupInputOperationOutputAlias = crate::operation::UpdateGroup;
 #[doc(hidden)]
-pub type UpdateGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGroup`](crate::operation::UpdateGroup)>
     #[allow(clippy::let_and_return)]
@@ -4726,7 +4547,7 @@ impl UpdateGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4805,7 +4626,7 @@ impl UpdateGroupInput {
             "UpdateGroup",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4866,7 +4687,7 @@ pub mod update_sampling_rule_input {
 #[doc(hidden)]
 pub type UpdateSamplingRuleInputOperationOutputAlias = crate::operation::UpdateSamplingRule;
 #[doc(hidden)]
-pub type UpdateSamplingRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSamplingRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSamplingRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSamplingRule`](crate::operation::UpdateSamplingRule)>
     #[allow(clippy::let_and_return)]
@@ -4877,7 +4698,7 @@ impl UpdateSamplingRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSamplingRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4957,7 +4778,7 @@ impl UpdateSamplingRuleInput {
             "UpdateSamplingRule",
             "xray",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5013,14 +4834,8 @@ pub struct UpdateGroupInput {
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li>
-    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-    /// group or false to disable insights for the group.</p>
-    /// </li>
-    /// <li>
-    /// <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group.
-    /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
-    /// </li>
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+    /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
 }
@@ -5039,14 +4854,8 @@ impl UpdateGroupInput {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li>
-    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-    /// group or false to disable insights for the group.</p>
-    /// </li>
-    /// <li>
-    /// <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group.
-    /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
-    /// </li>
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+    /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
     pub fn insights_configuration(
         &self,
@@ -5099,31 +4908,15 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or
-    /// sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-    /// in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of user-applied tags per resource: 50</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum tag key length: 128 Unicode characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum tag value length: 256 Unicode characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-    /// / = + - and @</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You
-    /// cannot edit or delete system tags.</p>
-    /// </li>
+    /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+    /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+    /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+    /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -5132,31 +4925,15 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or
-    /// sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-    /// in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of user-applied tags per resource: 50</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum tag key length: 128 Unicode characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum tag value length: 256 Unicode characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-    /// / = + - and @</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You
-    /// cannot edit or delete system tags.</p>
-    /// </li>
+    /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+    /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+    /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+    /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -5175,13 +4952,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutTraceSegmentsInput {
-    /// <p>A string containing a JSON document defining one or more segments or
-    /// subsegments.</p>
+    /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
     pub trace_segment_documents: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutTraceSegmentsInput {
-    /// <p>A string containing a JSON document defining one or more segments or
-    /// subsegments.</p>
+    /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
     pub fn trace_segment_documents(&self) -> std::option::Option<&[std::string::String]> {
         self.trace_segment_documents.as_deref()
     }
@@ -5242,57 +5017,27 @@ impl std::fmt::Debug for PutTelemetryRecordsInput {
 pub struct PutEncryptionConfigInput {
     /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Alias</b> - The name of the key. For example,
-    /// <code>alias/MyKey</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Key ID</b> - The KMS key ID of the key. For example,
-    /// <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>ARN</b> - The full Amazon Resource Name of the key ID or alias.
-    /// For example,
-    /// <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
-    /// Use this format to specify a key in a different account.</p>
-    /// </li>
+    /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li>
+    /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li>
+    /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>
     /// </ul>
     /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set
-    /// to <code>NONE</code> for default encryption.</p>
+    /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
     pub r#type: std::option::Option<crate::model::EncryptionType>,
 }
 impl PutEncryptionConfigInput {
     /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Alias</b> - The name of the key. For example,
-    /// <code>alias/MyKey</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Key ID</b> - The KMS key ID of the key. For example,
-    /// <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>ARN</b> - The full Amazon Resource Name of the key ID or alias.
-    /// For example,
-    /// <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
-    /// Use this format to specify a key in a different account.</p>
-    /// </li>
+    /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li>
+    /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li>
+    /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>
     /// </ul>
     /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set
-    /// to <code>NONE</code> for default encryption.</p>
+    /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.r#type.as_ref()
     }
@@ -5312,8 +5057,7 @@ impl std::fmt::Debug for PutEncryptionConfigInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
-    /// the current page of results as the value of this parameter to get the next page of results.</p>
+    /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results as the value of this parameter to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -5321,8 +5065,7 @@ impl ListTagsForResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
-    /// the current page of results as the value of this parameter to get the next page of results.</p>
+    /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results as the value of this parameter to get the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5346,17 +5089,13 @@ pub struct GetTraceSummariesInput {
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
     pub time_range_type: std::option::Option<crate::model::TimeRangeType>,
-    /// <p>Set to <code>true</code> to get summaries for only a subset of available
-    /// traces.</p>
+    /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
     pub sampling: std::option::Option<bool>,
-    /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and
-    /// Value.</p>
+    /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
     pub sampling_strategy: std::option::Option<crate::model::SamplingStrategy>,
-    /// <p>Specify a filter expression to retrieve trace summaries for services or requests that
-    /// meet certain requirements.</p>
+    /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
     pub filter_expression: std::option::Option<std::string::String>,
-    /// <p>Specify the pagination token returned by a previous request to retrieve the next page
-    /// of results.</p>
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTraceSummariesInput {
@@ -5372,23 +5111,19 @@ impl GetTraceSummariesInput {
     pub fn time_range_type(&self) -> std::option::Option<&crate::model::TimeRangeType> {
         self.time_range_type.as_ref()
     }
-    /// <p>Set to <code>true</code> to get summaries for only a subset of available
-    /// traces.</p>
+    /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
     pub fn sampling(&self) -> std::option::Option<bool> {
         self.sampling
     }
-    /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and
-    /// Value.</p>
+    /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
     pub fn sampling_strategy(&self) -> std::option::Option<&crate::model::SamplingStrategy> {
         self.sampling_strategy.as_ref()
     }
-    /// <p>Specify a filter expression to retrieve trace summaries for services or requests that
-    /// meet certain requirements.</p>
+    /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
     pub fn filter_expression(&self) -> std::option::Option<&str> {
         self.filter_expression.as_deref()
     }
-    /// <p>Specify the pagination token returned by a previous request to retrieve the next page
-    /// of results.</p>
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5447,14 +5182,11 @@ pub struct GetTimeSeriesServiceStatisticsInput {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
     pub group_arn: std::option::Option<std::string::String>,
-    /// <p>A filter expression defining entities that will be aggregated for statistics.
-    /// Supports ID, service, and edge functions. If no selector expression is specified, edge
-    /// statistics are returned. </p>
+    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
     pub entity_selector_expression: std::option::Option<std::string::String>,
     /// <p>Aggregation period in seconds.</p>
     pub period: std::option::Option<i32>,
-    /// <p>The forecasted high and low fault count values. Forecast enabled requests require the
-    /// EntitySelectorExpression ID be provided.</p>
+    /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
     pub forecast_statistics: std::option::Option<bool>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5476,9 +5208,7 @@ impl GetTimeSeriesServiceStatisticsInput {
     pub fn group_arn(&self) -> std::option::Option<&str> {
         self.group_arn.as_deref()
     }
-    /// <p>A filter expression defining entities that will be aggregated for statistics.
-    /// Supports ID, service, and edge functions. If no selector expression is specified, edge
-    /// statistics are returned. </p>
+    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
     pub fn entity_selector_expression(&self) -> std::option::Option<&str> {
         self.entity_selector_expression.as_deref()
     }
@@ -5486,8 +5216,7 @@ impl GetTimeSeriesServiceStatisticsInput {
     pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
-    /// <p>The forecasted high and low fault count values. Forecast enabled requests require the
-    /// EntitySelectorExpression ID be provided.</p>
+    /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
     pub fn forecast_statistics(&self) -> std::option::Option<bool> {
         self.forecast_statistics
     }
@@ -5642,8 +5371,7 @@ pub struct GetInsightSummariesInput {
     pub group_arn: std::option::Option<std::string::String>,
     /// <p>The name of the group. Required if the GroupARN isn't provided.</p>
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days
-    /// old.</p>
+    /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -5665,8 +5393,7 @@ impl GetInsightSummariesInput {
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days
-    /// old.</p>
+    /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -5703,11 +5430,9 @@ impl std::fmt::Debug for GetInsightSummariesInput {
 pub struct GetInsightImpactGraphInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
     pub insight_id: std::option::Option<std::string::String>,
-    /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value
-    /// provided and can't be more than 30 days old.</p>
+    /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided.
-    /// The time range between the start time and end time can't be more than six hours. </p>
+    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5717,13 +5442,11 @@ impl GetInsightImpactGraphInput {
     pub fn insight_id(&self) -> std::option::Option<&str> {
         self.insight_id.as_deref()
     }
-    /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value
-    /// provided and can't be more than 30 days old.</p>
+    /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided.
-    /// The time range between the start time and end time can't be more than six hours. </p>
+    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -5921,31 +5644,15 @@ impl std::fmt::Debug for DeleteGroupInput {
 pub struct CreateSamplingRuleInput {
     /// <p>The rule definition.</p>
     pub sampling_rule: std::option::Option<crate::model::SamplingRule>,
-    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling
-    /// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-    /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of user-applied tags per resource: 50</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum tag key length: 128 Unicode characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum tag value length: 256 Unicode characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-    /// / = + - and @</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
-    /// use.</p>
-    /// </li>
+    /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+    /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+    /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+    /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -5954,31 +5661,15 @@ impl CreateSamplingRuleInput {
     pub fn sampling_rule(&self) -> std::option::Option<&crate::model::SamplingRule> {
         self.sampling_rule.as_ref()
     }
-    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling
-    /// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-    /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of user-applied tags per resource: 50</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum tag key length: 128 Unicode characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum tag value length: 256 Unicode characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-    /// / = + - and @</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
-    /// use.</p>
-    /// </li>
+    /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+    /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+    /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+    /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -5997,55 +5688,30 @@ impl std::fmt::Debug for CreateSamplingRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupInput {
-    /// <p>The case-sensitive name of the new group. Default is a reserved name and names must
-    /// be unique.</p>
+    /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The filter expression defining criteria by which to group traces.</p>
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li>
-    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-    /// new group or false to disable insights for the new group.</p>
-    /// </li>
-    /// <li>
-    /// <p>The NotifcationsEnabled boolean can be set to true to enable insights
-    /// notifications for the new group. Notifications may only be enabled on a group
-    /// with InsightsEnabled set to true.</p>
-    /// </li>
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
+    /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
-    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group.
-    /// For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-    /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of user-applied tags per resource: 50</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum tag key length: 128 Unicode characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum tag value length: 256 Unicode characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-    /// / = + - and @</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
-    /// use.</p>
-    /// </li>
+    /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+    /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+    /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+    /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateGroupInput {
-    /// <p>The case-sensitive name of the new group. Default is a reserved name and names must
-    /// be unique.</p>
+    /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
@@ -6055,46 +5721,23 @@ impl CreateGroupInput {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li>
-    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-    /// new group or false to disable insights for the new group.</p>
-    /// </li>
-    /// <li>
-    /// <p>The NotifcationsEnabled boolean can be set to true to enable insights
-    /// notifications for the new group. Notifications may only be enabled on a group
-    /// with InsightsEnabled set to true.</p>
-    /// </li>
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
+    /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
     pub fn insights_configuration(
         &self,
     ) -> std::option::Option<&crate::model::InsightsConfiguration> {
         self.insights_configuration.as_ref()
     }
-    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group.
-    /// For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-    /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of user-applied tags per resource: 50</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum tag key length: 128 Unicode characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum tag value length: 256 Unicode characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-    /// / = + - and @</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
-    /// use.</p>
-    /// </li>
+    /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+    /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+    /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+    /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()

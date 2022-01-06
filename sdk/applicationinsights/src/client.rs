@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon CloudWatch Application Insights
@@ -191,6 +191,7 @@ where
     ///
     /// See [`ListApplications`](crate::client::fluent_builders::ListApplications) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
     pub fn list_applications(&self) -> fluent_builders::ListApplications<C, M, R> {
         fluent_builders::ListApplications::new(self.handle.clone())
     }
@@ -198,6 +199,7 @@ where
     ///
     /// See [`ListComponents`](crate::client::fluent_builders::ListComponents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComponents::into_paginator).
     pub fn list_components(&self) -> fluent_builders::ListComponents<C, M, R> {
         fluent_builders::ListComponents::new(self.handle.clone())
     }
@@ -205,6 +207,7 @@ where
     ///
     /// See [`ListConfigurationHistory`](crate::client::fluent_builders::ListConfigurationHistory) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConfigurationHistory::into_paginator).
     pub fn list_configuration_history(&self) -> fluent_builders::ListConfigurationHistory<C, M, R> {
         fluent_builders::ListConfigurationHistory::new(self.handle.clone())
     }
@@ -212,6 +215,7 @@ where
     ///
     /// See [`ListLogPatterns`](crate::client::fluent_builders::ListLogPatterns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLogPatterns::into_paginator).
     pub fn list_log_patterns(&self) -> fluent_builders::ListLogPatterns<C, M, R> {
         fluent_builders::ListLogPatterns::new(self.handle.clone())
     }
@@ -219,6 +223,7 @@ where
     ///
     /// See [`ListLogPatternSets`](crate::client::fluent_builders::ListLogPatternSets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLogPatternSets::into_paginator).
     pub fn list_log_pattern_sets(&self) -> fluent_builders::ListLogPatternSets<C, M, R> {
         fluent_builders::ListLogPatternSets::new(self.handle.clone())
     }
@@ -226,6 +231,7 @@ where
     ///
     /// See [`ListProblems`](crate::client::fluent_builders::ListProblems) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProblems::into_paginator).
     pub fn list_problems(&self) -> fluent_builders::ListProblems<C, M, R> {
         fluent_builders::ListProblems::new(self.handle.clone())
     }
@@ -292,7 +298,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
     /// <p>Adds an application that is created from a resource group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -337,10 +343,10 @@ pub mod fluent_builders {
                 crate::input::CreateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -349,8 +355,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -361,46 +367,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_group_name(input);
             self
         }
-        /// <p>
-        /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-        /// </p>
-        pub fn ops_center_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.ops_center_enabled(inp);
+        /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+        pub fn ops_center_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.ops_center_enabled(input);
             self
         }
-        /// <p>
-        /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-        /// </p>
+        /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
         pub fn set_ops_center_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_ops_center_enabled(input);
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
-        pub fn cwe_monitor_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.cwe_monitor_enabled(inp);
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+        pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.cwe_monitor_enabled(input);
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn set_cwe_monitor_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_cwe_monitor_enabled(input);
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-        /// receive notifications for updates to the opsItem.
-        /// </p>
-        pub fn ops_item_sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_item_sns_topic_arn(inp);
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
+        pub fn ops_item_sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_item_sns_topic_arn(input.into());
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-        /// receive notifications for updates to the opsItem.
-        /// </p>
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem. </p>
         pub fn set_ops_item_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -412,18 +404,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>List of tags to add to the application.
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>List of tags to add to the application.
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -432,8 +418,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn auto_config_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_config_enabled(inp);
+        pub fn auto_config_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_config_enabled(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -442,8 +428,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn auto_create(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_create(inp);
+        pub fn auto_create(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_create(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -455,7 +441,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateComponent`.
     ///
     /// <p>Creates a custom component by grouping similar standalone instances to monitor.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -500,10 +486,10 @@ pub mod fluent_builders {
                 crate::input::CreateComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -512,8 +498,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -525,8 +511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(inp);
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -542,8 +528,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_list`](Self::set_resource_list).
         ///
         /// <p>The list of resource ARNs that belong to the component.</p>
-        pub fn resource_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_list(inp);
+        pub fn resource_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_list(input.into());
             self
         }
         /// <p>The list of resource ARNs that belong to the component.</p>
@@ -558,7 +544,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLogPattern`.
     ///
     /// <p>Adds an log pattern to a <code>LogPatternSet</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLogPattern<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -603,10 +589,10 @@ pub mod fluent_builders {
                 crate::input::CreateLogPatternInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -615,8 +601,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -628,8 +614,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern set.</p>
-        pub fn pattern_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_set_name(inp);
+        pub fn pattern_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_set_name(input.into());
             self
         }
         /// <p>The name of the log pattern set.</p>
@@ -641,8 +627,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern.</p>
-        pub fn pattern_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_name(inp);
+        pub fn pattern_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_name(input.into());
             self
         }
         /// <p>The name of the log pattern.</p>
@@ -651,8 +637,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
-        pub fn pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern(inp);
+        pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern(input.into());
             self
         }
         /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
@@ -660,16 +646,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pattern(input);
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
-        pub fn rank(mut self, inp: i32) -> Self {
-            self.inner = self.inner.rank(inp);
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
+        pub fn rank(mut self, input: i32) -> Self {
+            self.inner = self.inner.rank(input);
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_rank(input);
             self
@@ -678,7 +660,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
     /// <p>Removes the specified application from monitoring. Does not delete the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -723,10 +705,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -735,8 +717,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -750,9 +732,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteComponent`.
     ///
-    /// <p>Ungroups a custom component. When you ungroup custom components, all applicable
-    /// monitors that are set up for the component are removed and the instances revert to their standalone status.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Ungroups a custom component. When you ungroup custom components, all applicable monitors that are set up for the component are removed and the instances revert to their standalone status.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -797,10 +778,10 @@ pub mod fluent_builders {
                 crate::input::DeleteComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -809,8 +790,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -822,8 +803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(inp);
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -838,7 +819,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLogPattern`.
     ///
     /// <p>Removes the specified log pattern from a <code>LogPatternSet</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLogPattern<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -883,10 +864,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLogPatternInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -895,8 +876,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -908,8 +889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern set.</p>
-        pub fn pattern_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_set_name(inp);
+        pub fn pattern_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_set_name(input.into());
             self
         }
         /// <p>The name of the log pattern set.</p>
@@ -921,8 +902,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern.</p>
-        pub fn pattern_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_name(inp);
+        pub fn pattern_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_name(input.into());
             self
         }
         /// <p>The name of the log pattern.</p>
@@ -934,7 +915,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplication`.
     ///
     /// <p>Describes the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -979,10 +960,10 @@ pub mod fluent_builders {
                 crate::input::DescribeApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -991,8 +972,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -1007,7 +988,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeComponent`.
     ///
     /// <p>Describes a component and lists the resources that are grouped together in a component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1052,10 +1033,10 @@ pub mod fluent_builders {
                 crate::input::DescribeComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1064,8 +1045,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -1077,8 +1058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(inp);
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -1093,7 +1074,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeComponentConfiguration`.
     ///
     /// <p>Describes the monitoring configuration of the component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComponentConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1138,10 +1119,10 @@ pub mod fluent_builders {
                 crate::input::DescribeComponentConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1150,8 +1131,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -1163,8 +1144,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(inp);
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -1179,7 +1160,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeComponentConfigurationRecommendation`.
     ///
     /// <p>Describes the recommended monitoring configuration of the component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeComponentConfigurationRecommendation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1226,10 +1207,10 @@ pub mod fluent_builders {
                 crate::input::DescribeComponentConfigurationRecommendationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1238,8 +1219,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -1251,8 +1232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(inp);
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -1263,16 +1244,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_component_name(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include
-        /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-        /// and <code>DEFAULT</code>.</p>
-        pub fn tier(mut self, inp: crate::model::Tier) -> Self {
-            self.inner = self.inner.tier(inp);
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        pub fn tier(mut self, input: crate::model::Tier) -> Self {
+            self.inner = self.inner.tier(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include
-        /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-        /// and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
             self.inner = self.inner.set_tier(input);
             self
@@ -1281,7 +1258,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLogPattern`.
     ///
     /// <p>Describe a specific log pattern from a <code>LogPatternSet</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLogPattern<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1326,10 +1303,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLogPatternInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1338,8 +1315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -1351,8 +1328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern set.</p>
-        pub fn pattern_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_set_name(inp);
+        pub fn pattern_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_set_name(input.into());
             self
         }
         /// <p>The name of the log pattern set.</p>
@@ -1364,8 +1341,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern.</p>
-        pub fn pattern_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_name(inp);
+        pub fn pattern_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_name(input.into());
             self
         }
         /// <p>The name of the log pattern.</p>
@@ -1377,7 +1354,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeObservation`.
     ///
     /// <p>Describes an anomaly or error with the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeObservation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1422,10 +1399,10 @@ pub mod fluent_builders {
                 crate::input::DescribeObservationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1434,8 +1411,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the observation.</p>
-        pub fn observation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.observation_id(inp);
+        pub fn observation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.observation_id(input.into());
             self
         }
         /// <p>The ID of the observation.</p>
@@ -1450,7 +1427,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProblem`.
     ///
     /// <p>Describes an application problem.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProblem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1495,10 +1472,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProblemInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1507,8 +1484,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the problem.</p>
-        pub fn problem_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.problem_id(inp);
+        pub fn problem_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.problem_id(input.into());
             self
         }
         /// <p>The ID of the problem.</p>
@@ -1520,7 +1497,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProblemObservations`.
     ///
     /// <p>Describes the anomalies or errors associated with the problem.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProblemObservations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1565,10 +1542,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProblemObservationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1577,8 +1554,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the problem.</p>
-        pub fn problem_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.problem_id(inp);
+        pub fn problem_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.problem_id(input.into());
             self
         }
         /// <p>The ID of the problem.</p>
@@ -1590,7 +1567,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplications`.
     ///
     /// <p>Lists the IDs of the applications that you are monitoring. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1635,10 +1612,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1646,21 +1623,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListApplicationsPaginator<C, M, R> {
+            crate::paginator::ListApplicationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -1672,7 +1653,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListComponents`.
     ///
     /// <p>Lists the auto-grouped, standalone, and custom components of the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1717,10 +1698,10 @@ pub mod fluent_builders {
                 crate::input::ListComponentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1728,9 +1709,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListComponentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListComponentsPaginator<C, M, R> {
+            crate::paginator::ListComponentsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -1741,21 +1728,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_group_name(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -1766,21 +1751,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListConfigurationHistory`.
     ///
-    /// <p>
-    /// Lists the INFO, WARN, and ERROR events for periodic configuration updates performed by Application Insights. Examples of events represented are:
-    /// </p>
+    /// <p> Lists the INFO, WARN, and ERROR events for periodic configuration updates performed by Application Insights. Examples of events represented are: </p>
     /// <ul>
-    /// <li>
-    /// <p>INFO: creating a new alarm or updating an alarm threshold.</p>
-    /// </li>
-    /// <li>
-    /// <p>WARN: alarm not created due to insufficient data points used to predict thresholds.</p>
-    /// </li>
-    /// <li>
-    /// <p>ERROR: alarm not created due to permission errors or exceeding quotas. </p>
-    /// </li>
+    /// <li> <p>INFO: creating a new alarm or updating an alarm threshold.</p> </li>
+    /// <li> <p>WARN: alarm not created due to insufficient data points used to predict thresholds.</p> </li>
+    /// <li> <p>ERROR: alarm not created due to permission errors or exceeding quotas. </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigurationHistory<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1825,10 +1802,10 @@ pub mod fluent_builders {
                 crate::input::ListConfigurationHistoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1836,9 +1813,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListConfigurationHistoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListConfigurationHistoryPaginator<C, M, R> {
+            crate::paginator::ListConfigurationHistoryPaginator::new(self.handle, self.inner)
+        }
         /// <p>Resource group to which the application belongs. </p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>Resource group to which the application belongs. </p>
@@ -1850,8 +1835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start time of the event. </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start time of the event. </p>
@@ -1863,8 +1848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end time of the event.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end time of the event.</p>
@@ -1876,8 +1861,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
-        pub fn event_status(mut self, inp: crate::model::ConfigurationEventStatus) -> Self {
-            self.inner = self.inner.event_status(inp);
+        pub fn event_status(mut self, input: crate::model::ConfigurationEventStatus) -> Self {
+            self.inner = self.inner.event_status(input);
             self
         }
         /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
@@ -1888,40 +1873,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_status(input);
             self
         }
-        /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in
-        /// paginated output. When this parameter is used, <code>ListConfigurationHistory</code>
-        /// returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListConfigurationHistory</code> request with the returned
-        /// <code>NextToken</code> value. If this parameter is not used, then
-        /// <code>ListConfigurationHistory</code> returns all results. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in
-        /// paginated output. When this parameter is used, <code>ListConfigurationHistory</code>
-        /// returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListConfigurationHistory</code> request with the returned
-        /// <code>NextToken</code> value. If this parameter is not used, then
-        /// <code>ListConfigurationHistory</code> returns all results. </p>
+        /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where
-        /// <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
-        /// continues from the end of the previous results that returned the <code>NextToken</code> value. This
-        /// value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where
-        /// <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
-        /// continues from the end of the previous results that returned the <code>NextToken</code> value. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1930,7 +1897,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLogPatterns`.
     ///
     /// <p>Lists the log patterns in the specific log <code>LogPatternSet</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLogPatterns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1975,10 +1942,10 @@ pub mod fluent_builders {
                 crate::input::ListLogPatternsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1986,9 +1953,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLogPatternsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLogPatternsPaginator<C, M, R> {
+            crate::paginator::ListLogPatternsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -2000,8 +1973,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern set.</p>
-        pub fn pattern_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_set_name(inp);
+        pub fn pattern_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_set_name(input.into());
             self
         }
         /// <p>The name of the log pattern set.</p>
@@ -2012,21 +1985,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pattern_set_name(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -2038,7 +2009,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLogPatternSets`.
     ///
     /// <p>Lists the log pattern sets in the specific application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLogPatternSets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2083,10 +2054,10 @@ pub mod fluent_builders {
                 crate::input::ListLogPatternSetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2094,9 +2065,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLogPatternSetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLogPatternSetsPaginator<C, M, R> {
+            crate::paginator::ListLogPatternSetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -2107,21 +2084,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_group_name(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -2133,7 +2108,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProblems`.
     ///
     /// <p>Lists the problems with your application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProblems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2178,10 +2153,10 @@ pub mod fluent_builders {
                 crate::input::ListProblemsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2189,9 +2164,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProblemsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProblemsPaginator<C, M, R> {
+            crate::paginator::ListProblemsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -2202,14 +2183,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_group_name(input);
             self
         }
-        /// <p>The time when the problem was detected, in epoch
-        /// seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The time when the problem was detected, in epoch
-        /// seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
+        /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2217,14 +2196,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the
-        /// past seven days are returned.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the
-        /// past seven days are returned.</p>
+        /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2232,21 +2209,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -2255,8 +2230,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(inp);
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -2270,13 +2245,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Retrieve a list of the tags (keys and values) that are associated with a specified
-    /// application. A <i>tag</i> is a label that you optionally define and associate
-    /// with an application. Each tag consists of a required <i>tag key</i> and an
-    /// optional associated <i>tag value</i>. A tag key is a general label that
-    /// acts as a category for more specific tag values. A tag value acts as a descriptor within
-    /// a tag key.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieve a list of the tags (keys and values) that are associated with a specified application. A <i>tag</i> is a label that you optionally define and associate with an application. Each tag consists of a required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2321,10 +2291,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2332,14 +2302,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag
-        /// information for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag information for.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag
-        /// information for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag information for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2347,15 +2315,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Add one or more tags (keys and values) to a specified application. A
-    /// <i>tag</i> is a label that you optionally define and associate with an
-    /// application. Tags can help you categorize and manage application in different ways, such as
-    /// by purpose, owner, environment, or other criteria. </p>
-    /// <p>Each tag consists of a required <i>tag key</i> and an
-    /// associated <i>tag value</i>, both of which you define. A tag key is a
-    /// general label that acts as a category for more specific tag values. A tag value acts as
-    /// a descriptor within a tag key.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Add one or more tags (keys and values) to a specified application. A <i>tag</i> is a label that you optionally define and associate with an application. Tags can help you categorize and manage application in different ways, such as by purpose, owner, environment, or other criteria. </p>
+    /// <p>Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2400,10 +2362,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2412,8 +2374,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application that you want to add one or more tags to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application that you want to add one or more tags to.</p>
@@ -2425,18 +2387,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that to add to the application. A tag consists of a required
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of tags that to add to the application. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags that to add to the application. A tag consists of a required
-        /// tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum
-        /// length of a tag key is 128 characters. The maximum length of a tag value is 256
-        /// characters.</p>
+        /// <p>A list of tags that to add to the application. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2448,7 +2404,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove one or more tags (keys and values) from a specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2493,10 +2449,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2505,8 +2461,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application that you want to remove one or more tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application that you want to remove one or more tags from.</p>
@@ -2518,20 +2474,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-        /// key, the action removes both that key and its associated tag value.</p>
-        /// <p>To remove more than one tag from the application, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand.
-        /// </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>To remove more than one tag from the application, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. </p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag
-        /// key, the action removes both that key and its associated tag value.</p>
-        /// <p>To remove more than one tag from the application, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand.
-        /// </p>
+        /// <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>
+        /// <p>To remove more than one tag from the application, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2543,7 +2493,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
     /// <p>Updates the application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2588,10 +2538,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2600,8 +2550,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -2612,44 +2562,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_group_name(input);
             self
         }
-        /// <p>
-        /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-        /// </p>
-        pub fn ops_center_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.ops_center_enabled(inp);
+        /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
+        pub fn ops_center_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.ops_center_enabled(input);
             self
         }
-        /// <p>
-        /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
-        /// </p>
+        /// <p> When set to <code>true</code>, creates opsItems for any problems detected on an application. </p>
         pub fn set_ops_center_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_ops_center_enabled(input);
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
-        pub fn cwe_monitor_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.cwe_monitor_enabled(inp);
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
+        pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.cwe_monitor_enabled(input);
             self
         }
-        /// <p>
-        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
-        /// </p>
+        /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn set_cwe_monitor_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_cwe_monitor_enabled(input);
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-        /// receive notifications for updates to the opsItem.</p>
-        pub fn ops_item_sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_item_sns_topic_arn(inp);
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
+        pub fn ops_item_sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_item_sns_topic_arn(input.into());
             self
         }
-        /// <p>
-        /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
-        /// receive notifications for updates to the opsItem.</p>
+        /// <p> The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
         pub fn set_ops_item_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2657,21 +2595,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ops_item_sns_topic_arn(input);
             self
         }
-        /// <p>
-        /// Disassociates the SNS topic from the opsItem created for detected problems.</p>
-        pub fn remove_sns_topic(mut self, inp: bool) -> Self {
-            self.inner = self.inner.remove_sns_topic(inp);
+        /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
+        pub fn remove_sns_topic(mut self, input: bool) -> Self {
+            self.inner = self.inner.remove_sns_topic(input);
             self
         }
-        /// <p>
-        /// Disassociates the SNS topic from the opsItem created for detected problems.</p>
+        /// <p> Disassociates the SNS topic from the opsItem created for detected problems.</p>
         pub fn set_remove_sns_topic(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_remove_sns_topic(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn auto_config_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_config_enabled(inp);
+        pub fn auto_config_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_config_enabled(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -2682,9 +2618,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateComponent`.
     ///
-    /// <p>Updates the custom component name and/or the list of resources that make up the
-    /// component.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the custom component name and/or the list of resources that make up the component.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateComponent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2729,10 +2664,10 @@ pub mod fluent_builders {
                 crate::input::UpdateComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2741,8 +2676,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -2754,8 +2689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(inp);
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -2767,8 +2702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the component.</p>
-        pub fn new_component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_component_name(inp);
+        pub fn new_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_component_name(input.into());
             self
         }
         /// <p>The new name of the component.</p>
@@ -2784,8 +2719,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_list`](Self::set_resource_list).
         ///
         /// <p>The list of resource ARNs that belong to the component.</p>
-        pub fn resource_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_list(inp);
+        pub fn resource_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_list(input.into());
             self
         }
         /// <p>The list of resource ARNs that belong to the component.</p>
@@ -2799,10 +2734,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateComponentConfiguration`.
     ///
-    /// <p>Updates the monitoring configurations for the component. The configuration input parameter
-    /// is an escaped JSON of the configuration and should match the schema of what is returned
-    /// by <code>DescribeComponentConfigurationRecommendation</code>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the monitoring configurations for the component. The configuration input parameter is an escaped JSON of the configuration and should match the schema of what is returned by <code>DescribeComponentConfigurationRecommendation</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateComponentConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2847,10 +2780,10 @@ pub mod fluent_builders {
                 crate::input::UpdateComponentConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2859,8 +2792,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -2872,8 +2805,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(inp);
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -2885,8 +2818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether the application component is monitored.</p>
-        pub fn monitor(mut self, inp: bool) -> Self {
-            self.inner = self.inner.monitor(inp);
+        pub fn monitor(mut self, input: bool) -> Self {
+            self.inner = self.inner.monitor(input);
             self
         }
         /// <p>Indicates whether the application component is monitored.</p>
@@ -2894,30 +2827,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitor(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-        /// <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
-        pub fn tier(mut self, inp: crate::model::Tier) -> Self {
-            self.inner = self.inner.tier(inp);
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        pub fn tier(mut self, input: crate::model::Tier) -> Self {
+            self.inner = self.inner.tier(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-        /// <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
             self.inner = self.inner.set_tier(input);
             self
         }
-        /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For
-        /// more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>.
-        /// You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete
-        /// format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
-        pub fn component_configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_configuration(inp);
+        /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
+        pub fn component_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_configuration(input.into());
             self
         }
-        /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For
-        /// more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>.
-        /// You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete
-        /// format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
+        /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
         pub fn set_component_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2926,8 +2851,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn auto_config_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_config_enabled(inp);
+        pub fn auto_config_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_config_enabled(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -2939,7 +2864,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLogPattern`.
     ///
     /// <p>Adds a log pattern to a <code>LogPatternSet</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLogPattern<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2984,10 +2909,10 @@ pub mod fluent_builders {
                 crate::input::UpdateLogPatternInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2996,8 +2921,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(inp);
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -3009,8 +2934,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern set.</p>
-        pub fn pattern_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_set_name(inp);
+        pub fn pattern_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_set_name(input.into());
             self
         }
         /// <p>The name of the log pattern set.</p>
@@ -3022,8 +2947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern.</p>
-        pub fn pattern_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_name(inp);
+        pub fn pattern_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_name(input.into());
             self
         }
         /// <p>The name of the log pattern.</p>
@@ -3032,8 +2957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
-        pub fn pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern(inp);
+        pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern(input.into());
             self
         }
         /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
@@ -3041,22 +2966,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pattern(input);
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
-        pub fn rank(mut self, inp: i32) -> Self {
-            self.inner = self.inner.rank(inp);
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
+        pub fn rank(mut self, input: i32) -> Self {
+            self.inner = self.inner.rank(input);
             self
         }
-        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
-        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-        /// </p>
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_rank(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

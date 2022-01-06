@@ -159,9 +159,9 @@ pub mod update_configuration_output {
         /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
         ///
         /// <p>The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.</p>
-        pub fn warnings(mut self, input: impl Into<crate::model::SanitizationWarning>) -> Self {
+        pub fn warnings(mut self, input: crate::model::SanitizationWarning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.warnings = Some(v);
             self
         }
@@ -587,9 +587,9 @@ pub mod list_users_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.</p>
-        pub fn users(mut self, input: impl Into<crate::model::UserSummary>) -> Self {
+        pub fn users(mut self, input: crate::model::UserSummary) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -742,9 +742,9 @@ pub mod list_configurations_output {
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
         /// <p>The list of all revisions for the specified configuration.</p>
-        pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
+        pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -885,9 +885,9 @@ pub mod list_configuration_revisions_output {
         /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
         ///
         /// <p>The list of all revisions for the specified configuration.</p>
-        pub fn revisions(mut self, input: impl Into<crate::model::ConfigurationRevision>) -> Self {
+        pub fn revisions(mut self, input: crate::model::ConfigurationRevision) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revisions = Some(v);
             self
         }
@@ -960,9 +960,9 @@ pub mod list_brokers_output {
         /// To override the contents of this collection use [`set_broker_summaries`](Self::set_broker_summaries).
         ///
         /// <p>A list of information about all brokers.</p>
-        pub fn broker_summaries(mut self, input: impl Into<crate::model::BrokerSummary>) -> Self {
+        pub fn broker_summaries(mut self, input: crate::model::BrokerSummary) -> Self {
             let mut v = self.broker_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.broker_summaries = Some(v);
             self
         }
@@ -1582,10 +1582,10 @@ pub mod describe_broker_instance_options_output {
         /// <p>List of available broker instance options.</p>
         pub fn broker_instance_options(
             mut self,
-            input: impl Into<crate::model::BrokerInstanceOption>,
+            input: crate::model::BrokerInstanceOption,
         ) -> Self {
             let mut v = self.broker_instance_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.broker_instance_options = Some(v);
             self
         }
@@ -1685,12 +1685,9 @@ pub mod describe_broker_engine_types_output {
         /// To override the contents of this collection use [`set_broker_engine_types`](Self::set_broker_engine_types).
         ///
         /// <p>List of available engine types and versions.</p>
-        pub fn broker_engine_types(
-            mut self,
-            input: impl Into<crate::model::BrokerEngineType>,
-        ) -> Self {
+        pub fn broker_engine_types(mut self, input: crate::model::BrokerEngineType) -> Self {
             let mut v = self.broker_engine_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.broker_engine_types = Some(v);
             self
         }
@@ -2072,9 +2069,9 @@ pub mod describe_broker_output {
         /// To override the contents of this collection use [`set_broker_instances`](Self::set_broker_instances).
         ///
         /// <p>A list of information about allocated brokers.</p>
-        pub fn broker_instances(mut self, input: impl Into<crate::model::BrokerInstance>) -> Self {
+        pub fn broker_instances(mut self, input: crate::model::BrokerInstance) -> Self {
             let mut v = self.broker_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.broker_instances = Some(v);
             self
         }
@@ -2410,9 +2407,9 @@ pub mod describe_broker_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>The list of all broker usernames for the specified broker.</p>
-        pub fn users(mut self, input: impl Into<crate::model::UserSummary>) -> Self {
+        pub fn users(mut self, input: crate::model::UserSummary) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }

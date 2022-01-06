@@ -12,11 +12,8 @@ pub struct DeleteLexiconError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLexiconErrorKind {
-    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a
-    /// lexicon that is missing, its name is misspelled or specifying a lexicon
-    /// that is in a different region.</p>
-    /// <p>Verify that the lexicon exists, is in the region (see <a>ListLexicons</a>) and that you spelled its name is spelled
-    /// correctly. Then try again.</p>
+    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p>
+    /// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
     LexiconNotFoundException(crate::error::LexiconNotFoundException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
@@ -62,8 +59,6 @@ impl DeleteLexiconError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -122,8 +117,7 @@ pub struct DescribeVoicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVoicesErrorKind {
-    /// <p>The NextToken is invalid. Verify that it's spelled correctly, and
-    /// then try again.</p>
+    /// <p>The NextToken is invalid. Verify that it's spelled correctly, and then try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
@@ -169,8 +163,6 @@ impl DescribeVoicesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -229,11 +221,8 @@ pub struct GetLexiconError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLexiconErrorKind {
-    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a
-    /// lexicon that is missing, its name is misspelled or specifying a lexicon
-    /// that is in a different region.</p>
-    /// <p>Verify that the lexicon exists, is in the region (see <a>ListLexicons</a>) and that you spelled its name is spelled
-    /// correctly. Then try again.</p>
+    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p>
+    /// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
     LexiconNotFoundException(crate::error::LexiconNotFoundException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
@@ -279,8 +268,6 @@ impl GetLexiconError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -333,13 +320,11 @@ pub struct GetSpeechSynthesisTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSpeechSynthesisTaskErrorKind {
-    /// <p>The provided Task ID is not valid. Please provide a valid Task ID and
-    /// try again.</p>
+    /// <p>The provided Task ID is not valid. Please provide a valid Task ID and try again.</p>
     InvalidTaskIdException(crate::error::InvalidTaskIdException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The Speech Synthesis task with requested Task ID cannot be
-    /// found.</p>
+    /// <p>The Speech Synthesis task with requested Task ID cannot be found.</p>
     SynthesisTaskNotFoundException(crate::error::SynthesisTaskNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -386,8 +371,6 @@ impl GetSpeechSynthesisTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -454,8 +437,7 @@ pub struct ListLexiconsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLexiconsErrorKind {
-    /// <p>The NextToken is invalid. Verify that it's spelled correctly, and
-    /// then try again.</p>
+    /// <p>The NextToken is invalid. Verify that it's spelled correctly, and then try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
@@ -501,8 +483,6 @@ impl ListLexiconsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -561,8 +541,7 @@ pub struct ListSpeechSynthesisTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSpeechSynthesisTasksErrorKind {
-    /// <p>The NextToken is invalid. Verify that it's spelled correctly, and
-    /// then try again.</p>
+    /// <p>The NextToken is invalid. Verify that it's spelled correctly, and then try again.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
@@ -608,8 +587,6 @@ impl ListSpeechSynthesisTasksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -668,25 +645,19 @@ pub struct PutLexiconError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutLexiconErrorKind {
-    /// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's
-    /// name is spelled correctly, and then try again.</p>
+    /// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's name is spelled correctly, and then try again.</p>
     InvalidLexiconException(crate::error::InvalidLexiconException),
-    /// <p>The maximum size of the specified lexicon would be exceeded by this
-    /// operation.</p>
+    /// <p>The maximum size of the specified lexicon would be exceeded by this operation.</p>
     LexiconSizeExceededException(crate::error::LexiconSizeExceededException),
-    /// <p>The maximum size of the lexeme would be exceeded by this
-    /// operation.</p>
+    /// <p>The maximum size of the lexeme would be exceeded by this operation.</p>
     MaxLexemeLengthExceededException(crate::error::MaxLexemeLengthExceededException),
-    /// <p>The maximum number of lexicons would be exceeded by this
-    /// operation.</p>
+    /// <p>The maximum number of lexicons would be exceeded by this operation.</p>
     MaxLexiconsNumberExceededException(crate::error::MaxLexiconsNumberExceededException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The alphabet specified by the lexicon is not a supported alphabet.
-    /// Valid values are <code>x-sampa</code> and <code>ipa</code>.</p>
+    /// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>x-sampa</code> and <code>ipa</code>.</p>
     UnsupportedPlsAlphabetException(crate::error::UnsupportedPlsAlphabetException),
-    /// <p>The language specified in the lexicon is unsupported. For a list of
-    /// supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
+    /// <p>The language specified in the lexicon is unsupported. For a list of supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
     UnsupportedPlsLanguageException(crate::error::UnsupportedPlsLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -735,8 +706,6 @@ impl PutLexiconError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -829,51 +798,32 @@ pub struct StartSpeechSynthesisTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartSpeechSynthesisTaskErrorKind {
-    /// <p>This engine is not compatible with the voice that you have designated.
-    /// Choose a new voice that is compatible with the engine or change the engine
-    /// and restart the operation.</p>
+    /// <p>This engine is not compatible with the voice that you have designated. Choose a new voice that is compatible with the engine or change the engine and restart the operation.</p>
     EngineNotSupportedException(crate::error::EngineNotSupportedException),
-    /// <p>The provided Amazon S3 bucket name is invalid. Please check your input
-    /// with S3 bucket naming requirements and try again.</p>
+    /// <p>The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket naming requirements and try again.</p>
     InvalidS3BucketException(crate::error::InvalidS3BucketException),
-    /// <p>The provided Amazon S3 key prefix is invalid. Please provide a valid
-    /// S3 object key name.</p>
+    /// <p>The provided Amazon S3 key prefix is invalid. Please provide a valid S3 object key name.</p>
     InvalidS3KeyException(crate::error::InvalidS3KeyException),
     /// <p>The specified sample rate is not valid.</p>
     InvalidSampleRateException(crate::error::InvalidSampleRateException),
-    /// <p>The provided SNS topic ARN is invalid. Please provide a valid SNS
-    /// topic ARN and try again.</p>
+    /// <p>The provided SNS topic ARN is invalid. Please provide a valid SNS topic ARN and try again.</p>
     InvalidSnsTopicArnException(crate::error::InvalidSnsTopicArnException),
-    /// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling
-    /// of tags and values, and then try again.</p>
+    /// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values, and then try again.</p>
     InvalidSsmlException(crate::error::InvalidSsmlException),
-    /// <p>The language specified is not currently supported by Amazon Polly in this
-    /// capacity.</p>
+    /// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
     LanguageNotSupportedException(crate::error::LanguageNotSupportedException),
-    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a
-    /// lexicon that is missing, its name is misspelled or specifying a lexicon
-    /// that is in a different region.</p>
-    /// <p>Verify that the lexicon exists, is in the region (see <a>ListLexicons</a>) and that you spelled its name is spelled
-    /// correctly. Then try again.</p>
+    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p>
+    /// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
     LexiconNotFoundException(crate::error::LexiconNotFoundException),
-    /// <p>Speech marks are not supported for the <code>OutputFormat</code>
-    /// selected. Speech marks are only available for content in <code>json</code>
-    /// format.</p>
+    /// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>
     MarksNotSupportedForFormatException(crate::error::MarksNotSupportedForFormatException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>SSML speech marks are not supported for plain text-type
-    /// input.</p>
+    /// <p>SSML speech marks are not supported for plain text-type input.</p>
     SsmlMarksNotSupportedForTextTypeException(
         crate::error::SsmlMarksNotSupportedForTextTypeException,
     ),
-    /// <p>The value of the "Text" parameter is longer than the accepted
-    /// limits. For the <code>SynthesizeSpeech</code> API, the limit for input
-    /// text is a maximum of 6000 characters total, of which no more than 3000 can
-    /// be billed characters. For the <code>StartSpeechSynthesisTask</code> API,
-    /// the maximum is 200,000 characters, of which no more than 100,000 can be
-    /// billed characters. SSML tags are not counted as billed
-    /// characters.</p>
+    /// <p>The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not counted as billed characters.</p>
     TextLengthExceededException(crate::error::TextLengthExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -933,8 +883,6 @@ impl StartSpeechSynthesisTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1079,42 +1027,26 @@ pub struct SynthesizeSpeechError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SynthesizeSpeechErrorKind {
-    /// <p>This engine is not compatible with the voice that you have designated.
-    /// Choose a new voice that is compatible with the engine or change the engine
-    /// and restart the operation.</p>
+    /// <p>This engine is not compatible with the voice that you have designated. Choose a new voice that is compatible with the engine or change the engine and restart the operation.</p>
     EngineNotSupportedException(crate::error::EngineNotSupportedException),
     /// <p>The specified sample rate is not valid.</p>
     InvalidSampleRateException(crate::error::InvalidSampleRateException),
-    /// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling
-    /// of tags and values, and then try again.</p>
+    /// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values, and then try again.</p>
     InvalidSsmlException(crate::error::InvalidSsmlException),
-    /// <p>The language specified is not currently supported by Amazon Polly in this
-    /// capacity.</p>
+    /// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
     LanguageNotSupportedException(crate::error::LanguageNotSupportedException),
-    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a
-    /// lexicon that is missing, its name is misspelled or specifying a lexicon
-    /// that is in a different region.</p>
-    /// <p>Verify that the lexicon exists, is in the region (see <a>ListLexicons</a>) and that you spelled its name is spelled
-    /// correctly. Then try again.</p>
+    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p>
+    /// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
     LexiconNotFoundException(crate::error::LexiconNotFoundException),
-    /// <p>Speech marks are not supported for the <code>OutputFormat</code>
-    /// selected. Speech marks are only available for content in <code>json</code>
-    /// format.</p>
+    /// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>
     MarksNotSupportedForFormatException(crate::error::MarksNotSupportedForFormatException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>SSML speech marks are not supported for plain text-type
-    /// input.</p>
+    /// <p>SSML speech marks are not supported for plain text-type input.</p>
     SsmlMarksNotSupportedForTextTypeException(
         crate::error::SsmlMarksNotSupportedForTextTypeException,
     ),
-    /// <p>The value of the "Text" parameter is longer than the accepted
-    /// limits. For the <code>SynthesizeSpeech</code> API, the limit for input
-    /// text is a maximum of 6000 characters total, of which no more than 3000 can
-    /// be billed characters. For the <code>StartSpeechSynthesisTask</code> API,
-    /// the maximum is 200,000 characters, of which no more than 100,000 can be
-    /// billed characters. SSML tags are not counted as billed
-    /// characters.</p>
+    /// <p>The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not counted as billed characters.</p>
     TextLengthExceededException(crate::error::TextLengthExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1167,8 +1099,6 @@ impl SynthesizeSpeechError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1272,13 +1202,7 @@ impl std::error::Error for SynthesizeSpeechError {
     }
 }
 
-/// <p>The value of the "Text" parameter is longer than the accepted
-/// limits. For the <code>SynthesizeSpeech</code> API, the limit for input
-/// text is a maximum of 6000 characters total, of which no more than 3000 can
-/// be billed characters. For the <code>StartSpeechSynthesisTask</code> API,
-/// the maximum is 200,000 characters, of which no more than 100,000 can be
-/// billed characters. SSML tags are not counted as billed
-/// characters.</p>
+/// <p>The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not counted as billed characters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextLengthExceededException {
@@ -1342,8 +1266,7 @@ impl TextLengthExceededException {
     }
 }
 
-/// <p>SSML speech marks are not supported for plain text-type
-/// input.</p>
+/// <p>SSML speech marks are not supported for plain text-type input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmlMarksNotSupportedForTextTypeException {
@@ -1471,9 +1394,7 @@ impl ServiceFailureException {
     }
 }
 
-/// <p>Speech marks are not supported for the <code>OutputFormat</code>
-/// selected. Speech marks are only available for content in <code>json</code>
-/// format.</p>
+/// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarksNotSupportedForFormatException {
@@ -1537,11 +1458,8 @@ impl MarksNotSupportedForFormatException {
     }
 }
 
-/// <p>Amazon Polly can't find the specified lexicon. This could be caused by a
-/// lexicon that is missing, its name is misspelled or specifying a lexicon
-/// that is in a different region.</p>
-/// <p>Verify that the lexicon exists, is in the region (see <a>ListLexicons</a>) and that you spelled its name is spelled
-/// correctly. Then try again.</p>
+/// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p>
+/// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexiconNotFoundException {
@@ -1605,8 +1523,7 @@ impl LexiconNotFoundException {
     }
 }
 
-/// <p>The language specified is not currently supported by Amazon Polly in this
-/// capacity.</p>
+/// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LanguageNotSupportedException {
@@ -1670,8 +1587,7 @@ impl LanguageNotSupportedException {
     }
 }
 
-/// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling
-/// of tags and values, and then try again.</p>
+/// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSsmlException {
@@ -1799,9 +1715,7 @@ impl InvalidSampleRateException {
     }
 }
 
-/// <p>This engine is not compatible with the voice that you have designated.
-/// Choose a new voice that is compatible with the engine or change the engine
-/// and restart the operation.</p>
+/// <p>This engine is not compatible with the voice that you have designated. Choose a new voice that is compatible with the engine or change the engine and restart the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineNotSupportedException {
@@ -1865,8 +1779,7 @@ impl EngineNotSupportedException {
     }
 }
 
-/// <p>The provided SNS topic ARN is invalid. Please provide a valid SNS
-/// topic ARN and try again.</p>
+/// <p>The provided SNS topic ARN is invalid. Please provide a valid SNS topic ARN and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSnsTopicArnException {
@@ -1930,8 +1843,7 @@ impl InvalidSnsTopicArnException {
     }
 }
 
-/// <p>The provided Amazon S3 key prefix is invalid. Please provide a valid
-/// S3 object key name.</p>
+/// <p>The provided Amazon S3 key prefix is invalid. Please provide a valid S3 object key name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3KeyException {
@@ -1995,8 +1907,7 @@ impl InvalidS3KeyException {
     }
 }
 
-/// <p>The provided Amazon S3 bucket name is invalid. Please check your input
-/// with S3 bucket naming requirements and try again.</p>
+/// <p>The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket naming requirements and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3BucketException {
@@ -2060,8 +1971,7 @@ impl InvalidS3BucketException {
     }
 }
 
-/// <p>The language specified in the lexicon is unsupported. For a list of
-/// supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
+/// <p>The language specified in the lexicon is unsupported. For a list of supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPlsLanguageException {
@@ -2125,8 +2035,7 @@ impl UnsupportedPlsLanguageException {
     }
 }
 
-/// <p>The alphabet specified by the lexicon is not a supported alphabet.
-/// Valid values are <code>x-sampa</code> and <code>ipa</code>.</p>
+/// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>x-sampa</code> and <code>ipa</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPlsAlphabetException {
@@ -2190,8 +2099,7 @@ impl UnsupportedPlsAlphabetException {
     }
 }
 
-/// <p>The maximum number of lexicons would be exceeded by this
-/// operation.</p>
+/// <p>The maximum number of lexicons would be exceeded by this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxLexiconsNumberExceededException {
@@ -2255,8 +2163,7 @@ impl MaxLexiconsNumberExceededException {
     }
 }
 
-/// <p>The maximum size of the lexeme would be exceeded by this
-/// operation.</p>
+/// <p>The maximum size of the lexeme would be exceeded by this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxLexemeLengthExceededException {
@@ -2320,8 +2227,7 @@ impl MaxLexemeLengthExceededException {
     }
 }
 
-/// <p>The maximum size of the specified lexicon would be exceeded by this
-/// operation.</p>
+/// <p>The maximum size of the specified lexicon would be exceeded by this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexiconSizeExceededException {
@@ -2385,8 +2291,7 @@ impl LexiconSizeExceededException {
     }
 }
 
-/// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's
-/// name is spelled correctly, and then try again.</p>
+/// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's name is spelled correctly, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLexiconException {
@@ -2450,8 +2355,7 @@ impl InvalidLexiconException {
     }
 }
 
-/// <p>The NextToken is invalid. Verify that it's spelled correctly, and
-/// then try again.</p>
+/// <p>The NextToken is invalid. Verify that it's spelled correctly, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
@@ -2515,8 +2419,7 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>The Speech Synthesis task with requested Task ID cannot be
-/// found.</p>
+/// <p>The Speech Synthesis task with requested Task ID cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SynthesisTaskNotFoundException {
@@ -2580,8 +2483,7 @@ impl SynthesisTaskNotFoundException {
     }
 }
 
-/// <p>The provided Task ID is not valid. Please provide a valid Task ID and
-/// try again.</p>
+/// <p>The provided Task ID is not valid. Please provide a valid Task ID and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTaskIdException {

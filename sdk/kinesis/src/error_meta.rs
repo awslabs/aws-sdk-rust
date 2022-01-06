@@ -7,48 +7,29 @@ pub enum Error {
     ExpiredIteratorException(crate::error::ExpiredIteratorException),
     /// <p>The pagination token passed to the operation is expired.</p>
     ExpiredNextTokenException(crate::error::ExpiredNextTokenException),
-    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.
-    /// For more information, see the returned message.</p>
+    /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>The ciphertext references a key that doesn't exist or that you don't have access
-    /// to.</p>
+    /// <p>The ciphertext references a key that doesn't exist or that you don't have access to.</p>
     KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
-    /// <p>The request was rejected because the specified customer master key (CMK) isn't
-    /// enabled.</p>
+    /// <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
     KmsDisabledException(crate::error::KmsDisabledException),
-    /// <p>The request was rejected because the state of the specified resource isn't valid for
-    /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a> in the <i>Amazon Web Services Key Management
-    /// Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource can't be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource can't be found.</p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
     /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
     KmsOptInRequired(crate::error::KmsOptInRequired),
-    /// <p>The request was denied due to request throttling. For more information about
-    /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-    /// the <i>Amazon Web Services Key Management Service Developer
-    /// Guide</i>.</p>
+    /// <p>The request was denied due to request throttling. For more information about throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     KmsThrottlingException(crate::error::KmsThrottlingException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request rate for the stream is too high, or the requested data is too large for
-    /// the available throughput. Reduce the frequency or size of your requests. For more
-    /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
-    /// <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and
-    /// Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>The resource is not available for this operation. For successful operation, the
-    /// resource must be in the <code>ACTIVE</code> state.</p>
+    /// <p>The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource could not be found. The stream might not be specified
-    /// correctly.</p>
+    /// <p>The requested resource could not be found. The stream might not be specified correctly.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    ///
-    /// </p>
+    /// <p> </p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

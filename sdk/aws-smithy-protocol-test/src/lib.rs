@@ -180,9 +180,9 @@ pub fn require_query_params<B>(
     Ok(())
 }
 
-pub fn validate_headers<B>(
+pub fn validate_headers<'a, B>(
     request: &Request<B>,
-    expected_headers: &[(impl AsRef<str>, impl AsRef<str>)],
+    expected_headers: impl IntoIterator<Item = (impl AsRef<str> + 'a, impl AsRef<str> + 'a)>,
 ) -> Result<(), ProtocolTestFailure> {
     for (key, expected_value) in expected_headers {
         let key = key.as_ref();
@@ -430,15 +430,15 @@ mod tests {
             .body(())
             .unwrap();
 
-        validate_headers(&request, &[("X-Foo", "foo")]).expect("header present");
-        validate_headers(&request, &[("X-Foo", "Foo")]).expect_err("case sensitive");
-        validate_headers(&request, &[("x-foo-list", "foo, bar")]).expect("list concat");
-        validate_headers(&request, &[("X-Foo-List", "foo")])
+        validate_headers(&request, [("X-Foo", "foo")]).expect("header present");
+        validate_headers(&request, [("X-Foo", "Foo")]).expect_err("case sensitive");
+        validate_headers(&request, [("x-foo-list", "foo, bar")]).expect("list concat");
+        validate_headers(&request, [("X-Foo-List", "foo")])
             .expect_err("all list members must be specified");
-        validate_headers(&request, &[("X-Inline", "inline, other")])
+        validate_headers(&request, [("X-Inline", "inline, other")])
             .expect("inline header lists also work");
         assert_eq!(
-            validate_headers(&request, &[("missing", "value")]),
+            validate_headers(&request, [("missing", "value")]),
             Err(ProtocolTestFailure::MissingHeader {
                 expected: "missing".to_owned()
             })

@@ -14,8 +14,7 @@ pub struct AcceptGrantError {
 pub enum AcceptGrantErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -74,8 +73,6 @@ impl AcceptGrantError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -164,8 +161,7 @@ pub struct CheckInLicenseError {
 pub enum CheckInLicenseErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>There was a conflict processing the request. Try your request again.</p>
     ConflictException(crate::error::ConflictException),
@@ -227,8 +223,6 @@ impl CheckInLicenseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -331,8 +325,7 @@ pub struct CheckoutBorrowLicenseError {
 pub enum CheckoutBorrowLicenseErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>The entitlement is not allowed.</p>
     EntitlementNotAllowedException(crate::error::EntitlementNotAllowedException),
@@ -407,8 +400,6 @@ impl CheckoutBorrowLicenseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -543,8 +534,7 @@ pub struct CheckoutLicenseError {
 pub enum CheckoutLicenseErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -616,8 +606,6 @@ impl CheckoutLicenseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -738,8 +726,7 @@ pub struct CreateGrantError {
 pub enum CreateGrantErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -798,8 +785,6 @@ impl CreateGrantError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -888,8 +873,7 @@ pub struct CreateGrantVersionError {
 pub enum CreateGrantVersionErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -948,8 +932,6 @@ impl CreateGrantVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1050,8 +1032,7 @@ pub struct CreateLicenseError {
 pub enum CreateLicenseErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -1110,8 +1091,6 @@ impl CreateLicenseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1203,8 +1182,7 @@ pub struct CreateLicenseConfigurationError {
 pub enum CreateLicenseConfigurationErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -1266,8 +1244,6 @@ impl CreateLicenseConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1364,8 +1340,7 @@ pub struct CreateLicenseConversionTaskForResourceError {
 pub enum CreateLicenseConversionTaskForResourceErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -1436,8 +1411,6 @@ impl CreateLicenseConversionTaskForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1544,8 +1517,7 @@ pub struct CreateLicenseManagerReportGeneratorError {
 pub enum CreateLicenseManagerReportGeneratorErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -1626,8 +1598,6 @@ impl CreateLicenseManagerReportGeneratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1754,8 +1724,7 @@ pub struct CreateLicenseVersionError {
 pub enum CreateLicenseVersionErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>There was a conflict processing the request. Try your request again.</p>
     ConflictException(crate::error::ConflictException),
@@ -1817,8 +1786,6 @@ impl CreateLicenseVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1927,8 +1894,7 @@ pub struct CreateTokenError {
 pub enum CreateTokenErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
     RateLimitExceededException(crate::error::RateLimitExceededException),
@@ -1990,8 +1956,6 @@ impl CreateTokenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2085,8 +2049,7 @@ pub struct DeleteGrantError {
 pub enum DeleteGrantErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -2145,8 +2108,6 @@ impl DeleteGrantError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2235,8 +2196,7 @@ pub struct DeleteLicenseError {
 pub enum DeleteLicenseErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>There was a conflict processing the request. Try your request again.</p>
     ConflictException(crate::error::ConflictException),
@@ -2298,8 +2258,6 @@ impl DeleteLicenseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2396,8 +2354,7 @@ pub struct DeleteLicenseConfigurationError {
 pub enum DeleteLicenseConfigurationErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -2454,8 +2411,6 @@ impl DeleteLicenseConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2542,8 +2497,7 @@ pub struct DeleteLicenseManagerReportGeneratorError {
 pub enum DeleteLicenseManagerReportGeneratorErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -2624,8 +2578,6 @@ impl DeleteLicenseManagerReportGeneratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2752,8 +2704,7 @@ pub struct DeleteTokenError {
 pub enum DeleteTokenErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
     RateLimitExceededException(crate::error::RateLimitExceededException),
@@ -2812,8 +2763,6 @@ impl DeleteTokenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2899,8 +2848,7 @@ pub struct ExtendLicenseConsumptionError {
 pub enum ExtendLicenseConsumptionErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -2961,8 +2909,6 @@ impl ExtendLicenseConsumptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3065,8 +3011,7 @@ pub struct GetAccessTokenError {
 pub enum GetAccessTokenErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
     RateLimitExceededException(crate::error::RateLimitExceededException),
@@ -3119,8 +3064,6 @@ impl GetAccessTokenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3202,8 +3145,7 @@ pub struct GetGrantError {
 pub enum GetGrantErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -3262,8 +3204,6 @@ impl GetGrantError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3349,8 +3289,7 @@ pub struct GetLicenseError {
 pub enum GetLicenseErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -3406,8 +3345,6 @@ impl GetLicenseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3488,8 +3425,7 @@ pub struct GetLicenseConfigurationError {
 pub enum GetLicenseConfigurationErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -3544,8 +3480,6 @@ impl GetLicenseConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3632,8 +3566,7 @@ pub struct GetLicenseConversionTaskError {
 pub enum GetLicenseConversionTaskErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -3688,8 +3621,6 @@ impl GetLicenseConversionTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3776,8 +3707,7 @@ pub struct GetLicenseManagerReportGeneratorError {
 pub enum GetLicenseManagerReportGeneratorErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -3856,8 +3786,6 @@ impl GetLicenseManagerReportGeneratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3980,8 +3908,7 @@ pub struct GetLicenseUsageError {
 pub enum GetLicenseUsageErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -4037,8 +3964,6 @@ impl GetLicenseUsageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4128,8 +4053,7 @@ pub struct GetServiceSettingsError {
 pub enum GetServiceSettingsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
     RateLimitExceededException(crate::error::RateLimitExceededException),
@@ -4179,8 +4103,6 @@ impl GetServiceSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4257,8 +4179,7 @@ pub struct ListAssociationsForLicenseConfigurationError {
 pub enum ListAssociationsForLicenseConfigurationErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>The request uses too many filters or too many filter values.</p>
     FilterLimitExceededException(crate::error::FilterLimitExceededException),
@@ -4329,8 +4250,6 @@ impl ListAssociationsForLicenseConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4437,8 +4356,7 @@ pub struct ListDistributedGrantsError {
 pub enum ListDistributedGrantsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -4497,8 +4415,6 @@ impl ListDistributedGrantsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4599,8 +4515,7 @@ pub struct ListFailuresForLicenseConfigurationOperationsError {
 pub enum ListFailuresForLicenseConfigurationOperationsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -4670,8 +4585,6 @@ impl ListFailuresForLicenseConfigurationOperationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4770,8 +4683,7 @@ pub struct ListLicenseConfigurationsError {
 pub enum ListLicenseConfigurationsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>The request uses too many filters or too many filter values.</p>
     FilterLimitExceededException(crate::error::FilterLimitExceededException),
@@ -4831,8 +4743,6 @@ impl ListLicenseConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4929,8 +4839,7 @@ pub struct ListLicenseConversionTasksError {
 pub enum ListLicenseConversionTasksErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -4987,8 +4896,6 @@ impl ListLicenseConversionTasksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5075,8 +4982,7 @@ pub struct ListLicenseManagerReportGeneratorsError {
 pub enum ListLicenseManagerReportGeneratorsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5157,8 +5063,6 @@ impl ListLicenseManagerReportGeneratorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5283,8 +5187,7 @@ pub struct ListLicensesError {
 pub enum ListLicensesErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5340,8 +5243,6 @@ impl ListLicensesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5425,8 +5326,7 @@ pub struct ListLicenseSpecificationsForResourceError {
 pub enum ListLicenseSpecificationsForResourceErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5492,8 +5392,6 @@ impl ListLicenseSpecificationsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5590,8 +5488,7 @@ pub struct ListLicenseVersionsError {
 pub enum ListLicenseVersionsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5644,8 +5541,6 @@ impl ListLicenseVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5730,8 +5625,7 @@ pub struct ListReceivedGrantsError {
 pub enum ListReceivedGrantsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5790,8 +5684,6 @@ impl ListReceivedGrantsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5892,8 +5784,7 @@ pub struct ListReceivedLicensesError {
 pub enum ListReceivedLicensesErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5952,8 +5843,6 @@ impl ListReceivedLicensesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6054,8 +5943,7 @@ pub struct ListResourceInventoryError {
 pub enum ListResourceInventoryErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>A dependency required to run the API is missing.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
@@ -6114,8 +6002,6 @@ impl ListResourceInventoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6216,8 +6102,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -6270,8 +6155,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6356,8 +6239,7 @@ pub struct ListTokensError {
 pub enum ListTokensErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
     RateLimitExceededException(crate::error::RateLimitExceededException),
@@ -6410,8 +6292,6 @@ impl ListTokensError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6484,8 +6364,7 @@ pub struct ListUsageForLicenseConfigurationError {
 pub enum ListUsageForLicenseConfigurationErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>The request uses too many filters or too many filter values.</p>
     FilterLimitExceededException(crate::error::FilterLimitExceededException),
@@ -6556,8 +6435,6 @@ impl ListUsageForLicenseConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6662,8 +6539,7 @@ pub struct RejectGrantError {
 pub enum RejectGrantErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -6722,8 +6598,6 @@ impl RejectGrantError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6812,8 +6686,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -6866,8 +6739,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6943,8 +6814,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -6997,8 +6867,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7080,8 +6948,7 @@ pub struct UpdateLicenseConfigurationError {
 pub enum UpdateLicenseConfigurationErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -7143,8 +7010,6 @@ impl UpdateLicenseConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7241,8 +7106,7 @@ pub struct UpdateLicenseManagerReportGeneratorError {
 pub enum UpdateLicenseManagerReportGeneratorErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -7323,8 +7187,6 @@ impl UpdateLicenseManagerReportGeneratorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7451,14 +7313,12 @@ pub struct UpdateLicenseSpecificationsForResourceError {
 pub enum UpdateLicenseSpecificationsForResourceErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>License Manager cannot allocate a license to a resource because of its state. </p>
-    /// <p>For example, you cannot allocate a license to an instance in the process of shutting
-    /// down.</p>
+    /// <p>For example, you cannot allocate a license to an instance in the process of shutting down.</p>
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
     /// <p>You do not have enough licenses available to support a new resource launch.</p>
     LicenseUsageException(crate::error::LicenseUsageException),
@@ -7530,8 +7390,6 @@ impl UpdateLicenseSpecificationsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7648,8 +7506,7 @@ pub struct UpdateServiceSettingsError {
 pub enum UpdateServiceSettingsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -7702,8 +7559,6 @@ impl UpdateServiceSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7965,8 +7820,7 @@ impl InvalidParameterValueException {
     }
 }
 
-/// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-/// policy associated with this account.</p>
+/// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationException {
@@ -8159,8 +8013,7 @@ impl LicenseUsageException {
 }
 
 /// <p>License Manager cannot allocate a license to a resource because of its state. </p>
-/// <p>For example, you cannot allocate a license to an instance in the process of shutting
-/// down.</p>
+/// <p>For example, you cannot allocate a license to an instance in the process of shutting down.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceStateException {

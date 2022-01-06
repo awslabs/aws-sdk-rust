@@ -66,13 +66,13 @@ pub(crate) enum JsonCredentials<'a> {
     Error {
         code: Cow<'a, str>,
         message: Cow<'a, str>,
-    }, // TODO(GeneralizedHttpCredentials): Add support for static credentials:
+    }, // TODO(https://github.com/awslabs/aws-sdk-rust/issues/340): Add support for static credentials:
        //  {
        //    "AccessKeyId" : "MUA...",
        //    "SecretAccessKey" : "/7PC5om...."
        //  }
 
-       // TODO(GeneralizedHttpCredentials): Add support for Assume role credentials:
+       // TODO(https://github.com/awslabs/aws-sdk-rust/issues/340): Add support for Assume role credentials:
        //   {
        //     // fields to construct STS client:
        //     "Region": "sts-region-name",

@@ -16,17 +16,13 @@ pub enum CreateParallelDataErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to
-    /// correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request. </p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity
-    /// below the stated limit.</p>
+    /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity below the stated limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -74,8 +70,6 @@ impl CreateParallelDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -166,17 +160,13 @@ pub struct DeleteParallelDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteParallelDataErrorKind {
-    /// <p>Another modification is being made. That modification must complete before you can make
-    /// your change.</p>
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The resource you are looking for has not been found. Review the resource you're looking
-    /// for and see if a different resource will accomplish your needs before retrying the revised
-    /// request.</p>
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -222,8 +212,6 @@ impl DeleteParallelDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -300,15 +288,11 @@ pub struct DeleteTerminologyError {
 pub enum DeleteTerminologyErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to
-    /// correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The resource you are looking for has not been found. Review the resource you're looking
-    /// for and see if a different resource will accomplish your needs before retrying the revised
-    /// request.</p>
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -354,8 +338,6 @@ impl DeleteTerminologyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -432,12 +414,9 @@ pub struct DescribeTextTranslationJobError {
 pub enum DescribeTextTranslationJobErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The resource you are looking for has not been found. Review the resource you're looking
-    /// for and see if a different resource will accomplish your needs before retrying the revised
-    /// request.</p>
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -482,8 +461,6 @@ impl DescribeTextTranslationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -552,15 +529,11 @@ pub struct GetParallelDataError {
 pub enum GetParallelDataErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to
-    /// correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The resource you are looking for has not been found. Review the resource you're looking
-    /// for and see if a different resource will accomplish your needs before retrying the revised
-    /// request.</p>
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -606,8 +579,6 @@ impl GetParallelDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -684,15 +655,11 @@ pub struct GetTerminologyError {
 pub enum GetTerminologyErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to
-    /// correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The resource you are looking for has not been found. Review the resource you're looking
-    /// for and see if a different resource will accomplish your needs before retrying the revised
-    /// request.</p>
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -738,8 +705,6 @@ impl GetTerminologyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -816,14 +781,11 @@ pub struct ImportTerminologyError {
 pub enum ImportTerminologyErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to
-    /// correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity
-    /// below the stated limit.</p>
+    /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity below the stated limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -869,8 +831,6 @@ impl ImportTerminologyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -947,11 +907,9 @@ pub struct ListParallelDataError {
 pub enum ListParallelDataErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to
-    /// correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -996,8 +954,6 @@ impl ListParallelDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1066,11 +1022,9 @@ pub struct ListTerminologiesError {
 pub enum ListTerminologiesErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to
-    /// correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1115,8 +1069,6 @@ impl ListTerminologiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1187,11 +1139,9 @@ pub enum ListTextTranslationJobsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request. </p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1237,8 +1187,6 @@ impl ListTextTranslationJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1315,21 +1263,15 @@ pub struct StartTextTranslationJobError {
 pub enum StartTextTranslationJobErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to
-    /// correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request. </p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource you are looking for has not been found. Review the resource you're looking
-    /// for and see if a different resource will accomplish your needs before retrying the revised
-    /// request.</p>
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>Amazon Translate does not support translation from the language of the source text into the requested
-    /// target language. For more information, see <a>how-to-error-msg</a>. </p>
+    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <code>how-to-error-msg</code>. </p>
     UnsupportedLanguagePairException(crate::error::UnsupportedLanguagePairException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1381,8 +1323,6 @@ impl StartTextTranslationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1479,12 +1419,9 @@ pub struct StopTextTranslationJobError {
 pub enum StopTextTranslationJobErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The resource you are looking for has not been found. Review the resource you're looking
-    /// for and see if a different resource will accomplish your needs before retrying the revised
-    /// request.</p>
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1529,8 +1466,6 @@ impl StopTextTranslationJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1597,31 +1532,21 @@ pub struct TranslateTextError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TranslateTextErrorKind {
-    /// <p>The confidence that Amazon Comprehend accurately detected the source language is low. If a
-    /// low confidence level is acceptable for your application, you can use the language in the
-    /// exception to call Amazon Translate again. For more information, see the <a href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer
-    /// Guide</i>. </p>
+    /// <p>The confidence that Amazon Comprehend accurately detected the source language is low. If a low confidence level is acceptable for your application, you can use the language in the exception to call Amazon Translate again. For more information, see the <a href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer Guide</i>. </p>
     DetectedLanguageLowConfidenceException(crate::error::DetectedLanguageLowConfidenceException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request. </p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource you are looking for has not been found. Review the resource you're looking
-    /// for and see if a different resource will accomplish your needs before retrying the revised
-    /// request.</p>
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The Amazon Translate service is temporarily unavailable. Please wait a bit and then retry your
-    /// request.</p>
+    /// <p>The Amazon Translate service is temporarily unavailable. Please wait a bit and then retry your request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>Amazon Translate does not support translation from the language of the source text into the requested
-    /// target language. For more information, see <a>how-to-error-msg</a>. </p>
+    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <code>how-to-error-msg</code>. </p>
     UnsupportedLanguagePairException(crate::error::UnsupportedLanguagePairException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1671,8 +1596,6 @@ impl TranslateTextError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1779,28 +1702,21 @@ pub struct UpdateParallelDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateParallelDataErrorKind {
-    /// <p>Another modification is being made. That modification must complete before you can make
-    /// your change.</p>
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>There was a conflict processing the request. Try your request again.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to
-    /// correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request. </p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity
-    /// below the stated limit.</p>
+    /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity below the stated limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource you are looking for has not been found. Review the resource you're looking
-    /// for and see if a different resource will accomplish your needs before retrying the revised
-    /// request.</p>
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1850,8 +1766,6 @@ impl UpdateParallelDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1945,8 +1859,7 @@ impl std::error::Error for UpdateParallelDataError {
     }
 }
 
-/// <p> You have made too many requests within a short period of time. Wait for a short time and
-/// then try your request again.</p>
+/// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
@@ -2010,9 +1923,7 @@ impl TooManyRequestsException {
     }
 }
 
-/// <p>The resource you are looking for has not been found. Review the resource you're looking
-/// for and see if a different resource will accomplish your needs before retrying the revised
-/// request.</p>
+/// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -2076,8 +1987,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The specified limit has been exceeded. Review your request and retry it with a quantity
-/// below the stated limit.</p>
+/// <p>The specified limit has been exceeded. Review your request and retry it with a quantity below the stated limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -2141,8 +2051,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p> The request that you made is invalid. Check your request to determine why it's invalid
-/// and then retry the request. </p>
+/// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
@@ -2206,8 +2115,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>The value of the parameter is invalid. Review the value of the parameter you are using to
-/// correct it, and then retry your operation.</p>
+/// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
@@ -2399,8 +2307,7 @@ impl ConflictException {
     }
 }
 
-/// <p>Another modification is being made. That modification must complete before you can make
-/// your change.</p>
+/// <p>Another modification is being made. That modification must complete before you can make your change.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
@@ -2464,8 +2371,7 @@ impl ConcurrentModificationException {
     }
 }
 
-/// <p>Amazon Translate does not support translation from the language of the source text into the requested
-/// target language. For more information, see <a>how-to-error-msg</a>. </p>
+/// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <code>how-to-error-msg</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedLanguagePairException {
@@ -2575,8 +2481,7 @@ impl UnsupportedLanguagePairException {
     }
 }
 
-/// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-/// use a smaller document and then retry your request. </p>
+/// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextSizeLimitExceededException {
@@ -2640,8 +2545,7 @@ impl TextSizeLimitExceededException {
     }
 }
 
-/// <p>The Amazon Translate service is temporarily unavailable. Please wait a bit and then retry your
-/// request.</p>
+/// <p>The Amazon Translate service is temporarily unavailable. Please wait a bit and then retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
@@ -2705,10 +2609,7 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p>The confidence that Amazon Comprehend accurately detected the source language is low. If a
-/// low confidence level is acceptable for your application, you can use the language in the
-/// exception to call Amazon Translate again. For more information, see the <a href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer
-/// Guide</i>. </p>
+/// <p>The confidence that Amazon Comprehend accurately detected the source language is low. If a low confidence level is acceptable for your application, you can use the language in the exception to call Amazon Translate again. For more information, see the <a href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectedLanguageLowConfidenceException {

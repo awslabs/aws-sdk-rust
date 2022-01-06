@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS IoT Analytics
@@ -215,6 +215,7 @@ where
     ///
     /// See [`ListChannels`](crate::client::fluent_builders::ListChannels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
     pub fn list_channels(&self) -> fluent_builders::ListChannels<C, M, R> {
         fluent_builders::ListChannels::new(self.handle.clone())
     }
@@ -222,6 +223,7 @@ where
     ///
     /// See [`ListDatasetContents`](crate::client::fluent_builders::ListDatasetContents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetContents::into_paginator).
     pub fn list_dataset_contents(&self) -> fluent_builders::ListDatasetContents<C, M, R> {
         fluent_builders::ListDatasetContents::new(self.handle.clone())
     }
@@ -229,6 +231,7 @@ where
     ///
     /// See [`ListDatasets`](crate::client::fluent_builders::ListDatasets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
     pub fn list_datasets(&self) -> fluent_builders::ListDatasets<C, M, R> {
         fluent_builders::ListDatasets::new(self.handle.clone())
     }
@@ -236,6 +239,7 @@ where
     ///
     /// See [`ListDatastores`](crate::client::fluent_builders::ListDatastores) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatastores::into_paginator).
     pub fn list_datastores(&self) -> fluent_builders::ListDatastores<C, M, R> {
         fluent_builders::ListDatastores::new(self.handle.clone())
     }
@@ -243,6 +247,7 @@ where
     ///
     /// See [`ListPipelines`](crate::client::fluent_builders::ListPipelines) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
     pub fn list_pipelines(&self) -> fluent_builders::ListPipelines<C, M, R> {
         fluent_builders::ListPipelines::new(self.handle.clone())
     }
@@ -337,7 +342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchPutMessage`.
     ///
     /// <p>Sends messages to a channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -382,10 +387,10 @@ pub mod fluent_builders {
                 crate::input::BatchPutMessageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -394,8 +399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the channel where the messages are sent.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The name of the channel where the messages are sent.</p>
@@ -407,66 +412,32 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string",
-        /// "payload": "string"}.</p>
+        /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
         /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain only alphanumeric characters and undescores (_). No other special characters are
-        /// allowed.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must begin with an alphabetic character or single underscore (_).</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot contain hyphens (-).</p>
-        /// </li>
-        /// <li>
-        /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot be more than 255 characters.</p>
-        /// </li>
-        /// <li>
-        /// <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered
-        /// duplicates.)</p>
-        /// </li>
+        /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
+        /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
+        /// <li> <p>Cannot contain hyphens (-).</p> </li>
+        /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
+        /// <li> <p>Cannot be more than 255 characters.</p> </li>
+        /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
         /// </ul>
-        /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29},
-        /// {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.  </p>
-        pub fn messages(mut self, inp: impl Into<crate::model::Message>) -> Self {
-            self.inner = self.inner.messages(inp);
+        /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
+            self.inner = self.inner.messages(input);
             self
         }
-        /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string",
-        /// "payload": "string"}.</p>
+        /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
         /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain only alphanumeric characters and undescores (_). No other special characters are
-        /// allowed.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must begin with an alphabetic character or single underscore (_).</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot contain hyphens (-).</p>
-        /// </li>
-        /// <li>
-        /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot be more than 255 characters.</p>
-        /// </li>
-        /// <li>
-        /// <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered
-        /// duplicates.)</p>
-        /// </li>
+        /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
+        /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
+        /// <li> <p>Cannot contain hyphens (-).</p> </li>
+        /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
+        /// <li> <p>Cannot be more than 255 characters.</p> </li>
+        /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
         /// </ul>
-        /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29},
-        /// {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.  </p>
+        /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -478,7 +449,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelPipelineReprocessing`.
     ///
     /// <p>Cancels the reprocessing of data through the pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelPipelineReprocessing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -523,10 +494,10 @@ pub mod fluent_builders {
                 crate::input::CancelPipelineReprocessingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -535,8 +506,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of pipeline for which data reprocessing is canceled.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of pipeline for which data reprocessing is canceled.</p>
@@ -547,14 +518,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_name(input);
             self
         }
-        /// <p>The ID of the reprocessing task (returned by
-        /// <code>StartPipelineReprocessing</code>).</p>
-        pub fn reprocessing_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reprocessing_id(inp);
+        /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
+        pub fn reprocessing_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reprocessing_id(input.into());
             self
         }
-        /// <p>The ID of the reprocessing task (returned by
-        /// <code>StartPipelineReprocessing</code>).</p>
+        /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
         pub fn set_reprocessing_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -565,9 +534,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateChannel`.
     ///
-    /// <p>Used to create a channel. A channel collects data from an MQTT topic and archives the raw,
-    /// unprocessed messages before publishing the data to a pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Used to create a channel. A channel collects data from an MQTT topic and archives the raw, unprocessed messages before publishing the data to a pipeline.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -612,10 +580,10 @@ pub mod fluent_builders {
                 crate::input::CreateChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -624,8 +592,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the channel.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The name of the channel.</p>
@@ -633,18 +601,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
-        pub fn channel_storage(mut self, inp: crate::model::ChannelStorage) -> Self {
-            self.inner = self.inner.channel_storage(inp);
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
+        pub fn channel_storage(mut self, input: crate::model::ChannelStorage) -> Self {
+            self.inner = self.inner.channel_storage(input);
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
         pub fn set_channel_storage(
             mut self,
             input: std::option::Option<crate::model::ChannelStorage>,
@@ -652,14 +614,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_storage(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -672,8 +632,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the channel.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata which can be used to manage the channel.</p>
@@ -687,12 +647,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
-    /// <p>Used to create a dataset. A dataset stores data retrieved from a data store by applying a
-    /// <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing a
-    /// containerized application). This operation creates the skeleton of a dataset. The dataset can
-    /// be populated manually by calling <code>CreateDatasetContent</code> or automatically according
-    /// to a trigger you specify.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Used to create a dataset. A dataset stores data retrieved from a data store by applying a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing a containerized application). This operation creates the skeleton of a dataset. The dataset can be populated manually by calling <code>CreateDatasetContent</code> or automatically according to a trigger you specify.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -737,10 +693,10 @@ pub mod fluent_builders {
                 crate::input::CreateDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -749,8 +705,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset.</p>
@@ -763,8 +719,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>A list of actions that create the dataset contents.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::DatasetAction>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::DatasetAction) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>A list of actions that create the dataset contents.</p>
@@ -779,16 +735,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
-        /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
-        /// interval or when another dataset's contents are created. The list of triggers can be empty or
-        /// contain up to five <code>DataSetTrigger</code> objects.</p>
-        pub fn triggers(mut self, inp: impl Into<crate::model::DatasetTrigger>) -> Self {
-            self.inner = self.inner.triggers(inp);
+        /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
+        pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
+            self.inner = self.inner.triggers(input);
             self
         }
-        /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
-        /// interval or when another dataset's contents are created. The list of triggers can be empty or
-        /// contain up to five <code>DataSetTrigger</code> objects.</p>
+        /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
         pub fn set_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
@@ -800,17 +752,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_content_delivery_rules`](Self::set_content_delivery_rules).
         ///
-        /// <p>When dataset contents are created, they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
         pub fn content_delivery_rules(
             mut self,
-            inp: impl Into<crate::model::DatasetContentDeliveryRule>,
+            input: crate::model::DatasetContentDeliveryRule,
         ) -> Self {
-            self.inner = self.inner.content_delivery_rules(inp);
+            self.inner = self.inner.content_delivery_rules(input);
             self
         }
-        /// <p>When dataset contents are created, they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
         pub fn set_content_delivery_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
@@ -818,22 +768,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_delivery_rules(input);
             self
         }
-        /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not
-        /// specified or set to <code>null</code>, versions of dataset contents are retained for at most
-        /// 90 days. The number of versions of dataset contents retained is determined by the
-        /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
-        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
-        /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not
-        /// specified or set to <code>null</code>, versions of dataset contents are retained for at most
-        /// 90 days. The number of versions of dataset contents retained is determined by the
-        /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
-        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -841,23 +781,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_retention_period(input);
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn versioning_configuration(
             mut self,
-            inp: crate::model::VersioningConfiguration,
+            input: crate::model::VersioningConfiguration,
         ) -> Self {
-            self.inner = self.inner.versioning_configuration(inp);
+            self.inner = self.inner.versioning_configuration(input);
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn set_versioning_configuration(
             mut self,
             input: std::option::Option<crate::model::VersioningConfiguration>,
@@ -870,8 +802,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the dataset.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata which can be used to manage the dataset.</p>
@@ -887,8 +819,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_late_data_rules`](Self::set_late_data_rules).
         ///
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-        pub fn late_data_rules(mut self, inp: impl Into<crate::model::LateDataRule>) -> Self {
-            self.inner = self.inner.late_data_rules(inp);
+        pub fn late_data_rules(mut self, input: crate::model::LateDataRule) -> Self {
+            self.inner = self.inner.late_data_rules(input);
             self
         }
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
@@ -902,9 +834,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDatasetContent`.
     ///
-    /// <p>Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query) or a
-    /// <code>containerAction</code> (executing a containerized application).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing a containerized application).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatasetContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -949,10 +880,10 @@ pub mod fluent_builders {
                 crate::input::CreateDatasetContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -961,8 +892,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset.</p>
@@ -970,14 +901,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset
-        /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
             self
         }
-        /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset
-        /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+        /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_id(input);
             self
@@ -986,7 +915,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDatastore`.
     ///
     /// <p>Creates a data store, which is a repository for messages.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatastore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1031,10 +960,10 @@ pub mod fluent_builders {
                 crate::input::CreateDatastoreInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1043,8 +972,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data store.</p>
-        pub fn datastore_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_name(inp);
+        pub fn datastore_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_name(input.into());
             self
         }
         /// <p>The name of the data store.</p>
@@ -1056,8 +985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
-        pub fn datastore_storage(mut self, inp: crate::model::DatastoreStorage) -> Self {
-            self.inner = self.inner.datastore_storage(inp);
+        pub fn datastore_storage(mut self, input: crate::model::DatastoreStorage) -> Self {
+            self.inner = self.inner.datastore_storage(input);
             self
         }
         /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
@@ -1068,14 +997,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_datastore_storage(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -1088,8 +1015,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the data store.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata which can be used to manage the data store.</p>
@@ -1100,17 +1027,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn file_format_configuration(
             mut self,
-            inp: crate::model::FileFormatConfiguration,
+            input: crate::model::FileFormatConfiguration,
         ) -> Self {
-            self.inner = self.inner.file_format_configuration(inp);
+            self.inner = self.inner.file_format_configuration(input);
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn set_file_format_configuration(
@@ -1121,8 +1048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Contains information about the partition dimensions in a data store. </p>
-        pub fn datastore_partitions(mut self, inp: crate::model::DatastorePartitions) -> Self {
-            self.inner = self.inner.datastore_partitions(inp);
+        pub fn datastore_partitions(mut self, input: crate::model::DatastorePartitions) -> Self {
+            self.inner = self.inner.datastore_partitions(input);
             self
         }
         /// <p> Contains information about the partition dimensions in a data store. </p>
@@ -1136,11 +1063,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePipeline`.
     ///
-    /// <p>Creates a pipeline. A pipeline consumes messages from a channel and allows you to process
-    /// the messages before storing them in a data store. You must specify both a <code>channel</code>
-    /// and a <code>datastore</code> activity and, optionally, as many as 23 additional activities in
-    /// the <code>pipelineActivities</code> array.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a pipeline. A pipeline consumes messages from a channel and allows you to process the messages before storing them in a data store. You must specify both a <code>channel</code> and a <code>datastore</code> activity and, optionally, as many as 23 additional activities in the <code>pipelineActivities</code> array.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1185,10 +1109,10 @@ pub mod fluent_builders {
                 crate::input::CreatePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1197,8 +1121,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline.</p>
@@ -1213,35 +1137,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_pipeline_activities`](Self::set_pipeline_activities).
         ///
-        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-        /// your messages, such as removing, renaming or adding message attributes; filtering messages
-        /// based on attribute values; invoking your Lambda unctions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.</p>
-        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-        /// contain only one activity. For example:</p>
-        /// <p>
-        /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-        /// ]</code>
-        /// </p>
-        pub fn pipeline_activities(
-            mut self,
-            inp: impl Into<crate::model::PipelineActivity>,
-        ) -> Self {
-            self.inner = self.inner.pipeline_activities(inp);
+        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+        /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
+        pub fn pipeline_activities(mut self, input: crate::model::PipelineActivity) -> Self {
+            self.inner = self.inner.pipeline_activities(input);
             self
         }
-        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-        /// your messages, such as removing, renaming or adding message attributes; filtering messages
-        /// based on attribute values; invoking your Lambda unctions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.</p>
-        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-        /// contain only one activity. For example:</p>
-        /// <p>
-        /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-        /// ]</code>
-        /// </p>
+        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+        /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
         pub fn set_pipeline_activities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
@@ -1254,8 +1159,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the pipeline.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>Metadata which can be used to manage the pipeline.</p>
@@ -1270,7 +1175,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteChannel`.
     ///
     /// <p>Deletes the specified channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1315,10 +1220,10 @@ pub mod fluent_builders {
                 crate::input::DeleteChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1327,8 +1232,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the channel to delete.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The name of the channel to delete.</p>
@@ -1340,9 +1245,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
     /// <p>Deletes the specified dataset.</p>
-    /// <p>You do not have to delete the content of the dataset before you perform this
-    /// operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You do not have to delete the content of the dataset before you perform this operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1387,10 +1291,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1399,8 +1303,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset to delete.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset to delete.</p>
@@ -1412,7 +1316,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDatasetContent`.
     ///
     /// <p>Deletes the content of the specified dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatasetContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1457,10 +1361,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDatasetContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1469,8 +1373,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset whose content is deleted.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset whose content is deleted.</p>
@@ -1478,16 +1382,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>The version of the dataset whose content is deleted. You can also use the strings
-        /// "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data
-        /// set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        /// <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
             self
         }
-        /// <p>The version of the dataset whose content is deleted. You can also use the strings
-        /// "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data
-        /// set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        /// <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_id(input);
             self
@@ -1496,7 +1396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDatastore`.
     ///
     /// <p>Deletes the specified data store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatastore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1541,10 +1441,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDatastoreInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1553,8 +1453,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data store to delete.</p>
-        pub fn datastore_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_name(inp);
+        pub fn datastore_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_name(input.into());
             self
         }
         /// <p>The name of the data store to delete.</p>
@@ -1569,7 +1469,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePipeline`.
     ///
     /// <p>Deletes the specified pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1614,10 +1514,10 @@ pub mod fluent_builders {
                 crate::input::DeletePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1626,8 +1526,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to delete.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline to delete.</p>
@@ -1642,7 +1542,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeChannel`.
     ///
     /// <p>Retrieves information about a channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1687,10 +1587,10 @@ pub mod fluent_builders {
                 crate::input::DescribeChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1699,8 +1599,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the channel whose information is retrieved.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The name of the channel whose information is retrieved.</p>
@@ -1708,14 +1608,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>If true, additional statistical information about the channel is included in the response.
-        /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
-        pub fn include_statistics(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_statistics(inp);
+        /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
+        pub fn include_statistics(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_statistics(input);
             self
         }
-        /// <p>If true, additional statistical information about the channel is included in the response.
-        /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
+        /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
         pub fn set_include_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_statistics(input);
             self
@@ -1724,7 +1622,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDataset`.
     ///
     /// <p>Retrieves information about a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1769,10 +1667,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1781,8 +1679,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset whose information is retrieved.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset whose information is retrieved.</p>
@@ -1794,7 +1692,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDatastore`.
     ///
     /// <p>Retrieves information about a data store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDatastore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1839,10 +1737,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDatastoreInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1851,8 +1749,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data store</p>
-        pub fn datastore_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_name(inp);
+        pub fn datastore_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_name(input.into());
             self
         }
         /// <p>The name of the data store</p>
@@ -1863,16 +1761,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_datastore_name(input);
             self
         }
-        /// <p>If true, additional statistical information about the data store is included in the
-        /// response. This feature can't be used with a data store whose S3 storage is
-        /// customer-managed.</p>
-        pub fn include_statistics(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_statistics(inp);
+        /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
+        pub fn include_statistics(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_statistics(input);
             self
         }
-        /// <p>If true, additional statistical information about the data store is included in the
-        /// response. This feature can't be used with a data store whose S3 storage is
-        /// customer-managed.</p>
+        /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
         pub fn set_include_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_statistics(input);
             self
@@ -1881,7 +1775,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoggingOptions`.
     ///
     /// <p>Retrieves the current settings of the IoT Analytics logging options.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1926,10 +1820,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLoggingOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1941,7 +1835,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePipeline`.
     ///
     /// <p>Retrieves information about a pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1986,10 +1880,10 @@ pub mod fluent_builders {
                 crate::input::DescribePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1998,8 +1892,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline whose information is retrieved.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline whose information is retrieved.</p>
@@ -2014,7 +1908,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDatasetContent`.
     ///
     /// <p>Retrieves the contents of a dataset as presigned URIs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDatasetContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2059,10 +1953,10 @@ pub mod fluent_builders {
                 crate::input::GetDatasetContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2071,8 +1965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset whose contents are retrieved.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset whose contents are retrieved.</p>
@@ -2080,16 +1974,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
-        /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully
-        /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
             self
         }
-        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
-        /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully
-        /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_id(input);
             self
@@ -2098,7 +1988,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListChannels`.
     ///
     /// <p>Retrieves a list of channels.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2143,10 +2033,10 @@ pub mod fluent_builders {
                 crate::input::ListChannelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2154,9 +2044,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChannelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListChannelsPaginator<C, M, R> {
+            crate::paginator::ListChannelsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2166,8 +2062,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in this request.</p>
         /// <p>The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -2180,7 +2076,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDatasetContents`.
     ///
     /// <p>Lists information about dataset contents that have been created.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasetContents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2225,10 +2121,10 @@ pub mod fluent_builders {
                 crate::input::ListDatasetContentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2236,9 +2132,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatasetContentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatasetContentsPaginator<C, M, R> {
+            crate::paginator::ListDatasetContentsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the dataset whose contents information you want to list.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset whose contents information you want to list.</p>
@@ -2247,8 +2149,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2257,8 +2159,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -2266,16 +2168,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
-        /// after the given time. See the field <code>triggers.schedule</code> in the
-        /// <code>CreateDataset</code> request. (timestamp)</p>
-        pub fn scheduled_on_or_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.scheduled_on_or_after(inp);
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
+        pub fn scheduled_on_or_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_on_or_after(input);
             self
         }
-        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
-        /// after the given time. See the field <code>triggers.schedule</code> in the
-        /// <code>CreateDataset</code> request. (timestamp)</p>
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
         pub fn set_scheduled_on_or_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2283,16 +2181,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scheduled_on_or_after(input);
             self
         }
-        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
-        /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
-        /// request. (timestamp)</p>
-        pub fn scheduled_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.scheduled_before(inp);
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
+        pub fn scheduled_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_before(input);
             self
         }
-        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
-        /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
-        /// request. (timestamp)</p>
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
         pub fn set_scheduled_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2304,7 +2198,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDatasets`.
     ///
     /// <p>Retrieves information about datasets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2349,10 +2243,10 @@ pub mod fluent_builders {
                 crate::input::ListDatasetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2360,9 +2254,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatasetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatasetsPaginator<C, M, R> {
+            crate::paginator::ListDatasetsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2372,8 +2272,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in this request.</p>
         /// <p>The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -2386,7 +2286,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDatastores`.
     ///
     /// <p>Retrieves a list of data stores.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatastores<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2431,10 +2331,10 @@ pub mod fluent_builders {
                 crate::input::ListDatastoresInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2442,9 +2342,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatastoresPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatastoresPaginator<C, M, R> {
+            crate::paginator::ListDatastoresPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2454,8 +2360,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in this request.</p>
         /// <p>The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -2468,7 +2374,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPipelines`.
     ///
     /// <p>Retrieves a list of pipelines.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPipelines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2513,10 +2419,10 @@ pub mod fluent_builders {
                 crate::input::ListPipelinesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2524,9 +2430,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPipelinesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPipelinesPaginator<C, M, R> {
+            crate::paginator::ListPipelinesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2536,8 +2448,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in this request.</p>
         /// <p>The default value is 100.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -2550,7 +2462,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags (metadata) that you have assigned to the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2595,10 +2507,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2607,8 +2519,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource whose tags you want to list.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource whose tags you want to list.</p>
@@ -2620,11 +2532,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutLoggingOptions`.
     ///
     /// <p>Sets or updates the IoT Analytics logging options.</p>
-    /// <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one
-    /// minute for the change to take effect. Also, if you change the policy attached to the role you
-    /// specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it
-    /// takes up to five minutes for that change to take effect. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the change to take effect. Also, if you change the policy attached to the role you specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it takes up to five minutes for that change to take effect. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLoggingOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2669,10 +2578,10 @@ pub mod fluent_builders {
                 crate::input::PutLoggingOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2681,8 +2590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The new values of the IoT Analytics logging options.</p>
-        pub fn logging_options(mut self, inp: crate::model::LoggingOptions) -> Self {
-            self.inner = self.inner.logging_options(inp);
+        pub fn logging_options(mut self, input: crate::model::LoggingOptions) -> Self {
+            self.inner = self.inner.logging_options(input);
             self
         }
         /// <p>The new values of the IoT Analytics logging options.</p>
@@ -2697,7 +2606,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RunPipelineActivity`.
     ///
     /// <p>Simulates the results of running a pipeline activity on a message payload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RunPipelineActivity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2742,10 +2651,10 @@ pub mod fluent_builders {
                 crate::input::RunPipelineActivityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2753,20 +2662,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store
-        /// activity because these activities are used in a pipeline only to load the original message and
-        /// to store the (possibly) transformed message. If a Lambda activity is specified, only
-        /// short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be
-        /// used.</p>
-        pub fn pipeline_activity(mut self, inp: crate::model::PipelineActivity) -> Self {
-            self.inner = self.inner.pipeline_activity(inp);
+        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
+        pub fn pipeline_activity(mut self, input: crate::model::PipelineActivity) -> Self {
+            self.inner = self.inner.pipeline_activity(input);
             self
         }
-        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store
-        /// activity because these activities are used in a pipeline only to load the original message and
-        /// to store the (possibly) transformed message. If a Lambda activity is specified, only
-        /// short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be
-        /// used.</p>
+        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
         pub fn set_pipeline_activity(
             mut self,
             input: std::option::Option<crate::model::PipelineActivity>,
@@ -2779,8 +2680,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_payloads`](Self::set_payloads).
         ///
         /// <p>The sample message payloads on which the pipeline activity is run.</p>
-        pub fn payloads(mut self, inp: impl Into<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.payloads(inp);
+        pub fn payloads(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.payloads(input);
             self
         }
         /// <p>The sample message payloads on which the pipeline activity is run.</p>
@@ -2794,9 +2695,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SampleChannelData`.
     ///
-    /// <p>Retrieves a sample of messages from the specified channel ingested during the specified
-    /// timeframe. Up to 10 messages can be retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a sample of messages from the specified channel ingested during the specified timeframe. Up to 10 messages can be retrieved.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SampleChannelData<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2841,10 +2741,10 @@ pub mod fluent_builders {
                 crate::input::SampleChannelDataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2853,8 +2753,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the channel whose message samples are retrieved.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The name of the channel whose message samples are retrieved.</p>
@@ -2862,21 +2762,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also
-        /// 10.</p>
-        pub fn max_messages(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_messages(inp);
+        /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
+        pub fn max_messages(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_messages(input);
             self
         }
-        /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also
-        /// 10.</p>
+        /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
         pub fn set_max_messages(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_messages(input);
             self
         }
         /// <p>The start of the time window from which sample messages are retrieved.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start of the time window from which sample messages are retrieved.</p>
@@ -2888,8 +2786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end of the time window from which sample messages are retrieved.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end of the time window from which sample messages are retrieved.</p>
@@ -2904,7 +2802,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartPipelineReprocessing`.
     ///
     /// <p>Starts the reprocessing of raw message data through the pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartPipelineReprocessing<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2949,10 +2847,10 @@ pub mod fluent_builders {
                 crate::input::StartPipelineReprocessingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2961,8 +2859,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline on which to start reprocessing.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline on which to start reprocessing.</p>
@@ -2974,15 +2872,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
-        /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
-        /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.</p>
+        /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2991,15 +2887,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
-        /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
-        /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.</p>
+        /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3008,15 +2902,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
-        /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for
-        /// <code>startTime</code> and <code>endTime</code>.</p>
-        pub fn channel_messages(mut self, inp: crate::model::ChannelMessages) -> Self {
-            self.inner = self.inner.channel_messages(inp);
+        /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
+        pub fn channel_messages(mut self, input: crate::model::ChannelMessages) -> Self {
+            self.inner = self.inner.channel_messages(input);
             self
         }
         /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
-        /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for
-        /// <code>startTime</code> and <code>endTime</code>.</p>
+        /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
         pub fn set_channel_messages(
             mut self,
             input: std::option::Option<crate::model::ChannelMessages>,
@@ -3027,9 +2919,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to
-    /// manage a resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3074,10 +2965,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3086,8 +2977,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource whose tags you want to modify.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource whose tags you want to modify.</p>
@@ -3100,8 +2991,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The new or modified tags for the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The new or modified tags for the resource.</p>
@@ -3116,7 +3007,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the given tags (metadata) from the resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3161,10 +3052,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3173,8 +3064,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource whose tags you want to remove.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource whose tags you want to remove.</p>
@@ -3187,8 +3078,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of those tags which you want to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of those tags which you want to remove.</p>
@@ -3203,7 +3094,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChannel`.
     ///
     /// <p>Used to update the settings of a channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3248,10 +3139,10 @@ pub mod fluent_builders {
                 crate::input::UpdateChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3260,8 +3151,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the channel to be updated.</p>
-        pub fn channel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_name(inp);
+        pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_name(input.into());
             self
         }
         /// <p>The name of the channel to be updated.</p>
@@ -3269,18 +3160,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_name(input);
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
-        pub fn channel_storage(mut self, inp: crate::model::ChannelStorage) -> Self {
-            self.inner = self.inner.channel_storage(inp);
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
+        pub fn channel_storage(mut self, input: crate::model::ChannelStorage) -> Self {
+            self.inner = self.inner.channel_storage(input);
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
         pub fn set_channel_storage(
             mut self,
             input: std::option::Option<crate::model::ChannelStorage>,
@@ -3288,14 +3173,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_storage(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. The retention period can't be
-        /// updated if the channel's Amazon S3 storage is customer-managed.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        /// <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. The retention period can't be
-        /// updated if the channel's Amazon S3 storage is customer-managed.</p>
+        /// <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -3307,7 +3190,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataset`.
     ///
     /// <p>Updates the settings of a dataset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3352,10 +3235,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDatasetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3364,8 +3247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset to update.</p>
-        pub fn dataset_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(inp);
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset to update.</p>
@@ -3378,8 +3261,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>A list of <code>DatasetAction</code> objects.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::DatasetAction>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::DatasetAction) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>A list of <code>DatasetAction</code> objects.</p>
@@ -3394,14 +3277,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
-        /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to
-        /// five <code>DatasetTrigger</code> objects.</p>
-        pub fn triggers(mut self, inp: impl Into<crate::model::DatasetTrigger>) -> Self {
-            self.inner = self.inner.triggers(inp);
+        /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
+        pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
+            self.inner = self.inner.triggers(input);
             self
         }
-        /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to
-        /// five <code>DatasetTrigger</code> objects.</p>
+        /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
         pub fn set_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
@@ -3413,17 +3294,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_content_delivery_rules`](Self::set_content_delivery_rules).
         ///
-        /// <p>When dataset contents are created, they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
         pub fn content_delivery_rules(
             mut self,
-            inp: impl Into<crate::model::DatasetContentDeliveryRule>,
+            input: crate::model::DatasetContentDeliveryRule,
         ) -> Self {
-            self.inner = self.inner.content_delivery_rules(inp);
+            self.inner = self.inner.content_delivery_rules(input);
             self
         }
-        /// <p>When dataset contents are created, they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
         pub fn set_content_delivery_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
@@ -3432,8 +3311,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>How long, in days, dataset contents are kept for the dataset.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
         /// <p>How long, in days, dataset contents are kept for the dataset.</p>
@@ -3444,23 +3323,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_retention_period(input);
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn versioning_configuration(
             mut self,
-            inp: crate::model::VersioningConfiguration,
+            input: crate::model::VersioningConfiguration,
         ) -> Self {
-            self.inner = self.inner.versioning_configuration(inp);
+            self.inner = self.inner.versioning_configuration(input);
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn set_versioning_configuration(
             mut self,
             input: std::option::Option<crate::model::VersioningConfiguration>,
@@ -3473,8 +3344,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_late_data_rules`](Self::set_late_data_rules).
         ///
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-        pub fn late_data_rules(mut self, inp: impl Into<crate::model::LateDataRule>) -> Self {
-            self.inner = self.inner.late_data_rules(inp);
+        pub fn late_data_rules(mut self, input: crate::model::LateDataRule) -> Self {
+            self.inner = self.inner.late_data_rules(input);
             self
         }
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
@@ -3489,7 +3360,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDatastore`.
     ///
     /// <p>Used to update the settings of a data store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDatastore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3534,10 +3405,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDatastoreInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3546,8 +3417,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data store to be updated.</p>
-        pub fn datastore_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.datastore_name(inp);
+        pub fn datastore_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.datastore_name(input.into());
             self
         }
         /// <p>The name of the data store to be updated.</p>
@@ -3558,14 +3429,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_datastore_name(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. The retention period can't be
-        /// updated if the data store's Amazon S3 storage is customer-managed.</p>
-        pub fn retention_period(mut self, inp: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(inp);
+        /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. The retention period can't be
-        /// updated if the data store's Amazon S3 storage is customer-managed.</p>
+        /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -3574,8 +3443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
-        pub fn datastore_storage(mut self, inp: crate::model::DatastoreStorage) -> Self {
-            self.inner = self.inner.datastore_storage(inp);
+        pub fn datastore_storage(mut self, input: crate::model::DatastoreStorage) -> Self {
+            self.inner = self.inner.datastore_storage(input);
             self
         }
         /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
@@ -3586,17 +3455,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_datastore_storage(input);
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn file_format_configuration(
             mut self,
-            inp: crate::model::FileFormatConfiguration,
+            input: crate::model::FileFormatConfiguration,
         ) -> Self {
-            self.inner = self.inner.file_format_configuration(inp);
+            self.inner = self.inner.file_format_configuration(input);
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn set_file_format_configuration(
@@ -3609,10 +3478,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePipeline`.
     ///
-    /// <p>Updates the settings of a pipeline. You must specify both a <code>channel</code> and a
-    /// <code>datastore</code> activity and, optionally, as many as 23 additional activities in the
-    /// <code>pipelineActivities</code> array.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the settings of a pipeline. You must specify both a <code>channel</code> and a <code>datastore</code> activity and, optionally, as many as 23 additional activities in the <code>pipelineActivities</code> array.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3657,10 +3524,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3669,8 +3536,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to update.</p>
-        pub fn pipeline_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(inp);
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline to update.</p>
@@ -3685,35 +3552,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_pipeline_activities`](Self::set_pipeline_activities).
         ///
-        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-        /// your messages, such as removing, renaming or adding message attributes; filtering messages
-        /// based on attribute values; invoking your Lambda functions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.</p>
-        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-        /// contain only one activity. For example:</p>
-        /// <p>
-        /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-        /// ]</code>
-        /// </p>
-        pub fn pipeline_activities(
-            mut self,
-            inp: impl Into<crate::model::PipelineActivity>,
-        ) -> Self {
-            self.inner = self.inner.pipeline_activities(inp);
+        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+        /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
+        pub fn pipeline_activities(mut self, input: crate::model::PipelineActivity) -> Self {
+            self.inner = self.inner.pipeline_activities(input);
             self
         }
-        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-        /// your messages, such as removing, renaming or adding message attributes; filtering messages
-        /// based on attribute values; invoking your Lambda functions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.</p>
-        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-        /// contain only one activity. For example:</p>
-        /// <p>
-        /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-        /// ]</code>
-        /// </p>
+        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+        /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
         pub fn set_pipeline_activities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
@@ -3723,6 +3571,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

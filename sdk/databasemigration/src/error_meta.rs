@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>DMS was denied access to the endpoint. Check that the
-    /// role is correctly configured.</p>
+    /// <p>DMS was denied access to the endpoint. Check that the role is correctly configured.</p>
     AccessDeniedFault(crate::error::AccessDeniedFault),
     /// <p>There are not enough resources allocated to the database migration.</p>
     InsufficientResourceCapacityFault(crate::error::InsufficientResourceCapacityFault),
@@ -40,8 +39,7 @@ pub enum Error {
     ResourceQuotaExceededFault(crate::error::ResourceQuotaExceededFault),
     /// <p>Insufficient privileges are preventing access to an Amazon S3 object.</p>
     S3AccessDeniedFault(crate::error::S3AccessDeniedFault),
-    /// <p>A specified Amazon S3 bucket, bucket folder, or other object can't be
-    /// found.</p>
+    /// <p>A specified Amazon S3 bucket, bucket folder, or other object can't be found.</p>
     S3ResourceNotFoundFault(crate::error::S3ResourceNotFoundFault),
     /// <p>The SNS topic is invalid.</p>
     SnsInvalidTopicFault(crate::error::SnsInvalidTopicFault),

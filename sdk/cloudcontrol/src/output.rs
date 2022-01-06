@@ -4,14 +4,12 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceOutput {
     /// <p>Represents the current status of the resource update request.</p>
-    /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation
-    /// request.</p>
+    /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
 impl UpdateResourceOutput {
     /// <p>Represents the current status of the resource update request.</p>
-    /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation
-    /// request.</p>
+    /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
     pub fn progress_event(&self) -> std::option::Option<&crate::model::ProgressEvent> {
         self.progress_event.as_ref()
     }
@@ -33,15 +31,13 @@ pub mod update_resource_output {
     }
     impl Builder {
         /// <p>Represents the current status of the resource update request.</p>
-        /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation
-        /// request.</p>
+        /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
         pub fn progress_event(mut self, input: crate::model::ProgressEvent) -> Self {
             self.progress_event = Some(input);
             self
         }
         /// <p>Represents the current status of the resource update request.</p>
-        /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation
-        /// request.</p>
+        /// <p>Use the <code>RequestToken</code> of the <code>ProgressEvent</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
         pub fn set_progress_event(
             mut self,
             input: std::option::Option<crate::model::ProgressEvent>,
@@ -70,8 +66,7 @@ impl UpdateResourceOutput {
 pub struct ListResourcesOutput {
     /// <p>The name of the resource type.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>Information about the specified resources, including primary identifier and resource
-    /// model.</p>
+    /// <p>Information about the specified resources, including primary identifier and resource model.</p>
     pub resource_descriptions:
         std::option::Option<std::vec::Vec<crate::model::ResourceDescription>>,
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
@@ -82,8 +77,7 @@ impl ListResourcesOutput {
     pub fn type_name(&self) -> std::option::Option<&str> {
         self.type_name.as_deref()
     }
-    /// <p>Information about the specified resources, including primary identifier and resource
-    /// model.</p>
+    /// <p>Information about the specified resources, including primary identifier and resource model.</p>
     pub fn resource_descriptions(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceDescription]> {
@@ -129,19 +123,14 @@ pub mod list_resources_output {
         ///
         /// To override the contents of this collection use [`set_resource_descriptions`](Self::set_resource_descriptions).
         ///
-        /// <p>Information about the specified resources, including primary identifier and resource
-        /// model.</p>
-        pub fn resource_descriptions(
-            mut self,
-            input: impl Into<crate::model::ResourceDescription>,
-        ) -> Self {
+        /// <p>Information about the specified resources, including primary identifier and resource model.</p>
+        pub fn resource_descriptions(mut self, input: crate::model::ResourceDescription) -> Self {
             let mut v = self.resource_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_descriptions = Some(v);
             self
         }
-        /// <p>Information about the specified resources, including primary identifier and resource
-        /// model.</p>
+        /// <p>Information about the specified resources, including primary identifier and resource model.</p>
         pub fn set_resource_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceDescription>>,
@@ -227,10 +216,10 @@ pub mod list_resource_requests_output {
         /// <p>The requests that match the specified filter criteria.</p>
         pub fn resource_request_status_summaries(
             mut self,
-            input: impl Into<crate::model::ProgressEvent>,
+            input: crate::model::ProgressEvent,
         ) -> Self {
             let mut v = self.resource_request_status_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_request_status_summaries = Some(v);
             self
         }
@@ -406,16 +395,12 @@ impl GetResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceOutput {
     /// <p>Represents the current status of the resource deletion request.</p>
-    /// <p>After you have initiated a resource deletion request, you can monitor the progress of your
-    /// request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the
-    /// <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
+    /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
 impl DeleteResourceOutput {
     /// <p>Represents the current status of the resource deletion request.</p>
-    /// <p>After you have initiated a resource deletion request, you can monitor the progress of your
-    /// request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the
-    /// <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
+    /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
     pub fn progress_event(&self) -> std::option::Option<&crate::model::ProgressEvent> {
         self.progress_event.as_ref()
     }
@@ -437,17 +422,13 @@ pub mod delete_resource_output {
     }
     impl Builder {
         /// <p>Represents the current status of the resource deletion request.</p>
-        /// <p>After you have initiated a resource deletion request, you can monitor the progress of your
-        /// request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the
-        /// <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
+        /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
         pub fn progress_event(mut self, input: crate::model::ProgressEvent) -> Self {
             self.progress_event = Some(input);
             self
         }
         /// <p>Represents the current status of the resource deletion request.</p>
-        /// <p>After you have initiated a resource deletion request, you can monitor the progress of your
-        /// request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the
-        /// <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
+        /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
         pub fn set_progress_event(
             mut self,
             input: std::option::Option<crate::model::ProgressEvent>,
@@ -475,16 +456,12 @@ impl DeleteResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceOutput {
     /// <p>Represents the current status of the resource creation request.</p>
-    /// <p>After you have initiated a resource creation request, you can monitor the progress of your
-    /// request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the
-    /// <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
+    /// <p>After you have initiated a resource creation request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
 impl CreateResourceOutput {
     /// <p>Represents the current status of the resource creation request.</p>
-    /// <p>After you have initiated a resource creation request, you can monitor the progress of your
-    /// request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the
-    /// <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
+    /// <p>After you have initiated a resource creation request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
     pub fn progress_event(&self) -> std::option::Option<&crate::model::ProgressEvent> {
         self.progress_event.as_ref()
     }
@@ -506,17 +483,13 @@ pub mod create_resource_output {
     }
     impl Builder {
         /// <p>Represents the current status of the resource creation request.</p>
-        /// <p>After you have initiated a resource creation request, you can monitor the progress of your
-        /// request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the
-        /// <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
+        /// <p>After you have initiated a resource creation request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
         pub fn progress_event(mut self, input: crate::model::ProgressEvent) -> Self {
             self.progress_event = Some(input);
             self
         }
         /// <p>Represents the current status of the resource creation request.</p>
-        /// <p>After you have initiated a resource creation request, you can monitor the progress of your
-        /// request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the
-        /// <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
+        /// <p>After you have initiated a resource creation request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>CreateResource</code>.</p>
         pub fn set_progress_event(
             mut self,
             input: std::option::Option<crate::model::ProgressEvent>,
@@ -543,15 +516,11 @@ impl CreateResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelResourceRequestOutput {
-    /// <p>Represents the current status of a resource operation request. For more information, see
-    /// <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the
-    /// <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     pub progress_event: std::option::Option<crate::model::ProgressEvent>,
 }
 impl CancelResourceRequestOutput {
-    /// <p>Represents the current status of a resource operation request. For more information, see
-    /// <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the
-    /// <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     pub fn progress_event(&self) -> std::option::Option<&crate::model::ProgressEvent> {
         self.progress_event.as_ref()
     }
@@ -572,16 +541,12 @@ pub mod cancel_resource_request_output {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
     }
     impl Builder {
-        /// <p>Represents the current status of a resource operation request. For more information, see
-        /// <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the
-        /// <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+        /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
         pub fn progress_event(mut self, input: crate::model::ProgressEvent) -> Self {
             self.progress_event = Some(input);
             self
         }
-        /// <p>Represents the current status of a resource operation request. For more information, see
-        /// <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the
-        /// <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+        /// <p>Represents the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html">Managing resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
         pub fn set_progress_event(
             mut self,
             input: std::option::Option<crate::model::ProgressEvent>,

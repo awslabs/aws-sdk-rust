@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Chime SDK Messaging
@@ -281,6 +281,7 @@ where
     ///
     /// See [`ListChannelBans`](crate::client::fluent_builders::ListChannelBans) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelBans::into_paginator).
     pub fn list_channel_bans(&self) -> fluent_builders::ListChannelBans<C, M, R> {
         fluent_builders::ListChannelBans::new(self.handle.clone())
     }
@@ -288,6 +289,7 @@ where
     ///
     /// See [`ListChannelFlows`](crate::client::fluent_builders::ListChannelFlows) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelFlows::into_paginator).
     pub fn list_channel_flows(&self) -> fluent_builders::ListChannelFlows<C, M, R> {
         fluent_builders::ListChannelFlows::new(self.handle.clone())
     }
@@ -295,6 +297,7 @@ where
     ///
     /// See [`ListChannelMemberships`](crate::client::fluent_builders::ListChannelMemberships) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelMemberships::into_paginator).
     pub fn list_channel_memberships(&self) -> fluent_builders::ListChannelMemberships<C, M, R> {
         fluent_builders::ListChannelMemberships::new(self.handle.clone())
     }
@@ -302,6 +305,7 @@ where
     ///
     /// See [`ListChannelMembershipsForAppInstanceUser`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::into_paginator).
     pub fn list_channel_memberships_for_app_instance_user(
         &self,
     ) -> fluent_builders::ListChannelMembershipsForAppInstanceUser<C, M, R> {
@@ -311,6 +315,7 @@ where
     ///
     /// See [`ListChannelMessages`](crate::client::fluent_builders::ListChannelMessages) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelMessages::into_paginator).
     pub fn list_channel_messages(&self) -> fluent_builders::ListChannelMessages<C, M, R> {
         fluent_builders::ListChannelMessages::new(self.handle.clone())
     }
@@ -318,6 +323,7 @@ where
     ///
     /// See [`ListChannelModerators`](crate::client::fluent_builders::ListChannelModerators) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelModerators::into_paginator).
     pub fn list_channel_moderators(&self) -> fluent_builders::ListChannelModerators<C, M, R> {
         fluent_builders::ListChannelModerators::new(self.handle.clone())
     }
@@ -325,6 +331,7 @@ where
     ///
     /// See [`ListChannels`](crate::client::fluent_builders::ListChannels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
     pub fn list_channels(&self) -> fluent_builders::ListChannels<C, M, R> {
         fluent_builders::ListChannels::new(self.handle.clone())
     }
@@ -332,6 +339,7 @@ where
     ///
     /// See [`ListChannelsAssociatedWithChannelFlow`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow::into_paginator).
     pub fn list_channels_associated_with_channel_flow(
         &self,
     ) -> fluent_builders::ListChannelsAssociatedWithChannelFlow<C, M, R> {
@@ -341,6 +349,7 @@ where
     ///
     /// See [`ListChannelsModeratedByAppInstanceUser`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::into_paginator).
     pub fn list_channels_moderated_by_app_instance_user(
         &self,
     ) -> fluent_builders::ListChannelsModeratedByAppInstanceUser<C, M, R> {
@@ -429,14 +438,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateChannelFlow`.
     ///
-    /// <p>Associates a channel flow with a channel. Once associated, all messages to that channel go through channel flow processors. To stop processing, use the
-    /// <code>DisassociateChannelFlow</code> API.</p>
-    ///
-    /// <note>
-    /// <p>Only administrators or channel moderators can associate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.</p>
+    /// <p>Associates a channel flow with a channel. Once associated, all messages to that channel go through channel flow processors. To stop processing, use the <code>DisassociateChannelFlow</code> API.</p> <note>
+    /// <p>Only administrators or channel moderators can associate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -481,10 +486,10 @@ pub mod fluent_builders {
                 crate::input::AssociateChannelFlowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -493,8 +498,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -503,8 +508,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the channel flow.</p>
-        pub fn channel_flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_flow_arn(inp);
+        pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_flow_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow.</p>
@@ -516,8 +521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
@@ -529,7 +534,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchCreateChannelMembership`.
     ///
     /// <p>Adds a specified number of users to a channel. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateChannelMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -574,10 +579,10 @@ pub mod fluent_builders {
                 crate::input::BatchCreateChannelMembershipInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -586,8 +591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
@@ -595,20 +600,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
-        pub fn r#type(mut self, inp: crate::model::ChannelMembershipType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+        pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -621,8 +618,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_member_arns`](Self::set_member_arns).
         ///
         /// <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.</p>
-        pub fn member_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arns(inp);
+        pub fn member_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arns(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.</p>
@@ -634,8 +631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -647,19 +644,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ChannelFlowCallback`.
     ///
     /// <p>Calls back Chime SDK Messaging with a processing response message. This should be invoked from the processor Lambda. This is a developer API.</p>
-    /// <p>You can return one of the following processing responses:</p>                  
+    /// <p>You can return one of the following processing responses:</p>
     /// <ul>
-    /// <li>
-    /// <p>Update message content or metadata</p>
-    /// </li>
-    /// <li>
-    /// <p>Deny a message</p>
-    /// </li>
-    /// <li>
-    /// <p>Make no changes to the message</p>
-    /// </li>
+    /// <li> <p>Update message content or metadata</p> </li>
+    /// <li> <p>Deny a message</p> </li>
+    /// <li> <p>Make no changes to the message</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ChannelFlowCallback<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -704,10 +695,10 @@ pub mod fluent_builders {
                 crate::input::ChannelFlowCallbackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -716,8 +707,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
-        pub fn callback_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.callback_id(inp);
+        pub fn callback_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.callback_id(input.into());
             self
         }
         /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
@@ -726,8 +717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -736,8 +727,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
-        pub fn delete_resource(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_resource(inp);
+        pub fn delete_resource(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_resource(input);
             self
         }
         /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
@@ -746,8 +737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Stores information about the processed message.</p>
-        pub fn channel_message(mut self, inp: crate::model::ChannelMessageCallback) -> Self {
-            self.inner = self.inner.channel_message(inp);
+        pub fn channel_message(mut self, input: crate::model::ChannelMessageCallback) -> Self {
+            self.inner = self.inner.channel_message(input);
             self
         }
         /// <p>Stores information about the processed message.</p>
@@ -762,17 +753,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChannel`.
     ///
     /// <p>Creates a channel to which you can add users and send messages.</p>
-    ///
-    /// <p>
-    /// <b>Restriction</b>: You can't change a channel's
-    /// privacy.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p> <b>Restriction</b>: You can't change a channel's privacy.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -817,10 +801,10 @@ pub mod fluent_builders {
                 crate::input::CreateChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -829,8 +813,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel request.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the channel request.</p>
@@ -842,8 +826,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the channel.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the channel.</p>
@@ -851,30 +835,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-        /// moderators, and channel members can add themselves and other members to unrestricted
-        /// channels. Only administrators and moderators can add members to restricted channels.</p>
-        pub fn mode(mut self, inp: crate::model::ChannelMode) -> Self {
-            self.inner = self.inner.mode(inp);
+        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
+        pub fn mode(mut self, input: crate::model::ChannelMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
-        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-        /// moderators, and channel members can add themselves and other members to unrestricted
-        /// channels. Only administrators and moderators can add members to restricted channels.</p>
+        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::ChannelMode>) -> Self {
             self.inner = self.inner.set_mode(input);
             self
         }
-        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the <code>AppInstance</code>.</p>
-        pub fn privacy(mut self, inp: crate::model::ChannelPrivacy) -> Self {
-            self.inner = self.inner.privacy(inp);
+        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
+        pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
+            self.inner = self.inner.privacy(input);
             self
         }
-        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the <code>AppInstance</code>.</p>
+        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
         pub fn set_privacy(
             mut self,
             input: std::option::Option<crate::model::ChannelPrivacy>,
@@ -883,8 +859,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
@@ -893,8 +869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
@@ -910,8 +886,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the creation request.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags for the creation request.</p>
@@ -923,8 +899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -935,19 +911,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateChannelBan`.
     ///
-    /// <p>Permanently bans a member from a channel. Moderators can't add banned members to a
-    /// channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then
-    /// <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or
-    /// channels.</p>
-    /// <p>If you ban a user who is already part of a channel, that user is automatically kicked
-    /// from the channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or channels.</p>
+    /// <p>If you ban a user who is already part of a channel, that user is automatically kicked from the channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelBan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -992,10 +960,10 @@ pub mod fluent_builders {
                 crate::input::CreateChannelBanInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1004,8 +972,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the ban request.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the ban request.</p>
@@ -1014,8 +982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
-        pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(inp);
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
@@ -1024,8 +992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1036,29 +1004,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateChannelFlow`.
     ///
-    /// <p>Creates a channel flow, a container for processors. Processors are AWS Lambda functions
-    /// that perform actions on chat messages, such as stripping out profanity. You can associate
-    /// channel flows with channels, and the processors in the channel flow then take action on all
-    /// messages sent to that channel. This is a developer API.</p>
-    ///
+    /// <p>Creates a channel flow, a container for processors. Processors are AWS Lambda functions that perform actions on chat messages, such as stripping out profanity. You can associate channel flows with channels, and the processors in the channel flow then take action on all messages sent to that channel. This is a developer API.</p>
     /// <p>Channel flows process the following items:</p>
     /// <ol>
-    /// <li>
-    /// <p>New and updated messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Persistent and non-persistent messages</p>
-    /// </li>
-    /// <li>
-    /// <p>The Standard message type</p>
-    /// </li>
-    /// </ol>
-    ///
-    /// <note>
-    /// <p>Channel flows don't process Control or System messages. For more information about the message types provided by Chime SDK Messaging, refer to
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message types</a> in the <i>Amazon Chime developer guide</i>.</p>
+    /// <li> <p>New and updated messages</p> </li>
+    /// <li> <p>Persistent and non-persistent messages</p> </li>
+    /// <li> <p>The Standard message type</p> </li>
+    /// </ol> <note>
+    /// <p>Channel flows don't process Control or System messages. For more information about the message types provided by Chime SDK Messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message types</a> in the <i>Amazon Chime developer guide</i>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1103,10 +1058,10 @@ pub mod fluent_builders {
                 crate::input::CreateChannelFlowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1115,8 +1070,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow request.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow request.</p>
@@ -1132,8 +1087,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_processors`](Self::set_processors).
         ///
         /// <p>Information about the processor Lambda functions.</p>
-        pub fn processors(mut self, inp: impl Into<crate::model::Processor>) -> Self {
-            self.inner = self.inner.processors(inp);
+        pub fn processors(mut self, input: crate::model::Processor) -> Self {
+            self.inner = self.inner.processors(input);
             self
         }
         /// <p>Information about the processor Lambda functions.</p>
@@ -1145,8 +1100,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the channel flow.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the channel flow.</p>
@@ -1159,8 +1114,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the creation request.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags for the creation request.</p>
@@ -1172,8 +1127,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client token for the request. An Idempotency token.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The client token for the request. An Idempotency token.</p>
@@ -1187,45 +1142,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateChannelMembership`.
     ///
-    /// <p>Adds a user to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code> is derived from the
-    /// request header. A channel member can:</p>
-    ///
+    /// <p>Adds a user to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code> is derived from the request header. A channel member can:</p>
     /// <ul>
-    /// <li>
-    /// <p>List messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Send messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Receive messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Edit their own messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Leave the channel</p>
-    /// </li>
+    /// <li> <p>List messages</p> </li>
+    /// <li> <p>Send messages</p> </li>
+    /// <li> <p>Receive messages</p> </li>
+    /// <li> <p>Edit their own messages</p> </li>
+    /// <li> <p>Leave the channel</p> </li>
     /// </ul>
-    ///
     /// <p>Privacy settings impact this action as follows:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>Public Channels: You do not need to be a member to list messages, but you must be
-    /// a member to send messages.</p>
-    /// </li>
-    /// <li>
-    /// <p>Private Channels: You must be a member to list or send messages.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <li> <p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p> </li>
+    /// <li> <p>Private Channels: You must be a member to list or send messages.</p> </li>
+    /// </ul> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1270,10 +1202,10 @@ pub mod fluent_builders {
                 crate::input::CreateChannelMembershipInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1282,8 +1214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
@@ -1292,8 +1224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
-        pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(inp);
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
@@ -1301,20 +1233,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_member_arn(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
-        pub fn r#type(mut self, inp: crate::model::ChannelMembershipType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+        pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -1323,8 +1247,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1336,31 +1260,16 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChannelModerator`.
     ///
     /// <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>Add and remove other members of the channel.</p>
-    /// </li>
-    /// <li>
-    /// <p>Add and remove other moderators of the channel.</p>
-    /// </li>
-    /// <li>
-    /// <p>Add and remove user bans for the channel.</p>
-    /// </li>
-    /// <li>
-    /// <p>Redact messages in the channel.</p>
-    /// </li>
-    /// <li>
-    /// <p>List messages in the channel.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <li> <p>Add and remove other members of the channel.</p> </li>
+    /// <li> <p>Add and remove other moderators of the channel.</p> </li>
+    /// <li> <p>Add and remove user bans for the channel.</p> </li>
+    /// <li> <p>Redact messages in the channel.</p> </li>
+    /// <li> <p>List messages in the channel.</p> </li>
+    /// </ul> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelModerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1405,10 +1314,10 @@ pub mod fluent_builders {
                 crate::input::CreateChannelModeratorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1417,8 +1326,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -1427,8 +1336,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
-        pub fn channel_moderator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_moderator_arn(inp);
+        pub fn channel_moderator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_moderator_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
@@ -1440,8 +1349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1452,15 +1361,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannel`.
     ///
-    /// <p>Immediately makes a channel and its memberships inaccessible and marks them for
-    /// deletion. This is an irreversible process.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible process.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1505,10 +1409,10 @@ pub mod fluent_builders {
                 crate::input::DeleteChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1517,8 +1421,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel being deleted.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel being deleted.</p>
@@ -1527,8 +1431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1539,14 +1443,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelBan`.
     ///
-    /// <p>Removes a user from a channel's ban list.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Removes a user from a channel's ban list.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelBan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1591,10 +1491,10 @@ pub mod fluent_builders {
                 crate::input::DeleteChannelBanInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1603,8 +1503,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
@@ -1613,8 +1513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
-        pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(inp);
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
@@ -1623,8 +1523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1635,12 +1535,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelFlow`.
     ///
-    /// <p>Deletes a channel flow, an irreversible process. This is a developer API.</p>
-    /// <note>
-    /// <p> This API works only when the channel flow is not associated with any channel. To get a list of all channels that a channel flow is associated with, use the
-    /// <code>ListChannelsAssociatedWithChannelFlow</code> API. Use the <code>DisassociateChannelFlow</code> API to disassociate a channel flow from all channels. </p>
+    /// <p>Deletes a channel flow, an irreversible process. This is a developer API.</p> <note>
+    /// <p> This API works only when the channel flow is not associated with any channel. To get a list of all channels that a channel flow is associated with, use the <code>ListChannelsAssociatedWithChannelFlow</code> API. Use the <code>DisassociateChannelFlow</code> API to disassociate a channel flow from all channels. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1685,10 +1583,10 @@ pub mod fluent_builders {
                 crate::input::DeleteChannelFlowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1697,8 +1595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow.</p>
-        pub fn channel_flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_flow_arn(inp);
+        pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_flow_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow.</p>
@@ -1712,14 +1610,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelMembership`.
     ///
-    /// <p>Removes a member from a channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Removes a member from a channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1764,10 +1658,10 @@ pub mod fluent_builders {
                 crate::input::DeleteChannelMembershipInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1776,8 +1670,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel from which you want to remove the user.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel from which you want to remove the user.</p>
@@ -1786,8 +1680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
-        pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(inp);
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
@@ -1796,8 +1690,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1808,16 +1702,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelMessage`.
     ///
-    /// <p>Deletes a channel message. Only admins can perform this action. Deletion makes messages
-    /// inaccessible immediately. A background process deletes any revisions created by
-    /// <code>UpdateChannelMessage</code>.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately. A background process deletes any revisions created by <code>UpdateChannelMessage</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1862,10 +1750,10 @@ pub mod fluent_builders {
                 crate::input::DeleteChannelMessageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1874,8 +1762,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -1884,8 +1772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the message being deleted.</p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(inp);
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID of the message being deleted.</p>
@@ -1894,8 +1782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1906,14 +1794,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelModerator`.
     ///
-    /// <p>Deletes a channel moderator.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Deletes a channel moderator.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelModerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1958,10 +1842,10 @@ pub mod fluent_builders {
                 crate::input::DeleteChannelModeratorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1970,8 +1854,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -1980,8 +1864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
-        pub fn channel_moderator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_moderator_arn(inp);
+        pub fn channel_moderator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_moderator_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
@@ -1993,8 +1877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2005,16 +1889,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannel`.
     ///
-    /// <p>Returns the full details of a channel in an Amazon Chime
-    /// <code>AppInstance</code>.</p>
-    ///
-    /// <note>
-    ///
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2059,10 +1937,10 @@ pub mod fluent_builders {
                 crate::input::DescribeChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2071,8 +1949,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -2081,8 +1959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2093,15 +1971,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelBan`.
     ///
-    /// <p>Returns the full details of a channel ban.</p>
-    ///
-    /// <note>
-    ///
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a channel ban.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelBan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2146,10 +2019,10 @@ pub mod fluent_builders {
                 crate::input::DescribeChannelBanInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2158,8 +2031,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel from which the user is banned.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel from which the user is banned.</p>
@@ -2168,8 +2041,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
-        pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(inp);
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
@@ -2178,8 +2051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2191,7 +2064,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeChannelFlow`.
     ///
     /// <p>Returns the full details of a channel flow in an Amazon Chime <code>AppInstance</code>. This is a developer API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2236,10 +2109,10 @@ pub mod fluent_builders {
                 crate::input::DescribeChannelFlowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2248,8 +2121,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow.</p>
-        pub fn channel_flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_flow_arn(inp);
+        pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_flow_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow.</p>
@@ -2263,13 +2136,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelMembership`.
     ///
-    /// <p>Returns the full details of a user's channel membership.</p>
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a user's channel membership.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelMembership<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2314,10 +2184,10 @@ pub mod fluent_builders {
                 crate::input::DescribeChannelMembershipInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2326,8 +2196,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -2336,8 +2206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member.</p>
-        pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(inp);
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member.</p>
@@ -2346,8 +2216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2358,15 +2228,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelMembershipForAppInstanceUser`.
     ///
-    /// <p> Returns the details of a channel based on the membership of the specified
-    /// <code>AppInstanceUser</code>.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p> Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelMembershipForAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2413,10 +2278,10 @@ pub mod fluent_builders {
                 crate::input::DescribeChannelMembershipForAppInstanceUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2425,8 +2290,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel to which the user belongs.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel to which the user belongs.</p>
@@ -2435,8 +2300,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the user in a channel.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the user in a channel.</p>
@@ -2448,8 +2313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2460,15 +2325,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelModeratedByAppInstanceUser`.
     ///
-    /// <p>Returns the full details of a channel moderated by the specified
-    /// <code>AppInstanceUser</code>.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelModeratedByAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2515,10 +2375,10 @@ pub mod fluent_builders {
                 crate::input::DescribeChannelModeratedByAppInstanceUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2527,8 +2387,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the moderated channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the moderated channel.</p>
@@ -2537,8 +2397,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
@@ -2550,8 +2410,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2562,13 +2422,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelModerator`.
     ///
-    /// <p>Returns the full details of a single ChannelModerator.</p>
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a single ChannelModerator.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelModerator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2613,10 +2470,10 @@ pub mod fluent_builders {
                 crate::input::DescribeChannelModeratorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2625,8 +2482,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -2635,8 +2492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
-        pub fn channel_moderator_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_moderator_arn(inp);
+        pub fn channel_moderator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_moderator_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
@@ -2648,8 +2505,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2660,13 +2517,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateChannelFlow`.
     ///
-    /// <p>Disassociates a channel flow from all its channels. Once disassociated, all messages to
-    /// that channel stop going through the channel flow processor.</p>
-    /// <note>
-    /// <p>Only administrators or channel moderators can disassociate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.</p>
+    /// <p>Disassociates a channel flow from all its channels. Once disassociated, all messages to that channel stop going through the channel flow processor.</p> <note>
+    /// <p>Only administrators or channel moderators can disassociate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2711,10 +2565,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateChannelFlowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2723,8 +2577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -2733,8 +2587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the channel flow.</p>
-        pub fn channel_flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_flow_arn(inp);
+        pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_flow_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow.</p>
@@ -2746,8 +2600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
@@ -2758,10 +2612,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetChannelMembershipPreferences`.
     ///
-    /// <p>Gets the membership preferences of an <code>AppInstanceUser</code> for the specified channel. The <code>AppInstanceUser</code> must be a member of the channel.
-    /// Only the <code>AppInstanceUser</code> who owns the membership can retrieve preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator roles can't retrieve preferences for other users.
-    /// Banned users can't retrieve membership preferences for the channel from which they are banned.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the membership preferences of an <code>AppInstanceUser</code> for the specified channel. The <code>AppInstanceUser</code> must be a member of the channel. Only the <code>AppInstanceUser</code> who owns the membership can retrieve preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator roles can't retrieve preferences for other users. Banned users can't retrieve membership preferences for the channel from which they are banned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelMembershipPreferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2806,10 +2658,10 @@ pub mod fluent_builders {
                 crate::input::GetChannelMembershipPreferencesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2818,8 +2670,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -2828,8 +2680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member retrieving the preferences.</p>
-        pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(inp);
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member retrieving the preferences.</p>
@@ -2838,8 +2690,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
@@ -2850,14 +2702,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetChannelMessage`.
     ///
-    /// <p>Gets the full details of a channel message.</p>
-    ///
-    /// <note>
-    /// <p>The x-amz-chime-bearer request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Gets the full details of a channel message.</p> <note>
+    /// <p>The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2902,10 +2750,10 @@ pub mod fluent_builders {
                 crate::input::GetChannelMessageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2914,8 +2762,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -2924,8 +2772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the message.</p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(inp);
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID of the message.</p>
@@ -2934,8 +2782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2946,44 +2794,41 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetChannelMessageStatus`.
     ///
-    /// <p>Gets message status for a specified <code>messageId</code>. Use this API to determine the intermediate status of messages going through channel flow processing. The API provides an alternative to
-    /// retrieving message status if the event was not received because a client wasn't connected to a websocket. </p>
-    ///
+    /// <p>Gets message status for a specified <code>messageId</code>. Use this API to determine the intermediate status of messages going through channel flow processing. The API provides an alternative to retrieving message status if the event was not received because a client wasn't connected to a websocket. </p>
     /// <p>Messages can have any one of these statuses.</p>
-    ///
     /// <dl>
-    /// <dt>SENT</dt>
+    /// <dt>
+    /// SENT
+    /// </dt>
     /// <dd>
     /// <p>Message processed successfully</p>
     /// </dd>
-    /// <dt>PENDING</dt>
+    /// <dt>
+    /// PENDING
+    /// </dt>
     /// <dd>
     /// <p>Ongoing processing</p>
     /// </dd>
-    /// <dt>FAILED</dt>
+    /// <dt>
+    /// FAILED
+    /// </dt>
     /// <dd>
     /// <p>Processing failed</p>
     /// </dd>
-    /// <dt>DENIED</dt>
+    /// <dt>
+    /// DENIED
+    /// </dt>
     /// <dd>
     /// <p>Messasge denied by the processor</p>
     /// </dd>
-    /// </dl>
-    ///
-    /// <note>
+    /// </dl> <note>
     /// <ul>
-    /// <li>
-    /// <p>This API does not return statuses for denied messages, because we don't store them once the processor denies them. </p>
-    /// </li>
-    /// <li>
-    /// <p>Only the message sender can invoke this API.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header</p>
-    /// </li>
+    /// <li> <p>This API does not return statuses for denied messages, because we don't store them once the processor denies them. </p> </li>
+    /// <li> <p>Only the message sender can invoke this API.</p> </li>
+    /// <li> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header</p> </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelMessageStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3028,10 +2873,10 @@ pub mod fluent_builders {
                 crate::input::GetChannelMessageStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3040,8 +2885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel</p>
@@ -3050,8 +2895,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the message.</p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(inp);
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID of the message.</p>
@@ -3060,8 +2905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
@@ -3073,7 +2918,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMessagingSessionEndpoint`.
     ///
     /// <p>The details of the endpoint for the messaging session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMessagingSessionEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3118,10 +2963,10 @@ pub mod fluent_builders {
                 crate::input::GetMessagingSessionEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3132,14 +2977,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelBans`.
     ///
-    /// <p>Lists all the users banned from a particular channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Lists all the users banned from a particular channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelBans<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3184,10 +3025,10 @@ pub mod fluent_builders {
                 crate::input::ListChannelBansInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3195,9 +3036,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChannelBansPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListChannelBansPaginator<C, M, R> {
+            crate::paginator::ListChannelBansPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -3206,8 +3053,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of bans that you want returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of bans that you want returned.</p>
@@ -3216,8 +3063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested bans are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested bans are returned.</p>
@@ -3226,8 +3073,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3239,7 +3086,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListChannelFlows`.
     ///
     /// <p>Returns a paginated lists of all the channel flows created under a single Chime. This is a developer API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelFlows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3284,10 +3131,10 @@ pub mod fluent_builders {
                 crate::input::ListChannelFlowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3295,9 +3142,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChannelFlowsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListChannelFlowsPaginator<C, M, R> {
+            crate::paginator::ListChannelFlowsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the app instance.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the app instance.</p>
@@ -3309,8 +3162,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channel flows that you want to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channel flows that you want to return.</p>
@@ -3319,8 +3172,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested channel flows are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested channel flows are returned.</p>
@@ -3331,17 +3184,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelMemberships`.
     ///
-    /// <p>Lists all channel memberships in a channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Lists all channel memberships in a channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    ///
-    /// <p>If you want to list the channels to which a specific app instance user belongs, see the
-    /// <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a> API.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you want to list the channels to which a specific app instance user belongs, see the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a> API.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMemberships<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3386,10 +3233,10 @@ pub mod fluent_builders {
                 crate::input::ListChannelMembershipsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3397,9 +3244,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChannelMembershipsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListChannelMembershipsPaginator<C, M, R> {
+            crate::paginator::ListChannelMembershipsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of channel memberships that you want returned.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The maximum number of channel memberships that you want returned.</p>
@@ -3407,18 +3260,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
-        pub fn r#type(mut self, inp: crate::model::ChannelMembershipType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -3427,8 +3274,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channel memberships that you want returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channel memberships that you want returned.</p>
@@ -3436,21 +3283,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3461,15 +3306,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelMembershipsForAppInstanceUser`.
     ///
-    /// <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an
-    /// <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMembershipsForAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3516,10 +3356,10 @@ pub mod fluent_builders {
                 crate::input::ListChannelMembershipsForAppInstanceUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3527,9 +3367,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChannelMembershipsForAppInstanceUserPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListChannelMembershipsForAppInstanceUserPaginator<C, M, R> {
+            crate::paginator::ListChannelMembershipsForAppInstanceUserPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
@@ -3541,8 +3392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of users that you want returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of users that you want returned.</p>
@@ -3550,21 +3401,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token returned from previous API requests until the number of channel memberships is
-        /// reached.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of channel memberships is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3575,18 +3424,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelMessages`.
     ///
-    /// <p>List all the messages in a channel. Returns a paginated list of
-    /// <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending
-    /// order.</p>
-    /// <note>
-    /// <p>Redacted messages appear in the results as empty, since they are only redacted, not
-    /// deleted. Deleted messages do not appear in the results. This action always returns the
-    /// latest version of an edited message.</p>
-    /// <p>Also, the x-amz-chime-bearer request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending order.</p> <note>
+    /// <p>Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do not appear in the results. This action always returns the latest version of an edited message.</p>
+    /// <p>Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMessages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3631,10 +3473,10 @@ pub mod fluent_builders {
                 crate::input::ListChannelMessagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3642,9 +3484,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChannelMessagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListChannelMessagesPaginator<C, M, R> {
+            crate::paginator::ListChannelMessagesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -3652,14 +3500,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The order in which you want messages sorted. Default is Descending, based on time
-        /// created.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>The order in which you want messages sorted. Default is Descending, based on time
-        /// created.</p>
+        /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -3668,8 +3514,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The initial or starting time stamp for your requested messages.</p>
-        pub fn not_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.not_before(inp);
+        pub fn not_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.not_before(input);
             self
         }
         /// <p>The initial or starting time stamp for your requested messages.</p>
@@ -3681,8 +3527,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The final or ending time stamp for your requested messages.</p>
-        pub fn not_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.not_after(inp);
+        pub fn not_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.not_after(input);
             self
         }
         /// <p>The final or ending time stamp for your requested messages.</p>
@@ -3694,8 +3540,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of messages that you want returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of messages that you want returned.</p>
@@ -3704,8 +3550,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested messages are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested messages are returned.</p>
@@ -3714,8 +3560,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3726,13 +3572,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelModerators`.
     ///
-    /// <p>Lists all the moderators for a channel.</p>
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Lists all the moderators for a channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelModerators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3777,10 +3620,10 @@ pub mod fluent_builders {
                 crate::input::ListChannelModeratorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3788,9 +3631,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChannelModeratorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListChannelModeratorsPaginator<C, M, R> {
+            crate::paginator::ListChannelModeratorsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -3799,8 +3648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of moderators that you want returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of moderators that you want returned.</p>
@@ -3808,21 +3657,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3833,29 +3680,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannels`.
     ///
-    /// <p>Lists all Channels created under a single Chime App as a paginated list. You can specify
-    /// filters to narrow results.</p>
-    ///
-    /// <p class="title">
-    /// <b>Functionality & restrictions</b>
-    /// </p>
+    /// <p>Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow results.</p>
+    /// <p class="title"> <b>Functionality &amp; restrictions</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the
-    /// account.</p>
-    /// </li>
-    /// <li>
-    /// <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to
-    /// list the private channels in an account.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <li> <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.</p> </li>
+    /// <li> <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p> </li>
+    /// </ul> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3900,10 +3733,10 @@ pub mod fluent_builders {
                 crate::input::ListChannelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3911,9 +3744,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChannelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListChannelsPaginator<C, M, R> {
+            crate::paginator::ListChannelsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(inp);
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -3924,16 +3763,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_instance_arn(input);
             self
         }
-        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-        /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-        /// can retrieve private channels. </p>
-        pub fn privacy(mut self, inp: crate::model::ChannelPrivacy) -> Self {
-            self.inner = self.inner.privacy(inp);
+        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
+        pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
+            self.inner = self.inner.privacy(input);
             self
         }
-        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-        /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-        /// can retrieve private channels. </p>
+        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
         pub fn set_privacy(
             mut self,
             input: std::option::Option<crate::model::ChannelPrivacy>,
@@ -3942,8 +3777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channels that you want to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channels that you want to return.</p>
@@ -3952,8 +3787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested channels are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested channels are returned.</p>
@@ -3962,8 +3797,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3975,7 +3810,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListChannelsAssociatedWithChannelFlow`.
     ///
     /// <p>Lists all channels associated with a specified channel flow. You can associate a channel flow with multiple channels, but you can only associate a channel with one channel flow. This is a developer API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelsAssociatedWithChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4022,10 +3857,10 @@ pub mod fluent_builders {
                 crate::input::ListChannelsAssociatedWithChannelFlowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4033,9 +3868,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChannelsAssociatedWithChannelFlowPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListChannelsAssociatedWithChannelFlowPaginator<C, M, R> {
+            crate::paginator::ListChannelsAssociatedWithChannelFlowPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The ARN of the channel flow.</p>
-        pub fn channel_flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_flow_arn(inp);
+        pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_flow_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow.</p>
@@ -4047,8 +3893,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channels that you want to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channels that you want to return.</p>
@@ -4057,8 +3903,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested channels are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested channels are returned.</p>
@@ -4069,14 +3915,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelsModeratedByAppInstanceUser`.
     ///
-    /// <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelsModeratedByAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4123,10 +3965,10 @@ pub mod fluent_builders {
                 crate::input::ListChannelsModeratedByAppInstanceUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4134,9 +3976,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChannelsModeratedByAppInstanceUserPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListChannelsModeratedByAppInstanceUserPaginator<C, M, R> {
+            crate::paginator::ListChannelsModeratedByAppInstanceUserPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The ARN of the user in the moderated channel.</p>
-        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(inp);
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the user in the moderated channel.</p>
@@ -4148,8 +4001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channels in the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channels in the request.</p>
@@ -4157,21 +4010,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -4183,7 +4034,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags applied to an Amazon Chime SDK messaging resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4228,10 +4079,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4240,8 +4091,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -4252,10 +4103,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutChannelMembershipPreferences`.
     ///
-    /// <p>Sets the membership preferences of an <code>AppInstanceUser</code> for the specified channel. The <code>AppInstanceUser</code> must be a member of the channel.
-    /// Only the <code>AppInstanceUser</code> who owns the membership can set preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences for other users.
-    /// Banned users can't set membership preferences for the channel from which they are banned.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets the membership preferences of an <code>AppInstanceUser</code> for the specified channel. The <code>AppInstanceUser</code> must be a member of the channel. Only the <code>AppInstanceUser</code> who owns the membership can set preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences for other users. Banned users can't set membership preferences for the channel from which they are banned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutChannelMembershipPreferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4300,10 +4149,10 @@ pub mod fluent_builders {
                 crate::input::PutChannelMembershipPreferencesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4312,8 +4161,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -4322,8 +4171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
-        pub fn member_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(inp);
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
@@ -4331,19 +4180,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_member_arn(input);
             self
         }
-        /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
-        /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
+        /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
         pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_chime_bearer(input);
             self
         }
         /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
-        pub fn preferences(mut self, inp: crate::model::ChannelMembershipPreferences) -> Self {
-            self.inner = self.inner.preferences(inp);
+        pub fn preferences(mut self, input: crate::model::ChannelMembershipPreferences) -> Self {
+            self.inner = self.inner.preferences(input);
             self
         }
         /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
@@ -4357,15 +4206,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RedactChannelMessage`.
     ///
-    /// <p>Redacts message content, but not metadata. The message exists in the back end, but the
-    /// action returns null content, and the state shows as redacted.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RedactChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4410,10 +4254,10 @@ pub mod fluent_builders {
                 crate::input::RedactChannelMessageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4422,8 +4266,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel containing the messages that you want to redact.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel containing the messages that you want to redact.</p>
@@ -4432,8 +4276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the message being redacted.</p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(inp);
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID of the message being redacted.</p>
@@ -4442,8 +4286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -4454,17 +4298,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendChannelMessage`.
     ///
-    /// <p>Sends a message to a particular channel that the member is a part of.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
-    ///
-    /// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata.
-    /// <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
+    /// <p>Sends a message to a particular channel that the member is a part of.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
+    /// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4509,10 +4347,10 @@ pub mod fluent_builders {
                 crate::input::SendChannelMessageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4521,8 +4359,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -4531,8 +4369,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the message.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the message.</p>
@@ -4541,8 +4379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ChannelMessageType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::ChannelMessageType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
@@ -4554,8 +4392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-        pub fn persistence(mut self, inp: crate::model::ChannelMessagePersistenceType) -> Self {
-            self.inner = self.inner.persistence(inp);
+        pub fn persistence(mut self, input: crate::model::ChannelMessagePersistenceType) -> Self {
+            self.inner = self.inner.persistence(input);
             self
         }
         /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
@@ -4567,8 +4405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The optional metadata for each message.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The optional metadata for each message.</p>
@@ -4577,8 +4415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>Idempotency</code> token for each client request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The <code>Idempotency</code> token for each client request.</p>
@@ -4590,8 +4428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -4602,9 +4440,9 @@ pub mod fluent_builders {
         /// <p>The push notification configuration of the message.</p>
         pub fn push_notification(
             mut self,
-            inp: crate::model::PushNotificationConfiguration,
+            input: crate::model::PushNotificationConfiguration,
         ) -> Self {
-            self.inner = self.inner.push_notification(inp);
+            self.inner = self.inner.push_notification(input);
             self
         }
         /// <p>The push notification configuration of the message.</p>
@@ -4623,9 +4461,9 @@ pub mod fluent_builders {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
-            self.inner = self.inner.message_attributes(k, v);
+            self.inner = self.inner.message_attributes(k.into(), v);
             self
         }
         /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
@@ -4642,7 +4480,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies the specified tags to the specified Amazon Chime SDK messaging resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4687,10 +4525,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4699,8 +4537,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -4713,8 +4551,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tag key-value pairs.</p>
@@ -4729,7 +4567,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified Amazon Chime SDK messaging resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4774,10 +4612,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4786,8 +4624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -4800,8 +4638,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -4816,14 +4654,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChannel`.
     ///
     /// <p>Update a channel's attributes.</p>
-    /// <p>
-    /// <b>Restriction</b>: You can't change a channel's privacy. </p>
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p> <b>Restriction</b>: You can't change a channel's privacy. </p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4868,10 +4702,10 @@ pub mod fluent_builders {
                 crate::input::UpdateChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4880,8 +4714,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -4890,8 +4724,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the channel.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the channel.</p>
@@ -4900,8 +4734,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mode of the update request.</p>
-        pub fn mode(mut self, inp: crate::model::ChannelMode) -> Self {
-            self.inner = self.inner.mode(inp);
+        pub fn mode(mut self, input: crate::model::ChannelMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
         /// <p>The mode of the update request.</p>
@@ -4910,8 +4744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata for the update request.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata for the update request.</p>
@@ -4920,8 +4754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -4933,7 +4767,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChannelFlow`.
     ///
     /// <p>Updates channel flow attributes. This is a developer API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelFlow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4978,10 +4812,10 @@ pub mod fluent_builders {
                 crate::input::UpdateChannelFlowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4990,8 +4824,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow.</p>
-        pub fn channel_flow_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_flow_arn(inp);
+        pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_flow_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow.</p>
@@ -5007,8 +4841,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_processors`](Self::set_processors).
         ///
         /// <p>Information about the processor Lambda functions </p>
-        pub fn processors(mut self, inp: impl Into<crate::model::Processor>) -> Self {
-            self.inner = self.inner.processors(inp);
+        pub fn processors(mut self, input: crate::model::Processor) -> Self {
+            self.inner = self.inner.processors(input);
             self
         }
         /// <p>Information about the processor Lambda functions </p>
@@ -5020,8 +4854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the channel flow.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the channel flow.</p>
@@ -5032,14 +4866,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateChannelMessage`.
     ///
-    /// <p>Updates the content of a message.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Updates the content of a message.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5084,10 +4914,10 @@ pub mod fluent_builders {
                 crate::input::UpdateChannelMessageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5096,8 +4926,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -5106,8 +4936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID string of the message being updated.</p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(inp);
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID string of the message being updated.</p>
@@ -5116,8 +4946,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the message being updated.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the message being updated.</p>
@@ -5126,8 +4956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata of the message being updated.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata of the message being updated.</p>
@@ -5136,8 +4966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -5148,14 +4978,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateChannelReadMarker`.
     ///
-    /// <p>The details of the time when a user last read messages in a channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>The details of the time when a user last read messages in a channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelReadMarker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5200,10 +5026,10 @@ pub mod fluent_builders {
                 crate::input::UpdateChannelReadMarkerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5212,8 +5038,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -5222,8 +5048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(inp);
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -5233,6 +5059,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

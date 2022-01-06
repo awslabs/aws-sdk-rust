@@ -185,8 +185,7 @@ impl PutPolicyOutput {
 pub struct ListTagsOutput {
     /// <p>The tags associated with your private CA.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.
-    /// </p>
+    /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOutput {
@@ -194,8 +193,7 @@ impl ListTagsOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.
-    /// </p>
+    /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -223,9 +221,9 @@ pub mod list_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with your private CA.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -237,14 +235,12 @@ pub mod list_tags_output {
             self.tags = input;
             self
         }
-        /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.
-        /// </p>
+        /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.
-        /// </p>
+        /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -269,21 +265,17 @@ impl ListTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsOutput {
-    /// <p>Summary information about each permission assigned by the specified private CA,
-    /// including the action enabled, the policy provided, and the time of creation.</p>
+    /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-    /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.
-    /// </p>
+    /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPermissionsOutput {
-    /// <p>Summary information about each permission assigned by the specified private CA,
-    /// including the action enabled, the policy provided, and the time of creation.</p>
+    /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
         self.permissions.as_deref()
     }
-    /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.
-    /// </p>
+    /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -310,16 +302,14 @@ pub mod list_permissions_output {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>Summary information about each permission assigned by the specified private CA,
-        /// including the action enabled, the policy provided, and the time of creation.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
-        /// <p>Summary information about each permission assigned by the specified private CA,
-        /// including the action enabled, the policy provided, and the time of creation.</p>
+        /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -327,14 +317,12 @@ pub mod list_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.
-        /// </p>
+        /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request.
-        /// </p>
+        /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -362,8 +350,7 @@ pub struct ListCertificateAuthoritiesOutput {
     /// <p>Summary information about each certificate authority you have created.</p>
     pub certificate_authorities:
         std::option::Option<std::vec::Vec<crate::model::CertificateAuthority>>,
-    /// <p>When the list is truncated, this value is present and should be used for the
-    /// <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCertificateAuthoritiesOutput {
@@ -373,8 +360,7 @@ impl ListCertificateAuthoritiesOutput {
     ) -> std::option::Option<&[crate::model::CertificateAuthority]> {
         self.certificate_authorities.as_deref()
     }
-    /// <p>When the list is truncated, this value is present and should be used for the
-    /// <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -405,10 +391,10 @@ pub mod list_certificate_authorities_output {
         /// <p>Summary information about each certificate authority you have created.</p>
         pub fn certificate_authorities(
             mut self,
-            input: impl Into<crate::model::CertificateAuthority>,
+            input: crate::model::CertificateAuthority,
         ) -> Self {
             let mut v = self.certificate_authorities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificate_authorities = Some(v);
             self
         }
@@ -420,14 +406,12 @@ pub mod list_certificate_authorities_output {
             self.certificate_authorities = input;
             self
         }
-        /// <p>When the list is truncated, this value is present and should be used for the
-        /// <code>NextToken</code> parameter in a subsequent pagination request.</p>
+        /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When the list is truncated, this value is present and should be used for the
-        /// <code>NextToken</code> parameter in a subsequent pagination request.</p>
+        /// <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -452,21 +436,13 @@ impl ListCertificateAuthoritiesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IssueCertificateOutput {
-    /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial
-    /// number. This is of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i>
-    /// </code>
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl IssueCertificateOutput {
-    /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial
-    /// number. This is of the form:</p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i>
-    /// </code>
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -487,22 +463,14 @@ pub mod issue_certificate_output {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial
-        /// number. This is of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i>
-        /// </code>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial
-        /// number. This is of the form:</p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i>
-        /// </code>
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -613,13 +581,11 @@ impl GetPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCertificateAuthorityCsrOutput {
-    /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
-    /// certificate.</p>
+    /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>
     pub csr: std::option::Option<std::string::String>,
 }
 impl GetCertificateAuthorityCsrOutput {
-    /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
-    /// certificate.</p>
+    /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>
     pub fn csr(&self) -> std::option::Option<&str> {
         self.csr.as_deref()
     }
@@ -640,14 +606,12 @@ pub mod get_certificate_authority_csr_output {
         pub(crate) csr: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
-        /// certificate.</p>
+        /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>
         pub fn csr(mut self, input: impl Into<std::string::String>) -> Self {
             self.csr = Some(input.into());
             self
         }
-        /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
-        /// certificate.</p>
+        /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>
         pub fn set_csr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.csr = input;
             self
@@ -671,10 +635,7 @@ impl GetCertificateAuthorityCsrOutput {
 pub struct GetCertificateAuthorityCertificateOutput {
     /// <p>Base64-encoded certificate authority (CA) certificate.</p>
     pub certificate: std::option::Option<std::string::String>,
-    /// <p>Base64-encoded certificate chain that includes any intermediate certificates and
-    /// chains up to root certificate that you used to sign your private CA certificate. The
-    /// chain does not include your private CA certificate. If this is a root CA, the value will
-    /// be null.</p>
+    /// <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
     pub certificate_chain: std::option::Option<std::string::String>,
 }
 impl GetCertificateAuthorityCertificateOutput {
@@ -682,10 +643,7 @@ impl GetCertificateAuthorityCertificateOutput {
     pub fn certificate(&self) -> std::option::Option<&str> {
         self.certificate.as_deref()
     }
-    /// <p>Base64-encoded certificate chain that includes any intermediate certificates and
-    /// chains up to root certificate that you used to sign your private CA certificate. The
-    /// chain does not include your private CA certificate. If this is a root CA, the value will
-    /// be null.</p>
+    /// <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
     pub fn certificate_chain(&self) -> std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
@@ -718,18 +676,12 @@ pub mod get_certificate_authority_certificate_output {
             self.certificate = input;
             self
         }
-        /// <p>Base64-encoded certificate chain that includes any intermediate certificates and
-        /// chains up to root certificate that you used to sign your private CA certificate. The
-        /// chain does not include your private CA certificate. If this is a root CA, the value will
-        /// be null.</p>
+        /// <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
         pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_chain = Some(input.into());
             self
         }
-        /// <p>Base64-encoded certificate chain that includes any intermediate certificates and
-        /// chains up to root certificate that you used to sign your private CA certificate. The
-        /// chain does not include your private CA certificate. If this is a root CA, the value will
-        /// be null.</p>
+        /// <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
         pub fn set_certificate_chain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -757,21 +709,17 @@ impl GetCertificateAuthorityCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCertificateOutput {
-    /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code>
-    /// parameter.</p>
+    /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
     pub certificate: std::option::Option<std::string::String>,
-    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate
-    /// that you used to sign your private CA certificate. </p>
+    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
     pub certificate_chain: std::option::Option<std::string::String>,
 }
 impl GetCertificateOutput {
-    /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code>
-    /// parameter.</p>
+    /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
     pub fn certificate(&self) -> std::option::Option<&str> {
         self.certificate.as_deref()
     }
-    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate
-    /// that you used to sign your private CA certificate. </p>
+    /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
     pub fn certificate_chain(&self) -> std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
@@ -794,26 +742,22 @@ pub mod get_certificate_output {
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code>
-        /// parameter.</p>
+        /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
         pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate = Some(input.into());
             self
         }
-        /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code>
-        /// parameter.</p>
+        /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
         }
-        /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate
-        /// that you used to sign your private CA certificate. </p>
+        /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
         pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_chain = Some(input.into());
             self
         }
-        /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate
-        /// that you used to sign your private CA certificate. </p>
+        /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
         pub fn set_certificate_chain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -845,8 +789,7 @@ pub struct DescribeCertificateAuthorityAuditReportOutput {
     pub audit_report_status: std::option::Option<crate::model::AuditReportStatus>,
     /// <p>Name of the S3 bucket that contains the report.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>S3 <b>key</b> that uniquely identifies the report file in
-    /// your S3 bucket.</p>
+    /// <p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
     pub s3_key: std::option::Option<std::string::String>,
     /// <p>The date and time at which the report was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -860,8 +803,7 @@ impl DescribeCertificateAuthorityAuditReportOutput {
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>S3 <b>key</b> that uniquely identifies the report file in
-    /// your S3 bucket.</p>
+    /// <p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
     pub fn s3_key(&self) -> std::option::Option<&str> {
         self.s3_key.as_deref()
     }
@@ -918,14 +860,12 @@ pub mod describe_certificate_authority_audit_report_output {
             self.s3_bucket_name = input;
             self
         }
-        /// <p>S3 <b>key</b> that uniquely identifies the report file in
-        /// your S3 bucket.</p>
+        /// <p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_key = Some(input.into());
             self
         }
-        /// <p>S3 <b>key</b> that uniquely identifies the report file in
-        /// your S3 bucket.</p>
+        /// <p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_key = input;
             self
@@ -965,13 +905,11 @@ impl DescribeCertificateAuthorityAuditReportOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateAuthorityOutput {
-    /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private
-    /// CA.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
     pub certificate_authority: std::option::Option<crate::model::CertificateAuthority>,
 }
 impl DescribeCertificateAuthorityOutput {
-    /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private
-    /// CA.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
     pub fn certificate_authority(
         &self,
     ) -> std::option::Option<&crate::model::CertificateAuthority> {
@@ -994,14 +932,12 @@ pub mod describe_certificate_authority_output {
         pub(crate) certificate_authority: std::option::Option<crate::model::CertificateAuthority>,
     }
     impl Builder {
-        /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private
-        /// CA.</p>
+        /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
         pub fn certificate_authority(mut self, input: crate::model::CertificateAuthority) -> Self {
             self.certificate_authority = Some(input);
             self
         }
-        /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private
-        /// CA.</p>
+        /// <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
         pub fn set_certificate_authority(
             mut self,
             input: std::option::Option<crate::model::CertificateAuthority>,
@@ -1150,8 +1086,7 @@ impl CreatePermissionOutput {
 pub struct CreateCertificateAuthorityAuditReportOutput {
     /// <p>An alphanumeric string that contains a report identifier.</p>
     pub audit_report_id: std::option::Option<std::string::String>,
-    /// <p>The <b>key</b> that uniquely identifies the report file in
-    /// your S3 bucket.</p>
+    /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
     pub s3_key: std::option::Option<std::string::String>,
 }
 impl CreateCertificateAuthorityAuditReportOutput {
@@ -1159,8 +1094,7 @@ impl CreateCertificateAuthorityAuditReportOutput {
     pub fn audit_report_id(&self) -> std::option::Option<&str> {
         self.audit_report_id.as_deref()
     }
-    /// <p>The <b>key</b> that uniquely identifies the report file in
-    /// your S3 bucket.</p>
+    /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
     pub fn s3_key(&self) -> std::option::Option<&str> {
         self.s3_key.as_deref()
     }
@@ -1196,14 +1130,12 @@ pub mod create_certificate_authority_audit_report_output {
             self.audit_report_id = input;
             self
         }
-        /// <p>The <b>key</b> that uniquely identifies the report file in
-        /// your S3 bucket.</p>
+        /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_key = Some(input.into());
             self
         }
-        /// <p>The <b>key</b> that uniquely identifies the report file in
-        /// your S3 bucket.</p>
+        /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_key = input;
             self
@@ -1228,21 +1160,13 @@ impl CreateCertificateAuthorityAuditReportOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCertificateAuthorityOutput {
-    /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This
-    /// is of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
 }
 impl CreateCertificateAuthorityOutput {
-    /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This
-    /// is of the form: </p>
-    /// <p>
-    /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-    /// </code>.
-    /// </p>
+    /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -1263,22 +1187,14 @@ pub mod create_certificate_authority_output {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This
-        /// is of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This
-        /// is of the form: </p>
-        /// <p>
-        /// <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>.
-        /// </p>
+        /// <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
+        /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,

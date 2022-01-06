@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Systems Manager Incident Manager Contacts
@@ -171,6 +171,7 @@ where
     ///
     /// See [`ListContactChannels`](crate::client::fluent_builders::ListContactChannels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContactChannels::into_paginator).
     pub fn list_contact_channels(&self) -> fluent_builders::ListContactChannels<C, M, R> {
         fluent_builders::ListContactChannels::new(self.handle.clone())
     }
@@ -178,6 +179,7 @@ where
     ///
     /// See [`ListContacts`](crate::client::fluent_builders::ListContacts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContacts::into_paginator).
     pub fn list_contacts(&self) -> fluent_builders::ListContacts<C, M, R> {
         fluent_builders::ListContacts::new(self.handle.clone())
     }
@@ -185,6 +187,7 @@ where
     ///
     /// See [`ListEngagements`](crate::client::fluent_builders::ListEngagements) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEngagements::into_paginator).
     pub fn list_engagements(&self) -> fluent_builders::ListEngagements<C, M, R> {
         fluent_builders::ListEngagements::new(self.handle.clone())
     }
@@ -192,6 +195,7 @@ where
     ///
     /// See [`ListPageReceipts`](crate::client::fluent_builders::ListPageReceipts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPageReceipts::into_paginator).
     pub fn list_page_receipts(&self) -> fluent_builders::ListPageReceipts<C, M, R> {
         fluent_builders::ListPageReceipts::new(self.handle.clone())
     }
@@ -199,6 +203,7 @@ where
     ///
     /// See [`ListPagesByContact`](crate::client::fluent_builders::ListPagesByContact) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPagesByContact::into_paginator).
     pub fn list_pages_by_contact(&self) -> fluent_builders::ListPagesByContact<C, M, R> {
         fluent_builders::ListPagesByContact::new(self.handle.clone())
     }
@@ -206,6 +211,7 @@ where
     ///
     /// See [`ListPagesByEngagement`](crate::client::fluent_builders::ListPagesByEngagement) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPagesByEngagement::into_paginator).
     pub fn list_pages_by_engagement(&self) -> fluent_builders::ListPagesByEngagement<C, M, R> {
         fluent_builders::ListPagesByEngagement::new(self.handle.clone())
     }
@@ -284,7 +290,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AcceptPage`.
     ///
     /// <p>Used to acknowledge an engagement to a contact channel during an incident.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AcceptPage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -329,10 +335,10 @@ pub mod fluent_builders {
                 crate::input::AcceptPageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -341,8 +347,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
-        pub fn page_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_id(inp);
+        pub fn page_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
@@ -351,8 +357,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the contact channel.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(input.into());
             self
         }
         /// <p>The ARN of the contact channel.</p>
@@ -364,8 +370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
-        pub fn accept_type(mut self, inp: crate::model::AcceptType) -> Self {
-            self.inner = self.inner.accept_type(inp);
+        pub fn accept_type(mut self, input: crate::model::AcceptType) -> Self {
+            self.inner = self.inner.accept_type(input);
             self
         }
         /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
@@ -377,8 +383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information provided by the user when the user acknowledges the page.</p>
-        pub fn note(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.note(inp);
+        pub fn note(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.note(input.into());
             self
         }
         /// <p>Information provided by the user when the user acknowledges the page.</p>
@@ -387,8 +393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
-        pub fn accept_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept_code(inp);
+        pub fn accept_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept_code(input.into());
             self
         }
         /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
@@ -396,26 +402,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_code(input);
             self
         }
-        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
-        /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
-        /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
-        /// validation causes Incident Manager to verify that the code entered by the user matches the
-        /// code sent by Incident Manager with the page.</p>
-        /// <p>Incident Manager can also <code>IGNORE</code>
-        /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
-        /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
-        pub fn accept_code_validation(mut self, inp: crate::model::AcceptCodeValidation) -> Self {
-            self.inner = self.inner.accept_code_validation(inp);
+        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+        /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+        pub fn accept_code_validation(mut self, input: crate::model::AcceptCodeValidation) -> Self {
+            self.inner = self.inner.accept_code_validation(input);
             self
         }
-        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
-        /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
-        /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
-        /// validation causes Incident Manager to verify that the code entered by the user matches the
-        /// code sent by Incident Manager with the page.</p>
-        /// <p>Incident Manager can also <code>IGNORE</code>
-        /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
-        /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+        /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
         pub fn set_accept_code_validation(
             mut self,
             input: std::option::Option<crate::model::AcceptCodeValidation>,
@@ -426,9 +420,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ActivateContactChannel`.
     ///
-    /// <p>Activates a contact's contact channel. Incident Manager can't engage a contact until the
-    /// contact channel has been activated.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Activates a contact's contact channel. Incident Manager can't engage a contact until the contact channel has been activated.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivateContactChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -473,10 +466,10 @@ pub mod fluent_builders {
                 crate::input::ActivateContactChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -485,8 +478,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
@@ -498,8 +491,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The code sent to the contact channel when it was created in the contact. </p>
-        pub fn activation_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activation_code(inp);
+        pub fn activation_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activation_code(input.into());
             self
         }
         /// <p>The code sent to the contact channel when it was created in the contact. </p>
@@ -513,10 +506,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateContact`.
     ///
-    /// <p>Contacts are either the contacts that Incident Manager engages during an incident or the
-    /// escalation plans that Incident Manager uses to engage contacts in phases during an
-    /// incident. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Contacts are either the contacts that Incident Manager engages during an incident or the escalation plans that Incident Manager uses to engage contacts in phases during an incident. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -561,10 +552,10 @@ pub mod fluent_builders {
                 crate::input::CreateContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -572,48 +563,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
-        /// be unique and identifiable. </p>
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
-        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
-        /// be unique and identifiable. </p>
+        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias(input);
             self
         }
-        /// <p>The full name of the contact or escalation plan.  </p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        /// <p>The full name of the contact or escalation plan. </p>
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
-        /// <p>The full name of the contact or escalation plan.  </p>
+        /// <p>The full name of the contact or escalation plan. </p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-        /// <code>PERSONAL</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ContactType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ContactType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-        /// <code>PERSONAL</code>.</p>
+        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
-        /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
-        pub fn plan(mut self, inp: crate::model::Plan) -> Self {
-            self.inner = self.inner.plan(inp);
+        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
+        pub fn plan(mut self, input: crate::model::Plan) -> Self {
+            self.inner = self.inner.plan(input);
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
-        /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
         pub fn set_plan(mut self, input: std::option::Option<crate::model::Plan>) -> Self {
             self.inner = self.inner.set_plan(input);
             self
@@ -622,14 +607,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
-        /// replication set. </p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
-        /// replication set. </p>
+        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -637,14 +620,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -656,7 +637,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateContactChannel`.
     ///
     /// <p>A contact channel is the method that Incident Manager uses to engage your contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContactChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -701,10 +682,10 @@ pub mod fluent_builders {
                 crate::input::CreateContactChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -713,8 +694,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
@@ -723,8 +704,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact channel.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the contact channel.</p>
@@ -734,79 +715,39 @@ pub mod fluent_builders {
         }
         /// <p>Incident Manager supports three types of contact channels:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VOICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EMAIL</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMS</code> </p> </li>
+        /// <li> <p> <code>VOICE</code> </p> </li>
+        /// <li> <p> <code>EMAIL</code> </p> </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::ChannelType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>Incident Manager supports three types of contact channels:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VOICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EMAIL</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMS</code> </p> </li>
+        /// <li> <p> <code>VOICE</code> </p> </li>
+        /// <li> <p> <code>EMAIL</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
-        /// is dependent on the type of the contact channel. The following are the expected
-        /// formats:</p>
+        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>SMS - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>VOICE - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>EMAIL - any standard email format</p>
-        /// </li>
+        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>EMAIL - any standard email format</p> </li>
         /// </ul>
-        pub fn delivery_address(mut self, inp: crate::model::ContactChannelAddress) -> Self {
-            self.inner = self.inner.delivery_address(inp);
+        pub fn delivery_address(mut self, input: crate::model::ContactChannelAddress) -> Self {
+            self.inner = self.inner.delivery_address(input);
             self
         }
-        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
-        /// is dependent on the type of the contact channel. The following are the expected
-        /// formats:</p>
+        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>SMS - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>VOICE - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>EMAIL - any standard email format</p>
-        /// </li>
+        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>EMAIL - any standard email format</p> </li>
         /// </ul>
         pub fn set_delivery_address(
             mut self,
@@ -815,26 +756,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_address(input);
             self
         }
-        /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
-        /// Incident Manager can't engage your contact channel until it has been activated.</p>
-        pub fn defer_activation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.defer_activation(inp);
+        /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
+        pub fn defer_activation(mut self, input: bool) -> Self {
+            self.inner = self.inner.defer_activation(input);
             self
         }
-        /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
-        /// Incident Manager can't engage your contact channel until it has been activated.</p>
+        /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
         pub fn set_defer_activation(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_defer_activation(input);
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -845,9 +782,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeactivateContactChannel`.
     ///
-    /// <p>To no longer receive Incident Manager engagements to a contact channel, you can deactivate
-    /// the channel.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To no longer receive Incident Manager engagements to a contact channel, you can deactivate the channel.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeactivateContactChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -892,10 +828,10 @@ pub mod fluent_builders {
                 crate::input::DeactivateContactChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -904,8 +840,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
@@ -919,11 +855,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteContact`.
     ///
-    /// <p>To remove a contact from Incident Manager, you can delete the contact. Deleting a contact
-    /// removes them from all escalation plans and related response plans. Deleting an escalation
-    /// plan removes it from all related response plans. You will have to recreate the contact and
-    /// its contact channels before you can use it again.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To remove a contact from Incident Manager, you can delete the contact. Deleting a contact removes them from all escalation plans and related response plans. Deleting an escalation plan removes it from all related response plans. You will have to recreate the contact and its contact channels before you can use it again.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -968,10 +901,10 @@ pub mod fluent_builders {
                 crate::input::DeleteContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -980,8 +913,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
@@ -992,11 +925,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteContactChannel`.
     ///
-    /// <p>To no longer receive engagements on a contact channel, you can delete the channel from a
-    /// contact. Deleting the contact channel removes it from the contact's engagement plan. If you
-    /// delete the only contact channel for a contact, you won't be able to engage that contact
-    /// during an incident.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To no longer receive engagements on a contact channel, you can delete the channel from a contact. Deleting the contact channel removes it from the contact's engagement plan. If you delete the only contact channel for a contact, you won't be able to engage that contact during an incident.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1041,10 +971,10 @@ pub mod fluent_builders {
                 crate::input::DeleteContactChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1053,8 +983,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
@@ -1068,9 +998,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEngagement`.
     ///
-    /// <p>Incident Manager uses engagements to engage contacts and escalation plans during an incident.
-    /// Use this command to describe the engagement that occurred during an incident.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Incident Manager uses engagements to engage contacts and escalation plans during an incident. Use this command to describe the engagement that occurred during an incident.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEngagement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1115,10 +1044,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEngagementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1127,8 +1056,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
-        pub fn engagement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engagement_id(inp);
+        pub fn engagement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engagement_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
@@ -1143,7 +1072,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePage`.
     ///
     /// <p>Lists details of the engagement to a contact channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1188,10 +1117,10 @@ pub mod fluent_builders {
                 crate::input::DescribePageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1200,8 +1129,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the engagement to a contact channel.</p>
-        pub fn page_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_id(inp);
+        pub fn page_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_id(input.into());
             self
         }
         /// <p>The ID of the engagement to a contact channel.</p>
@@ -1213,7 +1142,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContact`.
     ///
     /// <p>Retrieves information about the specified contact or escalation plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1258,10 +1187,10 @@ pub mod fluent_builders {
                 crate::input::GetContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1270,8 +1199,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
@@ -1283,7 +1212,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetContactChannel`.
     ///
     /// <p>List details about a specific contact channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1328,10 +1257,10 @@ pub mod fluent_builders {
                 crate::input::GetContactChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1340,8 +1269,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel you want information about.</p>
@@ -1355,9 +1284,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetContactPolicy`.
     ///
-    /// <p>Retrieves the resource policies attached to the specified contact or escalation
-    /// plan.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the resource policies attached to the specified contact or escalation plan.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1402,10 +1330,10 @@ pub mod fluent_builders {
                 crate::input::GetContactPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1414,8 +1342,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-        pub fn contact_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(inp);
+        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
@@ -1427,7 +1355,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContactChannels`.
     ///
     /// <p>Lists all contact channels for the specified contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContactChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1472,10 +1400,10 @@ pub mod fluent_builders {
                 crate::input::ListContactChannelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1483,9 +1411,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContactChannelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContactChannelsPaginator<C, M, R> {
+            crate::paginator::ListContactChannelsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the contact. </p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact. </p>
@@ -1494,8 +1428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1504,8 +1438,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of contact channels per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of contact channels per page.</p>
@@ -1517,7 +1451,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContacts`.
     ///
     /// <p>Lists all contacts and escalation plans in Incident Manager.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1562,10 +1496,10 @@ pub mod fluent_builders {
                 crate::input::ListContactsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1573,9 +1507,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContactsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContactsPaginator<C, M, R> {
+            crate::paginator::ListContactsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1584,8 +1524,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of contacts and escalation plans per page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of contacts and escalation plans per page of results.</p>
@@ -1594,8 +1534,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
-        pub fn alias_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_prefix(inp);
+        pub fn alias_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_prefix(input.into());
             self
         }
         /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
@@ -1603,14 +1543,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias_prefix(input);
             self
         }
-        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
-        /// type <code>ESCALATION</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::ContactType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ContactType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
-        /// type <code>ESCALATION</code>.</p>
+        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -1619,7 +1557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEngagements`.
     ///
     /// <p>Lists all engagements that have happened in an incident.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEngagements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1664,10 +1602,10 @@ pub mod fluent_builders {
                 crate::input::ListEngagementsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1675,9 +1613,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEngagementsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEngagementsPaginator<C, M, R> {
+            crate::paginator::ListEngagementsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1686,8 +1630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of engagements per page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of engagements per page of results.</p>
@@ -1696,8 +1640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
-        pub fn incident_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_id(inp);
+        pub fn incident_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.incident_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
@@ -1706,8 +1650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time range to lists engagements for an incident.</p>
-        pub fn time_range_value(mut self, inp: crate::model::TimeRange) -> Self {
-            self.inner = self.inner.time_range_value(inp);
+        pub fn time_range_value(mut self, input: crate::model::TimeRange) -> Self {
+            self.inner = self.inner.time_range_value(input);
             self
         }
         /// <p>The time range to lists engagements for an incident.</p>
@@ -1722,7 +1666,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPageReceipts`.
     ///
     /// <p>Lists all of the engagements to contact channels that have been acknowledged. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPageReceipts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1767,10 +1711,10 @@ pub mod fluent_builders {
                 crate::input::ListPageReceiptsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1778,9 +1722,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPageReceiptsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPageReceiptsPaginator<C, M, R> {
+            crate::paginator::ListPageReceiptsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p>
-        pub fn page_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_id(inp);
+        pub fn page_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p>
@@ -1789,8 +1739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1799,8 +1749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of acknowledgements per page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of acknowledgements per page of results.</p>
@@ -1812,7 +1762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPagesByContact`.
     ///
     /// <p>Lists the engagements to a contact's contact channels.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPagesByContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1857,10 +1807,10 @@ pub mod fluent_builders {
                 crate::input::ListPagesByContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1868,9 +1818,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPagesByContactPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPagesByContactPaginator<C, M, R> {
+            crate::paginator::ListPagesByContactPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
@@ -1879,8 +1835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1889,8 +1845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of engagements to contact channels to list per page of results. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of engagements to contact channels to list per page of results. </p>
@@ -1902,7 +1858,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPagesByEngagement`.
     ///
     /// <p>Lists the engagements to contact channels that occurred by engaging a contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPagesByEngagement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1947,10 +1903,10 @@ pub mod fluent_builders {
                 crate::input::ListPagesByEngagementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1958,9 +1914,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPagesByEngagementPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPagesByEngagementPaginator<C, M, R> {
+            crate::paginator::ListPagesByEngagementPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-        pub fn engagement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engagement_id(inp);
+        pub fn engagement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engagement_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
@@ -1972,8 +1934,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -1981,14 +1943,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of engagements to contact channels to list per page of
-        /// results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of engagements to contact channels to list per page of
-        /// results.</p>
+        /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1997,7 +1957,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags of an escalation plan or contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2042,10 +2002,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2054,8 +2014,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
@@ -2067,7 +2027,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutContactPolicy`.
     ///
     /// <p>Adds a resource to the specified contact or escalation plan.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutContactPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2112,10 +2072,10 @@ pub mod fluent_builders {
                 crate::input::PutContactPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2124,8 +2084,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-        pub fn contact_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(inp);
+        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
@@ -2134,8 +2094,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details of the resource policy.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>Details of the resource policy.</p>
@@ -2146,10 +2106,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendActivationCode`.
     ///
-    /// <p>Sends an activation code to a contact channel. The contact can use this code to activate
-    /// the contact channel in the console or with the <code>ActivateChannel</code> operation.
-    /// Incident Manager can't engage a contact channel until it has been activated.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sends an activation code to a contact channel. The contact can use this code to activate the contact channel in the console or with the <code>ActivateChannel</code> operation. Incident Manager can't engage a contact channel until it has been activated.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendActivationCode<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2194,10 +2152,10 @@ pub mod fluent_builders {
                 crate::input::SendActivationCodeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2206,8 +2164,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
@@ -2221,9 +2179,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartEngagement`.
     ///
-    /// <p>Starts an engagement to a contact or escalation plan. The engagement engages each
-    /// contact specified in the incident.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts an engagement to a contact or escalation plan. The engagement engages each contact specified in the incident.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartEngagement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2268,10 +2225,10 @@ pub mod fluent_builders {
                 crate::input::StartEngagementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2280,8 +2237,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
@@ -2290,8 +2247,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user that started the engagement.</p>
-        pub fn sender(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sender(inp);
+        pub fn sender(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sender(input.into());
             self
         }
         /// <p>The user that started the engagement.</p>
@@ -2299,38 +2256,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sender(input);
             self
         }
-        /// <p>The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
-        pub fn subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subject(inp);
+        /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subject(input.into());
             self
         }
-        /// <p>The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subject(input);
             self
         }
-        /// <p>The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
             self
         }
-        /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
-        pub fn public_subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_subject(inp);
+        /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+        pub fn public_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_subject(input.into());
             self
         }
-        /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn set_public_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2338,14 +2289,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_public_subject(input);
             self
         }
-        /// <p>The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
-        pub fn public_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_content(inp);
+        /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
+        pub fn public_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_content(input.into());
             self
         }
-        /// <p>The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn set_public_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2354,8 +2303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the incident that the engagement is part of.</p>
-        pub fn incident_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.incident_id(inp);
+        pub fn incident_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.incident_id(input.into());
             self
         }
         /// <p>The ARN of the incident that the engagement is part of.</p>
@@ -2363,14 +2312,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_id(input);
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2381,9 +2328,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopEngagement`.
     ///
-    /// <p>Stops an engagement before it finishes the final stage of the escalation plan or
-    /// engagement plan. Further contacts aren't engaged.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Stops an engagement before it finishes the final stage of the escalation plan or engagement plan. Further contacts aren't engaged.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopEngagement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2428,10 +2374,10 @@ pub mod fluent_builders {
                 crate::input::StopEngagementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2440,8 +2386,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-        pub fn engagement_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engagement_id(inp);
+        pub fn engagement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engagement_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
@@ -2453,8 +2399,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason that you're stopping the engagement. </p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>The reason that you're stopping the engagement. </p>
@@ -2465,9 +2411,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Tags a contact or escalation plan. You can tag only contacts and escalation plans in the
-    /// first region of your replication set. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Tags a contact or escalation plan. You can tag only contacts and escalation plans in the first region of your replication set. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2512,10 +2457,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2524,8 +2469,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
@@ -2538,8 +2483,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags that you are adding to the contact or escalation plan.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags that you are adding to the contact or escalation plan.</p>
@@ -2554,7 +2499,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from the specified resource. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2599,10 +2544,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2611,8 +2556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
@@ -2625,8 +2570,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The key of the tag that you want to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The key of the tag that you want to remove.</p>
@@ -2641,7 +2586,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContact`.
     ///
     /// <p>Updates the contact or escalation plan specified. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2686,10 +2631,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2698,8 +2643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
@@ -2708,8 +2653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full name of the contact or escalation plan.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The full name of the contact or escalation plan.</p>
@@ -2717,14 +2662,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
-        /// channels. An escalation plan uses these stages to contact specified contacts. </p>
-        pub fn plan(mut self, inp: crate::model::Plan) -> Self {
-            self.inner = self.inner.plan(inp);
+        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
+        pub fn plan(mut self, input: crate::model::Plan) -> Self {
+            self.inner = self.inner.plan(input);
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
-        /// channels. An escalation plan uses these stages to contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
         pub fn set_plan(mut self, input: std::option::Option<crate::model::Plan>) -> Self {
             self.inner = self.inner.set_plan(input);
             self
@@ -2733,7 +2676,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateContactChannel`.
     ///
     /// <p>Updates a contact's contact channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateContactChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2778,10 +2721,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContactChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2790,8 +2733,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
-        pub fn contact_channel_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_channel_id(inp);
+        pub fn contact_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_channel_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
@@ -2803,8 +2746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact channel.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the contact channel.</p>
@@ -2813,8 +2756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
-        pub fn delivery_address(mut self, inp: crate::model::ContactChannelAddress) -> Self {
-            self.inner = self.inner.delivery_address(inp);
+        pub fn delivery_address(mut self, input: crate::model::ContactChannelAddress) -> Self {
+            self.inner = self.inner.delivery_address(input);
             self
         }
         /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
@@ -2827,6 +2770,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

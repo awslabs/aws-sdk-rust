@@ -140,9 +140,7 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
-/// <p>A user settings resource that can be associated with a web portal. Once associated with
-/// a web portal, user settings control how users can transfer data between a streaming session
-/// and the their local devices. </p>
+/// <p>A user settings resource that can be associated with a web portal. Once associated with a web portal, user settings control how users can transfer data between a streaming session and the their local devices. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserSettings {
@@ -150,17 +148,13 @@ pub struct UserSettings {
     pub user_settings_arn: std::option::Option<std::string::String>,
     /// <p>A list of web portal ARNs that this user settings is associated with.</p>
     pub associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies whether the user can copy text from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub copy_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>Specifies whether the user can paste text from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
     pub paste_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>Specifies whether the user can download files from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     pub download_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>Specifies whether the user can upload files from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     pub upload_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can print to the local device.</p>
     pub print_allowed: std::option::Option<crate::model::EnabledType>,
@@ -174,23 +168,19 @@ impl UserSettings {
     pub fn associated_portal_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.associated_portal_arns.as_deref()
     }
-    /// <p>Specifies whether the user can copy text from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub fn copy_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.copy_allowed.as_ref()
     }
-    /// <p>Specifies whether the user can paste text from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
     pub fn paste_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.paste_allowed.as_ref()
     }
-    /// <p>Specifies whether the user can download files from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     pub fn download_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.download_allowed.as_ref()
     }
-    /// <p>Specifies whether the user can upload files from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     pub fn upload_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.upload_allowed.as_ref()
     }
@@ -259,14 +249,12 @@ pub mod user_settings {
             self.associated_portal_arns = input;
             self
         }
-        /// <p>Specifies whether the user can copy text from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
         pub fn copy_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.copy_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can copy text from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
         pub fn set_copy_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -274,14 +262,12 @@ pub mod user_settings {
             self.copy_allowed = input;
             self
         }
-        /// <p>Specifies whether the user can paste text from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
         pub fn paste_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.paste_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can paste text from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
         pub fn set_paste_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -289,14 +275,12 @@ pub mod user_settings {
             self.paste_allowed = input;
             self
         }
-        /// <p>Specifies whether the user can download files from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
         pub fn download_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.download_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can download files from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
         pub fn set_download_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -304,14 +288,12 @@ pub mod user_settings {
             self.download_allowed = input;
             self
         }
-        /// <p>Specifies whether the user can upload files from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
         pub fn upload_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.upload_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can upload files from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
         pub fn set_upload_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -420,8 +402,7 @@ pub struct Portal {
     pub browser_type: std::option::Option<crate::model::BrowserType>,
     /// <p>The status of the web portal.</p>
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
-    /// <p>The endpoint URL of the web portal that users access in order to start streaming
-    /// sessions.</p>
+    /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
     pub portal_endpoint: std::option::Option<std::string::String>,
     /// <p>The name of the web portal.</p>
     pub display_name: std::option::Option<std::string::String>,
@@ -455,8 +436,7 @@ impl Portal {
     pub fn portal_status(&self) -> std::option::Option<&crate::model::PortalStatus> {
         self.portal_status.as_ref()
     }
-    /// <p>The endpoint URL of the web portal that users access in order to start streaming
-    /// sessions.</p>
+    /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
     pub fn portal_endpoint(&self) -> std::option::Option<&str> {
         self.portal_endpoint.as_deref()
     }
@@ -576,14 +556,12 @@ pub mod portal {
             self.portal_status = input;
             self
         }
-        /// <p>The endpoint URL of the web portal that users access in order to start streaming
-        /// sessions.</p>
+        /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
         pub fn portal_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_endpoint = Some(input.into());
             self
         }
-        /// <p>The endpoint URL of the web portal that users access in order to start streaming
-        /// sessions.</p>
+        /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
         pub fn set_portal_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -866,9 +844,7 @@ impl AsRef<str> for RendererType {
     }
 }
 
-/// <p>A network settings resource that can be associated with a web portal. Once associated
-/// with a web portal, network settings define how streaming instances will connect with your
-/// specified VPC. </p>
+/// <p>A network settings resource that can be associated with a web portal. Once associated with a web portal, network settings define how streaming instances will connect with your specified VPC. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkSettings {
@@ -1038,158 +1014,46 @@ pub struct IdentityProvider {
     pub identity_provider_name: std::option::Option<std::string::String>,
     /// <p>The identity provider type.</p>
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
-    /// <p>The identity provider details. The following list describes the provider detail keys for
-    /// each identity provider type. </p>
+    /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
     /// <ul>
-    /// <li>
-    /// <p>For Google and Login with Amazon:</p>      
+    /// <li> <p>For Google and Login with Amazon:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client_secret</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For Facebook:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client_secret</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>api_version</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For Sign in with Apple:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// <li> <p> <code>api_version</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>team_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>key_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>private_key</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For OIDC providers:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>team_id</code> </p> </li>
+    /// <li> <p> <code>key_id</code> </p> </li>
+    /// <li> <p> <code>private_key</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client_secret</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>attributes_request_method</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oidc_issuer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_url</code>
-    /// <i>if not available from discovery URL specified by oidc_issuer
-    /// key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>token_url</code>
-    /// <i>if not available from discovery URL specified by oidc_issuer
-    /// key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>attributes_url</code>
-    /// <i>if not available from discovery URL specified by oidc_issuer
-    /// key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jwks_uri</code>
-    /// <i>if not available from discovery URL specified by oidc_issuer
-    /// key</i>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For SAML providers:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>attributes_request_method</code> </p> </li>
+    /// <li> <p> <code>oidc_issuer</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>MetadataFile</code> OR <code>MetadataURL</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IDPSignout</code>
-    /// <i>optional</i>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+    /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub identity_provider_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1209,158 +1073,46 @@ impl IdentityProvider {
     ) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
-    /// <p>The identity provider details. The following list describes the provider detail keys for
-    /// each identity provider type. </p>
+    /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
     /// <ul>
-    /// <li>
-    /// <p>For Google and Login with Amazon:</p>      
+    /// <li> <p>For Google and Login with Amazon:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client_secret</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For Facebook:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client_secret</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>api_version</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For Sign in with Apple:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// <li> <p> <code>api_version</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>team_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>key_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>private_key</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For OIDC providers:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>team_id</code> </p> </li>
+    /// <li> <p> <code>key_id</code> </p> </li>
+    /// <li> <p> <code>private_key</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client_secret</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>attributes_request_method</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oidc_issuer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_url</code>
-    /// <i>if not available from discovery URL specified by oidc_issuer
-    /// key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>token_url</code>
-    /// <i>if not available from discovery URL specified by oidc_issuer
-    /// key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>attributes_url</code>
-    /// <i>if not available from discovery URL specified by oidc_issuer
-    /// key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jwks_uri</code>
-    /// <i>if not available from discovery URL specified by oidc_issuer
-    /// key</i>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For SAML providers:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>attributes_request_method</code> </p> </li>
+    /// <li> <p> <code>oidc_issuer</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>MetadataFile</code> OR <code>MetadataURL</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IDPSignout</code>
-    /// <i>optional</i>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+    /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn identity_provider_details(
         &self,
@@ -1436,158 +1188,46 @@ pub mod identity_provider {
         ///
         /// To override the contents of this collection use [`set_identity_provider_details`](Self::set_identity_provider_details).
         ///
-        /// <p>The identity provider details. The following list describes the provider detail keys for
-        /// each identity provider type. </p>
+        /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For Google and Login with Amazon:</p>      
+        /// <li> <p>For Google and Login with Amazon:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Facebook:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Facebook:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>api_version</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Sign in with Apple:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>api_version</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Sign in with Apple:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>team_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>key_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>private_key</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For OIDC providers:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>team_id</code> </p> </li>
+        /// <li> <p> <code>key_id</code> </p> </li>
+        /// <li> <p> <code>private_key</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For OIDC providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attributes_request_method</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oidc_issuer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_url</code>
-        /// <i>if not available from discovery URL specified by oidc_issuer
-        /// key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>token_url</code>
-        /// <i>if not available from discovery URL specified by oidc_issuer
-        /// key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attributes_url</code>
-        /// <i>if not available from discovery URL specified by oidc_issuer
-        /// key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jwks_uri</code>
-        /// <i>if not available from discovery URL specified by oidc_issuer
-        /// key</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For SAML providers:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>attributes_request_method</code> </p> </li>
+        /// <li> <p> <code>oidc_issuer</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For SAML providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MetadataFile</code> OR <code>MetadataURL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IDPSignout</code>
-        /// <i>optional</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+        /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn identity_provider_details(
             mut self,
@@ -1599,158 +1239,46 @@ pub mod identity_provider {
             self.identity_provider_details = Some(hash_map);
             self
         }
-        /// <p>The identity provider details. The following list describes the provider detail keys for
-        /// each identity provider type. </p>
+        /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For Google and Login with Amazon:</p>      
+        /// <li> <p>For Google and Login with Amazon:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Facebook:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Facebook:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>api_version</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Sign in with Apple:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>api_version</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Sign in with Apple:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>team_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>key_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>private_key</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For OIDC providers:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>team_id</code> </p> </li>
+        /// <li> <p> <code>key_id</code> </p> </li>
+        /// <li> <p> <code>private_key</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For OIDC providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attributes_request_method</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oidc_issuer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_url</code>
-        /// <i>if not available from discovery URL specified by oidc_issuer
-        /// key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>token_url</code>
-        /// <i>if not available from discovery URL specified by oidc_issuer
-        /// key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attributes_url</code>
-        /// <i>if not available from discovery URL specified by oidc_issuer
-        /// key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jwks_uri</code>
-        /// <i>if not available from discovery URL specified by oidc_issuer
-        /// key</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For SAML providers:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>attributes_request_method</code> </p> </li>
+        /// <li> <p> <code>oidc_issuer</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For SAML providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MetadataFile</code> OR <code>MetadataURL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IDPSignout</code>
-        /// <i>optional</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+        /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_identity_provider_details(
             mut self,
@@ -1857,9 +1385,7 @@ impl AsRef<str> for IdentityProviderType {
     }
 }
 
-/// <p>The browser settings resource that can be associated with a web portal. Once associated
-/// with a web portal, browser settings control how the browser will behave once a user starts
-/// a streaming session for the web portal. </p>
+/// <p>The browser settings resource that can be associated with a web portal. Once associated with a web portal, browser settings control how the browser will behave once a user starts a streaming session for the web portal. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrowserSettings {
@@ -1867,8 +1393,7 @@ pub struct BrowserSettings {
     pub browser_settings_arn: std::option::Option<std::string::String>,
     /// <p>A list of web portal ARNs that this browser settings is associated with.</p>
     pub associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-    /// streaming sessions.</p>
+    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
     pub browser_policy: std::option::Option<std::string::String>,
 }
 impl BrowserSettings {
@@ -1880,8 +1405,7 @@ impl BrowserSettings {
     pub fn associated_portal_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.associated_portal_arns.as_deref()
     }
-    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-    /// streaming sessions.</p>
+    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
     pub fn browser_policy(&self) -> std::option::Option<&str> {
         self.browser_policy.as_deref()
     }
@@ -1938,14 +1462,12 @@ pub mod browser_settings {
             self.associated_portal_arns = input;
             self
         }
-        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-        /// streaming sessions.</p>
+        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
         pub fn browser_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.browser_policy = Some(input.into());
             self
         }
-        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-        /// streaming sessions.</p>
+        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
         pub fn set_browser_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2049,17 +1571,13 @@ impl Tag {
 pub struct UserSettingsSummary {
     /// <p>The ARN of the user settings.</p>
     pub user_settings_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the user can copy text from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub copy_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>Specifies whether the user can paste text from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
     pub paste_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>Specifies whether the user can download files from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     pub download_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>Specifies whether the user can upload files from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     pub upload_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can print to the local device.</p>
     pub print_allowed: std::option::Option<crate::model::EnabledType>,
@@ -2069,23 +1587,19 @@ impl UserSettingsSummary {
     pub fn user_settings_arn(&self) -> std::option::Option<&str> {
         self.user_settings_arn.as_deref()
     }
-    /// <p>Specifies whether the user can copy text from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub fn copy_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.copy_allowed.as_ref()
     }
-    /// <p>Specifies whether the user can paste text from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
     pub fn paste_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.paste_allowed.as_ref()
     }
-    /// <p>Specifies whether the user can download files from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     pub fn download_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.download_allowed.as_ref()
     }
-    /// <p>Specifies whether the user can upload files from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     pub fn upload_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.upload_allowed.as_ref()
     }
@@ -2133,14 +1647,12 @@ pub mod user_settings_summary {
             self.user_settings_arn = input;
             self
         }
-        /// <p>Specifies whether the user can copy text from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
         pub fn copy_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.copy_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can copy text from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
         pub fn set_copy_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -2148,14 +1660,12 @@ pub mod user_settings_summary {
             self.copy_allowed = input;
             self
         }
-        /// <p>Specifies whether the user can paste text from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
         pub fn paste_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.paste_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can paste text from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
         pub fn set_paste_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -2163,14 +1673,12 @@ pub mod user_settings_summary {
             self.paste_allowed = input;
             self
         }
-        /// <p>Specifies whether the user can download files from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
         pub fn download_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.download_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can download files from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
         pub fn set_download_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -2178,14 +1686,12 @@ pub mod user_settings_summary {
             self.download_allowed = input;
             self
         }
-        /// <p>Specifies whether the user can upload files from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
         pub fn upload_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.upload_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can upload files from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
         pub fn set_upload_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -2431,8 +1937,7 @@ pub struct PortalSummary {
     pub browser_type: std::option::Option<crate::model::BrowserType>,
     /// <p>The status of the web portal.</p>
     pub portal_status: std::option::Option<crate::model::PortalStatus>,
-    /// <p>The endpoint URL of the web portal that users access in order to start streaming
-    /// sessions.</p>
+    /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
     pub portal_endpoint: std::option::Option<std::string::String>,
     /// <p>The name of the web portal.</p>
     pub display_name: std::option::Option<std::string::String>,
@@ -2464,8 +1969,7 @@ impl PortalSummary {
     pub fn portal_status(&self) -> std::option::Option<&crate::model::PortalStatus> {
         self.portal_status.as_ref()
     }
-    /// <p>The endpoint URL of the web portal that users access in order to start streaming
-    /// sessions.</p>
+    /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
     pub fn portal_endpoint(&self) -> std::option::Option<&str> {
         self.portal_endpoint.as_deref()
     }
@@ -2579,14 +2083,12 @@ pub mod portal_summary {
             self.portal_status = input;
             self
         }
-        /// <p>The endpoint URL of the web portal that users access in order to start streaming
-        /// sessions.</p>
+        /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
         pub fn portal_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_endpoint = Some(input.into());
             self
         }
-        /// <p>The endpoint URL of the web portal that users access in order to start streaming
-        /// sessions.</p>
+        /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
         pub fn set_portal_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3085,11 +2587,7 @@ impl Certificate {
     }
 }
 
-/// <p>A trust store that can be associated with a web portal. A trust store contains
-/// certificate authority (CA) certificates. Once associated with a web portal, the browser in
-/// a streaming session will recognize certificates that have been issued using any of the CAs
-/// in the trust store. If your organization has internal websites that use certificates issued
-/// by private CAs, you should add the private CA certificate to the trust store. </p>
+/// <p>A trust store that can be associated with a web portal. A trust store contains certificate authority (CA) certificates. Once associated with a web portal, the browser in a streaming session will recognize certificates that have been issued using any of the CAs in the trust store. If your organization has internal websites that use certificates issued by private CAs, you should add the private CA certificate to the trust store. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustStore {

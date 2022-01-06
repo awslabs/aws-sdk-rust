@@ -4579,6 +4579,96 @@ pub fn parse_import_component_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_import_vm_image_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ImportVmImageOutput, crate::error::ImportVmImageError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ImportVmImageError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ImportVmImageError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ClientException" => {
+            crate::error::ImportVmImageError {
+                meta: generic,
+                kind: crate::error::ImportVmImageErrorKind::ClientException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportVmImageError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceException" => {
+            crate::error::ImportVmImageError {
+                meta: generic,
+                kind: crate::error::ImportVmImageErrorKind::ServiceException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::service_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportVmImageError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceUnavailableException" => crate::error::ImportVmImageError {
+            meta: generic,
+            kind: crate::error::ImportVmImageErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportVmImageError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ImportVmImageError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_import_vm_image_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ImportVmImageOutput, crate::error::ImportVmImageError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::import_vm_image_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_import_vm_image(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ImportVmImageError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_component_build_versions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

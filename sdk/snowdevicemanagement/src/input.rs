@@ -9,14 +9,12 @@ pub mod cancel_task_input {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
-        /// the <code>ListTasks</code> operation.</p>
+        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
-        /// the <code>ListTasks</code> operation.</p>
+        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -37,7 +35,7 @@ pub mod cancel_task_input {
 #[doc(hidden)]
 pub type CancelTaskInputOperationOutputAlias = crate::operation::CancelTask;
 #[doc(hidden)]
-pub type CancelTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelTaskInput {
     /// Consumes the builder and constructs an Operation<[`CancelTask`](crate::operation::CancelTask)>
     #[allow(clippy::let_and_return)]
@@ -48,7 +46,7 @@ impl CancelTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -138,7 +136,7 @@ impl CancelTaskInput {
             "CancelTask",
             "snowdevicemanagement",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -211,8 +209,7 @@ pub mod create_task_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment. </p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -223,8 +220,7 @@ pub mod create_task_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment. </p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -264,7 +260,7 @@ pub mod create_task_input {
 #[doc(hidden)]
 pub type CreateTaskInputOperationOutputAlias = crate::operation::CreateTask;
 #[doc(hidden)]
-pub type CreateTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateTask`](crate::operation::CreateTask)>
     #[allow(clippy::let_and_return)]
@@ -275,7 +271,7 @@ impl CreateTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -357,7 +353,7 @@ impl CreateTaskInput {
             "CreateTask",
             "snowdevicemanagement",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -418,7 +414,7 @@ pub mod describe_device_input {
 #[doc(hidden)]
 pub type DescribeDeviceInputOperationOutputAlias = crate::operation::DescribeDevice;
 #[doc(hidden)]
-pub type DescribeDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDevice`](crate::operation::DescribeDevice)>
     #[allow(clippy::let_and_return)]
@@ -429,7 +425,7 @@ impl DescribeDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -523,7 +519,7 @@ impl DescribeDeviceInput {
             "DescribeDevice",
             "snowdevicemanagement",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -598,7 +594,7 @@ pub mod describe_device_ec2_instances_input {
 pub type DescribeDeviceEc2InstancesInputOperationOutputAlias =
     crate::operation::DescribeDeviceEc2Instances;
 #[doc(hidden)]
-pub type DescribeDeviceEc2InstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDeviceEc2InstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeviceEc2InstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDeviceEc2Instances`](crate::operation::DescribeDeviceEc2Instances)>
     #[allow(clippy::let_and_return)]
@@ -609,7 +605,7 @@ impl DescribeDeviceEc2InstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDeviceEc2Instances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -710,7 +706,7 @@ impl DescribeDeviceEc2InstancesInput {
             "DescribeDeviceEc2Instances",
             "snowdevicemanagement",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -783,7 +779,7 @@ pub mod describe_execution_input {
 #[doc(hidden)]
 pub type DescribeExecutionInputOperationOutputAlias = crate::operation::DescribeExecution;
 #[doc(hidden)]
-pub type DescribeExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExecution`](crate::operation::DescribeExecution)>
     #[allow(clippy::let_and_return)]
@@ -794,7 +790,7 @@ impl DescribeExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -904,7 +900,7 @@ impl DescribeExecutionInput {
             "DescribeExecution",
             "snowdevicemanagement",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -954,7 +950,7 @@ pub mod describe_task_input {
 #[doc(hidden)]
 pub type DescribeTaskInputOperationOutputAlias = crate::operation::DescribeTask;
 #[doc(hidden)]
-pub type DescribeTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTaskInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTask`](crate::operation::DescribeTask)>
     #[allow(clippy::let_and_return)]
@@ -965,7 +961,7 @@ impl DescribeTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1054,7 +1050,7 @@ impl DescribeTaskInput {
             "DescribeTask",
             "snowdevicemanagement",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1143,7 +1139,7 @@ pub mod list_device_resources_input {
 #[doc(hidden)]
 pub type ListDeviceResourcesInputOperationOutputAlias = crate::operation::ListDeviceResources;
 #[doc(hidden)]
-pub type ListDeviceResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDeviceResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDeviceResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListDeviceResources`](crate::operation::ListDeviceResources)>
     #[allow(clippy::let_and_return)]
@@ -1154,7 +1150,7 @@ impl ListDeviceResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDeviceResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1268,7 +1264,7 @@ impl ListDeviceResourcesInput {
             "ListDeviceResources",
             "snowdevicemanagement",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1342,7 +1338,7 @@ pub mod list_devices_input {
 #[doc(hidden)]
 pub type ListDevicesInputOperationOutputAlias = crate::operation::ListDevices;
 #[doc(hidden)]
-pub type ListDevicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListDevices`](crate::operation::ListDevices)>
     #[allow(clippy::let_and_return)]
@@ -1353,7 +1349,7 @@ impl ListDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDevices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1447,7 +1443,7 @@ impl ListDevicesInput {
             "ListDevices",
             "snowdevicemanagement",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1536,7 +1532,7 @@ pub mod list_executions_input {
 #[doc(hidden)]
 pub type ListExecutionsInputOperationOutputAlias = crate::operation::ListExecutions;
 #[doc(hidden)]
-pub type ListExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListExecutions`](crate::operation::ListExecutions)>
     #[allow(clippy::let_and_return)]
@@ -1547,7 +1543,7 @@ impl ListExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1644,7 +1640,7 @@ impl ListExecutionsInput {
             "ListExecutions",
             "snowdevicemanagement",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1694,7 +1690,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1705,7 +1701,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1795,7 +1791,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "snowdevicemanagement",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1867,7 +1863,7 @@ pub mod list_tasks_input {
 #[doc(hidden)]
 pub type ListTasksInputOperationOutputAlias = crate::operation::ListTasks;
 #[doc(hidden)]
-pub type ListTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListTasks`](crate::operation::ListTasks)>
     #[allow(clippy::let_and_return)]
@@ -1878,7 +1874,7 @@ impl ListTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1970,7 +1966,7 @@ impl ListTasksInput {
                     "ListTasks",
                     "snowdevicemanagement",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2011,8 +2007,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2023,8 +2018,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2051,7 +2045,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2062,7 +2056,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2157,7 +2151,7 @@ impl TagResourceInput {
             "TagResource",
             "snowdevicemanagement",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2204,16 +2198,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2238,7 +2230,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2249,7 +2241,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2352,7 +2344,7 @@ impl UntagResourceInput {
             "UntagResource",
             "snowdevicemanagement",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2371,13 +2363,11 @@ impl UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelTaskInput {
-    /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
-    /// the <code>ListTasks</code> operation.</p>
+    /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelTaskInput {
-    /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
-    /// the <code>ListTasks</code> operation.</p>
+    /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -2435,8 +2425,7 @@ pub struct CreateTaskInput {
     pub command: std::option::Option<crate::model::Command>,
     /// <p>A description of the task and its targets.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment. </p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
@@ -2455,8 +2444,7 @@ impl CreateTaskInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment. </p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2703,8 +2691,7 @@ impl std::fmt::Debug for DescribeDeviceInput {
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2712,8 +2699,7 @@ impl UntagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -2733,8 +2719,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2743,8 +2728,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

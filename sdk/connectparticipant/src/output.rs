@@ -85,8 +85,7 @@ pub struct SendMessageOutput {
     /// <p>The ID of the message.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The time when the message was sent.</p>
-    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-    /// 2019-11-08T02:41:28.172Z.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub absolute_time: std::option::Option<std::string::String>,
 }
 impl SendMessageOutput {
@@ -95,8 +94,7 @@ impl SendMessageOutput {
         self.id.as_deref()
     }
     /// <p>The time when the message was sent.</p>
-    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-    /// 2019-11-08T02:41:28.172Z.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn absolute_time(&self) -> std::option::Option<&str> {
         self.absolute_time.as_deref()
     }
@@ -130,15 +128,13 @@ pub mod send_message_output {
             self
         }
         /// <p>The time when the message was sent.</p>
-        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-        /// 2019-11-08T02:41:28.172Z.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn absolute_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.absolute_time = Some(input.into());
             self
         }
         /// <p>The time when the message was sent.</p>
-        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-        /// 2019-11-08T02:41:28.172Z.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn set_absolute_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -169,8 +165,7 @@ pub struct SendEventOutput {
     /// <p>The ID of the response.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The time when the event was sent.</p>
-    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-    /// 2019-11-08T02:41:28.172Z.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub absolute_time: std::option::Option<std::string::String>,
 }
 impl SendEventOutput {
@@ -179,8 +174,7 @@ impl SendEventOutput {
         self.id.as_deref()
     }
     /// <p>The time when the event was sent.</p>
-    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-    /// 2019-11-08T02:41:28.172Z.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn absolute_time(&self) -> std::option::Option<&str> {
         self.absolute_time.as_deref()
     }
@@ -214,15 +208,13 @@ pub mod send_event_output {
             self
         }
         /// <p>The time when the event was sent.</p>
-        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-        /// 2019-11-08T02:41:28.172Z.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn absolute_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.absolute_time = Some(input.into());
             self
         }
         /// <p>The time when the event was sent.</p>
-        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-        /// 2019-11-08T02:41:28.172Z.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn set_absolute_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -254,8 +246,7 @@ pub struct GetTranscriptOutput {
     pub initial_contact_id: std::option::Option<std::string::String>,
     /// <p>The list of messages in the session.</p>
     pub transcript: std::option::Option<std::vec::Vec<crate::model::Item>>,
-    /// <p>The pagination token. Use the value returned previously in the next subsequent request
-    /// to retrieve the next set of results.</p>
+    /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTranscriptOutput {
@@ -267,8 +258,7 @@ impl GetTranscriptOutput {
     pub fn transcript(&self) -> std::option::Option<&[crate::model::Item]> {
         self.transcript.as_deref()
     }
-    /// <p>The pagination token. Use the value returned previously in the next subsequent request
-    /// to retrieve the next set of results.</p>
+    /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -311,9 +301,9 @@ pub mod get_transcript_output {
         /// To override the contents of this collection use [`set_transcript`](Self::set_transcript).
         ///
         /// <p>The list of messages in the session.</p>
-        pub fn transcript(mut self, input: impl Into<crate::model::Item>) -> Self {
+        pub fn transcript(mut self, input: crate::model::Item) -> Self {
             let mut v = self.transcript.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transcript = Some(v);
             self
         }
@@ -325,14 +315,12 @@ pub mod get_transcript_output {
             self.transcript = input;
             self
         }
-        /// <p>The pagination token. Use the value returned previously in the next subsequent request
-        /// to retrieve the next set of results.</p>
+        /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token. Use the value returned previously in the next subsequent request
-        /// to retrieve the next set of results.</p>
+        /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -358,15 +346,13 @@ impl GetTranscriptOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttachmentOutput {
-    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
-    /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub url_expiry: std::option::Option<std::string::String>,
 }
 impl GetAttachmentOutput {
-    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
-    /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -393,14 +379,12 @@ pub mod get_attachment_output {
         pub(crate) url_expiry: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
-        /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+        /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
-        /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+        /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -467,8 +451,7 @@ impl DisconnectParticipantOutput {
 pub struct CreateParticipantConnectionOutput {
     /// <p>Creates the participant's websocket connection.</p>
     pub websocket: std::option::Option<crate::model::Websocket>,
-    /// <p>Creates the participant's connection credentials. The authentication token associated
-    /// with the participant's connection.</p>
+    /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
     pub connection_credentials: std::option::Option<crate::model::ConnectionCredentials>,
 }
 impl CreateParticipantConnectionOutput {
@@ -476,8 +459,7 @@ impl CreateParticipantConnectionOutput {
     pub fn websocket(&self) -> std::option::Option<&crate::model::Websocket> {
         self.websocket.as_ref()
     }
-    /// <p>Creates the participant's connection credentials. The authentication token associated
-    /// with the participant's connection.</p>
+    /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
     pub fn connection_credentials(
         &self,
     ) -> std::option::Option<&crate::model::ConnectionCredentials> {
@@ -515,8 +497,7 @@ pub mod create_participant_connection_output {
             self.websocket = input;
             self
         }
-        /// <p>Creates the participant's connection credentials. The authentication token associated
-        /// with the participant's connection.</p>
+        /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
         pub fn connection_credentials(
             mut self,
             input: crate::model::ConnectionCredentials,
@@ -524,8 +505,7 @@ pub mod create_participant_connection_output {
             self.connection_credentials = Some(input);
             self
         }
-        /// <p>Creates the participant's connection credentials. The authentication token associated
-        /// with the participant's connection.</p>
+        /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
         pub fn set_connection_credentials(
             mut self,
             input: std::option::Option<crate::model::ConnectionCredentials>,

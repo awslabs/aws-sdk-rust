@@ -3,16 +3,13 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a
-    /// custom health check. </p>
+    /// <p>The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a custom health check. </p>
     CustomHealthNotFound(crate::error::CustomHealthNotFound),
     /// <p>The operation is already in progress.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the
-    /// instance hasn't propagated yet.</p>
+    /// <p>No instance exists with the specified ID, or the instance was recently registered, and information about the instance hasn't propagated yet.</p>
     InstanceNotFound(crate::error::InstanceNotFound),
-    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might
-    /// be outside the allowed range, or a string value might exceed length constraints.</p>
+    /// <p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The namespace that you're trying to create already exists.</p>
     NamespaceAlreadyExists(crate::error::NamespaceAlreadyExists),
@@ -20,12 +17,9 @@ pub enum Error {
     NamespaceNotFound(crate::error::NamespaceNotFound),
     /// <p>No operation exists with the specified ID.</p>
     OperationNotFound(crate::error::OperationNotFound),
-    /// <p>The operation can't be completed because you've reached the quota for the number of requests. For more
-    /// information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud Map API request throttling
-    /// quota</a> in the <i>Cloud Map Developer Guide</i>.</p>
+    /// <p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a
-    /// service that contains any instances.</p>
+    /// <p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a service that contains any instances.</p>
     ResourceInUse(crate::error::ResourceInUse),
     /// <p>The resource can't be created because you've reached the quota on the number of resources.</p>
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
@@ -35,8 +29,7 @@ pub enum Error {
     ServiceAlreadyExists(crate::error::ServiceAlreadyExists),
     /// <p>No service exists with the specified ID.</p>
     ServiceNotFound(crate::error::ServiceNotFound),
-    /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource
-    /// is 50.</p>
+    /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

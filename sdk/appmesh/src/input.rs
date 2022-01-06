@@ -38,16 +38,12 @@ pub mod create_gateway_route_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual
-        /// gateway is in a shared mesh, then you must be the owner of the virtual gateway
-        /// resource.</p>
+        /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
         pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.virtual_gateway_name = Some(input.into());
             self
         }
-        /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual
-        /// gateway is in a shared mesh, then you must be the owner of the virtual gateway
-        /// resource.</p>
+        /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
         pub fn set_virtual_gateway_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -72,20 +68,14 @@ pub mod create_gateway_route_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the gateway route to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Optional metadata that you can apply to the gateway route to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -93,28 +83,22 @@ pub mod create_gateway_route_input {
             self.tags = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -141,7 +125,7 @@ pub mod create_gateway_route_input {
 #[doc(hidden)]
 pub type CreateGatewayRouteInputOperationOutputAlias = crate::operation::CreateGatewayRoute;
 #[doc(hidden)]
-pub type CreateGatewayRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGatewayRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGatewayRouteInput {
     /// Consumes the builder and constructs an Operation<[`CreateGatewayRoute`](crate::operation::CreateGatewayRoute)>
     #[allow(clippy::let_and_return)]
@@ -152,7 +136,7 @@ impl CreateGatewayRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGatewayRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -282,7 +266,7 @@ impl CreateGatewayRouteInput {
             "CreateGatewayRoute",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -341,20 +325,14 @@ pub mod create_mesh_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the service mesh to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Optional metadata that you can apply to the service mesh to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -362,14 +340,12 @@ pub mod create_mesh_input {
             self.tags = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -393,7 +369,7 @@ pub mod create_mesh_input {
 #[doc(hidden)]
 pub type CreateMeshInputOperationOutputAlias = crate::operation::CreateMesh;
 #[doc(hidden)]
-pub type CreateMeshInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMeshInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMeshInput {
     /// Consumes the builder and constructs an Operation<[`CreateMesh`](crate::operation::CreateMesh)>
     #[allow(clippy::let_and_return)]
@@ -404,7 +380,7 @@ impl CreateMeshInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMesh,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -486,7 +462,7 @@ impl CreateMeshInput {
             "CreateMesh",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -544,14 +520,12 @@ pub mod create_route_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The name of the virtual router in which to create the route. If the virtual router is in
-        /// a shared mesh, then you must be the owner of the virtual router resource.</p>
+        /// <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
         pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.virtual_router_name = Some(input.into());
             self
         }
-        /// <p>The name of the virtual router in which to create the route. If the virtual router is in
-        /// a shared mesh, then you must be the owner of the virtual router resource.</p>
+        /// <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
         pub fn set_virtual_router_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -573,20 +547,14 @@ pub mod create_route_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the route to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you define.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        /// <p>Optional metadata that you can apply to the route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Optional metadata that you can apply to the route to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you define.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -594,28 +562,22 @@ pub mod create_route_input {
             self.tags = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -642,7 +604,7 @@ pub mod create_route_input {
 #[doc(hidden)]
 pub type CreateRouteInputOperationOutputAlias = crate::operation::CreateRoute;
 #[doc(hidden)]
-pub type CreateRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRouteInput {
     /// Consumes the builder and constructs an Operation<[`CreateRoute`](crate::operation::CreateRoute)>
     #[allow(clippy::let_and_return)]
@@ -653,7 +615,7 @@ impl CreateRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -782,7 +744,7 @@ impl CreateRouteInput {
             "CreateRoute",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -859,20 +821,14 @@ pub mod create_virtual_gateway_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the virtual gateway to assist with
-        /// categorization and organization. Each tag consists of a key and an optional value, both of
-        /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        /// <p>Optional metadata that you can apply to the virtual gateway to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Optional metadata that you can apply to the virtual gateway to assist with
-        /// categorization and organization. Each tag consists of a key and an optional value, both of
-        /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the virtual gateway to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -880,28 +836,22 @@ pub mod create_virtual_gateway_input {
             self.tags = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -927,7 +877,7 @@ pub mod create_virtual_gateway_input {
 #[doc(hidden)]
 pub type CreateVirtualGatewayInputOperationOutputAlias = crate::operation::CreateVirtualGateway;
 #[doc(hidden)]
-pub type CreateVirtualGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVirtualGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVirtualGatewayInput {
     /// Consumes the builder and constructs an Operation<[`CreateVirtualGateway`](crate::operation::CreateVirtualGateway)>
     #[allow(clippy::let_and_return)]
@@ -938,7 +888,7 @@ impl CreateVirtualGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVirtualGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1054,7 +1004,7 @@ impl CreateVirtualGatewayInput {
             "CreateVirtualGateway",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1131,20 +1081,14 @@ pub mod create_virtual_node_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the virtual node to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        /// <p>Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Optional metadata that you can apply to the virtual node to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -1152,28 +1096,22 @@ pub mod create_virtual_node_input {
             self.tags = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -1199,7 +1137,7 @@ pub mod create_virtual_node_input {
 #[doc(hidden)]
 pub type CreateVirtualNodeInputOperationOutputAlias = crate::operation::CreateVirtualNode;
 #[doc(hidden)]
-pub type CreateVirtualNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVirtualNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVirtualNodeInput {
     /// Consumes the builder and constructs an Operation<[`CreateVirtualNode`](crate::operation::CreateVirtualNode)>
     #[allow(clippy::let_and_return)]
@@ -1210,7 +1148,7 @@ impl CreateVirtualNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVirtualNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1324,7 +1262,7 @@ impl CreateVirtualNodeInput {
             "CreateVirtualNode",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1401,20 +1339,14 @@ pub mod create_virtual_router_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the virtual router to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Optional metadata that you can apply to the virtual router to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -1422,28 +1354,22 @@ pub mod create_virtual_router_input {
             self.tags = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -1469,7 +1395,7 @@ pub mod create_virtual_router_input {
 #[doc(hidden)]
 pub type CreateVirtualRouterInputOperationOutputAlias = crate::operation::CreateVirtualRouter;
 #[doc(hidden)]
-pub type CreateVirtualRouterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVirtualRouterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVirtualRouterInput {
     /// Consumes the builder and constructs an Operation<[`CreateVirtualRouter`](crate::operation::CreateVirtualRouter)>
     #[allow(clippy::let_and_return)]
@@ -1480,7 +1406,7 @@ impl CreateVirtualRouterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVirtualRouter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1594,7 +1520,7 @@ impl CreateVirtualRouterInput {
             "CreateVirtualRouter",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1671,20 +1597,14 @@ pub mod create_virtual_service_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the virtual service to assist with
-        /// categorization and organization. Each tag consists of a key and an optional value, both of
-        /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        /// <p>Optional metadata that you can apply to the virtual service to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Optional metadata that you can apply to the virtual service to assist with
-        /// categorization and organization. Each tag consists of a key and an optional value, both of
-        /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the virtual service to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -1692,28 +1612,22 @@ pub mod create_virtual_service_input {
             self.tags = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -1739,7 +1653,7 @@ pub mod create_virtual_service_input {
 #[doc(hidden)]
 pub type CreateVirtualServiceInputOperationOutputAlias = crate::operation::CreateVirtualService;
 #[doc(hidden)]
-pub type CreateVirtualServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVirtualServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVirtualServiceInput {
     /// Consumes the builder and constructs an Operation<[`CreateVirtualService`](crate::operation::CreateVirtualService)>
     #[allow(clippy::let_and_return)]
@@ -1750,7 +1664,7 @@ impl CreateVirtualServiceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVirtualService,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1866,7 +1780,7 @@ impl CreateVirtualServiceInput {
             "CreateVirtualService",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1937,14 +1851,12 @@ pub mod delete_gateway_route_input {
             self.virtual_gateway_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -1968,7 +1880,7 @@ pub mod delete_gateway_route_input {
 #[doc(hidden)]
 pub type DeleteGatewayRouteInputOperationOutputAlias = crate::operation::DeleteGatewayRoute;
 #[doc(hidden)]
-pub type DeleteGatewayRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGatewayRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGatewayRouteInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGatewayRoute`](crate::operation::DeleteGatewayRoute)>
     #[allow(clippy::let_and_return)]
@@ -1979,7 +1891,7 @@ impl DeleteGatewayRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGatewayRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2109,7 +2021,7 @@ impl DeleteGatewayRouteInput {
             "DeleteGatewayRoute",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2159,7 +2071,7 @@ pub mod delete_mesh_input {
 #[doc(hidden)]
 pub type DeleteMeshInputOperationOutputAlias = crate::operation::DeleteMesh;
 #[doc(hidden)]
-pub type DeleteMeshInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMeshInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMeshInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMesh`](crate::operation::DeleteMesh)>
     #[allow(clippy::let_and_return)]
@@ -2170,7 +2082,7 @@ impl DeleteMeshInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMesh,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2260,7 +2172,7 @@ impl DeleteMeshInput {
             "DeleteMesh",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2320,14 +2232,12 @@ pub mod delete_route_input {
             self.virtual_router_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -2351,7 +2261,7 @@ pub mod delete_route_input {
 #[doc(hidden)]
 pub type DeleteRouteInputOperationOutputAlias = crate::operation::DeleteRoute;
 #[doc(hidden)]
-pub type DeleteRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRouteInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRoute`](crate::operation::DeleteRoute)>
     #[allow(clippy::let_and_return)]
@@ -2362,7 +2272,7 @@ impl DeleteRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2499,7 +2409,7 @@ impl DeleteRouteInput {
             "DeleteRoute",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2548,14 +2458,12 @@ pub mod delete_virtual_gateway_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -2578,7 +2486,7 @@ pub mod delete_virtual_gateway_input {
 #[doc(hidden)]
 pub type DeleteVirtualGatewayInputOperationOutputAlias = crate::operation::DeleteVirtualGateway;
 #[doc(hidden)]
-pub type DeleteVirtualGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVirtualGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVirtualGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVirtualGateway`](crate::operation::DeleteVirtualGateway)>
     #[allow(clippy::let_and_return)]
@@ -2589,7 +2497,7 @@ impl DeleteVirtualGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVirtualGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2710,7 +2618,7 @@ impl DeleteVirtualGatewayInput {
             "DeleteVirtualGateway",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2759,14 +2667,12 @@ pub mod delete_virtual_node_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -2789,7 +2695,7 @@ pub mod delete_virtual_node_input {
 #[doc(hidden)]
 pub type DeleteVirtualNodeInputOperationOutputAlias = crate::operation::DeleteVirtualNode;
 #[doc(hidden)]
-pub type DeleteVirtualNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVirtualNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVirtualNodeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVirtualNode`](crate::operation::DeleteVirtualNode)>
     #[allow(clippy::let_and_return)]
@@ -2800,7 +2706,7 @@ impl DeleteVirtualNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVirtualNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2921,7 +2827,7 @@ impl DeleteVirtualNodeInput {
             "DeleteVirtualNode",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2970,14 +2876,12 @@ pub mod delete_virtual_router_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -3000,7 +2904,7 @@ pub mod delete_virtual_router_input {
 #[doc(hidden)]
 pub type DeleteVirtualRouterInputOperationOutputAlias = crate::operation::DeleteVirtualRouter;
 #[doc(hidden)]
-pub type DeleteVirtualRouterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVirtualRouterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVirtualRouterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVirtualRouter`](crate::operation::DeleteVirtualRouter)>
     #[allow(clippy::let_and_return)]
@@ -3011,7 +2915,7 @@ impl DeleteVirtualRouterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVirtualRouter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3132,7 +3036,7 @@ impl DeleteVirtualRouterInput {
             "DeleteVirtualRouter",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3181,14 +3085,12 @@ pub mod delete_virtual_service_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -3211,7 +3113,7 @@ pub mod delete_virtual_service_input {
 #[doc(hidden)]
 pub type DeleteVirtualServiceInputOperationOutputAlias = crate::operation::DeleteVirtualService;
 #[doc(hidden)]
-pub type DeleteVirtualServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVirtualServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVirtualServiceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVirtualService`](crate::operation::DeleteVirtualService)>
     #[allow(clippy::let_and_return)]
@@ -3222,7 +3124,7 @@ impl DeleteVirtualServiceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVirtualService,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3343,7 +3245,7 @@ impl DeleteVirtualServiceInput {
             "DeleteVirtualService",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3406,14 +3308,12 @@ pub mod describe_gateway_route_input {
             self.virtual_gateway_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -3437,7 +3337,7 @@ pub mod describe_gateway_route_input {
 #[doc(hidden)]
 pub type DescribeGatewayRouteInputOperationOutputAlias = crate::operation::DescribeGatewayRoute;
 #[doc(hidden)]
-pub type DescribeGatewayRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGatewayRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGatewayRouteInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGatewayRoute`](crate::operation::DescribeGatewayRoute)>
     #[allow(clippy::let_and_return)]
@@ -3448,7 +3348,7 @@ impl DescribeGatewayRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGatewayRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3578,7 +3478,7 @@ impl DescribeGatewayRouteInput {
             "DescribeGatewayRoute",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3613,14 +3513,12 @@ pub mod describe_mesh_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -3642,7 +3540,7 @@ pub mod describe_mesh_input {
 #[doc(hidden)]
 pub type DescribeMeshInputOperationOutputAlias = crate::operation::DescribeMesh;
 #[doc(hidden)]
-pub type DescribeMeshInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMeshInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMeshInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMesh`](crate::operation::DescribeMesh)>
     #[allow(clippy::let_and_return)]
@@ -3653,7 +3551,7 @@ impl DescribeMeshInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMesh,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3754,7 +3652,7 @@ impl DescribeMeshInput {
             "DescribeMesh",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3801,14 +3699,12 @@ pub mod describe_route_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -3845,7 +3741,7 @@ pub mod describe_route_input {
 #[doc(hidden)]
 pub type DescribeRouteInputOperationOutputAlias = crate::operation::DescribeRoute;
 #[doc(hidden)]
-pub type DescribeRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRouteInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRoute`](crate::operation::DescribeRoute)>
     #[allow(clippy::let_and_return)]
@@ -3856,7 +3752,7 @@ impl DescribeRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3993,7 +3889,7 @@ impl DescribeRouteInput {
             "DescribeRoute",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4042,14 +3938,12 @@ pub mod describe_virtual_gateway_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -4072,7 +3966,7 @@ pub mod describe_virtual_gateway_input {
 #[doc(hidden)]
 pub type DescribeVirtualGatewayInputOperationOutputAlias = crate::operation::DescribeVirtualGateway;
 #[doc(hidden)]
-pub type DescribeVirtualGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVirtualGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVirtualGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVirtualGateway`](crate::operation::DescribeVirtualGateway)>
     #[allow(clippy::let_and_return)]
@@ -4083,7 +3977,7 @@ impl DescribeVirtualGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4204,7 +4098,7 @@ impl DescribeVirtualGatewayInput {
             "DescribeVirtualGateway",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4253,14 +4147,12 @@ pub mod describe_virtual_node_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -4283,7 +4175,7 @@ pub mod describe_virtual_node_input {
 #[doc(hidden)]
 pub type DescribeVirtualNodeInputOperationOutputAlias = crate::operation::DescribeVirtualNode;
 #[doc(hidden)]
-pub type DescribeVirtualNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVirtualNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVirtualNodeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVirtualNode`](crate::operation::DescribeVirtualNode)>
     #[allow(clippy::let_and_return)]
@@ -4294,7 +4186,7 @@ impl DescribeVirtualNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4415,7 +4307,7 @@ impl DescribeVirtualNodeInput {
             "DescribeVirtualNode",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4464,14 +4356,12 @@ pub mod describe_virtual_router_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -4494,7 +4384,7 @@ pub mod describe_virtual_router_input {
 #[doc(hidden)]
 pub type DescribeVirtualRouterInputOperationOutputAlias = crate::operation::DescribeVirtualRouter;
 #[doc(hidden)]
-pub type DescribeVirtualRouterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVirtualRouterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVirtualRouterInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVirtualRouter`](crate::operation::DescribeVirtualRouter)>
     #[allow(clippy::let_and_return)]
@@ -4505,7 +4395,7 @@ impl DescribeVirtualRouterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualRouter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4626,7 +4516,7 @@ impl DescribeVirtualRouterInput {
             "DescribeVirtualRouter",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4675,14 +4565,12 @@ pub mod describe_virtual_service_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -4705,7 +4593,7 @@ pub mod describe_virtual_service_input {
 #[doc(hidden)]
 pub type DescribeVirtualServiceInputOperationOutputAlias = crate::operation::DescribeVirtualService;
 #[doc(hidden)]
-pub type DescribeVirtualServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVirtualServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVirtualServiceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVirtualService`](crate::operation::DescribeVirtualService)>
     #[allow(clippy::let_and_return)]
@@ -4716,7 +4604,7 @@ impl DescribeVirtualServiceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualService,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4837,7 +4725,7 @@ impl DescribeVirtualServiceInput {
             "DescribeVirtualService",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4888,54 +4776,32 @@ pub mod list_gateway_routes_input {
             self.virtual_gateway_name = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated
-        /// output. When you use this parameter, <code>ListGatewayRoutes</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When you use this parameter, <code>ListGatewayRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated
-        /// output. When you use this parameter, <code>ListGatewayRoutes</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When you use this parameter, <code>ListGatewayRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -4960,7 +4826,7 @@ pub mod list_gateway_routes_input {
 #[doc(hidden)]
 pub type ListGatewayRoutesInputOperationOutputAlias = crate::operation::ListGatewayRoutes;
 #[doc(hidden)]
-pub type ListGatewayRoutesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGatewayRoutesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGatewayRoutesInput {
     /// Consumes the builder and constructs an Operation<[`ListGatewayRoutes`](crate::operation::ListGatewayRoutes)>
     #[allow(clippy::let_and_return)]
@@ -4971,7 +4837,7 @@ impl ListGatewayRoutesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGatewayRoutes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5101,7 +4967,7 @@ impl ListGatewayRoutesInput {
             "ListGatewayRoutes",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5126,50 +4992,26 @@ pub mod list_meshes_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListMeshes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListMeshes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListMeshes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListMeshes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output.
-        /// When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code>
-        /// results in a single page along with a <code>nextToken</code> response element. You can see
-        /// the remaining results of the initial request by sending another <code>ListMeshes</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If you don't use this parameter,
-        /// <code>ListMeshes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output. When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListMeshes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output.
-        /// When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code>
-        /// results in a single page along with a <code>nextToken</code> response element. You can see
-        /// the remaining results of the initial request by sending another <code>ListMeshes</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If you don't use this parameter,
-        /// <code>ListMeshes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output. When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListMeshes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5191,7 +5033,7 @@ pub mod list_meshes_input {
 #[doc(hidden)]
 pub type ListMeshesInputOperationOutputAlias = crate::operation::ListMeshes;
 #[doc(hidden)]
-pub type ListMeshesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMeshesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMeshesInput {
     /// Consumes the builder and constructs an Operation<[`ListMeshes`](crate::operation::ListMeshes)>
     #[allow(clippy::let_and_return)]
@@ -5202,7 +5044,7 @@ impl ListMeshesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMeshes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5293,7 +5135,7 @@ impl ListMeshesInput {
             "ListMeshes",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5344,54 +5186,32 @@ pub mod list_routes_input {
             self.virtual_router_name = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListRoutes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListRoutes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output.
-        /// When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code>
-        /// results in a single page along with a <code>nextToken</code> response element. You can see
-        /// the remaining results of the initial request by sending another <code>ListRoutes</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If you don't use this parameter,
-        /// <code>ListRoutes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output.
-        /// When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code>
-        /// results in a single page along with a <code>nextToken</code> response element. You can see
-        /// the remaining results of the initial request by sending another <code>ListRoutes</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If you don't use this parameter,
-        /// <code>ListRoutes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -5416,7 +5236,7 @@ pub mod list_routes_input {
 #[doc(hidden)]
 pub type ListRoutesInputOperationOutputAlias = crate::operation::ListRoutes;
 #[doc(hidden)]
-pub type ListRoutesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRoutesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRoutesInput {
     /// Consumes the builder and constructs an Operation<[`ListRoutes`](crate::operation::ListRoutes)>
     #[allow(clippy::let_and_return)]
@@ -5427,7 +5247,7 @@ impl ListRoutesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRoutes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5557,7 +5377,7 @@ impl ListRoutesInput {
             "ListRoutes",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5593,42 +5413,22 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListTagsForResource</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListTagsForResource</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListTagsForResource</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListTagsForResource</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in
-        /// paginated output. When this parameter is used, <code>ListTagsForResource</code> returns
-        /// only <code>limit</code> results in a single page along with a <code>nextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListTagsForResource</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If you don't use
-        /// this parameter, <code>ListTagsForResource</code> returns up to 100
-        /// results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in paginated output. When this parameter is used, <code>ListTagsForResource</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListTagsForResource</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListTagsForResource</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in
-        /// paginated output. When this parameter is used, <code>ListTagsForResource</code> returns
-        /// only <code>limit</code> results in a single page along with a <code>nextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListTagsForResource</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If you don't use
-        /// this parameter, <code>ListTagsForResource</code> returns up to 100
-        /// results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in paginated output. When this parameter is used, <code>ListTagsForResource</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListTagsForResource</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListTagsForResource</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5651,7 +5451,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -5662,7 +5462,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5759,7 +5559,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5796,54 +5596,32 @@ pub mod list_virtual_gateways_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualGateways</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualGateways</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualGateways</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualGateways</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated output. When you use this parameter, <code>ListVirtualGateways</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualGateways</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualGateways</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualGateways</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated output. When you use this parameter, <code>ListVirtualGateways</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualGateways</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -5867,7 +5645,7 @@ pub mod list_virtual_gateways_input {
 #[doc(hidden)]
 pub type ListVirtualGatewaysInputOperationOutputAlias = crate::operation::ListVirtualGateways;
 #[doc(hidden)]
-pub type ListVirtualGatewaysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListVirtualGatewaysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVirtualGatewaysInput {
     /// Consumes the builder and constructs an Operation<[`ListVirtualGateways`](crate::operation::ListVirtualGateways)>
     #[allow(clippy::let_and_return)]
@@ -5878,7 +5656,7 @@ impl ListVirtualGatewaysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVirtualGateways,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5992,7 +5770,7 @@ impl ListVirtualGatewaysInput {
             "ListVirtualGateways",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6029,54 +5807,32 @@ pub mod list_virtual_nodes_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualNodes</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualNodes</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -6100,7 +5856,7 @@ pub mod list_virtual_nodes_input {
 #[doc(hidden)]
 pub type ListVirtualNodesInputOperationOutputAlias = crate::operation::ListVirtualNodes;
 #[doc(hidden)]
-pub type ListVirtualNodesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListVirtualNodesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVirtualNodesInput {
     /// Consumes the builder and constructs an Operation<[`ListVirtualNodes`](crate::operation::ListVirtualNodes)>
     #[allow(clippy::let_and_return)]
@@ -6111,7 +5867,7 @@ impl ListVirtualNodesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVirtualNodes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6225,7 +5981,7 @@ impl ListVirtualNodesInput {
             "ListVirtualNodes",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6262,54 +6018,32 @@ pub mod list_virtual_routers_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualRouters</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualRouters</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualRouters</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualRouters</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When you use this parameter, <code>ListVirtualRouters</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualRouters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualRouters</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualRouters</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When you use this parameter, <code>ListVirtualRouters</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualRouters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -6333,7 +6067,7 @@ pub mod list_virtual_routers_input {
 #[doc(hidden)]
 pub type ListVirtualRoutersInputOperationOutputAlias = crate::operation::ListVirtualRouters;
 #[doc(hidden)]
-pub type ListVirtualRoutersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListVirtualRoutersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVirtualRoutersInput {
     /// Consumes the builder and constructs an Operation<[`ListVirtualRouters`](crate::operation::ListVirtualRouters)>
     #[allow(clippy::let_and_return)]
@@ -6344,7 +6078,7 @@ impl ListVirtualRoutersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVirtualRouters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6458,7 +6192,7 @@ impl ListVirtualRoutersInput {
             "ListVirtualRouters",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6495,54 +6229,32 @@ pub mod list_virtual_services_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualServices</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualServices</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualServices</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualServices</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated output. When you use this parameter, <code>ListVirtualServices</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualServices</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualServices</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualServices</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated output. When you use this parameter, <code>ListVirtualServices</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualServices</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -6566,7 +6278,7 @@ pub mod list_virtual_services_input {
 #[doc(hidden)]
 pub type ListVirtualServicesInputOperationOutputAlias = crate::operation::ListVirtualServices;
 #[doc(hidden)]
-pub type ListVirtualServicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListVirtualServicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVirtualServicesInput {
     /// Consumes the builder and constructs an Operation<[`ListVirtualServices`](crate::operation::ListVirtualServices)>
     #[allow(clippy::let_and_return)]
@@ -6577,7 +6289,7 @@ impl ListVirtualServicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVirtualServices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6691,7 +6403,7 @@ impl ListVirtualServicesInput {
             "ListVirtualServices",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6730,18 +6442,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -6766,7 +6474,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -6777,7 +6485,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6870,7 +6578,7 @@ impl TagResourceInput {
             "TagResource",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6949,7 +6657,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -6960,7 +6668,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7053,7 +6761,7 @@ impl UntagResourceInput {
             "UntagResource",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7139,26 +6847,22 @@ pub mod update_gateway_route_input {
             self.spec = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -7184,7 +6888,7 @@ pub mod update_gateway_route_input {
 #[doc(hidden)]
 pub type UpdateGatewayRouteInputOperationOutputAlias = crate::operation::UpdateGatewayRoute;
 #[doc(hidden)]
-pub type UpdateGatewayRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateGatewayRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateGatewayRouteInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGatewayRoute`](crate::operation::UpdateGatewayRoute)>
     #[allow(clippy::let_and_return)]
@@ -7195,7 +6899,7 @@ impl UpdateGatewayRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateGatewayRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7334,7 +7038,7 @@ impl UpdateGatewayRouteInput {
             "UpdateGatewayRoute",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7388,14 +7092,12 @@ pub mod update_mesh_input {
             self.spec = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7418,7 +7120,7 @@ pub mod update_mesh_input {
 #[doc(hidden)]
 pub type UpdateMeshInputOperationOutputAlias = crate::operation::UpdateMesh;
 #[doc(hidden)]
-pub type UpdateMeshInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMeshInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMeshInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMesh`](crate::operation::UpdateMesh)>
     #[allow(clippy::let_and_return)]
@@ -7429,7 +7131,7 @@ impl UpdateMeshInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMesh,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7527,7 +7229,7 @@ impl UpdateMeshInput {
             "UpdateMesh",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7607,26 +7309,22 @@ pub mod update_route_input {
             self.spec = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -7652,7 +7350,7 @@ pub mod update_route_input {
 #[doc(hidden)]
 pub type UpdateRouteInputOperationOutputAlias = crate::operation::UpdateRoute;
 #[doc(hidden)]
-pub type UpdateRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRouteInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoute`](crate::operation::UpdateRoute)>
     #[allow(clippy::let_and_return)]
@@ -7663,7 +7361,7 @@ impl UpdateRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7808,7 +7506,7 @@ impl UpdateRouteInput {
             "UpdateRoute",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7867,14 +7565,12 @@ pub mod update_virtual_gateway_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The new virtual gateway specification to apply. This overwrites the existing
-        /// data.</p>
+        /// <p>The new virtual gateway specification to apply. This overwrites the existing data.</p>
         pub fn spec(mut self, input: crate::model::VirtualGatewaySpec) -> Self {
             self.spec = Some(input);
             self
         }
-        /// <p>The new virtual gateway specification to apply. This overwrites the existing
-        /// data.</p>
+        /// <p>The new virtual gateway specification to apply. This overwrites the existing data.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::VirtualGatewaySpec>,
@@ -7882,26 +7578,22 @@ pub mod update_virtual_gateway_input {
             self.spec = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -7926,7 +7618,7 @@ pub mod update_virtual_gateway_input {
 #[doc(hidden)]
 pub type UpdateVirtualGatewayInputOperationOutputAlias = crate::operation::UpdateVirtualGateway;
 #[doc(hidden)]
-pub type UpdateVirtualGatewayInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVirtualGatewayInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVirtualGatewayInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVirtualGateway`](crate::operation::UpdateVirtualGateway)>
     #[allow(clippy::let_and_return)]
@@ -7937,7 +7629,7 @@ impl UpdateVirtualGatewayInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVirtualGateway,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8069,7 +7761,7 @@ impl UpdateVirtualGatewayInput {
             "UpdateVirtualGateway",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8141,26 +7833,22 @@ pub mod update_virtual_node_input {
             self.spec = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -8185,7 +7873,7 @@ pub mod update_virtual_node_input {
 #[doc(hidden)]
 pub type UpdateVirtualNodeInputOperationOutputAlias = crate::operation::UpdateVirtualNode;
 #[doc(hidden)]
-pub type UpdateVirtualNodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVirtualNodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVirtualNodeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVirtualNode`](crate::operation::UpdateVirtualNode)>
     #[allow(clippy::let_and_return)]
@@ -8196,7 +7884,7 @@ impl UpdateVirtualNodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVirtualNode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8326,7 +8014,7 @@ impl UpdateVirtualNodeInput {
             "UpdateVirtualNode",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8398,26 +8086,22 @@ pub mod update_virtual_router_input {
             self.spec = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -8442,7 +8126,7 @@ pub mod update_virtual_router_input {
 #[doc(hidden)]
 pub type UpdateVirtualRouterInputOperationOutputAlias = crate::operation::UpdateVirtualRouter;
 #[doc(hidden)]
-pub type UpdateVirtualRouterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVirtualRouterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVirtualRouterInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVirtualRouter`](crate::operation::UpdateVirtualRouter)>
     #[allow(clippy::let_and_return)]
@@ -8453,7 +8137,7 @@ impl UpdateVirtualRouterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVirtualRouter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8583,7 +8267,7 @@ impl UpdateVirtualRouterInput {
             "UpdateVirtualRouter",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8642,14 +8326,12 @@ pub mod update_virtual_service_input {
             self.mesh_name = input;
             self
         }
-        /// <p>The new virtual service specification to apply. This overwrites the existing
-        /// data.</p>
+        /// <p>The new virtual service specification to apply. This overwrites the existing data.</p>
         pub fn spec(mut self, input: crate::model::VirtualServiceSpec) -> Self {
             self.spec = Some(input);
             self
         }
-        /// <p>The new virtual service specification to apply. This overwrites the existing
-        /// data.</p>
+        /// <p>The new virtual service specification to apply. This overwrites the existing data.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::VirtualServiceSpec>,
@@ -8657,26 +8339,22 @@ pub mod update_virtual_service_input {
             self.spec = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -8701,7 +8379,7 @@ pub mod update_virtual_service_input {
 #[doc(hidden)]
 pub type UpdateVirtualServiceInputOperationOutputAlias = crate::operation::UpdateVirtualService;
 #[doc(hidden)]
-pub type UpdateVirtualServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVirtualServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVirtualServiceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVirtualService`](crate::operation::UpdateVirtualService)>
     #[allow(clippy::let_and_return)]
@@ -8712,7 +8390,7 @@ impl UpdateVirtualServiceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVirtualService,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8844,7 +8522,7 @@ impl UpdateVirtualServiceInput {
             "UpdateVirtualService",
             "appmesh",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8871,45 +8549,21 @@ impl UpdateVirtualServiceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMeshesInput {
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListMeshes</code> request where <code>limit</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous
-    /// results that returned the <code>nextToken</code> value.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListMeshes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output.
-    /// When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code>
-    /// results in a single page along with a <code>nextToken</code> response element. You can see
-    /// the remaining results of the initial request by sending another <code>ListMeshes</code>
-    /// request with the returned <code>nextToken</code> value. This value can be between
-    /// 1 and 100. If you don't use this parameter,
-    /// <code>ListMeshes</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output. When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListMeshes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub limit: std::option::Option<i32>,
 }
 impl ListMeshesInput {
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListMeshes</code> request where <code>limit</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous
-    /// results that returned the <code>nextToken</code> value.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is used only to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListMeshes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output.
-    /// When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code>
-    /// results in a single page along with a <code>nextToken</code> response element. You can see
-    /// the remaining results of the initial request by sending another <code>ListMeshes</code>
-    /// request with the returned <code>nextToken</code> value. This value can be between
-    /// 1 and 100. If you don't use this parameter,
-    /// <code>ListMeshes</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output. When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListMeshes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -8931,13 +8585,9 @@ pub struct CreateMeshInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The service mesh specification to apply.</p>
     pub spec: std::option::Option<crate::model::MeshSpec>,
-    /// <p>Optional metadata that you can apply to the service mesh to assist with categorization
-    /// and organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateMeshInput {
@@ -8949,15 +8599,11 @@ impl CreateMeshInput {
     pub fn spec(&self) -> std::option::Option<&crate::model::MeshSpec> {
         self.spec.as_ref()
     }
-    /// <p>Optional metadata that you can apply to the service mesh to assist with categorization
-    /// and organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
         self.tags.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -9002,8 +8648,7 @@ pub struct UpdateMeshInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The service mesh specification to apply.</p>
     pub spec: std::option::Option<crate::model::MeshSpec>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateMeshInput {
@@ -9015,8 +8660,7 @@ impl UpdateMeshInput {
     pub fn spec(&self) -> std::option::Option<&crate::model::MeshSpec> {
         self.spec.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -9037,8 +8681,7 @@ impl std::fmt::Debug for UpdateMeshInput {
 pub struct DescribeMeshInput {
     /// <p>The name of the service mesh to describe.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DescribeMeshInput {
@@ -9046,8 +8689,7 @@ impl DescribeMeshInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9067,22 +8709,11 @@ impl std::fmt::Debug for DescribeMeshInput {
 pub struct ListVirtualServicesInput {
     /// <p>The name of the service mesh to list virtual services in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListVirtualServices</code> request where <code>limit</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated
-    /// output. When you use this parameter, <code>ListVirtualServices</code> returns only
-    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-    /// element. You can see the remaining results of the initial request by sending another
-    /// <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If you don't use this
-    /// parameter, <code>ListVirtualServices</code> returns up to 100 results and
-    /// a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated output. When you use this parameter, <code>ListVirtualServices</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualServices</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl ListVirtualServicesInput {
@@ -9090,26 +8721,15 @@ impl ListVirtualServicesInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListVirtualServices</code> request where <code>limit</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated
-    /// output. When you use this parameter, <code>ListVirtualServices</code> returns only
-    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-    /// element. You can see the remaining results of the initial request by sending another
-    /// <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If you don't use this
-    /// parameter, <code>ListVirtualServices</code> returns up to 100 results and
-    /// a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated output. When you use this parameter, <code>ListVirtualServices</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualServices</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9135,17 +8755,11 @@ pub struct CreateVirtualServiceInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The virtual service specification to apply.</p>
     pub spec: std::option::Option<crate::model::VirtualServiceSpec>,
-    /// <p>Optional metadata that you can apply to the virtual service to assist with
-    /// categorization and organization. Each tag consists of a key and an optional value, both of
-    /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the virtual service to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-    /// the account that you specify must share the mesh with your account before you can create
-    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl CreateVirtualServiceInput {
@@ -9161,21 +8775,15 @@ impl CreateVirtualServiceInput {
     pub fn spec(&self) -> std::option::Option<&crate::model::VirtualServiceSpec> {
         self.spec.as_ref()
     }
-    /// <p>Optional metadata that you can apply to the virtual service to assist with
-    /// categorization and organization. Each tag consists of a key and an optional value, both of
-    /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the virtual service to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
         self.tags.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-    /// the account that you specify must share the mesh with your account before you can create
-    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9201,8 +8809,7 @@ pub struct DeleteVirtualServiceInput {
     pub virtual_service_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to delete the virtual service in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualServiceInput {
@@ -9214,8 +8821,7 @@ impl DeleteVirtualServiceInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9238,14 +8844,11 @@ pub struct UpdateVirtualServiceInput {
     pub virtual_service_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the virtual service resides in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The new virtual service specification to apply. This overwrites the existing
-    /// data.</p>
+    /// <p>The new virtual service specification to apply. This overwrites the existing data.</p>
     pub spec: std::option::Option<crate::model::VirtualServiceSpec>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl UpdateVirtualServiceInput {
@@ -9257,18 +8860,15 @@ impl UpdateVirtualServiceInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The new virtual service specification to apply. This overwrites the existing
-    /// data.</p>
+    /// <p>The new virtual service specification to apply. This overwrites the existing data.</p>
     pub fn spec(&self) -> std::option::Option<&crate::model::VirtualServiceSpec> {
         self.spec.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9293,8 +8893,7 @@ pub struct DescribeVirtualServiceInput {
     pub virtual_service_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the virtual service resides in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DescribeVirtualServiceInput {
@@ -9306,8 +8905,7 @@ impl DescribeVirtualServiceInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9328,22 +8926,11 @@ impl std::fmt::Debug for DescribeVirtualServiceInput {
 pub struct ListVirtualRoutersInput {
     /// <p>The name of the service mesh to list virtual routers in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListVirtualRouters</code> request where <code>limit</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated
-    /// output. When you use this parameter, <code>ListVirtualRouters</code> returns only
-    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-    /// element. You can see the remaining results of the initial request by sending another
-    /// <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If you don't use this
-    /// parameter, <code>ListVirtualRouters</code> returns up to 100 results and
-    /// a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When you use this parameter, <code>ListVirtualRouters</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualRouters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl ListVirtualRoutersInput {
@@ -9351,26 +8938,15 @@ impl ListVirtualRoutersInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListVirtualRouters</code> request where <code>limit</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated
-    /// output. When you use this parameter, <code>ListVirtualRouters</code> returns only
-    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-    /// element. You can see the remaining results of the initial request by sending another
-    /// <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If you don't use this
-    /// parameter, <code>ListVirtualRouters</code> returns up to 100 results and
-    /// a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When you use this parameter, <code>ListVirtualRouters</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualRouters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9396,17 +8972,11 @@ pub struct CreateVirtualRouterInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The virtual router specification to apply.</p>
     pub spec: std::option::Option<crate::model::VirtualRouterSpec>,
-    /// <p>Optional metadata that you can apply to the virtual router to assist with categorization
-    /// and organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-    /// the account that you specify must share the mesh with your account before you can create
-    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl CreateVirtualRouterInput {
@@ -9422,21 +8992,15 @@ impl CreateVirtualRouterInput {
     pub fn spec(&self) -> std::option::Option<&crate::model::VirtualRouterSpec> {
         self.spec.as_ref()
     }
-    /// <p>Optional metadata that you can apply to the virtual router to assist with categorization
-    /// and organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
         self.tags.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-    /// the account that you specify must share the mesh with your account before you can create
-    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9462,8 +9026,7 @@ pub struct DeleteVirtualRouterInput {
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to delete the virtual router in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualRouterInput {
@@ -9475,8 +9038,7 @@ impl DeleteVirtualRouterInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9501,11 +9063,9 @@ pub struct UpdateVirtualRouterInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The new virtual router specification to apply. This overwrites the existing data.</p>
     pub spec: std::option::Option<crate::model::VirtualRouterSpec>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl UpdateVirtualRouterInput {
@@ -9521,13 +9081,11 @@ impl UpdateVirtualRouterInput {
     pub fn spec(&self) -> std::option::Option<&crate::model::VirtualRouterSpec> {
         self.spec.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9552,8 +9110,7 @@ pub struct DescribeVirtualRouterInput {
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the virtual router resides in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DescribeVirtualRouterInput {
@@ -9565,8 +9122,7 @@ impl DescribeVirtualRouterInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9589,22 +9145,11 @@ pub struct ListRoutesInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router to list routes in.</p>
     pub virtual_router_name: std::option::Option<std::string::String>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListRoutes</code> request where <code>limit</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous
-    /// results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output.
-    /// When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code>
-    /// results in a single page along with a <code>nextToken</code> response element. You can see
-    /// the remaining results of the initial request by sending another <code>ListRoutes</code>
-    /// request with the returned <code>nextToken</code> value. This value can be between
-    /// 1 and 100. If you don't use this parameter,
-    /// <code>ListRoutes</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl ListRoutesInput {
@@ -9616,26 +9161,15 @@ impl ListRoutesInput {
     pub fn virtual_router_name(&self) -> std::option::Option<&str> {
         self.virtual_router_name.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListRoutes</code> request where <code>limit</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous
-    /// results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output.
-    /// When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code>
-    /// results in a single page along with a <code>nextToken</code> response element. You can see
-    /// the remaining results of the initial request by sending another <code>ListRoutes</code>
-    /// request with the returned <code>nextToken</code> value. This value can be between
-    /// 1 and 100. If you don't use this parameter,
-    /// <code>ListRoutes</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9660,22 +9194,15 @@ pub struct CreateRouteInput {
     pub route_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to create the route in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The name of the virtual router in which to create the route. If the virtual router is in
-    /// a shared mesh, then you must be the owner of the virtual router resource.</p>
+    /// <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The route specification to apply.</p>
     pub spec: std::option::Option<crate::model::RouteSpec>,
-    /// <p>Optional metadata that you can apply to the route to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you define.
-    /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-    /// the account that you specify must share the mesh with your account before you can create
-    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl CreateRouteInput {
@@ -9687,8 +9214,7 @@ impl CreateRouteInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The name of the virtual router in which to create the route. If the virtual router is in
-    /// a shared mesh, then you must be the owner of the virtual router resource.</p>
+    /// <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
     pub fn virtual_router_name(&self) -> std::option::Option<&str> {
         self.virtual_router_name.as_deref()
     }
@@ -9696,21 +9222,15 @@ impl CreateRouteInput {
     pub fn spec(&self) -> std::option::Option<&crate::model::RouteSpec> {
         self.spec.as_ref()
     }
-    /// <p>Optional metadata that you can apply to the route to assist with categorization and
-    /// organization. Each tag consists of a key and an optional value, both of which you define.
-    /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
         self.tags.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-    /// the account that you specify must share the mesh with your account before you can create
-    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9739,8 +9259,7 @@ pub struct DeleteRouteInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router to delete the route in.</p>
     pub virtual_router_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DeleteRouteInput {
@@ -9756,8 +9275,7 @@ impl DeleteRouteInput {
     pub fn virtual_router_name(&self) -> std::option::Option<&str> {
         self.virtual_router_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9785,11 +9303,9 @@ pub struct UpdateRouteInput {
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The new route specification to apply. This overwrites the existing data.</p>
     pub spec: std::option::Option<crate::model::RouteSpec>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl UpdateRouteInput {
@@ -9809,13 +9325,11 @@ impl UpdateRouteInput {
     pub fn spec(&self) -> std::option::Option<&crate::model::RouteSpec> {
         self.spec.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9841,8 +9355,7 @@ pub struct DescribeRouteInput {
     pub route_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the route resides in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router that the route is associated with.</p>
     pub virtual_router_name: std::option::Option<std::string::String>,
@@ -9856,8 +9369,7 @@ impl DescribeRouteInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9883,22 +9395,11 @@ impl std::fmt::Debug for DescribeRouteInput {
 pub struct ListVirtualNodesInput {
     /// <p>The name of the service mesh to list virtual nodes in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous
-    /// results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated
-    /// output. When you use this parameter, <code>ListVirtualNodes</code> returns only
-    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-    /// element. You can see the remaining results of the initial request by sending another
-    /// <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If you don't use this
-    /// parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl ListVirtualNodesInput {
@@ -9906,26 +9407,15 @@ impl ListVirtualNodesInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous
-    /// results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated
-    /// output. When you use this parameter, <code>ListVirtualNodes</code> returns only
-    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-    /// element. You can see the remaining results of the initial request by sending another
-    /// <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If you don't use this
-    /// parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -9951,17 +9441,11 @@ pub struct CreateVirtualNodeInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The virtual node specification to apply.</p>
     pub spec: std::option::Option<crate::model::VirtualNodeSpec>,
-    /// <p>Optional metadata that you can apply to the virtual node to assist with categorization
-    /// and organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-    /// the account that you specify must share the mesh with your account before you can create
-    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl CreateVirtualNodeInput {
@@ -9977,21 +9461,15 @@ impl CreateVirtualNodeInput {
     pub fn spec(&self) -> std::option::Option<&crate::model::VirtualNodeSpec> {
         self.spec.as_ref()
     }
-    /// <p>Optional metadata that you can apply to the virtual node to assist with categorization
-    /// and organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
         self.tags.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-    /// the account that you specify must share the mesh with your account before you can create
-    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10017,8 +9495,7 @@ pub struct DeleteVirtualNodeInput {
     pub virtual_node_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to delete the virtual node in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualNodeInput {
@@ -10030,8 +9507,7 @@ impl DeleteVirtualNodeInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10056,11 +9532,9 @@ pub struct UpdateVirtualNodeInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The new virtual node specification to apply. This overwrites the existing data.</p>
     pub spec: std::option::Option<crate::model::VirtualNodeSpec>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl UpdateVirtualNodeInput {
@@ -10076,13 +9550,11 @@ impl UpdateVirtualNodeInput {
     pub fn spec(&self) -> std::option::Option<&crate::model::VirtualNodeSpec> {
         self.spec.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10107,8 +9579,7 @@ pub struct DescribeVirtualNodeInput {
     pub virtual_node_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the virtual node resides in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DescribeVirtualNodeInput {
@@ -10120,8 +9591,7 @@ impl DescribeVirtualNodeInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10142,22 +9612,11 @@ impl std::fmt::Debug for DescribeVirtualNodeInput {
 pub struct ListVirtualGatewaysInput {
     /// <p>The name of the service mesh to list virtual gateways in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListVirtualGateways</code> request where <code>limit</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated
-    /// output. When you use this parameter, <code>ListVirtualGateways</code> returns only
-    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-    /// element. You can see the remaining results of the initial request by sending another
-    /// <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If you don't use this
-    /// parameter, <code>ListVirtualGateways</code> returns up to 100 results and
-    /// a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated output. When you use this parameter, <code>ListVirtualGateways</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualGateways</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl ListVirtualGatewaysInput {
@@ -10165,26 +9624,15 @@ impl ListVirtualGatewaysInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListVirtualGateways</code> request where <code>limit</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated
-    /// output. When you use this parameter, <code>ListVirtualGateways</code> returns only
-    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-    /// element. You can see the remaining results of the initial request by sending another
-    /// <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If you don't use this
-    /// parameter, <code>ListVirtualGateways</code> returns up to 100 results and
-    /// a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated output. When you use this parameter, <code>ListVirtualGateways</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualGateways</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10210,17 +9658,11 @@ pub struct CreateVirtualGatewayInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The virtual gateway specification to apply.</p>
     pub spec: std::option::Option<crate::model::VirtualGatewaySpec>,
-    /// <p>Optional metadata that you can apply to the virtual gateway to assist with
-    /// categorization and organization. Each tag consists of a key and an optional value, both of
-    /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the virtual gateway to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-    /// the account that you specify must share the mesh with your account before you can create
-    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl CreateVirtualGatewayInput {
@@ -10236,21 +9678,15 @@ impl CreateVirtualGatewayInput {
     pub fn spec(&self) -> std::option::Option<&crate::model::VirtualGatewaySpec> {
         self.spec.as_ref()
     }
-    /// <p>Optional metadata that you can apply to the virtual gateway to assist with
-    /// categorization and organization. Each tag consists of a key and an optional value, both of
-    /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the virtual gateway to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
         self.tags.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-    /// the account that you specify must share the mesh with your account before you can create
-    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10276,8 +9712,7 @@ pub struct DeleteVirtualGatewayInput {
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to delete the virtual gateway from.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DeleteVirtualGatewayInput {
@@ -10289,8 +9724,7 @@ impl DeleteVirtualGatewayInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10313,14 +9747,11 @@ pub struct UpdateVirtualGatewayInput {
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The new virtual gateway specification to apply. This overwrites the existing
-    /// data.</p>
+    /// <p>The new virtual gateway specification to apply. This overwrites the existing data.</p>
     pub spec: std::option::Option<crate::model::VirtualGatewaySpec>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl UpdateVirtualGatewayInput {
@@ -10332,18 +9763,15 @@ impl UpdateVirtualGatewayInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The new virtual gateway specification to apply. This overwrites the existing
-    /// data.</p>
+    /// <p>The new virtual gateway specification to apply. This overwrites the existing data.</p>
     pub fn spec(&self) -> std::option::Option<&crate::model::VirtualGatewaySpec> {
         self.spec.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10368,8 +9796,7 @@ pub struct DescribeVirtualGatewayInput {
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh that the gateway route resides in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DescribeVirtualGatewayInput {
@@ -10381,8 +9808,7 @@ impl DescribeVirtualGatewayInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10405,22 +9831,11 @@ pub struct ListGatewayRoutesInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual gateway to list gateway routes in.</p>
     pub virtual_gateway_name: std::option::Option<std::string::String>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous
-    /// results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated
-    /// output. When you use this parameter, <code>ListGatewayRoutes</code> returns only
-    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-    /// element. You can see the remaining results of the initial request by sending another
-    /// <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If you don't use this
-    /// parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When you use this parameter, <code>ListGatewayRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl ListGatewayRoutesInput {
@@ -10432,26 +9847,15 @@ impl ListGatewayRoutesInput {
     pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
         self.virtual_gateway_name.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous
-    /// results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated
-    /// output. When you use this parameter, <code>ListGatewayRoutes</code> returns only
-    /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-    /// element. You can see the remaining results of the initial request by sending another
-    /// <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If you don't use this
-    /// parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a
-    /// <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When you use this parameter, <code>ListGatewayRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10476,23 +9880,15 @@ pub struct CreateGatewayRouteInput {
     pub gateway_route_name: std::option::Option<std::string::String>,
     /// <p>The name of the service mesh to create the gateway route in.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual
-    /// gateway is in a shared mesh, then you must be the owner of the virtual gateway
-    /// resource.</p>
+    /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The gateway route specification to apply.</p>
     pub spec: std::option::Option<crate::model::GatewayRouteSpec>,
-    /// <p>Optional metadata that you can apply to the gateway route to assist with categorization
-    /// and organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-    /// the account that you specify must share the mesh with your account before you can create
-    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl CreateGatewayRouteInput {
@@ -10504,9 +9900,7 @@ impl CreateGatewayRouteInput {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual
-    /// gateway is in a shared mesh, then you must be the owner of the virtual gateway
-    /// resource.</p>
+    /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
     pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
         self.virtual_gateway_name.as_deref()
     }
@@ -10514,21 +9908,15 @@ impl CreateGatewayRouteInput {
     pub fn spec(&self) -> std::option::Option<&crate::model::GatewayRouteSpec> {
         self.spec.as_ref()
     }
-    /// <p>Optional metadata that you can apply to the gateway route to assist with categorization
-    /// and organization. Each tag consists of a key and an optional value, both of which you
-    /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
         self.tags.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-    /// the account that you specify must share the mesh with your account before you can create
-    /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10557,8 +9945,7 @@ pub struct DeleteGatewayRouteInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual gateway to delete the route from.</p>
     pub virtual_gateway_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DeleteGatewayRouteInput {
@@ -10574,8 +9961,7 @@ impl DeleteGatewayRouteInput {
     pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
         self.virtual_gateway_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10603,11 +9989,9 @@ pub struct UpdateGatewayRouteInput {
     pub virtual_gateway_name: std::option::Option<std::string::String>,
     /// <p>The new gateway route specification to apply. This overwrites the existing data.</p>
     pub spec: std::option::Option<crate::model::GatewayRouteSpec>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl UpdateGatewayRouteInput {
@@ -10627,13 +10011,11 @@ impl UpdateGatewayRouteInput {
     pub fn spec(&self) -> std::option::Option<&crate::model::GatewayRouteSpec> {
         self.spec.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10661,8 +10043,7 @@ pub struct DescribeGatewayRouteInput {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
     pub virtual_gateway_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
 }
 impl DescribeGatewayRouteInput {
@@ -10678,8 +10059,7 @@ impl DescribeGatewayRouteInput {
     pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
         self.virtual_gateway_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
@@ -10729,9 +10109,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to add tags to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-    /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
 }
 impl TagResourceInput {
@@ -10739,9 +10117,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-    /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
         self.tags.as_deref()
     }
@@ -10761,19 +10137,9 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListTagsForResource</code> request where <code>limit</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListTagsForResource</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in
-    /// paginated output. When this parameter is used, <code>ListTagsForResource</code> returns
-    /// only <code>limit</code> results in a single page along with a <code>nextToken</code>
-    /// response element. You can see the remaining results of the initial request by sending
-    /// another <code>ListTagsForResource</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If you don't use
-    /// this parameter, <code>ListTagsForResource</code> returns up to 100
-    /// results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in paginated output. When this parameter is used, <code>ListTagsForResource</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListTagsForResource</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListTagsForResource</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub limit: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
@@ -10781,21 +10147,11 @@ impl ListTagsForResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListTagsForResource</code> request where <code>limit</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListTagsForResource</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in
-    /// paginated output. When this parameter is used, <code>ListTagsForResource</code> returns
-    /// only <code>limit</code> results in a single page along with a <code>nextToken</code>
-    /// response element. You can see the remaining results of the initial request by sending
-    /// another <code>ListTagsForResource</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If you don't use
-    /// this parameter, <code>ListTagsForResource</code> returns up to 100
-    /// results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in paginated output. When this parameter is used, <code>ListTagsForResource</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListTagsForResource</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListTagsForResource</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }

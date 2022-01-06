@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Greengrass
@@ -821,7 +821,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateRoleToGroup`.
     ///
     /// Associates a role with a group. Your Greengrass core will use the role to access AWS cloud services. The role's permissions should allow Greengrass core Lambda functions to perform actions against the cloud.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateRoleToGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -866,10 +866,10 @@ pub mod fluent_builders {
                 crate::input::AssociateRoleToGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -878,8 +878,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -888,8 +888,8 @@ pub mod fluent_builders {
             self
         }
         /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
@@ -901,7 +901,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateServiceRoleToAccount`.
     ///
     /// Associates a role with your account. AWS IoT Greengrass will use the role to access your Lambda functions and AWS IoT resources. This is necessary for deployments to succeed. The role must have at least minimum permissions in the policy ''AWSGreengrassResourceAccessRolePolicy''.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateServiceRoleToAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -946,10 +946,10 @@ pub mod fluent_builders {
                 crate::input::AssociateServiceRoleToAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -958,8 +958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the service role you wish to associate with your account.
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// The ARN of the service role you wish to associate with your account.
@@ -971,7 +971,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConnectorDefinition`.
     ///
     /// Creates a connector definition. You may provide the initial version of the connector definition now or use ''CreateConnectorDefinitionVersion'' at a later time.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnectorDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1016,10 +1016,10 @@ pub mod fluent_builders {
                 crate::input::CreateConnectorDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1028,8 +1028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1041,8 +1041,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the connector definition.
-        pub fn initial_version(mut self, inp: crate::model::ConnectorDefinitionVersion) -> Self {
-            self.inner = self.inner.initial_version(inp);
+        pub fn initial_version(mut self, input: crate::model::ConnectorDefinitionVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the connector definition.
@@ -1054,8 +1054,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the connector definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the connector definition.
@@ -1073,7 +1073,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// Tag(s) to add to the new resource.
@@ -1090,7 +1090,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConnectorDefinitionVersion`.
     ///
     /// Creates a version of a connector definition which has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnectorDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1135,10 +1135,10 @@ pub mod fluent_builders {
                 crate::input::CreateConnectorDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1147,8 +1147,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1160,8 +1160,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the connector definition.
-        pub fn connector_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_definition_id(inp);
+        pub fn connector_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_definition_id(input.into());
             self
         }
         /// The ID of the connector definition.
@@ -1177,8 +1177,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_connectors`](Self::set_connectors).
         ///
         /// A list of references to connectors in this version, with their corresponding configuration settings.
-        pub fn connectors(mut self, inp: impl Into<crate::model::Connector>) -> Self {
-            self.inner = self.inner.connectors(inp);
+        pub fn connectors(mut self, input: crate::model::Connector) -> Self {
+            self.inner = self.inner.connectors(input);
             self
         }
         /// A list of references to connectors in this version, with their corresponding configuration settings.
@@ -1193,7 +1193,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCoreDefinition`.
     ///
     /// Creates a core definition. You may provide the initial version of the core definition now or use ''CreateCoreDefinitionVersion'' at a later time. Greengrass groups must each contain exactly one Greengrass core.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCoreDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1238,10 +1238,10 @@ pub mod fluent_builders {
                 crate::input::CreateCoreDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1250,8 +1250,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1263,8 +1263,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the core definition.
-        pub fn initial_version(mut self, inp: crate::model::CoreDefinitionVersion) -> Self {
-            self.inner = self.inner.initial_version(inp);
+        pub fn initial_version(mut self, input: crate::model::CoreDefinitionVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the core definition.
@@ -1276,8 +1276,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the core definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the core definition.
@@ -1295,7 +1295,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// Tag(s) to add to the new resource.
@@ -1312,7 +1312,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCoreDefinitionVersion`.
     ///
     /// Creates a version of a core definition that has already been defined. Greengrass groups must each contain exactly one Greengrass core.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCoreDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1357,10 +1357,10 @@ pub mod fluent_builders {
                 crate::input::CreateCoreDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1369,8 +1369,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1382,8 +1382,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the core definition.
-        pub fn core_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_id(inp);
+        pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_id(input.into());
             self
         }
         /// The ID of the core definition.
@@ -1399,8 +1399,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_cores`](Self::set_cores).
         ///
         /// A list of cores in the core definition version.
-        pub fn cores(mut self, inp: impl Into<crate::model::Core>) -> Self {
-            self.inner = self.inner.cores(inp);
+        pub fn cores(mut self, input: crate::model::Core) -> Self {
+            self.inner = self.inner.cores(input);
             self
         }
         /// A list of cores in the core definition version.
@@ -1415,7 +1415,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeployment`.
     ///
     /// Creates a deployment. ''CreateDeployment'' requests are idempotent with respect to the ''X-Amzn-Client-Token'' token and the request parameters.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1460,10 +1460,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1472,8 +1472,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1485,8 +1485,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the deployment if you wish to redeploy a previous deployment.
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// The ID of the deployment if you wish to redeploy a previous deployment.
@@ -1498,8 +1498,8 @@ pub mod fluent_builders {
             self
         }
         /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
-        pub fn deployment_type(mut self, inp: crate::model::DeploymentType) -> Self {
-            self.inner = self.inner.deployment_type(inp);
+        pub fn deployment_type(mut self, input: crate::model::DeploymentType) -> Self {
+            self.inner = self.inner.deployment_type(input);
             self
         }
         /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
@@ -1511,8 +1511,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -1521,8 +1521,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the group version to be deployed.
-        pub fn group_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_version_id(inp);
+        pub fn group_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_version_id(input.into());
             self
         }
         /// The ID of the group version to be deployed.
@@ -1537,7 +1537,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeviceDefinition`.
     ///
     /// Creates a device definition. You may provide the initial version of the device definition now or use ''CreateDeviceDefinitionVersion'' at a later time.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeviceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1582,10 +1582,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeviceDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1594,8 +1594,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1607,8 +1607,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the device definition.
-        pub fn initial_version(mut self, inp: crate::model::DeviceDefinitionVersion) -> Self {
-            self.inner = self.inner.initial_version(inp);
+        pub fn initial_version(mut self, input: crate::model::DeviceDefinitionVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the device definition.
@@ -1620,8 +1620,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the device definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the device definition.
@@ -1639,7 +1639,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// Tag(s) to add to the new resource.
@@ -1656,7 +1656,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeviceDefinitionVersion`.
     ///
     /// Creates a version of a device definition that has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeviceDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1701,10 +1701,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeviceDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1713,8 +1713,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1726,8 +1726,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the device definition.
-        pub fn device_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_id(inp);
+        pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_definition_id(input.into());
             self
         }
         /// The ID of the device definition.
@@ -1743,8 +1743,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// A list of devices in the definition version.
-        pub fn devices(mut self, inp: impl Into<crate::model::Device>) -> Self {
-            self.inner = self.inner.devices(inp);
+        pub fn devices(mut self, input: crate::model::Device) -> Self {
+            self.inner = self.inner.devices(input);
             self
         }
         /// A list of devices in the definition version.
@@ -1759,7 +1759,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFunctionDefinition`.
     ///
     /// Creates a Lambda function definition which contains a list of Lambda functions and their configurations to be used in a group. You can create an initial version of the definition by providing a list of Lambda functions and their configurations now, or use ''CreateFunctionDefinitionVersion'' later.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFunctionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1804,10 +1804,10 @@ pub mod fluent_builders {
                 crate::input::CreateFunctionDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1816,8 +1816,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1829,8 +1829,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the function definition.
-        pub fn initial_version(mut self, inp: crate::model::FunctionDefinitionVersion) -> Self {
-            self.inner = self.inner.initial_version(inp);
+        pub fn initial_version(mut self, input: crate::model::FunctionDefinitionVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the function definition.
@@ -1842,8 +1842,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the function definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the function definition.
@@ -1861,7 +1861,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// Tag(s) to add to the new resource.
@@ -1878,7 +1878,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFunctionDefinitionVersion`.
     ///
     /// Creates a version of a Lambda function definition that has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFunctionDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1923,10 +1923,10 @@ pub mod fluent_builders {
                 crate::input::CreateFunctionDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1935,8 +1935,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1948,8 +1948,8 @@ pub mod fluent_builders {
             self
         }
         /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-        pub fn default_config(mut self, inp: crate::model::FunctionDefaultConfig) -> Self {
-            self.inner = self.inner.default_config(inp);
+        pub fn default_config(mut self, input: crate::model::FunctionDefaultConfig) -> Self {
+            self.inner = self.inner.default_config(input);
             self
         }
         /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
@@ -1961,8 +1961,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Lambda function definition.
-        pub fn function_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_definition_id(inp);
+        pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_definition_id(input.into());
             self
         }
         /// The ID of the Lambda function definition.
@@ -1978,8 +1978,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
         /// A list of Lambda functions in this function definition version.
-        pub fn functions(mut self, inp: impl Into<crate::model::Function>) -> Self {
-            self.inner = self.inner.functions(inp);
+        pub fn functions(mut self, input: crate::model::Function) -> Self {
+            self.inner = self.inner.functions(input);
             self
         }
         /// A list of Lambda functions in this function definition version.
@@ -1994,7 +1994,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGroup`.
     ///
     /// Creates a group. You may provide the initial version of the group or use ''CreateGroupVersion'' at a later time. Tip: You can use the ''gg_group_setup'' package (https://github.com/awslabs/aws-greengrass-group-setup) as a library or command-line application to create and deploy Greengrass groups.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2039,10 +2039,10 @@ pub mod fluent_builders {
                 crate::input::CreateGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2051,8 +2051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2064,8 +2064,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the group.
-        pub fn initial_version(mut self, inp: crate::model::GroupVersion) -> Self {
-            self.inner = self.inner.initial_version(inp);
+        pub fn initial_version(mut self, input: crate::model::GroupVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the group.
@@ -2077,8 +2077,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the group.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the group.
@@ -2096,7 +2096,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// Tag(s) to add to the new resource.
@@ -2113,7 +2113,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGroupCertificateAuthority`.
     ///
     /// Creates a CA for the group. If a CA already exists, it will rotate the existing CA.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroupCertificateAuthority<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2158,10 +2158,10 @@ pub mod fluent_builders {
                 crate::input::CreateGroupCertificateAuthorityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2170,8 +2170,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2183,8 +2183,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -2196,7 +2196,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGroupVersion`.
     ///
     /// Creates a version of a group which has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroupVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2241,10 +2241,10 @@ pub mod fluent_builders {
                 crate::input::CreateGroupVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2253,8 +2253,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2268,9 +2268,9 @@ pub mod fluent_builders {
         /// The ARN of the connector definition version for this group.
         pub fn connector_definition_version_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.connector_definition_version_arn(inp);
+            self.inner = self.inner.connector_definition_version_arn(input.into());
             self
         }
         /// The ARN of the connector definition version for this group.
@@ -2282,8 +2282,11 @@ pub mod fluent_builders {
             self
         }
         /// The ARN of the core definition version for this group.
-        pub fn core_definition_version_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_version_arn(inp);
+        pub fn core_definition_version_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.core_definition_version_arn(input.into());
             self
         }
         /// The ARN of the core definition version for this group.
@@ -2297,9 +2300,9 @@ pub mod fluent_builders {
         /// The ARN of the device definition version for this group.
         pub fn device_definition_version_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.device_definition_version_arn(inp);
+            self.inner = self.inner.device_definition_version_arn(input.into());
             self
         }
         /// The ARN of the device definition version for this group.
@@ -2313,9 +2316,9 @@ pub mod fluent_builders {
         /// The ARN of the function definition version for this group.
         pub fn function_definition_version_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.function_definition_version_arn(inp);
+            self.inner = self.inner.function_definition_version_arn(input.into());
             self
         }
         /// The ARN of the function definition version for this group.
@@ -2327,8 +2330,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -2339,9 +2342,9 @@ pub mod fluent_builders {
         /// The ARN of the logger definition version for this group.
         pub fn logger_definition_version_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logger_definition_version_arn(inp);
+            self.inner = self.inner.logger_definition_version_arn(input.into());
             self
         }
         /// The ARN of the logger definition version for this group.
@@ -2355,9 +2358,9 @@ pub mod fluent_builders {
         /// The ARN of the resource definition version for this group.
         pub fn resource_definition_version_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_definition_version_arn(inp);
+            self.inner = self.inner.resource_definition_version_arn(input.into());
             self
         }
         /// The ARN of the resource definition version for this group.
@@ -2371,9 +2374,9 @@ pub mod fluent_builders {
         /// The ARN of the subscription definition version for this group.
         pub fn subscription_definition_version_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.subscription_definition_version_arn(inp);
+            self.inner = self.inner.subscription_definition_version_arn(input.into());
             self
         }
         /// The ARN of the subscription definition version for this group.
@@ -2388,7 +2391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLoggerDefinition`.
     ///
     /// Creates a logger definition. You may provide the initial version of the logger definition now or use ''CreateLoggerDefinitionVersion'' at a later time.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoggerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2433,10 +2436,10 @@ pub mod fluent_builders {
                 crate::input::CreateLoggerDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2445,8 +2448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2458,8 +2461,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the logger definition.
-        pub fn initial_version(mut self, inp: crate::model::LoggerDefinitionVersion) -> Self {
-            self.inner = self.inner.initial_version(inp);
+        pub fn initial_version(mut self, input: crate::model::LoggerDefinitionVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the logger definition.
@@ -2471,8 +2474,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the logger definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the logger definition.
@@ -2490,7 +2493,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// Tag(s) to add to the new resource.
@@ -2507,7 +2510,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLoggerDefinitionVersion`.
     ///
     /// Creates a version of a logger definition that has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoggerDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2552,10 +2555,10 @@ pub mod fluent_builders {
                 crate::input::CreateLoggerDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2564,8 +2567,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2577,8 +2580,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the logger definition.
-        pub fn logger_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_id(inp);
+        pub fn logger_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logger_definition_id(input.into());
             self
         }
         /// The ID of the logger definition.
@@ -2594,8 +2597,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_loggers`](Self::set_loggers).
         ///
         /// A list of loggers.
-        pub fn loggers(mut self, inp: impl Into<crate::model::Logger>) -> Self {
-            self.inner = self.inner.loggers(inp);
+        pub fn loggers(mut self, input: crate::model::Logger) -> Self {
+            self.inner = self.inner.loggers(input);
             self
         }
         /// A list of loggers.
@@ -2610,7 +2613,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResourceDefinition`.
     ///
     /// Creates a resource definition which contains a list of resources to be used in a group. You can create an initial version of the definition by providing a list of resources now, or use ''CreateResourceDefinitionVersion'' later.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2655,10 +2658,10 @@ pub mod fluent_builders {
                 crate::input::CreateResourceDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2667,8 +2670,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2680,8 +2683,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the resource definition.
-        pub fn initial_version(mut self, inp: crate::model::ResourceDefinitionVersion) -> Self {
-            self.inner = self.inner.initial_version(inp);
+        pub fn initial_version(mut self, input: crate::model::ResourceDefinitionVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the resource definition.
@@ -2693,8 +2696,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the resource definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the resource definition.
@@ -2712,7 +2715,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// Tag(s) to add to the new resource.
@@ -2729,7 +2732,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResourceDefinitionVersion`.
     ///
     /// Creates a version of a resource definition that has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2774,10 +2777,10 @@ pub mod fluent_builders {
                 crate::input::CreateResourceDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2786,8 +2789,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2799,8 +2802,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the resource definition.
-        pub fn resource_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_definition_id(inp);
+        pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_definition_id(input.into());
             self
         }
         /// The ID of the resource definition.
@@ -2816,8 +2819,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of resources.
-        pub fn resources(mut self, inp: impl Into<crate::model::Resource>) -> Self {
-            self.inner = self.inner.resources(inp);
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
+            self.inner = self.inner.resources(input);
             self
         }
         /// A list of resources.
@@ -2832,7 +2835,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSoftwareUpdateJob`.
     ///
     /// Creates a software update for a core or group of cores (specified as an IoT thing group.) Use this to update the OTA Agent as well as the Greengrass core software. It makes use of the IoT Jobs feature which provides additional commands to manage a Greengrass core software update job.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSoftwareUpdateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2877,10 +2880,10 @@ pub mod fluent_builders {
                 crate::input::CreateSoftwareUpdateJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2889,8 +2892,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2902,8 +2905,8 @@ pub mod fluent_builders {
             self
         }
         /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
-        pub fn s3_url_signer_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_url_signer_role(inp);
+        pub fn s3_url_signer_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_url_signer_role(input.into());
             self
         }
         /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
@@ -2915,8 +2918,8 @@ pub mod fluent_builders {
             self
         }
         /// The piece of software on the Greengrass core that will be updated.
-        pub fn software_to_update(mut self, inp: crate::model::SoftwareToUpdate) -> Self {
-            self.inner = self.inner.software_to_update(inp);
+        pub fn software_to_update(mut self, input: crate::model::SoftwareToUpdate) -> Self {
+            self.inner = self.inner.software_to_update(input);
             self
         }
         /// The piece of software on the Greengrass core that will be updated.
@@ -2928,8 +2931,8 @@ pub mod fluent_builders {
             self
         }
         /// The minimum level of log statements that should be logged by the OTA Agent during an update.
-        pub fn update_agent_log_level(mut self, inp: crate::model::UpdateAgentLogLevel) -> Self {
-            self.inner = self.inner.update_agent_log_level(inp);
+        pub fn update_agent_log_level(mut self, input: crate::model::UpdateAgentLogLevel) -> Self {
+            self.inner = self.inner.update_agent_log_level(input);
             self
         }
         /// The minimum level of log statements that should be logged by the OTA Agent during an update.
@@ -2945,8 +2948,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_update_targets`](Self::set_update_targets).
         ///
         /// The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
-        pub fn update_targets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_targets(inp);
+        pub fn update_targets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_targets(input.into());
             self
         }
         /// The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
@@ -2960,9 +2963,9 @@ pub mod fluent_builders {
         /// The architecture of the cores which are the targets of an update.
         pub fn update_targets_architecture(
             mut self,
-            inp: crate::model::UpdateTargetsArchitecture,
+            input: crate::model::UpdateTargetsArchitecture,
         ) -> Self {
-            self.inner = self.inner.update_targets_architecture(inp);
+            self.inner = self.inner.update_targets_architecture(input);
             self
         }
         /// The architecture of the cores which are the targets of an update.
@@ -2976,9 +2979,9 @@ pub mod fluent_builders {
         /// The operating system of the cores which are the targets of an update.
         pub fn update_targets_operating_system(
             mut self,
-            inp: crate::model::UpdateTargetsOperatingSystem,
+            input: crate::model::UpdateTargetsOperatingSystem,
         ) -> Self {
-            self.inner = self.inner.update_targets_operating_system(inp);
+            self.inner = self.inner.update_targets_operating_system(input);
             self
         }
         /// The operating system of the cores which are the targets of an update.
@@ -2993,7 +2996,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSubscriptionDefinition`.
     ///
     /// Creates a subscription definition. You may provide the initial version of the subscription definition now or use ''CreateSubscriptionDefinitionVersion'' at a later time.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSubscriptionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3038,10 +3041,10 @@ pub mod fluent_builders {
                 crate::input::CreateSubscriptionDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3050,8 +3053,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -3063,8 +3066,11 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the subscription definition.
-        pub fn initial_version(mut self, inp: crate::model::SubscriptionDefinitionVersion) -> Self {
-            self.inner = self.inner.initial_version(inp);
+        pub fn initial_version(
+            mut self,
+            input: crate::model::SubscriptionDefinitionVersion,
+        ) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the subscription definition.
@@ -3076,8 +3082,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the subscription definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the subscription definition.
@@ -3095,7 +3101,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// Tag(s) to add to the new resource.
@@ -3112,7 +3118,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSubscriptionDefinitionVersion`.
     ///
     /// Creates a version of a subscription definition which has already been defined.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSubscriptionDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3159,10 +3165,10 @@ pub mod fluent_builders {
                 crate::input::CreateSubscriptionDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3171,8 +3177,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -3184,8 +3190,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the subscription definition.
-        pub fn subscription_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_definition_id(inp);
+        pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_definition_id(input.into());
             self
         }
         /// The ID of the subscription definition.
@@ -3201,8 +3207,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
         ///
         /// A list of subscriptions.
-        pub fn subscriptions(mut self, inp: impl Into<crate::model::Subscription>) -> Self {
-            self.inner = self.inner.subscriptions(inp);
+        pub fn subscriptions(mut self, input: crate::model::Subscription) -> Self {
+            self.inner = self.inner.subscriptions(input);
             self
         }
         /// A list of subscriptions.
@@ -3217,7 +3223,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnectorDefinition`.
     ///
     /// Deletes a connector definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnectorDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3262,10 +3268,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConnectorDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3274,8 +3280,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the connector definition.
-        pub fn connector_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_definition_id(inp);
+        pub fn connector_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_definition_id(input.into());
             self
         }
         /// The ID of the connector definition.
@@ -3290,7 +3296,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCoreDefinition`.
     ///
     /// Deletes a core definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCoreDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3335,10 +3341,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCoreDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3347,8 +3353,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the core definition.
-        pub fn core_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_id(inp);
+        pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_id(input.into());
             self
         }
         /// The ID of the core definition.
@@ -3363,7 +3369,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDeviceDefinition`.
     ///
     /// Deletes a device definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeviceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3408,10 +3414,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDeviceDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3420,8 +3426,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the device definition.
-        pub fn device_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_id(inp);
+        pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_definition_id(input.into());
             self
         }
         /// The ID of the device definition.
@@ -3436,7 +3442,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFunctionDefinition`.
     ///
     /// Deletes a Lambda function definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFunctionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3481,10 +3487,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFunctionDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3493,8 +3499,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Lambda function definition.
-        pub fn function_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_definition_id(inp);
+        pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_definition_id(input.into());
             self
         }
         /// The ID of the Lambda function definition.
@@ -3509,7 +3515,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGroup`.
     ///
     /// Deletes a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3554,10 +3560,10 @@ pub mod fluent_builders {
                 crate::input::DeleteGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3566,8 +3572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -3579,7 +3585,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLoggerDefinition`.
     ///
     /// Deletes a logger definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoggerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3624,10 +3630,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLoggerDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3636,8 +3642,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the logger definition.
-        pub fn logger_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_id(inp);
+        pub fn logger_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logger_definition_id(input.into());
             self
         }
         /// The ID of the logger definition.
@@ -3652,7 +3658,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourceDefinition`.
     ///
     /// Deletes a resource definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3697,10 +3703,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourceDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3709,8 +3715,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the resource definition.
-        pub fn resource_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_definition_id(inp);
+        pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_definition_id(input.into());
             self
         }
         /// The ID of the resource definition.
@@ -3725,7 +3731,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSubscriptionDefinition`.
     ///
     /// Deletes a subscription definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSubscriptionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3770,10 +3776,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSubscriptionDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3782,8 +3788,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the subscription definition.
-        pub fn subscription_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_definition_id(inp);
+        pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_definition_id(input.into());
             self
         }
         /// The ID of the subscription definition.
@@ -3798,7 +3804,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateRoleFromGroup`.
     ///
     /// Disassociates the role from a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateRoleFromGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3843,10 +3849,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateRoleFromGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3855,8 +3861,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -3868,7 +3874,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateServiceRoleFromAccount`.
     ///
     /// Disassociates the service role from your account. Without a service role, deployments will not work.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateServiceRoleFromAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3915,10 +3921,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateServiceRoleFromAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3930,7 +3936,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAssociatedRole`.
     ///
     /// Retrieves the role associated with a particular group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssociatedRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3975,10 +3981,10 @@ pub mod fluent_builders {
                 crate::input::GetAssociatedRoleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3987,8 +3993,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -4000,7 +4006,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBulkDeploymentStatus`.
     ///
     /// Returns the status of a bulk deployment.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBulkDeploymentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4045,10 +4051,10 @@ pub mod fluent_builders {
                 crate::input::GetBulkDeploymentStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4057,8 +4063,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the bulk deployment.
-        pub fn bulk_deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bulk_deployment_id(inp);
+        pub fn bulk_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bulk_deployment_id(input.into());
             self
         }
         /// The ID of the bulk deployment.
@@ -4073,7 +4079,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnectivityInfo`.
     ///
     /// Retrieves the connectivity information for a core.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnectivityInfo<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4118,10 +4124,10 @@ pub mod fluent_builders {
                 crate::input::GetConnectivityInfoInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4130,8 +4136,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The thing name.
-        pub fn thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(inp);
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// The thing name.
@@ -4143,7 +4149,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnectorDefinition`.
     ///
     /// Retrieves information about a connector definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnectorDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4188,10 +4194,10 @@ pub mod fluent_builders {
                 crate::input::GetConnectorDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4200,8 +4206,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the connector definition.
-        pub fn connector_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_definition_id(inp);
+        pub fn connector_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_definition_id(input.into());
             self
         }
         /// The ID of the connector definition.
@@ -4216,7 +4222,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnectorDefinitionVersion`.
     ///
     /// Retrieves information about a connector definition version, including the connectors that the version contains. Connectors are prebuilt modules that interact with local infrastructure, device protocols, AWS, and other cloud services.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnectorDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4261,10 +4267,10 @@ pub mod fluent_builders {
                 crate::input::GetConnectorDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4273,8 +4279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the connector definition.
-        pub fn connector_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_definition_id(inp);
+        pub fn connector_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_definition_id(input.into());
             self
         }
         /// The ID of the connector definition.
@@ -4288,9 +4294,9 @@ pub mod fluent_builders {
         /// The ID of the connector definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListConnectorDefinitionVersions'' requests. If the version is the last one that was associated with a connector definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
         pub fn connector_definition_version_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.connector_definition_version_id(inp);
+            self.inner = self.inner.connector_definition_version_id(input.into());
             self
         }
         /// The ID of the connector definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListConnectorDefinitionVersions'' requests. If the version is the last one that was associated with a connector definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -4302,8 +4308,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -4315,7 +4321,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCoreDefinition`.
     ///
     /// Retrieves information about a core definition version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCoreDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4360,10 +4366,10 @@ pub mod fluent_builders {
                 crate::input::GetCoreDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4372,8 +4378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the core definition.
-        pub fn core_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_id(inp);
+        pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_id(input.into());
             self
         }
         /// The ID of the core definition.
@@ -4388,7 +4394,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCoreDefinitionVersion`.
     ///
     /// Retrieves information about a core definition version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCoreDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4433,10 +4439,10 @@ pub mod fluent_builders {
                 crate::input::GetCoreDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4445,8 +4451,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the core definition.
-        pub fn core_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_id(inp);
+        pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_id(input.into());
             self
         }
         /// The ID of the core definition.
@@ -4458,8 +4464,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-        pub fn core_definition_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_version_id(inp);
+        pub fn core_definition_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_version_id(input.into());
             self
         }
         /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -4474,7 +4480,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeploymentStatus`.
     ///
     /// Returns the status of a deployment.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeploymentStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4519,10 +4525,10 @@ pub mod fluent_builders {
                 crate::input::GetDeploymentStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4531,8 +4537,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the deployment.
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// The ID of the deployment.
@@ -4544,8 +4550,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -4557,7 +4563,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeviceDefinition`.
     ///
     /// Retrieves information about a device definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeviceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4602,10 +4608,10 @@ pub mod fluent_builders {
                 crate::input::GetDeviceDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4614,8 +4620,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the device definition.
-        pub fn device_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_id(inp);
+        pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_definition_id(input.into());
             self
         }
         /// The ID of the device definition.
@@ -4630,7 +4636,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeviceDefinitionVersion`.
     ///
     /// Retrieves information about a device definition version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeviceDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4675,10 +4681,10 @@ pub mod fluent_builders {
                 crate::input::GetDeviceDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4687,8 +4693,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the device definition.
-        pub fn device_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_id(inp);
+        pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_definition_id(input.into());
             self
         }
         /// The ID of the device definition.
@@ -4700,8 +4706,11 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-        pub fn device_definition_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_version_id(inp);
+        pub fn device_definition_version_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.device_definition_version_id(input.into());
             self
         }
         /// The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -4713,8 +4722,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -4726,7 +4735,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFunctionDefinition`.
     ///
     /// Retrieves information about a Lambda function definition, including its creation time and latest version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunctionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4771,10 +4780,10 @@ pub mod fluent_builders {
                 crate::input::GetFunctionDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4783,8 +4792,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Lambda function definition.
-        pub fn function_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_definition_id(inp);
+        pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_definition_id(input.into());
             self
         }
         /// The ID of the Lambda function definition.
@@ -4799,7 +4808,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFunctionDefinitionVersion`.
     ///
     /// Retrieves information about a Lambda function definition version, including which Lambda functions are included in the version and their configurations.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFunctionDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4844,10 +4853,10 @@ pub mod fluent_builders {
                 crate::input::GetFunctionDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4856,8 +4865,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Lambda function definition.
-        pub fn function_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_definition_id(inp);
+        pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_definition_id(input.into());
             self
         }
         /// The ID of the Lambda function definition.
@@ -4871,9 +4880,9 @@ pub mod fluent_builders {
         /// The ID of the function definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version is the last one that was associated with a function definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
         pub fn function_definition_version_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.function_definition_version_id(inp);
+            self.inner = self.inner.function_definition_version_id(input.into());
             self
         }
         /// The ID of the function definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version is the last one that was associated with a function definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -4885,8 +4894,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -4898,7 +4907,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroup`.
     ///
     /// Retrieves information about a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4943,10 +4952,10 @@ pub mod fluent_builders {
                 crate::input::GetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4955,8 +4964,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -4968,7 +4977,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroupCertificateAuthority`.
     ///
     /// Retreives the CA associated with a group. Returns the public key of the CA.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroupCertificateAuthority<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5013,10 +5022,10 @@ pub mod fluent_builders {
                 crate::input::GetGroupCertificateAuthorityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5025,8 +5034,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the certificate authority.
-        pub fn certificate_authority_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_authority_id(inp);
+        pub fn certificate_authority_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_authority_id(input.into());
             self
         }
         /// The ID of the certificate authority.
@@ -5038,8 +5047,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -5051,7 +5060,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroupCertificateConfiguration`.
     ///
     /// Retrieves the current configuration for the CA used by the group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroupCertificateConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5096,10 +5105,10 @@ pub mod fluent_builders {
                 crate::input::GetGroupCertificateConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5108,8 +5117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -5121,7 +5130,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroupVersion`.
     ///
     /// Retrieves information about a group version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroupVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5166,10 +5175,10 @@ pub mod fluent_builders {
                 crate::input::GetGroupVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5178,8 +5187,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -5188,8 +5197,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
-        pub fn group_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_version_id(inp);
+        pub fn group_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_version_id(input.into());
             self
         }
         /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
@@ -5204,7 +5213,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLoggerDefinition`.
     ///
     /// Retrieves information about a logger definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLoggerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5249,10 +5258,10 @@ pub mod fluent_builders {
                 crate::input::GetLoggerDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5261,8 +5270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the logger definition.
-        pub fn logger_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_id(inp);
+        pub fn logger_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logger_definition_id(input.into());
             self
         }
         /// The ID of the logger definition.
@@ -5277,7 +5286,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLoggerDefinitionVersion`.
     ///
     /// Retrieves information about a logger definition version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLoggerDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5322,10 +5331,10 @@ pub mod fluent_builders {
                 crate::input::GetLoggerDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5334,8 +5343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the logger definition.
-        pub fn logger_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_id(inp);
+        pub fn logger_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logger_definition_id(input.into());
             self
         }
         /// The ID of the logger definition.
@@ -5347,8 +5356,11 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-        pub fn logger_definition_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_version_id(inp);
+        pub fn logger_definition_version_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.logger_definition_version_id(input.into());
             self
         }
         /// The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -5360,8 +5372,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -5373,7 +5385,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourceDefinition`.
     ///
     /// Retrieves information about a resource definition, including its creation time and latest version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5418,10 +5430,10 @@ pub mod fluent_builders {
                 crate::input::GetResourceDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5430,8 +5442,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the resource definition.
-        pub fn resource_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_definition_id(inp);
+        pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_definition_id(input.into());
             self
         }
         /// The ID of the resource definition.
@@ -5446,7 +5458,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourceDefinitionVersion`.
     ///
     /// Retrieves information about a resource definition version, including which resources are included in the version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5491,10 +5503,10 @@ pub mod fluent_builders {
                 crate::input::GetResourceDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5503,8 +5515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the resource definition.
-        pub fn resource_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_definition_id(inp);
+        pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_definition_id(input.into());
             self
         }
         /// The ID of the resource definition.
@@ -5518,9 +5530,9 @@ pub mod fluent_builders {
         /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
         pub fn resource_definition_version_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_definition_version_id(inp);
+            self.inner = self.inner.resource_definition_version_id(input.into());
             self
         }
         /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -5535,7 +5547,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServiceRoleForAccount`.
     ///
     /// Retrieves the service role that is attached to your account.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceRoleForAccount<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5580,10 +5592,10 @@ pub mod fluent_builders {
                 crate::input::GetServiceRoleForAccountInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5595,7 +5607,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSubscriptionDefinition`.
     ///
     /// Retrieves information about a subscription definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSubscriptionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5640,10 +5652,10 @@ pub mod fluent_builders {
                 crate::input::GetSubscriptionDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5652,8 +5664,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the subscription definition.
-        pub fn subscription_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_definition_id(inp);
+        pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_definition_id(input.into());
             self
         }
         /// The ID of the subscription definition.
@@ -5668,7 +5680,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSubscriptionDefinitionVersion`.
     ///
     /// Retrieves information about a subscription definition version.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSubscriptionDefinitionVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5713,10 +5725,10 @@ pub mod fluent_builders {
                 crate::input::GetSubscriptionDefinitionVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5725,8 +5737,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -5735,8 +5747,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the subscription definition.
-        pub fn subscription_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_definition_id(inp);
+        pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_definition_id(input.into());
             self
         }
         /// The ID of the subscription definition.
@@ -5750,9 +5762,9 @@ pub mod fluent_builders {
         /// The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
         pub fn subscription_definition_version_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.subscription_definition_version_id(inp);
+            self.inner = self.inner.subscription_definition_version_id(input.into());
             self
         }
         /// The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -5767,7 +5779,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetThingRuntimeConfiguration`.
     ///
     /// Get the runtime configuration of a thing.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetThingRuntimeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5812,10 +5824,10 @@ pub mod fluent_builders {
                 crate::input::GetThingRuntimeConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5824,8 +5836,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The thing name.
-        pub fn thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(inp);
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// The thing name.
@@ -5837,7 +5849,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBulkDeploymentDetailedReports`.
     ///
     /// Gets a paginated list of the deployments that have been started in a bulk deployment operation, and their current deployment status.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBulkDeploymentDetailedReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5882,10 +5894,10 @@ pub mod fluent_builders {
                 crate::input::ListBulkDeploymentDetailedReportsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5894,8 +5906,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the bulk deployment.
-        pub fn bulk_deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bulk_deployment_id(inp);
+        pub fn bulk_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bulk_deployment_id(input.into());
             self
         }
         /// The ID of the bulk deployment.
@@ -5907,8 +5919,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -5917,8 +5929,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -5930,7 +5942,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBulkDeployments`.
     ///
     /// Returns a list of bulk deployments.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBulkDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5975,10 +5987,10 @@ pub mod fluent_builders {
                 crate::input::ListBulkDeploymentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5987,8 +5999,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -5997,8 +6009,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6010,7 +6022,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConnectorDefinitions`.
     ///
     /// Retrieves a list of connector definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConnectorDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6055,10 +6067,10 @@ pub mod fluent_builders {
                 crate::input::ListConnectorDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6067,8 +6079,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6077,8 +6089,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6090,7 +6102,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConnectorDefinitionVersions`.
     ///
     /// Lists the versions of a connector definition, which are containers for connectors. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConnectorDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6135,10 +6147,10 @@ pub mod fluent_builders {
                 crate::input::ListConnectorDefinitionVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6147,8 +6159,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the connector definition.
-        pub fn connector_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_definition_id(inp);
+        pub fn connector_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_definition_id(input.into());
             self
         }
         /// The ID of the connector definition.
@@ -6160,8 +6172,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6170,8 +6182,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6183,7 +6195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCoreDefinitions`.
     ///
     /// Retrieves a list of core definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCoreDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6228,10 +6240,10 @@ pub mod fluent_builders {
                 crate::input::ListCoreDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6240,8 +6252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6250,8 +6262,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6263,7 +6275,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCoreDefinitionVersions`.
     ///
     /// Lists the versions of a core definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCoreDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6308,10 +6320,10 @@ pub mod fluent_builders {
                 crate::input::ListCoreDefinitionVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6320,8 +6332,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the core definition.
-        pub fn core_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_id(inp);
+        pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_id(input.into());
             self
         }
         /// The ID of the core definition.
@@ -6333,8 +6345,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6343,8 +6355,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6356,7 +6368,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeployments`.
     ///
     /// Returns a history of deployments for the group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6401,10 +6413,10 @@ pub mod fluent_builders {
                 crate::input::ListDeploymentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6413,8 +6425,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -6423,8 +6435,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6433,8 +6445,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6446,7 +6458,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeviceDefinitions`.
     ///
     /// Retrieves a list of device definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6491,10 +6503,10 @@ pub mod fluent_builders {
                 crate::input::ListDeviceDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6503,8 +6515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6513,8 +6525,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6526,7 +6538,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDeviceDefinitionVersions`.
     ///
     /// Lists the versions of a device definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6571,10 +6583,10 @@ pub mod fluent_builders {
                 crate::input::ListDeviceDefinitionVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6583,8 +6595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the device definition.
-        pub fn device_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_id(inp);
+        pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_definition_id(input.into());
             self
         }
         /// The ID of the device definition.
@@ -6596,8 +6608,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6606,8 +6618,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6619,7 +6631,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFunctionDefinitions`.
     ///
     /// Retrieves a list of Lambda function definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFunctionDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6664,10 +6676,10 @@ pub mod fluent_builders {
                 crate::input::ListFunctionDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6676,8 +6688,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6686,8 +6698,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6699,7 +6711,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListFunctionDefinitionVersions`.
     ///
     /// Lists the versions of a Lambda function definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFunctionDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6744,10 +6756,10 @@ pub mod fluent_builders {
                 crate::input::ListFunctionDefinitionVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6756,8 +6768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Lambda function definition.
-        pub fn function_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_definition_id(inp);
+        pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_definition_id(input.into());
             self
         }
         /// The ID of the Lambda function definition.
@@ -6769,8 +6781,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6779,8 +6791,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6792,7 +6804,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroupCertificateAuthorities`.
     ///
     /// Retrieves the current CAs for a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroupCertificateAuthorities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6837,10 +6849,10 @@ pub mod fluent_builders {
                 crate::input::ListGroupCertificateAuthoritiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6849,8 +6861,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -6862,7 +6874,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroups`.
     ///
     /// Retrieves a list of groups.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6907,10 +6919,10 @@ pub mod fluent_builders {
                 crate::input::ListGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6919,8 +6931,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6929,8 +6941,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6942,7 +6954,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroupVersions`.
     ///
     /// Lists the versions of a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroupVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6987,10 +6999,10 @@ pub mod fluent_builders {
                 crate::input::ListGroupVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6999,8 +7011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -7009,8 +7021,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7019,8 +7031,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7032,7 +7044,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLoggerDefinitions`.
     ///
     /// Retrieves a list of logger definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLoggerDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7077,10 +7089,10 @@ pub mod fluent_builders {
                 crate::input::ListLoggerDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7089,8 +7101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7099,8 +7111,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7112,7 +7124,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLoggerDefinitionVersions`.
     ///
     /// Lists the versions of a logger definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLoggerDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7157,10 +7169,10 @@ pub mod fluent_builders {
                 crate::input::ListLoggerDefinitionVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7169,8 +7181,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the logger definition.
-        pub fn logger_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_id(inp);
+        pub fn logger_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logger_definition_id(input.into());
             self
         }
         /// The ID of the logger definition.
@@ -7182,8 +7194,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7192,8 +7204,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7205,7 +7217,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResourceDefinitions`.
     ///
     /// Retrieves a list of resource definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7250,10 +7262,10 @@ pub mod fluent_builders {
                 crate::input::ListResourceDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7262,8 +7274,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7272,8 +7284,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7285,7 +7297,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResourceDefinitionVersions`.
     ///
     /// Lists the versions of a resource definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7330,10 +7342,10 @@ pub mod fluent_builders {
                 crate::input::ListResourceDefinitionVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7342,8 +7354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7352,8 +7364,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7362,8 +7374,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the resource definition.
-        pub fn resource_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_definition_id(inp);
+        pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_definition_id(input.into());
             self
         }
         /// The ID of the resource definition.
@@ -7378,7 +7390,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSubscriptionDefinitions`.
     ///
     /// Retrieves a list of subscription definitions.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSubscriptionDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7423,10 +7435,10 @@ pub mod fluent_builders {
                 crate::input::ListSubscriptionDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7435,8 +7447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7445,8 +7457,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7458,7 +7470,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSubscriptionDefinitionVersions`.
     ///
     /// Lists the versions of a subscription definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSubscriptionDefinitionVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7505,10 +7517,10 @@ pub mod fluent_builders {
                 crate::input::ListSubscriptionDefinitionVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7517,8 +7529,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7527,8 +7539,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7537,8 +7549,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the subscription definition.
-        pub fn subscription_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_definition_id(inp);
+        pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_definition_id(input.into());
             self
         }
         /// The ID of the subscription definition.
@@ -7553,7 +7565,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// Retrieves a list of resource tags for a resource arn.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7598,10 +7610,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7610,8 +7622,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the resource.
@@ -7623,7 +7635,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetDeployments`.
     ///
     /// Resets a group's deployments.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7668,10 +7680,10 @@ pub mod fluent_builders {
                 crate::input::ResetDeploymentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7680,8 +7692,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -7693,8 +7705,8 @@ pub mod fluent_builders {
             self
         }
         /// If true, performs a best-effort only core reset.
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
         /// If true, performs a best-effort only core reset.
@@ -7703,8 +7715,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -7716,7 +7728,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartBulkDeployment`.
     ///
     /// Deploys multiple groups in one operation. This action starts the bulk deployment of a specified set of group versions. Each group version deployment will be triggered with an adaptive rate that has a fixed upper limit. We recommend that you include an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment'' request. These requests are idempotent with respect to the token and the request parameters.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBulkDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7761,10 +7773,10 @@ pub mod fluent_builders {
                 crate::input::StartBulkDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7773,8 +7785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(inp);
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -7786,8 +7798,8 @@ pub mod fluent_builders {
             self
         }
         /// The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
             self
         }
         /// The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
@@ -7799,8 +7811,8 @@ pub mod fluent_builders {
             self
         }
         /// The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
-        pub fn input_file_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_file_uri(inp);
+        pub fn input_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_file_uri(input.into());
             self
         }
         /// The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
@@ -7821,7 +7833,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// Tag(s) to add to the new resource.
@@ -7838,7 +7850,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopBulkDeployment`.
     ///
     /// Stops the execution of a bulk deployment. This action returns a status of ''Stopping'' until the deployment is stopped. You cannot start a new bulk deployment while a previous deployment is in the ''Stopping'' state. This action doesn't rollback completed deployments or cancel pending deployments.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopBulkDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7883,10 +7895,10 @@ pub mod fluent_builders {
                 crate::input::StopBulkDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7895,8 +7907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the bulk deployment.
-        pub fn bulk_deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bulk_deployment_id(inp);
+        pub fn bulk_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bulk_deployment_id(input.into());
             self
         }
         /// The ID of the bulk deployment.
@@ -7911,7 +7923,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// Adds tags to a Greengrass resource. Valid resources are 'Group', 'ConnectorDefinition', 'CoreDefinition', 'DeviceDefinition', 'FunctionDefinition', 'LoggerDefinition', 'SubscriptionDefinition', 'ResourceDefinition', and 'BulkDeployment'.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7956,10 +7968,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7968,8 +7980,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the resource.
@@ -7987,7 +7999,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// The key-value pair for the resource tag.
@@ -8004,7 +8016,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// Remove resource tags from a Greengrass Resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8049,10 +8061,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8061,8 +8073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the resource.
@@ -8075,8 +8087,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// An array of tag keys to delete
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// An array of tag keys to delete
@@ -8091,7 +8103,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConnectivityInfo`.
     ///
     /// Updates the connectivity information for the core. Any devices that belong to the group which has this core will receive this information in order to find the location of the core and connect to it.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnectivityInfo<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8136,10 +8148,10 @@ pub mod fluent_builders {
                 crate::input::UpdateConnectivityInfoInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8152,8 +8164,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_connectivity_info`](Self::set_connectivity_info).
         ///
         /// A list of connectivity info.
-        pub fn connectivity_info(mut self, inp: impl Into<crate::model::ConnectivityInfo>) -> Self {
-            self.inner = self.inner.connectivity_info(inp);
+        pub fn connectivity_info(mut self, input: crate::model::ConnectivityInfo) -> Self {
+            self.inner = self.inner.connectivity_info(input);
             self
         }
         /// A list of connectivity info.
@@ -8165,8 +8177,8 @@ pub mod fluent_builders {
             self
         }
         /// The thing name.
-        pub fn thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(inp);
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// The thing name.
@@ -8178,7 +8190,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConnectorDefinition`.
     ///
     /// Updates a connector definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnectorDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8223,10 +8235,10 @@ pub mod fluent_builders {
                 crate::input::UpdateConnectorDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8235,8 +8247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the connector definition.
-        pub fn connector_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_definition_id(inp);
+        pub fn connector_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_definition_id(input.into());
             self
         }
         /// The ID of the connector definition.
@@ -8248,8 +8260,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8261,7 +8273,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCoreDefinition`.
     ///
     /// Updates a core definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCoreDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8306,10 +8318,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCoreDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8318,8 +8330,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the core definition.
-        pub fn core_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_id(inp);
+        pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_id(input.into());
             self
         }
         /// The ID of the core definition.
@@ -8331,8 +8343,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8344,7 +8356,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDeviceDefinition`.
     ///
     /// Updates a device definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeviceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8389,10 +8401,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDeviceDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8401,8 +8413,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the device definition.
-        pub fn device_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_id(inp);
+        pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_definition_id(input.into());
             self
         }
         /// The ID of the device definition.
@@ -8414,8 +8426,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8427,7 +8439,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFunctionDefinition`.
     ///
     /// Updates a Lambda function definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFunctionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8472,10 +8484,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFunctionDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8484,8 +8496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Lambda function definition.
-        pub fn function_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_definition_id(inp);
+        pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_definition_id(input.into());
             self
         }
         /// The ID of the Lambda function definition.
@@ -8497,8 +8509,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8510,7 +8522,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGroup`.
     ///
     /// Updates a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8555,10 +8567,10 @@ pub mod fluent_builders {
                 crate::input::UpdateGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8567,8 +8579,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -8577,8 +8589,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8590,7 +8602,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGroupCertificateConfiguration`.
     ///
     /// Updates the Certificate expiry time for a group.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGroupCertificateConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8637,10 +8649,10 @@ pub mod fluent_builders {
                 crate::input::UpdateGroupCertificateConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8651,9 +8663,9 @@ pub mod fluent_builders {
         /// The amount of time remaining before the certificate expires, in milliseconds.
         pub fn certificate_expiry_in_milliseconds(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.certificate_expiry_in_milliseconds(inp);
+            self.inner = self.inner.certificate_expiry_in_milliseconds(input.into());
             self
         }
         /// The amount of time remaining before the certificate expires, in milliseconds.
@@ -8665,8 +8677,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(inp);
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -8678,7 +8690,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLoggerDefinition`.
     ///
     /// Updates a logger definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLoggerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8723,10 +8735,10 @@ pub mod fluent_builders {
                 crate::input::UpdateLoggerDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8735,8 +8747,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the logger definition.
-        pub fn logger_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_id(inp);
+        pub fn logger_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logger_definition_id(input.into());
             self
         }
         /// The ID of the logger definition.
@@ -8748,8 +8760,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8761,7 +8773,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResourceDefinition`.
     ///
     /// Updates a resource definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8806,10 +8818,10 @@ pub mod fluent_builders {
                 crate::input::UpdateResourceDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8818,8 +8830,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8828,8 +8840,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the resource definition.
-        pub fn resource_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_definition_id(inp);
+        pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_definition_id(input.into());
             self
         }
         /// The ID of the resource definition.
@@ -8844,7 +8856,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSubscriptionDefinition`.
     ///
     /// Updates a subscription definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSubscriptionDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8889,10 +8901,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSubscriptionDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8901,8 +8913,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the definition.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8911,8 +8923,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the subscription definition.
-        pub fn subscription_definition_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_definition_id(inp);
+        pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_definition_id(input.into());
             self
         }
         /// The ID of the subscription definition.
@@ -8927,7 +8939,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateThingRuntimeConfiguration`.
     ///
     /// Updates the runtime configuration of a thing.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateThingRuntimeConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8972,10 +8984,10 @@ pub mod fluent_builders {
                 crate::input::UpdateThingRuntimeConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8986,9 +8998,9 @@ pub mod fluent_builders {
         /// Configuration for telemetry service.
         pub fn telemetry_configuration(
             mut self,
-            inp: crate::model::TelemetryConfigurationUpdate,
+            input: crate::model::TelemetryConfigurationUpdate,
         ) -> Self {
-            self.inner = self.inner.telemetry_configuration(inp);
+            self.inner = self.inner.telemetry_configuration(input);
             self
         }
         /// Configuration for telemetry service.
@@ -9000,8 +9012,8 @@ pub mod fluent_builders {
             self
         }
         /// The thing name.
-        pub fn thing_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(inp);
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// The thing name.
@@ -9011,6 +9023,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

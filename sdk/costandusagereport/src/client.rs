@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Cost and Usage Report Service
@@ -94,6 +94,7 @@ where
     ///
     /// See [`DescribeReportDefinitions`](crate::client::fluent_builders::DescribeReportDefinitions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReportDefinitions::into_paginator).
     pub fn describe_report_definitions(
         &self,
     ) -> fluent_builders::DescribeReportDefinitions<C, M, R> {
@@ -125,7 +126,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReportDefinition`.
     ///
     /// <p>Deletes the specified report.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -170,10 +171,10 @@ pub mod fluent_builders {
                 crate::input::DeleteReportDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -182,8 +183,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
-        pub fn report_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_name(inp);
+        pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_name(input.into());
             self
         }
         /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
@@ -195,7 +196,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeReportDefinitions`.
     ///
     /// <p>Lists the AWS Cost and Usage reports available to this account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReportDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -240,10 +241,10 @@ pub mod fluent_builders {
                 crate::input::DescribeReportDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -251,9 +252,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeReportDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeReportDefinitionsPaginator<C, M, R> {
+            crate::paginator::DescribeReportDefinitionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results that AWS returns for the operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that AWS returns for the operation.</p>
@@ -262,8 +271,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A generic string.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A generic string.</p>
@@ -275,7 +284,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyReportDefinition`.
     ///
     /// <p>Allows you to programatically update your report preferences.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -320,10 +329,10 @@ pub mod fluent_builders {
                 crate::input::ModifyReportDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -331,30 +340,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the report that you want to create. The name must be unique,
-        /// is case sensitive, and can't include spaces. </p>
-        pub fn report_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_name(inp);
+        /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
+        pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_name(input.into());
             self
         }
-        /// <p>The name of the report that you want to create. The name must be unique,
-        /// is case sensitive, and can't include spaces. </p>
+        /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
         pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_report_name(input);
             self
         }
-        /// <p>The definition of AWS Cost and Usage Report. You can specify the report name,
-        /// time unit, report format, compression format, S3 bucket, additional artifacts, and schema
-        /// elements in the definition.
-        /// </p>
-        pub fn report_definition(mut self, inp: crate::model::ReportDefinition) -> Self {
-            self.inner = self.inner.report_definition(inp);
+        /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
+        pub fn report_definition(mut self, input: crate::model::ReportDefinition) -> Self {
+            self.inner = self.inner.report_definition(input);
             self
         }
-        /// <p>The definition of AWS Cost and Usage Report. You can specify the report name,
-        /// time unit, report format, compression format, S3 bucket, additional artifacts, and schema
-        /// elements in the definition.
-        /// </p>
+        /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
         pub fn set_report_definition(
             mut self,
             input: std::option::Option<crate::model::ReportDefinition>,
@@ -366,7 +367,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutReportDefinition`.
     ///
     /// <p>Creates a new report using the description that you provide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -411,10 +412,10 @@ pub mod fluent_builders {
                 crate::input::PutReportDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -422,14 +423,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed
-        /// metadata and data file information. </p>
-        pub fn report_definition(mut self, inp: crate::model::ReportDefinition) -> Self {
-            self.inner = self.inner.report_definition(inp);
+        /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
+        pub fn report_definition(mut self, input: crate::model::ReportDefinition) -> Self {
+            self.inner = self.inner.report_definition(input);
             self
         }
-        /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed
-        /// metadata and data file information. </p>
+        /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
         pub fn set_report_definition(
             mut self,
             input: std::option::Option<crate::model::ReportDefinition>,
@@ -439,6 +438,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

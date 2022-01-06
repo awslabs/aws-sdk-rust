@@ -93,7 +93,7 @@ async fn test_query_strings_are_correctly_encoded() -> Result<(), aws_sdk_s3::Er
         let char = char::from(byte);
         let res = client
             .list_objects_v2()
-            .bucket("telephone-game")
+            .bucket("a-bucket-to-test-with")
             .prefix(char)
             .send()
             .await;

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Route53 Recovery Control Config
@@ -171,6 +171,7 @@ where
     ///
     /// See [`ListAssociatedRoute53HealthChecks`](crate::client::fluent_builders::ListAssociatedRoute53HealthChecks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedRoute53HealthChecks::into_paginator).
     pub fn list_associated_route53_health_checks(
         &self,
     ) -> fluent_builders::ListAssociatedRoute53HealthChecks<C, M, R> {
@@ -180,6 +181,7 @@ where
     ///
     /// See [`ListClusters`](crate::client::fluent_builders::ListClusters) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClusters::into_paginator).
     pub fn list_clusters(&self) -> fluent_builders::ListClusters<C, M, R> {
         fluent_builders::ListClusters::new(self.handle.clone())
     }
@@ -187,6 +189,7 @@ where
     ///
     /// See [`ListControlPanels`](crate::client::fluent_builders::ListControlPanels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListControlPanels::into_paginator).
     pub fn list_control_panels(&self) -> fluent_builders::ListControlPanels<C, M, R> {
         fluent_builders::ListControlPanels::new(self.handle.clone())
     }
@@ -194,6 +197,7 @@ where
     ///
     /// See [`ListRoutingControls`](crate::client::fluent_builders::ListRoutingControls) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRoutingControls::into_paginator).
     pub fn list_routing_controls(&self) -> fluent_builders::ListRoutingControls<C, M, R> {
         fluent_builders::ListRoutingControls::new(self.handle.clone())
     }
@@ -201,8 +205,30 @@ where
     ///
     /// See [`ListSafetyRules`](crate::client::fluent_builders::ListSafetyRules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSafetyRules::into_paginator).
     pub fn list_safety_rules(&self) -> fluent_builders::ListSafetyRules<C, M, R> {
         fluent_builders::ListSafetyRules::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    ///
+    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
+    /// operation and its arguments.
+    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
+        fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `TagResource` operation.
+    ///
+    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
+    /// operation and its arguments.
+    pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
+        fluent_builders::TagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UntagResource` operation.
+    ///
+    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
+    /// operation and its arguments.
+    pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
+        fluent_builders::UntagResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `UpdateControlPanel` operation.
     ///
@@ -236,8 +262,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateCluster`.
     ///
-    /// <p>Create a new cluster. A cluster is a set of redundant Regional endpoints against which you can run API calls to update or get the state of one or more routing controls. Each cluster has a name, status, Amazon Resource Name (ARN), and an array of the five cluster endpoints (one for each supported Amazon Web Services Region) that you can use with API calls to the Amazon Route 53 Application Recovery Controller cluster data plane.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Create a new cluster. A cluster is a set of redundant Regional endpoints against which you can run API calls to update or get the state of one or more routing controls. Each cluster has a name, status, Amazon Resource Name (ARN), and an array of the five cluster endpoints (one for each supported Amazon Web Services Region) that you can use with API calls to the cluster data plane.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -282,10 +308,10 @@ pub mod fluent_builders {
                 crate::input::CreateClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -293,19 +319,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique client idempotency token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique client idempotency token.</p>
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The name of the cluster.</p>
-        pub fn cluster_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(inp);
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster.</p>
@@ -313,11 +339,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_name(input);
             self
         }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the cluster.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The tags associated with the cluster.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateControlPanel`.
     ///
-    /// <p>Creates a new control panel. A control panel represents a group of routing controls that can be changed together in a single transaction. You can use a control panel to centrally view the operational status of applications across your organization, and trigger multi-app failovers in a single transaction, for example, to fail over an Availability Zone or AWS Region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new control panel. A control panel represents a group of routing controls that can be changed together in a single transaction. You can use a control panel to centrally view the operational status of applications across your organization, and trigger multi-app failovers in a single transaction, for example, to fail over an Availability Zone or Amazon Web Services Region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateControlPanel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -362,10 +411,10 @@ pub mod fluent_builders {
                 crate::input::CreateControlPanelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -373,19 +422,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique client idempotency token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique client idempotency token.</p>
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
-        pub fn cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(inp);
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
@@ -394,8 +443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the control panel.</p>
-        pub fn control_panel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_name(inp);
+        pub fn control_panel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_name(input.into());
             self
         }
         /// <p>The name of the control panel.</p>
@@ -406,11 +455,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_panel_name(input);
             self
         }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the control panel.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The tags associated with the control panel.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateRoutingControl`.
     ///
-    /// <p>Creates a new routing control.</p> <p>A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control traffic routing.</p> <p>To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new routing control.</p>
+    /// <p>A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control traffic routing.</p>
+    /// <p>To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoutingControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -455,10 +529,10 @@ pub mod fluent_builders {
                 crate::input::CreateRoutingControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -466,19 +540,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique client idempotency token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique client idempotency token.</p>
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
-        pub fn cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(inp);
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
@@ -487,8 +561,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
-        pub fn control_panel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(inp);
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
@@ -500,8 +574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the routing control.</p>
-        pub fn routing_control_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_name(inp);
+        pub fn routing_control_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_name(input.into());
             self
         }
         /// <p>The name of the routing control.</p>
@@ -515,8 +589,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSafetyRule`.
     ///
-    /// <p>Creates a safety rule in a control panel. Safety rules let you add safeguards around enabling and disabling routing controls, to help prevent unexpected outcomes.</p> <p>There are two types of safety rules: assertion rules and gating rules.</p> <p>Assertion rule: An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p> <p>Gating rule: A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a safety rule in a control panel. Safety rules let you add safeguards around changing routing control states, and for enabling and disabling routing controls, to help prevent unexpected outcomes.</p>
+    /// <p>There are two types of safety rules: assertion rules and gating rules.</p>
+    /// <p>Assertion rule: An assertion rule enforces that, when you change a routing control state, that a certain criteria is met. For example, the criteria might be that at least one routing control state is On after the transation so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p>
+    /// <p>Gating rule: A gating rule lets you configure a gating routing control as an overall "on/off" switch for a group of routing controls. Or, you can configure more complex gating scenarios, for example by configuring multiple gating routing controls.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.safety-rules.html">Safety rules</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSafetyRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -561,10 +639,10 @@ pub mod fluent_builders {
                 crate::input::CreateSafetyRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -572,12 +650,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A new assertion rule for a control panel.</p>
-        pub fn assertion_rule(mut self, inp: crate::model::NewAssertionRule) -> Self {
-            self.inner = self.inner.assertion_rule(inp);
+        /// <p>The assertion rule requested.</p>
+        pub fn assertion_rule(mut self, input: crate::model::NewAssertionRule) -> Self {
+            self.inner = self.inner.assertion_rule(input);
             self
         }
-        /// <p>A new assertion rule for a control panel.</p>
+        /// <p>The assertion rule requested.</p>
         pub fn set_assertion_rule(
             mut self,
             input: std::option::Option<crate::model::NewAssertionRule>,
@@ -585,22 +663,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assertion_rule(input);
             self
         }
-        /// <p>Unique client idempotency token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique client idempotency token.</p>
+        /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>A new gating rule for a control panel.</p>
-        pub fn gating_rule(mut self, inp: crate::model::NewGatingRule) -> Self {
-            self.inner = self.inner.gating_rule(inp);
+        /// <p>The gating rule requested.</p>
+        pub fn gating_rule(mut self, input: crate::model::NewGatingRule) -> Self {
+            self.inner = self.inner.gating_rule(input);
             self
         }
-        /// <p>A new gating rule for a control panel.</p>
+        /// <p>The gating rule requested.</p>
         pub fn set_gating_rule(
             mut self,
             input: std::option::Option<crate::model::NewGatingRule>,
@@ -608,11 +686,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gating_rule(input);
             self
         }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the safety rule.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The tags associated with the safety rule.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteCluster`.
     ///
     /// <p>Delete a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -657,10 +758,10 @@ pub mod fluent_builders {
                 crate::input::DeleteClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -669,8 +770,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster that you're deleting.</p>
-        pub fn cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(inp);
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster that you're deleting.</p>
@@ -682,7 +783,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteControlPanel`.
     ///
     /// <p>Deletes a control panel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteControlPanel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -727,10 +828,10 @@ pub mod fluent_builders {
                 crate::input::DeleteControlPanelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -738,12 +839,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're deleting.</p>
-        pub fn control_panel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're deleting.</p>
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -755,7 +856,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRoutingControl`.
     ///
     /// <p>Deletes a routing control.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRoutingControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -800,10 +901,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRoutingControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -812,8 +913,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
-        pub fn routing_control_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(inp);
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
@@ -828,7 +929,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSafetyRule`.
     ///
     /// <p>Deletes a safety rule.</p>/&gt;
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSafetyRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -873,10 +974,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSafetyRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -884,12 +985,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The request body that you include when you update a safety rule.</p>
-        pub fn safety_rule_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.safety_rule_arn(inp);
+        /// <p>The ARN of the safety rule.</p>
+        pub fn safety_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.safety_rule_arn(input.into());
             self
         }
-        /// <p>The request body that you include when you update a safety rule.</p>
+        /// <p>The ARN of the safety rule.</p>
         pub fn set_safety_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -901,7 +1002,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCluster`.
     ///
     /// <p>Display the details about a cluster. The response includes the cluster name, endpoints, status, and Amazon Resource Name (ARN).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -946,10 +1047,10 @@ pub mod fluent_builders {
                 crate::input::DescribeClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -957,12 +1058,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the cluster that you're getting details for.</p>
-        pub fn cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the cluster that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_arn(input);
             self
@@ -971,7 +1072,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeControlPanel`.
     ///
     /// <p>Displays details about a control panel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeControlPanel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1016,10 +1117,10 @@ pub mod fluent_builders {
                 crate::input::DescribeControlPanelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1027,12 +1128,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
-        pub fn control_panel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1043,8 +1144,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRoutingControl`.
     ///
-    /// <p>Displays details about a routing control. A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control routing.</p> <p>To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Displays details about a routing control. A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control routing.</p>
+    /// <p>To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRoutingControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1089,10 +1191,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRoutingControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1100,12 +1202,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
-        pub fn routing_control_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
         pub fn set_routing_control_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1116,8 +1218,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSafetyRule`.
     ///
-    /// <p>Describes the safety rules (that is, the assertion rules and gating rules) for the routing controls in a control panel.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about a safety rule.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSafetyRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1162,10 +1264,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSafetyRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1173,12 +1275,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The request body that you include when you update a safety rule.</p>
-        pub fn safety_rule_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.safety_rule_arn(inp);
+        /// <p>The ARN of the safety rule.</p>
+        pub fn safety_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.safety_rule_arn(input.into());
             self
         }
-        /// <p>The request body that you include when you update a safety rule.</p>
+        /// <p>The ARN of the safety rule.</p>
         pub fn set_safety_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1190,7 +1292,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssociatedRoute53HealthChecks`.
     ///
     /// <p>Returns an array of all Amazon Route 53 health checks associated with a specific routing control.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociatedRoute53HealthChecks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1235,10 +1337,10 @@ pub mod fluent_builders {
                 crate::input::ListAssociatedRoute53HealthChecksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1246,9 +1348,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssociatedRoute53HealthChecksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAssociatedRoute53HealthChecksPaginator<C, M, R> {
+            crate::paginator::ListAssociatedRoute53HealthChecksPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
@@ -1257,8 +1370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1266,12 +1379,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
-        pub fn routing_control_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
         pub fn set_routing_control_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1283,7 +1396,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListClusters`.
     ///
     /// <p>Returns an array of all the clusters in an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1328,10 +1441,10 @@ pub mod fluent_builders {
                 crate::input::ListClustersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1339,9 +1452,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListClustersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListClustersPaginator<C, M, R> {
+            crate::paginator::ListClustersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
@@ -1350,8 +1469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1362,8 +1481,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListControlPanels`.
     ///
-    /// <p>Returns an array of control panels for a cluster.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns an array of control panels in an account or in a cluster.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListControlPanels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1408,10 +1527,10 @@ pub mod fluent_builders {
                 crate::input::ListControlPanelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1419,9 +1538,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListControlPanelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListControlPanelsPaginator<C, M, R> {
+            crate::paginator::ListControlPanelsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of a cluster.</p>
-        pub fn cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(inp);
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a cluster.</p>
@@ -1430,8 +1555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
@@ -1440,8 +1565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1453,7 +1578,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRoutingControls`.
     ///
     /// <p>Returns an array of routing controls for a control panel. A routing control is an Amazon Route 53 Application Recovery Controller construct that has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control routing.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRoutingControls<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1498,10 +1623,10 @@ pub mod fluent_builders {
                 crate::input::ListRoutingControlsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1509,12 +1634,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting routing control details for.</p>
-        pub fn control_panel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRoutingControlsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRoutingControlsPaginator<C, M, R> {
+            crate::paginator::ListRoutingControlsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting routing control details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1523,8 +1654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
@@ -1533,8 +1664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1546,7 +1677,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSafetyRules`.
     ///
     /// <p>List the safety rules (the assertion rules and gating rules) that you've defined for the routing controls in a control panel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSafetyRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1591,10 +1722,10 @@ pub mod fluent_builders {
                 crate::input::ListSafetyRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1602,12 +1733,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
-        pub fn control_panel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSafetyRulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSafetyRulesPaginator<C, M, R> {
+            crate::paginator::ListSafetyRulesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1616,8 +1753,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
@@ -1626,8 +1763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1636,10 +1773,260 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListTagsForResource`.
+    ///
+    /// <p>Lists the tags for a resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTagsForResource<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_tags_for_resource_input::Builder,
+    }
+    impl<C, M, R> ListTagsForResource<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListTagsForResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTagsForResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListTagsForResourceInputOperationOutputAlias,
+                crate::output::ListTagsForResourceOutput,
+                crate::error::ListTagsForResourceError,
+                crate::input::ListTagsForResourceInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `TagResource`.
+    ///
+    /// <p>Adds a tag to a resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct TagResource<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::tag_resource_input::Builder,
+    }
+    impl<C, M, R> TagResource<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `TagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::TagResourceInputOperationOutputAlias,
+                crate::output::TagResourceOutput,
+                crate::error::TagResourceError,
+                crate::input::TagResourceInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The tags associated with the resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UntagResource`.
+    ///
+    /// <p>Removes a tag from a resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UntagResource<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::untag_resource_input::Builder,
+    }
+    impl<C, M, R> UntagResource<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UntagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UntagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UntagResourceInputOperationOutputAlias,
+                crate::output::UntagResourceOutput,
+                crate::error::UntagResourceError,
+                crate::input::UntagResourceInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `TagKeys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>Keys for the tags to be removed.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
+            self
+        }
+        /// <p>Keys for the tags to be removed.</p>
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateControlPanel`.
     ///
     /// <p>Updates a control panel. The only update you can make to a control panel is to change the name of the control panel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateControlPanel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1684,10 +2071,10 @@ pub mod fluent_builders {
                 crate::input::UpdateControlPanelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1696,8 +2083,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-        pub fn control_panel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(inp);
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
@@ -1709,8 +2096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the control panel.</p>
-        pub fn control_panel_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_name(inp);
+        pub fn control_panel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_name(input.into());
             self
         }
         /// <p>The name of the control panel.</p>
@@ -1725,7 +2112,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRoutingControl`.
     ///
     /// <p>Updates a routing control. You can only update the name of the routing control. To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1770,10 +2157,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRoutingControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1782,8 +2169,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-        pub fn routing_control_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(inp);
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
@@ -1795,8 +2182,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the routing control.</p>
-        pub fn routing_control_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_name(inp);
+        pub fn routing_control_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_name(input.into());
             self
         }
         /// <p>The name of the routing control.</p>
@@ -1810,8 +2197,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSafetyRule`.
     ///
-    /// <p>Update a safety rule (an assertion rule or gating rule) for the routing controls in a control panel. You can only update the name and the waiting period for a safety rule. To make other updates, delete the safety rule and create a new safety rule.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Update a safety rule (an assertion rule or gating rule). You can only update the name and the waiting period for a safety rule. To make other updates, delete the safety rule and create a new one.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSafetyRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1856,10 +2243,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSafetyRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1867,12 +2254,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
-        pub fn assertion_rule_update(mut self, inp: crate::model::AssertionRuleUpdate) -> Self {
-            self.inner = self.inner.assertion_rule_update(inp);
+        /// <p>The assertion rule to update.</p>
+        pub fn assertion_rule_update(mut self, input: crate::model::AssertionRuleUpdate) -> Self {
+            self.inner = self.inner.assertion_rule_update(input);
             self
         }
-        /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
+        /// <p>The assertion rule to update.</p>
         pub fn set_assertion_rule_update(
             mut self,
             input: std::option::Option<crate::model::AssertionRuleUpdate>,
@@ -1880,12 +2267,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assertion_rule_update(input);
             self
         }
-        /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
-        pub fn gating_rule_update(mut self, inp: crate::model::GatingRuleUpdate) -> Self {
-            self.inner = self.inner.gating_rule_update(inp);
+        /// <p>The gating rule to update.</p>
+        pub fn gating_rule_update(mut self, input: crate::model::GatingRuleUpdate) -> Self {
+            self.inner = self.inner.gating_rule_update(input);
             self
         }
-        /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
+        /// <p>The gating rule to update.</p>
         pub fn set_gating_rule_update(
             mut self,
             input: std::option::Option<crate::model::GatingRuleUpdate>,
@@ -1895,6 +2282,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

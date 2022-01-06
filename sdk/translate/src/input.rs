@@ -13,14 +13,12 @@ pub mod create_parallel_data_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name
-        /// that is unique in the account and region.</p>
+        /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name
-        /// that is unique in the account and region.</p>
+        /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -61,14 +59,12 @@ pub mod create_parallel_data_input {
             self.encryption_key = input;
             self
         }
-        /// <p>A unique identifier for the request. This token is automatically generated when you use
-        /// Amazon Translate through an AWS SDK.</p>
+        /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. This token is automatically generated when you use
-        /// Amazon Translate through an AWS SDK.</p>
+        /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -93,7 +89,7 @@ pub mod create_parallel_data_input {
 #[doc(hidden)]
 pub type CreateParallelDataInputOperationOutputAlias = crate::operation::CreateParallelData;
 #[doc(hidden)]
-pub type CreateParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`CreateParallelData`](crate::operation::CreateParallelData)>
     #[allow(clippy::let_and_return)]
@@ -104,7 +100,7 @@ impl CreateParallelDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateParallelData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -192,7 +188,7 @@ impl CreateParallelDataInput {
             "CreateParallelData",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -248,7 +244,7 @@ pub mod delete_parallel_data_input {
 #[doc(hidden)]
 pub type DeleteParallelDataInputOperationOutputAlias = crate::operation::DeleteParallelData;
 #[doc(hidden)]
-pub type DeleteParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`DeleteParallelData`](crate::operation::DeleteParallelData)>
     #[allow(clippy::let_and_return)]
@@ -259,7 +255,7 @@ impl DeleteParallelDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteParallelData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -344,7 +340,7 @@ impl DeleteParallelDataInput {
             "DeleteParallelData",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -400,7 +396,7 @@ pub mod delete_terminology_input {
 #[doc(hidden)]
 pub type DeleteTerminologyInputOperationOutputAlias = crate::operation::DeleteTerminology;
 #[doc(hidden)]
-pub type DeleteTerminologyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTerminologyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTerminology`](crate::operation::DeleteTerminology)>
     #[allow(clippy::let_and_return)]
@@ -411,7 +407,7 @@ impl DeleteTerminologyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTerminology,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -496,7 +492,7 @@ impl DeleteTerminologyInput {
             "DeleteTerminology",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -528,14 +524,12 @@ pub mod describe_text_translation_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Translate generated for the job. The <a>StartTextTranslationJob</a> operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Translate generated for the job. The <a>StartTextTranslationJob</a> operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -557,7 +551,7 @@ pub mod describe_text_translation_job_input {
 pub type DescribeTextTranslationJobInputOperationOutputAlias =
     crate::operation::DescribeTextTranslationJob;
 #[doc(hidden)]
-pub type DescribeTextTranslationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTextTranslationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTextTranslationJob`](crate::operation::DescribeTextTranslationJob)>
     #[allow(clippy::let_and_return)]
@@ -568,7 +562,7 @@ impl DescribeTextTranslationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTextTranslationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -654,7 +648,7 @@ impl DescribeTextTranslationJobInput {
             "DescribeTextTranslationJob",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -710,7 +704,7 @@ pub mod get_parallel_data_input {
 #[doc(hidden)]
 pub type GetParallelDataInputOperationOutputAlias = crate::operation::GetParallelData;
 #[doc(hidden)]
-pub type GetParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`GetParallelData`](crate::operation::GetParallelData)>
     #[allow(clippy::let_and_return)]
@@ -721,7 +715,7 @@ impl GetParallelDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetParallelData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -806,7 +800,7 @@ impl GetParallelDataInput {
             "GetParallelData",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -851,11 +845,8 @@ pub mod get_terminology_input {
             self
         }
         /// <p>The data format of the custom terminology being retrieved.</p>
-        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same
-        /// format as the file that was imported to create the terminology. </p>
-        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource,
-        /// you must specify the same format as that of the input file that was imported to create it.
-        /// Otherwise, Amazon Translate throws an error.</p>
+        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>
+        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
         pub fn terminology_data_format(
             mut self,
             input: crate::model::TerminologyDataFormat,
@@ -864,11 +855,8 @@ pub mod get_terminology_input {
             self
         }
         /// <p>The data format of the custom terminology being retrieved.</p>
-        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same
-        /// format as the file that was imported to create the terminology. </p>
-        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource,
-        /// you must specify the same format as that of the input file that was imported to create it.
-        /// Otherwise, Amazon Translate throws an error.</p>
+        /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>
+        /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
         pub fn set_terminology_data_format(
             mut self,
             input: std::option::Option<crate::model::TerminologyDataFormat>,
@@ -893,7 +881,7 @@ pub mod get_terminology_input {
 #[doc(hidden)]
 pub type GetTerminologyInputOperationOutputAlias = crate::operation::GetTerminology;
 #[doc(hidden)]
-pub type GetTerminologyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTerminologyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`GetTerminology`](crate::operation::GetTerminology)>
     #[allow(clippy::let_and_return)]
@@ -904,7 +892,7 @@ impl GetTerminologyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTerminology,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -989,7 +977,7 @@ impl GetTerminologyInput {
             "GetTerminology",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1035,16 +1023,12 @@ pub mod import_terminology_input {
             self.name = input;
             self
         }
-        /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE
-        /// merge strategy is supported. In this case, the imported terminology will overwrite an existing
-        /// terminology of the same name.</p>
+        /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
         pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
             self.merge_strategy = Some(input);
             self
         }
-        /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE
-        /// merge strategy is supported. In this case, the imported terminology will overwrite an existing
-        /// terminology of the same name.</p>
+        /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
         pub fn set_merge_strategy(
             mut self,
             input: std::option::Option<crate::model::MergeStrategy>,
@@ -1108,7 +1092,7 @@ pub mod import_terminology_input {
 #[doc(hidden)]
 pub type ImportTerminologyInputOperationOutputAlias = crate::operation::ImportTerminology;
 #[doc(hidden)]
-pub type ImportTerminologyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportTerminologyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportTerminologyInput {
     /// Consumes the builder and constructs an Operation<[`ImportTerminology`](crate::operation::ImportTerminology)>
     #[allow(clippy::let_and_return)]
@@ -1119,7 +1103,7 @@ impl ImportTerminologyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportTerminology,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1204,7 +1188,7 @@ impl ImportTerminologyInput {
             "ImportTerminology",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1274,7 +1258,7 @@ pub mod list_parallel_data_input {
 #[doc(hidden)]
 pub type ListParallelDataInputOperationOutputAlias = crate::operation::ListParallelData;
 #[doc(hidden)]
-pub type ListParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`ListParallelData`](crate::operation::ListParallelData)>
     #[allow(clippy::let_and_return)]
@@ -1285,7 +1269,7 @@ impl ListParallelDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListParallelData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1370,7 +1354,7 @@ impl ListParallelDataInput {
             "ListParallelData",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1403,14 +1387,12 @@ pub mod list_terminologies_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to
-        /// fetch the next group of custom terminologies. </p>
+        /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to
-        /// fetch the next group of custom terminologies. </p>
+        /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1442,7 +1424,7 @@ pub mod list_terminologies_input {
 #[doc(hidden)]
 pub type ListTerminologiesInputOperationOutputAlias = crate::operation::ListTerminologies;
 #[doc(hidden)]
-pub type ListTerminologiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTerminologiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTerminologiesInput {
     /// Consumes the builder and constructs an Operation<[`ListTerminologies`](crate::operation::ListTerminologies)>
     #[allow(clippy::let_and_return)]
@@ -1453,7 +1435,7 @@ impl ListTerminologiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTerminologies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1538,7 +1520,7 @@ impl ListTerminologiesInput {
             "ListTerminologies",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1572,14 +1554,12 @@ pub mod list_text_translation_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job
-        /// name, job status, and submission time. You can only set one filter at a time.</p>
+        /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::TextTranslationJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job
-        /// name, job status, and submission time. You can only set one filter at a time.</p>
+        /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::TextTranslationJobFilter>,
@@ -1626,7 +1606,7 @@ pub mod list_text_translation_jobs_input {
 pub type ListTextTranslationJobsInputOperationOutputAlias =
     crate::operation::ListTextTranslationJobs;
 #[doc(hidden)]
-pub type ListTextTranslationJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTextTranslationJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTextTranslationJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListTextTranslationJobs`](crate::operation::ListTextTranslationJobs)>
     #[allow(clippy::let_and_return)]
@@ -1637,7 +1617,7 @@ impl ListTextTranslationJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTextTranslationJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1724,7 +1704,7 @@ impl ListTextTranslationJobsInput {
             "ListTextTranslationJobs",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1775,14 +1755,12 @@ pub mod start_text_translation_job_input {
             self.job_name = input;
             self
         }
-        /// <p>Specifies the format and S3 location of the input documents for the translation
-        /// job.</p>
+        /// <p>Specifies the format and S3 location of the input documents for the translation job.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.input_data_config = Some(input);
             self
         }
-        /// <p>Specifies the format and S3 location of the input documents for the translation
-        /// job.</p>
+        /// <p>Specifies the format and S3 location of the input documents for the translation job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -1790,14 +1768,12 @@ pub mod start_text_translation_job_input {
             self.input_data_config = input;
             self
         }
-        /// <p>Specifies the S3 folder to which your job output will be saved.
-        /// </p>
+        /// <p>Specifies the S3 folder to which your job output will be saved. </p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>Specifies the S3 folder to which your job output will be saved.
-        /// </p>
+        /// <p>Specifies the S3 folder to which your job output will be saved. </p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -1805,14 +1781,12 @@ pub mod start_text_translation_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-        /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-        /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1820,16 +1794,14 @@ pub mod start_text_translation_job_input {
             self.data_access_role_arn = input;
             self
         }
-        /// <p>The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
-        /// <p>Amazon Translate does not automatically detect a source language during batch translation
-        /// jobs.</p>
+        /// <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>
+        /// <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_language_code = Some(input.into());
             self
         }
-        /// <p>The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
-        /// <p>Amazon Translate does not automatically detect a source language during batch translation
-        /// jobs.</p>
+        /// <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>
+        /// <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
         pub fn set_source_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1860,22 +1832,20 @@ pub mod start_text_translation_job_input {
         ///
         /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
         ///
-        /// <p>The name of a custom terminology resource to add to the translation job. This resource
-        /// lists examples source terms and the desired translation for each term.</p>
+        /// <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>
         /// <p>This parameter accepts only one custom terminology resource.</p>
-        /// <p>For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.</p>
-        /// <p>For more information, see <a>how-custom-terminology</a>.</p>
+        /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
+        /// <p>For more information, see <code>how-custom-terminology</code>.</p>
         pub fn terminology_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.terminology_names.unwrap_or_default();
             v.push(input.into());
             self.terminology_names = Some(v);
             self
         }
-        /// <p>The name of a custom terminology resource to add to the translation job. This resource
-        /// lists examples source terms and the desired translation for each term.</p>
+        /// <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>
         /// <p>This parameter accepts only one custom terminology resource.</p>
-        /// <p>For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.</p>
-        /// <p>For more information, see <a>how-custom-terminology</a>.</p>
+        /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
+        /// <p>For more information, see <code>how-custom-terminology</code>.</p>
         pub fn set_terminology_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1887,32 +1857,24 @@ pub mod start_text_translation_job_input {
         ///
         /// To override the contents of this collection use [`set_parallel_data_names`](Self::set_parallel_data_names).
         ///
-        /// <p>The name of a parallel data resource to add to the translation job. This resource consists
-        /// of examples that show how you want segments of text to be translated. When you add parallel
-        /// data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
-        /// <p>This parameter accepts only one parallel data resource.</p>
-        /// <note>
-        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't
-        /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
+        /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+        /// <p>This parameter accepts only one parallel data resource.</p> <note>
+        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
         /// </note>
-        /// <p>For a list of available parallel data resources, use the <a>ListParallelData</a> operation.</p>
-        /// <p>For more information, see <a>customizing-translations-parallel-data</a>.</p>
+        /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
+        /// <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
         pub fn parallel_data_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parallel_data_names.unwrap_or_default();
             v.push(input.into());
             self.parallel_data_names = Some(v);
             self
         }
-        /// <p>The name of a parallel data resource to add to the translation job. This resource consists
-        /// of examples that show how you want segments of text to be translated. When you add parallel
-        /// data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
-        /// <p>This parameter accepts only one parallel data resource.</p>
-        /// <note>
-        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't
-        /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
+        /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+        /// <p>This parameter accepts only one parallel data resource.</p> <note>
+        /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
         /// </note>
-        /// <p>For a list of available parallel data resources, use the <a>ListParallelData</a> operation.</p>
-        /// <p>For more information, see <a>customizing-translations-parallel-data</a>.</p>
+        /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
+        /// <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
         pub fn set_parallel_data_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1920,26 +1882,22 @@ pub mod start_text_translation_job_input {
             self.parallel_data_names = input;
             self
         }
-        /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate
-        /// SDK.</p>
+        /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate
-        /// SDK.</p>
+        /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words
-        /// and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
         pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
             self.settings = Some(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words
-        /// and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::TranslationSettings>,
@@ -1973,7 +1931,7 @@ pub mod start_text_translation_job_input {
 pub type StartTextTranslationJobInputOperationOutputAlias =
     crate::operation::StartTextTranslationJob;
 #[doc(hidden)]
-pub type StartTextTranslationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartTextTranslationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`StartTextTranslationJob`](crate::operation::StartTextTranslationJob)>
     #[allow(clippy::let_and_return)]
@@ -1984,7 +1942,7 @@ impl StartTextTranslationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartTextTranslationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2074,7 +2032,7 @@ impl StartTextTranslationJobInput {
             "StartTextTranslationJob",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2132,7 +2090,7 @@ pub mod stop_text_translation_job_input {
 #[doc(hidden)]
 pub type StopTextTranslationJobInputOperationOutputAlias = crate::operation::StopTextTranslationJob;
 #[doc(hidden)]
-pub type StopTextTranslationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopTextTranslationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopTextTranslationJobInput {
     /// Consumes the builder and constructs an Operation<[`StopTextTranslationJob`](crate::operation::StopTextTranslationJob)>
     #[allow(clippy::let_and_return)]
@@ -2143,7 +2101,7 @@ impl StopTextTranslationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopTextTranslationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2230,7 +2188,7 @@ impl StopTextTranslationJobInput {
             "StopTextTranslationJob",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2266,14 +2224,12 @@ pub mod translate_text_input {
         pub(crate) settings: std::option::Option<crate::model::TranslationSettings>,
     }
     impl Builder {
-        /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on
-        /// your character set, this may be fewer than 5,000 characters.</p>
+        /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on
-        /// your character set, this may be fewer than 5,000 characters.</p>
+        /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -2282,18 +2238,14 @@ pub mod translate_text_input {
         ///
         /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
         ///
-        /// <p>The name of the terminology list file to be used in the TranslateText request. You can use
-        /// 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can
-        /// contain a maximum of 256 terms.</p>
+        /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
         pub fn terminology_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.terminology_names.unwrap_or_default();
             v.push(input.into());
             self.terminology_names = Some(v);
             self
         }
-        /// <p>The name of the terminology list file to be used in the TranslateText request. You can use
-        /// 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can
-        /// contain a maximum of 256 terms.</p>
+        /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
         pub fn set_terminology_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2301,22 +2253,14 @@ pub mod translate_text_input {
             self.terminology_names = input;
             self
         }
-        /// <p>The language code for the language of the source text. The language must be a language
-        /// supported by Amazon Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
-        /// <p>To have Amazon Translate determine the source language of your text, you can specify
-        /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify
-        /// <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-        /// Comprehend</a> to determine the source language.</p>
+        /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
+        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_language_code = Some(input.into());
             self
         }
-        /// <p>The language code for the language of the source text. The language must be a language
-        /// supported by Amazon Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
-        /// <p>To have Amazon Translate determine the source language of your text, you can specify
-        /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify
-        /// <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-        /// Comprehend</a> to determine the source language.</p>
+        /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
+        /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
         pub fn set_source_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2324,14 +2268,12 @@ pub mod translate_text_input {
             self.source_language_code = input;
             self
         }
-        /// <p>The language code requested for the language of the target text. The language must be a
-        /// language supported by Amazon Translate.</p>
+        /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
         pub fn target_language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_language_code = Some(input.into());
             self
         }
-        /// <p>The language code requested for the language of the target text. The language must be a
-        /// language supported by Amazon Translate.</p>
+        /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
         pub fn set_target_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2339,14 +2281,12 @@ pub mod translate_text_input {
             self.target_language_code = input;
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words
-        /// and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
         pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
             self.settings = Some(input);
             self
         }
-        /// <p>Settings to configure your translation output, including the option to mask profane words
-        /// and phrases.</p>
+        /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::TranslationSettings>,
@@ -2374,7 +2314,7 @@ pub mod translate_text_input {
 #[doc(hidden)]
 pub type TranslateTextInputOperationOutputAlias = crate::operation::TranslateText;
 #[doc(hidden)]
-pub type TranslateTextInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TranslateTextInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TranslateTextInput {
     /// Consumes the builder and constructs an Operation<[`TranslateText`](crate::operation::TranslateText)>
     #[allow(clippy::let_and_return)]
@@ -2385,7 +2325,7 @@ impl TranslateTextInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TranslateText,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2469,7 +2409,7 @@ impl TranslateTextInput {
             "TranslateText",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2537,14 +2477,12 @@ pub mod update_parallel_data_input {
             self.parallel_data_config = input;
             self
         }
-        /// <p>A unique identifier for the request. This token is automatically generated when you use
-        /// Amazon Translate through an AWS SDK.</p>
+        /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. This token is automatically generated when you use
-        /// Amazon Translate through an AWS SDK.</p>
+        /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2568,7 +2506,7 @@ pub mod update_parallel_data_input {
 #[doc(hidden)]
 pub type UpdateParallelDataInputOperationOutputAlias = crate::operation::UpdateParallelData;
 #[doc(hidden)]
-pub type UpdateParallelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateParallelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateParallelDataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateParallelData`](crate::operation::UpdateParallelData)>
     #[allow(clippy::let_and_return)]
@@ -2579,7 +2517,7 @@ impl UpdateParallelDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateParallelData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2667,7 +2605,7 @@ impl UpdateParallelDataInput {
             "UpdateParallelData",
             "translate",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2700,8 +2638,7 @@ pub struct UpdateParallelDataInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
     pub parallel_data_config: std::option::Option<crate::model::ParallelDataConfig>,
-    /// <p>A unique identifier for the request. This token is automatically generated when you use
-    /// Amazon Translate through an AWS SDK.</p>
+    /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateParallelDataInput {
@@ -2717,8 +2654,7 @@ impl UpdateParallelDataInput {
     pub fn parallel_data_config(&self) -> std::option::Option<&crate::model::ParallelDataConfig> {
         self.parallel_data_config.as_ref()
     }
-    /// <p>A unique identifier for the request. This token is automatically generated when you use
-    /// Amazon Translate through an AWS SDK.</p>
+    /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -2738,55 +2674,37 @@ impl std::fmt::Debug for UpdateParallelDataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TranslateTextInput {
-    /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on
-    /// your character set, this may be fewer than 5,000 characters.</p>
+    /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The name of the terminology list file to be used in the TranslateText request. You can use
-    /// 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can
-    /// contain a maximum of 256 terms.</p>
+    /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
     pub terminology_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The language code for the language of the source text. The language must be a language
-    /// supported by Amazon Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
-    /// <p>To have Amazon Translate determine the source language of your text, you can specify
-    /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify
-    /// <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-    /// Comprehend</a> to determine the source language.</p>
+    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
     pub source_language_code: std::option::Option<std::string::String>,
-    /// <p>The language code requested for the language of the target text. The language must be a
-    /// language supported by Amazon Translate.</p>
+    /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
     pub target_language_code: std::option::Option<std::string::String>,
-    /// <p>Settings to configure your translation output, including the option to mask profane words
-    /// and phrases.</p>
+    /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
     pub settings: std::option::Option<crate::model::TranslationSettings>,
 }
 impl TranslateTextInput {
-    /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on
-    /// your character set, this may be fewer than 5,000 characters.</p>
+    /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set, this may be fewer than 5,000 characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The name of the terminology list file to be used in the TranslateText request. You can use
-    /// 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can
-    /// contain a maximum of 256 terms.</p>
+    /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
     pub fn terminology_names(&self) -> std::option::Option<&[std::string::String]> {
         self.terminology_names.as_deref()
     }
-    /// <p>The language code for the language of the source text. The language must be a language
-    /// supported by Amazon Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
-    /// <p>To have Amazon Translate determine the source language of your text, you can specify
-    /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify
-    /// <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-    /// Comprehend</a> to determine the source language.</p>
+    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <code>what-is-languages</code>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p>
     pub fn source_language_code(&self) -> std::option::Option<&str> {
         self.source_language_code.as_deref()
     }
-    /// <p>The language code requested for the language of the target text. The language must be a
-    /// language supported by Amazon Translate.</p>
+    /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
     pub fn target_language_code(&self) -> std::option::Option<&str> {
         self.target_language_code.as_deref()
     }
-    /// <p>Settings to configure your translation output, including the option to mask profane words
-    /// and phrases.</p>
+    /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::TranslationSettings> {
         self.settings.as_ref()
     }
@@ -2830,43 +2748,32 @@ impl std::fmt::Debug for StopTextTranslationJobInput {
 pub struct StartTextTranslationJobInput {
     /// <p>The name of the batch translation job to be performed.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the format and S3 location of the input documents for the translation
-    /// job.</p>
+    /// <p>Specifies the format and S3 location of the input documents for the translation job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
-    /// <p>Specifies the S3 folder to which your job output will be saved.
-    /// </p>
+    /// <p>Specifies the S3 folder to which your job output will be saved. </p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-    /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
-    /// <p>Amazon Translate does not automatically detect a source language during batch translation
-    /// jobs.</p>
+    /// <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>
+    /// <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
     pub source_language_code: std::option::Option<std::string::String>,
     /// <p>The language code of the output language.</p>
     pub target_language_codes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The name of a custom terminology resource to add to the translation job. This resource
-    /// lists examples source terms and the desired translation for each term.</p>
+    /// <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>
     /// <p>This parameter accepts only one custom terminology resource.</p>
-    /// <p>For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.</p>
-    /// <p>For more information, see <a>how-custom-terminology</a>.</p>
+    /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
+    /// <p>For more information, see <code>how-custom-terminology</code>.</p>
     pub terminology_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The name of a parallel data resource to add to the translation job. This resource consists
-    /// of examples that show how you want segments of text to be translated. When you add parallel
-    /// data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
-    /// <p>This parameter accepts only one parallel data resource.</p>
-    /// <note>
-    /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't
-    /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
+    /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+    /// <p>This parameter accepts only one parallel data resource.</p> <note>
+    /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
     /// </note>
-    /// <p>For a list of available parallel data resources, use the <a>ListParallelData</a> operation.</p>
-    /// <p>For more information, see <a>customizing-translations-parallel-data</a>.</p>
+    /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
+    /// <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
     pub parallel_data_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate
-    /// SDK.</p>
+    /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>Settings to configure your translation output, including the option to mask profane words
-    /// and phrases.</p>
+    /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
     pub settings: std::option::Option<crate::model::TranslationSettings>,
 }
 impl StartTextTranslationJobInput {
@@ -2874,24 +2781,20 @@ impl StartTextTranslationJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>Specifies the format and S3 location of the input documents for the translation
-    /// job.</p>
+    /// <p>Specifies the format and S3 location of the input documents for the translation job.</p>
     pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p>Specifies the S3 folder to which your job output will be saved.
-    /// </p>
+    /// <p>Specifies the S3 folder to which your job output will be saved. </p>
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-    /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <code>identity-and-access-management</code>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
-    /// <p>Amazon Translate does not automatically detect a source language during batch translation
-    /// jobs.</p>
+    /// <p>The language code of the input language. For a list of language codes, see <code>what-is-languages</code>.</p>
+    /// <p>Amazon Translate does not automatically detect a source language during batch translation jobs.</p>
     pub fn source_language_code(&self) -> std::option::Option<&str> {
         self.source_language_code.as_deref()
     }
@@ -2899,34 +2802,27 @@ impl StartTextTranslationJobInput {
     pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
         self.target_language_codes.as_deref()
     }
-    /// <p>The name of a custom terminology resource to add to the translation job. This resource
-    /// lists examples source terms and the desired translation for each term.</p>
+    /// <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>
     /// <p>This parameter accepts only one custom terminology resource.</p>
-    /// <p>For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.</p>
-    /// <p>For more information, see <a>how-custom-terminology</a>.</p>
+    /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
+    /// <p>For more information, see <code>how-custom-terminology</code>.</p>
     pub fn terminology_names(&self) -> std::option::Option<&[std::string::String]> {
         self.terminology_names.as_deref()
     }
-    /// <p>The name of a parallel data resource to add to the translation job. This resource consists
-    /// of examples that show how you want segments of text to be translated. When you add parallel
-    /// data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
-    /// <p>This parameter accepts only one parallel data resource.</p>
-    /// <note>
-    /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't
-    /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
+    /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
+    /// <p>This parameter accepts only one parallel data resource.</p> <note>
+    /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
     /// </note>
-    /// <p>For a list of available parallel data resources, use the <a>ListParallelData</a> operation.</p>
-    /// <p>For more information, see <a>customizing-translations-parallel-data</a>.</p>
+    /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
+    /// <p>For more information, see <code>customizing-translations-parallel-data</code>.</p>
     pub fn parallel_data_names(&self) -> std::option::Option<&[std::string::String]> {
         self.parallel_data_names.as_deref()
     }
-    /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate
-    /// SDK.</p>
+    /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Settings to configure your translation output, including the option to mask profane words
-    /// and phrases.</p>
+    /// <p>Settings to configure your translation output, including the option to mask profane words and phrases.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::TranslationSettings> {
         self.settings.as_ref()
     }
@@ -2952,8 +2848,7 @@ impl std::fmt::Debug for StartTextTranslationJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTextTranslationJobsInput {
-    /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job
-    /// name, job status, and submission time. You can only set one filter at a time.</p>
+    /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::TextTranslationJobFilter>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -2961,8 +2856,7 @@ pub struct ListTextTranslationJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListTextTranslationJobsInput {
-    /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job
-    /// name, job status, and submission time. You can only set one filter at a time.</p>
+    /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::TextTranslationJobFilter> {
         self.filter.as_ref()
     }
@@ -2989,15 +2883,13 @@ impl std::fmt::Debug for ListTextTranslationJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTerminologiesInput {
-    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to
-    /// fetch the next group of custom terminologies. </p>
+    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of custom terminologies returned per list request.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTerminologiesInput {
-    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to
-    /// fetch the next group of custom terminologies. </p>
+    /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3049,9 +2941,7 @@ impl std::fmt::Debug for ListParallelDataInput {
 pub struct ImportTerminologyInput {
     /// <p>The name of the custom terminology being imported.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE
-    /// merge strategy is supported. In this case, the imported terminology will overwrite an existing
-    /// terminology of the same name.</p>
+    /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
     pub merge_strategy: std::option::Option<crate::model::MergeStrategy>,
     /// <p>The description of the custom terminology being imported.</p>
     pub description: std::option::Option<std::string::String>,
@@ -3065,9 +2955,7 @@ impl ImportTerminologyInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE
-    /// merge strategy is supported. In this case, the imported terminology will overwrite an existing
-    /// terminology of the same name.</p>
+    /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
     pub fn merge_strategy(&self) -> std::option::Option<&crate::model::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
@@ -3103,11 +2991,8 @@ pub struct GetTerminologyInput {
     /// <p>The name of the custom terminology being retrieved.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The data format of the custom terminology being retrieved.</p>
-    /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same
-    /// format as the file that was imported to create the terminology. </p>
-    /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource,
-    /// you must specify the same format as that of the input file that was imported to create it.
-    /// Otherwise, Amazon Translate throws an error.</p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>
+    /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
     pub terminology_data_format: std::option::Option<crate::model::TerminologyDataFormat>,
 }
 impl GetTerminologyInput {
@@ -3116,11 +3001,8 @@ impl GetTerminologyInput {
         self.name.as_deref()
     }
     /// <p>The data format of the custom terminology being retrieved.</p>
-    /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same
-    /// format as the file that was imported to create the terminology. </p>
-    /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource,
-    /// you must specify the same format as that of the input file that was imported to create it.
-    /// Otherwise, Amazon Translate throws an error.</p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file that has the same format as the file that was imported to create the terminology. </p>
+    /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as that of the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
     pub fn terminology_data_format(
         &self,
     ) -> std::option::Option<&crate::model::TerminologyDataFormat> {
@@ -3161,13 +3043,11 @@ impl std::fmt::Debug for GetParallelDataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTextTranslationJobInput {
-    /// <p>The identifier that Amazon Translate generated for the job. The <a>StartTextTranslationJob</a> operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeTextTranslationJobInput {
-    /// <p>The identifier that Amazon Translate generated for the job. The <a>StartTextTranslationJob</a> operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -3226,8 +3106,7 @@ impl std::fmt::Debug for DeleteParallelDataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateParallelDataInput {
-    /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name
-    /// that is unique in the account and region.</p>
+    /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
     pub description: std::option::Option<std::string::String>,
@@ -3235,13 +3114,11 @@ pub struct CreateParallelDataInput {
     pub parallel_data_config: std::option::Option<crate::model::ParallelDataConfig>,
     /// <p>The encryption key used to encrypt this object.</p>
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
-    /// <p>A unique identifier for the request. This token is automatically generated when you use
-    /// Amazon Translate through an AWS SDK.</p>
+    /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateParallelDataInput {
-    /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name
-    /// that is unique in the account and region.</p>
+    /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -3257,8 +3134,7 @@ impl CreateParallelDataInput {
     pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
         self.encryption_key.as_ref()
     }
-    /// <p>A unique identifier for the request. This token is automatically generated when you use
-    /// Amazon Translate through an AWS SDK.</p>
+    /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

@@ -14,21 +14,17 @@ pub struct CompareFacesError {
 pub enum CompareFacesErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling
-    /// DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::error::InvalidImageFormatException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -80,8 +76,6 @@ impl CompareFacesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -180,19 +174,14 @@ pub enum CreateCollectionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>A resource with the specified ID already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p></p>
-    ///
-    ///
-    /// <p>The size of the collection exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -245,8 +234,6 @@ impl CreateCollectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -351,17 +338,13 @@ pub enum CreateDatasetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>A resource with the specified ID already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -418,8 +401,6 @@ impl CreateDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -529,15 +510,11 @@ pub enum CreateProjectErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -590,8 +567,6 @@ impl CreateProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -685,25 +660,18 @@ pub enum CreateProjectVersionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
-    ///
-    ///
-    /// <p>The size of the collection exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -758,8 +726,6 @@ impl CreateProjectVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -880,23 +846,16 @@ pub enum CreateStreamProcessorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p></p>
-    ///
-    ///
-    /// <p>The size of the collection exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -950,8 +909,6 @@ impl CreateStreamProcessorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1064,11 +1021,9 @@ pub enum DeleteCollectionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1122,8 +1077,6 @@ impl DeleteCollectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1220,15 +1173,11 @@ pub enum DeleteDatasetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -1284,8 +1233,6 @@ impl DeleteDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1387,11 +1334,9 @@ pub enum DeleteFacesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1443,8 +1388,6 @@ impl DeleteFacesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1530,11 +1473,9 @@ pub enum DeleteProjectErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -1589,8 +1530,6 @@ impl DeleteProjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1684,11 +1623,9 @@ pub enum DeleteProjectVersionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -1745,8 +1682,6 @@ impl DeleteProjectVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1851,11 +1786,9 @@ pub enum DeleteStreamProcessorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -1912,8 +1845,6 @@ impl DeleteStreamProcessorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2018,11 +1949,9 @@ pub enum DescribeCollectionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2076,8 +2005,6 @@ impl DescribeCollectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2174,11 +2101,9 @@ pub enum DescribeDatasetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2232,8 +2157,6 @@ impl DescribeDatasetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2326,11 +2249,9 @@ pub enum DescribeProjectsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2382,8 +2303,6 @@ impl DescribeProjectsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2482,11 +2401,9 @@ pub enum DescribeProjectVersionsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2543,8 +2460,6 @@ impl DescribeProjectVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2651,11 +2566,9 @@ pub enum DescribeStreamProcessorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2709,8 +2622,6 @@ impl DescribeStreamProcessorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2805,31 +2716,23 @@ pub struct DetectCustomLabelsError {
 pub enum DetectCustomLabelsErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling
-    /// DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::error::InvalidImageFormatException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The requested resource isn't ready. For example,  
-    /// this exception occurs when you call <code>DetectCustomLabels</code> with a
-    /// model version that isn't deployed. </p>
+    /// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed. </p>
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2886,8 +2789,6 @@ impl DetectCustomLabelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3022,21 +2923,17 @@ pub struct DetectFacesError {
 pub enum DetectFacesErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling
-    /// DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::error::InvalidImageFormatException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3088,8 +2985,6 @@ impl DetectFacesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3186,21 +3081,17 @@ pub struct DetectLabelsError {
 pub enum DetectLabelsErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling
-    /// DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::error::InvalidImageFormatException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3252,8 +3143,6 @@ impl DetectLabelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3352,21 +3241,17 @@ pub enum DetectModerationLabelsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The number of in-progress human reviews you have has exceeded the number allowed.</p>
     HumanLoopQuotaExceededException(crate::error::HumanLoopQuotaExceededException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling
-    /// DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::error::InvalidImageFormatException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3423,8 +3308,6 @@ impl DetectModerationLabelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3545,21 +3428,17 @@ pub struct DetectProtectiveEquipmentError {
 pub enum DetectProtectiveEquipmentErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling
-    /// DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::error::InvalidImageFormatException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3615,8 +3494,6 @@ impl DetectProtectiveEquipmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3727,21 +3604,17 @@ pub struct DetectTextError {
 pub enum DetectTextErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling
-    /// DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::error::InvalidImageFormatException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3793,8 +3666,6 @@ impl DetectTextError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3890,17 +3761,13 @@ pub enum DistributeDatasetEntriesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The requested resource isn't ready. For example,  
-    /// this exception occurs when you call <code>DetectCustomLabels</code> with a
-    /// model version that isn't deployed. </p>
+    /// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed. </p>
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3953,8 +3820,6 @@ impl DistributeDatasetEntriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4059,11 +3924,9 @@ pub enum GetCelebrityInfoErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4117,8 +3980,6 @@ impl GetCelebrityInfoError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4217,11 +4078,9 @@ pub enum GetCelebrityRecognitionErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4278,8 +4137,6 @@ impl GetCelebrityRecognitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4388,11 +4245,9 @@ pub enum GetContentModerationErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4447,8 +4302,6 @@ impl GetContentModerationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4555,11 +4408,9 @@ pub enum GetFaceDetectionErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4614,8 +4465,6 @@ impl GetFaceDetectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4722,11 +4571,9 @@ pub enum GetFaceSearchErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4779,8 +4626,6 @@ impl GetFaceSearchError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4876,11 +4721,9 @@ pub enum GetLabelDetectionErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4935,8 +4778,6 @@ impl GetLabelDetectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5043,11 +4884,9 @@ pub enum GetPersonTrackingErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5102,8 +4941,6 @@ impl GetPersonTrackingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5210,11 +5047,9 @@ pub enum GetSegmentDetectionErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5269,8 +5104,6 @@ impl GetSegmentDetectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5377,11 +5210,9 @@ pub enum GetTextDetectionErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5436,8 +5267,6 @@ impl GetTextDetectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5540,29 +5369,22 @@ pub struct IndexFacesError {
 pub enum IndexFacesErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling
-    /// DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::error::InvalidImageFormatException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
-    ///
-    ///
-    /// <p>The size of the collection exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5616,8 +5438,6 @@ impl IndexFacesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5731,11 +5551,9 @@ pub enum ListCollectionsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5790,8 +5608,6 @@ impl ListCollectionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5892,19 +5708,15 @@ pub enum ListDatasetEntriesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The requested resource isn't ready. For example,  
-    /// this exception occurs when you call <code>DetectCustomLabels</code> with a
-    /// model version that isn't deployed. </p>
+    /// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed. </p>
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5959,8 +5771,6 @@ impl ListDatasetEntriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6083,19 +5893,15 @@ pub enum ListDatasetLabelsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The requested resource isn't ready. For example,  
-    /// this exception occurs when you call <code>DetectCustomLabels</code> with a
-    /// model version that isn't deployed. </p>
+    /// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed. </p>
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6150,8 +5956,6 @@ impl ListDatasetLabelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6274,11 +6078,9 @@ pub enum ListFacesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6331,8 +6133,6 @@ impl ListFacesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6422,11 +6222,9 @@ pub enum ListStreamProcessorsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6478,8 +6276,6 @@ impl ListStreamProcessorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6576,11 +6372,9 @@ pub enum ListTagsForResourceErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6634,8 +6428,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6730,21 +6522,17 @@ pub struct RecognizeCelebritiesError {
 pub enum RecognizeCelebritiesErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling
-    /// DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::error::InvalidImageFormatException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6798,8 +6586,6 @@ impl RecognizeCelebritiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6912,11 +6698,9 @@ pub enum SearchFacesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6968,8 +6752,6 @@ impl SearchFacesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7053,21 +6835,17 @@ pub struct SearchFacesByImageError {
 pub enum SearchFacesByImageErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The input image size exceeds the allowed limit. If you are calling
-    /// DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ImageTooLargeException(crate::error::ImageTooLargeException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::error::InvalidImageFormatException),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7124,8 +6902,6 @@ impl SearchFacesByImageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7244,27 +7020,21 @@ pub struct StartCelebrityRecognitionError {
 pub enum StartCelebrityRecognitionErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input
-    /// parameters is different from the previous call to the operation.</p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
-    /// The maximum duration is 6 hours. </p>
+    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7319,8 +7089,6 @@ impl StartCelebrityRecognitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7441,27 +7209,21 @@ pub struct StartContentModerationError {
 pub enum StartContentModerationErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input
-    /// parameters is different from the previous call to the operation.</p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
-    /// The maximum duration is 6 hours. </p>
+    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7516,8 +7278,6 @@ impl StartContentModerationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7638,27 +7398,21 @@ pub struct StartFaceDetectionError {
 pub enum StartFaceDetectionErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input
-    /// parameters is different from the previous call to the operation.</p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
-    /// The maximum duration is 6 hours. </p>
+    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7713,8 +7467,6 @@ impl StartFaceDetectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7835,29 +7587,23 @@ pub struct StartFaceSearchError {
 pub enum StartFaceSearchErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input
-    /// parameters is different from the previous call to the operation.</p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
-    /// The maximum duration is 6 hours. </p>
+    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7911,8 +7657,6 @@ impl StartFaceSearchError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8033,27 +7777,21 @@ pub struct StartLabelDetectionError {
 pub enum StartLabelDetectionErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input
-    /// parameters is different from the previous call to the operation.</p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
-    /// The maximum duration is 6 hours. </p>
+    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8108,8 +7846,6 @@ impl StartLabelDetectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8230,27 +7966,21 @@ pub struct StartPersonTrackingError {
 pub enum StartPersonTrackingErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input
-    /// parameters is different from the previous call to the operation.</p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
-    /// The maximum duration is 6 hours. </p>
+    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8305,8 +8035,6 @@ impl StartPersonTrackingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8429,15 +8157,11 @@ pub enum StartProjectVersionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -8495,8 +8219,6 @@ impl StartProjectVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8607,27 +8329,21 @@ pub struct StartSegmentDetectionError {
 pub enum StartSegmentDetectionErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input
-    /// parameters is different from the previous call to the operation.</p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
-    /// The maximum duration is 6 hours. </p>
+    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8682,8 +8398,6 @@ impl StartSegmentDetectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8806,11 +8520,9 @@ pub enum StartStreamProcessorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -8867,8 +8579,6 @@ impl StartStreamProcessorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8971,27 +8681,21 @@ pub struct StartTextDetectionError {
 pub enum StartTextDetectionErrorKind {
     /// <p>You are not authorized to perform the action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input
-    /// parameters is different from the previous call to the operation.</p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
-    /// The maximum duration is 6 hours. </p>
+    /// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
     VideoTooLargeException(crate::error::VideoTooLargeException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9046,8 +8750,6 @@ impl StartTextDetectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9170,11 +8872,9 @@ pub enum StopProjectVersionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -9231,8 +8931,6 @@ impl StopProjectVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9337,11 +9035,9 @@ pub enum StopStreamProcessorErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -9398,8 +9094,6 @@ impl StopStreamProcessorError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9504,19 +9198,14 @@ pub enum TagResourceErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p></p>
-    ///
-    ///
-    /// <p>The size of the collection exceeds the allowed limit. For more information, see
-    /// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+    /// <p>The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -9567,8 +9256,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9662,11 +9349,9 @@ pub enum UntagResourceErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The resource specified in the request cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -9718,8 +9403,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9805,15 +9488,11 @@ pub enum UpdateDatasetEntriesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Amazon Rekognition experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-    /// operation again.</p>
+    /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-    /// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this
-    /// limit, contact Amazon Rekognition.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified resource is already being used.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
@@ -9871,8 +9550,6 @@ impl UpdateDatasetEntriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10280,8 +9957,7 @@ impl ResourceInUseException {
     }
 }
 
-/// <p>The number of requests exceeded your throughput limit. If you want to increase this
-/// limit, contact Amazon Rekognition.</p>
+/// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughputExceededException {
@@ -10385,9 +10061,7 @@ impl ProvisionedThroughputExceededException {
     }
 }
 
-/// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations
-/// (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until
-/// the number of concurrently running jobs is below the Amazon Rekognition service limit.  </p>
+/// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -10491,8 +10165,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>Input parameter violated a constraint. Validate your parameter before calling the API
-/// operation again.</p>
+/// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
@@ -10805,10 +10478,7 @@ impl AccessDeniedException {
 }
 
 /// <p></p>
-///
-///
-/// <p>The size of the collection exceeds the allowed limit. For more information, see
-/// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+/// <p>The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
@@ -10912,8 +10582,7 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB.
-/// The maximum duration is 6 hours. </p>
+/// <p>The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is 6 hours. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoTooLargeException {
@@ -11121,8 +10790,7 @@ impl InvalidS3ObjectException {
     }
 }
 
-/// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input
-/// parameters is different from the previous call to the operation.</p>
+/// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {
@@ -11330,9 +10998,7 @@ impl InvalidImageFormatException {
     }
 }
 
-/// <p>The input image size exceeds the allowed limit. If you are calling
-/// DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see
-/// Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
+/// <p>The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageTooLargeException {
@@ -11540,9 +11206,7 @@ impl InvalidPaginationTokenException {
     }
 }
 
-/// <p>The requested resource isn't ready. For example,  
-/// this exception occurs when you call <code>DetectCustomLabels</code> with a
-/// model version that isn't deployed. </p>
+/// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotReadyException {

@@ -14,12 +14,12 @@ pub struct AcceptDomainTransferFromAnotherAwsAccountError {
 pub enum AcceptDomainTransferFromAnotherAwsAccountErrorKind {
     /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
     DomainLimitExceeded(crate::error::DomainLimitExceeded),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
+    /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+    UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -33,6 +33,9 @@ impl std::fmt::Display for AcceptDomainTransferFromAnotherAwsAccountError {
                 _inner.fmt(f)
             }
             AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
+                _inner.fmt(f)
+            }
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
                 _inner.fmt(f)
             }
             AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -72,8 +75,6 @@ impl AcceptDomainTransferFromAnotherAwsAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -115,6 +116,13 @@ impl AcceptDomainTransferFromAnotherAwsAccountError {
             AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_)
         )
     }
+    /// Returns `true` if the error kind is `AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld`.
+    pub fn is_unsupported_tld(&self) -> bool {
+        matches!(
+            &self.kind,
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_)
+        )
+    }
 }
 impl std::error::Error for AcceptDomainTransferFromAnotherAwsAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -126,6 +134,9 @@ impl std::error::Error for AcceptDomainTransferFromAnotherAwsAccountError {
                 Some(_inner)
             }
             AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
+                Some(_inner)
+            }
+            AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
                 Some(_inner)
             }
             AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => {
@@ -148,12 +159,12 @@ pub struct CancelDomainTransferToAnotherAwsAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelDomainTransferToAnotherAwsAccountErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
+    /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+    UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -162,6 +173,9 @@ impl std::fmt::Display for CancelDomainTransferToAnotherAwsAccountError {
         match &self.kind {
             CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput(_inner) => _inner.fmt(f),
             CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
+                _inner.fmt(f)
+            }
+            CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
                 _inner.fmt(f)
             }
             CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -201,8 +215,6 @@ impl CancelDomainTransferToAnotherAwsAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -237,12 +249,22 @@ impl CancelDomainTransferToAnotherAwsAccountError {
             CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded(_)
         )
     }
+    /// Returns `true` if the error kind is `CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld`.
+    pub fn is_unsupported_tld(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(_)
+        )
+    }
 }
 impl std::error::Error for CancelDomainTransferToAnotherAwsAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput(_inner) => Some(_inner),
             CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
+                Some(_inner)
+            }
+            CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
                 Some(_inner)
             }
             CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(_inner) => {
@@ -265,9 +287,7 @@ pub struct CheckDomainAvailabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CheckDomainAvailabilityErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
@@ -313,8 +333,6 @@ impl CheckDomainAvailabilityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -373,9 +391,7 @@ pub struct CheckDomainTransferabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CheckDomainTransferabilityErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
@@ -421,8 +437,6 @@ impl CheckDomainTransferabilityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -468,6 +482,120 @@ impl std::error::Error for CheckDomainTransferabilityError {
     }
 }
 
+/// Error type for the `DeleteDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteDomainError {
+    /// Kind of error that occurred.
+    pub kind: DeleteDomainErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteDomain` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteDomainErrorKind {
+    /// <p>The request is already in progress for the domain.</p>
+    DuplicateRequest(crate::error::DuplicateRequest),
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
+    InvalidInput(crate::error::InvalidInput),
+    /// <p>The top-level domain does not support this operation.</p>
+    TldRulesViolation(crate::error::TldRulesViolation),
+    /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+    UnsupportedTld(crate::error::UnsupportedTld),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteDomainError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteDomainErrorKind::DuplicateRequest(_inner) => _inner.fmt(f),
+            DeleteDomainErrorKind::InvalidInput(_inner) => _inner.fmt(f),
+            DeleteDomainErrorKind::TldRulesViolation(_inner) => _inner.fmt(f),
+            DeleteDomainErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
+            DeleteDomainErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteDomainError {
+    fn code(&self) -> Option<&str> {
+        DeleteDomainError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteDomainError {
+    /// Creates a new `DeleteDomainError`.
+    pub fn new(kind: DeleteDomainErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteDomainError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteDomainErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteDomainError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteDomainErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::DuplicateRequest`.
+    pub fn is_duplicate_request(&self) -> bool {
+        matches!(&self.kind, DeleteDomainErrorKind::DuplicateRequest(_))
+    }
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::InvalidInput`.
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, DeleteDomainErrorKind::InvalidInput(_))
+    }
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::TldRulesViolation`.
+    pub fn is_tld_rules_violation(&self) -> bool {
+        matches!(&self.kind, DeleteDomainErrorKind::TldRulesViolation(_))
+    }
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::UnsupportedTld`.
+    pub fn is_unsupported_tld(&self) -> bool {
+        matches!(&self.kind, DeleteDomainErrorKind::UnsupportedTld(_))
+    }
+}
+impl std::error::Error for DeleteDomainError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteDomainErrorKind::DuplicateRequest(_inner) => Some(_inner),
+            DeleteDomainErrorKind::InvalidInput(_inner) => Some(_inner),
+            DeleteDomainErrorKind::TldRulesViolation(_inner) => Some(_inner),
+            DeleteDomainErrorKind::UnsupportedTld(_inner) => Some(_inner),
+            DeleteDomainErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteTagsForDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -481,9 +609,7 @@ pub struct DeleteTagsForDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTagsForDomainErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -532,8 +658,6 @@ impl DeleteTagsForDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -594,9 +718,7 @@ pub struct DisableDomainAutoRenewError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableDomainAutoRenewErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
@@ -642,8 +764,6 @@ impl DisableDomainAutoRenewError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -701,9 +821,7 @@ pub struct DisableDomainTransferLockError {
 pub enum DisableDomainTransferLockErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -756,8 +874,6 @@ impl DisableDomainTransferLockError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -840,9 +956,7 @@ pub struct EnableDomainAutoRenewError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableDomainAutoRenewErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The top-level domain does not support this operation.</p>
     TldRulesViolation(crate::error::TldRulesViolation),
@@ -891,8 +1005,6 @@ impl EnableDomainAutoRenewError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -958,9 +1070,7 @@ pub struct EnableDomainTransferLockError {
 pub enum EnableDomainTransferLockErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -1013,8 +1123,6 @@ impl EnableDomainTransferLockError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1097,9 +1205,7 @@ pub struct GetContactReachabilityStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContactReachabilityStatusErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -1148,8 +1254,6 @@ impl GetContactReachabilityStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1216,9 +1320,7 @@ pub struct GetDomainDetailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDomainDetailErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
@@ -1264,8 +1366,6 @@ impl GetDomainDetailError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1318,9 +1418,7 @@ pub struct GetDomainSuggestionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDomainSuggestionsErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
@@ -1366,8 +1464,6 @@ impl GetDomainSuggestionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1420,9 +1516,7 @@ pub struct GetOperationDetailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOperationDetailErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1465,8 +1559,6 @@ impl GetOperationDetailError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1514,9 +1606,7 @@ pub struct ListDomainsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDomainsErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1559,8 +1649,6 @@ impl ListDomainsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1608,9 +1696,7 @@ pub struct ListOperationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOperationsErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1653,8 +1739,6 @@ impl ListOperationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1689,6 +1773,104 @@ impl std::error::Error for ListOperationsError {
     }
 }
 
+/// Error type for the `ListPrices` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListPricesError {
+    /// Kind of error that occurred.
+    pub kind: ListPricesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListPrices` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListPricesErrorKind {
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
+    InvalidInput(crate::error::InvalidInput),
+    /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+    UnsupportedTld(crate::error::UnsupportedTld),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListPricesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListPricesErrorKind::InvalidInput(_inner) => _inner.fmt(f),
+            ListPricesErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
+            ListPricesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListPricesError {
+    fn code(&self) -> Option<&str> {
+        ListPricesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListPricesError {
+    /// Creates a new `ListPricesError`.
+    pub fn new(kind: ListPricesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListPricesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListPricesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListPricesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListPricesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListPricesErrorKind::InvalidInput`.
+    pub fn is_invalid_input(&self) -> bool {
+        matches!(&self.kind, ListPricesErrorKind::InvalidInput(_))
+    }
+    /// Returns `true` if the error kind is `ListPricesErrorKind::UnsupportedTld`.
+    pub fn is_unsupported_tld(&self) -> bool {
+        matches!(&self.kind, ListPricesErrorKind::UnsupportedTld(_))
+    }
+}
+impl std::error::Error for ListPricesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListPricesErrorKind::InvalidInput(_inner) => Some(_inner),
+            ListPricesErrorKind::UnsupportedTld(_inner) => Some(_inner),
+            ListPricesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListTagsForDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1702,9 +1884,7 @@ pub struct ListTagsForDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForDomainErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -1753,8 +1933,6 @@ impl ListTagsForDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1819,9 +1997,7 @@ pub enum RegisterDomainErrorKind {
     DomainLimitExceeded(crate::error::DomainLimitExceeded),
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -1875,8 +2051,6 @@ impl RegisterDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1952,12 +2126,12 @@ pub struct RejectDomainTransferFromAnotherAwsAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RejectDomainTransferFromAnotherAwsAccountErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
+    /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+    UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1968,6 +2142,9 @@ impl std::fmt::Display for RejectDomainTransferFromAnotherAwsAccountError {
                 _inner.fmt(f)
             }
             RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
+                _inner.fmt(f)
+            }
+            RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
                 _inner.fmt(f)
             }
             RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2007,8 +2184,6 @@ impl RejectDomainTransferFromAnotherAwsAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2043,6 +2218,13 @@ impl RejectDomainTransferFromAnotherAwsAccountError {
             RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_)
         )
     }
+    /// Returns `true` if the error kind is `RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld`.
+    pub fn is_unsupported_tld(&self) -> bool {
+        matches!(
+            &self.kind,
+            RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_)
+        )
+    }
 }
 impl std::error::Error for RejectDomainTransferFromAnotherAwsAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2051,6 +2233,9 @@ impl std::error::Error for RejectDomainTransferFromAnotherAwsAccountError {
                 Some(_inner)
             }
             RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
+                Some(_inner)
+            }
+            RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => {
                 Some(_inner)
             }
             RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(_inner) => {
@@ -2075,9 +2260,7 @@ pub struct RenewDomainError {
 pub enum RenewDomainErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -2130,8 +2313,6 @@ impl RenewDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2199,9 +2380,7 @@ pub struct ResendContactReachabilityEmailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResendContactReachabilityEmailErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -2255,8 +2434,6 @@ impl ResendContactReachabilityEmailError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2323,9 +2500,7 @@ pub struct RetrieveDomainAuthCodeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RetrieveDomainAuthCodeErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
     UnsupportedTld(crate::error::UnsupportedTld),
@@ -2371,8 +2546,6 @@ impl RetrieveDomainAuthCodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2432,9 +2605,7 @@ pub enum TransferDomainErrorKind {
     DomainLimitExceeded(crate::error::DomainLimitExceeded),
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -2488,8 +2659,6 @@ impl TransferDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2567,12 +2736,12 @@ pub struct TransferDomainToAnotherAwsAccountError {
 pub enum TransferDomainToAnotherAwsAccountErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
+    /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+    UnsupportedTld(crate::error::UnsupportedTld),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2584,6 +2753,7 @@ impl std::fmt::Display for TransferDomainToAnotherAwsAccountError {
             TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
                 _inner.fmt(f)
             }
+            TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => _inner.fmt(f),
             TransferDomainToAnotherAwsAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2621,8 +2791,6 @@ impl TransferDomainToAnotherAwsAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2664,6 +2832,13 @@ impl TransferDomainToAnotherAwsAccountError {
             TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(_)
         )
     }
+    /// Returns `true` if the error kind is `TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld`.
+    pub fn is_unsupported_tld(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(_)
+        )
+    }
 }
 impl std::error::Error for TransferDomainToAnotherAwsAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2673,6 +2848,7 @@ impl std::error::Error for TransferDomainToAnotherAwsAccountError {
             TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(_inner) => {
                 Some(_inner)
             }
+            TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(_inner) => Some(_inner),
             TransferDomainToAnotherAwsAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2693,9 +2869,7 @@ pub struct UpdateDomainContactError {
 pub enum UpdateDomainContactErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -2748,8 +2922,6 @@ impl UpdateDomainContactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2828,9 +3000,7 @@ pub struct UpdateDomainContactPrivacyError {
 pub enum UpdateDomainContactPrivacyErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -2883,8 +3053,6 @@ impl UpdateDomainContactPrivacyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2969,9 +3137,7 @@ pub struct UpdateDomainNameserversError {
 pub enum UpdateDomainNameserversErrorKind {
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -3024,8 +3190,6 @@ impl UpdateDomainNameserversError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3108,9 +3272,7 @@ pub struct UpdateTagsForDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTagsForDomainErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -3159,8 +3321,6 @@ impl UpdateTagsForDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3221,9 +3381,7 @@ pub struct ViewBillingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ViewBillingErrorKind {
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3266,8 +3424,6 @@ impl ViewBillingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3302,14 +3458,11 @@ impl std::error::Error for ViewBillingError {
     }
 }
 
-/// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-/// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-/// the password might be invalid.</p>
+/// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInput {
-    /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation
-    /// that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
+    /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidInput {
@@ -3344,14 +3497,12 @@ pub mod invalid_input {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation
-        /// that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
+        /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation
-        /// that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
+        /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

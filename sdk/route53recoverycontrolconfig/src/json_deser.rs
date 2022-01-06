@@ -648,7 +648,7 @@ pub fn deser_operation_crate_operation_list_associated_route53_health_checks(
                 match key.to_unescaped()?.as_ref() {
                     "HealthCheckIds" => {
                         builder = builder.set_health_check_ids(
-                            crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string(tokens)?
+                            crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string_max36_pattern_s(tokens)?
                         );
                     }
                     "NextToken" => {
@@ -848,6 +848,47 @@ pub fn deser_operation_crate_operation_list_safety_rules(
                     "SafetyRules" => {
                         builder = builder.set_safety_rules(
                             crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of_rule(tokens)?
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
+pub fn deser_operation_crate_operation_list_tags_for_resource(
+    value: &[u8],
+    mut builder: crate::output::list_tags_for_resource_output::Builder,
+) -> Result<
+    crate::output::list_tags_for_resource_output::Builder,
+    aws_smithy_json::deserialize::Error,
+> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Tags" => {
+                        builder = builder.set_tags(
+                            crate::json_deser::deser_map_com_amazonaws_route53recoverycontrolconfig___map_of__string_min0_max256_pattern_s(tokens)?
                         );
                     }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -1260,7 +1301,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "AssertedControls" => {
                                 builder = builder.set_asserted_controls(
-                                    crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string_min1_max256_pattern_a_za_z09(tokens)?
                                 );
                             }
                             "ControlPanelArn" => {
@@ -1365,7 +1406,7 @@ where
                             }
                             "GatingControls" => {
                                 builder = builder.set_gating_controls(
-                                    crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string_min1_max256_pattern_a_za_z09(tokens)?
                                 );
                             }
                             "Name" => {
@@ -1407,7 +1448,7 @@ where
                             }
                             "TargetControls" => {
                                 builder = builder.set_target_controls(
-                                    crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string(tokens)?
+                                    crate::json_deser::deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string_min1_max256_pattern_a_za_z09(tokens)?
                                 );
                             }
                             "WaitPeriodMs" => {
@@ -1438,7 +1479,10 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
-pub fn deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string<'a, I>(
+pub fn deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string_max36_pattern_s<
+    'a,
+    I,
+>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
 where
@@ -1619,6 +1663,55 @@ where
 }
 
 #[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_map_com_amazonaws_route53recoverycontrolconfig___map_of__string_min0_max256_pattern_s<
+    'a,
+    I,
+>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            let mut map = std::collections::HashMap::new();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        let key = key.to_unescaped().map(|u| u.into_owned())?;
+                        let value = aws_smithy_json::deserialize::token::expect_string_or_null(
+                            tokens.next(),
+                        )?
+                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                        .transpose()?;
+                        if let Some(value) = value {
+                            map.insert(key, value);
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(map))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
 pub fn deser_list_com_amazonaws_route53recoverycontrolconfig___list_of_cluster_endpoint<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<std::vec::Vec<crate::model::ClusterEndpoint>>, aws_smithy_json::deserialize::Error>
@@ -1642,6 +1735,48 @@ where
                             crate::json_deser::deser_structure_crate_model_cluster_endpoint(
                                 tokens,
                             )?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start array or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_com_amazonaws_route53recoverycontrolconfig___list_of__string_min1_max256_pattern_a_za_z09<
+    'a,
+    I,
+>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<std::vec::Vec<std::string::String>>, aws_smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value = aws_smithy_json::deserialize::token::expect_string_or_null(
+                            tokens.next(),
+                        )?
+                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                        .transpose()?;
                         if let Some(value) = value {
                             items.push(value);
                         }

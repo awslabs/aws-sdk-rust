@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ChannelNotBroadcasting(crate::error::ChannelNotBroadcasting),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p/>
+    /// <p></p>
     StreamUnavailable(crate::error::StreamUnavailable),
-    /// <p/>
+    /// <p></p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

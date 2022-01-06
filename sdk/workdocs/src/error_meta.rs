@@ -7,24 +7,19 @@ pub enum Error {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>Another operation is in progress on the resource that conflicts with the current operation.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
-    /// <p>The limit has been reached on the number of custom properties for the specified
-    /// resource.</p>
+    /// <p>The limit has been reached on the number of custom properties for the specified resource.</p>
     CustomMetadataLimitExceededException(crate::error::CustomMetadataLimitExceededException),
     /// <p>The last user in the organization is being deactivated.</p>
     DeactivatingLastSystemUserException(crate::error::DeactivatingLastSystemUserException),
-    /// <p>This exception is thrown when the document is locked for comments and user tries to
-    /// create or delete a comment on that document.</p>
+    /// <p>This exception is thrown when the document is locked for comments and user tries to create or delete a comment on that document.</p>
     DocumentLockedForCommentsException(crate::error::DocumentLockedForCommentsException),
-    /// <p>This exception is thrown when a valid checkout ID is not presented on document
-    /// version upload calls for a document that has been checked out from Web client.</p>
+    /// <p>This exception is thrown when a valid checkout ID is not presented on document version upload calls for a document that has been checked out from Web client.</p>
     DraftUploadOutOfSyncException(crate::error::DraftUploadOutOfSyncException),
     /// <p>The resource already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The user is undergoing transfer of ownership.</p>
     IllegalUserStateException(crate::error::IllegalUserStateException),
@@ -50,11 +45,9 @@ pub enum Error {
     StorageLimitExceededException(crate::error::StorageLimitExceededException),
     /// <p>The storage limit will be exceeded.</p>
     StorageLimitWillExceedException(crate::error::StorageLimitWillExceedException),
-    /// <p>The limit has been reached on the number of labels for the specified
-    /// resource.</p>
+    /// <p>The limit has been reached on the number of labels for the specified resource.</p>
     TooManyLabelsException(crate::error::TooManyLabelsException),
-    /// <p>You've reached the limit on the number of subscriptions for the WorkDocs
-    /// instance.</p>
+    /// <p>You've reached the limit on the number of subscriptions for the WorkDocs instance.</p>
     TooManySubscriptionsException(crate::error::TooManySubscriptionsException),
     /// <p>The operation is not permitted.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),

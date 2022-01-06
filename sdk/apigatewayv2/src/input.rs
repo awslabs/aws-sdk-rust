@@ -215,7 +215,7 @@ pub mod create_api_input {
 #[doc(hidden)]
 pub type CreateApiInputOperationOutputAlias = crate::operation::CreateApi;
 #[doc(hidden)]
-pub type CreateApiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApiInput {
     /// Consumes the builder and constructs an Operation<[`CreateApi`](crate::operation::CreateApi)>
     #[allow(clippy::let_and_return)]
@@ -226,7 +226,7 @@ impl CreateApiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApi,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -303,7 +303,7 @@ impl CreateApiInput {
                     "CreateApi",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -400,7 +400,7 @@ pub mod create_api_mapping_input {
 #[doc(hidden)]
 pub type CreateApiMappingInputOperationOutputAlias = crate::operation::CreateApiMapping;
 #[doc(hidden)]
-pub type CreateApiMappingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApiMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApiMappingInput {
     /// Consumes the builder and constructs an Operation<[`CreateApiMapping`](crate::operation::CreateApiMapping)>
     #[allow(clippy::let_and_return)]
@@ -411,7 +411,7 @@ impl CreateApiMappingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApiMapping,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -511,7 +511,7 @@ impl CreateApiMappingInput {
             "CreateApiMapping",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -618,14 +618,28 @@ pub mod create_authorizer_input {
             self.authorizer_type = input;
             self
         }
-        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
-        /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+        /// {account_id}
+        /// </replaceable>:function:<replaceable>
+        /// {lambda_function_name}
+        /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+        /// {region}
+        /// </replaceable>:lambda:path/<replaceable>
+        /// {service_api}
+        /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
         pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorizer_uri = Some(input.into());
             self
         }
-        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
-        /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+        /// {account_id}
+        /// </replaceable>:function:<replaceable>
+        /// {lambda_function_name}
+        /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+        /// {region}
+        /// </replaceable>:lambda:path/<replaceable>
+        /// {service_api}
+        /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
         pub fn set_authorizer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -647,14 +661,18 @@ pub mod create_authorizer_input {
         ///
         /// To override the contents of this collection use [`set_identity_source`](Self::set_identity_source).
         ///
-        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+        /// <p>The identity source for which authorization is requested.</p>
+        /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+        /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
         pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identity_source.unwrap_or_default();
             v.push(input.into());
             self.identity_source = Some(v);
             self
         }
-        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+        /// <p>The identity source for which authorization is requested.</p>
+        /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+        /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
         pub fn set_identity_source(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -729,7 +747,7 @@ pub mod create_authorizer_input {
 #[doc(hidden)]
 pub type CreateAuthorizerInputOperationOutputAlias = crate::operation::CreateAuthorizer;
 #[doc(hidden)]
-pub type CreateAuthorizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAuthorizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAuthorizerInput {
     /// Consumes the builder and constructs an Operation<[`CreateAuthorizer`](crate::operation::CreateAuthorizer)>
     #[allow(clippy::let_and_return)]
@@ -740,7 +758,7 @@ impl CreateAuthorizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAuthorizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -836,7 +854,7 @@ impl CreateAuthorizerInput {
             "CreateAuthorizer",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -918,7 +936,7 @@ pub mod create_deployment_input {
 #[doc(hidden)]
 pub type CreateDeploymentInputOperationOutputAlias = crate::operation::CreateDeployment;
 #[doc(hidden)]
-pub type CreateDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeployment`](crate::operation::CreateDeployment)>
     #[allow(clippy::let_and_return)]
@@ -929,7 +947,7 @@ impl CreateDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1025,7 +1043,7 @@ impl CreateDeploymentInput {
             "CreateDeployment",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1081,10 +1099,10 @@ pub mod create_domain_name_input {
         /// <p>The domain name configurations.</p>
         pub fn domain_name_configurations(
             mut self,
-            input: impl Into<crate::model::DomainNameConfiguration>,
+            input: crate::model::DomainNameConfiguration,
         ) -> Self {
             let mut v = self.domain_name_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_name_configurations = Some(v);
             self
         }
@@ -1156,7 +1174,7 @@ pub mod create_domain_name_input {
 #[doc(hidden)]
 pub type CreateDomainNameInputOperationOutputAlias = crate::operation::CreateDomainName;
 #[doc(hidden)]
-pub type CreateDomainNameInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDomainNameInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDomainNameInput {
     /// Consumes the builder and constructs an Operation<[`CreateDomainName`](crate::operation::CreateDomainName)>
     #[allow(clippy::let_and_return)]
@@ -1167,7 +1185,7 @@ impl CreateDomainNameInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDomainName,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1247,7 +1265,7 @@ impl CreateDomainNameInput {
             "CreateDomainName",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1342,7 +1360,10 @@ pub mod create_integration_input {
             self.connection_type = input;
             self
         }
-        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn content_handling_strategy(
             mut self,
             input: crate::model::ContentHandlingStrategy,
@@ -1350,7 +1371,10 @@ pub mod create_integration_input {
             self.content_handling_strategy = Some(input);
             self
         }
-        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -1407,12 +1431,22 @@ pub mod create_integration_input {
             self.integration_subtype = input;
             self
         }
-        /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+        /// <p>The integration type of an integration. One of the following:</p>
+        /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+        /// <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>
+        /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
+        /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
+        /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
         pub fn integration_type(mut self, input: crate::model::IntegrationType) -> Self {
             self.integration_type = Some(input);
             self
         }
-        /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+        /// <p>The integration type of an integration. One of the following:</p>
+        /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+        /// <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>
+        /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
+        /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
+        /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
         pub fn set_integration_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -1420,12 +1454,16 @@ pub mod create_integration_input {
             self.integration_type = input;
             self
         }
-        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
+        /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
+        /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
         pub fn integration_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.integration_uri = Some(input.into());
             self
         }
-        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
+        /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
+        /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
         pub fn set_integration_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1433,12 +1471,18 @@ pub mod create_integration_input {
             self.integration_uri = input;
             self
         }
-        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
+        /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
+        /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
+        /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
         pub fn passthrough_behavior(mut self, input: crate::model::PassthroughBehavior) -> Self {
             self.passthrough_behavior = Some(input);
             self
         }
-        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
+        /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
+        /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
+        /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
         pub fn set_passthrough_behavior(
             mut self,
             input: std::option::Option<crate::model::PassthroughBehavior>,
@@ -1463,12 +1507,17 @@ pub mod create_integration_input {
         ///
         /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
         ///
-        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-        /// , where
-        /// <replaceable>{location}</replaceable>
-        /// is querystring, path, or header; and
-        /// <replaceable>{name}</replaceable>
-        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
+        /// {location}
+        /// </replaceable>.<replaceable>
+        /// {name}
+        /// </replaceable> , where <replaceable>
+        /// {location}
+        /// </replaceable> is querystring, path, or header; and <replaceable>
+        /// {name}
+        /// </replaceable> must be a valid and unique method request parameter name.</p>
+        /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
+        /// <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1479,12 +1528,17 @@ pub mod create_integration_input {
             self.request_parameters = Some(hash_map);
             self
         }
-        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-        /// , where
-        /// <replaceable>{location}</replaceable>
-        /// is querystring, path, or header; and
-        /// <replaceable>{name}</replaceable>
-        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
+        /// {location}
+        /// </replaceable>.<replaceable>
+        /// {name}
+        /// </replaceable> , where <replaceable>
+        /// {location}
+        /// </replaceable> is querystring, path, or header; and <replaceable>
+        /// {name}
+        /// </replaceable> must be a valid and unique method request parameter name.</p>
+        /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
+        /// <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -1527,10 +1581,10 @@ pub mod create_integration_input {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -1619,7 +1673,7 @@ pub mod create_integration_input {
 #[doc(hidden)]
 pub type CreateIntegrationInputOperationOutputAlias = crate::operation::CreateIntegration;
 #[doc(hidden)]
-pub type CreateIntegrationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`CreateIntegration`](crate::operation::CreateIntegration)>
     #[allow(clippy::let_and_return)]
@@ -1630,7 +1684,7 @@ impl CreateIntegrationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateIntegration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1726,7 +1780,7 @@ impl CreateIntegrationInput {
             "CreateIntegration",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1779,7 +1833,10 @@ pub mod create_integration_response_input {
             self.api_id = input;
             self
         }
-        /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn content_handling_strategy(
             mut self,
             input: crate::model::ContentHandlingStrategy,
@@ -1787,7 +1844,10 @@ pub mod create_integration_response_input {
             self.content_handling_strategy = Some(input);
             self
         }
-        /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -1910,7 +1970,7 @@ pub mod create_integration_response_input {
 pub type CreateIntegrationResponseInputOperationOutputAlias =
     crate::operation::CreateIntegrationResponse;
 #[doc(hidden)]
-pub type CreateIntegrationResponseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateIntegrationResponseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIntegrationResponseInput {
     /// Consumes the builder and constructs an Operation<[`CreateIntegrationResponse`](crate::operation::CreateIntegrationResponse)>
     #[allow(clippy::let_and_return)]
@@ -1921,7 +1981,7 @@ impl CreateIntegrationResponseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateIntegrationResponse,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2039,7 +2099,7 @@ impl CreateIntegrationResponseInput {
             "CreateIntegrationResponse",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2145,7 +2205,7 @@ pub mod create_model_input {
 #[doc(hidden)]
 pub type CreateModelInputOperationOutputAlias = crate::operation::CreateModel;
 #[doc(hidden)]
-pub type CreateModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateModelInput {
     /// Consumes the builder and constructs an Operation<[`CreateModel`](crate::operation::CreateModel)>
     #[allow(clippy::let_and_return)]
@@ -2156,7 +2216,7 @@ impl CreateModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2251,7 +2311,7 @@ impl CreateModelInput {
             "CreateModel",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2422,10 +2482,10 @@ pub mod create_route_input {
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
@@ -2502,7 +2562,7 @@ pub mod create_route_input {
 #[doc(hidden)]
 pub type CreateRouteInputOperationOutputAlias = crate::operation::CreateRoute;
 #[doc(hidden)]
-pub type CreateRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRouteInput {
     /// Consumes the builder and constructs an Operation<[`CreateRoute`](crate::operation::CreateRoute)>
     #[allow(clippy::let_and_return)]
@@ -2513,7 +2573,7 @@ impl CreateRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2608,7 +2668,7 @@ impl CreateRouteInput {
             "CreateRoute",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2705,10 +2765,10 @@ pub mod create_route_response_input {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -2766,7 +2826,7 @@ pub mod create_route_response_input {
 #[doc(hidden)]
 pub type CreateRouteResponseInputOperationOutputAlias = crate::operation::CreateRouteResponse;
 #[doc(hidden)]
-pub type CreateRouteResponseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRouteResponseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRouteResponseInput {
     /// Consumes the builder and constructs an Operation<[`CreateRouteResponse`](crate::operation::CreateRouteResponse)>
     #[allow(clippy::let_and_return)]
@@ -2777,7 +2837,7 @@ impl CreateRouteResponseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRouteResponse,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2893,7 +2953,7 @@ impl CreateRouteResponseInput {
             "CreateRouteResponse",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3031,10 +3091,10 @@ pub mod create_stage_input {
         pub fn route_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RouteSettings>,
+            v: crate::model::RouteSettings,
         ) -> Self {
             let mut hash_map = self.route_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.route_settings = Some(hash_map);
             self
         }
@@ -3134,7 +3194,7 @@ pub mod create_stage_input {
 #[doc(hidden)]
 pub type CreateStageInputOperationOutputAlias = crate::operation::CreateStage;
 #[doc(hidden)]
-pub type CreateStageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStageInput {
     /// Consumes the builder and constructs an Operation<[`CreateStage`](crate::operation::CreateStage)>
     #[allow(clippy::let_and_return)]
@@ -3145,7 +3205,7 @@ impl CreateStageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3240,7 +3300,7 @@ impl CreateStageInput {
             "CreateStage",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3369,7 +3429,7 @@ pub mod create_vpc_link_input {
 #[doc(hidden)]
 pub type CreateVpcLinkInputOperationOutputAlias = crate::operation::CreateVpcLink;
 #[doc(hidden)]
-pub type CreateVpcLinkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVpcLinkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVpcLinkInput {
     /// Consumes the builder and constructs an Operation<[`CreateVpcLink`](crate::operation::CreateVpcLink)>
     #[allow(clippy::let_and_return)]
@@ -3380,7 +3440,7 @@ impl CreateVpcLinkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVpcLink,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3460,7 +3520,7 @@ impl CreateVpcLinkInput {
             "CreateVpcLink",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3531,7 +3591,7 @@ pub mod delete_access_log_settings_input {
 pub type DeleteAccessLogSettingsInputOperationOutputAlias =
     crate::operation::DeleteAccessLogSettings;
 #[doc(hidden)]
-pub type DeleteAccessLogSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAccessLogSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccessLogSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccessLogSettings`](crate::operation::DeleteAccessLogSettings)>
     #[allow(clippy::let_and_return)]
@@ -3542,7 +3602,7 @@ impl DeleteAccessLogSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessLogSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3652,7 +3712,7 @@ impl DeleteAccessLogSettingsInput {
             "DeleteAccessLogSettings",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3700,7 +3760,7 @@ pub mod delete_api_input {
 #[doc(hidden)]
 pub type DeleteApiInputOperationOutputAlias = crate::operation::DeleteApi;
 #[doc(hidden)]
-pub type DeleteApiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApiInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApi`](crate::operation::DeleteApi)>
     #[allow(clippy::let_and_return)]
@@ -3711,7 +3771,7 @@ impl DeleteApiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApi,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3798,7 +3858,7 @@ impl DeleteApiInput {
                     "DeleteApi",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3863,7 +3923,7 @@ pub mod delete_api_mapping_input {
 #[doc(hidden)]
 pub type DeleteApiMappingInputOperationOutputAlias = crate::operation::DeleteApiMapping;
 #[doc(hidden)]
-pub type DeleteApiMappingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApiMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApiMappingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApiMapping`](crate::operation::DeleteApiMapping)>
     #[allow(clippy::let_and_return)]
@@ -3874,7 +3934,7 @@ impl DeleteApiMappingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApiMapping,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3984,7 +4044,7 @@ impl DeleteApiMappingInput {
             "DeleteApiMapping",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4049,7 +4109,7 @@ pub mod delete_authorizer_input {
 #[doc(hidden)]
 pub type DeleteAuthorizerInputOperationOutputAlias = crate::operation::DeleteAuthorizer;
 #[doc(hidden)]
-pub type DeleteAuthorizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAuthorizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAuthorizerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAuthorizer`](crate::operation::DeleteAuthorizer)>
     #[allow(clippy::let_and_return)]
@@ -4060,7 +4120,7 @@ impl DeleteAuthorizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAuthorizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4170,7 +4230,7 @@ impl DeleteAuthorizerInput {
             "DeleteAuthorizer",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4221,7 +4281,7 @@ pub mod delete_cors_configuration_input {
 pub type DeleteCorsConfigurationInputOperationOutputAlias =
     crate::operation::DeleteCorsConfiguration;
 #[doc(hidden)]
-pub type DeleteCorsConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCorsConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCorsConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCorsConfiguration`](crate::operation::DeleteCorsConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4232,7 +4292,7 @@ impl DeleteCorsConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCorsConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4322,7 +4382,7 @@ impl DeleteCorsConfigurationInput {
             "DeleteCorsConfiguration",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4387,7 +4447,7 @@ pub mod delete_deployment_input {
 #[doc(hidden)]
 pub type DeleteDeploymentInputOperationOutputAlias = crate::operation::DeleteDeployment;
 #[doc(hidden)]
-pub type DeleteDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDeployment`](crate::operation::DeleteDeployment)>
     #[allow(clippy::let_and_return)]
@@ -4398,7 +4458,7 @@ impl DeleteDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4508,7 +4568,7 @@ impl DeleteDeploymentInput {
             "DeleteDeployment",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4558,7 +4618,7 @@ pub mod delete_domain_name_input {
 #[doc(hidden)]
 pub type DeleteDomainNameInputOperationOutputAlias = crate::operation::DeleteDomainName;
 #[doc(hidden)]
-pub type DeleteDomainNameInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDomainNameInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDomainNameInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDomainName`](crate::operation::DeleteDomainName)>
     #[allow(clippy::let_and_return)]
@@ -4569,7 +4629,7 @@ impl DeleteDomainNameInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDomainName,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4663,7 +4723,7 @@ impl DeleteDomainNameInput {
             "DeleteDomainName",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4728,7 +4788,7 @@ pub mod delete_integration_input {
 #[doc(hidden)]
 pub type DeleteIntegrationInputOperationOutputAlias = crate::operation::DeleteIntegration;
 #[doc(hidden)]
-pub type DeleteIntegrationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIntegration`](crate::operation::DeleteIntegration)>
     #[allow(clippy::let_and_return)]
@@ -4739,7 +4799,7 @@ impl DeleteIntegrationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIntegration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4849,7 +4909,7 @@ impl DeleteIntegrationInput {
             "DeleteIntegration",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4930,7 +4990,7 @@ pub mod delete_integration_response_input {
 pub type DeleteIntegrationResponseInputOperationOutputAlias =
     crate::operation::DeleteIntegrationResponse;
 #[doc(hidden)]
-pub type DeleteIntegrationResponseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIntegrationResponseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIntegrationResponseInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIntegrationResponse`](crate::operation::DeleteIntegrationResponse)>
     #[allow(clippy::let_and_return)]
@@ -4941,7 +5001,7 @@ impl DeleteIntegrationResponseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIntegrationResponse,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5060,7 +5120,7 @@ impl DeleteIntegrationResponseInput {
             "DeleteIntegrationResponse",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5122,7 +5182,7 @@ pub mod delete_model_input {
 #[doc(hidden)]
 pub type DeleteModelInputOperationOutputAlias = crate::operation::DeleteModel;
 #[doc(hidden)]
-pub type DeleteModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteModel`](crate::operation::DeleteModel)>
     #[allow(clippy::let_and_return)]
@@ -5133,7 +5193,7 @@ impl DeleteModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5243,7 +5303,7 @@ impl DeleteModelInput {
             "DeleteModel",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5305,7 +5365,7 @@ pub mod delete_route_input {
 #[doc(hidden)]
 pub type DeleteRouteInputOperationOutputAlias = crate::operation::DeleteRoute;
 #[doc(hidden)]
-pub type DeleteRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRouteInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRoute`](crate::operation::DeleteRoute)>
     #[allow(clippy::let_and_return)]
@@ -5316,7 +5376,7 @@ impl DeleteRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5426,7 +5486,7 @@ impl DeleteRouteInput {
             "DeleteRoute",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5504,7 +5564,7 @@ pub mod delete_route_request_parameter_input {
 pub type DeleteRouteRequestParameterInputOperationOutputAlias =
     crate::operation::DeleteRouteRequestParameter;
 #[doc(hidden)]
-pub type DeleteRouteRequestParameterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRouteRequestParameterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRouteRequestParameterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRouteRequestParameter`](crate::operation::DeleteRouteRequestParameter)>
     #[allow(clippy::let_and_return)]
@@ -5515,7 +5575,7 @@ impl DeleteRouteRequestParameterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRouteRequestParameter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5641,7 +5701,7 @@ impl DeleteRouteRequestParameterInput {
             "DeleteRouteRequestParameter",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5718,7 +5778,7 @@ pub mod delete_route_response_input {
 #[doc(hidden)]
 pub type DeleteRouteResponseInputOperationOutputAlias = crate::operation::DeleteRouteResponse;
 #[doc(hidden)]
-pub type DeleteRouteResponseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRouteResponseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRouteResponseInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRouteResponse`](crate::operation::DeleteRouteResponse)>
     #[allow(clippy::let_and_return)]
@@ -5729,7 +5789,7 @@ impl DeleteRouteResponseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRouteResponse,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5855,7 +5915,7 @@ impl DeleteRouteResponseInput {
             "DeleteRouteResponse",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5929,7 +5989,7 @@ pub mod delete_route_settings_input {
 #[doc(hidden)]
 pub type DeleteRouteSettingsInputOperationOutputAlias = crate::operation::DeleteRouteSettings;
 #[doc(hidden)]
-pub type DeleteRouteSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRouteSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRouteSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRouteSettings`](crate::operation::DeleteRouteSettings)>
     #[allow(clippy::let_and_return)]
@@ -5940,7 +6000,7 @@ impl DeleteRouteSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRouteSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6066,7 +6126,7 @@ impl DeleteRouteSettingsInput {
             "DeleteRouteSettings",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6128,7 +6188,7 @@ pub mod delete_stage_input {
 #[doc(hidden)]
 pub type DeleteStageInputOperationOutputAlias = crate::operation::DeleteStage;
 #[doc(hidden)]
-pub type DeleteStageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStage`](crate::operation::DeleteStage)>
     #[allow(clippy::let_and_return)]
@@ -6139,7 +6199,7 @@ impl DeleteStageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6249,7 +6309,7 @@ impl DeleteStageInput {
             "DeleteStage",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6299,7 +6359,7 @@ pub mod delete_vpc_link_input {
 #[doc(hidden)]
 pub type DeleteVpcLinkInputOperationOutputAlias = crate::operation::DeleteVpcLink;
 #[doc(hidden)]
-pub type DeleteVpcLinkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVpcLinkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVpcLinkInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVpcLink`](crate::operation::DeleteVpcLink)>
     #[allow(clippy::let_and_return)]
@@ -6310,7 +6370,7 @@ impl DeleteVpcLinkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVpcLink,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6400,7 +6460,7 @@ impl DeleteVpcLinkInput {
             "DeleteVpcLink",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6514,7 +6574,7 @@ pub mod export_api_input {
 #[doc(hidden)]
 pub type ExportApiInputOperationOutputAlias = crate::operation::ExportApi;
 #[doc(hidden)]
-pub type ExportApiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExportApiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportApiInput {
     /// Consumes the builder and constructs an Operation<[`ExportApi`](crate::operation::ExportApi)>
     #[allow(clippy::let_and_return)]
@@ -6525,7 +6585,7 @@ impl ExportApiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportApi,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6659,7 +6719,7 @@ impl ExportApiInput {
                     "ExportApi",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6707,7 +6767,7 @@ pub mod get_api_input {
 #[doc(hidden)]
 pub type GetApiInputOperationOutputAlias = crate::operation::GetApi;
 #[doc(hidden)]
-pub type GetApiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApiInput {
     /// Consumes the builder and constructs an Operation<[`GetApi`](crate::operation::GetApi)>
     #[allow(clippy::let_and_return)]
@@ -6718,7 +6778,7 @@ impl GetApiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApi,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6805,7 +6865,7 @@ impl GetApiInput {
                     "GetApi",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6870,7 +6930,7 @@ pub mod get_api_mapping_input {
 #[doc(hidden)]
 pub type GetApiMappingInputOperationOutputAlias = crate::operation::GetApiMapping;
 #[doc(hidden)]
-pub type GetApiMappingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApiMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApiMappingInput {
     /// Consumes the builder and constructs an Operation<[`GetApiMapping`](crate::operation::GetApiMapping)>
     #[allow(clippy::let_and_return)]
@@ -6881,7 +6941,7 @@ impl GetApiMappingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApiMapping,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6991,7 +7051,7 @@ impl GetApiMappingInput {
             "GetApiMapping",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7065,7 +7125,7 @@ pub mod get_api_mappings_input {
 #[doc(hidden)]
 pub type GetApiMappingsInputOperationOutputAlias = crate::operation::GetApiMappings;
 #[doc(hidden)]
-pub type GetApiMappingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApiMappingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApiMappingsInput {
     /// Consumes the builder and constructs an Operation<[`GetApiMappings`](crate::operation::GetApiMappings)>
     #[allow(clippy::let_and_return)]
@@ -7076,7 +7136,7 @@ impl GetApiMappingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApiMappings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7184,7 +7244,7 @@ impl GetApiMappingsInput {
             "GetApiMappings",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7244,7 +7304,7 @@ pub mod get_apis_input {
 #[doc(hidden)]
 pub type GetApisInputOperationOutputAlias = crate::operation::GetApis;
 #[doc(hidden)]
-pub type GetApisInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApisInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApisInput {
     /// Consumes the builder and constructs an Operation<[`GetApis`](crate::operation::GetApis)>
     #[allow(clippy::let_and_return)]
@@ -7255,7 +7315,7 @@ impl GetApisInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApis,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7341,7 +7401,7 @@ impl GetApisInput {
                     "GetApis",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7406,7 +7466,7 @@ pub mod get_authorizer_input {
 #[doc(hidden)]
 pub type GetAuthorizerInputOperationOutputAlias = crate::operation::GetAuthorizer;
 #[doc(hidden)]
-pub type GetAuthorizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAuthorizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAuthorizerInput {
     /// Consumes the builder and constructs an Operation<[`GetAuthorizer`](crate::operation::GetAuthorizer)>
     #[allow(clippy::let_and_return)]
@@ -7417,7 +7477,7 @@ impl GetAuthorizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAuthorizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7527,7 +7587,7 @@ impl GetAuthorizerInput {
             "GetAuthorizer",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7601,7 +7661,7 @@ pub mod get_authorizers_input {
 #[doc(hidden)]
 pub type GetAuthorizersInputOperationOutputAlias = crate::operation::GetAuthorizers;
 #[doc(hidden)]
-pub type GetAuthorizersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAuthorizersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAuthorizersInput {
     /// Consumes the builder and constructs an Operation<[`GetAuthorizers`](crate::operation::GetAuthorizers)>
     #[allow(clippy::let_and_return)]
@@ -7612,7 +7672,7 @@ impl GetAuthorizersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAuthorizers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7716,7 +7776,7 @@ impl GetAuthorizersInput {
             "GetAuthorizers",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7781,7 +7841,7 @@ pub mod get_deployment_input {
 #[doc(hidden)]
 pub type GetDeploymentInputOperationOutputAlias = crate::operation::GetDeployment;
 #[doc(hidden)]
-pub type GetDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`GetDeployment`](crate::operation::GetDeployment)>
     #[allow(clippy::let_and_return)]
@@ -7792,7 +7852,7 @@ impl GetDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7902,7 +7962,7 @@ impl GetDeploymentInput {
             "GetDeployment",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7976,7 +8036,7 @@ pub mod get_deployments_input {
 #[doc(hidden)]
 pub type GetDeploymentsInputOperationOutputAlias = crate::operation::GetDeployments;
 #[doc(hidden)]
-pub type GetDeploymentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDeploymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeploymentsInput {
     /// Consumes the builder and constructs an Operation<[`GetDeployments`](crate::operation::GetDeployments)>
     #[allow(clippy::let_and_return)]
@@ -7987,7 +8047,7 @@ impl GetDeploymentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeployments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8091,7 +8151,7 @@ impl GetDeploymentsInput {
             "GetDeployments",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8141,7 +8201,7 @@ pub mod get_domain_name_input {
 #[doc(hidden)]
 pub type GetDomainNameInputOperationOutputAlias = crate::operation::GetDomainName;
 #[doc(hidden)]
-pub type GetDomainNameInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDomainNameInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDomainNameInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainName`](crate::operation::GetDomainName)>
     #[allow(clippy::let_and_return)]
@@ -8152,7 +8212,7 @@ impl GetDomainNameInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDomainName,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8246,7 +8306,7 @@ impl GetDomainNameInput {
             "GetDomainName",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8308,7 +8368,7 @@ pub mod get_domain_names_input {
 #[doc(hidden)]
 pub type GetDomainNamesInputOperationOutputAlias = crate::operation::GetDomainNames;
 #[doc(hidden)]
-pub type GetDomainNamesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDomainNamesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDomainNamesInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainNames`](crate::operation::GetDomainNames)>
     #[allow(clippy::let_and_return)]
@@ -8319,7 +8379,7 @@ impl GetDomainNamesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDomainNames,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8407,7 +8467,7 @@ impl GetDomainNamesInput {
             "GetDomainNames",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8472,7 +8532,7 @@ pub mod get_integration_input {
 #[doc(hidden)]
 pub type GetIntegrationInputOperationOutputAlias = crate::operation::GetIntegration;
 #[doc(hidden)]
-pub type GetIntegrationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`GetIntegration`](crate::operation::GetIntegration)>
     #[allow(clippy::let_and_return)]
@@ -8483,7 +8543,7 @@ impl GetIntegrationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIntegration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8593,7 +8653,7 @@ impl GetIntegrationInput {
             "GetIntegration",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8673,7 +8733,7 @@ pub mod get_integration_response_input {
 #[doc(hidden)]
 pub type GetIntegrationResponseInputOperationOutputAlias = crate::operation::GetIntegrationResponse;
 #[doc(hidden)]
-pub type GetIntegrationResponseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIntegrationResponseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIntegrationResponseInput {
     /// Consumes the builder and constructs an Operation<[`GetIntegrationResponse`](crate::operation::GetIntegrationResponse)>
     #[allow(clippy::let_and_return)]
@@ -8684,7 +8744,7 @@ impl GetIntegrationResponseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIntegrationResponse,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8803,7 +8863,7 @@ impl GetIntegrationResponseInput {
             "GetIntegrationResponse",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8893,7 +8953,7 @@ pub mod get_integration_responses_input {
 pub type GetIntegrationResponsesInputOperationOutputAlias =
     crate::operation::GetIntegrationResponses;
 #[doc(hidden)]
-pub type GetIntegrationResponsesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIntegrationResponsesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIntegrationResponsesInput {
     /// Consumes the builder and constructs an Operation<[`GetIntegrationResponses`](crate::operation::GetIntegrationResponses)>
     #[allow(clippy::let_and_return)]
@@ -8904,7 +8964,7 @@ impl GetIntegrationResponsesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIntegrationResponses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9028,7 +9088,7 @@ impl GetIntegrationResponsesInput {
             "GetIntegrationResponses",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9102,7 +9162,7 @@ pub mod get_integrations_input {
 #[doc(hidden)]
 pub type GetIntegrationsInputOperationOutputAlias = crate::operation::GetIntegrations;
 #[doc(hidden)]
-pub type GetIntegrationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIntegrationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIntegrationsInput {
     /// Consumes the builder and constructs an Operation<[`GetIntegrations`](crate::operation::GetIntegrations)>
     #[allow(clippy::let_and_return)]
@@ -9113,7 +9173,7 @@ impl GetIntegrationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIntegrations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9217,7 +9277,7 @@ impl GetIntegrationsInput {
             "GetIntegrations",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9277,7 +9337,7 @@ pub mod get_model_input {
 #[doc(hidden)]
 pub type GetModelInputOperationOutputAlias = crate::operation::GetModel;
 #[doc(hidden)]
-pub type GetModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetModelInput {
     /// Consumes the builder and constructs an Operation<[`GetModel`](crate::operation::GetModel)>
     #[allow(clippy::let_and_return)]
@@ -9288,7 +9348,7 @@ impl GetModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9396,7 +9456,7 @@ impl GetModelInput {
                     "GetModel",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9468,7 +9528,7 @@ pub mod get_models_input {
 #[doc(hidden)]
 pub type GetModelsInputOperationOutputAlias = crate::operation::GetModels;
 #[doc(hidden)]
-pub type GetModelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetModelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetModelsInput {
     /// Consumes the builder and constructs an Operation<[`GetModels`](crate::operation::GetModels)>
     #[allow(clippy::let_and_return)]
@@ -9479,7 +9539,7 @@ impl GetModelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetModels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9581,7 +9641,7 @@ impl GetModelsInput {
                     "GetModels",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9643,7 +9703,7 @@ pub mod get_model_template_input {
 #[doc(hidden)]
 pub type GetModelTemplateInputOperationOutputAlias = crate::operation::GetModelTemplate;
 #[doc(hidden)]
-pub type GetModelTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetModelTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetModelTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetModelTemplate`](crate::operation::GetModelTemplate)>
     #[allow(clippy::let_and_return)]
@@ -9654,7 +9714,7 @@ impl GetModelTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetModelTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9764,7 +9824,7 @@ impl GetModelTemplateInput {
             "GetModelTemplate",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9824,7 +9884,7 @@ pub mod get_route_input {
 #[doc(hidden)]
 pub type GetRouteInputOperationOutputAlias = crate::operation::GetRoute;
 #[doc(hidden)]
-pub type GetRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRouteInput {
     /// Consumes the builder and constructs an Operation<[`GetRoute`](crate::operation::GetRoute)>
     #[allow(clippy::let_and_return)]
@@ -9835,7 +9895,7 @@ impl GetRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9943,7 +10003,7 @@ impl GetRouteInput {
                     "GetRoute",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10020,7 +10080,7 @@ pub mod get_route_response_input {
 #[doc(hidden)]
 pub type GetRouteResponseInputOperationOutputAlias = crate::operation::GetRouteResponse;
 #[doc(hidden)]
-pub type GetRouteResponseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRouteResponseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRouteResponseInput {
     /// Consumes the builder and constructs an Operation<[`GetRouteResponse`](crate::operation::GetRouteResponse)>
     #[allow(clippy::let_and_return)]
@@ -10031,7 +10091,7 @@ impl GetRouteResponseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRouteResponse,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10157,7 +10217,7 @@ impl GetRouteResponseInput {
             "GetRouteResponse",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10243,7 +10303,7 @@ pub mod get_route_responses_input {
 #[doc(hidden)]
 pub type GetRouteResponsesInputOperationOutputAlias = crate::operation::GetRouteResponses;
 #[doc(hidden)]
-pub type GetRouteResponsesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRouteResponsesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRouteResponsesInput {
     /// Consumes the builder and constructs an Operation<[`GetRouteResponses`](crate::operation::GetRouteResponses)>
     #[allow(clippy::let_and_return)]
@@ -10254,7 +10314,7 @@ impl GetRouteResponsesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRouteResponses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10378,7 +10438,7 @@ impl GetRouteResponsesInput {
             "GetRouteResponses",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10450,7 +10510,7 @@ pub mod get_routes_input {
 #[doc(hidden)]
 pub type GetRoutesInputOperationOutputAlias = crate::operation::GetRoutes;
 #[doc(hidden)]
-pub type GetRoutesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRoutesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRoutesInput {
     /// Consumes the builder and constructs an Operation<[`GetRoutes`](crate::operation::GetRoutes)>
     #[allow(clippy::let_and_return)]
@@ -10461,7 +10521,7 @@ impl GetRoutesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRoutes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10563,7 +10623,7 @@ impl GetRoutesInput {
                     "GetRoutes",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10623,7 +10683,7 @@ pub mod get_stage_input {
 #[doc(hidden)]
 pub type GetStageInputOperationOutputAlias = crate::operation::GetStage;
 #[doc(hidden)]
-pub type GetStageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStageInput {
     /// Consumes the builder and constructs an Operation<[`GetStage`](crate::operation::GetStage)>
     #[allow(clippy::let_and_return)]
@@ -10634,7 +10694,7 @@ impl GetStageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10742,7 +10802,7 @@ impl GetStageInput {
                     "GetStage",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10814,7 +10874,7 @@ pub mod get_stages_input {
 #[doc(hidden)]
 pub type GetStagesInputOperationOutputAlias = crate::operation::GetStages;
 #[doc(hidden)]
-pub type GetStagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStagesInput {
     /// Consumes the builder and constructs an Operation<[`GetStages`](crate::operation::GetStages)>
     #[allow(clippy::let_and_return)]
@@ -10825,7 +10885,7 @@ impl GetStagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10930,7 +10990,7 @@ impl GetStagesInput {
                     "GetStages",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10978,7 +11038,7 @@ pub mod get_tags_input {
 #[doc(hidden)]
 pub type GetTagsInputOperationOutputAlias = crate::operation::GetTags;
 #[doc(hidden)]
-pub type GetTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTagsInput {
     /// Consumes the builder and constructs an Operation<[`GetTags`](crate::operation::GetTags)>
     #[allow(clippy::let_and_return)]
@@ -10989,7 +11049,7 @@ impl GetTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11077,7 +11137,7 @@ impl GetTagsInput {
                     "GetTags",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11127,7 +11187,7 @@ pub mod get_vpc_link_input {
 #[doc(hidden)]
 pub type GetVpcLinkInputOperationOutputAlias = crate::operation::GetVpcLink;
 #[doc(hidden)]
-pub type GetVpcLinkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetVpcLinkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVpcLinkInput {
     /// Consumes the builder and constructs an Operation<[`GetVpcLink`](crate::operation::GetVpcLink)>
     #[allow(clippy::let_and_return)]
@@ -11138,7 +11198,7 @@ impl GetVpcLinkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVpcLink,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11228,7 +11288,7 @@ impl GetVpcLinkInput {
             "GetVpcLink",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11290,7 +11350,7 @@ pub mod get_vpc_links_input {
 #[doc(hidden)]
 pub type GetVpcLinksInputOperationOutputAlias = crate::operation::GetVpcLinks;
 #[doc(hidden)]
-pub type GetVpcLinksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetVpcLinksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVpcLinksInput {
     /// Consumes the builder and constructs an Operation<[`GetVpcLinks`](crate::operation::GetVpcLinks)>
     #[allow(clippy::let_and_return)]
@@ -11301,7 +11361,7 @@ impl GetVpcLinksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVpcLinks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11392,7 +11452,7 @@ impl GetVpcLinksInput {
             "GetVpcLinks",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11464,7 +11524,7 @@ pub mod import_api_input {
 #[doc(hidden)]
 pub type ImportApiInputOperationOutputAlias = crate::operation::ImportApi;
 #[doc(hidden)]
-pub type ImportApiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportApiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportApiInput {
     /// Consumes the builder and constructs an Operation<[`ImportApi`](crate::operation::ImportApi)>
     #[allow(clippy::let_and_return)]
@@ -11475,7 +11535,7 @@ impl ImportApiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportApi,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11569,7 +11629,7 @@ impl ImportApiInput {
                     "ImportApi",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11663,7 +11723,7 @@ pub mod reimport_api_input {
 #[doc(hidden)]
 pub type ReimportApiInputOperationOutputAlias = crate::operation::ReimportApi;
 #[doc(hidden)]
-pub type ReimportApiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ReimportApiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ReimportApiInput {
     /// Consumes the builder and constructs an Operation<[`ReimportApi`](crate::operation::ReimportApi)>
     #[allow(clippy::let_and_return)]
@@ -11674,7 +11734,7 @@ impl ReimportApiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ReimportApi,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11785,7 +11845,7 @@ impl ReimportApiInput {
             "ReimportApi",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11855,7 +11915,7 @@ pub mod reset_authorizers_cache_input {
 #[doc(hidden)]
 pub type ResetAuthorizersCacheInputOperationOutputAlias = crate::operation::ResetAuthorizersCache;
 #[doc(hidden)]
-pub type ResetAuthorizersCacheInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResetAuthorizersCacheInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResetAuthorizersCacheInput {
     /// Consumes the builder and constructs an Operation<[`ResetAuthorizersCache`](crate::operation::ResetAuthorizersCache)>
     #[allow(clippy::let_and_return)]
@@ -11866,7 +11926,7 @@ impl ResetAuthorizersCacheInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResetAuthorizersCache,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11976,7 +12036,7 @@ impl ResetAuthorizersCacheInput {
             "ResetAuthorizersCache",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12055,7 +12115,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -12066,7 +12126,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12161,7 +12221,7 @@ impl TagResourceInput {
             "TagResource",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12240,7 +12300,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -12251,7 +12311,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12354,7 +12414,7 @@ impl UntagResourceInput {
             "UntagResource",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12552,7 +12612,7 @@ pub mod update_api_input {
 #[doc(hidden)]
 pub type UpdateApiInputOperationOutputAlias = crate::operation::UpdateApi;
 #[doc(hidden)]
-pub type UpdateApiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApiInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApiInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApi`](crate::operation::UpdateApi)>
     #[allow(clippy::let_and_return)]
@@ -12563,7 +12623,7 @@ impl UpdateApiInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApi,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12655,7 +12715,7 @@ impl UpdateApiInput {
                     "UpdateApi",
                     "apigatewayv2",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12767,7 +12827,7 @@ pub mod update_api_mapping_input {
 #[doc(hidden)]
 pub type UpdateApiMappingInputOperationOutputAlias = crate::operation::UpdateApiMapping;
 #[doc(hidden)]
-pub type UpdateApiMappingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApiMappingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApiMappingInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApiMapping`](crate::operation::UpdateApiMapping)>
     #[allow(clippy::let_and_return)]
@@ -12778,7 +12838,7 @@ impl UpdateApiMappingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApiMapping,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12894,7 +12954,7 @@ impl UpdateApiMappingInput {
             "UpdateApiMapping",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13015,14 +13075,28 @@ pub mod update_authorizer_input {
             self.authorizer_type = input;
             self
         }
-        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
-        /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+        /// {account_id}
+        /// </replaceable>:function:<replaceable>
+        /// {lambda_function_name}
+        /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+        /// {region}
+        /// </replaceable>:lambda:path/<replaceable>
+        /// {service_api}
+        /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
         pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorizer_uri = Some(input.into());
             self
         }
-        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
-        /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+        /// {account_id}
+        /// </replaceable>:function:<replaceable>
+        /// {lambda_function_name}
+        /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+        /// {region}
+        /// </replaceable>:lambda:path/<replaceable>
+        /// {service_api}
+        /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
         pub fn set_authorizer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13044,14 +13118,18 @@ pub mod update_authorizer_input {
         ///
         /// To override the contents of this collection use [`set_identity_source`](Self::set_identity_source).
         ///
-        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+        /// <p>The identity source for which authorization is requested.</p>
+        /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+        /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
         pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identity_source.unwrap_or_default();
             v.push(input.into());
             self.identity_source = Some(v);
             self
         }
-        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+        /// <p>The identity source for which authorization is requested.</p>
+        /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+        /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
         pub fn set_identity_source(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13127,7 +13205,7 @@ pub mod update_authorizer_input {
 #[doc(hidden)]
 pub type UpdateAuthorizerInputOperationOutputAlias = crate::operation::UpdateAuthorizer;
 #[doc(hidden)]
-pub type UpdateAuthorizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAuthorizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAuthorizerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAuthorizer`](crate::operation::UpdateAuthorizer)>
     #[allow(clippy::let_and_return)]
@@ -13138,7 +13216,7 @@ impl UpdateAuthorizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAuthorizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13254,7 +13332,7 @@ impl UpdateAuthorizerInput {
             "UpdateAuthorizer",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13339,7 +13417,7 @@ pub mod update_deployment_input {
 #[doc(hidden)]
 pub type UpdateDeploymentInputOperationOutputAlias = crate::operation::UpdateDeployment;
 #[doc(hidden)]
-pub type UpdateDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDeployment`](crate::operation::UpdateDeployment)>
     #[allow(clippy::let_and_return)]
@@ -13350,7 +13428,7 @@ impl UpdateDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13466,7 +13544,7 @@ impl UpdateDeploymentInput {
             "UpdateDeployment",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13519,10 +13597,10 @@ pub mod update_domain_name_input {
         /// <p>The domain name configurations.</p>
         pub fn domain_name_configurations(
             mut self,
-            input: impl Into<crate::model::DomainNameConfiguration>,
+            input: crate::model::DomainNameConfiguration,
         ) -> Self {
             let mut v = self.domain_name_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_name_configurations = Some(v);
             self
         }
@@ -13568,7 +13646,7 @@ pub mod update_domain_name_input {
 #[doc(hidden)]
 pub type UpdateDomainNameInputOperationOutputAlias = crate::operation::UpdateDomainName;
 #[doc(hidden)]
-pub type UpdateDomainNameInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDomainNameInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainNameInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainName`](crate::operation::UpdateDomainName)>
     #[allow(clippy::let_and_return)]
@@ -13579,7 +13657,7 @@ impl UpdateDomainNameInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainName,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13679,7 +13757,7 @@ impl UpdateDomainNameInput {
             "UpdateDomainName",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13775,7 +13853,10 @@ pub mod update_integration_input {
             self.connection_type = input;
             self
         }
-        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn content_handling_strategy(
             mut self,
             input: crate::model::ContentHandlingStrategy,
@@ -13783,7 +13864,10 @@ pub mod update_integration_input {
             self.content_handling_strategy = Some(input);
             self
         }
-        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -13853,12 +13937,22 @@ pub mod update_integration_input {
             self.integration_subtype = input;
             self
         }
-        /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+        /// <p>The integration type of an integration. One of the following:</p>
+        /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+        /// <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>
+        /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
+        /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
+        /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
         pub fn integration_type(mut self, input: crate::model::IntegrationType) -> Self {
             self.integration_type = Some(input);
             self
         }
-        /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+        /// <p>The integration type of an integration. One of the following:</p>
+        /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+        /// <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>
+        /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
+        /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
+        /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
         pub fn set_integration_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -13866,12 +13960,16 @@ pub mod update_integration_input {
             self.integration_type = input;
             self
         }
-        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
+        /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
+        /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
         pub fn integration_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.integration_uri = Some(input.into());
             self
         }
-        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
+        /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
+        /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
         pub fn set_integration_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13879,12 +13977,18 @@ pub mod update_integration_input {
             self.integration_uri = input;
             self
         }
-        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
+        /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
+        /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
+        /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
         pub fn passthrough_behavior(mut self, input: crate::model::PassthroughBehavior) -> Self {
             self.passthrough_behavior = Some(input);
             self
         }
-        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
+        /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
+        /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
+        /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
         pub fn set_passthrough_behavior(
             mut self,
             input: std::option::Option<crate::model::PassthroughBehavior>,
@@ -13909,12 +14013,17 @@ pub mod update_integration_input {
         ///
         /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
         ///
-        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-        /// , where
-        /// <replaceable>{location}</replaceable>
-        /// is querystring, path, or header; and
-        /// <replaceable>{name}</replaceable>
-        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
+        /// {location}
+        /// </replaceable>.<replaceable>
+        /// {name}
+        /// </replaceable> , where <replaceable>
+        /// {location}
+        /// </replaceable> is querystring, path, or header; and <replaceable>
+        /// {name}
+        /// </replaceable> must be a valid and unique method request parameter name.</p>
+        /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
+        /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -13925,12 +14034,17 @@ pub mod update_integration_input {
             self.request_parameters = Some(hash_map);
             self
         }
-        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-        /// , where
-        /// <replaceable>{location}</replaceable>
-        /// is querystring, path, or header; and
-        /// <replaceable>{name}</replaceable>
-        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
+        /// {location}
+        /// </replaceable>.<replaceable>
+        /// {name}
+        /// </replaceable> , where <replaceable>
+        /// {location}
+        /// </replaceable> is querystring, path, or header; and <replaceable>
+        /// {name}
+        /// </replaceable> must be a valid and unique method request parameter name.</p>
+        /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
+        /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -13973,10 +14087,10 @@ pub mod update_integration_input {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -14066,7 +14180,7 @@ pub mod update_integration_input {
 #[doc(hidden)]
 pub type UpdateIntegrationInputOperationOutputAlias = crate::operation::UpdateIntegration;
 #[doc(hidden)]
-pub type UpdateIntegrationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIntegration`](crate::operation::UpdateIntegration)>
     #[allow(clippy::let_and_return)]
@@ -14077,7 +14191,7 @@ impl UpdateIntegrationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateIntegration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14193,7 +14307,7 @@ impl UpdateIntegrationInput {
             "UpdateIntegration",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14247,7 +14361,10 @@ pub mod update_integration_response_input {
             self.api_id = input;
             self
         }
-        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn content_handling_strategy(
             mut self,
             input: crate::model::ContentHandlingStrategy,
@@ -14255,7 +14372,10 @@ pub mod update_integration_response_input {
             self.content_handling_strategy = Some(input);
             self
         }
-        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+        /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+        /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -14306,14 +14426,17 @@ pub mod update_integration_response_input {
         ///
         /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
         ///
-        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable>
-        /// , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>{name}</replaceable>
-        /// or integration.response.body.<replaceable>{JSON-expression}</replaceable>
-        /// , where
-        /// <replaceable>{name}</replaceable>
-        /// is a valid and unique response header name and
-        /// <replaceable>{JSON-expression}</replaceable>
-        /// is a valid JSON expression without the $ prefix.</p>
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>
+        /// {name}
+        /// </replaceable> , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>
+        /// {name}
+        /// </replaceable> or integration.response.body.<replaceable>
+        /// {JSON-expression}
+        /// </replaceable> , where <replaceable>
+        /// {name}
+        /// </replaceable> is a valid and unique response header name and <replaceable>
+        /// {JSON-expression}
+        /// </replaceable> is a valid JSON expression without the $ prefix.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -14324,14 +14447,17 @@ pub mod update_integration_response_input {
             self.response_parameters = Some(hash_map);
             self
         }
-        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable>
-        /// , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>{name}</replaceable>
-        /// or integration.response.body.<replaceable>{JSON-expression}</replaceable>
-        /// , where
-        /// <replaceable>{name}</replaceable>
-        /// is a valid and unique response header name and
-        /// <replaceable>{JSON-expression}</replaceable>
-        /// is a valid JSON expression without the $ prefix.</p>
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>
+        /// {name}
+        /// </replaceable> , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>
+        /// {name}
+        /// </replaceable> or integration.response.body.<replaceable>
+        /// {JSON-expression}
+        /// </replaceable> , where <replaceable>
+        /// {name}
+        /// </replaceable> is a valid and unique response header name and <replaceable>
+        /// {JSON-expression}
+        /// </replaceable> is a valid JSON expression without the $ prefix.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -14406,7 +14532,7 @@ pub mod update_integration_response_input {
 pub type UpdateIntegrationResponseInputOperationOutputAlias =
     crate::operation::UpdateIntegrationResponse;
 #[doc(hidden)]
-pub type UpdateIntegrationResponseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateIntegrationResponseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIntegrationResponseInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIntegrationResponse`](crate::operation::UpdateIntegrationResponse)>
     #[allow(clippy::let_and_return)]
@@ -14417,7 +14543,7 @@ impl UpdateIntegrationResponseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateIntegrationResponse,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14544,7 +14670,7 @@ impl UpdateIntegrationResponseInput {
             "UpdateIntegrationResponse",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14662,7 +14788,7 @@ pub mod update_model_input {
 #[doc(hidden)]
 pub type UpdateModelInputOperationOutputAlias = crate::operation::UpdateModel;
 #[doc(hidden)]
-pub type UpdateModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateModelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateModel`](crate::operation::UpdateModel)>
     #[allow(clippy::let_and_return)]
@@ -14673,7 +14799,7 @@ impl UpdateModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14788,7 +14914,7 @@ impl UpdateModelInput {
             "UpdateModel",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14960,10 +15086,10 @@ pub mod update_route_input {
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
@@ -15051,7 +15177,7 @@ pub mod update_route_input {
 #[doc(hidden)]
 pub type UpdateRouteInputOperationOutputAlias = crate::operation::UpdateRoute;
 #[doc(hidden)]
-pub type UpdateRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRouteInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoute`](crate::operation::UpdateRoute)>
     #[allow(clippy::let_and_return)]
@@ -15062,7 +15188,7 @@ impl UpdateRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15177,7 +15303,7 @@ impl UpdateRouteInput {
             "UpdateRoute",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15275,10 +15401,10 @@ pub mod update_route_response_input {
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ParameterConstraints>,
+            v: crate::model::ParameterConstraints,
         ) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
@@ -15350,7 +15476,7 @@ pub mod update_route_response_input {
 #[doc(hidden)]
 pub type UpdateRouteResponseInputOperationOutputAlias = crate::operation::UpdateRouteResponse;
 #[doc(hidden)]
-pub type UpdateRouteResponseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRouteResponseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRouteResponseInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRouteResponse`](crate::operation::UpdateRouteResponse)>
     #[allow(clippy::let_and_return)]
@@ -15361,7 +15487,7 @@ impl UpdateRouteResponseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRouteResponse,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15493,7 +15619,7 @@ impl UpdateRouteResponseInput {
             "UpdateRouteResponse",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15628,10 +15754,10 @@ pub mod update_stage_input {
         pub fn route_settings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RouteSettings>,
+            v: crate::model::RouteSettings,
         ) -> Self {
             let mut hash_map = self.route_settings.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.route_settings = Some(hash_map);
             self
         }
@@ -15705,7 +15831,7 @@ pub mod update_stage_input {
 #[doc(hidden)]
 pub type UpdateStageInputOperationOutputAlias = crate::operation::UpdateStage;
 #[doc(hidden)]
-pub type UpdateStageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStage`](crate::operation::UpdateStage)>
     #[allow(clippy::let_and_return)]
@@ -15716,7 +15842,7 @@ impl UpdateStageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15831,7 +15957,7 @@ impl UpdateStageInput {
             "UpdateStage",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15901,7 +16027,7 @@ pub mod update_vpc_link_input {
 #[doc(hidden)]
 pub type UpdateVpcLinkInputOperationOutputAlias = crate::operation::UpdateVpcLink;
 #[doc(hidden)]
-pub type UpdateVpcLinkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVpcLinkInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVpcLinkInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVpcLink`](crate::operation::UpdateVpcLink)>
     #[allow(clippy::let_and_return)]
@@ -15912,7 +16038,7 @@ impl UpdateVpcLinkInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVpcLink,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16008,7 +16134,7 @@ impl UpdateVpcLinkInput {
             "UpdateVpcLink",
             "apigatewayv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16412,7 +16538,10 @@ impl std::fmt::Debug for UpdateModelInput {
 pub struct UpdateIntegrationResponseInput {
     /// <p>The API identifier.</p>
     pub api_id: std::option::Option<std::string::String>,
-    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+    /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+    /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
     pub content_handling_strategy: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>The integration ID.</p>
     pub integration_id: std::option::Option<std::string::String>,
@@ -16420,14 +16549,17 @@ pub struct UpdateIntegrationResponseInput {
     pub integration_response_id: std::option::Option<std::string::String>,
     /// <p>The integration response key.</p>
     pub integration_response_key: std::option::Option<std::string::String>,
-    /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable>
-    /// , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>{name}</replaceable>
-    /// or integration.response.body.<replaceable>{JSON-expression}</replaceable>
-    /// , where
-    /// <replaceable>{name}</replaceable>
-    /// is a valid and unique response header name and
-    /// <replaceable>{JSON-expression}</replaceable>
-    /// is a valid JSON expression without the $ prefix.</p>
+    /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>
+    /// {name}
+    /// </replaceable> , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>
+    /// {name}
+    /// </replaceable> or integration.response.body.<replaceable>
+    /// {JSON-expression}
+    /// </replaceable> , where <replaceable>
+    /// {name}
+    /// </replaceable> is a valid and unique response header name and <replaceable>
+    /// {JSON-expression}
+    /// </replaceable> is a valid JSON expression without the $ prefix.</p>
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
@@ -16441,7 +16573,10 @@ impl UpdateIntegrationResponseInput {
     pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
-    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+    /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+    /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
     pub fn content_handling_strategy(
         &self,
     ) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
@@ -16459,14 +16594,17 @@ impl UpdateIntegrationResponseInput {
     pub fn integration_response_key(&self) -> std::option::Option<&str> {
         self.integration_response_key.as_deref()
     }
-    /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable>
-    /// , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>{name}</replaceable>
-    /// or integration.response.body.<replaceable>{JSON-expression}</replaceable>
-    /// , where
-    /// <replaceable>{name}</replaceable>
-    /// is a valid and unique response header name and
-    /// <replaceable>{JSON-expression}</replaceable>
-    /// is a valid JSON expression without the $ prefix.</p>
+    /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>
+    /// {name}
+    /// </replaceable> , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>
+    /// {name}
+    /// </replaceable> or integration.response.body.<replaceable>
+    /// {JSON-expression}
+    /// </replaceable> , where <replaceable>
+    /// {name}
+    /// </replaceable> is a valid and unique response header name and <replaceable>
+    /// {JSON-expression}
+    /// </replaceable> is a valid JSON expression without the $ prefix.</p>
     pub fn response_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -16513,7 +16651,10 @@ pub struct UpdateIntegrationInput {
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
-    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+    /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+    /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
     pub content_handling_strategy: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
     pub credentials_arn: std::option::Option<std::string::String>,
@@ -16525,20 +16666,35 @@ pub struct UpdateIntegrationInput {
     pub integration_method: std::option::Option<std::string::String>,
     /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
     pub integration_subtype: std::option::Option<std::string::String>,
-    /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+    /// <p>The integration type of an integration. One of the following:</p>
+    /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+    /// <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>
+    /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
+    /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
+    /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
     pub integration_type: std::option::Option<crate::model::IntegrationType>,
-    /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+    /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
+    /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
+    /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
     pub integration_uri: std::option::Option<std::string::String>,
-    /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+    /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
+    /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
+    /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
+    /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
     pub passthrough_behavior: std::option::Option<crate::model::PassthroughBehavior>,
     /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
     pub payload_format_version: std::option::Option<std::string::String>,
-    /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-    /// , where
-    /// <replaceable>{location}</replaceable>
-    /// is querystring, path, or header; and
-    /// <replaceable>{name}</replaceable>
-    /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
+    /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
+    /// {location}
+    /// </replaceable>.<replaceable>
+    /// {name}
+    /// </replaceable> , where <replaceable>
+    /// {location}
+    /// </replaceable> is querystring, path, or header; and <replaceable>
+    /// {name}
+    /// </replaceable> must be a valid and unique method request parameter name.</p>
+    /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
+    /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
@@ -16571,7 +16727,10 @@ impl UpdateIntegrationInput {
     pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
         self.connection_type.as_ref()
     }
-    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+    /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+    /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
     pub fn content_handling_strategy(
         &self,
     ) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
@@ -16597,15 +16756,25 @@ impl UpdateIntegrationInput {
     pub fn integration_subtype(&self) -> std::option::Option<&str> {
         self.integration_subtype.as_deref()
     }
-    /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+    /// <p>The integration type of an integration. One of the following:</p>
+    /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+    /// <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>
+    /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
+    /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
+    /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
     pub fn integration_type(&self) -> std::option::Option<&crate::model::IntegrationType> {
         self.integration_type.as_ref()
     }
-    /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+    /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
+    /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
+    /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
     pub fn integration_uri(&self) -> std::option::Option<&str> {
         self.integration_uri.as_deref()
     }
-    /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+    /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
+    /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
+    /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
+    /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
     pub fn passthrough_behavior(&self) -> std::option::Option<&crate::model::PassthroughBehavior> {
         self.passthrough_behavior.as_ref()
     }
@@ -16613,12 +16782,17 @@ impl UpdateIntegrationInput {
     pub fn payload_format_version(&self) -> std::option::Option<&str> {
         self.payload_format_version.as_deref()
     }
-    /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-    /// , where
-    /// <replaceable>{location}</replaceable>
-    /// is querystring, path, or header; and
-    /// <replaceable>{name}</replaceable>
-    /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
+    /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
+    /// {location}
+    /// </replaceable>.<replaceable>
+    /// {name}
+    /// </replaceable> , where <replaceable>
+    /// {location}
+    /// </replaceable> is querystring, path, or header; and <replaceable>
+    /// {name}
+    /// </replaceable> must be a valid and unique method request parameter name.</p>
+    /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
+    /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
     pub fn request_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -16779,12 +16953,21 @@ pub struct UpdateAuthorizerInput {
     pub authorizer_result_ttl_in_seconds: i32,
     /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
     pub authorizer_type: std::option::Option<crate::model::AuthorizerType>,
-    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
-    /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+    /// {account_id}
+    /// </replaceable>:function:<replaceable>
+    /// {lambda_function_name}
+    /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+    /// {region}
+    /// </replaceable>:lambda:path/<replaceable>
+    /// {service_api}
+    /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
     pub authorizer_uri: std::option::Option<std::string::String>,
     /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
     pub enable_simple_responses: bool,
-    /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+    /// <p>The identity source for which authorization is requested.</p>
+    /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
     pub identity_source: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>This parameter is not used.</p>
     pub identity_validation_expression: std::option::Option<std::string::String>,
@@ -16818,8 +17001,15 @@ impl UpdateAuthorizerInput {
     pub fn authorizer_type(&self) -> std::option::Option<&crate::model::AuthorizerType> {
         self.authorizer_type.as_ref()
     }
-    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
-    /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+    /// {account_id}
+    /// </replaceable>:function:<replaceable>
+    /// {lambda_function_name}
+    /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+    /// {region}
+    /// </replaceable>:lambda:path/<replaceable>
+    /// {service_api}
+    /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
     pub fn authorizer_uri(&self) -> std::option::Option<&str> {
         self.authorizer_uri.as_deref()
     }
@@ -16827,7 +17017,9 @@ impl UpdateAuthorizerInput {
     pub fn enable_simple_responses(&self) -> bool {
         self.enable_simple_responses
     }
-    /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+    /// <p>The identity source for which authorization is requested.</p>
+    /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
     pub fn identity_source(&self) -> std::option::Option<&[std::string::String]> {
         self.identity_source.as_deref()
     }
@@ -18880,7 +19072,10 @@ impl std::fmt::Debug for CreateModelInput {
 pub struct CreateIntegrationResponseInput {
     /// <p>The API identifier.</p>
     pub api_id: std::option::Option<std::string::String>,
-    /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+    /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+    /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
     pub content_handling_strategy: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>The integration ID.</p>
     pub integration_id: std::option::Option<std::string::String>,
@@ -18900,7 +19095,10 @@ impl CreateIntegrationResponseInput {
     pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
-    /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+    /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+    /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
     pub fn content_handling_strategy(
         &self,
     ) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
@@ -18960,7 +19158,10 @@ pub struct CreateIntegrationInput {
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
-    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+    /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+    /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
     pub content_handling_strategy: std::option::Option<crate::model::ContentHandlingStrategy>,
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
     pub credentials_arn: std::option::Option<std::string::String>,
@@ -18970,20 +19171,35 @@ pub struct CreateIntegrationInput {
     pub integration_method: std::option::Option<std::string::String>,
     /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
     pub integration_subtype: std::option::Option<std::string::String>,
-    /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+    /// <p>The integration type of an integration. One of the following:</p>
+    /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+    /// <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>
+    /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
+    /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
+    /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
     pub integration_type: std::option::Option<crate::model::IntegrationType>,
-    /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+    /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
+    /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
+    /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
     pub integration_uri: std::option::Option<std::string::String>,
-    /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+    /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
+    /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
+    /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
+    /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
     pub passthrough_behavior: std::option::Option<crate::model::PassthroughBehavior>,
     /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
     pub payload_format_version: std::option::Option<std::string::String>,
-    /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-    /// , where
-    /// <replaceable>{location}</replaceable>
-    /// is querystring, path, or header; and
-    /// <replaceable>{name}</replaceable>
-    /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
+    /// {location}
+    /// </replaceable>.<replaceable>
+    /// {name}
+    /// </replaceable> , where <replaceable>
+    /// {location}
+    /// </replaceable> is querystring, path, or header; and <replaceable>
+    /// {name}
+    /// </replaceable> must be a valid and unique method request parameter name.</p>
+    /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
+    /// <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
@@ -19016,7 +19232,10 @@ impl CreateIntegrationInput {
     pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
         self.connection_type.as_ref()
     }
-    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
+    /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
+    /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
+    /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
+    /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
     pub fn content_handling_strategy(
         &self,
     ) -> std::option::Option<&crate::model::ContentHandlingStrategy> {
@@ -19038,15 +19257,25 @@ impl CreateIntegrationInput {
     pub fn integration_subtype(&self) -> std::option::Option<&str> {
         self.integration_subtype.as_deref()
     }
-    /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+    /// <p>The integration type of an integration. One of the following:</p>
+    /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+    /// <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p>
+    /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
+    /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
+    /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
     pub fn integration_type(&self) -> std::option::Option<&crate::model::IntegrationType> {
         self.integration_type.as_ref()
     }
-    /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
+    /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
+    /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
+    /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
     pub fn integration_uri(&self) -> std::option::Option<&str> {
         self.integration_uri.as_deref()
     }
-    /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
+    /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
+    /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
+    /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
+    /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
     pub fn passthrough_behavior(&self) -> std::option::Option<&crate::model::PassthroughBehavior> {
         self.passthrough_behavior.as_ref()
     }
@@ -19054,12 +19283,17 @@ impl CreateIntegrationInput {
     pub fn payload_format_version(&self) -> std::option::Option<&str> {
         self.payload_format_version.as_deref()
     }
-    /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
-    /// , where
-    /// <replaceable>{location}</replaceable>
-    /// is querystring, path, or header; and
-    /// <replaceable>{name}</replaceable>
-    /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
+    /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
+    /// {location}
+    /// </replaceable>.<replaceable>
+    /// {name}
+    /// </replaceable> , where <replaceable>
+    /// {location}
+    /// </replaceable> is querystring, path, or header; and <replaceable>
+    /// {name}
+    /// </replaceable> must be a valid and unique method request parameter name.</p>
+    /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
+    /// <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
     pub fn request_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -19228,12 +19462,21 @@ pub struct CreateAuthorizerInput {
     pub authorizer_result_ttl_in_seconds: i32,
     /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
     pub authorizer_type: std::option::Option<crate::model::AuthorizerType>,
-    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
-    /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+    /// {account_id}
+    /// </replaceable>:function:<replaceable>
+    /// {lambda_function_name}
+    /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+    /// {region}
+    /// </replaceable>:lambda:path/<replaceable>
+    /// {service_api}
+    /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
     pub authorizer_uri: std::option::Option<std::string::String>,
     /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
     pub enable_simple_responses: bool,
-    /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+    /// <p>The identity source for which authorization is requested.</p>
+    /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
     pub identity_source: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>This parameter is not used.</p>
     pub identity_validation_expression: std::option::Option<std::string::String>,
@@ -19263,8 +19506,15 @@ impl CreateAuthorizerInput {
     pub fn authorizer_type(&self) -> std::option::Option<&crate::model::AuthorizerType> {
         self.authorizer_type.as_ref()
     }
-    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
-    /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
+    /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>
+    /// {account_id}
+    /// </replaceable>:function:<replaceable>
+    /// {lambda_function_name}
+    /// </replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>
+    /// {region}
+    /// </replaceable>:lambda:path/<replaceable>
+    /// {service_api}
+    /// </replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
     pub fn authorizer_uri(&self) -> std::option::Option<&str> {
         self.authorizer_uri.as_deref()
     }
@@ -19272,7 +19522,9 @@ impl CreateAuthorizerInput {
     pub fn enable_simple_responses(&self) -> bool {
         self.enable_simple_responses
     }
-    /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
+    /// <p>The identity source for which authorization is requested.</p>
+    /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
+    /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
     pub fn identity_source(&self) -> std::option::Option<&[std::string::String]> {
         self.identity_source.as_deref()
     }

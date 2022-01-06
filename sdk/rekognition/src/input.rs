@@ -12,87 +12,47 @@ pub mod compare_faces_input {
         pub(crate) quality_filter: std::option::Option<crate::model::QualityFilter>,
     }
     impl Builder {
-        /// <p>The input image as base64-encoded bytes or an S3 object.
-        /// If you use the AWS CLI to call Amazon Rekognition operations,
-        /// passing base64-encoded image bytes is not supported. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn source_image(mut self, input: crate::model::Image) -> Self {
             self.source_image = Some(input);
             self
         }
-        /// <p>The input image as base64-encoded bytes or an S3 object.
-        /// If you use the AWS CLI to call Amazon Rekognition operations,
-        /// passing base64-encoded image bytes is not supported. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_source_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.source_image = input;
             self
         }
-        /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to
-        /// call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
-        /// </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn target_image(mut self, input: crate::model::Image) -> Self {
             self.target_image = Some(input);
             self
         }
-        /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to
-        /// call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
-        /// </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_target_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.target_image = input;
             self
         }
-        /// <p>The minimum level of confidence in the face matches that a match must meet to be
-        /// included in the <code>FaceMatches</code> array.</p>
+        /// <p>The minimum level of confidence in the face matches that a match must meet to be included in the <code>FaceMatches</code> array.</p>
         pub fn similarity_threshold(mut self, input: f32) -> Self {
             self.similarity_threshold = Some(input);
             self
         }
-        /// <p>The minimum level of confidence in the face matches that a match must meet to be
-        /// included in the <code>FaceMatches</code> array.</p>
+        /// <p>The minimum level of confidence in the face matches that a match must meet to be included in the <code>FaceMatches</code> array.</p>
         pub fn set_similarity_threshold(mut self, input: std::option::Option<f32>) -> Self {
             self.similarity_threshold = input;
             self
         }
-        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
-        /// Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar.
-        /// If you specify <code>LOW</code>,
-        /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
-        /// don’t meet the chosen quality bar.
-        ///
-        /// The quality bar is based on a variety of common use cases. Low-quality
-        /// detections can occur for a number of reasons. Some examples are an object that's misidentified
-        /// as a face, a face that's too blurry, or a face with a
-        /// pose that's too extreme to use. If you specify <code>NONE</code>, no
-        /// filtering is performed. The default value is <code>NONE</code>.
-        /// </p>
+        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
         /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
         pub fn quality_filter(mut self, input: crate::model::QualityFilter) -> Self {
             self.quality_filter = Some(input);
             self
         }
-        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
-        /// Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar.
-        /// If you specify <code>LOW</code>,
-        /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
-        /// don’t meet the chosen quality bar.
-        ///
-        /// The quality bar is based on a variety of common use cases. Low-quality
-        /// detections can occur for a number of reasons. Some examples are an object that's misidentified
-        /// as a face, a face that's too blurry, or a face with a
-        /// pose that's too extreme to use. If you specify <code>NONE</code>, no
-        /// filtering is performed. The default value is <code>NONE</code>.
-        /// </p>
+        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
         /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
         pub fn set_quality_filter(
             mut self,
@@ -120,7 +80,7 @@ pub mod compare_faces_input {
 #[doc(hidden)]
 pub type CompareFacesInputOperationOutputAlias = crate::operation::CompareFaces;
 #[doc(hidden)]
-pub type CompareFacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CompareFacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CompareFacesInput {
     /// Consumes the builder and constructs an Operation<[`CompareFaces`](crate::operation::CompareFaces)>
     #[allow(clippy::let_and_return)]
@@ -131,7 +91,7 @@ impl CompareFacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CompareFaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -215,7 +175,7 @@ impl CompareFacesInput {
             "CompareFaces",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -267,9 +227,7 @@ pub mod create_collection_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// A set of tags (key-value pairs) that you want to attach to the collection.
-        /// </p>
+        /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -280,9 +238,7 @@ pub mod create_collection_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// A set of tags (key-value pairs) that you want to attach to the collection.
-        /// </p>
+        /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -309,7 +265,7 @@ pub mod create_collection_input {
 #[doc(hidden)]
 pub type CreateCollectionInputOperationOutputAlias = crate::operation::CreateCollection;
 #[doc(hidden)]
-pub type CreateCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCollectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateCollection`](crate::operation::CreateCollection)>
     #[allow(clippy::let_and_return)]
@@ -320,7 +276,7 @@ impl CreateCollectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCollection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -405,7 +361,7 @@ impl CreateCollectionInput {
             "CreateCollection",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -439,22 +395,12 @@ pub mod create_dataset_input {
         pub(crate) project_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location
-        /// of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created.
-        /// To add labeled images to the dataset,  You can use the console or call <a>UpdateDatasetEntries</a>.
-        ///
-        /// </p>
+        /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
         pub fn dataset_source(mut self, input: crate::model::DatasetSource) -> Self {
             self.dataset_source = Some(input);
             self
         }
-        /// <p>
-        /// The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location
-        /// of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created.
-        /// To add labeled images to the dataset,  You can use the console or call <a>UpdateDatasetEntries</a>.
-        ///
-        /// </p>
+        /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
         pub fn set_dataset_source(
             mut self,
             input: std::option::Option<crate::model::DatasetSource>,
@@ -462,18 +408,12 @@ pub mod create_dataset_input {
             self.dataset_source = input;
             self
         }
-        /// <p>
-        /// The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code>
-        /// to create a test dataset.
-        /// </p>
+        /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
         pub fn dataset_type(mut self, input: crate::model::DatasetType) -> Self {
             self.dataset_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code>
-        /// to create a test dataset.
-        /// </p>
+        /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
         pub fn set_dataset_type(
             mut self,
             input: std::option::Option<crate::model::DatasetType>,
@@ -481,16 +421,12 @@ pub mod create_dataset_input {
             self.dataset_type = input;
             self
         }
-        /// <p>
-        /// The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.
-        /// </p>
+        /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.
-        /// </p>
+        /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -513,7 +449,7 @@ pub mod create_dataset_input {
 #[doc(hidden)]
 pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
 #[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(clippy::let_and_return)]
@@ -524,7 +460,7 @@ impl CreateDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -608,7 +544,7 @@ impl CreateDatasetInput {
             "CreateDataset",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -666,7 +602,7 @@ pub mod create_project_input {
 #[doc(hidden)]
 pub type CreateProjectInputOperationOutputAlias = crate::operation::CreateProject;
 #[doc(hidden)]
-pub type CreateProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectInput {
     /// Consumes the builder and constructs an Operation<[`CreateProject`](crate::operation::CreateProject)>
     #[allow(clippy::let_and_return)]
@@ -677,7 +613,7 @@ impl CreateProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -761,7 +697,7 @@ impl CreateProjectInput {
             "CreateProject",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -801,14 +737,12 @@ pub mod create_project_version_input {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the Amazon Rekognition Custom Labels project that
-        /// manages the model that you want to train.</p>
+        /// <p>The ARN of the Amazon Rekognition Custom Labels project that manages the model that you want to train.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Rekognition Custom Labels project that
-        /// manages the model that you want to train.</p>
+        /// <p>The ARN of the Amazon Rekognition Custom Labels project that manages the model that you want to train.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -823,16 +757,12 @@ pub mod create_project_version_input {
             self.version_name = input;
             self
         }
-        /// <p>The Amazon S3 bucket location to store the results of training.
-        /// The S3 bucket can be in any AWS account as long as the caller has
-        /// <code>s3:PutObject</code> permissions on the S3 bucket.</p>
+        /// <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
         pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
             self.output_config = Some(input);
             self
         }
-        /// <p>The Amazon S3 bucket location to store the results of training.
-        /// The S3 bucket can be in any AWS account as long as the caller has
-        /// <code>s3:PutObject</code> permissions on the S3 bucket.</p>
+        /// <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
         pub fn set_output_config(
             mut self,
             input: std::option::Option<crate::model::OutputConfig>,
@@ -840,18 +770,12 @@ pub mod create_project_version_input {
             self.output_config = input;
             self
         }
-        /// <p>Specifies an external manifest that the services uses to train the model.
-        /// If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>.
-        /// The project must not have any associated datasets.
-        /// </p>
+        /// <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
         pub fn training_data(mut self, input: crate::model::TrainingData) -> Self {
             self.training_data = Some(input);
             self
         }
-        /// <p>Specifies an external manifest that the services uses to train the model.
-        /// If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>.
-        /// The project must not have any associated datasets.
-        /// </p>
+        /// <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
         pub fn set_training_data(
             mut self,
             input: std::option::Option<crate::model::TrainingData>,
@@ -859,16 +783,12 @@ pub mod create_project_version_input {
             self.training_data = input;
             self
         }
-        /// <p>Specifies an external manifest that the service uses to test the model.
-        /// If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>.
-        /// The project must not have any associated datasets.</p>
+        /// <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
         pub fn testing_data(mut self, input: crate::model::TestingData) -> Self {
             self.testing_data = Some(input);
             self
         }
-        /// <p>Specifies an external manifest that the service uses to test the model.
-        /// If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>.
-        /// The project must not have any associated datasets.</p>
+        /// <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
         pub fn set_testing_data(
             mut self,
             input: std::option::Option<crate::model::TestingData>,
@@ -880,9 +800,7 @@ pub mod create_project_version_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// A set of tags (key-value pairs) that you want to attach to the model.
-        /// </p>
+        /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -893,9 +811,7 @@ pub mod create_project_version_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// A set of tags (key-value pairs) that you want to attach to the model.
-        /// </p>
+        /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -905,56 +821,28 @@ pub mod create_project_version_input {
             self.tags = input;
             self
         }
-        /// <p>The identifier for your AWS Key Management Service key (AWS KMS key).
-        /// You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
-        /// an alias for your KMS key, or an alias ARN.
-        /// The key is used to encrypt training and test images copied into the service for model training.
-        /// Your source images are unaffected. The key is also used to encrypt training results
-        /// and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+        /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
         /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
         /// <ul>
-        /// <li>
-        /// <p>kms:CreateGrant</p>
-        /// </li>
-        /// <li>
-        /// <p>kms:DescribeKey</p>
-        /// </li>
-        /// <li>
-        /// <p>kms:GenerateDataKey</p>
-        /// </li>
-        /// <li>
-        /// <p>kms:Decrypt</p>
-        /// </li>
+        /// <li> <p>kms:CreateGrant</p> </li>
+        /// <li> <p>kms:DescribeKey</p> </li>
+        /// <li> <p>kms:GenerateDataKey</p> </li>
+        /// <li> <p>kms:Decrypt</p> </li>
         /// </ul>
-        /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted
-        /// using a key that AWS owns and manages.</p>
+        /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The identifier for your AWS Key Management Service key (AWS KMS key).
-        /// You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
-        /// an alias for your KMS key, or an alias ARN.
-        /// The key is used to encrypt training and test images copied into the service for model training.
-        /// Your source images are unaffected. The key is also used to encrypt training results
-        /// and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+        /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
         /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
         /// <ul>
-        /// <li>
-        /// <p>kms:CreateGrant</p>
-        /// </li>
-        /// <li>
-        /// <p>kms:DescribeKey</p>
-        /// </li>
-        /// <li>
-        /// <p>kms:GenerateDataKey</p>
-        /// </li>
-        /// <li>
-        /// <p>kms:Decrypt</p>
-        /// </li>
+        /// <li> <p>kms:CreateGrant</p> </li>
+        /// <li> <p>kms:DescribeKey</p> </li>
+        /// <li> <p>kms:GenerateDataKey</p> </li>
+        /// <li> <p>kms:Decrypt</p> </li>
         /// </ul>
-        /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted
-        /// using a key that AWS owns and manages.</p>
+        /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -981,7 +869,7 @@ pub mod create_project_version_input {
 #[doc(hidden)]
 pub type CreateProjectVersionInputOperationOutputAlias = crate::operation::CreateProjectVersion;
 #[doc(hidden)]
-pub type CreateProjectVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProjectVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateProjectVersion`](crate::operation::CreateProjectVersion)>
     #[allow(clippy::let_and_return)]
@@ -992,7 +880,7 @@ impl CreateProjectVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProjectVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1079,7 +967,7 @@ impl CreateProjectVersionInput {
             "CreateProjectVersion",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1144,30 +1032,22 @@ pub mod create_stream_processor_input {
             self.output = input;
             self
         }
-        /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to
-        /// manage the stream processor. For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
-        /// <code>Name</code> is idempotent.
-        /// </p>
+        /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to
-        /// manage the stream processor. For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
-        /// <code>Name</code> is idempotent.
-        /// </p>
+        /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face
-        /// attributes to detect.</p>
+        /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
         pub fn settings(mut self, input: crate::model::StreamProcessorSettings) -> Self {
             self.settings = Some(input);
             self
         }
-        /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face
-        /// attributes to detect.</p>
+        /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::StreamProcessorSettings>,
@@ -1189,9 +1069,7 @@ pub mod create_stream_processor_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// A set of tags (key-value pairs) that you want to attach to the stream processor.
-        /// </p>
+        /// <p> A set of tags (key-value pairs) that you want to attach to the stream processor. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1202,9 +1080,7 @@ pub mod create_stream_processor_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// A set of tags (key-value pairs) that you want to attach to the stream processor.
-        /// </p>
+        /// <p> A set of tags (key-value pairs) that you want to attach to the stream processor. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1235,7 +1111,7 @@ pub mod create_stream_processor_input {
 #[doc(hidden)]
 pub type CreateStreamProcessorInputOperationOutputAlias = crate::operation::CreateStreamProcessor;
 #[doc(hidden)]
-pub type CreateStreamProcessorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStreamProcessorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamProcessor`](crate::operation::CreateStreamProcessor)>
     #[allow(clippy::let_and_return)]
@@ -1246,7 +1122,7 @@ impl CreateStreamProcessorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamProcessor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1333,7 +1209,7 @@ impl CreateStreamProcessorInput {
             "CreateStreamProcessor",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1394,7 +1270,7 @@ pub mod delete_collection_input {
 #[doc(hidden)]
 pub type DeleteCollectionInputOperationOutputAlias = crate::operation::DeleteCollection;
 #[doc(hidden)]
-pub type DeleteCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCollection`](crate::operation::DeleteCollection)>
     #[allow(clippy::let_and_return)]
@@ -1405,7 +1281,7 @@ impl DeleteCollectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCollection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1490,7 +1366,7 @@ impl DeleteCollectionInput {
             "DeleteCollection",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1522,16 +1398,12 @@ pub mod delete_dataset_input {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.
-        /// </p>
+        /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.
-        /// </p>
+        /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
@@ -1552,7 +1424,7 @@ pub mod delete_dataset_input {
 #[doc(hidden)]
 pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
 #[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(clippy::let_and_return)]
@@ -1563,7 +1435,7 @@ impl DeleteDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1647,7 +1519,7 @@ impl DeleteDatasetInput {
             "DeleteDataset",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1729,7 +1601,7 @@ pub mod delete_faces_input {
 #[doc(hidden)]
 pub type DeleteFacesInputOperationOutputAlias = crate::operation::DeleteFaces;
 #[doc(hidden)]
-pub type DeleteFacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFacesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFaces`](crate::operation::DeleteFaces)>
     #[allow(clippy::let_and_return)]
@@ -1740,7 +1612,7 @@ impl DeleteFacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1824,7 +1696,7 @@ impl DeleteFacesInput {
             "DeleteFaces",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1882,7 +1754,7 @@ pub mod delete_project_input {
 #[doc(hidden)]
 pub type DeleteProjectInputOperationOutputAlias = crate::operation::DeleteProject;
 #[doc(hidden)]
-pub type DeleteProjectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProjectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProject`](crate::operation::DeleteProject)>
     #[allow(clippy::let_and_return)]
@@ -1893,7 +1765,7 @@ impl DeleteProjectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProject,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1977,7 +1849,7 @@ impl DeleteProjectInput {
             "DeleteProject",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2038,7 +1910,7 @@ pub mod delete_project_version_input {
 #[doc(hidden)]
 pub type DeleteProjectVersionInputOperationOutputAlias = crate::operation::DeleteProjectVersion;
 #[doc(hidden)]
-pub type DeleteProjectVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProjectVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProjectVersion`](crate::operation::DeleteProjectVersion)>
     #[allow(clippy::let_and_return)]
@@ -2049,7 +1921,7 @@ impl DeleteProjectVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProjectVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2136,7 +2008,7 @@ impl DeleteProjectVersionInput {
             "DeleteProjectVersion",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2192,7 +2064,7 @@ pub mod delete_stream_processor_input {
 #[doc(hidden)]
 pub type DeleteStreamProcessorInputOperationOutputAlias = crate::operation::DeleteStreamProcessor;
 #[doc(hidden)]
-pub type DeleteStreamProcessorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStreamProcessorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamProcessor`](crate::operation::DeleteStreamProcessor)>
     #[allow(clippy::let_and_return)]
@@ -2203,7 +2075,7 @@ impl DeleteStreamProcessorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStreamProcessor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2290,7 +2162,7 @@ impl DeleteStreamProcessorInput {
             "DeleteStreamProcessor",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2351,7 +2223,7 @@ pub mod describe_collection_input {
 #[doc(hidden)]
 pub type DescribeCollectionInputOperationOutputAlias = crate::operation::DescribeCollection;
 #[doc(hidden)]
-pub type DescribeCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCollectionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCollection`](crate::operation::DescribeCollection)>
     #[allow(clippy::let_and_return)]
@@ -2362,7 +2234,7 @@ impl DescribeCollectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCollection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2447,7 +2319,7 @@ impl DescribeCollectionInput {
             "DescribeCollection",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2479,16 +2351,12 @@ pub mod describe_dataset_input {
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the dataset that you want to describe.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the dataset that you want to describe.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
@@ -2509,7 +2377,7 @@ pub mod describe_dataset_input {
 #[doc(hidden)]
 pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
 #[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(clippy::let_and_return)]
@@ -2520,7 +2388,7 @@ impl DescribeDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2605,7 +2473,7 @@ impl DescribeDatasetInput {
             "DescribeDataset",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2639,30 +2507,22 @@ pub mod describe_projects_input {
         pub(crate) project_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-        /// If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100. </p>
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-        /// If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100. </p>
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2671,16 +2531,14 @@ pub mod describe_projects_input {
         ///
         /// To override the contents of this collection use [`set_project_names`](Self::set_project_names).
         ///
-        /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value,
-        /// the response includes descriptions for all the projects in your AWS account.</p>
+        /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
         pub fn project_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.project_names.unwrap_or_default();
             v.push(input.into());
             self.project_names = Some(v);
             self
         }
-        /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value,
-        /// the response includes descriptions for all the projects in your AWS account.</p>
+        /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
         pub fn set_project_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2706,7 +2564,7 @@ pub mod describe_projects_input {
 #[doc(hidden)]
 pub type DescribeProjectsInputOperationOutputAlias = crate::operation::DescribeProjects;
 #[doc(hidden)]
-pub type DescribeProjectsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProjectsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProjects`](crate::operation::DescribeProjects)>
     #[allow(clippy::let_and_return)]
@@ -2717,7 +2575,7 @@ impl DescribeProjectsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProjects,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2802,7 +2660,7 @@ impl DescribeProjectsInput {
             "DescribeProjects",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2851,20 +2709,14 @@ pub mod describe_project_versions_input {
         ///
         /// To override the contents of this collection use [`set_version_names`](Self::set_version_names).
         ///
-        /// <p>A list of model version names that you want to describe. You can add up to 10 model version names
-        /// to the list. If you don't specify a value, all model descriptions are returned.  A version name is part of a
-        /// model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN.
-        /// <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
+        /// <p>A list of model version names that you want to describe. You can add up to 10 model version names to the list. If you don't specify a value, all model descriptions are returned. A version name is part of a model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
         pub fn version_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.version_names.unwrap_or_default();
             v.push(input.into());
             self.version_names = Some(v);
             self
         }
-        /// <p>A list of model version names that you want to describe. You can add up to 10 model version names
-        /// to the list. If you don't specify a value, all model descriptions are returned.  A version name is part of a
-        /// model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN.
-        /// <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
+        /// <p>A list of model version names that you want to describe. You can add up to 10 model version names to the list. If you don't specify a value, all model descriptions are returned. A version name is part of a model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
         pub fn set_version_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2872,30 +2724,22 @@ pub mod describe_project_versions_input {
             self.version_names = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
-        /// You can use this pagination token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
-        /// You can use this pagination token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per paginated call.
-        /// The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100. </p>
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per paginated call.
-        /// The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100. </p>
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2920,7 +2764,7 @@ pub mod describe_project_versions_input {
 pub type DescribeProjectVersionsInputOperationOutputAlias =
     crate::operation::DescribeProjectVersions;
 #[doc(hidden)]
-pub type DescribeProjectVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProjectVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProjectVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProjectVersions`](crate::operation::DescribeProjectVersions)>
     #[allow(clippy::let_and_return)]
@@ -2931,7 +2775,7 @@ impl DescribeProjectVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProjectVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3018,7 +2862,7 @@ impl DescribeProjectVersionsInput {
             "DescribeProjectVersions",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3075,7 +2919,7 @@ pub mod describe_stream_processor_input {
 pub type DescribeStreamProcessorInputOperationOutputAlias =
     crate::operation::DescribeStreamProcessor;
 #[doc(hidden)]
-pub type DescribeStreamProcessorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStreamProcessorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStreamProcessor`](crate::operation::DescribeStreamProcessor)>
     #[allow(clippy::let_and_return)]
@@ -3086,7 +2930,7 @@ impl DescribeStreamProcessorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStreamProcessor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3173,7 +3017,7 @@ impl DescribeStreamProcessorInput {
             "DescribeStreamProcessor",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3222,91 +3066,43 @@ pub mod detect_custom_labels_input {
             self
         }
         /// <p>Provides the input image either as bytes or an S3 object.</p>
-        /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code>
-        /// property. For example, you would use the <code>Bytes</code> property to pass an image loaded
-        /// from a local file system. Image bytes passed by using the <code>Bytes</code> property must be
-        /// base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to
-        /// call Amazon Rekognition API operations. </p>
-        ///
-        /// <p>For more information, see Analyzing an Image Loaded from a Local File System
-        /// in the Amazon Rekognition Developer Guide.</p>
-        /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the
-        /// <code>S3Object</code> property. Images stored in an S3 bucket do not need to be
-        /// base64-encoded.</p>
-        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for
-        /// Amazon Rekognition operations.</p>
-        /// <p>If you use the
-        /// AWS
-        /// CLI to call Amazon Rekognition operations, passing image bytes using the Bytes
-        /// property is not supported. You must first upload the image to an Amazon S3 bucket and then
-        /// call the operation using the S3Object property.</p>
-        ///
-        /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3
-        /// object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
-        /// </p>
+        /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>
+        /// <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p>
+        /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p>
+        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+        /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
+        /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p>
         pub fn image(mut self, input: crate::model::Image) -> Self {
             self.image = Some(input);
             self
         }
         /// <p>Provides the input image either as bytes or an S3 object.</p>
-        /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code>
-        /// property. For example, you would use the <code>Bytes</code> property to pass an image loaded
-        /// from a local file system. Image bytes passed by using the <code>Bytes</code> property must be
-        /// base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to
-        /// call Amazon Rekognition API operations. </p>
-        ///
-        /// <p>For more information, see Analyzing an Image Loaded from a Local File System
-        /// in the Amazon Rekognition Developer Guide.</p>
-        /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the
-        /// <code>S3Object</code> property. Images stored in an S3 bucket do not need to be
-        /// base64-encoded.</p>
-        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for
-        /// Amazon Rekognition operations.</p>
-        /// <p>If you use the
-        /// AWS
-        /// CLI to call Amazon Rekognition operations, passing image bytes using the Bytes
-        /// property is not supported. You must first upload the image to an Amazon S3 bucket and then
-        /// call the operation using the S3Object property.</p>
-        ///
-        /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3
-        /// object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
-        /// </p>
+        /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>
+        /// <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p>
+        /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p>
+        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+        /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
+        /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
         }
-        /// <p>Maximum number of results you want the service to return in the response.
-        /// The service returns the specified number of highest confidence labels ranked from highest confidence
-        /// to lowest.</p>
+        /// <p>Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of results you want the service to return in the response.
-        /// The service returns the specified number of highest confidence labels ranked from highest confidence
-        /// to lowest.</p>
+        /// <p>Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Specifies the minimum confidence level for the labels to return.
-        /// <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than
-        /// this specified value. If you specify a
-        /// value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed
-        /// threshold applied to each label.
-        /// If you don't specify a value for <code>MinConfidence</code>,  <code>DetectCustomLabels</code>
-        /// returns labels based on the assumed threshold of each label.</p>
+        /// <p>Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based on the assumed threshold of each label.</p>
         pub fn min_confidence(mut self, input: f32) -> Self {
             self.min_confidence = Some(input);
             self
         }
-        /// <p>Specifies the minimum confidence level for the labels to return.
-        /// <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than
-        /// this specified value. If you specify a
-        /// value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed
-        /// threshold applied to each label.
-        /// If you don't specify a value for <code>MinConfidence</code>,  <code>DetectCustomLabels</code>
-        /// returns labels based on the assumed threshold of each label.</p>
+        /// <p>Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based on the assumed threshold of each label.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.min_confidence = input;
             self
@@ -3330,7 +3126,7 @@ pub mod detect_custom_labels_input {
 #[doc(hidden)]
 pub type DetectCustomLabelsInputOperationOutputAlias = crate::operation::DetectCustomLabels;
 #[doc(hidden)]
-pub type DetectCustomLabelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectCustomLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectCustomLabelsInput {
     /// Consumes the builder and constructs an Operation<[`DetectCustomLabels`](crate::operation::DetectCustomLabels)>
     #[allow(clippy::let_and_return)]
@@ -3341,7 +3137,7 @@ impl DetectCustomLabelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectCustomLabels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3426,7 +3222,7 @@ impl DetectCustomLabelsInput {
             "DetectCustomLabels",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3459,20 +3255,14 @@ pub mod detect_faces_input {
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     }
     impl Builder {
-        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-        /// Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn image(mut self, input: crate::model::Image) -> Self {
             self.image = Some(input);
             self
         }
-        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-        /// Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -3481,28 +3271,16 @@ pub mod detect_faces_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>An array of facial attributes you want to be returned. This can be the default list of
-        /// attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if
-        /// you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
-        /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
-        /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-        /// facial attributes are returned, but the operation takes longer to complete.</p>
-        /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
-        /// operator to determine which attributes to return (in this case, all attributes). </p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        /// <p>An array of facial attributes you want to be returned. This can be the default list of attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the operation takes longer to complete.</p>
+        /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
-        /// <p>An array of facial attributes you want to be returned. This can be the default list of
-        /// attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if
-        /// you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
-        /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
-        /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-        /// facial attributes are returned, but the operation takes longer to complete.</p>
-        /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
-        /// operator to determine which attributes to return (in this case, all attributes). </p>
+        /// <p>An array of facial attributes you want to be returned. This can be the default list of attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the operation takes longer to complete.</p>
+        /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -3527,7 +3305,7 @@ pub mod detect_faces_input {
 #[doc(hidden)]
 pub type DetectFacesInputOperationOutputAlias = crate::operation::DetectFaces;
 #[doc(hidden)]
-pub type DetectFacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectFacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectFacesInput {
     /// Consumes the builder and constructs an Operation<[`DetectFaces`](crate::operation::DetectFaces)>
     #[allow(clippy::let_and_return)]
@@ -3538,7 +3316,7 @@ impl DetectFacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectFaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3622,7 +3400,7 @@ impl DetectFacesInput {
             "DetectFaces",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3656,50 +3434,36 @@ pub mod detect_labels_input {
         pub(crate) min_confidence: std::option::Option<f32>,
     }
     impl Builder {
-        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-        /// Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do
-        /// not need to be base64-encoded.</p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn image(mut self, input: crate::model::Image) -> Self {
             self.image = Some(input);
             self
         }
-        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-        /// Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do
-        /// not need to be base64-encoded.</p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
         }
-        /// <p>Maximum number of labels you want the service to return in the response. The service
-        /// returns the specified number of highest confidence labels. </p>
+        /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
         pub fn max_labels(mut self, input: i32) -> Self {
             self.max_labels = Some(input);
             self
         }
-        /// <p>Maximum number of labels you want the service to return in the response. The service
-        /// returns the specified number of highest confidence labels. </p>
+        /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
         pub fn set_max_labels(mut self, input: std::option::Option<i32>) -> Self {
             self.max_labels = input;
             self
         }
-        /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
-        /// return any labels with confidence lower than this specified value.</p>
-        /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a
-        /// confidence values greater than or equal to 55 percent.</p>
+        /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
+        /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
         pub fn min_confidence(mut self, input: f32) -> Self {
             self.min_confidence = Some(input);
             self
         }
-        /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
-        /// return any labels with confidence lower than this specified value.</p>
-        /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a
-        /// confidence values greater than or equal to 55 percent.</p>
+        /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
+        /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.min_confidence = input;
             self
@@ -3722,7 +3486,7 @@ pub mod detect_labels_input {
 #[doc(hidden)]
 pub type DetectLabelsInputOperationOutputAlias = crate::operation::DetectLabels;
 #[doc(hidden)]
-pub type DetectLabelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectLabelsInput {
     /// Consumes the builder and constructs an Operation<[`DetectLabels`](crate::operation::DetectLabels)>
     #[allow(clippy::let_and_return)]
@@ -3733,7 +3497,7 @@ impl DetectLabelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectLabels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3817,7 +3581,7 @@ impl DetectLabelsInput {
             "DetectLabels",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3851,50 +3615,36 @@ pub mod detect_moderation_labels_input {
         pub(crate) human_loop_config: std::option::Option<crate::model::HumanLoopConfig>,
     }
     impl Builder {
-        /// <p>The input image as base64-encoded bytes or an S3 object.
-        /// If you use the AWS CLI to call Amazon Rekognition operations,
-        /// passing base64-encoded image bytes is not supported. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn image(mut self, input: crate::model::Image) -> Self {
             self.image = Some(input);
             self
         }
-        /// <p>The input image as base64-encoded bytes or an S3 object.
-        /// If you use the AWS CLI to call Amazon Rekognition operations,
-        /// passing base64-encoded image bytes is not supported. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
         }
-        /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
-        /// return any labels with a confidence level lower than this specified value.</p>
-        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with
-        /// confidence values greater than or equal to 50 percent.</p>
+        /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
+        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
         pub fn min_confidence(mut self, input: f32) -> Self {
             self.min_confidence = Some(input);
             self
         }
-        /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
-        /// return any labels with a confidence level lower than this specified value.</p>
-        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with
-        /// confidence values greater than or equal to 50 percent.</p>
+        /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
+        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.min_confidence = input;
             self
         }
-        /// <p>Sets up the configuration for human evaluation, including the FlowDefinition
-        /// the image will be sent to.</p>
+        /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
         pub fn human_loop_config(mut self, input: crate::model::HumanLoopConfig) -> Self {
             self.human_loop_config = Some(input);
             self
         }
-        /// <p>Sets up the configuration for human evaluation, including the FlowDefinition
-        /// the image will be sent to.</p>
+        /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
         pub fn set_human_loop_config(
             mut self,
             input: std::option::Option<crate::model::HumanLoopConfig>,
@@ -3920,7 +3670,7 @@ pub mod detect_moderation_labels_input {
 #[doc(hidden)]
 pub type DetectModerationLabelsInputOperationOutputAlias = crate::operation::DetectModerationLabels;
 #[doc(hidden)]
-pub type DetectModerationLabelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectModerationLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectModerationLabelsInput {
     /// Consumes the builder and constructs an Operation<[`DetectModerationLabels`](crate::operation::DetectModerationLabels)>
     #[allow(clippy::let_and_return)]
@@ -3931,7 +3681,7 @@ impl DetectModerationLabelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectModerationLabels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4018,7 +3768,7 @@ impl DetectModerationLabelsInput {
             "DetectModerationLabels",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4052,14 +3802,12 @@ pub mod detect_protective_equipment_input {
             std::option::Option<crate::model::ProtectiveEquipmentSummarizationAttributes>,
     }
     impl Builder {
-        /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can
-        /// reference an image stored in an Amazon S3 bucket. </p>
+        /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
         pub fn image(mut self, input: crate::model::Image) -> Self {
             self.image = Some(input);
             self
         }
-        /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can
-        /// reference an image stored in an Amazon S3 bucket. </p>
+        /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -4098,7 +3846,7 @@ pub mod detect_protective_equipment_input {
 pub type DetectProtectiveEquipmentInputOperationOutputAlias =
     crate::operation::DetectProtectiveEquipment;
 #[doc(hidden)]
-pub type DetectProtectiveEquipmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectProtectiveEquipmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectProtectiveEquipmentInput {
     /// Consumes the builder and constructs an Operation<[`DetectProtectiveEquipment`](crate::operation::DetectProtectiveEquipment)>
     #[allow(clippy::let_and_return)]
@@ -4109,7 +3857,7 @@ impl DetectProtectiveEquipmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectProtectiveEquipment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4196,7 +3944,7 @@ impl DetectProtectiveEquipmentInput {
             "DetectProtectiveEquipment",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4229,20 +3977,14 @@ pub mod detect_text_input {
         pub(crate) filters: std::option::Option<crate::model::DetectTextFilters>,
     }
     impl Builder {
-        /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
-        /// to call Amazon Rekognition operations, you can't pass image bytes. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn image(mut self, input: crate::model::Image) -> Self {
             self.image = Some(input);
             self
         }
-        /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
-        /// to call Amazon Rekognition operations, you can't pass image bytes. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -4277,7 +4019,7 @@ pub mod detect_text_input {
 #[doc(hidden)]
 pub type DetectTextInputOperationOutputAlias = crate::operation::DetectText;
 #[doc(hidden)]
-pub type DetectTextInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectTextInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetectTextInput {
     /// Consumes the builder and constructs an Operation<[`DetectText`](crate::operation::DetectText)>
     #[allow(clippy::let_and_return)]
@@ -4288,7 +4030,7 @@ impl DetectTextInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetectText,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4372,7 +4114,7 @@ impl DetectTextInput {
             "DetectText",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4408,18 +4150,14 @@ pub mod distribute_dataset_entries_input {
         ///
         /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
         ///
-        /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
-        /// the same project. The test dataset must be empty.
-        /// </p>
-        pub fn datasets(mut self, input: impl Into<crate::model::DistributeDataset>) -> Self {
+        /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
+        pub fn datasets(mut self, input: crate::model::DistributeDataset) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datasets = Some(v);
             self
         }
-        /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
-        /// the same project. The test dataset must be empty.
-        /// </p>
+        /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
         pub fn set_datasets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DistributeDataset>>,
@@ -4444,7 +4182,7 @@ pub mod distribute_dataset_entries_input {
 pub type DistributeDatasetEntriesInputOperationOutputAlias =
     crate::operation::DistributeDatasetEntries;
 #[doc(hidden)]
-pub type DistributeDatasetEntriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DistributeDatasetEntriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DistributeDatasetEntriesInput {
     /// Consumes the builder and constructs an Operation<[`DistributeDatasetEntries`](crate::operation::DistributeDatasetEntries)>
     #[allow(clippy::let_and_return)]
@@ -4455,7 +4193,7 @@ impl DistributeDatasetEntriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DistributeDatasetEntries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4542,7 +4280,7 @@ impl DistributeDatasetEntriesInput {
             "DistributeDatasetEntries",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4574,14 +4312,12 @@ pub mod get_celebrity_info_input {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
-        /// which recognizes celebrities in an image. </p>
+        /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
-        /// which recognizes celebrities in an image. </p>
+        /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4600,7 +4336,7 @@ pub mod get_celebrity_info_input {
 #[doc(hidden)]
 pub type GetCelebrityInfoInputOperationOutputAlias = crate::operation::GetCelebrityInfo;
 #[doc(hidden)]
-pub type GetCelebrityInfoInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCelebrityInfoInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCelebrityInfoInput {
     /// Consumes the builder and constructs an Operation<[`GetCelebrityInfo`](crate::operation::GetCelebrityInfo)>
     #[allow(clippy::let_and_return)]
@@ -4611,7 +4347,7 @@ impl GetCelebrityInfoInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCelebrityInfo,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4696,7 +4432,7 @@ impl GetCelebrityInfoInput {
             "GetCelebrityInfo",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4731,52 +4467,42 @@ pub mod get_celebrity_recognition_input {
         pub(crate) sort_by: std::option::Option<crate::model::CelebrityRecognitionSortBy>,
     }
     impl Builder {
-        /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from
-        /// a call to <code>StartCelebrityRecognition</code>.</p>
+        /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to <code>StartCelebrityRecognition</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from
-        /// a call to <code>StartCelebrityRecognition</code>.</p>
+        /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to <code>StartCelebrityRecognition</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-        /// The default value is 1000.</p>
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-        /// The default value is 1000.</p>
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination
-        /// token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
+        /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination
-        /// token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
+        /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier,
-        /// specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
+        /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier, specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
         pub fn sort_by(mut self, input: crate::model::CelebrityRecognitionSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier,
-        /// specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
+        /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier, specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::CelebrityRecognitionSortBy>,
@@ -4804,7 +4530,7 @@ pub mod get_celebrity_recognition_input {
 pub type GetCelebrityRecognitionInputOperationOutputAlias =
     crate::operation::GetCelebrityRecognition;
 #[doc(hidden)]
-pub type GetCelebrityRecognitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCelebrityRecognitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCelebrityRecognitionInput {
     /// Consumes the builder and constructs an Operation<[`GetCelebrityRecognition`](crate::operation::GetCelebrityRecognition)>
     #[allow(clippy::let_and_return)]
@@ -4815,7 +4541,7 @@ impl GetCelebrityRecognitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCelebrityRecognition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4902,7 +4628,7 @@ impl GetCelebrityRecognitionInput {
             "GetCelebrityRecognition",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4937,60 +4663,42 @@ pub mod get_content_moderation_input {
         pub(crate) sort_by: std::option::Option<crate::model::ContentModerationSortBy>,
     }
     impl Builder {
-        /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in
-        /// a subsequent call to <code>GetContentModeration</code>.</p>
+        /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in
-        /// a subsequent call to <code>GetContentModeration</code>.</p>
+        /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-        /// The default value is 1000.</p>
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-        /// The default value is 1000.</p>
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of content moderation labels.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of content moderation labels.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array.
-        /// Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.
-        /// Use <code>NAME</code> to alphabetically group elements for a label together.
-        /// Within each label group, the array element are sorted by detection confidence.
-        /// The default sort is by <code>TIMESTAMP</code>.</p>
+        /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
         pub fn sort_by(mut self, input: crate::model::ContentModerationSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array.
-        /// Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.
-        /// Use <code>NAME</code> to alphabetically group elements for a label together.
-        /// Within each label group, the array element are sorted by detection confidence.
-        /// The default sort is by <code>TIMESTAMP</code>.</p>
+        /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ContentModerationSortBy>,
@@ -5017,7 +4725,7 @@ pub mod get_content_moderation_input {
 #[doc(hidden)]
 pub type GetContentModerationInputOperationOutputAlias = crate::operation::GetContentModeration;
 #[doc(hidden)]
-pub type GetContentModerationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContentModerationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContentModerationInput {
     /// Consumes the builder and constructs an Operation<[`GetContentModeration`](crate::operation::GetContentModeration)>
     #[allow(clippy::let_and_return)]
@@ -5028,7 +4736,7 @@ impl GetContentModerationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContentModeration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5115,7 +4823,7 @@ impl GetContentModerationInput {
             "GetContentModeration",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5159,28 +4867,22 @@ pub mod get_face_detection_input {
             self.job_id = input;
             self
         }
-        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-        /// The default value is 1000.</p>
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-        /// The default value is 1000.</p>
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination
-        /// token in the response. You can use this pagination token to retrieve the next set of faces.</p>
+        /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination
-        /// token in the response. You can use this pagination token to retrieve the next set of faces.</p>
+        /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5203,7 +4905,7 @@ pub mod get_face_detection_input {
 #[doc(hidden)]
 pub type GetFaceDetectionInputOperationOutputAlias = crate::operation::GetFaceDetection;
 #[doc(hidden)]
-pub type GetFaceDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFaceDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFaceDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetFaceDetection`](crate::operation::GetFaceDetection)>
     #[allow(clippy::let_and_return)]
@@ -5214,7 +4916,7 @@ impl GetFaceDetectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFaceDetection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5299,7 +5001,7 @@ impl GetFaceDetectionInput {
             "GetFaceDetection",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5344,40 +5046,32 @@ pub mod get_face_search_input {
             self.job_id = input;
             self
         }
-        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-        /// The default value is 1000.</p>
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-        /// The default value is 1000.</p>
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination
-        /// token in the response. You can use this pagination token to retrieve the next set of search results. </p>
+        /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of search results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination
-        /// token in the response. You can use this pagination token to retrieve the next set of search results. </p>
+        /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of search results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time
-        /// that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
+        /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
         pub fn sort_by(mut self, input: crate::model::FaceSearchSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time
-        /// that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
+        /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::FaceSearchSortBy>,
@@ -5404,7 +5098,7 @@ pub mod get_face_search_input {
 #[doc(hidden)]
 pub type GetFaceSearchInputOperationOutputAlias = crate::operation::GetFaceSearch;
 #[doc(hidden)]
-pub type GetFaceSearchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFaceSearchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFaceSearchInput {
     /// Consumes the builder and constructs an Operation<[`GetFaceSearch`](crate::operation::GetFaceSearch)>
     #[allow(clippy::let_and_return)]
@@ -5415,7 +5109,7 @@ impl GetFaceSearchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFaceSearch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5500,7 +5194,7 @@ impl GetFaceSearchInput {
             "GetFaceSearch",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5535,58 +5229,42 @@ pub mod get_label_detection_input {
         pub(crate) sort_by: std::option::Option<crate::model::LabelDetectionSortBy>,
     }
     impl Builder {
-        /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from
-        /// an initial call to <code>StartlabelDetection</code>.</p>
+        /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from
-        /// an initial call to <code>StartlabelDetection</code>.</p>
+        /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-        /// The default value is 1000.</p>
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-        /// The default value is 1000.</p>
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination
-        /// token in the response. You can use this pagination token to retrieve the next set of labels. </p>
+        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination
-        /// token in the response. You can use this pagination token to retrieve the next set of labels. </p>
+        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Sort to use for elements in the <code>Labels</code> array.
-        /// Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.
-        /// Use <code>NAME</code> to alphabetically group elements for a label together.
-        /// Within each label group, the array element are sorted by detection confidence.
-        /// The default sort is by <code>TIMESTAMP</code>.</p>
+        /// <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
         pub fn sort_by(mut self, input: crate::model::LabelDetectionSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Sort to use for elements in the <code>Labels</code> array.
-        /// Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.
-        /// Use <code>NAME</code> to alphabetically group elements for a label together.
-        /// Within each label group, the array element are sorted by detection confidence.
-        /// The default sort is by <code>TIMESTAMP</code>.</p>
+        /// <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::LabelDetectionSortBy>,
@@ -5613,7 +5291,7 @@ pub mod get_label_detection_input {
 #[doc(hidden)]
 pub type GetLabelDetectionInputOperationOutputAlias = crate::operation::GetLabelDetection;
 #[doc(hidden)]
-pub type GetLabelDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLabelDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLabelDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetLabelDetection`](crate::operation::GetLabelDetection)>
     #[allow(clippy::let_and_return)]
@@ -5624,7 +5302,7 @@ impl GetLabelDetectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLabelDetection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5709,7 +5387,7 @@ impl GetLabelDetectionInput {
             "GetLabelDetection",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5744,56 +5422,42 @@ pub mod get_person_tracking_input {
         pub(crate) sort_by: std::option::Option<crate::model::PersonTrackingSortBy>,
     }
     impl Builder {
-        /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>.
-        /// </p>
+        /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>.
-        /// </p>
+        /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-        /// The default value is 1000.</p>
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-        /// The default value is 1000.</p>
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination
-        /// token in the response. You can use this pagination token to retrieve the next set of persons. </p>
+        /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of persons. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination
-        /// token in the response. You can use this pagination token to retrieve the next set of persons. </p>
+        /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of persons. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements
-        /// by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons.
-        /// If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence.
-        /// The default sort is by <code>TIMESTAMP</code>.</p>
+        /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons. If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
         pub fn sort_by(mut self, input: crate::model::PersonTrackingSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
-        /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements
-        /// by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons.
-        /// If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence.
-        /// The default sort is by <code>TIMESTAMP</code>.</p>
+        /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons. If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::PersonTrackingSortBy>,
@@ -5820,7 +5484,7 @@ pub mod get_person_tracking_input {
 #[doc(hidden)]
 pub type GetPersonTrackingInputOperationOutputAlias = crate::operation::GetPersonTracking;
 #[doc(hidden)]
-pub type GetPersonTrackingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPersonTrackingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPersonTrackingInput {
     /// Consumes the builder and constructs an Operation<[`GetPersonTracking`](crate::operation::GetPersonTracking)>
     #[allow(clippy::let_and_return)]
@@ -5831,7 +5495,7 @@ impl GetPersonTrackingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPersonTracking,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5916,7 +5580,7 @@ impl GetPersonTrackingInput {
             "GetPersonTracking",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5950,14 +5614,12 @@ pub mod get_segment_detection_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Job identifier for the text detection operation for which you want results returned.
-        /// You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
+        /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>Job identifier for the text detection operation for which you want results returned.
-        /// You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
+        /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -5972,14 +5634,12 @@ pub mod get_segment_detection_input {
             self.max_results = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-        /// request to retrieve the next set of text.</p>
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-        /// request to retrieve the next set of text.</p>
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6002,7 +5662,7 @@ pub mod get_segment_detection_input {
 #[doc(hidden)]
 pub type GetSegmentDetectionInputOperationOutputAlias = crate::operation::GetSegmentDetection;
 #[doc(hidden)]
-pub type GetSegmentDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSegmentDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSegmentDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetSegmentDetection`](crate::operation::GetSegmentDetection)>
     #[allow(clippy::let_and_return)]
@@ -6013,7 +5673,7 @@ impl GetSegmentDetectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSegmentDetection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6098,7 +5758,7 @@ impl GetSegmentDetectionInput {
             "GetSegmentDetection",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6132,14 +5792,12 @@ pub mod get_text_detection_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Job identifier for the text detection operation for which you want results returned.
-        /// You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
+        /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>Job identifier for the text detection operation for which you want results returned.
-        /// You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
+        /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -6154,14 +5812,12 @@ pub mod get_text_detection_input {
             self.max_results = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns
-        /// a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns
-        /// a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6184,7 +5840,7 @@ pub mod get_text_detection_input {
 #[doc(hidden)]
 pub type GetTextDetectionInputOperationOutputAlias = crate::operation::GetTextDetection;
 #[doc(hidden)]
-pub type GetTextDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTextDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTextDetectionInput {
     /// Consumes the builder and constructs an Operation<[`GetTextDetection`](crate::operation::GetTextDetection)>
     #[allow(clippy::let_and_return)]
@@ -6195,7 +5851,7 @@ impl GetTextDetectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTextDetection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6280,7 +5936,7 @@ impl GetTextDetectionInput {
             "GetTextDetection",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6318,14 +5974,12 @@ pub mod index_faces_input {
         pub(crate) quality_filter: std::option::Option<crate::model::QualityFilter>,
     }
     impl Builder {
-        /// <p>The ID of an existing collection to which you want to add the faces that are detected
-        /// in the input images.</p>
+        /// <p>The ID of an existing collection to which you want to add the faces that are detected in the input images.</p>
         pub fn collection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.collection_id = Some(input.into());
             self
         }
-        /// <p>The ID of an existing collection to which you want to add the faces that are detected
-        /// in the input images.</p>
+        /// <p>The ID of an existing collection to which you want to add the faces that are detected in the input images.</p>
         pub fn set_collection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6333,20 +5987,14 @@ pub mod index_faces_input {
             self.collection_id = input;
             self
         }
-        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-        /// Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn image(mut self, input: crate::model::Image) -> Self {
             self.image = Some(input);
             self
         }
-        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-        /// Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -6368,28 +6016,16 @@ pub mod index_faces_input {
         ///
         /// To override the contents of this collection use [`set_detection_attributes`](Self::set_detection_attributes).
         ///
-        /// <p>An array of facial attributes that you want to be returned. This can be the default
-        /// list of attributes or all attributes. If you don't specify a value for <code>Attributes</code>
-        /// or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
-        /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
-        /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-        /// facial attributes are returned, but the operation takes longer to complete.</p>
-        /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
-        /// operator to determine which attributes to return (in this case, all attributes). </p>
-        pub fn detection_attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        /// <p>An array of facial attributes that you want to be returned. This can be the default list of attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the operation takes longer to complete.</p>
+        /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
+        pub fn detection_attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.detection_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.detection_attributes = Some(v);
             self
         }
-        /// <p>An array of facial attributes that you want to be returned. This can be the default
-        /// list of attributes or all attributes. If you don't specify a value for <code>Attributes</code>
-        /// or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
-        /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
-        /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-        /// facial attributes are returned, but the operation takes longer to complete.</p>
-        /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
-        /// operator to determine which attributes to return (in this case, all attributes). </p>
+        /// <p>An array of facial attributes that you want to be returned. This can be the default list of attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the operation takes longer to complete.</p>
+        /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
         pub fn set_detection_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -6397,69 +6033,29 @@ pub mod index_faces_input {
             self.detection_attributes = input;
             self
         }
-        /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater
-        /// than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an
-        /// image, even if you specify a larger value for <code>MaxFaces</code>.</p>
-        /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the
-        /// faces with the lowest quality are filtered out first. If there are still more faces than the
-        /// value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out
-        /// (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information
-        /// about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
-        /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face
-        /// bounding box size to the smallest size, in descending order.</p>
-        /// <p>
-        /// <code>MaxFaces</code> can be used with a collection associated with any version of
-        /// the face model.</p>
+        /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an image, even if you specify a larger value for <code>MaxFaces</code>.</p>
+        /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
+        /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face bounding box size to the smallest size, in descending order.</p>
+        /// <p> <code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
         pub fn max_faces(mut self, input: i32) -> Self {
             self.max_faces = Some(input);
             self
         }
-        /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater
-        /// than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an
-        /// image, even if you specify a larger value for <code>MaxFaces</code>.</p>
-        /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the
-        /// faces with the lowest quality are filtered out first. If there are still more faces than the
-        /// value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out
-        /// (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information
-        /// about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
-        /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face
-        /// bounding box size to the smallest size, in descending order.</p>
-        /// <p>
-        /// <code>MaxFaces</code> can be used with a collection associated with any version of
-        /// the face model.</p>
+        /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an image, even if you specify a larger value for <code>MaxFaces</code>.</p>
+        /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
+        /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face bounding box size to the smallest size, in descending order.</p>
+        /// <p> <code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
         pub fn set_max_faces(mut self, input: std::option::Option<i32>) -> Self {
             self.max_faces = input;
             self
         }
-        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
-        /// Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar.
-        /// If you specify <code>LOW</code>,
-        /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
-        /// don’t meet the chosen quality bar.  The default value is <code>AUTO</code>.
-        ///
-        /// The quality bar is based on a variety of common use cases. Low-quality
-        /// detections can occur for a number of reasons. Some examples are an object that's misidentified
-        /// as a face, a face that's too blurry, or a face with a
-        /// pose that's too extreme to use. If you specify <code>NONE</code>, no
-        /// filtering is performed.
-        /// </p>
+        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
         /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
         pub fn quality_filter(mut self, input: crate::model::QualityFilter) -> Self {
             self.quality_filter = Some(input);
             self
         }
-        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
-        /// Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar.
-        /// If you specify <code>LOW</code>,
-        /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
-        /// don’t meet the chosen quality bar.  The default value is <code>AUTO</code>.
-        ///
-        /// The quality bar is based on a variety of common use cases. Low-quality
-        /// detections can occur for a number of reasons. Some examples are an object that's misidentified
-        /// as a face, a face that's too blurry, or a face with a
-        /// pose that's too extreme to use. If you specify <code>NONE</code>, no
-        /// filtering is performed.
-        /// </p>
+        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
         /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
         pub fn set_quality_filter(
             mut self,
@@ -6489,7 +6085,7 @@ pub mod index_faces_input {
 #[doc(hidden)]
 pub type IndexFacesInputOperationOutputAlias = crate::operation::IndexFaces;
 #[doc(hidden)]
-pub type IndexFacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type IndexFacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl IndexFacesInput {
     /// Consumes the builder and constructs an Operation<[`IndexFaces`](crate::operation::IndexFaces)>
     #[allow(clippy::let_and_return)]
@@ -6500,7 +6096,7 @@ impl IndexFacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::IndexFaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6584,7 +6180,7 @@ impl IndexFacesInput {
             "IndexFaces",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6654,7 +6250,7 @@ pub mod list_collections_input {
 #[doc(hidden)]
 pub type ListCollectionsInputOperationOutputAlias = crate::operation::ListCollections;
 #[doc(hidden)]
-pub type ListCollectionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCollectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCollectionsInput {
     /// Consumes the builder and constructs an Operation<[`ListCollections`](crate::operation::ListCollections)>
     #[allow(clippy::let_and_return)]
@@ -6665,7 +6261,7 @@ impl ListCollectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCollections,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6750,7 +6346,7 @@ impl ListCollectionsInput {
             "ListCollections",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6788,16 +6384,12 @@ pub mod list_dataset_entries_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) for the dataset that you want to use.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) for the dataset that you want to use.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
@@ -6806,16 +6398,14 @@ pub mod list_dataset_entries_input {
         ///
         /// To override the contents of this collection use [`set_contains_labels`](Self::set_contains_labels).
         ///
-        /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry.       
-        /// </p>
+        /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
         pub fn contains_labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.contains_labels.unwrap_or_default();
             v.push(input.into());
             self.contains_labels = Some(v);
             self
         }
-        /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry.       
-        /// </p>
+        /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
         pub fn set_contains_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6823,36 +6413,22 @@ pub mod list_dataset_entries_input {
             self.contains_labels = input;
             self
         }
-        /// <p>
-        /// Specify <code>true</code> to get only the JSON Lines where the image is labeled.
-        /// Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you
-        /// don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled
-        /// images.
-        /// </p>
+        /// <p> Specify <code>true</code> to get only the JSON Lines where the image is labeled. Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled images. </p>
         pub fn labeled(mut self, input: bool) -> Self {
             self.labeled = Some(input);
             self
         }
-        /// <p>
-        /// Specify <code>true</code> to get only the JSON Lines where the image is labeled.
-        /// Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you
-        /// don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled
-        /// images.
-        /// </p>
+        /// <p> Specify <code>true</code> to get only the JSON Lines where the image is labeled. Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled images. </p>
         pub fn set_labeled(mut self, input: std::option::Option<bool>) -> Self {
             self.labeled = input;
             self
         }
-        /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is
-        /// part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image.
-        /// You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
+        /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
         pub fn source_ref_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_ref_contains = Some(input.into());
             self
         }
-        /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is
-        /// part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image.
-        /// You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
+        /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
         pub fn set_source_ref_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6860,42 +6436,32 @@ pub mod list_dataset_entries_input {
             self.source_ref_contains = input;
             self
         }
-        /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors.
-        /// </p>
+        /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors. </p>
         pub fn has_errors(mut self, input: bool) -> Self {
             self.has_errors = Some(input);
             self
         }
-        /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors.
-        /// </p>
+        /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors. </p>
         pub fn set_has_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.has_errors = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-        /// If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100. </p>
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-        /// If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100. </p>
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6922,7 +6488,7 @@ pub mod list_dataset_entries_input {
 #[doc(hidden)]
 pub type ListDatasetEntriesInputOperationOutputAlias = crate::operation::ListDatasetEntries;
 #[doc(hidden)]
-pub type ListDatasetEntriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetEntriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetEntriesInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasetEntries`](crate::operation::ListDatasetEntries)>
     #[allow(clippy::let_and_return)]
@@ -6933,7 +6499,7 @@ impl ListDatasetEntriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasetEntries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7018,7 +6584,7 @@ impl ListDatasetEntriesInput {
             "ListDatasetEntries",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7052,44 +6618,32 @@ pub mod list_dataset_labels_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the dataset that you want to use.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the dataset that you want to use.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more
-        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of results. </p>
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-        /// If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100. </p>
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-        /// If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100. </p>
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7112,7 +6666,7 @@ pub mod list_dataset_labels_input {
 #[doc(hidden)]
 pub type ListDatasetLabelsInputOperationOutputAlias = crate::operation::ListDatasetLabels;
 #[doc(hidden)]
-pub type ListDatasetLabelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetLabelsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasetLabels`](crate::operation::ListDatasetLabels)>
     #[allow(clippy::let_and_return)]
@@ -7123,7 +6677,7 @@ impl ListDatasetLabelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasetLabels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7208,7 +6762,7 @@ impl ListDatasetLabelsInput {
             "ListDatasetLabels",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7255,16 +6809,12 @@ pub mod list_faces_input {
             self.collection_id = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Rekognition returns a pagination token in the response. You can use this pagination token to
-        /// retrieve the next set of faces.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Rekognition returns a pagination token in the response. You can use this pagination token to
-        /// retrieve the next set of faces.</p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7295,7 +6845,7 @@ pub mod list_faces_input {
 #[doc(hidden)]
 pub type ListFacesInputOperationOutputAlias = crate::operation::ListFaces;
 #[doc(hidden)]
-pub type ListFacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFacesInput {
     /// Consumes the builder and constructs an Operation<[`ListFaces`](crate::operation::ListFaces)>
     #[allow(clippy::let_and_return)]
@@ -7306,7 +6856,7 @@ impl ListFacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7388,7 +6938,7 @@ impl ListFacesInput {
                     "ListFaces",
                     "rekognition",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7421,14 +6971,12 @@ pub mod list_stream_processors_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video
-        /// returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
+        /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video
-        /// returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
+        /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7460,7 +7008,7 @@ pub mod list_stream_processors_input {
 #[doc(hidden)]
 pub type ListStreamProcessorsInputOperationOutputAlias = crate::operation::ListStreamProcessors;
 #[doc(hidden)]
-pub type ListStreamProcessorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStreamProcessorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamProcessorsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamProcessors`](crate::operation::ListStreamProcessors)>
     #[allow(clippy::let_and_return)]
@@ -7471,7 +7019,7 @@ impl ListStreamProcessorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreamProcessors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7558,7 +7106,7 @@ impl ListStreamProcessorsInput {
             "ListStreamProcessors",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7590,16 +7138,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.
-        /// </p>
+        /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.
-        /// </p>
+        /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -7620,7 +7164,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -7631,7 +7175,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7718,7 +7262,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7750,20 +7294,14 @@ pub mod recognize_celebrities_input {
         pub(crate) image: std::option::Option<crate::model::Image>,
     }
     impl Builder {
-        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-        /// Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to
-        /// base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see
-        /// Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn image(mut self, input: crate::model::Image) -> Self {
             self.image = Some(input);
             self
         }
-        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-        /// Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to
-        /// base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see
-        /// Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -7782,7 +7320,7 @@ pub mod recognize_celebrities_input {
 #[doc(hidden)]
 pub type RecognizeCelebritiesInputOperationOutputAlias = crate::operation::RecognizeCelebrities;
 #[doc(hidden)]
-pub type RecognizeCelebritiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RecognizeCelebritiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RecognizeCelebritiesInput {
     /// Consumes the builder and constructs an Operation<[`RecognizeCelebrities`](crate::operation::RecognizeCelebrities)>
     #[allow(clippy::let_and_return)]
@@ -7793,7 +7331,7 @@ impl RecognizeCelebritiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RecognizeCelebrities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7878,7 +7416,7 @@ impl RecognizeCelebritiesInput {
             "RecognizeCelebrities",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7936,30 +7474,22 @@ pub mod search_faces_input {
             self.face_id = input;
             self
         }
-        /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
-        /// with the highest confidence in the match.</p>
+        /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
         pub fn max_faces(mut self, input: i32) -> Self {
             self.max_faces = Some(input);
             self
         }
-        /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
-        /// with the highest confidence in the match.</p>
+        /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
         pub fn set_max_faces(mut self, input: std::option::Option<i32>) -> Self {
             self.max_faces = input;
             self
         }
-        /// <p>Optional value specifying the minimum confidence in the face match to return. For
-        /// example, don't return any matches where confidence in matches is less than 70%.
-        /// The default value is 80%.
-        /// </p>
+        /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p>
         pub fn face_match_threshold(mut self, input: f32) -> Self {
             self.face_match_threshold = Some(input);
             self
         }
-        /// <p>Optional value specifying the minimum confidence in the face match to return. For
-        /// example, don't return any matches where confidence in matches is less than 70%.
-        /// The default value is 80%.
-        /// </p>
+        /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p>
         pub fn set_face_match_threshold(mut self, input: std::option::Option<f32>) -> Self {
             self.face_match_threshold = input;
             self
@@ -7983,7 +7513,7 @@ pub mod search_faces_input {
 #[doc(hidden)]
 pub type SearchFacesInputOperationOutputAlias = crate::operation::SearchFaces;
 #[doc(hidden)]
-pub type SearchFacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchFacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchFacesInput {
     /// Consumes the builder and constructs an Operation<[`SearchFaces`](crate::operation::SearchFaces)>
     #[allow(clippy::let_and_return)]
@@ -7994,7 +7524,7 @@ impl SearchFacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchFaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8078,7 +7608,7 @@ impl SearchFacesInput {
             "SearchFaces",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8127,81 +7657,45 @@ pub mod search_faces_by_image_input {
             self.collection_id = input;
             self
         }
-        /// <p>The input image as base64-encoded bytes or an S3 object.
-        /// If you use the AWS CLI to call Amazon Rekognition operations,
-        /// passing base64-encoded image bytes is not supported. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn image(mut self, input: crate::model::Image) -> Self {
             self.image = Some(input);
             self
         }
-        /// <p>The input image as base64-encoded bytes or an S3 object.
-        /// If you use the AWS CLI to call Amazon Rekognition operations,
-        /// passing base64-encoded image bytes is not supported. </p>
-        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-        /// passed using the <code>Bytes</code> field.
-        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
         }
-        /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
-        /// with the highest confidence in the match.</p>
+        /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
         pub fn max_faces(mut self, input: i32) -> Self {
             self.max_faces = Some(input);
             self
         }
-        /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
-        /// with the highest confidence in the match.</p>
+        /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
         pub fn set_max_faces(mut self, input: std::option::Option<i32>) -> Self {
             self.max_faces = input;
             self
         }
-        /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example,
-        /// don't return any matches where confidence in matches is less than 70%.
-        /// The default value is 80%.</p>
+        /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
         pub fn face_match_threshold(mut self, input: f32) -> Self {
             self.face_match_threshold = Some(input);
             self
         }
-        /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example,
-        /// don't return any matches where confidence in matches is less than 70%.
-        /// The default value is 80%.</p>
+        /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
         pub fn set_face_match_threshold(mut self, input: std::option::Option<f32>) -> Self {
             self.face_match_threshold = input;
             self
         }
-        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
-        /// Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition
-        /// chooses the quality bar.  If you specify <code>LOW</code>,
-        /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
-        /// don’t meet the chosen quality bar.  
-        ///
-        /// The quality bar is based on a variety of common use cases. Low-quality
-        /// detections can occur for a number of reasons. Some examples are an object that's misidentified
-        /// as a face, a face that's too blurry, or a face with a
-        /// pose that's too extreme to use. If you specify <code>NONE</code>, no
-        /// filtering is performed.  The default value is <code>NONE</code>.
-        /// </p>
+        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
         /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
         pub fn quality_filter(mut self, input: crate::model::QualityFilter) -> Self {
             self.quality_filter = Some(input);
             self
         }
-        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
-        /// Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition
-        /// chooses the quality bar.  If you specify <code>LOW</code>,
-        /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
-        /// don’t meet the chosen quality bar.  
-        ///
-        /// The quality bar is based on a variety of common use cases. Low-quality
-        /// detections can occur for a number of reasons. Some examples are an object that's misidentified
-        /// as a face, a face that's too blurry, or a face with a
-        /// pose that's too extreme to use. If you specify <code>NONE</code>, no
-        /// filtering is performed.  The default value is <code>NONE</code>.
-        /// </p>
+        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
         /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
         pub fn set_quality_filter(
             mut self,
@@ -8230,7 +7724,7 @@ pub mod search_faces_by_image_input {
 #[doc(hidden)]
 pub type SearchFacesByImageInputOperationOutputAlias = crate::operation::SearchFacesByImage;
 #[doc(hidden)]
-pub type SearchFacesByImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchFacesByImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchFacesByImageInput {
     /// Consumes the builder and constructs an Operation<[`SearchFacesByImage`](crate::operation::SearchFacesByImage)>
     #[allow(clippy::let_and_return)]
@@ -8241,7 +7735,7 @@ impl SearchFacesByImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchFacesByImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8326,7 +7820,7 @@ impl SearchFacesByImageInput {
             "SearchFacesByImage",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8361,28 +7855,22 @@ pub mod start_celebrity_recognition_input {
         pub(crate) job_tag: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The video in which you want to recognize celebrities. The video must be stored
-        /// in an Amazon S3 bucket.</p>
+        /// <p>The video in which you want to recognize celebrities. The video must be stored in an Amazon S3 bucket.</p>
         pub fn video(mut self, input: crate::model::Video) -> Self {
             self.video = Some(input);
             self
         }
-        /// <p>The video in which you want to recognize celebrities. The video must be stored
-        /// in an Amazon S3 bucket.</p>
+        /// <p>The video in which you want to recognize celebrities. The video must be stored in an Amazon S3 bucket.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8390,14 +7878,12 @@ pub mod start_celebrity_recognition_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
-        /// celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+        /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.notification_channel = Some(input);
             self
         }
-        /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
-        /// celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+        /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -8405,14 +7891,12 @@ pub mod start_celebrity_recognition_input {
             self.notification_channel = input;
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_tag = Some(input.into());
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -8437,7 +7921,7 @@ pub mod start_celebrity_recognition_input {
 pub type StartCelebrityRecognitionInputOperationOutputAlias =
     crate::operation::StartCelebrityRecognition;
 #[doc(hidden)]
-pub type StartCelebrityRecognitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartCelebrityRecognitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartCelebrityRecognitionInput {
     /// Consumes the builder and constructs an Operation<[`StartCelebrityRecognition`](crate::operation::StartCelebrityRecognition)>
     #[allow(clippy::let_and_return)]
@@ -8448,7 +7932,7 @@ impl StartCelebrityRecognitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartCelebrityRecognition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8535,7 +8019,7 @@ impl StartCelebrityRecognitionInput {
             "StartCelebrityRecognition",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8571,46 +8055,32 @@ pub mod start_content_moderation_input {
         pub(crate) job_tag: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored
-        /// in an Amazon S3 bucket.</p>
+        /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored in an Amazon S3 bucket.</p>
         pub fn video(mut self, input: crate::model::Video) -> Self {
             self.video = Some(input);
             self
         }
-        /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored
-        /// in an Amazon S3 bucket.</p>
+        /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored in an Amazon S3 bucket.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
         }
-        /// <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence
-        /// represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence.
-        /// 100 is the highest confidence.  Amazon Rekognition doesn't return any moderated content labels with a confidence level
-        /// lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code>
-        /// returns labels with confidence values greater than or equal to 50 percent.</p>
+        /// <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition doesn't return any moderated content labels with a confidence level lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code> returns labels with confidence values greater than or equal to 50 percent.</p>
         pub fn min_confidence(mut self, input: f32) -> Self {
             self.min_confidence = Some(input);
             self
         }
-        /// <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence
-        /// represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence.
-        /// 100 is the highest confidence.  Amazon Rekognition doesn't return any moderated content labels with a confidence level
-        /// lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code>
-        /// returns labels with confidence values greater than or equal to 50 percent.</p>
+        /// <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition doesn't return any moderated content labels with a confidence level lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code> returns labels with confidence values greater than or equal to 50 percent.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.min_confidence = input;
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8618,14 +8088,12 @@ pub mod start_content_moderation_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
-        /// content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+        /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.notification_channel = Some(input);
             self
         }
-        /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
-        /// content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+        /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -8633,14 +8101,12 @@ pub mod start_content_moderation_input {
             self.notification_channel = input;
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_tag = Some(input.into());
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -8665,7 +8131,7 @@ pub mod start_content_moderation_input {
 #[doc(hidden)]
 pub type StartContentModerationInputOperationOutputAlias = crate::operation::StartContentModeration;
 #[doc(hidden)]
-pub type StartContentModerationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartContentModerationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartContentModerationInput {
     /// Consumes the builder and constructs an Operation<[`StartContentModeration`](crate::operation::StartContentModeration)>
     #[allow(clippy::let_and_return)]
@@ -8676,7 +8142,7 @@ impl StartContentModerationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartContentModeration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8763,7 +8229,7 @@ impl StartContentModerationInput {
             "StartContentModeration",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8799,28 +8265,22 @@ pub mod start_face_detection_input {
         pub(crate) job_tag: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The video in which you want to detect faces. The video must be stored
-        /// in an Amazon S3 bucket.</p>
+        /// <p>The video in which you want to detect faces. The video must be stored in an Amazon S3 bucket.</p>
         pub fn video(mut self, input: crate::model::Video) -> Self {
             self.video = Some(input);
             self
         }
-        /// <p>The video in which you want to detect faces. The video must be stored
-        /// in an Amazon S3 bucket.</p>
+        /// <p>The video in which you want to detect faces. The video must be stored in an Amazon S3 bucket.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8828,14 +8288,12 @@ pub mod start_face_detection_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
-        /// face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.notification_channel = Some(input);
             self
         }
-        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
-        /// face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -8844,19 +8302,15 @@ pub mod start_face_detection_input {
             self
         }
         /// <p>The face attributes you want returned.</p>
-        /// <p>
-        /// <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
-        /// <p>
-        /// <code>ALL</code> - All facial attributes are returned.</p>
+        /// <p> <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
+        /// <p> <code>ALL</code> - All facial attributes are returned.</p>
         pub fn face_attributes(mut self, input: crate::model::FaceAttributes) -> Self {
             self.face_attributes = Some(input);
             self
         }
         /// <p>The face attributes you want returned.</p>
-        /// <p>
-        /// <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
-        /// <p>
-        /// <code>ALL</code> - All facial attributes are returned.</p>
+        /// <p> <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
+        /// <p> <code>ALL</code> - All facial attributes are returned.</p>
         pub fn set_face_attributes(
             mut self,
             input: std::option::Option<crate::model::FaceAttributes>,
@@ -8864,14 +8318,12 @@ pub mod start_face_detection_input {
             self.face_attributes = input;
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_tag = Some(input.into());
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -8896,7 +8348,7 @@ pub mod start_face_detection_input {
 #[doc(hidden)]
 pub type StartFaceDetectionInputOperationOutputAlias = crate::operation::StartFaceDetection;
 #[doc(hidden)]
-pub type StartFaceDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartFaceDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFaceDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartFaceDetection`](crate::operation::StartFaceDetection)>
     #[allow(clippy::let_and_return)]
@@ -8907,7 +8359,7 @@ impl StartFaceDetectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartFaceDetection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8992,7 +8444,7 @@ impl StartFaceDetectionInput {
             "StartFaceDetection",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9039,16 +8491,12 @@ pub mod start_face_search_input {
             self.video = input;
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9056,14 +8504,12 @@ pub mod start_face_search_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%.
-        /// The default value is 80%.</p>
+        /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
         pub fn face_match_threshold(mut self, input: f32) -> Self {
             self.face_match_threshold = Some(input);
             self
         }
-        /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%.
-        /// The default value is 80%.</p>
+        /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
         pub fn set_face_match_threshold(mut self, input: std::option::Option<f32>) -> Self {
             self.face_match_threshold = input;
             self
@@ -9094,14 +8540,12 @@ pub mod start_face_search_input {
             self.notification_channel = input;
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_tag = Some(input.into());
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -9127,7 +8571,7 @@ pub mod start_face_search_input {
 #[doc(hidden)]
 pub type StartFaceSearchInputOperationOutputAlias = crate::operation::StartFaceSearch;
 #[doc(hidden)]
-pub type StartFaceSearchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartFaceSearchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFaceSearchInput {
     /// Consumes the builder and constructs an Operation<[`StartFaceSearch`](crate::operation::StartFaceSearch)>
     #[allow(clippy::let_and_return)]
@@ -9138,7 +8582,7 @@ impl StartFaceSearchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartFaceSearch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9223,7 +8667,7 @@ impl StartFaceSearchInput {
             "StartFaceSearch",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9259,28 +8703,22 @@ pub mod start_label_detection_input {
         pub(crate) job_tag: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The video in which you want to detect labels. The video must be stored
-        /// in an Amazon S3 bucket.</p>
+        /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
         pub fn video(mut self, input: crate::model::Video) -> Self {
             self.video = Some(input);
             self
         }
-        /// <p>The video in which you want to detect labels. The video must be stored
-        /// in an Amazon S3 bucket.</p>
+        /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9288,34 +8726,24 @@ pub mod start_label_detection_input {
             self.client_request_token = input;
             self
         }
-        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence
-        /// represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence.
-        /// 100 is the highest confidence.  Amazon Rekognition Video doesn't return any labels with a confidence level
-        /// lower than this specified value.</p>
-        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence
-        /// values greater than or equal to 50 percent.</p>
+        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
+        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
         pub fn min_confidence(mut self, input: f32) -> Self {
             self.min_confidence = Some(input);
             self
         }
-        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence
-        /// represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence.
-        /// 100 is the highest confidence.  Amazon Rekognition Video doesn't return any labels with a confidence level
-        /// lower than this specified value.</p>
-        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence
-        /// values greater than or equal to 50 percent.</p>
+        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
+        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.min_confidence = input;
             self
         }
-        /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection
-        /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+        /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.notification_channel = Some(input);
             self
         }
-        /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection
-        /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+        /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -9323,14 +8751,12 @@ pub mod start_label_detection_input {
             self.notification_channel = input;
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_tag = Some(input.into());
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -9355,7 +8781,7 @@ pub mod start_label_detection_input {
 #[doc(hidden)]
 pub type StartLabelDetectionInputOperationOutputAlias = crate::operation::StartLabelDetection;
 #[doc(hidden)]
-pub type StartLabelDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartLabelDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartLabelDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartLabelDetection`](crate::operation::StartLabelDetection)>
     #[allow(clippy::let_and_return)]
@@ -9366,7 +8792,7 @@ impl StartLabelDetectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartLabelDetection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9451,7 +8877,7 @@ impl StartLabelDetectionInput {
             "StartLabelDetection",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9486,28 +8912,22 @@ pub mod start_person_tracking_input {
         pub(crate) job_tag: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The video in which you want to detect people. The video must be stored
-        /// in an Amazon S3 bucket.</p>
+        /// <p>The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.</p>
         pub fn video(mut self, input: crate::model::Video) -> Self {
             self.video = Some(input);
             self
         }
-        /// <p>The video in which you want to detect people. The video must be stored
-        /// in an Amazon S3 bucket.</p>
+        /// <p>The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9515,14 +8935,12 @@ pub mod start_person_tracking_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection
-        /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+        /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.notification_channel = Some(input);
             self
         }
-        /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection
-        /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+        /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -9530,14 +8948,12 @@ pub mod start_person_tracking_input {
             self.notification_channel = input;
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_tag = Some(input.into());
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -9561,7 +8977,7 @@ pub mod start_person_tracking_input {
 #[doc(hidden)]
 pub type StartPersonTrackingInputOperationOutputAlias = crate::operation::StartPersonTracking;
 #[doc(hidden)]
-pub type StartPersonTrackingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartPersonTrackingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartPersonTrackingInput {
     /// Consumes the builder and constructs an Operation<[`StartPersonTracking`](crate::operation::StartPersonTracking)>
     #[allow(clippy::let_and_return)]
@@ -9572,7 +8988,7 @@ impl StartPersonTrackingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartPersonTracking,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9657,7 +9073,7 @@ impl StartPersonTrackingInput {
             "StartPersonTracking",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9703,20 +9119,12 @@ pub mod start_project_version_input {
             self.project_version_arn = input;
             self
         }
-        /// <p>The minimum number of inference units to use. A single
-        /// inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS).
-        /// Use a higher number to increase the TPS throughput of your model. You are charged for the number
-        /// of inference units that you use.
-        /// </p>
+        /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
         pub fn min_inference_units(mut self, input: i32) -> Self {
             self.min_inference_units = Some(input);
             self
         }
-        /// <p>The minimum number of inference units to use. A single
-        /// inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS).
-        /// Use a higher number to increase the TPS throughput of your model. You are charged for the number
-        /// of inference units that you use.
-        /// </p>
+        /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
         pub fn set_min_inference_units(mut self, input: std::option::Option<i32>) -> Self {
             self.min_inference_units = input;
             self
@@ -9738,7 +9146,7 @@ pub mod start_project_version_input {
 #[doc(hidden)]
 pub type StartProjectVersionInputOperationOutputAlias = crate::operation::StartProjectVersion;
 #[doc(hidden)]
-pub type StartProjectVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartProjectVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`StartProjectVersion`](crate::operation::StartProjectVersion)>
     #[allow(clippy::let_and_return)]
@@ -9749,7 +9157,7 @@ impl StartProjectVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartProjectVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9834,7 +9242,7 @@ impl StartProjectVersionInput {
             "StartProjectVersion",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9871,28 +9279,22 @@ pub mod start_segment_detection_input {
         pub(crate) segment_types: std::option::Option<std::vec::Vec<crate::model::SegmentType>>,
     }
     impl Builder {
-        /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
-        /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+        /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
         pub fn video(mut self, input: crate::model::Video) -> Self {
             self.video = Some(input);
             self
         }
-        /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
-        /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+        /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-        /// <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use
-        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9900,14 +9302,12 @@ pub mod start_segment_detection_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
-        /// segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.notification_channel = Some(input);
             self
         }
-        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
-        /// segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -9915,14 +9315,12 @@ pub mod start_segment_detection_input {
             self.notification_channel = input;
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_tag = Some(input.into());
             self
         }
-        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -9945,9 +9343,9 @@ pub mod start_segment_detection_input {
         /// To override the contents of this collection use [`set_segment_types`](Self::set_segment_types).
         ///
         /// <p>An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.</p>
-        pub fn segment_types(mut self, input: impl Into<crate::model::SegmentType>) -> Self {
+        pub fn segment_types(mut self, input: crate::model::SegmentType) -> Self {
             let mut v = self.segment_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.segment_types = Some(v);
             self
         }
@@ -9980,7 +9378,7 @@ pub mod start_segment_detection_input {
 #[doc(hidden)]
 pub type StartSegmentDetectionInputOperationOutputAlias = crate::operation::StartSegmentDetection;
 #[doc(hidden)]
-pub type StartSegmentDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartSegmentDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSegmentDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartSegmentDetection`](crate::operation::StartSegmentDetection)>
     #[allow(clippy::let_and_return)]
@@ -9991,7 +9389,7 @@ impl StartSegmentDetectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSegmentDetection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10078,7 +9476,7 @@ impl StartSegmentDetectionInput {
             "StartSegmentDetection",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10134,7 +9532,7 @@ pub mod start_stream_processor_input {
 #[doc(hidden)]
 pub type StartStreamProcessorInputOperationOutputAlias = crate::operation::StartStreamProcessor;
 #[doc(hidden)]
-pub type StartStreamProcessorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartStreamProcessorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`StartStreamProcessor`](crate::operation::StartStreamProcessor)>
     #[allow(clippy::let_and_return)]
@@ -10145,7 +9543,7 @@ impl StartStreamProcessorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartStreamProcessor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10232,7 +9630,7 @@ impl StartStreamProcessorInput {
             "StartStreamProcessor",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10268,28 +9666,22 @@ pub mod start_text_detection_input {
         pub(crate) filters: std::option::Option<crate::model::StartTextDetectionFilters>,
     }
     impl Builder {
-        /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
-        /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+        /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
         pub fn video(mut self, input: crate::model::Video) -> Self {
             self.video = Some(input);
             self
         }
-        /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
-        /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+        /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code>
-        /// requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job
-        /// from being accidentaly started more than once.</p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code>
-        /// requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job
-        /// from being accidentaly started more than once.</p>
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10297,16 +9689,12 @@ pub mod start_text_detection_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see
-        /// <a>api-video</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.
-        /// For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
+        /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <code>api-video</code>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.notification_channel = Some(input);
             self
         }
-        /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see
-        /// <a>api-video</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.
-        /// For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
+        /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <code>api-video</code>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -10314,14 +9702,12 @@ pub mod start_text_detection_input {
             self.notification_channel = input;
             self
         }
-        /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic.  For example, you can use <code>JobTag</code> to group related jobs
-        /// and identify them in the completion notification.</p>
+        /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_tag = Some(input.into());
             self
         }
-        /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic.  For example, you can use <code>JobTag</code> to group related jobs
-        /// and identify them in the completion notification.</p>
+        /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -10359,7 +9745,7 @@ pub mod start_text_detection_input {
 #[doc(hidden)]
 pub type StartTextDetectionInputOperationOutputAlias = crate::operation::StartTextDetection;
 #[doc(hidden)]
-pub type StartTextDetectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartTextDetectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartTextDetectionInput {
     /// Consumes the builder and constructs an Operation<[`StartTextDetection`](crate::operation::StartTextDetection)>
     #[allow(clippy::let_and_return)]
@@ -10370,7 +9756,7 @@ impl StartTextDetectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartTextDetection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10455,7 +9841,7 @@ impl StartTextDetectionInput {
             "StartTextDetection",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10518,7 +9904,7 @@ pub mod stop_project_version_input {
 #[doc(hidden)]
 pub type StopProjectVersionInputOperationOutputAlias = crate::operation::StopProjectVersion;
 #[doc(hidden)]
-pub type StopProjectVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopProjectVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopProjectVersionInput {
     /// Consumes the builder and constructs an Operation<[`StopProjectVersion`](crate::operation::StopProjectVersion)>
     #[allow(clippy::let_and_return)]
@@ -10529,7 +9915,7 @@ impl StopProjectVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopProjectVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10614,7 +10000,7 @@ impl StopProjectVersionInput {
             "StopProjectVersion",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10646,12 +10032,12 @@ pub mod stop_stream_processor_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a stream processor created by <a>CreateStreamProcessor</a>.</p>
+        /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of a stream processor created by <a>CreateStreamProcessor</a>.</p>
+        /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10670,7 +10056,7 @@ pub mod stop_stream_processor_input {
 #[doc(hidden)]
 pub type StopStreamProcessorInputOperationOutputAlias = crate::operation::StopStreamProcessor;
 #[doc(hidden)]
-pub type StopStreamProcessorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopStreamProcessorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopStreamProcessorInput {
     /// Consumes the builder and constructs an Operation<[`StopStreamProcessor`](crate::operation::StopStreamProcessor)>
     #[allow(clippy::let_and_return)]
@@ -10681,7 +10067,7 @@ impl StopStreamProcessorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopStreamProcessor,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10766,7 +10152,7 @@ impl StopStreamProcessorInput {
             "StopStreamProcessor",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10801,16 +10187,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>
-        /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to.
-        /// </p>
+        /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to.
-        /// </p>
+        /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -10819,9 +10201,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The key-value tags to assign to the resource.
-        /// </p>
+        /// <p> The key-value tags to assign to the resource. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -10832,9 +10212,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// The key-value tags to assign to the resource.
-        /// </p>
+        /// <p> The key-value tags to assign to the resource. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -10861,7 +10239,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -10872,7 +10250,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10956,7 +10334,7 @@ impl TagResourceInput {
             "TagResource",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10989,16 +10367,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from.
-        /// </p>
+        /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from.
-        /// </p>
+        /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -11007,18 +10381,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>
-        /// A list of the tags that you want to remove.
-        /// </p>
+        /// <p> A list of the tags that you want to remove. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>
-        /// A list of the tags that you want to remove.
-        /// </p>
+        /// <p> A list of the tags that you want to remove. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11043,7 +10413,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -11054,7 +10424,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11138,7 +10508,7 @@ impl UntagResourceInput {
             "UntagResource",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11171,30 +10541,22 @@ pub mod update_dataset_entries_input {
         pub(crate) changes: std::option::Option<crate::model::DatasetChanges>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the dataset that you want to update.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
         pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the dataset that you want to update.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
         }
-        /// <p>
-        /// The changes that you want to make to the dataset.
-        /// </p>
+        /// <p> The changes that you want to make to the dataset. </p>
         pub fn changes(mut self, input: crate::model::DatasetChanges) -> Self {
             self.changes = Some(input);
             self
         }
-        /// <p>
-        /// The changes that you want to make to the dataset.
-        /// </p>
+        /// <p> The changes that you want to make to the dataset. </p>
         pub fn set_changes(
             mut self,
             input: std::option::Option<crate::model::DatasetChanges>,
@@ -11219,7 +10581,7 @@ pub mod update_dataset_entries_input {
 #[doc(hidden)]
 pub type UpdateDatasetEntriesInputOperationOutputAlias = crate::operation::UpdateDatasetEntries;
 #[doc(hidden)]
-pub type UpdateDatasetEntriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDatasetEntriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatasetEntriesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDatasetEntries`](crate::operation::UpdateDatasetEntries)>
     #[allow(clippy::let_and_return)]
@@ -11230,7 +10592,7 @@ impl UpdateDatasetEntriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDatasetEntries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11317,7 +10679,7 @@ impl UpdateDatasetEntriesInput {
             "UpdateDatasetEntries",
             "rekognition",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11344,25 +10706,17 @@ impl UpdateDatasetEntriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasetEntriesInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the dataset that you want to update.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The changes that you want to make to the dataset.
-    /// </p>
+    /// <p> The changes that you want to make to the dataset. </p>
     pub changes: std::option::Option<crate::model::DatasetChanges>,
 }
 impl UpdateDatasetEntriesInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the dataset that you want to update.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>
-    /// The changes that you want to make to the dataset.
-    /// </p>
+    /// <p> The changes that you want to make to the dataset. </p>
     pub fn changes(&self) -> std::option::Option<&crate::model::DatasetChanges> {
         self.changes.as_ref()
     }
@@ -11380,25 +10734,17 @@ impl std::fmt::Debug for UpdateDatasetEntriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>
-    /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from.
-    /// </p>
+    /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// A list of the tags that you want to remove.
-    /// </p>
+    /// <p> A list of the tags that you want to remove. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>
-    /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from.
-    /// </p>
+    /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>
-    /// A list of the tags that you want to remove.
-    /// </p>
+    /// <p> A list of the tags that you want to remove. </p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -11416,26 +10762,18 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>
-    /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to.
-    /// </p>
+    /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The key-value tags to assign to the resource.
-    /// </p>
+    /// <p> The key-value tags to assign to the resource. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>
-    /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to.
-    /// </p>
+    /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>
-    /// The key-value tags to assign to the resource.
-    /// </p>
+    /// <p> The key-value tags to assign to the resource. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11456,11 +10794,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStreamProcessorInput {
-    /// <p>The name of a stream processor created by <a>CreateStreamProcessor</a>.</p>
+    /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl StopStreamProcessorInput {
-    /// <p>The name of a stream processor created by <a>CreateStreamProcessor</a>.</p>
+    /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -11500,43 +10838,31 @@ impl std::fmt::Debug for StopProjectVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTextDetectionInput {
-    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
-    /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     pub video: std::option::Option<crate::model::Video>,
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code>
-    /// requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job
-    /// from being accidentaly started more than once.</p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see
-    /// <a>api-video</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.
-    /// For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
+    /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <code>api-video</code>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
-    /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic.  For example, you can use <code>JobTag</code> to group related jobs
-    /// and identify them in the completion notification.</p>
+    /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
     /// <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
     pub filters: std::option::Option<crate::model::StartTextDetectionFilters>,
 }
 impl StartTextDetectionInput {
-    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
-    /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     pub fn video(&self) -> std::option::Option<&crate::model::Video> {
         self.video.as_ref()
     }
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code>
-    /// requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job
-    /// from being accidentaly started more than once.</p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see
-    /// <a>api-video</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.
-    /// For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
+    /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <code>api-video</code>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
     pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
         self.notification_channel.as_ref()
     }
-    /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic.  For example, you can use <code>JobTag</code> to group related jobs
-    /// and identify them in the completion notification.</p>
+    /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(&self) -> std::option::Option<&str> {
         self.job_tag.as_deref()
     }
@@ -11582,18 +10908,13 @@ impl std::fmt::Debug for StartStreamProcessorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSegmentDetectionInput {
-    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
-    /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     pub video: std::option::Option<crate::model::Video>,
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
-    /// segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
     /// <p>Filters for technical cue or shot detection.</p>
     pub filters: std::option::Option<crate::model::StartSegmentDetectionFilters>,
@@ -11601,24 +10922,19 @@ pub struct StartSegmentDetectionInput {
     pub segment_types: std::option::Option<std::vec::Vec<crate::model::SegmentType>>,
 }
 impl StartSegmentDetectionInput {
-    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
-    /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     pub fn video(&self) -> std::option::Option<&crate::model::Video> {
         self.video.as_ref()
     }
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
-    /// segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
     pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
         self.notification_channel.as_ref()
     }
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(&self) -> std::option::Option<&str> {
         self.job_tag.as_deref()
     }
@@ -11650,11 +10966,7 @@ impl std::fmt::Debug for StartSegmentDetectionInput {
 pub struct StartProjectVersionInput {
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
     pub project_version_arn: std::option::Option<std::string::String>,
-    /// <p>The minimum number of inference units to use. A single
-    /// inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS).
-    /// Use a higher number to increase the TPS throughput of your model. You are charged for the number
-    /// of inference units that you use.
-    /// </p>
+    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     pub min_inference_units: std::option::Option<i32>,
 }
 impl StartProjectVersionInput {
@@ -11662,11 +10974,7 @@ impl StartProjectVersionInput {
     pub fn project_version_arn(&self) -> std::option::Option<&str> {
         self.project_version_arn.as_deref()
     }
-    /// <p>The minimum number of inference units to use. A single
-    /// inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS).
-    /// Use a higher number to increase the TPS throughput of your model. You are charged for the number
-    /// of inference units that you use.
-    /// </p>
+    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     pub fn min_inference_units(&self) -> std::option::Option<i32> {
         self.min_inference_units
     }
@@ -11684,39 +10992,29 @@ impl std::fmt::Debug for StartProjectVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPersonTrackingInput {
-    /// <p>The video in which you want to detect people. The video must be stored
-    /// in an Amazon S3 bucket.</p>
+    /// <p>The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.</p>
     pub video: std::option::Option<crate::model::Video>,
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection
-    /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
 }
 impl StartPersonTrackingInput {
-    /// <p>The video in which you want to detect people. The video must be stored
-    /// in an Amazon S3 bucket.</p>
+    /// <p>The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.</p>
     pub fn video(&self) -> std::option::Option<&crate::model::Video> {
         self.video.as_ref()
     }
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection
-    /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
         self.notification_channel.as_ref()
     }
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(&self) -> std::option::Option<&str> {
         self.job_tag.as_deref()
     }
@@ -11736,55 +11034,37 @@ impl std::fmt::Debug for StartPersonTrackingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLabelDetectionInput {
-    /// <p>The video in which you want to detect labels. The video must be stored
-    /// in an Amazon S3 bucket.</p>
+    /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
     pub video: std::option::Option<crate::model::Video>,
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence
-    /// represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence.
-    /// 100 is the highest confidence.  Amazon Rekognition Video doesn't return any labels with a confidence level
-    /// lower than this specified value.</p>
-    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence
-    /// values greater than or equal to 50 percent.</p>
+    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
+    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
     pub min_confidence: std::option::Option<f32>,
-    /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection
-    /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
 }
 impl StartLabelDetectionInput {
-    /// <p>The video in which you want to detect labels. The video must be stored
-    /// in an Amazon S3 bucket.</p>
+    /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
     pub fn video(&self) -> std::option::Option<&crate::model::Video> {
         self.video.as_ref()
     }
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence
-    /// represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence.
-    /// 100 is the highest confidence.  Amazon Rekognition Video doesn't return any labels with a confidence level
-    /// lower than this specified value.</p>
-    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence
-    /// values greater than or equal to 50 percent.</p>
+    /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
+    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
     pub fn min_confidence(&self) -> std::option::Option<f32> {
         self.min_confidence
     }
-    /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection
-    /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
         self.notification_channel.as_ref()
     }
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(&self) -> std::option::Option<&str> {
         self.job_tag.as_deref()
     }
@@ -11807,19 +11087,15 @@ impl std::fmt::Debug for StartLabelDetectionInput {
 pub struct StartFaceSearchInput {
     /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
     pub video: std::option::Option<crate::model::Video>,
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%.
-    /// The default value is 80%.</p>
+    /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
     pub face_match_threshold: std::option::Option<f32>,
     /// <p>ID of the collection that contains the faces you want to search for.</p>
     pub collection_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
 }
 impl StartFaceSearchInput {
@@ -11827,14 +11103,11 @@ impl StartFaceSearchInput {
     pub fn video(&self) -> std::option::Option<&crate::model::Video> {
         self.video.as_ref()
     }
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%.
-    /// The default value is 80%.</p>
+    /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
     pub fn face_match_threshold(&self) -> std::option::Option<f32> {
         self.face_match_threshold
     }
@@ -11846,8 +11119,7 @@ impl StartFaceSearchInput {
     pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
         self.notification_channel.as_ref()
     }
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(&self) -> std::option::Option<&str> {
         self.job_tag.as_deref()
     }
@@ -11869,53 +11141,39 @@ impl std::fmt::Debug for StartFaceSearchInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFaceDetectionInput {
-    /// <p>The video in which you want to detect faces. The video must be stored
-    /// in an Amazon S3 bucket.</p>
+    /// <p>The video in which you want to detect faces. The video must be stored in an Amazon S3 bucket.</p>
     pub video: std::option::Option<crate::model::Video>,
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
-    /// face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
     /// <p>The face attributes you want returned.</p>
-    /// <p>
-    /// <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
-    /// <p>
-    /// <code>ALL</code> - All facial attributes are returned.</p>
+    /// <p> <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
+    /// <p> <code>ALL</code> - All facial attributes are returned.</p>
     pub face_attributes: std::option::Option<crate::model::FaceAttributes>,
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
 }
 impl StartFaceDetectionInput {
-    /// <p>The video in which you want to detect faces. The video must be stored
-    /// in an Amazon S3 bucket.</p>
+    /// <p>The video in which you want to detect faces. The video must be stored in an Amazon S3 bucket.</p>
     pub fn video(&self) -> std::option::Option<&crate::model::Video> {
         self.video.as_ref()
     }
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
-    /// face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>The face attributes you want returned.</p>
-    /// <p>
-    /// <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
-    /// <p>
-    /// <code>ALL</code> - All facial attributes are returned.</p>
+    /// <p> <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
+    /// <p> <code>ALL</code> - All facial attributes are returned.</p>
     pub fn face_attributes(&self) -> std::option::Option<&crate::model::FaceAttributes> {
         self.face_attributes.as_ref()
     }
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(&self) -> std::option::Option<&str> {
         self.job_tag.as_deref()
     }
@@ -11936,53 +11194,35 @@ impl std::fmt::Debug for StartFaceDetectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartContentModerationInput {
-    /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored
-    /// in an Amazon S3 bucket.</p>
+    /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored in an Amazon S3 bucket.</p>
     pub video: std::option::Option<crate::model::Video>,
-    /// <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence
-    /// represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence.
-    /// 100 is the highest confidence.  Amazon Rekognition doesn't return any moderated content labels with a confidence level
-    /// lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code>
-    /// returns labels with confidence values greater than or equal to 50 percent.</p>
+    /// <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition doesn't return any moderated content labels with a confidence level lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code> returns labels with confidence values greater than or equal to 50 percent.</p>
     pub min_confidence: std::option::Option<f32>,
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
-    /// content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
 }
 impl StartContentModerationInput {
-    /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored
-    /// in an Amazon S3 bucket.</p>
+    /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored in an Amazon S3 bucket.</p>
     pub fn video(&self) -> std::option::Option<&crate::model::Video> {
         self.video.as_ref()
     }
-    /// <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence
-    /// represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence.
-    /// 100 is the highest confidence.  Amazon Rekognition doesn't return any moderated content labels with a confidence level
-    /// lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code>
-    /// returns labels with confidence values greater than or equal to 50 percent.</p>
+    /// <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition doesn't return any moderated content labels with a confidence level lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code> returns labels with confidence values greater than or equal to 50 percent.</p>
     pub fn min_confidence(&self) -> std::option::Option<f32> {
         self.min_confidence
     }
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
-    /// content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
     pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
         self.notification_channel.as_ref()
     }
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(&self) -> std::option::Option<&str> {
         self.job_tag.as_deref()
     }
@@ -12003,39 +11243,29 @@ impl std::fmt::Debug for StartContentModerationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCelebrityRecognitionInput {
-    /// <p>The video in which you want to recognize celebrities. The video must be stored
-    /// in an Amazon S3 bucket.</p>
+    /// <p>The video in which you want to recognize celebrities. The video must be stored in an Amazon S3 bucket.</p>
     pub video: std::option::Option<crate::model::Video>,
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
-    /// celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub notification_channel: std::option::Option<crate::model::NotificationChannel>,
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: std::option::Option<std::string::String>,
 }
 impl StartCelebrityRecognitionInput {
-    /// <p>The video in which you want to recognize celebrities. The video must be stored
-    /// in an Amazon S3 bucket.</p>
+    /// <p>The video in which you want to recognize celebrities. The video must be stored in an Amazon S3 bucket.</p>
     pub fn video(&self) -> std::option::Option<&crate::model::Video> {
         self.video.as_ref()
     }
-    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
-    /// <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use
-    /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
-    /// celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub fn notification_channel(&self) -> std::option::Option<&crate::model::NotificationChannel> {
         self.notification_channel.as_ref()
     }
-    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
-    /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(&self) -> std::option::Option<&str> {
         self.job_tag.as_deref()
     }
@@ -12057,32 +11287,14 @@ impl std::fmt::Debug for StartCelebrityRecognitionInput {
 pub struct SearchFacesByImageInput {
     /// <p>ID of the collection to search.</p>
     pub collection_id: std::option::Option<std::string::String>,
-    /// <p>The input image as base64-encoded bytes or an S3 object.
-    /// If you use the AWS CLI to call Amazon Rekognition operations,
-    /// passing base64-encoded image bytes is not supported. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub image: std::option::Option<crate::model::Image>,
-    /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
-    /// with the highest confidence in the match.</p>
+    /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
     pub max_faces: std::option::Option<i32>,
-    /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example,
-    /// don't return any matches where confidence in matches is less than 70%.
-    /// The default value is 80%.</p>
+    /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
     pub face_match_threshold: std::option::Option<f32>,
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
-    /// Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition
-    /// chooses the quality bar.  If you specify <code>LOW</code>,
-    /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
-    /// don’t meet the chosen quality bar.  
-    ///
-    /// The quality bar is based on a variety of common use cases. Low-quality
-    /// detections can occur for a number of reasons. Some examples are an object that's misidentified
-    /// as a face, a face that's too blurry, or a face with a
-    /// pose that's too extreme to use. If you specify <code>NONE</code>, no
-    /// filtering is performed.  The default value is <code>NONE</code>.
-    /// </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub quality_filter: std::option::Option<crate::model::QualityFilter>,
 }
@@ -12091,38 +11303,20 @@ impl SearchFacesByImageInput {
     pub fn collection_id(&self) -> std::option::Option<&str> {
         self.collection_id.as_deref()
     }
-    /// <p>The input image as base64-encoded bytes or an S3 object.
-    /// If you use the AWS CLI to call Amazon Rekognition operations,
-    /// passing base64-encoded image bytes is not supported. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn image(&self) -> std::option::Option<&crate::model::Image> {
         self.image.as_ref()
     }
-    /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
-    /// with the highest confidence in the match.</p>
+    /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
     pub fn max_faces(&self) -> std::option::Option<i32> {
         self.max_faces
     }
-    /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example,
-    /// don't return any matches where confidence in matches is less than 70%.
-    /// The default value is 80%.</p>
+    /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
     pub fn face_match_threshold(&self) -> std::option::Option<f32> {
         self.face_match_threshold
     }
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
-    /// Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition
-    /// chooses the quality bar.  If you specify <code>LOW</code>,
-    /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
-    /// don’t meet the chosen quality bar.  
-    ///
-    /// The quality bar is based on a variety of common use cases. Low-quality
-    /// detections can occur for a number of reasons. Some examples are an object that's misidentified
-    /// as a face, a face that's too blurry, or a face with a
-    /// pose that's too extreme to use. If you specify <code>NONE</code>, no
-    /// filtering is performed.  The default value is <code>NONE</code>.
-    /// </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub fn quality_filter(&self) -> std::option::Option<&crate::model::QualityFilter> {
         self.quality_filter.as_ref()
@@ -12148,13 +11342,9 @@ pub struct SearchFacesInput {
     pub collection_id: std::option::Option<std::string::String>,
     /// <p>ID of a face to find matches for in the collection.</p>
     pub face_id: std::option::Option<std::string::String>,
-    /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
-    /// with the highest confidence in the match.</p>
+    /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
     pub max_faces: std::option::Option<i32>,
-    /// <p>Optional value specifying the minimum confidence in the face match to return. For
-    /// example, don't return any matches where confidence in matches is less than 70%.
-    /// The default value is 80%.
-    /// </p>
+    /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p>
     pub face_match_threshold: std::option::Option<f32>,
 }
 impl SearchFacesInput {
@@ -12166,15 +11356,11 @@ impl SearchFacesInput {
     pub fn face_id(&self) -> std::option::Option<&str> {
         self.face_id.as_deref()
     }
-    /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
-    /// with the highest confidence in the match.</p>
+    /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
     pub fn max_faces(&self) -> std::option::Option<i32> {
         self.max_faces
     }
-    /// <p>Optional value specifying the minimum confidence in the face match to return. For
-    /// example, don't return any matches where confidence in matches is less than 70%.
-    /// The default value is 80%.
-    /// </p>
+    /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p>
     pub fn face_match_threshold(&self) -> std::option::Option<f32> {
         self.face_match_threshold
     }
@@ -12194,19 +11380,13 @@ impl std::fmt::Debug for SearchFacesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecognizeCelebritiesInput {
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-    /// Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to
-    /// base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see
-    /// Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub image: std::option::Option<crate::model::Image>,
 }
 impl RecognizeCelebritiesInput {
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-    /// Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to
-    /// base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see
-    /// Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn image(&self) -> std::option::Option<&crate::model::Image> {
         self.image.as_ref()
     }
@@ -12223,15 +11403,11 @@ impl std::fmt::Debug for RecognizeCelebritiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>
-    /// Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.
-    /// </p>
+    /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>
-    /// Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.
-    /// </p>
+    /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -12248,15 +11424,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamProcessorsInput {
-    /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video
-    /// returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
+    /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is 1000. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListStreamProcessorsInput {
-    /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video
-    /// returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
+    /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12280,9 +11454,7 @@ impl std::fmt::Debug for ListStreamProcessorsInput {
 pub struct ListFacesInput {
     /// <p>ID of the collection from which to list the faces.</p>
     pub collection_id: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Rekognition returns a pagination token in the response. You can use this pagination token to
-    /// retrieve the next set of faces.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of faces to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -12292,9 +11464,7 @@ impl ListFacesInput {
     pub fn collection_id(&self) -> std::option::Option<&str> {
         self.collection_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve),
-    /// Amazon Rekognition returns a pagination token in the response. You can use this pagination token to
-    /// retrieve the next set of faces.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12317,35 +11487,23 @@ impl std::fmt::Debug for ListFacesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetLabelsInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the dataset that you want to use.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-    /// If you specify a value greater than 100, a ValidationException
-    /// error occurs. The default value is 100. </p>
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetLabelsInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the dataset that you want to use.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-    /// If you specify a value greater than 100, a ValidationException
-    /// error occurs. The default value is 100. </p>
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -12364,77 +11522,47 @@ impl std::fmt::Debug for ListDatasetLabelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetEntriesInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) for the dataset that you want to use.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry.       
-    /// </p>
+    /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
     pub contains_labels: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// Specify <code>true</code> to get only the JSON Lines where the image is labeled.
-    /// Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you
-    /// don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled
-    /// images.
-    /// </p>
+    /// <p> Specify <code>true</code> to get only the JSON Lines where the image is labeled. Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled images. </p>
     pub labeled: std::option::Option<bool>,
-    /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is
-    /// part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image.
-    /// You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
+    /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
     pub source_ref_contains: std::option::Option<std::string::String>,
-    /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors.
-    /// </p>
+    /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors. </p>
     pub has_errors: std::option::Option<bool>,
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-    /// If you specify a value greater than 100, a ValidationException
-    /// error occurs. The default value is 100. </p>
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetEntriesInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) for the dataset that you want to use.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry.       
-    /// </p>
+    /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
     pub fn contains_labels(&self) -> std::option::Option<&[std::string::String]> {
         self.contains_labels.as_deref()
     }
-    /// <p>
-    /// Specify <code>true</code> to get only the JSON Lines where the image is labeled.
-    /// Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you
-    /// don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled
-    /// images.
-    /// </p>
+    /// <p> Specify <code>true</code> to get only the JSON Lines where the image is labeled. Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled images. </p>
     pub fn labeled(&self) -> std::option::Option<bool> {
         self.labeled
     }
-    /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is
-    /// part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image.
-    /// You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
+    /// <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
     pub fn source_ref_contains(&self) -> std::option::Option<&str> {
         self.source_ref_contains.as_deref()
     }
-    /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors.
-    /// </p>
+    /// <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors. </p>
     pub fn has_errors(&self) -> std::option::Option<bool> {
         self.has_errors
     }
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-    /// If you specify a value greater than 100, a ValidationException
-    /// error occurs. The default value is 100. </p>
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -12485,66 +11613,32 @@ impl std::fmt::Debug for ListCollectionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexFacesInput {
-    /// <p>The ID of an existing collection to which you want to add the faces that are detected
-    /// in the input images.</p>
+    /// <p>The ID of an existing collection to which you want to add the faces that are detected in the input images.</p>
     pub collection_id: std::option::Option<std::string::String>,
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-    /// Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub image: std::option::Option<crate::model::Image>,
     /// <p>The ID you want to assign to all the faces detected in the image.</p>
     pub external_image_id: std::option::Option<std::string::String>,
-    /// <p>An array of facial attributes that you want to be returned. This can be the default
-    /// list of attributes or all attributes. If you don't specify a value for <code>Attributes</code>
-    /// or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
-    /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
-    /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-    /// facial attributes are returned, but the operation takes longer to complete.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
-    /// operator to determine which attributes to return (in this case, all attributes). </p>
+    /// <p>An array of facial attributes that you want to be returned. This can be the default list of attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the operation takes longer to complete.</p>
+    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
     pub detection_attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
-    /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater
-    /// than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an
-    /// image, even if you specify a larger value for <code>MaxFaces</code>.</p>
-    /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the
-    /// faces with the lowest quality are filtered out first. If there are still more faces than the
-    /// value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out
-    /// (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information
-    /// about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
-    /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face
-    /// bounding box size to the smallest size, in descending order.</p>
-    /// <p>
-    /// <code>MaxFaces</code> can be used with a collection associated with any version of
-    /// the face model.</p>
+    /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an image, even if you specify a larger value for <code>MaxFaces</code>.</p>
+    /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
+    /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face bounding box size to the smallest size, in descending order.</p>
+    /// <p> <code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
     pub max_faces: std::option::Option<i32>,
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
-    /// Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar.
-    /// If you specify <code>LOW</code>,
-    /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
-    /// don’t meet the chosen quality bar.  The default value is <code>AUTO</code>.
-    ///
-    /// The quality bar is based on a variety of common use cases. Low-quality
-    /// detections can occur for a number of reasons. Some examples are an object that's misidentified
-    /// as a face, a face that's too blurry, or a face with a
-    /// pose that's too extreme to use. If you specify <code>NONE</code>, no
-    /// filtering is performed.
-    /// </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub quality_filter: std::option::Option<crate::model::QualityFilter>,
 }
 impl IndexFacesInput {
-    /// <p>The ID of an existing collection to which you want to add the faces that are detected
-    /// in the input images.</p>
+    /// <p>The ID of an existing collection to which you want to add the faces that are detected in the input images.</p>
     pub fn collection_id(&self) -> std::option::Option<&str> {
         self.collection_id.as_deref()
     }
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-    /// Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn image(&self) -> std::option::Option<&crate::model::Image> {
         self.image.as_ref()
     }
@@ -12552,45 +11646,19 @@ impl IndexFacesInput {
     pub fn external_image_id(&self) -> std::option::Option<&str> {
         self.external_image_id.as_deref()
     }
-    /// <p>An array of facial attributes that you want to be returned. This can be the default
-    /// list of attributes or all attributes. If you don't specify a value for <code>Attributes</code>
-    /// or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
-    /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
-    /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-    /// facial attributes are returned, but the operation takes longer to complete.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
-    /// operator to determine which attributes to return (in this case, all attributes). </p>
+    /// <p>An array of facial attributes that you want to be returned. This can be the default list of attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the operation takes longer to complete.</p>
+    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
     pub fn detection_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.detection_attributes.as_deref()
     }
-    /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater
-    /// than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an
-    /// image, even if you specify a larger value for <code>MaxFaces</code>.</p>
-    /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the
-    /// faces with the lowest quality are filtered out first. If there are still more faces than the
-    /// value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out
-    /// (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information
-    /// about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
-    /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face
-    /// bounding box size to the smallest size, in descending order.</p>
-    /// <p>
-    /// <code>MaxFaces</code> can be used with a collection associated with any version of
-    /// the face model.</p>
+    /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an image, even if you specify a larger value for <code>MaxFaces</code>.</p>
+    /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
+    /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face bounding box size to the smallest size, in descending order.</p>
+    /// <p> <code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
     pub fn max_faces(&self) -> std::option::Option<i32> {
         self.max_faces
     }
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
-    /// Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar.
-    /// If you specify <code>LOW</code>,
-    /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
-    /// don’t meet the chosen quality bar.  The default value is <code>AUTO</code>.
-    ///
-    /// The quality bar is based on a variety of common use cases. Low-quality
-    /// detections can occur for a number of reasons. Some examples are an object that's misidentified
-    /// as a face, a face that's too blurry, or a face with a
-    /// pose that's too extreme to use. If you specify <code>NONE</code>, no
-    /// filtering is performed.
-    /// </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub fn quality_filter(&self) -> std::option::Option<&crate::model::QualityFilter> {
         self.quality_filter.as_ref()
@@ -12613,18 +11681,15 @@ impl std::fmt::Debug for IndexFacesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTextDetectionInput {
-    /// <p>Job identifier for the text detection operation for which you want results returned.
-    /// You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
+    /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns
-    /// a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetTextDetectionInput {
-    /// <p>Job identifier for the text detection operation for which you want results returned.
-    /// You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
+    /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -12632,8 +11697,7 @@ impl GetTextDetectionInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns
-    /// a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12652,18 +11716,15 @@ impl std::fmt::Debug for GetTextDetectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentDetectionInput {
-    /// <p>Job identifier for the text detection operation for which you want results returned.
-    /// You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
+    /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-    /// request to retrieve the next set of text.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSegmentDetectionInput {
-    /// <p>Job identifier for the text detection operation for which you want results returned.
-    /// You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
+    /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -12671,8 +11732,7 @@ impl GetSegmentDetectionInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-    /// request to retrieve the next set of text.</p>
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12691,43 +11751,29 @@ impl std::fmt::Debug for GetSegmentDetectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPersonTrackingInput {
-    /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>.
-    /// </p>
+    /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>. </p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-    /// The default value is 1000.</p>
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination
-    /// token in the response. You can use this pagination token to retrieve the next set of persons. </p>
+    /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of persons. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements
-    /// by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons.
-    /// If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence.
-    /// The default sort is by <code>TIMESTAMP</code>.</p>
+    /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons. If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     pub sort_by: std::option::Option<crate::model::PersonTrackingSortBy>,
 }
 impl GetPersonTrackingInput {
-    /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>.
-    /// </p>
+    /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>. </p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-    /// The default value is 1000.</p>
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination
-    /// token in the response. You can use this pagination token to retrieve the next set of persons. </p>
+    /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of persons. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements
-    /// by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons.
-    /// If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence.
-    /// The default sort is by <code>TIMESTAMP</code>.</p>
+    /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons. If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::PersonTrackingSortBy> {
         self.sort_by.as_ref()
     }
@@ -12747,45 +11793,29 @@ impl std::fmt::Debug for GetPersonTrackingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLabelDetectionInput {
-    /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from
-    /// an initial call to <code>StartlabelDetection</code>.</p>
+    /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-    /// The default value is 1000.</p>
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination
-    /// token in the response. You can use this pagination token to retrieve the next set of labels. </p>
+    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Sort to use for elements in the <code>Labels</code> array.
-    /// Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.
-    /// Use <code>NAME</code> to alphabetically group elements for a label together.
-    /// Within each label group, the array element are sorted by detection confidence.
-    /// The default sort is by <code>TIMESTAMP</code>.</p>
+    /// <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     pub sort_by: std::option::Option<crate::model::LabelDetectionSortBy>,
 }
 impl GetLabelDetectionInput {
-    /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from
-    /// an initial call to <code>StartlabelDetection</code>.</p>
+    /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-    /// The default value is 1000.</p>
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination
-    /// token in the response. You can use this pagination token to retrieve the next set of labels. </p>
+    /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Sort to use for elements in the <code>Labels</code> array.
-    /// Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.
-    /// Use <code>NAME</code> to alphabetically group elements for a label together.
-    /// Within each label group, the array element are sorted by detection confidence.
-    /// The default sort is by <code>TIMESTAMP</code>.</p>
+    /// <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::LabelDetectionSortBy> {
         self.sort_by.as_ref()
     }
@@ -12807,15 +11837,11 @@ impl std::fmt::Debug for GetLabelDetectionInput {
 pub struct GetFaceSearchInput {
     /// <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-    /// The default value is 1000.</p>
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination
-    /// token in the response. You can use this pagination token to retrieve the next set of search results. </p>
+    /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of search results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time
-    /// that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
+    /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
     pub sort_by: std::option::Option<crate::model::FaceSearchSortBy>,
 }
 impl GetFaceSearchInput {
@@ -12823,19 +11849,15 @@ impl GetFaceSearchInput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-    /// The default value is 1000.</p>
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination
-    /// token in the response. You can use this pagination token to retrieve the next set of search results. </p>
+    /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of search results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time
-    /// that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
+    /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::FaceSearchSortBy> {
         self.sort_by.as_ref()
     }
@@ -12857,12 +11879,9 @@ impl std::fmt::Debug for GetFaceSearchInput {
 pub struct GetFaceDetectionInput {
     /// <p>Unique identifier for the face detection job. The <code>JobId</code> is returned from <code>StartFaceDetection</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-    /// The default value is 1000.</p>
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination
-    /// token in the response. You can use this pagination token to retrieve the next set of faces.</p>
+    /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetFaceDetectionInput {
@@ -12870,14 +11889,11 @@ impl GetFaceDetectionInput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-    /// The default value is 1000.</p>
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination
-    /// token in the response. You can use this pagination token to retrieve the next set of faces.</p>
+    /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12896,47 +11912,29 @@ impl std::fmt::Debug for GetFaceDetectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContentModerationInput {
-    /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in
-    /// a subsequent call to <code>GetContentModeration</code>.</p>
+    /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-    /// The default value is 1000.</p>
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of content moderation labels.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array.
-    /// Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.
-    /// Use <code>NAME</code> to alphabetically group elements for a label together.
-    /// Within each label group, the array element are sorted by detection confidence.
-    /// The default sort is by <code>TIMESTAMP</code>.</p>
+    /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     pub sort_by: std::option::Option<crate::model::ContentModerationSortBy>,
 }
 impl GetContentModerationInput {
-    /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in
-    /// a subsequent call to <code>GetContentModeration</code>.</p>
+    /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-    /// The default value is 1000.</p>
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of content moderation labels.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array.
-    /// Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.
-    /// Use <code>NAME</code> to alphabetically group elements for a label together.
-    /// Within each label group, the array element are sorted by detection confidence.
-    /// The default sort is by <code>TIMESTAMP</code>.</p>
+    /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::ContentModerationSortBy> {
         self.sort_by.as_ref()
     }
@@ -12956,39 +11954,29 @@ impl std::fmt::Debug for GetContentModerationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCelebrityRecognitionInput {
-    /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from
-    /// a call to <code>StartCelebrityRecognition</code>.</p>
+    /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to <code>StartCelebrityRecognition</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-    /// The default value is 1000.</p>
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination
-    /// token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
+    /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier,
-    /// specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
+    /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier, specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
     pub sort_by: std::option::Option<crate::model::CelebrityRecognitionSortBy>,
 }
 impl GetCelebrityRecognitionInput {
-    /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from
-    /// a call to <code>StartCelebrityRecognition</code>.</p>
+    /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to <code>StartCelebrityRecognition</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
-    /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
-    /// The default value is 1000.</p>
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination
-    /// token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
+    /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier,
-    /// specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
+    /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier, specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::CelebrityRecognitionSortBy> {
         self.sort_by.as_ref()
     }
@@ -13008,13 +11996,11 @@ impl std::fmt::Debug for GetCelebrityRecognitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCelebrityInfoInput {
-    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
-    /// which recognizes celebrities in an image. </p>
+    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetCelebrityInfoInput {
-    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
-    /// which recognizes celebrities in an image. </p>
+    /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -13031,15 +12017,11 @@ impl std::fmt::Debug for GetCelebrityInfoInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DistributeDatasetEntriesInput {
-    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
-    /// the same project. The test dataset must be empty.
-    /// </p>
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     pub datasets: std::option::Option<std::vec::Vec<crate::model::DistributeDataset>>,
 }
 impl DistributeDatasetEntriesInput {
-    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to
-    /// the same project. The test dataset must be empty.
-    /// </p>
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     pub fn datasets(&self) -> std::option::Option<&[crate::model::DistributeDataset]> {
         self.datasets.as_deref()
     }
@@ -13056,21 +12038,15 @@ impl std::fmt::Debug for DistributeDatasetEntriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectTextInput {
-    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
-    /// to call Amazon Rekognition operations, you can't pass image bytes. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub image: std::option::Option<crate::model::Image>,
     /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
     pub filters: std::option::Option<crate::model::DetectTextFilters>,
 }
 impl DetectTextInput {
-    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
-    /// to call Amazon Rekognition operations, you can't pass image bytes. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn image(&self) -> std::option::Option<&crate::model::Image> {
         self.image.as_ref()
     }
@@ -13092,16 +12068,14 @@ impl std::fmt::Debug for DetectTextInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectProtectiveEquipmentInput {
-    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can
-    /// reference an image stored in an Amazon S3 bucket. </p>
+    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
     pub image: std::option::Option<crate::model::Image>,
     /// <p>An array of PPE types that you want to summarize.</p>
     pub summarization_attributes:
         std::option::Option<crate::model::ProtectiveEquipmentSummarizationAttributes>,
 }
 impl DetectProtectiveEquipmentInput {
-    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can
-    /// reference an image stored in an Amazon S3 bucket. </p>
+    /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
     pub fn image(&self) -> std::option::Option<&crate::model::Image> {
         self.image.as_ref()
     }
@@ -13125,41 +12099,27 @@ impl std::fmt::Debug for DetectProtectiveEquipmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectModerationLabelsInput {
-    /// <p>The input image as base64-encoded bytes or an S3 object.
-    /// If you use the AWS CLI to call Amazon Rekognition operations,
-    /// passing base64-encoded image bytes is not supported. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub image: std::option::Option<crate::model::Image>,
-    /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
-    /// return any labels with a confidence level lower than this specified value.</p>
-    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with
-    /// confidence values greater than or equal to 50 percent.</p>
+    /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
+    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
     pub min_confidence: std::option::Option<f32>,
-    /// <p>Sets up the configuration for human evaluation, including the FlowDefinition
-    /// the image will be sent to.</p>
+    /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
     pub human_loop_config: std::option::Option<crate::model::HumanLoopConfig>,
 }
 impl DetectModerationLabelsInput {
-    /// <p>The input image as base64-encoded bytes or an S3 object.
-    /// If you use the AWS CLI to call Amazon Rekognition operations,
-    /// passing base64-encoded image bytes is not supported. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn image(&self) -> std::option::Option<&crate::model::Image> {
         self.image.as_ref()
     }
-    /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
-    /// return any labels with a confidence level lower than this specified value.</p>
-    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with
-    /// confidence values greater than or equal to 50 percent.</p>
+    /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
+    /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
     pub fn min_confidence(&self) -> std::option::Option<f32> {
         self.min_confidence
     }
-    /// <p>Sets up the configuration for human evaluation, including the FlowDefinition
-    /// the image will be sent to.</p>
+    /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
     pub fn human_loop_config(&self) -> std::option::Option<&crate::model::HumanLoopConfig> {
         self.human_loop_config.as_ref()
     }
@@ -13178,41 +12138,27 @@ impl std::fmt::Debug for DetectModerationLabelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectLabelsInput {
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-    /// Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do
-    /// not need to be base64-encoded.</p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub image: std::option::Option<crate::model::Image>,
-    /// <p>Maximum number of labels you want the service to return in the response. The service
-    /// returns the specified number of highest confidence labels. </p>
+    /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
     pub max_labels: std::option::Option<i32>,
-    /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
-    /// return any labels with confidence lower than this specified value.</p>
-    /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a
-    /// confidence values greater than or equal to 55 percent.</p>
+    /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
+    /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
     pub min_confidence: std::option::Option<f32>,
 }
 impl DetectLabelsInput {
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-    /// Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do
-    /// not need to be base64-encoded.</p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn image(&self) -> std::option::Option<&crate::model::Image> {
         self.image.as_ref()
     }
-    /// <p>Maximum number of labels you want the service to return in the response. The service
-    /// returns the specified number of highest confidence labels. </p>
+    /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
     pub fn max_labels(&self) -> std::option::Option<i32> {
         self.max_labels
     }
-    /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
-    /// return any labels with confidence lower than this specified value.</p>
-    /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a
-    /// confidence values greater than or equal to 55 percent.</p>
+    /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
+    /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
     pub fn min_confidence(&self) -> std::option::Option<f32> {
         self.min_confidence
     }
@@ -13231,39 +12177,21 @@ impl std::fmt::Debug for DetectLabelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectFacesInput {
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-    /// Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub image: std::option::Option<crate::model::Image>,
-    /// <p>An array of facial attributes you want to be returned. This can be the default list of
-    /// attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if
-    /// you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
-    /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
-    /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-    /// facial attributes are returned, but the operation takes longer to complete.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
-    /// operator to determine which attributes to return (in this case, all attributes). </p>
+    /// <p>An array of facial attributes you want to be returned. This can be the default list of attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the operation takes longer to complete.</p>
+    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl DetectFacesInput {
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
-    /// Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn image(&self) -> std::option::Option<&crate::model::Image> {
         self.image.as_ref()
     }
-    /// <p>An array of facial attributes you want to be returned. This can be the default list of
-    /// attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if
-    /// you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
-    /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
-    /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-    /// facial attributes are returned, but the operation takes longer to complete.</p>
-    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
-    /// operator to determine which attributes to return (in this case, all attributes). </p>
+    /// <p>An array of facial attributes you want to be returned. This can be the default list of attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the operation takes longer to complete.</p>
+    /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.attributes.as_deref()
     }
@@ -13284,40 +12212,16 @@ pub struct DetectCustomLabelsInput {
     /// <p>The ARN of the model version that you want to use.</p>
     pub project_version_arn: std::option::Option<std::string::String>,
     /// <p>Provides the input image either as bytes or an S3 object.</p>
-    /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code>
-    /// property. For example, you would use the <code>Bytes</code> property to pass an image loaded
-    /// from a local file system. Image bytes passed by using the <code>Bytes</code> property must be
-    /// base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to
-    /// call Amazon Rekognition API operations. </p>
-    ///
-    /// <p>For more information, see Analyzing an Image Loaded from a Local File System
-    /// in the Amazon Rekognition Developer Guide.</p>
-    /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the
-    /// <code>S3Object</code> property. Images stored in an S3 bucket do not need to be
-    /// base64-encoded.</p>
-    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for
-    /// Amazon Rekognition operations.</p>
-    /// <p>If you use the
-    /// AWS
-    /// CLI to call Amazon Rekognition operations, passing image bytes using the Bytes
-    /// property is not supported. You must first upload the image to an Amazon S3 bucket and then
-    /// call the operation using the S3Object property.</p>
-    ///
-    /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3
-    /// object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
-    /// </p>
+    /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>
+    /// <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p>
+    /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p>
+    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+    /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
+    /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p>
     pub image: std::option::Option<crate::model::Image>,
-    /// <p>Maximum number of results you want the service to return in the response.
-    /// The service returns the specified number of highest confidence labels ranked from highest confidence
-    /// to lowest.</p>
+    /// <p>Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Specifies the minimum confidence level for the labels to return.
-    /// <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than
-    /// this specified value. If you specify a
-    /// value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed
-    /// threshold applied to each label.
-    /// If you don't specify a value for <code>MinConfidence</code>,  <code>DetectCustomLabels</code>
-    /// returns labels based on the assumed threshold of each label.</p>
+    /// <p>Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based on the assumed threshold of each label.</p>
     pub min_confidence: std::option::Option<f32>,
 }
 impl DetectCustomLabelsInput {
@@ -13326,44 +12230,20 @@ impl DetectCustomLabelsInput {
         self.project_version_arn.as_deref()
     }
     /// <p>Provides the input image either as bytes or an S3 object.</p>
-    /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code>
-    /// property. For example, you would use the <code>Bytes</code> property to pass an image loaded
-    /// from a local file system. Image bytes passed by using the <code>Bytes</code> property must be
-    /// base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to
-    /// call Amazon Rekognition API operations. </p>
-    ///
-    /// <p>For more information, see Analyzing an Image Loaded from a Local File System
-    /// in the Amazon Rekognition Developer Guide.</p>
-    /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the
-    /// <code>S3Object</code> property. Images stored in an S3 bucket do not need to be
-    /// base64-encoded.</p>
-    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for
-    /// Amazon Rekognition operations.</p>
-    /// <p>If you use the
-    /// AWS
-    /// CLI to call Amazon Rekognition operations, passing image bytes using the Bytes
-    /// property is not supported. You must first upload the image to an Amazon S3 bucket and then
-    /// call the operation using the S3Object property.</p>
-    ///
-    /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3
-    /// object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
-    /// </p>
+    /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>
+    /// <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p>
+    /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p>
+    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+    /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
+    /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p>
     pub fn image(&self) -> std::option::Option<&crate::model::Image> {
         self.image.as_ref()
     }
-    /// <p>Maximum number of results you want the service to return in the response.
-    /// The service returns the specified number of highest confidence labels ranked from highest confidence
-    /// to lowest.</p>
+    /// <p>Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Specifies the minimum confidence level for the labels to return.
-    /// <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than
-    /// this specified value. If you specify a
-    /// value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed
-    /// threshold applied to each label.
-    /// If you don't specify a value for <code>MinConfidence</code>,  <code>DetectCustomLabels</code>
-    /// returns labels based on the assumed threshold of each label.</p>
+    /// <p>Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based on the assumed threshold of each label.</p>
     pub fn min_confidence(&self) -> std::option::Option<f32> {
         self.min_confidence
     }
@@ -13406,18 +12286,11 @@ impl std::fmt::Debug for DescribeStreamProcessorInput {
 pub struct DescribeProjectVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the project that contains the models you want to describe.</p>
     pub project_arn: std::option::Option<std::string::String>,
-    /// <p>A list of model version names that you want to describe. You can add up to 10 model version names
-    /// to the list. If you don't specify a value, all model descriptions are returned.  A version name is part of a
-    /// model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN.
-    /// <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
+    /// <p>A list of model version names that you want to describe. You can add up to 10 model version names to the list. If you don't specify a value, all model descriptions are returned. A version name is part of a model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
     pub version_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
-    /// You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per paginated call.
-    /// The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException
-    /// error occurs. The default value is 100. </p>
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeProjectVersionsInput {
@@ -13425,22 +12298,15 @@ impl DescribeProjectVersionsInput {
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
-    /// <p>A list of model version names that you want to describe. You can add up to 10 model version names
-    /// to the list. If you don't specify a value, all model descriptions are returned.  A version name is part of a
-    /// model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN.
-    /// <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
+    /// <p>A list of model version names that you want to describe. You can add up to 10 model version names to the list. If you don't specify a value, all model descriptions are returned. A version name is part of a model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
     pub fn version_names(&self) -> std::option::Option<&[std::string::String]> {
         self.version_names.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
-    /// You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per paginated call.
-    /// The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException
-    /// error occurs. The default value is 100. </p>
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -13460,33 +12326,23 @@ impl std::fmt::Debug for DescribeProjectVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectsInput {
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-    /// If you specify a value greater than 100, a ValidationException
-    /// error occurs. The default value is 100. </p>
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value,
-    /// the response includes descriptions for all the projects in your AWS account.</p>
+    /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
     pub project_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeProjectsInput {
-    /// <p>If the previous response was incomplete (because there is more
-    /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
-    /// token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
-    /// If you specify a value greater than 100, a ValidationException
-    /// error occurs. The default value is 100. </p>
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value,
-    /// the response includes descriptions for all the projects in your AWS account.</p>
+    /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
     pub fn project_names(&self) -> std::option::Option<&[std::string::String]> {
         self.project_names.as_deref()
     }
@@ -13505,15 +12361,11 @@ impl std::fmt::Debug for DescribeProjectsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the dataset that you want to describe.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the dataset that you want to describe.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
@@ -13642,15 +12494,11 @@ impl std::fmt::Debug for DeleteFacesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
-    /// <p>
-    /// The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.
-    /// </p>
+    /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
     pub dataset_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetInput {
-    /// <p>
-    /// The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.
-    /// </p>
+    /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
@@ -13692,19 +12540,13 @@ pub struct CreateStreamProcessorInput {
     pub input: std::option::Option<crate::model::StreamProcessorInput>,
     /// <p>Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.</p>
     pub output: std::option::Option<crate::model::StreamProcessorOutput>,
-    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to
-    /// manage the stream processor. For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
-    /// <code>Name</code> is idempotent.
-    /// </p>
+    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face
-    /// attributes to detect.</p>
+    /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
     pub settings: std::option::Option<crate::model::StreamProcessorSettings>,
     /// <p>ARN of the IAM role that allows access to the stream processor.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// A set of tags (key-value pairs) that you want to attach to the stream processor.
-    /// </p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the stream processor. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -13717,15 +12559,11 @@ impl CreateStreamProcessorInput {
     pub fn output(&self) -> std::option::Option<&crate::model::StreamProcessorOutput> {
         self.output.as_ref()
     }
-    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to
-    /// manage the stream processor. For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
-    /// <code>Name</code> is idempotent.
-    /// </p>
+    /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face
-    /// attributes to detect.</p>
+    /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
     pub fn settings(&self) -> std::option::Option<&crate::model::StreamProcessorSettings> {
         self.settings.as_ref()
     }
@@ -13733,9 +12571,7 @@ impl CreateStreamProcessorInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>
-    /// A set of tags (key-value pairs) that you want to attach to the stream processor.
-    /// </p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the stream processor. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -13760,57 +12596,32 @@ impl std::fmt::Debug for CreateStreamProcessorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectVersionInput {
-    /// <p>The ARN of the Amazon Rekognition Custom Labels project that
-    /// manages the model that you want to train.</p>
+    /// <p>The ARN of the Amazon Rekognition Custom Labels project that manages the model that you want to train.</p>
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>A name for the version of the model. This value must be unique.</p>
     pub version_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 bucket location to store the results of training.
-    /// The S3 bucket can be in any AWS account as long as the caller has
-    /// <code>s3:PutObject</code> permissions on the S3 bucket.</p>
+    /// <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
     pub output_config: std::option::Option<crate::model::OutputConfig>,
-    /// <p>Specifies an external manifest that the services uses to train the model.
-    /// If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>.
-    /// The project must not have any associated datasets.
-    /// </p>
+    /// <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
     pub training_data: std::option::Option<crate::model::TrainingData>,
-    /// <p>Specifies an external manifest that the service uses to test the model.
-    /// If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>.
-    /// The project must not have any associated datasets.</p>
+    /// <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
     pub testing_data: std::option::Option<crate::model::TestingData>,
-    /// <p>
-    /// A set of tags (key-value pairs) that you want to attach to the model.
-    /// </p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key).
-    /// You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
-    /// an alias for your KMS key, or an alias ARN.
-    /// The key is used to encrypt training and test images copied into the service for model training.
-    /// Your source images are unaffected. The key is also used to encrypt training results
-    /// and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li>
-    /// <p>kms:CreateGrant</p>
-    /// </li>
-    /// <li>
-    /// <p>kms:DescribeKey</p>
-    /// </li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p>
-    /// </li>
-    /// <li>
-    /// <p>kms:Decrypt</p>
-    /// </li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
-    /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted
-    /// using a key that AWS owns and manages.</p>
+    /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateProjectVersionInput {
-    /// <p>The ARN of the Amazon Rekognition Custom Labels project that
-    /// manages the model that you want to train.</p>
+    /// <p>The ARN of the Amazon Rekognition Custom Labels project that manages the model that you want to train.</p>
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -13818,57 +12629,34 @@ impl CreateProjectVersionInput {
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The Amazon S3 bucket location to store the results of training.
-    /// The S3 bucket can be in any AWS account as long as the caller has
-    /// <code>s3:PutObject</code> permissions on the S3 bucket.</p>
+    /// <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
     pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
         self.output_config.as_ref()
     }
-    /// <p>Specifies an external manifest that the services uses to train the model.
-    /// If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>.
-    /// The project must not have any associated datasets.
-    /// </p>
+    /// <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
     pub fn training_data(&self) -> std::option::Option<&crate::model::TrainingData> {
         self.training_data.as_ref()
     }
-    /// <p>Specifies an external manifest that the service uses to test the model.
-    /// If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>.
-    /// The project must not have any associated datasets.</p>
+    /// <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
     pub fn testing_data(&self) -> std::option::Option<&crate::model::TestingData> {
         self.testing_data.as_ref()
     }
-    /// <p>
-    /// A set of tags (key-value pairs) that you want to attach to the model.
-    /// </p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key).
-    /// You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
-    /// an alias for your KMS key, or an alias ARN.
-    /// The key is used to encrypt training and test images copied into the service for model training.
-    /// Your source images are unaffected. The key is also used to encrypt training results
-    /// and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li>
-    /// <p>kms:CreateGrant</p>
-    /// </li>
-    /// <li>
-    /// <p>kms:DescribeKey</p>
-    /// </li>
-    /// <li>
-    /// <p>kms:GenerateDataKey</p>
-    /// </li>
-    /// <li>
-    /// <p>kms:Decrypt</p>
-    /// </li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
-    /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted
-    /// using a key that AWS owns and manages.</p>
+    /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -13912,43 +12700,23 @@ impl std::fmt::Debug for CreateProjectInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetInput {
-    /// <p>
-    /// The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location
-    /// of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created.
-    /// To add labeled images to the dataset,  You can use the console or call <a>UpdateDatasetEntries</a>.
-    ///
-    /// </p>
+    /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
     pub dataset_source: std::option::Option<crate::model::DatasetSource>,
-    /// <p>
-    /// The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code>
-    /// to create a test dataset.
-    /// </p>
+    /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
     pub dataset_type: std::option::Option<crate::model::DatasetType>,
-    /// <p>
-    /// The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.
-    /// </p>
+    /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl CreateDatasetInput {
-    /// <p>
-    /// The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location
-    /// of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created.
-    /// To add labeled images to the dataset,  You can use the console or call <a>UpdateDatasetEntries</a>.
-    ///
-    /// </p>
+    /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
     pub fn dataset_source(&self) -> std::option::Option<&crate::model::DatasetSource> {
         self.dataset_source.as_ref()
     }
-    /// <p>
-    /// The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code>
-    /// to create a test dataset.
-    /// </p>
+    /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
     pub fn dataset_type(&self) -> std::option::Option<&crate::model::DatasetType> {
         self.dataset_type.as_ref()
     }
-    /// <p>
-    /// The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.
-    /// </p>
+    /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -13969,9 +12737,7 @@ impl std::fmt::Debug for CreateDatasetInput {
 pub struct CreateCollectionInput {
     /// <p>ID for the collection that you are creating.</p>
     pub collection_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// A set of tags (key-value pairs) that you want to attach to the collection.
-    /// </p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -13980,9 +12746,7 @@ impl CreateCollectionInput {
     pub fn collection_id(&self) -> std::option::Option<&str> {
         self.collection_id.as_deref()
     }
-    /// <p>
-    /// A set of tags (key-value pairs) that you want to attach to the collection.
-    /// </p>
+    /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -14003,74 +12767,34 @@ impl std::fmt::Debug for CreateCollectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompareFacesInput {
-    /// <p>The input image as base64-encoded bytes or an S3 object.
-    /// If you use the AWS CLI to call Amazon Rekognition operations,
-    /// passing base64-encoded image bytes is not supported. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub source_image: std::option::Option<crate::model::Image>,
-    /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to
-    /// call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
-    /// </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub target_image: std::option::Option<crate::model::Image>,
-    /// <p>The minimum level of confidence in the face matches that a match must meet to be
-    /// included in the <code>FaceMatches</code> array.</p>
+    /// <p>The minimum level of confidence in the face matches that a match must meet to be included in the <code>FaceMatches</code> array.</p>
     pub similarity_threshold: std::option::Option<f32>,
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
-    /// Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar.
-    /// If you specify <code>LOW</code>,
-    /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
-    /// don’t meet the chosen quality bar.
-    ///
-    /// The quality bar is based on a variety of common use cases. Low-quality
-    /// detections can occur for a number of reasons. Some examples are an object that's misidentified
-    /// as a face, a face that's too blurry, or a face with a
-    /// pose that's too extreme to use. If you specify <code>NONE</code>, no
-    /// filtering is performed. The default value is <code>NONE</code>.
-    /// </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub quality_filter: std::option::Option<crate::model::QualityFilter>,
 }
 impl CompareFacesInput {
-    /// <p>The input image as base64-encoded bytes or an S3 object.
-    /// If you use the AWS CLI to call Amazon Rekognition operations,
-    /// passing base64-encoded image bytes is not supported. </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn source_image(&self) -> std::option::Option<&crate::model::Image> {
         self.source_image.as_ref()
     }
-    /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to
-    /// call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
-    /// </p>
-    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
-    /// passed using the <code>Bytes</code> field.
-    /// For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn target_image(&self) -> std::option::Option<&crate::model::Image> {
         self.target_image.as_ref()
     }
-    /// <p>The minimum level of confidence in the face matches that a match must meet to be
-    /// included in the <code>FaceMatches</code> array.</p>
+    /// <p>The minimum level of confidence in the face matches that a match must meet to be included in the <code>FaceMatches</code> array.</p>
     pub fn similarity_threshold(&self) -> std::option::Option<f32> {
         self.similarity_threshold
     }
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
-    /// Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar.
-    /// If you specify <code>LOW</code>,
-    /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
-    /// don’t meet the chosen quality bar.
-    ///
-    /// The quality bar is based on a variety of common use cases. Low-quality
-    /// detections can occur for a number of reasons. Some examples are an object that's misidentified
-    /// as a face, a face that's too blurry, or a face with a
-    /// pose that's too extreme to use. If you specify <code>NONE</code>, no
-    /// filtering is performed. The default value is <code>NONE</code>.
-    /// </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub fn quality_filter(&self) -> std::option::Option<&crate::model::QualityFilter> {
         self.quality_filter.as_ref()

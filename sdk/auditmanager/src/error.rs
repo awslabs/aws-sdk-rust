@@ -12,11 +12,9 @@ pub struct AssociateAssessmentReportEvidenceFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateAssessmentReportEvidenceFolderErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -77,8 +75,6 @@ impl AssociateAssessmentReportEvidenceFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -163,11 +159,9 @@ pub struct BatchAssociateAssessmentReportEvidenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchAssociateAssessmentReportEvidenceErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -228,8 +222,6 @@ impl BatchAssociateAssessmentReportEvidenceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -314,11 +306,9 @@ pub struct BatchCreateDelegationByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchCreateDelegationByAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -379,8 +369,6 @@ impl BatchCreateDelegationByAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -461,11 +449,9 @@ pub struct BatchDeleteDelegationByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteDelegationByAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -526,8 +512,6 @@ impl BatchDeleteDelegationByAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -608,11 +592,9 @@ pub struct BatchDisassociateAssessmentReportEvidenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDisassociateAssessmentReportEvidenceErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -673,8 +655,6 @@ impl BatchDisassociateAssessmentReportEvidenceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -759,11 +739,9 @@ pub struct BatchImportEvidenceToAssessmentControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchImportEvidenceToAssessmentControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -824,8 +802,6 @@ impl BatchImportEvidenceToAssessmentControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -910,11 +886,9 @@ pub struct CreateAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -964,8 +938,6 @@ impl CreateAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1040,11 +1012,9 @@ pub struct CreateAssessmentFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAssessmentFrameworkErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1094,8 +1064,6 @@ impl CreateAssessmentFrameworkError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1170,11 +1138,9 @@ pub struct CreateAssessmentReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAssessmentReportErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1224,8 +1190,6 @@ impl CreateAssessmentReportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1300,11 +1264,9 @@ pub struct CreateControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1354,8 +1316,6 @@ impl CreateControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1424,11 +1384,9 @@ pub struct DeleteAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1478,8 +1436,6 @@ impl DeleteAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1554,11 +1510,9 @@ pub struct DeleteAssessmentFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssessmentFrameworkErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1608,8 +1562,6 @@ impl DeleteAssessmentFrameworkError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1684,11 +1636,9 @@ pub struct DeleteAssessmentFrameworkShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssessmentFrameworkShareErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1745,8 +1695,6 @@ impl DeleteAssessmentFrameworkShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1825,11 +1773,9 @@ pub struct DeleteAssessmentReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAssessmentReportErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1879,8 +1825,6 @@ impl DeleteAssessmentReportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1955,11 +1899,9 @@ pub struct DeleteControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2009,8 +1951,6 @@ impl DeleteControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2079,11 +2019,9 @@ pub struct DeregisterAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterAccountErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2133,8 +2071,6 @@ impl DeregisterAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2209,11 +2145,9 @@ pub struct DeregisterOrganizationAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterOrganizationAdminAccountErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2274,8 +2208,6 @@ impl DeregisterOrganizationAdminAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2358,11 +2290,9 @@ pub struct DisassociateAssessmentReportEvidenceFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateAssessmentReportEvidenceFolderErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2423,8 +2353,6 @@ impl DisassociateAssessmentReportEvidenceFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2509,8 +2437,7 @@ pub struct GetAccountStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountStatusErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2553,8 +2480,6 @@ impl GetAccountStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2605,11 +2530,9 @@ pub struct GetAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2659,8 +2582,6 @@ impl GetAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2729,11 +2650,9 @@ pub struct GetAssessmentFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssessmentFrameworkErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2783,8 +2702,6 @@ impl GetAssessmentFrameworkError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2859,11 +2776,9 @@ pub struct GetAssessmentReportUrlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssessmentReportUrlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2913,8 +2828,6 @@ impl GetAssessmentReportUrlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2989,11 +2902,9 @@ pub struct GetChangeLogsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetChangeLogsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3043,8 +2954,6 @@ impl GetChangeLogsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3113,11 +3022,9 @@ pub struct GetControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3167,8 +3074,6 @@ impl GetControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3234,11 +3139,9 @@ pub struct GetDelegationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDelegationsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -3285,8 +3188,6 @@ impl GetDelegationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3350,11 +3251,9 @@ pub struct GetEvidenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3404,8 +3303,6 @@ impl GetEvidenceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3471,11 +3368,9 @@ pub struct GetEvidenceByEvidenceFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceByEvidenceFolderErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3527,8 +3422,6 @@ impl GetEvidenceByEvidenceFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3603,11 +3496,9 @@ pub struct GetEvidenceFolderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceFolderErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3657,8 +3548,6 @@ impl GetEvidenceFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3733,11 +3622,9 @@ pub struct GetEvidenceFoldersByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceFoldersByAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3794,8 +3681,6 @@ impl GetEvidenceFoldersByAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3874,11 +3759,9 @@ pub struct GetEvidenceFoldersByAssessmentControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEvidenceFoldersByAssessmentControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3939,8 +3822,6 @@ impl GetEvidenceFoldersByAssessmentControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4025,11 +3906,9 @@ pub struct GetInsightsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInsightsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4073,8 +3952,6 @@ impl GetInsightsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4127,11 +4004,9 @@ pub struct GetInsightsByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInsightsByAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4181,8 +4056,6 @@ impl GetInsightsByAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4257,11 +4130,9 @@ pub struct GetOrganizationAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOrganizationAdminAccountErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4313,8 +4184,6 @@ impl GetOrganizationAdminAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4389,11 +4258,9 @@ pub struct GetServicesInScopeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServicesInScopeErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -4440,8 +4307,6 @@ impl GetServicesInScopeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4508,11 +4373,9 @@ pub struct GetSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSettingsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4556,8 +4419,6 @@ impl GetSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4610,11 +4471,9 @@ pub struct ListAssessmentControlInsightsByControlDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentControlInsightsByControlDomainErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4679,8 +4538,6 @@ impl ListAssessmentControlInsightsByControlDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4765,11 +4622,9 @@ pub struct ListAssessmentFrameworksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentFrameworksErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -4816,8 +4671,6 @@ impl ListAssessmentFrameworksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4884,11 +4737,9 @@ pub struct ListAssessmentFrameworkShareRequestsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentFrameworkShareRequestsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -4944,8 +4795,6 @@ impl ListAssessmentFrameworkShareRequestsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5020,11 +4869,9 @@ pub struct ListAssessmentReportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentReportsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -5071,8 +4918,6 @@ impl ListAssessmentReportsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5139,11 +4984,9 @@ pub struct ListAssessmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAssessmentsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -5190,8 +5033,6 @@ impl ListAssessmentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5255,11 +5096,9 @@ pub struct ListControlDomainInsightsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListControlDomainInsightsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5309,8 +5148,6 @@ impl ListControlDomainInsightsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5385,11 +5222,9 @@ pub struct ListControlDomainInsightsByAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListControlDomainInsightsByAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5450,8 +5285,6 @@ impl ListControlDomainInsightsByAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5536,11 +5369,9 @@ pub struct ListControlInsightsByControlDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListControlInsightsByControlDomainErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5601,8 +5432,6 @@ impl ListControlInsightsByControlDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5685,11 +5514,9 @@ pub struct ListControlsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListControlsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -5736,8 +5563,6 @@ impl ListControlsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5798,11 +5623,9 @@ pub struct ListKeywordsForDataSourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListKeywordsForDataSourceErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -5849,8 +5672,6 @@ impl ListKeywordsForDataSourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5917,11 +5738,9 @@ pub struct ListNotificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNotificationsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -5968,8 +5787,6 @@ impl ListNotificationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6036,8 +5853,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6086,8 +5902,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6154,11 +5968,9 @@ pub struct RegisterAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterAccountErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6208,8 +6020,6 @@ impl RegisterAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6281,11 +6091,9 @@ pub struct RegisterOrganizationAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterOrganizationAdminAccountErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6344,8 +6152,6 @@ impl RegisterOrganizationAdminAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6426,11 +6232,9 @@ pub struct StartAssessmentFrameworkShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartAssessmentFrameworkShareErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6487,8 +6291,6 @@ impl StartAssessmentFrameworkShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6565,8 +6367,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6615,8 +6416,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6677,8 +6476,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6727,8 +6525,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6792,11 +6588,9 @@ pub struct UpdateAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6846,8 +6640,6 @@ impl UpdateAssessmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6922,11 +6714,9 @@ pub struct UpdateAssessmentControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6976,8 +6766,6 @@ impl UpdateAssessmentControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7052,11 +6840,9 @@ pub struct UpdateAssessmentControlSetStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentControlSetStatusErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7115,8 +6901,6 @@ impl UpdateAssessmentControlSetStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7197,11 +6981,9 @@ pub struct UpdateAssessmentFrameworkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentFrameworkErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7251,8 +7033,6 @@ impl UpdateAssessmentFrameworkError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7327,11 +7107,9 @@ pub struct UpdateAssessmentFrameworkShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentFrameworkShareErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7388,8 +7166,6 @@ impl UpdateAssessmentFrameworkShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7468,11 +7244,9 @@ pub struct UpdateAssessmentStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssessmentStatusErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7522,8 +7296,6 @@ impl UpdateAssessmentStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7598,11 +7370,9 @@ pub struct UpdateControlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateControlErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7652,8 +7422,6 @@ impl UpdateControlError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7722,11 +7490,9 @@ pub struct UpdateSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSettingsErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
@@ -7773,8 +7539,6 @@ impl UpdateSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7838,11 +7602,9 @@ pub struct ValidateAssessmentReportIntegrityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ValidateAssessmentReportIntegrityErrorKind {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7903,8 +7665,6 @@ impl ValidateAssessmentReportIntegrityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8058,9 +7818,9 @@ pub mod validation_exception {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p> The fields that caused the error, if applicable. </p>
-        pub fn fields(mut self, input: impl Into<crate::model::ValidationExceptionField>) -> Self {
+        pub fn fields(mut self, input: crate::model::ValidationExceptionField) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fields = Some(v);
             self
         }
@@ -8196,8 +7956,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p> An internal service error occurred during the processing of your request. Try again
-/// later. </p>
+/// <p> An internal service error occurred during the processing of your request. Try again later. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -8261,8 +8020,7 @@ impl InternalServerException {
     }
 }
 
-/// <p> Your account isn't registered with Audit Manager. Check the delegated
-/// administrator setup on the Audit Manager settings page, and try again. </p>
+/// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

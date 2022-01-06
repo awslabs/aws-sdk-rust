@@ -210,8 +210,7 @@ pub struct ComponentUpdateRequest {
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the component type.</p>
     pub component_type_id: std::option::Option<std::string::String>,
-    /// <p>An object that maps strings to the properties to set in the component type update. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the properties to set in the component type update. Each string in the mapping must be unique to this object.</p>
     pub property_updates: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyRequest>,
     >,
@@ -229,8 +228,7 @@ impl ComponentUpdateRequest {
     pub fn component_type_id(&self) -> std::option::Option<&str> {
         self.component_type_id.as_deref()
     }
-    /// <p>An object that maps strings to the properties to set in the component type update. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the properties to set in the component type update. Each string in the mapping must be unique to this object.</p>
     pub fn property_updates(
         &self,
     ) -> std::option::Option<
@@ -303,20 +301,18 @@ pub mod component_update_request {
         ///
         /// To override the contents of this collection use [`set_property_updates`](Self::set_property_updates).
         ///
-        /// <p>An object that maps strings to the properties to set in the component type update. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the properties to set in the component type update. Each string in the mapping must be unique to this object.</p>
         pub fn property_updates(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyRequest>,
+            v: crate::model::PropertyRequest,
         ) -> Self {
             let mut hash_map = self.property_updates.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.property_updates = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the properties to set in the component type update. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the properties to set in the component type update. Each string in the mapping must be unique to this object.</p>
         pub fn set_property_updates(
             mut self,
             input: std::option::Option<
@@ -652,9 +648,9 @@ pub mod data_value {
         /// To override the contents of this collection use [`set_list_value`](Self::set_list_value).
         ///
         /// <p>A list of multiple values.</p>
-        pub fn list_value(mut self, input: impl Into<crate::model::DataValue>) -> Self {
+        pub fn list_value(mut self, input: crate::model::DataValue) -> Self {
             let mut v = self.list_value.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.list_value = Some(v);
             self
         }
@@ -674,10 +670,10 @@ pub mod data_value {
         pub fn map_value(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::DataValue>,
+            v: crate::model::DataValue,
         ) -> Self {
             let mut hash_map = self.map_value.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.map_value = Some(hash_map);
             self
         }
@@ -832,8 +828,7 @@ pub struct PropertyDefinitionRequest {
     pub is_time_series: std::option::Option<bool>,
     /// <p>An object that contains the default value.</p>
     pub default_value: std::option::Option<crate::model::DataValue>,
-    /// <p>A mapping that specifies configuration information about the property. Use this field to
-    /// specify information that you read from and write to an external source.</p>
+    /// <p>A mapping that specifies configuration information about the property. Use this field to specify information that you read from and write to an external source.</p>
     pub configuration:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -862,8 +857,7 @@ impl PropertyDefinitionRequest {
     pub fn default_value(&self) -> std::option::Option<&crate::model::DataValue> {
         self.default_value.as_ref()
     }
-    /// <p>A mapping that specifies configuration information about the property. Use this field to
-    /// specify information that you read from and write to an external source.</p>
+    /// <p>A mapping that specifies configuration information about the property. Use this field to specify information that you read from and write to an external source.</p>
     pub fn configuration(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -968,8 +962,7 @@ pub mod property_definition_request {
         ///
         /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
         ///
-        /// <p>A mapping that specifies configuration information about the property. Use this field to
-        /// specify information that you read from and write to an external source.</p>
+        /// <p>A mapping that specifies configuration information about the property. Use this field to specify information that you read from and write to an external source.</p>
         pub fn configuration(
             mut self,
             k: impl Into<std::string::String>,
@@ -980,8 +973,7 @@ pub mod property_definition_request {
             self.configuration = Some(hash_map);
             self
         }
-        /// <p>A mapping that specifies configuration information about the property. Use this field to
-        /// specify information that you read from and write to an external source.</p>
+        /// <p>A mapping that specifies configuration information about the property. Use this field to specify information that you read from and write to an external source.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<
@@ -1104,9 +1096,9 @@ pub mod data_type {
         /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
         ///
         /// <p>The allowed values for this data type.</p>
-        pub fn allowed_values(mut self, input: impl Into<crate::model::DataValue>) -> Self {
+        pub fn allowed_values(mut self, input: crate::model::DataValue) -> Self {
             let mut v = self.allowed_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_values = Some(v);
             self
         }
@@ -2716,9 +2708,9 @@ pub mod property_value_history {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>A list of objects that contain information about the values in the history of a time series property.</p>
-        pub fn values(mut self, input: impl Into<crate::model::PropertyValue>) -> Self {
+        pub fn values(mut self, input: crate::model::PropertyValue) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -3332,8 +3324,7 @@ pub struct ComponentResponse {
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The name of the property definition set in the request.</p>
     pub defined_in: std::option::Option<std::string::String>,
-    /// <p>An object that maps strings to the properties to set in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
     pub properties: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyResponse>,
     >,
@@ -3359,8 +3350,7 @@ impl ComponentResponse {
     pub fn defined_in(&self) -> std::option::Option<&str> {
         self.defined_in.as_deref()
     }
-    /// <p>An object that maps strings to the properties to set in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn properties(
         &self,
     ) -> std::option::Option<
@@ -3457,20 +3447,18 @@ pub mod component_response {
         ///
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
-        /// <p>An object that maps strings to the properties to set in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn properties(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyResponse>,
+            v: crate::model::PropertyResponse,
         ) -> Self {
             let mut hash_map = self.properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.properties = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the properties to set in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<
@@ -3950,8 +3938,7 @@ pub struct ComponentRequest {
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the component type.</p>
     pub component_type_id: std::option::Option<std::string::String>,
-    /// <p>An object that maps strings to the properties to set in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
     pub properties: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyRequest>,
     >,
@@ -3965,8 +3952,7 @@ impl ComponentRequest {
     pub fn component_type_id(&self) -> std::option::Option<&str> {
         self.component_type_id.as_deref()
     }
-    /// <p>An object that maps strings to the properties to set in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn properties(
         &self,
     ) -> std::option::Option<
@@ -4024,20 +4010,18 @@ pub mod component_request {
         ///
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
-        /// <p>An object that maps strings to the properties to set in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn properties(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::PropertyRequest>,
+            v: crate::model::PropertyRequest,
         ) -> Self {
             let mut hash_map = self.properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.properties = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the properties to set in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<
@@ -4068,13 +4052,11 @@ impl ComponentRequest {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutPropertyErrorEntry {
-    /// <p>A list of objects that contain information about errors returned by the
-    /// <code>BatchPutProperty</code> action.</p>
+    /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchPutPropertyError>>,
 }
 impl BatchPutPropertyErrorEntry {
-    /// <p>A list of objects that contain information about errors returned by the
-    /// <code>BatchPutProperty</code> action.</p>
+    /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchPutPropertyError]> {
         self.errors.as_deref()
     }
@@ -4099,16 +4081,14 @@ pub mod batch_put_property_error_entry {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>A list of objects that contain information about errors returned by the
-        /// <code>BatchPutProperty</code> action.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::BatchPutPropertyError>) -> Self {
+        /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
+        pub fn errors(mut self, input: crate::model::BatchPutPropertyError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>A list of objects that contain information about errors returned by the
-        /// <code>BatchPutProperty</code> action.</p>
+        /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchPutPropertyError>>,
@@ -4290,9 +4270,9 @@ pub mod property_value_entry {
         /// To override the contents of this collection use [`set_property_values`](Self::set_property_values).
         ///
         /// <p>A list of objects that specify time series property values.</p>
-        pub fn property_values(mut self, input: impl Into<crate::model::PropertyValue>) -> Self {
+        pub fn property_values(mut self, input: crate::model::PropertyValue) -> Self {
             let mut v = self.property_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_values = Some(v);
             self
         }

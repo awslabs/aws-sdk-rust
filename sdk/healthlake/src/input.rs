@@ -40,16 +40,12 @@ pub mod create_fhir_datastore_input {
             self.datastore_type_version = input;
             self
         }
-        /// <p>
-        /// The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store.
-        /// </p>
+        /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store. </p>
         pub fn sse_configuration(mut self, input: crate::model::SseConfiguration) -> Self {
             self.sse_configuration = Some(input);
             self
         }
-        /// <p>
-        /// The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store.
-        /// </p>
+        /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store. </p>
         pub fn set_sse_configuration(
             mut self,
             input: std::option::Option<crate::model::SseConfiguration>,
@@ -57,14 +53,12 @@ pub mod create_fhir_datastore_input {
             self.sse_configuration = input;
             self
         }
-        /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only
-        /// supported preloaded data is synthetic data generated from Synthea.</p>
+        /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
         pub fn preload_data_config(mut self, input: crate::model::PreloadDataConfig) -> Self {
             self.preload_data_config = Some(input);
             self
         }
-        /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only
-        /// supported preloaded data is synthetic data generated from Synthea.</p>
+        /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
         pub fn set_preload_data_config(
             mut self,
             input: std::option::Option<crate::model::PreloadDataConfig>,
@@ -86,18 +80,14 @@ pub mod create_fhir_datastore_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// Resource tags that are applied to a Data Store when it is created.
-        /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p> Resource tags that are applied to a Data Store when it is created. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>
-        /// Resource tags that are applied to a Data Store when it is created.
-        /// </p>
+        /// <p> Resource tags that are applied to a Data Store when it is created. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -126,7 +116,7 @@ pub mod create_fhir_datastore_input {
 #[doc(hidden)]
 pub type CreateFhirDatastoreInputOperationOutputAlias = crate::operation::CreateFHIRDatastore;
 #[doc(hidden)]
-pub type CreateFhirDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFhirDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFhirDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`CreateFHIRDatastore`](crate::operation::CreateFHIRDatastore)>
     #[allow(clippy::let_and_return)]
@@ -137,7 +127,7 @@ impl CreateFhirDatastoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFHIRDatastore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -225,7 +215,7 @@ impl CreateFhirDatastoreInput {
             "CreateFHIRDatastore",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -283,7 +273,7 @@ pub mod delete_fhir_datastore_input {
 #[doc(hidden)]
 pub type DeleteFhirDatastoreInputOperationOutputAlias = crate::operation::DeleteFHIRDatastore;
 #[doc(hidden)]
-pub type DeleteFhirDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFhirDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFhirDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFHIRDatastore`](crate::operation::DeleteFHIRDatastore)>
     #[allow(clippy::let_and_return)]
@@ -294,7 +284,7 @@ impl DeleteFhirDatastoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFHIRDatastore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -379,7 +369,7 @@ impl DeleteFhirDatastoreInput {
             "DeleteFHIRDatastore",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -437,7 +427,7 @@ pub mod describe_fhir_datastore_input {
 #[doc(hidden)]
 pub type DescribeFhirDatastoreInputOperationOutputAlias = crate::operation::DescribeFHIRDatastore;
 #[doc(hidden)]
-pub type DescribeFhirDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFhirDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFhirDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFHIRDatastore`](crate::operation::DescribeFHIRDatastore)>
     #[allow(clippy::let_and_return)]
@@ -448,7 +438,7 @@ impl DescribeFhirDatastoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFHIRDatastore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -535,7 +525,7 @@ impl DescribeFhirDatastoreInput {
             "DescribeFHIRDatastore",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -605,7 +595,7 @@ pub mod describe_fhir_export_job_input {
 #[doc(hidden)]
 pub type DescribeFhirExportJobInputOperationOutputAlias = crate::operation::DescribeFHIRExportJob;
 #[doc(hidden)]
-pub type DescribeFhirExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFhirExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFhirExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFHIRExportJob`](crate::operation::DescribeFHIRExportJob)>
     #[allow(clippy::let_and_return)]
@@ -616,7 +606,7 @@ impl DescribeFhirExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFHIRExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -703,7 +693,7 @@ impl DescribeFhirExportJobInput {
             "DescribeFHIRExportJob",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -773,7 +763,7 @@ pub mod describe_fhir_import_job_input {
 #[doc(hidden)]
 pub type DescribeFhirImportJobInputOperationOutputAlias = crate::operation::DescribeFHIRImportJob;
 #[doc(hidden)]
-pub type DescribeFhirImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFhirImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFhirImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFHIRImportJob`](crate::operation::DescribeFHIRImportJob)>
     #[allow(clippy::let_and_return)]
@@ -784,7 +774,7 @@ impl DescribeFhirImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFHIRImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -871,7 +861,7 @@ impl DescribeFhirImportJobInput {
             "DescribeFHIRImportJob",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -928,14 +918,12 @@ pub mod list_fhir_datastores_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of Data Stores returned in a single page of a
-        /// ListFHIRDatastoresRequest call.</p>
+        /// <p>The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of Data Stores returned in a single page of a
-        /// ListFHIRDatastoresRequest call.</p>
+        /// <p>The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -958,7 +946,7 @@ pub mod list_fhir_datastores_input {
 #[doc(hidden)]
 pub type ListFhirDatastoresInputOperationOutputAlias = crate::operation::ListFHIRDatastores;
 #[doc(hidden)]
-pub type ListFhirDatastoresInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFhirDatastoresInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFhirDatastoresInput {
     /// Consumes the builder and constructs an Operation<[`ListFHIRDatastores`](crate::operation::ListFHIRDatastores)>
     #[allow(clippy::let_and_return)]
@@ -969,7 +957,7 @@ impl ListFhirDatastoresInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFHIRDatastores,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1054,7 +1042,7 @@ impl ListFhirDatastoresInput {
             "ListFHIRDatastores",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1092,72 +1080,52 @@ pub mod list_fhir_export_jobs_input {
         pub(crate) submitted_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>
-        /// This parameter limits the response to the export job with the specified Data Store ID.
-        /// </p>
+        /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
         pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.datastore_id = Some(input.into());
             self
         }
-        /// <p>
-        /// This parameter limits the response to the export job with the specified Data Store ID.
-        /// </p>
+        /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.datastore_id = input;
             self
         }
-        /// <p>
-        /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
-        /// </p>
+        /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
-        /// </p>
+        /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user.
-        /// </p>
+        /// <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user.
-        /// </p>
+        /// <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// This parameter limits the response to the export job with the specified job name.
-        /// </p>
+        /// <p> This parameter limits the response to the export job with the specified job name. </p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_name = Some(input.into());
             self
         }
-        /// <p>
-        /// This parameter limits the response to the export job with the specified job name.
-        /// </p>
+        /// <p> This parameter limits the response to the export job with the specified job name. </p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
         }
-        /// <p>
-        /// This parameter limits the response to the export jobs with the specified job status.
-        /// </p>
+        /// <p> This parameter limits the response to the export jobs with the specified job status. </p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to the export jobs with the specified job status.
-        /// </p>
+        /// <p> This parameter limits the response to the export jobs with the specified job status. </p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -1165,16 +1133,12 @@ pub mod list_fhir_export_jobs_input {
             self.job_status = input;
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
         pub fn submitted_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_before = Some(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
         pub fn set_submitted_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1182,16 +1146,12 @@ pub mod list_fhir_export_jobs_input {
             self.submitted_before = input;
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
         pub fn submitted_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_after = Some(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
         pub fn set_submitted_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1221,7 +1181,7 @@ pub mod list_fhir_export_jobs_input {
 #[doc(hidden)]
 pub type ListFhirExportJobsInputOperationOutputAlias = crate::operation::ListFHIRExportJobs;
 #[doc(hidden)]
-pub type ListFhirExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFhirExportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFhirExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListFHIRExportJobs`](crate::operation::ListFHIRExportJobs)>
     #[allow(clippy::let_and_return)]
@@ -1232,7 +1192,7 @@ impl ListFhirExportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFHIRExportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1317,7 +1277,7 @@ impl ListFhirExportJobsInput {
             "ListFHIRExportJobs",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1355,72 +1315,52 @@ pub mod list_fhir_import_jobs_input {
         pub(crate) submitted_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>
-        /// This parameter limits the response to the import job with the specified Data Store ID.
-        /// </p>
+        /// <p> This parameter limits the response to the import job with the specified Data Store ID. </p>
         pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.datastore_id = Some(input.into());
             self
         }
-        /// <p>
-        /// This parameter limits the response to the import job with the specified Data Store ID.
-        /// </p>
+        /// <p> This parameter limits the response to the import job with the specified Data Store ID. </p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.datastore_id = input;
             self
         }
-        /// <p>
-        /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
-        /// </p>
+        /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
-        /// </p>
+        /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.
-        /// </p>
+        /// <p> This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.
-        /// </p>
+        /// <p> This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// This parameter limits the response to the import job with the specified job name.
-        /// </p>
+        /// <p> This parameter limits the response to the import job with the specified job name. </p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_name = Some(input.into());
             self
         }
-        /// <p>
-        /// This parameter limits the response to the import job with the specified job name.
-        /// </p>
+        /// <p> This parameter limits the response to the import job with the specified job name. </p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
         }
-        /// <p>
-        /// This parameter limits the response to the import job with the specified job status.
-        /// </p>
+        /// <p> This parameter limits the response to the import job with the specified job status. </p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to the import job with the specified job status.
-        /// </p>
+        /// <p> This parameter limits the response to the import job with the specified job status. </p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -1428,16 +1368,12 @@ pub mod list_fhir_import_jobs_input {
             self.job_status = input;
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR import jobs submitted before a user specified date. </p>
         pub fn submitted_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_before = Some(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR import jobs submitted before a user specified date. </p>
         pub fn set_submitted_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1445,16 +1381,12 @@ pub mod list_fhir_import_jobs_input {
             self.submitted_before = input;
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR import jobs submitted after a user specified date. </p>
         pub fn submitted_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_after = Some(input);
             self
         }
-        /// <p>
-        /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
-        /// </p>
+        /// <p> This parameter limits the response to FHIR import jobs submitted after a user specified date. </p>
         pub fn set_submitted_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1484,7 +1416,7 @@ pub mod list_fhir_import_jobs_input {
 #[doc(hidden)]
 pub type ListFhirImportJobsInputOperationOutputAlias = crate::operation::ListFHIRImportJobs;
 #[doc(hidden)]
-pub type ListFhirImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFhirImportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFhirImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListFHIRImportJobs`](crate::operation::ListFHIRImportJobs)>
     #[allow(clippy::let_and_return)]
@@ -1495,7 +1427,7 @@ impl ListFhirImportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFHIRImportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1580,7 +1512,7 @@ impl ListFhirImportJobsInput {
             "ListFHIRImportJobs",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1612,16 +1544,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
-        /// </p>
+        /// <p> The Amazon Resource Name(ARN) of the Data Store for which tags are being added. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
-        /// </p>
+        /// <p> The Amazon Resource Name(ARN) of the Data Store for which tags are being added. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1642,7 +1570,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1653,7 +1581,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1740,7 +1668,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1852,7 +1780,7 @@ pub mod start_fhir_export_job_input {
 #[doc(hidden)]
 pub type StartFhirExportJobInputOperationOutputAlias = crate::operation::StartFHIRExportJob;
 #[doc(hidden)]
-pub type StartFhirExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartFhirExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFhirExportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartFHIRExportJob`](crate::operation::StartFHIRExportJob)>
     #[allow(clippy::let_and_return)]
@@ -1863,7 +1791,7 @@ impl StartFhirExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartFHIRExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1951,7 +1879,7 @@ impl StartFhirExportJobInput {
             "StartFHIRExportJob",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2078,7 +2006,7 @@ pub mod start_fhir_import_job_input {
 #[doc(hidden)]
 pub type StartFhirImportJobInputOperationOutputAlias = crate::operation::StartFHIRImportJob;
 #[doc(hidden)]
-pub type StartFhirImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartFhirImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFhirImportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartFHIRImportJob`](crate::operation::StartFHIRImportJob)>
     #[allow(clippy::let_and_return)]
@@ -2089,7 +2017,7 @@ impl StartFhirImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartFHIRImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2177,7 +2105,7 @@ impl StartFhirImportJobInput {
             "StartFHIRImportJob",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2210,16 +2138,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
-        /// </p>
+        /// <p> The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
-        /// </p>
+        /// <p> The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2228,18 +2152,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The user specified key and value pair tags being added to a Data Store.
-        /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p> The user specified key and value pair tags being added to a Data Store. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>
-        /// The user specified key and value pair tags being added to a Data Store.
-        /// </p>
+        /// <p> The user specified key and value pair tags being added to a Data Store. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2264,7 +2184,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2275,7 +2195,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2359,7 +2279,7 @@ impl TagResourceInput {
             "TagResource",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2392,16 +2312,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
-        /// </p>
+        /// <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
-        /// </p>
+        /// <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2410,18 +2326,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>
-        /// The keys for the tags to be removed from the Healthlake Data Store.
-        /// </p>
+        /// <p> The keys for the tags to be removed from the Healthlake Data Store. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>
-        /// The keys for the tags to be removed from the Healthlake Data Store.
-        /// </p>
+        /// <p> The keys for the tags to be removed from the Healthlake Data Store. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2446,7 +2358,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2457,7 +2369,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2541,7 +2453,7 @@ impl UntagResourceInput {
             "UntagResource",
             "healthlake",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2568,25 +2480,17 @@ impl UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>
-    /// "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
-    /// </p>
+    /// <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The keys for the tags to be removed from the Healthlake Data Store.
-    /// </p>
+    /// <p> The keys for the tags to be removed from the Healthlake Data Store. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>
-    /// "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
-    /// </p>
+    /// <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>
-    /// The keys for the tags to be removed from the Healthlake Data Store.
-    /// </p>
+    /// <p> The keys for the tags to be removed from the Healthlake Data Store. </p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -2604,25 +2508,17 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>
-    /// The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
-    /// </p>
+    /// <p> The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The user specified key and value pair tags being added to a Data Store.
-    /// </p>
+    /// <p> The user specified key and value pair tags being added to a Data Store. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>
-    /// The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
-    /// </p>
+    /// <p> The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>
-    /// The user specified key and value pair tags being added to a Data Store.
-    /// </p>
+    /// <p> The user specified key and value pair tags being added to a Data Store. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -2745,15 +2641,11 @@ impl std::fmt::Debug for StartFhirExportJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>
-    /// The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
-    /// </p>
+    /// <p> The Amazon Resource Name(ARN) of the Data Store for which tags are being added. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>
-    /// The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
-    /// </p>
+    /// <p> The Amazon Resource Name(ARN) of the Data Store for which tags are being added. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -2770,75 +2662,47 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFhirImportJobsInput {
-    /// <p>
-    /// This parameter limits the response to the import job with the specified Data Store ID.
-    /// </p>
+    /// <p> This parameter limits the response to the import job with the specified Data Store ID. </p>
     pub datastore_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
-    /// </p>
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.
-    /// </p>
+    /// <p> This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// This parameter limits the response to the import job with the specified job name.
-    /// </p>
+    /// <p> This parameter limits the response to the import job with the specified job name. </p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// This parameter limits the response to the import job with the specified job status.
-    /// </p>
+    /// <p> This parameter limits the response to the import job with the specified job status. </p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
-    /// <p>
-    /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
-    /// </p>
+    /// <p> This parameter limits the response to FHIR import jobs submitted before a user specified date. </p>
     pub submitted_before: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
-    /// </p>
+    /// <p> This parameter limits the response to FHIR import jobs submitted after a user specified date. </p>
     pub submitted_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListFhirImportJobsInput {
-    /// <p>
-    /// This parameter limits the response to the import job with the specified Data Store ID.
-    /// </p>
+    /// <p> This parameter limits the response to the import job with the specified Data Store ID. </p>
     pub fn datastore_id(&self) -> std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
-    /// <p>
-    /// A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.
-    /// </p>
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user.
-    /// </p>
+    /// <p> This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// This parameter limits the response to the import job with the specified job name.
-    /// </p>
+    /// <p> This parameter limits the response to the import job with the specified job name. </p>
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>
-    /// This parameter limits the response to the import job with the specified job status.
-    /// </p>
+    /// <p> This parameter limits the response to the import job with the specified job status. </p>
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>
-    /// This parameter limits the response to FHIR import jobs submitted before a user specified date.
-    /// </p>
+    /// <p> This parameter limits the response to FHIR import jobs submitted before a user specified date. </p>
     pub fn submitted_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_before.as_ref()
     }
-    /// <p>
-    /// This parameter limits the response to FHIR import jobs submitted after a user specified date.
-    /// </p>
+    /// <p> This parameter limits the response to FHIR import jobs submitted after a user specified date. </p>
     pub fn submitted_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_after.as_ref()
     }
@@ -2861,75 +2725,47 @@ impl std::fmt::Debug for ListFhirImportJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFhirExportJobsInput {
-    /// <p>
-    /// This parameter limits the response to the export job with the specified Data Store ID.
-    /// </p>
+    /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
     pub datastore_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
-    /// </p>
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user.
-    /// </p>
+    /// <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// This parameter limits the response to the export job with the specified job name.
-    /// </p>
+    /// <p> This parameter limits the response to the export job with the specified job name. </p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// This parameter limits the response to the export jobs with the specified job status.
-    /// </p>
+    /// <p> This parameter limits the response to the export jobs with the specified job status. </p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
-    /// <p>
-    /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
-    /// </p>
+    /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
     pub submitted_before: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
-    /// </p>
+    /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
     pub submitted_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListFhirExportJobsInput {
-    /// <p>
-    /// This parameter limits the response to the export job with the specified Data Store ID.
-    /// </p>
+    /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
     pub fn datastore_id(&self) -> std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
-    /// <p>
-    /// A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.
-    /// </p>
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user.
-    /// </p>
+    /// <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// This parameter limits the response to the export job with the specified job name.
-    /// </p>
+    /// <p> This parameter limits the response to the export job with the specified job name. </p>
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>
-    /// This parameter limits the response to the export jobs with the specified job status.
-    /// </p>
+    /// <p> This parameter limits the response to the export jobs with the specified job status. </p>
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>
-    /// This parameter limits the response to FHIR export jobs submitted before a user specified date.
-    /// </p>
+    /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
     pub fn submitted_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_before.as_ref()
     }
-    /// <p>
-    /// This parameter limits the response to FHIR export jobs submitted after a user specified date.
-    /// </p>
+    /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
     pub fn submitted_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_after.as_ref()
     }
@@ -2956,8 +2792,7 @@ pub struct ListFhirDatastoresInput {
     pub filter: std::option::Option<crate::model::DatastoreFilter>,
     /// <p>Fetches the next page of Data Stores when results are paginated.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of Data Stores returned in a single page of a
-    /// ListFHIRDatastoresRequest call.</p>
+    /// <p>The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListFhirDatastoresInput {
@@ -2969,8 +2804,7 @@ impl ListFhirDatastoresInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of Data Stores returned in a single page of a
-    /// ListFHIRDatastoresRequest call.</p>
+    /// <p>The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -3091,18 +2925,13 @@ pub struct CreateFhirDatastoreInput {
     pub datastore_name: std::option::Option<std::string::String>,
     /// <p>The FHIR version of the Data Store. The only supported version is R4.</p>
     pub datastore_type_version: std::option::Option<crate::model::FhirVersion>,
-    /// <p>
-    /// The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store.
-    /// </p>
+    /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store. </p>
     pub sse_configuration: std::option::Option<crate::model::SseConfiguration>,
-    /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only
-    /// supported preloaded data is synthetic data generated from Synthea.</p>
+    /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
     pub preload_data_config: std::option::Option<crate::model::PreloadDataConfig>,
     /// <p>Optional user provided token used for ensuring idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// Resource tags that are applied to a Data Store when it is created.
-    /// </p>
+    /// <p> Resource tags that are applied to a Data Store when it is created. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateFhirDatastoreInput {
@@ -3114,14 +2943,11 @@ impl CreateFhirDatastoreInput {
     pub fn datastore_type_version(&self) -> std::option::Option<&crate::model::FhirVersion> {
         self.datastore_type_version.as_ref()
     }
-    /// <p>
-    /// The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store.
-    /// </p>
+    /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store. </p>
     pub fn sse_configuration(&self) -> std::option::Option<&crate::model::SseConfiguration> {
         self.sse_configuration.as_ref()
     }
-    /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only
-    /// supported preloaded data is synthetic data generated from Synthea.</p>
+    /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
     pub fn preload_data_config(&self) -> std::option::Option<&crate::model::PreloadDataConfig> {
         self.preload_data_config.as_ref()
     }
@@ -3129,9 +2955,7 @@ impl CreateFhirDatastoreInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>
-    /// Resource tags that are applied to a Data Store when it is created.
-    /// </p>
+    /// <p> Resource tags that are applied to a Data Store when it is created. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Elastic Load Balancing
@@ -237,6 +237,7 @@ where
     ///
     /// See [`DescribeLoadBalancers`](crate::client::fluent_builders::DescribeLoadBalancers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeLoadBalancers::into_paginator).
     pub fn describe_load_balancers(&self) -> fluent_builders::DescribeLoadBalancers<C, M, R> {
         fluent_builders::DescribeLoadBalancers::new(self.handle.clone())
     }
@@ -338,13 +339,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddTags`.
     ///
     /// <p>Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags.</p>
-    ///
-    /// <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated
-    /// with the load balancer, <code>AddTags</code> updates its value.</p>
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the load balancer, <code>AddTags</code> updates its value.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -389,10 +386,10 @@ pub mod fluent_builders {
                 crate::input::AddTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -405,8 +402,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
         ///
         /// <p>The name of the load balancer. You can specify one load balancer only.</p>
-        pub fn load_balancer_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_names(inp);
+        pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_names(input.into());
             self
         }
         /// <p>The name of the load balancer. You can specify one load balancer only.</p>
@@ -422,8 +419,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags.</p>
@@ -438,9 +435,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ApplySecurityGroupsToLoadBalancer`.
     ///
     /// <p>Associates one or more security groups with your load balancer in a virtual private cloud (VPC). The specified security groups override the previously associated security groups.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups">Security Groups for Load Balancers in a VPC</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups">Security Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApplySecurityGroupsToLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -485,10 +481,10 @@ pub mod fluent_builders {
                 crate::input::ApplySecurityGroupsToLoadBalancerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -497,8 +493,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -514,8 +510,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_groups(inp);
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_groups(input.into());
             self
         }
         /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
@@ -529,11 +525,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AttachLoadBalancerToSubnets`.
     ///
-    /// <p>Adds one or more subnets to the set of configured subnets for the specified load balancer.</p>  
-    /// <p>The load balancer evenly distributes requests across all registered subnets.
-    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add or Remove Subnets for Your Load Balancer in a VPC</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds one or more subnets to the set of configured subnets for the specified load balancer.</p>
+    /// <p>The load balancer evenly distributes requests across all registered subnets. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachLoadBalancerToSubnets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -578,10 +572,10 @@ pub mod fluent_builders {
                 crate::input::AttachLoadBalancerToSubnetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -590,8 +584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -607,8 +601,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
-        pub fn subnets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnets(inp);
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnets(input.into());
             self
         }
         /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
@@ -623,9 +617,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ConfigureHealthCheck`.
     ///
     /// <p>Specifies the health check settings to use when evaluating the health state of your EC2 instances.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure Health Checks for Your Load Balancer</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfigureHealthCheck<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -670,10 +663,10 @@ pub mod fluent_builders {
                 crate::input::ConfigureHealthCheckInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -682,8 +675,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -695,8 +688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration information.</p>
-        pub fn health_check(mut self, inp: crate::model::HealthCheck) -> Self {
-            self.inner = self.inner.health_check(inp);
+        pub fn health_check(mut self, input: crate::model::HealthCheck) -> Self {
+            self.inner = self.inner.health_check(input);
             self
         }
         /// <p>The configuration information.</p>
@@ -711,15 +704,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAppCookieStickinessPolicy`.
     ///
     /// <p>Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be associated only with HTTP/HTTPS listeners.</p>
-    /// <p>This policy is similar to the policy created by <a>CreateLBCookieStickinessPolicy</a>,
-    /// except that the lifetime of the special Elastic Load Balancing cookie, <code>AWSELB</code>,
-    /// follows the lifetime of the application-generated cookie specified in the policy configuration.
-    /// The load balancer only inserts a new stickiness cookie when the application response
-    /// includes a new application cookie.</p>
+    /// <p>This policy is similar to the policy created by <code>CreateLBCookieStickinessPolicy</code>, except that the lifetime of the special Elastic Load Balancing cookie, <code>AWSELB</code>, follows the lifetime of the application-generated cookie specified in the policy configuration. The load balancer only inserts a new stickiness cookie when the application response includes a new application cookie.</p>
     /// <p>If the application cookie is explicitly removed or expires, the session stops being sticky until a new application cookie is issued.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled Session Stickiness</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppCookieStickinessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -764,10 +752,10 @@ pub mod fluent_builders {
                 crate::input::CreateAppCookieStickinessPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -776,8 +764,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -789,8 +777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
@@ -799,8 +787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the application cookie used for stickiness.</p>
-        pub fn cookie_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cookie_name(inp);
+        pub fn cookie_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cookie_name(input.into());
             self
         }
         /// <p>The name of the application cookie used for stickiness.</p>
@@ -812,13 +800,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLBCookieStickinessPolicy`.
     ///
     /// <p>Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period. This policy can be associated only with HTTP/HTTPS listeners.</p>
-    /// <p>When a load balancer implements this policy, the load balancer uses a special cookie to track the instance for each request. When the load balancer receives a request, it first checks to see if this cookie is present in the request.
-    /// If so, the load balancer sends the request to the application server specified in the cookie. If not, the load balancer sends the request to a server that is chosen based on the existing load-balancing algorithm.</p>
+    /// <p>When a load balancer implements this policy, the load balancer uses a special cookie to track the instance for each request. When the load balancer receives a request, it first checks to see if this cookie is present in the request. If so, the load balancer sends the request to the application server specified in the cookie. If not, the load balancer sends the request to a server that is chosen based on the existing load-balancing algorithm.</p>
     /// <p>A cookie is inserted into the response for binding subsequent requests from the same user to that server. The validity of the cookie is based on the cookie expiration time, which is specified in the policy configuration.</p>
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based Session Stickiness</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLBCookieStickinessPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -863,10 +848,10 @@ pub mod fluent_builders {
                 crate::input::CreateLbCookieStickinessPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -875,8 +860,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -888,8 +873,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
@@ -898,8 +883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
-        pub fn cookie_expiration_period(mut self, inp: i64) -> Self {
-            self.inner = self.inner.cookie_expiration_period(inp);
+        pub fn cookie_expiration_period(mut self, input: i64) -> Self {
+            self.inner = self.inner.cookie_expiration_period(input);
             self
         }
         /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
@@ -911,20 +896,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLoadBalancer`.
     ///
     /// <p>Creates a Classic Load Balancer.</p>
-    ///
-    /// <p>You can add listeners, security groups, subnets, and tags when you create your load balancer,
-    /// or you can add them later using <a>CreateLoadBalancerListeners</a>,
-    /// <a>ApplySecurityGroupsToLoadBalancer</a>, <a>AttachLoadBalancerToSubnets</a>,
-    /// and <a>AddTags</a>.</p>
-    /// <p>To describe your current load balancers, see <a>DescribeLoadBalancers</a>.
-    /// When you are finished with a load balancer, you can delete it using
-    /// <a>DeleteLoadBalancer</a>.</p>
-    ///
-    /// <p>You can create up to 20 load balancers per region per account.
-    /// You can request an increase for the number of load balancers for your account.
-    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits for Your Classic Load Balancer</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can add listeners, security groups, subnets, and tags when you create your load balancer, or you can add them later using <code>CreateLoadBalancerListeners</code>, <code>ApplySecurityGroupsToLoadBalancer</code>, <code>AttachLoadBalancerToSubnets</code>, and <code>AddTags</code>.</p>
+    /// <p>To describe your current load balancers, see <code>DescribeLoadBalancers</code>. When you are finished with a load balancer, you can delete it using <code>DeleteLoadBalancer</code>.</p>
+    /// <p>You can create up to 20 load balancers per region per account. You can request an increase for the number of load balancers for your account. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -969,10 +944,10 @@ pub mod fluent_builders {
                 crate::input::CreateLoadBalancerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -982,8 +957,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the load balancer.</p>
         /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1000,15 +975,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
         /// <p>The listeners.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn listeners(mut self, inp: impl Into<crate::model::Listener>) -> Self {
-            self.inner = self.inner.listeners(inp);
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
+            self.inner = self.inner.listeners(input);
             self
         }
         /// <p>The listeners.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn set_listeners(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Listener>>,
@@ -1022,16 +995,14 @@ pub mod fluent_builders {
         ///
         /// <p>One or more Availability Zones from the same region as the load balancer.</p>
         /// <p>You must specify at least one Availability Zone.</p>
-        /// <p>You can add more Availability Zones after you create the load balancer using
-        /// <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zones(inp);
+        /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zones(input.into());
             self
         }
         /// <p>One or more Availability Zones from the same region as the load balancer.</p>
         /// <p>You must specify at least one Availability Zone.</p>
-        /// <p>You can add more Availability Zones after you create the load balancer using
-        /// <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
+        /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1043,14 +1014,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The IDs of the subnets in your VPC to attach to the load balancer.
-        /// Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
-        pub fn subnets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnets(inp);
+        /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnets(input.into());
             self
         }
-        /// <p>The IDs of the subnets in your VPC to attach to the load balancer.
-        /// Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+        /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1063,8 +1032,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>The IDs of the security groups to assign to the load balancer.</p>
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_groups(inp);
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_groups(input.into());
             self
         }
         /// <p>The IDs of the security groups to assign to the load balancer.</p>
@@ -1075,19 +1044,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_groups(input);
             self
         }
-        /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>          
-        /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses.
-        /// For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a>
-        /// in the <i>Elastic Load Balancing User Guide</i>.</p>
+        /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
+        /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
         /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
-        pub fn scheme(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheme(inp);
+        pub fn scheme(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheme(input.into());
             self
         }
-        /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>          
-        /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses.
-        /// For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a>
-        /// in the <i>Elastic Load Balancing User Guide</i>.</p>
+        /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
+        /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
         /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
         pub fn set_scheme(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_scheme(input);
@@ -1098,15 +1063,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to assign to the load balancer.</p>
-        /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags to assign to the load balancer.</p>
-        /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1118,9 +1081,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLoadBalancerListeners`.
     ///
     /// <p>Creates one or more listeners for the specified load balancer. If a listener with the specified port does not already exist, it is created; otherwise, the properties of the new listener must match the properties of the existing listener.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoadBalancerListeners<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1165,10 +1127,10 @@ pub mod fluent_builders {
                 crate::input::CreateLoadBalancerListenersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1177,8 +1139,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1194,8 +1156,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
         /// <p>The listeners.</p>
-        pub fn listeners(mut self, inp: impl Into<crate::model::Listener>) -> Self {
-            self.inner = self.inner.listeners(inp);
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
+            self.inner = self.inner.listeners(input);
             self
         }
         /// <p>The listeners.</p>
@@ -1211,7 +1173,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a policy with the specified attributes for the specified load balancer.</p>
     /// <p>Policies are settings that are saved for your load balancer and that can be applied to the listener or the application server, depending on the policy type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoadBalancerPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1256,10 +1218,10 @@ pub mod fluent_builders {
                 crate::input::CreateLoadBalancerPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1268,8 +1230,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1281,8 +1243,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
@@ -1290,14 +1252,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_name(input);
             self
         }
-        /// <p>The name of the base policy type.
-        /// To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.</p>
-        pub fn policy_type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_type_name(inp);
+        /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
+        pub fn policy_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_type_name(input.into());
             self
         }
-        /// <p>The name of the base policy type.
-        /// To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.</p>
+        /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
         pub fn set_policy_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1310,8 +1270,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_policy_attributes`](Self::set_policy_attributes).
         ///
         /// <p>The policy attributes.</p>
-        pub fn policy_attributes(mut self, inp: impl Into<crate::model::PolicyAttribute>) -> Self {
-            self.inner = self.inner.policy_attributes(inp);
+        pub fn policy_attributes(mut self, input: crate::model::PolicyAttribute) -> Self {
+            self.inner = self.inner.policy_attributes(input);
             self
         }
         /// <p>The policy attributes.</p>
@@ -1327,9 +1287,8 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified load balancer.</p>
     /// <p>If you are attempting to recreate a load balancer, you must reconfigure all settings. The DNS name associated with a deleted load balancer are no longer usable. The name and associated DNS record of the deleted load balancer no longer exist and traffic sent to any of its IP addresses is no longer delivered to your instances.</p>
-    /// <p>If the load balancer does not exist or has already been deleted, the call to
-    /// <code>DeleteLoadBalancer</code> still succeeds.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the load balancer does not exist or has already been deleted, the call to <code>DeleteLoadBalancer</code> still succeeds.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1374,10 +1333,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLoadBalancerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1386,8 +1345,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1402,7 +1361,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLoadBalancerListeners`.
     ///
     /// <p>Deletes the specified listeners from the specified load balancer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoadBalancerListeners<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1447,10 +1406,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLoadBalancerListenersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1459,8 +1418,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1476,8 +1435,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_load_balancer_ports`](Self::set_load_balancer_ports).
         ///
         /// <p>The client port numbers of the listeners.</p>
-        pub fn load_balancer_ports(mut self, inp: impl Into<i32>) -> Self {
-            self.inner = self.inner.load_balancer_ports(inp);
+        pub fn load_balancer_ports(mut self, input: i32) -> Self {
+            self.inner = self.inner.load_balancer_ports(input);
             self
         }
         /// <p>The client port numbers of the listeners.</p>
@@ -1492,7 +1451,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLoadBalancerPolicy`.
     ///
     /// <p>Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoadBalancerPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1537,10 +1496,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLoadBalancerPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1549,8 +1508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1562,8 +1521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy.</p>
@@ -1575,12 +1534,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterInstancesFromLoadBalancer`.
     ///
     /// <p>Deregisters the specified instances from the specified load balancer. After the instance is deregistered, it no longer receives traffic from the load balancer.</p>
-    ///
-    /// <p>You can use <a>DescribeLoadBalancers</a> to verify that the instance is deregistered from the load balancer.</p>  
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register or De-Register EC2 Instances</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can use <code>DescribeLoadBalancers</code> to verify that the instance is deregistered from the load balancer.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterInstancesFromLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1627,10 +1583,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterInstancesFromLoadBalancerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1639,8 +1595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1656,8 +1612,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The IDs of the instances.</p>
-        pub fn instances(mut self, inp: impl Into<crate::model::Instance>) -> Self {
-            self.inner = self.inner.instances(inp);
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
+            self.inner = self.inner.instances(input);
             self
         }
         /// <p>The IDs of the instances.</p>
@@ -1672,9 +1628,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAccountLimits`.
     ///
     /// <p>Describes the current Elastic Load Balancing resource limits for your AWS account.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits for Your Classic Load Balancer</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1719,10 +1674,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAccountLimitsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1731,8 +1686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
@@ -1741,8 +1696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
@@ -1754,7 +1709,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInstanceHealth`.
     ///
     /// <p>Describes the state of the specified instances with respect to the specified load balancer. If no instances are specified, the call describes the state of all instances that are currently registered with the load balancer. If instances are specified, their state is returned even if they are no longer registered with the load balancer. The state of terminated instances is not returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1799,10 +1754,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInstanceHealthInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1811,8 +1766,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1828,8 +1783,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The IDs of the instances.</p>
-        pub fn instances(mut self, inp: impl Into<crate::model::Instance>) -> Self {
-            self.inner = self.inner.instances(inp);
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
+            self.inner = self.inner.instances(input);
             self
         }
         /// <p>The IDs of the instances.</p>
@@ -1844,7 +1799,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoadBalancerAttributes`.
     ///
     /// <p>Describes the attributes for the specified load balancer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancerAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1889,10 +1844,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLoadBalancerAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1901,8 +1856,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1917,11 +1872,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoadBalancerPolicies`.
     ///
     /// <p>Describes the specified policies.</p>
-    /// <p>If you specify a load balancer name, the action returns the descriptions of all policies created for the load balancer.
-    /// If you specify a policy name associated with your load balancer, the action returns the description of that policy.
-    /// If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions of all sample policies.
-    /// The names of the sample policies have the <code>ELBSample-</code> prefix.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you specify a load balancer name, the action returns the descriptions of all policies created for the load balancer. If you specify a policy name associated with your load balancer, the action returns the description of that policy. If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions of all sample policies. The names of the sample policies have the <code>ELBSample-</code> prefix.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancerPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1966,10 +1918,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLoadBalancerPoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1978,8 +1930,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -1995,8 +1947,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
         ///
         /// <p>The names of the policies.</p>
-        pub fn policy_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_names(inp);
+        pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_names(input.into());
             self
         }
         /// <p>The names of the policies.</p>
@@ -2011,14 +1963,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoadBalancerPolicyTypes`.
     ///
     /// <p>Describes the specified load balancer policy types or all load balancer policy types.</p>
-    /// <p>The description of each type indicates how it can be used. For example,
-    /// some policies can be used only with layer 7 listeners,
-    /// some policies can be used only with layer 4 listeners,
-    /// and some policies can be used only with your EC2 instances.</p>
-    /// <p>You can use <a>CreateLoadBalancerPolicy</a> to create a policy configuration for any of these policy types.
-    /// Then, depending on the policy type, use either <a>SetLoadBalancerPoliciesOfListener</a> or
-    /// <a>SetLoadBalancerPoliciesForBackendServer</a> to set the policy.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The description of each type indicates how it can be used. For example, some policies can be used only with layer 7 listeners, some policies can be used only with layer 4 listeners, and some policies can be used only with your EC2 instances.</p>
+    /// <p>You can use <code>CreateLoadBalancerPolicy</code> to create a policy configuration for any of these policy types. Then, depending on the policy type, use either <code>SetLoadBalancerPoliciesOfListener</code> or <code>SetLoadBalancerPoliciesForBackendServer</code> to set the policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancerPolicyTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2063,10 +2010,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLoadBalancerPolicyTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2079,8 +2026,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_policy_type_names`](Self::set_policy_type_names).
         ///
         /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
-        pub fn policy_type_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_type_names(inp);
+        pub fn policy_type_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_type_names(input.into());
             self
         }
         /// <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
@@ -2095,7 +2042,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoadBalancers`.
     ///
     /// <p>Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2140,10 +2087,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLoadBalancersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2151,13 +2098,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeLoadBalancersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeLoadBalancersPaginator<C, M, R> {
+            crate::paginator::DescribeLoadBalancersPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `LoadBalancerNames`.
         ///
         /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
         ///
         /// <p>The names of the load balancers.</p>
-        pub fn load_balancer_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_names(inp);
+        pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_names(input.into());
             self
         }
         /// <p>The names of the load balancers.</p>
@@ -2169,8 +2122,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
@@ -2179,8 +2132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
@@ -2192,7 +2145,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTags`.
     ///
     /// <p>Describes the tags associated with the specified load balancers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2237,10 +2190,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2253,8 +2206,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
         ///
         /// <p>The names of the load balancers.</p>
-        pub fn load_balancer_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_names(inp);
+        pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_names(input.into());
             self
         }
         /// <p>The names of the load balancers.</p>
@@ -2269,10 +2222,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachLoadBalancerFromSubnets`.
     ///
     /// <p>Removes the specified subnets from the set of configured subnets for the load balancer.</p>
-    /// <p>After a subnet is removed, all EC2 instances registered with the load balancer  
-    /// in the removed subnet go into the <code>OutOfService</code> state. Then,
-    /// the load balancer balances the traffic among the remaining routable subnets.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After a subnet is removed, all EC2 instances registered with the load balancer in the removed subnet go into the <code>OutOfService</code> state. Then, the load balancer balances the traffic among the remaining routable subnets.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachLoadBalancerFromSubnets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2317,10 +2268,10 @@ pub mod fluent_builders {
                 crate::input::DetachLoadBalancerFromSubnetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2329,8 +2280,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -2346,8 +2297,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
         /// <p>The IDs of the subnets.</p>
-        pub fn subnets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnets(inp);
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnets(input.into());
             self
         }
         /// <p>The IDs of the subnets.</p>
@@ -2361,16 +2312,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableAvailabilityZonesForLoadBalancer`.
     ///
-    /// <p>Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer
-    /// in EC2-Classic or a default VPC.</p>
-    /// <p>For load balancers in a non-default VPC, use <a>DetachLoadBalancerFromSubnets</a>.</p>
-    /// <p>There must be at least one Availability Zone registered with a load balancer at all times.
-    /// After an Availability Zone is removed, all instances registered with the load balancer that are in the removed
-    /// Availability Zone go into the <code>OutOfService</code> state. Then, the load balancer attempts to equally balance
-    /// the traffic among its remaining Availability Zones.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove Availability Zones</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer in EC2-Classic or a default VPC.</p>
+    /// <p>For load balancers in a non-default VPC, use <code>DetachLoadBalancerFromSubnets</code>.</p>
+    /// <p>There must be at least one Availability Zone registered with a load balancer at all times. After an Availability Zone is removed, all instances registered with the load balancer that are in the removed Availability Zone go into the <code>OutOfService</code> state. Then, the load balancer attempts to equally balance the traffic among its remaining Availability Zones.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableAvailabilityZonesForLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2417,10 +2363,10 @@ pub mod fluent_builders {
                 crate::input::DisableAvailabilityZonesForLoadBalancerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2429,8 +2375,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -2446,8 +2392,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>The Availability Zones.</p>
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zones(inp);
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zones(input.into());
             self
         }
         /// <p>The Availability Zones.</p>
@@ -2461,13 +2407,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableAvailabilityZonesForLoadBalancer`.
     ///
-    /// <p>Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer
-    /// in EC2-Classic or a default VPC.</p>
-    /// <p>For load balancers in a non-default VPC, use <a>AttachLoadBalancerToSubnets</a>.</p>
-    /// <p>The load balancer evenly distributes requests across all its registered Availability Zones
-    /// that contain instances. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove Availability Zones</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer in EC2-Classic or a default VPC.</p>
+    /// <p>For load balancers in a non-default VPC, use <code>AttachLoadBalancerToSubnets</code>.</p>
+    /// <p>The load balancer evenly distributes requests across all its registered Availability Zones that contain instances. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableAvailabilityZonesForLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2514,10 +2457,10 @@ pub mod fluent_builders {
                 crate::input::EnableAvailabilityZonesForLoadBalancerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2526,8 +2469,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -2543,8 +2486,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zones(inp);
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zones(input.into());
             self
         }
         /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
@@ -2559,33 +2502,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyLoadBalancerAttributes`.
     ///
     /// <p>Modifies the attributes of the specified load balancer.</p>
-    /// <p>You can modify the load balancer attributes, such as <code>AccessLogs</code>, <code>ConnectionDraining</code>, and
-    /// <code>CrossZoneLoadBalancing</code> by either enabling or disabling them. Or, you can modify the load balancer attribute
-    /// <code>ConnectionSettings</code> by specifying an idle connection timeout value for your load balancer.</p>
+    /// <p>You can modify the load balancer attributes, such as <code>AccessLogs</code>, <code>ConnectionDraining</code>, and <code>CrossZoneLoadBalancing</code> by either enabling or disabling them. Or, you can modify the load balancer attribute <code>ConnectionSettings</code> by specifying an idle connection timeout value for your load balancer.</p>
     /// <p>For more information, see the following in the <i>Classic Load Balancers Guide</i>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Cross-Zone Load Balancing</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Connection Draining</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html">Access Logs</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Idle Connection Timeout</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Cross-Zone Load Balancing</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Connection Draining</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html">Access Logs</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Idle Connection Timeout</a> </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyLoadBalancerAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2630,10 +2555,10 @@ pub mod fluent_builders {
                 crate::input::ModifyLoadBalancerAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2642,8 +2567,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -2657,9 +2582,9 @@ pub mod fluent_builders {
         /// <p>The attributes for the load balancer.</p>
         pub fn load_balancer_attributes(
             mut self,
-            inp: crate::model::LoadBalancerAttributes,
+            input: crate::model::LoadBalancerAttributes,
         ) -> Self {
-            self.inner = self.inner.load_balancer_attributes(inp);
+            self.inner = self.inner.load_balancer_attributes(input);
             self
         }
         /// <p>The attributes for the load balancer.</p>
@@ -2674,25 +2599,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterInstancesWithLoadBalancer`.
     ///
     /// <p>Adds the specified instances to the specified load balancer.</p>
-    ///
     /// <p>The instance must be a running instance in the same network as the load balancer (EC2-Classic or the same VPC). If you have EC2-Classic instances and a load balancer in a VPC with ClassicLink enabled, you can link the EC2-Classic instances to that VPC and then register the linked EC2-Classic instances with the load balancer in the VPC.</p>
-    ///
-    /// <p>Note that <code>RegisterInstanceWithLoadBalancer</code> completes when the request has been registered.
-    /// Instance registration takes a little time to complete. To check the state of the registered instances, use
-    /// <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.</p>  
-    ///
-    /// <p>After the instance is registered, it starts receiving traffic
-    /// and requests from the load balancer. Any instance that is not
-    /// in one of the Availability Zones registered for the load balancer
-    /// is moved to the <code>OutOfService</code> state. If an Availability Zone
-    /// is added to the load balancer later, any instances registered with the
-    /// load balancer move to the <code>InService</code> state.</p>
-    ///
-    /// <p>To deregister instances from a load balancer, use <a>DeregisterInstancesFromLoadBalancer</a>.</p>
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register or De-Register EC2 Instances</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Note that <code>RegisterInstanceWithLoadBalancer</code> completes when the request has been registered. Instance registration takes a little time to complete. To check the state of the registered instances, use <code>DescribeLoadBalancers</code> or <code>DescribeInstanceHealth</code>.</p>
+    /// <p>After the instance is registered, it starts receiving traffic and requests from the load balancer. Any instance that is not in one of the Availability Zones registered for the load balancer is moved to the <code>OutOfService</code> state. If an Availability Zone is added to the load balancer later, any instances registered with the load balancer move to the <code>InService</code> state.</p>
+    /// <p>To deregister instances from a load balancer, use <code>DeregisterInstancesFromLoadBalancer</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterInstancesWithLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2737,10 +2649,10 @@ pub mod fluent_builders {
                 crate::input::RegisterInstancesWithLoadBalancerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2749,8 +2661,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -2766,8 +2678,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The IDs of the instances.</p>
-        pub fn instances(mut self, inp: impl Into<crate::model::Instance>) -> Self {
-            self.inner = self.inner.instances(inp);
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
+            self.inner = self.inner.instances(input);
             self
         }
         /// <p>The IDs of the instances.</p>
@@ -2782,7 +2694,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
     /// <p>Removes one or more tags from the specified load balancer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2827,10 +2739,10 @@ pub mod fluent_builders {
                 crate::input::RemoveTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2843,8 +2755,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
         ///
         /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
-        pub fn load_balancer_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_names(inp);
+        pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_names(input.into());
             self
         }
         /// <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
@@ -2860,8 +2772,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tag keys to remove.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::TagKeyOnly>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::TagKeyOnly) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The list of tag keys to remove.</p>
@@ -2876,11 +2788,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SetLoadBalancerListenerSSLCertificate`.
     ///
     /// <p>Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior certificate that was used on the same load balancer and port.</p>
-    ///
-    /// <p>For more information about updating your SSL certificate, see
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html">Replace the SSL Certificate for Your Load Balancer</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information about updating your SSL certificate, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html">Replace the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetLoadBalancerListenerSSLCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2927,10 +2836,10 @@ pub mod fluent_builders {
                 crate::input::SetLoadBalancerListenerSslCertificateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2939,8 +2848,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -2952,8 +2861,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port that uses the specified SSL certificate.</p>
-        pub fn load_balancer_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.load_balancer_port(inp);
+        pub fn load_balancer_port(mut self, input: i32) -> Self {
+            self.inner = self.inner.load_balancer_port(input);
             self
         }
         /// <p>The port that uses the specified SSL certificate.</p>
@@ -2962,8 +2871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-        pub fn ssl_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssl_certificate_id(inp);
+        pub fn ssl_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssl_certificate_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
@@ -2977,18 +2886,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetLoadBalancerPoliciesForBackendServer`.
     ///
-    /// <p>Replaces the set of policies associated with the specified port on which the EC2 instance is listening with a new set of policies.
-    /// At this time, only the back-end server authentication policy type can be applied to the instance ports; this policy type is composed of multiple public key policies.</p>
-    /// <p>Each time you use <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the policies,
-    /// use the <code>PolicyNames</code> parameter to list the policies that you want to enable.</p>
-    /// <p>You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> to verify that the policy
-    /// is associated with the EC2 instance.</p>     
-    ///
-    /// <p>For more information about enabling back-end instance authentication, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt">Configure Back-end Instance Authentication</a>
-    /// in the <i>Classic Load Balancers Guide</i>. For more information about Proxy Protocol, see
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure Proxy Protocol Support</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Replaces the set of policies associated with the specified port on which the EC2 instance is listening with a new set of policies. At this time, only the back-end server authentication policy type can be applied to the instance ports; this policy type is composed of multiple public key policies.</p>
+    /// <p>Each time you use <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the policies, use the <code>PolicyNames</code> parameter to list the policies that you want to enable.</p>
+    /// <p>You can use <code>DescribeLoadBalancers</code> or <code>DescribeLoadBalancerPolicies</code> to verify that the policy is associated with the EC2 instance.</p>
+    /// <p>For more information about enabling back-end instance authentication, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt">Configure Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>. For more information about Proxy Protocol, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure Proxy Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetLoadBalancerPoliciesForBackendServer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3035,10 +2937,10 @@ pub mod fluent_builders {
                 crate::input::SetLoadBalancerPoliciesForBackendServerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3047,8 +2949,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -3060,8 +2962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port number associated with the EC2 instance.</p>
-        pub fn instance_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.instance_port(inp);
+        pub fn instance_port(mut self, input: i32) -> Self {
+            self.inner = self.inner.instance_port(input);
             self
         }
         /// <p>The port number associated with the EC2 instance.</p>
@@ -3074,8 +2976,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
         ///
         /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-        pub fn policy_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_names(inp);
+        pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_names(input.into());
             self
         }
         /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
@@ -3090,13 +2992,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SetLoadBalancerPoliciesOfListener`.
     ///
     /// <p>Replaces the current set of policies for the specified load balancer port with the specified set of policies.</p>
-    /// <p>To enable back-end server authentication, use <a>SetLoadBalancerPoliciesForBackendServer</a>.</p>
-    /// <p>For more information about setting policies, see
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/ssl-config-update.html">Update the SSL Negotiation Configuration</a>,
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based Session Stickiness</a>, and
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled Session Stickiness</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To enable back-end server authentication, use <code>SetLoadBalancerPoliciesForBackendServer</code>.</p>
+    /// <p>For more information about setting policies, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/ssl-config-update.html">Update the SSL Negotiation Configuration</a>, <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based Session Stickiness</a>, and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetLoadBalancerPoliciesOfListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3141,10 +3039,10 @@ pub mod fluent_builders {
                 crate::input::SetLoadBalancerPoliciesOfListenerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3153,8 +3051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        pub fn load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_name(inp);
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
@@ -3166,8 +3064,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external port of the load balancer.</p>
-        pub fn load_balancer_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.load_balancer_port(inp);
+        pub fn load_balancer_port(mut self, input: i32) -> Self {
+            self.inner = self.inner.load_balancer_port(input);
             self
         }
         /// <p>The external port of the load balancer.</p>
@@ -3180,8 +3078,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
         ///
         /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
-        pub fn policy_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_names(inp);
+        pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_names(input.into());
             self
         }
         /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
@@ -3194,6 +3092,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

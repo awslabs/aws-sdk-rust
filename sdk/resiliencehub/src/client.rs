@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Resilience Hub
@@ -206,6 +206,7 @@ where
     ///
     /// See [`ListAlarmRecommendations`](crate::client::fluent_builders::ListAlarmRecommendations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAlarmRecommendations::into_paginator).
     pub fn list_alarm_recommendations(&self) -> fluent_builders::ListAlarmRecommendations<C, M, R> {
         fluent_builders::ListAlarmRecommendations::new(self.handle.clone())
     }
@@ -213,6 +214,7 @@ where
     ///
     /// See [`ListAppAssessments`](crate::client::fluent_builders::ListAppAssessments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppAssessments::into_paginator).
     pub fn list_app_assessments(&self) -> fluent_builders::ListAppAssessments<C, M, R> {
         fluent_builders::ListAppAssessments::new(self.handle.clone())
     }
@@ -220,6 +222,7 @@ where
     ///
     /// See [`ListAppComponentCompliances`](crate::client::fluent_builders::ListAppComponentCompliances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppComponentCompliances::into_paginator).
     pub fn list_app_component_compliances(
         &self,
     ) -> fluent_builders::ListAppComponentCompliances<C, M, R> {
@@ -229,6 +232,7 @@ where
     ///
     /// See [`ListAppComponentRecommendations`](crate::client::fluent_builders::ListAppComponentRecommendations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppComponentRecommendations::into_paginator).
     pub fn list_app_component_recommendations(
         &self,
     ) -> fluent_builders::ListAppComponentRecommendations<C, M, R> {
@@ -238,6 +242,7 @@ where
     ///
     /// See [`ListApps`](crate::client::fluent_builders::ListApps) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApps::into_paginator).
     pub fn list_apps(&self) -> fluent_builders::ListApps<C, M, R> {
         fluent_builders::ListApps::new(self.handle.clone())
     }
@@ -245,6 +250,7 @@ where
     ///
     /// See [`ListAppVersionResourceMappings`](crate::client::fluent_builders::ListAppVersionResourceMappings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppVersionResourceMappings::into_paginator).
     pub fn list_app_version_resource_mappings(
         &self,
     ) -> fluent_builders::ListAppVersionResourceMappings<C, M, R> {
@@ -254,6 +260,7 @@ where
     ///
     /// See [`ListAppVersionResources`](crate::client::fluent_builders::ListAppVersionResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppVersionResources::into_paginator).
     pub fn list_app_version_resources(&self) -> fluent_builders::ListAppVersionResources<C, M, R> {
         fluent_builders::ListAppVersionResources::new(self.handle.clone())
     }
@@ -261,6 +268,7 @@ where
     ///
     /// See [`ListAppVersions`](crate::client::fluent_builders::ListAppVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppVersions::into_paginator).
     pub fn list_app_versions(&self) -> fluent_builders::ListAppVersions<C, M, R> {
         fluent_builders::ListAppVersions::new(self.handle.clone())
     }
@@ -268,6 +276,7 @@ where
     ///
     /// See [`ListRecommendationTemplates`](crate::client::fluent_builders::ListRecommendationTemplates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecommendationTemplates::into_paginator).
     pub fn list_recommendation_templates(
         &self,
     ) -> fluent_builders::ListRecommendationTemplates<C, M, R> {
@@ -277,6 +286,7 @@ where
     ///
     /// See [`ListResiliencyPolicies`](crate::client::fluent_builders::ListResiliencyPolicies) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResiliencyPolicies::into_paginator).
     pub fn list_resiliency_policies(&self) -> fluent_builders::ListResiliencyPolicies<C, M, R> {
         fluent_builders::ListResiliencyPolicies::new(self.handle.clone())
     }
@@ -284,6 +294,7 @@ where
     ///
     /// See [`ListSopRecommendations`](crate::client::fluent_builders::ListSopRecommendations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSopRecommendations::into_paginator).
     pub fn list_sop_recommendations(&self) -> fluent_builders::ListSopRecommendations<C, M, R> {
         fluent_builders::ListSopRecommendations::new(self.handle.clone())
     }
@@ -291,6 +302,7 @@ where
     ///
     /// See [`ListSuggestedResiliencyPolicies`](crate::client::fluent_builders::ListSuggestedResiliencyPolicies) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSuggestedResiliencyPolicies::into_paginator).
     pub fn list_suggested_resiliency_policies(
         &self,
     ) -> fluent_builders::ListSuggestedResiliencyPolicies<C, M, R> {
@@ -307,6 +319,7 @@ where
     ///
     /// See [`ListTestRecommendations`](crate::client::fluent_builders::ListTestRecommendations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTestRecommendations::into_paginator).
     pub fn list_test_recommendations(&self) -> fluent_builders::ListTestRecommendations<C, M, R> {
         fluent_builders::ListTestRecommendations::new(self.handle.clone())
     }
@@ -314,6 +327,7 @@ where
     ///
     /// See [`ListUnsupportedAppVersionResources`](crate::client::fluent_builders::ListUnsupportedAppVersionResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUnsupportedAppVersionResources::into_paginator).
     pub fn list_unsupported_app_version_resources(
         &self,
     ) -> fluent_builders::ListUnsupportedAppVersionResources<C, M, R> {
@@ -400,7 +414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddDraftAppVersionResourceMappings`.
     ///
     /// <p>Adds the resource mapping for the draft application version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddDraftAppVersionResourceMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -447,10 +461,10 @@ pub mod fluent_builders {
                 crate::input::AddDraftAppVersionResourceMappingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -458,20 +472,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -480,20 +486,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_mappings`](Self::set_resource_mappings).
         ///
-        /// <p> Mappings used to map logical resources from the template to physical resources. You can
-        /// use the mapping type <code>CFN_STACK</code> if the application template uses
-        /// a logical stack name. Or you can map individual resources by using the mapping type
-        /// <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the
-        /// application is backed by a CloudFormation stack.</p>
-        pub fn resource_mappings(mut self, inp: impl Into<crate::model::ResourceMapping>) -> Self {
-            self.inner = self.inner.resource_mappings(inp);
+        /// <p> Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
+        pub fn resource_mappings(mut self, input: crate::model::ResourceMapping) -> Self {
+            self.inner = self.inner.resource_mappings(input);
             self
         }
-        /// <p> Mappings used to map logical resources from the template to physical resources. You can
-        /// use the mapping type <code>CFN_STACK</code> if the application template uses
-        /// a logical stack name. Or you can map individual resources by using the mapping type
-        /// <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the
-        /// application is backed by a CloudFormation stack.</p>
+        /// <p> Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
         pub fn set_resource_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceMapping>>,
@@ -504,17 +502,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateApp`.
     ///
-    /// <p>Creates a Resilience Hub application. A Resilience Hub application is a collection of Amazon Web Services
-    /// resources structured to prevent and recover Amazon Web Services application disruptions. To describe a
-    /// Resilience Hub application, you provide an application name, resources from one or more–up to
-    /// five–CloudFormation stacks, and an appropriate resiliency policy.</p>
-    ///
-    /// <p>After you create a Resilience Hub application, you publish it so that you can run a resiliency
-    /// assessment on it. You can then use recommendations from the assessment to improve resiliency
-    /// by running another assessment, comparing results, and then iterating the process until you
-    /// achieve your goals for recovery time objective (RTO) and recovery point objective
-    /// (RPO).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a Resilience Hub application. A Resilience Hub application is a collection of Amazon Web Services resources structured to prevent and recover Amazon Web Services application disruptions. To describe a Resilience Hub application, you provide an application name, resources from one or more–up to five–CloudFormation stacks, and an appropriate resiliency policy.</p>
+    /// <p>After you create a Resilience Hub application, you publish it so that you can run a resiliency assessment on it. You can then use recommendations from the assessment to improve resiliency by running another assessment, comparing results, and then iterating the process until you achieve your goals for recovery time objective (RTO) and recovery point objective (RPO).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -559,10 +549,10 @@ pub mod fluent_builders {
                 crate::input::CreateAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -571,8 +561,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the application.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the application.</p>
@@ -581,8 +571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The optional description for an app.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The optional description for an app.</p>
@@ -590,20 +580,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_arn(input);
             self
@@ -612,18 +594,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -633,14 +613,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -649,7 +627,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRecommendationTemplate`.
     ///
     /// <p>Creates a new recommendation template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecommendationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -694,10 +672,10 @@ pub mod fluent_builders {
                 crate::input::CreateRecommendationTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -710,8 +688,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
         ///
         /// <p>Identifiers for the recommendations used to create a recommendation template.</p>
-        pub fn recommendation_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommendation_ids(inp);
+        pub fn recommendation_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommendation_ids(input.into());
             self
         }
         /// <p>Identifiers for the recommendations used to create a recommendation template.</p>
@@ -724,26 +702,34 @@ pub mod fluent_builders {
         }
         /// <p>The format for the recommendation template.</p>
         /// <dl>
-        /// <dt>CfnJson</dt>
+        /// <dt>
+        /// CfnJson
+        /// </dt>
         /// <dd>
         /// <p>The template is CloudFormation JSON.</p>
         /// </dd>
-        /// <dt>CfnYaml</dt>
+        /// <dt>
+        /// CfnYaml
+        /// </dt>
         /// <dd>
         /// <p>The template is CloudFormation YAML.</p>
         /// </dd>
         /// </dl>
-        pub fn format(mut self, inp: crate::model::TemplateFormat) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::TemplateFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The format for the recommendation template.</p>
         /// <dl>
-        /// <dt>CfnJson</dt>
+        /// <dt>
+        /// CfnJson
+        /// </dt>
         /// <dd>
         /// <p>The template is CloudFormation JSON.</p>
         /// </dd>
-        /// <dt>CfnYaml</dt>
+        /// <dt>
+        /// CfnYaml
+        /// </dt>
         /// <dd>
         /// <p>The template is CloudFormation YAML.</p>
         /// </dd>
@@ -761,39 +747,51 @@ pub mod fluent_builders {
         ///
         /// <p>An array of strings that specify the recommendation template type or types.</p>
         /// <dl>
-        /// <dt>Alarm</dt>
+        /// <dt>
+        /// Alarm
+        /// </dt>
         /// <dd>
-        /// <p>The template is an <a>AlarmRecommendation</a> template.</p>
+        /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
         /// </dd>
-        /// <dt>Sop</dt>
+        /// <dt>
+        /// Sop
+        /// </dt>
         /// <dd>
-        /// <p>The template is a <a>SopRecommendation</a> template.</p>
+        /// <p>The template is a <code>SopRecommendation</code> template.</p>
         /// </dd>
-        /// <dt>Test</dt>
+        /// <dt>
+        /// Test
+        /// </dt>
         /// <dd>
-        /// <p>The template is a <a>TestRecommendation</a> template.</p>
+        /// <p>The template is a <code>TestRecommendation</code> template.</p>
         /// </dd>
         /// </dl>
         pub fn recommendation_types(
             mut self,
-            inp: impl Into<crate::model::RenderRecommendationType>,
+            input: crate::model::RenderRecommendationType,
         ) -> Self {
-            self.inner = self.inner.recommendation_types(inp);
+            self.inner = self.inner.recommendation_types(input);
             self
         }
         /// <p>An array of strings that specify the recommendation template type or types.</p>
         /// <dl>
-        /// <dt>Alarm</dt>
+        /// <dt>
+        /// Alarm
+        /// </dt>
         /// <dd>
-        /// <p>The template is an <a>AlarmRecommendation</a> template.</p>
+        /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
         /// </dd>
-        /// <dt>Sop</dt>
+        /// <dt>
+        /// Sop
+        /// </dt>
         /// <dd>
-        /// <p>The template is a <a>SopRecommendation</a> template.</p>
+        /// <p>The template is a <code>SopRecommendation</code> template.</p>
         /// </dd>
-        /// <dt>Test</dt>
+        /// <dt>
+        /// Test
+        /// </dt>
         /// <dd>
-        /// <p>The template is a <a>TestRecommendation</a> template.</p>
+        /// <p>The template is a <code>TestRecommendation</code> template.</p>
         /// </dd>
         /// </dl>
         pub fn set_recommendation_types(
@@ -803,20 +801,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recommendation_types(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -825,8 +815,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the recommendation template.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the recommendation template.</p>
@@ -834,14 +824,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -850,18 +838,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -872,8 +858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon S3 bucket that will contain the recommendation template.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket that will contain the recommendation template.</p>
@@ -885,7 +871,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateResiliencyPolicy`.
     ///
     /// <p>Creates a resiliency policy for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResiliencyPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -930,10 +916,10 @@ pub mod fluent_builders {
                 crate::input::CreateResiliencyPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -942,8 +928,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the policy</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy</p>
@@ -952,8 +938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the policy.</p>
-        pub fn policy_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_description(inp);
+        pub fn policy_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_description(input.into());
             self
         }
         /// <p>The description for the policy.</p>
@@ -964,17 +950,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_description(input);
             self
         }
-        /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-        /// data can be stored.</p>
+        /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
         pub fn data_location_constraint(
             mut self,
-            inp: crate::model::DataLocationConstraint,
+            input: crate::model::DataLocationConstraint,
         ) -> Self {
-            self.inner = self.inner.data_location_constraint(inp);
+            self.inner = self.inner.data_location_constraint(input);
             self
         }
-        /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-        /// data can be stored.</p>
+        /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
         pub fn set_data_location_constraint(
             mut self,
             input: std::option::Option<crate::model::DataLocationConstraint>,
@@ -982,14 +966,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_location_constraint(input);
             self
         }
-        /// <p>The tier for this resiliency policy, ranging from the highest severity
-        /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-        pub fn tier(mut self, inp: crate::model::ResiliencyPolicyTier) -> Self {
-            self.inner = self.inner.tier(inp);
+        /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+        pub fn tier(mut self, input: crate::model::ResiliencyPolicyTier) -> Self {
+            self.inner = self.inner.tier(input);
             self
         }
-        /// <p>The tier for this resiliency policy, ranging from the highest severity
-        /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+        /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
         pub fn set_tier(
             mut self,
             input: std::option::Option<crate::model::ResiliencyPolicyTier>,
@@ -1001,18 +983,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_policy`](Self::set_policy).
         ///
-        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO)
-        /// and recovery point objective (RPO) in seconds.</p>
+        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
         pub fn policy(
             mut self,
-            k: impl Into<crate::model::DisruptionType>,
-            v: impl Into<crate::model::FailurePolicy>,
+            k: crate::model::DisruptionType,
+            v: crate::model::FailurePolicy,
         ) -> Self {
             self.inner = self.inner.policy(k, v);
             self
         }
-        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO)
-        /// and recovery point objective (RPO) in seconds.</p>
+        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
         pub fn set_policy(
             mut self,
             input: std::option::Option<
@@ -1025,14 +1005,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy(input);
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1041,18 +1019,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1065,9 +1041,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteApp`.
     ///
-    /// <p>Deletes an AWS Resilience Hub application. This is a destructive action that can't be
-    /// undone.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an AWS Resilience Hub application. This is a destructive action that can't be undone.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1112,10 +1087,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1123,27 +1098,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>A boolean option to force the deletion of a Resilience Hub application. </p>
-        pub fn force_delete(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force_delete(inp);
+        pub fn force_delete(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_delete(input);
             self
         }
         /// <p>A boolean option to force the deletion of a Resilience Hub application. </p>
@@ -1151,14 +1118,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_force_delete(input);
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1166,9 +1131,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAppAssessment`.
     ///
-    /// <p>Deletes an AWS Resilience Hub application assessment. This is a destructive action that can't
-    /// be undone.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an AWS Resilience Hub application assessment. This is a destructive action that can't be undone.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1213,10 +1177,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1224,20 +1188,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1245,14 +1201,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_arn(input);
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1260,9 +1214,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRecommendationTemplate`.
     ///
-    /// <p>Deletes a recommendation template. This is a destructive action that can't be
-    /// undone.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a recommendation template. This is a destructive action that can't be undone.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecommendationTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1307,10 +1260,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRecommendationTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1319,8 +1272,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-        pub fn recommendation_template_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommendation_template_arn(inp);
+        pub fn recommendation_template_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.recommendation_template_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
@@ -1331,14 +1287,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recommendation_template_arn(input);
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1347,7 +1301,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResiliencyPolicy`.
     ///
     /// <p>Deletes a resiliency policy. This is a destructive action that can't be undone.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResiliencyPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1392,10 +1346,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResiliencyPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1403,32 +1357,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_arn(input);
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1437,7 +1381,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApp`.
     ///
     /// <p>Describes an AWS Resilience Hub application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1482,10 +1426,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1493,20 +1437,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -1515,7 +1451,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppAssessment`.
     ///
     /// <p>Describes an assessment for an AWS Resilience Hub application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1560,10 +1496,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAppAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1571,20 +1507,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1595,10 +1523,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAppVersionResourcesResolutionStatus`.
     ///
-    /// <p>Returns the resolution status for the specified resolution identifier for an application
-    /// version. If <code>resolutionId</code> is not specified, the current resolution status is
-    /// returned.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the resolution status for the specified resolution identifier for an application version. If <code>resolutionId</code> is not specified, the current resolution status is returned.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppVersionResourcesResolutionStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1645,10 +1571,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAppVersionResourcesResolutionStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1656,27 +1582,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(inp);
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -1685,8 +1603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for a specific resolution.</p>
-        pub fn resolution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolution_id(inp);
+        pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolution_id(input.into());
             self
         }
         /// <p>The identifier for a specific resolution.</p>
@@ -1701,7 +1619,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppVersionTemplate`.
     ///
     /// <p>Describes details about an AWS Resilience Hub </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppVersionTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1746,10 +1664,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAppVersionTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1757,27 +1675,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(inp);
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -1789,7 +1699,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDraftAppVersionResourcesImportStatus`.
     ///
     /// <p>Describes the status of importing resources to an application version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDraftAppVersionResourcesImportStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1836,10 +1746,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDraftAppVersionResourcesImportStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1847,20 +1757,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -1868,10 +1770,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeResiliencyPolicy`.
     ///
-    /// <p>Describes a specified resiliency policy for an AWS Resilience Hub application. The returned
-    /// policy object includes creation time, data location constraints, the Amazon Resource Name
-    /// (ARN) for the policy, tags, tier, and more.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes a specified resiliency policy for an AWS Resilience Hub application. The returned policy object includes creation time, data location constraints, the Amazon Resource Name (ARN) for the policy, tags, tier, and more.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResiliencyPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1916,10 +1816,10 @@ pub mod fluent_builders {
                 crate::input::DescribeResiliencyPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1927,20 +1827,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_arn(input);
             self
@@ -1948,9 +1840,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportResourcesToDraftAppVersion`.
     ///
-    /// <p>Imports resources from sources such as a CloudFormation stack, resource-groups, or application
-    /// registry app to a draft application version.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Imports resources from sources such as a CloudFormation stack, resource-groups, or application registry app to a draft application version.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportResourcesToDraftAppVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1995,10 +1886,10 @@ pub mod fluent_builders {
                 crate::input::ImportResourcesToDraftAppVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2006,20 +1897,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -2029,8 +1912,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_source_arns`](Self::set_source_arns).
         ///
         /// <p>The Amazon Resource Names (ARNs) for the resources that you want to import.</p>
-        pub fn source_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arns(inp);
+        pub fn source_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARNs) for the resources that you want to import.</p>
@@ -2045,7 +1928,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAlarmRecommendations`.
     ///
     /// <p>Lists the alarm recommendations for a AWS Resilience Hub application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAlarmRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2090,10 +1973,10 @@ pub mod fluent_builders {
                 crate::input::ListAlarmRecommendationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2101,20 +1984,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAlarmRecommendationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAlarmRecommendationsPaginator<C, M, R> {
+            crate::paginator::ListAlarmRecommendationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2123,8 +2006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2132,14 +2015,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2147,9 +2028,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAppAssessments`.
     ///
-    /// <p>Lists the assessments for an AWS Resilience Hub application. You can use request parameters to
-    /// refine the results for the response object.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the assessments for an AWS Resilience Hub application. You can use request parameters to refine the results for the response object.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppAssessments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2194,10 +2074,10 @@ pub mod fluent_builders {
                 crate::input::ListAppAssessmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2205,27 +2085,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppAssessmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAppAssessmentsPaginator<C, M, R> {
+            crate::paginator::ListAppAssessmentsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>The name for the assessment.</p>
-        pub fn assessment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_name(inp);
+        pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_name(input.into());
             self
         }
         /// <p>The name for the assessment.</p>
@@ -2241,8 +2119,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_assessment_status`](Self::set_assessment_status).
         ///
         /// <p>The current status of the assessment for the resiliency policy.</p>
-        pub fn assessment_status(mut self, inp: impl Into<crate::model::AssessmentStatus>) -> Self {
-            self.inner = self.inner.assessment_status(inp);
+        pub fn assessment_status(mut self, input: crate::model::AssessmentStatus) -> Self {
+            self.inner = self.inner.assessment_status(input);
             self
         }
         /// <p>The current status of the assessment for the resiliency policy.</p>
@@ -2254,8 +2132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current status of compliance for the resiliency policy.</p>
-        pub fn compliance_status(mut self, inp: crate::model::ComplianceStatus) -> Self {
-            self.inner = self.inner.compliance_status(inp);
+        pub fn compliance_status(mut self, input: crate::model::ComplianceStatus) -> Self {
+            self.inner = self.inner.compliance_status(input);
             self
         }
         /// <p>The current status of compliance for the resiliency policy.</p>
@@ -2266,14 +2144,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compliance_status(input);
             self
         }
-        /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the
-        /// <code>System</code>.</p>
-        pub fn invoker(mut self, inp: crate::model::AssessmentInvoker) -> Self {
-            self.inner = self.inner.invoker(inp);
+        /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
+        pub fn invoker(mut self, input: crate::model::AssessmentInvoker) -> Self {
+            self.inner = self.inner.invoker(input);
             self
         }
-        /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the
-        /// <code>System</code>.</p>
+        /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
         pub fn set_invoker(
             mut self,
             input: std::option::Option<crate::model::AssessmentInvoker>,
@@ -2281,21 +2157,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_invoker(input);
             self
         }
-        /// <p>The default is to sort by ascending <b>startTime</b>.
-        /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
-        pub fn reverse_order(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reverse_order(inp);
+        /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
-        /// <p>The default is to sort by ascending <b>startTime</b>.
-        /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+        /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reverse_order(input);
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2303,14 +2177,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2319,7 +2191,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppComponentCompliances`.
     ///
     /// <p>Lists the compliances for an AWS Resilience Hub component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppComponentCompliances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2364,10 +2236,10 @@ pub mod fluent_builders {
                 crate::input::ListAppComponentCompliancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2375,9 +2247,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppComponentCompliancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAppComponentCompliancesPaginator<C, M, R> {
+            crate::paginator::ListAppComponentCompliancesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2385,32 +2265,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2422,7 +2292,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppComponentRecommendations`.
     ///
     /// <p>Lists the recommendations for an AWS Resilience Hub component.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppComponentRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2467,10 +2337,10 @@ pub mod fluent_builders {
                 crate::input::ListAppComponentRecommendationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2478,20 +2348,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppComponentRecommendationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAppComponentRecommendationsPaginator<C, M, R> {
+            crate::paginator::ListAppComponentRecommendationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2500,8 +2370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2509,14 +2379,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2525,7 +2393,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApps`.
     ///
     /// <p>Lists your Resilience Hub applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2570,10 +2438,10 @@ pub mod fluent_builders {
                 crate::input::ListAppsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2581,9 +2449,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAppsPaginator<C, M, R> {
+            crate::paginator::ListAppsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2591,21 +2465,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The name for the one of the listed applications.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the one of the listed applications.</p>
@@ -2613,20 +2485,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -2634,10 +2498,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAppVersionResourceMappings`.
     ///
-    /// <p>Lists how the resources in an application version are mapped/sourced from. Mappings can be
-    /// physical resource identifiers, CloudFormation stacks, resource-groups, or an application registry
-    /// app.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists how the resources in an application version are mapped/sourced from. Mappings can be physical resource identifiers, CloudFormation stacks, resource-groups, or an application registry app.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppVersionResourceMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2682,10 +2544,10 @@ pub mod fluent_builders {
                 crate::input::ListAppVersionResourceMappingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2693,27 +2555,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppVersionResourceMappingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAppVersionResourceMappingsPaginator<C, M, R> {
+            crate::paginator::ListAppVersionResourceMappingsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(inp);
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -2722,8 +2584,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2731,14 +2593,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2747,7 +2607,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppVersionResources`.
     ///
     /// <p>Lists all the resources in an application version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppVersionResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2792,10 +2652,10 @@ pub mod fluent_builders {
                 crate::input::ListAppVersionResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2803,27 +2663,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppVersionResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAppVersionResourcesPaginator<C, M, R> {
+            crate::paginator::ListAppVersionResourcesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(inp);
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -2832,8 +2690,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for a specific resolution.</p>
-        pub fn resolution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolution_id(inp);
+        pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolution_id(input.into());
             self
         }
         /// <p>The identifier for a specific resolution.</p>
@@ -2845,8 +2703,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2854,14 +2712,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2870,7 +2726,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAppVersions`.
     ///
     /// <p>Lists the different versions for the Resilience Hub applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2915,10 +2771,10 @@ pub mod fluent_builders {
                 crate::input::ListAppVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2926,27 +2782,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAppVersionsPaginator<C, M, R> {
+            crate::paginator::ListAppVersionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2954,14 +2808,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2970,7 +2822,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRecommendationTemplates`.
     ///
     /// <p>Lists the recommendation templates for the Resilience Hub applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecommendationTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3015,10 +2867,10 @@ pub mod fluent_builders {
                 crate::input::ListRecommendationTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3026,20 +2878,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRecommendationTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListRecommendationTemplatesPaginator<C, M, R> {
+            crate::paginator::ListRecommendationTemplatesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3047,14 +2899,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_arn(input);
             self
         }
-        /// <p>The default is to sort by ascending <b>startTime</b>.
-        /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
-        pub fn reverse_order(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reverse_order(inp);
+        /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
-        /// <p>The default is to sort by ascending <b>startTime</b>.
-        /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
+        /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reverse_order(input);
             self
@@ -3064,11 +2914,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_status`](Self::set_status).
         ///
         /// <p>The status of the action.</p>
-        pub fn status(
-            mut self,
-            inp: impl Into<crate::model::RecommendationTemplateStatus>,
-        ) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::RecommendationTemplateStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the action.</p>
@@ -3080,8 +2927,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-        pub fn recommendation_template_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommendation_template_arn(inp);
+        pub fn recommendation_template_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.recommendation_template_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
@@ -3093,8 +2943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for one of the listed recommendation templates.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for one of the listed recommendation templates.</p>
@@ -3103,8 +2953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -3112,14 +2962,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3128,7 +2976,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResiliencyPolicies`.
     ///
     /// <p>Lists the resiliency policies for the Resilience Hub applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResiliencyPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3173,10 +3021,10 @@ pub mod fluent_builders {
                 crate::input::ListResiliencyPoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3184,9 +3032,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListResiliencyPoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListResiliencyPoliciesPaginator<C, M, R> {
+            crate::paginator::ListResiliencyPoliciesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the policy</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy</p>
@@ -3195,8 +3049,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -3204,14 +3058,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3219,9 +3071,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSopRecommendations`.
     ///
-    /// <p>Lists the standard operating procedure (SOP) recommendations for the Resilience Hub
-    /// applications.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSopRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3266,10 +3117,10 @@ pub mod fluent_builders {
                 crate::input::ListSopRecommendationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3277,9 +3128,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSopRecommendationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSopRecommendationsPaginator<C, M, R> {
+            crate::paginator::ListSopRecommendationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -3287,32 +3144,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3324,7 +3171,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSuggestedResiliencyPolicies`.
     ///
     /// <p>Lists the suggested resiliency policies for the Resilience Hub applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSuggestedResiliencyPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3369,10 +3216,10 @@ pub mod fluent_builders {
                 crate::input::ListSuggestedResiliencyPoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3380,9 +3227,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSuggestedResiliencyPoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListSuggestedResiliencyPoliciesPaginator<C, M, R> {
+            crate::paginator::ListSuggestedResiliencyPoliciesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -3390,14 +3245,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3406,7 +3259,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for your resources in your Resilience Hub applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3451,10 +3304,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3462,14 +3315,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub
-        /// application.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub application.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub
-        /// application.</p>
+        /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub application.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3478,7 +3329,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTestRecommendations`.
     ///
     /// <p>Lists the test recommendations for the Resilience Hub application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTestRecommendations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3523,10 +3374,10 @@ pub mod fluent_builders {
                 crate::input::ListTestRecommendationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3534,9 +3385,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTestRecommendationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTestRecommendationsPaginator<C, M, R> {
+            crate::paginator::ListTestRecommendationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -3544,32 +3401,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3580,10 +3427,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListUnsupportedAppVersionResources`.
     ///
-    /// <p>Lists the resources that are not currently supported in AWS Resilience Hub. An unsupported
-    /// resource is a resource that exists in the object that was used to create an app, but is not
-    /// supported by Resilience Hub.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the resources that are not currently supported in AWS Resilience Hub. An unsupported resource is a resource that exists in the object that was used to create an app, but is not supported by Resilience Hub.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUnsupportedAppVersionResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3630,10 +3475,10 @@ pub mod fluent_builders {
                 crate::input::ListUnsupportedAppVersionResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3641,27 +3486,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListUnsupportedAppVersionResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListUnsupportedAppVersionResourcesPaginator<C, M, R> {
+            crate::paginator::ListUnsupportedAppVersionResourcesPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(inp);
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -3670,8 +3518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for a specific resolution.</p>
-        pub fn resolution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolution_id(inp);
+        pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolution_id(input.into());
             self
         }
         /// <p>The identifier for a specific resolution.</p>
@@ -3683,8 +3531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -3692,14 +3540,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the specified
-        /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3708,7 +3554,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PublishAppVersion`.
     ///
     /// <p>Publishes a new version of a specific Resilience Hub application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishAppVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3753,10 +3599,10 @@ pub mod fluent_builders {
                 crate::input::PublishAppVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3764,20 +3610,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -3786,7 +3624,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutDraftAppVersionTemplate`.
     ///
     /// <p>Adds or updates the app template for a draft version of a Resilience Hub app.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDraftAppVersionTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3831,10 +3669,10 @@ pub mod fluent_builders {
                 crate::input::PutDraftAppVersionTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3842,27 +3680,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>A JSON string that contains the body of the app template.</p>
-        pub fn app_template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_template_body(inp);
+        pub fn app_template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_template_body(input.into());
             self
         }
         /// <p>A JSON string that contains the body of the app template.</p>
@@ -3877,7 +3707,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveDraftAppVersionResourceMappings`.
     ///
     /// <p>Removes resource mappings from a draft application version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveDraftAppVersionResourceMappings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3924,10 +3754,10 @@ pub mod fluent_builders {
                 crate::input::RemoveDraftAppVersionResourceMappingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3935,20 +3765,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -3958,8 +3780,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_names`](Self::set_resource_names).
         ///
         /// <p>The names of the resources to remove from the resource mappings.</p>
-        pub fn resource_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_names(inp);
+        pub fn resource_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_names(input.into());
             self
         }
         /// <p>The names of the resources to remove from the resource mappings.</p>
@@ -3975,8 +3797,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_logical_stack_names`](Self::set_logical_stack_names).
         ///
         /// <p>The names of the CloudFormation stacks to remove from the resource mappings.</p>
-        pub fn logical_stack_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logical_stack_names(inp);
+        pub fn logical_stack_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logical_stack_names(input.into());
             self
         }
         /// <p>The names of the CloudFormation stacks to remove from the resource mappings.</p>
@@ -3992,8 +3814,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_app_registry_app_names`](Self::set_app_registry_app_names).
         ///
         /// <p>The names of the registered applications to remove from the resource mappings.</p>
-        pub fn app_registry_app_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_registry_app_names(inp);
+        pub fn app_registry_app_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_registry_app_names(input.into());
             self
         }
         /// <p>The names of the registered applications to remove from the resource mappings.</p>
@@ -4009,8 +3831,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_group_names`](Self::set_resource_group_names).
         ///
         /// <p>The names of the resource groups to remove from the resource mappings.</p>
-        pub fn resource_group_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_names(inp);
+        pub fn resource_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_names(input.into());
             self
         }
         /// <p>The names of the resource groups to remove from the resource mappings.</p>
@@ -4025,7 +3847,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResolveAppVersionResources`.
     ///
     /// <p>Resolves the resources for an application version.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResolveAppVersionResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4070,10 +3892,10 @@ pub mod fluent_builders {
                 crate::input::ResolveAppVersionResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4081,27 +3903,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(inp);
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -4113,7 +3927,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartAppAssessment`.
     ///
     /// <p>Creates a new application assessment for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAppAssessment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4158,10 +3972,10 @@ pub mod fluent_builders {
                 crate::input::StartAppAssessmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4169,27 +3983,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(inp);
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -4198,8 +4004,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the assessment.</p>
-        pub fn assessment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_name(inp);
+        pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_name(input.into());
             self
         }
         /// <p>The name for the assessment.</p>
@@ -4210,14 +4016,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_name(input);
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
-        /// You should not reuse the same client token for other API requests.</p>
+        /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4226,18 +4030,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4251,7 +4053,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies one or more tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4296,10 +4098,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4308,8 +4110,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
@@ -4327,7 +4129,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the resource. Each tag consists of a key/value pair.</p>
@@ -4344,7 +4146,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4389,10 +4191,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4401,8 +4203,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
@@ -4415,8 +4217,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to remove.</p>
@@ -4431,7 +4233,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApp`.
     ///
     /// <p>Updates an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4476,10 +4278,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4487,27 +4289,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>The optional description for an app.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The optional description for an app.</p>
@@ -4515,27 +4309,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_arn(input);
             self
         }
         /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
-        pub fn clear_resiliency_policy_arn(mut self, inp: bool) -> Self {
-            self.inner = self.inner.clear_resiliency_policy_arn(inp);
+        pub fn clear_resiliency_policy_arn(mut self, input: bool) -> Self {
+            self.inner = self.inner.clear_resiliency_policy_arn(input);
             self
         }
         /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
@@ -4547,7 +4333,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateResiliencyPolicy`.
     ///
     /// <p>Updates a resiliency policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResiliencyPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4592,10 +4378,10 @@ pub mod fluent_builders {
                 crate::input::UpdateResiliencyPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4603,27 +4389,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_arn(input);
             self
         }
         /// <p>The name of the policy</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy</p>
@@ -4632,8 +4410,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the policy.</p>
-        pub fn policy_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_description(inp);
+        pub fn policy_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_description(input.into());
             self
         }
         /// <p>The description for the policy.</p>
@@ -4644,17 +4422,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_description(input);
             self
         }
-        /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-        /// data can be stored.</p>
+        /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
         pub fn data_location_constraint(
             mut self,
-            inp: crate::model::DataLocationConstraint,
+            input: crate::model::DataLocationConstraint,
         ) -> Self {
-            self.inner = self.inner.data_location_constraint(inp);
+            self.inner = self.inner.data_location_constraint(input);
             self
         }
-        /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-        /// data can be stored.</p>
+        /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
         pub fn set_data_location_constraint(
             mut self,
             input: std::option::Option<crate::model::DataLocationConstraint>,
@@ -4662,14 +4438,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_location_constraint(input);
             self
         }
-        /// <p>The tier for this resiliency policy, ranging from the highest severity
-        /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-        pub fn tier(mut self, inp: crate::model::ResiliencyPolicyTier) -> Self {
-            self.inner = self.inner.tier(inp);
+        /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+        pub fn tier(mut self, input: crate::model::ResiliencyPolicyTier) -> Self {
+            self.inner = self.inner.tier(input);
             self
         }
-        /// <p>The tier for this resiliency policy, ranging from the highest severity
-        /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+        /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
         pub fn set_tier(
             mut self,
             input: std::option::Option<crate::model::ResiliencyPolicyTier>,
@@ -4681,18 +4455,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_policy`](Self::set_policy).
         ///
-        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO)
-        /// and recovery point objective (RPO) in seconds.</p>
+        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
         pub fn policy(
             mut self,
-            k: impl Into<crate::model::DisruptionType>,
-            v: impl Into<crate::model::FailurePolicy>,
+            k: crate::model::DisruptionType,
+            v: crate::model::FailurePolicy,
         ) -> Self {
             self.inner = self.inner.policy(k, v);
             self
         }
-        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO)
-        /// and recovery point objective (RPO) in seconds.</p>
+        /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
         pub fn set_policy(
             mut self,
             input: std::option::Option<
@@ -4707,6 +4479,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

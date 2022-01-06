@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Elastic Load Balancing
@@ -180,6 +180,7 @@ where
     ///
     /// See [`DescribeListeners`](crate::client::fluent_builders::DescribeListeners) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeListeners::into_paginator).
     pub fn describe_listeners(&self) -> fluent_builders::DescribeListeners<C, M, R> {
         fluent_builders::DescribeListeners::new(self.handle.clone())
     }
@@ -196,6 +197,7 @@ where
     ///
     /// See [`DescribeLoadBalancers`](crate::client::fluent_builders::DescribeLoadBalancers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeLoadBalancers::into_paginator).
     pub fn describe_load_balancers(&self) -> fluent_builders::DescribeLoadBalancers<C, M, R> {
         fluent_builders::DescribeLoadBalancers::new(self.handle.clone())
     }
@@ -233,6 +235,7 @@ where
     ///
     /// See [`DescribeTargetGroups`](crate::client::fluent_builders::DescribeTargetGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTargetGroups::into_paginator).
     pub fn describe_target_groups(&self) -> fluent_builders::DescribeTargetGroups<C, M, R> {
         fluent_builders::DescribeTargetGroups::new(self.handle.clone())
     }
@@ -344,15 +347,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddListenerCertificates`.
     ///
-    /// <p>Adds the specified SSL server certificate to the certificate list for the specified HTTPS
-    /// or TLS listener.</p>
-    /// <p>If the certificate in already in the certificate list, the call is successful but the
-    /// certificate is not added again.</p>
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html">HTTPS
-    /// listeners</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS
-    /// listeners</a> in the <i>Network Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds the specified SSL server certificate to the certificate list for the specified HTTPS or TLS listener.</p>
+    /// <p>If the certificate in already in the certificate list, the call is successful but the certificate is not added again.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html">HTTPS listeners</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS listeners</a> in the <i>Network Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddListenerCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -397,10 +395,10 @@ pub mod fluent_builders {
                 crate::input::AddListenerCertificatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -409,8 +407,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -422,16 +420,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
-        /// <p>The certificate to add. You can specify one certificate per call. Set
-        /// <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
-        pub fn certificates(mut self, inp: impl Into<crate::model::Certificate>) -> Self {
-            self.inner = self.inner.certificates(inp);
+        /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
+            self.inner = self.inner.certificates(input);
             self
         }
-        /// <p>The certificate to add. You can specify one certificate per call. Set
-        /// <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
+        /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
@@ -442,12 +436,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddTags`.
     ///
-    /// <p>Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your
-    /// Application Load Balancers, Network Load Balancers, Gateway Load Balancers, target groups,
-    /// listeners, and rules.</p>
-    /// <p>Each tag consists of a key and an optional value. If a resource already has a tag with the
-    /// same key, <code>AddTags</code> updates its value.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, and rules.</p>
+    /// <p>Each tag consists of a key and an optional value. If a resource already has a tag with the same key, <code>AddTags</code> updates its value.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -492,10 +483,10 @@ pub mod fluent_builders {
                 crate::input::AddTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -508,8 +499,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -525,8 +516,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags.</p>
@@ -540,35 +531,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateListener`.
     ///
-    /// <p>Creates a listener for the specified Application Load Balancer, Network Load Balancer, or
-    /// Gateway Load Balancer.</p>
-    ///
-    ///
+    /// <p>Creates a listener for the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.</p>
     /// <p>For more information, see the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners for
-    /// your Application Load Balancers</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners for
-    /// your Network Load Balancers</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-listeners.html">Listeners for your
-    /// Gateway Load Balancers</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners for your Application Load Balancers</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners for your Network Load Balancers</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-listeners.html">Listeners for your Gateway Load Balancers</a> </p> </li>
     /// </ul>
-    ///
-    /// <p>This operation is idempotent, which means that it completes at most one time. If you
-    /// attempt to create multiple listeners with the same settings, each call succeeds.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple listeners with the same settings, each call succeeds.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -613,10 +584,10 @@ pub mod fluent_builders {
                 crate::input::CreateListenerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -625,8 +596,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn load_balancer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_arn(inp);
+        pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -637,20 +608,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_load_balancer_arn(input);
             self
         }
-        /// <p>The protocol for connections from clients to the load balancer. For Application Load
-        /// Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the
-        /// supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP
-        /// protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load
-        /// Balancer.</p>
-        pub fn protocol(mut self, inp: crate::model::ProtocolEnum) -> Self {
-            self.inner = self.inner.protocol(inp);
+        /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+        pub fn protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
+            self.inner = self.inner.protocol(input);
             self
         }
-        /// <p>The protocol for connections from clients to the load balancer. For Application Load
-        /// Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the
-        /// supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP
-        /// protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load
-        /// Balancer.</p>
+        /// <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::ProtocolEnum>,
@@ -658,30 +621,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protocol(input);
             self
         }
-        /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway
-        /// Load Balancer.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway
-        /// Load Balancer.</p>
+        /// <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_port(input);
             self
         }
-        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are
-        /// supported.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and
-        /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-        pub fn ssl_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssl_policy(inp);
+        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        pub fn ssl_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssl_policy(input.into());
             self
         }
-        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are
-        /// supported.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and
-        /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn set_ssl_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ssl_policy(input);
             self
@@ -690,16 +647,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
-        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
-        /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
-        pub fn certificates(mut self, inp: impl Into<crate::model::Certificate>) -> Self {
-            self.inner = self.inner.certificates(inp);
+        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
+            self.inner = self.inner.certificates(input);
             self
         }
-        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
-        /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
+        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
@@ -712,8 +665,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_default_actions`](Self::set_default_actions).
         ///
         /// <p>The actions for the default rule.</p>
-        pub fn default_actions(mut self, inp: impl Into<crate::model::Action>) -> Self {
-            self.inner = self.inner.default_actions(inp);
+        pub fn default_actions(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.default_actions(input);
             self
         }
         /// <p>The actions for the default rule.</p>
@@ -728,72 +681,28 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_alpn_policy`](Self::set_alpn_policy).
         ///
-        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You
-        /// can specify one policy name. The following are the possible values:</p>
+        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HTTP1Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Optional</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Preferred</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>None</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>HTTP1Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+        /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+        /// <li> <p> <code>None</code> </p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-        /// policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-        pub fn alpn_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alpn_policy(inp);
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        pub fn alpn_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alpn_policy(input.into());
             self
         }
-        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You
-        /// can specify one policy name. The following are the possible values:</p>
+        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HTTP1Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Optional</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Preferred</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>None</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>HTTP1Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+        /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+        /// <li> <p> <code>None</code> </p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-        /// policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn set_alpn_policy(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -806,8 +715,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the listener.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to assign to the listener.</p>
@@ -821,35 +730,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLoadBalancer`.
     ///
-    /// <p>Creates an Application Load Balancer, Network Load Balancer, or Gateway Load
-    /// Balancer.</p>
-    ///
-    ///
-    ///
+    /// <p>Creates an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.</p>
     /// <p>For more information, see the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application Load Balancers</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network Load
-    /// Balancers</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html">Gateway Load
-    /// Balancers</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application Load Balancers</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network Load Balancers</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html">Gateway Load Balancers</a> </p> </li>
     /// </ul>
-    ///
-    /// <p>This operation is idempotent, which means that it completes at most one time. If you
-    /// attempt to create multiple load balancers with the same settings, each call succeeds.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple load balancers with the same settings, each call succeeds.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -894,10 +783,10 @@ pub mod fluent_builders {
                 crate::input::CreateLoadBalancerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -906,17 +795,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the load balancer.</p>
-        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must
-        /// contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must
-        /// not begin with "internal-".</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the load balancer.</p>
-        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must
-        /// contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must
-        /// not begin with "internal-".</p>
+        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -925,32 +810,22 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability
-        /// Zones.</p>
-        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability
-        /// Zones.</p>
-        pub fn subnets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnets(inp);
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnets(input.into());
             self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability
-        /// Zones.</p>
-        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability
-        /// Zones.</p>
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -962,38 +837,22 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You
-        /// can specify one Elastic IP address per subnet if you need static IP addresses for your
-        /// internet-facing load balancer. For internal load balancers, you can specify one private IP
-        /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
-        /// can specify one IPv6 address per subnet.</p>
-        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You
-        /// cannot specify Elastic IP addresses for your subnets.</p>
-        pub fn subnet_mappings(mut self, inp: impl Into<crate::model::SubnetMapping>) -> Self {
-            self.inner = self.inner.subnet_mappings(inp);
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
+            self.inner = self.inner.subnet_mappings(input);
             self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You
-        /// can specify one Elastic IP address per subnet if you need static IP addresses for your
-        /// internet-facing load balancer. For internal load balancers, you can specify one private IP
-        /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
-        /// can specify one IPv6 address per subnet.</p>
-        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You
-        /// cannot specify Elastic IP addresses for your subnets.</p>
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+        /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         pub fn set_subnet_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
@@ -1006,8 +865,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_groups(inp);
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_groups(input.into());
             self
         }
         /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
@@ -1018,28 +877,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_groups(input);
             self
         }
-        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
-        /// Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes.
-        /// Therefore, Internet-facing load balancers can route requests from clients over the
-        /// internet.</p>
-        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an
-        /// internal load balancer is publicly resolvable to the private IP addresses of the nodes.
-        /// Therefore, internal load balancers can route requests only from clients with access to the VPC
-        /// for the load balancer.</p>
+        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
+        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
         /// <p>The default is an Internet-facing load balancer.</p>
         /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
-        pub fn scheme(mut self, inp: crate::model::LoadBalancerSchemeEnum) -> Self {
-            self.inner = self.inner.scheme(inp);
+        pub fn scheme(mut self, input: crate::model::LoadBalancerSchemeEnum) -> Self {
+            self.inner = self.inner.scheme(input);
             self
         }
-        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
-        /// Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes.
-        /// Therefore, Internet-facing load balancers can route requests from clients over the
-        /// internet.</p>
-        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an
-        /// internal load balancer is publicly resolvable to the private IP addresses of the nodes.
-        /// Therefore, internal load balancers can route requests only from clients with access to the VPC
-        /// for the load balancer.</p>
+        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
+        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
         /// <p>The default is an Internet-facing load balancer.</p>
         /// <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
         pub fn set_scheme(
@@ -1054,8 +901,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the load balancer.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to assign to the load balancer.</p>
@@ -1067,8 +914,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of load balancer. The default is <code>application</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::LoadBalancerTypeEnum) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::LoadBalancerTypeEnum) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of load balancer. The default is <code>application</code>.</p>
@@ -1079,16 +926,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
-        /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-        /// addresses). </p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
+        pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(input);
             self
         }
-        /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
-        /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-        /// addresses). </p>
+        /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -1096,14 +939,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ip_address_type(input);
             self
         }
-        /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP
-        /// pool).</p>
-        pub fn customer_owned_ipv4_pool(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_owned_ipv4_pool(inp);
+        /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
+        pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_owned_ipv4_pool(input.into());
             self
         }
-        /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP
-        /// pool).</p>
+        /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
         pub fn set_customer_owned_ipv4_pool(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1114,13 +955,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRule`.
     ///
-    /// <p>Creates a rule for the specified listener. The listener must be associated with an
-    /// Application Load Balancer.</p>
-    /// <p>Each rule consists of a priority, one or more actions, and one or more conditions. Rules
-    /// are evaluated in priority order, from the lowest value to the highest value. When the
-    /// conditions for a rule are met, its actions are performed. If the conditions for no rules are
-    /// met, the actions for the default rule are performed. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener rules</a> in the <i>Application Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.</p>
+    /// <p>Each rule consists of a priority, one or more actions, and one or more conditions. Rules are evaluated in priority order, from the lowest value to the highest value. When the conditions for a rule are met, its actions are performed. If the conditions for no rules are met, the actions for the default rule are performed. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener rules</a> in the <i>Application Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1165,10 +1002,10 @@ pub mod fluent_builders {
                 crate::input::CreateRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1177,8 +1014,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -1191,8 +1028,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
         ///
         /// <p>The conditions.</p>
-        pub fn conditions(mut self, inp: impl Into<crate::model::RuleCondition>) -> Self {
-            self.inner = self.inner.conditions(inp);
+        pub fn conditions(mut self, input: crate::model::RuleCondition) -> Self {
+            self.inner = self.inner.conditions(input);
             self
         }
         /// <p>The conditions.</p>
@@ -1204,8 +1041,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
-        pub fn priority(mut self, inp: i32) -> Self {
-            self.inner = self.inner.priority(inp);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
@@ -1218,8 +1055,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::Action>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>The actions.</p>
@@ -1235,8 +1072,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the rule.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to assign to the rule.</p>
@@ -1251,34 +1088,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTargetGroup`.
     ///
     /// <p>Creates a target group.</p>
-    ///
-    ///
-    ///
     /// <p>For more information, see the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
-    /// groups for your Application Load Balancers</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target groups
-    /// for your Network Load Balancers</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html">Target groups for your
-    /// Gateway Load Balancers</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target groups for your Application Load Balancers</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target groups for your Network Load Balancers</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html">Target groups for your Gateway Load Balancers</a> </p> </li>
     /// </ul>
-    ///
-    /// <p>This operation is idempotent, which means that it completes at most one time. If you
-    /// attempt to create multiple target groups with the same settings, each call succeeds.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple target groups with the same settings, each call succeeds.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTargetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1323,10 +1140,10 @@ pub mod fluent_builders {
                 crate::input::CreateTargetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1335,35 +1152,23 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the target group.</p>
-        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must
-        /// contain only alphanumeric characters or hyphens, and must not begin or end with a
-        /// hyphen.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the target group.</p>
-        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must
-        /// contain only alphanumeric characters or hyphens, and must not begin or end with a
-        /// hyphen.</p>
+        /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers,
-        /// the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported
-        /// protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is
-        /// GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a
-        /// Lambda function, this parameter does not apply.</p>
-        pub fn protocol(mut self, inp: crate::model::ProtocolEnum) -> Self {
-            self.inner = self.inner.protocol(inp);
+        /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
+        pub fn protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
+            self.inner = self.inner.protocol(input);
             self
         }
-        /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers,
-        /// the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported
-        /// protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is
-        /// GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a
-        /// Lambda function, this parameter does not apply.</p>
+        /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::ProtocolEnum>,
@@ -1371,16 +1176,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protocol(input);
             self
         }
-        /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to
-        /// targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The
-        /// default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
-        pub fn protocol_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.protocol_version(inp);
+        /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
+        pub fn protocol_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.protocol_version(input.into());
             self
         }
-        /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to
-        /// targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The
-        /// default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
+        /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
         pub fn set_protocol_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1388,46 +1189,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protocol_version(input);
             self
         }
-        /// <p>The port on which the targets receive traffic. This port is used unless you specify a port
-        /// override when registering the target. If the target is a Lambda function, this parameter does
-        /// not apply. If the protocol is GENEVE, the supported port is 6081.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        /// <p>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply. If the protocol is GENEVE, the supported port is 6081.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        /// <p>The port on which the targets receive traffic. This port is used unless you specify a port
-        /// override when registering the target. If the target is a Lambda function, this parameter does
-        /// not apply. If the protocol is GENEVE, the supported port is 6081.</p>
+        /// <p>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply. If the protocol is GENEVE, the supported port is 6081.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_port(input);
             self
         }
-        /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function,
-        /// this parameter does not apply. Otherwise, this parameter is required.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.</p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
-        /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function,
-        /// this parameter does not apply. Otherwise, this parameter is required.</p>
+        /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_vpc_id(input);
             self
         }
-        /// <p>The protocol the load balancer uses when performing health checks on targets. For
-        /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
-        /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
-        /// protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are
-        /// not supported for health checks.</p>
-        pub fn health_check_protocol(mut self, inp: crate::model::ProtocolEnum) -> Self {
-            self.inner = self.inner.health_check_protocol(inp);
+        /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+        pub fn health_check_protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
+            self.inner = self.inner.health_check_protocol(input);
             self
         }
-        /// <p>The protocol the load balancer uses when performing health checks on targets. For
-        /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
-        /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
-        /// protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are
-        /// not supported for health checks.</p>
+        /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::ProtocolEnum>,
@@ -1435,18 +1222,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_protocol(input);
             self
         }
-        /// <p>The port the load balancer uses when performing health checks on targets. If the protocol
-        /// is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is
-        /// the port on which each target receives traffic from the load balancer. If the protocol is
-        /// GENEVE, the default is port 80.</p>
-        pub fn health_check_port(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_port(inp);
+        /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
+        pub fn health_check_port(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_port(input.into());
             self
         }
-        /// <p>The port the load balancer uses when performing health checks on targets. If the protocol
-        /// is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is
-        /// the port on which each target receives traffic from the load balancer. If the protocol is
-        /// GENEVE, the default is port 80.</p>
+        /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
         pub fn set_health_check_port(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1454,34 +1235,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_port(input);
             self
         }
-        /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>,
-        /// health checks are disabled by default but can be enabled. If the target type is
-        /// <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always
-        /// enabled and cannot be disabled.</p>
-        pub fn health_check_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.health_check_enabled(inp);
+        /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
+        pub fn health_check_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.health_check_enabled(input);
             self
         }
-        /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>,
-        /// health checks are disabled by default but can be enabled. If the target type is
-        /// <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always
-        /// enabled and cannot be disabled.</p>
+        /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
         pub fn set_health_check_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_health_check_enabled(input);
             self
         }
         /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
         /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-        /// <p>[GRPC protocol version] The path of a custom health check method with the format
-        /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-        pub fn health_check_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_path(inp);
+        /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+        pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_path(input.into());
             self
         }
         /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
         /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-        /// <p>[GRPC protocol version] The path of a custom health check method with the format
-        /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+        /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1489,20 +1262,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_path(input);
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
-        /// If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30
-        /// seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the
-        /// target group protocol is GENEVE, the default is 10 seconds. If the target type is
-        /// <code>lambda</code>, the default is 35 seconds.</p>
-        pub fn health_check_interval_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_interval_seconds(inp);
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+        pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.health_check_interval_seconds(input);
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
-        /// If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30
-        /// seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the
-        /// target group protocol is GENEVE, the default is 10 seconds. If the target type is
-        /// <code>lambda</code>, the default is 35 seconds.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
         pub fn set_health_check_interval_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -1510,121 +1275,63 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_interval_seconds(input);
             self
         }
-        /// <p>The amount of time, in seconds, during which no response from a target means a failed
-        /// health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5
-        /// seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for
-        /// HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is
-        /// <code>lambda</code>, the default is 30 seconds.</p>
-        pub fn health_check_timeout_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_timeout_seconds(inp);
+        /// <p>The amount of time, in seconds, during which no response from a target means a failed health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
+        pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.health_check_timeout_seconds(input);
             self
         }
-        /// <p>The amount of time, in seconds, during which no response from a target means a failed
-        /// health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5
-        /// seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for
-        /// HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is
-        /// <code>lambda</code>, the default is 30 seconds.</p>
+        /// <p>The amount of time, in seconds, during which no response from a target means a failed health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
         pub fn set_health_check_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_health_check_timeout_seconds(input);
             self
         }
-        /// <p>The number of consecutive health checks successes required before considering an unhealthy
-        /// target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For
-        /// target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is
-        /// <code>lambda</code>, the default is 5.</p>
-        pub fn healthy_threshold_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.healthy_threshold_count(inp);
+        /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
+        pub fn healthy_threshold_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.healthy_threshold_count(input);
             self
         }
-        /// <p>The number of consecutive health checks successes required before considering an unhealthy
-        /// target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For
-        /// target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is
-        /// <code>lambda</code>, the default is 5.</p>
+        /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
         pub fn set_healthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_healthy_threshold_count(input);
             self
         }
-        /// <p>The number of consecutive health check failures required before considering a target
-        /// unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target
-        /// group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If
-        /// the target group protocol is GENEVE, the default is 3. If the target type is
-        /// <code>lambda</code>, the default is 2.</p>
-        pub fn unhealthy_threshold_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.unhealthy_threshold_count(inp);
+        /// <p>The number of consecutive health check failures required before considering a target unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 2.</p>
+        pub fn unhealthy_threshold_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.unhealthy_threshold_count(input);
             self
         }
-        /// <p>The number of consecutive health check failures required before considering a target
-        /// unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target
-        /// group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If
-        /// the target group protocol is GENEVE, the default is 3. If the target type is
-        /// <code>lambda</code>, the default is 2.</p>
+        /// <p>The number of consecutive health check failures required before considering a target unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 2.</p>
         pub fn set_unhealthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_unhealthy_threshold_count(input);
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-        /// response from a target.</p>
-        pub fn matcher(mut self, inp: crate::model::Matcher) -> Self {
-            self.inner = self.inner.matcher(inp);
+        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
+        pub fn matcher(mut self, input: crate::model::Matcher) -> Self {
+            self.inner = self.inner.matcher(input);
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-        /// response from a target.</p>
+        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
         pub fn set_matcher(mut self, input: std::option::Option<crate::model::Matcher>) -> Self {
             self.inner = self.inner.set_matcher(input);
             self
         }
-        /// <p>The type of target that you must specify when registering targets with this target group.
-        /// You can't specify targets for a target group using more than one target type.</p>
+        /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>instance</code> - Register targets by instance ID. This is the default
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ip</code> - Register targets by IP address. You can specify IP addresses from
-        /// the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range
-        /// (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10).
-        /// You can't specify publicly routable IP addresses.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>lambda</code> - Register a single Lambda function as a target.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>alb</code> - Register a single Application Load Balancer as a target.</p>
-        /// </li>
+        /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
+        /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
+        /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
+        /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
         /// </ul>
-        pub fn target_type(mut self, inp: crate::model::TargetTypeEnum) -> Self {
-            self.inner = self.inner.target_type(inp);
+        pub fn target_type(mut self, input: crate::model::TargetTypeEnum) -> Self {
+            self.inner = self.inner.target_type(input);
             self
         }
-        /// <p>The type of target that you must specify when registering targets with this target group.
-        /// You can't specify targets for a target group using more than one target type.</p>
+        /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>instance</code> - Register targets by instance ID. This is the default
-        /// value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ip</code> - Register targets by IP address. You can specify IP addresses from
-        /// the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range
-        /// (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10).
-        /// You can't specify publicly routable IP addresses.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>lambda</code> - Register a single Lambda function as a target.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>alb</code> - Register a single Application Load Balancer as a target.</p>
-        /// </li>
+        /// <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>
+        /// <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
+        /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
+        /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
         /// </ul>
         pub fn set_target_type(
             mut self,
@@ -1638,8 +1345,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the target group.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to assign to the target group.</p>
@@ -1650,16 +1357,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The type of IP address used for this target group. The possible values are
-        /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
-        /// the IP address type defaults to <code>ipv4</code>.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::TargetGroupIpAddressTypeEnum) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+        pub fn ip_address_type(
+            mut self,
+            input: crate::model::TargetGroupIpAddressTypeEnum,
+        ) -> Self {
+            self.inner = self.inner.ip_address_type(input);
             self
         }
-        /// <p>The type of IP address used for this target group. The possible values are
-        /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
-        /// the IP address type defaults to <code>ipv4</code>.</p>
+        /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
@@ -1671,9 +1377,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteListener`.
     ///
     /// <p>Deletes the specified listener.</p>
-    /// <p>Alternatively, your listener is deleted when you delete the load balancer to which it is
-    /// attached.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Alternatively, your listener is deleted when you delete the load balancer to which it is attached.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1718,10 +1423,10 @@ pub mod fluent_builders {
                 crate::input::DeleteListenerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1730,8 +1435,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -1742,14 +1447,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteLoadBalancer`.
     ///
-    /// <p>Deletes the specified Application Load Balancer, Network Load Balancer, or Gateway Load
-    /// Balancer. Deleting a load balancer also deletes its listeners.</p>
-    /// <p>You can't delete a load balancer if deletion protection is enabled. If the load balancer
-    /// does not exist or has already been deleted, the call succeeds.</p>
-    /// <p>Deleting a load balancer does not affect its registered targets. For example, your EC2
-    /// instances continue to run and are still registered to their target groups. If you no longer
-    /// need these EC2 instances, you can stop or terminate them.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer. Deleting a load balancer also deletes its listeners.</p>
+    /// <p>You can't delete a load balancer if deletion protection is enabled. If the load balancer does not exist or has already been deleted, the call succeeds.</p>
+    /// <p>Deleting a load balancer does not affect its registered targets. For example, your EC2 instances continue to run and are still registered to their target groups. If you no longer need these EC2 instances, you can stop or terminate them.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1794,10 +1495,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLoadBalancerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1806,8 +1507,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn load_balancer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_arn(inp);
+        pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -1823,7 +1524,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the specified rule.</p>
     /// <p>You can't delete the default rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1868,10 +1569,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1880,8 +1581,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-        pub fn rule_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_arn(inp);
+        pub fn rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -1893,11 +1594,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTargetGroup`.
     ///
     /// <p>Deletes the specified target group.</p>
-    /// <p>You can delete a target group if it is not referenced by any actions. Deleting a target
-    /// group also deletes any associated health checks. Deleting a target group does not affect its
-    /// registered targets. For example, any EC2 instances continue to run until you stop or terminate
-    /// them.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can delete a target group if it is not referenced by any actions. Deleting a target group also deletes any associated health checks. Deleting a target group does not affect its registered targets. For example, any EC2 instances continue to run until you stop or terminate them.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTargetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1942,10 +1640,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTargetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1954,8 +1652,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn target_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_arn(inp);
+        pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -1969,9 +1667,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterTargets`.
     ///
-    /// <p>Deregisters the specified targets from the specified target group. After the targets are
-    /// deregistered, they no longer receive traffic from the load balancer.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deregisters the specified targets from the specified target group. After the targets are deregistered, they no longer receive traffic from the load balancer.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2016,10 +1713,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterTargetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2028,8 +1725,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn target_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_arn(inp);
+        pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -2044,14 +1741,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets. If you specified a port override when you registered a target, you must
-        /// specify both the target ID and the port when you deregister it.</p>
-        pub fn targets(mut self, inp: impl Into<crate::model::TargetDescription>) -> Self {
-            self.inner = self.inner.targets(inp);
+        /// <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
+        pub fn targets(mut self, input: crate::model::TargetDescription) -> Self {
+            self.inner = self.inner.targets(input);
             self
         }
-        /// <p>The targets. If you specified a port override when you registered a target, you must
-        /// specify both the target ID and the port when you deregister it.</p>
+        /// <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetDescription>>,
@@ -2062,30 +1757,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccountLimits`.
     ///
-    /// <p>Describes the current Elastic Load Balancing resource limits for your Amazon Web Services
-    /// account.</p>
+    /// <p>Describes the current Elastic Load Balancing resource limits for your Amazon Web Services account.</p>
     /// <p>For more information, see the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas for your
-    /// Application Load Balancers</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas for your
-    /// Network Load Balancers</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/quotas-limits.html">Quotas for your Gateway
-    /// Load Balancers</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas for your Application Load Balancers</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas for your Network Load Balancers</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/quotas-limits.html">Quotas for your Gateway Load Balancers</a> </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountLimits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2130,10 +1809,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAccountLimitsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2141,21 +1820,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
@@ -2166,15 +1843,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeListenerCertificates`.
     ///
-    /// <p>Describes the default certificate and the certificate list for the specified HTTPS or TLS
-    /// listener.</p>
-    /// <p>If the default certificate is also in the certificate list, it appears twice in the
-    /// results (once with <code>IsDefault</code> set to true and once with <code>IsDefault</code> set
-    /// to false).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL certificates</a> in the <i>Application Load Balancers Guide</i> or
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#tls-listener-certificate">Server certificates</a> in the <i>Network Load Balancers
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the default certificate and the certificate list for the specified HTTPS or TLS listener.</p>
+    /// <p>If the default certificate is also in the certificate list, it appears twice in the results (once with <code>IsDefault</code> set to true and once with <code>IsDefault</code> set to false).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL certificates</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#tls-listener-certificate">Server certificates</a> in the <i>Network Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeListenerCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2219,10 +1891,10 @@ pub mod fluent_builders {
                 crate::input::DescribeListenerCertificatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2231,8 +1903,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Names (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the listener.</p>
@@ -2240,21 +1912,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_listener_arn(input);
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
@@ -2265,10 +1935,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeListeners`.
     ///
-    /// <p>Describes the specified listeners or the listeners for the specified Application Load
-    /// Balancer, Network Load Balancer, or Gateway Load Balancer. You must specify either a load
-    /// balancer or one or more listeners.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the specified listeners or the listeners for the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer. You must specify either a load balancer or one or more listeners.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeListeners<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2313,10 +1981,10 @@ pub mod fluent_builders {
                 crate::input::DescribeListenersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2324,9 +1992,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeListenersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeListenersPaginator<C, M, R> {
+            crate::paginator::DescribeListenersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn load_balancer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_arn(inp);
+        pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -2342,8 +2016,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_listener_arns`](Self::set_listener_arns).
         ///
         /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-        pub fn listener_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arns(inp);
+        pub fn listener_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
@@ -2354,21 +2028,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_listener_arns(input);
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
@@ -2379,31 +2051,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLoadBalancerAttributes`.
     ///
-    /// <p>Describes the attributes for the specified Application Load Balancer, Network Load
-    /// Balancer, or Gateway Load Balancer.</p>
-    ///
+    /// <p>Describes the attributes for the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.</p>
     /// <p>For more information, see the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load balancer attributes</a> in the <i>Application Load Balancers
-    /// Guide</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load balancer attributes</a> in the <i>Network Load Balancers
-    /// Guide</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html#load-balancer-attributes">Load balancer attributes</a> in the <i>Gateway Load Balancers
-    /// Guide</i>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load balancer attributes</a> in the <i>Application Load Balancers Guide</i> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load balancer attributes</a> in the <i>Network Load Balancers Guide</i> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html#load-balancer-attributes">Load balancer attributes</a> in the <i>Gateway Load Balancers Guide</i> </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancerAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2448,10 +2103,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLoadBalancerAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2460,8 +2115,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn load_balancer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_arn(inp);
+        pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -2476,7 +2131,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoadBalancers`.
     ///
     /// <p>Describes the specified load balancers or all of your load balancers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2521,10 +2176,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLoadBalancersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2532,18 +2187,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeLoadBalancersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeLoadBalancersPaginator<C, M, R> {
+            crate::paginator::DescribeLoadBalancersPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `LoadBalancerArns`.
         ///
         /// To override the contents of this collection use [`set_load_balancer_arns`](Self::set_load_balancer_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load
-        /// balancers in a single call.</p>
-        pub fn load_balancer_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_arns(inp);
+        /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
+        pub fn load_balancer_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load
-        /// balancers in a single call.</p>
+        /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
         pub fn set_load_balancer_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2556,8 +2215,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The names of the load balancers.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The names of the load balancers.</p>
@@ -2568,21 +2227,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_names(input);
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
@@ -2593,9 +2250,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRules`.
     ///
-    /// <p>Describes the specified rules or the rules for the specified listener. You must specify
-    /// either a listener or one or more rules.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the specified rules or the rules for the specified listener. You must specify either a listener or one or more rules.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2640,10 +2296,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2652,8 +2308,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -2666,8 +2322,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rule_arns`](Self::set_rule_arns).
         ///
         /// <p>The Amazon Resource Names (ARN) of the rules.</p>
-        pub fn rule_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_arns(inp);
+        pub fn rule_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the rules.</p>
@@ -2678,21 +2334,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_arns(input);
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
@@ -2704,9 +2358,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSSLPolicies`.
     ///
     /// <p>Describes the specified policies or all policies used for SSL negotiation.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSSLPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2751,10 +2404,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSslPoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2767,8 +2420,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The names of the policies.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The names of the policies.</p>
@@ -2779,21 +2432,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_names(input);
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
@@ -2801,14 +2452,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_page_size(input);
             self
         }
-        /// <p> The type of load balancer. The default lists the SSL policies for all load
-        /// balancers.</p>
-        pub fn load_balancer_type(mut self, inp: crate::model::LoadBalancerTypeEnum) -> Self {
-            self.inner = self.inner.load_balancer_type(inp);
+        /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
+        pub fn load_balancer_type(mut self, input: crate::model::LoadBalancerTypeEnum) -> Self {
+            self.inner = self.inner.load_balancer_type(input);
             self
         }
-        /// <p> The type of load balancer. The default lists the SSL policies for all load
-        /// balancers.</p>
+        /// <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
         pub fn set_load_balancer_type(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerTypeEnum>,
@@ -2819,10 +2468,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTags`.
     ///
-    /// <p>Describes the tags for the specified Elastic Load Balancing resources. You can describe
-    /// the tags for one or more Application Load Balancers, Network Load Balancers, Gateway Load
-    /// Balancers, target groups, listeners, or rules.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the tags for the specified Elastic Load Balancing resources. You can describe the tags for one or more Application Load Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, or rules.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2867,10 +2514,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2882,14 +2529,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a
-        /// single call.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a
-        /// single call.</p>
+        /// <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2903,26 +2548,11 @@ pub mod fluent_builders {
     /// <p>Describes the attributes for the specified target group.</p>
     /// <p>For more information, see the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target group attributes</a> in the <i>Application Load Balancers
-    /// Guide</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target group attributes</a> in the <i>Network Load Balancers
-    /// Guide</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#target-group-attributes">Target group attributes</a> in the <i>Gateway Load Balancers
-    /// Guide</i>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target group attributes</a> in the <i>Application Load Balancers Guide</i> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target group attributes</a> in the <i>Network Load Balancers Guide</i> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#target-group-attributes">Target group attributes</a> in the <i>Gateway Load Balancers Guide</i> </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTargetGroupAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2967,10 +2597,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTargetGroupAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2979,8 +2609,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn target_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_arn(inp);
+        pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -2994,11 +2624,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTargetGroups`.
     ///
-    /// <p>Describes the specified target groups or all of your target groups. By default, all target
-    /// groups are described. Alternatively, you can specify one of the following to filter the
-    /// results: the ARN of the load balancer, the names of one or more target groups, or the ARNs of
-    /// one or more target groups.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the specified target groups or all of your target groups. By default, all target groups are described. Alternatively, you can specify one of the following to filter the results: the ARN of the load balancer, the names of one or more target groups, or the ARNs of one or more target groups.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTargetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3043,10 +2670,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTargetGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3054,9 +2681,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeTargetGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeTargetGroupsPaginator<C, M, R> {
+            crate::paginator::DescribeTargetGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn load_balancer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_arn(inp);
+        pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -3072,8 +2705,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_target_group_arns`](Self::set_target_group_arns).
         ///
         /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
-        pub fn target_group_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_arns(inp);
+        pub fn target_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the target groups.</p>
@@ -3089,8 +2722,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The names of the target groups.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The names of the target groups.</p>
@@ -3101,21 +2734,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_names(input);
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The maximum number of results to return with this call.</p>
@@ -3127,7 +2758,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTargetHealth`.
     ///
     /// <p>Describes the health of the specified targets or all of your targets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTargetHealth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3172,10 +2803,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTargetHealthInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3184,8 +2815,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn target_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_arn(inp);
+        pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -3201,8 +2832,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets.</p>
-        pub fn targets(mut self, inp: impl Into<crate::model::TargetDescription>) -> Self {
-            self.inner = self.inner.targets(inp);
+        pub fn targets(mut self, input: crate::model::TargetDescription) -> Self {
+            self.inner = self.inner.targets(input);
             self
         }
         /// <p>The targets.</p>
@@ -3216,15 +2847,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyListener`.
     ///
-    /// <p>Replaces the specified properties of the specified listener. Any properties that you do
-    /// not specify remain unchanged.</p>
-    /// <p>Changing the protocol from HTTPS to HTTP, or from TLS to TCP, removes the security policy
-    /// and default certificate properties. If you change the protocol from HTTP to HTTPS, or from TCP
-    /// to TLS, you must add the security policy and default certificate properties.</p>
-    /// <p>To add an item to a list, remove an item from a list, or update an item in a list, you
-    /// must provide the entire list. For example, to add an action, specify a list with the current
-    /// actions plus the new action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Replaces the specified properties of the specified listener. Any properties that you do not specify remain unchanged.</p>
+    /// <p>Changing the protocol from HTTPS to HTTP, or from TLS to TCP, removes the security policy and default certificate properties. If you change the protocol from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and default certificate properties.</p>
+    /// <p>To add an item to a list, remove an item from a list, or update an item in a list, you must provide the entire list. For example, to add an action, specify a list with the current actions plus the new action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyListener<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3269,10 +2895,10 @@ pub mod fluent_builders {
                 crate::input::ModifyListenerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3281,8 +2907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -3290,30 +2916,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_listener_arn(input);
             self
         }
-        /// <p>The port for connections from clients to the load balancer. You cannot specify a port for
-        /// a Gateway Load Balancer.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.port(inp);
+        /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
-        /// <p>The port for connections from clients to the load balancer. You cannot specify a port for
-        /// a Gateway Load Balancer.</p>
+        /// <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_port(input);
             self
         }
-        /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers
-        /// support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and
-        /// TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is
-        /// enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
-        pub fn protocol(mut self, inp: crate::model::ProtocolEnum) -> Self {
-            self.inner = self.inner.protocol(inp);
+        /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+        pub fn protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
+            self.inner = self.inner.protocol(input);
             self
         }
-        /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers
-        /// support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and
-        /// TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is
-        /// enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+        /// <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::ProtocolEnum>,
@@ -3321,18 +2939,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protocol(input);
             self
         }
-        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are
-        /// supported.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or
-        /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-        pub fn ssl_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssl_policy(inp);
+        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        pub fn ssl_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssl_policy(input.into());
             self
         }
-        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are
-        /// supported.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or
-        /// <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn set_ssl_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ssl_policy(input);
             self
@@ -3341,16 +2955,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
-        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
-        /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
-        pub fn certificates(mut self, inp: impl Into<crate::model::Certificate>) -> Self {
-            self.inner = self.inner.certificates(inp);
+        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
+            self.inner = self.inner.certificates(input);
             self
         }
-        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
-        /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
+        /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
@@ -3363,8 +2973,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_default_actions`](Self::set_default_actions).
         ///
         /// <p>The actions for the default rule.</p>
-        pub fn default_actions(mut self, inp: impl Into<crate::model::Action>) -> Self {
-            self.inner = self.inner.default_actions(inp);
+        pub fn default_actions(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.default_actions(input);
             self
         }
         /// <p>The actions for the default rule.</p>
@@ -3379,72 +2989,28 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_alpn_policy`](Self::set_alpn_policy).
         ///
-        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You
-        /// can specify one policy name. The following are the possible values:</p>
+        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HTTP1Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Optional</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Preferred</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>None</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>HTTP1Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+        /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+        /// <li> <p> <code>None</code> </p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-        /// policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-        pub fn alpn_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alpn_policy(inp);
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        pub fn alpn_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alpn_policy(input.into());
             self
         }
-        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You
-        /// can specify one policy name. The following are the possible values:</p>
+        /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HTTP1Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Only</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Optional</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HTTP2Preferred</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>None</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>HTTP1Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Only</code> </p> </li>
+        /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+        /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+        /// <li> <p> <code>None</code> </p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-        /// policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
         pub fn set_alpn_policy(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3455,11 +3021,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyLoadBalancerAttributes`.
     ///
-    /// <p>Modifies the specified attributes of the specified Application Load Balancer, Network Load
-    /// Balancer, or Gateway Load Balancer.</p>
-    /// <p>If any of the specified attributes can't be modified as requested, the call fails. Any
-    /// existing attributes that you do not modify retain their current values.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the specified attributes of the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.</p>
+    /// <p>If any of the specified attributes can't be modified as requested, the call fails. Any existing attributes that you do not modify retain their current values.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyLoadBalancerAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3504,10 +3068,10 @@ pub mod fluent_builders {
                 crate::input::ModifyLoadBalancerAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3516,8 +3080,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn load_balancer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_arn(inp);
+        pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -3533,8 +3097,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The load balancer attributes.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::LoadBalancerAttribute>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, input: crate::model::LoadBalancerAttribute) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
         /// <p>The load balancer attributes.</p>
@@ -3548,12 +3112,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyRule`.
     ///
-    /// <p>Replaces the specified properties of the specified rule. Any properties that you do not
-    /// specify are unchanged.</p>
-    /// <p>To add an item to a list, remove an item from a list, or update an item in a list, you
-    /// must provide the entire list. For example, to add an action, specify a list with the current
-    /// actions plus the new action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Replaces the specified properties of the specified rule. Any properties that you do not specify are unchanged.</p>
+    /// <p>To add an item to a list, remove an item from a list, or update an item in a list, you must provide the entire list. For example, to add an action, specify a list with the current actions plus the new action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3598,10 +3159,10 @@ pub mod fluent_builders {
                 crate::input::ModifyRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3610,8 +3171,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-        pub fn rule_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_arn(inp);
+        pub fn rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -3624,8 +3185,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
         ///
         /// <p>The conditions.</p>
-        pub fn conditions(mut self, inp: impl Into<crate::model::RuleCondition>) -> Self {
-            self.inner = self.inner.conditions(inp);
+        pub fn conditions(mut self, input: crate::model::RuleCondition) -> Self {
+            self.inner = self.inner.conditions(input);
             self
         }
         /// <p>The conditions.</p>
@@ -3641,8 +3202,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::Action>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>The actions.</p>
@@ -3656,9 +3217,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyTargetGroup`.
     ///
-    /// <p>Modifies the health checks used when evaluating the health state of the targets in the
-    /// specified target group.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the health checks used when evaluating the health state of the targets in the specified target group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyTargetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3703,10 +3263,10 @@ pub mod fluent_builders {
                 crate::input::ModifyTargetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3715,8 +3275,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn target_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_arn(inp);
+        pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -3727,23 +3287,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_group_arn(input);
             self
         }
-        /// <p>The protocol the load balancer uses when performing health checks on targets. For
-        /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
-        /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
-        /// protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the
-        /// protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
-        /// protocols are not supported for health checks.</p>
+        /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
-        pub fn health_check_protocol(mut self, inp: crate::model::ProtocolEnum) -> Self {
-            self.inner = self.inner.health_check_protocol(inp);
+        pub fn health_check_protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
+            self.inner = self.inner.health_check_protocol(input);
             self
         }
-        /// <p>The protocol the load balancer uses when performing health checks on targets. For
-        /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
-        /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
-        /// protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the
-        /// protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
-        /// protocols are not supported for health checks.</p>
+        /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_health_check_protocol(
             mut self,
@@ -3753,8 +3303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port the load balancer uses when performing health checks on targets.</p>
-        pub fn health_check_port(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_port(inp);
+        pub fn health_check_port(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_port(input.into());
             self
         }
         /// <p>The port the load balancer uses when performing health checks on targets.</p>
@@ -3767,16 +3317,14 @@ pub mod fluent_builders {
         }
         /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
         /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-        /// <p>[GRPC protocol version] The path of a custom health check method with the format
-        /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-        pub fn health_check_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_path(inp);
+        /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+        pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_path(input.into());
             self
         }
         /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
         /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
-        /// <p>[GRPC protocol version] The path of a custom health check method with the format
-        /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+        /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3785,8 +3333,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether health checks are enabled.</p>
-        pub fn health_check_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.health_check_enabled(inp);
+        pub fn health_check_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.health_check_enabled(input);
             self
         }
         /// <p>Indicates whether health checks are enabled.</p>
@@ -3794,15 +3342,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_enabled(input);
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
-        /// For TCP health checks, the supported values are 10 or 30 seconds.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
-        pub fn health_check_interval_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_interval_seconds(inp);
+        pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.health_check_interval_seconds(input);
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
-        /// For TCP health checks, the supported values are 10 or 30 seconds.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_health_check_interval_seconds(
             mut self,
@@ -3811,55 +3357,45 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_interval_seconds(input);
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means
-        /// a failed health check.</p>
+        /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
-        pub fn health_check_timeout_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.health_check_timeout_seconds(inp);
+        pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.health_check_timeout_seconds(input);
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means
-        /// a failed health check.</p>
+        /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_health_check_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_health_check_timeout_seconds(input);
             self
         }
-        /// <p>The number of consecutive health checks successes required before considering an unhealthy
-        /// target healthy.</p>
-        pub fn healthy_threshold_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.healthy_threshold_count(inp);
+        /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
+        pub fn healthy_threshold_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.healthy_threshold_count(input);
             self
         }
-        /// <p>The number of consecutive health checks successes required before considering an unhealthy
-        /// target healthy.</p>
+        /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
         pub fn set_healthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_healthy_threshold_count(input);
             self
         }
-        /// <p>The number of consecutive health check failures required before considering the target
-        /// unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the
-        /// healthy threshold count.</p>
-        pub fn unhealthy_threshold_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.unhealthy_threshold_count(inp);
+        /// <p>The number of consecutive health check failures required before considering the target unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.</p>
+        pub fn unhealthy_threshold_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.unhealthy_threshold_count(input);
             self
         }
-        /// <p>The number of consecutive health check failures required before considering the target
-        /// unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the
-        /// healthy threshold count.</p>
+        /// <p>The number of consecutive health check failures required before considering the target unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.</p>
         pub fn set_unhealthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_unhealthy_threshold_count(input);
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-        /// response from a target.</p>
+        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
-        pub fn matcher(mut self, inp: crate::model::Matcher) -> Self {
-            self.inner = self.inner.matcher(inp);
+        pub fn matcher(mut self, input: crate::model::Matcher) -> Self {
+            self.inner = self.inner.matcher(input);
             self
         }
-        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-        /// response from a target.</p>
+        /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn set_matcher(mut self, input: std::option::Option<crate::model::Matcher>) -> Self {
             self.inner = self.inner.set_matcher(input);
@@ -3869,7 +3405,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyTargetGroupAttributes`.
     ///
     /// <p>Modifies the specified attributes of the specified target group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyTargetGroupAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3914,10 +3450,10 @@ pub mod fluent_builders {
                 crate::input::ModifyTargetGroupAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3926,8 +3462,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn target_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_arn(inp);
+        pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -3943,8 +3479,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes.</p>
-        pub fn attributes(mut self, inp: impl Into<crate::model::TargetGroupAttribute>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, input: crate::model::TargetGroupAttribute) -> Self {
+            self.inner = self.inner.attributes(input);
             self
         }
         /// <p>The attributes.</p>
@@ -3959,19 +3495,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterTargets`.
     ///
     /// <p>Registers the specified targets with the specified target group.</p>
-    ///
-    /// <p>If the target is an EC2 instance, it must be in the <code>running</code> state when you
-    /// register it.</p>
-    ///
-    /// <p>By default, the load balancer routes requests to registered targets using the protocol and
-    /// port for the target group. Alternatively, you can override the port for a target when you
-    /// register it. You can register each EC2 instance or IP address with the same target group
-    /// multiple times using different ports.</p>
-    ///
-    /// <p>With a Network Load Balancer, you cannot register instances by instance ID if they have
-    /// the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3,
-    /// and T1. You can register instances of these types by IP address.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If the target is an EC2 instance, it must be in the <code>running</code> state when you register it.</p>
+    /// <p>By default, the load balancer routes requests to registered targets using the protocol and port for the target group. Alternatively, you can override the port for a target when you register it. You can register each EC2 instance or IP address with the same target group multiple times using different ports.</p>
+    /// <p>With a Network Load Balancer, you cannot register instances by instance ID if they have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1. You can register instances of these types by IP address.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4016,10 +3543,10 @@ pub mod fluent_builders {
                 crate::input::RegisterTargetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4028,8 +3555,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-        pub fn target_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_arn(inp);
+        pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -4045,8 +3572,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets.</p>
-        pub fn targets(mut self, inp: impl Into<crate::model::TargetDescription>) -> Self {
-            self.inner = self.inner.targets(inp);
+        pub fn targets(mut self, input: crate::model::TargetDescription) -> Self {
+            self.inner = self.inner.targets(input);
             self
         }
         /// <p>The targets.</p>
@@ -4060,9 +3587,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveListenerCertificates`.
     ///
-    /// <p>Removes the specified certificate from the certificate list for the specified HTTPS or TLS
-    /// listener.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the specified certificate from the certificate list for the specified HTTPS or TLS listener.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveListenerCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4107,10 +3633,10 @@ pub mod fluent_builders {
                 crate::input::RemoveListenerCertificatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4119,8 +3645,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-        pub fn listener_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.listener_arn(inp);
+        pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.listener_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -4132,16 +3658,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
-        /// <p>The certificate to remove. You can specify one certificate per call. Set
-        /// <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
-        pub fn certificates(mut self, inp: impl Into<crate::model::Certificate>) -> Self {
-            self.inner = self.inner.certificates(inp);
+        /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
+            self.inner = self.inner.certificates(input);
             self
         }
-        /// <p>The certificate to remove. You can specify one certificate per call. Set
-        /// <code>CertificateArn</code> to the certificate ARN but do not set
-        /// <code>IsDefault</code>.</p>
+        /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
@@ -4152,10 +3674,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
-    /// <p>Removes the specified tags from the specified Elastic Load Balancing resources. You can
-    /// remove the tags for one or more Application Load Balancers, Network Load Balancers, Gateway
-    /// Load Balancers, target groups, listeners, or rules.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the specified tags from the specified Elastic Load Balancing resources. You can remove the tags for one or more Application Load Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, or rules.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4200,10 +3720,10 @@ pub mod fluent_builders {
                 crate::input::RemoveTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4216,8 +3736,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arns(inp);
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arns(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -4233,8 +3753,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys for the tags to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys for the tags to remove.</p>
@@ -4248,9 +3768,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetIpAddressType`.
     ///
-    /// <p>Sets the type of IP addresses used by the subnets of the specified Application Load
-    /// Balancer or Network Load Balancer.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets the type of IP addresses used by the subnets of the specified Application Load Balancer or Network Load Balancer.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetIpAddressType<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4295,10 +3814,10 @@ pub mod fluent_builders {
                 crate::input::SetIpAddressTypeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4307,8 +3826,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn load_balancer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_arn(inp);
+        pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -4319,18 +3838,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_load_balancer_arn(input);
             self
         }
-        /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-        /// <code>dualstack</code> (for IPv4 and IPv6 addresses).
-        /// You can’t specify
-        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+        pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(input);
             self
         }
-        /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-        /// <code>dualstack</code> (for IPv4 and IPv6 addresses).
-        /// You can’t specify
-        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+        /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -4342,9 +3855,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SetRulePriorities`.
     ///
     /// <p>Sets the priorities of the specified rules.</p>
-    /// <p>You can reorder the rules as long as there are no priority conflicts in the new order. Any
-    /// existing rules that you do not specify retain their current priority.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can reorder the rules as long as there are no priority conflicts in the new order. Any existing rules that you do not specify retain their current priority.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetRulePriorities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4389,10 +3901,10 @@ pub mod fluent_builders {
                 crate::input::SetRulePrioritiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4405,8 +3917,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rule_priorities`](Self::set_rule_priorities).
         ///
         /// <p>The rule priorities.</p>
-        pub fn rule_priorities(mut self, inp: impl Into<crate::model::RulePriorityPair>) -> Self {
-            self.inner = self.inner.rule_priorities(inp);
+        pub fn rule_priorities(mut self, input: crate::model::RulePriorityPair) -> Self {
+            self.inner = self.inner.rule_priorities(input);
             self
         }
         /// <p>The rule priorities.</p>
@@ -4420,11 +3932,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetSecurityGroups`.
     ///
-    /// <p>Associates the specified security groups with the specified Application Load Balancer. The
-    /// specified security groups override the previously associated security groups.</p>
-    /// <p>You can't specify a security group for a Network Load Balancer or Gateway Load
-    /// Balancer.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates the specified security groups with the specified Application Load Balancer. The specified security groups override the previously associated security groups.</p>
+    /// <p>You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetSecurityGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4469,10 +3979,10 @@ pub mod fluent_builders {
                 crate::input::SetSecurityGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4481,8 +3991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn load_balancer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_arn(inp);
+        pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -4498,8 +4008,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
         /// <p>The IDs of the security groups.</p>
-        pub fn security_groups(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_groups(inp);
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_groups(input.into());
             self
         }
         /// <p>The IDs of the security groups.</p>
@@ -4513,13 +4023,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetSubnets`.
     ///
-    /// <p>Enables the Availability Zones for the specified public subnets for the specified
-    /// Application Load Balancer or Network Load Balancer. The specified subnets replace the
-    /// previously enabled subnets.</p>
-    /// <p>When you specify subnets for a Network Load Balancer, you must include all subnets that
-    /// were enabled previously, with their existing configurations, plus any additional
-    /// subnets.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer or Network Load Balancer. The specified subnets replace the previously enabled subnets.</p>
+    /// <p>When you specify subnets for a Network Load Balancer, you must include all subnets that were enabled previously, with their existing configurations, plus any additional subnets.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetSubnets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4564,10 +4070,10 @@ pub mod fluent_builders {
                 crate::input::SetSubnetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4576,8 +4082,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-        pub fn load_balancer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.load_balancer_arn(inp);
+        pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.load_balancer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -4592,28 +4098,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability
-        /// Zones.</p>
-        pub fn subnets(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnets(inp);
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnets(input.into());
             self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability
-        /// Zones.</p>
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4625,34 +4123,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You
-        /// can specify one Elastic IP address per subnet if you need static IP addresses for your
-        /// internet-facing load balancer. For internal load balancers, you can specify one private IP
-        /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
-        /// can specify one IPv6 address per subnet.</p>
-        pub fn subnet_mappings(mut self, inp: impl Into<crate::model::SubnetMapping>) -> Self {
-            self.inner = self.inner.subnet_mappings(inp);
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
+            self.inner = self.inner.subnet_mappings(input);
             self
         }
-        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You
-        /// must specify either subnets or subnet mappings.</p>
-        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+        /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+        /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
         /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
-        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local
-        /// Zones.</p>
-        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You
-        /// can specify one Elastic IP address per subnet if you need static IP addresses for your
-        /// internet-facing load balancer. For internal load balancers, you can specify one private IP
-        /// address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you
-        /// can specify one IPv6 address per subnet.</p>
+        /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+        /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
         pub fn set_subnet_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
@@ -4660,20 +4144,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subnet_mappings(input);
             self
         }
-        /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load
-        /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-        /// <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
-        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
-        /// .</p>
-        pub fn ip_address_type(mut self, inp: crate::model::IpAddressType) -> Self {
-            self.inner = self.inner.ip_address_type(inp);
+        /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
+        pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
+            self.inner = self.inner.ip_address_type(input);
             self
         }
-        /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load
-        /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-        /// <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
-        /// <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
-        /// .</p>
+        /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -4683,6 +4159,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

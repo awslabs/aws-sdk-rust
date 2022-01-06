@@ -66,7 +66,7 @@ pub type AssociateConfigurationItemsToApplicationInputOperationOutputAlias =
     crate::operation::AssociateConfigurationItemsToApplication;
 #[doc(hidden)]
 pub type AssociateConfigurationItemsToApplicationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateConfigurationItemsToApplicationInput {
     /// Consumes the builder and constructs an Operation<[`AssociateConfigurationItemsToApplication`](crate::operation::AssociateConfigurationItemsToApplication)>
     #[allow(clippy::let_and_return)]
@@ -77,7 +77,7 @@ impl AssociateConfigurationItemsToApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateConfigurationItemsToApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -163,7 +163,7 @@ impl AssociateConfigurationItemsToApplicationInput {
             "AssociateConfigurationItemsToApplication",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -230,7 +230,7 @@ pub mod batch_delete_import_data_input {
 #[doc(hidden)]
 pub type BatchDeleteImportDataInputOperationOutputAlias = crate::operation::BatchDeleteImportData;
 #[doc(hidden)]
-pub type BatchDeleteImportDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDeleteImportDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDeleteImportDataInput {
     /// Consumes the builder and constructs an Operation<[`BatchDeleteImportData`](crate::operation::BatchDeleteImportData)>
     #[allow(clippy::let_and_return)]
@@ -241,7 +241,7 @@ impl BatchDeleteImportDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteImportData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -328,7 +328,7 @@ impl BatchDeleteImportDataInput {
             "BatchDeleteImportData",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -398,7 +398,7 @@ pub mod create_application_input {
 #[doc(hidden)]
 pub type CreateApplicationInputOperationOutputAlias = crate::operation::CreateApplication;
 #[doc(hidden)]
-pub type CreateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(clippy::let_and_return)]
@@ -409,7 +409,7 @@ impl CreateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -494,7 +494,7 @@ impl CreateApplicationInput {
             "CreateApplication",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -550,24 +550,16 @@ pub mod create_tags_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags that you want to associate with one or more configuration items. Specify the tags
-        /// that you want to create in a <i>key</i>-<i>value</i> format. For
-        /// example:</p>
-        /// <p>
-        /// <code>{"key": "serverType", "value": "webServer"}</code>
-        /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>
+        /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags that you want to associate with one or more configuration items. Specify the tags
-        /// that you want to create in a <i>key</i>-<i>value</i> format. For
-        /// example:</p>
-        /// <p>
-        /// <code>{"key": "serverType", "value": "webServer"}</code>
-        /// </p>
+        /// <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>
+        /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -592,7 +584,7 @@ pub mod create_tags_input {
 #[doc(hidden)]
 pub type CreateTagsInputOperationOutputAlias = crate::operation::CreateTags;
 #[doc(hidden)]
-pub type CreateTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTagsInput {
     /// Consumes the builder and constructs an Operation<[`CreateTags`](crate::operation::CreateTags)>
     #[allow(clippy::let_and_return)]
@@ -603,7 +595,7 @@ impl CreateTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -687,7 +679,7 @@ impl CreateTagsInput {
             "CreateTags",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -754,7 +746,7 @@ pub mod delete_applications_input {
 #[doc(hidden)]
 pub type DeleteApplicationsInputOperationOutputAlias = crate::operation::DeleteApplications;
 #[doc(hidden)]
-pub type DeleteApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplications`](crate::operation::DeleteApplications)>
     #[allow(clippy::let_and_return)]
@@ -765,7 +757,7 @@ impl DeleteApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -850,7 +842,7 @@ impl DeleteApplicationsInput {
             "DeleteApplications",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -906,24 +898,16 @@ pub mod delete_tags_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags that you want to delete from one or more configuration items. Specify the tags
-        /// that you want to delete in a <i>key</i>-<i>value</i> format. For
-        /// example:</p>
-        /// <p>
-        /// <code>{"key": "serverType", "value": "webServer"}</code>
-        /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
+        /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags that you want to delete from one or more configuration items. Specify the tags
-        /// that you want to delete in a <i>key</i>-<i>value</i> format. For
-        /// example:</p>
-        /// <p>
-        /// <code>{"key": "serverType", "value": "webServer"}</code>
-        /// </p>
+        /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
+        /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -948,7 +932,7 @@ pub mod delete_tags_input {
 #[doc(hidden)]
 pub type DeleteTagsInputOperationOutputAlias = crate::operation::DeleteTags;
 #[doc(hidden)]
-pub type DeleteTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTagsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTags`](crate::operation::DeleteTags)>
     #[allow(clippy::let_and_return)]
@@ -959,7 +943,7 @@ impl DeleteTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1043,7 +1027,7 @@ impl DeleteTagsInput {
             "DeleteTags",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1082,18 +1066,14 @@ pub mod describe_agents_input {
         ///
         /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
         ///
-        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs,
-        /// the system returns information about all agents/Connectors associated with your AWS user
-        /// account.</p>
+        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
         pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_ids.unwrap_or_default();
             v.push(input.into());
             self.agent_ids = Some(v);
             self
         }
-        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs,
-        /// the system returns information about all agents/Connectors associated with your AWS user
-        /// account.</p>
+        /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
         pub fn set_agent_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1105,22 +1085,16 @@ pub mod describe_agents_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>You can filter the request using various logical operators and a
-        /// <i>key</i>-<i>value</i> format. For example: </p>
-        /// <p>
-        /// <code>{"key": "collectionStatus", "value": "STARTED"}</code>
-        /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+        /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>You can filter the request using various logical operators and a
-        /// <i>key</i>-<i>value</i> format. For example: </p>
-        /// <p>
-        /// <code>{"key": "collectionStatus", "value": "STARTED"}</code>
-        /// </p>
+        /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+        /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -1128,30 +1102,22 @@ pub mod describe_agents_input {
             self.filters = input;
             self
         }
-        /// <p>The total number of agents/Connectors to return in a single page of output. The maximum
-        /// value is 100.</p>
+        /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of agents/Connectors to return in a single page of output. The maximum
-        /// value is 100.</p>
+        /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
-        /// IDs for <code>DescribeAgentsRequest$agentIds</code> but set
-        /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
-        /// with a token. Use that token in this query to get the next set of 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
-        /// IDs for <code>DescribeAgentsRequest$agentIds</code> but set
-        /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
-        /// with a token. Use that token in this query to get the next set of 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1175,7 +1141,7 @@ pub mod describe_agents_input {
 #[doc(hidden)]
 pub type DescribeAgentsInputOperationOutputAlias = crate::operation::DescribeAgents;
 #[doc(hidden)]
-pub type DescribeAgentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAgentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAgentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAgents`](crate::operation::DescribeAgents)>
     #[allow(clippy::let_and_return)]
@@ -1186,7 +1152,7 @@ impl DescribeAgentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAgents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1271,7 +1237,7 @@ impl DescribeAgentsInput {
             "DescribeAgents",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1338,7 +1304,7 @@ pub mod describe_configurations_input {
 #[doc(hidden)]
 pub type DescribeConfigurationsInputOperationOutputAlias = crate::operation::DescribeConfigurations;
 #[doc(hidden)]
-pub type DescribeConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurations`](crate::operation::DescribeConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -1349,7 +1315,7 @@ impl DescribeConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1436,7 +1402,7 @@ impl DescribeConfigurationsInput {
             "DescribeConfigurations",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1489,14 +1455,12 @@ pub mod describe_continuous_exports_input {
             self.export_ids = input;
             self
         }
-        /// <p>A number between 1 and 100 specifying the maximum number of continuous export
-        /// descriptions returned.</p>
+        /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>A number between 1 and 100 specifying the maximum number of continuous export
-        /// descriptions returned.</p>
+        /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1530,7 +1494,7 @@ pub mod describe_continuous_exports_input {
 pub type DescribeContinuousExportsInputOperationOutputAlias =
     crate::operation::DescribeContinuousExports;
 #[doc(hidden)]
-pub type DescribeContinuousExportsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeContinuousExportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeContinuousExportsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeContinuousExports`](crate::operation::DescribeContinuousExports)>
     #[allow(clippy::let_and_return)]
@@ -1541,7 +1505,7 @@ impl DescribeContinuousExportsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeContinuousExports,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1628,7 +1592,7 @@ impl DescribeContinuousExportsInput {
             "DescribeContinuousExports",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1681,14 +1645,12 @@ pub mod describe_export_configurations_input {
             self.export_ids = input;
             self
         }
-        /// <p>A number between 1 and 100 specifying the maximum number of continuous export
-        /// descriptions returned.</p>
+        /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>A number between 1 and 100 specifying the maximum number of continuous export
-        /// descriptions returned.</p>
+        /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1722,7 +1684,8 @@ pub mod describe_export_configurations_input {
 pub type DescribeExportConfigurationsInputOperationOutputAlias =
     crate::operation::DescribeExportConfigurations;
 #[doc(hidden)]
-pub type DescribeExportConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExportConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExportConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExportConfigurations`](crate::operation::DescribeExportConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -1733,7 +1696,7 @@ impl DescribeExportConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExportConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1819,7 +1782,7 @@ impl DescribeExportConfigurationsInput {
             "DescribeExportConfigurations",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1879,25 +1842,17 @@ pub mod describe_export_tasks_input {
         ///
         /// <p>One or more filters.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AgentId</code> - ID of the agent whose collected data will be
-        /// exported</p>
-        /// </li>
+        /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::ExportFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::ExportFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>One or more filters.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AgentId</code> - ID of the agent whose collected data will be
-        /// exported</p>
-        /// </li>
+        /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -1906,36 +1861,22 @@ pub mod describe_export_tasks_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in
-        /// paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element.</p>
+        /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in
-        /// paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element.</p>
+        /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is null when there
-        /// are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is null when there
-        /// are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1959,7 +1900,7 @@ pub mod describe_export_tasks_input {
 #[doc(hidden)]
 pub type DescribeExportTasksInputOperationOutputAlias = crate::operation::DescribeExportTasks;
 #[doc(hidden)]
-pub type DescribeExportTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExportTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExportTasksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExportTasks`](crate::operation::DescribeExportTasks)>
     #[allow(clippy::let_and_return)]
@@ -1970,7 +1911,7 @@ impl DescribeExportTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExportTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2055,7 +1996,7 @@ impl DescribeExportTasksInput {
             "DescribeExportTasks",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2093,18 +2034,14 @@ pub mod describe_import_tasks_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of name-value pairs that you provide to filter the results for the
-        /// <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard
-        /// values aren't supported for filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::ImportTaskFilter>) -> Self {
+        /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
+        pub fn filters(mut self, input: crate::model::ImportTaskFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>An array of name-value pairs that you provide to filter the results for the
-        /// <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard
-        /// values aren't supported for filters.</p>
+        /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImportTaskFilter>>,
@@ -2150,7 +2087,7 @@ pub mod describe_import_tasks_input {
 #[doc(hidden)]
 pub type DescribeImportTasksInputOperationOutputAlias = crate::operation::DescribeImportTasks;
 #[doc(hidden)]
-pub type DescribeImportTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeImportTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImportTasksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImportTasks`](crate::operation::DescribeImportTasks)>
     #[allow(clippy::let_and_return)]
@@ -2161,7 +2098,7 @@ impl DescribeImportTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeImportTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2246,7 +2183,7 @@ impl DescribeImportTasksInput {
             "DescribeImportTasks",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2284,18 +2221,14 @@ pub mod describe_tags_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>You can filter the list using a <i>key</i>-<i>value</i>
-        /// format. You can separate these items by using logical operators. Allowed filters include
-        /// <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::TagFilter>) -> Self {
+        /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
+        pub fn filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>You can filter the list using a <i>key</i>-<i>value</i>
-        /// format. You can separate these items by using logical operators. Allowed filters include
-        /// <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
+        /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -2303,14 +2236,12 @@ pub mod describe_tags_input {
             self.filters = input;
             self
         }
-        /// <p>The total number of items to return in a single page of output. The maximum value is
-        /// 100.</p>
+        /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of items to return in a single page of output. The maximum value is
-        /// 100.</p>
+        /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2343,7 +2274,7 @@ pub mod describe_tags_input {
 #[doc(hidden)]
 pub type DescribeTagsInputOperationOutputAlias = crate::operation::DescribeTags;
 #[doc(hidden)]
-pub type DescribeTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTagsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTags`](crate::operation::DescribeTags)>
     #[allow(clippy::let_and_return)]
@@ -2354,7 +2285,7 @@ impl DescribeTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2438,7 +2369,7 @@ impl DescribeTagsInput {
             "DescribeTags",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2527,7 +2458,7 @@ pub type DisassociateConfigurationItemsFromApplicationInputOperationOutputAlias 
     crate::operation::DisassociateConfigurationItemsFromApplication;
 #[doc(hidden)]
 pub type DisassociateConfigurationItemsFromApplicationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateConfigurationItemsFromApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateConfigurationItemsFromApplication`](crate::operation::DisassociateConfigurationItemsFromApplication)>
     #[allow(clippy::let_and_return)]
@@ -2538,7 +2469,7 @@ impl DisassociateConfigurationItemsFromApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateConfigurationItemsFromApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2624,7 +2555,7 @@ impl DisassociateConfigurationItemsFromApplicationInput {
             "DisassociateConfigurationItemsFromApplication",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2669,7 +2600,7 @@ pub mod export_configurations_input {
 #[doc(hidden)]
 pub type ExportConfigurationsInputOperationOutputAlias = crate::operation::ExportConfigurations;
 #[doc(hidden)]
-pub type ExportConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExportConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExportConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ExportConfigurations`](crate::operation::ExportConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -2680,7 +2611,7 @@ impl ExportConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExportConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2765,7 +2696,7 @@ impl ExportConfigurationsInput {
             "ExportConfigurations",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2801,7 +2732,7 @@ pub mod get_discovery_summary_input {
 #[doc(hidden)]
 pub type GetDiscoverySummaryInputOperationOutputAlias = crate::operation::GetDiscoverySummary;
 #[doc(hidden)]
-pub type GetDiscoverySummaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDiscoverySummaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDiscoverySummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetDiscoverySummary`](crate::operation::GetDiscoverySummary)>
     #[allow(clippy::let_and_return)]
@@ -2812,7 +2743,7 @@ impl GetDiscoverySummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDiscoverySummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2897,7 +2828,7 @@ impl GetDiscoverySummaryInput {
             "GetDiscoverySummary",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2942,28 +2873,18 @@ pub mod list_configurations_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>You can filter the request using various logical operators and a
-        /// <i>key</i>-<i>value</i> format. For example: </p>
-        /// <p>
-        /// <code>{"key": "serverType", "value": "webServer"}</code>
-        /// </p>
-        /// <p>For a complete list of filter options and guidance about using them with this action,
-        /// see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
-        /// Service User Guide</i>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+        /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+        /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>You can filter the request using various logical operators and a
-        /// <i>key</i>-<i>value</i> format. For example: </p>
-        /// <p>
-        /// <code>{"key": "serverType", "value": "webServer"}</code>
-        /// </p>
-        /// <p>For a complete list of filter options and guidance about using them with this action,
-        /// see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
-        /// Service User Guide</i>.</p>
+        /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+        /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+        /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -2981,18 +2902,12 @@ pub mod list_configurations_input {
             self.max_results = input;
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if a previous call to
-        /// ListConfigurations returned 100 items, but you set
-        /// <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
-        /// along with a token. Use that token in this query to get the next set of 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if a previous call to
-        /// ListConfigurations returned 100 items, but you set
-        /// <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
-        /// along with a token. Use that token in this query to get the next set of 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3001,18 +2916,14 @@ pub mod list_configurations_input {
         ///
         /// To override the contents of this collection use [`set_order_by`](Self::set_order_by).
         ///
-        /// <p>Certain filter criteria return output that can be sorted in ascending or descending
-        /// order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
-        /// Service User Guide</i>.</p>
-        pub fn order_by(mut self, input: impl Into<crate::model::OrderByElement>) -> Self {
+        /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+        pub fn order_by(mut self, input: crate::model::OrderByElement) -> Self {
             let mut v = self.order_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.order_by = Some(v);
             self
         }
-        /// <p>Certain filter criteria return output that can be sorted in ascending or descending
-        /// order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
-        /// Service User Guide</i>.</p>
+        /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
         pub fn set_order_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OrderByElement>>,
@@ -3040,7 +2951,7 @@ pub mod list_configurations_input {
 #[doc(hidden)]
 pub type ListConfigurationsInputOperationOutputAlias = crate::operation::ListConfigurations;
 #[doc(hidden)]
-pub type ListConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurations`](crate::operation::ListConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -3051,7 +2962,7 @@ impl ListConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3136,7 +3047,7 @@ impl ListConfigurationsInput {
             "ListConfigurations",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3186,14 +3097,12 @@ pub mod list_server_neighbors_input {
             self.configuration_id = input;
             self
         }
-        /// <p>Flag to indicate if port and protocol information is needed as part of the
-        /// response.</p>
+        /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
         pub fn port_information_needed(mut self, input: bool) -> Self {
             self.port_information_needed = Some(input);
             self
         }
-        /// <p>Flag to indicate if port and protocol information is needed as part of the
-        /// response.</p>
+        /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
         pub fn set_port_information_needed(mut self, input: std::option::Option<bool>) -> Self {
             self.port_information_needed = input;
             self
@@ -3227,18 +3136,12 @@ pub mod list_server_neighbors_input {
             self.max_results = input;
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
-        /// IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
-        /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results
-        /// along with a token. Use that token in this query to get the next set of 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
-        /// IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
-        /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results
-        /// along with a token. Use that token in this query to get the next set of 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3263,7 +3166,7 @@ pub mod list_server_neighbors_input {
 #[doc(hidden)]
 pub type ListServerNeighborsInputOperationOutputAlias = crate::operation::ListServerNeighbors;
 #[doc(hidden)]
-pub type ListServerNeighborsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServerNeighborsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServerNeighborsInput {
     /// Consumes the builder and constructs an Operation<[`ListServerNeighbors`](crate::operation::ListServerNeighbors)>
     #[allow(clippy::let_and_return)]
@@ -3274,7 +3177,7 @@ impl ListServerNeighborsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServerNeighbors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3359,7 +3262,7 @@ impl ListServerNeighborsInput {
             "ListServerNeighbors",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3403,7 +3306,7 @@ pub mod start_continuous_export_input {
 #[doc(hidden)]
 pub type StartContinuousExportInputOperationOutputAlias = crate::operation::StartContinuousExport;
 #[doc(hidden)]
-pub type StartContinuousExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartContinuousExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartContinuousExportInput {
     /// Consumes the builder and constructs an Operation<[`StartContinuousExport`](crate::operation::StartContinuousExport)>
     #[allow(clippy::let_and_return)]
@@ -3414,7 +3317,7 @@ impl StartContinuousExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartContinuousExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3501,7 +3404,7 @@ impl StartContinuousExportInput {
             "StartContinuousExport",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3529,26 +3432,14 @@ pub mod start_data_collection_by_agent_ids_input {
         ///
         /// To override the contents of this collection use [`set_agent_ids`](Self::set_agent_ids).
         ///
-        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a
-        /// request to an agent/connector ID that you do not have permission to contact, according to your
-        /// AWS account, the service does not throw an exception. Instead, it returns the error in the
-        /// <i>Description</i> field. If you send a request to multiple agents/connectors
-        /// and you do not have permission to contact some of those agents/connectors, the system does not
-        /// throw an exception. Instead, the system shows <code>Failed</code> in the
-        /// <i>Description</i> field.</p>
+        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
         pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_ids.unwrap_or_default();
             v.push(input.into());
             self.agent_ids = Some(v);
             self
         }
-        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a
-        /// request to an agent/connector ID that you do not have permission to contact, according to your
-        /// AWS account, the service does not throw an exception. Instead, it returns the error in the
-        /// <i>Description</i> field. If you send a request to multiple agents/connectors
-        /// and you do not have permission to contact some of those agents/connectors, the system does not
-        /// throw an exception. Instead, the system shows <code>Failed</code> in the
-        /// <i>Description</i> field.</p>
+        /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
         pub fn set_agent_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3573,7 +3464,8 @@ pub mod start_data_collection_by_agent_ids_input {
 pub type StartDataCollectionByAgentIdsInputOperationOutputAlias =
     crate::operation::StartDataCollectionByAgentIds;
 #[doc(hidden)]
-pub type StartDataCollectionByAgentIdsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartDataCollectionByAgentIdsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartDataCollectionByAgentIdsInput {
     /// Consumes the builder and constructs an Operation<[`StartDataCollectionByAgentIds`](crate::operation::StartDataCollectionByAgentIds)>
     #[allow(clippy::let_and_return)]
@@ -3584,7 +3476,7 @@ impl StartDataCollectionByAgentIdsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDataCollectionByAgentIds,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3670,7 +3562,7 @@ impl StartDataCollectionByAgentIdsInput {
             "StartDataCollectionByAgentIds",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3710,27 +3602,14 @@ pub mod start_export_task_input {
         ///
         /// To override the contents of this collection use [`set_export_data_format`](Self::set_export_data_format).
         ///
-        /// <p>The file format for the returned export data. Default value is <code>CSV</code>.
-        /// <b>Note:</b>
-        /// <i>The</i>
-        /// <code>GRAPHML</code>
-        /// <i>option has been deprecated.</i>
-        /// </p>
-        pub fn export_data_format(
-            mut self,
-            input: impl Into<crate::model::ExportDataFormat>,
-        ) -> Self {
+        /// <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
+        pub fn export_data_format(mut self, input: crate::model::ExportDataFormat) -> Self {
             let mut v = self.export_data_format.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.export_data_format = Some(v);
             self
         }
-        /// <p>The file format for the returned export data. Default value is <code>CSV</code>.
-        /// <b>Note:</b>
-        /// <i>The</i>
-        /// <code>GRAPHML</code>
-        /// <i>option has been deprecated.</i>
-        /// </p>
+        /// <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
         pub fn set_export_data_format(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportDataFormat>>,
@@ -3742,24 +3621,14 @@ pub mod start_export_task_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application
-        /// Discovery Agent for which data is exported. The <code>agentId</code> can be found in the
-        /// results of the <code>DescribeAgents</code> API or CLI. If no filter is present,
-        /// <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both
-        /// Agentless Discovery Connector data and summary data from Application Discovery agents.
-        /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::ExportFilter>) -> Self {
+        /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents. </p>
+        pub fn filters(mut self, input: crate::model::ExportFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application
-        /// Discovery Agent for which data is exported. The <code>agentId</code> can be found in the
-        /// results of the <code>DescribeAgents</code> API or CLI. If no filter is present,
-        /// <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both
-        /// Agentless Discovery Connector data and summary data from Application Discovery agents.
-        /// </p>
+        /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportFilter>>,
@@ -3767,16 +3636,12 @@ pub mod start_export_task_input {
             self.filters = input;
             self
         }
-        /// <p>The start timestamp for exported data from the single Application Discovery Agent
-        /// selected in the filters. If no value is specified, data is exported starting from the first
-        /// data collected by the agent.</p>
+        /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start timestamp for exported data from the single Application Discovery Agent
-        /// selected in the filters. If no value is specified, data is exported starting from the first
-        /// data collected by the agent.</p>
+        /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3784,16 +3649,12 @@ pub mod start_export_task_input {
             self.start_time = input;
             self
         }
-        /// <p>The end timestamp for exported data from the single Application Discovery Agent
-        /// selected in the filters. If no value is specified, exported data includes the most recent data
-        /// collected by the agent.</p>
+        /// <p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end timestamp for exported data from the single Application Discovery Agent
-        /// selected in the filters. If no value is specified, exported data includes the most recent data
-        /// collected by the agent.</p>
+        /// <p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3820,7 +3681,7 @@ pub mod start_export_task_input {
 #[doc(hidden)]
 pub type StartExportTaskInputOperationOutputAlias = crate::operation::StartExportTask;
 #[doc(hidden)]
-pub type StartExportTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartExportTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartExportTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartExportTask`](crate::operation::StartExportTask)>
     #[allow(clippy::let_and_return)]
@@ -3831,7 +3692,7 @@ impl StartExportTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartExportTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3916,7 +3777,7 @@ impl StartExportTaskInput {
             "StartExportTask",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3950,24 +3811,14 @@ pub mod start_import_task_input {
         pub(crate) import_url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Optional. A unique token that you can provide to prevent the same import request from
-        /// occurring more than once. If you don't provide a token, a token is automatically
-        /// generated.</p>
-        ///
-        /// <p>Sending more than one <code>StartImportTask</code> request with the same client request
-        /// token will return information about the original import task with that client request
-        /// token.</p>
+        /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
+        /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Optional. A unique token that you can provide to prevent the same import request from
-        /// occurring more than once. If you don't provide a token, a token is automatically
-        /// generated.</p>
-        ///
-        /// <p>Sending more than one <code>StartImportTask</code> request with the same client request
-        /// token will return information about the original import task with that client request
-        /// token.</p>
+        /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
+        /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3975,37 +3826,25 @@ pub mod start_import_task_input {
             self.client_request_token = input;
             self
         }
-        /// <p>A descriptive name for this request. You can use this name to filter future requests
-        /// related to this import task, such as identifying applications and servers that were included
-        /// in this import task. We recommend that you use a meaningful name for each import task.</p>
+        /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A descriptive name for this request. You can use this name to filter future requests
-        /// related to this import task, such as identifying applications and servers that were included
-        /// in this import task. We recommend that you use a meaningful name for each import task.</p>
+        /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
-        ///
-        /// <note>
-        /// <p>If you're using the AWS CLI, this URL is structured as follows:
-        /// <code>s3://BucketName/ImportFileName.CSV</code>
-        /// </p>
+        /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
+        /// <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
         /// </note>
         pub fn import_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.import_url = Some(input.into());
             self
         }
-        /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
-        ///
-        /// <note>
-        /// <p>If you're using the AWS CLI, this URL is structured as follows:
-        /// <code>s3://BucketName/ImportFileName.CSV</code>
-        /// </p>
+        /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
+        /// <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
         /// </note>
         pub fn set_import_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.import_url = input;
@@ -4029,7 +3868,7 @@ pub mod start_import_task_input {
 #[doc(hidden)]
 pub type StartImportTaskInputOperationOutputAlias = crate::operation::StartImportTask;
 #[doc(hidden)]
-pub type StartImportTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartImportTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartImportTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartImportTask`](crate::operation::StartImportTask)>
     #[allow(clippy::let_and_return)]
@@ -4040,7 +3879,7 @@ impl StartImportTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartImportTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4128,7 +3967,7 @@ impl StartImportTaskInput {
             "StartImportTask",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4186,7 +4025,7 @@ pub mod stop_continuous_export_input {
 #[doc(hidden)]
 pub type StopContinuousExportInputOperationOutputAlias = crate::operation::StopContinuousExport;
 #[doc(hidden)]
-pub type StopContinuousExportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopContinuousExportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopContinuousExportInput {
     /// Consumes the builder and constructs an Operation<[`StopContinuousExport`](crate::operation::StopContinuousExport)>
     #[allow(clippy::let_and_return)]
@@ -4197,7 +4036,7 @@ impl StopContinuousExportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopContinuousExport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4284,7 +4123,7 @@ impl StopContinuousExportInput {
             "StopContinuousExport",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4352,7 +4191,8 @@ pub mod stop_data_collection_by_agent_ids_input {
 pub type StopDataCollectionByAgentIdsInputOperationOutputAlias =
     crate::operation::StopDataCollectionByAgentIds;
 #[doc(hidden)]
-pub type StopDataCollectionByAgentIdsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopDataCollectionByAgentIdsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StopDataCollectionByAgentIdsInput {
     /// Consumes the builder and constructs an Operation<[`StopDataCollectionByAgentIds`](crate::operation::StopDataCollectionByAgentIds)>
     #[allow(clippy::let_and_return)]
@@ -4363,7 +4203,7 @@ impl StopDataCollectionByAgentIdsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopDataCollectionByAgentIds,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4449,7 +4289,7 @@ impl StopDataCollectionByAgentIdsInput {
             "StopDataCollectionByAgentIds",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4534,7 +4374,7 @@ pub mod update_application_input {
 #[doc(hidden)]
 pub type UpdateApplicationInputOperationOutputAlias = crate::operation::UpdateApplication;
 #[doc(hidden)]
-pub type UpdateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplication`](crate::operation::UpdateApplication)>
     #[allow(clippy::let_and_return)]
@@ -4545,7 +4385,7 @@ impl UpdateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4630,7 +4470,7 @@ impl UpdateApplicationInput {
             "UpdateApplication",
             "applicationdiscoveryservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4734,50 +4574,28 @@ impl std::fmt::Debug for StopContinuousExportInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImportTaskInput {
-    /// <p>Optional. A unique token that you can provide to prevent the same import request from
-    /// occurring more than once. If you don't provide a token, a token is automatically
-    /// generated.</p>
-    ///
-    /// <p>Sending more than one <code>StartImportTask</code> request with the same client request
-    /// token will return information about the original import task with that client request
-    /// token.</p>
+    /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
+    /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>A descriptive name for this request. You can use this name to filter future requests
-    /// related to this import task, such as identifying applications and servers that were included
-    /// in this import task. We recommend that you use a meaningful name for each import task.</p>
+    /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
-    ///
-    /// <note>
-    /// <p>If you're using the AWS CLI, this URL is structured as follows:
-    /// <code>s3://BucketName/ImportFileName.CSV</code>
-    /// </p>
+    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
+    /// <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
     /// </note>
     pub import_url: std::option::Option<std::string::String>,
 }
 impl StartImportTaskInput {
-    /// <p>Optional. A unique token that you can provide to prevent the same import request from
-    /// occurring more than once. If you don't provide a token, a token is automatically
-    /// generated.</p>
-    ///
-    /// <p>Sending more than one <code>StartImportTask</code> request with the same client request
-    /// token will return information about the original import task with that client request
-    /// token.</p>
+    /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
+    /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>A descriptive name for this request. You can use this name to filter future requests
-    /// related to this import task, such as identifying applications and servers that were included
-    /// in this import task. We recommend that you use a meaningful name for each import task.</p>
+    /// <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
-    ///
-    /// <note>
-    /// <p>If you're using the AWS CLI, this URL is structured as follows:
-    /// <code>s3://BucketName/ImportFileName.CSV</code>
-    /// </p>
+    /// <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>
+    /// <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>
     /// </note>
     pub fn import_url(&self) -> std::option::Option<&str> {
         self.import_url.as_deref()
@@ -4797,57 +4615,29 @@ impl std::fmt::Debug for StartImportTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartExportTaskInput {
-    /// <p>The file format for the returned export data. Default value is <code>CSV</code>.
-    /// <b>Note:</b>
-    /// <i>The</i>
-    /// <code>GRAPHML</code>
-    /// <i>option has been deprecated.</i>
-    /// </p>
+    /// <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
     pub export_data_format: std::option::Option<std::vec::Vec<crate::model::ExportDataFormat>>,
-    /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application
-    /// Discovery Agent for which data is exported. The <code>agentId</code> can be found in the
-    /// results of the <code>DescribeAgents</code> API or CLI. If no filter is present,
-    /// <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both
-    /// Agentless Discovery Connector data and summary data from Application Discovery agents.
-    /// </p>
+    /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::ExportFilter>>,
-    /// <p>The start timestamp for exported data from the single Application Discovery Agent
-    /// selected in the filters. If no value is specified, data is exported starting from the first
-    /// data collected by the agent.</p>
+    /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end timestamp for exported data from the single Application Discovery Agent
-    /// selected in the filters. If no value is specified, exported data includes the most recent data
-    /// collected by the agent.</p>
+    /// <p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StartExportTaskInput {
-    /// <p>The file format for the returned export data. Default value is <code>CSV</code>.
-    /// <b>Note:</b>
-    /// <i>The</i>
-    /// <code>GRAPHML</code>
-    /// <i>option has been deprecated.</i>
-    /// </p>
+    /// <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
     pub fn export_data_format(&self) -> std::option::Option<&[crate::model::ExportDataFormat]> {
         self.export_data_format.as_deref()
     }
-    /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application
-    /// Discovery Agent for which data is exported. The <code>agentId</code> can be found in the
-    /// results of the <code>DescribeAgents</code> API or CLI. If no filter is present,
-    /// <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both
-    /// Agentless Discovery Connector data and summary data from Application Discovery agents.
-    /// </p>
+    /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents. </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::ExportFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The start timestamp for exported data from the single Application Discovery Agent
-    /// selected in the filters. If no value is specified, data is exported starting from the first
-    /// data collected by the agent.</p>
+    /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end timestamp for exported data from the single Application Discovery Agent
-    /// selected in the filters. If no value is specified, exported data includes the most recent data
-    /// collected by the agent.</p>
+    /// <p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -4867,23 +4657,11 @@ impl std::fmt::Debug for StartExportTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDataCollectionByAgentIdsInput {
-    /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a
-    /// request to an agent/connector ID that you do not have permission to contact, according to your
-    /// AWS account, the service does not throw an exception. Instead, it returns the error in the
-    /// <i>Description</i> field. If you send a request to multiple agents/connectors
-    /// and you do not have permission to contact some of those agents/connectors, the system does not
-    /// throw an exception. Instead, the system shows <code>Failed</code> in the
-    /// <i>Description</i> field.</p>
+    /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
     pub agent_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartDataCollectionByAgentIdsInput {
-    /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a
-    /// request to an agent/connector ID that you do not have permission to contact, according to your
-    /// AWS account, the service does not throw an exception. Instead, it returns the error in the
-    /// <i>Description</i> field. If you send a request to multiple agents/connectors
-    /// and you do not have permission to contact some of those agents/connectors, the system does not
-    /// throw an exception. Instead, the system shows <code>Failed</code> in the
-    /// <i>Description</i> field.</p>
+    /// <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
     pub fn agent_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.agent_ids.as_deref()
     }
@@ -4913,17 +4691,13 @@ impl std::fmt::Debug for StartContinuousExportInput {
 pub struct ListServerNeighborsInput {
     /// <p>Configuration ID of the server for which neighbors are being listed.</p>
     pub configuration_id: std::option::Option<std::string::String>,
-    /// <p>Flag to indicate if port and protocol information is needed as part of the
-    /// response.</p>
+    /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
     pub port_information_needed: bool,
     /// <p>List of configuration IDs to test for one-hop-away.</p>
     pub neighbor_configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Maximum number of results to return in a single page of output.</p>
     pub max_results: i32,
-    /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
-    /// IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
-    /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results
-    /// along with a token. Use that token in this query to get the next set of 10.</p>
+    /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServerNeighborsInput {
@@ -4931,8 +4705,7 @@ impl ListServerNeighborsInput {
     pub fn configuration_id(&self) -> std::option::Option<&str> {
         self.configuration_id.as_deref()
     }
-    /// <p>Flag to indicate if port and protocol information is needed as part of the
-    /// response.</p>
+    /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
     pub fn port_information_needed(&self) -> bool {
         self.port_information_needed
     }
@@ -4944,10 +4717,7 @@ impl ListServerNeighborsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
-    /// IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
-    /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results
-    /// along with a token. Use that token in this query to get the next set of 10.</p>
+    /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4973,25 +4743,15 @@ impl std::fmt::Debug for ListServerNeighborsInput {
 pub struct ListConfigurationsInput {
     /// <p>A valid configuration identified by Application Discovery Service. </p>
     pub configuration_type: std::option::Option<crate::model::ConfigurationItemType>,
-    /// <p>You can filter the request using various logical operators and a
-    /// <i>key</i>-<i>value</i> format. For example: </p>
-    /// <p>
-    /// <code>{"key": "serverType", "value": "webServer"}</code>
-    /// </p>
-    /// <p>For a complete list of filter options and guidance about using them with this action,
-    /// see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
-    /// Service User Guide</i>.</p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The total number of items to return. The maximum value is 100.</p>
     pub max_results: i32,
-    /// <p>Token to retrieve the next set of results. For example, if a previous call to
-    /// ListConfigurations returned 100 items, but you set
-    /// <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
-    /// along with a token. Use that token in this query to get the next set of 10.</p>
+    /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Certain filter criteria return output that can be sorted in ascending or descending
-    /// order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
-    /// Service User Guide</i>.</p>
+    /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
     pub order_by: std::option::Option<std::vec::Vec<crate::model::OrderByElement>>,
 }
 impl ListConfigurationsInput {
@@ -4999,14 +4759,9 @@ impl ListConfigurationsInput {
     pub fn configuration_type(&self) -> std::option::Option<&crate::model::ConfigurationItemType> {
         self.configuration_type.as_ref()
     }
-    /// <p>You can filter the request using various logical operators and a
-    /// <i>key</i>-<i>value</i> format. For example: </p>
-    /// <p>
-    /// <code>{"key": "serverType", "value": "webServer"}</code>
-    /// </p>
-    /// <p>For a complete list of filter options and guidance about using them with this action,
-    /// see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
-    /// Service User Guide</i>.</p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -5014,16 +4769,11 @@ impl ListConfigurationsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>Token to retrieve the next set of results. For example, if a previous call to
-    /// ListConfigurations returned 100 items, but you set
-    /// <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
-    /// along with a token. Use that token in this query to get the next set of 10.</p>
+    /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Certain filter criteria return output that can be sorted in ascending or descending
-    /// order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery
-    /// Service User Guide</i>.</p>
+    /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
     pub fn order_by(&self) -> std::option::Option<&[crate::model::OrderByElement]> {
         self.order_by.as_deref()
     }
@@ -5097,25 +4847,19 @@ impl std::fmt::Debug for DisassociateConfigurationItemsFromApplicationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
-    /// <p>You can filter the list using a <i>key</i>-<i>value</i>
-    /// format. You can separate these items by using logical operators. Allowed filters include
-    /// <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
+    /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
-    /// <p>The total number of items to return in a single page of output. The maximum value is
-    /// 100.</p>
+    /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
     pub max_results: i32,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTagsInput {
-    /// <p>You can filter the list using a <i>key</i>-<i>value</i>
-    /// format. You can separate these items by using logical operators. Allowed filters include
-    /// <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
+    /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::TagFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The total number of items to return in a single page of output. The maximum value is
-    /// 100.</p>
+    /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -5138,9 +4882,7 @@ impl std::fmt::Debug for DescribeTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImportTasksInput {
-    /// <p>An array of name-value pairs that you provide to filter the results for the
-    /// <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard
-    /// values aren't supported for filters.</p>
+    /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::ImportTaskFilter>>,
     /// <p>The maximum number of results that you want this request to return, up to 100.</p>
     pub max_results: std::option::Option<i32>,
@@ -5148,9 +4890,7 @@ pub struct DescribeImportTasksInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImportTasksInput {
-    /// <p>An array of name-value pairs that you provide to filter the results for the
-    /// <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard
-    /// values aren't supported for filters.</p>
+    /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::ImportTaskFilter]> {
         self.filters.as_deref()
     }
@@ -5181,23 +4921,12 @@ pub struct DescribeExportTasksInput {
     pub export_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AgentId</code> - ID of the agent whose collected data will be
-    /// exported</p>
-    /// </li>
+    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::ExportFilter>>,
-    /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in
-    /// paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element.</p>
+    /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
     pub max_results: i32,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is null when there
-    /// are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeExportTasksInput {
@@ -5207,27 +4936,16 @@ impl DescribeExportTasksInput {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AgentId</code> - ID of the agent whose collected data will be
-    /// exported</p>
-    /// </li>
+    /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::ExportFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in
-    /// paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element.</p>
+    /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is null when there
-    /// are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5249,8 +4967,7 @@ impl std::fmt::Debug for DescribeExportTasksInput {
 pub struct DescribeExportConfigurationsInput {
     /// <p>A list of continuous export IDs to search for.</p>
     pub export_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A number between 1 and 100 specifying the maximum number of continuous export
-    /// descriptions returned.</p>
+    /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
     pub max_results: i32,
     /// <p>The token from the previous call to describe-export-tasks.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5260,8 +4977,7 @@ impl DescribeExportConfigurationsInput {
     pub fn export_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.export_ids.as_deref()
     }
-    /// <p>A number between 1 and 100 specifying the maximum number of continuous export
-    /// descriptions returned.</p>
+    /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -5286,8 +5002,7 @@ impl std::fmt::Debug for DescribeExportConfigurationsInput {
 pub struct DescribeContinuousExportsInput {
     /// <p>The unique IDs assigned to the exports.</p>
     pub export_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A number between 1 and 100 specifying the maximum number of continuous export
-    /// descriptions returned.</p>
+    /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5297,8 +5012,7 @@ impl DescribeContinuousExportsInput {
     pub fn export_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.export_ids.as_deref()
     }
-    /// <p>A number between 1 and 100 specifying the maximum number of continuous export
-    /// descriptions returned.</p>
+    /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5342,49 +5056,31 @@ impl std::fmt::Debug for DescribeConfigurationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentsInput {
-    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs,
-    /// the system returns information about all agents/Connectors associated with your AWS user
-    /// account.</p>
+    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
     pub agent_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>You can filter the request using various logical operators and a
-    /// <i>key</i>-<i>value</i> format. For example: </p>
-    /// <p>
-    /// <code>{"key": "collectionStatus", "value": "STARTED"}</code>
-    /// </p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The total number of agents/Connectors to return in a single page of output. The maximum
-    /// value is 100.</p>
+    /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
     pub max_results: i32,
-    /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
-    /// IDs for <code>DescribeAgentsRequest$agentIds</code> but set
-    /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
-    /// with a token. Use that token in this query to get the next set of 10.</p>
+    /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAgentsInput {
-    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs,
-    /// the system returns information about all agents/Connectors associated with your AWS user
-    /// account.</p>
+    /// <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
     pub fn agent_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.agent_ids.as_deref()
     }
-    /// <p>You can filter the request using various logical operators and a
-    /// <i>key</i>-<i>value</i> format. For example: </p>
-    /// <p>
-    /// <code>{"key": "collectionStatus", "value": "STARTED"}</code>
-    /// </p>
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The total number of agents/Connectors to return in a single page of output. The maximum
-    /// value is 100.</p>
+    /// <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>Token to retrieve the next set of results. For example, if you previously specified 100
-    /// IDs for <code>DescribeAgentsRequest$agentIds</code> but set
-    /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
-    /// with a token. Use that token in this query to get the next set of 10.</p>
+    /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5406,12 +5102,8 @@ impl std::fmt::Debug for DescribeAgentsInput {
 pub struct DeleteTagsInput {
     /// <p>A list of configuration items with tags that you want to delete.</p>
     pub configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Tags that you want to delete from one or more configuration items. Specify the tags
-    /// that you want to delete in a <i>key</i>-<i>value</i> format. For
-    /// example:</p>
-    /// <p>
-    /// <code>{"key": "serverType", "value": "webServer"}</code>
-    /// </p>
+    /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
+    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl DeleteTagsInput {
@@ -5419,12 +5111,8 @@ impl DeleteTagsInput {
     pub fn configuration_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.configuration_ids.as_deref()
     }
-    /// <p>Tags that you want to delete from one or more configuration items. Specify the tags
-    /// that you want to delete in a <i>key</i>-<i>value</i> format. For
-    /// example:</p>
-    /// <p>
-    /// <code>{"key": "serverType", "value": "webServer"}</code>
-    /// </p>
+    /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
+    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -5465,12 +5153,8 @@ impl std::fmt::Debug for DeleteApplicationsInput {
 pub struct CreateTagsInput {
     /// <p>A list of configuration items that you want to tag.</p>
     pub configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Tags that you want to associate with one or more configuration items. Specify the tags
-    /// that you want to create in a <i>key</i>-<i>value</i> format. For
-    /// example:</p>
-    /// <p>
-    /// <code>{"key": "serverType", "value": "webServer"}</code>
-    /// </p>
+    /// <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>
+    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTagsInput {
@@ -5478,12 +5162,8 @@ impl CreateTagsInput {
     pub fn configuration_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.configuration_ids.as_deref()
     }
-    /// <p>Tags that you want to associate with one or more configuration items. Specify the tags
-    /// that you want to create in a <i>key</i>-<i>value</i> format. For
-    /// example:</p>
-    /// <p>
-    /// <code>{"key": "serverType", "value": "webServer"}</code>
-    /// </p>
+    /// <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>
+    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }

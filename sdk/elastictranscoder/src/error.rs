@@ -18,11 +18,9 @@ pub enum CancelJobErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The resource you are attempting to change is in use. For example, you are attempting
-    /// to delete a pipeline that is currently in use.</p>
+    /// <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -72,8 +70,6 @@ impl CancelJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -155,11 +151,9 @@ pub enum CreateJobErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>Too many operations for a given AWS account. For example, the number of pipelines
-    /// exceeds the maximum allowed.</p>
+    /// <p>Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -209,8 +203,6 @@ impl CreateJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -292,11 +284,9 @@ pub enum CreatePipelineErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>Too many operations for a given AWS account. For example, the number of pipelines
-    /// exceeds the maximum allowed.</p>
+    /// <p>Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -346,8 +336,6 @@ impl CreatePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -441,8 +429,7 @@ pub enum CreatePresetErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>Too many operations for a given AWS account. For example, the number of pipelines
-    /// exceeds the maximum allowed.</p>
+    /// <p>Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -491,8 +478,6 @@ impl CreatePresetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -572,11 +557,9 @@ pub enum DeletePipelineErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The resource you are attempting to change is in use. For example, you are attempting
-    /// to delete a pipeline that is currently in use.</p>
+    /// <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -626,8 +609,6 @@ impl DeletePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -721,8 +702,7 @@ pub enum DeletePresetErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -771,8 +751,6 @@ impl DeletePresetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -855,8 +833,7 @@ pub enum ListJobsByPipelineErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -905,8 +882,6 @@ impl ListJobsByPipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -995,8 +970,7 @@ pub enum ListJobsByStatusErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -1045,8 +1019,6 @@ impl ListJobsByStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1181,8 +1153,6 @@ impl ListPipelinesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1303,8 +1273,6 @@ impl ListPresetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1379,8 +1347,7 @@ pub enum ReadJobErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -1429,8 +1396,6 @@ impl ReadJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1507,8 +1472,7 @@ pub enum ReadPipelineErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -1557,8 +1521,6 @@ impl ReadPipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1641,8 +1603,7 @@ pub enum ReadPresetErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -1691,8 +1652,6 @@ impl ReadPresetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1772,8 +1731,7 @@ pub enum TestRoleErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -1822,8 +1780,6 @@ impl TestRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1900,11 +1856,9 @@ pub enum UpdatePipelineErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The resource you are attempting to change is in use. For example, you are attempting
-    /// to delete a pipeline that is currently in use.</p>
+    /// <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -1954,8 +1908,6 @@ impl UpdatePipelineError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2049,11 +2001,9 @@ pub enum UpdatePipelineNotificationsErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The resource you are attempting to change is in use. For example, you are attempting
-    /// to delete a pipeline that is currently in use.</p>
+    /// <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -2107,8 +2057,6 @@ impl UpdatePipelineNotificationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2207,11 +2155,9 @@ pub enum UpdatePipelineStatusErrorKind {
     IncompatibleVersionException(crate::error::IncompatibleVersionException),
     /// <p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The resource you are attempting to change is in use. For example, you are attempting
-    /// to delete a pipeline that is currently in use.</p>
+    /// <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The requested resource does not exist or is not available. For example, the pipeline
-    /// to which you're trying to add a job doesn't exist or is still being created.</p>
+    /// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
@@ -2261,8 +2207,6 @@ impl UpdatePipelineStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2404,8 +2348,7 @@ impl ValidationException {
     }
 }
 
-/// <p>The requested resource does not exist or is not available. For example, the pipeline
-/// to which you're trying to add a job doesn't exist or is still being created.</p>
+/// <p>The requested resource does not exist or is not available. For example, the pipeline to which you're trying to add a job doesn't exist or is still being created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -2469,8 +2412,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The resource you are attempting to change is in use. For example, you are attempting
-/// to delete a pipeline that is currently in use.</p>
+/// <p>The resource you are attempting to change is in use. For example, you are attempting to delete a pipeline that is currently in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
@@ -2726,8 +2668,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>Too many operations for a given AWS account. For example, the number of pipelines
-/// exceeds the maximum allowed.</p>
+/// <p>Too many operations for a given AWS account. For example, the number of pipelines exceeds the maximum allowed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

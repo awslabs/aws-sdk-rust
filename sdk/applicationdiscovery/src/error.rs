@@ -12,15 +12,13 @@ pub struct AssociateConfigurationItemsToApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateConfigurationItemsToApplicationErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -82,8 +80,6 @@ impl AssociateConfigurationItemsToApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -178,15 +174,13 @@ pub struct BatchDeleteImportDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteImportDataErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -235,8 +229,6 @@ impl BatchDeleteImportDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -319,15 +311,13 @@ pub struct CreateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateApplicationErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -376,8 +366,6 @@ impl CreateApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -460,18 +448,15 @@ pub struct CreateTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTagsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The specified configuration ID was not located. Verify the configuration ID and try
-    /// again.</p>
+    /// <p>The specified configuration ID was not located. Verify the configuration ID and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -521,8 +506,6 @@ impl CreateTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -613,15 +596,13 @@ pub struct DeleteApplicationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApplicationsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -670,8 +651,6 @@ impl DeleteApplicationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -754,18 +733,15 @@ pub struct DeleteTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTagsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The specified configuration ID was not located. Verify the configuration ID and try
-    /// again.</p>
+    /// <p>The specified configuration ID was not located. Verify the configuration ID and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -815,8 +791,6 @@ impl DeleteTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -907,15 +881,13 @@ pub struct DescribeAgentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAgentsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -964,8 +936,6 @@ impl DescribeAgentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1048,15 +1018,13 @@ pub struct DescribeConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeConfigurationsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -1107,8 +1075,6 @@ impl DescribeConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1191,20 +1157,17 @@ pub struct DescribeContinuousExportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeContinuousExportsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>This operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>The specified configuration ID was not located. Verify the configuration ID and try
-    /// again.</p>
+    /// <p>The specified configuration ID was not located. Verify the configuration ID and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -1263,8 +1226,6 @@ impl DescribeContinuousExportsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1369,18 +1330,15 @@ pub struct DescribeExportConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExportConfigurationsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The specified configuration ID was not located. Verify the configuration ID and try
-    /// again.</p>
+    /// <p>The specified configuration ID was not located. Verify the configuration ID and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -1442,8 +1400,6 @@ impl DescribeExportConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1546,15 +1502,13 @@ pub struct DescribeExportTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExportTasksErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -1603,8 +1557,6 @@ impl DescribeExportTasksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1687,15 +1639,13 @@ pub struct DescribeImportTasksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeImportTasksErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -1744,8 +1694,6 @@ impl DescribeImportTasksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1828,18 +1776,15 @@ pub struct DescribeTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTagsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The specified configuration ID was not located. Verify the configuration ID and try
-    /// again.</p>
+    /// <p>The specified configuration ID was not located. Verify the configuration ID and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -1889,8 +1834,6 @@ impl DescribeTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1981,15 +1924,13 @@ pub struct DisassociateConfigurationItemsFromApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateConfigurationItemsFromApplicationErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -2055,8 +1996,6 @@ impl DisassociateConfigurationItemsFromApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2153,15 +2092,13 @@ pub struct ExportConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportConfigurationsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>This operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -2213,8 +2150,6 @@ impl ExportConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2305,15 +2240,13 @@ pub struct GetDiscoverySummaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDiscoverySummaryErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -2362,8 +2295,6 @@ impl GetDiscoverySummaryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2446,18 +2377,15 @@ pub struct ListConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListConfigurationsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The specified configuration ID was not located. Verify the configuration ID and try
-    /// again.</p>
+    /// <p>The specified configuration ID was not located. Verify the configuration ID and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -2507,8 +2435,6 @@ impl ListConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2599,15 +2525,13 @@ pub struct ListServerNeighborsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServerNeighborsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -2656,8 +2580,6 @@ impl ListServerNeighborsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2740,8 +2662,7 @@ pub struct StartContinuousExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartContinuousExportErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p></p>
     ConflictErrorException(crate::error::ConflictErrorException),
@@ -2749,16 +2670,11 @@ pub enum StartContinuousExportErrorKind {
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>This operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>This issue occurs when the same <code>clientRequestToken</code> is used with the
-    /// <code>StartImportTask</code> action, but with different parameters. For example, you use the
-    /// same request token but have two different import URLs, you can encounter this issue. If the
-    /// import tasks are meant to be different, use a different <code>clientRequestToken</code>, and
-    /// try again.</p>
+    /// <p>This issue occurs when the same <code>clientRequestToken</code> is used with the <code>StartImportTask</code> action, but with different parameters. For example, you use the same request token but have two different import URLs, you can encounter this issue. If the import tasks are meant to be different, use a different <code>clientRequestToken</code>, and try again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -2810,8 +2726,6 @@ impl StartContinuousExportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2918,15 +2832,13 @@ pub struct StartDataCollectionByAgentIdsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartDataCollectionByAgentIdsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -2988,8 +2900,6 @@ impl StartDataCollectionByAgentIdsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3082,15 +2992,13 @@ pub struct StartExportTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartExportTaskErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>This operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -3142,8 +3050,6 @@ impl StartExportTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3234,21 +3140,15 @@ pub struct StartImportTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartImportTaskErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>This issue occurs when the same <code>clientRequestToken</code> is used with the
-    /// <code>StartImportTask</code> action, but with different parameters. For example, you use the
-    /// same request token but have two different import URLs, you can encounter this issue. If the
-    /// import tasks are meant to be different, use a different <code>clientRequestToken</code>, and
-    /// try again.</p>
+    /// <p>This issue occurs when the same <code>clientRequestToken</code> is used with the <code>StartImportTask</code> action, but with different parameters. For example, you use the same request token but have two different import URLs, you can encounter this issue. If the import tasks are meant to be different, use a different <code>clientRequestToken</code>, and try again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -3298,8 +3198,6 @@ impl StartImportTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3390,26 +3288,19 @@ pub struct StopContinuousExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopContinuousExportErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>This operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>This issue occurs when the same <code>clientRequestToken</code> is used with the
-    /// <code>StartImportTask</code> action, but with different parameters. For example, you use the
-    /// same request token but have two different import URLs, you can encounter this issue. If the
-    /// import tasks are meant to be different, use a different <code>clientRequestToken</code>, and
-    /// try again.</p>
+    /// <p>This issue occurs when the same <code>clientRequestToken</code> is used with the <code>StartImportTask</code> action, but with different parameters. For example, you use the same request token but have two different import URLs, you can encounter this issue. If the import tasks are meant to be different, use a different <code>clientRequestToken</code>, and try again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified configuration ID was not located. Verify the configuration ID and try
-    /// again.</p>
+    /// <p>The specified configuration ID was not located. Verify the configuration ID and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -3461,8 +3352,6 @@ impl StopContinuousExportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3569,15 +3458,13 @@ pub struct StopDataCollectionByAgentIdsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopDataCollectionByAgentIdsErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -3636,8 +3523,6 @@ impl StopDataCollectionByAgentIdsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3730,15 +3615,13 @@ pub struct UpdateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationErrorKind {
-    /// <p>The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
     /// <p>One or more parameters are not valid. Verify the parameters and try again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The value of one or more parameters are either invalid or out of range. Verify the
-    /// parameter values and try again.</p>
+    /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalErrorException(crate::error::ServerInternalErrorException),
@@ -3787,8 +3670,6 @@ impl UpdateApplicationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3922,8 +3803,7 @@ impl ServerInternalErrorException {
     }
 }
 
-/// <p>The value of one or more parameters are either invalid or out of range. Verify the
-/// parameter values and try again.</p>
+/// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterValueException {
@@ -4115,8 +3995,7 @@ impl HomeRegionNotSetException {
     }
 }
 
-/// <p>The AWS user account does not have permission to perform the action. Check the IAM
-/// policy associated with this account.</p>
+/// <p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationErrorException {
@@ -4180,8 +4059,7 @@ impl AuthorizationErrorException {
     }
 }
 
-/// <p>The specified configuration ID was not located. Verify the configuration ID and try
-/// again.</p>
+/// <p>The specified configuration ID was not located. Verify the configuration ID and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -4245,11 +4123,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>This issue occurs when the same <code>clientRequestToken</code> is used with the
-/// <code>StartImportTask</code> action, but with different parameters. For example, you use the
-/// same request token but have two different import URLs, you can encounter this issue. If the
-/// import tasks are meant to be different, use a different <code>clientRequestToken</code>, and
-/// try again.</p>
+/// <p>This issue occurs when the same <code>clientRequestToken</code> is used with the <code>StartImportTask</code> action, but with different parameters. For example, you use the same request token but have two different import URLs, you can encounter this issue. If the import tasks are meant to be different, use a different <code>clientRequestToken</code>, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {

@@ -3,25 +3,17 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>A string that contains a tag key. The string length should be between 1 and 128
-    /// characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . :
-    /// / = + @.</p>
+    /// <p>A string that contains a tag key. The string length should be between 1 and 128 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>A string that contains an optional tag value. The string length should be between 0 and
-    /// 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ -
-    /// . : / = + @.</p>
+    /// <p>A string that contains an optional tag value. The string length should be between 0 and 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>A string that contains a tag key. The string length should be between 1 and 128
-    /// characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . :
-    /// / = + @.</p>
+    /// <p>A string that contains a tag key. The string length should be between 1 and 128 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>A string that contains an optional tag value. The string length should be between 0 and
-    /// 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ -
-    /// . : / = + @.</p>
+    /// <p>A string that contains an optional tag value. The string length should be between 0 and 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -44,30 +36,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A string that contains a tag key. The string length should be between 1 and 128
-        /// characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . :
-        /// / = + @.</p>
+        /// <p>A string that contains a tag key. The string length should be between 1 and 128 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>A string that contains a tag key. The string length should be between 1 and 128
-        /// characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . :
-        /// / = + @.</p>
+        /// <p>A string that contains a tag key. The string length should be between 1 and 128 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>A string that contains an optional tag value. The string length should be between 0 and
-        /// 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ -
-        /// . : / = + @.</p>
+        /// <p>A string that contains an optional tag value. The string length should be between 0 and 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>A string that contains an optional tag value. The string length should be between 0 and
-        /// 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ -
-        /// . : / = + @.</p>
+        /// <p>A string that contains an optional tag value. The string length should be between 0 and 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . : / = + @.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -108,8 +92,7 @@ pub struct RequestedServiceQuotaChange {
     pub desired_value: std::option::Option<f64>,
     /// <p>The state of the quota increase request.</p>
     pub status: std::option::Option<crate::model::RequestStatus>,
-    /// <p>The date and time when the quota increase request was received and the case ID was
-    /// created.</p>
+    /// <p>The date and time when the quota increase request was received and the case ID was created.</p>
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of the most recent change.</p>
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
@@ -155,8 +138,7 @@ impl RequestedServiceQuotaChange {
     pub fn status(&self) -> std::option::Option<&crate::model::RequestStatus> {
         self.status.as_ref()
     }
-    /// <p>The date and time when the quota increase request was received and the case ID was
-    /// created.</p>
+    /// <p>The date and time when the quota increase request was received and the case ID was created.</p>
     pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
@@ -306,14 +288,12 @@ pub mod requested_service_quota_change {
             self.status = input;
             self
         }
-        /// <p>The date and time when the quota increase request was received and the case ID was
-        /// created.</p>
+        /// <p>The date and time when the quota increase request was received and the case ID was created.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
-        /// <p>The date and time when the quota increase request was received and the case ID was
-        /// created.</p>
+        /// <p>The date and time when the quota increase request was received and the case ID was created.</p>
         pub fn set_created(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1010,26 +990,10 @@ impl ServiceQuota {
 pub struct ErrorReason {
     /// <p>Service Quotas returns the following error values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required
-    /// permissions to complete the action. To resolve the error, you must have permission to
-    /// access the service or quota.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service
-    /// Quotas.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
-    /// Quotas.</p>
-    /// </li>
+    /// <li> <p> <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the service or quota.</p> </li>
+    /// <li> <p> <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.</p> </li>
+    /// <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p> </li>
+    /// <li> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p> </li>
     /// </ul>
     pub error_code: std::option::Option<crate::model::ErrorCode>,
     /// <p>The error message.</p>
@@ -1038,26 +1002,10 @@ pub struct ErrorReason {
 impl ErrorReason {
     /// <p>Service Quotas returns the following error values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required
-    /// permissions to complete the action. To resolve the error, you must have permission to
-    /// access the service or quota.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service
-    /// Quotas.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
-    /// Quotas.</p>
-    /// </li>
+    /// <li> <p> <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the service or quota.</p> </li>
+    /// <li> <p> <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.</p> </li>
+    /// <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p> </li>
+    /// <li> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p> </li>
     /// </ul>
     pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
         self.error_code.as_ref()
@@ -1087,26 +1035,10 @@ pub mod error_reason {
     impl Builder {
         /// <p>Service Quotas returns the following error values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required
-        /// permissions to complete the action. To resolve the error, you must have permission to
-        /// access the service or quota.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service
-        /// Quotas.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
-        /// Quotas.</p>
-        /// </li>
+        /// <li> <p> <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the service or quota.</p> </li>
+        /// <li> <p> <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.</p> </li>
+        /// <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p> </li>
+        /// <li> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p> </li>
         /// </ul>
         pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
             self.error_code = Some(input);
@@ -1114,26 +1046,10 @@ pub mod error_reason {
         }
         /// <p>Service Quotas returns the following error values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required
-        /// permissions to complete the action. To resolve the error, you must have permission to
-        /// access the service or quota.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service
-        /// Quotas.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
-        /// Quotas.</p>
-        /// </li>
+        /// <li> <p> <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the service or quota.</p> </li>
+        /// <li> <p> <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.</p> </li>
+        /// <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p> </li>
+        /// <li> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p> </li>
         /// </ul>
         pub fn set_error_code(
             mut self,
@@ -1406,8 +1322,7 @@ pub struct MetricInfo {
     pub metric_namespace: std::option::Option<std::string::String>,
     /// <p>The name of the metric.</p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>The metric dimension. This is a name/value pair that is part of the identity of a
-    /// metric.</p>
+    /// <p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>
     pub metric_dimensions:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
@@ -1422,8 +1337,7 @@ impl MetricInfo {
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>The metric dimension. This is a name/value pair that is part of the identity of a
-    /// metric.</p>
+    /// <p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>
     pub fn metric_dimensions(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1489,8 +1403,7 @@ pub mod metric_info {
         ///
         /// To override the contents of this collection use [`set_metric_dimensions`](Self::set_metric_dimensions).
         ///
-        /// <p>The metric dimension. This is a name/value pair that is part of the identity of a
-        /// metric.</p>
+        /// <p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>
         pub fn metric_dimensions(
             mut self,
             k: impl Into<std::string::String>,
@@ -1501,8 +1414,7 @@ pub mod metric_info {
             self.metric_dimensions = Some(hash_map);
             self
         }
-        /// <p>The metric dimension. This is a name/value pair that is part of the identity of a
-        /// metric.</p>
+        /// <p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>
         pub fn set_metric_dimensions(
             mut self,
             input: std::option::Option<

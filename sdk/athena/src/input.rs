@@ -44,7 +44,7 @@ pub mod batch_get_named_query_input {
 #[doc(hidden)]
 pub type BatchGetNamedQueryInputOperationOutputAlias = crate::operation::BatchGetNamedQuery;
 #[doc(hidden)]
-pub type BatchGetNamedQueryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetNamedQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetNamedQueryInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetNamedQuery`](crate::operation::BatchGetNamedQuery)>
     #[allow(clippy::let_and_return)]
@@ -55,7 +55,7 @@ impl BatchGetNamedQueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetNamedQuery,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -140,7 +140,7 @@ impl BatchGetNamedQueryInput {
             "BatchGetNamedQuery",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -207,7 +207,7 @@ pub mod batch_get_query_execution_input {
 #[doc(hidden)]
 pub type BatchGetQueryExecutionInputOperationOutputAlias = crate::operation::BatchGetQueryExecution;
 #[doc(hidden)]
-pub type BatchGetQueryExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetQueryExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetQueryExecutionInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetQueryExecution`](crate::operation::BatchGetQueryExecution)>
     #[allow(clippy::let_and_return)]
@@ -218,7 +218,7 @@ impl BatchGetQueryExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetQueryExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -305,7 +305,7 @@ impl BatchGetQueryExecutionInput {
             "BatchGetQueryExecution",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -343,30 +343,22 @@ pub mod create_data_catalog_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of the data catalog to create. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the data catalog to create. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
-        /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
-        /// Glue Data Catalog.</p>
+        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
-        /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
-        /// Glue Data Catalog.</p>
+        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataCatalogType>,
@@ -388,73 +380,20 @@ pub mod create_data_catalog_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Specifies the Lambda function or functions to use for creating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
-        /// <code>
-        /// <i>catalog_id</i>
-        /// </code> is the account ID of the
-        /// Amazon Web Services account to which the Glue Data Catalog
-        /// belongs.</p>
-        /// <p>
-        /// <code>catalog-id=<i>catalog_id</i>
-        /// </code>
-        /// </p>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>GLUE</code> data catalog type also applies to the default
-        /// <code>AwsDataCatalog</code> that already exists in your account, of
-        /// which you can have only one and cannot modify.</p>
-        /// </li>
-        /// <li>
-        /// <p>Queries that specify a Glue Data Catalog other than the default
-        /// <code>AwsDataCatalog</code> must be run on Athena engine
-        /// version 2.</p>
-        /// </li>
-        /// <li>
-        /// <p>In Regions where Athena engine version 2 is not available,
-        /// creating new Glue data catalogs results in an
-        /// <code>INVALID_INPUT</code> error.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+        /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+        /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn parameters(
             mut self,
@@ -466,73 +405,20 @@ pub mod create_data_catalog_input {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>Specifies the Lambda function or functions to use for creating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
-        /// <code>
-        /// <i>catalog_id</i>
-        /// </code> is the account ID of the
-        /// Amazon Web Services account to which the Glue Data Catalog
-        /// belongs.</p>
-        /// <p>
-        /// <code>catalog-id=<i>catalog_id</i>
-        /// </code>
-        /// </p>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>GLUE</code> data catalog type also applies to the default
-        /// <code>AwsDataCatalog</code> that already exists in your account, of
-        /// which you can have only one and cannot modify.</p>
-        /// </li>
-        /// <li>
-        /// <p>Queries that specify a Glue Data Catalog other than the default
-        /// <code>AwsDataCatalog</code> must be run on Athena engine
-        /// version 2.</p>
-        /// </li>
-        /// <li>
-        /// <p>In Regions where Athena engine version 2 is not available,
-        /// creating new Glue data catalogs results in an
-        /// <code>INVALID_INPUT</code> error.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+        /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+        /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_parameters(
             mut self,
@@ -548,9 +434,9 @@ pub mod create_data_catalog_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -582,7 +468,7 @@ pub mod create_data_catalog_input {
 #[doc(hidden)]
 pub type CreateDataCatalogInputOperationOutputAlias = crate::operation::CreateDataCatalog;
 #[doc(hidden)]
-pub type CreateDataCatalogInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDataCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDataCatalogInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataCatalog`](crate::operation::CreateDataCatalog)>
     #[allow(clippy::let_and_return)]
@@ -593,7 +479,7 @@ impl CreateDataCatalogInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataCatalog,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -678,7 +564,7 @@ impl CreateDataCatalogInput {
             "CreateDataCatalog",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -755,29 +641,15 @@ pub mod create_named_query_input {
             self.query_string = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -817,7 +689,7 @@ pub mod create_named_query_input {
 #[doc(hidden)]
 pub type CreateNamedQueryInputOperationOutputAlias = crate::operation::CreateNamedQuery;
 #[doc(hidden)]
-pub type CreateNamedQueryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateNamedQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNamedQueryInput {
     /// Consumes the builder and constructs an Operation<[`CreateNamedQuery`](crate::operation::CreateNamedQuery)>
     #[allow(clippy::let_and_return)]
@@ -828,7 +700,7 @@ impl CreateNamedQueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNamedQuery,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -916,7 +788,7 @@ impl CreateNamedQueryInput {
             "CreateNamedQuery",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1017,7 +889,7 @@ pub mod create_prepared_statement_input {
 pub type CreatePreparedStatementInputOperationOutputAlias =
     crate::operation::CreatePreparedStatement;
 #[doc(hidden)]
-pub type CreatePreparedStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePreparedStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePreparedStatementInput {
     /// Consumes the builder and constructs an Operation<[`CreatePreparedStatement`](crate::operation::CreatePreparedStatement)>
     #[allow(clippy::let_and_return)]
@@ -1028,7 +900,7 @@ impl CreatePreparedStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePreparedStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1115,7 +987,7 @@ impl CreatePreparedStatementInput {
             "CreatePreparedStatement",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1160,24 +1032,12 @@ pub mod create_work_group_input {
             self.name = input;
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3
-        /// where query results are stored, the encryption configuration, if any, used for
-        /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
-        /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
-        /// specified, and whether workgroup's settings (specified with
-        /// <code>EnforceWorkGroupConfiguration</code>) in the
-        /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn configuration(mut self, input: crate::model::WorkGroupConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3
-        /// where query results are stored, the encryption configuration, if any, used for
-        /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
-        /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
-        /// specified, and whether workgroup's settings (specified with
-        /// <code>EnforceWorkGroupConfiguration</code>) in the
-        /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::WorkGroupConfiguration>,
@@ -1200,9 +1060,9 @@ pub mod create_work_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1233,7 +1093,7 @@ pub mod create_work_group_input {
 #[doc(hidden)]
 pub type CreateWorkGroupInputOperationOutputAlias = crate::operation::CreateWorkGroup;
 #[doc(hidden)]
-pub type CreateWorkGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorkGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkGroup`](crate::operation::CreateWorkGroup)>
     #[allow(clippy::let_and_return)]
@@ -1244,7 +1104,7 @@ impl CreateWorkGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1329,7 +1189,7 @@ impl CreateWorkGroupInput {
             "CreateWorkGroup",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1385,7 +1245,7 @@ pub mod delete_data_catalog_input {
 #[doc(hidden)]
 pub type DeleteDataCatalogInputOperationOutputAlias = crate::operation::DeleteDataCatalog;
 #[doc(hidden)]
-pub type DeleteDataCatalogInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDataCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDataCatalogInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataCatalog`](crate::operation::DeleteDataCatalog)>
     #[allow(clippy::let_and_return)]
@@ -1396,7 +1256,7 @@ impl DeleteDataCatalogInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataCatalog,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1481,7 +1341,7 @@ impl DeleteDataCatalogInput {
             "DeleteDataCatalog",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1542,7 +1402,7 @@ pub mod delete_named_query_input {
 #[doc(hidden)]
 pub type DeleteNamedQueryInputOperationOutputAlias = crate::operation::DeleteNamedQuery;
 #[doc(hidden)]
-pub type DeleteNamedQueryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteNamedQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNamedQueryInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNamedQuery`](crate::operation::DeleteNamedQuery)>
     #[allow(clippy::let_and_return)]
@@ -1553,7 +1413,7 @@ impl DeleteNamedQueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNamedQuery,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1641,7 +1501,7 @@ impl DeleteNamedQueryInput {
             "DeleteNamedQuery",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1715,7 +1575,7 @@ pub mod delete_prepared_statement_input {
 pub type DeletePreparedStatementInputOperationOutputAlias =
     crate::operation::DeletePreparedStatement;
 #[doc(hidden)]
-pub type DeletePreparedStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePreparedStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePreparedStatementInput {
     /// Consumes the builder and constructs an Operation<[`DeletePreparedStatement`](crate::operation::DeletePreparedStatement)>
     #[allow(clippy::let_and_return)]
@@ -1726,7 +1586,7 @@ impl DeletePreparedStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePreparedStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1813,7 +1673,7 @@ impl DeletePreparedStatementInput {
             "DeletePreparedStatement",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1856,14 +1716,12 @@ pub mod delete_work_group_input {
             self.work_group = input;
             self
         }
-        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
-        /// named queries or query executions.</p>
+        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
         pub fn recursive_delete_option(mut self, input: bool) -> Self {
             self.recursive_delete_option = Some(input);
             self
         }
-        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
-        /// named queries or query executions.</p>
+        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
         pub fn set_recursive_delete_option(mut self, input: std::option::Option<bool>) -> Self {
             self.recursive_delete_option = input;
             self
@@ -1885,7 +1743,7 @@ pub mod delete_work_group_input {
 #[doc(hidden)]
 pub type DeleteWorkGroupInputOperationOutputAlias = crate::operation::DeleteWorkGroup;
 #[doc(hidden)]
-pub type DeleteWorkGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWorkGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkGroup`](crate::operation::DeleteWorkGroup)>
     #[allow(clippy::let_and_return)]
@@ -1896,7 +1754,7 @@ impl DeleteWorkGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1981,7 +1839,7 @@ impl DeleteWorkGroupInput {
             "DeleteWorkGroup",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2054,7 +1912,7 @@ pub mod get_database_input {
 #[doc(hidden)]
 pub type GetDatabaseInputOperationOutputAlias = crate::operation::GetDatabase;
 #[doc(hidden)]
-pub type GetDatabaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDatabaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDatabaseInput {
     /// Consumes the builder and constructs an Operation<[`GetDatabase`](crate::operation::GetDatabase)>
     #[allow(clippy::let_and_return)]
@@ -2065,7 +1923,7 @@ impl GetDatabaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDatabase,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2149,7 +2007,7 @@ impl GetDatabaseInput {
             "GetDatabase",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2205,7 +2063,7 @@ pub mod get_data_catalog_input {
 #[doc(hidden)]
 pub type GetDataCatalogInputOperationOutputAlias = crate::operation::GetDataCatalog;
 #[doc(hidden)]
-pub type GetDataCatalogInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDataCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDataCatalogInput {
     /// Consumes the builder and constructs an Operation<[`GetDataCatalog`](crate::operation::GetDataCatalog)>
     #[allow(clippy::let_and_return)]
@@ -2216,7 +2074,7 @@ impl GetDataCatalogInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDataCatalog,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2301,7 +2159,7 @@ impl GetDataCatalogInput {
             "GetDataCatalog",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2333,14 +2191,12 @@ pub mod get_named_query_input {
         pub(crate) named_query_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
-        /// IDs.</p>
+        /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
         pub fn named_query_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.named_query_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
-        /// IDs.</p>
+        /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
         pub fn set_named_query_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2364,7 +2220,7 @@ pub mod get_named_query_input {
 #[doc(hidden)]
 pub type GetNamedQueryInputOperationOutputAlias = crate::operation::GetNamedQuery;
 #[doc(hidden)]
-pub type GetNamedQueryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNamedQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNamedQueryInput {
     /// Consumes the builder and constructs an Operation<[`GetNamedQuery`](crate::operation::GetNamedQuery)>
     #[allow(clippy::let_and_return)]
@@ -2375,7 +2231,7 @@ impl GetNamedQueryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNamedQuery,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2460,7 +2316,7 @@ impl GetNamedQueryInput {
             "GetNamedQuery",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2533,7 +2389,7 @@ pub mod get_prepared_statement_input {
 #[doc(hidden)]
 pub type GetPreparedStatementInputOperationOutputAlias = crate::operation::GetPreparedStatement;
 #[doc(hidden)]
-pub type GetPreparedStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPreparedStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPreparedStatementInput {
     /// Consumes the builder and constructs an Operation<[`GetPreparedStatement`](crate::operation::GetPreparedStatement)>
     #[allow(clippy::let_and_return)]
@@ -2544,7 +2400,7 @@ impl GetPreparedStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPreparedStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2631,7 +2487,7 @@ impl GetPreparedStatementInput {
             "GetPreparedStatement",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2692,7 +2548,7 @@ pub mod get_query_execution_input {
 #[doc(hidden)]
 pub type GetQueryExecutionInputOperationOutputAlias = crate::operation::GetQueryExecution;
 #[doc(hidden)]
-pub type GetQueryExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetQueryExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQueryExecutionInput {
     /// Consumes the builder and constructs an Operation<[`GetQueryExecution`](crate::operation::GetQueryExecution)>
     #[allow(clippy::let_and_return)]
@@ -2703,7 +2559,7 @@ impl GetQueryExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetQueryExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2788,7 +2644,7 @@ impl GetQueryExecutionInput {
             "GetQueryExecution",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2835,16 +2691,12 @@ pub mod get_query_results_input {
             self.query_execution_id = input;
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2877,7 +2729,7 @@ pub mod get_query_results_input {
 #[doc(hidden)]
 pub type GetQueryResultsInputOperationOutputAlias = crate::operation::GetQueryResults;
 #[doc(hidden)]
-pub type GetQueryResultsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetQueryResultsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQueryResultsInput {
     /// Consumes the builder and constructs an Operation<[`GetQueryResults`](crate::operation::GetQueryResults)>
     #[allow(clippy::let_and_return)]
@@ -2888,7 +2740,7 @@ impl GetQueryResultsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetQueryResults,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2973,7 +2825,7 @@ impl GetQueryResultsInput {
             "GetQueryResults",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3007,14 +2859,12 @@ pub mod get_table_metadata_input {
         pub(crate) table_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the data catalog that contains the database and table metadata to
-        /// return.</p>
+        /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
         pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.catalog_name = Some(input.into());
             self
         }
-        /// <p>The name of the data catalog that contains the database and table metadata to
-        /// return.</p>
+        /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
         pub fn set_catalog_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_name = input;
             self
@@ -3060,7 +2910,7 @@ pub mod get_table_metadata_input {
 #[doc(hidden)]
 pub type GetTableMetadataInputOperationOutputAlias = crate::operation::GetTableMetadata;
 #[doc(hidden)]
-pub type GetTableMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTableMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTableMetadataInput {
     /// Consumes the builder and constructs an Operation<[`GetTableMetadata`](crate::operation::GetTableMetadata)>
     #[allow(clippy::let_and_return)]
@@ -3071,7 +2921,7 @@ impl GetTableMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTableMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3156,7 +3006,7 @@ impl GetTableMetadataInput {
             "GetTableMetadata",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3214,7 +3064,7 @@ pub mod get_work_group_input {
 #[doc(hidden)]
 pub type GetWorkGroupInputOperationOutputAlias = crate::operation::GetWorkGroup;
 #[doc(hidden)]
-pub type GetWorkGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWorkGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWorkGroupInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkGroup`](crate::operation::GetWorkGroup)>
     #[allow(clippy::let_and_return)]
@@ -3225,7 +3075,7 @@ impl GetWorkGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWorkGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3309,7 +3159,7 @@ impl GetWorkGroupInput {
             "GetWorkGroup",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3353,16 +3203,12 @@ pub mod list_databases_input {
             self.catalog_name = input;
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3395,7 +3241,7 @@ pub mod list_databases_input {
 #[doc(hidden)]
 pub type ListDatabasesInputOperationOutputAlias = crate::operation::ListDatabases;
 #[doc(hidden)]
-pub type ListDatabasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatabasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatabasesInput {
     /// Consumes the builder and constructs an Operation<[`ListDatabases`](crate::operation::ListDatabases)>
     #[allow(clippy::let_and_return)]
@@ -3406,7 +3252,7 @@ impl ListDatabasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatabases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3490,7 +3336,7 @@ impl ListDatabasesInput {
             "ListDatabases",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3523,16 +3369,12 @@ pub mod list_data_catalogs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3564,7 +3406,7 @@ pub mod list_data_catalogs_input {
 #[doc(hidden)]
 pub type ListDataCatalogsInputOperationOutputAlias = crate::operation::ListDataCatalogs;
 #[doc(hidden)]
-pub type ListDataCatalogsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDataCatalogsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDataCatalogsInput {
     /// Consumes the builder and constructs an Operation<[`ListDataCatalogs`](crate::operation::ListDataCatalogs)>
     #[allow(clippy::let_and_return)]
@@ -3575,7 +3417,7 @@ impl ListDataCatalogsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDataCatalogs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3660,7 +3502,7 @@ impl ListDataCatalogsInput {
             "ListDataCatalogs",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3693,16 +3535,12 @@ pub mod list_engine_versions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3734,7 +3572,7 @@ pub mod list_engine_versions_input {
 #[doc(hidden)]
 pub type ListEngineVersionsInputOperationOutputAlias = crate::operation::ListEngineVersions;
 #[doc(hidden)]
-pub type ListEngineVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEngineVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEngineVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListEngineVersions`](crate::operation::ListEngineVersions)>
     #[allow(clippy::let_and_return)]
@@ -3745,7 +3583,7 @@ impl ListEngineVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEngineVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3830,7 +3668,7 @@ impl ListEngineVersionsInput {
             "ListEngineVersions",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3864,16 +3702,12 @@ pub mod list_named_queries_input {
         pub(crate) work_group: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3888,16 +3722,12 @@ pub mod list_named_queries_input {
             self.max_results = input;
             self
         }
-        /// <p>The name of the workgroup from which the named queries are being returned. If a
-        /// workgroup is not specified, the saved queries for the primary workgroup are
-        /// returned.</p>
+        /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
         pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.work_group = Some(input.into());
             self
         }
-        /// <p>The name of the workgroup from which the named queries are being returned. If a
-        /// workgroup is not specified, the saved queries for the primary workgroup are
-        /// returned.</p>
+        /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
         pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.work_group = input;
             self
@@ -3920,7 +3750,7 @@ pub mod list_named_queries_input {
 #[doc(hidden)]
 pub type ListNamedQueriesInputOperationOutputAlias = crate::operation::ListNamedQueries;
 #[doc(hidden)]
-pub type ListNamedQueriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListNamedQueriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNamedQueriesInput {
     /// Consumes the builder and constructs an Operation<[`ListNamedQueries`](crate::operation::ListNamedQueries)>
     #[allow(clippy::let_and_return)]
@@ -3931,7 +3761,7 @@ impl ListNamedQueriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNamedQueries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4016,7 +3846,7 @@ impl ListNamedQueriesInput {
             "ListNamedQueries",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4060,16 +3890,12 @@ pub mod list_prepared_statements_input {
             self.work_group = input;
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4102,7 +3928,7 @@ pub mod list_prepared_statements_input {
 #[doc(hidden)]
 pub type ListPreparedStatementsInputOperationOutputAlias = crate::operation::ListPreparedStatements;
 #[doc(hidden)]
-pub type ListPreparedStatementsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPreparedStatementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPreparedStatementsInput {
     /// Consumes the builder and constructs an Operation<[`ListPreparedStatements`](crate::operation::ListPreparedStatements)>
     #[allow(clippy::let_and_return)]
@@ -4113,7 +3939,7 @@ impl ListPreparedStatementsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPreparedStatements,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4200,7 +4026,7 @@ impl ListPreparedStatementsInput {
             "ListPreparedStatements",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4234,16 +4060,12 @@ pub mod list_query_executions_input {
         pub(crate) work_group: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4258,16 +4080,12 @@ pub mod list_query_executions_input {
             self.max_results = input;
             self
         }
-        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
-        /// specified, a list of available query execution IDs for the queries in the primary
-        /// workgroup is returned.</p>
+        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
         pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.work_group = Some(input.into());
             self
         }
-        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
-        /// specified, a list of available query execution IDs for the queries in the primary
-        /// workgroup is returned.</p>
+        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
         pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.work_group = input;
             self
@@ -4290,7 +4108,7 @@ pub mod list_query_executions_input {
 #[doc(hidden)]
 pub type ListQueryExecutionsInputOperationOutputAlias = crate::operation::ListQueryExecutions;
 #[doc(hidden)]
-pub type ListQueryExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListQueryExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListQueryExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListQueryExecutions`](crate::operation::ListQueryExecutions)>
     #[allow(clippy::let_and_return)]
@@ -4301,7 +4119,7 @@ impl ListQueryExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListQueryExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4386,7 +4204,7 @@ impl ListQueryExecutionsInput {
             "ListQueryExecutions",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4445,28 +4263,22 @@ pub mod list_table_metadata_input {
             self.database_name = input;
             self
         }
-        /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
-        /// metadata for all tables are listed.</p>
+        /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
-        /// metadata for all tables are listed.</p>
+        /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4501,7 +4313,7 @@ pub mod list_table_metadata_input {
 #[doc(hidden)]
 pub type ListTableMetadataInputOperationOutputAlias = crate::operation::ListTableMetadata;
 #[doc(hidden)]
-pub type ListTableMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTableMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTableMetadataInput {
     /// Consumes the builder and constructs an Operation<[`ListTableMetadata`](crate::operation::ListTableMetadata)>
     #[allow(clippy::let_and_return)]
@@ -4512,7 +4324,7 @@ impl ListTableMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTableMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4597,7 +4409,7 @@ impl ListTableMetadataInput {
             "ListTableMetadata",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4641,28 +4453,22 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>The token for the next set of results, or null if there are no additional results for
-        /// this request, where the request lists the tags for the resource with the specified
-        /// ARN.</p>
+        /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no additional results for
-        /// this request, where the request lists the tags for the resource with the specified
-        /// ARN.</p>
+        /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per request that lists the tags for the
-        /// resource.</p>
+        /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request that lists the tags for the
-        /// resource.</p>
+        /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4685,7 +4491,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -4696,7 +4502,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4783,7 +4589,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4816,16 +4622,12 @@ pub mod list_work_groups_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4857,7 +4659,7 @@ pub mod list_work_groups_input {
 #[doc(hidden)]
 pub type ListWorkGroupsInputOperationOutputAlias = crate::operation::ListWorkGroups;
 #[doc(hidden)]
-pub type ListWorkGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorkGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkGroups`](crate::operation::ListWorkGroups)>
     #[allow(clippy::let_and_return)]
@@ -4868,7 +4670,7 @@ impl ListWorkGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4953,7 +4755,7 @@ impl ListWorkGroupsInput {
             "ListWorkGroups",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5000,29 +4802,15 @@ pub mod start_query_execution_input {
             self.query_string = input;
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -5047,18 +4835,12 @@ pub mod start_query_execution_input {
             self.query_execution_context = input;
             self
         }
-        /// <p>Specifies information about where and how to save the results of the query execution.
-        /// If the query runs in a workgroup, then workgroup's settings may override query settings.
-        /// This affects the query results location. The workgroup settings override is specified in
-        /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn result_configuration(mut self, input: crate::model::ResultConfiguration) -> Self {
             self.result_configuration = Some(input);
             self
         }
-        /// <p>Specifies information about where and how to save the results of the query execution.
-        /// If the query runs in a workgroup, then workgroup's settings may override query settings.
-        /// This affects the query results location. The workgroup settings override is specified in
-        /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn set_result_configuration(
             mut self,
             input: std::option::Option<crate::model::ResultConfiguration>,
@@ -5096,7 +4878,7 @@ pub mod start_query_execution_input {
 #[doc(hidden)]
 pub type StartQueryExecutionInputOperationOutputAlias = crate::operation::StartQueryExecution;
 #[doc(hidden)]
-pub type StartQueryExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartQueryExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartQueryExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartQueryExecution`](crate::operation::StartQueryExecution)>
     #[allow(clippy::let_and_return)]
@@ -5107,7 +4889,7 @@ impl StartQueryExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartQueryExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5195,7 +4977,7 @@ impl StartQueryExecutionInput {
             "StartQueryExecution",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5256,7 +5038,7 @@ pub mod stop_query_execution_input {
 #[doc(hidden)]
 pub type StopQueryExecutionInputOperationOutputAlias = crate::operation::StopQueryExecution;
 #[doc(hidden)]
-pub type StopQueryExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopQueryExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopQueryExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StopQueryExecution`](crate::operation::StopQueryExecution)>
     #[allow(clippy::let_and_return)]
@@ -5267,7 +5049,7 @@ impl StopQueryExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopQueryExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5355,7 +5137,7 @@ impl StopQueryExecutionInput {
             "StopQueryExecution",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5388,14 +5170,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
-        /// which tags are to be added.</p>
+        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
-        /// which tags are to be added.</p>
+        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5405,9 +5185,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5436,7 +5216,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -5447,7 +5227,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5531,7 +5311,7 @@ impl TagResourceInput {
             "TagResource",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5578,16 +5358,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
-        /// specified resource.</p>
+        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
-        /// specified resource.</p>
+        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5612,7 +5390,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -5623,7 +5401,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5707,7 +5485,7 @@ impl UntagResourceInput {
             "UntagResource",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5744,30 +5522,22 @@ pub mod update_data_catalog_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the data catalog to update. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the data catalog to update. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-        /// federated catalog, <code>HIVE</code> for an external hive metastore, or
-        /// <code>GLUE</code> for an Glue Data Catalog.</p>
+        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-        /// federated catalog, <code>HIVE</code> for an external hive metastore, or
-        /// <code>GLUE</code> for an Glue Data Catalog.</p>
+        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataCatalogType>,
@@ -5789,44 +5559,14 @@ pub mod update_data_catalog_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Specifies the Lambda function or functions to use for updating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn parameters(
             mut self,
@@ -5838,44 +5578,14 @@ pub mod update_data_catalog_input {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>Specifies the Lambda function or functions to use for updating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_parameters(
             mut self,
@@ -5905,7 +5615,7 @@ pub mod update_data_catalog_input {
 #[doc(hidden)]
 pub type UpdateDataCatalogInputOperationOutputAlias = crate::operation::UpdateDataCatalog;
 #[doc(hidden)]
-pub type UpdateDataCatalogInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDataCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDataCatalogInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataCatalog`](crate::operation::UpdateDataCatalog)>
     #[allow(clippy::let_and_return)]
@@ -5916,7 +5626,7 @@ impl UpdateDataCatalogInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDataCatalog,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6001,7 +5711,7 @@ impl UpdateDataCatalogInput {
             "UpdateDataCatalog",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6102,7 +5812,7 @@ pub mod update_prepared_statement_input {
 pub type UpdatePreparedStatementInputOperationOutputAlias =
     crate::operation::UpdatePreparedStatement;
 #[doc(hidden)]
-pub type UpdatePreparedStatementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePreparedStatementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePreparedStatementInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePreparedStatement`](crate::operation::UpdatePreparedStatement)>
     #[allow(clippy::let_and_return)]
@@ -6113,7 +5823,7 @@ impl UpdatePreparedStatementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePreparedStatement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6200,7 +5910,7 @@ impl UpdatePreparedStatementInput {
             "UpdatePreparedStatement",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6304,7 +6014,7 @@ pub mod update_work_group_input {
 #[doc(hidden)]
 pub type UpdateWorkGroupInputOperationOutputAlias = crate::operation::UpdateWorkGroup;
 #[doc(hidden)]
-pub type UpdateWorkGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateWorkGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkGroup`](crate::operation::UpdateWorkGroup)>
     #[allow(clippy::let_and_return)]
@@ -6315,7 +6025,7 @@ impl UpdateWorkGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6400,7 +6110,7 @@ impl UpdateWorkGroupInput {
             "UpdateWorkGroup",
             "athena",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6513,68 +6223,30 @@ impl std::fmt::Debug for UpdatePreparedStatementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataCatalogInput {
-    /// <p>The name of the data catalog to update. The catalog name must be unique for the
-    /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-    /// sign, or hyphen characters.</p>
+    /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-    /// federated catalog, <code>HIVE</code> for an external hive metastore, or
-    /// <code>GLUE</code> for an Glue Data Catalog.</p>
+    /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub r#type: std::option::Option<crate::model::DataCatalogType>,
     /// <p>New or modified text that describes the data catalog.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies the Lambda function or functions to use for updating the data
-    /// catalog. This is a mapping whose values depend on the catalog type. </p>
+    /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-    /// <code>metadata-function</code> parameter is required. <code>The
-    /// sdk-version</code> parameter is optional and defaults to the currently
-    /// supported version.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// sdk-version=<i>version_number</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-    /// of required parameters, but not both.</p>
+    /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+    /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you have one Lambda function that processes metadata
-    /// and another for reading the actual data, use the following syntax. Both
-    /// parameters are required.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// record-function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> If you have a composite Lambda function that processes
-    /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-    /// <p>
-    /// <code>function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+    /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateDataCatalogInput {
-    /// <p>The name of the data catalog to update. The catalog name must be unique for the
-    /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-    /// sign, or hyphen characters.</p>
+    /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-    /// federated catalog, <code>HIVE</code> for an external hive metastore, or
-    /// <code>GLUE</code> for an Glue Data Catalog.</p>
+    /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataCatalogType> {
         self.r#type.as_ref()
     }
@@ -6582,44 +6254,14 @@ impl UpdateDataCatalogInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies the Lambda function or functions to use for updating the data
-    /// catalog. This is a mapping whose values depend on the catalog type. </p>
+    /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-    /// <code>metadata-function</code> parameter is required. <code>The
-    /// sdk-version</code> parameter is optional and defaults to the currently
-    /// supported version.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// sdk-version=<i>version_number</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-    /// of required parameters, but not both.</p>
+    /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+    /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you have one Lambda function that processes metadata
-    /// and another for reading the actual data, use the following syntax. Both
-    /// parameters are required.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// record-function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> If you have a composite Lambda function that processes
-    /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-    /// <p>
-    /// <code>function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+    /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn parameters(
         &self,
@@ -6645,8 +6287,7 @@ impl std::fmt::Debug for UpdateDataCatalogInput {
 pub struct UntagResourceInput {
     /// <p>Specifies the ARN of the resource from which tags are to be removed.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
-    /// specified resource.</p>
+    /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -6654,8 +6295,7 @@ impl UntagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
-    /// specified resource.</p>
+    /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -6673,15 +6313,13 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
-    /// which tags are to be added.</p>
+    /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
-    /// which tags are to be added.</p>
+    /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -6726,23 +6364,13 @@ impl std::fmt::Debug for StopQueryExecutionInput {
 pub struct StartQueryExecutionInput {
     /// <p>The SQL query statements to be executed.</p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is
-    /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
-    /// received, the same response is returned and another query is not created. If a parameter
-    /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-    /// <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-    /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-    /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-    /// this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The database within which the query executes.</p>
     pub query_execution_context: std::option::Option<crate::model::QueryExecutionContext>,
-    /// <p>Specifies information about where and how to save the results of the query execution.
-    /// If the query runs in a workgroup, then workgroup's settings may override query settings.
-    /// This affects the query results location. The workgroup settings override is specified in
-    /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub result_configuration: std::option::Option<crate::model::ResultConfiguration>,
     /// <p>The name of the workgroup in which the query is being started.</p>
     pub work_group: std::option::Option<std::string::String>,
@@ -6752,15 +6380,8 @@ impl StartQueryExecutionInput {
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is
-    /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
-    /// received, the same response is returned and another query is not created. If a parameter
-    /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-    /// <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-    /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-    /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-    /// this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -6771,10 +6392,7 @@ impl StartQueryExecutionInput {
     ) -> std::option::Option<&crate::model::QueryExecutionContext> {
         self.query_execution_context.as_ref()
     }
-    /// <p>Specifies information about where and how to save the results of the query execution.
-    /// If the query runs in a workgroup, then workgroup's settings may override query settings.
-    /// This affects the query results location. The workgroup settings override is specified in
-    /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn result_configuration(&self) -> std::option::Option<&crate::model::ResultConfiguration> {
         self.result_configuration.as_ref()
     }
@@ -6799,17 +6417,13 @@ impl std::fmt::Debug for StartQueryExecutionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkGroupsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of workgroups to return in this request.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkGroupsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6833,12 +6447,9 @@ impl std::fmt::Debug for ListWorkGroupsInput {
 pub struct ListTagsForResourceInput {
     /// <p>Lists the tags for the resource with the specified ARN.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results, or null if there are no additional results for
-    /// this request, where the request lists the tags for the resource with the specified
-    /// ARN.</p>
+    /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per request that lists the tags for the
-    /// resource.</p>
+    /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsForResourceInput {
@@ -6846,14 +6457,11 @@ impl ListTagsForResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The token for the next set of results, or null if there are no additional results for
-    /// this request, where the request lists the tags for the resource with the specified
-    /// ARN.</p>
+    /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to be returned per request that lists the tags for the
-    /// resource.</p>
+    /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6876,12 +6484,9 @@ pub struct ListTableMetadataInput {
     pub catalog_name: std::option::Option<std::string::String>,
     /// <p>The name of the database for which table metadata should be returned.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
-    /// metadata for all tables are listed.</p>
+    /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
     pub expression: std::option::Option<std::string::String>,
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the NextToken from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -6895,14 +6500,11 @@ impl ListTableMetadataInput {
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
-    /// metadata for all tables are listed.</p>
+    /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the NextToken from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6927,21 +6529,15 @@ impl std::fmt::Debug for ListTableMetadataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueryExecutionsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of query executions to return in this request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
-    /// specified, a list of available query execution IDs for the queries in the primary
-    /// workgroup is returned.</p>
+    /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
     pub work_group: std::option::Option<std::string::String>,
 }
 impl ListQueryExecutionsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6949,9 +6545,7 @@ impl ListQueryExecutionsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
-    /// specified, a list of available query execution IDs for the queries in the primary
-    /// workgroup is returned.</p>
+    /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
@@ -6972,9 +6566,7 @@ impl std::fmt::Debug for ListQueryExecutionsInput {
 pub struct ListPreparedStatementsInput {
     /// <p>The workgroup to list the prepared statements for.</p>
     pub work_group: std::option::Option<std::string::String>,
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
     pub max_results: std::option::Option<i32>,
@@ -6984,9 +6576,7 @@ impl ListPreparedStatementsInput {
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7009,21 +6599,15 @@ impl std::fmt::Debug for ListPreparedStatementsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamedQueriesInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of queries to return in this request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The name of the workgroup from which the named queries are being returned. If a
-    /// workgroup is not specified, the saved queries for the primary workgroup are
-    /// returned.</p>
+    /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
     pub work_group: std::option::Option<std::string::String>,
 }
 impl ListNamedQueriesInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7031,9 +6615,7 @@ impl ListNamedQueriesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The name of the workgroup from which the named queries are being returned. If a
-    /// workgroup is not specified, the saved queries for the primary workgroup are
-    /// returned.</p>
+    /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
@@ -7052,17 +6634,13 @@ impl std::fmt::Debug for ListNamedQueriesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEngineVersionsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of engine versions to return in this request.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListEngineVersionsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7084,17 +6662,13 @@ impl std::fmt::Debug for ListEngineVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDataCatalogsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the NextToken from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of data catalogs to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDataCatalogsInput {
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the NextToken from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7118,9 +6692,7 @@ impl std::fmt::Debug for ListDataCatalogsInput {
 pub struct ListDatabasesInput {
     /// <p>The name of the data catalog that contains the databases to return.</p>
     pub catalog_name: std::option::Option<std::string::String>,
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -7130,9 +6702,7 @@ impl ListDatabasesInput {
     pub fn catalog_name(&self) -> std::option::Option<&str> {
         self.catalog_name.as_deref()
     }
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7176,8 +6746,7 @@ impl std::fmt::Debug for GetWorkGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableMetadataInput {
-    /// <p>The name of the data catalog that contains the database and table metadata to
-    /// return.</p>
+    /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
     pub catalog_name: std::option::Option<std::string::String>,
     /// <p>The name of the database that contains the table metadata to return.</p>
     pub database_name: std::option::Option<std::string::String>,
@@ -7185,8 +6754,7 @@ pub struct GetTableMetadataInput {
     pub table_name: std::option::Option<std::string::String>,
 }
 impl GetTableMetadataInput {
-    /// <p>The name of the data catalog that contains the database and table metadata to
-    /// return.</p>
+    /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
     pub fn catalog_name(&self) -> std::option::Option<&str> {
         self.catalog_name.as_deref()
     }
@@ -7215,9 +6783,7 @@ impl std::fmt::Debug for GetTableMetadataInput {
 pub struct GetQueryResultsInput {
     /// <p>The unique ID of the query execution.</p>
     pub query_execution_id: std::option::Option<std::string::String>,
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results (rows) to return in this request.</p>
     pub max_results: std::option::Option<i32>,
@@ -7227,9 +6793,7 @@ impl GetQueryResultsInput {
     pub fn query_execution_id(&self) -> std::option::Option<&str> {
         self.query_execution_id.as_deref()
     }
-    /// <p>A token generated by the Athena service that specifies where to continue
-    /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-    /// the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7301,13 +6865,11 @@ impl std::fmt::Debug for GetPreparedStatementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNamedQueryInput {
-    /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
-    /// IDs.</p>
+    /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
     pub named_query_id: std::option::Option<std::string::String>,
 }
 impl GetNamedQueryInput {
-    /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
-    /// IDs.</p>
+    /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
     pub fn named_query_id(&self) -> std::option::Option<&str> {
         self.named_query_id.as_deref()
     }
@@ -7375,8 +6937,7 @@ impl std::fmt::Debug for GetDatabaseInput {
 pub struct DeleteWorkGroupInput {
     /// <p>The unique name of the workgroup to delete.</p>
     pub work_group: std::option::Option<std::string::String>,
-    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
-    /// named queries or query executions.</p>
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
     pub recursive_delete_option: std::option::Option<bool>,
 }
 impl DeleteWorkGroupInput {
@@ -7384,8 +6945,7 @@ impl DeleteWorkGroupInput {
     pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
-    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
-    /// named queries or query executions.</p>
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
     pub fn recursive_delete_option(&self) -> std::option::Option<bool> {
         self.recursive_delete_option
     }
@@ -7475,13 +7035,7 @@ impl std::fmt::Debug for DeleteDataCatalogInput {
 pub struct CreateWorkGroupInput {
     /// <p>The workgroup name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The configuration for the workgroup, which includes the location in Amazon S3
-    /// where query results are stored, the encryption configuration, if any, used for
-    /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
-    /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
-    /// specified, and whether workgroup's settings (specified with
-    /// <code>EnforceWorkGroupConfiguration</code>) in the
-    /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub configuration: std::option::Option<crate::model::WorkGroupConfiguration>,
     /// <p>The workgroup description.</p>
     pub description: std::option::Option<std::string::String>,
@@ -7493,13 +7047,7 @@ impl CreateWorkGroupInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The configuration for the workgroup, which includes the location in Amazon S3
-    /// where query results are stored, the encryption configuration, if any, used for
-    /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
-    /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
-    /// specified, and whether workgroup's settings (specified with
-    /// <code>EnforceWorkGroupConfiguration</code>) in the
-    /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::WorkGroupConfiguration> {
         self.configuration.as_ref()
     }
@@ -7577,15 +7125,8 @@ pub struct CreateNamedQueryInput {
     pub database: std::option::Option<std::string::String>,
     /// <p>The contents of the query with all query statements.</p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is
-    /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
-    /// received, the same response is returned and another query is not created. If a parameter
-    /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-    /// <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-    /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-    /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-    /// this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The name of the workgroup in which the named query is being created.</p>
@@ -7608,15 +7149,8 @@ impl CreateNamedQueryInput {
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is
-    /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
-    /// received, the same response is returned and another query is not created. If a parameter
-    /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-    /// <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-    /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-    /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-    /// this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -7643,83 +7177,26 @@ impl std::fmt::Debug for CreateNamedQueryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDataCatalogInput {
-    /// <p>The name of the data catalog to create. The catalog name must be unique for the
-    /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-    /// sign, or hyphen characters.</p>
+    /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
-    /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
-    /// Glue Data Catalog.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub r#type: std::option::Option<crate::model::DataCatalogType>,
     /// <p>A description of the data catalog to be created.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies the Lambda function or functions to use for creating the data
-    /// catalog. This is a mapping whose values depend on the catalog type. </p>
+    /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-    /// <code>metadata-function</code> parameter is required. <code>The
-    /// sdk-version</code> parameter is optional and defaults to the currently
-    /// supported version.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// sdk-version=<i>version_number</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-    /// of required parameters, but not both.</p>
+    /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+    /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you have one Lambda function that processes metadata
-    /// and another for reading the actual data, use the following syntax. Both
-    /// parameters are required.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// record-function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> If you have a composite Lambda function that processes
-    /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-    /// <p>
-    /// <code>function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
-    /// <code>
-    /// <i>catalog_id</i>
-    /// </code> is the account ID of the
-    /// Amazon Web Services account to which the Glue Data Catalog
-    /// belongs.</p>
-    /// <p>
-    /// <code>catalog-id=<i>catalog_id</i>
-    /// </code>
-    /// </p>
+    /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+    /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>GLUE</code> data catalog type also applies to the default
-    /// <code>AwsDataCatalog</code> that already exists in your account, of
-    /// which you can have only one and cannot modify.</p>
-    /// </li>
-    /// <li>
-    /// <p>Queries that specify a Glue Data Catalog other than the default
-    /// <code>AwsDataCatalog</code> must be run on Athena engine
-    /// version 2.</p>
-    /// </li>
-    /// <li>
-    /// <p>In Regions where Athena engine version 2 is not available,
-    /// creating new Glue data catalogs results in an
-    /// <code>INVALID_INPUT</code> error.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+    /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+    /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -7727,15 +7204,11 @@ pub struct CreateDataCatalogInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDataCatalogInput {
-    /// <p>The name of the data catalog to create. The catalog name must be unique for the
-    /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-    /// sign, or hyphen characters.</p>
+    /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
-    /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
-    /// Glue Data Catalog.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataCatalogType> {
         self.r#type.as_ref()
     }
@@ -7743,73 +7216,20 @@ impl CreateDataCatalogInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies the Lambda function or functions to use for creating the data
-    /// catalog. This is a mapping whose values depend on the catalog type. </p>
+    /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-    /// <code>metadata-function</code> parameter is required. <code>The
-    /// sdk-version</code> parameter is optional and defaults to the currently
-    /// supported version.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// sdk-version=<i>version_number</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-    /// of required parameters, but not both.</p>
+    /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+    /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you have one Lambda function that processes metadata
-    /// and another for reading the actual data, use the following syntax. Both
-    /// parameters are required.</p>
-    /// <p>
-    /// <code>metadata-function=<i>lambda_arn</i>,
-    /// record-function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p> If you have a composite Lambda function that processes
-    /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-    /// <p>
-    /// <code>function=<i>lambda_arn</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
-    /// <code>
-    /// <i>catalog_id</i>
-    /// </code> is the account ID of the
-    /// Amazon Web Services account to which the Glue Data Catalog
-    /// belongs.</p>
-    /// <p>
-    /// <code>catalog-id=<i>catalog_id</i>
-    /// </code>
-    /// </p>
+    /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+    /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>GLUE</code> data catalog type also applies to the default
-    /// <code>AwsDataCatalog</code> that already exists in your account, of
-    /// which you can have only one and cannot modify.</p>
-    /// </li>
-    /// <li>
-    /// <p>Queries that specify a Glue Data Catalog other than the default
-    /// <code>AwsDataCatalog</code> must be run on Athena engine
-    /// version 2.</p>
-    /// </li>
-    /// <li>
-    /// <p>In Regions where Athena engine version 2 is not available,
-    /// creating new Glue data catalogs results in an
-    /// <code>INVALID_INPUT</code> error.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+    /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+    /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn parameters(
         &self,

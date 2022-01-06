@@ -10,15 +10,13 @@ pub mod accept_handshake_input {
     }
     impl Builder {
         /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-        /// followed by from 8 to 32 lowercase letters or digits.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn handshake_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.handshake_id = Some(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-        /// followed by from 8 to 32 lowercase letters or digits.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn set_handshake_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.handshake_id = input;
             self
@@ -39,7 +37,7 @@ pub mod accept_handshake_input {
 #[doc(hidden)]
 pub type AcceptHandshakeInputOperationOutputAlias = crate::operation::AcceptHandshake;
 #[doc(hidden)]
-pub type AcceptHandshakeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptHandshakeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptHandshakeInput {
     /// Consumes the builder and constructs an Operation<[`AcceptHandshake`](crate::operation::AcceptHandshake)>
     #[allow(clippy::let_and_return)]
@@ -50,7 +48,7 @@ impl AcceptHandshakeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptHandshake,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -135,7 +133,7 @@ impl AcceptHandshakeInput {
             "AcceptHandshake",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -168,71 +166,35 @@ pub mod attach_policy_input {
         pub(crate) target_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You
-        /// can get the ID for the policy by calling the <a>ListPolicies</a>
-        /// operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-        /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+        /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You can get the ID for the policy by calling the <code>ListPolicies</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You
-        /// can get the ID for the policy by calling the <a>ListPolicies</a>
-        /// operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-        /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+        /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You can get the ID for the policy by calling the <code>ListPolicies</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
         }
-        /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the
-        /// policy to. You can get the ID by calling the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
-        /// operations.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the
-        /// policy to. You can get the ID by calling the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
-        /// operations.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
@@ -255,7 +217,7 @@ pub mod attach_policy_input {
 #[doc(hidden)]
 pub type AttachPolicyInputOperationOutputAlias = crate::operation::AttachPolicy;
 #[doc(hidden)]
-pub type AttachPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AttachPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachPolicyInput {
     /// Consumes the builder and constructs an Operation<[`AttachPolicy`](crate::operation::AttachPolicy)>
     #[allow(clippy::let_and_return)]
@@ -266,7 +228,7 @@ impl AttachPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -350,7 +312,7 @@ impl AttachPolicyInput {
             "AttachPolicy",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -382,18 +344,14 @@ pub mod cancel_handshake_input {
         pub(crate) handshake_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the
-        /// ID from the <a>ListHandshakesForOrganization</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-        /// followed by from 8 to 32 lowercase letters or digits.</p>
+        /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn handshake_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.handshake_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the
-        /// ID from the <a>ListHandshakesForOrganization</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-        /// followed by from 8 to 32 lowercase letters or digits.</p>
+        /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn set_handshake_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.handshake_id = input;
             self
@@ -414,7 +372,7 @@ pub mod cancel_handshake_input {
 #[doc(hidden)]
 pub type CancelHandshakeInputOperationOutputAlias = crate::operation::CancelHandshake;
 #[doc(hidden)]
-pub type CancelHandshakeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelHandshakeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelHandshakeInput {
     /// Consumes the builder and constructs an Operation<[`CancelHandshake`](crate::operation::CancelHandshake)>
     #[allow(clippy::let_and_return)]
@@ -425,7 +383,7 @@ impl CancelHandshakeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelHandshake,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -510,7 +468,7 @@ impl CancelHandshakeInput {
             "CancelHandshake",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -547,18 +505,12 @@ pub mod create_account_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The email address of the owner to assign to the new member account. This email address
-        /// must not already be associated with another AWS account. You must use a valid email
-        /// address to complete account creation. You can't access the root user of the account or
-        /// remove an account that was created with an invalid email address.</p>
+        /// <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
             self.email = Some(input.into());
             self
         }
-        /// <p>The email address of the owner to assign to the new member account. This email address
-        /// must not already be associated with another AWS account. You must use a valid email
-        /// address to complete account creation. You can't access the root user of the account or
-        /// remove an account that was created with an invalid email address.</p>
+        /// <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -574,74 +526,33 @@ pub mod create_account_input {
             self
         }
         /// <p>(Optional)</p>
-        /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member
-        /// account. This role trusts the management account, allowing users in the management
-        /// account to assume the role, as permitted by the management account administrator. The
-        /// role has administrator permissions in the new member account.</p>
-        /// <p>If you don't specify this parameter, the role name defaults to
-        /// <code>OrganizationAccountAccessRole</code>.</p>
-        /// <p>For more information about how to use this role to access the member account, see the
-        /// following links:</p>
+        /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
+        /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
+        /// <p>For more information about how to use this role to access the member account, see the following links:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your
-        /// Organization</a> in the <i>AWS Organizations User Guide</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-        /// Delegate Access Across AWS Accounts Using IAM Roles</a> in the
-        /// <i>IAM User Guide</i>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> </p> </li>
+        /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
         /// </ul>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that
-        /// is used to validate this parameter. The pattern can include uppercase
-        /// letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
         /// <p>(Optional)</p>
-        /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member
-        /// account. This role trusts the management account, allowing users in the management
-        /// account to assume the role, as permitted by the management account administrator. The
-        /// role has administrator permissions in the new member account.</p>
-        /// <p>If you don't specify this parameter, the role name defaults to
-        /// <code>OrganizationAccountAccessRole</code>.</p>
-        /// <p>For more information about how to use this role to access the member account, see the
-        /// following links:</p>
+        /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
+        /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
+        /// <p>For more information about how to use this role to access the member account, see the following links:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your
-        /// Organization</a> in the <i>AWS Organizations User Guide</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-        /// Delegate Access Across AWS Accounts Using IAM Roles</a> in the
-        /// <i>IAM User Guide</i>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> </p> </li>
+        /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
         /// </ul>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that
-        /// is used to validate this parameter. The pattern can include uppercase
-        /// letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
         }
-        /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account
-        /// billing information <i>if</i> they have the required permissions. If set
-        /// to <code>DENY</code>, only the root user of the new account can access account billing
-        /// information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-        /// Access to the Billing and Cost Management Console</a> in the
-        /// <i>AWS Billing and Cost Management User Guide</i>.</p>
-        /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and
-        /// IAM users and roles with the required permissions can access billing information for
-        /// the new account.</p>
+        /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+        /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
         pub fn iam_user_access_to_billing(
             mut self,
             input: crate::model::IamUserAccessToBilling,
@@ -649,15 +560,8 @@ pub mod create_account_input {
             self.iam_user_access_to_billing = Some(input);
             self
         }
-        /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account
-        /// billing information <i>if</i> they have the required permissions. If set
-        /// to <code>DENY</code>, only the root user of the new account can access account billing
-        /// information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-        /// Access to the Billing and Cost Management Console</a> in the
-        /// <i>AWS Billing and Cost Management User Guide</i>.</p>
-        /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and
-        /// IAM users and roles with the required permissions can access billing information for
-        /// the new account.</p>
+        /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+        /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
         pub fn set_iam_user_access_to_billing(
             mut self,
             input: std::option::Option<crate::model::IamUserAccessToBilling>,
@@ -669,29 +573,17 @@ pub mod create_account_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that you want to attach to the newly created account. For each tag in
-        /// the list, you must specify both a tag key and a value. You can set the value to an empty
-        /// string, but you can't set it to <code>null</code>. For more information about tagging,
-        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
-        /// resources</a> in the AWS Organizations User Guide.</p>
-        /// <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-        /// an account, then the entire request fails and the account is not created.</p>
+        /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags that you want to attach to the newly created account. For each tag in
-        /// the list, you must specify both a tag key and a value. You can set the value to an empty
-        /// string, but you can't set it to <code>null</code>. For more information about tagging,
-        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
-        /// resources</a> in the AWS Organizations User Guide.</p>
-        /// <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-        /// an account, then the entire request fails and the account is not created.</p>
+        /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -720,7 +612,7 @@ pub mod create_account_input {
 #[doc(hidden)]
 pub type CreateAccountInputOperationOutputAlias = crate::operation::CreateAccount;
 #[doc(hidden)]
-pub type CreateAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAccountInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccount`](crate::operation::CreateAccount)>
     #[allow(clippy::let_and_return)]
@@ -731,7 +623,7 @@ impl CreateAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -815,7 +707,7 @@ impl CreateAccountInput {
             "CreateAccount",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -852,24 +744,12 @@ pub mod create_gov_cloud_account_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The email address of the owner to assign to the new member account in the commercial
-        /// Region. This email address must not already be associated with another AWS account.
-        /// You must use a valid email address to complete account creation. You can't access the
-        /// root user of the account or remove an account that was created with an invalid email
-        /// address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request
-        /// for the email address for the AWS GovCloud (US) account originates from the commercial
-        /// Region, not from the AWS GovCloud (US) Region.</p>
+        /// <p>The email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the AWS GovCloud (US) account originates from the commercial Region, not from the AWS GovCloud (US) Region.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
             self.email = Some(input.into());
             self
         }
-        /// <p>The email address of the owner to assign to the new member account in the commercial
-        /// Region. This email address must not already be associated with another AWS account.
-        /// You must use a valid email address to complete account creation. You can't access the
-        /// root user of the account or remove an account that was created with an invalid email
-        /// address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request
-        /// for the email address for the AWS GovCloud (US) account originates from the commercial
-        /// Region, not from the AWS GovCloud (US) Region.</p>
+        /// <p>The email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the AWS GovCloud (US) account originates from the commercial Region, not from the AWS GovCloud (US) Region.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -885,55 +765,25 @@ pub mod create_gov_cloud_account_input {
             self
         }
         /// <p>(Optional)</p>
-        /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member
-        /// accounts in both the AWS GovCloud (US) Region and in the commercial Region. This role
-        /// trusts the management account, allowing users in the management account to assume the
-        /// role, as permitted by the management account administrator. The role has administrator
-        /// permissions in the new member account.</p>
-        /// <p>If you don't specify this parameter, the role name defaults to
-        /// <code>OrganizationAccountAccessRole</code>.</p>
-        /// <p>For more information about how to use this role to access the member account, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the
-        /// <i>AWS Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the
-        /// <i>IAM User Guide.</i>
-        /// </p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that
-        /// is used to validate this parameter. The pattern can include uppercase
-        /// letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+        /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
+        /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
+        /// <p>For more information about how to use this role to access the member account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i> </p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
         /// <p>(Optional)</p>
-        /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member
-        /// accounts in both the AWS GovCloud (US) Region and in the commercial Region. This role
-        /// trusts the management account, allowing users in the management account to assume the
-        /// role, as permitted by the management account administrator. The role has administrator
-        /// permissions in the new member account.</p>
-        /// <p>If you don't specify this parameter, the role name defaults to
-        /// <code>OrganizationAccountAccessRole</code>.</p>
-        /// <p>For more information about how to use this role to access the member account, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the
-        /// <i>AWS Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the
-        /// <i>IAM User Guide.</i>
-        /// </p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that
-        /// is used to validate this parameter. The pattern can include uppercase
-        /// letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+        /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
+        /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
+        /// <p>For more information about how to use this role to access the member account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i> </p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
         }
-        /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables
-        /// IAM users to access account billing information <i>if</i> they have the
-        /// required permissions. If set to <code>DENY</code>, only the root user of the new account
-        /// can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-        /// Access to the Billing and Cost Management Console</a> in the
-        /// <i>AWS Billing and Cost Management User Guide.</i>
-        /// </p>
-        /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and
-        /// IAM users and roles with the required permissions can access billing information for
-        /// the new account.</p>
+        /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide.</i> </p>
+        /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
         pub fn iam_user_access_to_billing(
             mut self,
             input: crate::model::IamUserAccessToBilling,
@@ -941,16 +791,8 @@ pub mod create_gov_cloud_account_input {
             self.iam_user_access_to_billing = Some(input);
             self
         }
-        /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables
-        /// IAM users to access account billing information <i>if</i> they have the
-        /// required permissions. If set to <code>DENY</code>, only the root user of the new account
-        /// can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-        /// Access to the Billing and Cost Management Console</a> in the
-        /// <i>AWS Billing and Cost Management User Guide.</i>
-        /// </p>
-        /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and
-        /// IAM users and roles with the required permissions can access billing information for
-        /// the new account.</p>
+        /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide.</i> </p>
+        /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
         pub fn set_iam_user_access_to_billing(
             mut self,
             input: std::option::Option<crate::model::IamUserAccessToBilling>,
@@ -962,35 +804,19 @@ pub mod create_gov_cloud_account_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that you want to attach to the newly created account. These tags are
-        /// attached to the commercial account associated with the GovCloud account, and not to the
-        /// GovCloud account itself. To add tags to the actual GovCloud account, call the <a>TagResource</a> operation in the GovCloud region after the new GovCloud
-        /// account exists.</p>
-        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the
-        /// value to an empty string, but you can't set it to <code>null</code>. For more
-        /// information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the
-        /// AWS Organizations User Guide.</p>
-        /// <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-        /// an account, then the entire request fails and the account is not created.</p>
+        /// <p>A list of tags that you want to attach to the newly created account. These tags are attached to the commercial account associated with the GovCloud account, and not to the GovCloud account itself. To add tags to the actual GovCloud account, call the <code>TagResource</code> operation in the GovCloud region after the new GovCloud account exists.</p>
+        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags that you want to attach to the newly created account. These tags are
-        /// attached to the commercial account associated with the GovCloud account, and not to the
-        /// GovCloud account itself. To add tags to the actual GovCloud account, call the <a>TagResource</a> operation in the GovCloud region after the new GovCloud
-        /// account exists.</p>
-        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the
-        /// value to an empty string, but you can't set it to <code>null</code>. For more
-        /// information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the
-        /// AWS Organizations User Guide.</p>
-        /// <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-        /// an account, then the entire request fails and the account is not created.</p>
+        /// <p>A list of tags that you want to attach to the newly created account. These tags are attached to the commercial account associated with the GovCloud account, and not to the GovCloud account itself. To add tags to the actual GovCloud account, call the <code>TagResource</code> operation in the GovCloud region after the new GovCloud account exists.</p>
+        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -1019,7 +845,7 @@ pub mod create_gov_cloud_account_input {
 #[doc(hidden)]
 pub type CreateGovCloudAccountInputOperationOutputAlias = crate::operation::CreateGovCloudAccount;
 #[doc(hidden)]
-pub type CreateGovCloudAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGovCloudAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGovCloudAccountInput {
     /// Consumes the builder and constructs an Operation<[`CreateGovCloudAccount`](crate::operation::CreateGovCloudAccount)>
     #[allow(clippy::let_and_return)]
@@ -1030,7 +856,7 @@ impl CreateGovCloudAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGovCloudAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1117,7 +943,7 @@ impl CreateGovCloudAccountInput {
             "CreateGovCloudAccount",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1149,55 +975,19 @@ pub mod create_organization_input {
         pub(crate) feature_set: std::option::Option<crate::model::OrganizationFeatureSet>,
     }
     impl Builder {
-        /// <p>Specifies the feature set supported by the new organization. Each feature set supports
-        /// different levels of functionality.</p>
+        /// <p>Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills
-        /// consolidated to and paid by the management account. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the
-        /// <i>AWS Organizations User Guide.</i>
-        /// </p>
-        /// <p> The consolidated billing feature subset isn't available for organizations in
-        /// the AWS GovCloud (US) Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code>: In addition to all the features supported by the
-        /// consolidated billing feature set, the management account can also apply any
-        /// policy type to any member account in the organization. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
-        /// features</a> in the <i>AWS Organizations User Guide.</i>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.</p> </li>
+        /// <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
         /// </ul>
         pub fn feature_set(mut self, input: crate::model::OrganizationFeatureSet) -> Self {
             self.feature_set = Some(input);
             self
         }
-        /// <p>Specifies the feature set supported by the new organization. Each feature set supports
-        /// different levels of functionality.</p>
+        /// <p>Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills
-        /// consolidated to and paid by the management account. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the
-        /// <i>AWS Organizations User Guide.</i>
-        /// </p>
-        /// <p> The consolidated billing feature subset isn't available for organizations in
-        /// the AWS GovCloud (US) Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code>: In addition to all the features supported by the
-        /// consolidated billing feature set, the management account can also apply any
-        /// policy type to any member account in the organization. For more information, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
-        /// features</a> in the <i>AWS Organizations User Guide.</i>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.</p> </li>
+        /// <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
         /// </ul>
         pub fn set_feature_set(
             mut self,
@@ -1222,7 +1012,7 @@ pub mod create_organization_input {
 #[doc(hidden)]
 pub type CreateOrganizationInputOperationOutputAlias = crate::operation::CreateOrganization;
 #[doc(hidden)]
-pub type CreateOrganizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateOrganizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`CreateOrganization`](crate::operation::CreateOrganization)>
     #[allow(clippy::let_and_return)]
@@ -1233,7 +1023,7 @@ impl CreateOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1318,7 +1108,7 @@ impl CreateOrganizationInput {
             "CreateOrganization",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1352,43 +1142,21 @@ pub mod create_organizational_unit_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU
-        /// in.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU
-        /// in.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_id = input;
@@ -1408,29 +1176,17 @@ pub mod create_organizational_unit_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the
-        /// list, you must specify both a tag key and a value. You can set the value to an empty
-        /// string, but you can't set it to <code>null</code>. For more information about tagging,
-        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
-        /// resources</a> in the AWS Organizations User Guide.</p>
-        /// <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-        /// an OU, then the entire request fails and the OU is not created.</p>
+        /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request fails and the OU is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the
-        /// list, you must specify both a tag key and a value. You can set the value to an empty
-        /// string, but you can't set it to <code>null</code>. For more information about tagging,
-        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
-        /// resources</a> in the AWS Organizations User Guide.</p>
-        /// <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-        /// an OU, then the entire request fails and the OU is not created.</p>
+        /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request fails and the OU is not created.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -1458,7 +1214,7 @@ pub mod create_organizational_unit_input {
 pub type CreateOrganizationalUnitInputOperationOutputAlias =
     crate::operation::CreateOrganizationalUnit;
 #[doc(hidden)]
-pub type CreateOrganizationalUnitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateOrganizationalUnitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOrganizationalUnitInput {
     /// Consumes the builder and constructs an Operation<[`CreateOrganizationalUnit`](crate::operation::CreateOrganizationalUnit)>
     #[allow(clippy::let_and_return)]
@@ -1469,7 +1225,7 @@ impl CreateOrganizationalUnitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOrganizationalUnit,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1556,7 +1312,7 @@ impl CreateOrganizationalUnitInput {
             "CreateOrganizationalUnit",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1592,14 +1348,12 @@ pub mod create_policy_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The policy text content to add to the new policy. The text that you supply must adhere
-        /// to the rules of the policy type you specify in the <code>Type</code> parameter.</p>
+        /// <p>The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy type you specify in the <code>Type</code> parameter.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The policy text content to add to the new policy. The text that you supply must adhere
-        /// to the rules of the policy type you specify in the <code>Type</code> parameter.</p>
+        /// <p>The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy type you specify in the <code>Type</code> parameter.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -1615,43 +1369,23 @@ pub mod create_policy_input {
             self
         }
         /// <p>The friendly name to assign to the policy.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-        /// that is used to validate this parameter is a string of any of the characters in the ASCII
-        /// character range.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The friendly name to assign to the policy.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-        /// that is used to validate this parameter is a string of any of the characters in the ASCII
-        /// character range.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>The type of policy to create. You can specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::PolicyType) -> Self {
             self.r#type = Some(input);
@@ -1659,26 +1393,10 @@ pub mod create_policy_input {
         }
         /// <p>The type of policy to create. You can specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PolicyType>) -> Self {
             self.r#type = input;
@@ -1688,29 +1406,17 @@ pub mod create_policy_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that you want to attach to the newly created policy. For each tag in
-        /// the list, you must specify both a tag key and a value. You can set the value to an empty
-        /// string, but you can't set it to <code>null</code>. For more information about tagging,
-        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
-        /// resources</a> in the AWS Organizations User Guide.</p>
-        /// <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-        /// a policy, then the entire request fails and the policy is not created.</p>
+        /// <p>A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire request fails and the policy is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags that you want to attach to the newly created policy. For each tag in
-        /// the list, you must specify both a tag key and a value. You can set the value to an empty
-        /// string, but you can't set it to <code>null</code>. For more information about tagging,
-        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
-        /// resources</a> in the AWS Organizations User Guide.</p>
-        /// <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-        /// a policy, then the entire request fails and the policy is not created.</p>
+        /// <p>A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire request fails and the policy is not created.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -1739,7 +1445,7 @@ pub mod create_policy_input {
 #[doc(hidden)]
 pub type CreatePolicyInputOperationOutputAlias = crate::operation::CreatePolicy;
 #[doc(hidden)]
-pub type CreatePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreatePolicy`](crate::operation::CreatePolicy)>
     #[allow(clippy::let_and_return)]
@@ -1750,7 +1456,7 @@ impl CreatePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1834,7 +1540,7 @@ impl CreatePolicyInput {
             "CreatePolicy",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1866,18 +1572,14 @@ pub mod decline_handshake_input {
         pub(crate) handshake_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the
-        /// ID from the <a>ListHandshakesForAccount</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-        /// followed by from 8 to 32 lowercase letters or digits.</p>
+        /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the ID from the <code>ListHandshakesForAccount</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn handshake_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.handshake_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the
-        /// ID from the <a>ListHandshakesForAccount</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-        /// followed by from 8 to 32 lowercase letters or digits.</p>
+        /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the ID from the <code>ListHandshakesForAccount</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn set_handshake_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.handshake_id = input;
             self
@@ -1898,7 +1600,7 @@ pub mod decline_handshake_input {
 #[doc(hidden)]
 pub type DeclineHandshakeInputOperationOutputAlias = crate::operation::DeclineHandshake;
 #[doc(hidden)]
-pub type DeclineHandshakeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeclineHandshakeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeclineHandshakeInput {
     /// Consumes the builder and constructs an Operation<[`DeclineHandshake`](crate::operation::DeclineHandshake)>
     #[allow(clippy::let_and_return)]
@@ -1909,7 +1611,7 @@ impl DeclineHandshakeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeclineHandshake,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1994,7 +1696,7 @@ impl DeclineHandshakeInput {
             "DeclineHandshake",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2038,7 +1740,7 @@ pub mod delete_organization_input {
 #[doc(hidden)]
 pub type DeleteOrganizationInputOperationOutputAlias = crate::operation::DeleteOrganization;
 #[doc(hidden)]
-pub type DeleteOrganizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteOrganizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOrganization`](crate::operation::DeleteOrganization)>
     #[allow(clippy::let_and_return)]
@@ -2049,7 +1751,7 @@ impl DeleteOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2134,7 +1836,7 @@ impl DeleteOrganizationInput {
             "DeleteOrganization",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2158,22 +1860,14 @@ pub mod delete_organizational_unit_input {
         pub(crate) organizational_unit_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the organizational unit that you want to delete. You can
-        /// get the ID from the <a>ListOrganizationalUnitsForParent</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-        /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
-        /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
-        /// or digits.</p>
+        /// <p>The unique identifier (ID) of the organizational unit that you want to delete. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organizational_unit_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the organizational unit that you want to delete. You can
-        /// get the ID from the <a>ListOrganizationalUnitsForParent</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-        /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
-        /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
-        /// or digits.</p>
+        /// <p>The unique identifier (ID) of the organizational unit that you want to delete. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         pub fn set_organizational_unit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2198,7 +1892,7 @@ pub mod delete_organizational_unit_input {
 pub type DeleteOrganizationalUnitInputOperationOutputAlias =
     crate::operation::DeleteOrganizationalUnit;
 #[doc(hidden)]
-pub type DeleteOrganizationalUnitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteOrganizationalUnitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOrganizationalUnitInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOrganizationalUnit`](crate::operation::DeleteOrganizationalUnit)>
     #[allow(clippy::let_and_return)]
@@ -2209,7 +1903,7 @@ impl DeleteOrganizationalUnitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOrganizationalUnit,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2296,7 +1990,7 @@ impl DeleteOrganizationalUnitInput {
             "DeleteOrganizationalUnit",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2328,20 +2022,14 @@ pub mod delete_policy_input {
         pub(crate) policy_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the policy that you want to delete. You can get the ID
-        /// from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-        /// operations.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-        /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+        /// <p>The unique identifier (ID) of the policy that you want to delete. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the policy that you want to delete. You can get the ID
-        /// from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-        /// operations.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-        /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+        /// <p>The unique identifier (ID) of the policy that you want to delete. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -2362,7 +2050,7 @@ pub mod delete_policy_input {
 #[doc(hidden)]
 pub type DeletePolicyInputOperationOutputAlias = crate::operation::DeletePolicy;
 #[doc(hidden)]
-pub type DeletePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeletePolicy`](crate::operation::DeletePolicy)>
     #[allow(clippy::let_and_return)]
@@ -2373,7 +2061,7 @@ impl DeletePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2457,7 +2145,7 @@ impl DeletePolicyInput {
             "DeletePolicy",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2490,34 +2178,24 @@ pub mod deregister_delegated_administrator_input {
         pub(crate) service_principal: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID number of the member account in the organization that you want to
-        /// deregister as a delegated administrator.</p>
+        /// <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID number of the member account in the organization that you want to
-        /// deregister as a delegated administrator.</p>
+        /// <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
-        /// <p>The service principal name of an AWS service for which the account is a delegated
-        /// administrator.</p>
-        /// <p>Delegated administrator privileges are revoked for only the specified AWS service
-        /// from the member account. If the specified service is the only service for which the
-        /// member account is a delegated administrator, the operation also revokes Organizations read action
-        /// permissions.</p>
+        /// <p>The service principal name of an AWS service for which the account is a delegated administrator.</p>
+        /// <p>Delegated administrator privileges are revoked for only the specified AWS service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
         pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_principal = Some(input.into());
             self
         }
-        /// <p>The service principal name of an AWS service for which the account is a delegated
-        /// administrator.</p>
-        /// <p>Delegated administrator privileges are revoked for only the specified AWS service
-        /// from the member account. If the specified service is the only service for which the
-        /// member account is a delegated administrator, the operation also revokes Organizations read action
-        /// permissions.</p>
+        /// <p>The service principal name of an AWS service for which the account is a delegated administrator.</p>
+        /// <p>Delegated administrator privileges are revoked for only the specified AWS service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
         pub fn set_service_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2543,7 +2221,8 @@ pub mod deregister_delegated_administrator_input {
 pub type DeregisterDelegatedAdministratorInputOperationOutputAlias =
     crate::operation::DeregisterDelegatedAdministrator;
 #[doc(hidden)]
-pub type DeregisterDelegatedAdministratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterDelegatedAdministratorInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterDelegatedAdministratorInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterDelegatedAdministrator`](crate::operation::DeregisterDelegatedAdministrator)>
     #[allow(clippy::let_and_return)]
@@ -2554,7 +2233,7 @@ impl DeregisterDelegatedAdministratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterDelegatedAdministrator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2640,7 +2319,7 @@ impl DeregisterDelegatedAdministratorInput {
             "DeregisterDelegatedAdministrator",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2672,18 +2351,14 @@ pub mod describe_account_input {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the AWS account that you want information about. You
-        /// can get the ID from the <a>ListAccounts</a> or <a>ListAccountsForParent</a> operations.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
-        /// digits.</p>
+        /// <p>The unique identifier (ID) of the AWS account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the AWS account that you want information about. You
-        /// can get the ID from the <a>ListAccounts</a> or <a>ListAccountsForParent</a> operations.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
-        /// digits.</p>
+        /// <p>The unique identifier (ID) of the AWS account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2704,7 +2379,7 @@ pub mod describe_account_input {
 #[doc(hidden)]
 pub type DescribeAccountInputOperationOutputAlias = crate::operation::DescribeAccount;
 #[doc(hidden)]
-pub type DescribeAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccount`](crate::operation::DescribeAccount)>
     #[allow(clippy::let_and_return)]
@@ -2715,7 +2390,7 @@ impl DescribeAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2800,7 +2475,7 @@ impl DescribeAccountInput {
             "DescribeAccount",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2832,20 +2507,14 @@ pub mod describe_create_account_status_input {
         pub(crate) create_account_request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the <code>Id</code> value that uniquely identifies the
-        /// <code>CreateAccount</code> request. You can get the value from the
-        /// <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
-        /// requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
+        /// <p>Specifies the <code>Id</code> value that uniquely identifies the <code>CreateAccount</code> request. You can get the value from the <code>CreateAccountStatus.Id</code> response in an earlier <code>CreateAccount</code> request, or from the <code>ListCreateAccountStatus</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn create_account_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.create_account_request_id = Some(input.into());
             self
         }
-        /// <p>Specifies the <code>Id</code> value that uniquely identifies the
-        /// <code>CreateAccount</code> request. You can get the value from the
-        /// <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
-        /// requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
+        /// <p>Specifies the <code>Id</code> value that uniquely identifies the <code>CreateAccount</code> request. You can get the value from the <code>CreateAccountStatus.Id</code> response in an earlier <code>CreateAccount</code> request, or from the <code>ListCreateAccountStatus</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn set_create_account_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2870,7 +2539,7 @@ pub mod describe_create_account_status_input {
 pub type DescribeCreateAccountStatusInputOperationOutputAlias =
     crate::operation::DescribeCreateAccountStatus;
 #[doc(hidden)]
-pub type DescribeCreateAccountStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCreateAccountStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCreateAccountStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCreateAccountStatus`](crate::operation::DescribeCreateAccountStatus)>
     #[allow(clippy::let_and_return)]
@@ -2881,7 +2550,7 @@ impl DescribeCreateAccountStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCreateAccountStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2967,7 +2636,7 @@ impl DescribeCreateAccountStatusInput {
             "DescribeCreateAccountStatus",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3000,47 +2669,21 @@ pub mod describe_effective_policy_input {
         pub(crate) target_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of policy that you want information about. You can specify one of the
-        /// following values:</p>
+        /// <p>The type of policy that you want information about. You can specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
         /// </ul>
         pub fn policy_type(mut self, input: crate::model::EffectivePolicyType) -> Self {
             self.policy_type = Some(input);
             self
         }
-        /// <p>The type of policy that you want information about. You can specify one of the
-        /// following values:</p>
+        /// <p>The type of policy that you want information about. You can specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
         /// </ul>
         pub fn set_policy_type(
             mut self,
@@ -3049,16 +2692,12 @@ pub mod describe_effective_policy_input {
             self.policy_type = input;
             self
         }
-        /// <p>When you're signed in as the management account, specify the ID of the account that
-        /// you want details about. Specifying an organization root or organizational unit (OU) as
-        /// the target is not supported.</p>
+        /// <p>When you're signed in as the management account, specify the ID of the account that you want details about. Specifying an organization root or organizational unit (OU) as the target is not supported.</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_id = Some(input.into());
             self
         }
-        /// <p>When you're signed in as the management account, specify the ID of the account that
-        /// you want details about. Specifying an organization root or organizational unit (OU) as
-        /// the target is not supported.</p>
+        /// <p>When you're signed in as the management account, specify the ID of the account that you want details about. Specifying an organization root or organizational unit (OU) as the target is not supported.</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
@@ -3081,7 +2720,7 @@ pub mod describe_effective_policy_input {
 pub type DescribeEffectivePolicyInputOperationOutputAlias =
     crate::operation::DescribeEffectivePolicy;
 #[doc(hidden)]
-pub type DescribeEffectivePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEffectivePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEffectivePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEffectivePolicy`](crate::operation::DescribeEffectivePolicy)>
     #[allow(clippy::let_and_return)]
@@ -3092,7 +2731,7 @@ impl DescribeEffectivePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEffectivePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3179,7 +2818,7 @@ impl DescribeEffectivePolicyInput {
             "DescribeEffectivePolicy",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3211,20 +2850,14 @@ pub mod describe_handshake_input {
         pub(crate) handshake_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the handshake that you want information about. You can
-        /// get the ID from the original call to <a>InviteAccountToOrganization</a>, or
-        /// from a call to <a>ListHandshakesForAccount</a> or <a>ListHandshakesForOrganization</a>.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-        /// followed by from 8 to 32 lowercase letters or digits.</p>
+        /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn handshake_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.handshake_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the handshake that you want information about. You can
-        /// get the ID from the original call to <a>InviteAccountToOrganization</a>, or
-        /// from a call to <a>ListHandshakesForAccount</a> or <a>ListHandshakesForOrganization</a>.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-        /// followed by from 8 to 32 lowercase letters or digits.</p>
+        /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn set_handshake_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.handshake_id = input;
             self
@@ -3245,7 +2878,7 @@ pub mod describe_handshake_input {
 #[doc(hidden)]
 pub type DescribeHandshakeInputOperationOutputAlias = crate::operation::DescribeHandshake;
 #[doc(hidden)]
-pub type DescribeHandshakeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeHandshakeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeHandshakeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHandshake`](crate::operation::DescribeHandshake)>
     #[allow(clippy::let_and_return)]
@@ -3256,7 +2889,7 @@ impl DescribeHandshakeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeHandshake,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3341,7 +2974,7 @@ impl DescribeHandshakeInput {
             "DescribeHandshake",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3385,7 +3018,7 @@ pub mod describe_organization_input {
 #[doc(hidden)]
 pub type DescribeOrganizationInputOperationOutputAlias = crate::operation::DescribeOrganization;
 #[doc(hidden)]
-pub type DescribeOrganizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOrganizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganization`](crate::operation::DescribeOrganization)>
     #[allow(clippy::let_and_return)]
@@ -3396,7 +3029,7 @@ impl DescribeOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3481,7 +3114,7 @@ impl DescribeOrganizationInput {
             "DescribeOrganization",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3505,24 +3138,14 @@ pub mod describe_organizational_unit_input {
         pub(crate) organizational_unit_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the organizational unit that you want details about. You
-        /// can get the ID from the <a>ListOrganizationalUnitsForParent</a>
-        /// operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-        /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
-        /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
-        /// or digits.</p>
+        /// <p>The unique identifier (ID) of the organizational unit that you want details about. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organizational_unit_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the organizational unit that you want details about. You
-        /// can get the ID from the <a>ListOrganizationalUnitsForParent</a>
-        /// operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-        /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
-        /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
-        /// or digits.</p>
+        /// <p>The unique identifier (ID) of the organizational unit that you want details about. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         pub fn set_organizational_unit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3547,7 +3170,7 @@ pub mod describe_organizational_unit_input {
 pub type DescribeOrganizationalUnitInputOperationOutputAlias =
     crate::operation::DescribeOrganizationalUnit;
 #[doc(hidden)]
-pub type DescribeOrganizationalUnitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOrganizationalUnitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationalUnitInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationalUnit`](crate::operation::DescribeOrganizationalUnit)>
     #[allow(clippy::let_and_return)]
@@ -3558,7 +3181,7 @@ impl DescribeOrganizationalUnitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationalUnit,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3645,7 +3268,7 @@ impl DescribeOrganizationalUnitInput {
             "DescribeOrganizationalUnit",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3677,20 +3300,14 @@ pub mod describe_policy_input {
         pub(crate) policy_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the policy that you want details about. You can get the
-        /// ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-        /// operations.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-        /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+        /// <p>The unique identifier (ID) of the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the policy that you want details about. You can get the
-        /// ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-        /// operations.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-        /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+        /// <p>The unique identifier (ID) of the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -3711,7 +3328,7 @@ pub mod describe_policy_input {
 #[doc(hidden)]
 pub type DescribePolicyInputOperationOutputAlias = crate::operation::DescribePolicy;
 #[doc(hidden)]
-pub type DescribePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribePolicy`](crate::operation::DescribePolicy)>
     #[allow(clippy::let_and_return)]
@@ -3722,7 +3339,7 @@ impl DescribePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3807,7 +3424,7 @@ impl DescribePolicyInput {
             "DescribePolicy",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3840,71 +3457,35 @@ pub mod detach_policy_input {
         pub(crate) target_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from
-        /// the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-        /// operations.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-        /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+        /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from
-        /// the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-        /// operations.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-        /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+        /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
         }
-        /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the
-        /// policy from. You can get the ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
-        /// operations.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the
-        /// policy from. You can get the ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
-        /// operations.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
@@ -3927,7 +3508,7 @@ pub mod detach_policy_input {
 #[doc(hidden)]
 pub type DetachPolicyInputOperationOutputAlias = crate::operation::DetachPolicy;
 #[doc(hidden)]
-pub type DetachPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetachPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DetachPolicy`](crate::operation::DetachPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3938,7 +3519,7 @@ impl DetachPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4022,7 +3603,7 @@ impl DetachPolicyInput {
             "DetachPolicy",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4054,18 +3635,12 @@ pub mod disable_aws_service_access_input {
         pub(crate) service_principal: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The service principal name of the AWS service for which you want to disable
-        /// integration with your organization. This is typically in the form of a URL, such as
-        /// <code>
-        /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+        /// <p>The service principal name of the AWS service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
         pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_principal = Some(input.into());
             self
         }
-        /// <p>The service principal name of the AWS service for which you want to disable
-        /// integration with your organization. This is typically in the form of a URL, such as
-        /// <code>
-        /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+        /// <p>The service principal name of the AWS service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
         pub fn set_service_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4090,7 +3665,7 @@ pub mod disable_aws_service_access_input {
 pub type DisableAwsServiceAccessInputOperationOutputAlias =
     crate::operation::DisableAWSServiceAccess;
 #[doc(hidden)]
-pub type DisableAwsServiceAccessInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableAwsServiceAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableAwsServiceAccessInput {
     /// Consumes the builder and constructs an Operation<[`DisableAWSServiceAccess`](crate::operation::DisableAWSServiceAccess)>
     #[allow(clippy::let_and_return)]
@@ -4101,7 +3676,7 @@ impl DisableAwsServiceAccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableAWSServiceAccess,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4188,7 +3763,7 @@ impl DisableAwsServiceAccessInput {
             "DisableAWSServiceAccess",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4221,73 +3796,35 @@ pub mod disable_policy_type_input {
         pub(crate) policy_type: std::option::Option<crate::model::PolicyType>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You
-        /// can get the ID from the <a>ListRoots</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-        /// from 4 to 32 lowercase letters or digits.</p>
+        /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
         pub fn root_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.root_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You
-        /// can get the ID from the <a>ListRoots</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-        /// from 4 to 32 lowercase letters or digits.</p>
+        /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
         pub fn set_root_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.root_id = input;
             self
         }
-        /// <p>The policy type that you want to disable in this root. You can specify one of the
-        /// following values:</p>
+        /// <p>The policy type that you want to disable in this root. You can specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
         /// </ul>
         pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
             self.policy_type = Some(input);
             self
         }
-        /// <p>The policy type that you want to disable in this root. You can specify one of the
-        /// following values:</p>
+        /// <p>The policy type that you want to disable in this root. You can specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
         /// </ul>
         pub fn set_policy_type(
             mut self,
@@ -4313,7 +3850,7 @@ pub mod disable_policy_type_input {
 #[doc(hidden)]
 pub type DisablePolicyTypeInputOperationOutputAlias = crate::operation::DisablePolicyType;
 #[doc(hidden)]
-pub type DisablePolicyTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisablePolicyTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisablePolicyTypeInput {
     /// Consumes the builder and constructs an Operation<[`DisablePolicyType`](crate::operation::DisablePolicyType)>
     #[allow(clippy::let_and_return)]
@@ -4324,7 +3861,7 @@ impl DisablePolicyTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisablePolicyType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4409,7 +3946,7 @@ impl DisablePolicyTypeInput {
             "DisablePolicyType",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4453,7 +3990,7 @@ pub mod enable_all_features_input {
 #[doc(hidden)]
 pub type EnableAllFeaturesInputOperationOutputAlias = crate::operation::EnableAllFeatures;
 #[doc(hidden)]
-pub type EnableAllFeaturesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableAllFeaturesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableAllFeaturesInput {
     /// Consumes the builder and constructs an Operation<[`EnableAllFeatures`](crate::operation::EnableAllFeatures)>
     #[allow(clippy::let_and_return)]
@@ -4464,7 +4001,7 @@ impl EnableAllFeaturesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableAllFeatures,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4549,7 +4086,7 @@ impl EnableAllFeaturesInput {
             "EnableAllFeatures",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4573,18 +4110,12 @@ pub mod enable_aws_service_access_input {
         pub(crate) service_principal: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The service principal name of the AWS service for which you want to enable
-        /// integration with your organization. This is typically in the form of a URL, such as
-        /// <code>
-        /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+        /// <p>The service principal name of the AWS service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
         pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_principal = Some(input.into());
             self
         }
-        /// <p>The service principal name of the AWS service for which you want to enable
-        /// integration with your organization. This is typically in the form of a URL, such as
-        /// <code>
-        /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+        /// <p>The service principal name of the AWS service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
         pub fn set_service_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4608,7 +4139,7 @@ pub mod enable_aws_service_access_input {
 #[doc(hidden)]
 pub type EnableAwsServiceAccessInputOperationOutputAlias = crate::operation::EnableAWSServiceAccess;
 #[doc(hidden)]
-pub type EnableAwsServiceAccessInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableAwsServiceAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableAwsServiceAccessInput {
     /// Consumes the builder and constructs an Operation<[`EnableAWSServiceAccess`](crate::operation::EnableAWSServiceAccess)>
     #[allow(clippy::let_and_return)]
@@ -4619,7 +4150,7 @@ impl EnableAwsServiceAccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableAWSServiceAccess,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4706,7 +4237,7 @@ impl EnableAwsServiceAccessInput {
             "EnableAWSServiceAccess",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4739,73 +4270,35 @@ pub mod enable_policy_type_input {
         pub(crate) policy_type: std::option::Option<crate::model::PolicyType>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the root in which you want to enable a policy type. You
-        /// can get the ID from the <a>ListRoots</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-        /// from 4 to 32 lowercase letters or digits.</p>
+        /// <p>The unique identifier (ID) of the root in which you want to enable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
         pub fn root_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.root_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the root in which you want to enable a policy type. You
-        /// can get the ID from the <a>ListRoots</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-        /// from 4 to 32 lowercase letters or digits.</p>
+        /// <p>The unique identifier (ID) of the root in which you want to enable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
         pub fn set_root_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.root_id = input;
             self
         }
-        /// <p>The policy type that you want to enable. You can specify one of the following
-        /// values:</p>
+        /// <p>The policy type that you want to enable. You can specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
         /// </ul>
         pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
             self.policy_type = Some(input);
             self
         }
-        /// <p>The policy type that you want to enable. You can specify one of the following
-        /// values:</p>
+        /// <p>The policy type that you want to enable. You can specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
         /// </ul>
         pub fn set_policy_type(
             mut self,
@@ -4831,7 +4324,7 @@ pub mod enable_policy_type_input {
 #[doc(hidden)]
 pub type EnablePolicyTypeInputOperationOutputAlias = crate::operation::EnablePolicyType;
 #[doc(hidden)]
-pub type EnablePolicyTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnablePolicyTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnablePolicyTypeInput {
     /// Consumes the builder and constructs an Operation<[`EnablePolicyType`](crate::operation::EnablePolicyType)>
     #[allow(clippy::let_and_return)]
@@ -4842,7 +4335,7 @@ impl EnablePolicyTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnablePolicyType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4927,7 +4420,7 @@ impl EnablePolicyTypeInput {
             "EnablePolicyType",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4961,48 +4454,22 @@ pub mod invite_account_to_organization_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The identifier (ID) of the AWS account that you want to invite to join your
-        /// organization. This is a JSON object that contains the following elements:</p>
-        /// <p>
-        /// <code>{ "Type": "ACCOUNT", "Id": "<<i>
-        /// <b>account id
-        /// number</b>
-        /// </i>>" }</code>
-        /// </p>
-        /// <p>If you use the AWS CLI, you can submit this as a single string, similar to the following
-        /// example:</p>
-        /// <p>
-        /// <code>--target Id=123456789012,Type=ACCOUNT</code>
-        /// </p>
-        /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID
-        /// number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
-        /// specify the email address that is associated with the account.</p>
-        /// <p>
-        /// <code>--target Id=diego@example.com,Type=EMAIL</code>
-        /// </p>
+        /// <p>The identifier (ID) of the AWS account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
+        /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
+        /// <p>If you use the AWS CLI, you can submit this as a single string, similar to the following example:</p>
+        /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
+        /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
+        /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
         pub fn target(mut self, input: crate::model::HandshakeParty) -> Self {
             self.target = Some(input);
             self
         }
-        /// <p>The identifier (ID) of the AWS account that you want to invite to join your
-        /// organization. This is a JSON object that contains the following elements:</p>
-        /// <p>
-        /// <code>{ "Type": "ACCOUNT", "Id": "<<i>
-        /// <b>account id
-        /// number</b>
-        /// </i>>" }</code>
-        /// </p>
-        /// <p>If you use the AWS CLI, you can submit this as a single string, similar to the following
-        /// example:</p>
-        /// <p>
-        /// <code>--target Id=123456789012,Type=ACCOUNT</code>
-        /// </p>
-        /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID
-        /// number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
-        /// specify the email address that is associated with the account.</p>
-        /// <p>
-        /// <code>--target Id=diego@example.com,Type=EMAIL</code>
-        /// </p>
+        /// <p>The identifier (ID) of the AWS account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
+        /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
+        /// <p>If you use the AWS CLI, you can submit this as a single string, similar to the following example:</p>
+        /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
+        /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
+        /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
         pub fn set_target(
             mut self,
             input: std::option::Option<crate::model::HandshakeParty>,
@@ -5010,14 +4477,12 @@ pub mod invite_account_to_organization_input {
             self.target = input;
             self
         }
-        /// <p>Additional information that you want to include in the generated email to the
-        /// recipient account owner.</p>
+        /// <p>Additional information that you want to include in the generated email to the recipient account owner.</p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.notes = Some(input.into());
             self
         }
-        /// <p>Additional information that you want to include in the generated email to the
-        /// recipient account owner.</p>
+        /// <p>Additional information that you want to include in the generated email to the recipient account owner.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
@@ -5026,51 +4491,21 @@ pub mod invite_account_to_organization_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags that you want to attach to the account when it becomes a member of the
-        /// organization. For each tag in the list, you must specify both a tag key and a value. You
-        /// can set the value to an empty string, but you can't set it to <code>null</code>. For
-        /// more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the
-        /// AWS Organizations User Guide.</p>
-        /// <important>
-        /// <p>Any tags in the request are checked for compliance with any applicable tag
-        /// policies when the request is made. The request is rejected if the tags in the
-        /// request don't match the requirements of the policy at that time. Tag policy
-        /// compliance is <i>
-        /// <b>not</b>
-        /// </i> checked
-        /// again when the invitation is accepted and the tags are actually attached to the
-        /// account. That means that if the tag policy changes between the invitation and the
-        /// acceptance, then that tags could potentially be non-compliant.</p>
-        /// </important>
-        /// <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-        /// an account, then the entire request fails and invitations are not sent.</p>
+        /// <p>A list of tags that you want to attach to the account when it becomes a member of the organization. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <important>
+        /// <p>Any tags in the request are checked for compliance with any applicable tag policies when the request is made. The request is rejected if the tags in the request don't match the requirements of the policy at that time. Tag policy compliance is <i> <b>not</b> </i> checked again when the invitation is accepted and the tags are actually attached to the account. That means that if the tag policy changes between the invitation and the acceptance, then that tags could potentially be non-compliant.</p>
+        /// </important> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags that you want to attach to the account when it becomes a member of the
-        /// organization. For each tag in the list, you must specify both a tag key and a value. You
-        /// can set the value to an empty string, but you can't set it to <code>null</code>. For
-        /// more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the
-        /// AWS Organizations User Guide.</p>
-        /// <important>
-        /// <p>Any tags in the request are checked for compliance with any applicable tag
-        /// policies when the request is made. The request is rejected if the tags in the
-        /// request don't match the requirements of the policy at that time. Tag policy
-        /// compliance is <i>
-        /// <b>not</b>
-        /// </i> checked
-        /// again when the invitation is accepted and the tags are actually attached to the
-        /// account. That means that if the tag policy changes between the invitation and the
-        /// acceptance, then that tags could potentially be non-compliant.</p>
-        /// </important>
-        /// <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-        /// an account, then the entire request fails and invitations are not sent.</p>
+        /// <p>A list of tags that you want to attach to the account when it becomes a member of the organization. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <important>
+        /// <p>Any tags in the request are checked for compliance with any applicable tag policies when the request is made. The request is rejected if the tags in the request don't match the requirements of the policy at that time. Tag policy compliance is <i> <b>not</b> </i> checked again when the invitation is accepted and the tags are actually attached to the account. That means that if the tag policy changes between the invitation and the acceptance, then that tags could potentially be non-compliant.</p>
+        /// </important> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -5098,7 +4533,7 @@ pub mod invite_account_to_organization_input {
 pub type InviteAccountToOrganizationInputOperationOutputAlias =
     crate::operation::InviteAccountToOrganization;
 #[doc(hidden)]
-pub type InviteAccountToOrganizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InviteAccountToOrganizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl InviteAccountToOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`InviteAccountToOrganization`](crate::operation::InviteAccountToOrganization)>
     #[allow(clippy::let_and_return)]
@@ -5109,7 +4544,7 @@ impl InviteAccountToOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::InviteAccountToOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5195,7 +4630,7 @@ impl InviteAccountToOrganizationInput {
             "InviteAccountToOrganization",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5239,7 +4674,7 @@ pub mod leave_organization_input {
 #[doc(hidden)]
 pub type LeaveOrganizationInputOperationOutputAlias = crate::operation::LeaveOrganization;
 #[doc(hidden)]
-pub type LeaveOrganizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type LeaveOrganizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl LeaveOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`LeaveOrganization`](crate::operation::LeaveOrganization)>
     #[allow(clippy::let_and_return)]
@@ -5250,7 +4685,7 @@ impl LeaveOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::LeaveOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5335,7 +4770,7 @@ impl LeaveOrganizationInput {
             "LeaveOrganization",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5360,44 +4795,22 @@ pub mod list_accounts_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5419,7 +4832,7 @@ pub mod list_accounts_input {
 #[doc(hidden)]
 pub type ListAccountsInputOperationOutputAlias = crate::operation::ListAccounts;
 #[doc(hidden)]
-pub type ListAccountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccountsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountsInput {
     /// Consumes the builder and constructs an Operation<[`ListAccounts`](crate::operation::ListAccounts)>
     #[allow(clippy::let_and_return)]
@@ -5430,7 +4843,7 @@ impl ListAccountsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccounts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5514,7 +4927,7 @@ impl ListAccountsInput {
             "ListAccounts",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5548,56 +4961,32 @@ pub mod list_accounts_for_parent_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose
-        /// accounts you want to list.</p>
+        /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose accounts you want to list.</p>
         pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose
-        /// accounts you want to list.</p>
+        /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose accounts you want to list.</p>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_id = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5620,7 +5009,7 @@ pub mod list_accounts_for_parent_input {
 #[doc(hidden)]
 pub type ListAccountsForParentInputOperationOutputAlias = crate::operation::ListAccountsForParent;
 #[doc(hidden)]
-pub type ListAccountsForParentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccountsForParentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccountsForParentInput {
     /// Consumes the builder and constructs an Operation<[`ListAccountsForParent`](crate::operation::ListAccountsForParent)>
     #[allow(clippy::let_and_return)]
@@ -5631,7 +5020,7 @@ impl ListAccountsForParentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccountsForParent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5718,7 +5107,7 @@ impl ListAccountsForParentInput {
             "ListAccountsForParent",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5751,44 +5140,22 @@ pub mod list_aws_service_access_for_organization_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5812,7 +5179,7 @@ pub type ListAwsServiceAccessForOrganizationInputOperationOutputAlias =
     crate::operation::ListAWSServiceAccessForOrganization;
 #[doc(hidden)]
 pub type ListAwsServiceAccessForOrganizationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAwsServiceAccessForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`ListAWSServiceAccessForOrganization`](crate::operation::ListAWSServiceAccessForOrganization)>
     #[allow(clippy::let_and_return)]
@@ -5823,7 +5190,7 @@ impl ListAwsServiceAccessForOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAWSServiceAccessForOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5909,7 +5276,7 @@ impl ListAwsServiceAccessForOrganizationInput {
             "ListAWSServiceAccessForOrganization",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5944,43 +5311,21 @@ pub mod list_children_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) for the parent root or OU whose children you want to
-        /// list.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) for the parent root or OU whose children you want to list.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) for the parent root or OU whose children you want to
-        /// list.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) for the parent root or OU whose children you want to list.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_id = input;
@@ -5999,44 +5344,22 @@ pub mod list_children_input {
             self.child_type = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6060,7 +5383,7 @@ pub mod list_children_input {
 #[doc(hidden)]
 pub type ListChildrenInputOperationOutputAlias = crate::operation::ListChildren;
 #[doc(hidden)]
-pub type ListChildrenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChildrenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChildrenInput {
     /// Consumes the builder and constructs an Operation<[`ListChildren`](crate::operation::ListChildren)>
     #[allow(clippy::let_and_return)]
@@ -6071,7 +5394,7 @@ impl ListChildrenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChildren,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6155,7 +5478,7 @@ impl ListChildrenInput {
             "ListChildren",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6193,16 +5516,14 @@ pub mod list_create_account_status_input {
         ///
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
-        /// <p>A list of one or more states that you want included in the response. If this parameter
-        /// isn't present, all requests are included in the response.</p>
-        pub fn states(mut self, input: impl Into<crate::model::CreateAccountState>) -> Self {
+        /// <p>A list of one or more states that you want included in the response. If this parameter isn't present, all requests are included in the response.</p>
+        pub fn states(mut self, input: crate::model::CreateAccountState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.states = Some(v);
             self
         }
-        /// <p>A list of one or more states that you want included in the response. If this parameter
-        /// isn't present, all requests are included in the response.</p>
+        /// <p>A list of one or more states that you want included in the response. If this parameter isn't present, all requests are included in the response.</p>
         pub fn set_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateAccountState>>,
@@ -6210,44 +5531,22 @@ pub mod list_create_account_status_input {
             self.states = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6271,7 +5570,7 @@ pub mod list_create_account_status_input {
 pub type ListCreateAccountStatusInputOperationOutputAlias =
     crate::operation::ListCreateAccountStatus;
 #[doc(hidden)]
-pub type ListCreateAccountStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCreateAccountStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCreateAccountStatusInput {
     /// Consumes the builder and constructs an Operation<[`ListCreateAccountStatus`](crate::operation::ListCreateAccountStatus)>
     #[allow(clippy::let_and_return)]
@@ -6282,7 +5581,7 @@ impl ListCreateAccountStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCreateAccountStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6369,7 +5668,7 @@ impl ListCreateAccountStatusInput {
             "ListCreateAccountStatus",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6403,18 +5702,14 @@ pub mod list_delegated_administrators_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifies a service principal name. If specified, then the operation lists the
-        /// delegated administrators only for the specified service.</p>
-        /// <p>If you don't specify a service principal, the operation lists all delegated
-        /// administrators for all services in your organization.</p>
+        /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p>
+        /// <p>If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.</p>
         pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_principal = Some(input.into());
             self
         }
-        /// <p>Specifies a service principal name. If specified, then the operation lists the
-        /// delegated administrators only for the specified service.</p>
-        /// <p>If you don't specify a service principal, the operation lists all delegated
-        /// administrators for all services in your organization.</p>
+        /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p>
+        /// <p>If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.</p>
         pub fn set_service_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6422,44 +5717,22 @@ pub mod list_delegated_administrators_input {
             self.service_principal = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6483,7 +5756,7 @@ pub mod list_delegated_administrators_input {
 pub type ListDelegatedAdministratorsInputOperationOutputAlias =
     crate::operation::ListDelegatedAdministrators;
 #[doc(hidden)]
-pub type ListDelegatedAdministratorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDelegatedAdministratorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDelegatedAdministratorsInput {
     /// Consumes the builder and constructs an Operation<[`ListDelegatedAdministrators`](crate::operation::ListDelegatedAdministrators)>
     #[allow(clippy::let_and_return)]
@@ -6494,7 +5767,7 @@ impl ListDelegatedAdministratorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDelegatedAdministrators,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6580,7 +5853,7 @@ impl ListDelegatedAdministratorsInput {
             "ListDelegatedAdministrators",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6624,44 +5897,22 @@ pub mod list_delegated_services_for_account_input {
             self.account_id = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6685,7 +5936,8 @@ pub mod list_delegated_services_for_account_input {
 pub type ListDelegatedServicesForAccountInputOperationOutputAlias =
     crate::operation::ListDelegatedServicesForAccount;
 #[doc(hidden)]
-pub type ListDelegatedServicesForAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDelegatedServicesForAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDelegatedServicesForAccountInput {
     /// Consumes the builder and constructs an Operation<[`ListDelegatedServicesForAccount`](crate::operation::ListDelegatedServicesForAccount)>
     #[allow(clippy::let_and_return)]
@@ -6696,7 +5948,7 @@ impl ListDelegatedServicesForAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDelegatedServicesForAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6782,7 +6034,7 @@ impl ListDelegatedServicesForAccountInput {
             "ListDelegatedServicesForAccount",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6816,24 +6068,12 @@ pub mod list_handshakes_for_account_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the handshakes that you want included in the response. The default is all
-        /// types. Use the <code>ActionType</code> element to limit the output to only a specified
-        /// type, such as <code>INVITE</code>, <code>ENABLE_ALL_FEATURES</code>, or
-        /// <code>APPROVE_ALL_FEATURES</code>. Alternatively, for the
-        /// <code>ENABLE_ALL_FEATURES</code> handshake that generates a separate child handshake
-        /// for each member account, you can specify <code>ParentHandshakeId</code> to see only the
-        /// handshakes that were generated by that parent request.</p>
+        /// <p>Filters the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE_ALL_FEATURES</code>, or <code>APPROVE_ALL_FEATURES</code>. Alternatively, for the <code>ENABLE_ALL_FEATURES</code> handshake that generates a separate child handshake for each member account, you can specify <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>
         pub fn filter(mut self, input: crate::model::HandshakeFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the handshakes that you want included in the response. The default is all
-        /// types. Use the <code>ActionType</code> element to limit the output to only a specified
-        /// type, such as <code>INVITE</code>, <code>ENABLE_ALL_FEATURES</code>, or
-        /// <code>APPROVE_ALL_FEATURES</code>. Alternatively, for the
-        /// <code>ENABLE_ALL_FEATURES</code> handshake that generates a separate child handshake
-        /// for each member account, you can specify <code>ParentHandshakeId</code> to see only the
-        /// handshakes that were generated by that parent request.</p>
+        /// <p>Filters the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE_ALL_FEATURES</code>, or <code>APPROVE_ALL_FEATURES</code>. Alternatively, for the <code>ENABLE_ALL_FEATURES</code> handshake that generates a separate child handshake for each member account, you can specify <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::HandshakeFilter>,
@@ -6841,44 +6081,22 @@ pub mod list_handshakes_for_account_input {
             self.filter = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6902,7 +6120,7 @@ pub mod list_handshakes_for_account_input {
 pub type ListHandshakesForAccountInputOperationOutputAlias =
     crate::operation::ListHandshakesForAccount;
 #[doc(hidden)]
-pub type ListHandshakesForAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListHandshakesForAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListHandshakesForAccountInput {
     /// Consumes the builder and constructs an Operation<[`ListHandshakesForAccount`](crate::operation::ListHandshakesForAccount)>
     #[allow(clippy::let_and_return)]
@@ -6913,7 +6131,7 @@ impl ListHandshakesForAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHandshakesForAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7000,7 +6218,7 @@ impl ListHandshakesForAccountInput {
             "ListHandshakesForAccount",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7034,24 +6252,12 @@ pub mod list_handshakes_for_organization_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A filter of the handshakes that you want included in the response. The default is all
-        /// types. Use the <code>ActionType</code> element to limit the output to only a specified
-        /// type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or
-        /// <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the
-        /// <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake
-        /// for each member account, you can specify the <code>ParentHandshakeId</code> to see only
-        /// the handshakes that were generated by that parent request.</p>
+        /// <p>A filter of the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake for each member account, you can specify the <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>
         pub fn filter(mut self, input: crate::model::HandshakeFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>A filter of the handshakes that you want included in the response. The default is all
-        /// types. Use the <code>ActionType</code> element to limit the output to only a specified
-        /// type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or
-        /// <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the
-        /// <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake
-        /// for each member account, you can specify the <code>ParentHandshakeId</code> to see only
-        /// the handshakes that were generated by that parent request.</p>
+        /// <p>A filter of the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake for each member account, you can specify the <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::HandshakeFilter>,
@@ -7059,44 +6265,22 @@ pub mod list_handshakes_for_organization_input {
             self.filter = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7120,7 +6304,8 @@ pub mod list_handshakes_for_organization_input {
 pub type ListHandshakesForOrganizationInputOperationOutputAlias =
     crate::operation::ListHandshakesForOrganization;
 #[doc(hidden)]
-pub type ListHandshakesForOrganizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListHandshakesForOrganizationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListHandshakesForOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`ListHandshakesForOrganization`](crate::operation::ListHandshakesForOrganization)>
     #[allow(clippy::let_and_return)]
@@ -7131,7 +6316,7 @@ impl ListHandshakesForOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHandshakesForOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7217,7 +6402,7 @@ impl ListHandshakesForOrganizationInput {
             "ListHandshakesForOrganization",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7252,83 +6437,41 @@ pub mod list_organizational_units_for_parent_input {
     }
     impl Builder {
         /// <p>The unique identifier (ID) of the root or OU whose child OUs you want to list.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-        /// following:</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_id = Some(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the root or OU whose child OUs you want to list.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-        /// following:</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_id = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7352,7 +6495,8 @@ pub mod list_organizational_units_for_parent_input {
 pub type ListOrganizationalUnitsForParentInputOperationOutputAlias =
     crate::operation::ListOrganizationalUnitsForParent;
 #[doc(hidden)]
-pub type ListOrganizationalUnitsForParentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOrganizationalUnitsForParentInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListOrganizationalUnitsForParentInput {
     /// Consumes the builder and constructs an Operation<[`ListOrganizationalUnitsForParent`](crate::operation::ListOrganizationalUnitsForParent)>
     #[allow(clippy::let_and_return)]
@@ -7363,7 +6507,7 @@ impl ListOrganizationalUnitsForParentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOrganizationalUnitsForParent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7449,7 +6593,7 @@ impl ListOrganizationalUnitsForParentInput {
             "ListOrganizationalUnitsForParent",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7483,86 +6627,42 @@ pub mod list_parents_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to
-        /// list. Don't specify a root.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a root.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with
-        /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that
-        /// contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional
-        /// lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn child_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.child_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to
-        /// list. Don't specify a root.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a root.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with
-        /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that
-        /// contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional
-        /// lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn set_child_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.child_id = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7585,7 +6685,7 @@ pub mod list_parents_input {
 #[doc(hidden)]
 pub type ListParentsInputOperationOutputAlias = crate::operation::ListParents;
 #[doc(hidden)]
-pub type ListParentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListParentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListParentsInput {
     /// Consumes the builder and constructs an Operation<[`ListParents`](crate::operation::ListParents)>
     #[allow(clippy::let_and_return)]
@@ -7596,7 +6696,7 @@ impl ListParentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListParents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7680,7 +6780,7 @@ impl ListParentsInput {
             "ListParents",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7714,100 +6814,44 @@ pub mod list_policies_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifies the type of policy that you want to include in the response. You must
-        /// specify one of the following values:</p>
+        /// <p>Specifies the type of policy that you want to include in the response. You must specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
         /// </ul>
         pub fn filter(mut self, input: crate::model::PolicyType) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Specifies the type of policy that you want to include in the response. You must
-        /// specify one of the following values:</p>
+        /// <p>Specifies the type of policy that you want to include in the response. You must specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
         /// </ul>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::PolicyType>) -> Self {
             self.filter = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7830,7 +6874,7 @@ pub mod list_policies_input {
 #[doc(hidden)]
 pub type ListPoliciesInputOperationOutputAlias = crate::operation::ListPolicies;
 #[doc(hidden)]
-pub type ListPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListPolicies`](crate::operation::ListPolicies)>
     #[allow(clippy::let_and_return)]
@@ -7841,7 +6885,7 @@ impl ListPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7925,7 +6969,7 @@ impl ListPoliciesInput {
             "ListPolicies",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7960,150 +7004,66 @@ pub mod list_policies_for_target_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the root, organizational unit, or account whose policies
-        /// you want to list.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the root, organizational unit, or account whose policies you want to list.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the root, organizational unit, or account whose policies
-        /// you want to list.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the root, organizational unit, or account whose policies you want to list.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
         }
-        /// <p>The type of policy that you want to include in the returned list. You must specify one
-        /// of the following values:</p>
+        /// <p>The type of policy that you want to include in the returned list. You must specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
         /// </ul>
         pub fn filter(mut self, input: crate::model::PolicyType) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>The type of policy that you want to include in the returned list. You must specify one
-        /// of the following values:</p>
+        /// <p>The type of policy that you want to include in the returned list. You must specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
         /// </ul>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::PolicyType>) -> Self {
             self.filter = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8127,7 +7087,7 @@ pub mod list_policies_for_target_input {
 #[doc(hidden)]
 pub type ListPoliciesForTargetInputOperationOutputAlias = crate::operation::ListPoliciesForTarget;
 #[doc(hidden)]
-pub type ListPoliciesForTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPoliciesForTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPoliciesForTargetInput {
     /// Consumes the builder and constructs an Operation<[`ListPoliciesForTarget`](crate::operation::ListPoliciesForTarget)>
     #[allow(clippy::let_and_return)]
@@ -8138,7 +7098,7 @@ impl ListPoliciesForTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPoliciesForTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8225,7 +7185,7 @@ impl ListPoliciesForTargetInput {
             "ListPoliciesForTarget",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8258,44 +7218,22 @@ pub mod list_roots_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8315,7 +7253,7 @@ pub mod list_roots_input {
 #[doc(hidden)]
 pub type ListRootsInputOperationOutputAlias = crate::operation::ListRoots;
 #[doc(hidden)]
-pub type ListRootsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRootsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRootsInput {
     /// Consumes the builder and constructs an Operation<[`ListRoots`](crate::operation::ListRoots)>
     #[allow(clippy::let_and_return)]
@@ -8326,7 +7264,7 @@ impl ListRootsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRoots,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8408,7 +7346,7 @@ impl ListRootsInput {
                     "ListRoots",
                     "organizations",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8444,27 +7382,10 @@ pub mod list_tags_for_resource_input {
         /// <p>The ID of the resource with the tags to list.</p>
         /// <p>You can specify any of the following taggable resources.</p>
         /// <ul>
-        /// <li>
-        /// <p>AWS account – specify the account ID number.</p>
-        /// </li>
-        /// <li>
-        /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
-        /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
-        /// to: <code>r-<i>1a2b</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
-        /// similar to: <code>p-<i>12abcdefg3</i>
-        /// </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>AWS account – specify the account ID number.</p> </li>
+        /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+        /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+        /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -8473,46 +7394,21 @@ pub mod list_tags_for_resource_input {
         /// <p>The ID of the resource with the tags to list.</p>
         /// <p>You can specify any of the following taggable resources.</p>
         /// <ul>
-        /// <li>
-        /// <p>AWS account – specify the account ID number.</p>
-        /// </li>
-        /// <li>
-        /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
-        /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
-        /// to: <code>r-<i>1a2b</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
-        /// similar to: <code>p-<i>12abcdefg3</i>
-        /// </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>AWS account – specify the account ID number.</p> </li>
+        /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+        /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+        /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
         /// </ul>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8534,7 +7430,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -8545,7 +7441,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8632,7 +7528,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8667,57 +7563,33 @@ pub mod list_targets_for_policy_input {
     }
     impl Builder {
         /// <p>The unique identifier (ID) of the policy whose attachments you want to know.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-        /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_id = Some(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the policy whose attachments you want to know.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-        /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value of the previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue
-        /// from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-        /// more results available. You should check <code>NextToken</code> after every operation to ensure
-        /// that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8740,7 +7612,7 @@ pub mod list_targets_for_policy_input {
 #[doc(hidden)]
 pub type ListTargetsForPolicyInputOperationOutputAlias = crate::operation::ListTargetsForPolicy;
 #[doc(hidden)]
-pub type ListTargetsForPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTargetsForPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTargetsForPolicyInput {
     /// Consumes the builder and constructs an Operation<[`ListTargetsForPolicy`](crate::operation::ListTargetsForPolicy)>
     #[allow(clippy::let_and_return)]
@@ -8751,7 +7623,7 @@ impl ListTargetsForPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTargetsForPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8838,7 +7710,7 @@ impl ListTargetsForPolicyInput {
             "ListTargetsForPolicy",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8873,56 +7745,32 @@ pub mod move_account_input {
     }
     impl Builder {
         /// <p>The unique identifier (ID) of the account that you want to move.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
-        /// digits.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the account that you want to move.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
-        /// digits.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
-        /// <p>The unique identifier (ID) of the root or organizational unit that you want to move
-        /// the account from.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn source_parent_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_parent_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the root or organizational unit that you want to move
-        /// the account from.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn set_source_parent_id(
             mut self,
@@ -8931,43 +7779,21 @@ pub mod move_account_input {
             self.source_parent_id = input;
             self
         }
-        /// <p>The unique identifier (ID) of the root or organizational unit that you want to move
-        /// the account to.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn destination_parent_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_parent_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the root or organizational unit that you want to move
-        /// the account to.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-        /// following:</p>
+        /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-        /// digits.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-        /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-        /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-        /// </li>
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
         /// </ul>
         pub fn set_destination_parent_id(
             mut self,
@@ -8994,7 +7820,7 @@ pub mod move_account_input {
 #[doc(hidden)]
 pub type MoveAccountInputOperationOutputAlias = crate::operation::MoveAccount;
 #[doc(hidden)]
-pub type MoveAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type MoveAccountInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl MoveAccountInput {
     /// Consumes the builder and constructs an Operation<[`MoveAccount`](crate::operation::MoveAccount)>
     #[allow(clippy::let_and_return)]
@@ -9005,7 +7831,7 @@ impl MoveAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::MoveAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9089,7 +7915,7 @@ impl MoveAccountInput {
             "MoveAccount",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9122,26 +7948,22 @@ pub mod register_delegated_administrator_input {
         pub(crate) service_principal: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID number of the member account in the organization to register as a
-        /// delegated administrator.</p>
+        /// <p>The account ID number of the member account in the organization to register as a delegated administrator.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID number of the member account in the organization to register as a
-        /// delegated administrator.</p>
+        /// <p>The account ID number of the member account in the organization to register as a delegated administrator.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
-        /// <p>The service principal of the AWS service for which you want to make the member
-        /// account a delegated administrator.</p>
+        /// <p>The service principal of the AWS service for which you want to make the member account a delegated administrator.</p>
         pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_principal = Some(input.into());
             self
         }
-        /// <p>The service principal of the AWS service for which you want to make the member
-        /// account a delegated administrator.</p>
+        /// <p>The service principal of the AWS service for which you want to make the member account a delegated administrator.</p>
         pub fn set_service_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9167,7 +7989,8 @@ pub mod register_delegated_administrator_input {
 pub type RegisterDelegatedAdministratorInputOperationOutputAlias =
     crate::operation::RegisterDelegatedAdministrator;
 #[doc(hidden)]
-pub type RegisterDelegatedAdministratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterDelegatedAdministratorInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterDelegatedAdministratorInput {
     /// Consumes the builder and constructs an Operation<[`RegisterDelegatedAdministrator`](crate::operation::RegisterDelegatedAdministrator)>
     #[allow(clippy::let_and_return)]
@@ -9178,7 +8001,7 @@ impl RegisterDelegatedAdministratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterDelegatedAdministrator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9264,7 +8087,7 @@ impl RegisterDelegatedAdministratorInput {
             "RegisterDelegatedAdministrator",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9296,18 +8119,14 @@ pub mod remove_account_from_organization_input {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the member account that you want to remove from the
-        /// organization.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
-        /// digits.</p>
+        /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the member account that you want to remove from the
-        /// organization.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
-        /// digits.</p>
+        /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -9329,7 +8148,8 @@ pub mod remove_account_from_organization_input {
 pub type RemoveAccountFromOrganizationInputOperationOutputAlias =
     crate::operation::RemoveAccountFromOrganization;
 #[doc(hidden)]
-pub type RemoveAccountFromOrganizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveAccountFromOrganizationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveAccountFromOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`RemoveAccountFromOrganization`](crate::operation::RemoveAccountFromOrganization)>
     #[allow(clippy::let_and_return)]
@@ -9340,7 +8160,7 @@ impl RemoveAccountFromOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveAccountFromOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9426,7 +8246,7 @@ impl RemoveAccountFromOrganizationInput {
             "RemoveAccountFromOrganization",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9476,72 +8296,30 @@ pub mod tag_resource_input {
         /// <p>A list of tags to add to the specified resource.</p>
         /// <p>You can specify any of the following taggable resources.</p>
         /// <ul>
-        /// <li>
-        /// <p>AWS account – specify the account ID number.</p>
-        /// </li>
-        /// <li>
-        /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
-        /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
-        /// to: <code>r-<i>1a2b</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
-        /// similar to: <code>p-<i>12abcdefg3</i>
-        /// </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>AWS account – specify the account ID number.</p> </li>
+        /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+        /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+        /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
         /// </ul>
-        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the
-        /// value to an empty string, but you can't set it to <code>null</code>.</p>
-        /// <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-        /// an account user, then the entire request fails and the account is not
-        /// created.</p>
+        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then the entire request fails and the account is not created.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
         /// <p>A list of tags to add to the specified resource.</p>
         /// <p>You can specify any of the following taggable resources.</p>
         /// <ul>
-        /// <li>
-        /// <p>AWS account – specify the account ID number.</p>
-        /// </li>
-        /// <li>
-        /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
-        /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
-        /// to: <code>r-<i>1a2b</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
-        /// similar to: <code>p-<i>12abcdefg3</i>
-        /// </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>AWS account – specify the account ID number.</p> </li>
+        /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+        /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+        /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
         /// </ul>
-        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the
-        /// value to an empty string, but you can't set it to <code>null</code>.</p>
-        /// <note>
-        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-        /// an account user, then the entire request fails and the account is not
-        /// created.</p>
+        /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>.</p> <note>
+        /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then the entire request fails and the account is not created.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -9567,7 +8345,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -9578,7 +8356,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9662,7 +8440,7 @@ impl TagResourceInput {
             "TagResource",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9698,27 +8476,10 @@ pub mod untag_resource_input {
         /// <p>The ID of the resource to remove a tag from.</p>
         /// <p>You can specify any of the following taggable resources.</p>
         /// <ul>
-        /// <li>
-        /// <p>AWS account – specify the account ID number.</p>
-        /// </li>
-        /// <li>
-        /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
-        /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
-        /// to: <code>r-<i>1a2b</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
-        /// similar to: <code>p-<i>12abcdefg3</i>
-        /// </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>AWS account – specify the account ID number.</p> </li>
+        /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+        /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+        /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
         /// </ul>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -9727,27 +8488,10 @@ pub mod untag_resource_input {
         /// <p>The ID of the resource to remove a tag from.</p>
         /// <p>You can specify any of the following taggable resources.</p>
         /// <ul>
-        /// <li>
-        /// <p>AWS account – specify the account ID number.</p>
-        /// </li>
-        /// <li>
-        /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
-        /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
-        /// to: <code>r-<i>1a2b</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
-        /// similar to: <code>p-<i>12abcdefg3</i>
-        /// </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>AWS account – specify the account ID number.</p> </li>
+        /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+        /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+        /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
         /// </ul>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
@@ -9789,7 +8533,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -9800,7 +8544,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9884,7 +8628,7 @@ impl UntagResourceInput {
             "UntagResource",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9917,22 +8661,14 @@ pub mod update_organizational_unit_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from
-        /// the <a>ListOrganizationalUnitsForParent</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-        /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
-        /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
-        /// or digits.</p>
+        /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organizational_unit_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from
-        /// the <a>ListOrganizationalUnitsForParent</a> operation.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-        /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
-        /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
-        /// or digits.</p>
+        /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         pub fn set_organizational_unit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9941,17 +8677,13 @@ pub mod update_organizational_unit_input {
             self
         }
         /// <p>The new name that you want to assign to the OU.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-        /// that is used to validate this parameter is a string of any of the characters in the ASCII
-        /// character range.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The new name that you want to assign to the OU.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-        /// that is used to validate this parameter is a string of any of the characters in the ASCII
-        /// character range.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9974,7 +8706,7 @@ pub mod update_organizational_unit_input {
 pub type UpdateOrganizationalUnitInputOperationOutputAlias =
     crate::operation::UpdateOrganizationalUnit;
 #[doc(hidden)]
-pub type UpdateOrganizationalUnitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateOrganizationalUnitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateOrganizationalUnitInput {
     /// Consumes the builder and constructs an Operation<[`UpdateOrganizationalUnit`](crate::operation::UpdateOrganizationalUnit)>
     #[allow(clippy::let_and_return)]
@@ -9985,7 +8717,7 @@ impl UpdateOrganizationalUnitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateOrganizationalUnit,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10072,7 +8804,7 @@ impl UpdateOrganizationalUnitInput {
             "UpdateOrganizationalUnit",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10108,31 +8840,25 @@ pub mod update_policy_input {
     }
     impl Builder {
         /// <p>The unique identifier (ID) of the policy that you want to update.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-        /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_id = Some(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the policy that you want to update.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-        /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
         }
         /// <p>If provided, the new name for the policy.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-        /// that is used to validate this parameter is a string of any of the characters in the ASCII
-        /// character range.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>If provided, the new name for the policy.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-        /// that is used to validate this parameter is a string of any of the characters in the ASCII
-        /// character range.</p>
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10147,18 +8873,12 @@ pub mod update_policy_input {
             self.description = input;
             self
         }
-        /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON
-        /// that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-        /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
-        /// </p>
+        /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON
-        /// that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-        /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
-        /// </p>
+        /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -10182,7 +8902,7 @@ pub mod update_policy_input {
 #[doc(hidden)]
 pub type UpdatePolicyInputOperationOutputAlias = crate::operation::UpdatePolicy;
 #[doc(hidden)]
-pub type UpdatePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePolicyInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePolicy`](crate::operation::UpdatePolicy)>
     #[allow(clippy::let_and_return)]
@@ -10193,7 +8913,7 @@ impl UpdatePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10277,7 +8997,7 @@ impl UpdatePolicyInput {
             "UpdatePolicy",
             "organizations",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10305,33 +9025,24 @@ impl UpdatePolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePolicyInput {
     /// <p>The unique identifier (ID) of the policy that you want to update.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>If provided, the new name for the policy.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-    /// that is used to validate this parameter is a string of any of the characters in the ASCII
-    /// character range.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>If provided, the new description for the policy.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON
-    /// that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-    /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
-    /// </p>
+    /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
     pub content: std::option::Option<std::string::String>,
 }
 impl UpdatePolicyInput {
     /// <p>The unique identifier (ID) of the policy that you want to update.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
     /// <p>If provided, the new name for the policy.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-    /// that is used to validate this parameter is a string of any of the characters in the ASCII
-    /// character range.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -10339,10 +9050,7 @@ impl UpdatePolicyInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON
-    /// that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-    /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
-    /// </p>
+    /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -10362,33 +9070,21 @@ impl std::fmt::Debug for UpdatePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOrganizationalUnitInput {
-    /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from
-    /// the <a>ListOrganizationalUnitsForParent</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
-    /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
-    /// or digits.</p>
+    /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub organizational_unit_id: std::option::Option<std::string::String>,
     /// <p>The new name that you want to assign to the OU.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-    /// that is used to validate this parameter is a string of any of the characters in the ASCII
-    /// character range.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl UpdateOrganizationalUnitInput {
-    /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from
-    /// the <a>ListOrganizationalUnitsForParent</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
-    /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
-    /// or digits.</p>
+    /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
     }
     /// <p>The new name that you want to assign to the OU.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-    /// that is used to validate this parameter is a string of any of the characters in the ASCII
-    /// character range.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -10409,27 +9105,10 @@ pub struct UntagResourceInput {
     /// <p>The ID of the resource to remove a tag from.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li>
-    /// <p>AWS account – specify the account ID number.</p>
-    /// </li>
-    /// <li>
-    /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
-    /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
-    /// to: <code>r-<i>1a2b</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
-    /// similar to: <code>p-<i>12abcdefg3</i>
-    /// </code>
-    /// </p>
-    /// </li>
+    /// <li> <p>AWS account – specify the account ID number.</p> </li>
+    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The list of keys for tags to remove from the specified resource.</p>
@@ -10439,27 +9118,10 @@ impl UntagResourceInput {
     /// <p>The ID of the resource to remove a tag from.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li>
-    /// <p>AWS account – specify the account ID number.</p>
-    /// </li>
-    /// <li>
-    /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
-    /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
-    /// to: <code>r-<i>1a2b</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
-    /// similar to: <code>p-<i>12abcdefg3</i>
-    /// </code>
-    /// </p>
-    /// </li>
+    /// <li> <p>AWS account – specify the account ID number.</p> </li>
+    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
     /// </ul>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
@@ -10487,34 +9149,13 @@ pub struct TagResourceInput {
     /// <p>A list of tags to add to the specified resource.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li>
-    /// <p>AWS account – specify the account ID number.</p>
-    /// </li>
-    /// <li>
-    /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
-    /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
-    /// to: <code>r-<i>1a2b</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
-    /// similar to: <code>p-<i>12abcdefg3</i>
-    /// </code>
-    /// </p>
-    /// </li>
+    /// <li> <p>AWS account – specify the account ID number.</p> </li>
+    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
     /// </ul>
-    /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the
-    /// value to an empty string, but you can't set it to <code>null</code>.</p>
-    /// <note>
-    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-    /// an account user, then the entire request fails and the account is not
-    /// created.</p>
+    /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>.</p> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then the entire request fails and the account is not created.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -10526,34 +9167,13 @@ impl TagResourceInput {
     /// <p>A list of tags to add to the specified resource.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li>
-    /// <p>AWS account – specify the account ID number.</p>
-    /// </li>
-    /// <li>
-    /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
-    /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
-    /// to: <code>r-<i>1a2b</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
-    /// similar to: <code>p-<i>12abcdefg3</i>
-    /// </code>
-    /// </p>
-    /// </li>
+    /// <li> <p>AWS account – specify the account ID number.</p> </li>
+    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
     /// </ul>
-    /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the
-    /// value to an empty string, but you can't set it to <code>null</code>.</p>
-    /// <note>
-    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-    /// an account user, then the entire request fails and the account is not
-    /// created.</p>
+    /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>.</p> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then the entire request fails and the account is not created.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -10572,17 +9192,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAccountFromOrganizationInput {
-    /// <p>The unique identifier (ID) of the member account that you want to remove from the
-    /// organization.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
-    /// digits.</p>
+    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
 impl RemoveAccountFromOrganizationInput {
-    /// <p>The unique identifier (ID) of the member account that you want to remove from the
-    /// organization.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
-    /// digits.</p>
+    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -10599,21 +9215,17 @@ impl std::fmt::Debug for RemoveAccountFromOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterDelegatedAdministratorInput {
-    /// <p>The account ID number of the member account in the organization to register as a
-    /// delegated administrator.</p>
+    /// <p>The account ID number of the member account in the organization to register as a delegated administrator.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The service principal of the AWS service for which you want to make the member
-    /// account a delegated administrator.</p>
+    /// <p>The service principal of the AWS service for which you want to make the member account a delegated administrator.</p>
     pub service_principal: std::option::Option<std::string::String>,
 }
 impl RegisterDelegatedAdministratorInput {
-    /// <p>The account ID number of the member account in the organization to register as a
-    /// delegated administrator.</p>
+    /// <p>The account ID number of the member account in the organization to register as a delegated administrator.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The service principal of the AWS service for which you want to make the member
-    /// account a delegated administrator.</p>
+    /// <p>The service principal of the AWS service for which you want to make the member account a delegated administrator.</p>
     pub fn service_principal(&self) -> std::option::Option<&str> {
         self.service_principal.as_deref()
     }
@@ -10632,89 +9244,43 @@ impl std::fmt::Debug for RegisterDelegatedAdministratorInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MoveAccountInput {
     /// <p>The unique identifier (ID) of the account that you want to move.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
-    /// digits.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move
-    /// the account from.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub source_parent_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move
-    /// the account to.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub destination_parent_id: std::option::Option<std::string::String>,
 }
 impl MoveAccountInput {
     /// <p>The unique identifier (ID) of the account that you want to move.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
-    /// digits.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move
-    /// the account from.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub fn source_parent_id(&self) -> std::option::Option<&str> {
         self.source_parent_id.as_deref()
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move
-    /// the account to.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub fn destination_parent_id(&self) -> std::option::Option<&str> {
         self.destination_parent_id.as_deref()
@@ -10735,48 +9301,24 @@ impl std::fmt::Debug for MoveAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetsForPolicyInput {
     /// <p>The unique identifier (ID) of the policy whose attachments you want to know.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTargetsForPolicyInput {
     /// <p>The unique identifier (ID) of the policy whose attachments you want to know.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -10798,70 +9340,28 @@ pub struct ListTagsForResourceInput {
     /// <p>The ID of the resource with the tags to list.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li>
-    /// <p>AWS account – specify the account ID number.</p>
-    /// </li>
-    /// <li>
-    /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
-    /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
-    /// to: <code>r-<i>1a2b</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
-    /// similar to: <code>p-<i>12abcdefg3</i>
-    /// </code>
-    /// </p>
-    /// </li>
+    /// <li> <p>AWS account – specify the account ID number.</p> </li>
+    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
     /// </ul>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The ID of the resource with the tags to list.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li>
-    /// <p>AWS account – specify the account ID number.</p>
-    /// </li>
-    /// <li>
-    /// <p>Organizational unit  – specify the OU ID that begins with <code>ou-</code> and
-    /// looks similar to: <code>ou-<i>1a2b-34uvwxyz</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar
-    /// to: <code>r-<i>1a2b</i>
-    /// </code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks
-    /// similar to: <code>p-<i>12abcdefg3</i>
-    /// </code>
-    /// </p>
-    /// </li>
+    /// <li> <p>AWS account – specify the account ID number.</p> </li>
+    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
     /// </ul>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10879,39 +9379,17 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRootsInput {
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListRootsInput {
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -10929,137 +9407,53 @@ impl std::fmt::Debug for ListRootsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesForTargetInput {
-    /// <p>The unique identifier (ID) of the root, organizational unit, or account whose policies
-    /// you want to list.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the root, organizational unit, or account whose policies you want to list.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub target_id: std::option::Option<std::string::String>,
-    /// <p>The type of policy that you want to include in the returned list. You must specify one
-    /// of the following values:</p>
+    /// <p>The type of policy that you want to include in the returned list. You must specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
     pub filter: std::option::Option<crate::model::PolicyType>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPoliciesForTargetInput {
-    /// <p>The unique identifier (ID) of the root, organizational unit, or account whose policies
-    /// you want to list.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the root, organizational unit, or account whose policies you want to list.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub fn target_id(&self) -> std::option::Option<&str> {
         self.target_id.as_deref()
     }
-    /// <p>The type of policy that you want to include in the returned list. You must specify one
-    /// of the following values:</p>
+    /// <p>The type of policy that you want to include in the returned list. You must specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
     pub fn filter(&self) -> std::option::Option<&crate::model::PolicyType> {
         self.filter.as_ref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11079,91 +9473,35 @@ impl std::fmt::Debug for ListPoliciesForTargetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesInput {
-    /// <p>Specifies the type of policy that you want to include in the response. You must
-    /// specify one of the following values:</p>
+    /// <p>Specifies the type of policy that you want to include in the response. You must specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
     pub filter: std::option::Option<crate::model::PolicyType>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPoliciesInput {
-    /// <p>Specifies the type of policy that you want to include in the response. You must
-    /// specify one of the following values:</p>
+    /// <p>Specifies the type of policy that you want to include in the response. You must specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
     pub fn filter(&self) -> std::option::Option<&crate::model::PolicyType> {
         self.filter.as_ref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11182,77 +9520,33 @@ impl std::fmt::Debug for ListPoliciesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListParentsInput {
-    /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to
-    /// list. Don't specify a root.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a root.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with
-    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that
-    /// contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional
-    /// lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub child_id: std::option::Option<std::string::String>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListParentsInput {
-    /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to
-    /// list. Don't specify a root.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a root.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with
-    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that
-    /// contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional
-    /// lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub fn child_id(&self) -> std::option::Option<&str> {
         self.child_id.as_deref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11272,74 +9566,32 @@ impl std::fmt::Debug for ListParentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationalUnitsForParentInput {
     /// <p>The unique identifier (ID) of the root or OU whose child OUs you want to list.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-    /// following:</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub parent_id: std::option::Option<std::string::String>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListOrganizationalUnitsForParentInput {
     /// <p>The unique identifier (ID) of the root or OU whose child OUs you want to list.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-    /// following:</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub fn parent_id(&self) -> std::option::Option<&str> {
         self.parent_id.as_deref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11358,57 +9610,23 @@ impl std::fmt::Debug for ListOrganizationalUnitsForParentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHandshakesForOrganizationInput {
-    /// <p>A filter of the handshakes that you want included in the response. The default is all
-    /// types. Use the <code>ActionType</code> element to limit the output to only a specified
-    /// type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or
-    /// <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the
-    /// <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake
-    /// for each member account, you can specify the <code>ParentHandshakeId</code> to see only
-    /// the handshakes that were generated by that parent request.</p>
+    /// <p>A filter of the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake for each member account, you can specify the <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>
     pub filter: std::option::Option<crate::model::HandshakeFilter>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListHandshakesForOrganizationInput {
-    /// <p>A filter of the handshakes that you want included in the response. The default is all
-    /// types. Use the <code>ActionType</code> element to limit the output to only a specified
-    /// type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or
-    /// <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the
-    /// <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake
-    /// for each member account, you can specify the <code>ParentHandshakeId</code> to see only
-    /// the handshakes that were generated by that parent request.</p>
+    /// <p>A filter of the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake for each member account, you can specify the <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::HandshakeFilter> {
         self.filter.as_ref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11427,57 +9645,23 @@ impl std::fmt::Debug for ListHandshakesForOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHandshakesForAccountInput {
-    /// <p>Filters the handshakes that you want included in the response. The default is all
-    /// types. Use the <code>ActionType</code> element to limit the output to only a specified
-    /// type, such as <code>INVITE</code>, <code>ENABLE_ALL_FEATURES</code>, or
-    /// <code>APPROVE_ALL_FEATURES</code>. Alternatively, for the
-    /// <code>ENABLE_ALL_FEATURES</code> handshake that generates a separate child handshake
-    /// for each member account, you can specify <code>ParentHandshakeId</code> to see only the
-    /// handshakes that were generated by that parent request.</p>
+    /// <p>Filters the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE_ALL_FEATURES</code>, or <code>APPROVE_ALL_FEATURES</code>. Alternatively, for the <code>ENABLE_ALL_FEATURES</code> handshake that generates a separate child handshake for each member account, you can specify <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>
     pub filter: std::option::Option<crate::model::HandshakeFilter>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListHandshakesForAccountInput {
-    /// <p>Filters the handshakes that you want included in the response. The default is all
-    /// types. Use the <code>ActionType</code> element to limit the output to only a specified
-    /// type, such as <code>INVITE</code>, <code>ENABLE_ALL_FEATURES</code>, or
-    /// <code>APPROVE_ALL_FEATURES</code>. Alternatively, for the
-    /// <code>ENABLE_ALL_FEATURES</code> handshake that generates a separate child handshake
-    /// for each member account, you can specify <code>ParentHandshakeId</code> to see only the
-    /// handshakes that were generated by that parent request.</p>
+    /// <p>Filters the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE_ALL_FEATURES</code>, or <code>APPROVE_ALL_FEATURES</code>. Alternatively, for the <code>ENABLE_ALL_FEATURES</code> handshake that generates a separate child handshake for each member account, you can specify <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::HandshakeFilter> {
         self.filter.as_ref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11498,20 +9682,9 @@ impl std::fmt::Debug for ListHandshakesForAccountInput {
 pub struct ListDelegatedServicesForAccountInput {
     /// <p>The account ID number of a delegated administrator account in the organization.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDelegatedServicesForAccountInput {
@@ -11519,22 +9692,11 @@ impl ListDelegatedServicesForAccountInput {
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11553,51 +9715,25 @@ impl std::fmt::Debug for ListDelegatedServicesForAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDelegatedAdministratorsInput {
-    /// <p>Specifies a service principal name. If specified, then the operation lists the
-    /// delegated administrators only for the specified service.</p>
-    /// <p>If you don't specify a service principal, the operation lists all delegated
-    /// administrators for all services in your organization.</p>
+    /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p>
+    /// <p>If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.</p>
     pub service_principal: std::option::Option<std::string::String>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDelegatedAdministratorsInput {
-    /// <p>Specifies a service principal name. If specified, then the operation lists the
-    /// delegated administrators only for the specified service.</p>
-    /// <p>If you don't specify a service principal, the operation lists all delegated
-    /// administrators for all services in your organization.</p>
+    /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p>
+    /// <p>If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.</p>
     pub fn service_principal(&self) -> std::option::Option<&str> {
         self.service_principal.as_deref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11616,47 +9752,23 @@ impl std::fmt::Debug for ListDelegatedAdministratorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCreateAccountStatusInput {
-    /// <p>A list of one or more states that you want included in the response. If this parameter
-    /// isn't present, all requests are included in the response.</p>
+    /// <p>A list of one or more states that you want included in the response. If this parameter isn't present, all requests are included in the response.</p>
     pub states: std::option::Option<std::vec::Vec<crate::model::CreateAccountState>>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListCreateAccountStatusInput {
-    /// <p>A list of one or more states that you want included in the response. If this parameter
-    /// isn't present, all requests are included in the response.</p>
+    /// <p>A list of one or more states that you want included in the response. If this parameter isn't present, all requests are included in the response.</p>
     pub fn states(&self) -> std::option::Option<&[crate::model::CreateAccountState]> {
         self.states.as_deref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11675,59 +9787,26 @@ impl std::fmt::Debug for ListCreateAccountStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChildrenInput {
-    /// <p>The unique identifier (ID) for the parent root or OU whose children you want to
-    /// list.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) for the parent root or OU whose children you want to list.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub parent_id: std::option::Option<std::string::String>,
     /// <p>Filters the output to include only the specified child type.</p>
     pub child_type: std::option::Option<crate::model::ChildType>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListChildrenInput {
-    /// <p>The unique identifier (ID) for the parent root or OU whose children you want to
-    /// list.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) for the parent root or OU whose children you want to list.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub fn parent_id(&self) -> std::option::Option<&str> {
         self.parent_id.as_deref()
@@ -11736,22 +9815,11 @@ impl ListChildrenInput {
     pub fn child_type(&self) -> std::option::Option<&crate::model::ChildType> {
         self.child_type.as_ref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11771,39 +9839,17 @@ impl std::fmt::Debug for ListChildrenInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAwsServiceAccessForOrganizationInput {
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAwsServiceAccessForOrganizationInput {
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11821,47 +9867,23 @@ impl std::fmt::Debug for ListAwsServiceAccessForOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsForParentInput {
-    /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose
-    /// accounts you want to list.</p>
+    /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose accounts you want to list.</p>
     pub parent_id: std::option::Option<std::string::String>,
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAccountsForParentInput {
-    /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose
-    /// accounts you want to list.</p>
+    /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose accounts you want to list.</p>
     pub fn parent_id(&self) -> std::option::Option<&str> {
         self.parent_id.as_deref()
     }
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11880,39 +9902,17 @@ impl std::fmt::Debug for ListAccountsForParentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsInput {
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAccountsInput {
-    /// <p>The parameter for receiving additional results if you receive a
-    /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-    /// indicates that more output is available. Set this parameter to the value of the previous
-    /// call's <code>NextToken</code> response to indicate where the output should continue
-    /// from.</p>
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of results that you want included on each page of the
-    /// response. If you do not include this parameter, it defaults to a value that is specific to the
-    /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-    /// response element is present and has a value (is not null). Include that value as the
-    /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-    /// of the results. Note that Organizations might return fewer results than the maximum even when there are
-    /// more results available. You should check <code>NextToken</code> after every operation to ensure
-    /// that you receive all of the results.</p>
+    /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that Organizations might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -11941,98 +9941,40 @@ impl std::fmt::Debug for LeaveOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteAccountToOrganizationInput {
-    /// <p>The identifier (ID) of the AWS account that you want to invite to join your
-    /// organization. This is a JSON object that contains the following elements:</p>
-    /// <p>
-    /// <code>{ "Type": "ACCOUNT", "Id": "<<i>
-    /// <b>account id
-    /// number</b>
-    /// </i>>" }</code>
-    /// </p>
-    /// <p>If you use the AWS CLI, you can submit this as a single string, similar to the following
-    /// example:</p>
-    /// <p>
-    /// <code>--target Id=123456789012,Type=ACCOUNT</code>
-    /// </p>
-    /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID
-    /// number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
-    /// specify the email address that is associated with the account.</p>
-    /// <p>
-    /// <code>--target Id=diego@example.com,Type=EMAIL</code>
-    /// </p>
+    /// <p>The identifier (ID) of the AWS account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
+    /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
+    /// <p>If you use the AWS CLI, you can submit this as a single string, similar to the following example:</p>
+    /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
+    /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
+    /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
     pub target: std::option::Option<crate::model::HandshakeParty>,
-    /// <p>Additional information that you want to include in the generated email to the
-    /// recipient account owner.</p>
+    /// <p>Additional information that you want to include in the generated email to the recipient account owner.</p>
     pub notes: std::option::Option<std::string::String>,
-    /// <p>A list of tags that you want to attach to the account when it becomes a member of the
-    /// organization. For each tag in the list, you must specify both a tag key and a value. You
-    /// can set the value to an empty string, but you can't set it to <code>null</code>. For
-    /// more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the
-    /// AWS Organizations User Guide.</p>
-    /// <important>
-    /// <p>Any tags in the request are checked for compliance with any applicable tag
-    /// policies when the request is made. The request is rejected if the tags in the
-    /// request don't match the requirements of the policy at that time. Tag policy
-    /// compliance is <i>
-    /// <b>not</b>
-    /// </i> checked
-    /// again when the invitation is accepted and the tags are actually attached to the
-    /// account. That means that if the tag policy changes between the invitation and the
-    /// acceptance, then that tags could potentially be non-compliant.</p>
-    /// </important>
-    /// <note>
-    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-    /// an account, then the entire request fails and invitations are not sent.</p>
+    /// <p>A list of tags that you want to attach to the account when it becomes a member of the organization. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <important>
+    /// <p>Any tags in the request are checked for compliance with any applicable tag policies when the request is made. The request is rejected if the tags in the request don't match the requirements of the policy at that time. Tag policy compliance is <i> <b>not</b> </i> checked again when the invitation is accepted and the tags are actually attached to the account. That means that if the tag policy changes between the invitation and the acceptance, then that tags could potentially be non-compliant.</p>
+    /// </important> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl InviteAccountToOrganizationInput {
-    /// <p>The identifier (ID) of the AWS account that you want to invite to join your
-    /// organization. This is a JSON object that contains the following elements:</p>
-    /// <p>
-    /// <code>{ "Type": "ACCOUNT", "Id": "<<i>
-    /// <b>account id
-    /// number</b>
-    /// </i>>" }</code>
-    /// </p>
-    /// <p>If you use the AWS CLI, you can submit this as a single string, similar to the following
-    /// example:</p>
-    /// <p>
-    /// <code>--target Id=123456789012,Type=ACCOUNT</code>
-    /// </p>
-    /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID
-    /// number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
-    /// specify the email address that is associated with the account.</p>
-    /// <p>
-    /// <code>--target Id=diego@example.com,Type=EMAIL</code>
-    /// </p>
+    /// <p>The identifier (ID) of the AWS account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
+    /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
+    /// <p>If you use the AWS CLI, you can submit this as a single string, similar to the following example:</p>
+    /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
+    /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
+    /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
     pub fn target(&self) -> std::option::Option<&crate::model::HandshakeParty> {
         self.target.as_ref()
     }
-    /// <p>Additional information that you want to include in the generated email to the
-    /// recipient account owner.</p>
+    /// <p>Additional information that you want to include in the generated email to the recipient account owner.</p>
     pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
     }
-    /// <p>A list of tags that you want to attach to the account when it becomes a member of the
-    /// organization. For each tag in the list, you must specify both a tag key and a value. You
-    /// can set the value to an empty string, but you can't set it to <code>null</code>. For
-    /// more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the
-    /// AWS Organizations User Guide.</p>
-    /// <important>
-    /// <p>Any tags in the request are checked for compliance with any applicable tag
-    /// policies when the request is made. The request is rejected if the tags in the
-    /// request don't match the requirements of the policy at that time. Tag policy
-    /// compliance is <i>
-    /// <b>not</b>
-    /// </i> checked
-    /// again when the invitation is accepted and the tags are actually attached to the
-    /// account. That means that if the tag policy changes between the invitation and the
-    /// acceptance, then that tags could potentially be non-compliant.</p>
-    /// </important>
-    /// <note>
-    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-    /// an account, then the entire request fails and invitations are not sent.</p>
+    /// <p>A list of tags that you want to attach to the account when it becomes a member of the organization. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <important>
+    /// <p>Any tags in the request are checked for compliance with any applicable tag policies when the request is made. The request is rejected if the tags in the request don't match the requirements of the policy at that time. Tag policy compliance is <i> <b>not</b> </i> checked again when the invitation is accepted and the tags are actually attached to the account. That means that if the tag policy changes between the invitation and the acceptance, then that tags could potentially be non-compliant.</p>
+    /// </important> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -12052,68 +9994,30 @@ impl std::fmt::Debug for InviteAccountToOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnablePolicyTypeInput {
-    /// <p>The unique identifier (ID) of the root in which you want to enable a policy type. You
-    /// can get the ID from the <a>ListRoots</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-    /// from 4 to 32 lowercase letters or digits.</p>
+    /// <p>The unique identifier (ID) of the root in which you want to enable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub root_id: std::option::Option<std::string::String>,
-    /// <p>The policy type that you want to enable. You can specify one of the following
-    /// values:</p>
+    /// <p>The policy type that you want to enable. You can specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
     pub policy_type: std::option::Option<crate::model::PolicyType>,
 }
 impl EnablePolicyTypeInput {
-    /// <p>The unique identifier (ID) of the root in which you want to enable a policy type. You
-    /// can get the ID from the <a>ListRoots</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-    /// from 4 to 32 lowercase letters or digits.</p>
+    /// <p>The unique identifier (ID) of the root in which you want to enable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub fn root_id(&self) -> std::option::Option<&str> {
         self.root_id.as_deref()
     }
-    /// <p>The policy type that you want to enable. You can specify one of the following
-    /// values:</p>
+    /// <p>The policy type that you want to enable. You can specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
     pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
         self.policy_type.as_ref()
@@ -12132,17 +10036,11 @@ impl std::fmt::Debug for EnablePolicyTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableAwsServiceAccessInput {
-    /// <p>The service principal name of the AWS service for which you want to enable
-    /// integration with your organization. This is typically in the form of a URL, such as
-    /// <code>
-    /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+    /// <p>The service principal name of the AWS service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
     pub service_principal: std::option::Option<std::string::String>,
 }
 impl EnableAwsServiceAccessInput {
-    /// <p>The service principal name of the AWS service for which you want to enable
-    /// integration with your organization. This is typically in the form of a URL, such as
-    /// <code>
-    /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+    /// <p>The service principal name of the AWS service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
     pub fn service_principal(&self) -> std::option::Option<&str> {
         self.service_principal.as_deref()
     }
@@ -12170,68 +10068,30 @@ impl std::fmt::Debug for EnableAllFeaturesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisablePolicyTypeInput {
-    /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You
-    /// can get the ID from the <a>ListRoots</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-    /// from 4 to 32 lowercase letters or digits.</p>
+    /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub root_id: std::option::Option<std::string::String>,
-    /// <p>The policy type that you want to disable in this root. You can specify one of the
-    /// following values:</p>
+    /// <p>The policy type that you want to disable in this root. You can specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
     pub policy_type: std::option::Option<crate::model::PolicyType>,
 }
 impl DisablePolicyTypeInput {
-    /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You
-    /// can get the ID from the <a>ListRoots</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-    /// from 4 to 32 lowercase letters or digits.</p>
+    /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub fn root_id(&self) -> std::option::Option<&str> {
         self.root_id.as_deref()
     }
-    /// <p>The policy type that you want to disable in this root. You can specify one of the
-    /// following values:</p>
+    /// <p>The policy type that you want to disable in this root. You can specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
     pub fn policy_type(&self) -> std::option::Option<&crate::model::PolicyType> {
         self.policy_type.as_ref()
@@ -12250,17 +10110,11 @@ impl std::fmt::Debug for DisablePolicyTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableAwsServiceAccessInput {
-    /// <p>The service principal name of the AWS service for which you want to disable
-    /// integration with your organization. This is typically in the form of a URL, such as
-    /// <code>
-    /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+    /// <p>The service principal name of the AWS service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
     pub service_principal: std::option::Option<std::string::String>,
 }
 impl DisableAwsServiceAccessInput {
-    /// <p>The service principal name of the AWS service for which you want to disable
-    /// integration with your organization. This is typically in the form of a URL, such as
-    /// <code>
-    /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+    /// <p>The service principal name of the AWS service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
     pub fn service_principal(&self) -> std::option::Option<&str> {
         self.service_principal.as_deref()
     }
@@ -12277,66 +10131,30 @@ impl std::fmt::Debug for DisableAwsServiceAccessInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachPolicyInput {
-    /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from
-    /// the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-    /// operations.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the
-    /// policy from. You can get the ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
-    /// operations.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub target_id: std::option::Option<std::string::String>,
 }
 impl DetachPolicyInput {
-    /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from
-    /// the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-    /// operations.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
-    /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the
-    /// policy from. You can get the ID from the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
-    /// operations.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub fn target_id(&self) -> std::option::Option<&str> {
         self.target_id.as_deref()
@@ -12355,19 +10173,13 @@ impl std::fmt::Debug for DetachPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePolicyInput {
-    /// <p>The unique identifier (ID) of the policy that you want details about. You can get the
-    /// ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-    /// operations.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// <p>The unique identifier (ID) of the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub policy_id: std::option::Option<std::string::String>,
 }
 impl DescribePolicyInput {
-    /// <p>The unique identifier (ID) of the policy that you want details about. You can get the
-    /// ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-    /// operations.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// <p>The unique identifier (ID) of the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
@@ -12384,23 +10196,13 @@ impl std::fmt::Debug for DescribePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationalUnitInput {
-    /// <p>The unique identifier (ID) of the organizational unit that you want details about. You
-    /// can get the ID from the <a>ListOrganizationalUnitsForParent</a>
-    /// operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
-    /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
-    /// or digits.</p>
+    /// <p>The unique identifier (ID) of the organizational unit that you want details about. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub organizational_unit_id: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationalUnitInput {
-    /// <p>The unique identifier (ID) of the organizational unit that you want details about. You
-    /// can get the ID from the <a>ListOrganizationalUnitsForParent</a>
-    /// operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
-    /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
-    /// or digits.</p>
+    /// <p>The unique identifier (ID) of the organizational unit that you want details about. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
     }
@@ -12428,19 +10230,13 @@ impl std::fmt::Debug for DescribeOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHandshakeInput {
-    /// <p>The unique identifier (ID) of the handshake that you want information about. You can
-    /// get the ID from the original call to <a>InviteAccountToOrganization</a>, or
-    /// from a call to <a>ListHandshakesForAccount</a> or <a>ListHandshakesForOrganization</a>.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub handshake_id: std::option::Option<std::string::String>,
 }
 impl DescribeHandshakeInput {
-    /// <p>The unique identifier (ID) of the handshake that you want information about. You can
-    /// get the ID from the original call to <a>InviteAccountToOrganization</a>, or
-    /// from a call to <a>ListHandshakesForAccount</a> or <a>ListHandshakesForOrganization</a>.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn handshake_id(&self) -> std::option::Option<&str> {
         self.handshake_id.as_deref()
     }
@@ -12457,57 +10253,27 @@ impl std::fmt::Debug for DescribeHandshakeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEffectivePolicyInput {
-    /// <p>The type of policy that you want information about. You can specify one of the
-    /// following values:</p>
+    /// <p>The type of policy that you want information about. You can specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
     pub policy_type: std::option::Option<crate::model::EffectivePolicyType>,
-    /// <p>When you're signed in as the management account, specify the ID of the account that
-    /// you want details about. Specifying an organization root or organizational unit (OU) as
-    /// the target is not supported.</p>
+    /// <p>When you're signed in as the management account, specify the ID of the account that you want details about. Specifying an organization root or organizational unit (OU) as the target is not supported.</p>
     pub target_id: std::option::Option<std::string::String>,
 }
 impl DescribeEffectivePolicyInput {
-    /// <p>The type of policy that you want information about. You can specify one of the
-    /// following values:</p>
+    /// <p>The type of policy that you want information about. You can specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
     pub fn policy_type(&self) -> std::option::Option<&crate::model::EffectivePolicyType> {
         self.policy_type.as_ref()
     }
-    /// <p>When you're signed in as the management account, specify the ID of the account that
-    /// you want details about. Specifying an organization root or organizational unit (OU) as
-    /// the target is not supported.</p>
+    /// <p>When you're signed in as the management account, specify the ID of the account that you want details about. Specifying an organization root or organizational unit (OU) as the target is not supported.</p>
     pub fn target_id(&self) -> std::option::Option<&str> {
         self.target_id.as_deref()
     }
@@ -12525,19 +10291,13 @@ impl std::fmt::Debug for DescribeEffectivePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCreateAccountStatusInput {
-    /// <p>Specifies the <code>Id</code> value that uniquely identifies the
-    /// <code>CreateAccount</code> request. You can get the value from the
-    /// <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
-    /// requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
+    /// <p>Specifies the <code>Id</code> value that uniquely identifies the <code>CreateAccount</code> request. You can get the value from the <code>CreateAccountStatus.Id</code> response in an earlier <code>CreateAccount</code> request, or from the <code>ListCreateAccountStatus</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub create_account_request_id: std::option::Option<std::string::String>,
 }
 impl DescribeCreateAccountStatusInput {
-    /// <p>Specifies the <code>Id</code> value that uniquely identifies the
-    /// <code>CreateAccount</code> request. You can get the value from the
-    /// <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
-    /// requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
+    /// <p>Specifies the <code>Id</code> value that uniquely identifies the <code>CreateAccount</code> request. You can get the value from the <code>CreateAccountStatus.Id</code> response in an earlier <code>CreateAccount</code> request, or from the <code>ListCreateAccountStatus</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn create_account_request_id(&self) -> std::option::Option<&str> {
         self.create_account_request_id.as_deref()
     }
@@ -12554,17 +10314,13 @@ impl std::fmt::Debug for DescribeCreateAccountStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountInput {
-    /// <p>The unique identifier (ID) of the AWS account that you want information about. You
-    /// can get the ID from the <a>ListAccounts</a> or <a>ListAccountsForParent</a> operations.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
-    /// digits.</p>
+    /// <p>The unique identifier (ID) of the AWS account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub account_id: std::option::Option<std::string::String>,
 }
 impl DescribeAccountInput {
-    /// <p>The unique identifier (ID) of the AWS account that you want information about. You
-    /// can get the ID from the <a>ListAccounts</a> or <a>ListAccountsForParent</a> operations.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
-    /// digits.</p>
+    /// <p>The unique identifier (ID) of the AWS account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -12581,29 +10337,19 @@ impl std::fmt::Debug for DescribeAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterDelegatedAdministratorInput {
-    /// <p>The account ID number of the member account in the organization that you want to
-    /// deregister as a delegated administrator.</p>
+    /// <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The service principal name of an AWS service for which the account is a delegated
-    /// administrator.</p>
-    /// <p>Delegated administrator privileges are revoked for only the specified AWS service
-    /// from the member account. If the specified service is the only service for which the
-    /// member account is a delegated administrator, the operation also revokes Organizations read action
-    /// permissions.</p>
+    /// <p>The service principal name of an AWS service for which the account is a delegated administrator.</p>
+    /// <p>Delegated administrator privileges are revoked for only the specified AWS service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
     pub service_principal: std::option::Option<std::string::String>,
 }
 impl DeregisterDelegatedAdministratorInput {
-    /// <p>The account ID number of the member account in the organization that you want to
-    /// deregister as a delegated administrator.</p>
+    /// <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The service principal name of an AWS service for which the account is a delegated
-    /// administrator.</p>
-    /// <p>Delegated administrator privileges are revoked for only the specified AWS service
-    /// from the member account. If the specified service is the only service for which the
-    /// member account is a delegated administrator, the operation also revokes Organizations read action
-    /// permissions.</p>
+    /// <p>The service principal name of an AWS service for which the account is a delegated administrator.</p>
+    /// <p>Delegated administrator privileges are revoked for only the specified AWS service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
     pub fn service_principal(&self) -> std::option::Option<&str> {
         self.service_principal.as_deref()
     }
@@ -12621,19 +10367,13 @@ impl std::fmt::Debug for DeregisterDelegatedAdministratorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePolicyInput {
-    /// <p>The unique identifier (ID) of the policy that you want to delete. You can get the ID
-    /// from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-    /// operations.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// <p>The unique identifier (ID) of the policy that you want to delete. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub policy_id: std::option::Option<std::string::String>,
 }
 impl DeletePolicyInput {
-    /// <p>The unique identifier (ID) of the policy that you want to delete. You can get the ID
-    /// from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
-    /// operations.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// <p>The unique identifier (ID) of the policy that you want to delete. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
@@ -12650,21 +10390,13 @@ impl std::fmt::Debug for DeletePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOrganizationalUnitInput {
-    /// <p>The unique identifier (ID) of the organizational unit that you want to delete. You can
-    /// get the ID from the <a>ListOrganizationalUnitsForParent</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
-    /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
-    /// or digits.</p>
+    /// <p>The unique identifier (ID) of the organizational unit that you want to delete. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub organizational_unit_id: std::option::Option<std::string::String>,
 }
 impl DeleteOrganizationalUnitInput {
-    /// <p>The unique identifier (ID) of the organizational unit that you want to delete. You can
-    /// get the ID from the <a>ListOrganizationalUnitsForParent</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-    /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
-    /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
-    /// or digits.</p>
+    /// <p>The unique identifier (ID) of the organizational unit that you want to delete. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
     }
@@ -12692,17 +10424,13 @@ impl std::fmt::Debug for DeleteOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineHandshakeInput {
-    /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the
-    /// ID from the <a>ListHandshakesForAccount</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the ID from the <code>ListHandshakesForAccount</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub handshake_id: std::option::Option<std::string::String>,
 }
 impl DeclineHandshakeInput {
-    /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the
-    /// ID from the <a>ListHandshakesForAccount</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the ID from the <code>ListHandshakesForAccount</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn handshake_id(&self) -> std::option::Option<&str> {
         self.handshake_id.as_deref()
     }
@@ -12719,54 +10447,28 @@ impl std::fmt::Debug for DeclineHandshakeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePolicyInput {
-    /// <p>The policy text content to add to the new policy. The text that you supply must adhere
-    /// to the rules of the policy type you specify in the <code>Type</code> parameter.</p>
+    /// <p>The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy type you specify in the <code>Type</code> parameter.</p>
     pub content: std::option::Option<std::string::String>,
     /// <p>An optional description to assign to the policy.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The friendly name to assign to the policy.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-    /// that is used to validate this parameter is a string of any of the characters in the ASCII
-    /// character range.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of policy to create. You can specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::PolicyType>,
-    /// <p>A list of tags that you want to attach to the newly created policy. For each tag in
-    /// the list, you must specify both a tag key and a value. You can set the value to an empty
-    /// string, but you can't set it to <code>null</code>. For more information about tagging,
-    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
-    /// resources</a> in the AWS Organizations User Guide.</p>
-    /// <note>
-    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-    /// a policy, then the entire request fails and the policy is not created.</p>
+    /// <p>A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire request fails and the policy is not created.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePolicyInput {
-    /// <p>The policy text content to add to the new policy. The text that you supply must adhere
-    /// to the rules of the policy type you specify in the <code>Type</code> parameter.</p>
+    /// <p>The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy type you specify in the <code>Type</code> parameter.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -12775,46 +10477,22 @@ impl CreatePolicyInput {
         self.description.as_deref()
     }
     /// <p>The friendly name to assign to the policy.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-    /// that is used to validate this parameter is a string of any of the characters in the ASCII
-    /// character range.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of policy to create. You can specify one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::PolicyType> {
         self.r#type.as_ref()
     }
-    /// <p>A list of tags that you want to attach to the newly created policy. For each tag in
-    /// the list, you must specify both a tag key and a value. You can set the value to an empty
-    /// string, but you can't set it to <code>null</code>. For more information about tagging,
-    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
-    /// resources</a> in the AWS Organizations User Guide.</p>
-    /// <note>
-    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-    /// a policy, then the entire request fails and the policy is not created.</p>
+    /// <p>A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire request fails and the policy is not created.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -12836,54 +10514,26 @@ impl std::fmt::Debug for CreatePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOrganizationalUnitInput {
-    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU
-    /// in.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub parent_id: std::option::Option<std::string::String>,
     /// <p>The friendly name to assign to the new OU.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the
-    /// list, you must specify both a tag key and a value. You can set the value to an empty
-    /// string, but you can't set it to <code>null</code>. For more information about tagging,
-    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
-    /// resources</a> in the AWS Organizations User Guide.</p>
-    /// <note>
-    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-    /// an OU, then the entire request fails and the OU is not created.</p>
+    /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request fails and the OU is not created.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateOrganizationalUnitInput {
-    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU
-    /// in.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub fn parent_id(&self) -> std::option::Option<&str> {
         self.parent_id.as_deref()
@@ -12892,14 +10542,8 @@ impl CreateOrganizationalUnitInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the
-    /// list, you must specify both a tag key and a value. You can set the value to an empty
-    /// string, but you can't set it to <code>null</code>. For more information about tagging,
-    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
-    /// resources</a> in the AWS Organizations User Guide.</p>
-    /// <note>
-    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-    /// an OU, then the entire request fails and the OU is not created.</p>
+    /// <p>A list of tags that you want to attach to the newly created OU. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request fails and the OU is not created.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -12919,54 +10563,18 @@ impl std::fmt::Debug for CreateOrganizationalUnitInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOrganizationInput {
-    /// <p>Specifies the feature set supported by the new organization. Each feature set supports
-    /// different levels of functionality.</p>
+    /// <p>Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills
-    /// consolidated to and paid by the management account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the
-    /// <i>AWS Organizations User Guide.</i>
-    /// </p>
-    /// <p> The consolidated billing feature subset isn't available for organizations in
-    /// the AWS GovCloud (US) Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL</code>: In addition to all the features supported by the
-    /// consolidated billing feature set, the management account can also apply any
-    /// policy type to any member account in the organization. For more information, see
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
-    /// features</a> in the <i>AWS Organizations User Guide.</i>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.</p> </li>
+    /// <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
     /// </ul>
     pub feature_set: std::option::Option<crate::model::OrganizationFeatureSet>,
 }
 impl CreateOrganizationInput {
-    /// <p>Specifies the feature set supported by the new organization. Each feature set supports
-    /// different levels of functionality.</p>
+    /// <p>Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills
-    /// consolidated to and paid by the management account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the
-    /// <i>AWS Organizations User Guide.</i>
-    /// </p>
-    /// <p> The consolidated billing feature subset isn't available for organizations in
-    /// the AWS GovCloud (US) Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL</code>: In addition to all the features supported by the
-    /// consolidated billing feature set, the management account can also apply any
-    /// policy type to any member account in the organization. For more information, see
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
-    /// features</a> in the <i>AWS Organizations User Guide.</i>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.</p> </li>
+    /// <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>AWS Organizations User Guide.</i> </p> </li>
     /// </ul>
     pub fn feature_set(&self) -> std::option::Option<&crate::model::OrganizationFeatureSet> {
         self.feature_set.as_ref()
@@ -12984,66 +10592,27 @@ impl std::fmt::Debug for CreateOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGovCloudAccountInput {
-    /// <p>The email address of the owner to assign to the new member account in the commercial
-    /// Region. This email address must not already be associated with another AWS account.
-    /// You must use a valid email address to complete account creation. You can't access the
-    /// root user of the account or remove an account that was created with an invalid email
-    /// address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request
-    /// for the email address for the AWS GovCloud (US) account originates from the commercial
-    /// Region, not from the AWS GovCloud (US) Region.</p>
+    /// <p>The email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the AWS GovCloud (US) account originates from the commercial Region, not from the AWS GovCloud (US) Region.</p>
     pub email: std::option::Option<std::string::String>,
     /// <p>The friendly name of the member account.</p>
     pub account_name: std::option::Option<std::string::String>,
     /// <p>(Optional)</p>
-    /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member
-    /// accounts in both the AWS GovCloud (US) Region and in the commercial Region. This role
-    /// trusts the management account, allowing users in the management account to assume the
-    /// role, as permitted by the management account administrator. The role has administrator
-    /// permissions in the new member account.</p>
-    /// <p>If you don't specify this parameter, the role name defaults to
-    /// <code>OrganizationAccountAccessRole</code>.</p>
-    /// <p>For more information about how to use this role to access the member account, see
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the
-    /// <i>AWS Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the
-    /// <i>IAM User Guide.</i>
-    /// </p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that
-    /// is used to validate this parameter. The pattern can include uppercase
-    /// letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+    /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
+    /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
+    /// <p>For more information about how to use this role to access the member account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i> </p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub role_name: std::option::Option<std::string::String>,
-    /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables
-    /// IAM users to access account billing information <i>if</i> they have the
-    /// required permissions. If set to <code>DENY</code>, only the root user of the new account
-    /// can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-    /// Access to the Billing and Cost Management Console</a> in the
-    /// <i>AWS Billing and Cost Management User Guide.</i>
-    /// </p>
-    /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and
-    /// IAM users and roles with the required permissions can access billing information for
-    /// the new account.</p>
+    /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide.</i> </p>
+    /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
     pub iam_user_access_to_billing: std::option::Option<crate::model::IamUserAccessToBilling>,
-    /// <p>A list of tags that you want to attach to the newly created account. These tags are
-    /// attached to the commercial account associated with the GovCloud account, and not to the
-    /// GovCloud account itself. To add tags to the actual GovCloud account, call the <a>TagResource</a> operation in the GovCloud region after the new GovCloud
-    /// account exists.</p>
-    /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the
-    /// value to an empty string, but you can't set it to <code>null</code>. For more
-    /// information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the
-    /// AWS Organizations User Guide.</p>
-    /// <note>
-    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-    /// an account, then the entire request fails and the account is not created.</p>
+    /// <p>A list of tags that you want to attach to the newly created account. These tags are attached to the commercial account associated with the GovCloud account, and not to the GovCloud account itself. To add tags to the actual GovCloud account, call the <code>TagResource</code> operation in the GovCloud region after the new GovCloud account exists.</p>
+    /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateGovCloudAccountInput {
-    /// <p>The email address of the owner to assign to the new member account in the commercial
-    /// Region. This email address must not already be associated with another AWS account.
-    /// You must use a valid email address to complete account creation. You can't access the
-    /// root user of the account or remove an account that was created with an invalid email
-    /// address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request
-    /// for the email address for the AWS GovCloud (US) account originates from the commercial
-    /// Region, not from the AWS GovCloud (US) Region.</p>
+    /// <p>The email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the AWS GovCloud (US) account originates from the commercial Region, not from the AWS GovCloud (US) Region.</p>
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
@@ -13052,50 +10621,23 @@ impl CreateGovCloudAccountInput {
         self.account_name.as_deref()
     }
     /// <p>(Optional)</p>
-    /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member
-    /// accounts in both the AWS GovCloud (US) Region and in the commercial Region. This role
-    /// trusts the management account, allowing users in the management account to assume the
-    /// role, as permitted by the management account administrator. The role has administrator
-    /// permissions in the new member account.</p>
-    /// <p>If you don't specify this parameter, the role name defaults to
-    /// <code>OrganizationAccountAccessRole</code>.</p>
-    /// <p>For more information about how to use this role to access the member account, see
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the
-    /// <i>AWS Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the
-    /// <i>IAM User Guide.</i>
-    /// </p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that
-    /// is used to validate this parameter. The pattern can include uppercase
-    /// letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+    /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member accounts in both the AWS GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
+    /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
+    /// <p>For more information about how to use this role to access the member account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> and steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i> </p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
-    /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables
-    /// IAM users to access account billing information <i>if</i> they have the
-    /// required permissions. If set to <code>DENY</code>, only the root user of the new account
-    /// can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-    /// Access to the Billing and Cost Management Console</a> in the
-    /// <i>AWS Billing and Cost Management User Guide.</i>
-    /// </p>
-    /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and
-    /// IAM users and roles with the required permissions can access billing information for
-    /// the new account.</p>
+    /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide.</i> </p>
+    /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
     pub fn iam_user_access_to_billing(
         &self,
     ) -> std::option::Option<&crate::model::IamUserAccessToBilling> {
         self.iam_user_access_to_billing.as_ref()
     }
-    /// <p>A list of tags that you want to attach to the newly created account. These tags are
-    /// attached to the commercial account associated with the GovCloud account, and not to the
-    /// GovCloud account itself. To add tags to the actual GovCloud account, call the <a>TagResource</a> operation in the GovCloud region after the new GovCloud
-    /// account exists.</p>
-    /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the
-    /// value to an empty string, but you can't set it to <code>null</code>. For more
-    /// information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the
-    /// AWS Organizations User Guide.</p>
-    /// <note>
-    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-    /// an account, then the entire request fails and the account is not created.</p>
+    /// <p>A list of tags that you want to attach to the newly created account. These tags are attached to the commercial account associated with the GovCloud account, and not to the GovCloud account itself. To add tags to the actual GovCloud account, call the <code>TagResource</code> operation in the GovCloud region after the new GovCloud account exists.</p>
+    /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -13120,66 +10662,30 @@ impl std::fmt::Debug for CreateGovCloudAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountInput {
-    /// <p>The email address of the owner to assign to the new member account. This email address
-    /// must not already be associated with another AWS account. You must use a valid email
-    /// address to complete account creation. You can't access the root user of the account or
-    /// remove an account that was created with an invalid email address.</p>
+    /// <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
     pub email: std::option::Option<std::string::String>,
     /// <p>The friendly name of the member account.</p>
     pub account_name: std::option::Option<std::string::String>,
     /// <p>(Optional)</p>
-    /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member
-    /// account. This role trusts the management account, allowing users in the management
-    /// account to assume the role, as permitted by the management account administrator. The
-    /// role has administrator permissions in the new member account.</p>
-    /// <p>If you don't specify this parameter, the role name defaults to
-    /// <code>OrganizationAccountAccessRole</code>.</p>
-    /// <p>For more information about how to use this role to access the member account, see the
-    /// following links:</p>
+    /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
+    /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
+    /// <p>For more information about how to use this role to access the member account, see the following links:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your
-    /// Organization</a> in the <i>AWS Organizations User Guide</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-    /// Delegate Access Across AWS Accounts Using IAM Roles</a> in the
-    /// <i>IAM User Guide</i>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> </p> </li>
+    /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
     /// </ul>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that
-    /// is used to validate this parameter. The pattern can include uppercase
-    /// letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub role_name: std::option::Option<std::string::String>,
-    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account
-    /// billing information <i>if</i> they have the required permissions. If set
-    /// to <code>DENY</code>, only the root user of the new account can access account billing
-    /// information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-    /// Access to the Billing and Cost Management Console</a> in the
-    /// <i>AWS Billing and Cost Management User Guide</i>.</p>
-    /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and
-    /// IAM users and roles with the required permissions can access billing information for
-    /// the new account.</p>
+    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+    /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
     pub iam_user_access_to_billing: std::option::Option<crate::model::IamUserAccessToBilling>,
-    /// <p>A list of tags that you want to attach to the newly created account. For each tag in
-    /// the list, you must specify both a tag key and a value. You can set the value to an empty
-    /// string, but you can't set it to <code>null</code>. For more information about tagging,
-    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
-    /// resources</a> in the AWS Organizations User Guide.</p>
-    /// <note>
-    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-    /// an account, then the entire request fails and the account is not created.</p>
+    /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAccountInput {
-    /// <p>The email address of the owner to assign to the new member account. This email address
-    /// must not already be associated with another AWS account. You must use a valid email
-    /// address to complete account creation. You can't access the root user of the account or
-    /// remove an account that was created with an invalid email address.</p>
+    /// <p>The email address of the owner to assign to the new member account. This email address must not already be associated with another AWS account. You must use a valid email address to complete account creation. You can't access the root user of the account or remove an account that was created with an invalid email address.</p>
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
@@ -13188,56 +10694,26 @@ impl CreateAccountInput {
         self.account_name.as_deref()
     }
     /// <p>(Optional)</p>
-    /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member
-    /// account. This role trusts the management account, allowing users in the management
-    /// account to assume the role, as permitted by the management account administrator. The
-    /// role has administrator permissions in the new member account.</p>
-    /// <p>If you don't specify this parameter, the role name defaults to
-    /// <code>OrganizationAccountAccessRole</code>.</p>
-    /// <p>For more information about how to use this role to access the member account, see the
-    /// following links:</p>
+    /// <p>The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
+    /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
+    /// <p>For more information about how to use this role to access the member account, see the following links:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your
-    /// Organization</a> in the <i>AWS Organizations User Guide</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-    /// Delegate Access Across AWS Accounts Using IAM Roles</a> in the
-    /// <i>IAM User Guide</i>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i> </p> </li>
+    /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
     /// </ul>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that
-    /// is used to validate this parameter. The pattern can include uppercase
-    /// letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
-    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account
-    /// billing information <i>if</i> they have the required permissions. If set
-    /// to <code>DENY</code>, only the root user of the new account can access account billing
-    /// information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-    /// Access to the Billing and Cost Management Console</a> in the
-    /// <i>AWS Billing and Cost Management User Guide</i>.</p>
-    /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and
-    /// IAM users and roles with the required permissions can access billing information for
-    /// the new account.</p>
+    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+    /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
     pub fn iam_user_access_to_billing(
         &self,
     ) -> std::option::Option<&crate::model::IamUserAccessToBilling> {
         self.iam_user_access_to_billing.as_ref()
     }
-    /// <p>A list of tags that you want to attach to the newly created account. For each tag in
-    /// the list, you must specify both a tag key and a value. You can set the value to an empty
-    /// string, but you can't set it to <code>null</code>. For more information about tagging,
-    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
-    /// resources</a> in the AWS Organizations User Guide.</p>
-    /// <note>
-    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for
-    /// an account, then the entire request fails and the account is not created.</p>
+    /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -13262,17 +10738,13 @@ impl std::fmt::Debug for CreateAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelHandshakeInput {
-    /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the
-    /// ID from the <a>ListHandshakesForOrganization</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub handshake_id: std::option::Option<std::string::String>,
 }
 impl CancelHandshakeInput {
-    /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the
-    /// ID from the <a>ListHandshakesForOrganization</a> operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn handshake_id(&self) -> std::option::Option<&str> {
         self.handshake_id.as_deref()
     }
@@ -13289,66 +10761,30 @@ impl std::fmt::Debug for CancelHandshakeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachPolicyInput {
-    /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You
-    /// can get the ID for the policy by calling the <a>ListPolicies</a>
-    /// operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You can get the ID for the policy by calling the <code>ListPolicies</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the
-    /// policy to. You can get the ID by calling the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
-    /// operations.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub target_id: std::option::Option<std::string::String>,
 }
 impl AttachPolicyInput {
-    /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You
-    /// can get the ID for the policy by calling the <a>ListPolicies</a>
-    /// operation.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
-    /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You can get the ID for the policy by calling the <code>ListPolicies</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
-    /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the
-    /// policy to. You can get the ID by calling the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a>
-    /// operations.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the
-    /// following:</p>
+    /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or
-    /// digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Account</b> - A string that consists of exactly 12 digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32
-    /// lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second
-    /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    /// </li>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
     pub fn target_id(&self) -> std::option::Option<&str> {
         self.target_id.as_deref()
@@ -13368,14 +10804,12 @@ impl std::fmt::Debug for AttachPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptHandshakeInput {
     /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub handshake_id: std::option::Option<std::string::String>,
 }
 impl AcceptHandshakeInput {
     /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
-    /// followed by from 8 to 32 lowercase letters or digits.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn handshake_id(&self) -> std::option::Option<&str> {
         self.handshake_id.as_deref()
     }

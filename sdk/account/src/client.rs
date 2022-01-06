@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Account
@@ -116,9 +116,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAlternateContact`.
     ///
     /// <p>Deletes the specified alternate contact from an Amazon Web Services account.</p>
-    /// <p>For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or
-    /// updating the alternate contacts</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating the alternate contacts</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlternateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -163,10 +162,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAlternateContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -175,8 +174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies which of the alternate contacts to delete. </p>
-        pub fn alternate_contact_type(mut self, inp: crate::model::AlternateContactType) -> Self {
-            self.inner = self.inner.alternate_contact_type(inp);
+        pub fn alternate_contact_type(mut self, input: crate::model::AlternateContactType) -> Self {
+            self.inner = self.inner.alternate_contact_type(input);
             self
         }
         /// <p>Specifies which of the alternate contacts to delete. </p>
@@ -187,46 +186,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alternate_contact_type(input);
             self
         }
-        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
-        /// you want to access or modify with this operation.</p>
-        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the
-        /// identity used to call the operation.</p>
-        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and
-        /// the specified account ID must be a member account in the same organization. The
-        /// organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features
-        /// enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the
-        /// Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account
-        /// assigned.</p>
-        /// <note>
-        /// <p>The management account can't specify its own <code>AccountId</code>; it must call
-        /// the operation in standalone context by not including the <code>AccountId</code>
-        /// parameter.</p>
+        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
+        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
+        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
+        /// <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
         /// </note>
-        /// <p>To call this operation on an account that is not a member of an organization, then
-        /// don't specify this parameter, and call the operation using an identity belonging to
-        /// the account whose contacts you wish to retrieve or modify.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
-        /// you want to access or modify with this operation.</p>
-        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the
-        /// identity used to call the operation.</p>
-        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and
-        /// the specified account ID must be a member account in the same organization. The
-        /// organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features
-        /// enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the
-        /// Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account
-        /// assigned.</p>
-        /// <note>
-        /// <p>The management account can't specify its own <code>AccountId</code>; it must call
-        /// the operation in standalone context by not including the <code>AccountId</code>
-        /// parameter.</p>
+        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
+        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
+        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
+        /// <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
         /// </note>
-        /// <p>To call this operation on an account that is not a member of an organization, then
-        /// don't specify this parameter, and call the operation using an identity belonging to
-        /// the account whose contacts you wish to retrieve or modify.</p>
+        /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -235,9 +210,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAlternateContact`.
     ///
     /// <p>Retrieves the specified alternate contact attached to an Amazon Web Services account.</p>
-    /// <p>For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or
-    /// updating the alternate contacts</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating the alternate contacts</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAlternateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -282,10 +256,10 @@ pub mod fluent_builders {
                 crate::input::GetAlternateContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -294,8 +268,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies which alternate contact you want to retrieve.</p>
-        pub fn alternate_contact_type(mut self, inp: crate::model::AlternateContactType) -> Self {
-            self.inner = self.inner.alternate_contact_type(inp);
+        pub fn alternate_contact_type(mut self, input: crate::model::AlternateContactType) -> Self {
+            self.inner = self.inner.alternate_contact_type(input);
             self
         }
         /// <p>Specifies which alternate contact you want to retrieve.</p>
@@ -306,46 +280,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alternate_contact_type(input);
             self
         }
-        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
-        /// you want to access or modify with this operation.</p>
-        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the
-        /// identity used to call the operation.</p>
-        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and
-        /// the specified account ID must be a member account in the same organization. The
-        /// organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features
-        /// enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the
-        /// Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account
-        /// assigned.</p>
-        /// <note>
-        /// <p>The management account can't specify its own <code>AccountId</code>; it must call
-        /// the operation in standalone context by not including the <code>AccountId</code>
-        /// parameter.</p>
+        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
+        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
+        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
+        /// <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
         /// </note>
-        /// <p>To call this operation on an account that is not a member of an organization, then
-        /// don't specify this parameter, and call the operation using an identity belonging to
-        /// the account whose contacts you wish to retrieve or modify.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
-        /// you want to access or modify with this operation.</p>
-        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the
-        /// identity used to call the operation.</p>
-        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and
-        /// the specified account ID must be a member account in the same organization. The
-        /// organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features
-        /// enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the
-        /// Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account
-        /// assigned.</p>
-        /// <note>
-        /// <p>The management account can't specify its own <code>AccountId</code>; it must call
-        /// the operation in standalone context by not including the <code>AccountId</code>
-        /// parameter.</p>
+        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
+        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
+        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
+        /// <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
         /// </note>
-        /// <p>To call this operation on an account that is not a member of an organization, then
-        /// don't specify this parameter, and call the operation using an identity belonging to
-        /// the account whose contacts you wish to retrieve or modify.</p>
+        /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -354,9 +304,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAlternateContact`.
     ///
     /// <p>Modifies the specified alternate contact attached to an Amazon Web Services account.</p>
-    /// <p>For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or
-    /// updating the alternate contacts</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access or updating the alternate contacts</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAlternateContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -401,10 +350,10 @@ pub mod fluent_builders {
                 crate::input::PutAlternateContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -413,8 +362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies a name for the alternate contact.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies a name for the alternate contact.</p>
@@ -423,8 +372,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a title for the alternate contact.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
             self
         }
         /// <p>Specifies a title for the alternate contact.</p>
@@ -433,8 +382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies an email address for the alternate contact. </p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
         /// <p>Specifies an email address for the alternate contact. </p>
@@ -446,8 +395,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a phone number for the alternate contact.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
             self
         }
         /// <p>Specifies a phone number for the alternate contact.</p>
@@ -456,8 +405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies which alternate contact you want to create or update.</p>
-        pub fn alternate_contact_type(mut self, inp: crate::model::AlternateContactType) -> Self {
-            self.inner = self.inner.alternate_contact_type(inp);
+        pub fn alternate_contact_type(mut self, input: crate::model::AlternateContactType) -> Self {
+            self.inner = self.inner.alternate_contact_type(input);
             self
         }
         /// <p>Specifies which alternate contact you want to create or update.</p>
@@ -468,52 +417,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alternate_contact_type(input);
             self
         }
-        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
-        /// you want to access or modify with this operation.</p>
-        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the
-        /// identity used to call the operation.</p>
-        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and
-        /// the specified account ID must be a member account in the same organization. The
-        /// organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features
-        /// enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the
-        /// Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account
-        /// assigned.</p>
-        /// <note>
-        /// <p>The management account can't specify its own <code>AccountId</code>; it must call
-        /// the operation in standalone context by not including the <code>AccountId</code>
-        /// parameter.</p>
+        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
+        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
+        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
+        /// <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
         /// </note>
-        /// <p>To call this operation on an account that is not a member of an organization, then
-        /// don't specify this parameter, and call the operation using an identity belonging to
-        /// the account whose contacts you wish to retrieve or modify.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
-        /// you want to access or modify with this operation.</p>
-        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the
-        /// identity used to call the operation.</p>
-        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and
-        /// the specified account ID must be a member account in the same organization. The
-        /// organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features
-        /// enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the
-        /// Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account
-        /// assigned.</p>
-        /// <note>
-        /// <p>The management account can't specify its own <code>AccountId</code>; it must call
-        /// the operation in standalone context by not including the <code>AccountId</code>
-        /// parameter.</p>
+        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
+        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
+        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
+        /// <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
         /// </note>
-        /// <p>To call this operation on an account that is not a member of an organization, then
-        /// don't specify this parameter, and call the operation using an identity belonging to
-        /// the account whose contacts you wish to retrieve or modify.</p>
+        /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

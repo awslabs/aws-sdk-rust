@@ -5,8 +5,7 @@
 pub enum Error {
     /// <p>The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is
-    /// correct.</p>
+    /// <p>The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is correct.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached the maximum number of sampling rules.</p>
     RuleLimitExceededException(crate::error::RuleLimitExceededException),

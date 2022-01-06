@@ -811,22 +811,17 @@ impl AsRef<str> for Engine {
     }
 }
 
-/// <p>SynthesisTask object that provides information about a speech
-/// synthesis task.</p>
+/// <p>SynthesisTask object that provides information about a speech synthesis task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SynthesisTask {
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
-    /// for Amazon Polly to use when processing input text for speech synthesis. Using a
-    /// voice that is not supported for the engine selected will result in an
-    /// error.</p>
+    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
     pub engine: std::option::Option<crate::model::Engine>,
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
     pub task_id: std::option::Option<std::string::String>,
     /// <p>Current status of the individual speech synthesis task.</p>
     pub task_status: std::option::Option<crate::model::TaskStatus>,
-    /// <p>Reason for the current status of a specific speech synthesis task,
-    /// including errors if the task has failed.</p>
+    /// <p>Reason for the current status of a specific speech synthesis task, including errors if the task has failed.</p>
     pub task_status_reason: std::option::Option<std::string::String>,
     /// <p>Pathway for the output speech file.</p>
     pub output_uri: std::option::Option<std::string::String>,
@@ -834,46 +829,28 @@ pub struct SynthesisTask {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Number of billable characters synthesized.</p>
     pub request_characters: i32,
-    /// <p>ARN for the SNS topic optionally used for providing status
-    /// notification for a speech synthesis task.</p>
+    /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>List of one or more pronunciation lexicon names you want the service
-    /// to apply during synthesis. Lexicons are applied only if the language of
-    /// the lexicon is the same as the language of the voice. </p>
+    /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
     pub lexicon_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The format in which the returned output will be encoded. For audio
-    /// stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will
-    /// be json. </p>
+    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     pub output_format: std::option::Option<crate::model::OutputFormat>,
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
-    /// and "24000". The default value for standard voices is "22050". The default
-    /// value for neural voices is "24000".</p>
-    /// <p>Valid values for pcm are "8000" and "16000" The default value is
-    /// "16000". </p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     pub sample_rate: std::option::Option<std::string::String>,
     /// <p>The type of speech marks returned for the input text.</p>
     pub speech_mark_types: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
-    /// <p>Specifies whether the input text is plain text or SSML. The default
-    /// value is plain text. </p>
+    /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
     pub text_type: std::option::Option<crate::model::TextType>,
     /// <p>Voice ID to use for the synthesis. </p>
     pub voice_id: std::option::Option<crate::model::VoiceId>,
-    /// <p>Optional language code for a synthesis task. This is only necessary if
-    /// using a bilingual voice, such as Aditi, which can be used for either
-    /// Indian English (en-IN) or Hindi (hi-IN). </p>
-    /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly
-    /// uses the default language of the bilingual voice. The default language for
-    /// any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code>
-    /// parameter. For example, if no language code is specified, Aditi will use
-    /// Indian English rather than Hindi.</p>
+    /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+    /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl SynthesisTask {
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
-    /// for Amazon Polly to use when processing input text for speech synthesis. Using a
-    /// voice that is not supported for the engine selected will result in an
-    /// error.</p>
+    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
     pub fn engine(&self) -> std::option::Option<&crate::model::Engine> {
         self.engine.as_ref()
     }
@@ -885,8 +862,7 @@ impl SynthesisTask {
     pub fn task_status(&self) -> std::option::Option<&crate::model::TaskStatus> {
         self.task_status.as_ref()
     }
-    /// <p>Reason for the current status of a specific speech synthesis task,
-    /// including errors if the task has failed.</p>
+    /// <p>Reason for the current status of a specific speech synthesis task, including errors if the task has failed.</p>
     pub fn task_status_reason(&self) -> std::option::Option<&str> {
         self.task_status_reason.as_deref()
     }
@@ -902,29 +878,21 @@ impl SynthesisTask {
     pub fn request_characters(&self) -> i32 {
         self.request_characters
     }
-    /// <p>ARN for the SNS topic optionally used for providing status
-    /// notification for a speech synthesis task.</p>
+    /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>List of one or more pronunciation lexicon names you want the service
-    /// to apply during synthesis. Lexicons are applied only if the language of
-    /// the lexicon is the same as the language of the voice. </p>
+    /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
     pub fn lexicon_names(&self) -> std::option::Option<&[std::string::String]> {
         self.lexicon_names.as_deref()
     }
-    /// <p>The format in which the returned output will be encoded. For audio
-    /// stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will
-    /// be json. </p>
+    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     pub fn output_format(&self) -> std::option::Option<&crate::model::OutputFormat> {
         self.output_format.as_ref()
     }
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
-    /// and "24000". The default value for standard voices is "22050". The default
-    /// value for neural voices is "24000".</p>
-    /// <p>Valid values for pcm are "8000" and "16000" The default value is
-    /// "16000". </p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
     pub fn sample_rate(&self) -> std::option::Option<&str> {
         self.sample_rate.as_deref()
     }
@@ -932,8 +900,7 @@ impl SynthesisTask {
     pub fn speech_mark_types(&self) -> std::option::Option<&[crate::model::SpeechMarkType]> {
         self.speech_mark_types.as_deref()
     }
-    /// <p>Specifies whether the input text is plain text or SSML. The default
-    /// value is plain text. </p>
+    /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
     pub fn text_type(&self) -> std::option::Option<&crate::model::TextType> {
         self.text_type.as_ref()
     }
@@ -941,14 +908,8 @@ impl SynthesisTask {
     pub fn voice_id(&self) -> std::option::Option<&crate::model::VoiceId> {
         self.voice_id.as_ref()
     }
-    /// <p>Optional language code for a synthesis task. This is only necessary if
-    /// using a bilingual voice, such as Aditi, which can be used for either
-    /// Indian English (en-IN) or Hindi (hi-IN). </p>
-    /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly
-    /// uses the default language of the bilingual voice. The default language for
-    /// any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code>
-    /// parameter. For example, if no language code is specified, Aditi will use
-    /// Indian English rather than Hindi.</p>
+    /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+    /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -998,18 +959,12 @@ pub mod synthesis_task {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
     }
     impl Builder {
-        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
-        /// for Amazon Polly to use when processing input text for speech synthesis. Using a
-        /// voice that is not supported for the engine selected will result in an
-        /// error.</p>
+        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
         pub fn engine(mut self, input: crate::model::Engine) -> Self {
             self.engine = Some(input);
             self
         }
-        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
-        /// for Amazon Polly to use when processing input text for speech synthesis. Using a
-        /// voice that is not supported for the engine selected will result in an
-        /// error.</p>
+        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
         pub fn set_engine(mut self, input: std::option::Option<crate::model::Engine>) -> Self {
             self.engine = input;
             self
@@ -1037,14 +992,12 @@ pub mod synthesis_task {
             self.task_status = input;
             self
         }
-        /// <p>Reason for the current status of a specific speech synthesis task,
-        /// including errors if the task has failed.</p>
+        /// <p>Reason for the current status of a specific speech synthesis task, including errors if the task has failed.</p>
         pub fn task_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_status_reason = Some(input.into());
             self
         }
-        /// <p>Reason for the current status of a specific speech synthesis task,
-        /// including errors if the task has failed.</p>
+        /// <p>Reason for the current status of a specific speech synthesis task, including errors if the task has failed.</p>
         pub fn set_task_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1085,14 +1038,12 @@ pub mod synthesis_task {
             self.request_characters = input;
             self
         }
-        /// <p>ARN for the SNS topic optionally used for providing status
-        /// notification for a speech synthesis task.</p>
+        /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>ARN for the SNS topic optionally used for providing status
-        /// notification for a speech synthesis task.</p>
+        /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1104,18 +1055,14 @@ pub mod synthesis_task {
         ///
         /// To override the contents of this collection use [`set_lexicon_names`](Self::set_lexicon_names).
         ///
-        /// <p>List of one or more pronunciation lexicon names you want the service
-        /// to apply during synthesis. Lexicons are applied only if the language of
-        /// the lexicon is the same as the language of the voice. </p>
+        /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
         pub fn lexicon_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lexicon_names.unwrap_or_default();
             v.push(input.into());
             self.lexicon_names = Some(v);
             self
         }
-        /// <p>List of one or more pronunciation lexicon names you want the service
-        /// to apply during synthesis. Lexicons are applied only if the language of
-        /// the lexicon is the same as the language of the voice. </p>
+        /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
         pub fn set_lexicon_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1123,16 +1070,12 @@ pub mod synthesis_task {
             self.lexicon_names = input;
             self
         }
-        /// <p>The format in which the returned output will be encoded. For audio
-        /// stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will
-        /// be json. </p>
+        /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
         pub fn output_format(mut self, input: crate::model::OutputFormat) -> Self {
             self.output_format = Some(input);
             self
         }
-        /// <p>The format in which the returned output will be encoded. For audio
-        /// stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will
-        /// be json. </p>
+        /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
         pub fn set_output_format(
             mut self,
             input: std::option::Option<crate::model::OutputFormat>,
@@ -1141,21 +1084,15 @@ pub mod synthesis_task {
             self
         }
         /// <p>The audio frequency specified in Hz.</p>
-        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
-        /// and "24000". The default value for standard voices is "22050". The default
-        /// value for neural voices is "24000".</p>
-        /// <p>Valid values for pcm are "8000" and "16000" The default value is
-        /// "16000". </p>
+        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+        /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
         pub fn sample_rate(mut self, input: impl Into<std::string::String>) -> Self {
             self.sample_rate = Some(input.into());
             self
         }
         /// <p>The audio frequency specified in Hz.</p>
-        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
-        /// and "24000". The default value for standard voices is "22050". The default
-        /// value for neural voices is "24000".</p>
-        /// <p>Valid values for pcm are "8000" and "16000" The default value is
-        /// "16000". </p>
+        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+        /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
         pub fn set_sample_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sample_rate = input;
             self
@@ -1165,9 +1102,9 @@ pub mod synthesis_task {
         /// To override the contents of this collection use [`set_speech_mark_types`](Self::set_speech_mark_types).
         ///
         /// <p>The type of speech marks returned for the input text.</p>
-        pub fn speech_mark_types(mut self, input: impl Into<crate::model::SpeechMarkType>) -> Self {
+        pub fn speech_mark_types(mut self, input: crate::model::SpeechMarkType) -> Self {
             let mut v = self.speech_mark_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.speech_mark_types = Some(v);
             self
         }
@@ -1179,14 +1116,12 @@ pub mod synthesis_task {
             self.speech_mark_types = input;
             self
         }
-        /// <p>Specifies whether the input text is plain text or SSML. The default
-        /// value is plain text. </p>
+        /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
         pub fn text_type(mut self, input: crate::model::TextType) -> Self {
             self.text_type = Some(input);
             self
         }
-        /// <p>Specifies whether the input text is plain text or SSML. The default
-        /// value is plain text. </p>
+        /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
         pub fn set_text_type(mut self, input: std::option::Option<crate::model::TextType>) -> Self {
             self.text_type = input;
             self
@@ -1201,26 +1136,14 @@ pub mod synthesis_task {
             self.voice_id = input;
             self
         }
-        /// <p>Optional language code for a synthesis task. This is only necessary if
-        /// using a bilingual voice, such as Aditi, which can be used for either
-        /// Indian English (en-IN) or Hindi (hi-IN). </p>
-        /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly
-        /// uses the default language of the bilingual voice. The default language for
-        /// any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code>
-        /// parameter. For example, if no language code is specified, Aditi will use
-        /// Indian English rather than Hindi.</p>
+        /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+        /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>Optional language code for a synthesis task. This is only necessary if
-        /// using a bilingual voice, such as Aditi, which can be used for either
-        /// Indian English (en-IN) or Hindi (hi-IN). </p>
-        /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly
-        /// uses the default language of the bilingual voice. The default language for
-        /// any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code>
-        /// parameter. For example, if no language code is specified, Aditi will use
-        /// Indian English rather than Hindi.</p>
+        /// <p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+        /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -1396,17 +1319,13 @@ impl LexiconDescription {
     }
 }
 
-/// <p>Contains metadata describing the lexicon such as the number of
-/// lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
+/// <p>Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexiconAttributes {
-    /// <p>Phonetic alphabet used in the lexicon. Valid values are
-    /// <code>ipa</code> and <code>x-sampa</code>.</p>
+    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
     pub alphabet: std::option::Option<std::string::String>,
-    /// <p>Language code that the lexicon applies to. A lexicon with a
-    /// language code such as "en" would be applied to all English languages
-    /// (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
+    /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>Date lexicon was last modified (a timestamp value).</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -1418,14 +1337,11 @@ pub struct LexiconAttributes {
     pub size: i32,
 }
 impl LexiconAttributes {
-    /// <p>Phonetic alphabet used in the lexicon. Valid values are
-    /// <code>ipa</code> and <code>x-sampa</code>.</p>
+    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
     pub fn alphabet(&self) -> std::option::Option<&str> {
         self.alphabet.as_deref()
     }
-    /// <p>Language code that the lexicon applies to. A lexicon with a
-    /// language code such as "en" would be applied to all English languages
-    /// (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
+    /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -1472,28 +1388,22 @@ pub mod lexicon_attributes {
         pub(crate) size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Phonetic alphabet used in the lexicon. Valid values are
-        /// <code>ipa</code> and <code>x-sampa</code>.</p>
+        /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
         pub fn alphabet(mut self, input: impl Into<std::string::String>) -> Self {
             self.alphabet = Some(input.into());
             self
         }
-        /// <p>Phonetic alphabet used in the lexicon. Valid values are
-        /// <code>ipa</code> and <code>x-sampa</code>.</p>
+        /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
         pub fn set_alphabet(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alphabet = input;
             self
         }
-        /// <p>Language code that the lexicon applies to. A lexicon with a
-        /// language code such as "en" would be applied to all English languages
-        /// (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
+        /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>Language code that the lexicon applies to. A lexicon with a
-        /// language code such as "en" would be applied to all English languages
-        /// (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
+        /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -1564,21 +1474,17 @@ impl LexiconAttributes {
     }
 }
 
-/// <p>Provides lexicon name and lexicon content in string format. For
-/// more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon
-/// Specification (PLS) Version 1.0</a>.</p>
+/// <p>Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Lexicon {
-    /// <p>Lexicon content in string format. The content of a lexicon must be
-    /// in PLS format.</p>
+    /// <p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>
     pub content: std::option::Option<std::string::String>,
     /// <p>Name of the lexicon.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl Lexicon {
-    /// <p>Lexicon content in string format. The content of a lexicon must be
-    /// in PLS format.</p>
+    /// <p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -1605,14 +1511,12 @@ pub mod lexicon {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Lexicon content in string format. The content of a lexicon must be
-        /// in PLS format.</p>
+        /// <p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>Lexicon content in string format. The content of a lexicon must be
-        /// in PLS format.</p>
+        /// <p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -1649,26 +1553,18 @@ impl Lexicon {
 pub struct Voice {
     /// <p>Gender of the voice.</p>
     pub gender: std::option::Option<crate::model::Gender>,
-    /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when
-    /// calling the <code>SynthesizeSpeech</code> operation.</p>
+    /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
     pub id: std::option::Option<crate::model::VoiceId>,
     /// <p>Language code of the voice.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>Human readable name of the language in English.</p>
     pub language_name: std::option::Option<std::string::String>,
-    /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides
-    /// a human readable voice name that you might display in your
-    /// application.</p>
+    /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Additional codes for languages available for the specified voice in
-    /// addition to its default language. </p>
-    /// <p>For example, the default language for Aditi is Indian English (en-IN)
-    /// because it was first used for that language. Since Aditi is bilingual and
-    /// fluent in both Indian English and Hindi, this parameter would show the
-    /// code <code>hi-IN</code>.</p>
+    /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+    /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
     pub additional_language_codes: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
-    /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>)
-    /// that are supported by a given voice.</p>
+    /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
     pub supported_engines: std::option::Option<std::vec::Vec<crate::model::Engine>>,
 }
 impl Voice {
@@ -1676,8 +1572,7 @@ impl Voice {
     pub fn gender(&self) -> std::option::Option<&crate::model::Gender> {
         self.gender.as_ref()
     }
-    /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when
-    /// calling the <code>SynthesizeSpeech</code> operation.</p>
+    /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
     pub fn id(&self) -> std::option::Option<&crate::model::VoiceId> {
         self.id.as_ref()
     }
@@ -1689,23 +1584,16 @@ impl Voice {
     pub fn language_name(&self) -> std::option::Option<&str> {
         self.language_name.as_deref()
     }
-    /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides
-    /// a human readable voice name that you might display in your
-    /// application.</p>
+    /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Additional codes for languages available for the specified voice in
-    /// addition to its default language. </p>
-    /// <p>For example, the default language for Aditi is Indian English (en-IN)
-    /// because it was first used for that language. Since Aditi is bilingual and
-    /// fluent in both Indian English and Hindi, this parameter would show the
-    /// code <code>hi-IN</code>.</p>
+    /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+    /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
     pub fn additional_language_codes(&self) -> std::option::Option<&[crate::model::LanguageCode]> {
         self.additional_language_codes.as_deref()
     }
-    /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>)
-    /// that are supported by a given voice.</p>
+    /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
     pub fn supported_engines(&self) -> std::option::Option<&[crate::model::Engine]> {
         self.supported_engines.as_deref()
     }
@@ -1749,14 +1637,12 @@ pub mod voice {
             self.gender = input;
             self
         }
-        /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when
-        /// calling the <code>SynthesizeSpeech</code> operation.</p>
+        /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
         pub fn id(mut self, input: crate::model::VoiceId) -> Self {
             self.id = Some(input);
             self
         }
-        /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when
-        /// calling the <code>SynthesizeSpeech</code> operation.</p>
+        /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
         pub fn set_id(mut self, input: std::option::Option<crate::model::VoiceId>) -> Self {
             self.id = input;
             self
@@ -1787,16 +1673,12 @@ pub mod voice {
             self.language_name = input;
             self
         }
-        /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides
-        /// a human readable voice name that you might display in your
-        /// application.</p>
+        /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides
-        /// a human readable voice name that you might display in your
-        /// application.</p>
+        /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1805,27 +1687,16 @@ pub mod voice {
         ///
         /// To override the contents of this collection use [`set_additional_language_codes`](Self::set_additional_language_codes).
         ///
-        /// <p>Additional codes for languages available for the specified voice in
-        /// addition to its default language. </p>
-        /// <p>For example, the default language for Aditi is Indian English (en-IN)
-        /// because it was first used for that language. Since Aditi is bilingual and
-        /// fluent in both Indian English and Hindi, this parameter would show the
-        /// code <code>hi-IN</code>.</p>
-        pub fn additional_language_codes(
-            mut self,
-            input: impl Into<crate::model::LanguageCode>,
-        ) -> Self {
+        /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+        /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
+        pub fn additional_language_codes(mut self, input: crate::model::LanguageCode) -> Self {
             let mut v = self.additional_language_codes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_language_codes = Some(v);
             self
         }
-        /// <p>Additional codes for languages available for the specified voice in
-        /// addition to its default language. </p>
-        /// <p>For example, the default language for Aditi is Indian English (en-IN)
-        /// because it was first used for that language. Since Aditi is bilingual and
-        /// fluent in both Indian English and Hindi, this parameter would show the
-        /// code <code>hi-IN</code>.</p>
+        /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
+        /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
         pub fn set_additional_language_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
@@ -1837,16 +1708,14 @@ pub mod voice {
         ///
         /// To override the contents of this collection use [`set_supported_engines`](Self::set_supported_engines).
         ///
-        /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>)
-        /// that are supported by a given voice.</p>
-        pub fn supported_engines(mut self, input: impl Into<crate::model::Engine>) -> Self {
+        /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
+        pub fn supported_engines(mut self, input: crate::model::Engine) -> Self {
             let mut v = self.supported_engines.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_engines = Some(v);
             self
         }
-        /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>)
-        /// that are supported by a given voice.</p>
+        /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
         pub fn set_supported_engines(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Engine>>,

@@ -476,6 +476,36 @@ impl PutInboundDmarcSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutEmailMonitoringConfigurationOutput {}
+impl std::fmt::Debug for PutEmailMonitoringConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutEmailMonitoringConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutEmailMonitoringConfigurationOutput`](crate::output::PutEmailMonitoringConfigurationOutput)
+pub mod put_email_monitoring_configuration_output {
+    /// A builder for [`PutEmailMonitoringConfigurationOutput`](crate::output::PutEmailMonitoringConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutEmailMonitoringConfigurationOutput`](crate::output::PutEmailMonitoringConfigurationOutput)
+        pub fn build(self) -> crate::output::PutEmailMonitoringConfigurationOutput {
+            crate::output::PutEmailMonitoringConfigurationOutput {}
+        }
+    }
+}
+impl PutEmailMonitoringConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`PutEmailMonitoringConfigurationOutput`](crate::output::PutEmailMonitoringConfigurationOutput)
+    pub fn builder() -> crate::output::put_email_monitoring_configuration_output::Builder {
+        crate::output::put_email_monitoring_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccessControlRuleOutput {}
 impl std::fmt::Debug for PutAccessControlRuleOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -509,8 +539,7 @@ impl PutAccessControlRuleOutput {
 pub struct ListUsersOutput {
     /// <p>The overview of users for an organization.</p>
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
-    /// <p> The token to use to retrieve the next page of results. This value is `null` when
-    /// there are no more results to return.</p>
+    /// <p> The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsersOutput {
@@ -518,8 +547,7 @@ impl ListUsersOutput {
     pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
         self.users.as_deref()
     }
-    /// <p> The token to use to retrieve the next page of results. This value is `null` when
-    /// there are no more results to return.</p>
+    /// <p> The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -547,9 +575,9 @@ pub mod list_users_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>The overview of users for an organization.</p>
-        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -561,14 +589,12 @@ pub mod list_users_output {
             self.users = input;
             self
         }
-        /// <p> The token to use to retrieve the next page of results. This value is `null` when
-        /// there are no more results to return.</p>
+        /// <p> The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The token to use to retrieve the next page of results. This value is `null` when
-        /// there are no more results to return.</p>
+        /// <p> The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -623,9 +649,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -656,9 +682,7 @@ impl ListTagsForResourceOutput {
 pub struct ListResourcesOutput {
     /// <p>One page of the organization's resource representation.</p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-    /// <p> The token used to paginate through all the organization's resources. While results
-    /// are still available, it has an associated value. When the last page is reached, the token
-    /// is empty.</p>
+    /// <p> The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesOutput {
@@ -666,9 +690,7 @@ impl ListResourcesOutput {
     pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
         self.resources.as_deref()
     }
-    /// <p> The token used to paginate through all the organization's resources. While results
-    /// are still available, it has an associated value. When the last page is reached, the token
-    /// is empty.</p>
+    /// <p> The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -696,9 +718,9 @@ pub mod list_resources_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>One page of the organization's resource representation.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -710,16 +732,12 @@ pub mod list_resources_output {
             self.resources = input;
             self
         }
-        /// <p> The token used to paginate through all the organization's resources. While results
-        /// are still available, it has an associated value. When the last page is reached, the token
-        /// is empty.</p>
+        /// <p> The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The token used to paginate through all the organization's resources. While results
-        /// are still available, it has an associated value. When the last page is reached, the token
-        /// is empty.</p>
+        /// <p> The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -746,9 +764,7 @@ impl ListResourcesOutput {
 pub struct ListResourceDelegatesOutput {
     /// <p>One page of the resource's delegates.</p>
     pub delegates: std::option::Option<std::vec::Vec<crate::model::Delegate>>,
-    /// <p>The token used to paginate through the delegates associated with a resource. While
-    /// results are still available, it has an associated value. When the last page is reached, the
-    /// token is empty. </p>
+    /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceDelegatesOutput {
@@ -756,9 +772,7 @@ impl ListResourceDelegatesOutput {
     pub fn delegates(&self) -> std::option::Option<&[crate::model::Delegate]> {
         self.delegates.as_deref()
     }
-    /// <p>The token used to paginate through the delegates associated with a resource. While
-    /// results are still available, it has an associated value. When the last page is reached, the
-    /// token is empty. </p>
+    /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -786,9 +800,9 @@ pub mod list_resource_delegates_output {
         /// To override the contents of this collection use [`set_delegates`](Self::set_delegates).
         ///
         /// <p>One page of the resource's delegates.</p>
-        pub fn delegates(mut self, input: impl Into<crate::model::Delegate>) -> Self {
+        pub fn delegates(mut self, input: crate::model::Delegate) -> Self {
             let mut v = self.delegates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegates = Some(v);
             self
         }
@@ -800,16 +814,12 @@ pub mod list_resource_delegates_output {
             self.delegates = input;
             self
         }
-        /// <p>The token used to paginate through the delegates associated with a resource. While
-        /// results are still available, it has an associated value. When the last page is reached, the
-        /// token is empty. </p>
+        /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to paginate through the delegates associated with a resource. While
-        /// results are still available, it has an associated value. When the last page is reached, the
-        /// token is empty. </p>
+        /// <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -834,24 +844,20 @@ impl ListResourceDelegatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationsOutput {
-    /// <p>The overview of owned organizations presented as a list of organization
-    /// summaries.</p>
+    /// <p>The overview of owned organizations presented as a list of organization summaries.</p>
     pub organization_summaries:
         std::option::Option<std::vec::Vec<crate::model::OrganizationSummary>>,
-    /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationsOutput {
-    /// <p>The overview of owned organizations presented as a list of organization
-    /// summaries.</p>
+    /// <p>The overview of owned organizations presented as a list of organization summaries.</p>
     pub fn organization_summaries(
         &self,
     ) -> std::option::Option<&[crate::model::OrganizationSummary]> {
         self.organization_summaries.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -879,19 +885,14 @@ pub mod list_organizations_output {
         ///
         /// To override the contents of this collection use [`set_organization_summaries`](Self::set_organization_summaries).
         ///
-        /// <p>The overview of owned organizations presented as a list of organization
-        /// summaries.</p>
-        pub fn organization_summaries(
-            mut self,
-            input: impl Into<crate::model::OrganizationSummary>,
-        ) -> Self {
+        /// <p>The overview of owned organizations presented as a list of organization summaries.</p>
+        pub fn organization_summaries(mut self, input: crate::model::OrganizationSummary) -> Self {
             let mut v = self.organization_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_summaries = Some(v);
             self
         }
-        /// <p>The overview of owned organizations presented as a list of organization
-        /// summaries.</p>
+        /// <p>The overview of owned organizations presented as a list of organization summaries.</p>
         pub fn set_organization_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OrganizationSummary>>,
@@ -899,14 +900,12 @@ pub mod list_organizations_output {
             self.organization_summaries = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -961,9 +960,9 @@ pub mod list_mobile_device_access_rules_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The list of mobile device access rules that exist under the specified Amazon WorkMail organization.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::MobileDeviceAccessRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::MobileDeviceAccessRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1031,12 +1030,9 @@ pub mod list_mobile_device_access_overrides_output {
         /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
         ///
         /// <p>The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.</p>
-        pub fn overrides(
-            mut self,
-            input: impl Into<crate::model::MobileDeviceAccessOverride>,
-        ) -> Self {
+        pub fn overrides(mut self, input: crate::model::MobileDeviceAccessOverride) -> Self {
             let mut v = self.overrides.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.overrides = Some(v);
             self
         }
@@ -1078,13 +1074,13 @@ impl ListMobileDeviceAccessOverridesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailDomainsOutput {
-    /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail  organization, along with the information about whether the domain is or isn't the default.</p>
+    /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
     pub mail_domains: std::option::Option<std::vec::Vec<crate::model::MailDomainSummary>>,
     /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMailDomainsOutput {
-    /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail  organization, along with the information about whether the domain is or isn't the default.</p>
+    /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
     pub fn mail_domains(&self) -> std::option::Option<&[crate::model::MailDomainSummary]> {
         self.mail_domains.as_deref()
     }
@@ -1116,14 +1112,14 @@ pub mod list_mail_domains_output {
         ///
         /// To override the contents of this collection use [`set_mail_domains`](Self::set_mail_domains).
         ///
-        /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail  organization, along with the information about whether the domain is or isn't the default.</p>
-        pub fn mail_domains(mut self, input: impl Into<crate::model::MailDomainSummary>) -> Self {
+        /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
+        pub fn mail_domains(mut self, input: crate::model::MailDomainSummary) -> Self {
             let mut v = self.mail_domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mail_domains = Some(v);
             self
         }
-        /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail  organization, along with the information about whether the domain is or isn't the default.</p>
+        /// <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
         pub fn set_mail_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MailDomainSummary>>,
@@ -1163,8 +1159,7 @@ impl ListMailDomainsOutput {
 pub struct ListMailboxPermissionsOutput {
     /// <p>One page of the user, group, or resource mailbox permissions.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
-    /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMailboxPermissionsOutput {
@@ -1172,8 +1167,7 @@ impl ListMailboxPermissionsOutput {
     pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
         self.permissions.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1201,9 +1195,9 @@ pub mod list_mailbox_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>One page of the user, group, or resource mailbox permissions.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -1215,14 +1209,12 @@ pub mod list_mailbox_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1285,9 +1277,9 @@ pub mod list_mailbox_export_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>The mailbox export job details.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::MailboxExportJob>) -> Self {
+        pub fn jobs(mut self, input: crate::model::MailboxExportJob) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -1331,8 +1323,7 @@ impl ListMailboxExportJobsOutput {
 pub struct ListGroupsOutput {
     /// <p>The overview of groups for an organization.</p>
     pub groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
-    /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupsOutput {
@@ -1340,8 +1331,7 @@ impl ListGroupsOutput {
     pub fn groups(&self) -> std::option::Option<&[crate::model::Group]> {
         self.groups.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1369,9 +1359,9 @@ pub mod list_groups_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>The overview of groups for an organization.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn groups(mut self, input: crate::model::Group) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -1383,14 +1373,12 @@ pub mod list_groups_output {
             self.groups = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1417,8 +1405,7 @@ impl ListGroupsOutput {
 pub struct ListGroupMembersOutput {
     /// <p>The members associated to the group.</p>
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGroupMembersOutput {
@@ -1426,8 +1413,7 @@ impl ListGroupMembersOutput {
     pub fn members(&self) -> std::option::Option<&[crate::model::Member]> {
         self.members.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1455,9 +1441,9 @@ pub mod list_group_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>The members associated to the group.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Member>) -> Self {
+        pub fn members(mut self, input: crate::model::Member) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -1469,14 +1455,12 @@ pub mod list_group_members_output {
             self.members = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1503,8 +1487,7 @@ impl ListGroupMembersOutput {
 pub struct ListAliasesOutput {
     /// <p>The entity's paginated aliases.</p>
     pub aliases: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAliasesOutput {
@@ -1512,8 +1495,7 @@ impl ListAliasesOutput {
     pub fn aliases(&self) -> std::option::Option<&[std::string::String]> {
         self.aliases.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1555,14 +1537,12 @@ pub mod list_aliases_output {
             self.aliases = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The value is "null" when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1617,9 +1597,9 @@ pub mod list_access_control_rules_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The access control rules.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::AccessControlRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::AccessControlRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1806,16 +1786,14 @@ impl GetMobileDeviceAccessOverrideOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMobileDeviceAccessEffectOutput {
-    /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated
-    /// user parameters.</p>
+    /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated user parameters.</p>
     pub effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
     /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
     pub matched_rules:
         std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessMatchedRule>>,
 }
 impl GetMobileDeviceAccessEffectOutput {
-    /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated
-    /// user parameters.</p>
+    /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated user parameters.</p>
     pub fn effect(&self) -> std::option::Option<&crate::model::MobileDeviceAccessRuleEffect> {
         self.effect.as_ref()
     }
@@ -1845,14 +1823,12 @@ pub mod get_mobile_device_access_effect_output {
             std::option::Option<std::vec::Vec<crate::model::MobileDeviceAccessMatchedRule>>,
     }
     impl Builder {
-        /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated
-        /// user parameters.</p>
+        /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated user parameters.</p>
         pub fn effect(mut self, input: crate::model::MobileDeviceAccessRuleEffect) -> Self {
             self.effect = Some(input);
             self
         }
-        /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated
-        /// user parameters.</p>
+        /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated user parameters.</p>
         pub fn set_effect(
             mut self,
             input: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
@@ -1865,12 +1841,9 @@ pub mod get_mobile_device_access_effect_output {
         /// To override the contents of this collection use [`set_matched_rules`](Self::set_matched_rules).
         ///
         /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
-        pub fn matched_rules(
-            mut self,
-            input: impl Into<crate::model::MobileDeviceAccessMatchedRule>,
-        ) -> Self {
+        pub fn matched_rules(mut self, input: crate::model::MobileDeviceAccessMatchedRule) -> Self {
             let mut v = self.matched_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.matched_rules = Some(v);
             self
         }
@@ -1902,8 +1875,7 @@ impl GetMobileDeviceAccessEffectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMailDomainOutput {
-    /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming
-    /// email traffic to SES. See admin guide for more details.</p>
+    /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
     pub records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
     /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
     pub is_test_domain: bool,
@@ -1916,8 +1888,7 @@ pub struct GetMailDomainOutput {
     pub dkim_verification_status: std::option::Option<crate::model::DnsRecordVerificationStatus>,
 }
 impl GetMailDomainOutput {
-    /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming
-    /// email traffic to SES. See admin guide for more details.</p>
+    /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
     pub fn records(&self) -> std::option::Option<&[crate::model::DnsRecord]> {
         self.records.as_deref()
     }
@@ -1975,16 +1946,14 @@ pub mod get_mail_domain_output {
         ///
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
-        /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming
-        /// email traffic to SES. See admin guide for more details.</p>
-        pub fn records(mut self, input: impl Into<crate::model::DnsRecord>) -> Self {
+        /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
+        pub fn records(mut self, input: crate::model::DnsRecord) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
-        /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming
-        /// email traffic to SES. See admin guide for more details.</p>
+        /// <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
         pub fn set_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
@@ -2228,12 +2197,9 @@ pub mod get_default_retention_policy_output {
         /// To override the contents of this collection use [`set_folder_configurations`](Self::set_folder_configurations).
         ///
         /// <p>The retention policy folder configurations.</p>
-        pub fn folder_configurations(
-            mut self,
-            input: impl Into<crate::model::FolderConfiguration>,
-        ) -> Self {
+        pub fn folder_configurations(mut self, input: crate::model::FolderConfiguration) -> Self {
             let mut v = self.folder_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folder_configurations = Some(v);
             self
         }
@@ -2420,20 +2386,13 @@ pub struct DescribeUserOutput {
     pub email: std::option::Option<std::string::String>,
     /// <p>The display name of the user.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or
-    /// never registered to WorkMail).</p>
+    /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub state: std::option::Option<crate::model::EntityState>,
-    /// <p>In certain cases, other entities are modeled as users. If interoperability is
-    /// enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail
-    /// organizations rely on different directory types, administrators can distinguish between an
-    /// unregistered user (account is disabled and has a user role) and the directory
-    /// administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+    /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
     pub user_role: std::option::Option<crate::model::UserRole>,
-    /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch
-    /// time format.</p>
+    /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch
-    /// time format.</p>
+    /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeUserOutput {
@@ -2453,26 +2412,19 @@ impl DescribeUserOutput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or
-    /// never registered to WorkMail).</p>
+    /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
         self.state.as_ref()
     }
-    /// <p>In certain cases, other entities are modeled as users. If interoperability is
-    /// enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail
-    /// organizations rely on different directory types, administrators can distinguish between an
-    /// unregistered user (account is disabled and has a user role) and the directory
-    /// administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+    /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
     pub fn user_role(&self) -> std::option::Option<&crate::model::UserRole> {
         self.user_role.as_ref()
     }
-    /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch
-    /// time format.</p>
+    /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
     pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
-    /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch
-    /// time format.</p>
+    /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
     pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
@@ -2547,44 +2499,32 @@ pub mod describe_user_output {
             self.display_name = input;
             self
         }
-        /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or
-        /// never registered to WorkMail).</p>
+        /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
         pub fn state(mut self, input: crate::model::EntityState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or
-        /// never registered to WorkMail).</p>
+        /// <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
             self.state = input;
             self
         }
-        /// <p>In certain cases, other entities are modeled as users. If interoperability is
-        /// enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail
-        /// organizations rely on different directory types, administrators can distinguish between an
-        /// unregistered user (account is disabled and has a user role) and the directory
-        /// administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+        /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
         pub fn user_role(mut self, input: crate::model::UserRole) -> Self {
             self.user_role = Some(input);
             self
         }
-        /// <p>In certain cases, other entities are modeled as users. If interoperability is
-        /// enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail
-        /// organizations rely on different directory types, administrators can distinguish between an
-        /// unregistered user (account is disabled and has a user role) and the directory
-        /// administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+        /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
         pub fn set_user_role(mut self, input: std::option::Option<crate::model::UserRole>) -> Self {
             self.user_role = input;
             self
         }
-        /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch
-        /// time format.</p>
+        /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
         pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
-        /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch
-        /// time format.</p>
+        /// <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
         pub fn set_enabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2592,14 +2532,12 @@ pub mod describe_user_output {
             self.enabled_date = input;
             self
         }
-        /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch
-        /// time format.</p>
+        /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
         pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
-        /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch
-        /// time format.</p>
+        /// <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
         pub fn set_disabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2643,14 +2581,11 @@ pub struct DescribeResourceOutput {
     pub r#type: std::option::Option<crate::model::ResourceType>,
     /// <p>The booking options for the described resource.</p>
     pub booking_options: std::option::Option<crate::model::BookingOptions>,
-    /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered
-    /// or never registered to WorkMail), or deleted.</p>
+    /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
     pub state: std::option::Option<crate::model::EntityState>,
-    /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time
-    /// format.</p>
+    /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time
-    /// format.</p>
+    /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeResourceOutput {
@@ -2674,18 +2609,15 @@ impl DescribeResourceOutput {
     pub fn booking_options(&self) -> std::option::Option<&crate::model::BookingOptions> {
         self.booking_options.as_ref()
     }
-    /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered
-    /// or never registered to WorkMail), or deleted.</p>
+    /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
         self.state.as_ref()
     }
-    /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time
-    /// format.</p>
+    /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
     pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
-    /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time
-    /// format.</p>
+    /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
     pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
@@ -2773,26 +2705,22 @@ pub mod describe_resource_output {
             self.booking_options = input;
             self
         }
-        /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered
-        /// or never registered to WorkMail), or deleted.</p>
+        /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
         pub fn state(mut self, input: crate::model::EntityState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered
-        /// or never registered to WorkMail), or deleted.</p>
+        /// <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
             self.state = input;
             self
         }
-        /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time
-        /// format.</p>
+        /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
         pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
-        /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time
-        /// format.</p>
+        /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
         pub fn set_enabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2800,14 +2728,12 @@ pub mod describe_resource_output {
             self.enabled_date = input;
             self
         }
-        /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time
-        /// format.</p>
+        /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
         pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
-        /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time
-        /// format.</p>
+        /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
         pub fn set_disabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2853,11 +2779,9 @@ pub struct DescribeOrganizationOutput {
     pub directory_type: std::option::Option<std::string::String>,
     /// <p>The default mail domain associated with the organization.</p>
     pub default_mail_domain: std::option::Option<std::string::String>,
-    /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch
-    /// time format.</p>
+    /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
     pub completed_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>(Optional) The error message indicating if unexpected behavior was encountered with
-    /// regards to the organization.</p>
+    /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the organization.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -2887,13 +2811,11 @@ impl DescribeOrganizationOutput {
     pub fn default_mail_domain(&self) -> std::option::Option<&str> {
         self.default_mail_domain.as_deref()
     }
-    /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch
-    /// time format.</p>
+    /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
     pub fn completed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_date.as_ref()
     }
-    /// <p>(Optional) The error message indicating if unexpected behavior was encountered with
-    /// regards to the organization.</p>
+    /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -3003,14 +2925,12 @@ pub mod describe_organization_output {
             self.default_mail_domain = input;
             self
         }
-        /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch
-        /// time format.</p>
+        /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
         pub fn completed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.completed_date = Some(input);
             self
         }
-        /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch
-        /// time format.</p>
+        /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
         pub fn set_completed_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3018,14 +2938,12 @@ pub mod describe_organization_output {
             self.completed_date = input;
             self
         }
-        /// <p>(Optional) The error message indicating if unexpected behavior was encountered with
-        /// regards to the organization.</p>
+        /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>(Optional) The error message indicating if unexpected behavior was encountered with
-        /// regards to the organization.</p>
+        /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3074,18 +2992,15 @@ pub struct DescribeMailboxExportJobOutput {
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The mailbox export job description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple
-    /// Storage Service (Amazon S3) bucket.</p>
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple Storage Service (Amazon S3) bucket.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-    /// key that encrypts the exported mailbox content.</p>
+    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 bucket prefix.</p>
     pub s3_prefix: std::option::Option<std::string::String>,
-    /// <p>The path to the S3 bucket and file that the mailbox export job is exporting
-    /// to.</p>
+    /// <p>The path to the S3 bucket and file that the mailbox export job is exporting to.</p>
     pub s3_path: std::option::Option<std::string::String>,
     /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
     pub estimated_progress: i32,
@@ -3107,13 +3022,11 @@ impl DescribeMailboxExportJobOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple
-    /// Storage Service (Amazon S3) bucket.</p>
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple Storage Service (Amazon S3) bucket.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-    /// key that encrypts the exported mailbox content.</p>
+    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -3125,8 +3038,7 @@ impl DescribeMailboxExportJobOutput {
     pub fn s3_prefix(&self) -> std::option::Option<&str> {
         self.s3_prefix.as_deref()
     }
-    /// <p>The path to the S3 bucket and file that the mailbox export job is exporting
-    /// to.</p>
+    /// <p>The path to the S3 bucket and file that the mailbox export job is exporting to.</p>
     pub fn s3_path(&self) -> std::option::Option<&str> {
         self.s3_path.as_deref()
     }
@@ -3209,26 +3121,22 @@ pub mod describe_mailbox_export_job_output {
             self.description = input;
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple
-        /// Storage Service (Amazon S3) bucket.</p>
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple Storage Service (Amazon S3) bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple
-        /// Storage Service (Amazon S3) bucket.</p>
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple Storage Service (Amazon S3) bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-        /// key that encrypts the exported mailbox content.</p>
+        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-        /// key that encrypts the exported mailbox content.</p>
+        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -3256,14 +3164,12 @@ pub mod describe_mailbox_export_job_output {
             self.s3_prefix = input;
             self
         }
-        /// <p>The path to the S3 bucket and file that the mailbox export job is exporting
-        /// to.</p>
+        /// <p>The path to the S3 bucket and file that the mailbox export job is exporting to.</p>
         pub fn s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_path = Some(input.into());
             self
         }
-        /// <p>The path to the S3 bucket and file that the mailbox export job is exporting
-        /// to.</p>
+        /// <p>The path to the S3 bucket and file that the mailbox export job is exporting to.</p>
         pub fn set_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_path = input;
             self
@@ -3417,14 +3323,11 @@ pub struct DescribeGroupOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The email of the described group.</p>
     pub email: std::option::Option<std::string::String>,
-    /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or
-    /// never registered to WorkMail).</p>
+    /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub state: std::option::Option<crate::model::EntityState>,
-    /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
-    /// format.</p>
+    /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
     pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time
-    /// format.</p>
+    /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
     pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeGroupOutput {
@@ -3440,18 +3343,15 @@ impl DescribeGroupOutput {
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
-    /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or
-    /// never registered to WorkMail).</p>
+    /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub fn state(&self) -> std::option::Option<&crate::model::EntityState> {
         self.state.as_ref()
     }
-    /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
-    /// format.</p>
+    /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
     pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
-    /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time
-    /// format.</p>
+    /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
     pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
@@ -3512,26 +3412,22 @@ pub mod describe_group_output {
             self.email = input;
             self
         }
-        /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or
-        /// never registered to WorkMail).</p>
+        /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
         pub fn state(mut self, input: crate::model::EntityState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or
-        /// never registered to WorkMail).</p>
+        /// <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
             self.state = input;
             self
         }
-        /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
-        /// format.</p>
+        /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
         pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.enabled_date = Some(input);
             self
         }
-        /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
-        /// format.</p>
+        /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
         pub fn set_enabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3539,14 +3435,12 @@ pub mod describe_group_output {
             self.enabled_date = input;
             self
         }
-        /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time
-        /// format.</p>
+        /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
         pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.disabled_date = Some(input);
             self
         }
-        /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time
-        /// format.</p>
+        /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
         pub fn set_disabled_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3571,6 +3465,82 @@ impl DescribeGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGroupOutput`](crate::output::DescribeGroupOutput)
     pub fn builder() -> crate::output::describe_group_output::Builder {
         crate::output::describe_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeEmailMonitoringConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+    pub log_group_arn: std::option::Option<std::string::String>,
+}
+impl DescribeEmailMonitoringConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+        self.log_group_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeEmailMonitoringConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeEmailMonitoringConfigurationOutput");
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("log_group_arn", &self.log_group_arn);
+        formatter.finish()
+    }
+}
+/// See [`DescribeEmailMonitoringConfigurationOutput`](crate::output::DescribeEmailMonitoringConfigurationOutput)
+pub mod describe_email_monitoring_configuration_output {
+    /// A builder for [`DescribeEmailMonitoringConfigurationOutput`](crate::output::DescribeEmailMonitoringConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) log_group_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+        pub fn set_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeEmailMonitoringConfigurationOutput`](crate::output::DescribeEmailMonitoringConfigurationOutput)
+        pub fn build(self) -> crate::output::DescribeEmailMonitoringConfigurationOutput {
+            crate::output::DescribeEmailMonitoringConfigurationOutput {
+                role_arn: self.role_arn,
+                log_group_arn: self.log_group_arn,
+            }
+        }
+    }
+}
+impl DescribeEmailMonitoringConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEmailMonitoringConfigurationOutput`](crate::output::DescribeEmailMonitoringConfigurationOutput)
+    pub fn builder() -> crate::output::describe_email_monitoring_configuration_output::Builder {
+        crate::output::describe_email_monitoring_configuration_output::Builder::default()
     }
 }
 
@@ -3917,6 +3887,36 @@ impl DeleteGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
     pub fn builder() -> crate::output::delete_group_output::Builder {
         crate::output::delete_group_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEmailMonitoringConfigurationOutput {}
+impl std::fmt::Debug for DeleteEmailMonitoringConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEmailMonitoringConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteEmailMonitoringConfigurationOutput`](crate::output::DeleteEmailMonitoringConfigurationOutput)
+pub mod delete_email_monitoring_configuration_output {
+    /// A builder for [`DeleteEmailMonitoringConfigurationOutput`](crate::output::DeleteEmailMonitoringConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteEmailMonitoringConfigurationOutput`](crate::output::DeleteEmailMonitoringConfigurationOutput)
+        pub fn build(self) -> crate::output::DeleteEmailMonitoringConfigurationOutput {
+            crate::output::DeleteEmailMonitoringConfigurationOutput {}
+        }
+    }
+}
+impl DeleteEmailMonitoringConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEmailMonitoringConfigurationOutput`](crate::output::DeleteEmailMonitoringConfigurationOutput)
+    pub fn builder() -> crate::output::delete_email_monitoring_configuration_output::Builder {
+        crate::output::delete_email_monitoring_configuration_output::Builder::default()
     }
 }
 

@@ -5,26 +5,14 @@
 pub enum Error {
     /// <p>WorkMail could not access the updated email content. Possible reasons:</p>
     /// <ul>
-    /// <li>
-    /// <p>You made the request in a region other than your S3 bucket region.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-owner-condition.html">S3 bucket owner</a> is not the
-    /// same as the calling AWS account.</p>
-    /// </li>
-    /// <li>
-    /// <p>You have an incomplete or missing S3 bucket policy. For more information about policies, see
-    /// <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html">
-    /// Updating message content with AWS Lambda
-    /// </a> in the <i>WorkMail Administrator
-    /// Guide</i>.</p>
-    /// </li>
+    /// <li> <p>You made the request in a region other than your S3 bucket region.</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-owner-condition.html">S3 bucket owner</a> is not the same as the calling AWS account.</p> </li>
+    /// <li> <p>You have an incomplete or missing S3 bucket policy. For more information about policies, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html"> Updating message content with AWS Lambda </a> in the <i>WorkMail Administrator Guide</i>.</p> </li>
     /// </ul>
     InvalidContentLocation(crate::error::InvalidContentLocation),
     /// <p>The requested email is not eligible for update. This is usually the case for a redirected email.</p>
     MessageFrozen(crate::error::MessageFrozen),
-    /// <p>The requested email could not be updated due to an error in the MIME content. Check the error message for more information about
-    /// what caused the error.</p>
+    /// <p>The requested email could not be updated due to an error in the MIME content. Check the error message for more information about what caused the error.</p>
     MessageRejected(crate::error::MessageRejected),
     /// <p>The requested email message is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),

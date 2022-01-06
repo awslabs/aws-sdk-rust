@@ -3,13 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSupportDataExportOutput {
-    /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be
-    /// used to correlate a request with notifications from the SNS topic.
+    /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     pub data_set_request_id: std::option::Option<std::string::String>,
 }
 impl StartSupportDataExportOutput {
-    /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be
-    /// used to correlate a request with notifications from the SNS topic.
+    /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     pub fn data_set_request_id(&self) -> std::option::Option<&str> {
         self.data_set_request_id.as_deref()
     }
@@ -30,14 +28,12 @@ pub mod start_support_data_export_output {
         pub(crate) data_set_request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be
-        /// used to correlate a request with notifications from the SNS topic.
+        /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
         pub fn data_set_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_request_id = Some(input.into());
             self
         }
-        /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be
-        /// used to correlate a request with notifications from the SNS topic.
+        /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
         pub fn set_data_set_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -64,13 +60,11 @@ impl StartSupportDataExportOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataSetOutput {
-    /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be
-    /// used to correlate a request with notifications from the SNS topic.
+    /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     pub data_set_request_id: std::option::Option<std::string::String>,
 }
 impl GenerateDataSetOutput {
-    /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be
-    /// used to correlate a request with notifications from the SNS topic.
+    /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     pub fn data_set_request_id(&self) -> std::option::Option<&str> {
         self.data_set_request_id.as_deref()
     }
@@ -91,14 +85,12 @@ pub mod generate_data_set_output {
         pub(crate) data_set_request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be
-        /// used to correlate a request with notifications from the SNS topic.
+        /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
         pub fn data_set_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_request_id = Some(input.into());
             self
         }
-        /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be
-        /// used to correlate a request with notifications from the SNS topic.
+        /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.
         pub fn set_data_set_request_id(
             mut self,
             input: std::option::Option<std::string::String>,

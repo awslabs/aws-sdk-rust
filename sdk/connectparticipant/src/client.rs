@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Connect Participant Service
@@ -117,6 +117,7 @@ where
     ///
     /// See [`GetTranscript`](crate::client::fluent_builders::GetTranscript) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTranscript::into_paginator).
     pub fn get_transcript(&self) -> fluent_builders::GetTranscript<C, M, R> {
         fluent_builders::GetTranscript::new(self.handle.clone())
     }
@@ -152,11 +153,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CompleteAttachmentUpload`.
     ///
-    /// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL
-    /// provided in StartAttachmentUpload API. </p>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
-    /// authentication</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in StartAttachmentUpload API. </p>
+    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CompleteAttachmentUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -201,10 +200,10 @@ pub mod fluent_builders {
                 crate::input::CompleteAttachmentUploadInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -217,8 +216,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attachment_ids`](Self::set_attachment_ids).
         ///
         /// <p>A list of unique identifiers for the attachments.</p>
-        pub fn attachment_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attachment_ids(inp);
+        pub fn attachment_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_ids(input.into());
             self
         }
         /// <p>A list of unique identifiers for the attachments.</p>
@@ -229,21 +228,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attachment_ids(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(inp);
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
@@ -257,36 +254,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateParticipantConnection`.
     ///
-    /// <p>Creates the participant's connection.  Note that ParticipantToken is used for invoking this API instead of
-    /// ConnectionToken.</p>
-    /// <p>The participant token is valid for the lifetime of the participant –
-    /// until they are part of a contact.</p>        
-    /// <p>The response URL for <code>WEBSOCKET</code> Type has a connect expiry timeout of 100s.
-    /// Clients must manually connect to the returned websocket URL and subscribe to the desired
-    /// topic. </p>
-    /// <p>For chat, you need to publish the following on the established websocket
-    /// connection:</p>
-    /// <p>
-    /// <code>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</code>
-    /// </p>
-    /// <p>Upon websocket URL expiry, as specified in the response ConnectionExpiry parameter,
-    /// clients need to call this API again to obtain a new websocket URL and perform the same
-    /// steps as before.</p>
-    /// <p>
-    /// <b>Message streaming support</b>: This API can also be used together with the
-    /// <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>
-    /// API to create a participant connection for chat contacts that are
-    /// not using a websocket. For more information about message streaming, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable real-time chat message streaming</a> in the <i>Amazon Connect
-    /// Administrator Guide</i>.</p>
-    /// <p>
-    /// <b>Feature specifications</b>: For information about feature specifications, such as the allowed number of open
-    /// websocket connections per participant, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator
-    /// Guide</i>. </p>
-    /// <note>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
-    /// authentication</a>.</p>
+    /// <p>Creates the participant's connection. Note that ParticipantToken is used for invoking this API instead of ConnectionToken.</p>
+    /// <p>The participant token is valid for the lifetime of the participant – until they are part of a contact.</p>
+    /// <p>The response URL for <code>WEBSOCKET</code> Type has a connect expiry timeout of 100s. Clients must manually connect to the returned websocket URL and subscribe to the desired topic. </p>
+    /// <p>For chat, you need to publish the following on the established websocket connection:</p>
+    /// <p> <code>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</code> </p>
+    /// <p>Upon websocket URL expiry, as specified in the response ConnectionExpiry parameter, clients need to call this API again to obtain a new websocket URL and perform the same steps as before.</p>
+    /// <p> <b>Message streaming support</b>: This API can also be used together with the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a> API to create a participant connection for chat contacts that are not using a websocket. For more information about message streaming, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable real-time chat message streaming</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p> <b>Feature specifications</b>: For information about feature specifications, such as the allowed number of open websocket connections per participant, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>. </p> <note>
+    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateParticipantConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -331,10 +309,10 @@ pub mod fluent_builders {
                 crate::input::CreateParticipantConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -347,8 +325,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_type`](Self::set_type).
         ///
         /// <p>Type of connection information required.</p>
-        pub fn r#type(mut self, inp: impl Into<crate::model::ConnectionType>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::ConnectionType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>Type of connection information required.</p>
@@ -360,15 +338,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>This is a header parameter.</p>
-        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-        /// API response.</p>
-        pub fn participant_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.participant_token(inp);
+        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
+        pub fn participant_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.participant_token(input.into());
             self
         }
         /// <p>This is a header parameter.</p>
-        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-        /// API response.</p>
+        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
         pub fn set_participant_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -376,14 +352,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_participant_token(input);
             self
         }
-        /// <p>Amazon Connect Participant is used to mark the participant as connected for message
-        /// streaming.</p>
-        pub fn connect_participant(mut self, inp: bool) -> Self {
-            self.inner = self.inner.connect_participant(inp);
+        /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
+        pub fn connect_participant(mut self, input: bool) -> Self {
+            self.inner = self.inner.connect_participant(input);
             self
         }
-        /// <p>Amazon Connect Participant is used to mark the participant as connected for message
-        /// streaming.</p>
+        /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
         pub fn set_connect_participant(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_connect_participant(input);
             self
@@ -391,11 +365,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisconnectParticipant`.
     ///
-    /// <p>Disconnects a participant. Note that ConnectionToken is used for invoking this API
-    /// instead of ParticipantToken.</p>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
-    /// authentication</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disconnects a participant. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.</p>
+    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisconnectParticipant<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -440,10 +412,10 @@ pub mod fluent_builders {
                 crate::input::DisconnectParticipantInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -451,21 +423,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(inp);
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
@@ -479,11 +449,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAttachment`.
     ///
-    /// <p>Provides a pre-signed URL for download of a completed attachment. This is an
-    /// asynchronous API for use with active contacts.</p>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
-    /// authentication</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active contacts.</p>
+    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAttachment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -528,10 +496,10 @@ pub mod fluent_builders {
                 crate::input::GetAttachmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -540,8 +508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the attachment.</p>
-        pub fn attachment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attachment_id(inp);
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_id(input.into());
             self
         }
         /// <p>A unique identifier for the attachment.</p>
@@ -553,8 +521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(inp);
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
@@ -568,11 +536,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTranscript`.
     ///
-    /// <p>Retrieves a transcript of the session, including details about any attachments. Note
-    /// that ConnectionToken is used for invoking this API instead of ParticipantToken.</p>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
-    /// authentication</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a transcript of the session, including details about any attachments. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.</p>
+    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTranscript<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -617,10 +583,10 @@ pub mod fluent_builders {
                 crate::input::GetTranscriptInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -628,9 +594,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTranscriptPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetTranscriptPaginator<C, M, R> {
+            crate::paginator::GetTranscriptPaginator::new(self.handle, self.inner)
+        }
         /// <p>The contactId from the current contact chain for which transcript is needed.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The contactId from the current contact chain for which transcript is needed.</p>
@@ -639,8 +611,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the page. Default: 10. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the page. Default: 10. </p>
@@ -648,26 +620,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token. Use the value returned previously in the next subsequent request
-        /// to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token. Use the value returned previously in the next subsequent request
-        /// to retrieve the next set of results.</p>
+        /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD
-        /// when no StartPosition is provided, FORWARD with StartPosition. </p>
-        pub fn scan_direction(mut self, inp: crate::model::ScanDirection) -> Self {
-            self.inner = self.inner.scan_direction(inp);
+        /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
+        pub fn scan_direction(mut self, input: crate::model::ScanDirection) -> Self {
+            self.inner = self.inner.scan_direction(input);
             self
         }
-        /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD
-        /// when no StartPosition is provided, FORWARD with StartPosition. </p>
+        /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
         pub fn set_scan_direction(
             mut self,
             input: std::option::Option<crate::model::ScanDirection>,
@@ -676,8 +644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for the records. Default: DESCENDING.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortKey) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortKey) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for the records. Default: DESCENDING.</p>
@@ -686,8 +654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filtering option for where to start.</p>
-        pub fn start_position(mut self, inp: crate::model::StartPosition) -> Self {
-            self.inner = self.inner.start_position(inp);
+        pub fn start_position(mut self, input: crate::model::StartPosition) -> Self {
+            self.inner = self.inner.start_position(input);
             self
         }
         /// <p>A filtering option for where to start.</p>
@@ -699,8 +667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(inp);
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
@@ -714,11 +682,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendEvent`.
     ///
-    /// <p>Sends an event. Note that ConnectionToken is used for invoking this API instead of
-    /// ParticipantToken.</p>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
-    /// authentication</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sends an event. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.</p>
+    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendEvent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -763,10 +729,10 @@ pub mod fluent_builders {
                 crate::input::SendEventInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -775,60 +741,46 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The content type of the request. Supported types are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>application/vnd.amazonaws.connect.event.typing</p>
-        /// </li>
-        /// <li>
-        /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p>
-        /// </li>
+        /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
+        /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
         /// </ul>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>The content type of the request. Supported types are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>application/vnd.amazonaws.connect.event.typing</p>
-        /// </li>
-        /// <li>
-        /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p>
-        /// </li>
+        /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
+        /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
         /// </ul>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content_type(input);
             self
         }
-        /// <p>The content of the event to be sent (for example, message text). This is not yet
-        /// supported.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        /// <p>The content of the event to be sent (for example, message text). This is not yet supported.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>The content of the event to be sent (for example, message text). This is not yet
-        /// supported.</p>
+        /// <p>The content of the event to be sent (for example, message text). This is not yet supported.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(inp);
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
@@ -842,11 +794,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendMessage`.
     ///
-    /// <p>Sends a message. Note that ConnectionToken is used for invoking this API instead of
-    /// ParticipantToken.</p>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
-    /// authentication</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sends a message. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.</p>
+    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -891,10 +841,10 @@ pub mod fluent_builders {
                 crate::input::SendMessageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -903,8 +853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of the content. Supported types are text/plain.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>The type of the content. Supported types are text/plain.</p>
@@ -913,8 +863,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the message.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the message.</p>
@@ -922,21 +872,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The authentication token associated with the connection.</p>
-        pub fn connection_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(inp);
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the connection.</p>
@@ -950,11 +898,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartAttachmentUpload`.
     ///
-    /// <p>Provides a pre-signed Amazon S3 URL in response for uploading the file directly to
-    /// S3.</p>
-    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
-    /// authentication</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides a pre-signed Amazon S3 URL in response for uploading the file directly to S3.</p>
+    /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAttachmentUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -999,10 +945,10 @@ pub mod fluent_builders {
                 crate::input::StartAttachmentUploadInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1011,8 +957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
@@ -1021,8 +967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The size of the attachment in bytes.</p>
-        pub fn attachment_size_in_bytes(mut self, inp: i64) -> Self {
-            self.inner = self.inner.attachment_size_in_bytes(inp);
+        pub fn attachment_size_in_bytes(mut self, input: i64) -> Self {
+            self.inner = self.inner.attachment_size_in_bytes(input);
             self
         }
         /// <p>The size of the attachment in bytes.</p>
@@ -1031,8 +977,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A case-sensitive name of the attachment being uploaded.</p>
-        pub fn attachment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attachment_name(inp);
+        pub fn attachment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_name(input.into());
             self
         }
         /// <p>A case-sensitive name of the attachment being uploaded.</p>
@@ -1044,8 +990,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case sensitive identifier to support idempotency of request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case sensitive identifier to support idempotency of request.</p>
@@ -1054,8 +1000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(inp);
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
@@ -1068,6 +1014,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

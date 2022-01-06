@@ -9,16 +9,12 @@ pub mod add_notification_channel_input {
         pub(crate) config: std::option::Option<crate::model::NotificationChannelConfig>,
     }
     impl Builder {
-        /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-        /// notification channel to add. The one
-        /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+        /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
         pub fn config(mut self, input: crate::model::NotificationChannelConfig) -> Self {
             self.config = Some(input);
             self
         }
-        /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-        /// notification channel to add. The one
-        /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+        /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
         pub fn set_config(
             mut self,
             input: std::option::Option<crate::model::NotificationChannelConfig>,
@@ -42,7 +38,7 @@ pub mod add_notification_channel_input {
 #[doc(hidden)]
 pub type AddNotificationChannelInputOperationOutputAlias = crate::operation::AddNotificationChannel;
 #[doc(hidden)]
-pub type AddNotificationChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddNotificationChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddNotificationChannelInput {
     /// Consumes the builder and constructs an Operation<[`AddNotificationChannel`](crate::operation::AddNotificationChannel)>
     #[allow(clippy::let_and_return)]
@@ -53,7 +49,7 @@ impl AddNotificationChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddNotificationChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -135,7 +131,7 @@ impl AddNotificationChannelInput {
             "AddNotificationChannel",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -179,7 +175,7 @@ pub mod describe_account_health_input {
 #[doc(hidden)]
 pub type DescribeAccountHealthInputOperationOutputAlias = crate::operation::DescribeAccountHealth;
 #[doc(hidden)]
-pub type DescribeAccountHealthInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccountHealthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountHealth`](crate::operation::DescribeAccountHealth)>
     #[allow(clippy::let_and_return)]
@@ -190,7 +186,7 @@ impl DescribeAccountHealthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountHealth,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -264,7 +260,7 @@ impl DescribeAccountHealthInput {
             "DescribeAccountHealth",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -289,16 +285,12 @@ pub mod describe_account_overview_input {
         pub(crate) to_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p> The start of the time range passed in. The start time granularity is at the day
-        /// level. The floor of the start time is used. Returned information occurred after this
-        /// day. </p>
+        /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
         pub fn from_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.from_time = Some(input);
             self
         }
-        /// <p> The start of the time range passed in. The start time granularity is at the day
-        /// level. The floor of the start time is used. Returned information occurred after this
-        /// day. </p>
+        /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
         pub fn set_from_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -306,16 +298,12 @@ pub mod describe_account_overview_input {
             self.from_time = input;
             self
         }
-        /// <p> The end of the time range passed in. The start time granularity is at the day level.
-        /// The floor of the start time is used. Returned information occurred before this day. If
-        /// this is not specified, then the current day is used. </p>
+        /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
         pub fn to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.to_time = Some(input);
             self
         }
-        /// <p> The end of the time range passed in. The start time granularity is at the day level.
-        /// The floor of the start time is used. Returned information occurred before this day. If
-        /// this is not specified, then the current day is used. </p>
+        /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
         pub fn set_to_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -341,7 +329,7 @@ pub mod describe_account_overview_input {
 pub type DescribeAccountOverviewInputOperationOutputAlias =
     crate::operation::DescribeAccountOverview;
 #[doc(hidden)]
-pub type DescribeAccountOverviewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccountOverviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountOverviewInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountOverview`](crate::operation::DescribeAccountOverview)>
     #[allow(clippy::let_and_return)]
@@ -352,7 +340,7 @@ impl DescribeAccountOverviewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountOverview,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -434,7 +422,7 @@ impl DescribeAccountOverviewInput {
             "DescribeAccountOverview",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -504,7 +492,7 @@ pub mod describe_anomaly_input {
 #[doc(hidden)]
 pub type DescribeAnomalyInputOperationOutputAlias = crate::operation::DescribeAnomaly;
 #[doc(hidden)]
-pub type DescribeAnomalyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAnomalyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAnomalyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAnomaly`](crate::operation::DescribeAnomaly)>
     #[allow(clippy::let_and_return)]
@@ -515,7 +503,7 @@ impl DescribeAnomalyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAnomaly,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -615,7 +603,7 @@ impl DescribeAnomalyInput {
             "DescribeAnomaly",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -665,7 +653,7 @@ pub mod describe_feedback_input {
 #[doc(hidden)]
 pub type DescribeFeedbackInputOperationOutputAlias = crate::operation::DescribeFeedback;
 #[doc(hidden)]
-pub type DescribeFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFeedback`](crate::operation::DescribeFeedback)>
     #[allow(clippy::let_and_return)]
@@ -676,7 +664,7 @@ impl DescribeFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFeedback,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -756,7 +744,7 @@ impl DescribeFeedbackInput {
             "DescribeFeedback",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -826,7 +814,7 @@ pub mod describe_insight_input {
 #[doc(hidden)]
 pub type DescribeInsightInputOperationOutputAlias = crate::operation::DescribeInsight;
 #[doc(hidden)]
-pub type DescribeInsightInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInsightInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInsightInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInsight`](crate::operation::DescribeInsight)>
     #[allow(clippy::let_and_return)]
@@ -837,7 +825,7 @@ impl DescribeInsightInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInsight,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -937,7 +925,7 @@ impl DescribeInsightInput {
             "DescribeInsight",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1018,7 +1006,7 @@ pub mod describe_organization_health_input {
 pub type DescribeOrganizationHealthInputOperationOutputAlias =
     crate::operation::DescribeOrganizationHealth;
 #[doc(hidden)]
-pub type DescribeOrganizationHealthInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOrganizationHealthInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationHealth`](crate::operation::DescribeOrganizationHealth)>
     #[allow(clippy::let_and_return)]
@@ -1029,7 +1017,7 @@ impl DescribeOrganizationHealthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationHealth,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1111,7 +1099,7 @@ impl DescribeOrganizationHealthInput {
             "DescribeOrganizationHealth",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1146,16 +1134,12 @@ pub mod describe_organization_overview_input {
         pub(crate) organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p> The start of the time range passed in. The start time granularity is at the day
-        /// level. The floor of the start time is used. Returned information occurred after this
-        /// day. </p>
+        /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
         pub fn from_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.from_time = Some(input);
             self
         }
-        /// <p> The start of the time range passed in. The start time granularity is at the day
-        /// level. The floor of the start time is used. Returned information occurred after this
-        /// day. </p>
+        /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
         pub fn set_from_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1163,16 +1147,12 @@ pub mod describe_organization_overview_input {
             self.from_time = input;
             self
         }
-        /// <p> The end of the time range passed in. The start time granularity is at the day level.
-        /// The floor of the start time is used. Returned information occurred before this day. If
-        /// this is not specified, then the current day is used. </p>
+        /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
         pub fn to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.to_time = Some(input);
             self
         }
-        /// <p> The end of the time range passed in. The start time granularity is at the day level.
-        /// The floor of the start time is used. Returned information occurred before this day. If
-        /// this is not specified, then the current day is used. </p>
+        /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
         pub fn set_to_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1238,7 +1218,8 @@ pub mod describe_organization_overview_input {
 pub type DescribeOrganizationOverviewInputOperationOutputAlias =
     crate::operation::DescribeOrganizationOverview;
 #[doc(hidden)]
-pub type DescribeOrganizationOverviewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOrganizationOverviewInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationOverviewInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationOverview`](crate::operation::DescribeOrganizationOverview)>
     #[allow(clippy::let_and_return)]
@@ -1249,7 +1230,7 @@ impl DescribeOrganizationOverviewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationOverview,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1330,7 +1311,7 @@ impl DescribeOrganizationOverviewInput {
             "DescribeOrganizationOverview",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1367,10 +1348,7 @@ pub mod describe_organization_resource_collection_health_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn organization_resource_collection_type(
             mut self,
             input: crate::model::OrganizationResourceCollectionType,
@@ -1378,10 +1356,7 @@ pub mod describe_organization_resource_collection_health_input {
             self.organization_resource_collection_type = Some(input);
             self
         }
-        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn set_organization_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::OrganizationResourceCollectionType>,
@@ -1427,26 +1402,22 @@ pub mod describe_organization_resource_collection_health_input {
             self.organizational_unit_ids = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1476,7 +1447,7 @@ pub type DescribeOrganizationResourceCollectionHealthInputOperationOutputAlias =
     crate::operation::DescribeOrganizationResourceCollectionHealth;
 #[doc(hidden)]
 pub type DescribeOrganizationResourceCollectionHealthInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationResourceCollectionHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganizationResourceCollectionHealth`](crate::operation::DescribeOrganizationResourceCollectionHealth)>
     #[allow(clippy::let_and_return)]
@@ -1487,7 +1458,7 @@ impl DescribeOrganizationResourceCollectionHealthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationResourceCollectionHealth,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1569,7 +1540,7 @@ impl DescribeOrganizationResourceCollectionHealthInput {
             "DescribeOrganizationResourceCollectionHealth",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1604,10 +1575,7 @@ pub mod describe_resource_collection_health_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
             input: crate::model::ResourceCollectionType,
@@ -1615,10 +1583,7 @@ pub mod describe_resource_collection_health_input {
             self.resource_collection_type = Some(input);
             self
         }
-        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-        /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-        /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-        /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+        /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionType>,
@@ -1626,14 +1591,12 @@ pub mod describe_resource_collection_health_input {
             self.resource_collection_type = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1656,7 +1619,8 @@ pub mod describe_resource_collection_health_input {
 pub type DescribeResourceCollectionHealthInputOperationOutputAlias =
     crate::operation::DescribeResourceCollectionHealth;
 #[doc(hidden)]
-pub type DescribeResourceCollectionHealthInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeResourceCollectionHealthInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResourceCollectionHealthInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResourceCollectionHealth`](crate::operation::DescribeResourceCollectionHealth)>
     #[allow(clippy::let_and_return)]
@@ -1667,7 +1631,7 @@ impl DescribeResourceCollectionHealthInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeResourceCollectionHealth,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1772,7 +1736,7 @@ impl DescribeResourceCollectionHealthInput {
             "DescribeResourceCollectionHealth",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1809,7 +1773,7 @@ pub mod describe_service_integration_input {
 pub type DescribeServiceIntegrationInputOperationOutputAlias =
     crate::operation::DescribeServiceIntegration;
 #[doc(hidden)]
-pub type DescribeServiceIntegrationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeServiceIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServiceIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServiceIntegration`](crate::operation::DescribeServiceIntegration)>
     #[allow(clippy::let_and_return)]
@@ -1820,7 +1784,7 @@ impl DescribeServiceIntegrationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeServiceIntegration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1894,7 +1858,7 @@ impl DescribeServiceIntegrationInput {
             "DescribeServiceIntegration",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1918,14 +1882,12 @@ pub mod get_cost_estimation_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1946,7 +1908,7 @@ pub mod get_cost_estimation_input {
 #[doc(hidden)]
 pub type GetCostEstimationInputOperationOutputAlias = crate::operation::GetCostEstimation;
 #[doc(hidden)]
-pub type GetCostEstimationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCostEstimationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCostEstimationInput {
     /// Consumes the builder and constructs an Operation<[`GetCostEstimation`](crate::operation::GetCostEstimation)>
     #[allow(clippy::let_and_return)]
@@ -1957,7 +1919,7 @@ impl GetCostEstimationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCostEstimation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2042,7 +2004,7 @@ impl GetCostEstimationInput {
             "GetCostEstimation",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2068,8 +2030,7 @@ pub mod get_resource_collection_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
-        /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
             input: crate::model::ResourceCollectionType,
@@ -2077,8 +2038,7 @@ pub mod get_resource_collection_input {
             self.resource_collection_type = Some(input);
             self
         }
-        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
-        /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+        /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
         pub fn set_resource_collection_type(
             mut self,
             input: std::option::Option<crate::model::ResourceCollectionType>,
@@ -2086,14 +2046,12 @@ pub mod get_resource_collection_input {
             self.resource_collection_type = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2115,7 +2073,7 @@ pub mod get_resource_collection_input {
 #[doc(hidden)]
 pub type GetResourceCollectionInputOperationOutputAlias = crate::operation::GetResourceCollection;
 #[doc(hidden)]
-pub type GetResourceCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourceCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceCollection`](crate::operation::GetResourceCollection)>
     #[allow(clippy::let_and_return)]
@@ -2126,7 +2084,7 @@ impl GetResourceCollectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceCollection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2231,7 +2189,7 @@ impl GetResourceCollectionInput {
             "GetResourceCollection",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2269,14 +2227,12 @@ pub mod list_anomalies_for_insight_input {
             self.insight_id = input;
             self
         }
-        /// <p> A time range used to specify when the requested anomalies started. All returned
-        /// anomalies started during this time range. </p>
+        /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
         pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
             self.start_time_range = Some(input);
             self
         }
-        /// <p> A time range used to specify when the requested anomalies started. All returned
-        /// anomalies started during this time range. </p>
+        /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
         pub fn set_start_time_range(
             mut self,
             input: std::option::Option<crate::model::StartTimeRange>,
@@ -2284,26 +2240,22 @@ pub mod list_anomalies_for_insight_input {
             self.start_time_range = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2339,7 +2291,7 @@ pub mod list_anomalies_for_insight_input {
 pub type ListAnomaliesForInsightInputOperationOutputAlias =
     crate::operation::ListAnomaliesForInsight;
 #[doc(hidden)]
-pub type ListAnomaliesForInsightInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAnomaliesForInsightInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAnomaliesForInsightInput {
     /// Consumes the builder and constructs an Operation<[`ListAnomaliesForInsight`](crate::operation::ListAnomaliesForInsight)>
     #[allow(clippy::let_and_return)]
@@ -2350,7 +2302,7 @@ impl ListAnomaliesForInsightInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAnomaliesForInsight,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2452,7 +2404,7 @@ impl ListAnomaliesForInsightInput {
             "ListAnomaliesForInsight",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2487,14 +2439,12 @@ pub mod list_events_input {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
-        /// </p>
+        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
         pub fn filters(mut self, input: crate::model::ListEventsFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
-        /// </p>
+        /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::ListEventsFilters>,
@@ -2502,26 +2452,22 @@ pub mod list_events_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2555,7 +2501,7 @@ pub mod list_events_input {
 #[doc(hidden)]
 pub type ListEventsInputOperationOutputAlias = crate::operation::ListEvents;
 #[doc(hidden)]
-pub type ListEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventsInput {
     /// Consumes the builder and constructs an Operation<[`ListEvents`](crate::operation::ListEvents)>
     #[allow(clippy::let_and_return)]
@@ -2566,7 +2512,7 @@ impl ListEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2645,7 +2591,7 @@ impl ListEventsInput {
             "ListEvents",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2679,14 +2625,12 @@ pub mod list_insights_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A filter used to filter the returned insights by their status. You can specify one
-        /// status filter. </p>
+        /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
         pub fn status_filter(mut self, input: crate::model::ListInsightsStatusFilter) -> Self {
             self.status_filter = Some(input);
             self
         }
-        /// <p> A filter used to filter the returned insights by their status. You can specify one
-        /// status filter. </p>
+        /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::ListInsightsStatusFilter>,
@@ -2694,26 +2638,22 @@ pub mod list_insights_input {
             self.status_filter = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2736,7 +2676,7 @@ pub mod list_insights_input {
 #[doc(hidden)]
 pub type ListInsightsInputOperationOutputAlias = crate::operation::ListInsights;
 #[doc(hidden)]
-pub type ListInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInsightsInput {
     /// Consumes the builder and constructs an Operation<[`ListInsights`](crate::operation::ListInsights)>
     #[allow(clippy::let_and_return)]
@@ -2747,7 +2687,7 @@ impl ListInsightsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInsights,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2826,7 +2766,7 @@ impl ListInsightsInput {
             "ListInsights",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2858,14 +2798,12 @@ pub mod list_notification_channels_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2887,7 +2825,7 @@ pub mod list_notification_channels_input {
 pub type ListNotificationChannelsInputOperationOutputAlias =
     crate::operation::ListNotificationChannels;
 #[doc(hidden)]
-pub type ListNotificationChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListNotificationChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNotificationChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListNotificationChannels`](crate::operation::ListNotificationChannels)>
     #[allow(clippy::let_and_return)]
@@ -2898,7 +2836,7 @@ impl ListNotificationChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNotificationChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2980,7 +2918,7 @@ impl ListNotificationChannelsInput {
             "ListNotificationChannels",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3016,14 +2954,12 @@ pub mod list_organization_insights_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
-        /// </p>
+        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
         pub fn status_filter(mut self, input: crate::model::ListInsightsStatusFilter) -> Self {
             self.status_filter = Some(input);
             self
         }
-        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
-        /// </p>
+        /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::ListInsightsStatusFilter>,
@@ -3031,14 +2967,12 @@ pub mod list_organization_insights_input {
             self.status_filter = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3081,14 +3015,12 @@ pub mod list_organization_insights_input {
             self.organizational_unit_ids = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3114,7 +3046,7 @@ pub mod list_organization_insights_input {
 pub type ListOrganizationInsightsInputOperationOutputAlias =
     crate::operation::ListOrganizationInsights;
 #[doc(hidden)]
-pub type ListOrganizationInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOrganizationInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOrganizationInsightsInput {
     /// Consumes the builder and constructs an Operation<[`ListOrganizationInsights`](crate::operation::ListOrganizationInsights)>
     #[allow(clippy::let_and_return)]
@@ -3125,7 +3057,7 @@ impl ListOrganizationInsightsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOrganizationInsights,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3207,7 +3139,7 @@ impl ListOrganizationInsightsInput {
             "ListOrganizationInsights",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3252,14 +3184,12 @@ pub mod list_recommendations_input {
             self.insight_id = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3303,7 +3233,7 @@ pub mod list_recommendations_input {
 #[doc(hidden)]
 pub type ListRecommendationsInputOperationOutputAlias = crate::operation::ListRecommendations;
 #[doc(hidden)]
-pub type ListRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecommendations`](crate::operation::ListRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -3314,7 +3244,7 @@ impl ListRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3394,7 +3324,7 @@ impl ListRecommendationsInput {
             "ListRecommendations",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3455,7 +3385,7 @@ pub mod put_feedback_input {
 #[doc(hidden)]
 pub type PutFeedbackInputOperationOutputAlias = crate::operation::PutFeedback;
 #[doc(hidden)]
-pub type PutFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`PutFeedback`](crate::operation::PutFeedback)>
     #[allow(clippy::let_and_return)]
@@ -3466,7 +3396,7 @@ impl PutFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutFeedback,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3545,7 +3475,7 @@ impl PutFeedbackInput {
             "PutFeedback",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3602,7 +3532,7 @@ pub mod remove_notification_channel_input {
 pub type RemoveNotificationChannelInputOperationOutputAlias =
     crate::operation::RemoveNotificationChannel;
 #[doc(hidden)]
-pub type RemoveNotificationChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveNotificationChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveNotificationChannelInput {
     /// Consumes the builder and constructs an Operation<[`RemoveNotificationChannel`](crate::operation::RemoveNotificationChannel)>
     #[allow(clippy::let_and_return)]
@@ -3613,7 +3543,7 @@ impl RemoveNotificationChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveNotificationChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3702,7 +3632,7 @@ impl RemoveNotificationChannelInput {
             "RemoveNotificationChannel",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3730,14 +3660,12 @@ pub mod search_insights_input {
         pub(crate) r#type: std::option::Option<crate::model::InsightType>,
     }
     impl Builder {
-        /// <p> The start of the time range passed in. Returned insights occurred after this time.
-        /// </p>
+        /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
         pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
             self.start_time_range = Some(input);
             self
         }
-        /// <p> The start of the time range passed in. Returned insights occurred after this time.
-        /// </p>
+        /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
         pub fn set_start_time_range(
             mut self,
             input: std::option::Option<crate::model::StartTimeRange>,
@@ -3745,14 +3673,12 @@ pub mod search_insights_input {
             self.start_time_range = input;
             self
         }
-        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
-        /// status filters on your insight search. </p>
+        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
         pub fn filters(mut self, input: crate::model::SearchInsightsFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
-        /// status filters on your insight search. </p>
+        /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::SearchInsightsFilters>,
@@ -3760,38 +3686,32 @@ pub mod search_insights_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-        /// <code>PROACTIVE</code>). </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
         pub fn r#type(mut self, input: crate::model::InsightType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-        /// <code>PROACTIVE</code>). </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
             self.r#type = input;
             self
@@ -3816,7 +3736,7 @@ pub mod search_insights_input {
 #[doc(hidden)]
 pub type SearchInsightsInputOperationOutputAlias = crate::operation::SearchInsights;
 #[doc(hidden)]
-pub type SearchInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchInsightsInput {
     /// Consumes the builder and constructs an Operation<[`SearchInsights`](crate::operation::SearchInsights)>
     #[allow(clippy::let_and_return)]
@@ -3827,7 +3747,7 @@ impl SearchInsightsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchInsights,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3907,7 +3827,7 @@ impl SearchInsightsInput {
             "SearchInsights",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3963,14 +3883,12 @@ pub mod search_organization_insights_input {
             self.account_ids = input;
             self
         }
-        /// <p> A time range used to specify when the behavior of an insight or anomaly started.
-        /// </p>
+        /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
         pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
             self.start_time_range = Some(input);
             self
         }
-        /// <p> A time range used to specify when the behavior of an insight or anomaly started.
-        /// </p>
+        /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
         pub fn set_start_time_range(
             mut self,
             input: std::option::Option<crate::model::StartTimeRange>,
@@ -3978,14 +3896,12 @@ pub mod search_organization_insights_input {
             self.start_time_range = input;
             self
         }
-        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
-        /// severity and status filters on your insight search. </p>
+        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
         pub fn filters(mut self, input: crate::model::SearchOrganizationInsightsFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
-        /// severity and status filters on your insight search. </p>
+        /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::SearchOrganizationInsightsFilters>,
@@ -3993,38 +3909,32 @@ pub mod search_organization_insights_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use to retrieve
-        /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-        /// <code>PROACTIVE</code>). </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
         pub fn r#type(mut self, input: crate::model::InsightType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-        /// <code>PROACTIVE</code>). </p>
+        /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
             self.r#type = input;
             self
@@ -4051,7 +3961,7 @@ pub mod search_organization_insights_input {
 pub type SearchOrganizationInsightsInputOperationOutputAlias =
     crate::operation::SearchOrganizationInsights;
 #[doc(hidden)]
-pub type SearchOrganizationInsightsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchOrganizationInsightsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchOrganizationInsightsInput {
     /// Consumes the builder and constructs an Operation<[`SearchOrganizationInsights`](crate::operation::SearchOrganizationInsights)>
     #[allow(clippy::let_and_return)]
@@ -4062,7 +3972,7 @@ impl SearchOrganizationInsightsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchOrganizationInsights,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4144,7 +4054,7 @@ impl SearchOrganizationInsightsInput {
             "SearchOrganizationInsights",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4221,7 +4131,7 @@ pub mod start_cost_estimation_input {
 #[doc(hidden)]
 pub type StartCostEstimationInputOperationOutputAlias = crate::operation::StartCostEstimation;
 #[doc(hidden)]
-pub type StartCostEstimationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartCostEstimationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartCostEstimationInput {
     /// Consumes the builder and constructs an Operation<[`StartCostEstimation`](crate::operation::StartCostEstimation)>
     #[allow(clippy::let_and_return)]
@@ -4232,7 +4142,7 @@ impl StartCostEstimationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartCostEstimation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4315,7 +4225,7 @@ impl StartCostEstimationInput {
             "StartCostEstimation",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4349,14 +4259,12 @@ pub mod update_resource_collection_input {
             std::option::Option<crate::model::UpdateResourceCollectionFilter>,
     }
     impl Builder {
-        /// <p> Specifies if the resource collection in the request is added or deleted to the
-        /// resource collection. </p>
+        /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
         pub fn action(mut self, input: crate::model::UpdateResourceCollectionAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p> Specifies if the resource collection in the request is added or deleted to the
-        /// resource collection. </p>
+        /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::UpdateResourceCollectionAction>,
@@ -4398,7 +4306,7 @@ pub mod update_resource_collection_input {
 pub type UpdateResourceCollectionInputOperationOutputAlias =
     crate::operation::UpdateResourceCollection;
 #[doc(hidden)]
-pub type UpdateResourceCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateResourceCollectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourceCollectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourceCollection`](crate::operation::UpdateResourceCollection)>
     #[allow(clippy::let_and_return)]
@@ -4409,7 +4317,7 @@ impl UpdateResourceCollectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResourceCollection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4491,7 +4399,7 @@ impl UpdateResourceCollectionInput {
             "UpdateResourceCollection",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4524,8 +4432,7 @@ pub mod update_service_integration_input {
             std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
     }
     impl Builder {
-        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
-        /// you want to update, and whether you want to update it to enabled or disabled. </p>
+        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
         pub fn service_integration(
             mut self,
             input: crate::model::UpdateServiceIntegrationConfig,
@@ -4533,8 +4440,7 @@ pub mod update_service_integration_input {
             self.service_integration = Some(input);
             self
         }
-        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
-        /// you want to update, and whether you want to update it to enabled or disabled. </p>
+        /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
         pub fn set_service_integration(
             mut self,
             input: std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
@@ -4559,7 +4465,7 @@ pub mod update_service_integration_input {
 pub type UpdateServiceIntegrationInputOperationOutputAlias =
     crate::operation::UpdateServiceIntegration;
 #[doc(hidden)]
-pub type UpdateServiceIntegrationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateServiceIntegrationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServiceIntegrationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServiceIntegration`](crate::operation::UpdateServiceIntegration)>
     #[allow(clippy::let_and_return)]
@@ -4570,7 +4476,7 @@ impl UpdateServiceIntegrationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateServiceIntegration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4652,7 +4558,7 @@ impl UpdateServiceIntegrationInput {
             "UpdateServiceIntegration",
             "devopsguru",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4679,13 +4585,11 @@ impl UpdateServiceIntegrationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceIntegrationInput {
-    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
-    /// you want to update, and whether you want to update it to enabled or disabled. </p>
+    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
     pub service_integration: std::option::Option<crate::model::UpdateServiceIntegrationConfig>,
 }
 impl UpdateServiceIntegrationInput {
-    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service
-    /// you want to update, and whether you want to update it to enabled or disabled. </p>
+    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
     pub fn service_integration(
         &self,
     ) -> std::option::Option<&crate::model::UpdateServiceIntegrationConfig> {
@@ -4704,15 +4608,13 @@ impl std::fmt::Debug for UpdateServiceIntegrationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceCollectionInput {
-    /// <p> Specifies if the resource collection in the request is added or deleted to the
-    /// resource collection. </p>
+    /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
     pub action: std::option::Option<crate::model::UpdateResourceCollectionAction>,
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
     pub resource_collection: std::option::Option<crate::model::UpdateResourceCollectionFilter>,
 }
 impl UpdateResourceCollectionInput {
-    /// <p> Specifies if the resource collection in the request is added or deleted to the
-    /// resource collection. </p>
+    /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::UpdateResourceCollectionAction> {
         self.action.as_ref()
     }
@@ -4769,20 +4671,15 @@ impl std::fmt::Debug for StartCostEstimationInput {
 pub struct SearchOrganizationInsightsInput {
     /// <p>The ID of the Amazon Web Services account. </p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> A time range used to specify when the behavior of an insight or anomaly started.
-    /// </p>
+    /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
-    /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
-    /// severity and status filters on your insight search. </p>
+    /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub filters: std::option::Option<crate::model::SearchOrganizationInsightsFilters>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-    /// <code>PROACTIVE</code>). </p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub r#type: std::option::Option<crate::model::InsightType>,
 }
 impl SearchOrganizationInsightsInput {
@@ -4790,28 +4687,23 @@ impl SearchOrganizationInsightsInput {
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
-    /// <p> A time range used to specify when the behavior of an insight or anomaly started.
-    /// </p>
+    /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
     pub fn start_time_range(&self) -> std::option::Option<&crate::model::StartTimeRange> {
         self.start_time_range.as_ref()
     }
-    /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
-    /// severity and status filters on your insight search. </p>
+    /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::SearchOrganizationInsightsFilters> {
         self.filters.as_ref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-    /// <code>PROACTIVE</code>). </p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::InsightType> {
         self.r#type.as_ref()
     }
@@ -4833,45 +4725,35 @@ impl std::fmt::Debug for SearchOrganizationInsightsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchInsightsInput {
-    /// <p> The start of the time range passed in. Returned insights occurred after this time.
-    /// </p>
+    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
-    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
-    /// status filters on your insight search. </p>
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub filters: std::option::Option<crate::model::SearchInsightsFilters>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-    /// <code>PROACTIVE</code>). </p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub r#type: std::option::Option<crate::model::InsightType>,
 }
 impl SearchInsightsInput {
-    /// <p> The start of the time range passed in. Returned insights occurred after this time.
-    /// </p>
+    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
     pub fn start_time_range(&self) -> std::option::Option<&crate::model::StartTimeRange> {
         self.start_time_range.as_ref()
     }
-    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
-    /// status filters on your insight search. </p>
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::SearchInsightsFilters> {
         self.filters.as_ref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
-    /// <code>PROACTIVE</code>). </p>
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::InsightType> {
         self.r#type.as_ref()
     }
@@ -4936,8 +4818,7 @@ impl std::fmt::Debug for PutFeedbackInput {
 pub struct ListRecommendationsInput {
     /// <p> The ID of the requested insight. </p>
     pub insight_id: std::option::Option<std::string::String>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A locale that specifies the language to use for recommendations.</p>
     pub locale: std::option::Option<crate::model::Locale>,
@@ -4949,8 +4830,7 @@ impl ListRecommendationsInput {
     pub fn insight_id(&self) -> std::option::Option<&str> {
         self.insight_id.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4978,28 +4858,23 @@ impl std::fmt::Debug for ListRecommendationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationInsightsInput {
-    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
-    /// </p>
+    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
     pub status_filter: std::option::Option<crate::model::ListInsightsStatusFilter>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The ID of the Amazon Web Services account. </p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationInsightsInput {
-    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
-    /// </p>
+    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
     pub fn status_filter(&self) -> std::option::Option<&crate::model::ListInsightsStatusFilter> {
         self.status_filter.as_ref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5011,8 +4886,7 @@ impl ListOrganizationInsightsInput {
     pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.organizational_unit_ids.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5033,13 +4907,11 @@ impl std::fmt::Debug for ListOrganizationInsightsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationChannelsInput {
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNotificationChannelsInput {
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5056,29 +4928,23 @@ impl std::fmt::Debug for ListNotificationChannelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInsightsInput {
-    /// <p> A filter used to filter the returned insights by their status. You can specify one
-    /// status filter. </p>
+    /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
     pub status_filter: std::option::Option<crate::model::ListInsightsStatusFilter>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInsightsInput {
-    /// <p> A filter used to filter the returned insights by their status. You can specify one
-    /// status filter. </p>
+    /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
     pub fn status_filter(&self) -> std::option::Option<&crate::model::ListInsightsStatusFilter> {
         self.status_filter.as_ref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5097,31 +4963,25 @@ impl std::fmt::Debug for ListInsightsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventsInput {
-    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
-    /// </p>
+    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
     pub filters: std::option::Option<crate::model::ListEventsFilters>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account. </p>
     pub account_id: std::option::Option<std::string::String>,
 }
 impl ListEventsInput {
-    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
-    /// </p>
+    /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
     pub fn filters(&self) -> std::option::Option<&crate::model::ListEventsFilters> {
         self.filters.as_ref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5147,14 +5007,11 @@ impl std::fmt::Debug for ListEventsInput {
 pub struct ListAnomaliesForInsightInput {
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     pub insight_id: std::option::Option<std::string::String>,
-    /// <p> A time range used to specify when the requested anomalies started. All returned
-    /// anomalies started during this time range. </p>
+    /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
     pub start_time_range: std::option::Option<crate::model::StartTimeRange>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account. </p>
     pub account_id: std::option::Option<std::string::String>,
@@ -5164,18 +5021,15 @@ impl ListAnomaliesForInsightInput {
     pub fn insight_id(&self) -> std::option::Option<&str> {
         self.insight_id.as_deref()
     }
-    /// <p> A time range used to specify when the requested anomalies started. All returned
-    /// anomalies started during this time range. </p>
+    /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
     pub fn start_time_range(&self) -> std::option::Option<&crate::model::StartTimeRange> {
         self.start_time_range.as_ref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5200,23 +5054,19 @@ impl std::fmt::Debug for ListAnomaliesForInsightInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceCollectionInput {
-    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
-    /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
     pub resource_collection_type: std::option::Option<crate::model::ResourceCollectionType>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceCollectionInput {
-    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
-    /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection_type(
         &self,
     ) -> std::option::Option<&crate::model::ResourceCollectionType> {
         self.resource_collection_type.as_ref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5234,13 +5084,11 @@ impl std::fmt::Debug for GetResourceCollectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostEstimationInput {
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCostEstimationInput {
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5268,27 +5116,19 @@ impl std::fmt::Debug for DescribeServiceIntegrationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceCollectionHealthInput {
-    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-    /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub resource_collection_type: std::option::Option<crate::model::ResourceCollectionType>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeResourceCollectionHealthInput {
-    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-    /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection_type(
         &self,
     ) -> std::option::Option<&crate::model::ResourceCollectionType> {
         self.resource_collection_type.as_ref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5306,28 +5146,20 @@ impl std::fmt::Debug for DescribeResourceCollectionHealthInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationResourceCollectionHealthInput {
-    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-    /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub organization_resource_collection_type:
         std::option::Option<crate::model::OrganizationResourceCollectionType>,
     /// <p>The ID of the Amazon Web Services account.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeOrganizationResourceCollectionHealthInput {
-    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
-    /// are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and
-    /// Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze
-    /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn organization_resource_collection_type(
         &self,
     ) -> std::option::Option<&crate::model::OrganizationResourceCollectionType> {
@@ -5341,13 +5173,11 @@ impl DescribeOrganizationResourceCollectionHealthInput {
     pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.organizational_unit_ids.as_deref()
     }
-    /// <p>The pagination token to use to retrieve
-    /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5371,13 +5201,9 @@ impl std::fmt::Debug for DescribeOrganizationResourceCollectionHealthInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationOverviewInput {
-    /// <p> The start of the time range passed in. The start time granularity is at the day
-    /// level. The floor of the start time is used. Returned information occurred after this
-    /// day. </p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub from_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The end of the time range passed in. The start time granularity is at the day level.
-    /// The floor of the start time is used. Returned information occurred before this day. If
-    /// this is not specified, then the current day is used. </p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub to_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the Amazon Web Services account.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5385,15 +5211,11 @@ pub struct DescribeOrganizationOverviewInput {
     pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeOrganizationOverviewInput {
-    /// <p> The start of the time range passed in. The start time granularity is at the day
-    /// level. The floor of the start time is used. Returned information occurred after this
-    /// day. </p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.from_time.as_ref()
     }
-    /// <p> The end of the time range passed in. The start time granularity is at the day level.
-    /// The floor of the start time is used. Returned information occurred before this day. If
-    /// this is not specified, then the current day is used. </p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to_time.as_ref()
     }
@@ -5526,25 +5348,17 @@ impl std::fmt::Debug for DescribeAnomalyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountOverviewInput {
-    /// <p> The start of the time range passed in. The start time granularity is at the day
-    /// level. The floor of the start time is used. Returned information occurred after this
-    /// day. </p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub from_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The end of the time range passed in. The start time granularity is at the day level.
-    /// The floor of the start time is used. Returned information occurred before this day. If
-    /// this is not specified, then the current day is used. </p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub to_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeAccountOverviewInput {
-    /// <p> The start of the time range passed in. The start time granularity is at the day
-    /// level. The floor of the start time is used. Returned information occurred after this
-    /// day. </p>
+    /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
     pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.from_time.as_ref()
     }
-    /// <p> The end of the time range passed in. The start time granularity is at the day level.
-    /// The floor of the start time is used. Returned information occurred before this day. If
-    /// this is not specified, then the current day is used. </p>
+    /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
     pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to_time.as_ref()
     }
@@ -5573,15 +5387,11 @@ impl std::fmt::Debug for DescribeAccountHealthInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddNotificationChannelInput {
-    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-    /// notification channel to add. The one
-    /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
     pub config: std::option::Option<crate::model::NotificationChannelConfig>,
 }
 impl AddNotificationChannelInput {
-    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-    /// notification channel to add. The one
-    /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
     pub fn config(&self) -> std::option::Option<&crate::model::NotificationChannelConfig> {
         self.config.as_ref()
     }

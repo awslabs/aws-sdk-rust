@@ -3,44 +3,21 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>
-    /// Account Action is required in order to continue the request.
-    /// </p>
+    /// <p> Account Action is required in order to continue the request. </p>
     AccountActionRequiredException(crate::error::AccountActionRequiredException),
-    /// <p>
-    /// The request cannot be processed because some parameter is not valid or the project
-    /// state prevents the operation from being performed.
-    /// </p>
+    /// <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>
-    /// The service has encountered an unexpected error condition which prevents it from
-    /// servicing the request.
-    /// </p>
+    /// <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>
-    /// There are too many AWS Mobile Hub projects in the account or the account has
-    /// exceeded the maximum number of resources in some AWS service. You should create
-    /// another sub-account using AWS Organizations or remove some resources and retry
-    /// your request.
-    /// </p>
+    /// <p> There are too many AWS Mobile Hub projects in the account or the account has exceeded the maximum number of resources in some AWS service. You should create another sub-account using AWS Organizations or remove some resources and retry your request. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// No entity can be found with the specified identifier.
-    /// </p>
+    /// <p> No entity can be found with the specified identifier. </p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The service is temporarily unavailable. The request should be retried after some
-    /// time delay.
-    /// </p>
+    /// <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>
-    /// Too many requests have been received for this AWS account in too short a time. The
-    /// request should be retried after some time delay.
-    /// </p>
+    /// <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>
-    /// Credentials of the caller are insufficient to authorize the request.
-    /// </p>
+    /// <p> Credentials of the caller are insufficient to authorize the request. </p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

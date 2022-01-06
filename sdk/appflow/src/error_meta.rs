@@ -3,21 +3,17 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p> There was a conflict when processing the request (for example, a flow with the given name
-    /// already exists within the account. Check for conflicting resource names and try again. </p>
+    /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> An error occurred when authenticating with the connector endpoint. </p>
     ConnectorAuthenticationException(crate::error::ConnectorAuthenticationException),
     /// <p> An error occurred when retrieving data from the connector endpoint. </p>
     ConnectorServerException(crate::error::ConnectorServerException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector
-    /// profile) is not found. </p>
+    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> The request would cause a service quota (such as the number of flows) to be exceeded.
-    /// </p>
+    /// <p> The request would cause a service quota (such as the number of flows) to be exceeded. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The requested operation is not supported for the current flow. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),

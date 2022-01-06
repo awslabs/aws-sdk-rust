@@ -9,8 +9,7 @@ pub enum Error {
     ApprovalRuleContentRequiredException(crate::error::ApprovalRuleContentRequiredException),
     /// <p>The specified approval rule does not exist.</p>
     ApprovalRuleDoesNotExistException(crate::error::ApprovalRuleDoesNotExistException),
-    /// <p>An approval rule with that name already exists. Approval rule names must be unique
-    /// within the scope of a pull request.</p>
+    /// <p>An approval rule with that name already exists. Approval rule names must be unique within the scope of a pull request.</p>
     ApprovalRuleNameAlreadyExistsException(crate::error::ApprovalRuleNameAlreadyExistsException),
     /// <p>An approval rule name is required, but was not specified.</p>
     ApprovalRuleNameRequiredException(crate::error::ApprovalRuleNameRequiredException),
@@ -18,17 +17,13 @@ pub enum Error {
     ApprovalRuleTemplateContentRequiredException(
         crate::error::ApprovalRuleTemplateContentRequiredException,
     ),
-    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template
-    /// was created, and then try again.</p>
+    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(
         crate::error::ApprovalRuleTemplateDoesNotExistException,
     ),
-    /// <p>The approval rule template is associated with one or more repositories. You cannot delete a template that is associated with a repository. Remove
-    /// all associations, and then try again.</p>
+    /// <p>The approval rule template is associated with one or more repositories. You cannot delete a template that is associated with a repository. Remove all associations, and then try again.</p>
     ApprovalRuleTemplateInUseException(crate::error::ApprovalRuleTemplateInUseException),
-    /// <p>You cannot create an approval rule template with that name because a template with
-    /// that name already exists in this AWS Region for your AWS account. Approval rule template
-    /// names must be unique.</p>
+    /// <p>You cannot create an approval rule template with that name because a template with that name already exists in this AWS Region for your AWS account. Approval rule template names must be unique.</p>
     ApprovalRuleTemplateNameAlreadyExistsException(
         crate::error::ApprovalRuleTemplateNameAlreadyExistsException,
     ),
@@ -50,29 +45,21 @@ pub enum Error {
     BlobIdRequiredException(crate::error::BlobIdRequiredException),
     /// <p>The specified branch does not exist.</p>
     BranchDoesNotExistException(crate::error::BranchDoesNotExistException),
-    /// <p>Cannot create the branch with the specified name because the commit conflicts with an existing branch with the same name.
-    /// Branch names must be unique.</p>
+    /// <p>Cannot create the branch with the specified name because the commit conflicts with an existing branch with the same name. Branch names must be unique.</p>
     BranchNameExistsException(crate::error::BranchNameExistsException),
-    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a
-    /// branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.</p>
+    /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a branch in the repository. For a list of valid branch names, use <code>ListBranches</code>.</p>
     BranchNameIsTagNameException(crate::error::BranchNameIsTagNameException),
     /// <p>A branch name is required, but was not specified.</p>
     BranchNameRequiredException(crate::error::BranchNameRequiredException),
-    /// <p>The approval rule cannot be deleted from the pull request because it was created by an
-    /// approval rule template and applied to the pull request automatically.</p>
+    /// <p>The approval rule cannot be deleted from the pull request because it was created by an approval rule template and applied to the pull request automatically.</p>
     CannotDeleteApprovalRuleFromTemplateException(
         crate::error::CannotDeleteApprovalRuleFromTemplateException,
     ),
-    /// <p>The approval rule cannot be modified for the pull request because it was created by an
-    /// approval rule template and applied to the pull request automatically.</p>
+    /// <p>The approval rule cannot be modified for the pull request because it was created by an approval rule template and applied to the pull request automatically.</p>
     CannotModifyApprovalRuleFromTemplateException(
         crate::error::CannotModifyApprovalRuleFromTemplateException,
     ),
-    /// <p>A client request token is required. A client request token is an unique,
-    /// client-generated idempotency token that, when provided in a request, ensures the request
-    /// cannot be repeated with a changed parameter. If a request is received with the same
-    /// parameters and a token is included, the request returns information about the initial
-    /// request that used that token.</p>
+    /// <p>A client request token is required. A client request token is an unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     ClientRequestTokenRequiredException(crate::error::ClientRequestTokenRequiredException),
     /// <p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>
     CommentContentRequiredException(crate::error::CommentContentRequiredException),
@@ -82,8 +69,7 @@ pub enum Error {
     ),
     /// <p>This comment has already been deleted. You cannot edit or delete a deleted comment.</p>
     CommentDeletedException(crate::error::CommentDeletedException),
-    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and
-    /// then try again.</p>
+    /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.</p>
     CommentDoesNotExistException(crate::error::CommentDoesNotExistException),
     /// <p>The comment ID is missing or null. A comment ID is required.</p>
     CommentIdRequiredException(crate::error::CommentIdRequiredException),
@@ -107,8 +93,7 @@ pub enum Error {
     ConcurrentReferenceUpdateException(crate::error::ConcurrentReferenceUpdateException),
     /// <p>The specified branch is the default branch for the repository, and cannot be deleted. To delete this branch, you must first set another branch as the default branch.</p>
     DefaultBranchCannotBeDeletedException(crate::error::DefaultBranchCannotBeDeletedException),
-    /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository.
-    /// Either provide a different name for the file, or specify a different path for the file.</p>
+    /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository. Either provide a different name for the file, or specify a different path for the file.</p>
     DirectoryNameConflictsWithFileNameException(
         crate::error::DirectoryNameConflictsWithFileNameException,
     ),
@@ -124,51 +109,37 @@ pub enum Error {
     EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
-    /// <p>The commit cannot be created because both a source file and file content have been
-    /// specified for the same file. You cannot provide both. Either specify a source file or
-    /// provide the file content directly.</p>
+    /// <p>The commit cannot be created because both a source file and file content have been specified for the same file. You cannot provide both. Either specify a source file or provide the file content directly.</p>
     FileContentAndSourceFileSpecifiedException(
         crate::error::FileContentAndSourceFileSpecifiedException,
     ),
     /// <p>The file cannot be added because it is empty. Empty files cannot be added to the repository with this API.</p>
     FileContentRequiredException(crate::error::FileContentRequiredException),
-    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and
-    /// the combined file content change size is 7 MB. Consider making these changes using a Git
-    /// client.</p>
+    /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
     FileContentSizeLimitExceededException(crate::error::FileContentSizeLimitExceededException),
-    /// <p>The specified file does not exist. Verify that you have used the correct file name,
-    /// full path, and extension.</p>
+    /// <p>The specified file does not exist. Verify that you have used the correct file name, full path, and extension.</p>
     FileDoesNotExistException(crate::error::FileDoesNotExistException),
     /// <p>The commit cannot be created because no files have been specified as added, updated, or changed (PutFile or DeleteFile) for the commit.</p>
     FileEntryRequiredException(crate::error::FileEntryRequiredException),
-    /// <p>The commit cannot be created because no file mode has been specified. A file mode is
-    /// required to update mode permissions for a file.</p>
+    /// <p>The commit cannot be created because no file mode has been specified. A file mode is required to update mode permissions for a file.</p>
     FileModeRequiredException(crate::error::FileModeRequiredException),
-    /// <p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide
-    /// another name for the file, or add the file in a directory that does not match the file name.</p>
+    /// <p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide another name for the file, or add the file in a directory that does not match the file name.</p>
     FileNameConflictsWithDirectoryNameException(
         crate::error::FileNameConflictsWithDirectoryNameException,
     ),
-    /// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files
-    /// have valid file paths that do not point to a submodule.</p>
+    /// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files have valid file paths that do not point to a submodule.</p>
     FilePathConflictsWithSubmodulePathException(
         crate::error::FilePathConflictsWithSubmodulePathException,
     ),
-    /// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     FileTooLargeException(crate::error::FileTooLargeException),
-    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a
-    /// folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes,
-    /// or split the changes across multiple folders.</p>
+    /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
     FolderContentSizeLimitExceededException(crate::error::FolderContentSizeLimitExceededException),
-    /// <p>The specified folder does not exist. Either the folder name is not correct, or you did
-    /// not enter the full path to the folder.</p>
+    /// <p>The specified folder does not exist. Either the folder name is not correct, or you did not enter the full path to the folder.</p>
     FolderDoesNotExistException(crate::error::FolderDoesNotExistException),
-    /// <p>The client request token is not valid. Either the token is not in a valid format, or
-    /// the token has been used in a previous request and cannot be reused.</p>
+    /// <p>The client request token is not valid. Either the token is not in a valid format, or the token has been used in a previous request and cannot be reused.</p>
     IdempotencyParameterMismatchException(crate::error::IdempotencyParameterMismatchException),
-    /// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the user who initiated the change for the pull request,
-    /// and then try again.</p>
+    /// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the user who initiated the change for the pull request, and then try again.</p>
     InvalidActorArnException(crate::error::InvalidActorArnException),
     /// <p>The content for the approval rule is not valid.</p>
     InvalidApprovalRuleContentException(crate::error::InvalidApprovalRuleContentException),
@@ -178,17 +149,11 @@ pub enum Error {
     InvalidApprovalRuleTemplateContentException(
         crate::error::InvalidApprovalRuleTemplateContentException,
     ),
-    /// <p>The description for the approval rule template is not valid because it exceeds the
-    /// maximum characters allowed for a description. For more information about limits in AWS
-    /// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User
-    /// Guide</a>.</p>
+    /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateDescriptionException(
         crate::error::InvalidApprovalRuleTemplateDescriptionException,
     ),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1
-    /// and 100 valid characters in length. For more information about limits in AWS CodeCommit,
-    /// see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-    /// CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
@@ -220,20 +185,17 @@ pub enum Error {
     InvalidContinuationTokenException(crate::error::InvalidContinuationTokenException),
     /// <p>The specified deletion parameter is not valid.</p>
     InvalidDeletionParameterException(crate::error::InvalidDeletionParameterException),
-    /// <p>The pull request description is not valid. Descriptions cannot be more than 1,000
-    /// characters.</p>
+    /// <p>The pull request description is not valid. Descriptions cannot be more than 1,000 characters.</p>
     InvalidDescriptionException(crate::error::InvalidDescriptionException),
     /// <p>The destination commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID. </p>
     InvalidDestinationCommitSpecifierException(
         crate::error::InvalidDestinationCommitSpecifierException,
     ),
-    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters
-    /// allowed for an email address.</p>
+    /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::error::InvalidEmailException),
-    /// <p>The location of the file is not valid. Make sure that you include the file name and
-    /// extension.</p>
+    /// <p>The location of the file is not valid. Make sure that you include the file name and extension.</p>
     InvalidFileLocationException(crate::error::InvalidFileLocationException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <a>PutFile</a>. </p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
     InvalidFileModeException(crate::error::InvalidFileModeException),
     /// <p>The position is not valid. Make sure that the line number exists in the version of the file you want to comment on.</p>
     InvalidFilePositionException(crate::error::InvalidFilePositionException),
@@ -249,8 +211,7 @@ pub enum Error {
     InvalidOrderException(crate::error::InvalidOrderException),
     /// <p>The override status is not valid. Valid statuses are OVERRIDE and REVOKE.</p>
     InvalidOverrideStatusException(crate::error::InvalidOverrideStatusException),
-    /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you
-    /// want to add or update a file.</p>
+    /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you want to add or update a file.</p>
     InvalidParentCommitIdException(crate::error::InvalidParentCommitIdException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::error::InvalidPathException),
@@ -266,9 +227,7 @@ pub enum Error {
     InvalidReactionUserArnException(crate::error::InvalidReactionUserArnException),
     /// <p>The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.</p>
     InvalidReactionValueException(crate::error::InvalidReactionValueException),
-    /// <p>The specified reference name format is not valid. Reference names must conform to the
-    /// Git references format (for example, refs/heads/master). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals -
-    /// Git References</a> or consult your Git documentation.</p>
+    /// <p>The specified reference name format is not valid. Reference names must conform to the Git references format (for example, refs/heads/master). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your Git documentation.</p>
     InvalidReferenceNameException(crate::error::InvalidReferenceNameException),
     /// <p>Either the enum is not in a valid format, or the specified file version enum is not valid in respect to the current file version.</p>
     InvalidRelativeFileVersionEnumException(crate::error::InvalidRelativeFileVersionEnumException),
@@ -278,12 +237,8 @@ pub enum Error {
     InvalidReplacementTypeException(crate::error::InvalidReplacementTypeException),
     /// <p>The specified repository description is not valid.</p>
     InvalidRepositoryDescriptionException(crate::error::InvalidRepositoryDescriptionException),
-    /// <p>A specified repository name is not valid.</p>
-    ///
-    /// <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other
-    /// exceptions occur when a required repository parameter is missing, or when a
-    /// specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note>
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>One or more branch names specified for the trigger is not valid.</p>
@@ -302,13 +257,9 @@ pub enum Error {
     InvalidRepositoryTriggerEventsException(crate::error::InvalidRepositoryTriggerEventsException),
     /// <p>The name of the trigger is not valid.</p>
     InvalidRepositoryTriggerNameException(crate::error::InvalidRepositoryTriggerNameException),
-    /// <p>The AWS Region for the trigger target does not match the AWS Region for the
-    /// repository. Triggers must be created in the same Region as the target for the
-    /// trigger.</p>
+    /// <p>The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be created in the same Region as the target for the trigger.</p>
     InvalidRepositoryTriggerRegionException(crate::error::InvalidRepositoryTriggerRegionException),
-    /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
-    /// in the AWS CodeCommit User Guide.</p>
+    /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
     InvalidResourceArnException(crate::error::InvalidResourceArnException),
     /// <p>The revision ID is not valid. Use GetPullRequest to determine the value.</p>
     InvalidRevisionIdException(crate::error::InvalidRevisionIdException),
@@ -328,8 +279,7 @@ pub enum Error {
     InvalidTargetBranchException(crate::error::InvalidTargetBranchException),
     /// <p>The target for the pull request is not valid. A target must contain the full values for the repository name, source branch, and destination branch for the pull request.</p>
     InvalidTargetException(crate::error::InvalidTargetException),
-    /// <p>The targets for the pull request is not valid or not in a valid format. Targets are a list of target objects. Each target object must contain the full values for
-    /// the repository name, source branch, and destination branch for a pull request.</p>
+    /// <p>The targets for the pull request is not valid or not in a valid format. Targets are a list of target objects. Each target object must contain the full values for the repository name, source branch, and destination branch for a pull request.</p>
     InvalidTargetsException(crate::error::InvalidTargetsException),
     /// <p>The title of the pull request is not valid. Pull request titles cannot exceed 100 characters in length.</p>
     InvalidTitleException(crate::error::InvalidTitleException),
@@ -345,8 +295,7 @@ pub enum Error {
     MaximumFileContentToLoadExceededException(
         crate::error::MaximumFileContentToLoadExceededException,
     ),
-    /// <p>The number of specified files to change as part of this commit exceeds the maximum number of files
-    /// that can be changed in a single commit. Consider using a Git client for these changes.</p>
+    /// <p>The number of specified files to change as part of this commit exceeds the maximum number of files that can be changed in a single commit. Consider using a Git client for these changes.</p>
     MaximumFileEntriesExceededException(crate::error::MaximumFileEntriesExceededException),
     /// <p>The number of items to compare between the source or destination branches and the merge base has exceeded the maximum allowed.</p>
     MaximumItemsToCompareExceededException(crate::error::MaximumItemsToCompareExceededException),
@@ -354,8 +303,7 @@ pub enum Error {
     MaximumNumberOfApprovalsExceededException(
         crate::error::MaximumNumberOfApprovalsExceededException,
     ),
-    /// <p>You cannot create the pull request because the repository has too many open pull requests.
-    /// The maximum number of open pull requests for a repository is 1,000. Close one or more open pull requests, and then try again.</p>
+    /// <p>You cannot create the pull request because the repository has too many open pull requests. The maximum number of open pull requests for a repository is 1,000. Close one or more open pull requests, and then try again.</p>
     MaximumOpenPullRequestsExceededException(
         crate::error::MaximumOpenPullRequestsExceededException,
     ),
@@ -365,8 +313,7 @@ pub enum Error {
     MaximumRepositoryTriggersExceededException(
         crate::error::MaximumRepositoryTriggersExceededException,
     ),
-    /// <p>The maximum number of approval rule templates for a repository has been exceeded. You cannot associate more than 25
-    /// approval rule templates with a repository.</p>
+    /// <p>The maximum number of approval rule templates for a repository has been exceeded. You cannot associate more than 25 approval rule templates with a repository.</p>
     MaximumRuleTemplatesAssociatedWithRepositoryException(
         crate::error::MaximumRuleTemplatesAssociatedWithRepositoryException,
     ),
@@ -394,11 +341,9 @@ pub enum Error {
     OverrideStatusRequiredException(crate::error::OverrideStatusRequiredException),
     /// <p>The parent commit ID is not valid because it does not exist. The specified parent commit ID does not exist in the specified branch of the repository.</p>
     ParentCommitDoesNotExistException(crate::error::ParentCommitDoesNotExistException),
-    /// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head
-    /// of the branch, use <a>GetBranch</a>.</p>
+    /// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head of the branch, use <code>GetBranch</code>.</p>
     ParentCommitIdOutdatedException(crate::error::ParentCommitIdOutdatedException),
-    /// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <a>GetBranch</a> or a Git command
-    /// (for example, git pull or git log).</p>
+    /// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <code>GetBranch</code> or a Git command (for example, git pull or git log).</p>
     ParentCommitIdRequiredException(crate::error::ParentCommitIdRequiredException),
     /// <p>The specified path does not exist.</p>
     PathDoesNotExistException(crate::error::PathDoesNotExistException),
@@ -410,8 +355,7 @@ pub enum Error {
     PullRequestApprovalRulesNotSatisfiedException(
         crate::error::PullRequestApprovalRulesNotSatisfiedException,
     ),
-    /// <p>The approval cannot be applied because the user approving the pull request matches the user who created the pull request. You cannot approve a pull
-    /// request that you created.</p>
+    /// <p>The approval cannot be applied because the user approving the pull request matches the user who created the pull request. You cannot approve a pull request that you created.</p>
     PullRequestCannotBeApprovedByAuthorException(
         crate::error::PullRequestCannotBeApprovedByAuthorException,
     ),
@@ -451,13 +395,11 @@ pub enum Error {
     RepositoryNotAssociatedWithPullRequestException(
         crate::error::RepositoryNotAssociatedWithPullRequestException,
     ),
-    /// <p>At least one branch name is required, but was not specified in the trigger
-    /// configuration.</p>
+    /// <p>At least one branch name is required, but was not specified in the trigger configuration.</p>
     RepositoryTriggerBranchNameListRequiredException(
         crate::error::RepositoryTriggerBranchNameListRequiredException,
     ),
-    /// <p>A destination ARN for the target service for the trigger is required, but was not
-    /// specified.</p>
+    /// <p>A destination ARN for the target service for the trigger is required, but was not specified.</p>
     RepositoryTriggerDestinationArnRequiredException(
         crate::error::RepositoryTriggerDestinationArnRequiredException,
     ),
@@ -469,9 +411,7 @@ pub enum Error {
     RepositoryTriggerNameRequiredException(crate::error::RepositoryTriggerNameRequiredException),
     /// <p>The list of triggers for the repository is required, but was not specified.</p>
     RepositoryTriggersListRequiredException(crate::error::RepositoryTriggersListRequiredException),
-    /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see
-    /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
-    /// in the AWS CodeCommit User Guide.</p>
+    /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
     /// <p>The commit cannot be created because one of the changes specifies copying or moving a .gitkeep file.</p>
     RestrictedSourceFileException(crate::error::RestrictedSourceFileException),
@@ -479,15 +419,11 @@ pub enum Error {
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
     /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
     RevisionNotCurrentException(crate::error::RevisionNotCurrentException),
-    /// <p>The file was not added or updated because the content of the file is exactly the same as the content of that file in the repository and branch
-    /// that you specified.</p>
+    /// <p>The file was not added or updated because the content of the file is exactly the same as the content of that file in the repository and branch that you specified.</p>
     SameFileContentException(crate::error::SameFileContentException),
-    /// <p>The commit cannot be created because one or more changes in this commit duplicate actions in the same file path. For example,
-    /// you cannot make the same delete request to the same file in the same file path twice, or make a delete request and a move request to the same
-    /// file as part of the same commit.</p>
+    /// <p>The commit cannot be created because one or more changes in this commit duplicate actions in the same file path. For example, you cannot make the same delete request to the same file in the same file path twice, or make a delete request and a move request to the same file as part of the same commit.</p>
     SamePathRequestException(crate::error::SamePathRequestException),
-    /// <p>The source branch and destination branch for the pull request are the same. You must
-    /// specify different branches for the source and destination.</p>
+    /// <p>The source branch and destination branch for the pull request are the same. You must specify different branches for the source and destination.</p>
     SourceAndDestinationAreSameException(crate::error::SourceAndDestinationAreSameException),
     /// <p>The commit cannot be created because no source files or file content have been specified for the commit.</p>
     SourceFileOrContentRequiredException(crate::error::SourceFileOrContentRequiredException),
@@ -501,13 +437,11 @@ pub enum Error {
     TargetRequiredException(crate::error::TargetRequiredException),
     /// <p>An array of target objects is required. It cannot be empty or null.</p>
     TargetsRequiredException(crate::error::TargetsRequiredException),
-    /// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request.
-    /// The pull request might have been updated. Make sure that you have the latest changes.</p>
+    /// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request. The pull request might have been updated. Make sure that you have the latest changes.</p>
     TipOfSourceReferenceIsDifferentException(
         crate::error::TipOfSourceReferenceIsDifferentException,
     ),
-    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
-    /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
+    /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
     /// <p>A pull request title is required. It cannot be empty or null.</p>
     TitleRequiredException(crate::error::TitleRequiredException),

@@ -23,14 +23,12 @@ pub mod create_endpoint_input {
             self.outpost_id = input;
             self
         }
-        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
-        /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.subnet_id = Some(input.into());
             self
         }
-        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
-        /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -48,16 +46,12 @@ pub mod create_endpoint_input {
             self.security_group_id = input;
             self
         }
-        /// <p>The type of access for the on-premise network connectivity for the
-        /// Outpost endpoint. To access the endpoint from an on-premises network, you must
-        /// specify the access type and provide the customer owned IPv4 pool.</p>
+        /// <p>The type of access for the on-premise network connectivity for the Outpost endpoint. To access the endpoint from an on-premises network, you must specify the access type and provide the customer owned IPv4 pool.</p>
         pub fn access_type(mut self, input: crate::model::EndpointAccessType) -> Self {
             self.access_type = Some(input);
             self
         }
-        /// <p>The type of access for the on-premise network connectivity for the
-        /// Outpost endpoint. To access the endpoint from an on-premises network, you must
-        /// specify the access type and provide the customer owned IPv4 pool.</p>
+        /// <p>The type of access for the on-premise network connectivity for the Outpost endpoint. To access the endpoint from an on-premises network, you must specify the access type and provide the customer owned IPv4 pool.</p>
         pub fn set_access_type(
             mut self,
             input: std::option::Option<crate::model::EndpointAccessType>,
@@ -65,14 +59,12 @@ pub mod create_endpoint_input {
             self.access_type = input;
             self
         }
-        /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
-        /// IP addresses will be allocated from this pool for the endpoint.</p>
+        /// <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated from this pool for the endpoint.</p>
         pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
             self.customer_owned_ipv4_pool = Some(input.into());
             self
         }
-        /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
-        /// IP addresses will be allocated from this pool for the endpoint.</p>
+        /// <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated from this pool for the endpoint.</p>
         pub fn set_customer_owned_ipv4_pool(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -100,7 +92,7 @@ pub mod create_endpoint_input {
 #[doc(hidden)]
 pub type CreateEndpointInputOperationOutputAlias = crate::operation::CreateEndpoint;
 #[doc(hidden)]
-pub type CreateEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateEndpoint`](crate::operation::CreateEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -111,7 +103,7 @@ impl CreateEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -191,7 +183,7 @@ impl CreateEndpointInput {
             "CreateEndpoint",
             "s3outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -261,7 +253,7 @@ pub mod delete_endpoint_input {
 #[doc(hidden)]
 pub type DeleteEndpointInputOperationOutputAlias = crate::operation::DeleteEndpoint;
 #[doc(hidden)]
-pub type DeleteEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpoint`](crate::operation::DeleteEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -272,7 +264,7 @@ impl DeleteEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -360,7 +352,7 @@ impl DeleteEndpointInput {
             "DeleteEndpoint",
             "s3outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -422,7 +414,7 @@ pub mod list_endpoints_input {
 #[doc(hidden)]
 pub type ListEndpointsInputOperationOutputAlias = crate::operation::ListEndpoints;
 #[doc(hidden)]
-pub type ListEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`ListEndpoints`](crate::operation::ListEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -433,7 +425,7 @@ impl ListEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -524,7 +516,7 @@ impl ListEndpointsInput {
             "ListEndpoints",
             "s3outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -601,17 +593,13 @@ impl std::fmt::Debug for DeleteEndpointInput {
 pub struct CreateEndpointInput {
     /// <p>The ID of the AWS Outposts. </p>
     pub outpost_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
-    /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+    /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The ID of the security group to use with the endpoint.</p>
     pub security_group_id: std::option::Option<std::string::String>,
-    /// <p>The type of access for the on-premise network connectivity for the
-    /// Outpost endpoint. To access the endpoint from an on-premises network, you must
-    /// specify the access type and provide the customer owned IPv4 pool.</p>
+    /// <p>The type of access for the on-premise network connectivity for the Outpost endpoint. To access the endpoint from an on-premises network, you must specify the access type and provide the customer owned IPv4 pool.</p>
     pub access_type: std::option::Option<crate::model::EndpointAccessType>,
-    /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
-    /// IP addresses will be allocated from this pool for the endpoint.</p>
+    /// <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated from this pool for the endpoint.</p>
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
 }
 impl CreateEndpointInput {
@@ -619,8 +607,7 @@ impl CreateEndpointInput {
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
-    /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
-    /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+    /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
@@ -628,14 +615,11 @@ impl CreateEndpointInput {
     pub fn security_group_id(&self) -> std::option::Option<&str> {
         self.security_group_id.as_deref()
     }
-    /// <p>The type of access for the on-premise network connectivity for the
-    /// Outpost endpoint. To access the endpoint from an on-premises network, you must
-    /// specify the access type and provide the customer owned IPv4 pool.</p>
+    /// <p>The type of access for the on-premise network connectivity for the Outpost endpoint. To access the endpoint from an on-premises network, you must specify the access type and provide the customer owned IPv4 pool.</p>
     pub fn access_type(&self) -> std::option::Option<&crate::model::EndpointAccessType> {
         self.access_type.as_ref()
     }
-    /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
-    /// IP addresses will be allocated from this pool for the endpoint.</p>
+    /// <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated from this pool for the endpoint.</p>
     pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
     }

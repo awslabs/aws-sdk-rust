@@ -3,57 +3,31 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The specified fleet has no available instances to fulfill a
-    /// <code>CreateGameSession</code> request. Clients can retry such requests immediately
-    /// or after a waiting period.</p>
+    /// <p>The specified fleet has no available instances to fulfill a <code>CreateGameSession</code> request. Clients can retry such requests immediately or after a waiting period.</p>
     FleetCapacityExceededException(crate::error::FleetCapacityExceededException),
-    /// <p>The game instance is currently full and cannot allow the requested player(s) to
-    /// join. Clients can retry such requests immediately or after a waiting period.</p>
+    /// <p>The game instance is currently full and cannot allow the requested player(s) to join. Clients can retry such requests immediately or after a waiting period.</p>
     GameSessionFullException(crate::error::GameSessionFullException),
-    /// <p>A game session with this custom ID string already exists in this fleet. Resolve
-    /// this conflict before retrying this request.</p>
+    /// <p>A game session with this custom ID string already exists in this fleet. Resolve this conflict before retrying this request.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the game instance. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the game instance. Resolve the conflict before retrying.</p>
     InvalidGameSessionStatusException(crate::error::InvalidGameSessionStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The specified game server group has no available game servers to fulfill a
-    /// <code>ClaimGameServer</code> request. Clients can retry such requests immediately
-    /// or after a waiting period.
-    ///
-    /// </p>
+    /// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period. </p>
     OutOfCapacityException(crate::error::OutOfCapacityException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),

@@ -7,14 +7,8 @@ pub struct ListRealtimeContactAnalysisSegmentsOutput {
     pub segments: std::option::Option<std::vec::Vec<crate::model::RealtimeContactAnalysisSegment>>,
     /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
     /// <ul>
-    /// <li>
-    /// <p>There are more segments so another call is required to get them.</p>
-    /// </li>
-    /// <li>
-    /// <p>There are no more segments at this time, but more may be available later (real-time
-    /// analysis is in progress) so the client should call the operation again to get new
-    /// segments.</p>
-    /// </li>
+    /// <li> <p>There are more segments so another call is required to get them.</p> </li>
+    /// <li> <p>There are no more segments at this time, but more may be available later (real-time analysis is in progress) so the client should call the operation again to get new segments.</p> </li>
     /// </ul>
     /// <p>If response does not include <code>nextToken</code>, the analysis is completed (successfully or failed) and there are no more segments to retrieve.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -26,14 +20,8 @@ impl ListRealtimeContactAnalysisSegmentsOutput {
     }
     /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
     /// <ul>
-    /// <li>
-    /// <p>There are more segments so another call is required to get them.</p>
-    /// </li>
-    /// <li>
-    /// <p>There are no more segments at this time, but more may be available later (real-time
-    /// analysis is in progress) so the client should call the operation again to get new
-    /// segments.</p>
-    /// </li>
+    /// <li> <p>There are more segments so another call is required to get them.</p> </li>
+    /// <li> <p>There are no more segments at this time, but more may be available later (real-time analysis is in progress) so the client should call the operation again to get new segments.</p> </li>
     /// </ul>
     /// <p>If response does not include <code>nextToken</code>, the analysis is completed (successfully or failed) and there are no more segments to retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
@@ -64,12 +52,9 @@ pub mod list_realtime_contact_analysis_segments_output {
         /// To override the contents of this collection use [`set_segments`](Self::set_segments).
         ///
         /// <p>An analyzed transcript or category.</p>
-        pub fn segments(
-            mut self,
-            input: impl Into<crate::model::RealtimeContactAnalysisSegment>,
-        ) -> Self {
+        pub fn segments(mut self, input: crate::model::RealtimeContactAnalysisSegment) -> Self {
             let mut v = self.segments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.segments = Some(v);
             self
         }
@@ -83,14 +68,8 @@ pub mod list_realtime_contact_analysis_segments_output {
         }
         /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
         /// <ul>
-        /// <li>
-        /// <p>There are more segments so another call is required to get them.</p>
-        /// </li>
-        /// <li>
-        /// <p>There are no more segments at this time, but more may be available later (real-time
-        /// analysis is in progress) so the client should call the operation again to get new
-        /// segments.</p>
-        /// </li>
+        /// <li> <p>There are more segments so another call is required to get them.</p> </li>
+        /// <li> <p>There are no more segments at this time, but more may be available later (real-time analysis is in progress) so the client should call the operation again to get new segments.</p> </li>
         /// </ul>
         /// <p>If response does not include <code>nextToken</code>, the analysis is completed (successfully or failed) and there are no more segments to retrieve.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,14 +78,8 @@ pub mod list_realtime_contact_analysis_segments_output {
         }
         /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
         /// <ul>
-        /// <li>
-        /// <p>There are more segments so another call is required to get them.</p>
-        /// </li>
-        /// <li>
-        /// <p>There are no more segments at this time, but more may be available later (real-time
-        /// analysis is in progress) so the client should call the operation again to get new
-        /// segments.</p>
-        /// </li>
+        /// <li> <p>There are more segments so another call is required to get them.</p> </li>
+        /// <li> <p>There are no more segments at this time, but more may be available later (real-time analysis is in progress) so the client should call the operation again to get new segments.</p> </li>
         /// </ul>
         /// <p>If response does not include <code>nextToken</code>, the analysis is completed (successfully or failed) and there are no more segments to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {

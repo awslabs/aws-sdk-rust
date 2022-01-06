@@ -1308,11 +1308,9 @@ impl StartContactRecordingOutput {
 pub struct StartChatContactOutput {
     /// <p>The identifier of this contact within the Amazon Connect instance. </p>
     pub contact_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for a chat participant. The participantId for a chat participant is the same
-    /// throughout the chat lifecycle.</p>
+    /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     pub participant_id: std::option::Option<std::string::String>,
-    /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat
-    /// participant.</p>
+    /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
     pub participant_token: std::option::Option<std::string::String>,
 }
 impl StartChatContactOutput {
@@ -1320,13 +1318,11 @@ impl StartChatContactOutput {
     pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>The identifier for a chat participant. The participantId for a chat participant is the same
-    /// throughout the chat lifecycle.</p>
+    /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     pub fn participant_id(&self) -> std::option::Option<&str> {
         self.participant_id.as_deref()
     }
-    /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat
-    /// participant.</p>
+    /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
     pub fn participant_token(&self) -> std::option::Option<&str> {
         self.participant_token.as_deref()
     }
@@ -1361,14 +1357,12 @@ pub mod start_chat_contact_output {
             self.contact_id = input;
             self
         }
-        /// <p>The identifier for a chat participant. The participantId for a chat participant is the same
-        /// throughout the chat lifecycle.</p>
+        /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
         pub fn participant_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.participant_id = Some(input.into());
             self
         }
-        /// <p>The identifier for a chat participant. The participantId for a chat participant is the same
-        /// throughout the chat lifecycle.</p>
+        /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
         pub fn set_participant_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1376,14 +1370,12 @@ pub mod start_chat_contact_output {
             self.participant_id = input;
             self
         }
-        /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat
-        /// participant.</p>
+        /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
         pub fn participant_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.participant_token = Some(input.into());
             self
         }
-        /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat
-        /// participant.</p>
+        /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
         pub fn set_participant_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1480,9 +1472,9 @@ pub mod list_users_output {
         /// To override the contents of this collection use [`set_user_summary_list`](Self::set_user_summary_list).
         ///
         /// <p>Information about the users.</p>
-        pub fn user_summary_list(mut self, input: impl Into<crate::model::UserSummary>) -> Self {
+        pub fn user_summary_list(mut self, input: crate::model::UserSummary) -> Self {
             let mut v = self.user_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_summary_list = Some(v);
             self
         }
@@ -1571,10 +1563,10 @@ pub mod list_user_hierarchy_groups_output {
         /// <p>Information about the hierarchy groups.</p>
         pub fn user_hierarchy_group_summary_list(
             mut self,
-            input: impl Into<crate::model::HierarchyGroupSummary>,
+            input: crate::model::HierarchyGroupSummary,
         ) -> Self {
             let mut v = self.user_hierarchy_group_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_hierarchy_group_summary_list = Some(v);
             self
         }
@@ -1654,9 +1646,9 @@ pub mod list_use_cases_output {
         /// To override the contents of this collection use [`set_use_case_summary_list`](Self::set_use_case_summary_list).
         ///
         /// <p>The use cases.</p>
-        pub fn use_case_summary_list(mut self, input: impl Into<crate::model::UseCase>) -> Self {
+        pub fn use_case_summary_list(mut self, input: crate::model::UseCase) -> Self {
             let mut v = self.use_case_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.use_case_summary_list = Some(v);
             self
         }
@@ -1818,10 +1810,10 @@ pub mod list_security_profiles_output {
         /// <p>Information about the security profiles.</p>
         pub fn security_profile_summary_list(
             mut self,
-            input: impl Into<crate::model::SecurityProfileSummary>,
+            input: crate::model::SecurityProfileSummary,
         ) -> Self {
             let mut v = self.security_profile_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_profile_summary_list = Some(v);
             self
         }
@@ -1983,9 +1975,9 @@ pub mod list_security_keys_output {
         /// To override the contents of this collection use [`set_security_keys`](Self::set_security_keys).
         ///
         /// <p>The security keys.</p>
-        pub fn security_keys(mut self, input: impl Into<crate::model::SecurityKey>) -> Self {
+        pub fn security_keys(mut self, input: crate::model::SecurityKey) -> Self {
             let mut v = self.security_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.security_keys = Some(v);
             self
         }
@@ -2074,10 +2066,10 @@ pub mod list_routing_profiles_output {
         /// <p>Information about the routing profiles.</p>
         pub fn routing_profile_summary_list(
             mut self,
-            input: impl Into<crate::model::RoutingProfileSummary>,
+            input: crate::model::RoutingProfileSummary,
         ) -> Self {
             let mut v = self.routing_profile_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routing_profile_summary_list = Some(v);
             self
         }
@@ -2176,12 +2168,12 @@ pub mod list_routing_profile_queues_output {
         /// <p>Information about the routing profiles.</p>
         pub fn routing_profile_queue_config_summary_list(
             mut self,
-            input: impl Into<crate::model::RoutingProfileQueueConfigSummary>,
+            input: crate::model::RoutingProfileQueueConfigSummary,
         ) -> Self {
             let mut v = self
                 .routing_profile_queue_config_summary_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routing_profile_queue_config_summary_list = Some(v);
             self
         }
@@ -2263,10 +2255,10 @@ pub mod list_quick_connects_output {
         /// <p>Information about the quick connects.</p>
         pub fn quick_connect_summary_list(
             mut self,
-            input: impl Into<crate::model::QuickConnectSummary>,
+            input: crate::model::QuickConnectSummary,
         ) -> Self {
             let mut v = self.quick_connect_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.quick_connect_summary_list = Some(v);
             self
         }
@@ -2347,9 +2339,9 @@ pub mod list_queues_output {
         /// To override the contents of this collection use [`set_queue_summary_list`](Self::set_queue_summary_list).
         ///
         /// <p>Information about the queues.</p>
-        pub fn queue_summary_list(mut self, input: impl Into<crate::model::QueueSummary>) -> Self {
+        pub fn queue_summary_list(mut self, input: crate::model::QueueSummary) -> Self {
             let mut v = self.queue_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queue_summary_list = Some(v);
             self
         }
@@ -2448,10 +2440,10 @@ pub mod list_queue_quick_connects_output {
         /// <p>Information about the quick connects.</p>
         pub fn quick_connect_summary_list(
             mut self,
-            input: impl Into<crate::model::QuickConnectSummary>,
+            input: crate::model::QuickConnectSummary,
         ) -> Self {
             let mut v = self.quick_connect_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.quick_connect_summary_list = Some(v);
             self
         }
@@ -2522,12 +2514,9 @@ pub mod list_prompts_output {
         /// To override the contents of this collection use [`set_prompt_summary_list`](Self::set_prompt_summary_list).
         ///
         /// <p>Information about the prompts.</p>
-        pub fn prompt_summary_list(
-            mut self,
-            input: impl Into<crate::model::PromptSummary>,
-        ) -> Self {
+        pub fn prompt_summary_list(mut self, input: crate::model::PromptSummary) -> Self {
             let mut v = self.prompt_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.prompt_summary_list = Some(v);
             self
         }
@@ -2613,10 +2602,10 @@ pub mod list_phone_numbers_output {
         /// <p>Information about the phone numbers.</p>
         pub fn phone_number_summary_list(
             mut self,
-            input: impl Into<crate::model::PhoneNumberSummary>,
+            input: crate::model::PhoneNumberSummary,
         ) -> Self {
             let mut v = self.phone_number_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_number_summary_list = Some(v);
             self
         }
@@ -2696,9 +2685,9 @@ pub mod list_lex_bots_output {
         /// To override the contents of this collection use [`set_lex_bots`](Self::set_lex_bots).
         ///
         /// <p>The names and Regions of the Amazon Lex bots associated with the specified instance.</p>
-        pub fn lex_bots(mut self, input: impl Into<crate::model::LexBot>) -> Self {
+        pub fn lex_bots(mut self, input: crate::model::LexBot) -> Self {
             let mut v = self.lex_bots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lex_bots = Some(v);
             self
         }
@@ -2869,12 +2858,12 @@ pub mod list_integration_associations_output {
         /// <p>The associations.</p>
         pub fn integration_association_summary_list(
             mut self,
-            input: impl Into<crate::model::IntegrationAssociationSummary>,
+            input: crate::model::IntegrationAssociationSummary,
         ) -> Self {
             let mut v = self
                 .integration_association_summary_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.integration_association_summary_list = Some(v);
             self
         }
@@ -2955,12 +2944,9 @@ pub mod list_instance_storage_configs_output {
         /// To override the contents of this collection use [`set_storage_configs`](Self::set_storage_configs).
         ///
         /// <p>A valid storage type.</p>
-        pub fn storage_configs(
-            mut self,
-            input: impl Into<crate::model::InstanceStorageConfig>,
-        ) -> Self {
+        pub fn storage_configs(mut self, input: crate::model::InstanceStorageConfig) -> Self {
             let mut v = self.storage_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_configs = Some(v);
             self
         }
@@ -3041,12 +3027,9 @@ pub mod list_instances_output {
         /// To override the contents of this collection use [`set_instance_summary_list`](Self::set_instance_summary_list).
         ///
         /// <p>Information about the instances.</p>
-        pub fn instance_summary_list(
-            mut self,
-            input: impl Into<crate::model::InstanceSummary>,
-        ) -> Self {
+        pub fn instance_summary_list(mut self, input: crate::model::InstanceSummary) -> Self {
             let mut v = self.instance_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_summary_list = Some(v);
             self
         }
@@ -3126,9 +3109,9 @@ pub mod list_instance_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attribute types.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -3217,10 +3200,10 @@ pub mod list_hours_of_operations_output {
         /// <p>Information about the hours of operation.</p>
         pub fn hours_of_operation_summary_list(
             mut self,
-            input: impl Into<crate::model::HoursOfOperationSummary>,
+            input: crate::model::HoursOfOperationSummary,
         ) -> Self {
             let mut v = self.hours_of_operation_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hours_of_operation_summary_list = Some(v);
             self
         }
@@ -3264,8 +3247,7 @@ impl ListHoursOfOperationsOutput {
 pub struct ListContactReferencesOutput {
     /// <p>Information about the contact flows.</p>
     pub reference_summary_list: std::option::Option<std::vec::Vec<crate::model::ReferenceSummary>>,
-    /// <p>If there are additional results, this is the token for the next set of results.</p>
-    /// <important>
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub next_token: std::option::Option<std::string::String>,
@@ -3275,8 +3257,7 @@ impl ListContactReferencesOutput {
     pub fn reference_summary_list(&self) -> std::option::Option<&[crate::model::ReferenceSummary]> {
         self.reference_summary_list.as_deref()
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p>
-    /// <important>
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub fn next_token(&self) -> std::option::Option<&str> {
@@ -3307,12 +3288,9 @@ pub mod list_contact_references_output {
         /// To override the contents of this collection use [`set_reference_summary_list`](Self::set_reference_summary_list).
         ///
         /// <p>Information about the contact flows.</p>
-        pub fn reference_summary_list(
-            mut self,
-            input: impl Into<crate::model::ReferenceSummary>,
-        ) -> Self {
+        pub fn reference_summary_list(mut self, input: crate::model::ReferenceSummary) -> Self {
             let mut v = self.reference_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reference_summary_list = Some(v);
             self
         }
@@ -3324,16 +3302,14 @@ pub mod list_contact_references_output {
             self.reference_summary_list = input;
             self
         }
-        /// <p>If there are additional results, this is the token for the next set of results.</p>
-        /// <important>
+        /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
         /// <p>This is always returned as null in the response.</p>
         /// </important>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are additional results, this is the token for the next set of results.</p>
-        /// <important>
+        /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
         /// <p>This is always returned as null in the response.</p>
         /// </important>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3404,10 +3380,10 @@ pub mod list_contact_flows_output {
         /// <p>Information about the contact flows.</p>
         pub fn contact_flow_summary_list(
             mut self,
-            input: impl Into<crate::model::ContactFlowSummary>,
+            input: crate::model::ContactFlowSummary,
         ) -> Self {
             let mut v = self.contact_flow_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contact_flow_summary_list = Some(v);
             self
         }
@@ -3496,10 +3472,10 @@ pub mod list_contact_flow_modules_output {
         /// <p>Information about the contact flow module.</p>
         pub fn contact_flow_modules_summary_list(
             mut self,
-            input: impl Into<crate::model::ContactFlowModuleSummary>,
+            input: crate::model::ContactFlowModuleSummary,
         ) -> Self {
             let mut v = self.contact_flow_modules_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contact_flow_modules_summary_list = Some(v);
             self
         }
@@ -3541,15 +3517,13 @@ impl ListContactFlowModulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotsOutput {
-    /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified
-    /// instance.</p>
+    /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
     pub lex_bots: std::option::Option<std::vec::Vec<crate::model::LexBotConfig>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBotsOutput {
-    /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified
-    /// instance.</p>
+    /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
     pub fn lex_bots(&self) -> std::option::Option<&[crate::model::LexBotConfig]> {
         self.lex_bots.as_deref()
     }
@@ -3580,16 +3554,14 @@ pub mod list_bots_output {
         ///
         /// To override the contents of this collection use [`set_lex_bots`](Self::set_lex_bots).
         ///
-        /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified
-        /// instance.</p>
-        pub fn lex_bots(mut self, input: impl Into<crate::model::LexBotConfig>) -> Self {
+        /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
+        pub fn lex_bots(mut self, input: crate::model::LexBotConfig) -> Self {
             let mut v = self.lex_bots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lex_bots = Some(v);
             self
         }
-        /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified
-        /// instance.</p>
+        /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
         pub fn set_lex_bots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LexBotConfig>>,
@@ -3763,10 +3735,10 @@ pub mod list_agent_statuses_output {
         /// <p>A summary of agent statuses.</p>
         pub fn agent_status_summary_list(
             mut self,
-            input: impl Into<crate::model::AgentStatusSummary>,
+            input: crate::model::AgentStatusSummary,
         ) -> Self {
             let mut v = self.agent_status_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agent_status_summary_list = Some(v);
             self
         }
@@ -3799,8 +3771,7 @@ impl ListAgentStatusesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-    /// the token must use the same request parameters as the request that generated the token.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the historical metrics.</p>
     /// <p>If no grouping is specified, a summary of metric data is returned.</p>
@@ -3808,8 +3779,7 @@ pub struct GetMetricDataOutput {
 }
 impl GetMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-    /// the token must use the same request parameters as the request that generated the token.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3839,15 +3809,13 @@ pub mod get_metric_data_output {
     }
     impl Builder {
         /// <p>If there are additional results, this is the token for the next set of results.</p>
-        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-        /// the token must use the same request parameters as the request that generated the token.</p>
+        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
-        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-        /// the token must use the same request parameters as the request that generated the token.</p>
+        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3858,12 +3826,9 @@ pub mod get_metric_data_output {
         ///
         /// <p>Information about the historical metrics.</p>
         /// <p>If no grouping is specified, a summary of metric data is returned.</p>
-        pub fn metric_results(
-            mut self,
-            input: impl Into<crate::model::HistoricalMetricResult>,
-        ) -> Self {
+        pub fn metric_results(mut self, input: crate::model::HistoricalMetricResult) -> Self {
             let mut v = self.metric_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_results = Some(v);
             self
         }
@@ -3954,8 +3919,7 @@ impl GetFederationTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCurrentMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-    /// the token must use the same request parameters as the request that generated the token.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the real-time metrics.</p>
     pub metric_results: std::option::Option<std::vec::Vec<crate::model::CurrentMetricResult>>,
@@ -3964,8 +3928,7 @@ pub struct GetCurrentMetricDataOutput {
 }
 impl GetCurrentMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-    /// the token must use the same request parameters as the request that generated the token.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4000,15 +3963,13 @@ pub mod get_current_metric_data_output {
     }
     impl Builder {
         /// <p>If there are additional results, this is the token for the next set of results.</p>
-        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-        /// the token must use the same request parameters as the request that generated the token.</p>
+        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
-        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-        /// the token must use the same request parameters as the request that generated the token.</p>
+        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4018,12 +3979,9 @@ pub mod get_current_metric_data_output {
         /// To override the contents of this collection use [`set_metric_results`](Self::set_metric_results).
         ///
         /// <p>Information about the real-time metrics.</p>
-        pub fn metric_results(
-            mut self,
-            input: impl Into<crate::model::CurrentMetricResult>,
-        ) -> Self {
+        pub fn metric_results(mut self, input: crate::model::CurrentMetricResult) -> Self {
             let mut v = self.metric_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_results = Some(v);
             self
         }
@@ -4830,15 +4788,11 @@ impl DescribeInstanceStorageConfigOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceAttributeOutput {
-    /// <p>The
-    /// type
-    /// of attribute.</p>
+    /// <p>The type of attribute.</p>
     pub attribute: std::option::Option<crate::model::Attribute>,
 }
 impl DescribeInstanceAttributeOutput {
-    /// <p>The
-    /// type
-    /// of attribute.</p>
+    /// <p>The type of attribute.</p>
     pub fn attribute(&self) -> std::option::Option<&crate::model::Attribute> {
         self.attribute.as_ref()
     }
@@ -4859,16 +4813,12 @@ pub mod describe_instance_attribute_output {
         pub(crate) attribute: std::option::Option<crate::model::Attribute>,
     }
     impl Builder {
-        /// <p>The
-        /// type
-        /// of attribute.</p>
+        /// <p>The type of attribute.</p>
         pub fn attribute(mut self, input: crate::model::Attribute) -> Self {
             self.attribute = Some(input);
             self
         }
-        /// <p>The
-        /// type
-        /// of attribute.</p>
+        /// <p>The type of attribute.</p>
         pub fn set_attribute(
             mut self,
             input: std::option::Option<crate::model::Attribute>,
@@ -5916,8 +5866,7 @@ impl CreateRoutingProfileOutput {
 pub struct CreateQuickConnectOutput {
     /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
     pub quick_connect_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier for the quick connect.
-    /// </p>
+    /// <p>The identifier for the quick connect. </p>
     pub quick_connect_id: std::option::Option<std::string::String>,
 }
 impl CreateQuickConnectOutput {
@@ -5925,8 +5874,7 @@ impl CreateQuickConnectOutput {
     pub fn quick_connect_arn(&self) -> std::option::Option<&str> {
         self.quick_connect_arn.as_deref()
     }
-    /// <p>The identifier for the quick connect.
-    /// </p>
+    /// <p>The identifier for the quick connect. </p>
     pub fn quick_connect_id(&self) -> std::option::Option<&str> {
         self.quick_connect_id.as_deref()
     }
@@ -5962,14 +5910,12 @@ pub mod create_quick_connect_output {
             self.quick_connect_arn = input;
             self
         }
-        /// <p>The identifier for the quick connect.
-        /// </p>
+        /// <p>The identifier for the quick connect. </p>
         pub fn quick_connect_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.quick_connect_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the quick connect.
-        /// </p>
+        /// <p>The identifier for the quick connect. </p>
         pub fn set_quick_connect_id(
             mut self,
             input: std::option::Option<std::string::String>,

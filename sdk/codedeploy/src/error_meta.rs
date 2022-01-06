@@ -5,8 +5,7 @@
 pub enum Error {
     /// <p>The maximum number of alarms for a deployment group (10) was exceeded.</p>
     AlarmsLimitExceededException(crate::error::AlarmsLimitExceededException),
-    /// <p>An application with the specified name with the IAM user or AWS account already
-    /// exists.</p>
+    /// <p>An application with the specified name with the IAM user or AWS account already exists.</p>
     ApplicationAlreadyExistsException(crate::error::ApplicationAlreadyExistsException),
     /// <p>The application does not exist with the IAM user or AWS account.</p>
     ApplicationDoesNotExistException(crate::error::ApplicationDoesNotExistException),
@@ -14,8 +13,7 @@ pub enum Error {
     ApplicationLimitExceededException(crate::error::ApplicationLimitExceededException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::error::ApplicationNameRequiredException),
-    /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource
-    /// that is not expected. </p>
+    /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected. </p>
     ArnNotSupportedException(crate::error::ArnNotSupportedException),
     /// <p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>
     BatchLimitExceededException(crate::error::BatchLimitExceededException),
@@ -23,8 +21,7 @@ pub enum Error {
     BucketNameFilterRequiredException(crate::error::BucketNameFilterRequiredException),
     /// <p>The deployment is already complete.</p>
     DeploymentAlreadyCompletedException(crate::error::DeploymentAlreadyCompletedException),
-    /// <p>A deployment configuration with the specified name with the IAM user or AWS account
-    /// already exists.</p>
+    /// <p>A deployment configuration with the specified name with the IAM user or AWS account already exists.</p>
     DeploymentConfigAlreadyExistsException(crate::error::DeploymentConfigAlreadyExistsException),
     /// <p>The deployment configuration does not exist with the IAM user or AWS account.</p>
     DeploymentConfigDoesNotExistException(crate::error::DeploymentConfigDoesNotExistException),
@@ -36,8 +33,7 @@ pub enum Error {
     DeploymentConfigNameRequiredException(crate::error::DeploymentConfigNameRequiredException),
     /// <p>The deployment with the IAM user or AWS account does not exist.</p>
     DeploymentDoesNotExistException(crate::error::DeploymentDoesNotExistException),
-    /// <p>A deployment group with the specified name with the IAM user or AWS account already
-    /// exists.</p>
+    /// <p>A deployment group with the specified name with the IAM user or AWS account already exists.</p>
     DeploymentGroupAlreadyExistsException(crate::error::DeploymentGroupAlreadyExistsException),
     /// <p>The named deployment group with the IAM user or AWS account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::error::DeploymentGroupDoesNotExistException),
@@ -57,26 +53,21 @@ pub enum Error {
     DeploymentTargetDoesNotExistException(crate::error::DeploymentTargetDoesNotExistException),
     /// <p> A deployment target ID was not provided. </p>
     DeploymentTargetIdRequiredException(crate::error::DeploymentTargetIdRequiredException),
-    /// <p> The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda
-    /// deployment was exceeded. The target list of both types of deployments must have exactly
-    /// one item. This exception does not apply to EC2/On-premises deployments. </p>
+    /// <p> The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
     DeploymentTargetListSizeExceededException(
         crate::error::DeploymentTargetListSizeExceededException,
     ),
     /// <p>The description is too long.</p>
     DescriptionTooLongException(crate::error::DescriptionTooLongException),
-    /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon
-    /// ECS service can be associated with only one deployment group. </p>
+    /// <p> The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated with only one deployment group. </p>
     EcsServiceMappingLimitExceededException(crate::error::EcsServiceMappingLimitExceededException),
     /// <p>No GitHub account connection exists with the named specified in the call.</p>
     GitHubAccountTokenDoesNotExistException(crate::error::GitHubAccountTokenDoesNotExistException),
     /// <p>The call is missing a required GitHub account connection name.</p>
     GitHubAccountTokenNameRequiredException(crate::error::GitHubAccountTokenNameRequiredException),
-    /// <p>No IAM ARN was included in the request. You must use an IAM session ARN or IAM user
-    /// ARN in the request.</p>
+    /// <p>No IAM ARN was included in the request. You must use an IAM session ARN or IAM user ARN in the request.</p>
     IamArnRequiredException(crate::error::IamArnRequiredException),
-    /// <p>The request included an IAM session ARN that has already been used to register a
-    /// different instance.</p>
+    /// <p>The request included an IAM session ARN that has already been used to register a different instance.</p>
     IamSessionArnAlreadyRegisteredException(crate::error::IamSessionArnAlreadyRegisteredException),
     /// <p>The specified IAM user ARN is already registered with an on-premises instance.</p>
     IamUserArnAlreadyRegisteredException(crate::error::IamUserArnAlreadyRegisteredException),
@@ -86,8 +77,7 @@ pub enum Error {
     InstanceDoesNotExistException(crate::error::InstanceDoesNotExistException),
     /// <p>The instance ID was not specified.</p>
     InstanceIdRequiredException(crate::error::InstanceIdRequiredException),
-    /// <p>The maximum number of allowed on-premises instances in a single call was
-    /// exceeded.</p>
+    /// <p>The maximum number of allowed on-premises instances in a single call was exceeded.</p>
     InstanceLimitExceededException(crate::error::InstanceLimitExceededException),
     /// <p>The specified on-premises instance name is already registered.</p>
     InstanceNameAlreadyRegisteredException(crate::error::InstanceNameAlreadyRegisteredException),
@@ -97,42 +87,28 @@ pub enum Error {
     InstanceNotRegisteredException(crate::error::InstanceNotRegisteredException),
     /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
     /// <ul>
-    /// <li>
-    /// <p>The alarm list is null.</p>
-    /// </li>
-    /// <li>
-    /// <p>The alarm object is null.</p>
-    /// </li>
-    /// <li>
-    /// <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p>
-    /// </li>
-    /// <li>
-    /// <p>Two alarms with the same name have been specified.</p>
-    /// </li>
-    /// <li>
-    /// <p>The alarm configuration is enabled, but the alarm list is empty.</p>
-    /// </li>
+    /// <li> <p>The alarm list is null.</p> </li>
+    /// <li> <p>The alarm object is null.</p> </li>
+    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
+    /// <li> <p>Two alarms with the same name have been specified.</p> </li>
+    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
     /// </ul>
     InvalidAlarmConfigException(crate::error::InvalidAlarmConfigException),
     /// <p>The application name was specified in an invalid format.</p>
     InvalidApplicationNameException(crate::error::InvalidApplicationNameException),
     /// <p> The specified ARN is not in a valid format. </p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The automatic rollback configuration was specified in an invalid format. For example,
-    /// automatic rollback is enabled, but an invalid triggering event type or no event types
-    /// were listed.</p>
+    /// <p>The automatic rollback configuration was specified in an invalid format. For example, automatic rollback is enabled, but an invalid triggering event type or no event types were listed.</p>
     InvalidAutoRollbackConfigException(crate::error::InvalidAutoRollbackConfigException),
     /// <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
     InvalidAutoScalingGroupException(crate::error::InvalidAutoScalingGroupException),
-    /// <p>The configuration for the blue/green deployment group was provided in an invalid
-    /// format. For information about deployment configuration format, see <a>CreateDeploymentConfig</a>.</p>
+    /// <p>The configuration for the blue/green deployment group was provided in an invalid format. For information about deployment configuration format, see <code>CreateDeploymentConfig</code>.</p>
     InvalidBlueGreenDeploymentConfigurationException(
         crate::error::InvalidBlueGreenDeploymentConfigurationException,
     ),
     /// <p>The bucket name either doesn't exist or was specified in an invalid format.</p>
     InvalidBucketNameFilterException(crate::error::InvalidBucketNameFilterException),
-    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>,
-    /// <code>Server</code>, or <code>ECS</code>.</p>
+    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::error::InvalidComputePlatformException),
     /// <p>The deployed state filter was specified in an invalid format.</p>
     InvalidDeployedStateFilterException(crate::error::InvalidDeployedStateFilterException),
@@ -142,21 +118,17 @@ pub enum Error {
     InvalidDeploymentGroupNameException(crate::error::InvalidDeploymentGroupNameException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::error::InvalidDeploymentIdException),
-    /// <p>An instance type was specified for an in-place deployment. Instance types are
-    /// supported for blue/green deployments only.</p>
+    /// <p>An instance type was specified for an in-place deployment. Instance types are supported for blue/green deployments only.</p>
     InvalidDeploymentInstanceTypeException(crate::error::InvalidDeploymentInstanceTypeException),
     /// <p>The specified deployment status doesn't exist or cannot be determined.</p>
     InvalidDeploymentStatusException(crate::error::InvalidDeploymentStatusException),
-    /// <p>An invalid deployment style was specified. Valid deployment types include "IN_PLACE"
-    /// and "BLUE_GREEN." Valid deployment options include "WITH_TRAFFIC_CONTROL" and
-    /// "WITHOUT_TRAFFIC_CONTROL."</p>
+    /// <p>An invalid deployment style was specified. Valid deployment types include "IN_PLACE" and "BLUE_GREEN." Valid deployment options include "WITH_TRAFFIC_CONTROL" and "WITHOUT_TRAFFIC_CONTROL."</p>
     InvalidDeploymentStyleException(crate::error::InvalidDeploymentStyleException),
     /// <p> The target ID provided was not valid. </p>
     InvalidDeploymentTargetIdException(crate::error::InvalidDeploymentTargetIdException),
     /// <p> The wait type is invalid. </p>
     InvalidDeploymentWaitTypeException(crate::error::InvalidDeploymentWaitTypeException),
-    /// <p>A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of
-    /// these data types can be used in a single call.</p>
+    /// <p>A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of these data types can be used in a single call.</p>
     InvalidEc2TagCombinationException(crate::error::InvalidEc2TagCombinationException),
     /// <p>The tag was specified in an invalid format.</p>
     InvalidEc2TagException(crate::error::InvalidEc2TagException),
@@ -164,10 +136,7 @@ pub enum Error {
     InvalidEcsServiceException(crate::error::InvalidEcsServiceException),
     /// <p>The external ID was specified in an invalid format.</p>
     InvalidExternalIdException(crate::error::InvalidExternalIdException),
-    /// <p>An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy
-    /// handles files or directories that already exist in a deployment target location, but
-    /// weren't part of the previous successful deployment. Valid values include "DISALLOW,"
-    /// "OVERWRITE," and "RETAIN."</p>
+    /// <p>An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy handles files or directories that already exist in a deployment target location, but weren't part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE," and "RETAIN."</p>
     InvalidFileExistsBehaviorException(crate::error::InvalidFileExistsBehaviorException),
     /// <p>The GitHub token is not valid.</p>
     InvalidGitHubAccountTokenException(crate::error::InvalidGitHubAccountTokenException),
@@ -177,9 +146,7 @@ pub enum Error {
     InvalidIamSessionArnException(crate::error::InvalidIamSessionArnException),
     /// <p>The IAM user ARN was specified in an invalid format.</p>
     InvalidIamUserArnException(crate::error::InvalidIamUserArnException),
-    /// <p>The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments,
-    /// <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code>
-    /// or <code>false</code> is expected.</p>
+    /// <p>The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
     InvalidIgnoreApplicationStopFailuresValueException(
         crate::error::InvalidIgnoreApplicationStopFailuresValueException,
     ),
@@ -189,20 +156,15 @@ pub enum Error {
     InvalidInstanceNameException(crate::error::InvalidInstanceNameException),
     /// <p>The specified instance status does not exist.</p>
     InvalidInstanceStatusException(crate::error::InvalidInstanceStatusException),
-    /// <p>An invalid instance type was specified for instances in a blue/green deployment. Valid
-    /// values include "Blue" for an original environment and "Green" for a replacement
-    /// environment.</p>
+    /// <p>An invalid instance type was specified for instances in a blue/green deployment. Valid values include "Blue" for an original environment and "Green" for a replacement environment.</p>
     InvalidInstanceTypeException(crate::error::InvalidInstanceTypeException),
     /// <p>The specified key prefix filter was specified in an invalid format.</p>
     InvalidKeyPrefixFilterException(crate::error::InvalidKeyPrefixFilterException),
-    /// <p>A lifecycle event hook is invalid. Review the <code>hooks</code> section in your
-    /// AppSpec file to ensure the lifecycle events and <code>hooks</code> functions are
-    /// valid.</p>
+    /// <p>A lifecycle event hook is invalid. Review the <code>hooks</code> section in your AppSpec file to ensure the lifecycle events and <code>hooks</code> functions are valid.</p>
     InvalidLifecycleEventHookExecutionIdException(
         crate::error::InvalidLifecycleEventHookExecutionIdException,
     ),
-    /// <p>The result of a Lambda validation function that verifies a lifecycle event is invalid.
-    /// It should return <code>Succeeded</code> or <code>Failed</code>.</p>
+    /// <p>The result of a Lambda validation function that verifies a lifecycle event is invalid. It should return <code>Succeeded</code> or <code>Failed</code>.</p>
     InvalidLifecycleEventHookExecutionStatusException(
         crate::error::InvalidLifecycleEventHookExecutionStatusException,
     ),
@@ -212,8 +174,7 @@ pub enum Error {
     InvalidMinimumHealthyHostValueException(crate::error::InvalidMinimumHealthyHostValueException),
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet,
-    /// but only one of these data types can be used in a single call.</p>
+    /// <p>A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet, but only one of these data types can be used in a single call.</p>
     InvalidOnPremisesTagCombinationException(
         crate::error::InvalidOnPremisesTagCombinationException,
     ),
@@ -223,12 +184,9 @@ pub enum Error {
     InvalidRegistrationStatusException(crate::error::InvalidRegistrationStatusException),
     /// <p>The revision was specified in an invalid format.</p>
     InvalidRevisionException(crate::error::InvalidRevisionException),
-    /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group
-    /// was specified, the specified service role does not grant the appropriate permissions to
-    /// Amazon EC2 Auto Scaling.</p>
+    /// <p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.</p>
     InvalidRoleException(crate::error::InvalidRoleException),
-    /// <p>The column name to sort by is either not present or was specified in an invalid
-    /// format.</p>
+    /// <p>The column name to sort by is either not present or was specified in an invalid format.</p>
     InvalidSortByException(crate::error::InvalidSortByException),
     /// <p>The sort order was specified in an invalid format.</p>
     InvalidSortOrderException(crate::error::InvalidSortOrderException),
@@ -244,43 +202,29 @@ pub enum Error {
     InvalidTargetGroupPairException(crate::error::InvalidTargetGroupPairException),
     /// <p>The target instance configuration is invalid. Possible causes include:</p>
     /// <ul>
-    /// <li>
-    /// <p>Configuration data for target instances was entered for an in-place
-    /// deployment.</p>
-    /// </li>
-    /// <li>
-    /// <p>The limit of 10 tags for a tag type was exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>The combined length of the tag names exceeded the limit. </p>
-    /// </li>
-    /// <li>
-    /// <p>A specified tag is not currently applied to any instances.</p>
-    /// </li>
+    /// <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li>
+    /// <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li>
+    /// <li> <p>The combined length of the tag names exceeded the limit. </p> </li>
+    /// <li> <p>A specified tag is not currently applied to any instances.</p> </li>
     /// </ul>
     InvalidTargetInstancesException(crate::error::InvalidTargetInstancesException),
     /// <p>The specified time range was specified in an invalid format.</p>
     InvalidTimeRangeException(crate::error::InvalidTimeRangeException),
-    /// <p> The configuration that specifies how traffic is routed during a deployment is
-    /// invalid.</p>
+    /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
     InvalidTrafficRoutingConfigurationException(
         crate::error::InvalidTrafficRoutingConfigurationException,
     ),
     /// <p>The trigger was specified in an invalid format.</p>
     InvalidTriggerConfigException(crate::error::InvalidTriggerConfigException),
-    /// <p>The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments,
-    /// <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code>
-    /// or <code>false</code> is expected.</p>
+    /// <p>The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
     InvalidUpdateOutdatedInstancesOnlyValueException(
         crate::error::InvalidUpdateOutdatedInstancesOnlyValueException,
     ),
-    /// <p>An attempt to return the status of an already completed lifecycle event
-    /// occurred.</p>
+    /// <p>An attempt to return the status of an already completed lifecycle event occurred.</p>
     LifecycleEventAlreadyCompletedException(crate::error::LifecycleEventAlreadyCompletedException),
     /// <p>The limit for lifecycle hooks was exceeded.</p>
     LifecycleHookLimitExceededException(crate::error::LifecycleHookLimitExceededException),
-    /// <p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one
-    /// ARN type.</p>
+    /// <p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.</p>
     MultipleIamArnsProvidedException(crate::error::MultipleIamArnsProvidedException),
     /// <p>The API used does not support the deployment.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
@@ -298,8 +242,7 @@ pub enum Error {
     TagLimitExceededException(crate::error::TagLimitExceededException),
     /// <p>A tag was not specified.</p>
     TagRequiredException(crate::error::TagRequiredException),
-    /// <p>The number of tag groups included in the tag set list exceeded the maximum allowed
-    /// limit of 3.</p>
+    /// <p>The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.</p>
     TagSetListLimitExceededException(crate::error::TagSetListLimitExceededException),
     /// <p>An API function was called too frequently.</p>
     ThrottlingException(crate::error::ThrottlingException),

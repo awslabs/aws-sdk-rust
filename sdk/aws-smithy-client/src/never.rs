@@ -54,10 +54,8 @@ impl<Req, Resp, Err> NeverService<Req, Resp, Err> {
 pub type NeverConnector =
     NeverService<http::Request<SdkBody>, http::Response<SdkBody>, ConnectorError>;
 
-#[cfg(feature = "rt-tokio")]
-#[allow(dead_code)]
-/// A service where the underlying TCP connection never connects
-pub type NeverConnected = NeverService<Uri, tokio::net::TcpStream, BoxError>;
+/// A service where the underlying TCP connection never connects.
+pub type NeverConnected = NeverService<Uri, stream::EmptyStream, BoxError>;
 
 /// Streams that never return data
 pub(crate) mod stream {

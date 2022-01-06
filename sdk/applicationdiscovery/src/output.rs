@@ -33,16 +33,12 @@ impl UpdateApplicationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopDataCollectionByAgentIdsOutput {
-    /// <p>Information about the agents or connector that were instructed to stop collecting data.
-    /// Information includes the agent/connector ID, a description of the operation performed, and
-    /// whether the agent/connector configuration was updated.</p>
+    /// <p>Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
     pub agents_configuration_status:
         std::option::Option<std::vec::Vec<crate::model::AgentConfigurationStatus>>,
 }
 impl StopDataCollectionByAgentIdsOutput {
-    /// <p>Information about the agents or connector that were instructed to stop collecting data.
-    /// Information includes the agent/connector ID, a description of the operation performed, and
-    /// whether the agent/connector configuration was updated.</p>
+    /// <p>Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
     pub fn agents_configuration_status(
         &self,
     ) -> std::option::Option<&[crate::model::AgentConfigurationStatus]> {
@@ -73,21 +69,17 @@ pub mod stop_data_collection_by_agent_ids_output {
         ///
         /// To override the contents of this collection use [`set_agents_configuration_status`](Self::set_agents_configuration_status).
         ///
-        /// <p>Information about the agents or connector that were instructed to stop collecting data.
-        /// Information includes the agent/connector ID, a description of the operation performed, and
-        /// whether the agent/connector configuration was updated.</p>
+        /// <p>Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
         pub fn agents_configuration_status(
             mut self,
-            input: impl Into<crate::model::AgentConfigurationStatus>,
+            input: crate::model::AgentConfigurationStatus,
         ) -> Self {
             let mut v = self.agents_configuration_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agents_configuration_status = Some(v);
             self
         }
-        /// <p>Information about the agents or connector that were instructed to stop collecting data.
-        /// Information includes the agent/connector ID, a description of the operation performed, and
-        /// whether the agent/connector configuration was updated.</p>
+        /// <p>Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
         pub fn set_agents_configuration_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AgentConfigurationStatus>>,
@@ -114,15 +106,13 @@ impl StopDataCollectionByAgentIdsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopContinuousExportOutput {
-    /// <p>Timestamp that represents when this continuous export started collecting
-    /// data.</p>
+    /// <p>Timestamp that represents when this continuous export started collecting data.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Timestamp that represents when this continuous export was stopped.</p>
     pub stop_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StopContinuousExportOutput {
-    /// <p>Timestamp that represents when this continuous export started collecting
-    /// data.</p>
+    /// <p>Timestamp that represents when this continuous export started collecting data.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -149,14 +139,12 @@ pub mod stop_continuous_export_output {
         pub(crate) stop_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Timestamp that represents when this continuous export started collecting
-        /// data.</p>
+        /// <p>Timestamp that represents when this continuous export started collecting data.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>Timestamp that represents when this continuous export started collecting
-        /// data.</p>
+        /// <p>Timestamp that represents when this continuous export started collecting data.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -197,13 +185,11 @@ impl StopContinuousExportOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImportTaskOutput {
-    /// <p>An array of information related to the import task request including status information,
-    /// times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
+    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
     pub task: std::option::Option<crate::model::ImportTask>,
 }
 impl StartImportTaskOutput {
-    /// <p>An array of information related to the import task request including status information,
-    /// times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
+    /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
     pub fn task(&self) -> std::option::Option<&crate::model::ImportTask> {
         self.task.as_ref()
     }
@@ -224,14 +210,12 @@ pub mod start_import_task_output {
         pub(crate) task: std::option::Option<crate::model::ImportTask>,
     }
     impl Builder {
-        /// <p>An array of information related to the import task request including status information,
-        /// times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
+        /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
         pub fn task(mut self, input: crate::model::ImportTask) -> Self {
             self.task = Some(input);
             self
         }
-        /// <p>An array of information related to the import task request including status information,
-        /// times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
+        /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
         pub fn set_task(mut self, input: std::option::Option<crate::model::ImportTask>) -> Self {
             self.task = input;
             self
@@ -307,16 +291,12 @@ impl StartExportTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDataCollectionByAgentIdsOutput {
-    /// <p>Information about agents or the connector that were instructed to start collecting
-    /// data. Information includes the agent/connector ID, a description of the operation performed,
-    /// and whether the agent/connector configuration was updated.</p>
+    /// <p>Information about agents or the connector that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
     pub agents_configuration_status:
         std::option::Option<std::vec::Vec<crate::model::AgentConfigurationStatus>>,
 }
 impl StartDataCollectionByAgentIdsOutput {
-    /// <p>Information about agents or the connector that were instructed to start collecting
-    /// data. Information includes the agent/connector ID, a description of the operation performed,
-    /// and whether the agent/connector configuration was updated.</p>
+    /// <p>Information about agents or the connector that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
     pub fn agents_configuration_status(
         &self,
     ) -> std::option::Option<&[crate::model::AgentConfigurationStatus]> {
@@ -347,21 +327,17 @@ pub mod start_data_collection_by_agent_ids_output {
         ///
         /// To override the contents of this collection use [`set_agents_configuration_status`](Self::set_agents_configuration_status).
         ///
-        /// <p>Information about agents or the connector that were instructed to start collecting
-        /// data. Information includes the agent/connector ID, a description of the operation performed,
-        /// and whether the agent/connector configuration was updated.</p>
+        /// <p>Information about agents or the connector that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
         pub fn agents_configuration_status(
             mut self,
-            input: impl Into<crate::model::AgentConfigurationStatus>,
+            input: crate::model::AgentConfigurationStatus,
         ) -> Self {
             let mut v = self.agents_configuration_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agents_configuration_status = Some(v);
             self
         }
-        /// <p>Information about agents or the connector that were instructed to start collecting
-        /// data. Information includes the agent/connector ID, a description of the operation performed,
-        /// and whether the agent/connector configuration was updated.</p>
+        /// <p>Information about agents or the connector that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
         pub fn set_agents_configuration_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AgentConfigurationStatus>>,
@@ -394,16 +370,11 @@ pub struct StartContinuousExportOutput {
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The timestamp representing when the continuous export was started.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The type of data collector used to gather this data (currently only offered for
-    /// AGENT).</p>
+    /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
     /// <p>A dictionary which describes how the data is stored.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>databaseName</code> - the name of the Glue database used to store the
-    /// schema.</p>
-    /// </li>
+    /// <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>
     /// </ul>
     pub schema_storage_config:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -421,18 +392,13 @@ impl StartContinuousExportOutput {
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The type of data collector used to gather this data (currently only offered for
-    /// AGENT).</p>
+    /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
     pub fn data_source(&self) -> std::option::Option<&crate::model::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>A dictionary which describes how the data is stored.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>databaseName</code> - the name of the Glue database used to store the
-    /// schema.</p>
-    /// </li>
+    /// <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>
     /// </ul>
     pub fn schema_storage_config(
         &self,
@@ -500,14 +466,12 @@ pub mod start_continuous_export_output {
             self.start_time = input;
             self
         }
-        /// <p>The type of data collector used to gather this data (currently only offered for
-        /// AGENT).</p>
+        /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
         pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
             self.data_source = Some(input);
             self
         }
-        /// <p>The type of data collector used to gather this data (currently only offered for
-        /// AGENT).</p>
+        /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::DataSource>,
@@ -521,11 +485,7 @@ pub mod start_continuous_export_output {
         ///
         /// <p>A dictionary which describes how the data is stored.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>databaseName</code> - the name of the Glue database used to store the
-        /// schema.</p>
-        /// </li>
+        /// <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>
         /// </ul>
         pub fn schema_storage_config(
             mut self,
@@ -539,11 +499,7 @@ pub mod start_continuous_export_output {
         }
         /// <p>A dictionary which describes how the data is stored.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>databaseName</code> - the name of the Glue database used to store the
-        /// schema.</p>
-        /// </li>
+        /// <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>
         /// </ul>
         pub fn set_schema_storage_config(
             mut self,
@@ -579,11 +535,7 @@ impl StartContinuousExportOutput {
 pub struct ListServerNeighborsOutput {
     /// <p>List of distinct servers that are one hop away from the given server.</p>
     pub neighbors: std::option::Option<std::vec::Vec<crate::model::NeighborConnectionDetail>>,
-    /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for
-    /// <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
-    /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results
-    /// along with this token. Use this token in the next query to retrieve the next set of
-    /// 10.</p>
+    /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Count of distinct servers that are one hop away from the given server.</p>
     pub known_dependency_count: i64,
@@ -593,11 +545,7 @@ impl ListServerNeighborsOutput {
     pub fn neighbors(&self) -> std::option::Option<&[crate::model::NeighborConnectionDetail]> {
         self.neighbors.as_deref()
     }
-    /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for
-    /// <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
-    /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results
-    /// along with this token. Use this token in the next query to retrieve the next set of
-    /// 10.</p>
+    /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -632,12 +580,9 @@ pub mod list_server_neighbors_output {
         /// To override the contents of this collection use [`set_neighbors`](Self::set_neighbors).
         ///
         /// <p>List of distinct servers that are one hop away from the given server.</p>
-        pub fn neighbors(
-            mut self,
-            input: impl Into<crate::model::NeighborConnectionDetail>,
-        ) -> Self {
+        pub fn neighbors(mut self, input: crate::model::NeighborConnectionDetail) -> Self {
             let mut v = self.neighbors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.neighbors = Some(v);
             self
         }
@@ -649,20 +594,12 @@ pub mod list_server_neighbors_output {
             self.neighbors = input;
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for
-        /// <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
-        /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results
-        /// along with this token. Use this token in the next query to retrieve the next set of
-        /// 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for
-        /// <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
-        /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results
-        /// along with this token. Use this token in the next query to retrieve the next set of
-        /// 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -698,32 +635,22 @@ impl ListServerNeighborsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationsOutput {
-    /// <p>Returns configuration details, including the configuration ID, attribute names, and
-    /// attribute values.</p>
+    /// <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
     pub configurations: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
-    /// <p>Token to retrieve the next set of results. For example, if your call to
-    /// ListConfigurations returned 100 items, but you set
-    /// <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
-    /// along with this token. Use this token in the next query to retrieve the next set of
-    /// 10.</p>
+    /// <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationsOutput {
-    /// <p>Returns configuration details, including the configuration ID, attribute names, and
-    /// attribute values.</p>
+    /// <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
     pub fn configurations(
         &self,
     ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
     {
         self.configurations.as_deref()
     }
-    /// <p>Token to retrieve the next set of results. For example, if your call to
-    /// ListConfigurations returned 100 items, but you set
-    /// <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
-    /// along with this token. Use this token in the next query to retrieve the next set of
-    /// 10.</p>
+    /// <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -752,19 +679,17 @@ pub mod list_configurations_output {
         ///
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
-        /// <p>Returns configuration details, including the configuration ID, attribute names, and
-        /// attribute values.</p>
+        /// <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
         pub fn configurations(
             mut self,
-            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
-        /// <p>Returns configuration details, including the configuration ID, attribute names, and
-        /// attribute values.</p>
+        /// <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
         pub fn set_configurations(
             mut self,
             input: std::option::Option<
@@ -774,20 +699,12 @@ pub mod list_configurations_output {
             self.configurations = input;
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if your call to
-        /// ListConfigurations returned 100 items, but you set
-        /// <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
-        /// along with this token. Use this token in the next query to retrieve the next set of
-        /// 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if your call to
-        /// ListConfigurations returned 100 items, but you set
-        /// <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
-        /// along with this token. Use this token in the next query to retrieve the next set of
-        /// 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1060,15 +977,13 @@ impl DisassociateConfigurationItemsFromApplicationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsOutput {
-    /// <p>Depending on the input, this is a list of configuration items tagged with a specific
-    /// tag, or a list of tags for a specific configuration item.</p>
+    /// <p>Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::ConfigurationTag>>,
     /// <p>The call returns a token. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTagsOutput {
-    /// <p>Depending on the input, this is a list of configuration items tagged with a specific
-    /// tag, or a list of tags for a specific configuration item.</p>
+    /// <p>Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::ConfigurationTag]> {
         self.tags.as_deref()
     }
@@ -1099,16 +1014,14 @@ pub mod describe_tags_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Depending on the input, this is a list of configuration items tagged with a specific
-        /// tag, or a list of tags for a specific configuration item.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::ConfigurationTag>) -> Self {
+        /// <p>Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.</p>
+        pub fn tags(mut self, input: crate::model::ConfigurationTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Depending on the input, this is a list of configuration items tagged with a specific
-        /// tag, or a list of tags for a specific configuration item.</p>
+        /// <p>Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigurationTag>>,
@@ -1148,8 +1061,7 @@ impl DescribeTagsOutput {
 pub struct DescribeImportTasksOutput {
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A returned array of import tasks that match any applied filters, up to the specified
-    /// number of maximum results.</p>
+    /// <p>A returned array of import tasks that match any applied filters, up to the specified number of maximum results.</p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::ImportTask>>,
 }
 impl DescribeImportTasksOutput {
@@ -1157,8 +1069,7 @@ impl DescribeImportTasksOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A returned array of import tasks that match any applied filters, up to the specified
-    /// number of maximum results.</p>
+    /// <p>A returned array of import tasks that match any applied filters, up to the specified number of maximum results.</p>
     pub fn tasks(&self) -> std::option::Option<&[crate::model::ImportTask]> {
         self.tasks.as_deref()
     }
@@ -1195,16 +1106,14 @@ pub mod describe_import_tasks_output {
         ///
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
-        /// <p>A returned array of import tasks that match any applied filters, up to the specified
-        /// number of maximum results.</p>
-        pub fn tasks(mut self, input: impl Into<crate::model::ImportTask>) -> Self {
+        /// <p>A returned array of import tasks that match any applied filters, up to the specified number of maximum results.</p>
+        pub fn tasks(mut self, input: crate::model::ImportTask) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
-        /// <p>A returned array of import tasks that match any applied filters, up to the specified
-        /// number of maximum results.</p>
+        /// <p>A returned array of import tasks that match any applied filters, up to the specified number of maximum results.</p>
         pub fn set_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImportTask>>,
@@ -1232,29 +1141,17 @@ impl DescribeImportTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExportTasksOutput {
-    /// <p>Contains one or more sets of export request details. When the status of a request is
-    /// <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can
-    /// view the data in a CSV file.</p>
+    /// <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
     pub exports_info: std::option::Option<std::vec::Vec<crate::model::ExportInfo>>,
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>DescribeExportTasks</code> request. When the results of a
-    /// <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be
-    /// used to retrieve the next page of results. This value is null when there are no more results
-    /// to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeExportTasksOutput {
-    /// <p>Contains one or more sets of export request details. When the status of a request is
-    /// <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can
-    /// view the data in a CSV file.</p>
+    /// <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
     pub fn exports_info(&self) -> std::option::Option<&[crate::model::ExportInfo]> {
         self.exports_info.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>DescribeExportTasks</code> request. When the results of a
-    /// <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be
-    /// used to retrieve the next page of results. This value is null when there are no more results
-    /// to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1281,18 +1178,14 @@ pub mod describe_export_tasks_output {
         ///
         /// To override the contents of this collection use [`set_exports_info`](Self::set_exports_info).
         ///
-        /// <p>Contains one or more sets of export request details. When the status of a request is
-        /// <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can
-        /// view the data in a CSV file.</p>
-        pub fn exports_info(mut self, input: impl Into<crate::model::ExportInfo>) -> Self {
+        /// <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
+        pub fn exports_info(mut self, input: crate::model::ExportInfo) -> Self {
             let mut v = self.exports_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.exports_info = Some(v);
             self
         }
-        /// <p>Contains one or more sets of export request details. When the status of a request is
-        /// <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can
-        /// view the data in a CSV file.</p>
+        /// <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
         pub fn set_exports_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportInfo>>,
@@ -1300,20 +1193,12 @@ pub mod describe_export_tasks_output {
             self.exports_info = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>DescribeExportTasks</code> request. When the results of a
-        /// <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be
-        /// used to retrieve the next page of results. This value is null when there are no more results
-        /// to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>DescribeExportTasks</code> request. When the results of a
-        /// <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be
-        /// used to retrieve the next page of results. This value is null when there are no more results
-        /// to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1376,9 +1261,9 @@ pub mod describe_export_configurations_output {
         /// To override the contents of this collection use [`set_exports_info`](Self::set_exports_info).
         ///
         /// <p></p>
-        pub fn exports_info(mut self, input: impl Into<crate::model::ExportInfo>) -> Self {
+        pub fn exports_info(mut self, input: crate::model::ExportInfo) -> Self {
             let mut v = self.exports_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.exports_info = Some(v);
             self
         }
@@ -1461,12 +1346,9 @@ pub mod describe_continuous_exports_output {
         /// To override the contents of this collection use [`set_descriptions`](Self::set_descriptions).
         ///
         /// <p>A list of continuous export descriptions.</p>
-        pub fn descriptions(
-            mut self,
-            input: impl Into<crate::model::ContinuousExportDescription>,
-        ) -> Self {
+        pub fn descriptions(mut self, input: crate::model::ContinuousExportDescription) -> Self {
             let mut v = self.descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.descriptions = Some(v);
             self
         }
@@ -1547,10 +1429,10 @@ pub mod describe_configurations_output {
         /// <p>A key in the response map. The value is an array of data.</p>
         pub fn configurations(
             mut self,
-            input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            input: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configurations = Some(v);
             self
         }
@@ -1583,29 +1465,17 @@ impl DescribeConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentsOutput {
-    /// <p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your
-    /// user account if you did not specify an agent/Connector ID. The output includes agent/Connector
-    /// IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name
-    /// where the agent/Connector resides, and the version number of each agent/Connector.</p>
+    /// <p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of each agent/Connector.</p>
     pub agents_info: std::option::Option<std::vec::Vec<crate::model::AgentInfo>>,
-    /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for
-    /// <code>DescribeAgentsRequest$agentIds</code> but set
-    /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
-    /// with this token. Use this token in the next query to retrieve the next set of 10.</p>
+    /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAgentsOutput {
-    /// <p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your
-    /// user account if you did not specify an agent/Connector ID. The output includes agent/Connector
-    /// IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name
-    /// where the agent/Connector resides, and the version number of each agent/Connector.</p>
+    /// <p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of each agent/Connector.</p>
     pub fn agents_info(&self) -> std::option::Option<&[crate::model::AgentInfo]> {
         self.agents_info.as_deref()
     }
-    /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for
-    /// <code>DescribeAgentsRequest$agentIds</code> but set
-    /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
-    /// with this token. Use this token in the next query to retrieve the next set of 10.</p>
+    /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1632,20 +1502,14 @@ pub mod describe_agents_output {
         ///
         /// To override the contents of this collection use [`set_agents_info`](Self::set_agents_info).
         ///
-        /// <p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your
-        /// user account if you did not specify an agent/Connector ID. The output includes agent/Connector
-        /// IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name
-        /// where the agent/Connector resides, and the version number of each agent/Connector.</p>
-        pub fn agents_info(mut self, input: impl Into<crate::model::AgentInfo>) -> Self {
+        /// <p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of each agent/Connector.</p>
+        pub fn agents_info(mut self, input: crate::model::AgentInfo) -> Self {
             let mut v = self.agents_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agents_info = Some(v);
             self
         }
-        /// <p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your
-        /// user account if you did not specify an agent/Connector ID. The output includes agent/Connector
-        /// IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name
-        /// where the agent/Connector resides, and the version number of each agent/Connector.</p>
+        /// <p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of each agent/Connector.</p>
         pub fn set_agents_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AgentInfo>>,
@@ -1653,18 +1517,12 @@ pub mod describe_agents_output {
             self.agents_info = input;
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for
-        /// <code>DescribeAgentsRequest$agentIds</code> but set
-        /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
-        /// with this token. Use this token in the next query to retrieve the next set of 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for
-        /// <code>DescribeAgentsRequest$agentIds</code> but set
-        /// <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along
-        /// with this token. Use this token in the next query to retrieve the next set of 10.</p>
+        /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1836,13 +1694,11 @@ impl CreateApplicationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteImportDataOutput {
-    /// <p>Error messages returned for each import task that you deleted as a response for this
-    /// command.</p>
+    /// <p>Error messages returned for each import task that you deleted as a response for this command.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchDeleteImportDataError>>,
 }
 impl BatchDeleteImportDataOutput {
-    /// <p>Error messages returned for each import task that you deleted as a response for this
-    /// command.</p>
+    /// <p>Error messages returned for each import task that you deleted as a response for this command.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchDeleteImportDataError]> {
         self.errors.as_deref()
     }
@@ -1868,19 +1724,14 @@ pub mod batch_delete_import_data_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>Error messages returned for each import task that you deleted as a response for this
-        /// command.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::BatchDeleteImportDataError>,
-        ) -> Self {
+        /// <p>Error messages returned for each import task that you deleted as a response for this command.</p>
+        pub fn errors(mut self, input: crate::model::BatchDeleteImportDataError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>Error messages returned for each import task that you deleted as a response for this
-        /// command.</p>
+        /// <p>Error messages returned for each import task that you deleted as a response for this command.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchDeleteImportDataError>>,

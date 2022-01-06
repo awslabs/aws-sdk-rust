@@ -17,7 +17,7 @@ use qldbsession::{Config, Region};
 use std::time::{Duration, UNIX_EPOCH};
 pub type Client<C> = CoreClient<C, DefaultMiddleware>;
 
-// TODO: having the full HTTP requests right in the code is a bit gross, consider something
+// TODO(DVR): having the full HTTP requests right in the code is a bit gross, consider something
 // like https://github.com/davidbarsky/sigv4/blob/master/aws-sigv4/src/lib.rs#L283-L315 to store
 // the requests/responses externally
 

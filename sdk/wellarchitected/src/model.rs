@@ -155,8 +155,7 @@ pub struct WorkloadShare {
     /// <p>The status of a workload share.</p>
     pub status: std::option::Option<crate::model::ShareStatus>,
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
@@ -183,8 +182,7 @@ impl WorkloadShare {
         self.status.as_ref()
     }
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
@@ -275,15 +273,13 @@ pub mod workload_share {
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name = Some(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -453,8 +449,7 @@ pub struct Workload {
     /// <p>The ARN for the workload.</p>
     pub workload_arn: std::option::Option<std::string::String>,
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The description for the workload.</p>
     pub description: std::option::Option<std::string::String>,
@@ -464,162 +459,49 @@ pub struct Workload {
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-    /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
     pub aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub non_aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The URL of the architectural design for the workload.</p>
     pub architectural_design: std::option::Option<std::string::String>,
-    /// <p>The review owner of the workload. The name, email address, or identifier for the
-    /// primary group or individual that owns the workload review process.</p>
+    /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
     pub review_owner: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
     pub review_restriction_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
-    /// owner</i> field is required.</p>
-    /// <p>If a <b>Review owner</b> is not added to the workload within
-    /// 60 days of acknowledgement, access to the workload is restricted until an owner is
-    /// added.</p>
+    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+    /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
     pub is_review_owner_update_acknowledged: bool,
     /// <p>The industry type for the workload.</p>
-    /// <p>If specified, must be one of the following:</p>  
+    /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Agriculture</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Automobile</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Defense</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Design and Engineering</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Digital Advertising</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Education</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Environmental Protection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Financial Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Gaming</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>General Public Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Healthcare</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Hospitality</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>InfoTech</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Justice and Public Safety</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Life Sciences</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Manufacturing</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Media & Entertainment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Mining & Resources</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Oil & Gas</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Power & Utilities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Professional Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Real Estate & Construction</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Retail & Wholesale</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Social Protection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Telecommunications</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Travel, Transportation & Logistics</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Other</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub industry_type: std::option::Option<std::string::String>,
     /// <p>The industry for the workload.</p>
@@ -630,10 +512,9 @@ pub struct Workload {
     pub improvement_status: std::option::Option<crate::model::WorkloadImprovementStatus>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
-    /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-    /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub pillar_priorities: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lenses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An Amazon Web Services account ID.</p>
     pub owner: std::option::Option<std::string::String>,
@@ -653,8 +534,7 @@ impl Workload {
         self.workload_arn.as_deref()
     }
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
@@ -674,8 +554,7 @@ impl Workload {
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
-    /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-    /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
     pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.aws_regions.as_deref()
     }
@@ -687,8 +566,7 @@ impl Workload {
     pub fn architectural_design(&self) -> std::option::Option<&str> {
         self.architectural_design.as_deref()
     }
-    /// <p>The review owner of the workload. The name, email address, or identifier for the
-    /// primary group or individual that owns the workload review process.</p>
+    /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
     pub fn review_owner(&self) -> std::option::Option<&str> {
         self.review_owner.as_deref()
     }
@@ -696,152 +574,41 @@ impl Workload {
     pub fn review_restriction_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.review_restriction_date.as_ref()
     }
-    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
-    /// owner</i> field is required.</p>
-    /// <p>If a <b>Review owner</b> is not added to the workload within
-    /// 60 days of acknowledgement, access to the workload is restricted until an owner is
-    /// added.</p>
+    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+    /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
     pub fn is_review_owner_update_acknowledged(&self) -> bool {
         self.is_review_owner_update_acknowledged
     }
     /// <p>The industry type for the workload.</p>
-    /// <p>If specified, must be one of the following:</p>  
+    /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Agriculture</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Automobile</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Defense</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Design and Engineering</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Digital Advertising</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Education</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Environmental Protection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Financial Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Gaming</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>General Public Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Healthcare</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Hospitality</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>InfoTech</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Justice and Public Safety</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Life Sciences</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Manufacturing</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Media & Entertainment</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Mining & Resources</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Oil & Gas</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Power & Utilities</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Professional Services</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Real Estate & Construction</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Retail & Wholesale</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Social Protection</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Telecommunications</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Travel, Transportation & Logistics</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Other</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub fn industry_type(&self) -> std::option::Option<&str> {
         self.industry_type.as_deref()
@@ -866,12 +633,11 @@ impl Workload {
     ) -> std::option::Option<&std::collections::HashMap<crate::model::Risk, i32>> {
         self.risk_counts.as_ref()
     }
-    /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-    /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_priorities(&self) -> std::option::Option<&[std::string::String]> {
         self.pillar_priorities.as_deref()
     }
-    /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lenses(&self) -> std::option::Option<&[std::string::String]> {
         self.lenses.as_deref()
     }
@@ -978,15 +744,13 @@ pub mod workload {
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name = Some(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1053,16 +817,14 @@ pub mod workload {
         ///
         /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
         ///
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_regions.unwrap_or_default();
             v.push(input.into());
             self.aws_regions = Some(v);
             self
         }
-        /// <p>The list of Amazon Web Services Regions associated with the workload, for example,
-        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+        /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1102,14 +864,12 @@ pub mod workload {
             self.architectural_design = input;
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
         pub fn review_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.review_owner = Some(input.into());
             self
         }
-        /// <p>The review owner of the workload. The name, email address, or identifier for the
-        /// primary group or individual that owns the workload review process.</p>
+        /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
         pub fn set_review_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.review_owner = input;
             self
@@ -1127,20 +887,14 @@ pub mod workload {
             self.review_restriction_date = input;
             self
         }
-        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
-        /// owner</i> field is required.</p>
-        /// <p>If a <b>Review owner</b> is not added to the workload within
-        /// 60 days of acknowledgement, access to the workload is restricted until an owner is
-        /// added.</p>
+        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+        /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
         pub fn is_review_owner_update_acknowledged(mut self, input: bool) -> Self {
             self.is_review_owner_update_acknowledged = Some(input);
             self
         }
-        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
-        /// owner</i> field is required.</p>
-        /// <p>If a <b>Review owner</b> is not added to the workload within
-        /// 60 days of acknowledgement, access to the workload is restricted until an owner is
-        /// added.</p>
+        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+        /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
         pub fn set_is_review_owner_update_acknowledged(
             mut self,
             input: std::option::Option<bool>,
@@ -1149,286 +903,70 @@ pub mod workload {
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
         pub fn industry_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.industry_type = Some(input.into());
             self
         }
         /// <p>The industry type for the workload.</p>
-        /// <p>If specified, must be one of the following:</p>  
+        /// <p>If specified, must be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Agriculture</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Automobile</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Defense</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Design and Engineering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Digital Advertising</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Education</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Environmental Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Financial Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Gaming</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>General Public Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Healthcare</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Hospitality</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InfoTech</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Justice and Public Safety</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Life Sciences</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Manufacturing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Media & Entertainment</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Mining & Resources</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Oil & Gas</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Power & Utilities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Professional Services</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Real Estate & Construction</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Retail & Wholesale</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Social Protection</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Telecommunications</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Travel, Transportation & Logistics</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Other</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Agriculture</code> </p> </li>
+        /// <li> <p> <code>Automobile</code> </p> </li>
+        /// <li> <p> <code>Defense</code> </p> </li>
+        /// <li> <p> <code>Design and Engineering</code> </p> </li>
+        /// <li> <p> <code>Digital Advertising</code> </p> </li>
+        /// <li> <p> <code>Education</code> </p> </li>
+        /// <li> <p> <code>Environmental Protection</code> </p> </li>
+        /// <li> <p> <code>Financial Services</code> </p> </li>
+        /// <li> <p> <code>Gaming</code> </p> </li>
+        /// <li> <p> <code>General Public Services</code> </p> </li>
+        /// <li> <p> <code>Healthcare</code> </p> </li>
+        /// <li> <p> <code>Hospitality</code> </p> </li>
+        /// <li> <p> <code>InfoTech</code> </p> </li>
+        /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+        /// <li> <p> <code>Life Sciences</code> </p> </li>
+        /// <li> <p> <code>Manufacturing</code> </p> </li>
+        /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+        /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+        /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+        /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+        /// <li> <p> <code>Professional Services</code> </p> </li>
+        /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+        /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+        /// <li> <p> <code>Social Protection</code> </p> </li>
+        /// <li> <p> <code>Telecommunications</code> </p> </li>
+        /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+        /// <li> <p> <code>Other</code> </p> </li>
         /// </ul>
         pub fn set_industry_type(
             mut self,
@@ -1478,9 +1016,9 @@ pub mod workload {
         /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
         ///
         /// <p>A map from risk names to the count of how questions have that rating.</p>
-        pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
+        pub fn risk_counts(mut self, k: crate::model::Risk, v: i32) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.risk_counts = Some(hash_map);
             self
         }
@@ -1496,16 +1034,14 @@ pub mod workload {
         ///
         /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
         ///
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_priorities(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pillar_priorities.unwrap_or_default();
             v.push(input.into());
             self.pillar_priorities = Some(v);
             self
         }
-        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
-        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1517,14 +1053,14 @@ pub mod workload {
         ///
         /// To override the contents of this collection use [`set_lenses`](Self::set_lenses).
         ///
-        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lenses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lenses.unwrap_or_default();
             v.push(input.into());
             self.lenses = Some(v);
             self
         }
-        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lenses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1825,7 +1361,7 @@ pub struct ShareInvitation {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
     pub lens_arn: std::option::Option<std::string::String>,
@@ -1844,7 +1380,7 @@ impl ShareInvitation {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -1914,13 +1450,13 @@ pub mod share_invitation {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -2069,7 +1605,7 @@ impl AsRef<str> for ShareInvitationAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LensReview {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
     pub lens_arn: std::option::Option<std::string::String>,
@@ -2093,7 +1629,7 @@ pub struct LensReview {
 }
 impl LensReview {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -2175,13 +1711,13 @@ pub mod lens_review {
     }
     impl Builder {
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -2234,12 +1770,9 @@ pub mod lens_review {
         /// To override the contents of this collection use [`set_pillar_review_summaries`](Self::set_pillar_review_summaries).
         ///
         /// <p>List of pillar review summaries of lens review in a workload.</p>
-        pub fn pillar_review_summaries(
-            mut self,
-            input: impl Into<crate::model::PillarReviewSummary>,
-        ) -> Self {
+        pub fn pillar_review_summaries(mut self, input: crate::model::PillarReviewSummary) -> Self {
             let mut v = self.pillar_review_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pillar_review_summaries = Some(v);
             self
         }
@@ -2279,9 +1812,9 @@ pub mod lens_review {
         /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
         ///
         /// <p>A map from risk names to the count of how questions have that rating.</p>
-        pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
+        pub fn risk_counts(mut self, k: crate::model::Risk, v: i32) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.risk_counts = Some(hash_map);
             self
         }
@@ -2332,7 +1865,7 @@ impl LensReview {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PillarReviewSummary {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The name of the pillar.</p>
     pub pillar_name: std::option::Option<std::string::String>,
@@ -2343,7 +1876,7 @@ pub struct PillarReviewSummary {
 }
 impl PillarReviewSummary {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(&self) -> std::option::Option<&str> {
         self.pillar_id.as_deref()
     }
@@ -2386,13 +1919,13 @@ pub mod pillar_review_summary {
     }
     impl Builder {
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pillar_id = Some(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -2422,9 +1955,9 @@ pub mod pillar_review_summary {
         /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
         ///
         /// <p>A map from risk names to the count of how questions have that rating.</p>
-        pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
+        pub fn risk_counts(mut self, k: crate::model::Risk, v: i32) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.risk_counts = Some(hash_map);
             self
         }
@@ -2534,7 +2067,7 @@ pub struct Answer {
     /// <p>The ID of the question.</p>
     pub question_id: std::option::Option<std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The title of the question.</p>
     pub question_title: std::option::Option<std::string::String>,
@@ -2569,7 +2102,7 @@ impl Answer {
         self.question_id.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(&self) -> std::option::Option<&str> {
         self.pillar_id.as_deref()
     }
@@ -2680,13 +2213,13 @@ pub mod answer {
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pillar_id = Some(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -2766,9 +2299,9 @@ pub mod answer {
         /// To override the contents of this collection use [`set_choices`](Self::set_choices).
         ///
         /// <p>List of choices available for a question.</p>
-        pub fn choices(mut self, input: impl Into<crate::model::Choice>) -> Self {
+        pub fn choices(mut self, input: crate::model::Choice) -> Self {
             let mut v = self.choices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.choices = Some(v);
             self
         }
@@ -2806,9 +2339,9 @@ pub mod answer {
         /// To override the contents of this collection use [`set_choice_answers`](Self::set_choice_answers).
         ///
         /// <p>A list of selected choices to a question in your workload.</p>
-        pub fn choice_answers(mut self, input: impl Into<crate::model::ChoiceAnswer>) -> Self {
+        pub fn choice_answers(mut self, input: crate::model::ChoiceAnswer) -> Self {
             let mut v = self.choice_answers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.choice_answers = Some(v);
             self
         }
@@ -3643,14 +3176,13 @@ pub struct WorkloadSummary {
     /// <p>The ARN for the workload.</p>
     pub workload_arn: std::option::Option<std::string::String>,
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Web Services account ID.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lenses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
@@ -3667,8 +3199,7 @@ impl WorkloadSummary {
         self.workload_arn.as_deref()
     }
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
@@ -3680,7 +3211,7 @@ impl WorkloadSummary {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lenses(&self) -> std::option::Option<&[std::string::String]> {
         self.lenses.as_deref()
     }
@@ -3749,15 +3280,13 @@ pub mod workload_summary {
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name = Some(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3792,14 +3321,14 @@ pub mod workload_summary {
         ///
         /// To override the contents of this collection use [`set_lenses`](Self::set_lenses).
         ///
-        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lenses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lenses.unwrap_or_default();
             v.push(input.into());
             self.lenses = Some(v);
             self
         }
-        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lenses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3812,9 +3341,9 @@ pub mod workload_summary {
         /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
         ///
         /// <p>A map from risk names to the count of how questions have that rating.</p>
-        pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
+        pub fn risk_counts(mut self, k: crate::model::Risk, v: i32) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.risk_counts = Some(hash_map);
             self
         }
@@ -3879,8 +3408,7 @@ pub struct ShareInvitationSummary {
     /// <p>The resource type of the share invitation.</p>
     pub share_resource_type: std::option::Option<crate::model::ShareResourceType>,
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
@@ -3911,8 +3439,7 @@ impl ShareInvitationSummary {
         self.share_resource_type.as_ref()
     }
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
@@ -4021,15 +3548,13 @@ pub mod share_invitation_summary {
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name = Some(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4176,11 +3701,10 @@ pub struct LensUpgradeSummary {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub workload_name: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
     pub lens_arn: std::option::Option<std::string::String>,
@@ -4195,13 +3719,12 @@ impl LensUpgradeSummary {
         self.workload_id.as_deref()
     }
     /// <p>The name of the workload.</p>
-    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-    /// are ignored when checking for uniqueness.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -4255,15 +3778,13 @@ pub mod lens_upgrade_summary {
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.workload_name = Some(input.into());
             self
         }
         /// <p>The name of the workload.</p>
-        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
-        /// are ignored when checking for uniqueness.</p>
+        /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4272,13 +3793,13 @@ pub mod lens_upgrade_summary {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -4619,7 +4140,7 @@ impl LensShareSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LensReviewSummary {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
     pub lens_arn: std::option::Option<std::string::String>,
@@ -4636,7 +4157,7 @@ pub struct LensReviewSummary {
 }
 impl LensReviewSummary {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -4697,13 +4218,13 @@ pub mod lens_review_summary {
     }
     impl Builder {
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -4769,9 +4290,9 @@ pub mod lens_review_summary {
         /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
         ///
         /// <p>A map from risk names to the count of how questions have that rating.</p>
-        pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
+        pub fn risk_counts(mut self, k: crate::model::Risk, v: i32) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.risk_counts = Some(hash_map);
             self
         }
@@ -4811,7 +4332,7 @@ pub struct ImprovementSummary {
     /// <p>The ID of the question.</p>
     pub question_id: std::option::Option<std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The title of the question.</p>
     pub question_title: std::option::Option<std::string::String>,
@@ -4829,7 +4350,7 @@ impl ImprovementSummary {
         self.question_id.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(&self) -> std::option::Option<&str> {
         self.pillar_id.as_deref()
     }
@@ -4889,13 +4410,13 @@ pub mod improvement_summary {
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pillar_id = Some(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -4943,12 +4464,9 @@ pub mod improvement_summary {
         /// To override the contents of this collection use [`set_improvement_plans`](Self::set_improvement_plans).
         ///
         /// <p>The improvement plan details.</p>
-        pub fn improvement_plans(
-            mut self,
-            input: impl Into<crate::model::ChoiceImprovementPlan>,
-        ) -> Self {
+        pub fn improvement_plans(mut self, input: crate::model::ChoiceImprovementPlan) -> Self {
             let mut v = self.improvement_plans.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.improvement_plans = Some(v);
             self
         }
@@ -5086,7 +4604,7 @@ pub struct LensSummary {
     /// <p>The ARN of the lens.</p>
     pub lens_arn: std::option::Option<std::string::String>,
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The full name of the lens.</p>
     pub lens_name: std::option::Option<std::string::String>,
@@ -5111,7 +4629,7 @@ impl LensSummary {
         self.lens_arn.as_deref()
     }
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -5193,13 +4711,13 @@ pub mod lens_summary {
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -5442,7 +4960,7 @@ pub struct AnswerSummary {
     /// <p>The ID of the question.</p>
     pub question_id: std::option::Option<std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The title of the question.</p>
     pub question_title: std::option::Option<std::string::String>,
@@ -5467,7 +4985,7 @@ impl AnswerSummary {
         self.question_id.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(&self) -> std::option::Option<&str> {
         self.pillar_id.as_deref()
     }
@@ -5547,13 +5065,13 @@ pub mod answer_summary {
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pillar_id = Some(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -5576,9 +5094,9 @@ pub mod answer_summary {
         /// To override the contents of this collection use [`set_choices`](Self::set_choices).
         ///
         /// <p>List of choices available for a question.</p>
-        pub fn choices(mut self, input: impl Into<crate::model::Choice>) -> Self {
+        pub fn choices(mut self, input: crate::model::Choice) -> Self {
             let mut v = self.choices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.choices = Some(v);
             self
         }
@@ -5616,12 +5134,9 @@ pub mod answer_summary {
         /// To override the contents of this collection use [`set_choice_answer_summaries`](Self::set_choice_answer_summaries).
         ///
         /// <p>A list of selected choices to a question in your workload.</p>
-        pub fn choice_answer_summaries(
-            mut self,
-            input: impl Into<crate::model::ChoiceAnswerSummary>,
-        ) -> Self {
+        pub fn choice_answer_summaries(mut self, input: crate::model::ChoiceAnswerSummary) -> Self {
             let mut v = self.choice_answer_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.choice_answer_summaries = Some(v);
             self
         }
@@ -6006,12 +5521,9 @@ pub mod version_differences {
         /// To override the contents of this collection use [`set_pillar_differences`](Self::set_pillar_differences).
         ///
         /// <p>The differences between the base and latest versions of the lens.</p>
-        pub fn pillar_differences(
-            mut self,
-            input: impl Into<crate::model::PillarDifference>,
-        ) -> Self {
+        pub fn pillar_differences(mut self, input: crate::model::PillarDifference) -> Self {
             let mut v = self.pillar_differences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pillar_differences = Some(v);
             self
         }
@@ -6043,7 +5555,7 @@ impl VersionDifferences {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PillarDifference {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub pillar_id: std::option::Option<std::string::String>,
     /// <p>The name of the pillar.</p>
     pub pillar_name: std::option::Option<std::string::String>,
@@ -6054,7 +5566,7 @@ pub struct PillarDifference {
 }
 impl PillarDifference {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-    /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(&self) -> std::option::Option<&str> {
         self.pillar_id.as_deref()
     }
@@ -6095,13 +5607,13 @@ pub mod pillar_difference {
     }
     impl Builder {
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pillar_id = Some(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
-        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+        /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -6134,12 +5646,9 @@ pub mod pillar_difference {
         /// To override the contents of this collection use [`set_question_differences`](Self::set_question_differences).
         ///
         /// <p>List of question differences.</p>
-        pub fn question_differences(
-            mut self,
-            input: impl Into<crate::model::QuestionDifference>,
-        ) -> Self {
+        pub fn question_differences(mut self, input: crate::model::QuestionDifference) -> Self {
             let mut v = self.question_differences.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.question_differences = Some(v);
             self
         }
@@ -6331,7 +5840,7 @@ impl AsRef<str> for DifferenceStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LensReviewReport {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The ARN for the lens.</p>
     pub lens_arn: std::option::Option<std::string::String>,
@@ -6341,7 +5850,7 @@ pub struct LensReviewReport {
 }
 impl LensReviewReport {
     /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-    /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
@@ -6376,13 +5885,13 @@ pub mod lens_review_report {
     }
     impl Builder {
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.lens_alias = Some(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
-        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+        /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self

@@ -311,9 +311,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags associated with the specified resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -342,25 +342,17 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSpeakersOutput {
-    /// <p>A list containing details about each speaker in the Amazon Web Services account.
-    /// </p>
+    /// <p>A list containing details about each speaker in the Amazon Web Services account. </p>
     pub speaker_summaries: std::option::Option<std::vec::Vec<crate::model::SpeakerSummary>>,
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSpeakersOutput {
-    /// <p>A list containing details about each speaker in the Amazon Web Services account.
-    /// </p>
+    /// <p>A list containing details about each speaker in the Amazon Web Services account. </p>
     pub fn speaker_summaries(&self) -> std::option::Option<&[crate::model::SpeakerSummary]> {
         self.speaker_summaries.as_deref()
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -388,16 +380,14 @@ pub mod list_speakers_output {
         ///
         /// To override the contents of this collection use [`set_speaker_summaries`](Self::set_speaker_summaries).
         ///
-        /// <p>A list containing details about each speaker in the Amazon Web Services account.
-        /// </p>
-        pub fn speaker_summaries(mut self, input: impl Into<crate::model::SpeakerSummary>) -> Self {
+        /// <p>A list containing details about each speaker in the Amazon Web Services account. </p>
+        pub fn speaker_summaries(mut self, input: crate::model::SpeakerSummary) -> Self {
             let mut v = self.speaker_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.speaker_summaries = Some(v);
             self
         }
-        /// <p>A list containing details about each speaker in the Amazon Web Services account.
-        /// </p>
+        /// <p>A list containing details about each speaker in the Amazon Web Services account. </p>
         pub fn set_speaker_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SpeakerSummary>>,
@@ -405,18 +395,12 @@ pub mod list_speakers_output {
             self.speaker_summaries = input;
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -444,10 +428,7 @@ pub struct ListSpeakerEnrollmentJobsOutput {
     /// <p>A list containing details about each specified speaker enrollment job.</p>
     pub job_summaries:
         std::option::Option<std::vec::Vec<crate::model::SpeakerEnrollmentJobSummary>>,
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSpeakerEnrollmentJobsOutput {
@@ -457,10 +438,7 @@ impl ListSpeakerEnrollmentJobsOutput {
     ) -> std::option::Option<&[crate::model::SpeakerEnrollmentJobSummary]> {
         self.job_summaries.as_deref()
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -489,12 +467,9 @@ pub mod list_speaker_enrollment_jobs_output {
         /// To override the contents of this collection use [`set_job_summaries`](Self::set_job_summaries).
         ///
         /// <p>A list containing details about each specified speaker enrollment job.</p>
-        pub fn job_summaries(
-            mut self,
-            input: impl Into<crate::model::SpeakerEnrollmentJobSummary>,
-        ) -> Self {
+        pub fn job_summaries(mut self, input: crate::model::SpeakerEnrollmentJobSummary) -> Self {
             let mut v = self.job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_summaries = Some(v);
             self
         }
@@ -506,18 +481,12 @@ pub mod list_speaker_enrollment_jobs_output {
             self.job_summaries = input;
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -545,10 +514,7 @@ pub struct ListFraudsterRegistrationJobsOutput {
     /// <p>A list containing details about each specified fraudster registration job.</p>
     pub job_summaries:
         std::option::Option<std::vec::Vec<crate::model::FraudsterRegistrationJobSummary>>,
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFraudsterRegistrationJobsOutput {
@@ -558,10 +524,7 @@ impl ListFraudsterRegistrationJobsOutput {
     ) -> std::option::Option<&[crate::model::FraudsterRegistrationJobSummary]> {
         self.job_summaries.as_deref()
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -592,10 +555,10 @@ pub mod list_fraudster_registration_jobs_output {
         /// <p>A list containing details about each specified fraudster registration job.</p>
         pub fn job_summaries(
             mut self,
-            input: impl Into<crate::model::FraudsterRegistrationJobSummary>,
+            input: crate::model::FraudsterRegistrationJobSummary,
         ) -> Self {
             let mut v = self.job_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_summaries = Some(v);
             self
         }
@@ -609,18 +572,12 @@ pub mod list_fraudster_registration_jobs_output {
             self.job_summaries = input;
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -647,10 +604,7 @@ impl ListFraudsterRegistrationJobsOutput {
 pub struct ListDomainsOutput {
     /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
     pub domain_summaries: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsOutput {
@@ -658,10 +612,7 @@ impl ListDomainsOutput {
     pub fn domain_summaries(&self) -> std::option::Option<&[crate::model::DomainSummary]> {
         self.domain_summaries.as_deref()
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -690,9 +641,9 @@ pub mod list_domains_output {
         /// To override the contents of this collection use [`set_domain_summaries`](Self::set_domain_summaries).
         ///
         /// <p>A list containing details about each domain in the Amazon Web Services account.</p>
-        pub fn domain_summaries(mut self, input: impl Into<crate::model::DomainSummary>) -> Self {
+        pub fn domain_summaries(mut self, input: crate::model::DomainSummary) -> Self {
             let mut v = self.domain_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domain_summaries = Some(v);
             self
         }
@@ -704,18 +655,12 @@ pub mod list_domains_output {
             self.domain_summaries = input;
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -746,16 +691,9 @@ pub struct EvaluateSessionOutput {
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The client-provided name of the session.</p>
     pub session_name: std::option::Option<std::string::String>,
-    /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when
-    /// the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>.
-    /// In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can
-    /// mean that the client should call the API again later, once Voice ID has enough audio to produce a result.
-    /// If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>,
-    /// it means that the previously streamed session did not have enough speech to perform evaluation, and a new
-    /// streaming session is needed to try again.</p>
+    /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, once Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
     pub streaming_status: std::option::Option<crate::model::StreamingStatus>,
-    /// <p>Details resulting from the authentication process, such as authentication decision and
-    /// authentication score.</p>
+    /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
     pub authentication_result: std::option::Option<crate::model::AuthenticationResult>,
     /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
     pub fraud_detection_result: std::option::Option<crate::model::FraudDetectionResult>,
@@ -773,18 +711,11 @@ impl EvaluateSessionOutput {
     pub fn session_name(&self) -> std::option::Option<&str> {
         self.session_name.as_deref()
     }
-    /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when
-    /// the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>.
-    /// In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can
-    /// mean that the client should call the API again later, once Voice ID has enough audio to produce a result.
-    /// If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>,
-    /// it means that the previously streamed session did not have enough speech to perform evaluation, and a new
-    /// streaming session is needed to try again.</p>
+    /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, once Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
     pub fn streaming_status(&self) -> std::option::Option<&crate::model::StreamingStatus> {
         self.streaming_status.as_ref()
     }
-    /// <p>Details resulting from the authentication process, such as authentication decision and
-    /// authentication score.</p>
+    /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
     pub fn authentication_result(
         &self,
     ) -> std::option::Option<&crate::model::AuthenticationResult> {
@@ -853,24 +784,12 @@ pub mod evaluate_session_output {
             self.session_name = input;
             self
         }
-        /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when
-        /// the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>.
-        /// In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can
-        /// mean that the client should call the API again later, once Voice ID has enough audio to produce a result.
-        /// If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>,
-        /// it means that the previously streamed session did not have enough speech to perform evaluation, and a new
-        /// streaming session is needed to try again.</p>
+        /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, once Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
         pub fn streaming_status(mut self, input: crate::model::StreamingStatus) -> Self {
             self.streaming_status = Some(input);
             self
         }
-        /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when
-        /// the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>.
-        /// In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can
-        /// mean that the client should call the API again later, once Voice ID has enough audio to produce a result.
-        /// If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>,
-        /// it means that the previously streamed session did not have enough speech to perform evaluation, and a new
-        /// streaming session is needed to try again.</p>
+        /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, once Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
         pub fn set_streaming_status(
             mut self,
             input: std::option::Option<crate::model::StreamingStatus>,
@@ -878,14 +797,12 @@ pub mod evaluate_session_output {
             self.streaming_status = input;
             self
         }
-        /// <p>Details resulting from the authentication process, such as authentication decision and
-        /// authentication score.</p>
+        /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
         pub fn authentication_result(mut self, input: crate::model::AuthenticationResult) -> Self {
             self.authentication_result = Some(input);
             self
         }
-        /// <p>Details resulting from the authentication process, such as authentication decision and
-        /// authentication score.</p>
+        /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
         pub fn set_authentication_result(
             mut self,
             input: std::option::Option<crate::model::AuthenticationResult>,

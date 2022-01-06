@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS CloudTrail
@@ -90,12 +90,33 @@ where
     pub fn add_tags(&self) -> fluent_builders::AddTags<C, M, R> {
         fluent_builders::AddTags::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CancelQuery` operation.
+    ///
+    /// See [`CancelQuery`](crate::client::fluent_builders::CancelQuery) for more information about the
+    /// operation and its arguments.
+    pub fn cancel_query(&self) -> fluent_builders::CancelQuery<C, M, R> {
+        fluent_builders::CancelQuery::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateEventDataStore` operation.
+    ///
+    /// See [`CreateEventDataStore`](crate::client::fluent_builders::CreateEventDataStore) for more information about the
+    /// operation and its arguments.
+    pub fn create_event_data_store(&self) -> fluent_builders::CreateEventDataStore<C, M, R> {
+        fluent_builders::CreateEventDataStore::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateTrail` operation.
     ///
     /// See [`CreateTrail`](crate::client::fluent_builders::CreateTrail) for more information about the
     /// operation and its arguments.
     pub fn create_trail(&self) -> fluent_builders::CreateTrail<C, M, R> {
         fluent_builders::CreateTrail::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteEventDataStore` operation.
+    ///
+    /// See [`DeleteEventDataStore`](crate::client::fluent_builders::DeleteEventDataStore) for more information about the
+    /// operation and its arguments.
+    pub fn delete_event_data_store(&self) -> fluent_builders::DeleteEventDataStore<C, M, R> {
+        fluent_builders::DeleteEventDataStore::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteTrail` operation.
     ///
@@ -104,12 +125,26 @@ where
     pub fn delete_trail(&self) -> fluent_builders::DeleteTrail<C, M, R> {
         fluent_builders::DeleteTrail::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeQuery` operation.
+    ///
+    /// See [`DescribeQuery`](crate::client::fluent_builders::DescribeQuery) for more information about the
+    /// operation and its arguments.
+    pub fn describe_query(&self) -> fluent_builders::DescribeQuery<C, M, R> {
+        fluent_builders::DescribeQuery::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DescribeTrails` operation.
     ///
     /// See [`DescribeTrails`](crate::client::fluent_builders::DescribeTrails) for more information about the
     /// operation and its arguments.
     pub fn describe_trails(&self) -> fluent_builders::DescribeTrails<C, M, R> {
         fluent_builders::DescribeTrails::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetEventDataStore` operation.
+    ///
+    /// See [`GetEventDataStore`](crate::client::fluent_builders::GetEventDataStore) for more information about the
+    /// operation and its arguments.
+    pub fn get_event_data_store(&self) -> fluent_builders::GetEventDataStore<C, M, R> {
+        fluent_builders::GetEventDataStore::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetEventSelectors` operation.
     ///
@@ -125,6 +160,14 @@ where
     pub fn get_insight_selectors(&self) -> fluent_builders::GetInsightSelectors<C, M, R> {
         fluent_builders::GetInsightSelectors::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetQueryResults` operation.
+    ///
+    /// See [`GetQueryResults`](crate::client::fluent_builders::GetQueryResults) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetQueryResults::into_paginator).
+    pub fn get_query_results(&self) -> fluent_builders::GetQueryResults<C, M, R> {
+        fluent_builders::GetQueryResults::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetTrail` operation.
     ///
     /// See [`GetTrail`](crate::client::fluent_builders::GetTrail) for more information about the
@@ -139,17 +182,35 @@ where
     pub fn get_trail_status(&self) -> fluent_builders::GetTrailStatus<C, M, R> {
         fluent_builders::GetTrailStatus::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ListEventDataStores` operation.
+    ///
+    /// See [`ListEventDataStores`](crate::client::fluent_builders::ListEventDataStores) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEventDataStores::into_paginator).
+    pub fn list_event_data_stores(&self) -> fluent_builders::ListEventDataStores<C, M, R> {
+        fluent_builders::ListEventDataStores::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListPublicKeys` operation.
     ///
     /// See [`ListPublicKeys`](crate::client::fluent_builders::ListPublicKeys) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPublicKeys::into_paginator).
     pub fn list_public_keys(&self) -> fluent_builders::ListPublicKeys<C, M, R> {
         fluent_builders::ListPublicKeys::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListQueries` operation.
+    ///
+    /// See [`ListQueries`](crate::client::fluent_builders::ListQueries) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQueries::into_paginator).
+    pub fn list_queries(&self) -> fluent_builders::ListQueries<C, M, R> {
+        fluent_builders::ListQueries::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListTags` operation.
     ///
     /// See [`ListTags`](crate::client::fluent_builders::ListTags) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
     pub fn list_tags(&self) -> fluent_builders::ListTags<C, M, R> {
         fluent_builders::ListTags::new(self.handle.clone())
     }
@@ -157,6 +218,7 @@ where
     ///
     /// See [`ListTrails`](crate::client::fluent_builders::ListTrails) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrails::into_paginator).
     pub fn list_trails(&self) -> fluent_builders::ListTrails<C, M, R> {
         fluent_builders::ListTrails::new(self.handle.clone())
     }
@@ -164,6 +226,7 @@ where
     ///
     /// See [`LookupEvents`](crate::client::fluent_builders::LookupEvents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::LookupEvents::into_paginator).
     pub fn lookup_events(&self) -> fluent_builders::LookupEvents<C, M, R> {
         fluent_builders::LookupEvents::new(self.handle.clone())
     }
@@ -188,6 +251,13 @@ where
     pub fn remove_tags(&self) -> fluent_builders::RemoveTags<C, M, R> {
         fluent_builders::RemoveTags::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `RestoreEventDataStore` operation.
+    ///
+    /// See [`RestoreEventDataStore`](crate::client::fluent_builders::RestoreEventDataStore) for more information about the
+    /// operation and its arguments.
+    pub fn restore_event_data_store(&self) -> fluent_builders::RestoreEventDataStore<C, M, R> {
+        fluent_builders::RestoreEventDataStore::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `StartLogging` operation.
     ///
     /// See [`StartLogging`](crate::client::fluent_builders::StartLogging) for more information about the
@@ -195,12 +265,26 @@ where
     pub fn start_logging(&self) -> fluent_builders::StartLogging<C, M, R> {
         fluent_builders::StartLogging::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `StartQuery` operation.
+    ///
+    /// See [`StartQuery`](crate::client::fluent_builders::StartQuery) for more information about the
+    /// operation and its arguments.
+    pub fn start_query(&self) -> fluent_builders::StartQuery<C, M, R> {
+        fluent_builders::StartQuery::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `StopLogging` operation.
     ///
     /// See [`StopLogging`](crate::client::fluent_builders::StopLogging) for more information about the
     /// operation and its arguments.
     pub fn stop_logging(&self) -> fluent_builders::StopLogging<C, M, R> {
         fluent_builders::StopLogging::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateEventDataStore` operation.
+    ///
+    /// See [`UpdateEventDataStore`](crate::client::fluent_builders::UpdateEventDataStore) for more information about the
+    /// operation and its arguments.
+    pub fn update_event_data_store(&self) -> fluent_builders::UpdateEventDataStore<C, M, R> {
+        fluent_builders::UpdateEventDataStore::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `UpdateTrail` operation.
     ///
@@ -220,11 +304,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddTags`.
     ///
-    /// <p>Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's value when a new value is specified for an existing tag key.
-    /// Tag key names must be unique for a trail; you cannot have two keys with the same name but different values.
-    /// If you specify a key without a value, the tag will be created with the specified key and a value of null.
-    /// You can tag a trail that applies to all Amazon Web Services Regions only from the Region in which the trail was created (also known as its home region).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's value when a new value is specified for an existing tag key. Tag key names must be unique for a trail; you cannot have two keys with the same name but different values. If you specify a key without a value, the tag will be created with the specified key and a value of null. You can tag a trail that applies to all Amazon Web Services Regions only from the Region in which the trail was created (also known as its home region).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -269,10 +350,10 @@ pub mod fluent_builders {
                 crate::input::AddTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -281,17 +362,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -301,8 +378,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
         ///
         /// <p>Contains a list of tags, up to a limit of 50</p>
-        pub fn tags_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags_list(inp);
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags_list(input);
             self
         }
         /// <p>Contains a list of tags, up to a limit of 50</p>
@@ -314,11 +391,243 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CancelQuery`.
+    ///
+    /// <p>Cancels a query if the query is not in a terminated state, such as <code>CANCELLED</code>, <code>FAILED</code> or <code>FINISHED</code>. You must specify an ARN value for <code>EventDataStore</code>. The ID of the query that you want to cancel is also required. When you run <code>CancelQuery</code>, the query status might show as <code>CANCELLED</code> even if the operation is not yet finished.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CancelQuery<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::cancel_query_input::Builder,
+    }
+    impl<C, M, R> CancelQuery<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CancelQuery`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CancelQueryOutput,
+            aws_smithy_http::result::SdkError<crate::error::CancelQueryError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CancelQueryInputOperationOutputAlias,
+                crate::output::CancelQueryOutput,
+                crate::error::CancelQueryError,
+                crate::input::CancelQueryInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_data_store(input.into());
+            self
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_data_store(input);
+            self
+        }
+        /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(input.into());
+            self
+        }
+        /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateEventDataStore`.
+    ///
+    /// <p>Creates a new event data store.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateEventDataStore<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_event_data_store_input::Builder,
+    }
+    impl<C, M, R> CreateEventDataStore<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateEventDataStore`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateEventDataStoreOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateEventDataStoreError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateEventDataStoreInputOperationOutputAlias,
+                crate::output::CreateEventDataStoreOutput,
+                crate::error::CreateEventDataStoreError,
+                crate::input::CreateEventDataStoreInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the event data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the event data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// Appends an item to `AdvancedEventSelectors`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
+        ///
+        /// <p>The advanced event selectors to use to select the events for the data store. For more information about how to use advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
+        pub fn advanced_event_selectors(
+            mut self,
+            input: crate::model::AdvancedEventSelector,
+        ) -> Self {
+            self.inner = self.inner.advanced_event_selectors(input);
+            self
+        }
+        /// <p>The advanced event selectors to use to select the events for the data store. For more information about how to use advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
+        pub fn set_advanced_event_selectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        ) -> Self {
+            self.inner = self.inner.set_advanced_event_selectors(input);
+            self
+        }
+        /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+        pub fn multi_region_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_region_enabled(input);
+            self
+        }
+        /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+        pub fn set_multi_region_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_multi_region_enabled(input);
+            self
+        }
+        /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+        pub fn organization_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.organization_enabled(input);
+            self
+        }
+        /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+        pub fn set_organization_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_organization_enabled(input);
+            self
+        }
+        /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the equivalent of seven years.</p>
+        pub fn retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.retention_period(input);
+            self
+        }
+        /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the equivalent of seven years.</p>
+        pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_retention_period(input);
+            self
+        }
+        /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
+        pub fn termination_protection_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.termination_protection_enabled(input);
+            self
+        }
+        /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
+        pub fn set_termination_protection_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_termination_protection_enabled(input);
+            self
+        }
+        /// Appends an item to `TagsList`.
+        ///
+        /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
+        ///
+        /// <p>A list of tags.</p>
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags_list(input);
+            self
+        }
+        /// <p>A list of tags.</p>
+        pub fn set_tags_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags_list(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateTrail`.
     ///
-    /// <p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -363,10 +672,10 @@ pub mod fluent_builders {
                 crate::input::CreateTrailInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -376,53 +685,31 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(inp);
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
         /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
@@ -433,14 +720,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_bucket_name(input);
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
-        pub fn s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key_prefix(inp);
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_key_prefix(input.into());
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -449,8 +734,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
-        pub fn sns_topic_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_name(inp);
+        pub fn sns_topic_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_name(input.into());
             self
         }
         /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
@@ -462,8 +747,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
-        pub fn include_global_service_events(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_global_service_events(inp);
+        pub fn include_global_service_events(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_global_service_events(input);
             self
         }
         /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
@@ -474,53 +759,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_include_global_service_events(input);
             self
         }
-        /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
-        /// creating trails that log events in all regions.</p>
-        pub fn is_multi_region_trail(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_multi_region_trail(inp);
+        /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
+        pub fn is_multi_region_trail(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_multi_region_trail(input);
             self
         }
-        /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
-        /// creating trails that log events in all regions.</p>
+        /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
         pub fn set_is_multi_region_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_multi_region_trail(input);
             self
         }
-        /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
-        /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
-        /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
-        /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
-        /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
-        /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
-        pub fn enable_log_file_validation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_log_file_validation(inp);
+        pub fn enable_log_file_validation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_log_file_validation(input);
             self
         }
-        /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
-        /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
-        /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
-        /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
-        /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
-        /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn set_enable_log_file_validation(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_log_file_validation(input);
             self
         }
-        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-        /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logs_log_group_arn(inp);
+            self.inner = self.inner.cloud_watch_logs_log_group_arn(input.into());
             self
         }
-        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-        /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn set_cloud_watch_logs_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -529,8 +800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
-        pub fn cloud_watch_logs_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cloud_watch_logs_role_arn(inp);
+        pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cloud_watch_logs_role_arn(input.into());
             self
         }
         /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
@@ -541,64 +812,38 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cloud_watch_logs_role_arn(input);
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-        /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.</p>
-        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-        /// </li>
-        /// <li>
-        /// <p>12345678-1234-1234-1234-123456789012</p>
-        /// </li>
+        /// <li> <p>alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
         /// </ul>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-        /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.</p>
-        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-        /// </li>
-        /// <li>
-        /// <p>12345678-1234-1234-1234-123456789012</p>
-        /// </li>
+        /// <li> <p>alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-        /// Organizations.</p>
-        pub fn is_organization_trail(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_organization_trail(inp);
+        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
+        pub fn is_organization_trail(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_organization_trail(input);
             self
         }
-        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-        /// Organizations.</p>
+        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
         pub fn set_is_organization_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_organization_trail(input);
             self
@@ -608,8 +853,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
         ///
         /// <p>A list of tags.</p>
-        pub fn tags_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags_list(inp);
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags_list(input);
             self
         }
         /// <p>A list of tags.</p>
@@ -621,12 +866,84 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteEventDataStore`.
+    ///
+    /// <p>Disables the event data store specified by <code>EventDataStore</code>, which accepts an event data store ARN. After you run <code>DeleteEventDataStore</code>, the event data store is automatically deleted after a wait period of seven days. <code>TerminationProtectionEnabled</code> must be set to <code>False</code> on the event data store; this operation cannot work if <code>TerminationProtectionEnabled</code> is <code>True</code>.</p>
+    /// <p>After you run <code>DeleteEventDataStore</code> on an event data store, you cannot run <code>ListQueries</code>, <code>DescribeQuery</code>, or <code>GetQueryResults</code> on queries that are using an event data store in a <code>PENDING_DELETION</code> state.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteEventDataStore<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_event_data_store_input::Builder,
+    }
+    impl<C, M, R> DeleteEventDataStore<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteEventDataStore`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteEventDataStoreOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteEventDataStoreError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteEventDataStoreInputOperationOutputAlias,
+                crate::output::DeleteEventDataStoreOutput,
+                crate::error::DeleteEventDataStoreError,
+                crate::input::DeleteEventDataStoreInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_data_store(input.into());
+            self
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_data_store(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteTrail`.
     ///
-    /// <p>Deletes a trail. This operation must be called from the region in which the trail was
-    /// created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails
-    /// in other regions) of a trail that is enabled in all regions.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a trail. This operation must be called from the region in which the trail was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -671,10 +988,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTrailInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -682,27 +999,104 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
-        /// trail ARN.
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
-        /// trail ARN.
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeQuery`.
+    ///
+    /// <p>Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched, and query status. You must specify an ARN for <code>EventDataStore</code>, and a value for <code>QueryID</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeQuery<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_query_input::Builder,
+    }
+    impl<C, M, R> DescribeQuery<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeQuery`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeQueryOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeQueryError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeQueryInputOperationOutputAlias,
+                crate::output::DescribeQueryOutput,
+                crate::error::DescribeQueryError,
+                crate::input::DescribeQueryInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_data_store(input.into());
+            self
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_data_store(input);
+            self
+        }
+        /// <p>The query ID.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(input.into());
+            self
+        }
+        /// <p>The query ID.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_id(input);
             self
         }
     }
     /// Fluent builder constructing a request to `DescribeTrails`.
     ///
     /// <p>Retrieves settings for one or more trails associated with the current region for your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -747,10 +1141,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTrailsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -763,43 +1157,25 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_trail_name_list`](Self::set_trail_name_list).
         ///
         /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        ///
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         /// <p>If an empty list is specified, information for the trail in the current region is returned.</p>
         /// <ul>
-        /// <li>
-        /// <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then
-        /// information for all trails in the current region is returned.</p>
-        /// </li>
-        /// <li>
-        /// <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>
+        /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>
+        /// </ul> <note>
         /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
         /// </note>
-        pub fn trail_name_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trail_name_list(inp);
+        pub fn trail_name_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trail_name_list(input.into());
             self
         }
         /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        ///
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         /// <p>If an empty list is specified, information for the trail in the current region is returned.</p>
         /// <ul>
-        /// <li>
-        /// <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then
-        /// information for all trails in the current region is returned.</p>
-        /// </li>
-        /// <li>
-        /// <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>
+        /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>
+        /// </ul> <note>
         /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
         /// </note>
         pub fn set_trail_name_list(
@@ -809,41 +1185,100 @@ pub mod fluent_builders {
             self.inner = self.inner.set_trail_name_list(input);
             self
         }
-        /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
-        /// or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account
-        /// and region replication trails will not be returned. The default is true.</p>
-        pub fn include_shadow_trails(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_shadow_trails(inp);
+        /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>
+        pub fn include_shadow_trails(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_shadow_trails(input);
             self
         }
-        /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
-        /// or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account
-        /// and region replication trails will not be returned. The default is true.</p>
+        /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>
         pub fn set_include_shadow_trails(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_shadow_trails(input);
             self
         }
     }
+    /// Fluent builder constructing a request to `GetEventDataStore`.
+    ///
+    /// <p>Returns information about an event data store specified as either an ARN or the ID portion of the ARN.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetEventDataStore<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_event_data_store_input::Builder,
+    }
+    impl<C, M, R> GetEventDataStore<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetEventDataStore`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetEventDataStoreOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetEventDataStoreError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetEventDataStoreInputOperationOutputAlias,
+                crate::output::GetEventDataStoreOutput,
+                crate::error::GetEventDataStoreError,
+                crate::input::GetEventDataStoreInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_data_store(input.into());
+            self
+        }
+        /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_data_store(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetEventSelectors`.
     ///
-    /// <p>Describes the settings for the event selectors that you configured for your trail.
-    /// The information returned for your event selectors includes the following:</p>
+    /// <p>Describes the settings for the event selectors that you configured for your trail. The information returned for your event selectors includes the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If your event selector includes read-only events, write-only events, or
-    /// all events. This applies to both management events and data events.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your event selector includes management events.</p>
-    /// </li>
-    /// <li>
-    /// <p>If your event selector includes data events, the resources on which you are logging data
-    /// events.</p>
-    /// </li>
+    /// <li> <p>If your event selector includes read-only events, write-only events, or all events. This applies to both management events and data events.</p> </li>
+    /// <li> <p>If your event selector includes management events.</p> </li>
+    /// <li> <p>If your event selector includes data events, the resources on which you are logging data events.</p> </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging Data and Management Events for Trails
-    /// </a> in the <i>CloudTrail User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging Data and Management Events for Trails </a> in the <i>CloudTrail User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventSelectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -888,10 +1323,10 @@ pub mod fluent_builders {
                 crate::input::GetEventSelectorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -899,58 +1334,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the format:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        pub fn trail_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trail_name(inp);
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trail_name(input.into());
             self
         }
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the format:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_trail_name(input);
             self
@@ -958,14 +1365,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInsightSelectors`.
     ///
-    /// <p>Describes the settings for the Insights event selectors that you configured for your trail. <code>GetInsightSelectors</code> shows
-    /// if CloudTrail Insights event logging is enabled on the trail, and if it is, which insight types are enabled.
-    /// If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception
-    /// <code>InsightNotEnabledException</code>
-    /// </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging CloudTrail Insights Events for Trails
-    /// </a> in the <i>CloudTrail User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the settings for the Insights event selectors that you configured for your trail. <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging is enabled on the trail, and if it is, which insight types are enabled. If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging CloudTrail Insights Events for Trails </a> in the <i>CloudTrail User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightSelectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1010,10 +1412,10 @@ pub mod fluent_builders {
                 crate::input::GetInsightSelectorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1021,67 +1423,148 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the format:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        pub fn trail_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trail_name(inp);
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trail_name(input.into());
             self
         }
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the format:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_trail_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetQueryResults`.
+    ///
+    /// <p>Gets event data results of a query. You must specify the <code>QueryID</code> value returned by the <code>StartQuery</code> operation, and an ARN for <code>EventDataStore</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetQueryResults<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_query_results_input::Builder,
+    }
+    impl<C, M, R> GetQueryResults<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetQueryResults`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetQueryResultsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetQueryResultsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetQueryResultsInputOperationOutputAlias,
+                crate::output::GetQueryResultsOutput,
+                crate::error::GetQueryResultsError,
+                crate::input::GetQueryResultsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetQueryResultsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetQueryResultsPaginator<C, M, R> {
+            crate::paginator::GetQueryResultsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_data_store(input.into());
+            self
+        }
+        /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_data_store(input);
+            self
+        }
+        /// <p>The ID of the query for which you want to get results.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(input.into());
+            self
+        }
+        /// <p>The ID of the query for which you want to get results.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_query_id(input);
+            self
+        }
+        /// <p>A token you can use to get the next page of query results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token you can use to get the next page of query results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of query results to display on a single page.</p>
+        pub fn max_query_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_query_results(input);
+            self
+        }
+        /// <p>The maximum number of query results to display on a single page.</p>
+        pub fn set_max_query_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_query_results(input);
             self
         }
     }
     /// Fluent builder constructing a request to `GetTrail`.
     ///
     /// <p>Returns settings information for a specified trail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1126,10 +1609,10 @@ pub mod fluent_builders {
                 crate::input::GetTrailInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1138,8 +1621,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
@@ -1151,7 +1634,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTrailStatus`.
     ///
     /// <p>Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. This operation returns trail status from a single region. To return trail status from all regions, you must call the operation on each region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrailStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1196,10 +1679,10 @@ pub mod fluent_builders {
                 crate::input::GetTrailStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1207,34 +1690,111 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
-        /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
-        /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
     }
+    /// Fluent builder constructing a request to `ListEventDataStores`.
+    ///
+    /// <p>Returns information about all event data stores in the account, in the current region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListEventDataStores<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_event_data_stores_input::Builder,
+    }
+    impl<C, M, R> ListEventDataStores<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListEventDataStores`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListEventDataStoresOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListEventDataStoresError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListEventDataStoresInputOperationOutputAlias,
+                crate::output::ListEventDataStoresOutput,
+                crate::error::ListEventDataStoresError,
+                crate::input::ListEventDataStoresInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEventDataStoresPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEventDataStoresPaginator<C, M, R> {
+            crate::paginator::ListEventDataStoresPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token you can use to get the next page of event data store results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token you can use to get the next page of event data store results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of event data stores to display on a single page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of event data stores to display on a single page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListPublicKeys`.
     ///
-    /// <p>Returns all public keys whose private keys were used to sign the digest files within the specified time range. The public key is needed to validate digest files that were signed with its corresponding private key.</p>
-    /// <note>
-    /// <p>CloudTrail uses different private and public key pairs per region. Each digest file is signed with a private key
-    /// unique to its region. When you validate a digest file from a specific region, you must look in the same region for its
-    /// corresponding public key.</p>
+    /// <p>Returns all public keys whose private keys were used to sign the digest files within the specified time range. The public key is needed to validate digest files that were signed with its corresponding private key.</p> <note>
+    /// <p>CloudTrail uses different private and public key pairs per region. Each digest file is signed with a private key unique to its region. When you validate a digest file from a specific region, you must look in the same region for its corresponding public key.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPublicKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1279,10 +1839,10 @@ pub mod fluent_builders {
                 crate::input::ListPublicKeysInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1290,14 +1850,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
-        /// If not specified, the current time is used, and the current public key is returned.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPublicKeysPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPublicKeysPaginator<C, M, R> {
+            crate::paginator::ListPublicKeysPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
-        /// If not specified, the current time is used, and the current public key is returned.</p>
+        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1305,14 +1869,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
-        /// specified, the current time is used.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
-        /// specified, the current time is used.</p>
+        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1321,8 +1883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Reserved for future use.</p>
@@ -1331,10 +1893,148 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListQueries`.
+    ///
+    /// <p>Returns a list of queries and query statuses for the past seven days. You must specify an ARN value for <code>EventDataStore</code>. Optionally, to shorten the list of results, you can specify a time range, formatted as timestamps, by adding <code>StartTime</code> and <code>EndTime</code> parameters, and a <code>QueryStatus</code> value. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListQueries<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_queries_input::Builder,
+    }
+    impl<C, M, R> ListQueries<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListQueries`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListQueriesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListQueriesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListQueriesInputOperationOutputAlias,
+                crate::output::ListQueriesOutput,
+                crate::error::ListQueriesError,
+                crate::input::ListQueriesInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListQueriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListQueriesPaginator<C, M, R> {
+            crate::paginator::ListQueriesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_data_store(input.into());
+            self
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_data_store(input);
+            self
+        }
+        /// <p>A token you can use to get the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>A token you can use to get the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of queries to show on a page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of queries to show on a page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
+            self
+        }
+        /// <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_start_time(input);
+            self
+        }
+        /// <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
+            self
+        }
+        /// <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inner = self.inner.set_end_time(input);
+            self
+        }
+        /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+        pub fn query_status(mut self, input: crate::model::QueryStatus) -> Self {
+            self.inner = self.inner.query_status(input);
+            self
+        }
+        /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+        pub fn set_query_status(
+            mut self,
+            input: std::option::Option<crate::model::QueryStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_query_status(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTags`.
     ///
     /// <p>Lists the tags for the trail in the current region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1379,10 +2079,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1390,24 +2090,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsPaginator<C, M, R> {
+            crate::paginator::ListTagsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `ResourceIdList`.
         ///
         /// To override the contents of this collection use [`set_resource_id_list`](Self::set_resource_id_list).
         ///
-        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
-        /// a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        pub fn resource_id_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id_list(inp);
+        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        pub fn resource_id_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id_list(input.into());
             self
         }
-        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
-        /// a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_resource_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1416,8 +2116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Reserved for future use.</p>
@@ -1429,7 +2129,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTrails`.
     ///
     /// <p>Lists trails that are in the current account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrails<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1474,10 +2174,10 @@ pub mod fluent_builders {
                 crate::input::ListTrailsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1485,18 +2185,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed
-        /// in with the same parameters that were specified in the the original call. For example, if the original
-        /// call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should
-        /// include those same parameters.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTrailsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTrailsPaginator<C, M, R> {
+            crate::paginator::ListTrailsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed
-        /// in with the same parameters that were specified in the the original call. For example, if the original
-        /// call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should
-        /// include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1504,55 +2204,27 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `LookupEvents`.
     ///
-    /// <p>Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management events</a> or
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail Insights events</a> that are captured by CloudTrail.
-    /// You can look up events that occurred in a region within the last 90 days. Lookup supports the following attributes for management events:</p>
+    /// <p>Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management events</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a region within the last 90 days. Lookup supports the following attributes for management events:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services access key</p>
-    /// </li>
-    /// <li>
-    /// <p>Event ID</p>
-    /// </li>
-    /// <li>
-    /// <p>Event name</p>
-    /// </li>
-    /// <li>
-    /// <p>Event source</p>
-    /// </li>
-    /// <li>
-    /// <p>Read only</p>
-    /// </li>
-    /// <li>
-    /// <p>Resource name</p>
-    /// </li>
-    /// <li>
-    /// <p>Resource type</p>
-    /// </li>
-    /// <li>
-    /// <p>User name</p>
-    /// </li>
+    /// <li> <p>Amazon Web Services access key</p> </li>
+    /// <li> <p>Event ID</p> </li>
+    /// <li> <p>Event name</p> </li>
+    /// <li> <p>Event source</p> </li>
+    /// <li> <p>Read only</p> </li>
+    /// <li> <p>Resource name</p> </li>
+    /// <li> <p>Resource type</p> </li>
+    /// <li> <p>User name</p> </li>
     /// </ul>
     /// <p>Lookup supports the following attributes for Insights events:</p>
     /// <ul>
-    /// <li>
-    /// <p>Event ID</p>
-    /// </li>
-    /// <li>
-    /// <p>Event name</p>
-    /// </li>
-    /// <li>
-    /// <p>Event source</p>
-    /// </li>
+    /// <li> <p>Event ID</p> </li>
+    /// <li> <p>Event name</p> </li>
+    /// <li> <p>Event source</p> </li>
     /// </ul>
-    /// <p>All attributes are optional. The default number of results returned is 50, with a
-    /// maximum of 50 possible. The response includes a token that you can use to get the next page
-    /// of results.</p>
-    /// <important>
-    /// <p>The rate of lookup requests is limited to two per second, per account, per region. If this
-    /// limit is exceeded, a throttling error occurs.</p>
+    /// <p>All attributes are optional. The default number of results returned is 50, with a maximum of 50 possible. The response includes a token that you can use to get the next page of results.</p> <important>
+    /// <p>The rate of lookup requests is limited to two per second, per account, per region. If this limit is exceeded, a throttling error occurs.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct LookupEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1597,10 +2269,10 @@ pub mod fluent_builders {
                 crate::input::LookupEventsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1608,13 +2280,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::LookupEventsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::LookupEventsPaginator<C, M, R> {
+            crate::paginator::LookupEventsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `LookupAttributes`.
         ///
         /// To override the contents of this collection use [`set_lookup_attributes`](Self::set_lookup_attributes).
         ///
         /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-        pub fn lookup_attributes(mut self, inp: impl Into<crate::model::LookupAttribute>) -> Self {
-            self.inner = self.inner.lookup_attributes(inp);
+        pub fn lookup_attributes(mut self, input: crate::model::LookupAttribute) -> Self {
+            self.inner = self.inner.lookup_attributes(input);
             self
         }
         /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
@@ -1626,8 +2304,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
@@ -1639,8 +2317,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
@@ -1651,14 +2329,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
-        /// if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
-        pub fn event_category(mut self, inp: crate::model::EventCategory) -> Self {
-            self.inner = self.inner.event_category(inp);
+        /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+        pub fn event_category(mut self, input: crate::model::EventCategory) -> Self {
+            self.inner = self.inner.event_category(input);
             self
         }
-        /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
-        /// if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+        /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
         pub fn set_event_category(
             mut self,
             input: std::option::Option<crate::model::EventCategory>,
@@ -1667,8 +2343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
@@ -1676,14 +2352,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1691,52 +2365,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutEventSelectors`.
     ///
-    /// <p>Configures an event selector or advanced event selectors for your trail.
-    /// Use event selectors or advanced event selectors to specify management and data event settings for your trail. By
-    /// default, trails created without specific event selectors are configured to log all read and
-    /// write management events, and no data events.</p>
-    /// <p>When an event occurs in your account, CloudTrail
-    /// evaluates the event selectors or advanced event selectors in all trails. For each trail, if the event matches
-    /// any event selector, the trail processes and logs the event. If the event doesn't match any event
-    /// selector, the trail doesn't log the event.</p>
+    /// <p>Configures an event selector or advanced event selectors for your trail. Use event selectors or advanced event selectors to specify management and data event settings for your trail. By default, trails created without specific event selectors are configured to log all read and write management events, and no data events.</p>
+    /// <p>When an event occurs in your account, CloudTrail evaluates the event selectors or advanced event selectors in all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event.</p>
     /// <p>Example</p>
     /// <ol>
-    /// <li>
-    /// <p>You create an event selector for a trail and specify that you want
-    /// write-only events.</p>
-    /// </li>
-    /// <li>
-    /// <p>The EC2 <code>GetConsoleOutput</code> and <code>RunInstances</code> API
-    /// operations occur in your account.</p>
-    /// </li>
-    /// <li>
-    /// <p>CloudTrail evaluates whether the events match your event
-    /// selectors.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>RunInstances</code> is a write-only event and it matches your
-    /// event selector. The trail logs the event.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>GetConsoleOutput</code> is a read-only event that doesn't
-    /// match your event selector. The trail doesn't log the event.
-    /// </p>
-    /// </li>
+    /// <li> <p>You create an event selector for a trail and specify that you want write-only events.</p> </li>
+    /// <li> <p>The EC2 <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur in your account.</p> </li>
+    /// <li> <p>CloudTrail evaluates whether the events match your event selectors.</p> </li>
+    /// <li> <p>The <code>RunInstances</code> is a write-only event and it matches your event selector. The trail logs the event.</p> </li>
+    /// <li> <p>The <code>GetConsoleOutput</code> is a read-only event that doesn't match your event selector. The trail doesn't log the event. </p> </li>
     /// </ol>
-    /// <p>The <code>PutEventSelectors</code> operation must be called from the region in which
-    /// the trail was created; otherwise, an <code>InvalidHomeRegionException</code> exception is
-    /// thrown.</p>
-    /// <p>You can configure up to five event selectors for each trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging data and management events for trails
-    /// </a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in CloudTrail</a>
-    /// in the <i>CloudTrail User Guide</i>.</p>
-    /// <p>You can add advanced event selectors, and conditions for your advanced
-    /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
-    /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
-    /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
-    /// advanced event selectors, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events for trails</a> in the <i>CloudTrail User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The <code>PutEventSelectors</code> operation must be called from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code> exception is thrown.</p>
+    /// <p>You can configure up to five event selectors for each trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging data and management events for trails </a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
+    /// <p>You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEventSelectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1781,10 +2423,10 @@ pub mod fluent_builders {
                 crate::input::PutEventSelectorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1792,58 +2434,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        pub fn trail_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trail_name(inp);
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trail_name(input.into());
             self
         }
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_trail_name(input);
             self
@@ -1852,16 +2466,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
         ///
-        /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
-        /// You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both.
-        /// If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
-        pub fn event_selectors(mut self, inp: impl Into<crate::model::EventSelector>) -> Self {
-            self.inner = self.inner.event_selectors(inp);
+        /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+        pub fn event_selectors(mut self, input: crate::model::EventSelector) -> Self {
+            self.inner = self.inner.event_selectors(input);
             self
         }
-        /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
-        /// You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both.
-        /// If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+        /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
         pub fn set_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
@@ -1873,31 +2483,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
         ///
-        /// <p>
-        /// Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced
-        /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
-        /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
-        /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
-        /// advanced event selectors, see
-        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
-        /// </p>
+        /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
         pub fn advanced_event_selectors(
             mut self,
-            inp: impl Into<crate::model::AdvancedEventSelector>,
+            input: crate::model::AdvancedEventSelector,
         ) -> Self {
-            self.inner = self.inner.advanced_event_selectors(inp);
+            self.inner = self.inner.advanced_event_selectors(input);
             self
         }
-        /// <p>
-        /// Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced
-        /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
-        /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
-        /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
-        /// advanced event selectors, see
-        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
-        /// </p>
+        /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
         pub fn set_advanced_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
@@ -1908,11 +2502,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutInsightSelectors`.
     ///
-    /// <p>Lets you enable Insights event logging by specifying the Insights
-    /// selectors that you want to enable on an existing trail. You also use
-    /// <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an empty list of insight types.
-    /// The valid Insights event type in this release is <code>ApiCallRateInsight</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an existing trail. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an empty list of insight types. The valid Insights event types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInsightSelectors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1957,10 +2548,10 @@ pub mod fluent_builders {
                 crate::input::PutInsightSelectorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1969,8 +2560,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
-        pub fn trail_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trail_name(inp);
+        pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trail_name(input.into());
             self
         }
         /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
@@ -1982,12 +2573,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
         ///
-        /// <p>A JSON string that contains the Insights types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
-        pub fn insight_selectors(mut self, inp: impl Into<crate::model::InsightSelector>) -> Self {
-            self.inner = self.inner.insight_selectors(inp);
+        /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
+        pub fn insight_selectors(mut self, input: crate::model::InsightSelector) -> Self {
+            self.inner = self.inner.insight_selectors(input);
             self
         }
-        /// <p>A JSON string that contains the Insights types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
+        /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
         pub fn set_insight_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
@@ -1999,7 +2590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
     /// <p>Removes the specified tags from a trail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2044,10 +2635,10 @@ pub mod fluent_builders {
                 crate::input::RemoveTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2056,17 +2647,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -2076,8 +2663,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
         ///
         /// <p>Specifies a list of tags to be removed.</p>
-        pub fn tags_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags_list(inp);
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags_list(input);
             self
         }
         /// <p>Specifies a list of tags to be removed.</p>
@@ -2089,10 +2676,83 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `RestoreEventDataStore`.
+    ///
+    /// <p>Restores a deleted event data store specified by <code>EventDataStore</code>, which accepts an event data store ARN. You can only restore a deleted event data store within the seven-day wait period after deletion. Restoring an event data store can take several minutes, depending on the size of the event data store.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RestoreEventDataStore<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::restore_event_data_store_input::Builder,
+    }
+    impl<C, M, R> RestoreEventDataStore<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `RestoreEventDataStore`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RestoreEventDataStoreOutput,
+            aws_smithy_http::result::SdkError<crate::error::RestoreEventDataStoreError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::RestoreEventDataStoreInputOperationOutputAlias,
+                crate::output::RestoreEventDataStoreOutput,
+                crate::error::RestoreEventDataStoreError,
+                crate::input::RestoreEventDataStoreInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_data_store(input.into());
+            self
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_data_store(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StartLogging`.
     ///
     /// <p>Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is enabled in all regions, this operation must be called from the region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartLogging<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2137,10 +2797,10 @@ pub mod fluent_builders {
                 crate::input::StartLoggingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2148,35 +2808,96 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
-        /// The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
-        /// The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
     }
+    /// Fluent builder constructing a request to `StartQuery`.
+    ///
+    /// <p>Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter provides your SQL query, enclosed in single quotation marks.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartQuery<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::start_query_input::Builder,
+    }
+    impl<C, M, R> StartQuery<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartQuery`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartQueryOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartQueryError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StartQueryInputOperationOutputAlias,
+                crate::output::StartQueryOutput,
+                crate::error::StartQueryError,
+                crate::input::StartQueryInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The SQL code of your query.</p>
+        pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_statement(input.into());
+            self
+        }
+        /// <p>The SQL code of your query.</p>
+        pub fn set_query_statement(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_query_statement(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StopLogging`.
     ///
-    /// <p>Suspends the recording of Amazon Web Services API calls and log file delivery for the specified trail.
-    /// Under most circumstances, there is no need to use this action. You can update a trail
-    /// without stopping it first. This action is the only way to stop recording. For a trail
-    /// enabled in all regions, this operation must be called from the region in which the trail
-    /// was created, or an <code>InvalidHomeRegionException</code> will occur. This operation
-    /// cannot be called on the shadow trails (replicated trails in other regions) of a trail
-    /// enabled in all regions.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Suspends the recording of Amazon Web Services API calls and log file delivery for the specified trail. Under most circumstances, there is no need to use this action. You can update a trail without stopping it first. This action is the only way to stop recording. For a trail enabled in all regions, this operation must be called from the region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail enabled in all regions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopLogging<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2221,10 +2942,10 @@ pub mod fluent_builders {
                 crate::input::StopLoggingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2232,34 +2953,169 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
-        /// API calls. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
-        /// API calls. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateEventDataStore`.
+    ///
+    /// <p>Updates an event data store. The required <code>EventDataStore</code> value is an ARN or the ID portion of the ARN. Other parameters are optional, but at least one optional parameter must be specified, or CloudTrail throws an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 90 and 2555. By default, <code>TerminationProtection</code> is enabled. <code>AdvancedEventSelectors</code> includes or excludes management and data events in your event data store; for more information about <code>AdvancedEventSelectors</code>, see <code>PutEventSelectorsRequest$AdvancedEventSelectors</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateEventDataStore<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_event_data_store_input::Builder,
+    }
+    impl<C, M, R> UpdateEventDataStore<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateEventDataStore`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateEventDataStoreOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateEventDataStoreError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateEventDataStoreInputOperationOutputAlias,
+                crate::output::UpdateEventDataStoreOutput,
+                crate::error::UpdateEventDataStoreError,
+                crate::input::UpdateEventDataStoreInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_data_store(input.into());
+            self
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_event_data_store(input);
+            self
+        }
+        /// <p>The event data store name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The event data store name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// Appends an item to `AdvancedEventSelectors`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
+        ///
+        /// <p>The advanced event selectors used to select events for the event data store.</p>
+        pub fn advanced_event_selectors(
+            mut self,
+            input: crate::model::AdvancedEventSelector,
+        ) -> Self {
+            self.inner = self.inner.advanced_event_selectors(input);
+            self
+        }
+        /// <p>The advanced event selectors used to select events for the event data store.</p>
+        pub fn set_advanced_event_selectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        ) -> Self {
+            self.inner = self.inner.set_advanced_event_selectors(input);
+            self
+        }
+        /// <p>Specifies whether an event data store collects events from all regions, or only from the region in which it was created.</p>
+        pub fn multi_region_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_region_enabled(input);
+            self
+        }
+        /// <p>Specifies whether an event data store collects events from all regions, or only from the region in which it was created.</p>
+        pub fn set_multi_region_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_multi_region_enabled(input);
+            self
+        }
+        /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+        pub fn organization_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.organization_enabled(input);
+            self
+        }
+        /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+        pub fn set_organization_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_organization_enabled(input);
+            self
+        }
+        /// <p>The retention period, in days.</p>
+        pub fn retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.retention_period(input);
+            self
+        }
+        /// <p>The retention period, in days.</p>
+        pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_retention_period(input);
+            self
+        }
+        /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+        pub fn termination_protection_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.termination_protection_enabled(input);
+            self
+        }
+        /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+        pub fn set_termination_protection_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_termination_protection_enabled(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateTrail`.
     ///
-    /// <p>Updates trail settings that control what events you are logging, and how to handle log files. Changes to a trail do not require
-    /// stopping the CloudTrail service. Use this action to designate an existing bucket for log
-    /// delivery. If the existing bucket has previously been a target for CloudTrail log files,
-    /// an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from the
-    /// region in which the trail was created; otherwise, an
-    /// <code>InvalidHomeRegionException</code> is thrown.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates trail settings that control what events you are logging, and how to handle log files. Changes to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrail<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2304,10 +3160,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTrailInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2315,65 +3171,37 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
-        pub fn s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(inp);
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
         /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
@@ -2384,14 +3212,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_bucket_name(input);
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
-        pub fn s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key_prefix(inp);
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_key_prefix(input.into());
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2400,8 +3226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
-        pub fn sns_topic_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_name(inp);
+        pub fn sns_topic_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_name(input.into());
             self
         }
         /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
@@ -2413,8 +3239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
-        pub fn include_global_service_events(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_global_service_events(inp);
+        pub fn include_global_service_events(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_global_service_events(input);
             self
         }
         /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
@@ -2425,41 +3251,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_include_global_service_events(input);
             self
         }
-        /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true,
-        /// shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region
-        /// where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider
-        /// using trails that log events in all regions.</p>
-        pub fn is_multi_region_trail(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_multi_region_trail(inp);
+        /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider using trails that log events in all regions.</p>
+        pub fn is_multi_region_trail(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_multi_region_trail(input);
             self
         }
-        /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true,
-        /// shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region
-        /// where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider
-        /// using trails that log events in all regions.</p>
+        /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider using trails that log events in all regions.</p>
         pub fn set_is_multi_region_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_multi_region_trail(input);
             self
         }
-        /// <p>Specifies whether log file validation is enabled. The default is false.</p>
-        /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
-        /// does not create digest files for log files that were delivered during a period in which log file integrity validation
-        /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
-        /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
-        /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
-        pub fn enable_log_file_validation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_log_file_validation(inp);
+        pub fn enable_log_file_validation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_log_file_validation(input);
             self
         }
-        /// <p>Specifies whether log file validation is enabled. The default is false.</p>
-        /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
-        /// does not create digest files for log files that were delivered during a period in which log file integrity validation
-        /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
-        /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
-        /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn set_enable_log_file_validation(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_log_file_validation(input);
@@ -2468,9 +3278,9 @@ pub mod fluent_builders {
         /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logs_log_group_arn(inp);
+            self.inner = self.inner.cloud_watch_logs_log_group_arn(input.into());
             self
         }
         /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
@@ -2482,8 +3292,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
-        pub fn cloud_watch_logs_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cloud_watch_logs_role_arn(inp);
+        pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cloud_watch_logs_role_arn(input.into());
             self
         }
         /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
@@ -2494,74 +3304,45 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cloud_watch_logs_role_arn(input);
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-        /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.</p>
-        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-        /// </li>
-        /// <li>
-        /// <p>12345678-1234-1234-1234-123456789012</p>
-        /// </li>
+        /// <li> <p>alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
         /// </ul>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-        /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.</p>
-        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-        /// </li>
-        /// <li>
-        /// <p>12345678-1234-1234-1234-123456789012</p>
-        /// </li>
+        /// <li> <p>alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-        /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
-        /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
-        /// deleted from all member accounts in the organization.</p>
-        pub fn is_organization_trail(mut self, inp: bool) -> Self {
-            self.inner = self.inner.is_organization_trail(inp);
+        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
+        pub fn is_organization_trail(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_organization_trail(input);
             self
         }
-        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-        /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
-        /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
-        /// deleted from all member accounts in the organization.</p>
+        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
         pub fn set_is_organization_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_organization_trail(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

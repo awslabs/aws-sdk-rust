@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon S3 on Outposts
@@ -101,6 +101,7 @@ where
     ///
     /// See [`ListEndpoints`](crate::client::fluent_builders::ListEndpoints) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEndpoints::into_paginator).
     pub fn list_endpoints(&self) -> fluent_builders::ListEndpoints<C, M, R> {
         fluent_builders::ListEndpoints::new(self.handle.clone())
     }
@@ -115,29 +116,17 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateEndpoint`.
     ///
-    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts.
-    /// S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your
-    /// virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-    /// Accessing S3 on Outposts using VPC only access points</a>.</p>
-    /// <p>This action creates an endpoint and associates it with the specified Outposts.</p>
-    /// <note>
+    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html"> Accessing S3 on Outposts using VPC only access points</a>.</p>
+    /// <p>This action creates an endpoint and associates it with the specified Outposts.</p> <note>
     /// <p>It can take up to 5 minutes for this action to complete.</p>
     /// </note>
     /// <p></p>
     /// <p>Related actions include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a> </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -182,10 +171,10 @@ pub mod fluent_builders {
                 crate::input::CreateEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -194,8 +183,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the AWS Outposts. </p>
-        pub fn outpost_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_id(inp);
+        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_id(input.into());
             self
         }
         /// <p>The ID of the AWS Outposts. </p>
@@ -203,21 +192,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_outpost_id(input);
             self
         }
-        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
-        /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
-        pub fn subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(inp);
+        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input.into());
             self
         }
-        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
-        /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subnet_id(input);
             self
         }
         /// <p>The ID of the security group to use with the endpoint.</p>
-        pub fn security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_id(inp);
+        pub fn security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_id(input.into());
             self
         }
         /// <p>The ID of the security group to use with the endpoint.</p>
@@ -228,16 +215,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_group_id(input);
             self
         }
-        /// <p>The type of access for the on-premise network connectivity for the
-        /// Outpost endpoint. To access the endpoint from an on-premises network, you must
-        /// specify the access type and provide the customer owned IPv4 pool.</p>
-        pub fn access_type(mut self, inp: crate::model::EndpointAccessType) -> Self {
-            self.inner = self.inner.access_type(inp);
+        /// <p>The type of access for the on-premise network connectivity for the Outpost endpoint. To access the endpoint from an on-premises network, you must specify the access type and provide the customer owned IPv4 pool.</p>
+        pub fn access_type(mut self, input: crate::model::EndpointAccessType) -> Self {
+            self.inner = self.inner.access_type(input);
             self
         }
-        /// <p>The type of access for the on-premise network connectivity for the
-        /// Outpost endpoint. To access the endpoint from an on-premises network, you must
-        /// specify the access type and provide the customer owned IPv4 pool.</p>
+        /// <p>The type of access for the on-premise network connectivity for the Outpost endpoint. To access the endpoint from an on-premises network, you must specify the access type and provide the customer owned IPv4 pool.</p>
         pub fn set_access_type(
             mut self,
             input: std::option::Option<crate::model::EndpointAccessType>,
@@ -245,14 +228,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_access_type(input);
             self
         }
-        /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
-        /// IP addresses will be allocated from this pool for the endpoint.</p>
-        pub fn customer_owned_ipv4_pool(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_owned_ipv4_pool(inp);
+        /// <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated from this pool for the endpoint.</p>
+        pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_owned_ipv4_pool(input.into());
             self
         }
-        /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
-        /// IP addresses will be allocated from this pool for the endpoint.</p>
+        /// <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated from this pool for the endpoint.</p>
         pub fn set_customer_owned_ipv4_pool(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -263,29 +244,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEndpoint`.
     ///
-    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts.
-    /// S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your
-    /// virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-    /// Accessing S3 on Outposts using VPC only access points</a>.</p>
-    /// <p>This action deletes an endpoint.</p>
-    /// <note>
+    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html"> Accessing S3 on Outposts using VPC only access points</a>.</p>
+    /// <p>This action deletes an endpoint.</p> <note>
     /// <p>It can take up to 5 minutes for this action to complete.</p>
     /// </note>
     /// <p></p>
     /// <p>Related actions include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a> </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -330,10 +299,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -342,8 +311,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the endpoint.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The ID of the endpoint.</p>
@@ -352,8 +321,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the AWS Outposts. </p>
-        pub fn outpost_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_id(inp);
+        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_id(input.into());
             self
         }
         /// <p>The ID of the AWS Outposts. </p>
@@ -364,27 +333,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEndpoints`.
     ///
-    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts.
-    /// S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your
-    /// virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-    /// Accessing S3 on Outposts using VPC only access points</a>.</p>
-    /// <p>This action lists endpoints associated with the Outposts.
-    /// </p>
+    /// <p>Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html"> Accessing S3 on Outposts using VPC only access points</a>.</p>
+    /// <p>This action lists endpoints associated with the Outposts. </p>
     /// <p></p>
     /// <p>Related actions include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-    /// </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a> </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -429,10 +386,10 @@ pub mod fluent_builders {
                 crate::input::ListEndpointsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -440,9 +397,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEndpointsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEndpointsPaginator<C, M, R> {
+            crate::paginator::ListEndpointsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The next endpoint requested in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The next endpoint requested in the list.</p>
@@ -451,8 +414,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The max number of endpoints that can be returned on the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The max number of endpoints that can be returned on the request.</p>
@@ -462,6 +425,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

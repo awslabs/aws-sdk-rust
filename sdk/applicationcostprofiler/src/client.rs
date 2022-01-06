@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Application Cost Profiler
@@ -108,6 +108,7 @@ where
     ///
     /// See [`ListReportDefinitions`](crate::client::fluent_builders::ListReportDefinitions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReportDefinitions::into_paginator).
     pub fn list_report_definitions(&self) -> fluent_builders::ListReportDefinitions<C, M, R> {
         fluent_builders::ListReportDefinitions::new(self.handle.clone())
     }
@@ -136,9 +137,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `DeleteReportDefinition`.
     ///
-    /// <p>Deletes the specified report definition in AWS Application Cost Profiler. This stops the report from being
-    /// generated.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified report definition in AWS Application Cost Profiler. This stops the report from being generated.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -183,10 +183,10 @@ pub mod fluent_builders {
                 crate::input::DeleteReportDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -195,8 +195,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Required. ID of the report to delete.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(inp);
+        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(input.into());
             self
         }
         /// <p>Required. ID of the report to delete.</p>
@@ -208,7 +208,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReportDefinition`.
     ///
     /// <p>Retrieves the definition of a report already configured in AWS Application Cost Profiler.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -253,10 +253,10 @@ pub mod fluent_builders {
                 crate::input::GetReportDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -265,8 +265,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of the report to retrieve.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(inp);
+        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(input.into());
             self
         }
         /// <p>ID of the report to retrieve.</p>
@@ -278,10 +278,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportApplicationUsage`.
     ///
     /// <p>Ingests application usage data from Amazon Simple Storage Service (Amazon S3).</p>
-    /// <p>The data must already exist in the S3 location. As part of the action, AWS Application Cost Profiler
-    /// copies the object from your S3 bucket to an S3 bucket owned by Amazon for processing
-    /// asynchronously.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The data must already exist in the S3 location. As part of the action, AWS Application Cost Profiler copies the object from your S3 bucket to an S3 bucket owned by Amazon for processing asynchronously.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportApplicationUsage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -326,10 +324,10 @@ pub mod fluent_builders {
                 crate::input::ImportApplicationUsageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -338,8 +336,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon S3 location to import application usage data from.</p>
-        pub fn source_s3_location(mut self, inp: crate::model::SourceS3Location) -> Self {
-            self.inner = self.inner.source_s3_location(inp);
+        pub fn source_s3_location(mut self, input: crate::model::SourceS3Location) -> Self {
+            self.inner = self.inner.source_s3_location(input);
             self
         }
         /// <p>Amazon S3 location to import application usage data from.</p>
@@ -355,7 +353,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list of all reports and their configurations for your AWS account.</p>
     /// <p>The maximum number of reports is one.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReportDefinitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -400,10 +398,10 @@ pub mod fluent_builders {
                 crate::input::ListReportDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -411,9 +409,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListReportDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListReportDefinitionsPaginator<C, M, R> {
+            crate::paginator::ListReportDefinitionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token value from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token value from a previous call to access the next page of results.</p>
@@ -422,8 +426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -435,7 +439,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutReportDefinition`.
     ///
     /// <p>Creates the report definition for a report in Application Cost Profiler.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -480,10 +484,10 @@ pub mod fluent_builders {
                 crate::input::PutReportDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -491,21 +495,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the
-        /// ID.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(inp);
+        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
+        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(input.into());
             self
         }
-        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the
-        /// ID.</p>
+        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_report_id(input);
             self
         }
         /// <p>Required. Description of the report.</p>
-        pub fn report_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_description(inp);
+        pub fn report_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_description(input.into());
             self
         }
         /// <p>Required. Description of the report.</p>
@@ -517,8 +519,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The cadence to generate the report.</p>
-        pub fn report_frequency(mut self, inp: crate::model::ReportFrequency) -> Self {
-            self.inner = self.inner.report_frequency(inp);
+        pub fn report_frequency(mut self, input: crate::model::ReportFrequency) -> Self {
+            self.inner = self.inner.report_frequency(input);
             self
         }
         /// <p>Required. The cadence to generate the report.</p>
@@ -530,8 +532,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The format to use for the generated report.</p>
-        pub fn format(mut self, inp: crate::model::Format) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::Format) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>Required. The format to use for the generated report.</p>
@@ -539,14 +541,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-        /// report.</p>
-        pub fn destination_s3_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.destination_s3_location(inp);
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
+        pub fn destination_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.inner = self.inner.destination_s3_location(input);
             self
         }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-        /// report.</p>
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
         pub fn set_destination_s3_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -558,7 +558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateReportDefinition`.
     ///
     /// <p>Updates existing report in AWS Application Cost Profiler.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -603,10 +603,10 @@ pub mod fluent_builders {
                 crate::input::UpdateReportDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -615,8 +615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Required. ID of the report to update.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(inp);
+        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(input.into());
             self
         }
         /// <p>Required. ID of the report to update.</p>
@@ -625,8 +625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. Description of the report.</p>
-        pub fn report_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_description(inp);
+        pub fn report_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_description(input.into());
             self
         }
         /// <p>Required. Description of the report.</p>
@@ -638,8 +638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The cadence to generate the report.</p>
-        pub fn report_frequency(mut self, inp: crate::model::ReportFrequency) -> Self {
-            self.inner = self.inner.report_frequency(inp);
+        pub fn report_frequency(mut self, input: crate::model::ReportFrequency) -> Self {
+            self.inner = self.inner.report_frequency(input);
             self
         }
         /// <p>Required. The cadence to generate the report.</p>
@@ -651,8 +651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The format to use for the generated report.</p>
-        pub fn format(mut self, inp: crate::model::Format) -> Self {
-            self.inner = self.inner.format(inp);
+        pub fn format(mut self, input: crate::model::Format) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>Required. The format to use for the generated report.</p>
@@ -660,14 +660,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-        /// report.</p>
-        pub fn destination_s3_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.destination_s3_location(inp);
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
+        pub fn destination_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.inner = self.inner.destination_s3_location(input);
             self
         }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-        /// report.</p>
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
         pub fn set_destination_s3_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -677,6 +675,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

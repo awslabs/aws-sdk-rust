@@ -87,13 +87,13 @@ impl PutStudioMembersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudioMembersOutput {
-    /// <p>A list of members.</p>
+    /// <p>A list of admin members.</p>
     pub members: std::option::Option<std::vec::Vec<crate::model::StudioMembership>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStudioMembersOutput {
-    /// <p>A list of members.</p>
+    /// <p>A list of admin members.</p>
     pub fn members(&self) -> std::option::Option<&[crate::model::StudioMembership]> {
         self.members.as_deref()
     }
@@ -124,14 +124,14 @@ pub mod list_studio_members_output {
         ///
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
-        /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::StudioMembership>) -> Self {
+        /// <p>A list of admin members.</p>
+        pub fn members(mut self, input: crate::model::StudioMembership) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
-        /// <p>A list of members.</p>
+        /// <p>A list of admin members.</p>
         pub fn set_members(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StudioMembership>>,
@@ -304,9 +304,9 @@ pub mod list_studios_output {
         /// To override the contents of this collection use [`set_studios`](Self::set_studios).
         ///
         /// <p>A collection of studios.</p>
-        pub fn studios(mut self, input: impl Into<crate::model::Studio>) -> Self {
+        pub fn studios(mut self, input: crate::model::Studio) -> Self {
             let mut v = self.studios.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.studios = Some(v);
             self
         }
@@ -603,12 +603,9 @@ pub mod list_studio_components_output {
         /// To override the contents of this collection use [`set_studio_components`](Self::set_studio_components).
         ///
         /// <p>A collection of studio components.</p>
-        pub fn studio_components(
-            mut self,
-            input: impl Into<crate::model::StudioComponent>,
-        ) -> Self {
+        pub fn studio_components(mut self, input: crate::model::StudioComponent) -> Self {
             let mut v = self.studio_components.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.studio_components = Some(v);
             self
         }
@@ -636,7 +633,7 @@ impl ListStudioComponentsOutput {
     }
 }
 
-/// <p/>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioComponentOutput {
@@ -868,13 +865,11 @@ impl GetStudioComponentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStreamingSessionOutput {
-    /// <p>A streaming session is a virtual workstation created using a particular launch
-    /// profile.</p>
+    /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     pub session: std::option::Option<crate::model::StreamingSession>,
 }
 impl StopStreamingSessionOutput {
-    /// <p>A streaming session is a virtual workstation created using a particular launch
-    /// profile.</p>
+    /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     pub fn session(&self) -> std::option::Option<&crate::model::StreamingSession> {
         self.session.as_ref()
     }
@@ -895,14 +890,12 @@ pub mod stop_streaming_session_output {
         pub(crate) session: std::option::Option<crate::model::StreamingSession>,
     }
     impl Builder {
-        /// <p>A streaming session is a virtual workstation created using a particular launch
-        /// profile.</p>
+        /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
         pub fn session(mut self, input: crate::model::StreamingSession) -> Self {
             self.session = Some(input);
             self
         }
-        /// <p>A streaming session is a virtual workstation created using a particular launch
-        /// profile.</p>
+        /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
         pub fn set_session(
             mut self,
             input: std::option::Option<crate::model::StreamingSession>,
@@ -929,13 +922,11 @@ impl StopStreamingSessionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStreamingSessionOutput {
-    /// <p>A streaming session is a virtual workstation created using a particular launch
-    /// profile.</p>
+    /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     pub session: std::option::Option<crate::model::StreamingSession>,
 }
 impl StartStreamingSessionOutput {
-    /// <p>A streaming session is a virtual workstation created using a particular launch
-    /// profile.</p>
+    /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     pub fn session(&self) -> std::option::Option<&crate::model::StreamingSession> {
         self.session.as_ref()
     }
@@ -956,14 +947,12 @@ pub mod start_streaming_session_output {
         pub(crate) session: std::option::Option<crate::model::StreamingSession>,
     }
     impl Builder {
-        /// <p>A streaming session is a virtual workstation created using a particular launch
-        /// profile.</p>
+        /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
         pub fn session(mut self, input: crate::model::StreamingSession) -> Self {
             self.session = Some(input);
             self
         }
-        /// <p>A streaming session is a virtual workstation created using a particular launch
-        /// profile.</p>
+        /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
         pub fn set_session(
             mut self,
             input: std::option::Option<crate::model::StreamingSession>,
@@ -1152,9 +1141,9 @@ pub mod list_streaming_sessions_output {
         /// To override the contents of this collection use [`set_sessions`](Self::set_sessions).
         ///
         /// <p>A collection of streaming sessions.</p>
-        pub fn sessions(mut self, input: impl Into<crate::model::StreamingSession>) -> Self {
+        pub fn sessions(mut self, input: crate::model::StreamingSession) -> Self {
             let mut v = self.sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sessions = Some(v);
             self
         }
@@ -1406,9 +1395,9 @@ pub mod list_streaming_images_output {
         /// To override the contents of this collection use [`set_streaming_images`](Self::set_streaming_images).
         ///
         /// <p>A collection of streaming images.</p>
-        pub fn streaming_images(mut self, input: impl Into<crate::model::StreamingImage>) -> Self {
+        pub fn streaming_images(mut self, input: crate::model::StreamingImage) -> Self {
             let mut v = self.streaming_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.streaming_images = Some(v);
             self
         }
@@ -1550,15 +1539,21 @@ impl DeleteStreamingImageOutput {
     }
 }
 
-/// <p/>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamingImageOutput {
-    /// <p/>
+    /// <p>Represents a streaming image resource.</p>
+    /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
+    /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
+    /// <p>You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you create for this purpose. You can also include software that your users require.</p>
     pub streaming_image: std::option::Option<crate::model::StreamingImage>,
 }
 impl UpdateStreamingImageOutput {
-    /// <p/>
+    /// <p>Represents a streaming image resource.</p>
+    /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
+    /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
+    /// <p>You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you create for this purpose. You can also include software that your users require.</p>
     pub fn streaming_image(&self) -> std::option::Option<&crate::model::StreamingImage> {
         self.streaming_image.as_ref()
     }
@@ -1579,12 +1574,18 @@ pub mod update_streaming_image_output {
         pub(crate) streaming_image: std::option::Option<crate::model::StreamingImage>,
     }
     impl Builder {
-        /// <p/>
+        /// <p>Represents a streaming image resource.</p>
+        /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
+        /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
+        /// <p>You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you create for this purpose. You can also include software that your users require.</p>
         pub fn streaming_image(mut self, input: crate::model::StreamingImage) -> Self {
             self.streaming_image = Some(input);
             self
         }
-        /// <p/>
+        /// <p>Represents a streaming image resource.</p>
+        /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
+        /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
+        /// <p>You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you create for this purpose. You can also include software that your users require.</p>
         pub fn set_streaming_image(
             mut self,
             input: std::option::Option<crate::model::StreamingImage>,
@@ -1794,9 +1795,9 @@ pub mod list_launch_profile_members_output {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::LaunchProfileMembership>) -> Self {
+        pub fn members(mut self, input: crate::model::LaunchProfileMembership) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -2029,9 +2030,9 @@ pub mod get_launch_profile_details_output {
         /// To override the contents of this collection use [`set_streaming_images`](Self::set_streaming_images).
         ///
         /// <p>A collection of streaming images.</p>
-        pub fn streaming_images(mut self, input: impl Into<crate::model::StreamingImage>) -> Self {
+        pub fn streaming_images(mut self, input: crate::model::StreamingImage) -> Self {
             let mut v = self.streaming_images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.streaming_images = Some(v);
             self
         }
@@ -2050,10 +2051,10 @@ pub mod get_launch_profile_details_output {
         /// <p>A collection of studio component summaries.</p>
         pub fn studio_component_summaries(
             mut self,
-            input: impl Into<crate::model::StudioComponentSummary>,
+            input: crate::model::StudioComponentSummary,
         ) -> Self {
             let mut v = self.studio_component_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.studio_component_summaries = Some(v);
             self
         }
@@ -2154,9 +2155,9 @@ pub mod list_launch_profiles_output {
         /// To override the contents of this collection use [`set_launch_profiles`](Self::set_launch_profiles).
         ///
         /// <p>A collection of launch profiles.</p>
-        pub fn launch_profiles(mut self, input: impl Into<crate::model::LaunchProfile>) -> Self {
+        pub fn launch_profiles(mut self, input: crate::model::LaunchProfile) -> Self {
             let mut v = self.launch_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.launch_profiles = Some(v);
             self
         }
@@ -2464,9 +2465,9 @@ pub mod list_eulas_output {
         /// To override the contents of this collection use [`set_eulas`](Self::set_eulas).
         ///
         /// <p>A collection of EULA resources.</p>
-        pub fn eulas(mut self, input: impl Into<crate::model::Eula>) -> Self {
+        pub fn eulas(mut self, input: crate::model::Eula) -> Self {
             let mut v = self.eulas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.eulas = Some(v);
             self
         }
@@ -2556,7 +2557,7 @@ impl GetEulaOutput {
     }
 }
 
-/// <p/>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEulaAcceptancesOutput {
@@ -2599,9 +2600,9 @@ pub mod list_eula_acceptances_output {
         /// To override the contents of this collection use [`set_eula_acceptances`](Self::set_eula_acceptances).
         ///
         /// <p>A collection of EULA acceptances.</p>
-        pub fn eula_acceptances(mut self, input: impl Into<crate::model::EulaAcceptance>) -> Self {
+        pub fn eula_acceptances(mut self, input: crate::model::EulaAcceptance) -> Self {
             let mut v = self.eula_acceptances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.eula_acceptances = Some(v);
             self
         }
@@ -2674,9 +2675,9 @@ pub mod accept_eulas_output {
         /// To override the contents of this collection use [`set_eula_acceptances`](Self::set_eula_acceptances).
         ///
         /// <p>A collection of EULA acceptances.</p>
-        pub fn eula_acceptances(mut self, input: impl Into<crate::model::EulaAcceptance>) -> Self {
+        pub fn eula_acceptances(mut self, input: crate::model::EulaAcceptance) -> Self {
             let mut v = self.eula_acceptances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.eula_acceptances = Some(v);
             self
         }
@@ -2767,14 +2768,12 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2804,8 +2803,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2816,8 +2814,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

@@ -23,18 +23,12 @@ pub mod accept_qualification_request_input {
             self.qualification_request_id = input;
             self
         }
-        /// <p>
-        /// The value of the Qualification. You can omit this value if you are using the
-        /// presence or absence of the Qualification as the basis for a HIT requirement.
-        /// </p>
+        /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
         pub fn integer_value(mut self, input: i32) -> Self {
             self.integer_value = Some(input);
             self
         }
-        /// <p>
-        /// The value of the Qualification. You can omit this value if you are using the
-        /// presence or absence of the Qualification as the basis for a HIT requirement.
-        /// </p>
+        /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
         pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
             self.integer_value = input;
             self
@@ -57,7 +51,7 @@ pub mod accept_qualification_request_input {
 pub type AcceptQualificationRequestInputOperationOutputAlias =
     crate::operation::AcceptQualificationRequest;
 #[doc(hidden)]
-pub type AcceptQualificationRequestInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptQualificationRequestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptQualificationRequestInput {
     /// Consumes the builder and constructs an Operation<[`AcceptQualificationRequest`](crate::operation::AcceptQualificationRequest)>
     #[allow(clippy::let_and_return)]
@@ -68,7 +62,7 @@ impl AcceptQualificationRequestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptQualificationRequest,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -155,7 +149,7 @@ impl AcceptQualificationRequestInput {
             "AcceptQualificationRequest",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -189,16 +183,12 @@ pub mod approve_assignment_input {
         pub(crate) override_rejection: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
-        /// </p>
+        /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
         pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.assignment_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
-        /// </p>
+        /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -206,16 +196,12 @@ pub mod approve_assignment_input {
             self.assignment_id = input;
             self
         }
-        /// <p>
-        /// A message for the Worker, which the Worker can see in the Status section of the web site.
-        /// </p>
+        /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
         pub fn requester_feedback(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester_feedback = Some(input.into());
             self
         }
-        /// <p>
-        /// A message for the Worker, which the Worker can see in the Status section of the web site.
-        /// </p>
+        /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
         pub fn set_requester_feedback(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -223,16 +209,12 @@ pub mod approve_assignment_input {
             self.requester_feedback = input;
             self
         }
-        /// <p>
-        /// A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>.
-        /// </p>
+        /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
         pub fn override_rejection(mut self, input: bool) -> Self {
             self.override_rejection = Some(input);
             self
         }
-        /// <p>
-        /// A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>.
-        /// </p>
+        /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
         pub fn set_override_rejection(mut self, input: std::option::Option<bool>) -> Self {
             self.override_rejection = input;
             self
@@ -255,7 +237,7 @@ pub mod approve_assignment_input {
 #[doc(hidden)]
 pub type ApproveAssignmentInputOperationOutputAlias = crate::operation::ApproveAssignment;
 #[doc(hidden)]
-pub type ApproveAssignmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ApproveAssignmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ApproveAssignmentInput {
     /// Consumes the builder and constructs an Operation<[`ApproveAssignment`](crate::operation::ApproveAssignment)>
     #[allow(clippy::let_and_return)]
@@ -266,7 +248,7 @@ impl ApproveAssignmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ApproveAssignment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -351,7 +333,7 @@ impl ApproveAssignmentInput {
             "ApproveAssignment",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -399,18 +381,12 @@ pub mod associate_qualification_with_worker_input {
             self.qualification_type_id = input;
             self
         }
-        /// <p>
-        /// The ID of the Worker to whom the Qualification is being assigned.
-        /// Worker IDs are included with submitted HIT assignments and Qualification requests.
-        /// </p>
+        /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
         pub fn worker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.worker_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Worker to whom the Qualification is being assigned.
-        /// Worker IDs are included with submitted HIT assignments and Qualification requests.
-        /// </p>
+        /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -425,20 +401,12 @@ pub mod associate_qualification_with_worker_input {
             self.integer_value = input;
             self
         }
-        /// <p>
-        /// Specifies whether to send a notification email message to the Worker
-        /// saying that the qualification was assigned to the Worker.
-        /// Note: this is true by default.
-        /// </p>
+        /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
         pub fn send_notification(mut self, input: bool) -> Self {
             self.send_notification = Some(input);
             self
         }
-        /// <p>
-        /// Specifies whether to send a notification email message to the Worker
-        /// saying that the qualification was assigned to the Worker.
-        /// Note: this is true by default.
-        /// </p>
+        /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
         pub fn set_send_notification(mut self, input: std::option::Option<bool>) -> Self {
             self.send_notification = input;
             self
@@ -463,7 +431,8 @@ pub mod associate_qualification_with_worker_input {
 pub type AssociateQualificationWithWorkerInputOperationOutputAlias =
     crate::operation::AssociateQualificationWithWorker;
 #[doc(hidden)]
-pub type AssociateQualificationWithWorkerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateQualificationWithWorkerInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateQualificationWithWorkerInput {
     /// Consumes the builder and constructs an Operation<[`AssociateQualificationWithWorker`](crate::operation::AssociateQualificationWithWorker)>
     #[allow(clippy::let_and_return)]
@@ -474,7 +443,7 @@ impl AssociateQualificationWithWorkerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateQualificationWithWorker,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -560,7 +529,7 @@ impl AssociateQualificationWithWorkerInput {
             "AssociateQualificationWithWorker",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -617,26 +586,12 @@ pub mod create_additional_assignments_for_hit_input {
             self.number_of_additional_assignments = input;
             self
         }
-        /// <p>
-        /// A unique identifier for this request, which allows you to retry the call on error
-        /// without extending the HIT multiple times.
-        /// This is useful in cases such as network timeouts where it is unclear whether or not
-        /// the call succeeded on the server. If the extend HIT already exists in the system
-        /// from a previous call using the same <code>UniqueRequestToken</code>,
-        /// subsequent calls will return an error with a message containing the request ID.
-        /// </p>
+        /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
         pub fn unique_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.unique_request_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A unique identifier for this request, which allows you to retry the call on error
-        /// without extending the HIT multiple times.
-        /// This is useful in cases such as network timeouts where it is unclear whether or not
-        /// the call succeeded on the server. If the extend HIT already exists in the system
-        /// from a previous call using the same <code>UniqueRequestToken</code>,
-        /// subsequent calls will return an error with a message containing the request ID.
-        /// </p>
+        /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
         pub fn set_unique_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -663,7 +618,8 @@ pub mod create_additional_assignments_for_hit_input {
 pub type CreateAdditionalAssignmentsForHitInputOperationOutputAlias =
     crate::operation::CreateAdditionalAssignmentsForHIT;
 #[doc(hidden)]
-pub type CreateAdditionalAssignmentsForHitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAdditionalAssignmentsForHitInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAdditionalAssignmentsForHitInput {
     /// Consumes the builder and constructs an Operation<[`CreateAdditionalAssignmentsForHIT`](crate::operation::CreateAdditionalAssignmentsForHIT)>
     #[allow(clippy::let_and_return)]
@@ -674,7 +630,7 @@ impl CreateAdditionalAssignmentsForHitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAdditionalAssignmentsForHIT,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -760,7 +716,7 @@ impl CreateAdditionalAssignmentsForHitInput {
             "CreateAdditionalAssignmentsForHIT",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -809,34 +765,22 @@ pub mod create_hit_input {
             std::option::Option<std::vec::Vec<crate::model::HitLayoutParameter>>,
     }
     impl Builder {
-        /// <p>
-        /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
-        /// </p>
+        /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
         pub fn max_assignments(mut self, input: i32) -> Self {
             self.max_assignments = Some(input);
             self
         }
-        /// <p>
-        /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
-        /// </p>
+        /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
         pub fn set_max_assignments(mut self, input: std::option::Option<i32>) -> Self {
             self.max_assignments = input;
             self
         }
-        /// <p>
-        /// The number of seconds after an assignment for the HIT has been submitted,
-        /// after which the assignment is considered Approved automatically
-        /// unless the Requester explicitly rejects it.
-        /// </p>
+        /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
         pub fn auto_approval_delay_in_seconds(mut self, input: i64) -> Self {
             self.auto_approval_delay_in_seconds = Some(input);
             self
         }
-        /// <p>
-        /// The number of seconds after an assignment for the HIT has been submitted,
-        /// after which the assignment is considered Approved automatically
-        /// unless the Requester explicitly rejects it.
-        /// </p>
+        /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
         pub fn set_auto_approval_delay_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -844,42 +788,22 @@ pub mod create_hit_input {
             self.auto_approval_delay_in_seconds = input;
             self
         }
-        /// <p>
-        /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
-        /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
-        /// even if not all of the assignments for the HIT have been accepted.
-        /// </p>
+        /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
         pub fn lifetime_in_seconds(mut self, input: i64) -> Self {
             self.lifetime_in_seconds = Some(input);
             self
         }
-        /// <p>
-        /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
-        /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
-        /// even if not all of the assignments for the HIT have been accepted.
-        /// </p>
+        /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
         pub fn set_lifetime_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.lifetime_in_seconds = input;
             self
         }
-        /// <p>
-        /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
-        /// If a Worker does not complete the assignment within the specified duration,
-        /// the assignment is considered abandoned. If the HIT is still active
-        /// (that is, its lifetime has not elapsed), the assignment becomes available
-        /// for other users to find and accept.
-        /// </p>
+        /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
         pub fn assignment_duration_in_seconds(mut self, input: i64) -> Self {
             self.assignment_duration_in_seconds = Some(input);
             self
         }
-        /// <p>
-        /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
-        /// If a Worker does not complete the assignment within the specified duration,
-        /// the assignment is considered abandoned. If the HIT is still active
-        /// (that is, its lifetime has not elapsed), the assignment becomes available
-        /// for other users to find and accept.
-        /// </p>
+        /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
         pub fn set_assignment_duration_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -887,134 +811,70 @@ pub mod create_hit_input {
             self.assignment_duration_in_seconds = input;
             self
         }
-        /// <p>
-        /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
-        /// </p>
+        /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
         pub fn reward(mut self, input: impl Into<std::string::String>) -> Self {
             self.reward = Some(input.into());
             self
         }
-        /// <p>
-        /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
-        /// </p>
+        /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
         pub fn set_reward(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reward = input;
             self
         }
-        /// <p>
-        /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
-        /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
-        /// and everywhere the HIT is mentioned.
-        /// </p>
+        /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
             self.title = Some(input.into());
             self
         }
-        /// <p>
-        /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
-        /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
-        /// and everywhere the HIT is mentioned.
-        /// </p>
+        /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
         }
-        /// <p>
-        /// One or more words or phrases that describe the HIT, separated by commas.
-        /// These words are used in searches to find HITs.
-        /// </p>
+        /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
         pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
             self.keywords = Some(input.into());
             self
         }
-        /// <p>
-        /// One or more words or phrases that describe the HIT, separated by commas.
-        /// These words are used in searches to find HITs.
-        /// </p>
+        /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
         pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.keywords = input;
             self
         }
-        /// <p>
-        /// A general description of the HIT. A description includes detailed information about the kind of task
-        /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
-        /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
-        /// information to evaluate the HIT before accepting it.
-        /// </p>
+        /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>
-        /// A general description of the HIT. A description includes detailed information about the kind of task
-        /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
-        /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
-        /// information to evaluate the HIT before accepting it.
-        /// </p>
+        /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>
-        /// The data the person completing the HIT uses to produce the results.
-        /// </p>
-        /// <p>
-        /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
-        /// or an HTMLQuestion data structure. The XML question data must not be larger than
-        /// 64 kilobytes (65,535 bytes) in size, including whitespace.
-        /// </p>
+        /// <p> The data the person completing the HIT uses to produce the results. </p>
+        /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
         /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
         pub fn question(mut self, input: impl Into<std::string::String>) -> Self {
             self.question = Some(input.into());
             self
         }
-        /// <p>
-        /// The data the person completing the HIT uses to produce the results.
-        /// </p>
-        /// <p>
-        /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
-        /// or an HTMLQuestion data structure. The XML question data must not be larger than
-        /// 64 kilobytes (65,535 bytes) in size, including whitespace.
-        /// </p>
+        /// <p> The data the person completing the HIT uses to produce the results. </p>
+        /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
         /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
         pub fn set_question(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.question = input;
             self
         }
-        /// <p>
-        /// An arbitrary data field.
-        /// The RequesterAnnotation parameter lets your application attach arbitrary data
-        /// to the HIT for tracking purposes.
-        /// For example, this parameter could be an identifier internal to the Requester's application
-        /// that corresponds with the HIT.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
-        /// It is not shown to the Worker, or any other Requester.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter may be different for each HIT you submit.
-        /// It does not affect how your HITs are grouped.
-        /// </p>
+        /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+        /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+        /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
         pub fn requester_annotation(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester_annotation = Some(input.into());
             self
         }
-        /// <p>
-        /// An arbitrary data field.
-        /// The RequesterAnnotation parameter lets your application attach arbitrary data
-        /// to the HIT for tracking purposes.
-        /// For example, this parameter could be an identifier internal to the Requester's application
-        /// that corresponds with the HIT.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
-        /// It is not shown to the Worker, or any other Requester.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter may be different for each HIT you submit.
-        /// It does not affect how your HITs are grouped.
-        /// </p>
+        /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+        /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+        /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
         pub fn set_requester_annotation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1026,31 +886,17 @@ pub mod create_hit_input {
         ///
         /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
         ///
-        /// <p>
-        /// Conditions that a Worker's Qualifications must meet in order
-        /// to accept the HIT. A HIT can have between zero and ten
-        /// Qualification requirements. All requirements must be met in
-        /// order for a Worker to accept the HIT. Additionally, other
-        /// actions can be restricted using the <code>ActionsGuarded</code>
-        /// field on each <code>QualificationRequirement</code> structure.
-        /// </p>
+        /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
         pub fn qualification_requirements(
             mut self,
-            input: impl Into<crate::model::QualificationRequirement>,
+            input: crate::model::QualificationRequirement,
         ) -> Self {
             let mut v = self.qualification_requirements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.qualification_requirements = Some(v);
             self
         }
-        /// <p>
-        /// Conditions that a Worker's Qualifications must meet in order
-        /// to accept the HIT. A HIT can have between zero and ten
-        /// Qualification requirements. All requirements must be met in
-        /// order for a Worker to accept the HIT. Additionally, other
-        /// actions can be restricted using the <code>ActionsGuarded</code>
-        /// field on each <code>QualificationRequirement</code> structure.
-        /// </p>
+        /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
         pub fn set_qualification_requirements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
@@ -1058,41 +904,15 @@ pub mod create_hit_input {
             self.qualification_requirements = input;
             self
         }
-        /// <p>
-        /// A unique identifier for this request which allows you to retry the call
-        /// on error without creating duplicate HITs.
-        /// This is useful in cases such as network timeouts where it is unclear whether or not
-        /// the call succeeded on the server.
-        /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
-        /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
-        /// with a message containing the HITId.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// Note: It is your responsibility to ensure uniqueness of the token.
-        /// The unique token expires after 24 hours. Subsequent calls using the same
-        /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-        /// </p>
+        /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+        /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
         /// </note>
         pub fn unique_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.unique_request_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A unique identifier for this request which allows you to retry the call
-        /// on error without creating duplicate HITs.
-        /// This is useful in cases such as network timeouts where it is unclear whether or not
-        /// the call succeeded on the server.
-        /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
-        /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
-        /// with a message containing the HITId.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// Note: It is your responsibility to ensure uniqueness of the token.
-        /// The unique token expires after 24 hours. Subsequent calls using the same
-        /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-        /// </p>
+        /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+        /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
         /// </note>
         pub fn set_unique_request_token(
             mut self,
@@ -1101,18 +921,12 @@ pub mod create_hit_input {
             self.unique_request_token = input;
             self
         }
-        /// <p>
-        /// The Assignment-level Review Policy applies to the assignments under the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
+        /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
         pub fn assignment_review_policy(mut self, input: crate::model::ReviewPolicy) -> Self {
             self.assignment_review_policy = Some(input);
             self
         }
-        /// <p>
-        /// The Assignment-level Review Policy applies to the assignments under the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
+        /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
         pub fn set_assignment_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -1120,18 +934,12 @@ pub mod create_hit_input {
             self.assignment_review_policy = input;
             self
         }
-        /// <p>
-        /// The HIT-level Review Policy applies to the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
+        /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
         pub fn hit_review_policy(mut self, input: crate::model::ReviewPolicy) -> Self {
             self.hit_review_policy = Some(input);
             self
         }
-        /// <p>
-        /// The HIT-level Review Policy applies to the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
+        /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
         pub fn set_hit_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -1139,24 +947,14 @@ pub mod create_hit_input {
             self.hit_review_policy = input;
             self
         }
-        /// <p>
-        /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
-        /// and create an additional HIT by providing those values as HITLayoutParameters.
-        /// </p>
-        /// <p>
-        /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
-        /// </p>
+        /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+        /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
         pub fn hit_layout_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hit_layout_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
-        /// and create an additional HIT by providing those values as HITLayoutParameters.
-        /// </p>
-        /// <p>
-        /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
-        /// </p>
+        /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+        /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
         pub fn set_hit_layout_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1168,23 +966,14 @@ pub mod create_hit_input {
         ///
         /// To override the contents of this collection use [`set_hit_layout_parameters`](Self::set_hit_layout_parameters).
         ///
-        /// <p>
-        /// If the HITLayoutId is provided, any placeholder values must be filled in with values
-        /// using the HITLayoutParameter structure. For more information, see HITLayout.
-        /// </p>
-        pub fn hit_layout_parameters(
-            mut self,
-            input: impl Into<crate::model::HitLayoutParameter>,
-        ) -> Self {
+        /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
+        pub fn hit_layout_parameters(mut self, input: crate::model::HitLayoutParameter) -> Self {
             let mut v = self.hit_layout_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hit_layout_parameters = Some(v);
             self
         }
-        /// <p>
-        /// If the HITLayoutId is provided, any placeholder values must be filled in with values
-        /// using the HITLayoutParameter structure. For more information, see HITLayout.
-        /// </p>
+        /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
         pub fn set_hit_layout_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HitLayoutParameter>>,
@@ -1221,7 +1010,7 @@ pub mod create_hit_input {
 #[doc(hidden)]
 pub type CreateHitInputOperationOutputAlias = crate::operation::CreateHIT;
 #[doc(hidden)]
-pub type CreateHitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateHitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHitInput {
     /// Consumes the builder and constructs an Operation<[`CreateHIT`](crate::operation::CreateHIT)>
     #[allow(clippy::let_and_return)]
@@ -1232,7 +1021,7 @@ impl CreateHitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHIT,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1314,7 +1103,7 @@ impl CreateHitInput {
                     "CreateHIT",
                     "mturk",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1353,20 +1142,12 @@ pub mod create_hit_type_input {
             std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
     }
     impl Builder {
-        /// <p>
-        /// The number of seconds after an assignment for the HIT has been submitted,
-        /// after which the assignment is considered Approved automatically
-        /// unless the Requester explicitly rejects it.
-        /// </p>
+        /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
         pub fn auto_approval_delay_in_seconds(mut self, input: i64) -> Self {
             self.auto_approval_delay_in_seconds = Some(input);
             self
         }
-        /// <p>
-        /// The number of seconds after an assignment for the HIT has been submitted,
-        /// after which the assignment is considered Approved automatically
-        /// unless the Requester explicitly rejects it.
-        /// </p>
+        /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
         pub fn set_auto_approval_delay_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -1374,24 +1155,12 @@ pub mod create_hit_type_input {
             self.auto_approval_delay_in_seconds = input;
             self
         }
-        /// <p>
-        /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
-        /// If a Worker does not complete the assignment within the specified duration,
-        /// the assignment is considered abandoned. If the HIT is still active
-        /// (that is, its lifetime has not elapsed), the assignment becomes available
-        /// for other users to find and accept.
-        /// </p>
+        /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
         pub fn assignment_duration_in_seconds(mut self, input: i64) -> Self {
             self.assignment_duration_in_seconds = Some(input);
             self
         }
-        /// <p>
-        /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
-        /// If a Worker does not complete the assignment within the specified duration,
-        /// the assignment is considered abandoned. If the HIT is still active
-        /// (that is, its lifetime has not elapsed), the assignment becomes available
-        /// for other users to find and accept.
-        /// </p>
+        /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
         pub fn set_assignment_duration_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -1399,70 +1168,42 @@ pub mod create_hit_type_input {
             self.assignment_duration_in_seconds = input;
             self
         }
-        /// <p>
-        /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
-        /// </p>
+        /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
         pub fn reward(mut self, input: impl Into<std::string::String>) -> Self {
             self.reward = Some(input.into());
             self
         }
-        /// <p>
-        /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
-        /// </p>
+        /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
         pub fn set_reward(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reward = input;
             self
         }
-        /// <p>
-        /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
-        /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
-        /// and everywhere the HIT is mentioned.
-        /// </p>
+        /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
             self.title = Some(input.into());
             self
         }
-        /// <p>
-        /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
-        /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
-        /// and everywhere the HIT is mentioned.
-        /// </p>
+        /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
         }
-        /// <p>
-        /// One or more words or phrases that describe the HIT, separated by commas.
-        /// These words are used in searches to find HITs.
-        /// </p>
+        /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
         pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
             self.keywords = Some(input.into());
             self
         }
-        /// <p>
-        /// One or more words or phrases that describe the HIT, separated by commas.
-        /// These words are used in searches to find HITs.
-        /// </p>
+        /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
         pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.keywords = input;
             self
         }
-        /// <p>
-        /// A general description of the HIT. A description includes detailed information about the kind of task
-        /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
-        /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
-        /// information to evaluate the HIT before accepting it.
-        /// </p>
+        /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>
-        /// A general description of the HIT. A description includes detailed information about the kind of task
-        /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
-        /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
-        /// information to evaluate the HIT before accepting it.
-        /// </p>
+        /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1471,31 +1212,17 @@ pub mod create_hit_type_input {
         ///
         /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
         ///
-        /// <p>
-        /// Conditions that a Worker's Qualifications must meet in order
-        /// to accept the HIT. A HIT can have between zero and ten
-        /// Qualification requirements. All requirements must be met in
-        /// order for a Worker to accept the HIT. Additionally, other
-        /// actions can be restricted using the <code>ActionsGuarded</code>
-        /// field on each <code>QualificationRequirement</code> structure.
-        /// </p>
+        /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
         pub fn qualification_requirements(
             mut self,
-            input: impl Into<crate::model::QualificationRequirement>,
+            input: crate::model::QualificationRequirement,
         ) -> Self {
             let mut v = self.qualification_requirements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.qualification_requirements = Some(v);
             self
         }
-        /// <p>
-        /// Conditions that a Worker's Qualifications must meet in order
-        /// to accept the HIT. A HIT can have between zero and ten
-        /// Qualification requirements. All requirements must be met in
-        /// order for a Worker to accept the HIT. Additionally, other
-        /// actions can be restricted using the <code>ActionsGuarded</code>
-        /// field on each <code>QualificationRequirement</code> structure.
-        /// </p>
+        /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
         pub fn set_qualification_requirements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
@@ -1525,7 +1252,7 @@ pub mod create_hit_type_input {
 #[doc(hidden)]
 pub type CreateHitTypeInputOperationOutputAlias = crate::operation::CreateHITType;
 #[doc(hidden)]
-pub type CreateHitTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateHitTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHitTypeInput {
     /// Consumes the builder and constructs an Operation<[`CreateHITType`](crate::operation::CreateHITType)>
     #[allow(clippy::let_and_return)]
@@ -1536,7 +1263,7 @@ impl CreateHitTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHITType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1621,7 +1348,7 @@ impl CreateHitTypeInput {
             "CreateHITType",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1673,98 +1400,50 @@ pub mod create_hit_with_hit_type_input {
             self.hit_type_id = input;
             self
         }
-        /// <p>
-        /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
-        /// </p>
+        /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
         pub fn max_assignments(mut self, input: i32) -> Self {
             self.max_assignments = Some(input);
             self
         }
-        /// <p>
-        /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
-        /// </p>
+        /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
         pub fn set_max_assignments(mut self, input: std::option::Option<i32>) -> Self {
             self.max_assignments = input;
             self
         }
-        /// <p>
-        /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
-        /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
-        /// even if not all of the assignments for the HIT have been accepted.
-        /// </p>
+        /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
         pub fn lifetime_in_seconds(mut self, input: i64) -> Self {
             self.lifetime_in_seconds = Some(input);
             self
         }
-        /// <p>
-        /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
-        /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
-        /// even if not all of the assignments for the HIT have been accepted.
-        /// </p>
+        /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
         pub fn set_lifetime_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.lifetime_in_seconds = input;
             self
         }
-        /// <p>
-        /// The data the person completing the HIT uses to produce the results.
-        /// </p>
-        /// <p>
-        /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
-        /// or an HTMLQuestion data structure. The XML question data must not be larger than
-        /// 64 kilobytes (65,535 bytes) in size, including whitespace.
-        /// </p>
+        /// <p> The data the person completing the HIT uses to produce the results. </p>
+        /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
         /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
         pub fn question(mut self, input: impl Into<std::string::String>) -> Self {
             self.question = Some(input.into());
             self
         }
-        /// <p>
-        /// The data the person completing the HIT uses to produce the results.
-        /// </p>
-        /// <p>
-        /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
-        /// or an HTMLQuestion data structure. The XML question data must not be larger than
-        /// 64 kilobytes (65,535 bytes) in size, including whitespace.
-        /// </p>
+        /// <p> The data the person completing the HIT uses to produce the results. </p>
+        /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
         /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
         pub fn set_question(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.question = input;
             self
         }
-        /// <p>
-        /// An arbitrary data field.
-        /// The RequesterAnnotation parameter lets your application attach arbitrary data
-        /// to the HIT for tracking purposes.
-        /// For example, this parameter could be an identifier internal to the Requester's application
-        /// that corresponds with the HIT.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
-        /// It is not shown to the Worker, or any other Requester.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter may be different for each HIT you submit.
-        /// It does not affect how your HITs are grouped.
-        /// </p>
+        /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+        /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+        /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
         pub fn requester_annotation(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester_annotation = Some(input.into());
             self
         }
-        /// <p>
-        /// An arbitrary data field.
-        /// The RequesterAnnotation parameter lets your application attach arbitrary data
-        /// to the HIT for tracking purposes.
-        /// For example, this parameter could be an identifier internal to the Requester's application
-        /// that corresponds with the HIT.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
-        /// It is not shown to the Worker, or any other Requester.
-        /// </p>
-        /// <p>
-        /// The RequesterAnnotation parameter may be different for each HIT you submit.
-        /// It does not affect how your HITs are grouped.
-        /// </p>
+        /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+        /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+        /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
         pub fn set_requester_annotation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1772,41 +1451,15 @@ pub mod create_hit_with_hit_type_input {
             self.requester_annotation = input;
             self
         }
-        /// <p>
-        /// A unique identifier for this request which allows you to retry the call
-        /// on error without creating duplicate HITs.
-        /// This is useful in cases such as network timeouts where it is unclear whether or not
-        /// the call succeeded on the server.
-        /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
-        /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
-        /// with a message containing the HITId.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// Note: It is your responsibility to ensure uniqueness of the token.
-        /// The unique token expires after 24 hours. Subsequent calls using the same
-        /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-        /// </p>
+        /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+        /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
         /// </note>
         pub fn unique_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.unique_request_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A unique identifier for this request which allows you to retry the call
-        /// on error without creating duplicate HITs.
-        /// This is useful in cases such as network timeouts where it is unclear whether or not
-        /// the call succeeded on the server.
-        /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
-        /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
-        /// with a message containing the HITId.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// Note: It is your responsibility to ensure uniqueness of the token.
-        /// The unique token expires after 24 hours. Subsequent calls using the same
-        /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-        /// </p>
+        /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+        /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
         /// </note>
         pub fn set_unique_request_token(
             mut self,
@@ -1815,18 +1468,12 @@ pub mod create_hit_with_hit_type_input {
             self.unique_request_token = input;
             self
         }
-        /// <p>
-        /// The Assignment-level Review Policy applies to the assignments under the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
+        /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
         pub fn assignment_review_policy(mut self, input: crate::model::ReviewPolicy) -> Self {
             self.assignment_review_policy = Some(input);
             self
         }
-        /// <p>
-        /// The Assignment-level Review Policy applies to the assignments under the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
+        /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
         pub fn set_assignment_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -1834,18 +1481,12 @@ pub mod create_hit_with_hit_type_input {
             self.assignment_review_policy = input;
             self
         }
-        /// <p>
-        /// The HIT-level Review Policy applies to the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
+        /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
         pub fn hit_review_policy(mut self, input: crate::model::ReviewPolicy) -> Self {
             self.hit_review_policy = Some(input);
             self
         }
-        /// <p>
-        /// The HIT-level Review Policy applies to the HIT.
-        /// You can specify for Mechanical Turk to take various actions based on the policy.
-        /// </p>
+        /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
         pub fn set_hit_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -1853,24 +1494,14 @@ pub mod create_hit_with_hit_type_input {
             self.hit_review_policy = input;
             self
         }
-        /// <p>
-        /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
-        /// and create an additional HIT by providing those values as HITLayoutParameters.
-        /// </p>
-        /// <p>
-        /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
-        /// </p>
+        /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+        /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
         pub fn hit_layout_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hit_layout_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
-        /// and create an additional HIT by providing those values as HITLayoutParameters.
-        /// </p>
-        /// <p>
-        /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
-        /// </p>
+        /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+        /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
         pub fn set_hit_layout_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1882,23 +1513,14 @@ pub mod create_hit_with_hit_type_input {
         ///
         /// To override the contents of this collection use [`set_hit_layout_parameters`](Self::set_hit_layout_parameters).
         ///
-        /// <p>
-        /// If the HITLayoutId is provided, any placeholder values must be filled in with values
-        /// using the HITLayoutParameter structure. For more information, see HITLayout.
-        /// </p>
-        pub fn hit_layout_parameters(
-            mut self,
-            input: impl Into<crate::model::HitLayoutParameter>,
-        ) -> Self {
+        /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
+        pub fn hit_layout_parameters(mut self, input: crate::model::HitLayoutParameter) -> Self {
             let mut v = self.hit_layout_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hit_layout_parameters = Some(v);
             self
         }
-        /// <p>
-        /// If the HITLayoutId is provided, any placeholder values must be filled in with values
-        /// using the HITLayoutParameter structure. For more information, see HITLayout.
-        /// </p>
+        /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
         pub fn set_hit_layout_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HitLayoutParameter>>,
@@ -1931,7 +1553,7 @@ pub mod create_hit_with_hit_type_input {
 #[doc(hidden)]
 pub type CreateHitWithHitTypeInputOperationOutputAlias = crate::operation::CreateHITWithHITType;
 #[doc(hidden)]
-pub type CreateHitWithHitTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateHitWithHitTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateHitWithHitTypeInput {
     /// Consumes the builder and constructs an Operation<[`CreateHITWithHITType`](crate::operation::CreateHITWithHITType)>
     #[allow(clippy::let_and_return)]
@@ -1942,7 +1564,7 @@ impl CreateHitWithHitTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateHITWithHITType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2029,7 +1651,7 @@ impl CreateHitWithHitTypeInput {
             "CreateHITWithHITType",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2071,46 +1693,32 @@ pub mod create_qualification_type_input {
         pub(crate) auto_granted_value: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p> The name you give to the Qualification type. The type name
-        /// is used to represent the Qualification to Workers, and to find the
-        /// type using a Qualification type search. It must be unique across all
-        /// of your Qualification types.</p>
+        /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p> The name you give to the Qualification type. The type name
-        /// is used to represent the Qualification to Workers, and to find the
-        /// type using a Qualification type search. It must be unique across all
-        /// of your Qualification types.</p>
+        /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>One or more words or phrases that describe the Qualification
-        /// type, separated by commas. The keywords of a type make the type
-        /// easier to find during a search.</p>
+        /// <p>One or more words or phrases that describe the Qualification type, separated by commas. The keywords of a type make the type easier to find during a search.</p>
         pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
             self.keywords = Some(input.into());
             self
         }
-        /// <p>One or more words or phrases that describe the Qualification
-        /// type, separated by commas. The keywords of a type make the type
-        /// easier to find during a search.</p>
+        /// <p>One or more words or phrases that describe the Qualification type, separated by commas. The keywords of a type make the type easier to find during a search.</p>
         pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.keywords = input;
             self
         }
-        /// <p>A long description for the Qualification type. On the Amazon
-        /// Mechanical Turk website, the long description is displayed when a
-        /// Worker examines a Qualification type.</p>
+        /// <p>A long description for the Qualification type. On the Amazon Mechanical Turk website, the long description is displayed when a Worker examines a Qualification type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A long description for the Qualification type. On the Amazon
-        /// Mechanical Turk website, the long description is displayed when a
-        /// Worker examines a Qualification type.</p>
+        /// <p>A long description for the Qualification type. On the Amazon Mechanical Turk website, the long description is displayed when a Worker examines a Qualification type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2133,126 +1741,74 @@ pub mod create_qualification_type_input {
             self.qualification_type_status = input;
             self
         }
-        /// <p>The number of seconds that a Worker must wait after
-        /// requesting a Qualification of the Qualification type before the
-        /// worker can retry the Qualification request.</p>
-        /// <p>Constraints: None. If not specified, retries are disabled and
-        /// Workers can request a Qualification of this type only once, even if
-        /// the Worker has not been granted the Qualification. It is not possible
-        /// to disable retries for a Qualification type after it has been created
-        /// with retries enabled. If you want to disable retries, you must delete
-        /// existing retry-enabled Qualification type and then create a new
-        /// Qualification type with retries disabled.</p>
+        /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>
+        /// <p>Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.</p>
         pub fn retry_delay_in_seconds(mut self, input: i64) -> Self {
             self.retry_delay_in_seconds = Some(input);
             self
         }
-        /// <p>The number of seconds that a Worker must wait after
-        /// requesting a Qualification of the Qualification type before the
-        /// worker can retry the Qualification request.</p>
-        /// <p>Constraints: None. If not specified, retries are disabled and
-        /// Workers can request a Qualification of this type only once, even if
-        /// the Worker has not been granted the Qualification. It is not possible
-        /// to disable retries for a Qualification type after it has been created
-        /// with retries enabled. If you want to disable retries, you must delete
-        /// existing retry-enabled Qualification type and then create a new
-        /// Qualification type with retries disabled.</p>
+        /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>
+        /// <p>Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.</p>
         pub fn set_retry_delay_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.retry_delay_in_seconds = input;
             self
         }
-        /// <p>
-        /// The questions for the Qualification test a Worker must answer
-        /// correctly to obtain a Qualification of this type. If this parameter
-        /// is specified,
-        /// <code>TestDurationInSeconds</code>
-        /// must also be specified.
-        /// </p>
-        /// <p>Constraints: Must not be longer than 65535 bytes. Must be a
-        /// QuestionForm data structure. This parameter cannot be specified if
-        /// AutoGranted is true.</p>
-        /// <p>Constraints: None. If not specified, the Worker may request
-        /// the Qualification without answering any questions.</p>
+        /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
+        /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
+        /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
         pub fn test(mut self, input: impl Into<std::string::String>) -> Self {
             self.test = Some(input.into());
             self
         }
-        /// <p>
-        /// The questions for the Qualification test a Worker must answer
-        /// correctly to obtain a Qualification of this type. If this parameter
-        /// is specified,
-        /// <code>TestDurationInSeconds</code>
-        /// must also be specified.
-        /// </p>
-        /// <p>Constraints: Must not be longer than 65535 bytes. Must be a
-        /// QuestionForm data structure. This parameter cannot be specified if
-        /// AutoGranted is true.</p>
-        /// <p>Constraints: None. If not specified, the Worker may request
-        /// the Qualification without answering any questions.</p>
+        /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
+        /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
+        /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
         pub fn set_test(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.test = input;
             self
         }
-        /// <p>The answers to the Qualification test specified in the Test
-        /// parameter, in the form of an AnswerKey data structure.</p>
+        /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
         /// <p>Constraints: Must not be longer than 65535 bytes.</p>
-        /// <p>Constraints: None. If not specified, you must process
-        /// Qualification requests manually.</p>
+        /// <p>Constraints: None. If not specified, you must process Qualification requests manually.</p>
         pub fn answer_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.answer_key = Some(input.into());
             self
         }
-        /// <p>The answers to the Qualification test specified in the Test
-        /// parameter, in the form of an AnswerKey data structure.</p>
+        /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
         /// <p>Constraints: Must not be longer than 65535 bytes.</p>
-        /// <p>Constraints: None. If not specified, you must process
-        /// Qualification requests manually.</p>
+        /// <p>Constraints: None. If not specified, you must process Qualification requests manually.</p>
         pub fn set_answer_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.answer_key = input;
             self
         }
-        /// <p>The number of seconds the Worker has to complete the
-        /// Qualification test, starting from the time the Worker requests the
-        /// Qualification.</p>
+        /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
         pub fn test_duration_in_seconds(mut self, input: i64) -> Self {
             self.test_duration_in_seconds = Some(input);
             self
         }
-        /// <p>The number of seconds the Worker has to complete the
-        /// Qualification test, starting from the time the Worker requests the
-        /// Qualification.</p>
+        /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
         pub fn set_test_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.test_duration_in_seconds = input;
             self
         }
-        /// <p>Specifies whether requests for the Qualification type are
-        /// granted immediately, without prompting the Worker with a
-        /// Qualification test.</p>
-        /// <p>Constraints: If the Test parameter is specified, this
-        /// parameter cannot be true.</p>
+        /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
+        /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
         pub fn auto_granted(mut self, input: bool) -> Self {
             self.auto_granted = Some(input);
             self
         }
-        /// <p>Specifies whether requests for the Qualification type are
-        /// granted immediately, without prompting the Worker with a
-        /// Qualification test.</p>
-        /// <p>Constraints: If the Test parameter is specified, this
-        /// parameter cannot be true.</p>
+        /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
+        /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
         pub fn set_auto_granted(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_granted = input;
             self
         }
-        /// <p>The Qualification value to use for automatically granted
-        /// Qualifications. This parameter is used only if the AutoGranted
-        /// parameter is true.</p>
+        /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
         pub fn auto_granted_value(mut self, input: i32) -> Self {
             self.auto_granted_value = Some(input);
             self
         }
-        /// <p>The Qualification value to use for automatically granted
-        /// Qualifications. This parameter is used only if the AutoGranted
-        /// parameter is true.</p>
+        /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
         pub fn set_auto_granted_value(mut self, input: std::option::Option<i32>) -> Self {
             self.auto_granted_value = input;
             self
@@ -2283,7 +1839,7 @@ pub mod create_qualification_type_input {
 pub type CreateQualificationTypeInputOperationOutputAlias =
     crate::operation::CreateQualificationType;
 #[doc(hidden)]
-pub type CreateQualificationTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateQualificationTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateQualificationTypeInput {
     /// Consumes the builder and constructs an Operation<[`CreateQualificationType`](crate::operation::CreateQualificationType)>
     #[allow(clippy::let_and_return)]
@@ -2294,7 +1850,7 @@ impl CreateQualificationTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateQualificationType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2381,7 +1937,7 @@ impl CreateQualificationTypeInput {
             "CreateQualificationType",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2451,7 +2007,7 @@ pub mod create_worker_block_input {
 #[doc(hidden)]
 pub type CreateWorkerBlockInputOperationOutputAlias = crate::operation::CreateWorkerBlock;
 #[doc(hidden)]
-pub type CreateWorkerBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorkerBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkerBlockInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkerBlock`](crate::operation::CreateWorkerBlock)>
     #[allow(clippy::let_and_return)]
@@ -2462,7 +2018,7 @@ impl CreateWorkerBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkerBlock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2547,7 +2103,7 @@ impl CreateWorkerBlockInput {
             "CreateWorkerBlock",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2603,7 +2159,7 @@ pub mod delete_hit_input {
 #[doc(hidden)]
 pub type DeleteHitInputOperationOutputAlias = crate::operation::DeleteHIT;
 #[doc(hidden)]
-pub type DeleteHitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteHitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteHitInput {
     /// Consumes the builder and constructs an Operation<[`DeleteHIT`](crate::operation::DeleteHIT)>
     #[allow(clippy::let_and_return)]
@@ -2614,7 +2170,7 @@ impl DeleteHitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteHIT,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2696,7 +2252,7 @@ impl DeleteHitInput {
                     "DeleteHIT",
                     "mturk",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2758,7 +2314,7 @@ pub mod delete_qualification_type_input {
 pub type DeleteQualificationTypeInputOperationOutputAlias =
     crate::operation::DeleteQualificationType;
 #[doc(hidden)]
-pub type DeleteQualificationTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteQualificationTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteQualificationTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteQualificationType`](crate::operation::DeleteQualificationType)>
     #[allow(clippy::let_and_return)]
@@ -2769,7 +2325,7 @@ impl DeleteQualificationTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteQualificationType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2856,7 +2412,7 @@ impl DeleteQualificationTypeInput {
             "DeleteQualificationType",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2926,7 +2482,7 @@ pub mod delete_worker_block_input {
 #[doc(hidden)]
 pub type DeleteWorkerBlockInputOperationOutputAlias = crate::operation::DeleteWorkerBlock;
 #[doc(hidden)]
-pub type DeleteWorkerBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWorkerBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkerBlockInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkerBlock`](crate::operation::DeleteWorkerBlock)>
     #[allow(clippy::let_and_return)]
@@ -2937,7 +2493,7 @@ impl DeleteWorkerBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkerBlock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3022,7 +2578,7 @@ impl DeleteWorkerBlockInput {
             "DeleteWorkerBlock",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3109,7 +2665,7 @@ pub type DisassociateQualificationFromWorkerInputOperationOutputAlias =
     crate::operation::DisassociateQualificationFromWorker;
 #[doc(hidden)]
 pub type DisassociateQualificationFromWorkerInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateQualificationFromWorkerInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateQualificationFromWorker`](crate::operation::DisassociateQualificationFromWorker)>
     #[allow(clippy::let_and_return)]
@@ -3120,7 +2676,7 @@ impl DisassociateQualificationFromWorkerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateQualificationFromWorker,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3206,7 +2762,7 @@ impl DisassociateQualificationFromWorkerInput {
             "DisassociateQualificationFromWorker",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3250,7 +2806,7 @@ pub mod get_account_balance_input {
 #[doc(hidden)]
 pub type GetAccountBalanceInputOperationOutputAlias = crate::operation::GetAccountBalance;
 #[doc(hidden)]
-pub type GetAccountBalanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAccountBalanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccountBalanceInput {
     /// Consumes the builder and constructs an Operation<[`GetAccountBalance`](crate::operation::GetAccountBalance)>
     #[allow(clippy::let_and_return)]
@@ -3261,7 +2817,7 @@ impl GetAccountBalanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccountBalance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3346,7 +2902,7 @@ impl GetAccountBalanceInput {
             "GetAccountBalance",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3399,7 +2955,7 @@ pub mod get_assignment_input {
 #[doc(hidden)]
 pub type GetAssignmentInputOperationOutputAlias = crate::operation::GetAssignment;
 #[doc(hidden)]
-pub type GetAssignmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAssignmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssignmentInput {
     /// Consumes the builder and constructs an Operation<[`GetAssignment`](crate::operation::GetAssignment)>
     #[allow(clippy::let_and_return)]
@@ -3410,7 +2966,7 @@ impl GetAssignmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAssignment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3494,7 +3050,7 @@ impl GetAssignmentInput {
             "GetAssignment",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3527,14 +3083,12 @@ pub mod get_file_upload_url_input {
         pub(crate) question_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the assignment that contains the question with a
-        /// FileUploadAnswer.</p>
+        /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
         pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.assignment_id = Some(input.into());
             self
         }
-        /// <p>The ID of the assignment that contains the question with a
-        /// FileUploadAnswer.</p>
+        /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3542,14 +3096,12 @@ pub mod get_file_upload_url_input {
             self.assignment_id = input;
             self
         }
-        /// <p>The identifier of the question with a FileUploadAnswer, as
-        /// specified in the QuestionForm of the HIT.</p>
+        /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
         pub fn question_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.question_identifier = Some(input.into());
             self
         }
-        /// <p>The identifier of the question with a FileUploadAnswer, as
-        /// specified in the QuestionForm of the HIT.</p>
+        /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
         pub fn set_question_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3574,7 +3126,7 @@ pub mod get_file_upload_url_input {
 #[doc(hidden)]
 pub type GetFileUploadUrlInputOperationOutputAlias = crate::operation::GetFileUploadURL;
 #[doc(hidden)]
-pub type GetFileUploadUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFileUploadUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFileUploadUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetFileUploadURL`](crate::operation::GetFileUploadURL)>
     #[allow(clippy::let_and_return)]
@@ -3585,7 +3137,7 @@ impl GetFileUploadUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFileUploadURL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3670,7 +3222,7 @@ impl GetFileUploadUrlInput {
             "GetFileUploadURL",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3726,7 +3278,7 @@ pub mod get_hit_input {
 #[doc(hidden)]
 pub type GetHitInputOperationOutputAlias = crate::operation::GetHIT;
 #[doc(hidden)]
-pub type GetHitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetHitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetHitInput {
     /// Consumes the builder and constructs an Operation<[`GetHIT`](crate::operation::GetHIT)>
     #[allow(clippy::let_and_return)]
@@ -3737,7 +3289,7 @@ impl GetHitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHIT,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3816,7 +3368,7 @@ impl GetHitInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::GetHIT::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("GetHIT", "mturk"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3889,7 +3441,7 @@ pub mod get_qualification_score_input {
 #[doc(hidden)]
 pub type GetQualificationScoreInputOperationOutputAlias = crate::operation::GetQualificationScore;
 #[doc(hidden)]
-pub type GetQualificationScoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetQualificationScoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQualificationScoreInput {
     /// Consumes the builder and constructs an Operation<[`GetQualificationScore`](crate::operation::GetQualificationScore)>
     #[allow(clippy::let_and_return)]
@@ -3900,7 +3452,7 @@ impl GetQualificationScoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetQualificationScore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3987,7 +3539,7 @@ impl GetQualificationScoreInput {
             "GetQualificationScore",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4048,7 +3600,7 @@ pub mod get_qualification_type_input {
 #[doc(hidden)]
 pub type GetQualificationTypeInputOperationOutputAlias = crate::operation::GetQualificationType;
 #[doc(hidden)]
-pub type GetQualificationTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetQualificationTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQualificationTypeInput {
     /// Consumes the builder and constructs an Operation<[`GetQualificationType`](crate::operation::GetQualificationType)>
     #[allow(clippy::let_and_return)]
@@ -4059,7 +3611,7 @@ impl GetQualificationTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetQualificationType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4146,7 +3698,7 @@ impl GetQualificationTypeInput {
             "GetQualificationType",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4216,19 +3768,14 @@ pub mod list_assignments_for_hit_input {
         ///
         /// To override the contents of this collection use [`set_assignment_statuses`](Self::set_assignment_statuses).
         ///
-        /// <p>The status of the assignments to return: Submitted | Approved
-        /// | Rejected</p>
-        pub fn assignment_statuses(
-            mut self,
-            input: impl Into<crate::model::AssignmentStatus>,
-        ) -> Self {
+        /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
+        pub fn assignment_statuses(mut self, input: crate::model::AssignmentStatus) -> Self {
             let mut v = self.assignment_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.assignment_statuses = Some(v);
             self
         }
-        /// <p>The status of the assignments to return: Submitted | Approved
-        /// | Rejected</p>
+        /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
         pub fn set_assignment_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssignmentStatus>>,
@@ -4255,7 +3802,7 @@ pub mod list_assignments_for_hit_input {
 #[doc(hidden)]
 pub type ListAssignmentsForHitInputOperationOutputAlias = crate::operation::ListAssignmentsForHIT;
 #[doc(hidden)]
-pub type ListAssignmentsForHitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssignmentsForHitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssignmentsForHitInput {
     /// Consumes the builder and constructs an Operation<[`ListAssignmentsForHIT`](crate::operation::ListAssignmentsForHIT)>
     #[allow(clippy::let_and_return)]
@@ -4266,7 +3813,7 @@ impl ListAssignmentsForHitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssignmentsForHIT,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4353,7 +3900,7 @@ impl ListAssignmentsForHitInput {
             "ListAssignmentsForHIT",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4388,34 +3935,22 @@ pub mod list_bonus_payments_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the HIT associated with the bonus payments to
-        /// retrieve. If not specified, all bonus payments for all assignments
-        /// for the given HIT are returned. Either the HITId parameter or the
-        /// AssignmentId parameter must be specified</p>
+        /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
         pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hit_id = Some(input.into());
             self
         }
-        /// <p>The ID of the HIT associated with the bonus payments to
-        /// retrieve. If not specified, all bonus payments for all assignments
-        /// for the given HIT are returned. Either the HITId parameter or the
-        /// AssignmentId parameter must be specified</p>
+        /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
         }
-        /// <p>The ID of the assignment associated with the bonus payments
-        /// to retrieve. If specified, only bonus payments for the given
-        /// assignment are returned. Either the HITId parameter or the
-        /// AssignmentId parameter must be specified</p>
+        /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
         pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.assignment_id = Some(input.into());
             self
         }
-        /// <p>The ID of the assignment associated with the bonus payments
-        /// to retrieve. If specified, only bonus payments for the given
-        /// assignment are returned. Either the HITId parameter or the
-        /// AssignmentId parameter must be specified</p>
+        /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4462,7 +3997,7 @@ pub mod list_bonus_payments_input {
 #[doc(hidden)]
 pub type ListBonusPaymentsInputOperationOutputAlias = crate::operation::ListBonusPayments;
 #[doc(hidden)]
-pub type ListBonusPaymentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBonusPaymentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBonusPaymentsInput {
     /// Consumes the builder and constructs an Operation<[`ListBonusPayments`](crate::operation::ListBonusPayments)>
     #[allow(clippy::let_and_return)]
@@ -4473,7 +4008,7 @@ impl ListBonusPaymentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBonusPayments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4558,7 +4093,7 @@ impl ListBonusPaymentsInput {
             "ListBonusPayments",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4626,7 +4161,7 @@ pub mod list_hi_ts_input {
 #[doc(hidden)]
 pub type ListHiTsInputOperationOutputAlias = crate::operation::ListHITs;
 #[doc(hidden)]
-pub type ListHiTsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListHiTsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListHiTsInput {
     /// Consumes the builder and constructs an Operation<[`ListHITs`](crate::operation::ListHITs)>
     #[allow(clippy::let_and_return)]
@@ -4637,7 +4172,7 @@ impl ListHiTsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHITs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4718,7 +4253,7 @@ impl ListHiTsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListHITs", "mturk",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4752,16 +4287,12 @@ pub mod list_hi_ts_for_qualification_type_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the Qualification type to use when querying HITs.
-        /// </p>
+        /// <p> The ID of the Qualification type to use when querying HITs. </p>
         pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.qualification_type_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Qualification type to use when querying HITs.
-        /// </p>
+        /// <p> The ID of the Qualification type to use when querying HITs. </p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4779,16 +4310,12 @@ pub mod list_hi_ts_for_qualification_type_input {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// Limit the number of results returned.
-        /// </p>
+        /// <p> Limit the number of results returned. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// Limit the number of results returned.
-        /// </p>
+        /// <p> Limit the number of results returned. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4812,7 +4339,8 @@ pub mod list_hi_ts_for_qualification_type_input {
 pub type ListHiTsForQualificationTypeInputOperationOutputAlias =
     crate::operation::ListHITsForQualificationType;
 #[doc(hidden)]
-pub type ListHiTsForQualificationTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListHiTsForQualificationTypeInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListHiTsForQualificationTypeInput {
     /// Consumes the builder and constructs an Operation<[`ListHITsForQualificationType`](crate::operation::ListHITsForQualificationType)>
     #[allow(clippy::let_and_return)]
@@ -4823,7 +4351,7 @@ impl ListHiTsForQualificationTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListHITsForQualificationType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4909,7 +4437,7 @@ impl ListHiTsForQualificationTypeInput {
             "ListHITsForQualificationType",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4956,30 +4484,22 @@ pub mod list_qualification_requests_input {
             self.qualification_type_id = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p> The maximum number of results to return in a single call.
-        /// </p>
+        /// <p> The maximum number of results to return in a single call. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p> The maximum number of results to return in a single call.
-        /// </p>
+        /// <p> The maximum number of results to return in a single call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5003,7 +4523,7 @@ pub mod list_qualification_requests_input {
 pub type ListQualificationRequestsInputOperationOutputAlias =
     crate::operation::ListQualificationRequests;
 #[doc(hidden)]
-pub type ListQualificationRequestsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListQualificationRequestsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListQualificationRequestsInput {
     /// Consumes the builder and constructs an Operation<[`ListQualificationRequests`](crate::operation::ListQualificationRequests)>
     #[allow(clippy::let_and_return)]
@@ -5014,7 +4534,7 @@ impl ListQualificationRequestsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListQualificationRequests,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5101,7 +4621,7 @@ impl ListQualificationRequestsInput {
             "ListQualificationRequests",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5137,84 +4657,52 @@ pub mod list_qualification_types_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p> A text query against all of the searchable attributes of
-        /// Qualification types.
-        /// </p>
+        /// <p> A text query against all of the searchable attributes of Qualification types. </p>
         pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
             self.query = Some(input.into());
             self
         }
-        /// <p> A text query against all of the searchable attributes of
-        /// Qualification types.
-        /// </p>
+        /// <p> A text query against all of the searchable attributes of Qualification types. </p>
         pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query = input;
             self
         }
-        /// <p>Specifies that only Qualification types that a user can
-        /// request through the Amazon Mechanical Turk web site, such as by
-        /// taking a Qualification test, are returned as results of the search.
-        /// Some Qualification types, such as those assigned automatically by the
-        /// system, cannot be requested directly by users. If false, all
-        /// Qualification types, including those managed by the system, are
-        /// considered. Valid values are True | False.
-        /// </p>
+        /// <p>Specifies that only Qualification types that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test, are returned as results of the search. Some Qualification types, such as those assigned automatically by the system, cannot be requested directly by users. If false, all Qualification types, including those managed by the system, are considered. Valid values are True | False. </p>
         pub fn must_be_requestable(mut self, input: bool) -> Self {
             self.must_be_requestable = Some(input);
             self
         }
-        /// <p>Specifies that only Qualification types that a user can
-        /// request through the Amazon Mechanical Turk web site, such as by
-        /// taking a Qualification test, are returned as results of the search.
-        /// Some Qualification types, such as those assigned automatically by the
-        /// system, cannot be requested directly by users. If false, all
-        /// Qualification types, including those managed by the system, are
-        /// considered. Valid values are True | False.
-        /// </p>
+        /// <p>Specifies that only Qualification types that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test, are returned as results of the search. Some Qualification types, such as those assigned automatically by the system, cannot be requested directly by users. If false, all Qualification types, including those managed by the system, are considered. Valid values are True | False. </p>
         pub fn set_must_be_requestable(mut self, input: std::option::Option<bool>) -> Self {
             self.must_be_requestable = input;
             self
         }
-        /// <p> Specifies that only Qualification types that the Requester
-        /// created are returned. If false, the operation returns all
-        /// Qualification types.
-        /// </p>
+        /// <p> Specifies that only Qualification types that the Requester created are returned. If false, the operation returns all Qualification types. </p>
         pub fn must_be_owned_by_caller(mut self, input: bool) -> Self {
             self.must_be_owned_by_caller = Some(input);
             self
         }
-        /// <p> Specifies that only Qualification types that the Requester
-        /// created are returned. If false, the operation returns all
-        /// Qualification types.
-        /// </p>
+        /// <p> Specifies that only Qualification types that the Requester created are returned. If false, the operation returns all Qualification types. </p>
         pub fn set_must_be_owned_by_caller(mut self, input: std::option::Option<bool>) -> Self {
             self.must_be_owned_by_caller = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p> The maximum number of results to return in a single call.
-        /// </p>
+        /// <p> The maximum number of results to return in a single call. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p> The maximum number of results to return in a single call.
-        /// </p>
+        /// <p> The maximum number of results to return in a single call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5239,7 +4727,7 @@ pub mod list_qualification_types_input {
 #[doc(hidden)]
 pub type ListQualificationTypesInputOperationOutputAlias = crate::operation::ListQualificationTypes;
 #[doc(hidden)]
-pub type ListQualificationTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListQualificationTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListQualificationTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListQualificationTypes`](crate::operation::ListQualificationTypes)>
     #[allow(clippy::let_and_return)]
@@ -5250,7 +4738,7 @@ impl ListQualificationTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListQualificationTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5337,7 +4825,7 @@ impl ListQualificationTypesInput {
             "ListQualificationTypes",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5372,34 +4860,22 @@ pub mod list_reviewable_hi_ts_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the HIT type of the HITs to consider for the query.
-        /// If not specified, all HITs for the Reviewer are considered
-        /// </p>
+        /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
         pub fn hit_type_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hit_type_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the HIT type of the HITs to consider for the query.
-        /// If not specified, all HITs for the Reviewer are considered
-        /// </p>
+        /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
         pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_type_id = input;
             self
         }
-        /// <p>
-        /// Can be either <code>Reviewable</code> or <code>Reviewing</code>.
-        /// Reviewable is the default value.
-        /// </p>
+        /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
         pub fn status(mut self, input: crate::model::ReviewableHitStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>
-        /// Can be either <code>Reviewable</code> or <code>Reviewing</code>.
-        /// Reviewable is the default value.
-        /// </p>
+        /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReviewableHitStatus>,
@@ -5417,16 +4893,12 @@ pub mod list_reviewable_hi_ts_input {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// Limit the number of results returned.
-        /// </p>
+        /// <p> Limit the number of results returned. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// Limit the number of results returned.
-        /// </p>
+        /// <p> Limit the number of results returned. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5450,7 +4922,7 @@ pub mod list_reviewable_hi_ts_input {
 #[doc(hidden)]
 pub type ListReviewableHiTsInputOperationOutputAlias = crate::operation::ListReviewableHITs;
 #[doc(hidden)]
-pub type ListReviewableHiTsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListReviewableHiTsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReviewableHiTsInput {
     /// Consumes the builder and constructs an Operation<[`ListReviewableHITs`](crate::operation::ListReviewableHITs)>
     #[allow(clippy::let_and_return)]
@@ -5461,7 +4933,7 @@ impl ListReviewableHiTsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReviewableHITs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5546,7 +5018,7 @@ impl ListReviewableHiTsInput {
             "ListReviewableHITs",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5598,22 +5070,14 @@ pub mod list_review_policy_results_for_hit_input {
         ///
         /// To override the contents of this collection use [`set_policy_levels`](Self::set_policy_levels).
         ///
-        /// <p>
-        /// The Policy Level(s) to retrieve review results for - HIT or Assignment.
-        /// If omitted, the default behavior is to retrieve all data for both policy levels.
-        /// For a list of all the described policies, see Review Policies.
-        /// </p>
-        pub fn policy_levels(mut self, input: impl Into<crate::model::ReviewPolicyLevel>) -> Self {
+        /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
+        pub fn policy_levels(mut self, input: crate::model::ReviewPolicyLevel) -> Self {
             let mut v = self.policy_levels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_levels = Some(v);
             self
         }
-        /// <p>
-        /// The Policy Level(s) to retrieve review results for - HIT or Assignment.
-        /// If omitted, the default behavior is to retrieve all data for both policy levels.
-        /// For a list of all the described policies, see Review Policies.
-        /// </p>
+        /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
         pub fn set_policy_levels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReviewPolicyLevel>>,
@@ -5621,32 +5085,22 @@ pub mod list_review_policy_results_for_hit_input {
             self.policy_levels = input;
             self
         }
-        /// <p>
-        /// Specify if the operation should retrieve a list of the actions taken executing
-        /// the Review Policies and their outcomes.
-        /// </p>
+        /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
         pub fn retrieve_actions(mut self, input: bool) -> Self {
             self.retrieve_actions = Some(input);
             self
         }
-        /// <p>
-        /// Specify if the operation should retrieve a list of the actions taken executing
-        /// the Review Policies and their outcomes.
-        /// </p>
+        /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
         pub fn set_retrieve_actions(mut self, input: std::option::Option<bool>) -> Self {
             self.retrieve_actions = input;
             self
         }
-        /// <p>
-        /// Specify if the operation should retrieve a list of the results computed by the Review Policies.
-        /// </p>
+        /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
         pub fn retrieve_results(mut self, input: bool) -> Self {
             self.retrieve_results = Some(input);
             self
         }
-        /// <p>
-        /// Specify if the operation should retrieve a list of the results computed by the Review Policies.
-        /// </p>
+        /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
         pub fn set_retrieve_results(mut self, input: std::option::Option<bool>) -> Self {
             self.retrieve_results = input;
             self
@@ -5693,7 +5147,8 @@ pub mod list_review_policy_results_for_hit_input {
 pub type ListReviewPolicyResultsForHitInputOperationOutputAlias =
     crate::operation::ListReviewPolicyResultsForHIT;
 #[doc(hidden)]
-pub type ListReviewPolicyResultsForHitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListReviewPolicyResultsForHitInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListReviewPolicyResultsForHitInput {
     /// Consumes the builder and constructs an Operation<[`ListReviewPolicyResultsForHIT`](crate::operation::ListReviewPolicyResultsForHIT)>
     #[allow(clippy::let_and_return)]
@@ -5704,7 +5159,7 @@ impl ListReviewPolicyResultsForHitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReviewPolicyResultsForHIT,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5790,7 +5245,7 @@ impl ListReviewPolicyResultsForHitInput {
             "ListReviewPolicyResultsForHIT",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5860,7 +5315,7 @@ pub mod list_worker_blocks_input {
 #[doc(hidden)]
 pub type ListWorkerBlocksInputOperationOutputAlias = crate::operation::ListWorkerBlocks;
 #[doc(hidden)]
-pub type ListWorkerBlocksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorkerBlocksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkerBlocksInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkerBlocks`](crate::operation::ListWorkerBlocks)>
     #[allow(clippy::let_and_return)]
@@ -5871,7 +5326,7 @@ impl ListWorkerBlocksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkerBlocks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5956,7 +5411,7 @@ impl ListWorkerBlocksInput {
             "ListWorkerBlocks",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5991,14 +5446,12 @@ pub mod list_workers_with_qualification_type_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the Qualification type of the Qualifications to
-        /// return.</p>
+        /// <p>The ID of the Qualification type of the Qualifications to return.</p>
         pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.qualification_type_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Qualification type of the Qualifications to
-        /// return.</p>
+        /// <p>The ID of the Qualification type of the Qualifications to return.</p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6006,18 +5459,12 @@ pub mod list_workers_with_qualification_type_input {
             self.qualification_type_id = input;
             self
         }
-        /// <p>
-        /// The status of the Qualifications to return.
-        /// Can be <code>Granted | Revoked</code>.
-        /// </p>
+        /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
         pub fn status(mut self, input: crate::model::QualificationStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>
-        /// The status of the Qualifications to return.
-        /// Can be <code>Granted | Revoked</code>.
-        /// </p>
+        /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::QualificationStatus>,
@@ -6035,16 +5482,12 @@ pub mod list_workers_with_qualification_type_input {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// Limit the number of results returned.
-        /// </p>
+        /// <p> Limit the number of results returned. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// Limit the number of results returned.
-        /// </p>
+        /// <p> Limit the number of results returned. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6069,7 +5512,8 @@ pub mod list_workers_with_qualification_type_input {
 pub type ListWorkersWithQualificationTypeInputOperationOutputAlias =
     crate::operation::ListWorkersWithQualificationType;
 #[doc(hidden)]
-pub type ListWorkersWithQualificationTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorkersWithQualificationTypeInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkersWithQualificationTypeInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkersWithQualificationType`](crate::operation::ListWorkersWithQualificationType)>
     #[allow(clippy::let_and_return)]
@@ -6080,7 +5524,7 @@ impl ListWorkersWithQualificationTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkersWithQualificationType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6166,7 +5610,7 @@ impl ListWorkersWithQualificationTypeInput {
             "ListWorkersWithQualificationType",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6200,26 +5644,22 @@ pub mod notify_workers_input {
         pub(crate) worker_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The subject line of the email message to send. Can include up
-        /// to 200 characters.</p>
+        /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
         pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.subject = Some(input.into());
             self
         }
-        /// <p>The subject line of the email message to send. Can include up
-        /// to 200 characters.</p>
+        /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
         }
-        /// <p>The text of the email message to send. Can include up to
-        /// 4,096 characters</p>
+        /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
         pub fn message_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_text = Some(input.into());
             self
         }
-        /// <p>The text of the email message to send. Can include up to
-        /// 4,096 characters</p>
+        /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
         pub fn set_message_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_text = input;
             self
@@ -6228,18 +5668,14 @@ pub mod notify_workers_input {
         ///
         /// To override the contents of this collection use [`set_worker_ids`](Self::set_worker_ids).
         ///
-        /// <p>A list of Worker IDs you wish to notify. You
-        /// can notify upto
-        /// 100 Workers at a time.</p>
+        /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
         pub fn worker_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.worker_ids.unwrap_or_default();
             v.push(input.into());
             self.worker_ids = Some(v);
             self
         }
-        /// <p>A list of Worker IDs you wish to notify. You
-        /// can notify upto
-        /// 100 Workers at a time.</p>
+        /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
         pub fn set_worker_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6265,7 +5701,7 @@ pub mod notify_workers_input {
 #[doc(hidden)]
 pub type NotifyWorkersInputOperationOutputAlias = crate::operation::NotifyWorkers;
 #[doc(hidden)]
-pub type NotifyWorkersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type NotifyWorkersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyWorkersInput {
     /// Consumes the builder and constructs an Operation<[`NotifyWorkers`](crate::operation::NotifyWorkers)>
     #[allow(clippy::let_and_return)]
@@ -6276,7 +5712,7 @@ impl NotifyWorkersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::NotifyWorkers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6360,7 +5796,7 @@ impl NotifyWorkersInput {
             "NotifyWorkers",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6393,16 +5829,12 @@ pub mod reject_assignment_input {
         pub(crate) requester_feedback: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
-        /// </p>
+        /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
         pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.assignment_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
-        /// </p>
+        /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6410,16 +5842,12 @@ pub mod reject_assignment_input {
             self.assignment_id = input;
             self
         }
-        /// <p>
-        /// A message for the Worker, which the Worker can see in the Status section of the web site.
-        /// </p>
+        /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
         pub fn requester_feedback(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester_feedback = Some(input.into());
             self
         }
-        /// <p>
-        /// A message for the Worker, which the Worker can see in the Status section of the web site.
-        /// </p>
+        /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
         pub fn set_requester_feedback(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6444,7 +5872,7 @@ pub mod reject_assignment_input {
 #[doc(hidden)]
 pub type RejectAssignmentInputOperationOutputAlias = crate::operation::RejectAssignment;
 #[doc(hidden)]
-pub type RejectAssignmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RejectAssignmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectAssignmentInput {
     /// Consumes the builder and constructs an Operation<[`RejectAssignment`](crate::operation::RejectAssignment)>
     #[allow(clippy::let_and_return)]
@@ -6455,7 +5883,7 @@ impl RejectAssignmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectAssignment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6540,7 +5968,7 @@ impl RejectAssignmentInput {
             "RejectAssignment",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6573,20 +6001,12 @@ pub mod reject_qualification_request_input {
         pub(crate) reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the Qualification request, as returned by the
-        /// <code>ListQualificationRequests</code>
-        /// operation.
-        /// </p>
+        /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
         pub fn qualification_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.qualification_request_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Qualification request, as returned by the
-        /// <code>ListQualificationRequests</code>
-        /// operation.
-        /// </p>
+        /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
         pub fn set_qualification_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6594,14 +6014,12 @@ pub mod reject_qualification_request_input {
             self.qualification_request_id = input;
             self
         }
-        /// <p>A text message explaining why the request was rejected, to be
-        /// shown to the Worker who made the request.</p>
+        /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
         }
-        /// <p>A text message explaining why the request was rejected, to be
-        /// shown to the Worker who made the request.</p>
+        /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -6624,7 +6042,7 @@ pub mod reject_qualification_request_input {
 pub type RejectQualificationRequestInputOperationOutputAlias =
     crate::operation::RejectQualificationRequest;
 #[doc(hidden)]
-pub type RejectQualificationRequestInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RejectQualificationRequestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectQualificationRequestInput {
     /// Consumes the builder and constructs an Operation<[`RejectQualificationRequest`](crate::operation::RejectQualificationRequest)>
     #[allow(clippy::let_and_return)]
@@ -6635,7 +6053,7 @@ impl RejectQualificationRequestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectQualificationRequest,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6722,7 +6140,7 @@ impl RejectQualificationRequestInput {
             "RejectQualificationRequest",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6768,18 +6186,12 @@ pub mod send_bonus_input {
             self.worker_id = input;
             self
         }
-        /// <p>
-        /// The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and
-        /// "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.
-        /// </p>
+        /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
         pub fn bonus_amount(mut self, input: impl Into<std::string::String>) -> Self {
             self.bonus_amount = Some(input.into());
             self
         }
-        /// <p>
-        /// The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and
-        /// "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.
-        /// </p>
+        /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
         pub fn set_bonus_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bonus_amount = input;
             self
@@ -6797,36 +6209,22 @@ pub mod send_bonus_input {
             self.assignment_id = input;
             self
         }
-        /// <p>A message that explains the reason for the bonus payment. The
-        /// Worker receiving the bonus can see this message.</p>
+        /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
         }
-        /// <p>A message that explains the reason for the bonus payment. The
-        /// Worker receiving the bonus can see this message.</p>
+        /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
         }
-        /// <p>A unique identifier for this request, which allows you to
-        /// retry the call on error without granting multiple bonuses. This is
-        /// useful in cases such as network timeouts where it is unclear whether
-        /// or not the call succeeded on the server. If the bonus already exists
-        /// in the system from a previous call using the same UniqueRequestToken,
-        /// subsequent calls will return an error with a message containing the
-        /// request ID.</p>
+        /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
         pub fn unique_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.unique_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for this request, which allows you to
-        /// retry the call on error without granting multiple bonuses. This is
-        /// useful in cases such as network timeouts where it is unclear whether
-        /// or not the call succeeded on the server. If the bonus already exists
-        /// in the system from a previous call using the same UniqueRequestToken,
-        /// subsequent calls will return an error with a message containing the
-        /// request ID.</p>
+        /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
         pub fn set_unique_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6852,7 +6250,7 @@ pub mod send_bonus_input {
 #[doc(hidden)]
 pub type SendBonusInputOperationOutputAlias = crate::operation::SendBonus;
 #[doc(hidden)]
-pub type SendBonusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendBonusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendBonusInput {
     /// Consumes the builder and constructs an Operation<[`SendBonus`](crate::operation::SendBonus)>
     #[allow(clippy::let_and_return)]
@@ -6863,7 +6261,7 @@ impl SendBonusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendBonus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6945,7 +6343,7 @@ impl SendBonusInput {
                     "SendBonus",
                     "mturk",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6978,20 +6376,12 @@ pub mod send_test_event_notification_input {
         pub(crate) test_event_type: std::option::Option<crate::model::EventType>,
     }
     impl Builder {
-        /// <p>
-        /// The notification specification to test. This value is identical to the value
-        /// you would provide to the UpdateNotificationSettings operation when you establish
-        /// the notification specification for a HIT type.
-        /// </p>
+        /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
         pub fn notification(mut self, input: crate::model::NotificationSpecification) -> Self {
             self.notification = Some(input);
             self
         }
-        /// <p>
-        /// The notification specification to test. This value is identical to the value
-        /// you would provide to the UpdateNotificationSettings operation when you establish
-        /// the notification specification for a HIT type.
-        /// </p>
+        /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::NotificationSpecification>,
@@ -6999,22 +6389,12 @@ pub mod send_test_event_notification_input {
             self.notification = input;
             self
         }
-        /// <p>
-        /// The event to simulate to test the notification specification.
-        /// This event is included in the test message even if the notification specification
-        /// does not include the event type.
-        /// The notification specification does not filter out the test event.
-        /// </p>
+        /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
         pub fn test_event_type(mut self, input: crate::model::EventType) -> Self {
             self.test_event_type = Some(input);
             self
         }
-        /// <p>
-        /// The event to simulate to test the notification specification.
-        /// This event is included in the test message even if the notification specification
-        /// does not include the event type.
-        /// The notification specification does not filter out the test event.
-        /// </p>
+        /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
         pub fn set_test_event_type(
             mut self,
             input: std::option::Option<crate::model::EventType>,
@@ -7040,7 +6420,7 @@ pub mod send_test_event_notification_input {
 pub type SendTestEventNotificationInputOperationOutputAlias =
     crate::operation::SendTestEventNotification;
 #[doc(hidden)]
-pub type SendTestEventNotificationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendTestEventNotificationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendTestEventNotificationInput {
     /// Consumes the builder and constructs an Operation<[`SendTestEventNotification`](crate::operation::SendTestEventNotification)>
     #[allow(clippy::let_and_return)]
@@ -7051,7 +6431,7 @@ impl SendTestEventNotificationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendTestEventNotification,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7138,7 +6518,7 @@ impl SendTestEventNotificationInput {
             "SendTestEventNotification",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7171,30 +6551,22 @@ pub mod update_expiration_for_hit_input {
         pub(crate) expire_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>
-        /// The HIT to update.
-        /// </p>
+        /// <p> The HIT to update. </p>
         pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hit_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The HIT to update.
-        /// </p>
+        /// <p> The HIT to update. </p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
         }
-        /// <p>
-        /// The date and time at which you want the HIT to expire
-        /// </p>
+        /// <p> The date and time at which you want the HIT to expire </p>
         pub fn expire_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expire_at = Some(input);
             self
         }
-        /// <p>
-        /// The date and time at which you want the HIT to expire
-        /// </p>
+        /// <p> The date and time at which you want the HIT to expire </p>
         pub fn set_expire_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7219,7 +6591,7 @@ pub mod update_expiration_for_hit_input {
 #[doc(hidden)]
 pub type UpdateExpirationForHitInputOperationOutputAlias = crate::operation::UpdateExpirationForHIT;
 #[doc(hidden)]
-pub type UpdateExpirationForHitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateExpirationForHitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateExpirationForHitInput {
     /// Consumes the builder and constructs an Operation<[`UpdateExpirationForHIT`](crate::operation::UpdateExpirationForHIT)>
     #[allow(clippy::let_and_return)]
@@ -7230,7 +6602,7 @@ impl UpdateExpirationForHitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateExpirationForHIT,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7317,7 +6689,7 @@ impl UpdateExpirationForHitInput {
             "UpdateExpirationForHIT",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7350,53 +6722,29 @@ pub mod update_hit_review_status_input {
         pub(crate) revert: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the HIT to update.
-        /// </p>
+        /// <p> The ID of the HIT to update. </p>
         pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hit_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the HIT to update.
-        /// </p>
+        /// <p> The ID of the HIT to update. </p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
         }
-        /// <p>
-        /// Specifies how to update the HIT status. Default is <code>False</code>.
-        /// </p>
+        /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
+        /// <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>
         /// </ul>
         pub fn revert(mut self, input: bool) -> Self {
             self.revert = Some(input);
             self
         }
-        /// <p>
-        /// Specifies how to update the HIT status. Default is <code>False</code>.
-        /// </p>
+        /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
+        /// <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>
         /// </ul>
         pub fn set_revert(mut self, input: std::option::Option<bool>) -> Self {
             self.revert = input;
@@ -7419,7 +6767,7 @@ pub mod update_hit_review_status_input {
 #[doc(hidden)]
 pub type UpdateHitReviewStatusInputOperationOutputAlias = crate::operation::UpdateHITReviewStatus;
 #[doc(hidden)]
-pub type UpdateHitReviewStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateHitReviewStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateHitReviewStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateHITReviewStatus`](crate::operation::UpdateHITReviewStatus)>
     #[allow(clippy::let_and_return)]
@@ -7430,7 +6778,7 @@ impl UpdateHitReviewStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateHITReviewStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7517,7 +6865,7 @@ impl UpdateHitReviewStatusInput {
             "UpdateHITReviewStatus",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7587,7 +6935,7 @@ pub mod update_hit_type_of_hit_input {
 #[doc(hidden)]
 pub type UpdateHitTypeOfHitInputOperationOutputAlias = crate::operation::UpdateHITTypeOfHIT;
 #[doc(hidden)]
-pub type UpdateHitTypeOfHitInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateHitTypeOfHitInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateHitTypeOfHitInput {
     /// Consumes the builder and constructs an Operation<[`UpdateHITTypeOfHIT`](crate::operation::UpdateHITTypeOfHIT)>
     #[allow(clippy::let_and_return)]
@@ -7598,7 +6946,7 @@ impl UpdateHitTypeOfHitInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateHITTypeOfHIT,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7685,7 +7033,7 @@ impl UpdateHitTypeOfHitInput {
             "UpdateHITTypeOfHIT",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7719,30 +7067,22 @@ pub mod update_notification_settings_input {
         pub(crate) active: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the HIT type whose notification specification is being updated.
-        /// </p>
+        /// <p> The ID of the HIT type whose notification specification is being updated. </p>
         pub fn hit_type_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hit_type_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the HIT type whose notification specification is being updated.
-        /// </p>
+        /// <p> The ID of the HIT type whose notification specification is being updated. </p>
         pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_type_id = input;
             self
         }
-        /// <p>
-        /// The notification specification for the HIT type.
-        /// </p>
+        /// <p> The notification specification for the HIT type. </p>
         pub fn notification(mut self, input: crate::model::NotificationSpecification) -> Self {
             self.notification = Some(input);
             self
         }
-        /// <p>
-        /// The notification specification for the HIT type.
-        /// </p>
+        /// <p> The notification specification for the HIT type. </p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::NotificationSpecification>,
@@ -7750,22 +7090,12 @@ pub mod update_notification_settings_input {
             self.notification = input;
             self
         }
-        /// <p>
-        /// Specifies whether notifications are sent for HITs of this HIT type,
-        /// according to the notification specification.
-        /// You must specify either the Notification parameter or the Active parameter
-        /// for the call to UpdateNotificationSettings to succeed.
-        /// </p>
+        /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
         pub fn active(mut self, input: bool) -> Self {
             self.active = Some(input);
             self
         }
-        /// <p>
-        /// Specifies whether notifications are sent for HITs of this HIT type,
-        /// according to the notification specification.
-        /// You must specify either the Notification parameter or the Active parameter
-        /// for the call to UpdateNotificationSettings to succeed.
-        /// </p>
+        /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
             self.active = input;
             self
@@ -7789,7 +7119,7 @@ pub mod update_notification_settings_input {
 pub type UpdateNotificationSettingsInputOperationOutputAlias =
     crate::operation::UpdateNotificationSettings;
 #[doc(hidden)]
-pub type UpdateNotificationSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateNotificationSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNotificationSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNotificationSettings`](crate::operation::UpdateNotificationSettings)>
     #[allow(clippy::let_and_return)]
@@ -7800,7 +7130,7 @@ impl UpdateNotificationSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNotificationSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7887,7 +7217,7 @@ impl UpdateNotificationSettingsInput {
             "UpdateNotificationSettings",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8001,26 +7331,12 @@ pub mod update_qualification_type_input {
             self.test_duration_in_seconds = input;
             self
         }
-        /// <p>The amount of time, in seconds, that Workers must wait
-        /// after requesting a Qualification of the specified Qualification type
-        /// before they can retry the Qualification request. It is not possible to
-        /// disable retries for a Qualification type after it has been created with
-        /// retries enabled. If you want to disable retries, you must dispose of
-        /// the existing retry-enabled Qualification type using
-        /// DisposeQualificationType and then create a new Qualification type with
-        /// retries disabled using CreateQualificationType.</p>
+        /// <p>The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.</p>
         pub fn retry_delay_in_seconds(mut self, input: i64) -> Self {
             self.retry_delay_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Workers must wait
-        /// after requesting a Qualification of the specified Qualification type
-        /// before they can retry the Qualification request. It is not possible to
-        /// disable retries for a Qualification type after it has been created with
-        /// retries enabled. If you want to disable retries, you must dispose of
-        /// the existing retry-enabled Qualification type using
-        /// DisposeQualificationType and then create a new Qualification type with
-        /// retries disabled using CreateQualificationType.</p>
+        /// <p>The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.</p>
         pub fn set_retry_delay_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.retry_delay_in_seconds = input;
             self
@@ -8072,7 +7388,7 @@ pub mod update_qualification_type_input {
 pub type UpdateQualificationTypeInputOperationOutputAlias =
     crate::operation::UpdateQualificationType;
 #[doc(hidden)]
-pub type UpdateQualificationTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateQualificationTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateQualificationTypeInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQualificationType`](crate::operation::UpdateQualificationType)>
     #[allow(clippy::let_and_return)]
@@ -8083,7 +7399,7 @@ impl UpdateQualificationTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateQualificationType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8170,7 +7486,7 @@ impl UpdateQualificationTypeInput {
             "UpdateQualificationType",
             "mturk",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8211,14 +7527,7 @@ pub struct UpdateQualificationTypeInput {
     pub answer_key: std::option::Option<std::string::String>,
     /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
     pub test_duration_in_seconds: std::option::Option<i64>,
-    /// <p>The amount of time, in seconds, that Workers must wait
-    /// after requesting a Qualification of the specified Qualification type
-    /// before they can retry the Qualification request. It is not possible to
-    /// disable retries for a Qualification type after it has been created with
-    /// retries enabled. If you want to disable retries, you must dispose of
-    /// the existing retry-enabled Qualification type using
-    /// DisposeQualificationType and then create a new Qualification type with
-    /// retries disabled using CreateQualificationType.</p>
+    /// <p>The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.</p>
     pub retry_delay_in_seconds: std::option::Option<i64>,
     /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
     /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
@@ -8255,14 +7564,7 @@ impl UpdateQualificationTypeInput {
     pub fn test_duration_in_seconds(&self) -> std::option::Option<i64> {
         self.test_duration_in_seconds
     }
-    /// <p>The amount of time, in seconds, that Workers must wait
-    /// after requesting a Qualification of the specified Qualification type
-    /// before they can retry the Qualification request. It is not possible to
-    /// disable retries for a Qualification type after it has been created with
-    /// retries enabled. If you want to disable retries, you must dispose of
-    /// the existing retry-enabled Qualification type using
-    /// DisposeQualificationType and then create a new Qualification type with
-    /// retries disabled using CreateQualificationType.</p>
+    /// <p>The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.</p>
     pub fn retry_delay_in_seconds(&self) -> std::option::Option<i64> {
         self.retry_delay_in_seconds
     }
@@ -8296,41 +7598,23 @@ impl std::fmt::Debug for UpdateQualificationTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNotificationSettingsInput {
-    /// <p>
-    /// The ID of the HIT type whose notification specification is being updated.
-    /// </p>
+    /// <p> The ID of the HIT type whose notification specification is being updated. </p>
     pub hit_type_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The notification specification for the HIT type.
-    /// </p>
+    /// <p> The notification specification for the HIT type. </p>
     pub notification: std::option::Option<crate::model::NotificationSpecification>,
-    /// <p>
-    /// Specifies whether notifications are sent for HITs of this HIT type,
-    /// according to the notification specification.
-    /// You must specify either the Notification parameter or the Active parameter
-    /// for the call to UpdateNotificationSettings to succeed.
-    /// </p>
+    /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
     pub active: std::option::Option<bool>,
 }
 impl UpdateNotificationSettingsInput {
-    /// <p>
-    /// The ID of the HIT type whose notification specification is being updated.
-    /// </p>
+    /// <p> The ID of the HIT type whose notification specification is being updated. </p>
     pub fn hit_type_id(&self) -> std::option::Option<&str> {
         self.hit_type_id.as_deref()
     }
-    /// <p>
-    /// The notification specification for the HIT type.
-    /// </p>
+    /// <p> The notification specification for the HIT type. </p>
     pub fn notification(&self) -> std::option::Option<&crate::model::NotificationSpecification> {
         self.notification.as_ref()
     }
-    /// <p>
-    /// Specifies whether notifications are sent for HITs of this HIT type,
-    /// according to the notification specification.
-    /// You must specify either the Notification parameter or the Active parameter
-    /// for the call to UpdateNotificationSettings to succeed.
-    /// </p>
+    /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
     pub fn active(&self) -> std::option::Option<bool> {
         self.active
     }
@@ -8377,48 +7661,24 @@ impl std::fmt::Debug for UpdateHitTypeOfHitInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHitReviewStatusInput {
-    /// <p>
-    /// The ID of the HIT to update.
-    /// </p>
+    /// <p> The ID of the HIT to update. </p>
     pub hit_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// Specifies how to update the HIT status. Default is <code>False</code>.
-    /// </p>
+    /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
+    /// <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>
     /// </ul>
     pub revert: std::option::Option<bool>,
 }
 impl UpdateHitReviewStatusInput {
-    /// <p>
-    /// The ID of the HIT to update.
-    /// </p>
+    /// <p> The ID of the HIT to update. </p>
     pub fn hit_id(&self) -> std::option::Option<&str> {
         self.hit_id.as_deref()
     }
-    /// <p>
-    /// Specifies how to update the HIT status. Default is <code>False</code>.
-    /// </p>
+    /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
+    /// <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>
     /// </ul>
     pub fn revert(&self) -> std::option::Option<bool> {
         self.revert
@@ -8437,25 +7697,17 @@ impl std::fmt::Debug for UpdateHitReviewStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExpirationForHitInput {
-    /// <p>
-    /// The HIT to update.
-    /// </p>
+    /// <p> The HIT to update. </p>
     pub hit_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The date and time at which you want the HIT to expire
-    /// </p>
+    /// <p> The date and time at which you want the HIT to expire </p>
     pub expire_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateExpirationForHitInput {
-    /// <p>
-    /// The HIT to update.
-    /// </p>
+    /// <p> The HIT to update. </p>
     pub fn hit_id(&self) -> std::option::Option<&str> {
         self.hit_id.as_deref()
     }
-    /// <p>
-    /// The date and time at which you want the HIT to expire
-    /// </p>
+    /// <p> The date and time at which you want the HIT to expire </p>
     pub fn expire_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expire_at.as_ref()
     }
@@ -8473,35 +7725,17 @@ impl std::fmt::Debug for UpdateExpirationForHitInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTestEventNotificationInput {
-    /// <p>
-    /// The notification specification to test. This value is identical to the value
-    /// you would provide to the UpdateNotificationSettings operation when you establish
-    /// the notification specification for a HIT type.
-    /// </p>
+    /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
     pub notification: std::option::Option<crate::model::NotificationSpecification>,
-    /// <p>
-    /// The event to simulate to test the notification specification.
-    /// This event is included in the test message even if the notification specification
-    /// does not include the event type.
-    /// The notification specification does not filter out the test event.
-    /// </p>
+    /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
     pub test_event_type: std::option::Option<crate::model::EventType>,
 }
 impl SendTestEventNotificationInput {
-    /// <p>
-    /// The notification specification to test. This value is identical to the value
-    /// you would provide to the UpdateNotificationSettings operation when you establish
-    /// the notification specification for a HIT type.
-    /// </p>
+    /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
     pub fn notification(&self) -> std::option::Option<&crate::model::NotificationSpecification> {
         self.notification.as_ref()
     }
-    /// <p>
-    /// The event to simulate to test the notification specification.
-    /// This event is included in the test message even if the notification specification
-    /// does not include the event type.
-    /// The notification specification does not filter out the test event.
-    /// </p>
+    /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
     pub fn test_event_type(&self) -> std::option::Option<&crate::model::EventType> {
         self.test_event_type.as_ref()
     }
@@ -8521,23 +7755,13 @@ impl std::fmt::Debug for SendTestEventNotificationInput {
 pub struct SendBonusInput {
     /// <p>The ID of the Worker being paid the bonus.</p>
     pub worker_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and
-    /// "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.
-    /// </p>
+    /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
     pub bonus_amount: std::option::Option<std::string::String>,
     /// <p>The ID of the assignment for which this bonus is paid.</p>
     pub assignment_id: std::option::Option<std::string::String>,
-    /// <p>A message that explains the reason for the bonus payment. The
-    /// Worker receiving the bonus can see this message.</p>
+    /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
     pub reason: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for this request, which allows you to
-    /// retry the call on error without granting multiple bonuses. This is
-    /// useful in cases such as network timeouts where it is unclear whether
-    /// or not the call succeeded on the server. If the bonus already exists
-    /// in the system from a previous call using the same UniqueRequestToken,
-    /// subsequent calls will return an error with a message containing the
-    /// request ID.</p>
+    /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
     pub unique_request_token: std::option::Option<std::string::String>,
 }
 impl SendBonusInput {
@@ -8545,10 +7769,7 @@ impl SendBonusInput {
     pub fn worker_id(&self) -> std::option::Option<&str> {
         self.worker_id.as_deref()
     }
-    /// <p>
-    /// The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and
-    /// "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.
-    /// </p>
+    /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
     pub fn bonus_amount(&self) -> std::option::Option<&str> {
         self.bonus_amount.as_deref()
     }
@@ -8556,18 +7777,11 @@ impl SendBonusInput {
     pub fn assignment_id(&self) -> std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
-    /// <p>A message that explains the reason for the bonus payment. The
-    /// Worker receiving the bonus can see this message.</p>
+    /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
-    /// <p>A unique identifier for this request, which allows you to
-    /// retry the call on error without granting multiple bonuses. This is
-    /// useful in cases such as network timeouts where it is unclear whether
-    /// or not the call succeeded on the server. If the bonus already exists
-    /// in the system from a previous call using the same UniqueRequestToken,
-    /// subsequent calls will return an error with a message containing the
-    /// request ID.</p>
+    /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
     pub fn unique_request_token(&self) -> std::option::Option<&str> {
         self.unique_request_token.as_deref()
     }
@@ -8588,27 +7802,17 @@ impl std::fmt::Debug for SendBonusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectQualificationRequestInput {
-    /// <p>
-    /// The ID of the Qualification request, as returned by the
-    /// <code>ListQualificationRequests</code>
-    /// operation.
-    /// </p>
+    /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
     pub qualification_request_id: std::option::Option<std::string::String>,
-    /// <p>A text message explaining why the request was rejected, to be
-    /// shown to the Worker who made the request.</p>
+    /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
     pub reason: std::option::Option<std::string::String>,
 }
 impl RejectQualificationRequestInput {
-    /// <p>
-    /// The ID of the Qualification request, as returned by the
-    /// <code>ListQualificationRequests</code>
-    /// operation.
-    /// </p>
+    /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
     pub fn qualification_request_id(&self) -> std::option::Option<&str> {
         self.qualification_request_id.as_deref()
     }
-    /// <p>A text message explaining why the request was rejected, to be
-    /// shown to the Worker who made the request.</p>
+    /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -8626,25 +7830,17 @@ impl std::fmt::Debug for RejectQualificationRequestInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectAssignmentInput {
-    /// <p>
-    /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
-    /// </p>
+    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
     pub assignment_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// A message for the Worker, which the Worker can see in the Status section of the web site.
-    /// </p>
+    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     pub requester_feedback: std::option::Option<std::string::String>,
 }
 impl RejectAssignmentInput {
-    /// <p>
-    /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
-    /// </p>
+    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
     pub fn assignment_id(&self) -> std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
-    /// <p>
-    /// A message for the Worker, which the Worker can see in the Status section of the web site.
-    /// </p>
+    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     pub fn requester_feedback(&self) -> std::option::Option<&str> {
         self.requester_feedback.as_deref()
     }
@@ -8662,31 +7858,23 @@ impl std::fmt::Debug for RejectAssignmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyWorkersInput {
-    /// <p>The subject line of the email message to send. Can include up
-    /// to 200 characters.</p>
+    /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
     pub subject: std::option::Option<std::string::String>,
-    /// <p>The text of the email message to send. Can include up to
-    /// 4,096 characters</p>
+    /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
     pub message_text: std::option::Option<std::string::String>,
-    /// <p>A list of Worker IDs you wish to notify. You
-    /// can notify upto
-    /// 100 Workers at a time.</p>
+    /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
     pub worker_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NotifyWorkersInput {
-    /// <p>The subject line of the email message to send. Can include up
-    /// to 200 characters.</p>
+    /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
     pub fn subject(&self) -> std::option::Option<&str> {
         self.subject.as_deref()
     }
-    /// <p>The text of the email message to send. Can include up to
-    /// 4,096 characters</p>
+    /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
     pub fn message_text(&self) -> std::option::Option<&str> {
         self.message_text.as_deref()
     }
-    /// <p>A list of Worker IDs you wish to notify. You
-    /// can notify upto
-    /// 100 Workers at a time.</p>
+    /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
     pub fn worker_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.worker_ids.as_deref()
     }
@@ -8705,31 +7893,21 @@ impl std::fmt::Debug for NotifyWorkersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkersWithQualificationTypeInput {
-    /// <p>The ID of the Qualification type of the Qualifications to
-    /// return.</p>
+    /// <p>The ID of the Qualification type of the Qualifications to return.</p>
     pub qualification_type_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The status of the Qualifications to return.
-    /// Can be <code>Granted | Revoked</code>.
-    /// </p>
+    /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
     pub status: std::option::Option<crate::model::QualificationStatus>,
     /// <p>Pagination Token</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// Limit the number of results returned.
-    /// </p>
+    /// <p> Limit the number of results returned. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListWorkersWithQualificationTypeInput {
-    /// <p>The ID of the Qualification type of the Qualifications to
-    /// return.</p>
+    /// <p>The ID of the Qualification type of the Qualifications to return.</p>
     pub fn qualification_type_id(&self) -> std::option::Option<&str> {
         self.qualification_type_id.as_deref()
     }
-    /// <p>
-    /// The status of the Qualifications to return.
-    /// Can be <code>Granted | Revoked</code>.
-    /// </p>
+    /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::QualificationStatus> {
         self.status.as_ref()
     }
@@ -8737,9 +7915,7 @@ impl ListWorkersWithQualificationTypeInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// Limit the number of results returned.
-    /// </p>
+    /// <p> Limit the number of results returned. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8789,20 +7965,11 @@ impl std::fmt::Debug for ListWorkerBlocksInput {
 pub struct ListReviewPolicyResultsForHitInput {
     /// <p>The unique identifier of the HIT to retrieve review results for.</p>
     pub hit_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Policy Level(s) to retrieve review results for - HIT or Assignment.
-    /// If omitted, the default behavior is to retrieve all data for both policy levels.
-    /// For a list of all the described policies, see Review Policies.
-    /// </p>
+    /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
     pub policy_levels: std::option::Option<std::vec::Vec<crate::model::ReviewPolicyLevel>>,
-    /// <p>
-    /// Specify if the operation should retrieve a list of the actions taken executing
-    /// the Review Policies and their outcomes.
-    /// </p>
+    /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
     pub retrieve_actions: std::option::Option<bool>,
-    /// <p>
-    /// Specify if the operation should retrieve a list of the results computed by the Review Policies.
-    /// </p>
+    /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
     pub retrieve_results: std::option::Option<bool>,
     /// <p>Pagination token</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -8814,24 +7981,15 @@ impl ListReviewPolicyResultsForHitInput {
     pub fn hit_id(&self) -> std::option::Option<&str> {
         self.hit_id.as_deref()
     }
-    /// <p>
-    /// The Policy Level(s) to retrieve review results for - HIT or Assignment.
-    /// If omitted, the default behavior is to retrieve all data for both policy levels.
-    /// For a list of all the described policies, see Review Policies.
-    /// </p>
+    /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
     pub fn policy_levels(&self) -> std::option::Option<&[crate::model::ReviewPolicyLevel]> {
         self.policy_levels.as_deref()
     }
-    /// <p>
-    /// Specify if the operation should retrieve a list of the actions taken executing
-    /// the Review Policies and their outcomes.
-    /// </p>
+    /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
     pub fn retrieve_actions(&self) -> std::option::Option<bool> {
         self.retrieve_actions
     }
-    /// <p>
-    /// Specify if the operation should retrieve a list of the results computed by the Review Policies.
-    /// </p>
+    /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
     pub fn retrieve_results(&self) -> std::option::Option<bool> {
         self.retrieve_results
     }
@@ -8861,35 +8019,21 @@ impl std::fmt::Debug for ListReviewPolicyResultsForHitInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReviewableHiTsInput {
-    /// <p>
-    /// The ID of the HIT type of the HITs to consider for the query.
-    /// If not specified, all HITs for the Reviewer are considered
-    /// </p>
+    /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
     pub hit_type_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// Can be either <code>Reviewable</code> or <code>Reviewing</code>.
-    /// Reviewable is the default value.
-    /// </p>
+    /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
     pub status: std::option::Option<crate::model::ReviewableHitStatus>,
     /// <p>Pagination Token</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// Limit the number of results returned.
-    /// </p>
+    /// <p> Limit the number of results returned. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListReviewableHiTsInput {
-    /// <p>
-    /// The ID of the HIT type of the HITs to consider for the query.
-    /// If not specified, all HITs for the Reviewer are considered
-    /// </p>
+    /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
     pub fn hit_type_id(&self) -> std::option::Option<&str> {
         self.hit_type_id.as_deref()
     }
-    /// <p>
-    /// Can be either <code>Reviewable</code> or <code>Reviewing</code>.
-    /// Reviewable is the default value.
-    /// </p>
+    /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::ReviewableHitStatus> {
         self.status.as_ref()
     }
@@ -8897,9 +8041,7 @@ impl ListReviewableHiTsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// Limit the number of results returned.
-    /// </p>
+    /// <p> Limit the number of results returned. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8919,67 +8061,35 @@ impl std::fmt::Debug for ListReviewableHiTsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQualificationTypesInput {
-    /// <p> A text query against all of the searchable attributes of
-    /// Qualification types.
-    /// </p>
+    /// <p> A text query against all of the searchable attributes of Qualification types. </p>
     pub query: std::option::Option<std::string::String>,
-    /// <p>Specifies that only Qualification types that a user can
-    /// request through the Amazon Mechanical Turk web site, such as by
-    /// taking a Qualification test, are returned as results of the search.
-    /// Some Qualification types, such as those assigned automatically by the
-    /// system, cannot be requested directly by users. If false, all
-    /// Qualification types, including those managed by the system, are
-    /// considered. Valid values are True | False.
-    /// </p>
+    /// <p>Specifies that only Qualification types that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test, are returned as results of the search. Some Qualification types, such as those assigned automatically by the system, cannot be requested directly by users. If false, all Qualification types, including those managed by the system, are considered. Valid values are True | False. </p>
     pub must_be_requestable: std::option::Option<bool>,
-    /// <p> Specifies that only Qualification types that the Requester
-    /// created are returned. If false, the operation returns all
-    /// Qualification types.
-    /// </p>
+    /// <p> Specifies that only Qualification types that the Requester created are returned. If false, the operation returns all Qualification types. </p>
     pub must_be_owned_by_caller: std::option::Option<bool>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The maximum number of results to return in a single call.
-    /// </p>
+    /// <p> The maximum number of results to return in a single call. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListQualificationTypesInput {
-    /// <p> A text query against all of the searchable attributes of
-    /// Qualification types.
-    /// </p>
+    /// <p> A text query against all of the searchable attributes of Qualification types. </p>
     pub fn query(&self) -> std::option::Option<&str> {
         self.query.as_deref()
     }
-    /// <p>Specifies that only Qualification types that a user can
-    /// request through the Amazon Mechanical Turk web site, such as by
-    /// taking a Qualification test, are returned as results of the search.
-    /// Some Qualification types, such as those assigned automatically by the
-    /// system, cannot be requested directly by users. If false, all
-    /// Qualification types, including those managed by the system, are
-    /// considered. Valid values are True | False.
-    /// </p>
+    /// <p>Specifies that only Qualification types that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test, are returned as results of the search. Some Qualification types, such as those assigned automatically by the system, cannot be requested directly by users. If false, all Qualification types, including those managed by the system, are considered. Valid values are True | False. </p>
     pub fn must_be_requestable(&self) -> std::option::Option<bool> {
         self.must_be_requestable
     }
-    /// <p> Specifies that only Qualification types that the Requester
-    /// created are returned. If false, the operation returns all
-    /// Qualification types.
-    /// </p>
+    /// <p> Specifies that only Qualification types that the Requester created are returned. If false, the operation returns all Qualification types. </p>
     pub fn must_be_owned_by_caller(&self) -> std::option::Option<bool> {
         self.must_be_owned_by_caller
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The maximum number of results to return in a single call.
-    /// </p>
+    /// <p> The maximum number of results to return in a single call. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -9002,13 +8112,9 @@ impl std::fmt::Debug for ListQualificationTypesInput {
 pub struct ListQualificationRequestsInput {
     /// <p>The ID of the QualificationType.</p>
     pub qualification_type_id: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The maximum number of results to return in a single call.
-    /// </p>
+    /// <p> The maximum number of results to return in a single call. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListQualificationRequestsInput {
@@ -9016,15 +8122,11 @@ impl ListQualificationRequestsInput {
     pub fn qualification_type_id(&self) -> std::option::Option<&str> {
         self.qualification_type_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The maximum number of results to return in a single call.
-    /// </p>
+    /// <p> The maximum number of results to return in a single call. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -9043,21 +8145,15 @@ impl std::fmt::Debug for ListQualificationRequestsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHiTsForQualificationTypeInput {
-    /// <p>
-    /// The ID of the Qualification type to use when querying HITs.
-    /// </p>
+    /// <p> The ID of the Qualification type to use when querying HITs. </p>
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p>Pagination Token</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// Limit the number of results returned.
-    /// </p>
+    /// <p> Limit the number of results returned. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListHiTsForQualificationTypeInput {
-    /// <p>
-    /// The ID of the Qualification type to use when querying HITs.
-    /// </p>
+    /// <p> The ID of the Qualification type to use when querying HITs. </p>
     pub fn qualification_type_id(&self) -> std::option::Option<&str> {
         self.qualification_type_id.as_deref()
     }
@@ -9065,9 +8161,7 @@ impl ListHiTsForQualificationTypeInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// Limit the number of results returned.
-    /// </p>
+    /// <p> Limit the number of results returned. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -9114,15 +8208,9 @@ impl std::fmt::Debug for ListHiTsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBonusPaymentsInput {
-    /// <p>The ID of the HIT associated with the bonus payments to
-    /// retrieve. If not specified, all bonus payments for all assignments
-    /// for the given HIT are returned. Either the HITId parameter or the
-    /// AssignmentId parameter must be specified</p>
+    /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
     pub hit_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the assignment associated with the bonus payments
-    /// to retrieve. If specified, only bonus payments for the given
-    /// assignment are returned. Either the HITId parameter or the
-    /// AssignmentId parameter must be specified</p>
+    /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p>Pagination token</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -9130,17 +8218,11 @@ pub struct ListBonusPaymentsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListBonusPaymentsInput {
-    /// <p>The ID of the HIT associated with the bonus payments to
-    /// retrieve. If not specified, all bonus payments for all assignments
-    /// for the given HIT are returned. Either the HITId parameter or the
-    /// AssignmentId parameter must be specified</p>
+    /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
     pub fn hit_id(&self) -> std::option::Option<&str> {
         self.hit_id.as_deref()
     }
-    /// <p>The ID of the assignment associated with the bonus payments
-    /// to retrieve. If specified, only bonus payments for the given
-    /// assignment are returned. Either the HITId parameter or the
-    /// AssignmentId parameter must be specified</p>
+    /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
     pub fn assignment_id(&self) -> std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
@@ -9174,8 +8256,7 @@ pub struct ListAssignmentsForHitInput {
     pub next_token: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub max_results: std::option::Option<i32>,
-    /// <p>The status of the assignments to return: Submitted | Approved
-    /// | Rejected</p>
+    /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
     pub assignment_statuses: std::option::Option<std::vec::Vec<crate::model::AssignmentStatus>>,
 }
 impl ListAssignmentsForHitInput {
@@ -9191,8 +8272,7 @@ impl ListAssignmentsForHitInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The status of the assignments to return: Submitted | Approved
-    /// | Rejected</p>
+    /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
     pub fn assignment_statuses(&self) -> std::option::Option<&[crate::model::AssignmentStatus]> {
         self.assignment_statuses.as_deref()
     }
@@ -9282,21 +8362,17 @@ impl std::fmt::Debug for GetHitInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFileUploadUrlInput {
-    /// <p>The ID of the assignment that contains the question with a
-    /// FileUploadAnswer.</p>
+    /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
     pub assignment_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the question with a FileUploadAnswer, as
-    /// specified in the QuestionForm of the HIT.</p>
+    /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
     pub question_identifier: std::option::Option<std::string::String>,
 }
 impl GetFileUploadUrlInput {
-    /// <p>The ID of the assignment that contains the question with a
-    /// FileUploadAnswer.</p>
+    /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
     pub fn assignment_id(&self) -> std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
-    /// <p>The identifier of the question with a FileUploadAnswer, as
-    /// specified in the QuestionForm of the HIT.</p>
+    /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
     pub fn question_identifier(&self) -> std::option::Option<&str> {
         self.question_identifier.as_deref()
     }
@@ -9479,84 +8555,44 @@ impl std::fmt::Debug for CreateWorkerBlockInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQualificationTypeInput {
-    /// <p> The name you give to the Qualification type. The type name
-    /// is used to represent the Qualification to Workers, and to find the
-    /// type using a Qualification type search. It must be unique across all
-    /// of your Qualification types.</p>
+    /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>One or more words or phrases that describe the Qualification
-    /// type, separated by commas. The keywords of a type make the type
-    /// easier to find during a search.</p>
+    /// <p>One or more words or phrases that describe the Qualification type, separated by commas. The keywords of a type make the type easier to find during a search.</p>
     pub keywords: std::option::Option<std::string::String>,
-    /// <p>A long description for the Qualification type. On the Amazon
-    /// Mechanical Turk website, the long description is displayed when a
-    /// Worker examines a Qualification type.</p>
+    /// <p>A long description for the Qualification type. On the Amazon Mechanical Turk website, the long description is displayed when a Worker examines a Qualification type.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The initial status of the Qualification type.</p>
     /// <p>Constraints: Valid values are: Active | Inactive</p>
     pub qualification_type_status: std::option::Option<crate::model::QualificationTypeStatus>,
-    /// <p>The number of seconds that a Worker must wait after
-    /// requesting a Qualification of the Qualification type before the
-    /// worker can retry the Qualification request.</p>
-    /// <p>Constraints: None. If not specified, retries are disabled and
-    /// Workers can request a Qualification of this type only once, even if
-    /// the Worker has not been granted the Qualification. It is not possible
-    /// to disable retries for a Qualification type after it has been created
-    /// with retries enabled. If you want to disable retries, you must delete
-    /// existing retry-enabled Qualification type and then create a new
-    /// Qualification type with retries disabled.</p>
+    /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>
+    /// <p>Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.</p>
     pub retry_delay_in_seconds: std::option::Option<i64>,
-    /// <p>
-    /// The questions for the Qualification test a Worker must answer
-    /// correctly to obtain a Qualification of this type. If this parameter
-    /// is specified,
-    /// <code>TestDurationInSeconds</code>
-    /// must also be specified.
-    /// </p>
-    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a
-    /// QuestionForm data structure. This parameter cannot be specified if
-    /// AutoGranted is true.</p>
-    /// <p>Constraints: None. If not specified, the Worker may request
-    /// the Qualification without answering any questions.</p>
+    /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
+    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
+    /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
     pub test: std::option::Option<std::string::String>,
-    /// <p>The answers to the Qualification test specified in the Test
-    /// parameter, in the form of an AnswerKey data structure.</p>
+    /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
     /// <p>Constraints: Must not be longer than 65535 bytes.</p>
-    /// <p>Constraints: None. If not specified, you must process
-    /// Qualification requests manually.</p>
+    /// <p>Constraints: None. If not specified, you must process Qualification requests manually.</p>
     pub answer_key: std::option::Option<std::string::String>,
-    /// <p>The number of seconds the Worker has to complete the
-    /// Qualification test, starting from the time the Worker requests the
-    /// Qualification.</p>
+    /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
     pub test_duration_in_seconds: std::option::Option<i64>,
-    /// <p>Specifies whether requests for the Qualification type are
-    /// granted immediately, without prompting the Worker with a
-    /// Qualification test.</p>
-    /// <p>Constraints: If the Test parameter is specified, this
-    /// parameter cannot be true.</p>
+    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
+    /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
     pub auto_granted: std::option::Option<bool>,
-    /// <p>The Qualification value to use for automatically granted
-    /// Qualifications. This parameter is used only if the AutoGranted
-    /// parameter is true.</p>
+    /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
     pub auto_granted_value: std::option::Option<i32>,
 }
 impl CreateQualificationTypeInput {
-    /// <p> The name you give to the Qualification type. The type name
-    /// is used to represent the Qualification to Workers, and to find the
-    /// type using a Qualification type search. It must be unique across all
-    /// of your Qualification types.</p>
+    /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>One or more words or phrases that describe the Qualification
-    /// type, separated by commas. The keywords of a type make the type
-    /// easier to find during a search.</p>
+    /// <p>One or more words or phrases that describe the Qualification type, separated by commas. The keywords of a type make the type easier to find during a search.</p>
     pub fn keywords(&self) -> std::option::Option<&str> {
         self.keywords.as_deref()
     }
-    /// <p>A long description for the Qualification type. On the Amazon
-    /// Mechanical Turk website, the long description is displayed when a
-    /// Worker examines a Qualification type.</p>
+    /// <p>A long description for the Qualification type. On the Amazon Mechanical Turk website, the long description is displayed when a Worker examines a Qualification type.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -9567,59 +8603,33 @@ impl CreateQualificationTypeInput {
     ) -> std::option::Option<&crate::model::QualificationTypeStatus> {
         self.qualification_type_status.as_ref()
     }
-    /// <p>The number of seconds that a Worker must wait after
-    /// requesting a Qualification of the Qualification type before the
-    /// worker can retry the Qualification request.</p>
-    /// <p>Constraints: None. If not specified, retries are disabled and
-    /// Workers can request a Qualification of this type only once, even if
-    /// the Worker has not been granted the Qualification. It is not possible
-    /// to disable retries for a Qualification type after it has been created
-    /// with retries enabled. If you want to disable retries, you must delete
-    /// existing retry-enabled Qualification type and then create a new
-    /// Qualification type with retries disabled.</p>
+    /// <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>
+    /// <p>Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.</p>
     pub fn retry_delay_in_seconds(&self) -> std::option::Option<i64> {
         self.retry_delay_in_seconds
     }
-    /// <p>
-    /// The questions for the Qualification test a Worker must answer
-    /// correctly to obtain a Qualification of this type. If this parameter
-    /// is specified,
-    /// <code>TestDurationInSeconds</code>
-    /// must also be specified.
-    /// </p>
-    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a
-    /// QuestionForm data structure. This parameter cannot be specified if
-    /// AutoGranted is true.</p>
-    /// <p>Constraints: None. If not specified, the Worker may request
-    /// the Qualification without answering any questions.</p>
+    /// <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>
+    /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
+    /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
     pub fn test(&self) -> std::option::Option<&str> {
         self.test.as_deref()
     }
-    /// <p>The answers to the Qualification test specified in the Test
-    /// parameter, in the form of an AnswerKey data structure.</p>
+    /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
     /// <p>Constraints: Must not be longer than 65535 bytes.</p>
-    /// <p>Constraints: None. If not specified, you must process
-    /// Qualification requests manually.</p>
+    /// <p>Constraints: None. If not specified, you must process Qualification requests manually.</p>
     pub fn answer_key(&self) -> std::option::Option<&str> {
         self.answer_key.as_deref()
     }
-    /// <p>The number of seconds the Worker has to complete the
-    /// Qualification test, starting from the time the Worker requests the
-    /// Qualification.</p>
+    /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
     pub fn test_duration_in_seconds(&self) -> std::option::Option<i64> {
         self.test_duration_in_seconds
     }
-    /// <p>Specifies whether requests for the Qualification type are
-    /// granted immediately, without prompting the Worker with a
-    /// Qualification test.</p>
-    /// <p>Constraints: If the Test parameter is specified, this
-    /// parameter cannot be true.</p>
+    /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
+    /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
     pub fn auto_granted(&self) -> std::option::Option<bool> {
         self.auto_granted
     }
-    /// <p>The Qualification value to use for automatically granted
-    /// Qualifications. This parameter is used only if the AutoGranted
-    /// parameter is true.</p>
+    /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
     pub fn auto_granted_value(&self) -> std::option::Option<i32> {
         self.auto_granted_value
     }
@@ -9647,81 +8657,30 @@ impl std::fmt::Debug for CreateQualificationTypeInput {
 pub struct CreateHitWithHitTypeInput {
     /// <p>The HIT type ID you want to create this HIT with.</p>
     pub hit_type_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
-    /// </p>
+    /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
     pub max_assignments: std::option::Option<i32>,
-    /// <p>
-    /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
-    /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
-    /// even if not all of the assignments for the HIT have been accepted.
-    /// </p>
+    /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
     pub lifetime_in_seconds: std::option::Option<i64>,
-    /// <p>
-    /// The data the person completing the HIT uses to produce the results.
-    /// </p>
-    /// <p>
-    /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
-    /// or an HTMLQuestion data structure. The XML question data must not be larger than
-    /// 64 kilobytes (65,535 bytes) in size, including whitespace.
-    /// </p>
+    /// <p> The data the person completing the HIT uses to produce the results. </p>
+    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
     /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
     pub question: std::option::Option<std::string::String>,
-    /// <p>
-    /// An arbitrary data field.
-    /// The RequesterAnnotation parameter lets your application attach arbitrary data
-    /// to the HIT for tracking purposes.
-    /// For example, this parameter could be an identifier internal to the Requester's application
-    /// that corresponds with the HIT.
-    /// </p>
-    /// <p>
-    /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
-    /// It is not shown to the Worker, or any other Requester.
-    /// </p>
-    /// <p>
-    /// The RequesterAnnotation parameter may be different for each HIT you submit.
-    /// It does not affect how your HITs are grouped.
-    /// </p>
+    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+    /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
     pub requester_annotation: std::option::Option<std::string::String>,
-    /// <p>
-    /// A unique identifier for this request which allows you to retry the call
-    /// on error without creating duplicate HITs.
-    /// This is useful in cases such as network timeouts where it is unclear whether or not
-    /// the call succeeded on the server.
-    /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
-    /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
-    /// with a message containing the HITId.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// Note: It is your responsibility to ensure uniqueness of the token.
-    /// The unique token expires after 24 hours. Subsequent calls using the same
-    /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-    /// </p>
+    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
     /// </note>
     pub unique_request_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Assignment-level Review Policy applies to the assignments under the HIT.
-    /// You can specify for Mechanical Turk to take various actions based on the policy.
-    /// </p>
+    /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     pub assignment_review_policy: std::option::Option<crate::model::ReviewPolicy>,
-    /// <p>
-    /// The HIT-level Review Policy applies to the HIT.
-    /// You can specify for Mechanical Turk to take various actions based on the policy.
-    /// </p>
+    /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     pub hit_review_policy: std::option::Option<crate::model::ReviewPolicy>,
-    /// <p>
-    /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
-    /// and create an additional HIT by providing those values as HITLayoutParameters.
-    /// </p>
-    /// <p>
-    /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
-    /// </p>
+    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+    /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
     pub hit_layout_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// If the HITLayoutId is provided, any placeholder values must be filled in with values
-    /// using the HITLayoutParameter structure. For more information, see HITLayout.
-    /// </p>
+    /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
     pub hit_layout_parameters: std::option::Option<std::vec::Vec<crate::model::HitLayoutParameter>>,
 }
 impl CreateHitWithHitTypeInput {
@@ -9729,97 +8688,46 @@ impl CreateHitWithHitTypeInput {
     pub fn hit_type_id(&self) -> std::option::Option<&str> {
         self.hit_type_id.as_deref()
     }
-    /// <p>
-    /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
-    /// </p>
+    /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
     pub fn max_assignments(&self) -> std::option::Option<i32> {
         self.max_assignments
     }
-    /// <p>
-    /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
-    /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
-    /// even if not all of the assignments for the HIT have been accepted.
-    /// </p>
+    /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
     pub fn lifetime_in_seconds(&self) -> std::option::Option<i64> {
         self.lifetime_in_seconds
     }
-    /// <p>
-    /// The data the person completing the HIT uses to produce the results.
-    /// </p>
-    /// <p>
-    /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
-    /// or an HTMLQuestion data structure. The XML question data must not be larger than
-    /// 64 kilobytes (65,535 bytes) in size, including whitespace.
-    /// </p>
+    /// <p> The data the person completing the HIT uses to produce the results. </p>
+    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
     /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
     pub fn question(&self) -> std::option::Option<&str> {
         self.question.as_deref()
     }
-    /// <p>
-    /// An arbitrary data field.
-    /// The RequesterAnnotation parameter lets your application attach arbitrary data
-    /// to the HIT for tracking purposes.
-    /// For example, this parameter could be an identifier internal to the Requester's application
-    /// that corresponds with the HIT.
-    /// </p>
-    /// <p>
-    /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
-    /// It is not shown to the Worker, or any other Requester.
-    /// </p>
-    /// <p>
-    /// The RequesterAnnotation parameter may be different for each HIT you submit.
-    /// It does not affect how your HITs are grouped.
-    /// </p>
+    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+    /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
     pub fn requester_annotation(&self) -> std::option::Option<&str> {
         self.requester_annotation.as_deref()
     }
-    /// <p>
-    /// A unique identifier for this request which allows you to retry the call
-    /// on error without creating duplicate HITs.
-    /// This is useful in cases such as network timeouts where it is unclear whether or not
-    /// the call succeeded on the server.
-    /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
-    /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
-    /// with a message containing the HITId.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// Note: It is your responsibility to ensure uniqueness of the token.
-    /// The unique token expires after 24 hours. Subsequent calls using the same
-    /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-    /// </p>
+    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
     /// </note>
     pub fn unique_request_token(&self) -> std::option::Option<&str> {
         self.unique_request_token.as_deref()
     }
-    /// <p>
-    /// The Assignment-level Review Policy applies to the assignments under the HIT.
-    /// You can specify for Mechanical Turk to take various actions based on the policy.
-    /// </p>
+    /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     pub fn assignment_review_policy(&self) -> std::option::Option<&crate::model::ReviewPolicy> {
         self.assignment_review_policy.as_ref()
     }
-    /// <p>
-    /// The HIT-level Review Policy applies to the HIT.
-    /// You can specify for Mechanical Turk to take various actions based on the policy.
-    /// </p>
+    /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     pub fn hit_review_policy(&self) -> std::option::Option<&crate::model::ReviewPolicy> {
         self.hit_review_policy.as_ref()
     }
-    /// <p>
-    /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
-    /// and create an additional HIT by providing those values as HITLayoutParameters.
-    /// </p>
-    /// <p>
-    /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
-    /// </p>
+    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+    /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
     pub fn hit_layout_id(&self) -> std::option::Option<&str> {
         self.hit_layout_id.as_deref()
     }
-    /// <p>
-    /// If the HITLayoutId is provided, any placeholder values must be filled in with values
-    /// using the HITLayoutParameter structure. For more information, see HITLayout.
-    /// </p>
+    /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
     pub fn hit_layout_parameters(
         &self,
     ) -> std::option::Option<&[crate::model::HitLayoutParameter]> {
@@ -9847,110 +8755,48 @@ impl std::fmt::Debug for CreateHitWithHitTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitTypeInput {
-    /// <p>
-    /// The number of seconds after an assignment for the HIT has been submitted,
-    /// after which the assignment is considered Approved automatically
-    /// unless the Requester explicitly rejects it.
-    /// </p>
+    /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
     pub auto_approval_delay_in_seconds: std::option::Option<i64>,
-    /// <p>
-    /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
-    /// If a Worker does not complete the assignment within the specified duration,
-    /// the assignment is considered abandoned. If the HIT is still active
-    /// (that is, its lifetime has not elapsed), the assignment becomes available
-    /// for other users to find and accept.
-    /// </p>
+    /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
     pub assignment_duration_in_seconds: std::option::Option<i64>,
-    /// <p>
-    /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
-    /// </p>
+    /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
     pub reward: std::option::Option<std::string::String>,
-    /// <p>
-    /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
-    /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
-    /// and everywhere the HIT is mentioned.
-    /// </p>
+    /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
     pub title: std::option::Option<std::string::String>,
-    /// <p>
-    /// One or more words or phrases that describe the HIT, separated by commas.
-    /// These words are used in searches to find HITs.
-    /// </p>
+    /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
     pub keywords: std::option::Option<std::string::String>,
-    /// <p>
-    /// A general description of the HIT. A description includes detailed information about the kind of task
-    /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
-    /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
-    /// information to evaluate the HIT before accepting it.
-    /// </p>
+    /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>
-    /// Conditions that a Worker's Qualifications must meet in order
-    /// to accept the HIT. A HIT can have between zero and ten
-    /// Qualification requirements. All requirements must be met in
-    /// order for a Worker to accept the HIT. Additionally, other
-    /// actions can be restricted using the <code>ActionsGuarded</code>
-    /// field on each <code>QualificationRequirement</code> structure.
-    /// </p>
+    /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
     pub qualification_requirements:
         std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
 }
 impl CreateHitTypeInput {
-    /// <p>
-    /// The number of seconds after an assignment for the HIT has been submitted,
-    /// after which the assignment is considered Approved automatically
-    /// unless the Requester explicitly rejects it.
-    /// </p>
+    /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
     pub fn auto_approval_delay_in_seconds(&self) -> std::option::Option<i64> {
         self.auto_approval_delay_in_seconds
     }
-    /// <p>
-    /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
-    /// If a Worker does not complete the assignment within the specified duration,
-    /// the assignment is considered abandoned. If the HIT is still active
-    /// (that is, its lifetime has not elapsed), the assignment becomes available
-    /// for other users to find and accept.
-    /// </p>
+    /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
     pub fn assignment_duration_in_seconds(&self) -> std::option::Option<i64> {
         self.assignment_duration_in_seconds
     }
-    /// <p>
-    /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
-    /// </p>
+    /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
     pub fn reward(&self) -> std::option::Option<&str> {
         self.reward.as_deref()
     }
-    /// <p>
-    /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
-    /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
-    /// and everywhere the HIT is mentioned.
-    /// </p>
+    /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>
-    /// One or more words or phrases that describe the HIT, separated by commas.
-    /// These words are used in searches to find HITs.
-    /// </p>
+    /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
     pub fn keywords(&self) -> std::option::Option<&str> {
         self.keywords.as_deref()
     }
-    /// <p>
-    /// A general description of the HIT. A description includes detailed information about the kind of task
-    /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
-    /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
-    /// information to evaluate the HIT before accepting it.
-    /// </p>
+    /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>
-    /// Conditions that a Worker's Qualifications must meet in order
-    /// to accept the HIT. A HIT can have between zero and ten
-    /// Qualification requirements. All requirements must be met in
-    /// order for a Worker to accept the HIT. Additionally, other
-    /// actions can be restricted using the <code>ActionsGuarded</code>
-    /// field on each <code>QualificationRequirement</code> structure.
-    /// </p>
+    /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
     pub fn qualification_requirements(
         &self,
     ) -> std::option::Option<&[crate::model::QualificationRequirement]> {
@@ -9984,282 +8830,118 @@ impl std::fmt::Debug for CreateHitTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitInput {
-    /// <p>
-    /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
-    /// </p>
+    /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
     pub max_assignments: std::option::Option<i32>,
-    /// <p>
-    /// The number of seconds after an assignment for the HIT has been submitted,
-    /// after which the assignment is considered Approved automatically
-    /// unless the Requester explicitly rejects it.
-    /// </p>
+    /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
     pub auto_approval_delay_in_seconds: std::option::Option<i64>,
-    /// <p>
-    /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
-    /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
-    /// even if not all of the assignments for the HIT have been accepted.
-    /// </p>
+    /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
     pub lifetime_in_seconds: std::option::Option<i64>,
-    /// <p>
-    /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
-    /// If a Worker does not complete the assignment within the specified duration,
-    /// the assignment is considered abandoned. If the HIT is still active
-    /// (that is, its lifetime has not elapsed), the assignment becomes available
-    /// for other users to find and accept.
-    /// </p>
+    /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
     pub assignment_duration_in_seconds: std::option::Option<i64>,
-    /// <p>
-    /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
-    /// </p>
+    /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
     pub reward: std::option::Option<std::string::String>,
-    /// <p>
-    /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
-    /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
-    /// and everywhere the HIT is mentioned.
-    /// </p>
+    /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
     pub title: std::option::Option<std::string::String>,
-    /// <p>
-    /// One or more words or phrases that describe the HIT, separated by commas.
-    /// These words are used in searches to find HITs.
-    /// </p>
+    /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
     pub keywords: std::option::Option<std::string::String>,
-    /// <p>
-    /// A general description of the HIT. A description includes detailed information about the kind of task
-    /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
-    /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
-    /// information to evaluate the HIT before accepting it.
-    /// </p>
+    /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>
-    /// The data the person completing the HIT uses to produce the results.
-    /// </p>
-    /// <p>
-    /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
-    /// or an HTMLQuestion data structure. The XML question data must not be larger than
-    /// 64 kilobytes (65,535 bytes) in size, including whitespace.
-    /// </p>
+    /// <p> The data the person completing the HIT uses to produce the results. </p>
+    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
     /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
     pub question: std::option::Option<std::string::String>,
-    /// <p>
-    /// An arbitrary data field.
-    /// The RequesterAnnotation parameter lets your application attach arbitrary data
-    /// to the HIT for tracking purposes.
-    /// For example, this parameter could be an identifier internal to the Requester's application
-    /// that corresponds with the HIT.
-    /// </p>
-    /// <p>
-    /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
-    /// It is not shown to the Worker, or any other Requester.
-    /// </p>
-    /// <p>
-    /// The RequesterAnnotation parameter may be different for each HIT you submit.
-    /// It does not affect how your HITs are grouped.
-    /// </p>
+    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+    /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
     pub requester_annotation: std::option::Option<std::string::String>,
-    /// <p>
-    /// Conditions that a Worker's Qualifications must meet in order
-    /// to accept the HIT. A HIT can have between zero and ten
-    /// Qualification requirements. All requirements must be met in
-    /// order for a Worker to accept the HIT. Additionally, other
-    /// actions can be restricted using the <code>ActionsGuarded</code>
-    /// field on each <code>QualificationRequirement</code> structure.
-    /// </p>
+    /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
     pub qualification_requirements:
         std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
-    /// <p>
-    /// A unique identifier for this request which allows you to retry the call
-    /// on error without creating duplicate HITs.
-    /// This is useful in cases such as network timeouts where it is unclear whether or not
-    /// the call succeeded on the server.
-    /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
-    /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
-    /// with a message containing the HITId.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// Note: It is your responsibility to ensure uniqueness of the token.
-    /// The unique token expires after 24 hours. Subsequent calls using the same
-    /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-    /// </p>
+    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
     /// </note>
     pub unique_request_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Assignment-level Review Policy applies to the assignments under the HIT.
-    /// You can specify for Mechanical Turk to take various actions based on the policy.
-    /// </p>
+    /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     pub assignment_review_policy: std::option::Option<crate::model::ReviewPolicy>,
-    /// <p>
-    /// The HIT-level Review Policy applies to the HIT.
-    /// You can specify for Mechanical Turk to take various actions based on the policy.
-    /// </p>
+    /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     pub hit_review_policy: std::option::Option<crate::model::ReviewPolicy>,
-    /// <p>
-    /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
-    /// and create an additional HIT by providing those values as HITLayoutParameters.
-    /// </p>
-    /// <p>
-    /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
-    /// </p>
+    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+    /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
     pub hit_layout_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// If the HITLayoutId is provided, any placeholder values must be filled in with values
-    /// using the HITLayoutParameter structure. For more information, see HITLayout.
-    /// </p>
+    /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
     pub hit_layout_parameters: std::option::Option<std::vec::Vec<crate::model::HitLayoutParameter>>,
 }
 impl CreateHitInput {
-    /// <p>
-    /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
-    /// </p>
+    /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
     pub fn max_assignments(&self) -> std::option::Option<i32> {
         self.max_assignments
     }
-    /// <p>
-    /// The number of seconds after an assignment for the HIT has been submitted,
-    /// after which the assignment is considered Approved automatically
-    /// unless the Requester explicitly rejects it.
-    /// </p>
+    /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
     pub fn auto_approval_delay_in_seconds(&self) -> std::option::Option<i64> {
         self.auto_approval_delay_in_seconds
     }
-    /// <p>
-    /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
-    /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
-    /// even if not all of the assignments for the HIT have been accepted.
-    /// </p>
+    /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
     pub fn lifetime_in_seconds(&self) -> std::option::Option<i64> {
         self.lifetime_in_seconds
     }
-    /// <p>
-    /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
-    /// If a Worker does not complete the assignment within the specified duration,
-    /// the assignment is considered abandoned. If the HIT is still active
-    /// (that is, its lifetime has not elapsed), the assignment becomes available
-    /// for other users to find and accept.
-    /// </p>
+    /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
     pub fn assignment_duration_in_seconds(&self) -> std::option::Option<i64> {
         self.assignment_duration_in_seconds
     }
-    /// <p>
-    /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
-    /// </p>
+    /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
     pub fn reward(&self) -> std::option::Option<&str> {
         self.reward.as_deref()
     }
-    /// <p>
-    /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
-    /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
-    /// and everywhere the HIT is mentioned.
-    /// </p>
+    /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>
-    /// One or more words or phrases that describe the HIT, separated by commas.
-    /// These words are used in searches to find HITs.
-    /// </p>
+    /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
     pub fn keywords(&self) -> std::option::Option<&str> {
         self.keywords.as_deref()
     }
-    /// <p>
-    /// A general description of the HIT. A description includes detailed information about the kind of task
-    /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
-    /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
-    /// information to evaluate the HIT before accepting it.
-    /// </p>
+    /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>
-    /// The data the person completing the HIT uses to produce the results.
-    /// </p>
-    /// <p>
-    /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
-    /// or an HTMLQuestion data structure. The XML question data must not be larger than
-    /// 64 kilobytes (65,535 bytes) in size, including whitespace.
-    /// </p>
+    /// <p> The data the person completing the HIT uses to produce the results. </p>
+    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
     /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
     pub fn question(&self) -> std::option::Option<&str> {
         self.question.as_deref()
     }
-    /// <p>
-    /// An arbitrary data field.
-    /// The RequesterAnnotation parameter lets your application attach arbitrary data
-    /// to the HIT for tracking purposes.
-    /// For example, this parameter could be an identifier internal to the Requester's application
-    /// that corresponds with the HIT.
-    /// </p>
-    /// <p>
-    /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
-    /// It is not shown to the Worker, or any other Requester.
-    /// </p>
-    /// <p>
-    /// The RequesterAnnotation parameter may be different for each HIT you submit.
-    /// It does not affect how your HITs are grouped.
-    /// </p>
+    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+    /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
     pub fn requester_annotation(&self) -> std::option::Option<&str> {
         self.requester_annotation.as_deref()
     }
-    /// <p>
-    /// Conditions that a Worker's Qualifications must meet in order
-    /// to accept the HIT. A HIT can have between zero and ten
-    /// Qualification requirements. All requirements must be met in
-    /// order for a Worker to accept the HIT. Additionally, other
-    /// actions can be restricted using the <code>ActionsGuarded</code>
-    /// field on each <code>QualificationRequirement</code> structure.
-    /// </p>
+    /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
     pub fn qualification_requirements(
         &self,
     ) -> std::option::Option<&[crate::model::QualificationRequirement]> {
         self.qualification_requirements.as_deref()
     }
-    /// <p>
-    /// A unique identifier for this request which allows you to retry the call
-    /// on error without creating duplicate HITs.
-    /// This is useful in cases such as network timeouts where it is unclear whether or not
-    /// the call succeeded on the server.
-    /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
-    /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
-    /// with a message containing the HITId.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// Note: It is your responsibility to ensure uniqueness of the token.
-    /// The unique token expires after 24 hours. Subsequent calls using the same
-    /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-    /// </p>
+    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
     /// </note>
     pub fn unique_request_token(&self) -> std::option::Option<&str> {
         self.unique_request_token.as_deref()
     }
-    /// <p>
-    /// The Assignment-level Review Policy applies to the assignments under the HIT.
-    /// You can specify for Mechanical Turk to take various actions based on the policy.
-    /// </p>
+    /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     pub fn assignment_review_policy(&self) -> std::option::Option<&crate::model::ReviewPolicy> {
         self.assignment_review_policy.as_ref()
     }
-    /// <p>
-    /// The HIT-level Review Policy applies to the HIT.
-    /// You can specify for Mechanical Turk to take various actions based on the policy.
-    /// </p>
+    /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     pub fn hit_review_policy(&self) -> std::option::Option<&crate::model::ReviewPolicy> {
         self.hit_review_policy.as_ref()
     }
-    /// <p>
-    /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
-    /// and create an additional HIT by providing those values as HITLayoutParameters.
-    /// </p>
-    /// <p>
-    /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
-    /// </p>
+    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+    /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
     pub fn hit_layout_id(&self) -> std::option::Option<&str> {
         self.hit_layout_id.as_deref()
     }
-    /// <p>
-    /// If the HITLayoutId is provided, any placeholder values must be filled in with values
-    /// using the HITLayoutParameter structure. For more information, see HITLayout.
-    /// </p>
+    /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
     pub fn hit_layout_parameters(
         &self,
     ) -> std::option::Option<&[crate::model::HitLayoutParameter]> {
@@ -10306,14 +8988,7 @@ pub struct CreateAdditionalAssignmentsForHitInput {
     pub hit_id: std::option::Option<std::string::String>,
     /// <p>The number of additional assignments to request for this HIT.</p>
     pub number_of_additional_assignments: std::option::Option<i32>,
-    /// <p>
-    /// A unique identifier for this request, which allows you to retry the call on error
-    /// without extending the HIT multiple times.
-    /// This is useful in cases such as network timeouts where it is unclear whether or not
-    /// the call succeeded on the server. If the extend HIT already exists in the system
-    /// from a previous call using the same <code>UniqueRequestToken</code>,
-    /// subsequent calls will return an error with a message containing the request ID.
-    /// </p>
+    /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
     pub unique_request_token: std::option::Option<std::string::String>,
 }
 impl CreateAdditionalAssignmentsForHitInput {
@@ -10325,14 +9000,7 @@ impl CreateAdditionalAssignmentsForHitInput {
     pub fn number_of_additional_assignments(&self) -> std::option::Option<i32> {
         self.number_of_additional_assignments
     }
-    /// <p>
-    /// A unique identifier for this request, which allows you to retry the call on error
-    /// without extending the HIT multiple times.
-    /// This is useful in cases such as network timeouts where it is unclear whether or not
-    /// the call succeeded on the server. If the extend HIT already exists in the system
-    /// from a previous call using the same <code>UniqueRequestToken</code>,
-    /// subsequent calls will return an error with a message containing the request ID.
-    /// </p>
+    /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
     pub fn unique_request_token(&self) -> std::option::Option<&str> {
         self.unique_request_token.as_deref()
     }
@@ -10356,18 +9024,11 @@ impl std::fmt::Debug for CreateAdditionalAssignmentsForHitInput {
 pub struct AssociateQualificationWithWorkerInput {
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
     pub qualification_type_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The ID of the Worker to whom the Qualification is being assigned.
-    /// Worker IDs are included with submitted HIT assignments and Qualification requests.
-    /// </p>
+    /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
     pub worker_id: std::option::Option<std::string::String>,
     /// <p>The value of the Qualification to assign.</p>
     pub integer_value: std::option::Option<i32>,
-    /// <p>
-    /// Specifies whether to send a notification email message to the Worker
-    /// saying that the qualification was assigned to the Worker.
-    /// Note: this is true by default.
-    /// </p>
+    /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
     pub send_notification: std::option::Option<bool>,
 }
 impl AssociateQualificationWithWorkerInput {
@@ -10375,10 +9036,7 @@ impl AssociateQualificationWithWorkerInput {
     pub fn qualification_type_id(&self) -> std::option::Option<&str> {
         self.qualification_type_id.as_deref()
     }
-    /// <p>
-    /// The ID of the Worker to whom the Qualification is being assigned.
-    /// Worker IDs are included with submitted HIT assignments and Qualification requests.
-    /// </p>
+    /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
     pub fn worker_id(&self) -> std::option::Option<&str> {
         self.worker_id.as_deref()
     }
@@ -10386,11 +9044,7 @@ impl AssociateQualificationWithWorkerInput {
     pub fn integer_value(&self) -> std::option::Option<i32> {
         self.integer_value
     }
-    /// <p>
-    /// Specifies whether to send a notification email message to the Worker
-    /// saying that the qualification was assigned to the Worker.
-    /// Note: this is true by default.
-    /// </p>
+    /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
     pub fn send_notification(&self) -> std::option::Option<bool> {
         self.send_notification
     }
@@ -10410,35 +9064,23 @@ impl std::fmt::Debug for AssociateQualificationWithWorkerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApproveAssignmentInput {
-    /// <p>
-    /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
-    /// </p>
+    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
     pub assignment_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// A message for the Worker, which the Worker can see in the Status section of the web site.
-    /// </p>
+    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     pub requester_feedback: std::option::Option<std::string::String>,
-    /// <p>
-    /// A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>.
-    /// </p>
+    /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
     pub override_rejection: std::option::Option<bool>,
 }
 impl ApproveAssignmentInput {
-    /// <p>
-    /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
-    /// </p>
+    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
     pub fn assignment_id(&self) -> std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
-    /// <p>
-    /// A message for the Worker, which the Worker can see in the Status section of the web site.
-    /// </p>
+    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     pub fn requester_feedback(&self) -> std::option::Option<&str> {
         self.requester_feedback.as_deref()
     }
-    /// <p>
-    /// A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>.
-    /// </p>
+    /// <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
     pub fn override_rejection(&self) -> std::option::Option<bool> {
         self.override_rejection
     }
@@ -10459,10 +9101,7 @@ impl std::fmt::Debug for ApproveAssignmentInput {
 pub struct AcceptQualificationRequestInput {
     /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
     pub qualification_request_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The value of the Qualification. You can omit this value if you are using the
-    /// presence or absence of the Qualification as the basis for a HIT requirement.
-    /// </p>
+    /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
     pub integer_value: std::option::Option<i32>,
 }
 impl AcceptQualificationRequestInput {
@@ -10470,10 +9109,7 @@ impl AcceptQualificationRequestInput {
     pub fn qualification_request_id(&self) -> std::option::Option<&str> {
         self.qualification_request_id.as_deref()
     }
-    /// <p>
-    /// The value of the Qualification. You can omit this value if you are using the
-    /// presence or absence of the Qualification as the basis for a HIT requirement.
-    /// </p>
+    /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
     pub fn integer_value(&self) -> std::option::Option<i32> {
         self.integer_value
     }

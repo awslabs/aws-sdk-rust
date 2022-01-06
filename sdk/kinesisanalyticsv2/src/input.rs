@@ -26,20 +26,12 @@ pub mod add_application_cloud_watch_logging_option_input {
             self.application_name = input;
             self
         }
-        /// <p>The version ID of the Kinesis Data Analytics application. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The version ID of the Kinesis Data Analytics application. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -63,20 +55,12 @@ pub mod add_application_cloud_watch_logging_option_input {
             self.cloud_watch_logging_option = input;
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-        /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-        /// <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn conditional_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.conditional_token = Some(input.into());
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-        /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-        /// <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_conditional_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -105,7 +89,7 @@ pub type AddApplicationCloudWatchLoggingOptionInputOperationOutputAlias =
     crate::operation::AddApplicationCloudWatchLoggingOption;
 #[doc(hidden)]
 pub type AddApplicationCloudWatchLoggingOptionInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AddApplicationCloudWatchLoggingOptionInput {
     /// Consumes the builder and constructs an Operation<[`AddApplicationCloudWatchLoggingOption`](crate::operation::AddApplicationCloudWatchLoggingOption)>
     #[allow(clippy::let_and_return)]
@@ -116,7 +100,7 @@ impl AddApplicationCloudWatchLoggingOptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddApplicationCloudWatchLoggingOption,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -202,7 +186,7 @@ impl AddApplicationCloudWatchLoggingOptionInput {
             "AddApplicationCloudWatchLoggingOption",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -236,14 +220,12 @@ pub mod add_application_input_input {
         pub(crate) input: std::option::Option<crate::model::Input>,
     }
     impl Builder {
-        /// <p>The name of your existing application to which you want to add the streaming
-        /// source.</p>
+        /// <p>The name of your existing application to which you want to add the streaming source.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of your existing application to which you want to add the streaming
-        /// source.</p>
+        /// <p>The name of your existing application to which you want to add the streaming source.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -251,14 +233,12 @@ pub mod add_application_input_input {
             self.application_name = input;
             self
         }
-        /// <p>The current version of your application.
-        /// You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current application version.</p>
+        /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The current version of your application.
-        /// You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current application version.</p>
+        /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -266,12 +246,12 @@ pub mod add_application_input_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>The <a>Input</a> to add.</p>
+        /// <p>The <code>Input</code> to add.</p>
         pub fn input(mut self, input: crate::model::Input) -> Self {
             self.input = Some(input);
             self
         }
-        /// <p>The <a>Input</a> to add.</p>
+        /// <p>The <code>Input</code> to add.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
             self.input = input;
             self
@@ -294,7 +274,7 @@ pub mod add_application_input_input {
 #[doc(hidden)]
 pub type AddApplicationInputInputOperationOutputAlias = crate::operation::AddApplicationInput;
 #[doc(hidden)]
-pub type AddApplicationInputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddApplicationInputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddApplicationInputInput {
     /// Consumes the builder and constructs an Operation<[`AddApplicationInput`](crate::operation::AddApplicationInput)>
     #[allow(clippy::let_and_return)]
@@ -305,7 +285,7 @@ impl AddApplicationInputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddApplicationInput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -390,7 +370,7 @@ impl AddApplicationInputInput {
             "AddApplicationInput",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -426,14 +406,12 @@ pub mod add_application_input_processing_configuration_input {
             std::option::Option<crate::model::InputProcessingConfiguration>,
     }
     impl Builder {
-        /// <p>The name of the application to which you want to add the input processing
-        /// configuration.</p>
+        /// <p>The name of the application to which you want to add the input processing configuration.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of the application to which you want to add the input processing
-        /// configuration.</p>
+        /// <p>The name of the application to which you want to add the input processing configuration.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -441,18 +419,12 @@ pub mod add_application_input_processing_configuration_input {
             self.application_name = input;
             self
         }
-        /// <p>The version of the application to which you want to add the input processing
-        /// configuration. You can use the <a>DescribeApplication</a> operation to get the
-        /// current application version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>The version of the application to which you want to add the input processing configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The version of the application to which you want to add the input processing
-        /// configuration. You can use the <a>DescribeApplication</a> operation to get the
-        /// current application version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>The version of the application to which you want to add the input processing configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -460,19 +432,17 @@ pub mod add_application_input_processing_configuration_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>The ID of the input configuration to add the input processing configuration to. You
-        /// can get a list of the input IDs for an application using the <a>DescribeApplication</a> operation.</p>
+        /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <code>DescribeApplication</code> operation.</p>
         pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_id = Some(input.into());
             self
         }
-        /// <p>The ID of the input configuration to add the input processing configuration to. You
-        /// can get a list of the input IDs for an application using the <a>DescribeApplication</a> operation.</p>
+        /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <code>DescribeApplication</code> operation.</p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_id = input;
             self
         }
-        /// <p>The <a>InputProcessingConfiguration</a> to add to the application.</p>
+        /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
         pub fn input_processing_configuration(
             mut self,
             input: crate::model::InputProcessingConfiguration,
@@ -480,7 +450,7 @@ pub mod add_application_input_processing_configuration_input {
             self.input_processing_configuration = Some(input);
             self
         }
-        /// <p>The <a>InputProcessingConfiguration</a> to add to the application.</p>
+        /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
         pub fn set_input_processing_configuration(
             mut self,
             input: std::option::Option<crate::model::InputProcessingConfiguration>,
@@ -511,7 +481,7 @@ pub type AddApplicationInputProcessingConfigurationInputOperationOutputAlias =
     crate::operation::AddApplicationInputProcessingConfiguration;
 #[doc(hidden)]
 pub type AddApplicationInputProcessingConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AddApplicationInputProcessingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`AddApplicationInputProcessingConfiguration`](crate::operation::AddApplicationInputProcessingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -522,7 +492,7 @@ impl AddApplicationInputProcessingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddApplicationInputProcessingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -608,7 +578,7 @@ impl AddApplicationInputProcessingConfigurationInput {
             "AddApplicationInputProcessingConfiguration",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -656,18 +626,12 @@ pub mod add_application_output_input {
             self.application_name = input;
             self
         }
-        /// <p>The version of the application to which you want to add the output configuration. You can
-        /// use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned. </p>
+        /// <p>The version of the application to which you want to add the output configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The version of the application to which you want to add the output configuration. You can
-        /// use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned. </p>
+        /// <p>The version of the application to which you want to add the output configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -675,18 +639,12 @@ pub mod add_application_output_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>An array of objects, each describing one output configuration. In the output
-        /// configuration, you specify the name of an in-application stream, a destination (that is, a
-        /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and
-        /// record the formation to use when writing to the destination.</p>
+        /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.</p>
         pub fn output(mut self, input: crate::model::Output) -> Self {
             self.output = Some(input);
             self
         }
-        /// <p>An array of objects, each describing one output configuration. In the output
-        /// configuration, you specify the name of an in-application stream, a destination (that is, a
-        /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and
-        /// record the formation to use when writing to the destination.</p>
+        /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.</p>
         pub fn set_output(mut self, input: std::option::Option<crate::model::Output>) -> Self {
             self.output = input;
             self
@@ -709,7 +667,7 @@ pub mod add_application_output_input {
 #[doc(hidden)]
 pub type AddApplicationOutputInputOperationOutputAlias = crate::operation::AddApplicationOutput;
 #[doc(hidden)]
-pub type AddApplicationOutputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddApplicationOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddApplicationOutputInput {
     /// Consumes the builder and constructs an Operation<[`AddApplicationOutput`](crate::operation::AddApplicationOutput)>
     #[allow(clippy::let_and_return)]
@@ -720,7 +678,7 @@ impl AddApplicationOutputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddApplicationOutput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -807,7 +765,7 @@ impl AddApplicationOutputInput {
             "AddApplicationOutput",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -854,20 +812,12 @@ pub mod add_application_reference_data_source_input {
             self.application_name = input;
             self
         }
-        /// <p>The version of the application for which you are adding the reference data source.
-        /// You can
-        /// use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The version of the application for which you are adding the reference data source.
-        /// You can
-        /// use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -875,18 +825,12 @@ pub mod add_application_reference_data_source_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data
-        /// into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting
-        /// in-application table that is
-        /// created. </p>
+        /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
         pub fn reference_data_source(mut self, input: crate::model::ReferenceDataSource) -> Self {
             self.reference_data_source = Some(input);
             self
         }
-        /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data
-        /// into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting
-        /// in-application table that is
-        /// created. </p>
+        /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
         pub fn set_reference_data_source(
             mut self,
             input: std::option::Option<crate::model::ReferenceDataSource>,
@@ -913,7 +857,8 @@ pub mod add_application_reference_data_source_input {
 pub type AddApplicationReferenceDataSourceInputOperationOutputAlias =
     crate::operation::AddApplicationReferenceDataSource;
 #[doc(hidden)]
-pub type AddApplicationReferenceDataSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddApplicationReferenceDataSourceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AddApplicationReferenceDataSourceInput {
     /// Consumes the builder and constructs an Operation<[`AddApplicationReferenceDataSource`](crate::operation::AddApplicationReferenceDataSource)>
     #[allow(clippy::let_and_return)]
@@ -924,7 +869,7 @@ impl AddApplicationReferenceDataSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddApplicationReferenceDataSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1010,7 +955,7 @@ impl AddApplicationReferenceDataSourceInput {
             "AddApplicationReferenceDataSource",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1058,24 +1003,12 @@ pub mod add_application_vpc_configuration_input {
             self.application_name = input;
             self
         }
-        /// <p>The version of the application to which you want to add the VPC configuration. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-        /// can use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned. For better concurrency support,
-        /// use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The version of the application to which you want to add the VPC configuration. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-        /// can use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned. For better concurrency support,
-        /// use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -1096,20 +1029,12 @@ pub mod add_application_vpc_configuration_input {
             self.vpc_configuration = input;
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get
-        /// the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-        /// <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn conditional_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.conditional_token = Some(input.into());
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get
-        /// the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-        /// <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_conditional_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1137,7 +1062,8 @@ pub mod add_application_vpc_configuration_input {
 pub type AddApplicationVpcConfigurationInputOperationOutputAlias =
     crate::operation::AddApplicationVpcConfiguration;
 #[doc(hidden)]
-pub type AddApplicationVpcConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddApplicationVpcConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AddApplicationVpcConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`AddApplicationVpcConfiguration`](crate::operation::AddApplicationVpcConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1148,7 +1074,7 @@ impl AddApplicationVpcConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddApplicationVpcConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1234,7 +1160,7 @@ impl AddApplicationVpcConfigurationInput {
             "AddApplicationVpcConfiguration",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1314,14 +1240,12 @@ pub mod create_application_input {
             self.runtime_environment = input;
             self
         }
-        /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose
-        /// delivery streams, Amazon S3 objects, and other external resources.</p>
+        /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
         pub fn service_execution_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_execution_role = Some(input.into());
             self
         }
-        /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose
-        /// delivery streams, Amazon S3 objects, and other external resources.</p>
+        /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
         pub fn set_service_execution_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1349,21 +1273,17 @@ pub mod create_application_input {
         ///
         /// To override the contents of this collection use [`set_cloud_watch_logging_options`](Self::set_cloud_watch_logging_options).
         ///
-        /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application
-        /// configuration errors.
-        /// </p>
+        /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
         pub fn cloud_watch_logging_options(
             mut self,
-            input: impl Into<crate::model::CloudWatchLoggingOption>,
+            input: crate::model::CloudWatchLoggingOption,
         ) -> Self {
             let mut v = self.cloud_watch_logging_options.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_logging_options = Some(v);
             self
         }
-        /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application
-        /// configuration errors.
-        /// </p>
+        /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
         pub fn set_cloud_watch_logging_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOption>>,
@@ -1375,22 +1295,14 @@ pub mod create_application_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
-        /// application. Note that the maximum number of application tags includes system tags. The maximum number of
-        /// user-defined application tags is 50.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
-        /// application. Note that the maximum number of application tags includes system tags. The maximum number of
-        /// user-defined application tags is 50.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1398,14 +1310,12 @@ pub mod create_application_input {
             self.tags = input;
             self
         }
-        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the
-        /// <code>INTERACTIVE</code> mode.</p>
+        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
         pub fn application_mode(mut self, input: crate::model::ApplicationMode) -> Self {
             self.application_mode = Some(input);
             self
         }
-        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the
-        /// <code>INTERACTIVE</code> mode.</p>
+        /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
         pub fn set_application_mode(
             mut self,
             input: std::option::Option<crate::model::ApplicationMode>,
@@ -1436,7 +1346,7 @@ pub mod create_application_input {
 #[doc(hidden)]
 pub type CreateApplicationInputOperationOutputAlias = crate::operation::CreateApplication;
 #[doc(hidden)]
-pub type CreateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(clippy::let_and_return)]
@@ -1447,7 +1357,7 @@ impl CreateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1532,7 +1442,7 @@ impl CreateApplicationInput {
             "CreateApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1579,14 +1489,12 @@ pub mod create_application_presigned_url_input {
             self.application_name = input;
             self
         }
-        /// <p>The type of the extension for which to create and return a URL. Currently, the only valid
-        /// extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
+        /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
         pub fn url_type(mut self, input: crate::model::UrlType) -> Self {
             self.url_type = Some(input);
             self
         }
-        /// <p>The type of the extension for which to create and return a URL. Currently, the only valid
-        /// extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
+        /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
         pub fn set_url_type(mut self, input: std::option::Option<crate::model::UrlType>) -> Self {
             self.url_type = input;
             self
@@ -1623,7 +1531,8 @@ pub mod create_application_presigned_url_input {
 pub type CreateApplicationPresignedUrlInputOperationOutputAlias =
     crate::operation::CreateApplicationPresignedUrl;
 #[doc(hidden)]
-pub type CreateApplicationPresignedUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationPresignedUrlInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationPresignedUrlInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplicationPresignedUrl`](crate::operation::CreateApplicationPresignedUrl)>
     #[allow(clippy::let_and_return)]
@@ -1634,7 +1543,7 @@ impl CreateApplicationPresignedUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplicationPresignedUrl,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1720,7 +1629,7 @@ impl CreateApplicationPresignedUrlInput {
             "CreateApplicationPresignedUrl",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1797,7 +1706,7 @@ pub mod create_application_snapshot_input {
 pub type CreateApplicationSnapshotInputOperationOutputAlias =
     crate::operation::CreateApplicationSnapshot;
 #[doc(hidden)]
-pub type CreateApplicationSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplicationSnapshot`](crate::operation::CreateApplicationSnapshot)>
     #[allow(clippy::let_and_return)]
@@ -1808,7 +1717,7 @@ impl CreateApplicationSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplicationSnapshot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1895,7 +1804,7 @@ impl CreateApplicationSnapshotInput {
             "CreateApplicationSnapshot",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1971,7 +1880,7 @@ pub mod delete_application_input {
 #[doc(hidden)]
 pub type DeleteApplicationInputOperationOutputAlias = crate::operation::DeleteApplication;
 #[doc(hidden)]
-pub type DeleteApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplication`](crate::operation::DeleteApplication)>
     #[allow(clippy::let_and_return)]
@@ -1982,7 +1891,7 @@ impl DeleteApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2067,7 +1976,7 @@ impl DeleteApplicationInput {
             "DeleteApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2115,20 +2024,12 @@ pub mod delete_application_cloud_watch_logging_option_input {
             self.application_name = input;
             self
         }
-        /// <p>The version ID of the application. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The version ID of the application. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -2136,8 +2037,7 @@ pub mod delete_application_cloud_watch_logging_option_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to
-        /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation. </p>
+        /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
         pub fn cloud_watch_logging_option_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -2145,8 +2045,7 @@ pub mod delete_application_cloud_watch_logging_option_input {
             self.cloud_watch_logging_option_id = Some(input.into());
             self
         }
-        /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to
-        /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation. </p>
+        /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
         pub fn set_cloud_watch_logging_option_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2154,18 +2053,12 @@ pub mod delete_application_cloud_watch_logging_option_input {
             self.cloud_watch_logging_option_id = input;
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must provide
-        /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
-        /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn conditional_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.conditional_token = Some(input.into());
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must provide
-        /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
-        /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_conditional_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2196,7 +2089,7 @@ pub type DeleteApplicationCloudWatchLoggingOptionInputOperationOutputAlias =
     crate::operation::DeleteApplicationCloudWatchLoggingOption;
 #[doc(hidden)]
 pub type DeleteApplicationCloudWatchLoggingOptionInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationCloudWatchLoggingOptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplicationCloudWatchLoggingOption`](crate::operation::DeleteApplicationCloudWatchLoggingOption)>
     #[allow(clippy::let_and_return)]
@@ -2207,7 +2100,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationCloudWatchLoggingOption,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2293,7 +2186,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
             "DeleteApplicationCloudWatchLoggingOption",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2340,20 +2233,12 @@ pub mod delete_application_input_processing_configuration_input {
             self.application_name = input;
             self
         }
-        /// <p>The application version.
-        /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.
-        /// </p>
+        /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The application version.
-        /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.
-        /// </p>
+        /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -2361,14 +2246,12 @@ pub mod delete_application_input_processing_configuration_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>The ID of the input configuration from which to delete the input processing
-        /// configuration. You can get a list of the input IDs for an application by using the <a>DescribeApplication</a> operation.</p>
+        /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <code>DescribeApplication</code> operation.</p>
         pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_id = Some(input.into());
             self
         }
-        /// <p>The ID of the input configuration from which to delete the input processing
-        /// configuration. You can get a list of the input IDs for an application by using the <a>DescribeApplication</a> operation.</p>
+        /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <code>DescribeApplication</code> operation.</p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_id = input;
             self
@@ -2395,7 +2278,7 @@ pub type DeleteApplicationInputProcessingConfigurationInputOperationOutputAlias 
     crate::operation::DeleteApplicationInputProcessingConfiguration;
 #[doc(hidden)]
 pub type DeleteApplicationInputProcessingConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationInputProcessingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplicationInputProcessingConfiguration`](crate::operation::DeleteApplicationInputProcessingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2406,7 +2289,7 @@ impl DeleteApplicationInputProcessingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationInputProcessingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2492,7 +2375,7 @@ impl DeleteApplicationInputProcessingConfigurationInput {
             "DeleteApplicationInputProcessingConfiguration",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2540,20 +2423,12 @@ pub mod delete_application_output_input {
             self.application_name = input;
             self
         }
-        /// <p>The application version.
-        /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.
-        /// </p>
+        /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The application version.
-        /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.
-        /// </p>
+        /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -2561,20 +2436,12 @@ pub mod delete_application_output_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>The ID of the configuration to delete. Each output configuration that is added to the
-        /// application (either when the application is created or later) using the <a>AddApplicationOutput</a> operation has a unique ID. You need to provide the ID to
-        /// uniquely identify the output configuration that you want to delete from the application
-        /// configuration. You can use the <a>DescribeApplication</a> operation to get the
-        /// specific <code>OutputId</code>. </p>
+        /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
         pub fn output_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_id = Some(input.into());
             self
         }
-        /// <p>The ID of the configuration to delete. Each output configuration that is added to the
-        /// application (either when the application is created or later) using the <a>AddApplicationOutput</a> operation has a unique ID. You need to provide the ID to
-        /// uniquely identify the output configuration that you want to delete from the application
-        /// configuration. You can use the <a>DescribeApplication</a> operation to get the
-        /// specific <code>OutputId</code>. </p>
+        /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
         pub fn set_output_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_id = input;
             self
@@ -2598,7 +2465,7 @@ pub mod delete_application_output_input {
 pub type DeleteApplicationOutputInputOperationOutputAlias =
     crate::operation::DeleteApplicationOutput;
 #[doc(hidden)]
-pub type DeleteApplicationOutputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationOutputInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplicationOutput`](crate::operation::DeleteApplicationOutput)>
     #[allow(clippy::let_and_return)]
@@ -2609,7 +2476,7 @@ impl DeleteApplicationOutputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationOutput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2696,7 +2563,7 @@ impl DeleteApplicationOutputInput {
             "DeleteApplicationOutput",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2743,18 +2610,12 @@ pub mod delete_application_reference_data_source_input {
             self.application_name = input;
             self
         }
-        /// <p>The current application version.  
-        /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified
-        /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The current application version.  
-        /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-        /// If the version specified
-        /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -2762,18 +2623,12 @@ pub mod delete_application_reference_data_source_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>The ID of the reference data source. When you add a reference data source to your
-        /// application using the <a>AddApplicationReferenceDataSource</a>, Kinesis Data Analytics assigns an ID.
-        /// You can use the <a>DescribeApplication</a> operation to
-        /// get the reference ID. </p>
+        /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
         pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.reference_id = Some(input.into());
             self
         }
-        /// <p>The ID of the reference data source. When you add a reference data source to your
-        /// application using the <a>AddApplicationReferenceDataSource</a>, Kinesis Data Analytics assigns an ID.
-        /// You can use the <a>DescribeApplication</a> operation to
-        /// get the reference ID. </p>
+        /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reference_id = input;
             self
@@ -2798,7 +2653,7 @@ pub type DeleteApplicationReferenceDataSourceInputOperationOutputAlias =
     crate::operation::DeleteApplicationReferenceDataSource;
 #[doc(hidden)]
 pub type DeleteApplicationReferenceDataSourceInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationReferenceDataSourceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplicationReferenceDataSource`](crate::operation::DeleteApplicationReferenceDataSource)>
     #[allow(clippy::let_and_return)]
@@ -2809,7 +2664,7 @@ impl DeleteApplicationReferenceDataSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationReferenceDataSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2895,7 +2750,7 @@ impl DeleteApplicationReferenceDataSourceInput {
             "DeleteApplicationReferenceDataSource",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2955,16 +2810,12 @@ pub mod delete_application_snapshot_input {
             self.snapshot_name = input;
             self
         }
-        /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value
-        /// using
-        /// or .</p>
+        /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
         pub fn snapshot_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.snapshot_creation_timestamp = Some(input);
             self
         }
-        /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value
-        /// using
-        /// or .</p>
+        /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
         pub fn set_snapshot_creation_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2991,7 +2842,7 @@ pub mod delete_application_snapshot_input {
 pub type DeleteApplicationSnapshotInputOperationOutputAlias =
     crate::operation::DeleteApplicationSnapshot;
 #[doc(hidden)]
-pub type DeleteApplicationSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplicationSnapshot`](crate::operation::DeleteApplicationSnapshot)>
     #[allow(clippy::let_and_return)]
@@ -3002,7 +2853,7 @@ impl DeleteApplicationSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationSnapshot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3089,7 +2940,7 @@ impl DeleteApplicationSnapshotInput {
             "DeleteApplicationSnapshot",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3137,20 +2988,12 @@ pub mod delete_application_vpc_configuration_input {
             self.application_name = input;
             self
         }
-        /// <p>The current application version ID. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The current application version ID. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -3171,18 +3014,12 @@ pub mod delete_application_vpc_configuration_input {
             self.vpc_configuration_id = input;
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must provide
-        /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
-        /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn conditional_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.conditional_token = Some(input.into());
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must provide
-        /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
-        /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_conditional_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3210,7 +3047,8 @@ pub mod delete_application_vpc_configuration_input {
 pub type DeleteApplicationVpcConfigurationInputOperationOutputAlias =
     crate::operation::DeleteApplicationVpcConfiguration;
 #[doc(hidden)]
-pub type DeleteApplicationVpcConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationVpcConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationVpcConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplicationVpcConfiguration`](crate::operation::DeleteApplicationVpcConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -3221,7 +3059,7 @@ impl DeleteApplicationVpcConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplicationVpcConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3307,7 +3145,7 @@ impl DeleteApplicationVpcConfigurationInput {
             "DeleteApplicationVpcConfiguration",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3380,7 +3218,7 @@ pub mod describe_application_input {
 #[doc(hidden)]
 pub type DescribeApplicationInputOperationOutputAlias = crate::operation::DescribeApplication;
 #[doc(hidden)]
-pub type DescribeApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplication`](crate::operation::DescribeApplication)>
     #[allow(clippy::let_and_return)]
@@ -3391,7 +3229,7 @@ impl DescribeApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3476,7 +3314,7 @@ impl DescribeApplicationInput {
             "DescribeApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3522,14 +3360,12 @@ pub mod describe_application_snapshot_input {
             self.application_name = input;
             self
         }
-        /// <p>The identifier of an application snapshot. You can retrieve this value using
-        /// .</p>
+        /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
         pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_name = Some(input.into());
             self
         }
-        /// <p>The identifier of an application snapshot. You can retrieve this value using
-        /// .</p>
+        /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
         pub fn set_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3555,7 +3391,7 @@ pub mod describe_application_snapshot_input {
 pub type DescribeApplicationSnapshotInputOperationOutputAlias =
     crate::operation::DescribeApplicationSnapshot;
 #[doc(hidden)]
-pub type DescribeApplicationSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeApplicationSnapshotInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicationSnapshot`](crate::operation::DescribeApplicationSnapshot)>
     #[allow(clippy::let_and_return)]
@@ -3566,7 +3402,7 @@ impl DescribeApplicationSnapshotInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplicationSnapshot,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3652,7 +3488,7 @@ impl DescribeApplicationSnapshotInput {
             "DescribeApplicationSnapshot",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3726,7 +3562,7 @@ pub mod describe_application_version_input {
 pub type DescribeApplicationVersionInputOperationOutputAlias =
     crate::operation::DescribeApplicationVersion;
 #[doc(hidden)]
-pub type DescribeApplicationVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeApplicationVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationVersionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicationVersion`](crate::operation::DescribeApplicationVersion)>
     #[allow(clippy::let_and_return)]
@@ -3737,7 +3573,7 @@ impl DescribeApplicationVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplicationVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3824,7 +3660,7 @@ impl DescribeApplicationVersionInput {
             "DescribeApplicationVersion",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3885,8 +3721,7 @@ pub mod discover_input_schema_input {
             self.service_execution_role = input;
             self
         }
-        /// <p>The point at which you want Kinesis Data Analytics to start reading records from the
-        /// specified streaming source discovery purposes.</p>
+        /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
         pub fn input_starting_position_configuration(
             mut self,
             input: crate::model::InputStartingPositionConfiguration,
@@ -3894,8 +3729,7 @@ pub mod discover_input_schema_input {
             self.input_starting_position_configuration = Some(input);
             self
         }
-        /// <p>The point at which you want Kinesis Data Analytics to start reading records from the
-        /// specified streaming source discovery purposes.</p>
+        /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
         pub fn set_input_starting_position_configuration(
             mut self,
             input: std::option::Option<crate::model::InputStartingPositionConfiguration>,
@@ -3903,14 +3737,12 @@ pub mod discover_input_schema_input {
             self.input_starting_position_configuration = input;
             self
         }
-        /// <p>Specify this parameter to discover a schema from data in an Amazon S3
-        /// object.</p>
+        /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
         pub fn s3_configuration(mut self, input: crate::model::S3Configuration) -> Self {
             self.s3_configuration = Some(input);
             self
         }
-        /// <p>Specify this parameter to discover a schema from data in an Amazon S3
-        /// object.</p>
+        /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
         pub fn set_s3_configuration(
             mut self,
             input: std::option::Option<crate::model::S3Configuration>,
@@ -3918,8 +3750,7 @@ pub mod discover_input_schema_input {
             self.s3_configuration = input;
             self
         }
-        /// <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
-        /// before discovering the schema of the records.</p>
+        /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
         pub fn input_processing_configuration(
             mut self,
             input: crate::model::InputProcessingConfiguration,
@@ -3927,8 +3758,7 @@ pub mod discover_input_schema_input {
             self.input_processing_configuration = Some(input);
             self
         }
-        /// <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
-        /// before discovering the schema of the records.</p>
+        /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
         pub fn set_input_processing_configuration(
             mut self,
             input: std::option::Option<crate::model::InputProcessingConfiguration>,
@@ -3956,7 +3786,7 @@ pub mod discover_input_schema_input {
 #[doc(hidden)]
 pub type DiscoverInputSchemaInputOperationOutputAlias = crate::operation::DiscoverInputSchema;
 #[doc(hidden)]
-pub type DiscoverInputSchemaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DiscoverInputSchemaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DiscoverInputSchemaInput {
     /// Consumes the builder and constructs an Operation<[`DiscoverInputSchema`](crate::operation::DiscoverInputSchema)>
     #[allow(clippy::let_and_return)]
@@ -3967,7 +3797,7 @@ impl DiscoverInputSchemaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DiscoverInputSchema,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4052,7 +3882,7 @@ impl DiscoverInputSchemaInput {
             "DiscoverInputSchema",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4095,18 +3925,12 @@ pub mod list_applications_input {
             self.limit = input;
             self
         }
-        /// <p>If a previous command returned a pagination token,
-        /// pass it into this value to retrieve the next set of results.
-        /// For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+        /// <p>If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a previous command returned a pagination token,
-        /// pass it into this value to retrieve the next set of results.
-        /// For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+        /// <p>If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4128,7 +3952,7 @@ pub mod list_applications_input {
 #[doc(hidden)]
 pub type ListApplicationsInputOperationOutputAlias = crate::operation::ListApplications;
 #[doc(hidden)]
-pub type ListApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplications`](crate::operation::ListApplications)>
     #[allow(clippy::let_and_return)]
@@ -4139,7 +3963,7 @@ impl ListApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4224,7 +4048,7 @@ impl ListApplicationsInput {
             "ListApplications",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4281,16 +4105,12 @@ pub mod list_application_snapshots_input {
             self.limit = input;
             self
         }
-        /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more
-        /// output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should
-        /// continue from. </p>
+        /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more
-        /// output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should
-        /// continue from. </p>
+        /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4314,7 +4134,7 @@ pub mod list_application_snapshots_input {
 pub type ListApplicationSnapshotsInputOperationOutputAlias =
     crate::operation::ListApplicationSnapshots;
 #[doc(hidden)]
-pub type ListApplicationSnapshotsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApplicationSnapshotsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationSnapshots`](crate::operation::ListApplicationSnapshots)>
     #[allow(clippy::let_and_return)]
@@ -4325,7 +4145,7 @@ impl ListApplicationSnapshotsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplicationSnapshots,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4412,7 +4232,7 @@ impl ListApplicationSnapshotsInput {
             "ListApplicationSnapshots",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4469,14 +4289,12 @@ pub mod list_application_versions_input {
             self.limit = input;
             self
         }
-        /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+        /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
-        /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+        /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4500,7 +4318,7 @@ pub mod list_application_versions_input {
 pub type ListApplicationVersionsInputOperationOutputAlias =
     crate::operation::ListApplicationVersions;
 #[doc(hidden)]
-pub type ListApplicationVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApplicationVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationVersions`](crate::operation::ListApplicationVersions)>
     #[allow(clippy::let_and_return)]
@@ -4511,7 +4329,7 @@ impl ListApplicationVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplicationVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4598,7 +4416,7 @@ impl ListApplicationVersionsInput {
             "ListApplicationVersions",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4656,7 +4474,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -4667,7 +4485,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4754,7 +4572,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4800,14 +4618,12 @@ pub mod rollback_application_input {
             self.application_name = input;
             self
         }
-        /// <p>The current application version ID. You can retrieve the application version ID using
-        /// <a>DescribeApplication</a>.</p>
+        /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The current application version ID. You can retrieve the application version ID using
-        /// <a>DescribeApplication</a>.</p>
+        /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -4832,7 +4648,7 @@ pub mod rollback_application_input {
 #[doc(hidden)]
 pub type RollbackApplicationInputOperationOutputAlias = crate::operation::RollbackApplication;
 #[doc(hidden)]
-pub type RollbackApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RollbackApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RollbackApplicationInput {
     /// Consumes the builder and constructs an Operation<[`RollbackApplication`](crate::operation::RollbackApplication)>
     #[allow(clippy::let_and_return)]
@@ -4843,7 +4659,7 @@ impl RollbackApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RollbackApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4928,7 +4744,7 @@ impl RollbackApplicationInput {
             "RollbackApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5004,7 +4820,7 @@ pub mod start_application_input {
 #[doc(hidden)]
 pub type StartApplicationInputOperationOutputAlias = crate::operation::StartApplication;
 #[doc(hidden)]
-pub type StartApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartApplicationInput {
     /// Consumes the builder and constructs an Operation<[`StartApplication`](crate::operation::StartApplication)>
     #[allow(clippy::let_and_return)]
@@ -5015,7 +4831,7 @@ impl StartApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5100,7 +4916,7 @@ impl StartApplicationInput {
             "StartApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5146,34 +4962,20 @@ pub mod stop_application_input {
             self.application_name = input;
             self
         }
-        /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code>
-        /// to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot.
-        /// </p>
-        /// <note>
-        /// <p>Force-stopping your application may lead to data loss or duplication.
-        /// To prevent data loss or duplicate processing of data during application restarts,
-        /// we recommend you to take frequent snapshots of your application.</p>
+        /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>
+        /// <p>Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate processing of data during application restarts, we recommend you to take frequent snapshots of your application.</p>
         /// </note>
         /// <p>You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based Kinesis Data Analytics application.</p>
-        /// <p>The application must be in the
-        /// <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or
-        /// <code>RUNNING</code> status. </p>
+        /// <p>The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code>
-        /// to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot.
-        /// </p>
-        /// <note>
-        /// <p>Force-stopping your application may lead to data loss or duplication.
-        /// To prevent data loss or duplicate processing of data during application restarts,
-        /// we recommend you to take frequent snapshots of your application.</p>
+        /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>
+        /// <p>Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate processing of data during application restarts, we recommend you to take frequent snapshots of your application.</p>
         /// </note>
         /// <p>You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based Kinesis Data Analytics application.</p>
-        /// <p>The application must be in the
-        /// <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or
-        /// <code>RUNNING</code> status. </p>
+        /// <p>The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -5195,7 +4997,7 @@ pub mod stop_application_input {
 #[doc(hidden)]
 pub type StopApplicationInputOperationOutputAlias = crate::operation::StopApplication;
 #[doc(hidden)]
-pub type StopApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopApplicationInput {
     /// Consumes the builder and constructs an Operation<[`StopApplication`](crate::operation::StopApplication)>
     #[allow(clippy::let_and_return)]
@@ -5206,7 +5008,7 @@ impl StopApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5291,7 +5093,7 @@ impl StopApplicationInput {
             "StopApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5339,9 +5141,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value tags to assign to the application.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5370,7 +5172,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -5381,7 +5183,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5465,7 +5267,7 @@ impl TagResourceInput {
             "TagResource",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5544,7 +5346,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -5555,7 +5357,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5639,7 +5441,7 @@ impl UntagResourceInput {
             "UntagResource",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5693,20 +5495,12 @@ pub mod update_application_input {
             self.application_name = input;
             self
         }
-        /// <p>The current application version ID. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The current application version ID. You must provide the
-        /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
-        /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-        /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -5766,21 +5560,17 @@ pub mod update_application_input {
         ///
         /// To override the contents of this collection use [`set_cloud_watch_logging_option_updates`](Self::set_cloud_watch_logging_option_updates).
         ///
-        /// <p>Describes application Amazon CloudWatch logging option updates. You can only update
-        /// existing CloudWatch logging options with this action. To add a new CloudWatch logging option,
-        /// use <a>AddApplicationCloudWatchLoggingOption</a>.</p>
+        /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
         pub fn cloud_watch_logging_option_updates(
             mut self,
-            input: impl Into<crate::model::CloudWatchLoggingOptionUpdate>,
+            input: crate::model::CloudWatchLoggingOptionUpdate,
         ) -> Self {
             let mut v = self.cloud_watch_logging_option_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cloud_watch_logging_option_updates = Some(v);
             self
         }
-        /// <p>Describes application Amazon CloudWatch logging option updates. You can only update
-        /// existing CloudWatch logging options with this action. To add a new CloudWatch logging option,
-        /// use <a>AddApplicationCloudWatchLoggingOption</a>.</p>
+        /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
         pub fn set_cloud_watch_logging_option_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionUpdate>>,
@@ -5788,20 +5578,12 @@ pub mod update_application_input {
             self.cloud_watch_logging_option_updates = input;
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-        /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-        /// <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn conditional_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.conditional_token = Some(input.into());
             self
         }
-        /// <p>A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-        /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-        /// <code>ConditionalToken</code> parameter instead of
-        /// <code>CurrentApplicationVersionId</code>.</p>
+        /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
         pub fn set_conditional_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5831,7 +5613,7 @@ pub mod update_application_input {
 #[doc(hidden)]
 pub type UpdateApplicationInputOperationOutputAlias = crate::operation::UpdateApplication;
 #[doc(hidden)]
-pub type UpdateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplication`](crate::operation::UpdateApplication)>
     #[allow(clippy::let_and_return)]
@@ -5842,7 +5624,7 @@ impl UpdateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5927,7 +5709,7 @@ impl UpdateApplicationInput {
             "UpdateApplication",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6012,7 +5794,7 @@ pub type UpdateApplicationMaintenanceConfigurationInputOperationOutputAlias =
     crate::operation::UpdateApplicationMaintenanceConfiguration;
 #[doc(hidden)]
 pub type UpdateApplicationMaintenanceConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationMaintenanceConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplicationMaintenanceConfiguration`](crate::operation::UpdateApplicationMaintenanceConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -6023,7 +5805,7 @@ impl UpdateApplicationMaintenanceConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplicationMaintenanceConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6109,7 +5891,7 @@ impl UpdateApplicationMaintenanceConfigurationInput {
             "UpdateApplicationMaintenanceConfiguration",
             "kinesisanalyticsv2",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6172,11 +5954,7 @@ impl std::fmt::Debug for UpdateApplicationMaintenanceConfigurationInput {
 pub struct UpdateApplicationInput {
     /// <p>The name of the application to update.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The current application version ID. You must provide the
-    /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
-    /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-    /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>Describes application configuration updates.</p>
     pub application_configuration_update:
@@ -6185,16 +5963,10 @@ pub struct UpdateApplicationInput {
     pub service_execution_role_update: std::option::Option<std::string::String>,
     /// <p>Describes updates to the application's starting parameters.</p>
     pub run_configuration_update: std::option::Option<crate::model::RunConfigurationUpdate>,
-    /// <p>Describes application Amazon CloudWatch logging option updates. You can only update
-    /// existing CloudWatch logging options with this action. To add a new CloudWatch logging option,
-    /// use <a>AddApplicationCloudWatchLoggingOption</a>.</p>
+    /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
     pub cloud_watch_logging_option_updates:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionUpdate>>,
-    /// <p>A value you use to implement strong concurrency for application updates. You must
-    /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-    /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-    /// <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationInput {
@@ -6202,11 +5974,7 @@ impl UpdateApplicationInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The current application version ID. You must provide the
-    /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
-    /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-    /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
@@ -6226,19 +5994,13 @@ impl UpdateApplicationInput {
     ) -> std::option::Option<&crate::model::RunConfigurationUpdate> {
         self.run_configuration_update.as_ref()
     }
-    /// <p>Describes application Amazon CloudWatch logging option updates. You can only update
-    /// existing CloudWatch logging options with this action. To add a new CloudWatch logging option,
-    /// use <a>AddApplicationCloudWatchLoggingOption</a>.</p>
+    /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
     pub fn cloud_watch_logging_option_updates(
         &self,
     ) -> std::option::Option<&[crate::model::CloudWatchLoggingOptionUpdate]> {
         self.cloud_watch_logging_option_updates.as_deref()
     }
-    /// <p>A value you use to implement strong concurrency for application updates. You must
-    /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-    /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-    /// <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn conditional_token(&self) -> std::option::Option<&str> {
         self.conditional_token.as_deref()
     }
@@ -6331,18 +6093,11 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StopApplicationInput {
     /// <p>The name of the running application to stop.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code>
-    /// to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot.
-    /// </p>
-    /// <note>
-    /// <p>Force-stopping your application may lead to data loss or duplication.
-    /// To prevent data loss or duplicate processing of data during application restarts,
-    /// we recommend you to take frequent snapshots of your application.</p>
+    /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>
+    /// <p>Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate processing of data during application restarts, we recommend you to take frequent snapshots of your application.</p>
     /// </note>
     /// <p>You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based Kinesis Data Analytics application.</p>
-    /// <p>The application must be in the
-    /// <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or
-    /// <code>RUNNING</code> status. </p>
+    /// <p>The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
     pub force: std::option::Option<bool>,
 }
 impl StopApplicationInput {
@@ -6350,18 +6105,11 @@ impl StopApplicationInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code>
-    /// to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot.
-    /// </p>
-    /// <note>
-    /// <p>Force-stopping your application may lead to data loss or duplication.
-    /// To prevent data loss or duplicate processing of data during application restarts,
-    /// we recommend you to take frequent snapshots of your application.</p>
+    /// <p>Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>
+    /// <p>Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate processing of data during application restarts, we recommend you to take frequent snapshots of your application.</p>
     /// </note>
     /// <p>You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based Kinesis Data Analytics application.</p>
-    /// <p>The application must be in the
-    /// <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or
-    /// <code>RUNNING</code> status. </p>
+    /// <p>The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>, <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
     pub fn force(&self) -> std::option::Option<bool> {
         self.force
     }
@@ -6409,8 +6157,7 @@ impl std::fmt::Debug for StartApplicationInput {
 pub struct RollbackApplicationInput {
     /// <p>The name of the application.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The current application version ID. You can retrieve the application version ID using
-    /// <a>DescribeApplication</a>.</p>
+    /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
     pub current_application_version_id: std::option::Option<i64>,
 }
 impl RollbackApplicationInput {
@@ -6418,8 +6165,7 @@ impl RollbackApplicationInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The current application version ID. You can retrieve the application version ID using
-    /// <a>DescribeApplication</a>.</p>
+    /// <p>The current application version ID. You can retrieve the application version ID using <code>DescribeApplication</code>.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
@@ -6465,8 +6211,7 @@ pub struct ListApplicationVersionsInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of versions to list in this invocation of the operation.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationVersionsInput {
@@ -6478,8 +6223,7 @@ impl ListApplicationVersionsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6502,9 +6246,7 @@ pub struct ListApplicationSnapshotsInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of application snapshots to list.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more
-    /// output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should
-    /// continue from. </p>
+    /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationSnapshotsInput {
@@ -6516,9 +6258,7 @@ impl ListApplicationSnapshotsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more
-    /// output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should
-    /// continue from. </p>
+    /// <p>Use this parameter if you receive a <code>NextToken</code> response in a previous request that indicates that there is more output available. Set it to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6539,10 +6279,7 @@ impl std::fmt::Debug for ListApplicationSnapshotsInput {
 pub struct ListApplicationsInput {
     /// <p>The maximum number of applications to list.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>If a previous command returned a pagination token,
-    /// pass it into this value to retrieve the next set of results.
-    /// For more information about pagination, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    /// <p>If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsInput {
@@ -6550,10 +6287,7 @@ impl ListApplicationsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>If a previous command returned a pagination token,
-    /// pass it into this value to retrieve the next set of results.
-    /// For more information about pagination, see
-    /// <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
+    /// <p>If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6575,15 +6309,12 @@ pub struct DiscoverInputSchemaInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that is used to access the streaming source.</p>
     pub service_execution_role: std::option::Option<std::string::String>,
-    /// <p>The point at which you want Kinesis Data Analytics to start reading records from the
-    /// specified streaming source discovery purposes.</p>
+    /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
     pub input_starting_position_configuration:
         std::option::Option<crate::model::InputStartingPositionConfiguration>,
-    /// <p>Specify this parameter to discover a schema from data in an Amazon S3
-    /// object.</p>
+    /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
     pub s3_configuration: std::option::Option<crate::model::S3Configuration>,
-    /// <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
-    /// before discovering the schema of the records.</p>
+    /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
     pub input_processing_configuration:
         std::option::Option<crate::model::InputProcessingConfiguration>,
 }
@@ -6596,20 +6327,17 @@ impl DiscoverInputSchemaInput {
     pub fn service_execution_role(&self) -> std::option::Option<&str> {
         self.service_execution_role.as_deref()
     }
-    /// <p>The point at which you want Kinesis Data Analytics to start reading records from the
-    /// specified streaming source discovery purposes.</p>
+    /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
     pub fn input_starting_position_configuration(
         &self,
     ) -> std::option::Option<&crate::model::InputStartingPositionConfiguration> {
         self.input_starting_position_configuration.as_ref()
     }
-    /// <p>Specify this parameter to discover a schema from data in an Amazon S3
-    /// object.</p>
+    /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
     pub fn s3_configuration(&self) -> std::option::Option<&crate::model::S3Configuration> {
         self.s3_configuration.as_ref()
     }
-    /// <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
-    /// before discovering the schema of the records.</p>
+    /// <p>The <code>InputProcessingConfiguration</code> to use to preprocess the records before discovering the schema of the records.</p>
     pub fn input_processing_configuration(
         &self,
     ) -> std::option::Option<&crate::model::InputProcessingConfiguration> {
@@ -6668,8 +6396,7 @@ impl std::fmt::Debug for DescribeApplicationVersionInput {
 pub struct DescribeApplicationSnapshotInput {
     /// <p>The name of an existing application.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The identifier of an application snapshot. You can retrieve this value using
-    /// .</p>
+    /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
     pub snapshot_name: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationSnapshotInput {
@@ -6677,8 +6404,7 @@ impl DescribeApplicationSnapshotInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The identifier of an application snapshot. You can retrieve this value using
-    /// .</p>
+    /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
     pub fn snapshot_name(&self) -> std::option::Option<&str> {
         self.snapshot_name.as_deref()
     }
@@ -6729,18 +6455,11 @@ impl std::fmt::Debug for DescribeApplicationInput {
 pub struct DeleteApplicationVpcConfigurationInput {
     /// <p>The name of an existing application.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The current application version ID. You must provide the
-    /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
-    /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-    /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>The ID of the VPC configuration to delete.</p>
     pub vpc_configuration_id: std::option::Option<std::string::String>,
-    /// <p>A value you use to implement strong concurrency for application updates. You must provide
-    /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
-    /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationVpcConfigurationInput {
@@ -6748,11 +6467,7 @@ impl DeleteApplicationVpcConfigurationInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The current application version ID. You must provide the
-    /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
-    /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-    /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
@@ -6760,10 +6475,7 @@ impl DeleteApplicationVpcConfigurationInput {
     pub fn vpc_configuration_id(&self) -> std::option::Option<&str> {
         self.vpc_configuration_id.as_deref()
     }
-    /// <p>A value you use to implement strong concurrency for application updates. You must provide
-    /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
-    /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn conditional_token(&self) -> std::option::Option<&str> {
         self.conditional_token.as_deref()
     }
@@ -6790,9 +6502,7 @@ pub struct DeleteApplicationSnapshotInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The identifier for the snapshot delete.</p>
     pub snapshot_name: std::option::Option<std::string::String>,
-    /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value
-    /// using
-    /// or .</p>
+    /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
     pub snapshot_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteApplicationSnapshotInput {
@@ -6804,9 +6514,7 @@ impl DeleteApplicationSnapshotInput {
     pub fn snapshot_name(&self) -> std::option::Option<&str> {
         self.snapshot_name.as_deref()
     }
-    /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value
-    /// using
-    /// or .</p>
+    /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
     pub fn snapshot_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_creation_timestamp.as_ref()
     }
@@ -6830,15 +6538,9 @@ impl std::fmt::Debug for DeleteApplicationSnapshotInput {
 pub struct DeleteApplicationReferenceDataSourceInput {
     /// <p>The name of an existing application.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The current application version.  
-    /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-    /// If the version specified
-    /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>The ID of the reference data source. When you add a reference data source to your
-    /// application using the <a>AddApplicationReferenceDataSource</a>, Kinesis Data Analytics assigns an ID.
-    /// You can use the <a>DescribeApplication</a> operation to
-    /// get the reference ID. </p>
+    /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
     pub reference_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationReferenceDataSourceInput {
@@ -6846,17 +6548,11 @@ impl DeleteApplicationReferenceDataSourceInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The current application version.  
-    /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-    /// If the version specified
-    /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The ID of the reference data source. When you add a reference data source to your
-    /// application using the <a>AddApplicationReferenceDataSource</a>, Kinesis Data Analytics assigns an ID.
-    /// You can use the <a>DescribeApplication</a> operation to
-    /// get the reference ID. </p>
+    /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID. </p>
     pub fn reference_id(&self) -> std::option::Option<&str> {
         self.reference_id.as_deref()
     }
@@ -6880,17 +6576,9 @@ impl std::fmt::Debug for DeleteApplicationReferenceDataSourceInput {
 pub struct DeleteApplicationOutputInput {
     /// <p>The application name.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The application version.
-    /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-    /// If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.
-    /// </p>
+    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>The ID of the configuration to delete. Each output configuration that is added to the
-    /// application (either when the application is created or later) using the <a>AddApplicationOutput</a> operation has a unique ID. You need to provide the ID to
-    /// uniquely identify the output configuration that you want to delete from the application
-    /// configuration. You can use the <a>DescribeApplication</a> operation to get the
-    /// specific <code>OutputId</code>. </p>
+    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
     pub output_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationOutputInput {
@@ -6898,19 +6586,11 @@ impl DeleteApplicationOutputInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The application version.
-    /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-    /// If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.
-    /// </p>
+    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The ID of the configuration to delete. Each output configuration that is added to the
-    /// application (either when the application is created or later) using the <a>AddApplicationOutput</a> operation has a unique ID. You need to provide the ID to
-    /// uniquely identify the output configuration that you want to delete from the application
-    /// configuration. You can use the <a>DescribeApplication</a> operation to get the
-    /// specific <code>OutputId</code>. </p>
+    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the <code>AddApplicationOutput</code> operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <code>DescribeApplication</code> operation to get the specific <code>OutputId</code>. </p>
     pub fn output_id(&self) -> std::option::Option<&str> {
         self.output_id.as_deref()
     }
@@ -6934,14 +6614,9 @@ impl std::fmt::Debug for DeleteApplicationOutputInput {
 pub struct DeleteApplicationInputProcessingConfigurationInput {
     /// <p>The name of the application.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The application version.
-    /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-    /// If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.
-    /// </p>
+    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>The ID of the input configuration from which to delete the input processing
-    /// configuration. You can get a list of the input IDs for an application by using the <a>DescribeApplication</a> operation.</p>
+    /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <code>DescribeApplication</code> operation.</p>
     pub input_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInputProcessingConfigurationInput {
@@ -6949,16 +6624,11 @@ impl DeleteApplicationInputProcessingConfigurationInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The application version.
-    /// You can use the <a>DescribeApplication</a> operation to get the current application version.
-    /// If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.
-    /// </p>
+    /// <p>The application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The ID of the input configuration from which to delete the input processing
-    /// configuration. You can get a list of the input IDs for an application by using the <a>DescribeApplication</a> operation.</p>
+    /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <code>DescribeApplication</code> operation.</p>
     pub fn input_id(&self) -> std::option::Option<&str> {
         self.input_id.as_deref()
     }
@@ -6982,19 +6652,11 @@ impl std::fmt::Debug for DeleteApplicationInputProcessingConfigurationInput {
 pub struct DeleteApplicationCloudWatchLoggingOptionInput {
     /// <p>The application name.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The version ID of the application. You must provide the
-    /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
-    /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-    /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to
-    /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation. </p>
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
     pub cloud_watch_logging_option_id: std::option::Option<std::string::String>,
-    /// <p>A value you use to implement strong concurrency for application updates. You must provide
-    /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
-    /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationCloudWatchLoggingOptionInput {
@@ -7002,23 +6664,15 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The version ID of the application. You must provide the
-    /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can
-    /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-    /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to
-    /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a> operation. </p>
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
     pub fn cloud_watch_logging_option_id(&self) -> std::option::Option<&str> {
         self.cloud_watch_logging_option_id.as_deref()
     }
-    /// <p>A value you use to implement strong concurrency for application updates. You must provide
-    /// the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the
-    /// application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn conditional_token(&self) -> std::option::Option<&str> {
         self.conditional_token.as_deref()
     }
@@ -7102,8 +6756,7 @@ impl std::fmt::Debug for CreateApplicationSnapshotInput {
 pub struct CreateApplicationPresignedUrlInput {
     /// <p>The name of the application.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid
-    /// extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
+    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
     pub url_type: std::option::Option<crate::model::UrlType>,
     /// <p>The duration in seconds for which the returned URL will be valid.</p>
     pub session_expiration_duration_in_seconds: std::option::Option<i64>,
@@ -7113,8 +6766,7 @@ impl CreateApplicationPresignedUrlInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid
-    /// extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
+    /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
     pub fn url_type(&self) -> std::option::Option<&crate::model::UrlType> {
         self.url_type.as_ref()
     }
@@ -7146,24 +6798,16 @@ pub struct CreateApplicationInput {
     pub application_description: std::option::Option<std::string::String>,
     /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
     pub runtime_environment: std::option::Option<crate::model::RuntimeEnvironment>,
-    /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose
-    /// delivery streams, Amazon S3 objects, and other external resources.</p>
+    /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
     pub service_execution_role: std::option::Option<std::string::String>,
     /// <p>Use this parameter to configure the application.</p>
     pub application_configuration: std::option::Option<crate::model::ApplicationConfiguration>,
-    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application
-    /// configuration errors.
-    /// </p>
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
     pub cloud_watch_logging_options:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOption>>,
-    /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
-    /// application. Note that the maximum number of application tags includes system tags. The maximum number of
-    /// user-defined application tags is 50.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+    /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the
-    /// <code>INTERACTIVE</code> mode.</p>
+    /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
     pub application_mode: std::option::Option<crate::model::ApplicationMode>,
 }
 impl CreateApplicationInput {
@@ -7179,8 +6823,7 @@ impl CreateApplicationInput {
     pub fn runtime_environment(&self) -> std::option::Option<&crate::model::RuntimeEnvironment> {
         self.runtime_environment.as_ref()
     }
-    /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose
-    /// delivery streams, Amazon S3 objects, and other external resources.</p>
+    /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
     pub fn service_execution_role(&self) -> std::option::Option<&str> {
         self.service_execution_role.as_deref()
     }
@@ -7190,24 +6833,17 @@ impl CreateApplicationInput {
     ) -> std::option::Option<&crate::model::ApplicationConfiguration> {
         self.application_configuration.as_ref()
     }
-    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application
-    /// configuration errors.
-    /// </p>
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
     pub fn cloud_watch_logging_options(
         &self,
     ) -> std::option::Option<&[crate::model::CloudWatchLoggingOption]> {
         self.cloud_watch_logging_options.as_deref()
     }
-    /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
-    /// application. Note that the maximum number of application tags includes system tags. The maximum number of
-    /// user-defined application tags is 50.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+    /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the
-    /// <code>INTERACTIVE</code> mode.</p>
+    /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
     pub fn application_mode(&self) -> std::option::Option<&crate::model::ApplicationMode> {
         self.application_mode.as_ref()
     }
@@ -7236,21 +6872,11 @@ impl std::fmt::Debug for CreateApplicationInput {
 pub struct AddApplicationVpcConfigurationInput {
     /// <p>The name of an existing application.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The version of the application to which you want to add the VPC configuration. You must
-    /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-    /// can use the <a>DescribeApplication</a> operation to get the current application
-    /// version. If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned. For better concurrency support,
-    /// use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>Description of the VPC to add to the application.</p>
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
-    /// <p>A value you use to implement strong concurrency for application updates. You must
-    /// provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get
-    /// the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-    /// <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: std::option::Option<std::string::String>,
 }
 impl AddApplicationVpcConfigurationInput {
@@ -7258,13 +6884,7 @@ impl AddApplicationVpcConfigurationInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The version of the application to which you want to add the VPC configuration. You must
-    /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-    /// can use the <a>DescribeApplication</a> operation to get the current application
-    /// version. If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned. For better concurrency support,
-    /// use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>The version of the application to which you want to add the VPC configuration. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
@@ -7272,11 +6892,7 @@ impl AddApplicationVpcConfigurationInput {
     pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
-    /// <p>A value you use to implement strong concurrency for application updates. You must
-    /// provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get
-    /// the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-    /// <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn conditional_token(&self) -> std::option::Option<&str> {
         self.conditional_token.as_deref()
     }
@@ -7301,16 +6917,9 @@ impl std::fmt::Debug for AddApplicationVpcConfigurationInput {
 pub struct AddApplicationReferenceDataSourceInput {
     /// <p>The name of an existing application.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The version of the application for which you are adding the reference data source.
-    /// You can
-    /// use the <a>DescribeApplication</a> operation to get the current application
-    /// version. If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data
-    /// into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting
-    /// in-application table that is
-    /// created. </p>
+    /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
     pub reference_data_source: std::option::Option<crate::model::ReferenceDataSource>,
 }
 impl AddApplicationReferenceDataSourceInput {
@@ -7318,18 +6927,11 @@ impl AddApplicationReferenceDataSourceInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The version of the application for which you are adding the reference data source.
-    /// You can
-    /// use the <a>DescribeApplication</a> operation to get the current application
-    /// version. If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data
-    /// into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting
-    /// in-application table that is
-    /// created. </p>
+    /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
     pub fn reference_data_source(&self) -> std::option::Option<&crate::model::ReferenceDataSource> {
         self.reference_data_source.as_ref()
     }
@@ -7353,15 +6955,9 @@ impl std::fmt::Debug for AddApplicationReferenceDataSourceInput {
 pub struct AddApplicationOutputInput {
     /// <p>The name of the application to which you want to add the output configuration.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The version of the application to which you want to add the output configuration. You can
-    /// use the <a>DescribeApplication</a> operation to get the current application
-    /// version. If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned. </p>
+    /// <p>The version of the application to which you want to add the output configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>An array of objects, each describing one output configuration. In the output
-    /// configuration, you specify the name of an in-application stream, a destination (that is, a
-    /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and
-    /// record the formation to use when writing to the destination.</p>
+    /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.</p>
     pub output: std::option::Option<crate::model::Output>,
 }
 impl AddApplicationOutputInput {
@@ -7369,17 +6965,11 @@ impl AddApplicationOutputInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The version of the application to which you want to add the output configuration. You can
-    /// use the <a>DescribeApplication</a> operation to get the current application
-    /// version. If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned. </p>
+    /// <p>The version of the application to which you want to add the output configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>An array of objects, each describing one output configuration. In the output
-    /// configuration, you specify the name of an in-application stream, a destination (that is, a
-    /// Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and
-    /// record the formation to use when writing to the destination.</p>
+    /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.</p>
     pub fn output(&self) -> std::option::Option<&crate::model::Output> {
         self.output.as_ref()
     }
@@ -7401,40 +6991,30 @@ impl std::fmt::Debug for AddApplicationOutputInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationInputProcessingConfigurationInput {
-    /// <p>The name of the application to which you want to add the input processing
-    /// configuration.</p>
+    /// <p>The name of the application to which you want to add the input processing configuration.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The version of the application to which you want to add the input processing
-    /// configuration. You can use the <a>DescribeApplication</a> operation to get the
-    /// current application version. If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>The version of the application to which you want to add the input processing configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>The ID of the input configuration to add the input processing configuration to. You
-    /// can get a list of the input IDs for an application using the <a>DescribeApplication</a> operation.</p>
+    /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <code>DescribeApplication</code> operation.</p>
     pub input_id: std::option::Option<std::string::String>,
-    /// <p>The <a>InputProcessingConfiguration</a> to add to the application.</p>
+    /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
     pub input_processing_configuration:
         std::option::Option<crate::model::InputProcessingConfiguration>,
 }
 impl AddApplicationInputProcessingConfigurationInput {
-    /// <p>The name of the application to which you want to add the input processing
-    /// configuration.</p>
+    /// <p>The name of the application to which you want to add the input processing configuration.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The version of the application to which you want to add the input processing
-    /// configuration. You can use the <a>DescribeApplication</a> operation to get the
-    /// current application version. If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>The version of the application to which you want to add the input processing configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The ID of the input configuration to add the input processing configuration to. You
-    /// can get a list of the input IDs for an application using the <a>DescribeApplication</a> operation.</p>
+    /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <code>DescribeApplication</code> operation.</p>
     pub fn input_id(&self) -> std::option::Option<&str> {
         self.input_id.as_deref()
     }
-    /// <p>The <a>InputProcessingConfiguration</a> to add to the application.</p>
+    /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
     pub fn input_processing_configuration(
         &self,
     ) -> std::option::Option<&crate::model::InputProcessingConfiguration> {
@@ -7462,27 +7042,23 @@ impl std::fmt::Debug for AddApplicationInputProcessingConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddApplicationInputInput {
-    /// <p>The name of your existing application to which you want to add the streaming
-    /// source.</p>
+    /// <p>The name of your existing application to which you want to add the streaming source.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The current version of your application.
-    /// You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current application version.</p>
+    /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>The <a>Input</a> to add.</p>
+    /// <p>The <code>Input</code> to add.</p>
     pub input: std::option::Option<crate::model::Input>,
 }
 impl AddApplicationInputInput {
-    /// <p>The name of your existing application to which you want to add the streaming
-    /// source.</p>
+    /// <p>The name of your existing application to which you want to add the streaming source.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The current version of your application.
-    /// You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current application version.</p>
+    /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The <a>Input</a> to add.</p>
+    /// <p>The <code>Input</code> to add.</p>
     pub fn input(&self) -> std::option::Option<&crate::model::Input> {
         self.input.as_ref()
     }
@@ -7506,19 +7082,11 @@ impl std::fmt::Debug for AddApplicationInputInput {
 pub struct AddApplicationCloudWatchLoggingOptionInput {
     /// <p>The Kinesis Data Analytics application name.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The version ID of the Kinesis Data Analytics application. You must provide the
-    /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
-    /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-    /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
     pub cloud_watch_logging_option: std::option::Option<crate::model::CloudWatchLoggingOption>,
-    /// <p>A value you use to implement strong concurrency for application updates. You must
-    /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-    /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-    /// <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: std::option::Option<std::string::String>,
 }
 impl AddApplicationCloudWatchLoggingOptionInput {
@@ -7526,11 +7094,7 @@ impl AddApplicationCloudWatchLoggingOptionInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The version ID of the Kinesis Data Analytics application. You must provide the
-    /// <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can
-    /// retrieve the application version ID using <a>DescribeApplication</a>. For better
-    /// concurrency support, use the <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
@@ -7540,11 +7104,7 @@ impl AddApplicationCloudWatchLoggingOptionInput {
     ) -> std::option::Option<&crate::model::CloudWatchLoggingOption> {
         self.cloud_watch_logging_option.as_ref()
     }
-    /// <p>A value you use to implement strong concurrency for application updates. You must
-    /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You
-    /// get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
-    /// <code>ConditionalToken</code> parameter instead of
-    /// <code>CurrentApplicationVersionId</code>.</p>
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn conditional_token(&self) -> std::option::Option<&str> {
         self.conditional_token.as_deref()
     }

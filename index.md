@@ -6,6 +6,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | ------- | ------- |
 | AWS Account | [aws-sdk-account](https://crates.io/crates/aws-sdk-account) ([docs](https://docs.rs/aws-sdk-account)) |
 | AWS Amplify | [aws-sdk-amplify](https://crates.io/crates/aws-sdk-amplify) ([docs](https://docs.rs/aws-sdk-amplify)) |
+| AWS Amplify UI Builder | [aws-sdk-amplifyuibuilder](https://crates.io/crates/aws-sdk-amplifyuibuilder) ([docs](https://docs.rs/aws-sdk-amplifyuibuilder)) |
 | AWS App Mesh | [aws-sdk-appmesh](https://crates.io/crates/aws-sdk-appmesh) ([docs](https://docs.rs/aws-sdk-appmesh)) |
 | AWS App Runner | [aws-sdk-apprunner](https://crates.io/crates/aws-sdk-apprunner) ([docs](https://docs.rs/aws-sdk-apprunner)) |
 | AWS AppConfig Data | [aws-sdk-appconfigdata](https://crates.io/crates/aws-sdk-appconfigdata) ([docs](https://docs.rs/aws-sdk-appconfigdata)) |

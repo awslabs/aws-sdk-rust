@@ -5,7 +5,7 @@
 pub struct UpdateResourceShareOutput {
     /// <p>Information about the resource share.</p>
     pub resource_share: std::option::Option<crate::model::ResourceShare>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateResourceShareOutput {
@@ -13,7 +13,7 @@ impl UpdateResourceShareOutput {
     pub fn resource_share(&self) -> std::option::Option<&crate::model::ResourceShare> {
         self.resource_share.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -49,12 +49,12 @@ pub mod update_resource_share_output {
             self.resource_share = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -139,19 +139,19 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectResourceShareInvitationOutput {
-    /// <p>Information about the invitation.</p>
+    /// <p>An object that contains the details about the rejected invitation.</p>
     pub resource_share_invitation: std::option::Option<crate::model::ResourceShareInvitation>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl RejectResourceShareInvitationOutput {
-    /// <p>Information about the invitation.</p>
+    /// <p>An object that contains the details about the rejected invitation.</p>
     pub fn resource_share_invitation(
         &self,
     ) -> std::option::Option<&crate::model::ResourceShareInvitation> {
         self.resource_share_invitation.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -175,7 +175,7 @@ pub mod reject_resource_share_invitation_output {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about the invitation.</p>
+        /// <p>An object that contains the details about the rejected invitation.</p>
         pub fn resource_share_invitation(
             mut self,
             input: crate::model::ResourceShareInvitation,
@@ -183,7 +183,7 @@ pub mod reject_resource_share_invitation_output {
             self.resource_share_invitation = Some(input);
             self
         }
-        /// <p>Information about the invitation.</p>
+        /// <p>An object that contains the details about the rejected invitation.</p>
         pub fn set_resource_share_invitation(
             mut self,
             input: std::option::Option<crate::model::ResourceShareInvitation>,
@@ -191,12 +191,12 @@ pub mod reject_resource_share_invitation_output {
             self.resource_share_invitation = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -221,11 +221,11 @@ impl RejectResourceShareInvitationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PromoteResourceShareCreatedFromPolicyOutput {
-    /// <p>Indicates whether the request succeeded.</p>
+    /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub return_value: std::option::Option<bool>,
 }
 impl PromoteResourceShareCreatedFromPolicyOutput {
-    /// <p>Indicates whether the request succeeded.</p>
+    /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub fn return_value(&self) -> std::option::Option<bool> {
         self.return_value
     }
@@ -246,12 +246,12 @@ pub mod promote_resource_share_created_from_policy_output {
         pub(crate) return_value: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Indicates whether the request succeeded.</p>
+        /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
         pub fn return_value(mut self, input: bool) -> Self {
             self.return_value = Some(input);
             self
         }
-        /// <p>Indicates whether the request succeeded.</p>
+        /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
             self.return_value = input;
             self
@@ -275,20 +275,20 @@ impl PromoteResourceShareCreatedFromPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceTypesOutput {
-    /// <p>The shareable resource types supported by RAM.</p>
+    /// <p>An array of objects that contain information about the resource types that can be shared using RAM.</p>
     pub resource_types:
         std::option::Option<std::vec::Vec<crate::model::ServiceNameAndResourceType>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceTypesOutput {
-    /// <p>The shareable resource types supported by RAM.</p>
+    /// <p>An array of objects that contain information about the resource types that can be shared using RAM.</p>
     pub fn resource_types(
         &self,
     ) -> std::option::Option<&[crate::model::ServiceNameAndResourceType]> {
         self.resource_types.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -316,17 +316,14 @@ pub mod list_resource_types_output {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>The shareable resource types supported by RAM.</p>
-        pub fn resource_types(
-            mut self,
-            input: impl Into<crate::model::ServiceNameAndResourceType>,
-        ) -> Self {
+        /// <p>An array of objects that contain information about the resource types that can be shared using RAM.</p>
+        pub fn resource_types(mut self, input: crate::model::ServiceNameAndResourceType) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_types = Some(v);
             self
         }
-        /// <p>The shareable resource types supported by RAM.</p>
+        /// <p>An array of objects that contain information about the resource types that can be shared using RAM.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceNameAndResourceType>>,
@@ -334,12 +331,12 @@ pub mod list_resource_types_output {
             self.resource_types = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -364,20 +361,20 @@ impl ListResourceTypesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceSharePermissionsOutput {
-    /// <p>The permissions associated with the resource share.</p>
+    /// <p>An array of objects that describe the permissions associated with the resource share.</p>
     pub permissions:
         std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceSharePermissionsOutput {
-    /// <p>The permissions associated with the resource share.</p>
+    /// <p>An array of objects that describe the permissions associated with the resource share.</p>
     pub fn permissions(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceSharePermissionSummary]> {
         self.permissions.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -405,17 +402,14 @@ pub mod list_resource_share_permissions_output {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>The permissions associated with the resource share.</p>
-        pub fn permissions(
-            mut self,
-            input: impl Into<crate::model::ResourceSharePermissionSummary>,
-        ) -> Self {
+        /// <p>An array of objects that describe the permissions associated with the resource share.</p>
+        pub fn permissions(mut self, input: crate::model::ResourceSharePermissionSummary) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
-        /// <p>The permissions associated with the resource share.</p>
+        /// <p>An array of objects that describe the permissions associated with the resource share.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
@@ -423,12 +417,12 @@ pub mod list_resource_share_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -453,17 +447,17 @@ impl ListResourceSharePermissionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesOutput {
-    /// <p>Information about the resources.</p>
+    /// <p>An array of objects that contain information about the resources.</p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesOutput {
-    /// <p>Information about the resources.</p>
+    /// <p>An array of objects that contain information about the resources.</p>
     pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
         self.resources.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -490,14 +484,14 @@ pub mod list_resources_output {
         ///
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
-        /// <p>Information about the resources.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        /// <p>An array of objects that contain information about the resources.</p>
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
-        /// <p>Information about the resources.</p>
+        /// <p>An array of objects that contain information about the resources.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -505,12 +499,12 @@ pub mod list_resources_output {
             self.resources = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -535,17 +529,17 @@ impl ListResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPrincipalsOutput {
-    /// <p>The principals.</p>
+    /// <p>An array of objects that contain the details about the principals.</p>
     pub principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPrincipalsOutput {
-    /// <p>The principals.</p>
+    /// <p>An array of objects that contain the details about the principals.</p>
     pub fn principals(&self) -> std::option::Option<&[crate::model::Principal]> {
         self.principals.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -572,14 +566,14 @@ pub mod list_principals_output {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>The principals.</p>
-        pub fn principals(mut self, input: impl Into<crate::model::Principal>) -> Self {
+        /// <p>An array of objects that contain the details about the principals.</p>
+        pub fn principals(mut self, input: crate::model::Principal) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principals = Some(v);
             self
         }
-        /// <p>The principals.</p>
+        /// <p>An array of objects that contain the details about the principals.</p>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -587,12 +581,12 @@ pub mod list_principals_output {
             self.principals = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -617,20 +611,20 @@ impl ListPrincipalsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsOutput {
-    /// <p>Information about the permissions.</p>
+    /// <p>An array of objects with information about the permissions.</p>
     pub permissions:
         std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPermissionsOutput {
-    /// <p>Information about the permissions.</p>
+    /// <p>An array of objects with information about the permissions.</p>
     pub fn permissions(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceSharePermissionSummary]> {
         self.permissions.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -658,17 +652,14 @@ pub mod list_permissions_output {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>Information about the permissions.</p>
-        pub fn permissions(
-            mut self,
-            input: impl Into<crate::model::ResourceSharePermissionSummary>,
-        ) -> Self {
+        /// <p>An array of objects with information about the permissions.</p>
+        pub fn permissions(mut self, input: crate::model::ResourceSharePermissionSummary) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
-        /// <p>Information about the permissions.</p>
+        /// <p>An array of objects with information about the permissions.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
@@ -676,12 +667,12 @@ pub mod list_permissions_output {
             self.permissions = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -706,17 +697,17 @@ impl ListPermissionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPendingInvitationResourcesOutput {
-    /// <p>Information about the resources included the resource share.</p>
+    /// <p>An array of objects that contain the information about the resources included the specified resource share.</p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPendingInvitationResourcesOutput {
-    /// <p>Information about the resources included the resource share.</p>
+    /// <p>An array of objects that contain the information about the resources included the specified resource share.</p>
     pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
         self.resources.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -743,14 +734,14 @@ pub mod list_pending_invitation_resources_output {
         ///
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
-        /// <p>Information about the resources included the resource share.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        /// <p>An array of objects that contain the information about the resources included the specified resource share.</p>
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
-        /// <p>Information about the resources included the resource share.</p>
+        /// <p>An array of objects that contain the information about the resources included the specified resource share.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -758,12 +749,12 @@ pub mod list_pending_invitation_resources_output {
             self.resources = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -788,17 +779,17 @@ impl ListPendingInvitationResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceSharesOutput {
-    /// <p>Information about the resource shares.</p>
+    /// <p>An array of objects that contain the information about the resource shares.</p>
     pub resource_shares: std::option::Option<std::vec::Vec<crate::model::ResourceShare>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceSharesOutput {
-    /// <p>Information about the resource shares.</p>
+    /// <p>An array of objects that contain the information about the resource shares.</p>
     pub fn resource_shares(&self) -> std::option::Option<&[crate::model::ResourceShare]> {
         self.resource_shares.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -825,14 +816,14 @@ pub mod get_resource_shares_output {
         ///
         /// To override the contents of this collection use [`set_resource_shares`](Self::set_resource_shares).
         ///
-        /// <p>Information about the resource shares.</p>
-        pub fn resource_shares(mut self, input: impl Into<crate::model::ResourceShare>) -> Self {
+        /// <p>An array of objects that contain the information about the resource shares.</p>
+        pub fn resource_shares(mut self, input: crate::model::ResourceShare) -> Self {
             let mut v = self.resource_shares.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_shares = Some(v);
             self
         }
-        /// <p>Information about the resource shares.</p>
+        /// <p>An array of objects that contain the information about the resource shares.</p>
         pub fn set_resource_shares(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceShare>>,
@@ -840,12 +831,12 @@ pub mod get_resource_shares_output {
             self.resource_shares = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -870,20 +861,20 @@ impl GetResourceSharesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceShareInvitationsOutput {
-    /// <p>Information about the invitations.</p>
+    /// <p>An array of objects that contain the details about the invitations.</p>
     pub resource_share_invitations:
         std::option::Option<std::vec::Vec<crate::model::ResourceShareInvitation>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceShareInvitationsOutput {
-    /// <p>Information about the invitations.</p>
+    /// <p>An array of objects that contain the details about the invitations.</p>
     pub fn resource_share_invitations(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceShareInvitation]> {
         self.resource_share_invitations.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -914,17 +905,17 @@ pub mod get_resource_share_invitations_output {
         ///
         /// To override the contents of this collection use [`set_resource_share_invitations`](Self::set_resource_share_invitations).
         ///
-        /// <p>Information about the invitations.</p>
+        /// <p>An array of objects that contain the details about the invitations.</p>
         pub fn resource_share_invitations(
             mut self,
-            input: impl Into<crate::model::ResourceShareInvitation>,
+            input: crate::model::ResourceShareInvitation,
         ) -> Self {
             let mut v = self.resource_share_invitations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_share_invitations = Some(v);
             self
         }
-        /// <p>Information about the invitations.</p>
+        /// <p>An array of objects that contain the details about the invitations.</p>
         pub fn set_resource_share_invitations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceShareInvitation>>,
@@ -932,12 +923,12 @@ pub mod get_resource_share_invitations_output {
             self.resource_share_invitations = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -962,20 +953,20 @@ impl GetResourceShareInvitationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceShareAssociationsOutput {
-    /// <p>Information about the associations.</p>
+    /// <p>An array of objects that contain the details about the associations.</p>
     pub resource_share_associations:
         std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceShareAssociationsOutput {
-    /// <p>Information about the associations.</p>
+    /// <p>An array of objects that contain the details about the associations.</p>
     pub fn resource_share_associations(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceShareAssociation]> {
         self.resource_share_associations.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1006,17 +997,17 @@ pub mod get_resource_share_associations_output {
         ///
         /// To override the contents of this collection use [`set_resource_share_associations`](Self::set_resource_share_associations).
         ///
-        /// <p>Information about the associations.</p>
+        /// <p>An array of objects that contain the details about the associations.</p>
         pub fn resource_share_associations(
             mut self,
-            input: impl Into<crate::model::ResourceShareAssociation>,
+            input: crate::model::ResourceShareAssociation,
         ) -> Self {
             let mut v = self.resource_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_share_associations = Some(v);
             self
         }
-        /// <p>Information about the associations.</p>
+        /// <p>An array of objects that contain the details about the associations.</p>
         pub fn set_resource_share_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
@@ -1024,12 +1015,12 @@ pub mod get_resource_share_associations_output {
             self.resource_share_associations = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1054,17 +1045,17 @@ impl GetResourceShareAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePoliciesOutput {
-    /// <p>A key policy document, in JSON format.</p>
+    /// <p>An array of resource policy documents in JSON format.</p>
     pub policies: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourcePoliciesOutput {
-    /// <p>A key policy document, in JSON format.</p>
+    /// <p>An array of resource policy documents in JSON format.</p>
     pub fn policies(&self) -> std::option::Option<&[std::string::String]> {
         self.policies.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1091,14 +1082,14 @@ pub mod get_resource_policies_output {
         ///
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
-        /// <p>A key policy document, in JSON format.</p>
+        /// <p>An array of resource policy documents in JSON format.</p>
         pub fn policies(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policies.unwrap_or_default();
             v.push(input.into());
             self.policies = Some(v);
             self
         }
-        /// <p>A key policy document, in JSON format.</p>
+        /// <p>An array of resource policy documents in JSON format.</p>
         pub fn set_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1106,12 +1097,12 @@ pub mod get_resource_policies_output {
             self.policies = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1136,11 +1127,11 @@ impl GetResourcePoliciesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionOutput {
-    /// <p>Information about the permission.</p>
+    /// <p>An object that contains information about the permission.</p>
     pub permission: std::option::Option<crate::model::ResourceSharePermissionDetail>,
 }
 impl GetPermissionOutput {
-    /// <p>Information about the permission.</p>
+    /// <p>An object that contains information about the permission.</p>
     pub fn permission(&self) -> std::option::Option<&crate::model::ResourceSharePermissionDetail> {
         self.permission.as_ref()
     }
@@ -1161,12 +1152,12 @@ pub mod get_permission_output {
         pub(crate) permission: std::option::Option<crate::model::ResourceSharePermissionDetail>,
     }
     impl Builder {
-        /// <p>Information about the permission.</p>
+        /// <p>An object that contains information about the permission.</p>
         pub fn permission(mut self, input: crate::model::ResourceSharePermissionDetail) -> Self {
             self.permission = Some(input);
             self
         }
-        /// <p>Information about the permission.</p>
+        /// <p>An object that contains information about the permission.</p>
         pub fn set_permission(
             mut self,
             input: std::option::Option<crate::model::ResourceSharePermissionDetail>,
@@ -1193,11 +1184,11 @@ impl GetPermissionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableSharingWithAwsOrganizationOutput {
-    /// <p>Indicates whether the request succeeded.</p>
+    /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub return_value: std::option::Option<bool>,
 }
 impl EnableSharingWithAwsOrganizationOutput {
-    /// <p>Indicates whether the request succeeded.</p>
+    /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub fn return_value(&self) -> std::option::Option<bool> {
         self.return_value
     }
@@ -1218,12 +1209,12 @@ pub mod enable_sharing_with_aws_organization_output {
         pub(crate) return_value: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Indicates whether the request succeeded.</p>
+        /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
         pub fn return_value(mut self, input: bool) -> Self {
             self.return_value = Some(input);
             self
         }
-        /// <p>Indicates whether the request succeeded.</p>
+        /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
             self.return_value = input;
             self
@@ -1247,17 +1238,17 @@ impl EnableSharingWithAwsOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResourceSharePermissionOutput {
-    /// <p>Indicates whether the request succeeded.</p>
+    /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub return_value: std::option::Option<bool>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateResourceSharePermissionOutput {
-    /// <p>Indicates whether the request succeeded.</p>
+    /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub fn return_value(&self) -> std::option::Option<bool> {
         self.return_value
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1280,22 +1271,22 @@ pub mod disassociate_resource_share_permission_output {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates whether the request succeeded.</p>
+        /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
         pub fn return_value(mut self, input: bool) -> Self {
             self.return_value = Some(input);
             self
         }
-        /// <p>Indicates whether the request succeeded.</p>
+        /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
             self.return_value = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1320,20 +1311,20 @@ impl DisassociateResourceSharePermissionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResourceShareOutput {
-    /// <p>Information about the associations.</p>
+    /// <p>An array of objects that contain information about the updated associations for this resource share.</p>
     pub resource_share_associations:
         std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateResourceShareOutput {
-    /// <p>Information about the associations.</p>
+    /// <p>An array of objects that contain information about the updated associations for this resource share.</p>
     pub fn resource_share_associations(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceShareAssociation]> {
         self.resource_share_associations.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1364,17 +1355,17 @@ pub mod disassociate_resource_share_output {
         ///
         /// To override the contents of this collection use [`set_resource_share_associations`](Self::set_resource_share_associations).
         ///
-        /// <p>Information about the associations.</p>
+        /// <p>An array of objects that contain information about the updated associations for this resource share.</p>
         pub fn resource_share_associations(
             mut self,
-            input: impl Into<crate::model::ResourceShareAssociation>,
+            input: crate::model::ResourceShareAssociation,
         ) -> Self {
             let mut v = self.resource_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_share_associations = Some(v);
             self
         }
-        /// <p>Information about the associations.</p>
+        /// <p>An array of objects that contain information about the updated associations for this resource share.</p>
         pub fn set_resource_share_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
@@ -1382,12 +1373,12 @@ pub mod disassociate_resource_share_output {
             self.resource_share_associations = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1412,17 +1403,17 @@ impl DisassociateResourceShareOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceShareOutput {
-    /// <p>Indicates whether the request succeeded.</p>
+    /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub return_value: std::option::Option<bool>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteResourceShareOutput {
-    /// <p>Indicates whether the request succeeded.</p>
+    /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub fn return_value(&self) -> std::option::Option<bool> {
         self.return_value
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1445,22 +1436,22 @@ pub mod delete_resource_share_output {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates whether the request succeeded.</p>
+        /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
         pub fn return_value(mut self, input: bool) -> Self {
             self.return_value = Some(input);
             self
         }
-        /// <p>Indicates whether the request succeeded.</p>
+        /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
             self.return_value = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1485,17 +1476,17 @@ impl DeleteResourceShareOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceShareOutput {
-    /// <p>Information about the resource share.</p>
+    /// <p>An object with information about the new resource share.</p>
     pub resource_share: std::option::Option<crate::model::ResourceShare>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateResourceShareOutput {
-    /// <p>Information about the resource share.</p>
+    /// <p>An object with information about the new resource share.</p>
     pub fn resource_share(&self) -> std::option::Option<&crate::model::ResourceShare> {
         self.resource_share.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1518,12 +1509,12 @@ pub mod create_resource_share_output {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about the resource share.</p>
+        /// <p>An object with information about the new resource share.</p>
         pub fn resource_share(mut self, input: crate::model::ResourceShare) -> Self {
             self.resource_share = Some(input);
             self
         }
-        /// <p>Information about the resource share.</p>
+        /// <p>An object with information about the new resource share.</p>
         pub fn set_resource_share(
             mut self,
             input: std::option::Option<crate::model::ResourceShare>,
@@ -1531,12 +1522,12 @@ pub mod create_resource_share_output {
             self.resource_share = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1561,17 +1552,17 @@ impl CreateResourceShareOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceSharePermissionOutput {
-    /// <p>Indicates whether the request succeeded.</p>
+    /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub return_value: std::option::Option<bool>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateResourceSharePermissionOutput {
-    /// <p>Indicates whether the request succeeded.</p>
+    /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub fn return_value(&self) -> std::option::Option<bool> {
         self.return_value
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1594,22 +1585,22 @@ pub mod associate_resource_share_permission_output {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates whether the request succeeded.</p>
+        /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
         pub fn return_value(mut self, input: bool) -> Self {
             self.return_value = Some(input);
             self
         }
-        /// <p>Indicates whether the request succeeded.</p>
+        /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
             self.return_value = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1634,20 +1625,20 @@ impl AssociateResourceSharePermissionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceShareOutput {
-    /// <p>Information about the associations.</p>
+    /// <p>An array of objects that contain information about the associations.</p>
     pub resource_share_associations:
         std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateResourceShareOutput {
-    /// <p>Information about the associations.</p>
+    /// <p>An array of objects that contain information about the associations.</p>
     pub fn resource_share_associations(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceShareAssociation]> {
         self.resource_share_associations.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1678,17 +1669,17 @@ pub mod associate_resource_share_output {
         ///
         /// To override the contents of this collection use [`set_resource_share_associations`](Self::set_resource_share_associations).
         ///
-        /// <p>Information about the associations.</p>
+        /// <p>An array of objects that contain information about the associations.</p>
         pub fn resource_share_associations(
             mut self,
-            input: impl Into<crate::model::ResourceShareAssociation>,
+            input: crate::model::ResourceShareAssociation,
         ) -> Self {
             let mut v = self.resource_share_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_share_associations = Some(v);
             self
         }
-        /// <p>Information about the associations.</p>
+        /// <p>An array of objects that contain information about the associations.</p>
         pub fn set_resource_share_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
@@ -1696,12 +1687,12 @@ pub mod associate_resource_share_output {
             self.resource_share_associations = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1726,19 +1717,19 @@ impl AssociateResourceShareOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptResourceShareInvitationOutput {
-    /// <p>Information about the invitation.</p>
+    /// <p>An object that contains information about the specified invitation.</p>
     pub resource_share_invitation: std::option::Option<crate::model::ResourceShareInvitation>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AcceptResourceShareInvitationOutput {
-    /// <p>Information about the invitation.</p>
+    /// <p>An object that contains information about the specified invitation.</p>
     pub fn resource_share_invitation(
         &self,
     ) -> std::option::Option<&crate::model::ResourceShareInvitation> {
         self.resource_share_invitation.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1762,7 +1753,7 @@ pub mod accept_resource_share_invitation_output {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about the invitation.</p>
+        /// <p>An object that contains information about the specified invitation.</p>
         pub fn resource_share_invitation(
             mut self,
             input: crate::model::ResourceShareInvitation,
@@ -1770,7 +1761,7 @@ pub mod accept_resource_share_invitation_output {
             self.resource_share_invitation = Some(input);
             self
         }
-        /// <p>Information about the invitation.</p>
+        /// <p>An object that contains information about the specified invitation.</p>
         pub fn set_resource_share_invitation(
             mut self,
             input: std::option::Option<crate::model::ResourceShareInvitation>,
@@ -1778,12 +1769,12 @@ pub mod accept_resource_share_invitation_output {
             self.resource_share_invitation = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self

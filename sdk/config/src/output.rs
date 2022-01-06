@@ -144,9 +144,9 @@ pub mod start_remediation_execution_output {
         /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
         ///
         /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
-        pub fn failed_items(mut self, input: impl Into<crate::model::ResourceKey>) -> Self {
+        pub fn failed_items(mut self, input: crate::model::ResourceKey) -> Self {
             let mut v = self.failed_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_items = Some(v);
             self
         }
@@ -446,13 +446,11 @@ impl SelectAggregateResourceConfigOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStoredQueryOutput {
-    /// <p>Amazon Resource Name (ARN) of the query.
-    /// For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+    /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
     pub query_arn: std::option::Option<std::string::String>,
 }
 impl PutStoredQueryOutput {
-    /// <p>Amazon Resource Name (ARN) of the query.
-    /// For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+    /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
     pub fn query_arn(&self) -> std::option::Option<&str> {
         self.query_arn.as_deref()
     }
@@ -473,14 +471,12 @@ pub mod put_stored_query_output {
         pub(crate) query_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Amazon Resource Name (ARN) of the query.
-        /// For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+        /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
         pub fn query_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the query.
-        /// For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+        /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
         pub fn set_query_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_arn = input;
             self
@@ -633,10 +629,10 @@ pub mod put_remediation_exceptions_output {
         /// <p>Returns a list of failed remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
         pub fn failed_batches(
             mut self,
-            input: impl Into<crate::model::FailedRemediationExceptionBatch>,
+            input: crate::model::FailedRemediationExceptionBatch,
         ) -> Self {
             let mut v = self.failed_batches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_batches = Some(v);
             self
         }
@@ -700,12 +696,9 @@ pub mod put_remediation_configurations_output {
         /// To override the contents of this collection use [`set_failed_batches`](Self::set_failed_batches).
         ///
         /// <p>Returns a list of failed remediation batch objects.</p>
-        pub fn failed_batches(
-            mut self,
-            input: impl Into<crate::model::FailedRemediationBatch>,
-        ) -> Self {
+        pub fn failed_batches(mut self, input: crate::model::FailedRemediationBatch) -> Self {
             let mut v = self.failed_batches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_batches = Some(v);
             self
         }
@@ -892,13 +885,11 @@ impl PutExternalEvaluationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEvaluationsOutput {
-    /// <p>Requests that failed because of a client or server
-    /// error.</p>
+    /// <p>Requests that failed because of a client or server error.</p>
     pub failed_evaluations: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
 }
 impl PutEvaluationsOutput {
-    /// <p>Requests that failed because of a client or server
-    /// error.</p>
+    /// <p>Requests that failed because of a client or server error.</p>
     pub fn failed_evaluations(&self) -> std::option::Option<&[crate::model::Evaluation]> {
         self.failed_evaluations.as_deref()
     }
@@ -923,16 +914,14 @@ pub mod put_evaluations_output {
         ///
         /// To override the contents of this collection use [`set_failed_evaluations`](Self::set_failed_evaluations).
         ///
-        /// <p>Requests that failed because of a client or server
-        /// error.</p>
-        pub fn failed_evaluations(mut self, input: impl Into<crate::model::Evaluation>) -> Self {
+        /// <p>Requests that failed because of a client or server error.</p>
+        pub fn failed_evaluations(mut self, input: crate::model::Evaluation) -> Self {
             let mut v = self.failed_evaluations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_evaluations = Some(v);
             self
         }
-        /// <p>Requests that failed because of a client or server
-        /// error.</p>
+        /// <p>Requests that failed because of a client or server error.</p>
         pub fn set_failed_evaluations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
@@ -1169,15 +1158,11 @@ impl PutConfigRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAggregationAuthorizationOutput {
-    /// <p>Returns an AggregationAuthorization object.
-    ///
-    /// </p>
+    /// <p>Returns an AggregationAuthorization object. </p>
     pub aggregation_authorization: std::option::Option<crate::model::AggregationAuthorization>,
 }
 impl PutAggregationAuthorizationOutput {
-    /// <p>Returns an AggregationAuthorization object.
-    ///
-    /// </p>
+    /// <p>Returns an AggregationAuthorization object. </p>
     pub fn aggregation_authorization(
         &self,
     ) -> std::option::Option<&crate::model::AggregationAuthorization> {
@@ -1201,9 +1186,7 @@ pub mod put_aggregation_authorization_output {
             std::option::Option<crate::model::AggregationAuthorization>,
     }
     impl Builder {
-        /// <p>Returns an AggregationAuthorization object.
-        ///
-        /// </p>
+        /// <p>Returns an AggregationAuthorization object. </p>
         pub fn aggregation_authorization(
             mut self,
             input: crate::model::AggregationAuthorization,
@@ -1211,9 +1194,7 @@ pub mod put_aggregation_authorization_output {
             self.aggregation_authorization = Some(input);
             self
         }
-        /// <p>Returns an AggregationAuthorization object.
-        ///
-        /// </p>
+        /// <p>Returns an AggregationAuthorization object. </p>
         pub fn set_aggregation_authorization(
             mut self,
             input: std::option::Option<crate::model::AggregationAuthorization>,
@@ -1278,9 +1259,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1325,9 +1306,7 @@ pub struct ListStoredQueriesOutput {
     /// <p>A list of <code>StoredQueryMetadata</code> objects.</p>
     pub stored_query_metadata:
         std::option::Option<std::vec::Vec<crate::model::StoredQueryMetadata>>,
-    /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token.
-    /// To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter.
-    /// If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
+    /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStoredQueriesOutput {
@@ -1337,9 +1316,7 @@ impl ListStoredQueriesOutput {
     ) -> std::option::Option<&[crate::model::StoredQueryMetadata]> {
         self.stored_query_metadata.as_deref()
     }
-    /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token.
-    /// To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter.
-    /// If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
+    /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1368,12 +1345,9 @@ pub mod list_stored_queries_output {
         /// To override the contents of this collection use [`set_stored_query_metadata`](Self::set_stored_query_metadata).
         ///
         /// <p>A list of <code>StoredQueryMetadata</code> objects.</p>
-        pub fn stored_query_metadata(
-            mut self,
-            input: impl Into<crate::model::StoredQueryMetadata>,
-        ) -> Self {
+        pub fn stored_query_metadata(mut self, input: crate::model::StoredQueryMetadata) -> Self {
             let mut v = self.stored_query_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stored_query_metadata = Some(v);
             self
         }
@@ -1385,16 +1359,12 @@ pub mod list_stored_queries_output {
             self.stored_query_metadata = input;
             self
         }
-        /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token.
-        /// To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter.
-        /// If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
+        /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token.
-        /// To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter.
-        /// If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
+        /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1419,21 +1389,17 @@ impl ListStoredQueriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoveredResourcesOutput {
-    /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the
-    /// custom resource name.</p>
+    /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
     pub resource_identifiers: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDiscoveredResourcesOutput {
-    /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the
-    /// custom resource name.</p>
+    /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
     pub fn resource_identifiers(&self) -> std::option::Option<&[crate::model::ResourceIdentifier]> {
         self.resource_identifiers.as_deref()
     }
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1461,19 +1427,14 @@ pub mod list_discovered_resources_output {
         ///
         /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
         ///
-        /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the
-        /// custom resource name.</p>
-        pub fn resource_identifiers(
-            mut self,
-            input: impl Into<crate::model::ResourceIdentifier>,
-        ) -> Self {
+        /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
+        pub fn resource_identifiers(mut self, input: crate::model::ResourceIdentifier) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_identifiers = Some(v);
             self
         }
-        /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the
-        /// custom resource name.</p>
+        /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
         pub fn set_resource_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
@@ -1481,14 +1442,12 @@ pub mod list_discovered_resources_output {
             self.resource_identifiers = input;
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1557,10 +1516,10 @@ pub mod list_aggregate_discovered_resources_output {
         /// <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
         pub fn resource_identifiers(
             mut self,
-            input: impl Into<crate::model::AggregateResourceIdentifier>,
+            input: crate::model::AggregateResourceIdentifier,
         ) -> Self {
             let mut v = self.resource_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_identifiers = Some(v);
             self
         }
@@ -1655,26 +1614,21 @@ impl GetStoredQueryOutput {
     }
 }
 
-/// <p>The output for the <a>GetResourceConfigHistory</a>
-/// action.</p>
+/// <p>The output for the <code>GetResourceConfigHistory</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceConfigHistoryOutput {
-    /// <p>A list that contains the configuration history of one or more
-    /// resources.</p>
+    /// <p>A list that contains the configuration history of one or more resources.</p>
     pub configuration_items: std::option::Option<std::vec::Vec<crate::model::ConfigurationItem>>,
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceConfigHistoryOutput {
-    /// <p>A list that contains the configuration history of one or more
-    /// resources.</p>
+    /// <p>A list that contains the configuration history of one or more resources.</p>
     pub fn configuration_items(&self) -> std::option::Option<&[crate::model::ConfigurationItem]> {
         self.configuration_items.as_deref()
     }
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1702,19 +1656,14 @@ pub mod get_resource_config_history_output {
         ///
         /// To override the contents of this collection use [`set_configuration_items`](Self::set_configuration_items).
         ///
-        /// <p>A list that contains the configuration history of one or more
-        /// resources.</p>
-        pub fn configuration_items(
-            mut self,
-            input: impl Into<crate::model::ConfigurationItem>,
-        ) -> Self {
+        /// <p>A list that contains the configuration history of one or more resources.</p>
+        pub fn configuration_items(mut self, input: crate::model::ConfigurationItem) -> Self {
             let mut v = self.configuration_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_items = Some(v);
             self
         }
-        /// <p>A list that contains the configuration history of one or more
-        /// resources.</p>
+        /// <p>A list that contains the configuration history of one or more resources.</p>
         pub fn set_configuration_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigurationItem>>,
@@ -1722,14 +1671,12 @@ pub mod get_resource_config_history_output {
             self.configuration_items = input;
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1803,12 +1750,12 @@ pub mod get_organization_conformance_pack_detailed_status_output {
         /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
         pub fn organization_conformance_pack_detailed_statuses(
             mut self,
-            input: impl Into<crate::model::OrganizationConformancePackDetailedStatus>,
+            input: crate::model::OrganizationConformancePackDetailedStatus,
         ) -> Self {
             let mut v = self
                 .organization_conformance_pack_detailed_statuses
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_conformance_pack_detailed_statuses = Some(v);
             self
         }
@@ -1901,12 +1848,12 @@ pub mod get_organization_config_rule_detailed_status_output {
         /// <p>A list of <code>MemberAccountStatus</code> objects.</p>
         pub fn organization_config_rule_detailed_status(
             mut self,
-            input: impl Into<crate::model::MemberAccountStatus>,
+            input: crate::model::MemberAccountStatus,
         ) -> Self {
             let mut v = self
                 .organization_config_rule_detailed_status
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_config_rule_detailed_status = Some(v);
             self
         }
@@ -1950,81 +1897,35 @@ impl GetOrganizationConfigRuleDetailedStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDiscoveredResourceCountsOutput {
-    /// <p>The total number of resources that Config is recording in
-    /// the region for your account. If you specify resource types in the
-    /// request, Config returns only the total number of resources for
-    /// those resource types.</p>
-    ///
-    ///
-    /// <p class="title">
-    /// <b>Example</b>
-    /// </p>
+    /// <p>The total number of resources that Config is recording in the region for your account. If you specify resource types in the request, Config returns only the total number of resources for those resource types.</p>
+    /// <p class="title"> <b>Example</b> </p>
     /// <ol>
-    /// <li>
-    /// <p>Config is recording three resource types in the US
-    /// East (Ohio) Region for your account: 25 EC2 instances, 20
-    /// IAM users, and 15 S3 buckets, for a total of 60
-    /// resources.</p>
-    /// </li>
-    /// <li>
-    /// <p>You make a call to the
-    /// <code>GetDiscoveredResourceCounts</code> action and
-    /// specify the resource type,
-    /// <code>"AWS::EC2::Instances"</code>, in the
-    /// request.</p>
-    /// </li>
-    /// <li>
-    /// <p>Config returns 25 for
-    /// <code>totalDiscoveredResources</code>.</p>
-    /// </li>
+    /// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li>
+    /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>
+    /// <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>
     /// </ol>
     pub total_discovered_resources: i64,
-    /// <p>The list of <code>ResourceCount</code> objects. Each object is
-    /// listed in descending order by the number of resources.</p>
+    /// <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
     pub resource_counts: std::option::Option<std::vec::Vec<crate::model::ResourceCount>>,
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDiscoveredResourceCountsOutput {
-    /// <p>The total number of resources that Config is recording in
-    /// the region for your account. If you specify resource types in the
-    /// request, Config returns only the total number of resources for
-    /// those resource types.</p>
-    ///
-    ///
-    /// <p class="title">
-    /// <b>Example</b>
-    /// </p>
+    /// <p>The total number of resources that Config is recording in the region for your account. If you specify resource types in the request, Config returns only the total number of resources for those resource types.</p>
+    /// <p class="title"> <b>Example</b> </p>
     /// <ol>
-    /// <li>
-    /// <p>Config is recording three resource types in the US
-    /// East (Ohio) Region for your account: 25 EC2 instances, 20
-    /// IAM users, and 15 S3 buckets, for a total of 60
-    /// resources.</p>
-    /// </li>
-    /// <li>
-    /// <p>You make a call to the
-    /// <code>GetDiscoveredResourceCounts</code> action and
-    /// specify the resource type,
-    /// <code>"AWS::EC2::Instances"</code>, in the
-    /// request.</p>
-    /// </li>
-    /// <li>
-    /// <p>Config returns 25 for
-    /// <code>totalDiscoveredResources</code>.</p>
-    /// </li>
+    /// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li>
+    /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>
+    /// <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>
     /// </ol>
     pub fn total_discovered_resources(&self) -> i64 {
         self.total_discovered_resources
     }
-    /// <p>The list of <code>ResourceCount</code> objects. Each object is
-    /// listed in descending order by the number of resources.</p>
+    /// <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
     pub fn resource_counts(&self) -> std::option::Option<&[crate::model::ResourceCount]> {
         self.resource_counts.as_deref()
     }
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2052,65 +1953,23 @@ pub mod get_discovered_resource_counts_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The total number of resources that Config is recording in
-        /// the region for your account. If you specify resource types in the
-        /// request, Config returns only the total number of resources for
-        /// those resource types.</p>
-        ///
-        ///
-        /// <p class="title">
-        /// <b>Example</b>
-        /// </p>
+        /// <p>The total number of resources that Config is recording in the region for your account. If you specify resource types in the request, Config returns only the total number of resources for those resource types.</p>
+        /// <p class="title"> <b>Example</b> </p>
         /// <ol>
-        /// <li>
-        /// <p>Config is recording three resource types in the US
-        /// East (Ohio) Region for your account: 25 EC2 instances, 20
-        /// IAM users, and 15 S3 buckets, for a total of 60
-        /// resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>You make a call to the
-        /// <code>GetDiscoveredResourceCounts</code> action and
-        /// specify the resource type,
-        /// <code>"AWS::EC2::Instances"</code>, in the
-        /// request.</p>
-        /// </li>
-        /// <li>
-        /// <p>Config returns 25 for
-        /// <code>totalDiscoveredResources</code>.</p>
-        /// </li>
+        /// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li>
+        /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>
+        /// <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>
         /// </ol>
         pub fn total_discovered_resources(mut self, input: i64) -> Self {
             self.total_discovered_resources = Some(input);
             self
         }
-        /// <p>The total number of resources that Config is recording in
-        /// the region for your account. If you specify resource types in the
-        /// request, Config returns only the total number of resources for
-        /// those resource types.</p>
-        ///
-        ///
-        /// <p class="title">
-        /// <b>Example</b>
-        /// </p>
+        /// <p>The total number of resources that Config is recording in the region for your account. If you specify resource types in the request, Config returns only the total number of resources for those resource types.</p>
+        /// <p class="title"> <b>Example</b> </p>
         /// <ol>
-        /// <li>
-        /// <p>Config is recording three resource types in the US
-        /// East (Ohio) Region for your account: 25 EC2 instances, 20
-        /// IAM users, and 15 S3 buckets, for a total of 60
-        /// resources.</p>
-        /// </li>
-        /// <li>
-        /// <p>You make a call to the
-        /// <code>GetDiscoveredResourceCounts</code> action and
-        /// specify the resource type,
-        /// <code>"AWS::EC2::Instances"</code>, in the
-        /// request.</p>
-        /// </li>
-        /// <li>
-        /// <p>Config returns 25 for
-        /// <code>totalDiscoveredResources</code>.</p>
-        /// </li>
+        /// <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li>
+        /// <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>
+        /// <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>
         /// </ol>
         pub fn set_total_discovered_resources(mut self, input: std::option::Option<i64>) -> Self {
             self.total_discovered_resources = input;
@@ -2120,16 +1979,14 @@ pub mod get_discovered_resource_counts_output {
         ///
         /// To override the contents of this collection use [`set_resource_counts`](Self::set_resource_counts).
         ///
-        /// <p>The list of <code>ResourceCount</code> objects. Each object is
-        /// listed in descending order by the number of resources.</p>
-        pub fn resource_counts(mut self, input: impl Into<crate::model::ResourceCount>) -> Self {
+        /// <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
+        pub fn resource_counts(mut self, input: crate::model::ResourceCount) -> Self {
             let mut v = self.resource_counts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_counts = Some(v);
             self
         }
-        /// <p>The list of <code>ResourceCount</code> objects. Each object is
-        /// listed in descending order by the number of resources.</p>
+        /// <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
         pub fn set_resource_counts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceCount>>,
@@ -2137,14 +1994,12 @@ pub mod get_discovered_resource_counts_output {
             self.resource_counts = input;
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2217,12 +2072,12 @@ pub mod get_conformance_pack_compliance_summary_output {
         /// <p>A list of <code>ConformancePackComplianceSummary</code> objects. </p>
         pub fn conformance_pack_compliance_summary_list(
             mut self,
-            input: impl Into<crate::model::ConformancePackComplianceSummary>,
+            input: crate::model::ConformancePackComplianceSummary,
         ) -> Self {
             let mut v = self
                 .conformance_pack_compliance_summary_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_compliance_summary_list = Some(v);
             self
         }
@@ -2335,12 +2190,12 @@ pub mod get_conformance_pack_compliance_details_output {
         /// <p>Returns a list of <code>ConformancePackEvaluationResult</code> objects.</p>
         pub fn conformance_pack_rule_evaluation_results(
             mut self,
-            input: impl Into<crate::model::ConformancePackEvaluationResult>,
+            input: crate::model::ConformancePackEvaluationResult,
         ) -> Self {
             let mut v = self
                 .conformance_pack_rule_evaluation_results
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_rule_evaluation_results = Some(v);
             self
         }
@@ -2386,18 +2241,12 @@ impl GetConformancePackComplianceDetailsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceSummaryByResourceTypeOutput {
-    /// <p>The number of resources that are compliant and the number that
-    /// are noncompliant. If one or more resource types were provided with
-    /// the request, the numbers are returned for each resource type. The
-    /// maximum number returned is 100.</p>
+    /// <p>The number of resources that are compliant and the number that are noncompliant. If one or more resource types were provided with the request, the numbers are returned for each resource type. The maximum number returned is 100.</p>
     pub compliance_summaries_by_resource_type:
         std::option::Option<std::vec::Vec<crate::model::ComplianceSummaryByResourceType>>,
 }
 impl GetComplianceSummaryByResourceTypeOutput {
-    /// <p>The number of resources that are compliant and the number that
-    /// are noncompliant. If one or more resource types were provided with
-    /// the request, the numbers are returned for each resource type. The
-    /// maximum number returned is 100.</p>
+    /// <p>The number of resources that are compliant and the number that are noncompliant. If one or more resource types were provided with the request, the numbers are returned for each resource type. The maximum number returned is 100.</p>
     pub fn compliance_summaries_by_resource_type(
         &self,
     ) -> std::option::Option<&[crate::model::ComplianceSummaryByResourceType]> {
@@ -2428,25 +2277,19 @@ pub mod get_compliance_summary_by_resource_type_output {
         ///
         /// To override the contents of this collection use [`set_compliance_summaries_by_resource_type`](Self::set_compliance_summaries_by_resource_type).
         ///
-        /// <p>The number of resources that are compliant and the number that
-        /// are noncompliant. If one or more resource types were provided with
-        /// the request, the numbers are returned for each resource type. The
-        /// maximum number returned is 100.</p>
+        /// <p>The number of resources that are compliant and the number that are noncompliant. If one or more resource types were provided with the request, the numbers are returned for each resource type. The maximum number returned is 100.</p>
         pub fn compliance_summaries_by_resource_type(
             mut self,
-            input: impl Into<crate::model::ComplianceSummaryByResourceType>,
+            input: crate::model::ComplianceSummaryByResourceType,
         ) -> Self {
             let mut v = self
                 .compliance_summaries_by_resource_type
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_summaries_by_resource_type = Some(v);
             self
         }
-        /// <p>The number of resources that are compliant and the number that
-        /// are noncompliant. If one or more resource types were provided with
-        /// the request, the numbers are returned for each resource type. The
-        /// maximum number returned is 100.</p>
+        /// <p>The number of resources that are compliant and the number that are noncompliant. If one or more resource types were provided with the request, the numbers are returned for each resource type. The maximum number returned is 100.</p>
         pub fn set_compliance_summaries_by_resource_type(
             mut self,
             input: std::option::Option<
@@ -2475,15 +2318,11 @@ impl GetComplianceSummaryByResourceTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceSummaryByConfigRuleOutput {
-    /// <p>The number of Config rules that are compliant and the
-    /// number that are noncompliant, up to a maximum of 25 for
-    /// each.</p>
+    /// <p>The number of Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for each.</p>
     pub compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
 }
 impl GetComplianceSummaryByConfigRuleOutput {
-    /// <p>The number of Config rules that are compliant and the
-    /// number that are noncompliant, up to a maximum of 25 for
-    /// each.</p>
+    /// <p>The number of Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for each.</p>
     pub fn compliance_summary(&self) -> std::option::Option<&crate::model::ComplianceSummary> {
         self.compliance_summary.as_ref()
     }
@@ -2504,16 +2343,12 @@ pub mod get_compliance_summary_by_config_rule_output {
         pub(crate) compliance_summary: std::option::Option<crate::model::ComplianceSummary>,
     }
     impl Builder {
-        /// <p>The number of Config rules that are compliant and the
-        /// number that are noncompliant, up to a maximum of 25 for
-        /// each.</p>
+        /// <p>The number of Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for each.</p>
         pub fn compliance_summary(mut self, input: crate::model::ComplianceSummary) -> Self {
             self.compliance_summary = Some(input);
             self
         }
-        /// <p>The number of Config rules that are compliant and the
-        /// number that are noncompliant, up to a maximum of 25 for
-        /// each.</p>
+        /// <p>The number of Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for each.</p>
         pub fn set_compliance_summary(
             mut self,
             input: std::option::Option<crate::model::ComplianceSummary>,
@@ -2542,8 +2377,7 @@ impl GetComplianceSummaryByConfigRuleOutput {
 pub struct GetComplianceDetailsByResourceOutput {
     /// <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailsByResourceOutput {
@@ -2551,8 +2385,7 @@ impl GetComplianceDetailsByResourceOutput {
     pub fn evaluation_results(&self) -> std::option::Option<&[crate::model::EvaluationResult]> {
         self.evaluation_results.as_deref()
     }
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2581,12 +2414,9 @@ pub mod get_compliance_details_by_resource_output {
         /// To override the contents of this collection use [`set_evaluation_results`](Self::set_evaluation_results).
         ///
         /// <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
-        pub fn evaluation_results(
-            mut self,
-            input: impl Into<crate::model::EvaluationResult>,
-        ) -> Self {
+        pub fn evaluation_results(mut self, input: crate::model::EvaluationResult) -> Self {
             let mut v = self.evaluation_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluation_results = Some(v);
             self
         }
@@ -2598,14 +2428,12 @@ pub mod get_compliance_details_by_resource_output {
             self.evaluation_results = input;
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2630,21 +2458,17 @@ impl GetComplianceDetailsByResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceDetailsByConfigRuleOutput {
-    /// <p>Indicates whether the Amazon Web Services resource complies with the specified
-    /// Config rule.</p>
+    /// <p>Indicates whether the Amazon Web Services resource complies with the specified Config rule.</p>
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceDetailsByConfigRuleOutput {
-    /// <p>Indicates whether the Amazon Web Services resource complies with the specified
-    /// Config rule.</p>
+    /// <p>Indicates whether the Amazon Web Services resource complies with the specified Config rule.</p>
     pub fn evaluation_results(&self) -> std::option::Option<&[crate::model::EvaluationResult]> {
         self.evaluation_results.as_deref()
     }
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2672,19 +2496,14 @@ pub mod get_compliance_details_by_config_rule_output {
         ///
         /// To override the contents of this collection use [`set_evaluation_results`](Self::set_evaluation_results).
         ///
-        /// <p>Indicates whether the Amazon Web Services resource complies with the specified
-        /// Config rule.</p>
-        pub fn evaluation_results(
-            mut self,
-            input: impl Into<crate::model::EvaluationResult>,
-        ) -> Self {
+        /// <p>Indicates whether the Amazon Web Services resource complies with the specified Config rule.</p>
+        pub fn evaluation_results(mut self, input: crate::model::EvaluationResult) -> Self {
             let mut v = self.evaluation_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluation_results = Some(v);
             self
         }
-        /// <p>Indicates whether the Amazon Web Services resource complies with the specified
-        /// Config rule.</p>
+        /// <p>Indicates whether the Amazon Web Services resource complies with the specified Config rule.</p>
         pub fn set_evaluation_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
@@ -2692,14 +2511,12 @@ pub mod get_compliance_details_by_config_rule_output {
             self.evaluation_results = input;
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2864,10 +2681,10 @@ pub mod get_aggregate_discovered_resource_counts_output {
         /// <p>Returns a list of GroupedResourceCount objects.</p>
         pub fn grouped_resource_counts(
             mut self,
-            input: impl Into<crate::model::GroupedResourceCount>,
+            input: crate::model::GroupedResourceCount,
         ) -> Self {
             let mut v = self.grouped_resource_counts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grouped_resource_counts = Some(v);
             self
         }
@@ -2968,12 +2785,12 @@ pub mod get_aggregate_conformance_pack_compliance_summary_output {
         /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
         pub fn aggregate_conformance_pack_compliance_summaries(
             mut self,
-            input: impl Into<crate::model::AggregateConformancePackComplianceSummary>,
+            input: crate::model::AggregateConformancePackComplianceSummary,
         ) -> Self {
             let mut v = self
                 .aggregate_conformance_pack_compliance_summaries
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregate_conformance_pack_compliance_summaries = Some(v);
             self
         }
@@ -3035,8 +2852,7 @@ pub struct GetAggregateConfigRuleComplianceSummaryOutput {
     /// <p>Returns a list of AggregateComplianceCounts object.</p>
     pub aggregate_compliance_counts:
         std::option::Option<std::vec::Vec<crate::model::AggregateComplianceCount>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateConfigRuleComplianceSummaryOutput {
@@ -3050,8 +2866,7 @@ impl GetAggregateConfigRuleComplianceSummaryOutput {
     ) -> std::option::Option<&[crate::model::AggregateComplianceCount]> {
         self.aggregate_compliance_counts.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3097,10 +2912,10 @@ pub mod get_aggregate_config_rule_compliance_summary_output {
         /// <p>Returns a list of AggregateComplianceCounts object.</p>
         pub fn aggregate_compliance_counts(
             mut self,
-            input: impl Into<crate::model::AggregateComplianceCount>,
+            input: crate::model::AggregateComplianceCount,
         ) -> Self {
             let mut v = self.aggregate_compliance_counts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregate_compliance_counts = Some(v);
             self
         }
@@ -3112,14 +2927,12 @@ pub mod get_aggregate_config_rule_compliance_summary_output {
             self.aggregate_compliance_counts = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3149,8 +2962,7 @@ pub struct GetAggregateComplianceDetailsByConfigRuleOutput {
     /// <p>Returns an AggregateEvaluationResults object.</p>
     pub aggregate_evaluation_results:
         std::option::Option<std::vec::Vec<crate::model::AggregateEvaluationResult>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetAggregateComplianceDetailsByConfigRuleOutput {
@@ -3160,8 +2972,7 @@ impl GetAggregateComplianceDetailsByConfigRuleOutput {
     ) -> std::option::Option<&[crate::model::AggregateEvaluationResult]> {
         self.aggregate_evaluation_results.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3195,10 +3006,10 @@ pub mod get_aggregate_compliance_details_by_config_rule_output {
         /// <p>Returns an AggregateEvaluationResults object.</p>
         pub fn aggregate_evaluation_results(
             mut self,
-            input: impl Into<crate::model::AggregateEvaluationResult>,
+            input: crate::model::AggregateEvaluationResult,
         ) -> Self {
             let mut v = self.aggregate_evaluation_results.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregate_evaluation_results = Some(v);
             self
         }
@@ -3210,14 +3021,12 @@ pub mod get_aggregate_compliance_details_by_config_rule_output {
             self.aggregate_evaluation_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3246,9 +3055,7 @@ pub struct DescribeRetentionConfigurationsOutput {
     /// <p>Returns a retention configuration object.</p>
     pub retention_configurations:
         std::option::Option<std::vec::Vec<crate::model::RetentionConfiguration>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response. </p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRetentionConfigurationsOutput {
@@ -3258,9 +3065,7 @@ impl DescribeRetentionConfigurationsOutput {
     ) -> std::option::Option<&[crate::model::RetentionConfiguration]> {
         self.retention_configurations.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page
-    /// that you use to get the next page of results in a paginated
-    /// response. </p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3291,10 +3096,10 @@ pub mod describe_retention_configurations_output {
         /// <p>Returns a retention configuration object.</p>
         pub fn retention_configurations(
             mut self,
-            input: impl Into<crate::model::RetentionConfiguration>,
+            input: crate::model::RetentionConfiguration,
         ) -> Self {
             let mut v = self.retention_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.retention_configurations = Some(v);
             self
         }
@@ -3306,16 +3111,12 @@ pub mod describe_retention_configurations_output {
             self.retention_configurations = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response. </p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page
-        /// that you use to get the next page of results in a paginated
-        /// response. </p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3387,10 +3188,10 @@ pub mod describe_remediation_execution_status_output {
         /// <p>Returns a list of remediation execution statuses objects.</p>
         pub fn remediation_execution_statuses(
             mut self,
-            input: impl Into<crate::model::RemediationExecutionStatus>,
+            input: crate::model::RemediationExecutionStatus,
         ) -> Self {
             let mut v = self.remediation_execution_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remediation_execution_statuses = Some(v);
             self
         }
@@ -3474,12 +3275,9 @@ pub mod describe_remediation_exceptions_output {
         /// To override the contents of this collection use [`set_remediation_exceptions`](Self::set_remediation_exceptions).
         ///
         /// <p>Returns a list of remediation exception objects.</p>
-        pub fn remediation_exceptions(
-            mut self,
-            input: impl Into<crate::model::RemediationException>,
-        ) -> Self {
+        pub fn remediation_exceptions(mut self, input: crate::model::RemediationException) -> Self {
             let mut v = self.remediation_exceptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remediation_exceptions = Some(v);
             self
         }
@@ -3560,10 +3358,10 @@ pub mod describe_remediation_configurations_output {
         /// <p>Returns a remediation configuration object.</p>
         pub fn remediation_configurations(
             mut self,
-            input: impl Into<crate::model::RemediationConfiguration>,
+            input: crate::model::RemediationConfiguration,
         ) -> Self {
             let mut v = self.remediation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remediation_configurations = Some(v);
             self
         }
@@ -3597,8 +3395,7 @@ pub struct DescribePendingAggregationRequestsOutput {
     /// <p>Returns a PendingAggregationRequests object.</p>
     pub pending_aggregation_requests:
         std::option::Option<std::vec::Vec<crate::model::PendingAggregationRequest>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePendingAggregationRequestsOutput {
@@ -3608,8 +3405,7 @@ impl DescribePendingAggregationRequestsOutput {
     ) -> std::option::Option<&[crate::model::PendingAggregationRequest]> {
         self.pending_aggregation_requests.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3643,10 +3439,10 @@ pub mod describe_pending_aggregation_requests_output {
         /// <p>Returns a PendingAggregationRequests object.</p>
         pub fn pending_aggregation_requests(
             mut self,
-            input: impl Into<crate::model::PendingAggregationRequest>,
+            input: crate::model::PendingAggregationRequest,
         ) -> Self {
             let mut v = self.pending_aggregation_requests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pending_aggregation_requests = Some(v);
             self
         }
@@ -3658,14 +3454,12 @@ pub mod describe_pending_aggregation_requests_output {
             self.pending_aggregation_requests = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3737,12 +3531,12 @@ pub mod describe_organization_conformance_pack_statuses_output {
         /// <p>A list of <code>OrganizationConformancePackStatus</code> objects. </p>
         pub fn organization_conformance_pack_statuses(
             mut self,
-            input: impl Into<crate::model::OrganizationConformancePackStatus>,
+            input: crate::model::OrganizationConformancePackStatus,
         ) -> Self {
             let mut v = self
                 .organization_conformance_pack_statuses
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_conformance_pack_statuses = Some(v);
             self
         }
@@ -3790,8 +3584,7 @@ pub struct DescribeOrganizationConformancePacksOutput {
     /// <p>Returns a list of OrganizationConformancePacks objects.</p>
     pub organization_conformance_packs:
         std::option::Option<std::vec::Vec<crate::model::OrganizationConformancePack>>,
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-    /// paginated response.</p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConformancePacksOutput {
@@ -3801,8 +3594,7 @@ impl DescribeOrganizationConformancePacksOutput {
     ) -> std::option::Option<&[crate::model::OrganizationConformancePack]> {
         self.organization_conformance_packs.as_deref()
     }
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-    /// paginated response.</p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3836,10 +3628,10 @@ pub mod describe_organization_conformance_packs_output {
         /// <p>Returns a list of OrganizationConformancePacks objects.</p>
         pub fn organization_conformance_packs(
             mut self,
-            input: impl Into<crate::model::OrganizationConformancePack>,
+            input: crate::model::OrganizationConformancePack,
         ) -> Self {
             let mut v = self.organization_conformance_packs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_conformance_packs = Some(v);
             self
         }
@@ -3851,14 +3643,12 @@ pub mod describe_organization_conformance_packs_output {
             self.organization_conformance_packs = input;
             self
         }
-        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-        /// paginated response.</p>
+        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
-        /// paginated response.</p>
+        /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3930,10 +3720,10 @@ pub mod describe_organization_config_rule_statuses_output {
         /// <p>A list of <code>OrganizationConfigRuleStatus</code> objects.</p>
         pub fn organization_config_rule_statuses(
             mut self,
-            input: impl Into<crate::model::OrganizationConfigRuleStatus>,
+            input: crate::model::OrganizationConfigRuleStatus,
         ) -> Self {
             let mut v = self.organization_config_rule_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_config_rule_statuses = Some(v);
             self
         }
@@ -4019,10 +3809,10 @@ pub mod describe_organization_config_rules_output {
         /// <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
         pub fn organization_config_rules(
             mut self,
-            input: impl Into<crate::model::OrganizationConfigRule>,
+            input: crate::model::OrganizationConfigRule,
         ) -> Self {
             let mut v = self.organization_config_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organization_config_rules = Some(v);
             self
         }
@@ -4060,18 +3850,16 @@ impl DescribeOrganizationConfigRulesOutput {
     }
 }
 
-/// <p>The output for the <a>DescribeDeliveryChannelStatus</a> action.</p>
+/// <p>The output for the <code>DescribeDeliveryChannelStatus</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeliveryChannelStatusOutput {
-    /// <p>A list that contains the status of a specified delivery
-    /// channel.</p>
+    /// <p>A list that contains the status of a specified delivery channel.</p>
     pub delivery_channels_status:
         std::option::Option<std::vec::Vec<crate::model::DeliveryChannelStatus>>,
 }
 impl DescribeDeliveryChannelStatusOutput {
-    /// <p>A list that contains the status of a specified delivery
-    /// channel.</p>
+    /// <p>A list that contains the status of a specified delivery channel.</p>
     pub fn delivery_channels_status(
         &self,
     ) -> std::option::Option<&[crate::model::DeliveryChannelStatus]> {
@@ -4099,19 +3887,17 @@ pub mod describe_delivery_channel_status_output {
         ///
         /// To override the contents of this collection use [`set_delivery_channels_status`](Self::set_delivery_channels_status).
         ///
-        /// <p>A list that contains the status of a specified delivery
-        /// channel.</p>
+        /// <p>A list that contains the status of a specified delivery channel.</p>
         pub fn delivery_channels_status(
             mut self,
-            input: impl Into<crate::model::DeliveryChannelStatus>,
+            input: crate::model::DeliveryChannelStatus,
         ) -> Self {
             let mut v = self.delivery_channels_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delivery_channels_status = Some(v);
             self
         }
-        /// <p>A list that contains the status of a specified delivery
-        /// channel.</p>
+        /// <p>A list that contains the status of a specified delivery channel.</p>
         pub fn set_delivery_channels_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeliveryChannelStatus>>,
@@ -4134,18 +3920,15 @@ impl DescribeDeliveryChannelStatusOutput {
     }
 }
 
-/// <p>The output for the <a>DescribeDeliveryChannels</a>
-/// action.</p>
+/// <p>The output for the <code>DescribeDeliveryChannels</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeliveryChannelsOutput {
-    /// <p>A list that contains the descriptions of the specified delivery
-    /// channel.</p>
+    /// <p>A list that contains the descriptions of the specified delivery channel.</p>
     pub delivery_channels: std::option::Option<std::vec::Vec<crate::model::DeliveryChannel>>,
 }
 impl DescribeDeliveryChannelsOutput {
-    /// <p>A list that contains the descriptions of the specified delivery
-    /// channel.</p>
+    /// <p>A list that contains the descriptions of the specified delivery channel.</p>
     pub fn delivery_channels(&self) -> std::option::Option<&[crate::model::DeliveryChannel]> {
         self.delivery_channels.as_deref()
     }
@@ -4171,19 +3954,14 @@ pub mod describe_delivery_channels_output {
         ///
         /// To override the contents of this collection use [`set_delivery_channels`](Self::set_delivery_channels).
         ///
-        /// <p>A list that contains the descriptions of the specified delivery
-        /// channel.</p>
-        pub fn delivery_channels(
-            mut self,
-            input: impl Into<crate::model::DeliveryChannel>,
-        ) -> Self {
+        /// <p>A list that contains the descriptions of the specified delivery channel.</p>
+        pub fn delivery_channels(mut self, input: crate::model::DeliveryChannel) -> Self {
             let mut v = self.delivery_channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delivery_channels = Some(v);
             self
         }
-        /// <p>A list that contains the descriptions of the specified delivery
-        /// channel.</p>
+        /// <p>A list that contains the descriptions of the specified delivery channel.</p>
         pub fn set_delivery_channels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeliveryChannel>>,
@@ -4257,10 +4035,10 @@ pub mod describe_conformance_pack_status_output {
         /// <p>A list of <code>ConformancePackStatusDetail</code> objects.</p>
         pub fn conformance_pack_status_details(
             mut self,
-            input: impl Into<crate::model::ConformancePackStatusDetail>,
+            input: crate::model::ConformancePackStatusDetail,
         ) -> Self {
             let mut v = self.conformance_pack_status_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_status_details = Some(v);
             self
         }
@@ -4346,10 +4124,10 @@ pub mod describe_conformance_packs_output {
         /// <p>Returns a list of <code>ConformancePackDetail</code> objects.</p>
         pub fn conformance_pack_details(
             mut self,
-            input: impl Into<crate::model::ConformancePackDetail>,
+            input: crate::model::ConformancePackDetail,
         ) -> Self {
             let mut v = self.conformance_pack_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_details = Some(v);
             self
         }
@@ -4459,12 +4237,12 @@ pub mod describe_conformance_pack_compliance_output {
         /// <p>Returns a list of <code>ConformancePackRuleCompliance</code> objects.</p>
         pub fn conformance_pack_rule_compliance_list(
             mut self,
-            input: impl Into<crate::model::ConformancePackRuleCompliance>,
+            input: crate::model::ConformancePackRuleCompliance,
         ) -> Self {
             let mut v = self
                 .conformance_pack_rule_compliance_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conformance_pack_rule_compliance_list = Some(v);
             self
         }
@@ -4503,19 +4281,16 @@ impl DescribeConformancePackComplianceOutput {
     }
 }
 
-/// <p>The output for the <a>DescribeConfigurationRecorderStatus</a> action, in JSON
-/// format.</p>
+/// <p>The output for the <code>DescribeConfigurationRecorderStatus</code> action, in JSON format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRecorderStatusOutput {
-    /// <p>A list that contains status of the specified
-    /// recorders.</p>
+    /// <p>A list that contains status of the specified recorders.</p>
     pub configuration_recorders_status:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationRecorderStatus>>,
 }
 impl DescribeConfigurationRecorderStatusOutput {
-    /// <p>A list that contains status of the specified
-    /// recorders.</p>
+    /// <p>A list that contains status of the specified recorders.</p>
     pub fn configuration_recorders_status(
         &self,
     ) -> std::option::Option<&[crate::model::ConfigurationRecorderStatus]> {
@@ -4546,19 +4321,17 @@ pub mod describe_configuration_recorder_status_output {
         ///
         /// To override the contents of this collection use [`set_configuration_recorders_status`](Self::set_configuration_recorders_status).
         ///
-        /// <p>A list that contains status of the specified
-        /// recorders.</p>
+        /// <p>A list that contains status of the specified recorders.</p>
         pub fn configuration_recorders_status(
             mut self,
-            input: impl Into<crate::model::ConfigurationRecorderStatus>,
+            input: crate::model::ConfigurationRecorderStatus,
         ) -> Self {
             let mut v = self.configuration_recorders_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_recorders_status = Some(v);
             self
         }
-        /// <p>A list that contains status of the specified
-        /// recorders.</p>
+        /// <p>A list that contains status of the specified recorders.</p>
         pub fn set_configuration_recorders_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigurationRecorderStatus>>,
@@ -4581,18 +4354,16 @@ impl DescribeConfigurationRecorderStatusOutput {
     }
 }
 
-/// <p>The output for the <a>DescribeConfigurationRecorders</a> action.</p>
+/// <p>The output for the <code>DescribeConfigurationRecorders</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRecordersOutput {
-    /// <p>A list that contains the descriptions of the specified
-    /// configuration recorders.</p>
+    /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
     pub configuration_recorders:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationRecorder>>,
 }
 impl DescribeConfigurationRecordersOutput {
-    /// <p>A list that contains the descriptions of the specified
-    /// configuration recorders.</p>
+    /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
     pub fn configuration_recorders(
         &self,
     ) -> std::option::Option<&[crate::model::ConfigurationRecorder]> {
@@ -4620,19 +4391,17 @@ pub mod describe_configuration_recorders_output {
         ///
         /// To override the contents of this collection use [`set_configuration_recorders`](Self::set_configuration_recorders).
         ///
-        /// <p>A list that contains the descriptions of the specified
-        /// configuration recorders.</p>
+        /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
         pub fn configuration_recorders(
             mut self,
-            input: impl Into<crate::model::ConfigurationRecorder>,
+            input: crate::model::ConfigurationRecorder,
         ) -> Self {
             let mut v = self.configuration_recorders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_recorders = Some(v);
             self
         }
-        /// <p>A list that contains the descriptions of the specified
-        /// configuration recorders.</p>
+        /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
         pub fn set_configuration_recorders(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigurationRecorder>>,
@@ -4659,24 +4428,20 @@ impl DescribeConfigurationRecordersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationAggregatorSourcesStatusOutput {
-    /// <p>Returns an AggregatedSourceStatus object.
-    /// </p>
+    /// <p>Returns an AggregatedSourceStatus object. </p>
     pub aggregated_source_status_list:
         std::option::Option<std::vec::Vec<crate::model::AggregatedSourceStatus>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigurationAggregatorSourcesStatusOutput {
-    /// <p>Returns an AggregatedSourceStatus object.
-    /// </p>
+    /// <p>Returns an AggregatedSourceStatus object. </p>
     pub fn aggregated_source_status_list(
         &self,
     ) -> std::option::Option<&[crate::model::AggregatedSourceStatus]> {
         self.aggregated_source_status_list.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4707,19 +4472,17 @@ pub mod describe_configuration_aggregator_sources_status_output {
         ///
         /// To override the contents of this collection use [`set_aggregated_source_status_list`](Self::set_aggregated_source_status_list).
         ///
-        /// <p>Returns an AggregatedSourceStatus object.
-        /// </p>
+        /// <p>Returns an AggregatedSourceStatus object. </p>
         pub fn aggregated_source_status_list(
             mut self,
-            input: impl Into<crate::model::AggregatedSourceStatus>,
+            input: crate::model::AggregatedSourceStatus,
         ) -> Self {
             let mut v = self.aggregated_source_status_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregated_source_status_list = Some(v);
             self
         }
-        /// <p>Returns an AggregatedSourceStatus object.
-        /// </p>
+        /// <p>Returns an AggregatedSourceStatus object. </p>
         pub fn set_aggregated_source_status_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AggregatedSourceStatus>>,
@@ -4727,14 +4490,12 @@ pub mod describe_configuration_aggregator_sources_status_output {
             self.aggregated_source_status_list = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4763,8 +4524,7 @@ pub struct DescribeConfigurationAggregatorsOutput {
     /// <p>Returns a ConfigurationAggregators object.</p>
     pub configuration_aggregators:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationAggregator>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigurationAggregatorsOutput {
@@ -4774,8 +4534,7 @@ impl DescribeConfigurationAggregatorsOutput {
     ) -> std::option::Option<&[crate::model::ConfigurationAggregator]> {
         self.configuration_aggregators.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4806,10 +4565,10 @@ pub mod describe_configuration_aggregators_output {
         /// <p>Returns a ConfigurationAggregators object.</p>
         pub fn configuration_aggregators(
             mut self,
-            input: impl Into<crate::model::ConfigurationAggregator>,
+            input: crate::model::ConfigurationAggregator,
         ) -> Self {
             let mut v = self.configuration_aggregators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_aggregators = Some(v);
             self
         }
@@ -4821,14 +4580,12 @@ pub mod describe_configuration_aggregators_output {
             self.configuration_aggregators = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4855,8 +4612,7 @@ impl DescribeConfigurationAggregatorsOutput {
 pub struct DescribeConfigRulesOutput {
     /// <p>The details about your Config rules.</p>
     pub config_rules: std::option::Option<std::vec::Vec<crate::model::ConfigRule>>,
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigRulesOutput {
@@ -4864,8 +4620,7 @@ impl DescribeConfigRulesOutput {
     pub fn config_rules(&self) -> std::option::Option<&[crate::model::ConfigRule]> {
         self.config_rules.as_deref()
     }
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4893,9 +4648,9 @@ pub mod describe_config_rules_output {
         /// To override the contents of this collection use [`set_config_rules`](Self::set_config_rules).
         ///
         /// <p>The details about your Config rules.</p>
-        pub fn config_rules(mut self, input: impl Into<crate::model::ConfigRule>) -> Self {
+        pub fn config_rules(mut self, input: crate::model::ConfigRule) -> Self {
             let mut v = self.config_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.config_rules = Some(v);
             self
         }
@@ -4907,14 +4662,12 @@ pub mod describe_config_rules_output {
             self.config_rules = input;
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4942,8 +4695,7 @@ pub struct DescribeConfigRuleEvaluationStatusOutput {
     /// <p>Status information about your Config managed rules.</p>
     pub config_rules_evaluation_status:
         std::option::Option<std::vec::Vec<crate::model::ConfigRuleEvaluationStatus>>,
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigRuleEvaluationStatusOutput {
@@ -4953,8 +4705,7 @@ impl DescribeConfigRuleEvaluationStatusOutput {
     ) -> std::option::Option<&[crate::model::ConfigRuleEvaluationStatus]> {
         self.config_rules_evaluation_status.as_deref()
     }
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4988,10 +4739,10 @@ pub mod describe_config_rule_evaluation_status_output {
         /// <p>Status information about your Config managed rules.</p>
         pub fn config_rules_evaluation_status(
             mut self,
-            input: impl Into<crate::model::ConfigRuleEvaluationStatus>,
+            input: crate::model::ConfigRuleEvaluationStatus,
         ) -> Self {
             let mut v = self.config_rules_evaluation_status.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.config_rules_evaluation_status = Some(v);
             self
         }
@@ -5003,14 +4754,12 @@ pub mod describe_config_rule_evaluation_status_output {
             self.config_rules_evaluation_status = input;
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5035,24 +4784,20 @@ impl DescribeConfigRuleEvaluationStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByResourceOutput {
-    /// <p>Indicates whether the specified Amazon Web Services resource complies with all
-    /// of the Config rules that evaluate it.</p>
+    /// <p>Indicates whether the specified Amazon Web Services resource complies with all of the Config rules that evaluate it.</p>
     pub compliance_by_resources:
         std::option::Option<std::vec::Vec<crate::model::ComplianceByResource>>,
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeComplianceByResourceOutput {
-    /// <p>Indicates whether the specified Amazon Web Services resource complies with all
-    /// of the Config rules that evaluate it.</p>
+    /// <p>Indicates whether the specified Amazon Web Services resource complies with all of the Config rules that evaluate it.</p>
     pub fn compliance_by_resources(
         &self,
     ) -> std::option::Option<&[crate::model::ComplianceByResource]> {
         self.compliance_by_resources.as_deref()
     }
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5080,19 +4825,17 @@ pub mod describe_compliance_by_resource_output {
         ///
         /// To override the contents of this collection use [`set_compliance_by_resources`](Self::set_compliance_by_resources).
         ///
-        /// <p>Indicates whether the specified Amazon Web Services resource complies with all
-        /// of the Config rules that evaluate it.</p>
+        /// <p>Indicates whether the specified Amazon Web Services resource complies with all of the Config rules that evaluate it.</p>
         pub fn compliance_by_resources(
             mut self,
-            input: impl Into<crate::model::ComplianceByResource>,
+            input: crate::model::ComplianceByResource,
         ) -> Self {
             let mut v = self.compliance_by_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_by_resources = Some(v);
             self
         }
-        /// <p>Indicates whether the specified Amazon Web Services resource complies with all
-        /// of the Config rules that evaluate it.</p>
+        /// <p>Indicates whether the specified Amazon Web Services resource complies with all of the Config rules that evaluate it.</p>
         pub fn set_compliance_by_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceByResource>>,
@@ -5100,14 +4843,12 @@ pub mod describe_compliance_by_resource_output {
             self.compliance_by_resources = input;
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5132,24 +4873,20 @@ impl DescribeComplianceByResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComplianceByConfigRuleOutput {
-    /// <p>Indicates whether each of the specified Config rules is
-    /// compliant.</p>
+    /// <p>Indicates whether each of the specified Config rules is compliant.</p>
     pub compliance_by_config_rules:
         std::option::Option<std::vec::Vec<crate::model::ComplianceByConfigRule>>,
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeComplianceByConfigRuleOutput {
-    /// <p>Indicates whether each of the specified Config rules is
-    /// compliant.</p>
+    /// <p>Indicates whether each of the specified Config rules is compliant.</p>
     pub fn compliance_by_config_rules(
         &self,
     ) -> std::option::Option<&[crate::model::ComplianceByConfigRule]> {
         self.compliance_by_config_rules.as_deref()
     }
-    /// <p>The string that you use in a subsequent request to get the next
-    /// page of results in a paginated response.</p>
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5180,19 +4917,17 @@ pub mod describe_compliance_by_config_rule_output {
         ///
         /// To override the contents of this collection use [`set_compliance_by_config_rules`](Self::set_compliance_by_config_rules).
         ///
-        /// <p>Indicates whether each of the specified Config rules is
-        /// compliant.</p>
+        /// <p>Indicates whether each of the specified Config rules is compliant.</p>
         pub fn compliance_by_config_rules(
             mut self,
-            input: impl Into<crate::model::ComplianceByConfigRule>,
+            input: crate::model::ComplianceByConfigRule,
         ) -> Self {
             let mut v = self.compliance_by_config_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compliance_by_config_rules = Some(v);
             self
         }
-        /// <p>Indicates whether each of the specified Config rules is
-        /// compliant.</p>
+        /// <p>Indicates whether each of the specified Config rules is compliant.</p>
         pub fn set_compliance_by_config_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceByConfigRule>>,
@@ -5200,14 +4935,12 @@ pub mod describe_compliance_by_config_rule_output {
             self.compliance_by_config_rules = input;
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The string that you use in a subsequent request to get the next
-        /// page of results in a paginated response.</p>
+        /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5232,24 +4965,20 @@ impl DescribeComplianceByConfigRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregationAuthorizationsOutput {
-    /// <p>Returns a list of authorizations granted to various aggregator
-    /// accounts and regions.</p>
+    /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
     pub aggregation_authorizations:
         std::option::Option<std::vec::Vec<crate::model::AggregationAuthorization>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAggregationAuthorizationsOutput {
-    /// <p>Returns a list of authorizations granted to various aggregator
-    /// accounts and regions.</p>
+    /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
     pub fn aggregation_authorizations(
         &self,
     ) -> std::option::Option<&[crate::model::AggregationAuthorization]> {
         self.aggregation_authorizations.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5280,19 +5009,17 @@ pub mod describe_aggregation_authorizations_output {
         ///
         /// To override the contents of this collection use [`set_aggregation_authorizations`](Self::set_aggregation_authorizations).
         ///
-        /// <p>Returns a list of authorizations granted to various aggregator
-        /// accounts and regions.</p>
+        /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
         pub fn aggregation_authorizations(
             mut self,
-            input: impl Into<crate::model::AggregationAuthorization>,
+            input: crate::model::AggregationAuthorization,
         ) -> Self {
             let mut v = self.aggregation_authorizations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregation_authorizations = Some(v);
             self
         }
-        /// <p>Returns a list of authorizations granted to various aggregator
-        /// accounts and regions.</p>
+        /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
         pub fn set_aggregation_authorizations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AggregationAuthorization>>,
@@ -5300,14 +5027,12 @@ pub mod describe_aggregation_authorizations_output {
             self.aggregation_authorizations = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5379,12 +5104,12 @@ pub mod describe_aggregate_compliance_by_conformance_packs_output {
         /// <p>Returns the <code>AggregateComplianceByConformancePack</code> object.</p>
         pub fn aggregate_compliance_by_conformance_packs(
             mut self,
-            input: impl Into<crate::model::AggregateComplianceByConformancePack>,
+            input: crate::model::AggregateComplianceByConformancePack,
         ) -> Self {
             let mut v = self
                 .aggregate_compliance_by_conformance_packs
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregate_compliance_by_conformance_packs = Some(v);
             self
         }
@@ -5430,24 +5155,20 @@ impl DescribeAggregateComplianceByConformancePacksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregateComplianceByConfigRulesOutput {
-    /// <p>Returns a list of AggregateComplianceByConfigRule
-    /// object.</p>
+    /// <p>Returns a list of AggregateComplianceByConfigRule object.</p>
     pub aggregate_compliance_by_config_rules:
         std::option::Option<std::vec::Vec<crate::model::AggregateComplianceByConfigRule>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAggregateComplianceByConfigRulesOutput {
-    /// <p>Returns a list of AggregateComplianceByConfigRule
-    /// object.</p>
+    /// <p>Returns a list of AggregateComplianceByConfigRule object.</p>
     pub fn aggregate_compliance_by_config_rules(
         &self,
     ) -> std::option::Option<&[crate::model::AggregateComplianceByConfigRule]> {
         self.aggregate_compliance_by_config_rules.as_deref()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use
-    /// to get the next page of results in a paginated response.</p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5478,21 +5199,19 @@ pub mod describe_aggregate_compliance_by_config_rules_output {
         ///
         /// To override the contents of this collection use [`set_aggregate_compliance_by_config_rules`](Self::set_aggregate_compliance_by_config_rules).
         ///
-        /// <p>Returns a list of AggregateComplianceByConfigRule
-        /// object.</p>
+        /// <p>Returns a list of AggregateComplianceByConfigRule object.</p>
         pub fn aggregate_compliance_by_config_rules(
             mut self,
-            input: impl Into<crate::model::AggregateComplianceByConfigRule>,
+            input: crate::model::AggregateComplianceByConfigRule,
         ) -> Self {
             let mut v = self
                 .aggregate_compliance_by_config_rules
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aggregate_compliance_by_config_rules = Some(v);
             self
         }
-        /// <p>Returns a list of AggregateComplianceByConfigRule
-        /// object.</p>
+        /// <p>Returns a list of AggregateComplianceByConfigRule object.</p>
         pub fn set_aggregate_compliance_by_config_rules(
             mut self,
             input: std::option::Option<
@@ -5502,14 +5221,12 @@ pub mod describe_aggregate_compliance_by_config_rules_output {
             self.aggregate_compliance_by_config_rules = input;
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> string returned on a previous page that you use
-        /// to get the next page of results in a paginated response.</p>
+        /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5531,8 +5248,7 @@ impl DescribeAggregateComplianceByConfigRulesOutput {
     }
 }
 
-/// <p>The output for the <a>DeliverConfigSnapshot</a>
-/// action, in JSON format.</p>
+/// <p>The output for the <code>DeliverConfigSnapshot</code> action, in JSON format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeliverConfigSnapshotOutput {
@@ -5720,10 +5436,10 @@ pub mod delete_remediation_exceptions_output {
         /// <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
         pub fn failed_batches(
             mut self,
-            input: impl Into<crate::model::FailedDeleteRemediationExceptionsBatch>,
+            input: crate::model::FailedDeleteRemediationExceptionsBatch,
         ) -> Self {
             let mut v = self.failed_batches.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_batches = Some(v);
             self
         }
@@ -5872,8 +5588,7 @@ impl DeleteOrganizationConfigRuleOutput {
     }
 }
 
-/// <p>The output when you delete the evaluation results for the
-/// specified Config rule.</p>
+/// <p>The output when you delete the evaluation results for the specified Config rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEvaluationResultsOutput {}
@@ -6087,34 +5802,20 @@ impl DeleteAggregationAuthorizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetResourceConfigOutput {
-    /// <p>A list that contains the current configuration of one or more
-    /// resources.</p>
+    /// <p>A list that contains the current configuration of one or more resources.</p>
     pub base_configuration_items:
         std::option::Option<std::vec::Vec<crate::model::BaseConfigurationItem>>,
-    /// <p>A list of resource keys that were not processed with the
-    /// current response. The unprocessesResourceKeys value is in the same
-    /// form as ResourceKeys, so the value can be directly provided to a
-    /// subsequent BatchGetResourceConfig operation.
-    ///
-    /// If there are no unprocessed resource keys, the response contains an
-    /// empty unprocessedResourceKeys list. </p>
+    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
     pub unprocessed_resource_keys: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
 }
 impl BatchGetResourceConfigOutput {
-    /// <p>A list that contains the current configuration of one or more
-    /// resources.</p>
+    /// <p>A list that contains the current configuration of one or more resources.</p>
     pub fn base_configuration_items(
         &self,
     ) -> std::option::Option<&[crate::model::BaseConfigurationItem]> {
         self.base_configuration_items.as_deref()
     }
-    /// <p>A list of resource keys that were not processed with the
-    /// current response. The unprocessesResourceKeys value is in the same
-    /// form as ResourceKeys, so the value can be directly provided to a
-    /// subsequent BatchGetResourceConfig operation.
-    ///
-    /// If there are no unprocessed resource keys, the response contains an
-    /// empty unprocessedResourceKeys list. </p>
+    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
     pub fn unprocessed_resource_keys(&self) -> std::option::Option<&[crate::model::ResourceKey]> {
         self.unprocessed_resource_keys.as_deref()
     }
@@ -6143,19 +5844,17 @@ pub mod batch_get_resource_config_output {
         ///
         /// To override the contents of this collection use [`set_base_configuration_items`](Self::set_base_configuration_items).
         ///
-        /// <p>A list that contains the current configuration of one or more
-        /// resources.</p>
+        /// <p>A list that contains the current configuration of one or more resources.</p>
         pub fn base_configuration_items(
             mut self,
-            input: impl Into<crate::model::BaseConfigurationItem>,
+            input: crate::model::BaseConfigurationItem,
         ) -> Self {
             let mut v = self.base_configuration_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.base_configuration_items = Some(v);
             self
         }
-        /// <p>A list that contains the current configuration of one or more
-        /// resources.</p>
+        /// <p>A list that contains the current configuration of one or more resources.</p>
         pub fn set_base_configuration_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BaseConfigurationItem>>,
@@ -6167,29 +5866,14 @@ pub mod batch_get_resource_config_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_resource_keys`](Self::set_unprocessed_resource_keys).
         ///
-        /// <p>A list of resource keys that were not processed with the
-        /// current response. The unprocessesResourceKeys value is in the same
-        /// form as ResourceKeys, so the value can be directly provided to a
-        /// subsequent BatchGetResourceConfig operation.
-        ///
-        /// If there are no unprocessed resource keys, the response contains an
-        /// empty unprocessedResourceKeys list. </p>
-        pub fn unprocessed_resource_keys(
-            mut self,
-            input: impl Into<crate::model::ResourceKey>,
-        ) -> Self {
+        /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
+        pub fn unprocessed_resource_keys(mut self, input: crate::model::ResourceKey) -> Self {
             let mut v = self.unprocessed_resource_keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_resource_keys = Some(v);
             self
         }
-        /// <p>A list of resource keys that were not processed with the
-        /// current response. The unprocessesResourceKeys value is in the same
-        /// form as ResourceKeys, so the value can be directly provided to a
-        /// subsequent BatchGetResourceConfig operation.
-        ///
-        /// If there are no unprocessed resource keys, the response contains an
-        /// empty unprocessedResourceKeys list. </p>
+        /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
         pub fn set_unprocessed_resource_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceKey>>,
@@ -6268,10 +5952,10 @@ pub mod batch_get_aggregate_resource_config_output {
         /// <p>A list that contains the current configuration of one or more resources.</p>
         pub fn base_configuration_items(
             mut self,
-            input: impl Into<crate::model::BaseConfigurationItem>,
+            input: crate::model::BaseConfigurationItem,
         ) -> Self {
             let mut v = self.base_configuration_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.base_configuration_items = Some(v);
             self
         }
@@ -6290,10 +5974,10 @@ pub mod batch_get_aggregate_resource_config_output {
         /// <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
         pub fn unprocessed_resource_identifiers(
             mut self,
-            input: impl Into<crate::model::AggregateResourceIdentifier>,
+            input: crate::model::AggregateResourceIdentifier,
         ) -> Self {
             let mut v = self.unprocessed_resource_identifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_resource_identifiers = Some(v);
             self
         }

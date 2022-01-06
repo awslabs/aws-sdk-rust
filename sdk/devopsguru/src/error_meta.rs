@@ -3,10 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p> You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that grants
-    /// the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the
-    /// <i>IAM User Guide</i>. </p>
+    /// <p> You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> An exception that is thrown when a conflict occurs. </p>
     ConflictException(crate::error::ConflictException),
@@ -18,8 +15,7 @@ pub enum Error {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not
-    /// valid. </p>
+    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

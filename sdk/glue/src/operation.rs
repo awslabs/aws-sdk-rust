@@ -3465,6 +3465,108 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTriggers {
     }
 }
 
+/// Operation shape for `GetUnfilteredPartitionMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_unfiltered_partition_metadata`](crate::client::Client::get_unfiltered_partition_metadata).
+///
+/// See [`crate::client::fluent_builders::GetUnfilteredPartitionMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetUnfilteredPartitionMetadata {
+    _private: (),
+}
+impl GetUnfilteredPartitionMetadata {
+    /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionMetadataInput`](crate::input::GetUnfilteredPartitionMetadataInput)
+    pub fn builder() -> crate::input::get_unfiltered_partition_metadata_input::Builder {
+        crate::input::get_unfiltered_partition_metadata_input::Builder::default()
+    }
+    /// Creates a new `GetUnfilteredPartitionMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetUnfilteredPartitionMetadata {
+    type Output = std::result::Result<
+        crate::output::GetUnfilteredPartitionMetadataOutput,
+        crate::error::GetUnfilteredPartitionMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_unfiltered_partition_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_get_unfiltered_partition_metadata_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetUnfilteredPartitionsMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_unfiltered_partitions_metadata`](crate::client::Client::get_unfiltered_partitions_metadata).
+///
+/// See [`crate::client::fluent_builders::GetUnfilteredPartitionsMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetUnfilteredPartitionsMetadata {
+    _private: (),
+}
+impl GetUnfilteredPartitionsMetadata {
+    /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionsMetadataInput`](crate::input::GetUnfilteredPartitionsMetadataInput)
+    pub fn builder() -> crate::input::get_unfiltered_partitions_metadata_input::Builder {
+        crate::input::get_unfiltered_partitions_metadata_input::Builder::default()
+    }
+    /// Creates a new `GetUnfilteredPartitionsMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetUnfilteredPartitionsMetadata {
+    type Output = std::result::Result<
+        crate::output::GetUnfilteredPartitionsMetadataOutput,
+        crate::error::GetUnfilteredPartitionsMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_unfiltered_partitions_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_get_unfiltered_partitions_metadata_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetUnfilteredTableMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_unfiltered_table_metadata`](crate::client::Client::get_unfiltered_table_metadata).
+///
+/// See [`crate::client::fluent_builders::GetUnfilteredTableMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetUnfilteredTableMetadata {
+    _private: (),
+}
+impl GetUnfilteredTableMetadata {
+    /// Creates a new builder-style object to manufacture [`GetUnfilteredTableMetadataInput`](crate::input::GetUnfilteredTableMetadataInput)
+    pub fn builder() -> crate::input::get_unfiltered_table_metadata_input::Builder {
+        crate::input::get_unfiltered_table_metadata_input::Builder::default()
+    }
+    /// Creates a new `GetUnfilteredTableMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetUnfilteredTableMetadata {
+    type Output = std::result::Result<
+        crate::output::GetUnfilteredTableMetadataOutput,
+        crate::error::GetUnfilteredTableMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_unfiltered_table_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_get_unfiltered_table_metadata_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetUserDefinedFunction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

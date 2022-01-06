@@ -52,8 +52,6 @@ impl BatchGetChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -136,8 +134,6 @@ impl BatchGetStreamKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -180,15 +176,15 @@ pub struct CreateChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateChannelErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -235,8 +231,6 @@ impl CreateChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -310,17 +304,17 @@ pub struct CreateRecordingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRecordingConfigurationErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -370,8 +364,6 @@ impl CreateRecordingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -464,15 +456,15 @@ pub struct CreateStreamKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStreamKeyErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -519,8 +511,6 @@ impl CreateStreamKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -597,15 +587,15 @@ pub struct DeleteChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteChannelErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -652,8 +642,6 @@ impl DeleteChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -724,13 +712,13 @@ pub struct DeletePlaybackKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePlaybackKeyPairErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -776,8 +764,6 @@ impl DeletePlaybackKeyPairError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -852,15 +838,15 @@ pub struct DeleteRecordingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRecordingConfigurationErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -909,8 +895,6 @@ impl DeleteRecordingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -995,13 +979,13 @@ pub struct DeleteStreamKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStreamKeyErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1047,8 +1031,6 @@ impl DeleteStreamKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1117,11 +1099,11 @@ pub struct GetChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetChannelErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1166,8 +1148,6 @@ impl GetChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1228,11 +1208,11 @@ pub struct GetPlaybackKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPlaybackKeyPairErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1277,8 +1257,6 @@ impl GetPlaybackKeyPairError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1345,13 +1323,13 @@ pub struct GetRecordingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRecordingConfigurationErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1397,8 +1375,6 @@ impl GetRecordingConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1473,13 +1449,13 @@ pub struct GetStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStreamErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ChannelNotBroadcasting(crate::error::ChannelNotBroadcasting),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1525,8 +1501,6 @@ impl GetStreamError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1589,11 +1563,11 @@ pub struct GetStreamKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStreamKeyErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1638,8 +1612,6 @@ impl GetStreamKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1700,11 +1672,11 @@ pub struct GetStreamSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStreamSessionErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1749,8 +1721,6 @@ impl GetStreamSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1817,15 +1787,15 @@ pub struct ImportPlaybackKeyPairError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportPlaybackKeyPairErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1872,8 +1842,6 @@ impl ImportPlaybackKeyPairError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1956,11 +1924,11 @@ pub struct ListChannelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListChannelsErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2005,8 +1973,6 @@ impl ListChannelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2064,9 +2030,9 @@ pub struct ListPlaybackKeyPairsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPlaybackKeyPairsErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2110,8 +2076,6 @@ impl ListPlaybackKeyPairsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2170,11 +2134,11 @@ pub struct ListRecordingConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRecordingConfigurationsErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2219,8 +2183,6 @@ impl ListRecordingConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2287,11 +2249,11 @@ pub struct ListStreamKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamKeysErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2336,8 +2298,6 @@ impl ListStreamKeysError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2401,7 +2361,7 @@ pub struct ListStreamsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamsErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2444,8 +2404,6 @@ impl ListStreamsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2493,11 +2451,11 @@ pub struct ListStreamSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStreamSessionsErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2542,8 +2500,6 @@ impl ListStreamSessionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2610,11 +2566,11 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2659,8 +2615,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2727,15 +2681,15 @@ pub struct PutMetadataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutMetadataErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ChannelNotBroadcasting(crate::error::ChannelNotBroadcasting),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2782,8 +2736,6 @@ impl PutMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2854,15 +2806,15 @@ pub struct StopStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopStreamErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ChannelNotBroadcasting(crate::error::ChannelNotBroadcasting),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     StreamUnavailable(crate::error::StreamUnavailable),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2909,8 +2861,6 @@ impl StopStreamError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2981,11 +2931,11 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3030,8 +2980,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3092,11 +3040,11 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p/>
+    /// <p></p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3141,8 +3089,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3206,15 +3152,15 @@ pub struct UpdateChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateChannelErrorKind {
-    /// <p/>
+    /// <p></p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p/>
+    /// <p></p>
     ConflictException(crate::error::ConflictException),
-    /// <p/>
+    /// <p></p>
     PendingVerification(crate::error::PendingVerification),
-    /// <p/>
+    /// <p></p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p/>
+    /// <p></p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3261,8 +3207,6 @@ impl UpdateChannelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3320,7 +3264,7 @@ impl std::error::Error for UpdateChannelError {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -3408,7 +3352,7 @@ impl ValidationException {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -3496,7 +3440,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingVerification {
@@ -3584,7 +3528,7 @@ impl PendingVerification {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -3672,7 +3616,7 @@ impl ConflictException {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -3760,7 +3704,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -3848,7 +3792,7 @@ impl InternalServerException {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamUnavailable {
@@ -3936,7 +3880,7 @@ impl StreamUnavailable {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelNotBroadcasting {
@@ -4024,7 +3968,7 @@ impl ChannelNotBroadcasting {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -4112,7 +4056,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

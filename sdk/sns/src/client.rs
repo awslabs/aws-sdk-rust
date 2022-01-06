@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Simple Notification Service
@@ -222,6 +222,7 @@ where
     ///
     /// See [`ListEndpointsByPlatformApplication`](crate::client::fluent_builders::ListEndpointsByPlatformApplication) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEndpointsByPlatformApplication::into_paginator).
     pub fn list_endpoints_by_platform_application(
         &self,
     ) -> fluent_builders::ListEndpointsByPlatformApplication<C, M, R> {
@@ -231,6 +232,7 @@ where
     ///
     /// See [`ListOriginationNumbers`](crate::client::fluent_builders::ListOriginationNumbers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOriginationNumbers::into_paginator).
     pub fn list_origination_numbers(&self) -> fluent_builders::ListOriginationNumbers<C, M, R> {
         fluent_builders::ListOriginationNumbers::new(self.handle.clone())
     }
@@ -238,6 +240,7 @@ where
     ///
     /// See [`ListPhoneNumbersOptedOut`](crate::client::fluent_builders::ListPhoneNumbersOptedOut) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPhoneNumbersOptedOut::into_paginator).
     pub fn list_phone_numbers_opted_out(
         &self,
     ) -> fluent_builders::ListPhoneNumbersOptedOut<C, M, R> {
@@ -247,6 +250,7 @@ where
     ///
     /// See [`ListPlatformApplications`](crate::client::fluent_builders::ListPlatformApplications) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPlatformApplications::into_paginator).
     pub fn list_platform_applications(&self) -> fluent_builders::ListPlatformApplications<C, M, R> {
         fluent_builders::ListPlatformApplications::new(self.handle.clone())
     }
@@ -254,6 +258,7 @@ where
     ///
     /// See [`ListSMSSandboxPhoneNumbers`](crate::client::fluent_builders::ListSMSSandboxPhoneNumbers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSMSSandboxPhoneNumbers::into_paginator).
     pub fn list_sms_sandbox_phone_numbers(
         &self,
     ) -> fluent_builders::ListSMSSandboxPhoneNumbers<C, M, R> {
@@ -263,6 +268,7 @@ where
     ///
     /// See [`ListSubscriptions`](crate::client::fluent_builders::ListSubscriptions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSubscriptions::into_paginator).
     pub fn list_subscriptions(&self) -> fluent_builders::ListSubscriptions<C, M, R> {
         fluent_builders::ListSubscriptions::new(self.handle.clone())
     }
@@ -270,6 +276,7 @@ where
     ///
     /// See [`ListSubscriptionsByTopic`](crate::client::fluent_builders::ListSubscriptionsByTopic) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSubscriptionsByTopic::into_paginator).
     pub fn list_subscriptions_by_topic(
         &self,
     ) -> fluent_builders::ListSubscriptionsByTopic<C, M, R> {
@@ -286,6 +293,7 @@ where
     ///
     /// See [`ListTopics`](crate::client::fluent_builders::ListTopics) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTopics::into_paginator).
     pub fn list_topics(&self) -> fluent_builders::ListTopics<C, M, R> {
         fluent_builders::ListTopics::new(self.handle.clone())
     }
@@ -404,9 +412,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddPermission`.
     ///
-    /// <p>Adds a statement to a topic's access control policy, granting access for the specified
-    /// Amazon Web Services accounts to the specified actions.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds a statement to a topic's access control policy, granting access for the specified Amazon Web Services accounts to the specified actions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -451,10 +458,10 @@ pub mod fluent_builders {
                 crate::input::AddPermissionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -463,8 +470,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
@@ -473,8 +480,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the new policy statement.</p>
-        pub fn label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label(inp);
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label(input.into());
             self
         }
         /// <p>A unique identifier for the new policy statement.</p>
@@ -486,16 +493,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_aws_account_id`](Self::set_aws_account_id).
         ///
-        /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the
-        /// specified actions. The users must have Amazon Web Services account, but do not need to be signed up for
-        /// this service.</p>
-        pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(inp);
+        /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the
-        /// specified actions. The users must have Amazon Web Services account, but do not need to be signed up for
-        /// this service.</p>
+        /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -509,8 +512,8 @@ pub mod fluent_builders {
         ///
         /// <p>The action you want to allow for the specified principal(s).</p>
         /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
-        pub fn action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(inp);
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input.into());
             self
         }
         /// <p>The action you want to allow for the specified principal(s).</p>
@@ -525,12 +528,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CheckIfPhoneNumberIsOptedOut`.
     ///
-    /// <p>Accepts a phone number and indicates whether the phone holder has opted out of
-    /// receiving SMS messages from your Amazon Web Services account. You cannot send SMS messages to a number that
-    /// is opted out.</p>
-    /// <p>To resume sending messages, you can opt in the number by using the
-    /// <code>OptInPhoneNumber</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Accepts a phone number and indicates whether the phone holder has opted out of receiving SMS messages from your Amazon Web Services account. You cannot send SMS messages to a number that is opted out.</p>
+    /// <p>To resume sending messages, you can opt in the number by using the <code>OptInPhoneNumber</code> action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckIfPhoneNumberIsOptedOut<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -575,10 +575,10 @@ pub mod fluent_builders {
                 crate::input::CheckIfPhoneNumberIsOptedOutInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -587,8 +587,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number for which you want to check the opt out status.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
             self
         }
         /// <p>The phone number for which you want to check the opt out status.</p>
@@ -599,12 +599,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ConfirmSubscription`.
     ///
-    /// <p>Verifies an endpoint owner's intent to receive messages by validating the token sent
-    /// to the endpoint by an earlier <code>Subscribe</code> action. If the token is valid, the
-    /// action creates a new subscription and returns its Amazon Resource Name (ARN). This call
-    /// requires an AWS signature only when the <code>AuthenticateOnUnsubscribe</code> flag is
-    /// set to "true".</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Verifies an endpoint owner's intent to receive messages by validating the token sent to the endpoint by an earlier <code>Subscribe</code> action. If the token is valid, the action creates a new subscription and returns its Amazon Resource Name (ARN). This call requires an AWS signature only when the <code>AuthenticateOnUnsubscribe</code> flag is set to "true".</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfirmSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -649,10 +645,10 @@ pub mod fluent_builders {
                 crate::input::ConfirmSubscriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -661,8 +657,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic for which you wish to confirm a subscription.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The ARN of the topic for which you wish to confirm a subscription.</p>
@@ -671,8 +667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
@@ -680,18 +676,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_token(input);
             self
         }
-        /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this
-        /// parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic
-        /// owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action
-        /// requires Amazon Web Services authentication. </p>
-        pub fn authenticate_on_unsubscribe(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authenticate_on_unsubscribe(inp);
+        /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </p>
+        pub fn authenticate_on_unsubscribe(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.authenticate_on_unsubscribe(input.into());
             self
         }
-        /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this
-        /// parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic
-        /// owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action
-        /// requires Amazon Web Services authentication. </p>
+        /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </p>
         pub fn set_authenticate_on_unsubscribe(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -702,52 +695,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePlatformApplication`.
     ///
-    /// <p>Creates a platform application object for one of the supported push notification
-    /// services, such as APNS and GCM (Firebase Cloud Messaging), to which devices and mobile
-    /// apps may register. You must specify <code>PlatformPrincipal</code> and
-    /// <code>PlatformCredential</code> attributes when using the
-    /// <code>CreatePlatformApplication</code> action.</p>
-    /// <p>
-    /// <code>PlatformPrincipal</code> and <code>PlatformCredential</code> are received from
-    /// the notification service.</p>
+    /// <p>Creates a platform application object for one of the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging), to which devices and mobile apps may register. You must specify <code>PlatformPrincipal</code> and <code>PlatformCredential</code> attributes when using the <code>CreatePlatformApplication</code> action.</p>
+    /// <p> <code>PlatformPrincipal</code> and <code>PlatformCredential</code> are received from the notification service.</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>ADM</code>, <code>PlatformPrincipal</code> is <code>client id</code>
-    /// and <code>PlatformCredential</code> is <code>client secret</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>Baidu</code>, <code>PlatformPrincipal</code> is <code>API key</code>
-    /// and <code>PlatformCredential</code> is <code>secret key</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>APNS</code> and <code>APNS_SANDBOX</code> using certificate credentials,
-    /// <code>PlatformPrincipal</code> is <code>SSL certificate</code> and
-    /// <code>PlatformCredential</code> is <code>private key</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>APNS</code> and <code>APNS_SANDBOX</code> using token credentials,
-    /// <code>PlatformPrincipal</code> is <code>signing key ID</code> and
-    /// <code>PlatformCredential</code> is <code>signing key</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>GCM</code> (Firebase Cloud Messaging), there is no
-    /// <code>PlatformPrincipal</code> and the <code>PlatformCredential</code> is
-    /// <code>API key</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>MPNS</code>, <code>PlatformPrincipal</code> is <code>TLS
-    /// certificate</code> and <code>PlatformCredential</code> is <code>private
-    /// key</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>WNS</code>, <code>PlatformPrincipal</code> is <code>Package Security
-    /// Identifier</code> and <code>PlatformCredential</code> is <code>secret
-    /// key</code>.</p>
-    /// </li>
+    /// <li> <p>For <code>ADM</code>, <code>PlatformPrincipal</code> is <code>client id</code> and <code>PlatformCredential</code> is <code>client secret</code>.</p> </li>
+    /// <li> <p>For <code>Baidu</code>, <code>PlatformPrincipal</code> is <code>API key</code> and <code>PlatformCredential</code> is <code>secret key</code>.</p> </li>
+    /// <li> <p>For <code>APNS</code> and <code>APNS_SANDBOX</code> using certificate credentials, <code>PlatformPrincipal</code> is <code>SSL certificate</code> and <code>PlatformCredential</code> is <code>private key</code>.</p> </li>
+    /// <li> <p>For <code>APNS</code> and <code>APNS_SANDBOX</code> using token credentials, <code>PlatformPrincipal</code> is <code>signing key ID</code> and <code>PlatformCredential</code> is <code>signing key</code>.</p> </li>
+    /// <li> <p>For <code>GCM</code> (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code> and the <code>PlatformCredential</code> is <code>API key</code>.</p> </li>
+    /// <li> <p>For <code>MPNS</code>, <code>PlatformPrincipal</code> is <code>TLS certificate</code> and <code>PlatformCredential</code> is <code>private key</code>.</p> </li>
+    /// <li> <p>For <code>WNS</code>, <code>PlatformPrincipal</code> is <code>Package Security Identifier</code> and <code>PlatformCredential</code> is <code>secret key</code>.</p> </li>
     /// </ul>
-    /// <p>You can use the returned <code>PlatformApplicationArn</code> as an attribute for the
-    /// <code>CreatePlatformEndpoint</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can use the returned <code>PlatformApplicationArn</code> as an attribute for the <code>CreatePlatformEndpoint</code> action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePlatformApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -792,10 +752,10 @@ pub mod fluent_builders {
                 crate::input::CreatePlatformApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -803,28 +763,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Application names must be made up of only uppercase and lowercase ASCII letters,
-        /// numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters
-        /// long.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters long.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>Application names must be made up of only uppercase and lowercase ASCII letters,
-        /// numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters
-        /// long.</p>
+        /// <p>Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters long.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push
-        /// Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
-        pub fn platform(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform(inp);
+        /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
+        pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform(input.into());
             self
         }
-        /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push
-        /// Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
+        /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_platform(input);
             self
@@ -839,7 +793,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
         /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.</p>
@@ -855,21 +809,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePlatformEndpoint`.
     ///
-    /// <p>Creates an endpoint for a device and mobile app on one of the supported push
-    /// notification services, such as GCM (Firebase Cloud Messaging) and APNS.
-    /// <code>CreatePlatformEndpoint</code> requires the <code>PlatformApplicationArn</code>
-    /// that is returned from <code>CreatePlatformApplication</code>. You can use the returned
-    /// <code>EndpointArn</code> to send a message to a mobile app or by the
-    /// <code>Subscribe</code> action for subscription to a topic. The
-    /// <code>CreatePlatformEndpoint</code> action is idempotent, so if the requester
-    /// already owns an endpoint with the same device token and attributes, that endpoint's ARN
-    /// is returned without creating a new endpoint. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
-    /// Notifications</a>. </p>
-    /// <p>When using <code>CreatePlatformEndpoint</code> with Baidu, two attributes must be
-    /// provided: ChannelId and UserId. The token field must also contain the ChannelId. For
-    /// more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating an Amazon SNS Endpoint
-    /// for Baidu</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an endpoint for a device and mobile app on one of the supported push notification services, such as GCM (Firebase Cloud Messaging) and APNS. <code>CreatePlatformEndpoint</code> requires the <code>PlatformApplicationArn</code> that is returned from <code>CreatePlatformApplication</code>. You can use the returned <code>EndpointArn</code> to send a message to a mobile app or by the <code>Subscribe</code> action for subscription to a topic. The <code>CreatePlatformEndpoint</code> action is idempotent, so if the requester already owns an endpoint with the same device token and attributes, that endpoint's ARN is returned without creating a new endpoint. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
+    /// <p>When using <code>CreatePlatformEndpoint</code> with Baidu, two attributes must be provided: ChannelId and UserId. The token field must also contain the ChannelId. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating an Amazon SNS Endpoint for Baidu</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePlatformEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -914,10 +856,10 @@ pub mod fluent_builders {
                 crate::input::CreatePlatformEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -925,14 +867,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an
-        /// endpoint.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_application_arn(inp);
+        /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_application_arn(input.into());
             self
         }
-        /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an
-        /// endpoint.</p>
+        /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
         pub fn set_platform_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -940,32 +880,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_platform_application_arn(input);
             self
         }
-        /// <p>Unique identifier created by the notification service for an app on a device. The
-        /// specific name for Token will vary, depending on which notification service is being
-        /// used. For example, when using APNS as the notification service, you need the device
-        /// token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token
-        /// equivalent is called the registration ID.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        /// <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token equivalent is called the registration ID.</p>
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
-        /// <p>Unique identifier created by the notification service for an app on a device. The
-        /// specific name for Token will vary, depending on which notification service is being
-        /// used. For example, when using APNS as the notification service, you need the device
-        /// token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token
-        /// equivalent is called the registration ID.</p>
+        /// <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token equivalent is called the registration ID.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_token(input);
             self
         }
-        /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The
-        /// data must be in UTF-8 format and less than 2KB.</p>
-        pub fn custom_user_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_user_data(inp);
+        /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p>
+        pub fn custom_user_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_user_data(input.into());
             self
         }
-        /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The
-        /// data must be in UTF-8 format and less than 2KB.</p>
+        /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p>
         pub fn set_custom_user_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -983,7 +913,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
         /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
@@ -999,17 +929,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSMSSandboxPhoneNumber`.
     ///
-    /// <p>Adds a destination phone number to an Amazon Web Services account in the SMS sandbox and sends a
-    /// one-time password (OTP) to that phone number.</p>
-    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the
-    /// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
-    /// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
-    /// Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
-    /// SMS messages only to verified destination phone numbers. For more information, including how to
-    /// move out of the sandbox to send messages without restrictions,
-    /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
-    /// the <i>Amazon SNS Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds a destination phone number to an Amazon Web Services account in the SMS sandbox and sends a one-time password (OTP) to that phone number.</p>
+    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSMSSandboxPhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1054,10 +976,10 @@ pub mod fluent_builders {
                 crate::input::CreateSmsSandboxPhoneNumberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1065,26 +987,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number
-        /// to the list of verified phone numbers that you can send SMS messages to.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number to the list of verified phone numbers that you can send SMS messages to.</p>
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
             self
         }
-        /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number
-        /// to the list of verified phone numbers that you can send SMS messages to.</p>
+        /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number to the list of verified phone numbers that you can send SMS messages to.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_phone_number(input);
             self
         }
-        /// <p>The language to use for sending the OTP. The default value is
-        /// <code>en-US</code>.</p>
-        pub fn language_code(mut self, inp: crate::model::LanguageCodeString) -> Self {
-            self.inner = self.inner.language_code(inp);
+        /// <p>The language to use for sending the OTP. The default value is <code>en-US</code>.</p>
+        pub fn language_code(mut self, input: crate::model::LanguageCodeString) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language to use for sending the OTP. The default value is
-        /// <code>en-US</code>.</p>
+        /// <p>The language to use for sending the OTP. The default value is <code>en-US</code>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCodeString>,
@@ -1095,12 +1013,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTopic`.
     ///
-    /// <p>Creates a topic to which notifications can be published. Users can create at most
-    /// 100,000 standard topics (at most 1,000 FIFO topics). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-create-topic.html">Creating an Amazon SNS
-    /// topic</a> in the <i>Amazon SNS Developer Guide</i>. This action is
-    /// idempotent, so if the requester already owns a topic with the specified name, that
-    /// topic's ARN is returned without creating a new topic.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a topic to which notifications can be published. Users can create at most 100,000 standard topics (at most 1,000 FIFO topics). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-create-topic.html">Creating an Amazon SNS topic</a> in the <i>Amazon SNS Developer Guide</i>. This action is idempotent, so if the requester already owns a topic with the specified name, that topic's ARN is returned without creating a new topic.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTopic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1145,10 +1059,10 @@ pub mod fluent_builders {
                 crate::input::CreateTopicInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1157,21 +1071,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the topic you want to create.</p>
-        /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII
-        /// letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters
-        /// long.</p>
-        /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code>
-        /// suffix. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</p>
+        /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the topic you want to create.</p>
-        /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII
-        /// letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters
-        /// long.</p>
-        /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code>
-        /// suffix. </p>
+        /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</p>
+        /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1181,150 +1089,54 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A map of attributes with their corresponding values.</p>
-        /// <p>The following lists the names, descriptions, and values of the special request
-        /// parameters that the <code>CreateTopic</code> action uses:</p>
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-        /// failed deliveries to HTTP/S endpoints.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DisplayName</code> – The display name to use for a topic with SMS
-        /// subscriptions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FifoTopic</code> – Set to true to create a FIFO topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Policy</code> – The policy that defines who can access your
-        /// topic. By default, only the topic owner can publish or subscribe to the
-        /// topic.</p>
-        /// </li>
+        /// <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>
+        /// <li> <p> <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.</p> </li>
+        /// <li> <p> <code>FifoTopic</code> – Set to true to create a FIFO topic.</p> </li>
+        /// <li> <p> <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic.</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
-        /// encryption</a>:</p>
+        /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side encryption</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master
-        /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
-        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
-        /// Reference</i>. </p>
-        /// </li>
+        /// <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO
-        /// topic is created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-        /// FIFO topics.</p>
-        ///
+        /// <li> <p> <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p> </li>
+        /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
         /// <ul>
-        /// <li>
-        /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
-        /// If you create a FIFO topic and this attribute is <code>false</code>, you must
-        /// specify a value for the <code>MessageDeduplicationId</code> parameter for the
-        /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p>
-        /// </li>
-        /// <li>
-        /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>,
-        /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-        /// the body of the message (but not the attributes of the message).</p>
-        /// <p>(Optional) To override the generated value, you can specify a value
-        /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
-        /// action.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>
+        /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
-        /// <p>The following lists the names, descriptions, and values of the special request
-        /// parameters that the <code>CreateTopic</code> action uses:</p>
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-        /// failed deliveries to HTTP/S endpoints.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DisplayName</code> – The display name to use for a topic with SMS
-        /// subscriptions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FifoTopic</code> – Set to true to create a FIFO topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Policy</code> – The policy that defines who can access your
-        /// topic. By default, only the topic owner can publish or subscribe to the
-        /// topic.</p>
-        /// </li>
+        /// <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>
+        /// <li> <p> <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.</p> </li>
+        /// <li> <p> <code>FifoTopic</code> – Set to true to create a FIFO topic.</p> </li>
+        /// <li> <p> <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic.</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
-        /// encryption</a>:</p>
+        /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side encryption</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master
-        /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
-        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
-        /// Reference</i>. </p>
-        /// </li>
+        /// <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO
-        /// topic is created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-        /// FIFO topics.</p>
-        ///
+        /// <li> <p> <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p> </li>
+        /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
         /// <ul>
-        /// <li>
-        /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
-        /// If you create a FIFO topic and this attribute is <code>false</code>, you must
-        /// specify a value for the <code>MessageDeduplicationId</code> parameter for the
-        /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p>
-        /// </li>
-        /// <li>
-        /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>,
-        /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-        /// the body of the message (but not the attributes of the message).</p>
-        /// <p>(Optional) To override the generated value, you can specify a value
-        /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
-        /// action.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>
+        /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_attributes(
             mut self,
@@ -1339,21 +1151,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The list of tags to add to a new topic.</p>
-        /// <note>
-        /// <p>To be able to tag a topic on creation, you must have the
-        /// <code>sns:CreateTopic</code> and <code>sns:TagResource</code>
-        /// permissions.</p>
+        /// <p>The list of tags to add to a new topic.</p> <note>
+        /// <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p>
         /// </note>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The list of tags to add to a new topic.</p>
-        /// <note>
-        /// <p>To be able to tag a topic on creation, you must have the
-        /// <code>sns:CreateTopic</code> and <code>sns:TagResource</code>
-        /// permissions.</p>
+        /// <p>The list of tags to add to a new topic.</p> <note>
+        /// <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -1365,12 +1171,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEndpoint`.
     ///
-    /// <p>Deletes the endpoint for a device and mobile app from Amazon SNS. This action is
-    /// idempotent. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
-    /// Notifications</a>. </p>
-    /// <p>When you delete an endpoint that is also subscribed to a topic, then you must also
-    /// unsubscribe the endpoint from the topic.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the endpoint for a device and mobile app from Amazon SNS. This action is idempotent. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
+    /// <p>When you delete an endpoint that is also subscribed to a topic, then you must also unsubscribe the endpoint from the topic.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1415,10 +1218,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1427,8 +1230,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>EndpointArn of endpoint to delete.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input.into());
             self
         }
         /// <p>EndpointArn of endpoint to delete.</p>
@@ -1439,11 +1242,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePlatformApplication`.
     ///
-    /// <p>Deletes a platform application object for one of the supported push notification
-    /// services, such as APNS and GCM (Firebase Cloud Messaging). For more information, see
-    /// <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
-    /// Mobile Push Notifications</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a platform application object for one of the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePlatformApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1488,10 +1288,10 @@ pub mod fluent_builders {
                 crate::input::DeletePlatformApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1500,8 +1300,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>PlatformApplicationArn of platform application object to delete.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_application_arn(inp);
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_application_arn(input.into());
             self
         }
         /// <p>PlatformApplicationArn of platform application object to delete.</p>
@@ -1516,15 +1316,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSMSSandboxPhoneNumber`.
     ///
     /// <p>Deletes an Amazon Web Services account's verified or pending phone number from the SMS sandbox.</p>
-    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the
-    /// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
-    /// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
-    /// Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
-    /// SMS messages only to verified destination phone numbers. For more information, including how to
-    /// move out of the sandbox to send messages without restrictions,
-    /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
-    /// the <i>Amazon SNS Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSMSSandboxPhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1569,10 +1362,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSmsSandboxPhoneNumberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1581,8 +1374,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The destination phone number to delete.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
             self
         }
         /// <p>The destination phone number to delete.</p>
@@ -1593,11 +1386,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTopic`.
     ///
-    /// <p>Deletes a topic and all its subscriptions. Deleting a topic might prevent some
-    /// messages previously sent to the topic from being delivered to subscribers. This action
-    /// is idempotent, so deleting a topic that does not exist does not result in an
-    /// error.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent to the topic from being delivered to subscribers. This action is idempotent, so deleting a topic that does not exist does not result in an error.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTopic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1642,10 +1432,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTopicInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1654,8 +1444,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic you want to delete.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The ARN of the topic you want to delete.</p>
@@ -1666,10 +1456,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEndpointAttributes`.
     ///
-    /// <p>Retrieves the endpoint attributes for a device on one of the supported push
-    /// notification services, such as GCM (Firebase Cloud Messaging) and APNS. For more
-    /// information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM (Firebase Cloud Messaging) and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEndpointAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1714,10 +1502,10 @@ pub mod fluent_builders {
                 crate::input::GetEndpointAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1726,8 +1514,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>EndpointArn for GetEndpointAttributes input.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input.into());
             self
         }
         /// <p>EndpointArn for GetEndpointAttributes input.</p>
@@ -1738,10 +1526,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPlatformApplicationAttributes`.
     ///
-    /// <p>Retrieves the attributes of the platform application object for the supported push
-    /// notification services, such as APNS and GCM (Firebase Cloud Messaging). For more
-    /// information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the attributes of the platform application object for the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPlatformApplicationAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1786,10 +1572,10 @@ pub mod fluent_builders {
                 crate::input::GetPlatformApplicationAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1798,8 +1584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_application_arn(inp);
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_application_arn(input.into());
             self
         }
         /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
@@ -1815,7 +1601,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns the settings for sending SMS messages from your Amazon Web Services account.</p>
     /// <p>These settings are set with the <code>SetSMSAttributes</code> action.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSMSAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1860,10 +1646,10 @@ pub mod fluent_builders {
                 crate::input::GetSmsAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1875,16 +1661,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for
-        /// which you want values.</p>
+        /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
         /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
         /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-        pub fn attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attributes(inp);
+        pub fn attributes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attributes(input.into());
             self
         }
-        /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for
-        /// which you want values.</p>
+        /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
         /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
         /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
         pub fn set_attributes(
@@ -1898,15 +1682,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSMSSandboxAccountStatus`.
     ///
     /// <p>Retrieves the SMS sandbox status for the calling Amazon Web Services account in the target Amazon Web Services Region.</p>
-    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the
-    /// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
-    /// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
-    /// Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
-    /// SMS messages only to verified destination phone numbers. For more information, including how to
-    /// move out of the sandbox to send messages without restrictions,
-    /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
-    /// the <i>Amazon SNS Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSMSSandboxAccountStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1951,10 +1728,10 @@ pub mod fluent_builders {
                 crate::input::GetSmsSandboxAccountStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1966,7 +1743,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSubscriptionAttributes`.
     ///
     /// <p>Returns all of the properties of a subscription.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSubscriptionAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2011,10 +1788,10 @@ pub mod fluent_builders {
                 crate::input::GetSubscriptionAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2023,8 +1800,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the subscription whose properties you want to get.</p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_arn(inp);
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_arn(input.into());
             self
         }
         /// <p>The ARN of the subscription whose properties you want to get.</p>
@@ -2038,9 +1815,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTopicAttributes`.
     ///
-    /// <p>Returns all of the properties of a topic. Topic properties returned might differ based
-    /// on the authorization of the user.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns all of the properties of a topic. Topic properties returned might differ based on the authorization of the user.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTopicAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2085,10 +1861,10 @@ pub mod fluent_builders {
                 crate::input::GetTopicAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2097,8 +1873,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic whose properties you want to get.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The ARN of the topic whose properties you want to get.</p>
@@ -2109,17 +1885,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEndpointsByPlatformApplication`.
     ///
-    /// <p>Lists the endpoints and endpoint attributes for devices in a supported push
-    /// notification service, such as GCM (Firebase Cloud Messaging) and APNS. The results for
-    /// <code>ListEndpointsByPlatformApplication</code> are paginated and return a limited
-    /// list of endpoints, up to 100. If additional records are available after the first page
-    /// results, then a NextToken string will be returned. To receive the next page, you call
-    /// <code>ListEndpointsByPlatformApplication</code> again using the NextToken string
-    /// received from the previous call. When there are no more records to return, NextToken
-    /// will be null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
-    /// Notifications</a>. </p>
+    /// <p>Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as GCM (Firebase Cloud Messaging) and APNS. The results for <code>ListEndpointsByPlatformApplication</code> are paginated and return a limited list of endpoints, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call <code>ListEndpointsByPlatformApplication</code> again using the NextToken string received from the previous call. When there are no more records to return, NextToken will be null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
     /// <p>This action is throttled at 30 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEndpointsByPlatformApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2166,10 +1934,10 @@ pub mod fluent_builders {
                 crate::input::ListEndpointsByPlatformApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2177,9 +1945,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEndpointsByPlatformApplicationPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListEndpointsByPlatformApplicationPaginator<C, M, R> {
+            crate::paginator::ListEndpointsByPlatformApplicationPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_application_arn(inp);
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_application_arn(input.into());
             self
         }
         /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
@@ -2190,14 +1969,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_platform_application_arn(input);
             self
         }
-        /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to
-        /// retrieve additional records that are available after the first page results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to
-        /// retrieve additional records that are available after the first page results.</p>
+        /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2205,10 +1982,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOriginationNumbers`.
     ///
-    /// <p>Lists the calling Amazon Web Services account's dedicated origination numbers and their metadata. For
-    /// more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination numbers</a> in the <i>Amazon SNS Developer
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the calling Amazon Web Services account's dedicated origination numbers and their metadata. For more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination numbers</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOriginationNumbers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2253,10 +2028,10 @@ pub mod fluent_builders {
                 crate::input::ListOriginationNumbersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2264,9 +2039,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOriginationNumbersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListOriginationNumbersPaginator<C, M, R> {
+            crate::paginator::ListOriginationNumbersPaginator::new(self.handle, self.inner)
+        }
         /// <p>Token that the previous <code>ListOriginationNumbers</code> request returns.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Token that the previous <code>ListOriginationNumbers</code> request returns.</p>
@@ -2275,8 +2056,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of origination numbers to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of origination numbers to return.</p>
@@ -2287,15 +2068,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPhoneNumbersOptedOut`.
     ///
-    /// <p>Returns a list of phone numbers that are opted out, meaning you cannot send SMS
-    /// messages to them.</p>
-    /// <p>The results for <code>ListPhoneNumbersOptedOut</code> are paginated, and each page
-    /// returns up to 100 phone numbers. If additional phone numbers are available after the
-    /// first page of results, then a <code>NextToken</code> string will be returned. To receive
-    /// the next page, you call <code>ListPhoneNumbersOptedOut</code> again using the
-    /// <code>NextToken</code> string received from the previous call. When there are no
-    /// more records to return, <code>NextToken</code> will be null.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of phone numbers that are opted out, meaning you cannot send SMS messages to them.</p>
+    /// <p>The results for <code>ListPhoneNumbersOptedOut</code> are paginated, and each page returns up to 100 phone numbers. If additional phone numbers are available after the first page of results, then a <code>NextToken</code> string will be returned. To receive the next page, you call <code>ListPhoneNumbersOptedOut</code> again using the <code>NextToken</code> string received from the previous call. When there are no more records to return, <code>NextToken</code> will be null.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPhoneNumbersOptedOut<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2340,10 +2115,10 @@ pub mod fluent_builders {
                 crate::input::ListPhoneNumbersOptedOutInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2351,16 +2126,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A <code>NextToken</code> string is used when you call the
-        /// <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are
-        /// available after the first page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPhoneNumbersOptedOutPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPhoneNumbersOptedOutPaginator<C, M, R> {
+            crate::paginator::ListPhoneNumbersOptedOutPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A <code>NextToken</code> string is used when you call the
-        /// <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are
-        /// available after the first page of results.</p>
+        /// <p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2368,17 +2147,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPlatformApplications`.
     ///
-    /// <p>Lists the platform application objects for the supported push notification services,
-    /// such as APNS and GCM (Firebase Cloud Messaging). The results for
-    /// <code>ListPlatformApplications</code> are paginated and return a limited list of
-    /// applications, up to 100. If additional records are available after the first page
-    /// results, then a NextToken string will be returned. To receive the next page, you call
-    /// <code>ListPlatformApplications</code> using the NextToken string received from the
-    /// previous call. When there are no more records to return, <code>NextToken</code> will be
-    /// null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
-    /// Notifications</a>. </p>
+    /// <p>Lists the platform application objects for the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging). The results for <code>ListPlatformApplications</code> are paginated and return a limited list of applications, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call <code>ListPlatformApplications</code> using the NextToken string received from the previous call. When there are no more records to return, <code>NextToken</code> will be null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
     /// <p>This action is throttled at 15 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPlatformApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2423,10 +2194,10 @@ pub mod fluent_builders {
                 crate::input::ListPlatformApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2434,14 +2205,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve
-        /// additional records that are available after the first page results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPlatformApplicationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPlatformApplicationsPaginator<C, M, R> {
+            crate::paginator::ListPlatformApplicationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve
-        /// additional records that are available after the first page results.</p>
+        /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2449,17 +2226,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSMSSandboxPhoneNumbers`.
     ///
-    /// <p>Lists the calling Amazon Web Services account's current verified and pending destination phone numbers
-    /// in the SMS sandbox.</p>
-    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the
-    /// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
-    /// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
-    /// Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
-    /// SMS messages only to verified destination phone numbers. For more information, including how to
-    /// move out of the sandbox to send messages without restrictions,
-    /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
-    /// the <i>Amazon SNS Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the calling Amazon Web Services account's current verified and pending destination phone numbers in the SMS sandbox.</p>
+    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSMSSandboxPhoneNumbers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2504,10 +2273,10 @@ pub mod fluent_builders {
                 crate::input::ListSmsSandboxPhoneNumbersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2515,21 +2284,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request
-        /// returns.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSmsSandboxPhoneNumbersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListSmsSandboxPhoneNumbersPaginator<C, M, R> {
+            crate::paginator::ListSmsSandboxPhoneNumbersPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request returns.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request
-        /// returns.</p>
+        /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request returns.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of phone numbers to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of phone numbers to return.</p>
@@ -2540,12 +2315,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSubscriptions`.
     ///
-    /// <p>Returns a list of the requester's subscriptions. Each call returns a limited list of
-    /// subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code> is
-    /// also returned. Use the <code>NextToken</code> parameter in a new
-    /// <code>ListSubscriptions</code> call to get further results.</p>
+    /// <p>Returns a list of the requester's subscriptions. Each call returns a limited list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptions</code> call to get further results.</p>
     /// <p>This action is throttled at 30 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2590,10 +2362,10 @@ pub mod fluent_builders {
                 crate::input::ListSubscriptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2601,9 +2373,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSubscriptionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSubscriptionsPaginator<C, M, R> {
+            crate::paginator::ListSubscriptionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
@@ -2614,12 +2392,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSubscriptionsByTopic`.
     ///
-    /// <p>Returns a list of the subscriptions to a specific topic. Each call returns a limited
-    /// list of subscriptions, up to 100. If there are more subscriptions, a
-    /// <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in
-    /// a new <code>ListSubscriptionsByTopic</code> call to get further results.</p>
+    /// <p>Returns a list of the subscriptions to a specific topic. Each call returns a limited list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptionsByTopic</code> call to get further results.</p>
     /// <p>This action is throttled at 30 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSubscriptionsByTopic<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2664,10 +2439,10 @@ pub mod fluent_builders {
                 crate::input::ListSubscriptionsByTopicInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2675,9 +2450,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSubscriptionsByTopicPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListSubscriptionsByTopicPaginator<C, M, R> {
+            crate::paginator::ListSubscriptionsByTopicPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
@@ -2686,8 +2469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
@@ -2698,9 +2481,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>List all tags added to the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the
-    /// <i>Amazon Simple Notification Service Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>List all tags added to the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2745,10 +2527,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2757,8 +2539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic for which to list tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the topic for which to list tags.</p>
@@ -2769,12 +2551,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTopics`.
     ///
-    /// <p>Returns a list of the requester's topics. Each call returns a limited list of topics,
-    /// up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use the
-    /// <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get
-    /// further results.</p>
+    /// <p>Returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get further results.</p>
     /// <p>This action is throttled at 30 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTopics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2819,10 +2598,10 @@ pub mod fluent_builders {
                 crate::input::ListTopicsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2830,9 +2609,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTopicsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTopicsPaginator<C, M, R> {
+            crate::paginator::ListTopicsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Token returned by the previous <code>ListTopics</code> request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Token returned by the previous <code>ListTopics</code> request.</p>
@@ -2843,10 +2628,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `OptInPhoneNumber`.
     ///
-    /// <p>Use this request to opt in a phone number that is opted out, which enables you to
-    /// resume sending SMS messages to the number.</p>
+    /// <p>Use this request to opt in a phone number that is opted out, which enables you to resume sending SMS messages to the number.</p>
     /// <p>You can opt in a phone number only once every 30 days.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct OptInPhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2891,10 +2675,10 @@ pub mod fluent_builders {
                 crate::input::OptInPhoneNumberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2903,8 +2687,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number to opt in. Use E.164 format.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
             self
         }
         /// <p>The phone number to opt in. Use E.164 format.</p>
@@ -2915,24 +2699,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `Publish`.
     ///
-    /// <p>Sends a message to an Amazon SNS topic, a text message (SMS message) directly to a phone
-    /// number, or a message to a mobile platform endpoint (when you specify the
-    /// <code>TargetArn</code>).</p>
-    /// <p>If you send a message to a topic, Amazon SNS delivers the message to each endpoint that is
-    /// subscribed to the topic. The format of the message depends on the notification protocol
-    /// for each subscribed endpoint.</p>
-    /// <p>When a <code>messageId</code> is returned, the message is saved and Amazon SNS
-    /// immediately deliverers it to subscribers.</p>
-    /// <p>To use the <code>Publish</code> action for publishing a message to a mobile endpoint,
-    /// such as an app on a Kindle device or mobile phone, you must specify the EndpointArn for
-    /// the TargetArn parameter. The EndpointArn is returned when making a call with the
-    /// <code>CreatePlatformEndpoint</code> action. </p>
-    /// <p>For more information about formatting messages, see <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom
-    /// Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>
-    /// <important>
+    /// <p>Sends a message to an Amazon SNS topic, a text message (SMS message) directly to a phone number, or a message to a mobile platform endpoint (when you specify the <code>TargetArn</code>).</p>
+    /// <p>If you send a message to a topic, Amazon SNS delivers the message to each endpoint that is subscribed to the topic. The format of the message depends on the notification protocol for each subscribed endpoint.</p>
+    /// <p>When a <code>messageId</code> is returned, the message is saved and Amazon SNS immediately deliverers it to subscribers.</p>
+    /// <p>To use the <code>Publish</code> action for publishing a message to a mobile endpoint, such as an app on a Kindle device or mobile phone, you must specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned when making a call with the <code>CreatePlatformEndpoint</code> action. </p>
+    /// <p>For more information about formatting messages, see <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. </p> <important>
     /// <p>You can publish messages only to topics and endpoints in the same Amazon Web Services Region.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Publish<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2977,10 +2751,10 @@ pub mod fluent_builders {
                 crate::input::PublishInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2989,239 +2763,117 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The topic you want to publish to.</p>
-        /// <p>If you don't specify a value for the <code>TopicArn</code> parameter, you must specify
-        /// a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        /// <p>If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The topic you want to publish to.</p>
-        /// <p>If you don't specify a value for the <code>TopicArn</code> parameter, you must specify
-        /// a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
+        /// <p>If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_topic_arn(input);
             self
         }
-        /// <p>If you don't specify a value for the <code>TargetArn</code> parameter, you must
-        /// specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
-        /// parameters.</p>
-        pub fn target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_arn(inp);
+        /// <p>If you don't specify a value for the <code>TargetArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(input.into());
             self
         }
-        /// <p>If you don't specify a value for the <code>TargetArn</code> parameter, you must
-        /// specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
-        /// parameters.</p>
+        /// <p>If you don't specify a value for the <code>TargetArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_arn(input);
             self
         }
         /// <p>The phone number to which you want to deliver an SMS message. Use E.164 format.</p>
-        /// <p>If you don't specify a value for the <code>PhoneNumber</code> parameter, you must
-        /// specify a value for the <code>TargetArn</code> or <code>TopicArn</code>
-        /// parameters.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        /// <p>If you don't specify a value for the <code>PhoneNumber</code> parameter, you must specify a value for the <code>TargetArn</code> or <code>TopicArn</code> parameters.</p>
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
             self
         }
         /// <p>The phone number to which you want to deliver an SMS message. Use E.164 format.</p>
-        /// <p>If you don't specify a value for the <code>PhoneNumber</code> parameter, you must
-        /// specify a value for the <code>TargetArn</code> or <code>TopicArn</code>
-        /// parameters.</p>
+        /// <p>If you don't specify a value for the <code>PhoneNumber</code> parameter, you must specify a value for the <code>TargetArn</code> or <code>TopicArn</code> parameters.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_phone_number(input);
             self
         }
         /// <p>The message you want to send.</p>
-        /// <p>If you are publishing to a topic and you want to send the same message to all
-        /// transport protocols, include the text of the message as a String value. If you want to
-        /// send different messages for each transport protocol, set the value of the
-        /// <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object
-        /// for the <code>Message</code> parameter.
-        /// </p>
+        /// <p>If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter. </p>
         /// <p></p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>With the exception of SMS, messages must be UTF-8 encoded strings and at most
-        /// 256 KB in size (262,144 bytes, not 262,144 characters).</p>
-        /// </li>
-        /// <li>
-        /// <p>For SMS, each message can contain up to 140 characters. This character limit
-        /// depends on the encoding schema. For example, an SMS message can contain 160 GSM
-        /// characters, 140 ASCII characters, or 70 UCS-2 characters.</p>
-        /// <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message
-        /// as multiple messages, each fitting within the size limit. Messages aren't
-        /// truncated mid-word but are cut off at whole-word boundaries.</p>
-        /// <p>The total size limit for a single SMS <code>Publish</code> action is 1,600
-        /// characters.</p>
-        /// </li>
+        /// <li> <p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p> </li>
+        /// <li> <p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p> <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p> <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p> </li>
         /// </ul>
         /// <p>JSON-specific constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Keys in the JSON object that correspond to supported transport protocols must
-        /// have simple JSON string values.</p>
-        /// </li>
-        /// <li>
-        /// <p>The values will be parsed (unescaped) before they are used in outgoing
-        /// messages.</p>
-        /// </li>
-        /// <li>
-        /// <p>Outbound notifications are JSON encoded (meaning that the characters will be
-        /// reescaped for sending).</p>
-        /// </li>
-        /// <li>
-        /// <p>Values have a minimum length of 0 (the empty string, "", is allowed).</p>
-        /// </li>
-        /// <li>
-        /// <p>Values have a maximum length bounded by the overall message size (so,
-        /// including multiple protocols may limit message sizes).</p>
-        /// </li>
-        /// <li>
-        /// <p>Non-string values will cause the key to be ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>Keys that do not correspond to supported transport protocols are
-        /// ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>Duplicate keys are not allowed.</p>
-        /// </li>
-        /// <li>
-        /// <p>Failure to parse or validate any key or value in the message will cause the
-        /// <code>Publish</code> call to return an error (no partial delivery).</p>
-        /// </li>
+        /// <li> <p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p> </li>
+        /// <li> <p>The values will be parsed (unescaped) before they are used in outgoing messages.</p> </li>
+        /// <li> <p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p> </li>
+        /// <li> <p>Values have a minimum length of 0 (the empty string, "", is allowed).</p> </li>
+        /// <li> <p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p> </li>
+        /// <li> <p>Non-string values will cause the key to be ignored.</p> </li>
+        /// <li> <p>Keys that do not correspond to supported transport protocols are ignored.</p> </li>
+        /// <li> <p>Duplicate keys are not allowed.</p> </li>
+        /// <li> <p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p> </li>
         /// </ul>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message(inp);
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message(input.into());
             self
         }
         /// <p>The message you want to send.</p>
-        /// <p>If you are publishing to a topic and you want to send the same message to all
-        /// transport protocols, include the text of the message as a String value. If you want to
-        /// send different messages for each transport protocol, set the value of the
-        /// <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object
-        /// for the <code>Message</code> parameter.
-        /// </p>
+        /// <p>If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter. </p>
         /// <p></p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>With the exception of SMS, messages must be UTF-8 encoded strings and at most
-        /// 256 KB in size (262,144 bytes, not 262,144 characters).</p>
-        /// </li>
-        /// <li>
-        /// <p>For SMS, each message can contain up to 140 characters. This character limit
-        /// depends on the encoding schema. For example, an SMS message can contain 160 GSM
-        /// characters, 140 ASCII characters, or 70 UCS-2 characters.</p>
-        /// <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message
-        /// as multiple messages, each fitting within the size limit. Messages aren't
-        /// truncated mid-word but are cut off at whole-word boundaries.</p>
-        /// <p>The total size limit for a single SMS <code>Publish</code> action is 1,600
-        /// characters.</p>
-        /// </li>
+        /// <li> <p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p> </li>
+        /// <li> <p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p> <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p> <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p> </li>
         /// </ul>
         /// <p>JSON-specific constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Keys in the JSON object that correspond to supported transport protocols must
-        /// have simple JSON string values.</p>
-        /// </li>
-        /// <li>
-        /// <p>The values will be parsed (unescaped) before they are used in outgoing
-        /// messages.</p>
-        /// </li>
-        /// <li>
-        /// <p>Outbound notifications are JSON encoded (meaning that the characters will be
-        /// reescaped for sending).</p>
-        /// </li>
-        /// <li>
-        /// <p>Values have a minimum length of 0 (the empty string, "", is allowed).</p>
-        /// </li>
-        /// <li>
-        /// <p>Values have a maximum length bounded by the overall message size (so,
-        /// including multiple protocols may limit message sizes).</p>
-        /// </li>
-        /// <li>
-        /// <p>Non-string values will cause the key to be ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>Keys that do not correspond to supported transport protocols are
-        /// ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>Duplicate keys are not allowed.</p>
-        /// </li>
-        /// <li>
-        /// <p>Failure to parse or validate any key or value in the message will cause the
-        /// <code>Publish</code> call to return an error (no partial delivery).</p>
-        /// </li>
+        /// <li> <p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p> </li>
+        /// <li> <p>The values will be parsed (unescaped) before they are used in outgoing messages.</p> </li>
+        /// <li> <p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p> </li>
+        /// <li> <p>Values have a minimum length of 0 (the empty string, "", is allowed).</p> </li>
+        /// <li> <p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p> </li>
+        /// <li> <p>Non-string values will cause the key to be ignored.</p> </li>
+        /// <li> <p>Keys that do not correspond to supported transport protocols are ignored.</p> </li>
+        /// <li> <p>Duplicate keys are not allowed.</p> </li>
+        /// <li> <p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p> </li>
         /// </ul>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_message(input);
             self
         }
-        /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to
-        /// email endpoints. This field will also be included, if present, in the standard JSON
-        /// messages delivered to other endpoints.</p>
-        /// <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or
-        /// punctuation mark; must not include line breaks or control characters; and must be less
-        /// than 100 characters long.</p>
-        pub fn subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subject(inp);
+        /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints.</p>
+        /// <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</p>
+        pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subject(input.into());
             self
         }
-        /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to
-        /// email endpoints. This field will also be included, if present, in the standard JSON
-        /// messages delivered to other endpoints.</p>
-        /// <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or
-        /// punctuation mark; must not include line breaks or control characters; and must be less
-        /// than 100 characters long.</p>
+        /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints.</p>
+        /// <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subject(input);
             self
         }
-        /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different
-        /// message for each protocol. For example, using one publish action, you can send a short
-        /// message to your SMS subscribers and a longer message to your email subscribers. If you
-        /// set <code>MessageStructure</code> to <code>json</code>, the value of the
-        /// <code>Message</code> parameter must: </p>
+        /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>
         /// <ul>
-        /// <li>
-        /// <p>be a syntactically valid JSON object; and</p>
-        /// </li>
-        /// <li>
-        /// <p>contain at least a top-level JSON key of "default" with a value that is a
-        /// string.</p>
-        /// </li>
+        /// <li> <p>be a syntactically valid JSON object; and</p> </li>
+        /// <li> <p>contain at least a top-level JSON key of "default" with a value that is a string.</p> </li>
         /// </ul>
-        /// <p>You can define other top-level keys that define the message you want to send to a
-        /// specific transport protocol (e.g., "http").</p>
-        /// <p>Valid value: <code>json</code>
-        /// </p>
-        pub fn message_structure(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_structure(inp);
+        /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g., "http").</p>
+        /// <p>Valid value: <code>json</code> </p>
+        pub fn message_structure(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_structure(input.into());
             self
         }
-        /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different
-        /// message for each protocol. For example, using one publish action, you can send a short
-        /// message to your SMS subscribers and a longer message to your email subscribers. If you
-        /// set <code>MessageStructure</code> to <code>json</code>, the value of the
-        /// <code>Message</code> parameter must: </p>
+        /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>
         /// <ul>
-        /// <li>
-        /// <p>be a syntactically valid JSON object; and</p>
-        /// </li>
-        /// <li>
-        /// <p>contain at least a top-level JSON key of "default" with a value that is a
-        /// string.</p>
-        /// </li>
+        /// <li> <p>be a syntactically valid JSON object; and</p> </li>
+        /// <li> <p>contain at least a top-level JSON key of "default" with a value that is a string.</p> </li>
         /// </ul>
-        /// <p>You can define other top-level keys that define the message you want to send to a
-        /// specific transport protocol (e.g., "http").</p>
-        /// <p>Valid value: <code>json</code>
-        /// </p>
+        /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g., "http").</p>
+        /// <p>Valid value: <code>json</code> </p>
         pub fn set_message_structure(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3237,9 +2889,9 @@ pub mod fluent_builders {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
-            self.inner = self.inner.message_attributes(k, v);
+            self.inner = self.inner.message_attributes(k.into(), v);
             self
         }
         /// <p>Message attributes for Publish action.</p>
@@ -3252,34 +2904,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_message_attributes(input);
             self
         }
-        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-        /// <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters
-        /// <code>(a-z, A-Z, 0-9)</code> and punctuation
-        /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
-        /// used for deduplication of sent messages. If a message with a particular
-        /// <code>MessageDeduplicationId</code> is sent successfully, any message sent with the
-        /// same <code>MessageDeduplicationId</code> during the 5-minute deduplication interval is
-        /// treated as a duplicate. </p>
-        /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a
-        /// <code>MessageDeduplicationId</code> based on the contents of the message. Your
-        /// <code>MessageDeduplicationId</code> overrides the generated one.</p>
-        pub fn message_deduplication_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_deduplication_id(inp);
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any message sent with the same <code>MessageDeduplicationId</code> during the 5-minute deduplication interval is treated as a duplicate. </p>
+        /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a <code>MessageDeduplicationId</code> based on the contents of the message. Your <code>MessageDeduplicationId</code> overrides the generated one.</p>
+        pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_deduplication_id(input.into());
             self
         }
-        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-        /// <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters
-        /// <code>(a-z, A-Z, 0-9)</code> and punctuation
-        /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
-        /// used for deduplication of sent messages. If a message with a particular
-        /// <code>MessageDeduplicationId</code> is sent successfully, any message sent with the
-        /// same <code>MessageDeduplicationId</code> during the 5-minute deduplication interval is
-        /// treated as a duplicate. </p>
-        /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a
-        /// <code>MessageDeduplicationId</code> based on the contents of the message. Your
-        /// <code>MessageDeduplicationId</code> overrides the generated one.</p>
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any message sent with the same <code>MessageDeduplicationId</code> during the 5-minute deduplication interval is treated as a duplicate. </p>
+        /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a <code>MessageDeduplicationId</code> based on the contents of the message. Your <code>MessageDeduplicationId</code> overrides the generated one.</p>
         pub fn set_message_deduplication_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3287,26 +2921,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_message_deduplication_id(input);
             self
         }
-        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-        /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
-        /// <code>(a-z, A-Z, 0-9)</code> and punctuation
-        /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>        
-        /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
-        /// specific message group. Messages that belong to the same message group are processed in
-        /// a FIFO manner (however, messages in different message groups might be processed out of
-        /// order). Every message must include a <code>MessageGroupId</code>.</p>
-        pub fn message_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_group_id(inp);
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageGroupId</code> can contain up to 128 alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+        /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). Every message must include a <code>MessageGroupId</code>.</p>
+        pub fn message_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_group_id(input.into());
             self
         }
-        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-        /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
-        /// <code>(a-z, A-Z, 0-9)</code> and punctuation
-        /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>        
-        /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
-        /// specific message group. Messages that belong to the same message group are processed in
-        /// a FIFO manner (however, messages in different message groups might be processed out of
-        /// order). Every message must include a <code>MessageGroupId</code>.</p>
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageGroupId</code> can contain up to 128 alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+        /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). Every message must include a <code>MessageGroupId</code>.</p>
         pub fn set_message_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3321,13 +2943,11 @@ pub mod fluent_builders {
     /// <p>The result of publishing each message is reported individually in the response. Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of <code>200</code>.</p>
     /// <p>The maximum allowed individual message size and the maximum total payload size (the sum of the individual lengths of all of the batched messages) are both 256 KB (262,144 bytes). </p>
     /// <p>Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this: </p>
-    /// <p>&AttributeName.1=first</p>
-    /// <p>&AttributeName.2=second</p>  
-    /// <p>If you send a batch message to a topic, Amazon SNS publishes the batch message to each endpoint that is
-    /// subscribed to the topic. The format of the batch message depends on the notification protocol
-    /// for each subscribed endpoint.</p>
+    /// <p>&amp;AttributeName.1=first</p>
+    /// <p>&amp;AttributeName.2=second</p>
+    /// <p>If you send a batch message to a topic, Amazon SNS publishes the batch message to each endpoint that is subscribed to the topic. The format of the batch message depends on the notification protocol for each subscribed endpoint.</p>
     /// <p>When a <code>messageId</code> is returned, the batch message is saved and Amazon SNS immediately delivers the message to subscribers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PublishBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3372,10 +2992,10 @@ pub mod fluent_builders {
                 crate::input::PublishBatchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3384,8 +3004,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
@@ -3400,9 +3020,9 @@ pub mod fluent_builders {
         /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
         pub fn publish_batch_request_entries(
             mut self,
-            inp: impl Into<crate::model::PublishBatchRequestEntry>,
+            input: crate::model::PublishBatchRequestEntry,
         ) -> Self {
-            self.inner = self.inner.publish_batch_request_entries(inp);
+            self.inner = self.inner.publish_batch_request_entries(input);
             self
         }
         /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
@@ -3417,7 +3037,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemovePermission`.
     ///
     /// <p>Removes a statement from a topic's access control policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemovePermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3462,10 +3082,10 @@ pub mod fluent_builders {
                 crate::input::RemovePermissionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3474,8 +3094,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
@@ -3484,8 +3104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique label of the statement you want to remove.</p>
-        pub fn label(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label(inp);
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label(input.into());
             self
         }
         /// <p>The unique label of the statement you want to remove.</p>
@@ -3496,10 +3116,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetEndpointAttributes`.
     ///
-    /// <p>Sets the attributes for an endpoint for a device on one of the supported push
-    /// notification services, such as GCM (Firebase Cloud Messaging) and APNS. For more
-    /// information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets the attributes for an endpoint for a device on one of the supported push notification services, such as GCM (Firebase Cloud Messaging) and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetEndpointAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3544,10 +3162,10 @@ pub mod fluent_builders {
                 crate::input::SetEndpointAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3556,8 +3174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>EndpointArn used for SetEndpointAttributes action.</p>
-        pub fn endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_arn(inp);
+        pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_arn(input.into());
             self
         }
         /// <p>EndpointArn used for SetEndpointAttributes action.</p>
@@ -3571,57 +3189,23 @@ pub mod fluent_builders {
         ///
         /// <p>A map of the endpoint attributes. Attributes in this map include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CustomUserData</code> – arbitrary user data to associate with the
-        /// endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and
-        /// less than 2KB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Enabled</code> – flag that enables/disables delivery to the
-        /// endpoint. Amazon SNS will set this to false when a notification service indicates to
-        /// Amazon SNS that the endpoint is invalid. Users can set it back to true, typically
-        /// after updating Token.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Token</code> – device token, also referred to as a registration id,
-        /// for an app and mobile device. This is returned from the notification service
-        /// when an app and mobile device are registered with the notification
-        /// service.</p>
-        /// </li>
+        /// <li> <p> <code>CustomUserData</code> – arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p> </li>
+        /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li>
+        /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> </li>
         /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
         /// <p>A map of the endpoint attributes. Attributes in this map include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CustomUserData</code> – arbitrary user data to associate with the
-        /// endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and
-        /// less than 2KB.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Enabled</code> – flag that enables/disables delivery to the
-        /// endpoint. Amazon SNS will set this to false when a notification service indicates to
-        /// Amazon SNS that the endpoint is invalid. Users can set it back to true, typically
-        /// after updating Token.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Token</code> – device token, also referred to as a registration id,
-        /// for an app and mobile device. This is returned from the notification service
-        /// when an app and mobile device are registered with the notification
-        /// service.</p>
-        /// </li>
+        /// <li> <p> <code>CustomUserData</code> – arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p> </li>
+        /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li>
+        /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> </li>
         /// </ul>
         pub fn set_attributes(
             mut self,
@@ -3635,12 +3219,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetPlatformApplicationAttributes`.
     ///
-    /// <p>Sets the attributes of the platform application object for the supported push
-    /// notification services, such as APNS and GCM (Firebase Cloud Messaging). For more
-    /// information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. For information on configuring
-    /// attributes for message delivery status, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application Attributes for
-    /// Message Delivery Status</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets the attributes of the platform application object for the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. For information on configuring attributes for message delivery status, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application Attributes for Message Delivery Status</a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetPlatformApplicationAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3685,10 +3265,10 @@ pub mod fluent_builders {
                 crate::input::SetPlatformApplicationAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3697,8 +3277,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
-        pub fn platform_application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_application_arn(inp);
+        pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_application_arn(input.into());
             self
         }
         /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
@@ -3713,197 +3293,79 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A map of the platform application attributes. Attributes in this map include the
-        /// following:</p>
+        /// <p>A map of the platform application attributes. Attributes in this map include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlatformCredential</code> – The credential received from the notification service.</p>
+        /// <li> <p> <code>PlatformCredential</code> – The credential received from the notification service.</p>
         /// <ul>
-        /// <li>
-        /// <p>For ADM, <code>PlatformCredential</code>is client secret.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Apple Services using certificate credentials, <code>PlatformCredential</code> is private key.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p>
-        /// </li>
-        /// <li>
-        /// <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>For ADM, <code>PlatformCredential</code>is client secret.</p> </li>
+        /// <li> <p>For Apple Services using certificate credentials, <code>PlatformCredential</code> is private key.</p> </li>
+        /// <li> <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p> </li>
+        /// <li> <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlatformPrincipal</code> – The principal received from the notification service.</p>  
+        /// <li> <p> <code>PlatformPrincipal</code> – The principal received from the notification service.</p>
         /// <ul>
-        /// <li>
-        /// <p>For ADM, <code>PlatformPrincipal</code>is client id.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Apple Services using certificate credentials, <code>PlatformPrincipal</code> is SSL certificate.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Apple Services using token credentials, <code>PlatformPrincipal</code> is signing key ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>For GCM (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>For ADM, <code>PlatformPrincipal</code>is client id.</p> </li>
+        /// <li> <p>For Apple Services using certificate credentials, <code>PlatformPrincipal</code> is SSL certificate.</p> </li>
+        /// <li> <p>For Apple Services using token credentials, <code>PlatformPrincipal</code> is signing key ID.</p> </li>
+        /// <li> <p>For GCM (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>EventEndpointCreated</code> – Topic ARN to which
-        /// <code>EndpointCreated</code> event notifications are sent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EventEndpointDeleted</code> – Topic ARN to which
-        /// <code>EndpointDeleted</code> event notifications are sent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EventEndpointUpdated</code> – Topic ARN to which
-        /// <code>EndpointUpdate</code> event notifications are sent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EventDeliveryFailure</code> – Topic ARN to which
-        /// <code>DeliveryFailure</code> event notifications are sent upon Direct
-        /// Publish delivery failure (permanent) to one of the application's
-        /// endpoints.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS
-        /// write access to use CloudWatch Logs on your behalf.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS
-        /// write access to use CloudWatch Logs on your behalf.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100)
-        /// of successfully delivered messages.</p>
-        /// </li>
+        /// <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which <code>EndpointCreated</code> event notifications are sent.</p> </li>
+        /// <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which <code>EndpointDeleted</code> event notifications are sent.</p> </li>
+        /// <li> <p> <code>EventEndpointUpdated</code> – Topic ARN to which <code>EndpointUpdate</code> event notifications are sent.</p> </li>
+        /// <li> <p> <code>EventDeliveryFailure</code> – Topic ARN to which <code>DeliveryFailure</code> event notifications are sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</p> </li>
+        /// <li> <p> <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on your behalf.</p> </li>
+        /// <li> <p> <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on your behalf.</p> </li>
+        /// <li> <p> <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of successfully delivered messages.</p> </li>
         /// </ul>
-        /// <p>The following attributes only apply to <code>APNs</code> token-based authentication:</p>  
+        /// <p>The following attributes only apply to <code>APNs</code> token-based authentication:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p>
-        /// </li>
+        /// <li> <p> <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p> </li>
+        /// <li> <p> <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p> </li>
         /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>A map of the platform application attributes. Attributes in this map include the
-        /// following:</p>
+        /// <p>A map of the platform application attributes. Attributes in this map include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlatformCredential</code> – The credential received from the notification service.</p>
+        /// <li> <p> <code>PlatformCredential</code> – The credential received from the notification service.</p>
         /// <ul>
-        /// <li>
-        /// <p>For ADM, <code>PlatformCredential</code>is client secret.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Apple Services using certificate credentials, <code>PlatformCredential</code> is private key.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p>
-        /// </li>
-        /// <li>
-        /// <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>For ADM, <code>PlatformCredential</code>is client secret.</p> </li>
+        /// <li> <p>For Apple Services using certificate credentials, <code>PlatformCredential</code> is private key.</p> </li>
+        /// <li> <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p> </li>
+        /// <li> <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlatformPrincipal</code> – The principal received from the notification service.</p>  
+        /// <li> <p> <code>PlatformPrincipal</code> – The principal received from the notification service.</p>
         /// <ul>
-        /// <li>
-        /// <p>For ADM, <code>PlatformPrincipal</code>is client id.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Apple Services using certificate credentials, <code>PlatformPrincipal</code> is SSL certificate.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Apple Services using token credentials, <code>PlatformPrincipal</code> is signing key ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>For GCM (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>For ADM, <code>PlatformPrincipal</code>is client id.</p> </li>
+        /// <li> <p>For Apple Services using certificate credentials, <code>PlatformPrincipal</code> is SSL certificate.</p> </li>
+        /// <li> <p>For Apple Services using token credentials, <code>PlatformPrincipal</code> is signing key ID.</p> </li>
+        /// <li> <p>For GCM (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p> </li>
+        /// </ul> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>EventEndpointCreated</code> – Topic ARN to which
-        /// <code>EndpointCreated</code> event notifications are sent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EventEndpointDeleted</code> – Topic ARN to which
-        /// <code>EndpointDeleted</code> event notifications are sent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EventEndpointUpdated</code> – Topic ARN to which
-        /// <code>EndpointUpdate</code> event notifications are sent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EventDeliveryFailure</code> – Topic ARN to which
-        /// <code>DeliveryFailure</code> event notifications are sent upon Direct
-        /// Publish delivery failure (permanent) to one of the application's
-        /// endpoints.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS
-        /// write access to use CloudWatch Logs on your behalf.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS
-        /// write access to use CloudWatch Logs on your behalf.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100)
-        /// of successfully delivered messages.</p>
-        /// </li>
+        /// <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which <code>EndpointCreated</code> event notifications are sent.</p> </li>
+        /// <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which <code>EndpointDeleted</code> event notifications are sent.</p> </li>
+        /// <li> <p> <code>EventEndpointUpdated</code> – Topic ARN to which <code>EndpointUpdate</code> event notifications are sent.</p> </li>
+        /// <li> <p> <code>EventDeliveryFailure</code> – Topic ARN to which <code>DeliveryFailure</code> event notifications are sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</p> </li>
+        /// <li> <p> <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on your behalf.</p> </li>
+        /// <li> <p> <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on your behalf.</p> </li>
+        /// <li> <p> <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of successfully delivered messages.</p> </li>
         /// </ul>
-        /// <p>The following attributes only apply to <code>APNs</code> token-based authentication:</p>  
+        /// <p>The following attributes only apply to <code>APNs</code> token-based authentication:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p>
-        /// </li>
+        /// <li> <p> <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p> </li>
+        /// <li> <p> <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p> </li>
         /// </ul>
         pub fn set_attributes(
             mut self,
@@ -3917,18 +3379,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetSMSAttributes`.
     ///
-    /// <p>Use this request to set the default settings for sending SMS messages and receiving
-    /// daily SMS usage reports.</p>
-    /// <p>You can override some of these settings for a single message when you use the
-    /// <code>Publish</code> action with the <code>MessageAttributes.entry.N</code>
-    /// parameter. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a>
-    /// in the <i>Amazon SNS Developer Guide</i>.</p>
-    /// <note>
-    /// <p>To use this operation, you must grant the Amazon SNS service principal
-    /// (<code>sns.amazonaws.com</code>) permission to perform the
-    /// <code>s3:ListBucket</code> action. </p>
+    /// <p>Use this request to set the default settings for sending SMS messages and receiving daily SMS usage reports.</p>
+    /// <p>You can override some of these settings for a single message when you use the <code>Publish</code> action with the <code>MessageAttributes.entry.N</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.</p> <note>
+    /// <p>To use this operation, you must grant the Amazon SNS service principal (<code>sns.amazonaws.com</code>) permission to perform the <code>s3:ListBucket</code> action. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetSMSAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3973,10 +3428,10 @@ pub mod fluent_builders {
                 crate::input::SetSmsAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3988,184 +3443,66 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values
-        /// for the following attribute names:</p>
-        /// <p>
-        /// <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend
-        /// each month to send SMS messages. When Amazon SNS determines that sending an SMS message would
-        /// incur a cost that exceeds this limit, it stops sending SMS messages within
-        /// minutes.</p>
-        /// <important>
-        /// <p>Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During
-        /// that interval, if you continue to send SMS messages, you will incur costs that
-        /// exceed your limit.</p>
+        /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values for the following attribute names:</p>
+        /// <p> <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend each month to send SMS messages. When Amazon SNS determines that sending an SMS message would incur a cost that exceeds this limit, it stops sending SMS messages within minutes.</p> <important>
+        /// <p>Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During that interval, if you continue to send SMS messages, you will incur costs that exceed your limit.</p>
         /// </important>
-        /// <p>By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to
-        /// raise the limit, submit an <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sns">SNS Limit Increase case</a>. For <b>New limit
-        /// value</b>, enter your desired monthly spend limit. In the <b>Use Case Description</b> field, explain that you are requesting
-        /// an SMS monthly spend limit increase.</p>
-        /// <p>
-        /// <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon SNS to write
-        /// logs about SMS deliveries in CloudWatch Logs. For each SMS message that you send, Amazon SNS
-        /// writes a log that includes the message price, the success or failure status, the reason
-        /// for failure (if the message failed), the message dwell time, and other
-        /// information.</p>
-        /// <p>
-        /// <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful SMS
-        /// deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value can be an
-        /// integer from 0 - 100. For example, to write logs only for failed deliveries, set this
-        /// value to <code>0</code>. To write logs for 10% of your successful deliveries, set it to
-        /// <code>10</code>.</p>
-        /// <p>
-        /// <code>DefaultSenderID</code> – A string, such as your business brand, that is displayed
-        /// as the sender on the receiving device. Support for sender IDs varies by country. The
-        /// sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one
-        /// letter.</p>
-        /// <p>
-        /// <code>DefaultSMSType</code> – The type of SMS message that you will send by default. You
-        /// can assign the following values:</p>
+        /// <p>By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to raise the limit, submit an <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly spend limit. In the <b>Use Case Description</b> field, explain that you are requesting an SMS monthly spend limit increase.</p>
+        /// <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message that you send, Amazon SNS writes a log that includes the message price, the success or failure status, the reason for failure (if the message failed), the message dwell time, and other information.</p>
+        /// <p> <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value can be an integer from 0 - 100. For example, to write logs only for failed deliveries, set this value to <code>0</code>. To write logs for 10% of your successful deliveries, set it to <code>10</code>.</p>
+        /// <p> <code>DefaultSenderID</code> – A string, such as your business brand, that is displayed as the sender on the receiving device. Support for sender IDs varies by country. The sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one letter.</p>
+        /// <p> <code>DefaultSMSType</code> – The type of SMS message that you will send by default. You can assign the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Promotional</code> – (Default) Noncritical messages, such as marketing
-        /// messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Transactional</code> – Critical messages that support customer
-        /// transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p>
-        /// </li>
+        /// <li> <p> <code>Promotional</code> – (Default) Noncritical messages, such as marketing messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p> </li>
+        /// <li> <p> <code>Transactional</code> – Critical messages that support customer transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS
-        /// usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to
-        /// the bucket. The report includes the following information for each SMS message that was
-        /// successfully delivered by your Amazon Web Services account:</p>
+        /// <p> <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to the bucket. The report includes the following information for each SMS message that was successfully delivered by your Amazon Web Services account:</p>
         /// <ul>
-        /// <li>
-        /// <p>Time that the message was published (in UTC)</p>
-        /// </li>
-        /// <li>
-        /// <p>Message ID</p>
-        /// </li>
-        /// <li>
-        /// <p>Destination phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>Message type</p>
-        /// </li>
-        /// <li>
-        /// <p>Delivery status</p>
-        /// </li>
-        /// <li>
-        /// <p>Message price (in USD)</p>
-        /// </li>
-        /// <li>
-        /// <p>Part number (a message is split into multiple parts if it is too long for a
-        /// single message)</p>
-        /// </li>
-        /// <li>
-        /// <p>Total number of parts</p>
-        /// </li>
+        /// <li> <p>Time that the message was published (in UTC)</p> </li>
+        /// <li> <p>Message ID</p> </li>
+        /// <li> <p>Destination phone number</p> </li>
+        /// <li> <p>Message type</p> </li>
+        /// <li> <p>Delivery status</p> </li>
+        /// <li> <p>Message price (in USD)</p> </li>
+        /// <li> <p>Part number (a message is split into multiple parts if it is too long for a single message)</p> </li>
+        /// <li> <p>Total number of parts</p> </li>
         /// </ul>
-        /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service
-        /// principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code>
-        /// actions.</p>
-        /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the
-        /// <i>Amazon SNS Developer Guide</i>.</p>
+        /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
+        /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values
-        /// for the following attribute names:</p>
-        /// <p>
-        /// <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend
-        /// each month to send SMS messages. When Amazon SNS determines that sending an SMS message would
-        /// incur a cost that exceeds this limit, it stops sending SMS messages within
-        /// minutes.</p>
-        /// <important>
-        /// <p>Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During
-        /// that interval, if you continue to send SMS messages, you will incur costs that
-        /// exceed your limit.</p>
+        /// <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values for the following attribute names:</p>
+        /// <p> <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend each month to send SMS messages. When Amazon SNS determines that sending an SMS message would incur a cost that exceeds this limit, it stops sending SMS messages within minutes.</p> <important>
+        /// <p>Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During that interval, if you continue to send SMS messages, you will incur costs that exceed your limit.</p>
         /// </important>
-        /// <p>By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to
-        /// raise the limit, submit an <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sns">SNS Limit Increase case</a>. For <b>New limit
-        /// value</b>, enter your desired monthly spend limit. In the <b>Use Case Description</b> field, explain that you are requesting
-        /// an SMS monthly spend limit increase.</p>
-        /// <p>
-        /// <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon SNS to write
-        /// logs about SMS deliveries in CloudWatch Logs. For each SMS message that you send, Amazon SNS
-        /// writes a log that includes the message price, the success or failure status, the reason
-        /// for failure (if the message failed), the message dwell time, and other
-        /// information.</p>
-        /// <p>
-        /// <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful SMS
-        /// deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value can be an
-        /// integer from 0 - 100. For example, to write logs only for failed deliveries, set this
-        /// value to <code>0</code>. To write logs for 10% of your successful deliveries, set it to
-        /// <code>10</code>.</p>
-        /// <p>
-        /// <code>DefaultSenderID</code> – A string, such as your business brand, that is displayed
-        /// as the sender on the receiving device. Support for sender IDs varies by country. The
-        /// sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one
-        /// letter.</p>
-        /// <p>
-        /// <code>DefaultSMSType</code> – The type of SMS message that you will send by default. You
-        /// can assign the following values:</p>
+        /// <p>By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to raise the limit, submit an <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly spend limit. In the <b>Use Case Description</b> field, explain that you are requesting an SMS monthly spend limit increase.</p>
+        /// <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message that you send, Amazon SNS writes a log that includes the message price, the success or failure status, the reason for failure (if the message failed), the message dwell time, and other information.</p>
+        /// <p> <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value can be an integer from 0 - 100. For example, to write logs only for failed deliveries, set this value to <code>0</code>. To write logs for 10% of your successful deliveries, set it to <code>10</code>.</p>
+        /// <p> <code>DefaultSenderID</code> – A string, such as your business brand, that is displayed as the sender on the receiving device. Support for sender IDs varies by country. The sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one letter.</p>
+        /// <p> <code>DefaultSMSType</code> – The type of SMS message that you will send by default. You can assign the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Promotional</code> – (Default) Noncritical messages, such as marketing
-        /// messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Transactional</code> – Critical messages that support customer
-        /// transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p>
-        /// </li>
+        /// <li> <p> <code>Promotional</code> – (Default) Noncritical messages, such as marketing messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p> </li>
+        /// <li> <p> <code>Transactional</code> – Critical messages that support customer transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p> </li>
         /// </ul>
-        /// <p>
-        /// <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS
-        /// usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to
-        /// the bucket. The report includes the following information for each SMS message that was
-        /// successfully delivered by your Amazon Web Services account:</p>
+        /// <p> <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to the bucket. The report includes the following information for each SMS message that was successfully delivered by your Amazon Web Services account:</p>
         /// <ul>
-        /// <li>
-        /// <p>Time that the message was published (in UTC)</p>
-        /// </li>
-        /// <li>
-        /// <p>Message ID</p>
-        /// </li>
-        /// <li>
-        /// <p>Destination phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>Message type</p>
-        /// </li>
-        /// <li>
-        /// <p>Delivery status</p>
-        /// </li>
-        /// <li>
-        /// <p>Message price (in USD)</p>
-        /// </li>
-        /// <li>
-        /// <p>Part number (a message is split into multiple parts if it is too long for a
-        /// single message)</p>
-        /// </li>
-        /// <li>
-        /// <p>Total number of parts</p>
-        /// </li>
+        /// <li> <p>Time that the message was published (in UTC)</p> </li>
+        /// <li> <p>Message ID</p> </li>
+        /// <li> <p>Destination phone number</p> </li>
+        /// <li> <p>Message type</p> </li>
+        /// <li> <p>Delivery status</p> </li>
+        /// <li> <p>Message price (in USD)</p> </li>
+        /// <li> <p>Part number (a message is split into multiple parts if it is too long for a single message)</p> </li>
+        /// <li> <p>Total number of parts</p> </li>
         /// </ul>
-        /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service
-        /// principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code>
-        /// actions.</p>
-        /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the
-        /// <i>Amazon SNS Developer Guide</i>.</p>
+        /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
+        /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -4178,9 +3515,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetSubscriptionAttributes`.
     ///
-    /// <p>Allows a subscription owner to set an attribute of the subscription to a new
-    /// value.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Allows a subscription owner to set an attribute of the subscription to a new value.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetSubscriptionAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4225,10 +3561,10 @@ pub mod fluent_builders {
                 crate::input::SetSubscriptionAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4237,8 +3573,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the subscription to modify.</p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_arn(inp);
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_arn(input.into());
             self
         }
         /// <p>The ARN of the subscription to modify.</p>
@@ -4250,108 +3586,40 @@ pub mod fluent_builders {
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
-        /// <p>The following lists the names, descriptions, and values of the special request
-        /// parameters that this action uses:</p>
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that this action uses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-        /// failed deliveries to HTTP/S endpoints.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FilterPolicy</code> – The simple JSON object that lets your
-        /// subscriber receive only a subset of messages, rather than receiving every
-        /// message published to the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RawMessageDelivery</code> – When set to <code>true</code>,
-        /// enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the
-        /// need for the endpoints to process JSON formatting, which is otherwise created
-        /// for Amazon SNS metadata.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue.
-        /// Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable)
-        /// or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held
-        /// in the dead-letter queue for further analysis or reprocessing.</p>
-        /// </li>
+        /// <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>
+        /// <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p> </li>
+        /// <li> <p> <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p> </li>
+        /// <li> <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+        /// <li> <p> <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon SNS listed as a trusted entity</p>
-        /// </li>
+        /// <li> <p>Permission to write to the Kinesis Data Firehose delivery stream</p> </li>
+        /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
+        /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
         /// </ul>
-        /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
-        /// </li>
-        /// </ul>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(inp);
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input.into());
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
-        /// <p>The following lists the names, descriptions, and values of the special request
-        /// parameters that this action uses:</p>
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that this action uses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-        /// failed deliveries to HTTP/S endpoints.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FilterPolicy</code> – The simple JSON object that lets your
-        /// subscriber receive only a subset of messages, rather than receiving every
-        /// message published to the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RawMessageDelivery</code> – When set to <code>true</code>,
-        /// enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the
-        /// need for the endpoints to process JSON formatting, which is otherwise created
-        /// for Amazon SNS metadata.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue.
-        /// Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable)
-        /// or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held
-        /// in the dead-letter queue for further analysis or reprocessing.</p>
-        /// </li>
+        /// <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>
+        /// <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p> </li>
+        /// <li> <p> <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p> </li>
+        /// <li> <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+        /// <li> <p> <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon SNS listed as a trusted entity</p>
-        /// </li>
-        /// </ul>
-        /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
-        /// </li>
+        /// <li> <p>Permission to write to the Kinesis Data Firehose delivery stream</p> </li>
+        /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
+        /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
         /// </ul>
         pub fn set_attribute_name(
             mut self,
@@ -4361,8 +3629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new value for the attribute in JSON format.</p>
-        pub fn attribute_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_value(inp);
+        pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_value(input.into());
             self
         }
         /// <p>The new value for the attribute in JSON format.</p>
@@ -4377,7 +3645,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SetTopicAttributes`.
     ///
     /// <p>Allows a topic owner to set an attribute of the topic to a new value.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetTopicAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4422,10 +3690,10 @@ pub mod fluent_builders {
                 crate::input::SetTopicAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4434,8 +3702,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic to modify.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The ARN of the topic to modify.</p>
@@ -4444,126 +3712,46 @@ pub mod fluent_builders {
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
-        /// <p>The following lists the names, descriptions, and values of the special request
-        /// parameters that the <code>SetTopicAttributes</code> action uses:</p>
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-        /// failed deliveries to HTTP/S endpoints.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DisplayName</code> – The display name to use for a topic with SMS
-        /// subscriptions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Policy</code> – The policy that defines who can access your
-        /// topic. By default, only the topic owner can publish or subscribe to the
-        /// topic.</p>
-        /// </li>
+        /// <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>
+        /// <li> <p> <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.</p> </li>
+        /// <li> <p> <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic.</p> </li>
         /// </ul>
-        ///
         /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master
-        /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
-        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
-        /// Reference</i>. </p>
-        /// </li>
+        /// <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-        /// FIFO topics.</p>
-        ///
+        /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
         /// <ul>
-        /// <li>
-        /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
-        /// If you create a FIFO topic and this attribute is <code>false</code>, you must
-        /// specify a value for the <code>MessageDeduplicationId</code> parameter for the
-        /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p>
-        /// </li>
-        /// <li>
-        /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>,
-        /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-        /// the body of the message (but not the attributes of the message).</p>
-        /// <p>(Optional) To override the generated value, you can specify a value
-        /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
-        /// action.</p>
-        /// </li>
+        /// <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>
+        /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// </ul>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(inp);
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input.into());
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
-        /// <p>The following lists the names, descriptions, and values of the special request
-        /// parameters that the <code>SetTopicAttributes</code> action uses:</p>
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-        /// failed deliveries to HTTP/S endpoints.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DisplayName</code> – The display name to use for a topic with SMS
-        /// subscriptions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Policy</code> – The policy that defines who can access your
-        /// topic. By default, only the topic owner can publish or subscribe to the
-        /// topic.</p>
-        /// </li>
+        /// <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>
+        /// <li> <p> <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.</p> </li>
+        /// <li> <p> <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic.</p> </li>
         /// </ul>
-        ///
         /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master
-        /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
-        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
-        /// Reference</i>. </p>
-        /// </li>
+        /// <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-        /// FIFO topics.</p>
-        ///
+        /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>
         /// <ul>
-        /// <li>
-        /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
-        /// If you create a FIFO topic and this attribute is <code>false</code>, you must
-        /// specify a value for the <code>MessageDeduplicationId</code> parameter for the
-        /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p>
-        /// </li>
-        /// <li>
-        /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>,
-        /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
-        /// the body of the message (but not the attributes of the message).</p>
-        /// <p>(Optional) To override the generated value, you can specify a value
-        /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
-        /// action.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>
+        /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_attribute_name(
             mut self,
@@ -4573,8 +3761,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new value for the attribute.</p>
-        pub fn attribute_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_value(inp);
+        pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_value(input.into());
             self
         }
         /// <p>The new value for the attribute.</p>
@@ -4588,13 +3776,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `Subscribe`.
     ///
-    /// <p>Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email, or
-    /// if the endpoint and the topic are not in the same Amazon Web Services account, the endpoint owner must
-    /// run the <code>ConfirmSubscription</code> action to confirm the subscription.</p>
-    /// <p>You call the <code>ConfirmSubscription</code> action with the token from the
-    /// subscription response. Confirmation tokens are valid for three days.</p>
+    /// <p>Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email, or if the endpoint and the topic are not in the same Amazon Web Services account, the endpoint owner must run the <code>ConfirmSubscription</code> action to confirm the subscription.</p>
+    /// <p>You call the <code>ConfirmSubscription</code> action with the token from the subscription response. Confirmation tokens are valid for three days.</p>
     /// <p>This action is throttled at 100 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Subscribe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4639,10 +3824,10 @@ pub mod fluent_builders {
                 crate::input::SubscribeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4651,8 +3836,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic you want to subscribe to.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(inp);
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The ARN of the topic you want to subscribe to.</p>
@@ -4662,185 +3847,63 @@ pub mod fluent_builders {
         }
         /// <p>The protocol that you want to use. Supported protocols include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>http</code> – delivery of JSON-encoded message via HTTP
-        /// POST</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>https</code> – delivery of JSON-encoded message via HTTPS
-        /// POST</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>email</code> – delivery of message via SMTP</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>email-json</code> – delivery of JSON-encoded message via
-        /// SMTP</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sms</code> – delivery of message via SMS</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
-        /// queue</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application</code> – delivery of JSON-encoded message to an
-        /// EndpointArn for a mobile app and device</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>lambda</code> – delivery of JSON-encoded message to an Lambda
-        /// function</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>firehose</code> – delivery of JSON-encoded message to an Amazon
-        /// Kinesis Data Firehose delivery stream.</p>
-        /// </li>
+        /// <li> <p> <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+        /// <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS POST</p> </li>
+        /// <li> <p> <code>email</code> – delivery of message via SMTP</p> </li>
+        /// <li> <p> <code>email-json</code> – delivery of JSON-encoded message via SMTP</p> </li>
+        /// <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
+        /// <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p> </li>
+        /// <li> <p> <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p> </li>
+        /// <li> <p> <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p> </li>
+        /// <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p> </li>
         /// </ul>
-        pub fn protocol(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.protocol(inp);
+        pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.protocol(input.into());
             self
         }
         /// <p>The protocol that you want to use. Supported protocols include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>http</code> – delivery of JSON-encoded message via HTTP
-        /// POST</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>https</code> – delivery of JSON-encoded message via HTTPS
-        /// POST</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>email</code> – delivery of message via SMTP</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>email-json</code> – delivery of JSON-encoded message via
-        /// SMTP</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sms</code> – delivery of message via SMS</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
-        /// queue</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application</code> – delivery of JSON-encoded message to an
-        /// EndpointArn for a mobile app and device</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>lambda</code> – delivery of JSON-encoded message to an Lambda
-        /// function</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>firehose</code> – delivery of JSON-encoded message to an Amazon
-        /// Kinesis Data Firehose delivery stream.</p>
-        /// </li>
+        /// <li> <p> <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+        /// <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS POST</p> </li>
+        /// <li> <p> <code>email</code> – delivery of message via SMTP</p> </li>
+        /// <li> <p> <code>email-json</code> – delivery of JSON-encoded message via SMTP</p> </li>
+        /// <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
+        /// <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p> </li>
+        /// <li> <p> <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p> </li>
+        /// <li> <p> <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p> </li>
+        /// <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p> </li>
         /// </ul>
         pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_protocol(input);
             self
         }
-        /// <p>The endpoint that you want to receive notifications. Endpoints vary by
-        /// protocol:</p>
+        /// <p>The endpoint that you want to receive notifications. Endpoints vary by protocol:</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning
-        /// with <code>http://</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning
-        /// with <code>https://</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>email</code> protocol, the endpoint is an email address.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>email-json</code> protocol, the endpoint is an email
-        /// address.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
-        /// SMS-enabled device.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS
-        /// queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of
-        /// a mobile app and device.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda
-        /// function.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon
-        /// Kinesis Data Firehose delivery stream.</p>
-        /// </li>
+        /// <li> <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p> </li>
+        /// <li> <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p> </li>
+        /// <li> <p>For the <code>email</code> protocol, the endpoint is an email address.</p> </li>
+        /// <li> <p>For the <code>email-json</code> protocol, the endpoint is an email address.</p> </li>
+        /// <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p> </li>
+        /// <li> <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p> </li>
+        /// <li> <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p> </li>
+        /// <li> <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p> </li>
+        /// <li> <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p> </li>
         /// </ul>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint(inp);
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint(input.into());
             self
         }
-        /// <p>The endpoint that you want to receive notifications. Endpoints vary by
-        /// protocol:</p>
+        /// <p>The endpoint that you want to receive notifications. Endpoints vary by protocol:</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning
-        /// with <code>http://</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning
-        /// with <code>https://</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>email</code> protocol, the endpoint is an email address.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>email-json</code> protocol, the endpoint is an email
-        /// address.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
-        /// SMS-enabled device.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS
-        /// queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of
-        /// a mobile app and device.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda
-        /// function.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon
-        /// Kinesis Data Firehose delivery stream.</p>
-        /// </li>
+        /// <li> <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p> </li>
+        /// <li> <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p> </li>
+        /// <li> <p>For the <code>email</code> protocol, the endpoint is an email address.</p> </li>
+        /// <li> <p>For the <code>email-json</code> protocol, the endpoint is an email address.</p> </li>
+        /// <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p> </li>
+        /// <li> <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p> </li>
+        /// <li> <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p> </li>
+        /// <li> <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p> </li>
+        /// <li> <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p> </li>
         /// </ul>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_endpoint(input);
@@ -4851,112 +3914,44 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A map of attributes with their corresponding values.</p>
-        /// <p>The following lists the names, descriptions, and values of the special request
-        /// parameters that the <code>Subscribe</code> action uses:</p>
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>Subscribe</code> action uses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-        /// failed deliveries to HTTP/S endpoints.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FilterPolicy</code> – The simple JSON object that lets your
-        /// subscriber receive only a subset of messages, rather than receiving every
-        /// message published to the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RawMessageDelivery</code> – When set to <code>true</code>,
-        /// enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the
-        /// need for the endpoints to process JSON formatting, which is otherwise created
-        /// for Amazon SNS metadata.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue.
-        /// Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable)
-        /// or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held
-        /// in the dead-letter queue for further analysis or reprocessing.</p>
-        /// </li>
+        /// <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>
+        /// <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p> </li>
+        /// <li> <p> <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p> </li>
+        /// <li> <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+        /// <li> <p> <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon SNS listed as a trusted entity</p>
-        /// </li>
-        /// </ul>
-        /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
-        /// </li>
+        /// <li> <p>Permission to write to the Kinesis Data Firehose delivery stream</p> </li>
+        /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
+        /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
         /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
         /// <p>A map of attributes with their corresponding values.</p>
-        /// <p>The following lists the names, descriptions, and values of the special request
-        /// parameters that the <code>Subscribe</code> action uses:</p>
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>Subscribe</code> action uses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
-        /// failed deliveries to HTTP/S endpoints.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FilterPolicy</code> – The simple JSON object that lets your
-        /// subscriber receive only a subset of messages, rather than receiving every
-        /// message published to the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RawMessageDelivery</code> – When set to <code>true</code>,
-        /// enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the
-        /// need for the endpoints to process JSON formatting, which is otherwise created
-        /// for Amazon SNS metadata.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue.
-        /// Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable)
-        /// or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held
-        /// in the dead-letter queue for further analysis or reprocessing.</p>
-        /// </li>
+        /// <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>
+        /// <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p> </li>
+        /// <li> <p> <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p> </li>
+        /// <li> <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+        /// <li> <p> <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon SNS listed as a trusted entity</p>
-        /// </li>
-        /// </ul>
-        /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
-        /// </li>
+        /// <li> <p>Permission to write to the Kinesis Data Firehose delivery stream</p> </li>
+        /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
+        /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
         /// </ul>
         pub fn set_attributes(
             mut self,
@@ -4967,28 +3962,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attributes(input);
             self
         }
-        /// <p>Sets whether the response from the <code>Subscribe</code> request includes the
-        /// subscription ARN, even if the subscription is not yet confirmed.</p>
-        /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all
-        /// cases, even if the subscription is not yet confirmed. In addition to the ARN for
-        /// confirmed subscriptions, the response also includes the <code>pending
-        /// subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-        /// subscription becomes confirmed when the subscriber calls the
-        /// <code>ConfirmSubscription</code> action with a confirmation token.</p>
+        /// <p>Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the subscription is not yet confirmed.</p>
+        /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation token.</p>
         /// <p></p>
         /// <p>The default value is <code>false</code>.</p>
-        pub fn return_subscription_arn(mut self, inp: bool) -> Self {
-            self.inner = self.inner.return_subscription_arn(inp);
+        pub fn return_subscription_arn(mut self, input: bool) -> Self {
+            self.inner = self.inner.return_subscription_arn(input);
             self
         }
-        /// <p>Sets whether the response from the <code>Subscribe</code> request includes the
-        /// subscription ARN, even if the subscription is not yet confirmed.</p>
-        /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all
-        /// cases, even if the subscription is not yet confirmed. In addition to the ARN for
-        /// confirmed subscriptions, the response also includes the <code>pending
-        /// subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-        /// subscription becomes confirmed when the subscriber calls the
-        /// <code>ConfirmSubscription</code> action with a confirmation token.</p>
+        /// <p>Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the subscription is not yet confirmed.</p>
+        /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation token.</p>
         /// <p></p>
         /// <p>The default value is <code>false</code>.</p>
         pub fn set_return_subscription_arn(mut self, input: std::option::Option<bool>) -> Self {
@@ -4998,30 +3981,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Add tags to the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the
-    /// <i>Amazon SNS Developer Guide</i>.</p>
+    /// <p>Add tags to the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     /// <p>When you use topic tags, keep the following guidelines in mind:</p>
     /// <ul>
-    /// <li>
-    /// <p>Adding more than 50 tags to a topic isn't recommended.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tags don't have any semantic meaning. Amazon SNS interprets tags as character
-    /// strings.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tags are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>A new tag with a key identical to that of an existing tag overwrites the
-    /// existing tag.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tagging actions are limited to 10 TPS per Amazon Web Services account, per Amazon Web Services Region. If your
-    /// application requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support request</a>.</p>
-    /// </li>
+    /// <li> <p>Adding more than 50 tags to a topic isn't recommended.</p> </li>
+    /// <li> <p>Tags don't have any semantic meaning. Amazon SNS interprets tags as character strings.</p> </li>
+    /// <li> <p>Tags are case-sensitive.</p> </li>
+    /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
+    /// <li> <p>Tagging actions are limited to 10 TPS per Amazon Web Services account, per Amazon Web Services Region. If your application requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support request</a>.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5066,10 +4035,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5078,8 +4047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic to which to add tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the topic to which to add tags.</p>
@@ -5091,14 +4060,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to be added to the specified topic. A tag consists of a required key and an
-        /// optional value.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>The tags to be added to the specified topic. A tag consists of a required key and an optional value.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to be added to the specified topic. A tag consists of a required key and an
-        /// optional value.</p>
+        /// <p>The tags to be added to the specified topic. A tag consists of a required key and an optional value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5109,14 +4076,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `Unsubscribe`.
     ///
-    /// <p>Deletes a subscription. If the subscription requires authentication for deletion, only
-    /// the owner of the subscription or the topic's owner can unsubscribe, and an Amazon Web Services signature
-    /// is required. If the <code>Unsubscribe</code> call does not require authentication and
-    /// the requester is not the subscription owner, a final cancellation message is delivered
-    /// to the endpoint, so that the endpoint owner can easily resubscribe to the topic if the
-    /// <code>Unsubscribe</code> request was unintended.</p>
+    /// <p>Deletes a subscription. If the subscription requires authentication for deletion, only the owner of the subscription or the topic's owner can unsubscribe, and an Amazon Web Services signature is required. If the <code>Unsubscribe</code> call does not require authentication and the requester is not the subscription owner, a final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the topic if the <code>Unsubscribe</code> request was unintended.</p>
     /// <p>This action is throttled at 100 transactions per second (TPS).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Unsubscribe<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5161,10 +4123,10 @@ pub mod fluent_builders {
                 crate::input::UnsubscribeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5173,8 +4135,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the subscription to be deleted.</p>
-        pub fn subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_arn(inp);
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_arn(input.into());
             self
         }
         /// <p>The ARN of the subscription to be deleted.</p>
@@ -5188,9 +4150,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Remove tags from the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the
-    /// <i>Amazon SNS Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Remove tags from the specified Amazon SNS topic. For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5235,10 +4196,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5247,8 +4208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the topic from which to remove tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the topic from which to remove tags.</p>
@@ -5261,8 +4222,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys to remove from the specified topic.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys to remove from the specified topic.</p>
@@ -5277,15 +4238,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `VerifySMSSandboxPhoneNumber`.
     ///
     /// <p>Verifies a destination phone number with a one-time password (OTP) for the calling Amazon Web Services account.</p>
-    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the
-    /// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
-    /// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
-    /// Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
-    /// SMS messages only to verified destination phone numbers. For more information, including how to
-    /// move out of the sandbox to send messages without restrictions,
-    /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
-    /// the <i>Amazon SNS Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VerifySMSSandboxPhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5330,10 +4284,10 @@ pub mod fluent_builders {
                 crate::input::VerifySmsSandboxPhoneNumberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5342,8 +4296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The destination phone number to verify.</p>
-        pub fn phone_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(inp);
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
             self
         }
         /// <p>The destination phone number to verify.</p>
@@ -5351,14 +4305,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_phone_number(input);
             self
         }
-        /// <p>The OTP sent to the destination number from the
-        /// <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
-        pub fn one_time_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.one_time_password(inp);
+        /// <p>The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
+        pub fn one_time_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.one_time_password(input.into());
             self
         }
-        /// <p>The OTP sent to the destination number from the
-        /// <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
+        /// <p>The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
         pub fn set_one_time_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5368,6 +4320,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -5,20 +5,11 @@
 pub struct UserProfileSummary {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     pub user_arn: std::option::Option<std::string::String>,
-    /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and
-    /// last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate
-    /// the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the
-    /// display name, the first character that appears after the space will be used as the second
-    /// character in the user initial icon. The initial icon displays a maximum of two characters, so
-    /// a display name with more than one space (for example "Mary Jane Major") would generate an
-    /// initial icon using the first character and the first character after the space ("MJ", not
-    /// "MM").</p>
+    /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The email address associated with the user.</p>
     pub email_address: std::option::Option<std::string::String>,
-    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-    /// user remote access to project resources, this public key will be used along with the user's
-    /// private key for SSH access.</p>
+    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
 }
 impl UserProfileSummary {
@@ -26,14 +17,7 @@ impl UserProfileSummary {
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
-    /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and
-    /// last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate
-    /// the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the
-    /// display name, the first character that appears after the space will be used as the second
-    /// character in the user initial icon. The initial icon displays a maximum of two characters, so
-    /// a display name with more than one space (for example "Mary Jane Major") would generate an
-    /// initial icon using the first character and the first character after the space ("MJ", not
-    /// "MM").</p>
+    /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -41,9 +25,7 @@ impl UserProfileSummary {
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
-    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-    /// user remote access to project resources, this public key will be used along with the user's
-    /// private key for SSH access.</p>
+    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
@@ -80,26 +62,12 @@ pub mod user_profile_summary {
             self.user_arn = input;
             self
         }
-        /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and
-        /// last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate
-        /// the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the
-        /// display name, the first character that appears after the space will be used as the second
-        /// character in the user initial icon. The initial icon displays a maximum of two characters, so
-        /// a display name with more than one space (for example "Mary Jane Major") would generate an
-        /// initial icon using the first character and the first character after the space ("MJ", not
-        /// "MM").</p>
+        /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and
-        /// last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate
-        /// the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the
-        /// display name, the first character that appears after the space will be used as the second
-        /// character in the user initial icon. The initial icon displays a maximum of two characters, so
-        /// a display name with more than one space (for example "Mary Jane Major") would generate an
-        /// initial icon using the first character and the first character after the space ("MJ", not
-        /// "MM").</p>
+        /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -117,16 +85,12 @@ pub mod user_profile_summary {
             self.email_address = input;
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-        /// user remote access to project resources, this public key will be used along with the user's
-        /// private key for SSH access.</p>
+        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_public_key = Some(input.into());
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-        /// user remote access to project resources, this public key will be used along with the user's
-        /// private key for SSH access.</p>
+        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -158,12 +122,9 @@ impl UserProfileSummary {
 pub struct TeamMember {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     pub user_arn: std::option::Option<std::string::String>,
-    /// <p>The role assigned to the user in the project. Project roles have different levels of
-    /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
-    /// Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
+    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
     pub project_role: std::option::Option<std::string::String>,
-    /// <p>Whether the user is allowed to remotely access project resources using an SSH
-    /// public/private key pair.</p>
+    /// <p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>
     pub remote_access_allowed: std::option::Option<bool>,
 }
 impl TeamMember {
@@ -171,14 +132,11 @@ impl TeamMember {
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
-    /// <p>The role assigned to the user in the project. Project roles have different levels of
-    /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
-    /// Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
+    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
     pub fn project_role(&self) -> std::option::Option<&str> {
         self.project_role.as_deref()
     }
-    /// <p>Whether the user is allowed to remotely access project resources using an SSH
-    /// public/private key pair.</p>
+    /// <p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>
     pub fn remote_access_allowed(&self) -> std::option::Option<bool> {
         self.remote_access_allowed
     }
@@ -213,28 +171,22 @@ pub mod team_member {
             self.user_arn = input;
             self
         }
-        /// <p>The role assigned to the user in the project. Project roles have different levels of
-        /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
-        /// Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
+        /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
         pub fn project_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_role = Some(input.into());
             self
         }
-        /// <p>The role assigned to the user in the project. Project roles have different levels of
-        /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
-        /// Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
+        /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
         pub fn set_project_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_role = input;
             self
         }
-        /// <p>Whether the user is allowed to remotely access project resources using an SSH
-        /// public/private key pair.</p>
+        /// <p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>
         pub fn remote_access_allowed(mut self, input: bool) -> Self {
             self.remote_access_allowed = Some(input);
             self
         }
-        /// <p>Whether the user is allowed to remotely access project resources using an SSH
-        /// public/private key pair.</p>
+        /// <p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>
         pub fn set_remote_access_allowed(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_access_allowed = input;
             self
@@ -381,15 +333,13 @@ impl ProjectSummary {
     }
 }
 
-/// <p>An indication of whether a project creation or deletion is failed or
-/// successful.</p>
+/// <p>An indication of whether a project creation or deletion is failed or successful.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectStatus {
     /// <p>The phase of completion for a project creation or deletion.</p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>In the case of a project creation or deletion failure, a reason for the
-    /// failure.</p>
+    /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
     pub reason: std::option::Option<std::string::String>,
 }
 impl ProjectStatus {
@@ -397,8 +347,7 @@ impl ProjectStatus {
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
-    /// <p>In the case of a project creation or deletion failure, a reason for the
-    /// failure.</p>
+    /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -431,14 +380,12 @@ pub mod project_status {
             self.state = input;
             self
         }
-        /// <p>In the case of a project creation or deletion failure, a reason for the
-        /// failure.</p>
+        /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
         }
-        /// <p>In the case of a project creation or deletion failure, a reason for the
-        /// failure.</p>
+        /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -459,35 +406,28 @@ impl ProjectStatus {
     }
 }
 
-/// <p>The toolchain template file provided with the project request. AWS CodeStar uses
-/// the template to provision the toolchain stack in AWS CloudFormation.</p>
+/// <p>The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Toolchain {
-    /// <p>The Amazon S3 location where the toolchain template file provided with the
-    /// project request is stored. AWS CodeStar retrieves the file during project creation.</p>
+    /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
     pub source: std::option::Option<crate::model::ToolchainSource>,
-    /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack
-    /// provisioning.</p>
+    /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The list of parameter overrides to be passed into the toolchain template during stack
-    /// provisioning, if any.</p>
+    /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
     pub stack_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Toolchain {
-    /// <p>The Amazon S3 location where the toolchain template file provided with the
-    /// project request is stored. AWS CodeStar retrieves the file during project creation.</p>
+    /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::ToolchainSource> {
         self.source.as_ref()
     }
-    /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack
-    /// provisioning.</p>
+    /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The list of parameter overrides to be passed into the toolchain template during stack
-    /// provisioning, if any.</p>
+    /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
     pub fn stack_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -517,14 +457,12 @@ pub mod toolchain {
         >,
     }
     impl Builder {
-        /// <p>The Amazon S3 location where the toolchain template file provided with the
-        /// project request is stored. AWS CodeStar retrieves the file during project creation.</p>
+        /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
         pub fn source(mut self, input: crate::model::ToolchainSource) -> Self {
             self.source = Some(input);
             self
         }
-        /// <p>The Amazon S3 location where the toolchain template file provided with the
-        /// project request is stored. AWS CodeStar retrieves the file during project creation.</p>
+        /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::ToolchainSource>,
@@ -532,14 +470,12 @@ pub mod toolchain {
             self.source = input;
             self
         }
-        /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack
-        /// provisioning.</p>
+        /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack
-        /// provisioning.</p>
+        /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -548,8 +484,7 @@ pub mod toolchain {
         ///
         /// To override the contents of this collection use [`set_stack_parameters`](Self::set_stack_parameters).
         ///
-        /// <p>The list of parameter overrides to be passed into the toolchain template during stack
-        /// provisioning, if any.</p>
+        /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
         pub fn stack_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -560,8 +495,7 @@ pub mod toolchain {
             self.stack_parameters = Some(hash_map);
             self
         }
-        /// <p>The list of parameter overrides to be passed into the toolchain template during stack
-        /// provisioning, if any.</p>
+        /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
         pub fn set_stack_parameters(
             mut self,
             input: std::option::Option<
@@ -588,18 +522,15 @@ impl Toolchain {
     }
 }
 
-/// <p>The Amazon S3 location where the toolchain template file provided with the
-/// project request is stored. AWS CodeStar retrieves the file during project creation.</p>
+/// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ToolchainSource {
-    /// <p>The Amazon S3 bucket where the toolchain template file provided with the project
-    /// request is stored.</p>
+    /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
     pub s3: std::option::Option<crate::model::S3Location>,
 }
 impl ToolchainSource {
-    /// <p>The Amazon S3 bucket where the toolchain template file provided with the project
-    /// request is stored.</p>
+    /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
     pub fn s3(&self) -> std::option::Option<&crate::model::S3Location> {
         self.s3.as_ref()
     }
@@ -620,14 +551,12 @@ pub mod toolchain_source {
         pub(crate) s3: std::option::Option<crate::model::S3Location>,
     }
     impl Builder {
-        /// <p>The Amazon S3 bucket where the toolchain template file provided with the project
-        /// request is stored.</p>
+        /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
         pub fn s3(mut self, input: crate::model::S3Location) -> Self {
             self.s3 = Some(input);
             self
         }
-        /// <p>The Amazon S3 bucket where the toolchain template file provided with the project
-        /// request is stored.</p>
+        /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
         pub fn set_s3(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
             self.s3 = input;
             self
@@ -645,26 +574,21 @@ impl ToolchainSource {
     }
 }
 
-/// <p>The Amazon S3 location where the source code files provided with the project
-/// request are stored.</p>
+/// <p>The Amazon S3 location where the source code files provided with the project request are stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Location {
-    /// <p>The Amazon S3 bucket name where the source code files provided with the project
-    /// request are stored.</p>
+    /// <p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>
     pub bucket_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 object key where the source code files provided with the project
-    /// request are stored.</p>
+    /// <p>The Amazon S3 object key where the source code files provided with the project request are stored.</p>
     pub bucket_key: std::option::Option<std::string::String>,
 }
 impl S3Location {
-    /// <p>The Amazon S3 bucket name where the source code files provided with the project
-    /// request are stored.</p>
+    /// <p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
-    /// <p>The Amazon S3 object key where the source code files provided with the project
-    /// request are stored.</p>
+    /// <p>The Amazon S3 object key where the source code files provided with the project request are stored.</p>
     pub fn bucket_key(&self) -> std::option::Option<&str> {
         self.bucket_key.as_deref()
     }
@@ -687,26 +611,22 @@ pub mod s3_location {
         pub(crate) bucket_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon S3 bucket name where the source code files provided with the project
-        /// request are stored.</p>
+        /// <p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_name = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 bucket name where the source code files provided with the project
-        /// request are stored.</p>
+        /// <p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
         }
-        /// <p>The Amazon S3 object key where the source code files provided with the project
-        /// request are stored.</p>
+        /// <p>The Amazon S3 object key where the source code files provided with the project request are stored.</p>
         pub fn bucket_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_key = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 object key where the source code files provided with the project
-        /// request are stored.</p>
+        /// <p>The Amazon S3 object key where the source code files provided with the project request are stored.</p>
         pub fn set_bucket_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_key = input;
             self
@@ -727,27 +647,21 @@ impl S3Location {
     }
 }
 
-/// <p>Location and destination information about the source code files provided with the
-/// project request. The source code is uploaded to the new project source repository after
-/// project creation.</p>
+/// <p>Location and destination information about the source code files provided with the project request. The source code is uploaded to the new project source repository after project creation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Code {
-    /// <p>The location where the source code files provided with the project request are
-    /// stored. AWS CodeStar retrieves the files during project creation.</p>
+    /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
     pub source: std::option::Option<crate::model::CodeSource>,
-    /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the
-    /// source code files provided with the project request are placed in the repository.</p>
+    /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
     pub destination: std::option::Option<crate::model::CodeDestination>,
 }
 impl Code {
-    /// <p>The location where the source code files provided with the project request are
-    /// stored. AWS CodeStar retrieves the files during project creation.</p>
+    /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::CodeSource> {
         self.source.as_ref()
     }
-    /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the
-    /// source code files provided with the project request are placed in the repository.</p>
+    /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
     pub fn destination(&self) -> std::option::Option<&crate::model::CodeDestination> {
         self.destination.as_ref()
     }
@@ -770,26 +684,22 @@ pub mod code {
         pub(crate) destination: std::option::Option<crate::model::CodeDestination>,
     }
     impl Builder {
-        /// <p>The location where the source code files provided with the project request are
-        /// stored. AWS CodeStar retrieves the files during project creation.</p>
+        /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
         pub fn source(mut self, input: crate::model::CodeSource) -> Self {
             self.source = Some(input);
             self
         }
-        /// <p>The location where the source code files provided with the project request are
-        /// stored. AWS CodeStar retrieves the files during project creation.</p>
+        /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::CodeSource>) -> Self {
             self.source = input;
             self
         }
-        /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the
-        /// source code files provided with the project request are placed in the repository.</p>
+        /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
         pub fn destination(mut self, input: crate::model::CodeDestination) -> Self {
             self.destination = Some(input);
             self
         }
-        /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the
-        /// source code files provided with the project request are placed in the repository.</p>
+        /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::CodeDestination>,
@@ -813,26 +723,21 @@ impl Code {
     }
 }
 
-/// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the
-/// source code files provided with the project request are placed in the repository.</p>
+/// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeDestination {
-    /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided
-    /// with the project request will be uploaded after project creation.</p>
+    /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
     pub code_commit: std::option::Option<crate::model::CodeCommitCodeDestination>,
-    /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the
-    /// project request will be uploaded after project creation.</p>
+    /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
     pub git_hub: std::option::Option<crate::model::GitHubCodeDestination>,
 }
 impl CodeDestination {
-    /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided
-    /// with the project request will be uploaded after project creation.</p>
+    /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
     pub fn code_commit(&self) -> std::option::Option<&crate::model::CodeCommitCodeDestination> {
         self.code_commit.as_ref()
     }
-    /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the
-    /// project request will be uploaded after project creation.</p>
+    /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
     pub fn git_hub(&self) -> std::option::Option<&crate::model::GitHubCodeDestination> {
         self.git_hub.as_ref()
     }
@@ -855,14 +760,12 @@ pub mod code_destination {
         pub(crate) git_hub: std::option::Option<crate::model::GitHubCodeDestination>,
     }
     impl Builder {
-        /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided
-        /// with the project request will be uploaded after project creation.</p>
+        /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
         pub fn code_commit(mut self, input: crate::model::CodeCommitCodeDestination) -> Self {
             self.code_commit = Some(input);
             self
         }
-        /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided
-        /// with the project request will be uploaded after project creation.</p>
+        /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
         pub fn set_code_commit(
             mut self,
             input: std::option::Option<crate::model::CodeCommitCodeDestination>,
@@ -870,14 +773,12 @@ pub mod code_destination {
             self.code_commit = input;
             self
         }
-        /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the
-        /// project request will be uploaded after project creation.</p>
+        /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
         pub fn git_hub(mut self, input: crate::model::GitHubCodeDestination) -> Self {
             self.git_hub = Some(input);
             self
         }
-        /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the
-        /// project request will be uploaded after project creation.</p>
+        /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
         pub fn set_git_hub(
             mut self,
             input: std::option::Option<crate::model::GitHubCodeDestination>,
@@ -901,20 +802,17 @@ impl CodeDestination {
     }
 }
 
-/// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the
-/// project request will be uploaded after project creation.</p>
+/// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GitHubCodeDestination {
     /// <p>Name of the GitHub repository to be created in AWS CodeStar.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in
-    /// GitHub after the repository is created.</p>
+    /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>
     pub r#type: std::option::Option<std::string::String>,
-    /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should
-    /// be owned by a GitHub organization, provide its name.</p>
+    /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>Whether the GitHub repository is to be a private repository.</p>
     pub private_repository: bool,
@@ -928,8 +826,7 @@ impl GitHubCodeDestination {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in
-    /// GitHub after the repository is created.</p>
+    /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -937,8 +834,7 @@ impl GitHubCodeDestination {
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should
-    /// be owned by a GitHub organization, provide its name.</p>
+    /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -993,14 +889,12 @@ pub mod git_hub_code_destination {
             self.name = input;
             self
         }
-        /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in
-        /// GitHub after the repository is created.</p>
+        /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in
-        /// GitHub after the repository is created.</p>
+        /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1015,14 +909,12 @@ pub mod git_hub_code_destination {
             self.r#type = input;
             self
         }
-        /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should
-        /// be owned by a GitHub organization, provide its name.</p>
+        /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should
-        /// be owned by a GitHub organization, provide its name.</p>
+        /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -1078,8 +970,7 @@ impl GitHubCodeDestination {
     }
 }
 
-/// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided
-/// with the project request will be uploaded after project creation.</p>
+/// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeCommitCodeDestination {
@@ -1131,18 +1022,15 @@ impl CodeCommitCodeDestination {
     }
 }
 
-/// <p>The location where the source code files provided with the project request are
-/// stored. AWS CodeStar retrieves the files during project creation.</p>
+/// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeSource {
-    /// <p>Information about the Amazon S3 location where the source code files provided with the
-    /// project request are stored. </p>
+    /// <p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>
     pub s3: std::option::Option<crate::model::S3Location>,
 }
 impl CodeSource {
-    /// <p>Information about the Amazon S3 location where the source code files provided with the
-    /// project request are stored. </p>
+    /// <p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>
     pub fn s3(&self) -> std::option::Option<&crate::model::S3Location> {
         self.s3.as_ref()
     }
@@ -1163,14 +1051,12 @@ pub mod code_source {
         pub(crate) s3: std::option::Option<crate::model::S3Location>,
     }
     impl Builder {
-        /// <p>Information about the Amazon S3 location where the source code files provided with the
-        /// project request are stored. </p>
+        /// <p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>
         pub fn s3(mut self, input: crate::model::S3Location) -> Self {
             self.s3 = Some(input);
             self
         }
-        /// <p>Information about the Amazon S3 location where the source code files provided with the
-        /// project request are stored. </p>
+        /// <p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>
         pub fn set_s3(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
             self.s3 = input;
             self

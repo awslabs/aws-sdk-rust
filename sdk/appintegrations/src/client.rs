@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon AppIntegrations Service
@@ -203,13 +203,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateDataIntegration`.
     ///
-    /// <p>Creates and persists a DataIntegration resource.</p>
-    /// <note>
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated.  
-    /// Use a different DataIntegration, or recreate the DataIntegration using the
-    /// <code>CreateDataIntegration</code> API.</p>
+    /// <p>Creates and persists a DataIntegration resource.</p> <note>
+    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <code>CreateDataIntegration</code> API.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -254,10 +251,10 @@ pub mod fluent_builders {
                 crate::input::CreateDataIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -266,8 +263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DataIntegration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the DataIntegration.</p>
@@ -276,8 +273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the DataIntegration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the DataIntegration.</p>
@@ -286,8 +283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The KMS key for the DataIntegration.</p>
-        pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(inp);
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
             self
         }
         /// <p>The KMS key for the DataIntegration.</p>
@@ -296,8 +293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI of the data source.</p>
-        pub fn source_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_uri(inp);
+        pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_uri(input.into());
             self
         }
         /// <p>The URI of the data source.</p>
@@ -306,8 +303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the data and how often it should be pulled from the source.</p>
-        pub fn schedule_config(mut self, inp: crate::model::ScheduleConfiguration) -> Self {
-            self.inner = self.inner.schedule_config(inp);
+        pub fn schedule_config(mut self, input: crate::model::ScheduleConfiguration) -> Self {
+            self.inner = self.inner.schedule_config(input);
             self
         }
         /// <p>The name of the data and how often it should be pulled from the source.</p>
@@ -328,7 +325,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags.</p>
@@ -341,14 +338,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -356,11 +351,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEventIntegration`.
     ///
-    /// <p>Creates an EventIntegration, given a specified name, description, and a reference to an
-    /// Amazon EventBridge bus in your account and a partner event source that pushes events to that bus. No
-    /// objects are created in the your account, only metadata that is persisted on the
-    /// EventIntegration control plane.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an EventIntegration, given a specified name, description, and a reference to an Amazon EventBridge bus in your account and a partner event source that pushes events to that bus. No objects are created in the your account, only metadata that is persisted on the EventIntegration control plane.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -405,10 +397,10 @@ pub mod fluent_builders {
                 crate::input::CreateEventIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -417,8 +409,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event integration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the event integration.</p>
@@ -427,8 +419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the event integration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the event integration.</p>
@@ -437,8 +429,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event filter.</p>
-        pub fn event_filter(mut self, inp: crate::model::EventFilter) -> Self {
-            self.inner = self.inner.event_filter(inp);
+        pub fn event_filter(mut self, input: crate::model::EventFilter) -> Self {
+            self.inner = self.inner.event_filter(input);
             self
         }
         /// <p>The event filter.</p>
@@ -450,8 +442,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The EventBridge bus.</p>
-        pub fn event_bridge_bus(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bridge_bus(inp);
+        pub fn event_bridge_bus(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bridge_bus(input.into());
             self
         }
         /// <p>The EventBridge bus.</p>
@@ -462,14 +454,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_bridge_bus(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -484,7 +474,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags.</p>
@@ -500,15 +490,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDataIntegration`.
     ///
-    /// <p>Deletes the DataIntegration. Only DataIntegrations that don't have any
-    /// DataIntegrationAssociations can be deleted. Deleting a DataIntegration also deletes the
-    /// underlying Amazon AppFlow flow and service linked role. </p>
-    /// <note>
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated.  
-    /// Use a different DataIntegration, or recreate the DataIntegration using the
-    /// <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
+    /// <p>Deletes the DataIntegration. Only DataIntegrations that don't have any DataIntegrationAssociations can be deleted. Deleting a DataIntegration also deletes the underlying Amazon AppFlow flow and service linked role. </p> <note>
+    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -553,10 +538,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDataIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -565,8 +550,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the DataIntegration.</p>
-        pub fn data_integration_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_integration_identifier(inp);
+        pub fn data_integration_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.data_integration_identifier(input.into());
             self
         }
         /// <p>A unique identifier for the DataIntegration.</p>
@@ -580,9 +568,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEventIntegration`.
     ///
-    /// <p>Deletes the specified existing event integration. If the event integration is associated
-    /// with clients, the request is rejected.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified existing event integration. If the event integration is associated with clients, the request is rejected.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -627,10 +614,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEventIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -639,8 +626,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event integration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the event integration.</p>
@@ -651,13 +638,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDataIntegration`.
     ///
-    /// <p>Returns information about the DataIntegration.</p>
-    /// <note>
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated.  
-    /// Use a different DataIntegration, or recreate the DataIntegration using the
-    /// <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
+    /// <p>Returns information about the DataIntegration.</p> <note>
+    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -702,10 +686,10 @@ pub mod fluent_builders {
                 crate::input::GetDataIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -714,8 +698,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>A unique identifier.</p>
@@ -727,7 +711,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEventIntegration`.
     ///
     /// <p>Returns information about the event integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -772,10 +756,10 @@ pub mod fluent_builders {
                 crate::input::GetEventIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -784,8 +768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event integration. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the event integration. </p>
@@ -796,13 +780,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDataIntegrationAssociations`.
     ///
-    /// <p>Returns a paginated list of DataIntegration associations in the account.</p>
-    /// <note>
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated.  
-    /// Use a different DataIntegration, or recreate the DataIntegration using the
-    /// <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
+    /// <p>Returns a paginated list of DataIntegration associations in the account.</p> <note>
+    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataIntegrationAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -847,10 +828,10 @@ pub mod fluent_builders {
                 crate::input::ListDataIntegrationAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -859,8 +840,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the DataIntegration.</p>
-        pub fn data_integration_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_integration_identifier(inp);
+        pub fn data_integration_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.data_integration_identifier(input.into());
             self
         }
         /// <p>A unique identifier for the DataIntegration.</p>
@@ -871,21 +855,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_integration_identifier(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -896,13 +878,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDataIntegrations`.
     ///
-    /// <p>Returns a paginated list of DataIntegrations in the account.</p>
-    /// <note>
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated.  
-    /// Use a different DataIntegration, or recreate the DataIntegration using the
-    /// <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
+    /// <p>Returns a paginated list of DataIntegrations in the account.</p> <note>
+    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataIntegrations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -947,10 +926,10 @@ pub mod fluent_builders {
                 crate::input::ListDataIntegrationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -958,21 +937,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -984,7 +961,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEventIntegrationAssociations`.
     ///
     /// <p>Returns a paginated list of event integration associations in the account. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventIntegrationAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1029,10 +1006,10 @@ pub mod fluent_builders {
                 crate::input::ListEventIntegrationAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1041,8 +1018,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event integration. </p>
-        pub fn event_integration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_integration_name(inp);
+        pub fn event_integration_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_integration_name(input.into());
             self
         }
         /// <p>The name of the event integration. </p>
@@ -1053,21 +1030,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_integration_name(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -1079,7 +1054,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEventIntegrations`.
     ///
     /// <p>Returns a paginated list of event integrations in the account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEventIntegrations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1124,10 +1099,10 @@ pub mod fluent_builders {
                 crate::input::ListEventIntegrationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1135,21 +1110,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -1161,7 +1134,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1206,10 +1179,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1218,8 +1191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
@@ -1231,7 +1204,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds the specified tags to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1276,10 +1249,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1288,8 +1261,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1307,7 +1280,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tags. </p>
@@ -1324,7 +1297,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1369,10 +1342,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1381,8 +1354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1395,8 +1368,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys.</p>
@@ -1410,13 +1383,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDataIntegration`.
     ///
-    /// <p>Updates the description of a DataIntegration.</p>
-    /// <note>
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated.  
-    /// Use a different DataIntegration, or recreate the DataIntegration using the
-    /// <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
+    /// <p>Updates the description of a DataIntegration.</p> <note>
+    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1461,10 +1431,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDataIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1473,8 +1443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the DataIntegration.</p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>A unique identifier for the DataIntegration.</p>
@@ -1483,8 +1453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the DataIntegration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the DataIntegration.</p>
@@ -1493,8 +1463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the DataIntegration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the DataIntegration.</p>
@@ -1506,7 +1476,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEventIntegration`.
     ///
     /// <p>Updates the description of an event integration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEventIntegration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1551,10 +1521,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEventIntegrationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1563,8 +1533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event integration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the event integration.</p>
@@ -1573,8 +1543,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the event inegration.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the event inegration.</p>
@@ -1584,6 +1554,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

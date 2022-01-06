@@ -7,8 +7,7 @@ pub enum Error {
     BaseException(crate::error::BaseException),
     /// <p>The request was rejected because it attempted an operation which is not enabled.</p>
     DisabledOperationException(crate::error::DisabledOperationException),
-    /// <p>An internal error occurred while processing the request. If this problem persists,
-    /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
+    /// <p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it specified an invalid type definition.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
